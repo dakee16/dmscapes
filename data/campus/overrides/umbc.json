@@ -1,0 +1,54 @@
+{
+  "places": {
+    "technology-research-center": {
+      "hide": true
+    },
+    "bwtech-umbc": {
+      "hide": true
+    },
+    "5525-allegis": {
+      "hide": true
+    },
+    "tech-2-building": {
+      "hide": true
+    },
+    "central-plant": {
+      "hide": true
+    },
+    "child-care-center": {
+      "hide": true
+    },
+    "ticket-booth": {
+      "hide": true
+    },
+    "apartment-community-center": {
+      "hide": true
+    },
+    "walker-avenue-apartments-clubhouse": {
+      "hide": true
+    },
+    "walker-avenue-apartments-management-office": {
+      "hide": true
+    },
+    "alumni-house": {
+      "hide": true
+    },
+    "true-grits": {
+      "kind": "dining"
+    }
+  },
+  "notes": {
+    "technology-research-center": "bwtech@UMBC research park building, not somewhere classes happen.",
+    "bwtech-umbc": "bwtech@UMBC research park building, not somewhere classes happen.",
+    "5525-allegis": "bwtech@UMBC research park building, not somewhere classes happen.",
+    "tech-2-building": "bwtech@UMBC research park building, not somewhere classes happen.",
+    "central-plant": "Utility plant, not somewhere classes happen.",
+    "child-care-center": "Childcare centre, not somewhere classes happen.",
+    "ticket-booth": "A ticket booth, not somewhere classes happen.",
+    "apartment-community-center": "Housing office or clubhouse, not somewhere classes happen.",
+    "walker-avenue-apartments-clubhouse": "Housing office or clubhouse, not somewhere classes happen.",
+    "walker-avenue-apartments-management-office": "Housing office or clubhouse, not somewhere classes happen.",
+    "alumni-house": "Alumni house, not somewhere classes happen.",
+    "true-grits": "UMBC's campus map Building Directory lists True Grit's as a dining hall (umbc.edu/about/visit/directions/)."
+  }
+}

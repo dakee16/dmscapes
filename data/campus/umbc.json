@@ -1,0 +1,486 @@
+{
+ "collegeId": "umbc",
+ "generatedAt": "2026-11-09T18:15:29.856Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/umbc.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -76.71967,
+  39.25197,
+  -76.70673,
+  39.25889
+ ],
+ "halls": [
+  {
+   "dormId": "chesapeake-hall",
+   "name": "Chesapeake Hall",
+   "lng": -76.708489,
+   "lat": 39.256664,
+   "pin": "name",
+   "osm": "way/41285498",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "albin-o-kuhn-library-and-gallery",
+     "minutes": 3.5
+    },
+    "gym": {
+     "placeId": "retriever-activities-center",
+     "minutes": 7.3
+    },
+    "dining": {
+     "placeId": "true-grits",
+     "minutes": 1.7
+    }
+   }
+  },
+  {
+   "dormId": "patapsco-hall",
+   "name": "Patapsco Hall",
+   "lng": -76.706734,
+   "lat": 39.255221,
+   "pin": "name",
+   "osm": "way/32429393",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "albin-o-kuhn-library-and-gallery",
+     "minutes": 5
+    },
+    "gym": {
+     "placeId": "retriever-activities-center",
+     "minutes": 7.3
+    },
+    "dining": {
+     "placeId": "true-grits",
+     "minutes": 0.9
+    }
+   }
+  },
+  {
+   "dormId": "potomac-hall",
+   "name": "Potomac Hall",
+   "lng": -76.706725,
+   "lat": 39.255982,
+   "pin": "name",
+   "osm": "way/32429396",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "albin-o-kuhn-library-and-gallery",
+     "minutes": 6.1
+    },
+    "gym": {
+     "placeId": "retriever-activities-center",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "true-grits",
+     "minutes": 0.8
+    }
+   }
+  },
+  {
+   "dormId": "susquehanna-hall",
+   "name": "Susquehanna Hall",
+   "lng": -76.70865,
+   "lat": 39.255755,
+   "pin": "name",
+   "osm": "way/32430087",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "albin-o-kuhn-library-and-gallery",
+     "minutes": 4
+    },
+    "gym": {
+     "placeId": "retriever-activities-center",
+     "minutes": 6.7
+    },
+    "dining": {
+     "placeId": "true-grits",
+     "minutes": 1.4
+    }
+   }
+  },
+  {
+   "dormId": "erickson-hall",
+   "name": "Erickson Hall",
+   "lng": -76.709666,
+   "lat": 39.257049,
+   "pin": "name",
+   "osm": "way/256971398",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "albin-o-kuhn-library-and-gallery",
+     "minutes": 1.6
+    },
+    "gym": {
+     "placeId": "retriever-activities-center",
+     "minutes": 7
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "harbor-hall",
+   "name": "Harbor Hall",
+   "lng": -76.708007,
+   "lat": 39.257278,
+   "pin": "name",
+   "osm": "way/32430110",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "albin-o-kuhn-library-and-gallery",
+     "minutes": 5.1
+    },
+    "gym": {
+     "placeId": "retriever-activities-center",
+     "minutes": 8.9
+    },
+    "dining": {
+     "placeId": "true-grits",
+     "minutes": 2.5
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "chesapeake-employers-insurance-arena",
+   "name": "Chesapeake Employers Insurance Arena",
+   "short": "Chesapeake Employers Insurance Arena",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.707103,
+   "lat": 39.251965,
+   "osm": "way/468799800"
+  },
+  {
+   "id": "albin-o-kuhn-library-and-gallery",
+   "name": "Albin O. Kuhn Library and Gallery",
+   "short": "Albin O. Kuhn Library and Gallery",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "LIB"
+   ],
+   "lng": -76.711625,
+   "lat": 39.256604,
+   "osm": "way/32433087"
+  },
+  {
+   "id": "retriever-activities-center",
+   "name": "Retriever Activities Center",
+   "short": "Retriever Activities Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "RAC"
+   ],
+   "lng": -76.712482,
+   "lat": 39.252824,
+   "osm": "way/32429403"
+  },
+  {
+   "id": "performing-arts-and-humanities",
+   "name": "Performing Arts & Humanities",
+   "short": "Performing Arts & Humanities",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PAHB"
+   ],
+   "lng": -76.715388,
+   "lat": 39.255256,
+   "osm": "way/256977077"
+  },
+  {
+   "id": "the-commons",
+   "name": "The Commons",
+   "short": "The Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "COM"
+   ],
+   "lng": -76.710994,
+   "lat": 39.254922,
+   "osm": "way/32429381"
+  },
+  {
+   "id": "information-technology-engineering",
+   "name": "Information Technology/Engineering",
+   "short": "Information Technology/Engineering",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ITE"
+   ],
+   "lng": -76.71428,
+   "lat": 39.253832,
+   "osm": "way/32429358"
+  },
+  {
+   "id": "engineering",
+   "name": "Engineering",
+   "short": "Engineering",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ENG"
+   ],
+   "lng": -76.713969,
+   "lat": 39.254517,
+   "osm": "way/32429361"
+  },
+  {
+   "id": "true-grits",
+   "name": "True Grit's",
+   "short": "True Grit's",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "DH"
+   ],
+   "lng": -76.707687,
+   "lat": 39.255918,
+   "osm": "way/32429401"
+  },
+  {
+   "id": "fine-arts",
+   "name": "Fine Arts",
+   "short": "Fine Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "FA"
+   ],
+   "lng": -76.713617,
+   "lat": 39.255173,
+   "osm": "way/32429362"
+  },
+  {
+   "id": "interdisciplinary-life-sciences-building",
+   "name": "Interdisciplinary Life Sciences Building",
+   "short": "Interdisciplinary Life Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ILSB"
+   ],
+   "lng": -76.710846,
+   "lat": 39.253951,
+   "osm": "way/746049951"
+  },
+  {
+   "id": "meyerhoff-hall",
+   "name": "Meyerhoff Hall",
+   "short": "Meyerhoff Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MEYR"
+   ],
+   "lng": -76.712872,
+   "lat": 39.254955,
+   "osm": "way/32429363"
+  },
+  {
+   "id": "sherman-hall",
+   "name": "Sherman Hall",
+   "short": "Sherman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Academic IV"
+   ],
+   "lng": -76.713413,
+   "lat": 39.253663,
+   "osm": "way/32429365"
+  },
+  {
+   "id": "university-center",
+   "name": "University Center",
+   "short": "University Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "UC"
+   ],
+   "lng": -76.713242,
+   "lat": 39.254317,
+   "osm": "way/32429364"
+  },
+  {
+   "id": "biological-sciences",
+   "name": "Biological Sciences",
+   "short": "Biological Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "BIOL"
+   ],
+   "lng": -76.712229,
+   "lat": 39.254742,
+   "osm": "relation/20180151"
+  },
+  {
+   "id": "physics",
+   "name": "Physics",
+   "short": "Physics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PHYS"
+   ],
+   "lng": -76.709612,
+   "lat": 39.254507,
+   "osm": "way/32429395"
+  },
+  {
+   "id": "public-policy",
+   "name": "Public Policy",
+   "short": "Public Policy",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PUP"
+   ],
+   "lng": -76.709142,
+   "lat": 39.255191,
+   "osm": "way/32429397"
+  },
+  {
+   "id": "sondheim-hall",
+   "name": "Sondheim Hall",
+   "short": "Sondheim Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SOND",
+    "Social Sciences"
+   ],
+   "lng": -76.712789,
+   "lat": 39.253462,
+   "osm": "way/32429366"
+  },
+  {
+   "id": "mathematics-and-psychology",
+   "name": "Mathematics & Psychology",
+   "short": "Mathematics & Psychology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MP"
+   ],
+   "lng": -76.712463,
+   "lat": 39.254098,
+   "osm": "way/32429368"
+  },
+  {
+   "id": "the-center-for-well-being",
+   "name": "The Center For Well-Being",
+   "short": "The Center For Well-Being",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.708923,
+   "lat": 39.25607,
+   "osm": "way/965526045"
+  },
+  {
+   "id": "administration",
+   "name": "Administration",
+   "short": "Administration",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "AD"
+   ],
+   "lng": -76.713492,
+   "lat": 39.253058,
+   "osm": "way/32429370"
+  },
+  {
+   "id": "chemistry-lecture-hall",
+   "name": "Chemistry Lecture Hall",
+   "short": "Chemistry Lecture Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.712593,
+   "lat": 39.254867,
+   "osm": "way/868762950"
+  },
+  {
+   "id": "lecture-hall-one",
+   "name": "Lecture Hall One",
+   "short": "Lecture Hall One",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "LH1"
+   ],
+   "lng": -76.711826,
+   "lat": 39.254812,
+   "osm": "way/32429373"
+  },
+  {
+   "id": "army-rotc-building",
+   "name": "Army ROTC Building",
+   "short": "Army ROTC Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.717099,
+   "lat": 39.258892,
+   "osm": "way/277722446"
+  },
+  {
+   "id": "surge-facility",
+   "name": "Surge Facility",
+   "short": "Surge Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.719668,
+   "lat": 39.256787,
+   "osm": "way/32430086"
+  },
+  {
+   "id": "naval-rotc-building",
+   "name": "Naval ROTC Building",
+   "short": "Naval ROTC Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.717166,
+   "lat": 39.2585,
+   "osm": "way/277722445"
+  }
+ ]
+}

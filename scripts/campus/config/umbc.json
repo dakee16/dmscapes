@@ -1,0 +1,16 @@
+{
+  "collegeId": "umbc",
+  "area": {
+    "osm": "relation/12867319",
+    "bbox": [
+      39.24238,
+      -76.72014,
+      39.2625,
+      -76.70008
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "UMBC publishes no building-code list: the registrar's site (registrar.umbc.edu) has none, and the campus map's Building Directory (umbc.edu/about/visit/directions/) gives names, map squares and a common short name for a few buildings only (ITE, ILSB, PAHB, RAC, UC) (checked 2026-11-08)."
+}
