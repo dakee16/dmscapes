@@ -1,0 +1,18 @@
+{
+  "collegeId": "uc-irvine",
+  "area": {
+    "osm": "way/35154092",
+    "bbox": [
+      33.6316,
+      -117.85963,
+      33.6547,
+      -117.82193
+    ],
+    "note": "Nominatim: way/35154092 amenity=university 'University of California, Irvine' (main campus; area.mjs found no outline by name)."
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/uc-irvine.codes.json"
+  }
+}
