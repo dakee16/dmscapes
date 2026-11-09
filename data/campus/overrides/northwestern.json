@@ -1,0 +1,83 @@
+{
+  "halls": {
+    "bobb-hall": {
+      "pin": [
+        -87.675561,
+        42.05965
+      ]
+    }
+  },
+  "places": {
+    "segal-visitors-center": {
+      "hide": true
+    },
+    "university-relations": {
+      "hide": true
+    },
+    "admissions-and-financial-aid": {
+      "hide": true
+    },
+    "northwestern-career-advancement": {
+      "hide": true
+    },
+    "office-of-human-resources": {
+      "hide": true
+    },
+    "alumni-center": {
+      "hide": true
+    },
+    "mogentale-players-lounge": {
+      "hide": true
+    },
+    "canning-family-private-suite": {
+      "hide": true
+    },
+    "levere-memorial-temple": {
+      "hide": true
+    },
+    "delta-chi-fraternity": {
+      "hide": true
+    },
+    "roycemore": {
+      "hide": true
+    },
+    "seabury-western-theological-seminary": {
+      "hide": true
+    },
+    "sailing-center": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "bobb-hall": "Bobb-McCulloch Hall is OSM's 'Bobb Residence Hall' (way/218117034, 2305 Sheridan Road) and 'McCulloch Residence Hall' next door; pinned on Bobb.",
+    "segal-visitors-center": "Administrative, alumni or visitor offices, not somewhere classes happen.",
+    "university-relations": "Administrative, alumni or visitor offices, not somewhere classes happen.",
+    "admissions-and-financial-aid": "Administrative, alumni or visitor offices, not somewhere classes happen.",
+    "northwestern-career-advancement": "Administrative, alumni or visitor offices, not somewhere classes happen.",
+    "office-of-human-resources": "Administrative, alumni or visitor offices, not somewhere classes happen.",
+    "alumni-center": "Administrative, alumni or visitor offices, not somewhere classes happen.",
+    "mogentale-players-lounge": "Stadium suite or varsity lounge, not somewhere classes happen.",
+    "canning-family-private-suite": "Stadium suite or varsity lounge, not somewhere classes happen.",
+    "levere-memorial-temple": "Fraternity house or headquarters, not somewhere classes happen.",
+    "delta-chi-fraternity": "Fraternity house or headquarters, not somewhere classes happen.",
+    "roycemore": "Roycemore School, a separate K-12 school.",
+    "seabury-western-theological-seminary": "A separate seminary, not part of Northwestern.",
+    "sailing-center": "Sailing club boathouse, not somewhere classes happen."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "sargent-hall -> cook-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "Cook Hall's mapped door is on its south side, facing the Technological Institute, so walks from Sargent Hall to the north go round the building."
+    },
+    {
+      "pairs": [
+        "hinman -> anthropology-department"
+      ],
+      "maxRatio": 3.5,
+      "why": "City block: the Anthropology Department's house faces the next street over from Hinman's door, with houses and yards between and no mapped path through, so walks go round the block."
+    }
+  ]
+}

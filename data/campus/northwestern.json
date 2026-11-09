@@ -1,0 +1,847 @@
+{
+ "collegeId": "northwestern",
+ "generatedAt": "2026-11-09T18:15:51.918Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/northwestern.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -87.69329,
+  42.04936,
+  -87.67142,
+  42.06713
+ ],
+ "halls": [
+  {
+   "dormId": "elder-hall",
+   "name": "Elder Hall",
+   "lng": -87.67768,
+   "lat": 42.060912,
+   "pin": "name",
+   "osm": "way/42703578",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "patten-gymnasium",
+     "minutes": 3.4
+    },
+    "library": {
+     "placeId": "seeley-g-mudd-science-and-engineering-library",
+     "minutes": 7
+    }
+   }
+  },
+  {
+   "dormId": "willard-hall",
+   "name": "Willard Residential College",
+   "lng": -87.681322,
+   "lat": 42.051733,
+   "pin": "name",
+   "osm": "way/42702460",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "blomquist-recreation-center",
+     "minutes": 6.9
+    },
+    "library": {
+     "placeId": "deering-library",
+     "minutes": 8
+    }
+   }
+  },
+  {
+   "dormId": "bobb-hall",
+   "name": "Bobb-McCulloch Hall",
+   "lng": -87.675561,
+   "lat": 42.05965,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "patten-gymnasium",
+     "minutes": 3.8
+    },
+    "library": {
+     "placeId": "seeley-g-mudd-science-and-engineering-library",
+     "minutes": 2.3
+    }
+   }
+  },
+  {
+   "dormId": "sargent-hall",
+   "name": "Sargent Hall",
+   "lng": -87.675477,
+   "lat": 42.058773,
+   "pin": "name",
+   "osm": "way/42708359",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "henry-crown-sports-pavilion",
+     "minutes": 4
+    },
+    "library": {
+     "placeId": "seeley-g-mudd-science-and-engineering-library",
+     "minutes": 2.1
+    }
+   }
+  },
+  {
+   "dormId": "hinman",
+   "name": "Hinman (South Mid-Quads)",
+   "lng": -87.675422,
+   "lat": 42.049978,
+   "pin": "name",
+   "osm": "way/42702950",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "blomquist-recreation-center",
+     "minutes": 9.9
+    },
+    "library": {
+     "placeId": "northwestern-university-library",
+     "minutes": 6.2
+    }
+   }
+  },
+  {
+   "dormId": "allison-hall",
+   "name": "Allison Hall",
+   "lng": -87.678389,
+   "lat": 42.050453,
+   "pin": "name",
+   "osm": "way/42702425",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "blomquist-recreation-center",
+     "minutes": 7.7
+    },
+    "library": {
+     "placeId": "deering-library",
+     "minutes": 5.6
+    }
+   }
+  },
+  {
+   "dormId": "east-fairchild",
+   "name": "East Fairchild",
+   "lng": -87.675098,
+   "lat": 42.050838,
+   "pin": "name",
+   "osm": "way/123307477",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "blomquist-recreation-center",
+     "minutes": 8.1
+    },
+    "library": {
+     "placeId": "northwestern-university-library",
+     "minutes": 3.9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "northwestern-university-technological-institute",
+   "name": "Northwestern University Technological Institute",
+   "short": "Tech Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Tech Institute"
+   ],
+   "lng": -87.67585,
+   "lat": 42.057835,
+   "osm": "way/35598594"
+  },
+  {
+   "id": "walter-athletics-center",
+   "name": "Walter Athletics Center",
+   "short": "Walter Athletics Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.672445,
+   "lat": 42.05991,
+   "osm": "way/768687038"
+  },
+  {
+   "id": "henry-crown-sports-pavilion",
+   "name": "Henry Crown Sports Pavilion",
+   "short": "Henry Crown Sports Pavilion",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.673158,
+   "lat": 42.059604,
+   "osm": "way/275854464"
+  },
+  {
+   "id": "virginia-wadsworth-wirtz-center-for-the-performing-arts",
+   "name": "Virginia Wadsworth Wirtz Center for the Performing Arts",
+   "short": "Virginia Wadsworth Wirtz Center for the Performing Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Theater and Interpretation Center"
+   ],
+   "lng": -87.672931,
+   "lat": 42.052042,
+   "osm": "relation/4630782"
+  },
+  {
+   "id": "trienens-performance-center",
+   "name": "Trienens Performance Center",
+   "short": "Trienens Performance Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.693293,
+   "lat": 42.067134,
+   "osm": "way/42708317"
+  },
+  {
+   "id": "kellogg-global-hub",
+   "name": "Kellogg Global Hub",
+   "short": "Kellogg Global Hub",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.672063,
+   "lat": 42.057413,
+   "osm": "way/466698283"
+  },
+  {
+   "id": "mcgaw-memorial-hall",
+   "name": "McGaw Memorial Hall",
+   "short": "McGaw Memorial Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Welsh-Ryan Arena"
+   ],
+   "lng": -87.692451,
+   "lat": 42.066943,
+   "osm": "way/42708318"
+  },
+  {
+   "id": "ryan-field-house",
+   "name": "Ryan Field House",
+   "short": "Ryan Field House",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.672555,
+   "lat": 42.060015,
+   "osm": "way/768687037"
+  },
+  {
+   "id": "northwestern-university-library",
+   "name": "Northwestern University Library",
+   "short": "Northwestern University Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.67413,
+   "lat": 42.053144,
+   "osm": "way/175187764"
+  },
+  {
+   "id": "jacobs-center",
+   "name": "Jacobs Center",
+   "short": "Jacobs Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.676261,
+   "lat": 42.054077,
+   "osm": "way/165094354"
+  },
+  {
+   "id": "donald-jacobs-center",
+   "name": "Donald Jacobs Center",
+   "short": "Donald Jacobs Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.676261,
+   "lat": 42.054077,
+   "osm": "relation/2199802"
+  },
+  {
+   "id": "allen-center",
+   "name": "Allen Center",
+   "short": "Allen Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.673007,
+   "lat": 42.056459,
+   "osm": "way/33908935"
+  },
+  {
+   "id": "seeley-g-mudd-science-and-engineering-library",
+   "name": "Seeley G. Mudd Science and Engineering Library",
+   "short": "Seeley G. Mudd Science and Engineering Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.67429,
+   "lat": 42.058198,
+   "osm": "way/42703541"
+  },
+  {
+   "id": "patrick-g-and-shirley-w-ryan-center-for-the-musical-arts",
+   "name": "Patrick G. and Shirley W. Ryan Center for the Musical Arts",
+   "short": "Patrick G. and Shirley W. Ryan Center for the Musical Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.671541,
+   "lat": 42.051849,
+   "osm": "way/275849772"
+  },
+  {
+   "id": "frances-searle-building",
+   "name": "Frances Searle Building",
+   "short": "Frances Searle Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.673611,
+   "lat": 42.058526,
+   "osm": "way/42703542"
+  },
+  {
+   "id": "cook-hall",
+   "name": "Cook Hall",
+   "short": "Cook Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.673927,
+   "lat": 42.05779,
+   "osm": "way/42703540"
+  },
+  {
+   "id": "1801-maple-avenue",
+   "name": "1801 Maple Avenue",
+   "short": "1801 Maple Avenue",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.684247,
+   "lat": 42.050376,
+   "osm": "way/168370535"
+  },
+  {
+   "id": "norris-university-center",
+   "name": "Norris University Center",
+   "short": "Norris University Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.672621,
+   "lat": 42.053436,
+   "osm": "relation/16505176"
+  },
+  {
+   "id": "pancoe-enh-life-sciences-pavilion",
+   "name": "Pancoe-ENH Life Sciences Pavilion",
+   "short": "Pancoe-ENH Life Sciences Pavilion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.673589,
+   "lat": 42.057152,
+   "osm": "way/33908936"
+  },
+  {
+   "id": "silverman-hall",
+   "name": "Silverman Hall",
+   "short": "Silverman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.674059,
+   "lat": 42.056498,
+   "osm": "way/53160129"
+  },
+  {
+   "id": "patten-gymnasium",
+   "name": "Patten Gymnasium",
+   "short": "Patten Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.676609,
+   "lat": 42.061141,
+   "osm": "way/42703697"
+  },
+  {
+   "id": "kresge-hall",
+   "name": "Kresge Hall",
+   "short": "Kresge Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.675034,
+   "lat": 42.051637,
+   "osm": "way/151311271"
+  },
+  {
+   "id": "scott-hall",
+   "name": "Scott Hall",
+   "short": "Scott Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.677749,
+   "lat": 42.05173,
+   "osm": "way/42701676"
+  },
+  {
+   "id": "deering-library",
+   "name": "Deering Library",
+   "short": "Deering Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.675301,
+   "lat": 42.053219,
+   "osm": "way/214618504"
+  },
+  {
+   "id": "rebecca-crown-center",
+   "name": "Rebecca Crown Center",
+   "short": "Rebecca Crown Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.679838,
+   "lat": 42.050528,
+   "osm": "way/42702830"
+  },
+  {
+   "id": "pick-staiger-concert-hall",
+   "name": "Pick-Staiger Concert Hall",
+   "short": "Pick-Staiger Concert Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.672184,
+   "lat": 42.052674,
+   "osm": "way/33908912"
+  },
+  {
+   "id": "blomquist-recreation-center",
+   "name": "Blomquist Recreation Center",
+   "short": "Blomquist Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.678211,
+   "lat": 42.054295,
+   "osm": "way/42701585"
+  },
+  {
+   "id": "regenstein-hall-of-music",
+   "name": "Regenstein Hall of Music",
+   "short": "Regenstein Hall of Music",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.671418,
+   "lat": 42.052215,
+   "osm": "way/275854486"
+  },
+  {
+   "id": "annenberg-hall",
+   "name": "Annenberg Hall",
+   "short": "Annenberg Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.674494,
+   "lat": 42.056073,
+   "osm": "way/42701586"
+  },
+  {
+   "id": "searle-hall",
+   "name": "Searle Hall",
+   "short": "Searle Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.678917,
+   "lat": 42.052325,
+   "osm": "way/42702015"
+  },
+  {
+   "id": "ryan-hall",
+   "name": "Ryan Hall",
+   "short": "Ryan Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.674526,
+   "lat": 42.056844,
+   "osm": "way/42703498"
+  },
+  {
+   "id": "fisk-hall",
+   "name": "Fisk Hall",
+   "short": "Fisk Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.674189,
+   "lat": 42.050764,
+   "osm": "way/33908919"
+  },
+  {
+   "id": "parkes-hall",
+   "name": "Parkes Hall",
+   "short": "Parkes Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.677076,
+   "lat": 42.050207,
+   "osm": "way/42703717"
+  },
+  {
+   "id": "hogan-biological-sciences-building",
+   "name": "Hogan Biological Sciences Building",
+   "short": "Hogan Biological Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.67418,
+   "lat": 42.057358,
+   "osm": "way/42703499"
+  },
+  {
+   "id": "music-administration-building",
+   "name": "Music Administration Building",
+   "short": "Music Administration Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.680671,
+   "lat": 42.050603,
+   "osm": "way/42702794"
+  },
+  {
+   "id": "swift-hall",
+   "name": "Swift Hall",
+   "short": "Swift Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.674975,
+   "lat": 42.055155,
+   "osm": "way/214618520"
+  },
+  {
+   "id": "cahn-auditorium",
+   "name": "Cahn Auditorium",
+   "short": "Cahn Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.677848,
+   "lat": 42.05186,
+   "osm": "way/1360690337"
+  },
+  {
+   "id": "ford-design-center",
+   "name": "Ford Design Center",
+   "short": "Ford Design Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.676566,
+   "lat": 42.056914,
+   "osm": "way/42702286"
+  },
+  {
+   "id": "mccormick-foundation-center",
+   "name": "McCormick Foundation Center",
+   "short": "McCormick Foundation Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.674231,
+   "lat": 42.051366,
+   "osm": "way/214630813"
+  },
+  {
+   "id": "anderson-hall",
+   "name": "Anderson Hall",
+   "short": "Anderson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Burton Academic Advising Building"
+   ],
+   "lng": -87.691563,
+   "lat": 42.066464,
+   "osm": "way/205849880"
+  },
+  {
+   "id": "main",
+   "name": "Main",
+   "short": "Main",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.675569,
+   "lat": 42.05632,
+   "osm": "way/249758351"
+  },
+  {
+   "id": "harris-hall",
+   "name": "Harris Hall",
+   "short": "Harris Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.67631,
+   "lat": 42.051271,
+   "osm": "way/33908926"
+  },
+  {
+   "id": "catalysis-center",
+   "name": "Catalysis Center",
+   "short": "Catalysis Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.675155,
+   "lat": 42.056947,
+   "osm": "way/42703496"
+  },
+  {
+   "id": "crowe-hall",
+   "name": "Crowe Hall",
+   "short": "Crowe Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.675221,
+   "lat": 42.051355,
+   "osm": "way/214618498"
+  },
+  {
+   "id": "lunt-hall",
+   "name": "Lunt Hall",
+   "short": "Lunt Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.676341,
+   "lat": 42.054803,
+   "osm": "way/33908930"
+  },
+  {
+   "id": "lesemann-hall",
+   "name": "Lesemann Hall",
+   "short": "Lesemann Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.675703,
+   "lat": 42.055927,
+   "osm": "way/249758352"
+  },
+  {
+   "id": "cresap-laboratory",
+   "name": "Cresap Laboratory",
+   "short": "Cresap Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.674961,
+   "lat": 42.05472,
+   "osm": "way/53160796"
+  },
+  {
+   "id": "university-hall",
+   "name": "University Hall",
+   "short": "University Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.675959,
+   "lat": 42.05189,
+   "osm": "way/33908928"
+  },
+  {
+   "id": "anthropology-department",
+   "name": "Anthropology Department",
+   "short": "Anthropology Department",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.676786,
+   "lat": 42.049529,
+   "osm": "way/42706493"
+  },
+  {
+   "id": "annie-may-swift-hall",
+   "name": "Annie May Swift Hall",
+   "short": "Annie May Swift Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.675085,
+   "lat": 42.052338,
+   "osm": "way/33908908"
+  },
+  {
+   "id": "lutkin-hall",
+   "name": "Lutkin Hall",
+   "short": "Lutkin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.680254,
+   "lat": 42.051019,
+   "osm": "way/42702797"
+  },
+  {
+   "id": "loder-hall",
+   "name": "Loder Hall",
+   "short": "Loder Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.675182,
+   "lat": 42.055756,
+   "osm": "way/33908933"
+  },
+  {
+   "id": "locy-hall",
+   "name": "Locy Hall",
+   "short": "Locy Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.673903,
+   "lat": 42.05106,
+   "osm": "way/33908921"
+  },
+  {
+   "id": "chambers-hall",
+   "name": "Chambers Hall",
+   "short": "Chambers Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.677743,
+   "lat": 42.053635,
+   "osm": "way/42703834"
+  },
+  {
+   "id": "dearborn-observatory",
+   "name": "Dearborn Observatory",
+   "short": "Dearborn Observatory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.675081,
+   "lat": 42.056675,
+   "osm": "way/42703497"
+  },
+  {
+   "id": "pfeiffer-hall",
+   "name": "Pfeiffer Hall",
+   "short": "Pfeiffer Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.675175,
+   "lat": 42.056366,
+   "osm": "way/249758354"
+  },
+  {
+   "id": "shanley-hall",
+   "name": "Shanley Hall",
+   "short": "Shanley Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.675967,
+   "lat": 42.054823,
+   "osm": "way/116713965"
+  },
+  {
+   "id": "music-practice-building",
+   "name": "Music Practice Building",
+   "short": "Music Practice Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.681481,
+   "lat": 42.050769,
+   "osm": "way/42702792"
+  },
+  {
+   "id": "buffett-institute",
+   "name": "Buffett Institute",
+   "short": "Buffett Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.677697,
+   "lat": 42.052244,
+   "osm": "way/42706489"
+  },
+  {
+   "id": "statistics-department",
+   "name": "Statistics Department",
+   "short": "Statistics Department",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.677689,
+   "lat": 42.054167,
+   "osm": "way/42706552"
+  },
+  {
+   "id": "program-in-geography-and-department-of-sociology",
+   "name": "Program in Geography and Department of Sociology",
+   "short": "Program in Geography and Department of Sociology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.676956,
+   "lat": 42.049358,
+   "osm": "way/42706492"
+  }
+ ]
+}
