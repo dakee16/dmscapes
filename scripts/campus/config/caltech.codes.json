@@ -1,0 +1,195 @@
+{
+ "name": "Caltech Office of the Registrar, Key to Abbreviations: Course Schedule locations (last updated 05/06/2025)",
+ "url": "https://schedules.caltech.edu/abbreviations.html",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "ALLES",
+   "name": "Alles Laboratory"
+  },
+  {
+   "code": "ANB",
+   "name": "Annenberg Center for Information Science and Technology"
+  },
+  {
+   "code": "ARM",
+   "name": "Arms Laboratory of Geological Sciences"
+  },
+  {
+   "code": "AVE",
+   "name": "Avery House"
+  },
+  {
+   "code": "BAC",
+   "name": "Braun Athletic Center"
+  },
+  {
+   "code": "BAX",
+   "name": "Baxter Hall of Humanities and Social Services"
+  },
+  {
+   "code": "BBB",
+   "name": "Beckman Laboratory of Behavioral Biology"
+  },
+  {
+   "code": "BCK",
+   "name": "Beckman Institute"
+  },
+  {
+   "code": "BCK AUD",
+   "name": "Beckman Auditorium"
+  },
+  {
+   "code": "BRD",
+   "name": "Broad Center"
+  },
+  {
+   "code": "BRG",
+   "name": "Bridge Laboratory of Physics"
+  },
+  {
+   "code": "BRN",
+   "name": "Braun Laboratory"
+  },
+  {
+   "code": "BRW",
+   "name": "Brown Gym"
+  },
+  {
+   "code": "CHL",
+   "name": "Cahill Center for Astronomy and Astrophysics"
+  },
+  {
+   "code": "CHR",
+   "name": "Church Laboratory of Chemical Biology"
+  },
+  {
+   "code": "CNRB",
+   "name": "Tianqiao and Chrissy Chen Neuroscience Research Building"
+  },
+  {
+   "code": "CRL",
+   "name": "Crellin Chemistry Laboratory"
+  },
+  {
+   "code": "CSS",
+   "name": "Center for Student Services"
+  },
+  {
+   "code": "DAB",
+   "name": "Dabney Hall of Humanities"
+  },
+  {
+   "code": "DWN",
+   "name": "Downs Physics Laboratory"
+  },
+  {
+   "code": "FIR",
+   "name": "Firestone Flight Science Laboratory"
+  },
+  {
+   "code": "GCL",
+   "name": "Gates Chemical Laboratory (Bldg #26)"
+  },
+  {
+   "code": "GTL",
+   "name": "Gates-Thomas Engineering Laboratory (Bldg #44)"
+  },
+  {
+   "code": "GUG",
+   "name": "Guggenheim Laboratory"
+  },
+  {
+   "code": "HAM",
+   "name": "Hameetman Center"
+  },
+  {
+   "code": "JRG",
+   "name": "Jorgensen Laboratory for Information Science"
+  },
+  {
+   "code": "KCK",
+   "name": "Keck Engineering Laboratory"
+  },
+  {
+   "code": "KRK",
+   "name": "Kerckhoff Laboratory of Biological Sciences"
+  },
+  {
+   "code": "KSP",
+   "name": "Keith Spauling Building"
+  },
+  {
+   "code": "LAU",
+   "name": "Lauritsen Physics Laboratory"
+  },
+  {
+   "code": "LINDE",
+   "name": "Ronald and Maxine Linde Hall of Mathematics and Physics"
+  },
+  {
+   "code": "LLB",
+   "name": "Ronald and Maxine Linde Laboratory for Global Environmental Science"
+  },
+  {
+   "code": "MLKN",
+   "name": "Robert A. Millikan Memorial Building"
+  },
+  {
+   "code": "MRE",
+   "name": "Moore Laboratory"
+  },
+  {
+   "code": "NMD",
+   "name": "North Mudd Building of Geological Sciences"
+  },
+  {
+   "code": "NYS",
+   "name": "Noyes Laboratory of Chemical Physics"
+  },
+  {
+   "code": "POLY",
+   "name": "Polytechnic School"
+  },
+  {
+   "code": "PWB",
+   "name": "Powell/Booth Laboratory"
+  },
+  {
+   "code": "RSC",
+   "name": "Resnick Sustainability Center"
+  },
+  {
+   "code": "SCH",
+   "name": "Schlinger Laboratory"
+  },
+  {
+   "code": "SFL",
+   "name": "Sherman Fairchild Library"
+  },
+  {
+   "code": "SMD",
+   "name": "South Mudd Building of Geophysics and Planetary Sciences"
+  },
+  {
+   "code": "SPL",
+   "name": "Spalding Laboratory of Chemical Engineering"
+  },
+  {
+   "code": "STL",
+   "name": "Steele Laboratory of Electrical Engineering"
+  },
+  {
+   "code": "TCT",
+   "name": "Theater Arts at Caltech (TACIT)"
+  },
+  {
+   "code": "WAT",
+   "name": "Watson Laboratory of Applied Physics"
+  },
+  {
+   "code": "YHC",
+   "name": "Young Health Center"
+  }
+ ]
+}

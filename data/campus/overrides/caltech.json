@@ -1,0 +1,40 @@
+{
+  "halls": {
+    "south-houses": {
+      "pin": [
+        -118.123323,
+        34.13657
+      ]
+    },
+    "north-houses": {
+      "pin": [
+        -118.122908,
+        34.137267
+      ]
+    },
+    "catalina-complex": {
+      "pin": [
+        -118.128972,
+        34.139515
+      ]
+    }
+  },
+  "notes": {
+    "south-houses": "One entry for four adjoining houses (Blacker, Dabney, Fleming, Ricketts); pin is OSM's Fleming House (relation/10129302), the house nearest the middle of the four (the mean of their centroids falls in the Student Activities Center).",
+    "north-houses": "One entry for the North Houses; pin is the mean of OSM's Lloyd House, Page House and Venerable House centroids (ways 32735342, 32735362, 32735305); OSM has no separately named Ruddock House. The point falls inside Lloyd House.",
+    "catalina-complex": "OSM leaves the Catalina apartment buildings unnamed; pin is the mean of its named Central, North and South Catalina common rooms (ways 857648974, 1053224839, 1053224840), the middle of the complex.",
+    "TCT": "TCT (Theater Arts at Caltech) only word-matched OSM's \"Center for the Arts\"; not confirmed to be the same building, so TCT isn't placed."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "bechtel-residence -> imss"
+      ],
+      "maxRatio": 3.5,
+      "why": "Bechtel Residence (relation/9162392) has no mapped entrance; its centre snaps to the footway on its south side, so the walk north to IMSS goes round the building."
+    }
+  ],
+  "codes": {
+    "TCT": null
+  }
+}

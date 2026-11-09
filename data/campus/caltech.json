@@ -1,0 +1,829 @@
+{
+ "collegeId": "caltech",
+ "generatedAt": "2026-11-09T18:16:56.163Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Caltech Office of the Registrar, Key to Abbreviations: Course Schedule locations (last updated 05/06/2025)",
+   "url": "https://schedules.caltech.edu/abbreviations.html",
+   "use": "building codes",
+   "read": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/caltech.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -118.12899,
+  34.13323,
+  -118.12237,
+  34.14149
+ ],
+ "halls": [
+  {
+   "dormId": "bechtel-residence",
+   "name": "Bechtel Residence",
+   "lng": -118.124558,
+   "lat": 34.140479,
+   "pin": "name",
+   "osm": "relation/9162392",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-catalina-recreation-room",
+     "minutes": 7.9
+    },
+    "dining": {
+     "placeId": "the-lee-f-browne-dining-hall-and-the-caltech-convenience-store",
+     "minutes": 5.8
+    },
+    "library": {
+     "placeId": "sherman-fairchild-library",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "braun-house",
+   "name": "Braun House",
+   "lng": -118.122371,
+   "lat": 34.13806,
+   "pin": "name",
+   "osm": "way/44634995",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "brown-gym",
+     "minutes": 10.2
+    },
+    "dining": {
+     "placeId": "the-lee-f-browne-dining-hall-and-the-caltech-convenience-store",
+     "minutes": 2.2
+    },
+    "library": {
+     "placeId": "sherman-fairchild-library",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "south-houses",
+   "name": "The South Houses (Blacker, Dabney, Fleming, Ricketts)",
+   "lng": -118.123323,
+   "lat": 34.13657,
+   "pin": "manual",
+   "osm": "relation/10129302",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "brown-gym",
+     "minutes": 7.1
+    },
+    "dining": {
+     "placeId": "the-lee-f-browne-dining-hall-and-the-caltech-convenience-store",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "sherman-fairchild-library",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "north-houses",
+   "name": "The North Houses (Lloyd, Page, Ruddock/Venerable)",
+   "lng": -118.122908,
+   "lat": 34.137267,
+   "pin": "manual",
+   "osm": "way/32735342",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "brown-gym",
+     "minutes": 9.3
+    },
+    "dining": {
+     "placeId": "the-lee-f-browne-dining-hall-and-the-caltech-convenience-store",
+     "minutes": 1.1
+    },
+    "library": {
+     "placeId": "sherman-fairchild-library",
+     "minutes": 4
+    }
+   }
+  },
+  {
+   "dormId": "avery-house",
+   "name": "Avery House",
+   "lng": -118.123496,
+   "lat": 34.1405,
+   "pin": "name",
+   "osm": "relation/364262",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-catalina-recreation-room",
+     "minutes": 9.1
+    },
+    "dining": {
+     "placeId": "the-lee-f-browne-dining-hall-and-the-caltech-convenience-store",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "sherman-fairchild-library",
+     "minutes": 6.2
+    }
+   }
+  },
+  {
+   "dormId": "catalina-complex",
+   "name": "Catalina Complex (Graduate)",
+   "lng": -118.128972,
+   "lat": 34.139515,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-catalina-recreation-room",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "the-lee-f-browne-dining-hall-and-the-caltech-convenience-store",
+     "minutes": 9.4
+    },
+    "library": {
+     "placeId": "sherman-fairchild-library",
+     "minutes": 7.4
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "beckman-institute",
+   "name": "Beckman Institute",
+   "short": "Beckman Institute",
+   "kind": "academic",
+   "codes": [
+    "BCK"
+   ],
+   "aliases": [],
+   "lng": -118.126723,
+   "lat": 34.1392,
+   "osm": "relation/333928"
+  },
+  {
+   "id": "watson-laboratories",
+   "name": "Watson Laboratories",
+   "short": "Watson Laboratories",
+   "kind": "academic",
+   "codes": [
+    "WAT"
+   ],
+   "aliases": [
+    "Thomas J. Watson, Sr., Laboratories of Applied Physics",
+    "Watson Laboratory of Applied Physics"
+   ],
+   "lng": -118.124316,
+   "lat": 34.139198,
+   "osm": "relation/10138079"
+  },
+  {
+   "id": "chen-neuroscience-research-building",
+   "name": "Chen Neuroscience Research Building",
+   "short": "Chen Neuroscience Research Building",
+   "kind": "academic",
+   "codes": [
+    "CNRB"
+   ],
+   "aliases": [
+    "Tianqiao and Chrissy Chen Neuroscience Research Building"
+   ],
+   "lng": -118.127289,
+   "lat": 34.140424,
+   "osm": "way/1047787606"
+  },
+  {
+   "id": "braun-athletic-center",
+   "name": "Braun Athletic Center",
+   "short": "Braun Athletic Center",
+   "kind": "gym",
+   "codes": [
+    "BAC"
+   ],
+   "aliases": [],
+   "lng": -118.127508,
+   "lat": 34.133879,
+   "osm": "way/44634950"
+  },
+  {
+   "id": "beckman-laboratories",
+   "name": "Beckman Laboratories",
+   "short": "Beckman Laboratories",
+   "kind": "academic",
+   "codes": [
+    "BBB"
+   ],
+   "aliases": [
+    "The Mabel and Arnold Beckman Laboratories of Behavioral Biology",
+    "Beckman Laboratory of Behavioral Biology"
+   ],
+   "lng": -118.125893,
+   "lat": 34.138426,
+   "osm": "way/30086726"
+  },
+  {
+   "id": "baxter-lecture-hall",
+   "name": "Baxter Lecture Hall",
+   "short": "Baxter Lecture Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Donald E. Baxter, M.D., Hall of the Humanities and Social Sciences"
+   ],
+   "lng": -118.125171,
+   "lat": 34.138427,
+   "osm": "way/30086730"
+  },
+  {
+   "id": "brown-gym",
+   "name": "Brown Gym",
+   "short": "Brown Gym",
+   "kind": "gym",
+   "codes": [
+    "BRW"
+   ],
+   "aliases": [
+    "Scott Brown Gymnasium"
+   ],
+   "lng": -118.126129,
+   "lat": 34.133801,
+   "osm": "way/44634949"
+  },
+  {
+   "id": "braun-labs",
+   "name": "Braun Labs",
+   "short": "Braun Labs",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Braun Laboratories in Memory of Carl F and Winifred H Braun"
+   ],
+   "lng": -118.12744,
+   "lat": 34.138087,
+   "osm": "way/44635003"
+  },
+  {
+   "id": "cahill-center",
+   "name": "Cahill Center",
+   "short": "Cahill Center",
+   "kind": "academic",
+   "codes": [
+    "CHL"
+   ],
+   "aliases": [
+    "Cahill Center for Astronomy and Astrophysics"
+   ],
+   "lng": -118.126272,
+   "lat": 34.135561,
+   "osm": "way/44634973"
+  },
+  {
+   "id": "noyes-laboratory",
+   "name": "Noyes Laboratory",
+   "short": "Noyes Laboratory",
+   "kind": "academic",
+   "codes": [
+    "NYS"
+   ],
+   "aliases": [
+    "Arthur Amos Noyes Laboratory of Chemical Physics",
+    "Noyes Laboratory of Chemical Physics"
+   ],
+   "lng": -118.126824,
+   "lat": 34.138462,
+   "osm": "way/30086723"
+  },
+  {
+   "id": "resnick-sustainability-center",
+   "name": "Resnick Sustainability Center",
+   "short": "Resnick Sustainability Center",
+   "kind": "academic",
+   "codes": [
+    "RSC"
+   ],
+   "aliases": [],
+   "lng": -118.12731,
+   "lat": 34.13856,
+   "osm": "way/1478497309"
+  },
+  {
+   "id": "broad-center",
+   "name": "Broad Center",
+   "short": "Broad Center",
+   "kind": "academic",
+   "codes": [
+    "BRD"
+   ],
+   "aliases": [
+    "Edythe and Eli Broad Center for the Biological Sciences"
+   ],
+   "lng": -118.127381,
+   "lat": 34.139773,
+   "osm": "way/30086690"
+  },
+  {
+   "id": "kerckhoff",
+   "name": "Kerckhoff",
+   "short": "Kerckhoff",
+   "kind": "academic",
+   "codes": [
+    "KRK"
+   ],
+   "aliases": [
+    "William G. Kerckhoff Laboratories of the Biological Sciences",
+    "Kerckhoff Laboratory of Biological Sciences"
+   ],
+   "lng": -118.127001,
+   "lat": 34.137121,
+   "osm": "way/44635015"
+  },
+  {
+   "id": "morrisroe",
+   "name": "Morrisroe",
+   "short": "Morrisroe",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "David W. Morrisroe Astroscience Laboratory"
+   ],
+   "lng": -118.12766,
+   "lat": 34.133234,
+   "osm": "way/45420596"
+  },
+  {
+   "id": "the-lee-f-browne-dining-hall-and-the-caltech-convenience-store",
+   "name": "The Lee F. Browne Dining Hall and the Caltech Convenience Store",
+   "short": "The Lee F. Browne Dining Hall and the Caltech Convenience Store",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -118.123251,
+   "lat": 34.137612,
+   "osm": "way/45094662"
+  },
+  {
+   "id": "schlinger-laboratory",
+   "name": "Schlinger Laboratory",
+   "short": "Schlinger Laboratory",
+   "kind": "academic",
+   "codes": [
+    "SCH"
+   ],
+   "aliases": [
+    "Warren and Katharine Schlinger Laboratory for Chemistry and Chemical Engineering"
+   ],
+   "lng": -118.126389,
+   "lat": 34.138143,
+   "osm": "way/44635008"
+  },
+  {
+   "id": "beckman-auditorium",
+   "name": "Beckman Auditorium",
+   "short": "Beckman Auditorium",
+   "kind": "academic",
+   "codes": [
+    "BCK AUD"
+   ],
+   "aliases": [],
+   "lng": -118.125541,
+   "lat": 34.139191,
+   "osm": "way/30086742"
+  },
+  {
+   "id": "south-mudd",
+   "name": "South Mudd",
+   "short": "South Mudd",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Seeley G. Mudd Building of Geophysics and Planetary Science"
+   ],
+   "lng": -118.127469,
+   "lat": 34.136222,
+   "osm": "way/44635032"
+  },
+  {
+   "id": "annenberg-center",
+   "name": "Annenberg Center",
+   "short": "Annenberg Center",
+   "kind": "academic",
+   "codes": [
+    "ANB"
+   ],
+   "aliases": [
+    "Walter and Leonore Annenberg Center for Information Science and Technology",
+    "Annenberg Center for Information Science and Technology"
+   ],
+   "lng": -118.123848,
+   "lat": 34.139775,
+   "osm": "way/44635014"
+  },
+  {
+   "id": "moore-laboratory",
+   "name": "Moore Laboratory",
+   "short": "Moore Laboratory",
+   "kind": "academic",
+   "codes": [
+    "MRE"
+   ],
+   "aliases": [
+    "The Gordon and Betty Moore Laboratory of Engineering"
+   ],
+   "lng": -118.124695,
+   "lat": 34.139761,
+   "osm": "way/30086749"
+  },
+  {
+   "id": "church",
+   "name": "Church",
+   "short": "Church",
+   "kind": "academic",
+   "codes": [
+    "CHR"
+   ],
+   "aliases": [
+    "Norman W. Church Laboratory for Chemical Biology",
+    "Church Laboratory of Chemical Biology"
+   ],
+   "lng": -118.127096,
+   "lat": 34.137519,
+   "osm": "way/44635017"
+  },
+  {
+   "id": "keith-spalding",
+   "name": "Keith Spalding",
+   "short": "Keith Spalding",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Keith Spalding Building of Business Services"
+   ],
+   "lng": -118.127313,
+   "lat": 34.135629,
+   "osm": "way/44634969"
+  },
+  {
+   "id": "guggenheim-aeronautical-laboratory",
+   "name": "Guggenheim Aeronautical Laboratory",
+   "short": "Guggenheim Aeronautical Laboratory",
+   "kind": "academic",
+   "codes": [
+    "GUG"
+   ],
+   "aliases": [
+    "Guggenheim Laboratory"
+   ],
+   "lng": -118.124513,
+   "lat": 34.136607,
+   "osm": "way/44635061"
+  },
+  {
+   "id": "keck-laboratories",
+   "name": "Keck Laboratories",
+   "short": "Keck Laboratories",
+   "kind": "academic",
+   "codes": [
+    "KCK"
+   ],
+   "aliases": [
+    "W. M. Keck Engineering Laboratories",
+    "Keck Engineering Laboratory"
+   ],
+   "lng": -118.124754,
+   "lat": 34.13834,
+   "osm": "way/30086758"
+  },
+  {
+   "id": "center-for-student-services",
+   "name": "Center for Student Services",
+   "short": "Center for Student Services",
+   "kind": "academic",
+   "codes": [
+    "CSS"
+   ],
+   "aliases": [],
+   "lng": -118.122494,
+   "lat": 34.138513,
+   "osm": "way/44634991"
+  },
+  {
+   "id": "imss",
+   "name": "IMSS",
+   "short": "IMSS",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Information Management Systems and Services"
+   ],
+   "lng": -118.124836,
+   "lat": 34.141489,
+   "osm": "way/70859874"
+  },
+  {
+   "id": "jorgensen-laboratory",
+   "name": "Jorgensen Laboratory",
+   "short": "Jorgensen Laboratory",
+   "kind": "academic",
+   "codes": [
+    "JRG"
+   ],
+   "aliases": [
+    "The Earle M. Jorgensen Laboratory of Information Science",
+    "Jorgensen Laboratory for Information Science"
+   ],
+   "lng": -118.123868,
+   "lat": 34.138234,
+   "osm": "way/30086775"
+  },
+  {
+   "id": "spalding",
+   "name": "Spalding",
+   "short": "Spalding",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Eudora Hull Spalding Laboratory of Engineering"
+   ],
+   "lng": -118.124533,
+   "lat": 34.137609,
+   "osm": "way/44635077"
+  },
+  {
+   "id": "hameetman-center",
+   "name": "Hameetman Center",
+   "short": "Hameetman Center",
+   "kind": "academic",
+   "codes": [
+    "HAM"
+   ],
+   "aliases": [],
+   "lng": -118.123913,
+   "lat": 34.137257,
+   "osm": "way/726013375"
+  },
+  {
+   "id": "thomas",
+   "name": "Thomas",
+   "short": "Thomas",
+   "kind": "academic",
+   "codes": [
+    "GTL"
+   ],
+   "aliases": [
+    "Gates–Thomas Laboratory of Engineering",
+    "Gates-Thomas Engineering Laboratory (Bldg #44)"
+   ],
+   "lng": -118.124541,
+   "lat": 34.137083,
+   "osm": "way/44635071"
+  },
+  {
+   "id": "steele-laboratories",
+   "name": "Steele Laboratories",
+   "short": "Steele Laboratories",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Harry G. Steele Laboratory of Electrical Sciences"
+   ],
+   "lng": -118.124167,
+   "lat": 34.138652,
+   "osm": "way/30086767"
+  },
+  {
+   "id": "lauritsen-laboratory-of-high-energy-physics",
+   "name": "Lauritsen Laboratory of High Energy Physics",
+   "short": "Lauritsen Laboratory of High Energy Physics",
+   "kind": "academic",
+   "codes": [
+    "LAU"
+   ],
+   "aliases": [
+    "Lauritsen Physics Laboratory"
+   ],
+   "lng": -118.124297,
+   "lat": 34.13617,
+   "osm": "way/44635065"
+  },
+  {
+   "id": "north-mudd",
+   "name": "North Mudd",
+   "short": "North Mudd",
+   "kind": "academic",
+   "codes": [
+    "NMD"
+   ],
+   "aliases": [
+    "Seeley W. Mudd Laboratory of the Geological Sciences",
+    "North Mudd Building of Geological Sciences"
+   ],
+   "lng": -118.127332,
+   "lat": 34.136636,
+   "osm": "way/44635051"
+  },
+  {
+   "id": "dabney-hall",
+   "name": "Dabney Hall",
+   "short": "Dabney Hall",
+   "kind": "academic",
+   "codes": [
+    "DAB"
+   ],
+   "aliases": [
+    "Dabney Hall of Humanities"
+   ],
+   "lng": -118.125329,
+   "lat": 34.137327,
+   "osm": "way/44635060"
+  },
+  {
+   "id": "arms-laboratory-of-the-geological-sciences",
+   "name": "Arms Laboratory of the Geological Sciences",
+   "short": "Arms Laboratory of the Geological Sciences",
+   "kind": "academic",
+   "codes": [
+    "ARM"
+   ],
+   "aliases": [
+    "Charles Arms Laboratory of the Geological Sciences",
+    "Arms Laboratory of Geological Sciences"
+   ],
+   "lng": -118.126649,
+   "lat": 34.136602,
+   "osm": "way/44635046"
+  },
+  {
+   "id": "crellin",
+   "name": "Crellin",
+   "short": "Crellin",
+   "kind": "academic",
+   "codes": [
+    "CRL"
+   ],
+   "aliases": [
+    "Crellin Chemistry Laboratory"
+   ],
+   "lng": -118.126383,
+   "lat": 34.137381,
+   "osm": "way/44635025"
+  },
+  {
+   "id": "linde-hall-of-mathematics-and-physics",
+   "name": "Linde Hall of Mathematics and Physics",
+   "short": "Linde Hall of Mathematics and Physics",
+   "kind": "academic",
+   "codes": [
+    "LINDE"
+   ],
+   "aliases": [
+    "High Volts",
+    "Ronald and Maxine Linde Hall of Mathematics and Physics"
+   ],
+   "lng": -118.125379,
+   "lat": 34.136376,
+   "osm": "way/44635057"
+  },
+  {
+   "id": "young-student-health-center",
+   "name": "Young Student Health Center",
+   "short": "Young Student Health Center",
+   "kind": "academic",
+   "codes": [
+    "YHC"
+   ],
+   "aliases": [
+    "Young Health Center"
+   ],
+   "lng": -118.124975,
+   "lat": 34.135292,
+   "osm": "way/44634965"
+  },
+  {
+   "id": "powell-booth-laboratory-for-computational-science",
+   "name": "Powell-Booth Laboratory for Computational Science",
+   "short": "Powell-Booth Laboratory for Computational Science",
+   "kind": "academic",
+   "codes": [
+    "PWB"
+   ],
+   "aliases": [
+    "Powell/Booth Laboratory"
+   ],
+   "lng": -118.124187,
+   "lat": 34.138176,
+   "osm": "way/30086769"
+  },
+  {
+   "id": "linde-laboratory-for-global-environmental-science",
+   "name": "Linde Laboratory for Global Environmental Science",
+   "short": "Linde Laboratory for Global Environmental Science",
+   "kind": "academic",
+   "codes": [
+    "LLB"
+   ],
+   "aliases": [
+    "Robinson Laboratory of Astrophysics",
+    "Ronald and Maxine Linde Laboratory for Global Environmental Science"
+   ],
+   "lng": -118.126993,
+   "lat": 34.136381,
+   "osm": "way/44635050"
+  },
+  {
+   "id": "sherman-fairchild-library",
+   "name": "Sherman Fairchild Library",
+   "short": "Sherman Fairchild Library",
+   "kind": "library",
+   "codes": [
+    "SFL"
+   ],
+   "aliases": [
+    "Sherman Fairchild Library of Engineering and Applied Science"
+   ],
+   "lng": -118.124798,
+   "lat": 34.13735,
+   "osm": "way/44635080"
+  },
+  {
+   "id": "downs-laboratory-of-physics",
+   "name": "Downs Laboratory of Physics",
+   "short": "Downs Laboratory of Physics",
+   "kind": "academic",
+   "codes": [
+    "DWN"
+   ],
+   "aliases": [
+    "Downs Physics Laboratory"
+   ],
+   "lng": -118.124672,
+   "lat": 34.136173,
+   "osm": "way/44635063"
+  },
+  {
+   "id": "keck-center",
+   "name": "Keck Center",
+   "short": "Keck Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "W.M. Keck Center"
+   ],
+   "lng": -118.126515,
+   "lat": 34.139837,
+   "osm": "way/366446709"
+  },
+  {
+   "id": "alles",
+   "name": "Alles",
+   "short": "Alles",
+   "kind": "academic",
+   "codes": [
+    "ALLES"
+   ],
+   "aliases": [
+    "Gordon A. Alles Laboratory for Molecular Biology",
+    "Alles Laboratory"
+   ],
+   "lng": -118.127204,
+   "lat": 34.13732,
+   "osm": "way/44635022"
+  },
+  {
+   "id": "north-catalina-recreation-room",
+   "name": "North Catalina Recreation Room",
+   "short": "North Catalina Recreation Room",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -118.128994,
+   "lat": 34.14025,
+   "osm": "way/1053224839"
+  }
+ ]
+}
