@@ -1,0 +1,17 @@
+{
+  "collegeId": "uc-berkeley",
+  "area": {
+    "osm": "relation/2814221",
+    "bbox": [
+      37.861,
+      -122.268,
+      37.882,
+      -122.245
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class building-code list: the Registrar's academic scheduling pages (https://registrar.berkeley.edu/scheduling) and glossary (https://www.registrar.berkeley.edu/enrollment/glossary/) publish no building key, and no campus building layer with codes turned up on ArcGIS Online; checked 2026-11-08.",
+  "areaNote": "OSM 'University of California, Berkeley' (relation/2814221, found on Nominatim by 'UC Berkeley'); bbox trimmed to the central campus and the residence halls south and east of it, leaving out the hill labs."
+}

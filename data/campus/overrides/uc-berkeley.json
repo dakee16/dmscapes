@@ -1,0 +1,205 @@
+{
+  "halls": {
+    "unit-1": {
+      "pin": [
+        -122.255174,
+        37.867841
+      ]
+    },
+    "unit-2": {
+      "pin": [
+        -122.254798,
+        37.866095
+      ]
+    },
+    "unit-3": {
+      "pin": [
+        -122.260449,
+        37.867196
+      ]
+    },
+    "foothill": {
+      "pin": [
+        -122.255647,
+        37.875508
+      ]
+    },
+    "clark-kerr": {
+      "pin": [
+        -122.249301,
+        37.864249
+      ]
+    }
+  },
+  "notes": {
+    "unit-1": "Unit 1 is Christian, Freeborn, Putnam, Slottman, Deutsch and Cheney Halls (OSM ways 62200987-style dormitories by Durant Avenue: 62200983, 40413745, 40413752, 62200987, 41746106, 40413757); the pin is their middle. The word rule had picked the Oxford Research Unit greenhouse.",
+    "unit-2": "Unit 2 is Towle, Griffiths, Ehrman, Davidson, Cunningham and Wada Halls (OSM ways 109192571, 109192574, 109192575, 109192576, 109192581, 109192579); the pin is their middle.",
+    "unit-3": "Unit 3 is Norton, Spens-Black, Ida Sproul and Priestley Halls (OSM ways 41746358, 41746363, 41746383, 41746395); the pin is their middle.",
+    "foothill": "Foothill is the La Loma 1-3 and Hillside 4-9 buildings (OSM ways 24024505, 38939695, 38939707, 24907719, 35894521, 473599691, 473599692); the pin is their middle.",
+    "clark-kerr": "OSM names none of the Clark Kerr Campus buildings; pinned at its 'Clark Kerr Campus' stop on Horseshoe Driveway (node/6563941561), the complex's main drive.",
+    "residence-hall": "Residence building (Clark Kerr Campus or the units), not a class place.",
+    "residence-hall-128467250": "Residence building (Clark Kerr Campus or the units), not a class place.",
+    "faculty-apartments": "Residence building (Clark Kerr Campus or the units), not a class place.",
+    "residence-hall-128467227": "Residence building (Clark Kerr Campus or the units), not a class place.",
+    "residence-hall-128467249": "Residence building (Clark Kerr Campus or the units), not a class place.",
+    "residence-hall-114851444": "Residence building (Clark Kerr Campus or the units), not a class place.",
+    "suites": "Residence building (Clark Kerr Campus or the units), not a class place.",
+    "residence-hall-128467264": "Residence building (Clark Kerr Campus or the units), not a class place.",
+    "suites-128467240": "Residence building (Clark Kerr Campus or the units), not a class place.",
+    "faculty-apartments-128467223": "Residence building (Clark Kerr Campus or the units), not a class place.",
+    "residence-hall-128467257": "Residence building (Clark Kerr Campus or the units), not a class place.",
+    "towle-hall": "Unit 2 residence hall, not a class place.",
+    "davidson-hall": "Unit 2 residence hall, not a class place.",
+    "griffiths-hall": "Unit 2 residence hall, not a class place.",
+    "ehrman-hall": "Unit 2 residence hall, not a class place.",
+    "cunningham-hall": "Unit 2 residence hall, not a class place.",
+    "channing-bowditch-apartments": "Student apartments, not a class place.",
+    "recreation-maintenance": "Recreation maintenance building on Clark Kerr Campus, not a gym.",
+    "hazardous-materials-facility": "Hazardous materials facility, not a class or meal place.",
+    "child-care-center": "Child care, not a class or meal place.",
+    "child-care": "Child care, not a class or meal place.",
+    "the-campanile-sather-tower": "Bell tower, not a class or meal place.",
+    "press-coffee": "Coffee shop, not a dining hall.",
+    "ticket-office": "Ticket office, not a class or meal place.",
+    "obrien-breezeway": "Covered walkway, not a building with classes.",
+    "cupola-of-the-old-chemistry-building": "Historic cupola, not a class or meal place.",
+    "blackberry-canyon-gate": "Gatehouse on the road up to the lab, not a class or meal place.",
+    "faculty-club": "Faculty club, not a class or meal place for students.",
+    "womens-faculty-club": "Faculty club, not a class or meal place for students.",
+    "university-house": "Chancellor's residence, not a class or meal place.",
+    "faculty-house": "Faculty housing, not a class place.",
+    "alumni-house": "Alumni house, not a class or meal place.",
+    "haas-clubhouse": "Varsity clubhouse, not a class or meal place.",
+    "golden-bear-gymnastics": "Varsity gymnastics gym on Clark Kerr Campus, not a student gym.",
+    "kleeberger-field-house": "Varsity field house, not a class or meal place.",
+    "doc-hudson-field-house": "Varsity field house, not a class or meal place.",
+    "lower-hearst-structure": "Parking garage, not a class or meal place.",
+    "national-energy-research-scientific-computing-center-nersc": "Lawrence Berkeley National Laboratory computing center up the hill, not a class place."
+  },
+  "places": {
+    "residence-hall": {
+      "hide": true
+    },
+    "residence-hall-128467250": {
+      "hide": true
+    },
+    "faculty-apartments": {
+      "hide": true
+    },
+    "residence-hall-128467227": {
+      "hide": true
+    },
+    "residence-hall-128467249": {
+      "hide": true
+    },
+    "residence-hall-114851444": {
+      "hide": true
+    },
+    "suites": {
+      "hide": true
+    },
+    "residence-hall-128467264": {
+      "hide": true
+    },
+    "suites-128467240": {
+      "hide": true
+    },
+    "faculty-apartments-128467223": {
+      "hide": true
+    },
+    "residence-hall-128467257": {
+      "hide": true
+    },
+    "towle-hall": {
+      "hide": true
+    },
+    "davidson-hall": {
+      "hide": true
+    },
+    "griffiths-hall": {
+      "hide": true
+    },
+    "ehrman-hall": {
+      "hide": true
+    },
+    "cunningham-hall": {
+      "hide": true
+    },
+    "channing-bowditch-apartments": {
+      "hide": true
+    },
+    "recreation-maintenance": {
+      "hide": true
+    },
+    "hazardous-materials-facility": {
+      "hide": true
+    },
+    "child-care-center": {
+      "hide": true
+    },
+    "child-care": {
+      "hide": true
+    },
+    "the-campanile-sather-tower": {
+      "hide": true
+    },
+    "press-coffee": {
+      "hide": true
+    },
+    "ticket-office": {
+      "hide": true
+    },
+    "obrien-breezeway": {
+      "hide": true
+    },
+    "cupola-of-the-old-chemistry-building": {
+      "hide": true
+    },
+    "blackberry-canyon-gate": {
+      "hide": true
+    },
+    "faculty-club": {
+      "hide": true
+    },
+    "womens-faculty-club": {
+      "hide": true
+    },
+    "university-house": {
+      "hide": true
+    },
+    "faculty-house": {
+      "hide": true
+    },
+    "alumni-house": {
+      "hide": true
+    },
+    "haas-clubhouse": {
+      "hide": true
+    },
+    "golden-bear-gymnastics": {
+      "hide": true
+    },
+    "kleeberger-field-house": {
+      "hide": true
+    },
+    "doc-hudson-field-house": {
+      "hide": true
+    },
+    "lower-hearst-structure": {
+      "hide": true
+    },
+    "national-energy-research-scientific-computing-center-nersc": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "stern -> donner-laboratory",
+        "stern -> latimer-hall"
+      ],
+      "maxRatio": 3.0,
+      "why": "Stern Hall sits on the hillside above Gayley Road and its mapped way out runs east and down the slope; walks to Donner and Latimer go down to Gayley Road and back along it, round the College of Chemistry block."
+    }
+  ]
+}

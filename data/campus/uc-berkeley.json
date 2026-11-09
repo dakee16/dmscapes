@@ -1,0 +1,1514 @@
+{
+ "collegeId": "uc-berkeley",
+ "generatedAt": "2026-11-09T18:17:25.448Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/uc-berkeley.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -122.27128,
+  37.86353,
+  -122.24428,
+  37.87666
+ ],
+ "halls": [
+  {
+   "dormId": "unit-1",
+   "name": "Unit 1",
+   "lng": -122.255174,
+   "lat": 37.867841,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hearst-memorial-gymnasium",
+     "minutes": 5.4
+    },
+    "library": {
+     "placeId": "hargrove-music-library",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "dining-center-and-suites",
+     "minutes": 11.4
+    }
+   }
+  },
+  {
+   "dormId": "unit-2",
+   "name": "Unit 2",
+   "lng": -122.254798,
+   "lat": 37.866095,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hearst-memorial-gymnasium",
+     "minutes": 7.8
+    },
+    "library": {
+     "placeId": "hargrove-music-library",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "dining-center-and-suites",
+     "minutes": 9.3
+    }
+   }
+  },
+  {
+   "dormId": "unit-3",
+   "name": "Unit 3",
+   "lng": -122.260449,
+   "lat": 37.867196,
+   "pin": "manual",
+   "osm": "way/41746370",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "spieker-aquatics-complex",
+     "minutes": 3.5
+    },
+    "library": {
+     "placeId": "bancroft-library",
+     "minutes": 9
+    },
+    "dining": {
+     "placeId": "dining-center-and-suites",
+     "minutes": 17.7
+    }
+   }
+  },
+  {
+   "dormId": "foothill",
+   "name": "Foothill",
+   "lng": -122.255647,
+   "lat": 37.875508,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hearst-memorial-gymnasium",
+     "minutes": 12.8
+    },
+    "library": {
+     "placeId": "c-v-starr-east-asian-library",
+     "minutes": 7.1
+    },
+    "dining": {
+     "placeId": "dining-center-and-suites",
+     "minutes": 20.6
+    }
+   }
+  },
+  {
+   "dormId": "stern",
+   "name": "Stern",
+   "lng": -122.255141,
+   "lat": 37.874835,
+   "pin": "name",
+   "osm": "way/473599694",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hearst-memorial-gymnasium",
+     "minutes": 12.2
+    },
+    "library": {
+     "placeId": "bancroft-library",
+     "minutes": 7.5
+    },
+    "dining": {
+     "placeId": "dining-center-and-suites",
+     "minutes": 19.9
+    }
+   }
+  },
+  {
+   "dormId": "clark-kerr",
+   "name": "Clark Kerr",
+   "lng": -122.249301,
+   "lat": 37.864249,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hearst-memorial-gymnasium",
+     "minutes": 14.5
+    },
+    "library": {
+     "placeId": "hargrove-music-library",
+     "minutes": 14.3
+    },
+    "dining": {
+     "placeId": "dining-center-and-suites",
+     "minutes": 2.2
+    }
+   }
+  },
+  {
+   "dormId": "blackwell-hall",
+   "name": "Blackwell Hall",
+   "lng": -122.261074,
+   "lat": 37.868078,
+   "pin": "name",
+   "osm": "way/482840642",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "spieker-aquatics-complex",
+     "minutes": 2.1
+    },
+    "library": {
+     "placeId": "moffitt-undergraduate-library",
+     "minutes": 8.1
+    },
+    "dining": {
+     "placeId": "dining-center-and-suites",
+     "minutes": 18.6
+    }
+   }
+  },
+  {
+   "dormId": "martinez-commons",
+   "name": "Martinez Commons",
+   "lng": -122.25779,
+   "lat": 37.866637,
+   "pin": "name",
+   "osm": "relation/6141724",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hearst-memorial-gymnasium",
+     "minutes": 6.3
+    },
+    "library": {
+     "placeId": "hargrove-music-library",
+     "minutes": 7.7
+    },
+    "dining": {
+     "placeId": "dining-center-and-suites",
+     "minutes": 13.3
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "valley-life-sciences-building",
+   "name": "Valley Life Sciences Building",
+   "short": "Valley Life Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Life Sciences Building",
+    "VLSB"
+   ],
+   "lng": -122.262128,
+   "lat": 37.871476,
+   "osm": "relation/94099"
+  },
+  {
+   "id": "haas-pavilion",
+   "name": "Haas Pavilion",
+   "short": "Haas Pavilion",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Harmon Gymnasium"
+   ],
+   "lng": -122.262213,
+   "lat": 37.869394,
+   "osm": "way/24025440"
+  },
+  {
+   "id": "the-gateway",
+   "name": "The Gateway",
+   "short": "The Gateway",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The Barbara and Gerson Bakar Gateway"
+   ],
+   "lng": -122.263574,
+   "lat": 37.874126,
+   "osm": "way/1460048471"
+  },
+  {
+   "id": "dwinelle-hall",
+   "name": "Dwinelle Hall",
+   "short": "Dwinelle Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.260648,
+   "lat": 37.870724,
+   "osm": "relation/18934"
+  },
+  {
+   "id": "the-law-building",
+   "name": "The Law Building",
+   "short": "The Law Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Boalt Hall"
+   ],
+   "lng": -122.253461,
+   "lat": 37.869928,
+   "osm": "way/27293995"
+  },
+  {
+   "id": "hearst-memorial-gymnasium",
+   "name": "Hearst Memorial Gymnasium",
+   "short": "Hearst Memorial Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.256886,
+   "lat": 37.869555,
+   "osm": "relation/1734951"
+  },
+  {
+   "id": "doe-memorial-library",
+   "name": "Doe Memorial Library",
+   "short": "Doe Memorial Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.259459,
+   "lat": 37.872129,
+   "osm": "relation/21101411"
+  },
+  {
+   "id": "berkeley-way-west",
+   "name": "Berkeley Way West",
+   "short": "Berkeley Way West",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.267944,
+   "lat": 37.873548,
+   "osm": "way/431329525"
+  },
+  {
+   "id": "bauer-wurster-hall",
+   "name": "Bauer Wurster Hall",
+   "short": "Bauer Wurster Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Wurster Hall"
+   ],
+   "lng": -122.254769,
+   "lat": 37.870617,
+   "osm": "relation/6415953"
+  },
+  {
+   "id": "recreational-sports-facility",
+   "name": "Recreational Sports Facility",
+   "short": "Recreational Sports Facility",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.262779,
+   "lat": 37.868659,
+   "osm": "way/24025442"
+  },
+  {
+   "id": "stanley-hall",
+   "name": "Stanley Hall",
+   "short": "Stanley Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.256124,
+   "lat": 37.873998,
+   "osm": "way/24025051"
+  },
+  {
+   "id": "hearst-greek-theatre",
+   "name": "Hearst Greek Theatre",
+   "short": "Hearst Greek Theatre",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "William Randolph Hearst Greek Theatre",
+    "Greek Theatre"
+   ],
+   "lng": -122.254228,
+   "lat": 37.87371,
+   "osm": "way/24025050"
+  },
+  {
+   "id": "residential-and-student-services-building",
+   "name": "Residential & Student Services Building",
+   "short": "Residential & Student Services Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.25588,
+   "lat": 37.866855,
+   "osm": "way/109192582"
+  },
+  {
+   "id": "bakar-bioenginuity-hub",
+   "name": "Bakar BioEnginuity Hub",
+   "short": "Bakar BioEnginuity Hub",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Woo Hon Fai Hall",
+    "Bakar Labs",
+    "University of California, Berkeley Art Museum and Pacific Film Archive",
+    "Berkeley Art Museum",
+    "BAM/PFA"
+   ],
+   "lng": -122.255892,
+   "lat": 37.868727,
+   "osm": "way/24025033"
+  },
+  {
+   "id": "li-ka-shing-center",
+   "name": "Li Ka Shing Center",
+   "short": "Li Ka Shing Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.265336,
+   "lat": 37.872998,
+   "osm": "way/109187413"
+  },
+  {
+   "id": "cory-hall",
+   "name": "Cory Hall",
+   "short": "Cory Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.257584,
+   "lat": 37.875063,
+   "osm": "relation/18935"
+  },
+  {
+   "id": "hearst-memorial-mining-building",
+   "name": "Hearst Memorial Mining Building",
+   "short": "Hearst Memorial Mining Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.257274,
+   "lat": 37.87445,
+   "osm": "way/24024353"
+  },
+  {
+   "id": "berkeley-art-museum-pacific-film-archive",
+   "name": "Berkeley Art Museum - Pacific Film Archive",
+   "short": "Berkeley Art Museum - Pacific Film Archive",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "BAMPFA",
+    "BAM/PFA",
+    "University of California, Berkeley Art Museum and Pacific Film Archive"
+   ],
+   "lng": -122.266404,
+   "lat": 37.870914,
+   "osm": "way/396383943"
+  },
+  {
+   "id": "physics-north-and-physics-south",
+   "name": "Physics North & Physics South",
+   "short": "Physics North & Physics South",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "LeConte Hall"
+   ],
+   "lng": -122.257122,
+   "lat": 37.872597,
+   "osm": "way/24024500"
+  },
+  {
+   "id": "dining-center-and-suites",
+   "name": "Dining Center & Suites",
+   "short": "Dining Center & Suites",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.249317,
+   "lat": 37.863759,
+   "osm": "way/114851448"
+  },
+  {
+   "id": "wheeler-hall",
+   "name": "Wheeler Hall",
+   "short": "Wheeler Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.259168,
+   "lat": 37.871307,
+   "osm": "way/1410826203"
+  },
+  {
+   "id": "martin-luther-king-jr-student-union",
+   "name": "Martin Luther King Jr. Student Union",
+   "short": "Martin Luther King Jr. Student Union",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ASUC Student Union"
+   ],
+   "lng": -122.259673,
+   "lat": 37.869117,
+   "osm": "way/24025428"
+  },
+  {
+   "id": "anthropology-and-art-practice-building",
+   "name": "Anthropology and Art Practice Building",
+   "short": "Anthropology and Art Practice Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Kroeber Hall"
+   ],
+   "lng": -122.255336,
+   "lat": 37.869877,
+   "osm": "way/24025043"
+  },
+  {
+   "id": "golden-bear-building",
+   "name": "Golden Bear Building",
+   "short": "Golden Bear Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.271282,
+   "lat": 37.872072,
+   "osm": "way/43178796"
+  },
+  {
+   "id": "moffitt-undergraduate-library",
+   "name": "Moffitt Undergraduate Library",
+   "short": "Moffitt Undergraduate Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.260855,
+   "lat": 37.872551,
+   "osm": "way/24025027"
+  },
+  {
+   "id": "weill-hall",
+   "name": "Weill Hall",
+   "short": "Weill Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.263266,
+   "lat": 37.871407,
+   "osm": "way/24024679"
+  },
+  {
+   "id": "zellerbach-hall",
+   "name": "Zellerbach Hall",
+   "short": "Zellerbach Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.260801,
+   "lat": 37.869107,
+   "osm": "way/24025430"
+  },
+  {
+   "id": "social-sciences-building",
+   "name": "Social Sciences Building",
+   "short": "Social Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Barrows Hall"
+   ],
+   "lng": -122.257956,
+   "lat": 37.870053,
+   "osm": "relation/11307389"
+  },
+  {
+   "id": "tang-center",
+   "name": "Tang Center",
+   "short": "Tang Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.26433,
+   "lat": 37.867623,
+   "osm": "way/24025444"
+  },
+  {
+   "id": "sproul-hall",
+   "name": "Sproul Hall",
+   "short": "Sproul Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.258786,
+   "lat": 37.869599,
+   "osm": "way/24025028"
+  },
+  {
+   "id": "cesar-e-chavez-student-center",
+   "name": "César E. Chavez Student Center",
+   "short": "César E. Chavez Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.26019,
+   "lat": 37.869745,
+   "osm": "way/24025426"
+  },
+  {
+   "id": "spieker-aquatics-complex",
+   "name": "Spieker Aquatics Complex",
+   "short": "Spieker Aquatics Complex",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.262012,
+   "lat": 37.868727,
+   "osm": "relation/1734952"
+  },
+  {
+   "id": "gerson-bakar-faculty-building",
+   "name": "Gerson Bakar Faculty Building",
+   "short": "Gerson Bakar Faculty Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Faculty Building"
+   ],
+   "lng": -122.253646,
+   "lat": 37.871922,
+   "osm": "way/32224854"
+  },
+  {
+   "id": "sutardja-dai-hall-citris",
+   "name": "Sutardja Dai Hall (CITRIS)",
+   "short": "Sutardja Dai Hall (CITRIS)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.258374,
+   "lat": 37.874862,
+   "osm": "way/24024350"
+  },
+  {
+   "id": "minor-hall-addition",
+   "name": "Minor Hall Addition",
+   "short": "Minor Hall Addition",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.255118,
+   "lat": 37.871404,
+   "osm": "relation/14526854"
+  },
+  {
+   "id": "bancroft-library",
+   "name": "Bancroft Library",
+   "short": "Bancroft Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Doe Annex"
+   ],
+   "lng": -122.258876,
+   "lat": 37.87225,
+   "osm": "way/24024508"
+  },
+  {
+   "id": "koshland-hall",
+   "name": "Koshland Hall",
+   "short": "Koshland Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.264889,
+   "lat": 37.873929,
+   "osm": "way/24024682"
+  },
+  {
+   "id": "evans-hall",
+   "name": "Evans Hall",
+   "short": "Evans Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.257844,
+   "lat": 37.873623,
+   "osm": "relation/6411209"
+  },
+  {
+   "id": "mccone-hall",
+   "name": "McCone Hall",
+   "short": "McCone Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Department of Geography"
+   ],
+   "lng": -122.259691,
+   "lat": 37.874128,
+   "osm": "way/24025437"
+  },
+  {
+   "id": "etcheverry-hall",
+   "name": "Etcheverry Hall",
+   "short": "Etcheverry Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.259278,
+   "lat": 37.875683,
+   "osm": "way/24024292"
+  },
+  {
+   "id": "student-services-building",
+   "name": "Student Services Building",
+   "short": "Student Services Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Haas School Student Services Building"
+   ],
+   "lng": -122.253551,
+   "lat": 37.871449,
+   "osm": "way/32224838"
+  },
+  {
+   "id": "soda-hall",
+   "name": "Soda Hall",
+   "short": "Soda Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.258724,
+   "lat": 37.875674,
+   "osm": "way/280300979"
+  },
+  {
+   "id": "earl-warren-hall",
+   "name": "Earl Warren Hall",
+   "short": "Earl Warren Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.266982,
+   "lat": 37.874388,
+   "osm": "way/31871980"
+  },
+  {
+   "id": "hertz-hall",
+   "name": "Hertz Hall",
+   "short": "Hertz Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.255733,
+   "lat": 37.871098,
+   "osm": "way/24024671"
+  },
+  {
+   "id": "innovative-genomics-institute",
+   "name": "Innovative Genomics Institute",
+   "short": "Innovative Genomics Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Helios Energy Research Facility"
+   ],
+   "lng": -122.266947,
+   "lat": 37.87384,
+   "osm": "way/202361277"
+  },
+  {
+   "id": "grimes-engineering-center",
+   "name": "Grimes Engineering Center",
+   "short": "Grimes Engineering Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Stephen D. Bechtel Engineering Center"
+   ],
+   "lng": -122.258196,
+   "lat": 37.874235,
+   "osm": "way/25079275"
+  },
+  {
+   "id": "davis-hall",
+   "name": "Davis Hall",
+   "short": "Davis Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.258277,
+   "lat": 37.874516,
+   "osm": "way/24024351"
+  },
+  {
+   "id": "latimer-hall",
+   "name": "Latimer Hall",
+   "short": "Latimer Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.255917,
+   "lat": 37.873117,
+   "osm": "way/24024502"
+  },
+  {
+   "id": "giannini-hall",
+   "name": "Giannini Hall",
+   "short": "Giannini Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.262378,
+   "lat": 37.873539,
+   "osm": "way/24025042"
+  },
+  {
+   "id": "hilgard-hall",
+   "name": "Hilgard Hall",
+   "short": "Hilgard Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.263393,
+   "lat": 37.873291,
+   "osm": "way/24025040"
+  },
+  {
+   "id": "mulford-hall",
+   "name": "Mulford Hall",
+   "short": "Mulford Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.26449,
+   "lat": 37.872651,
+   "osm": "way/24024684"
+  },
+  {
+   "id": "undergraduate-academic-building",
+   "name": "Undergraduate Academic Building",
+   "short": "Undergraduate Academic Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.261591,
+   "lat": 37.870863,
+   "osm": "way/1460053154"
+  },
+  {
+   "id": "lewis-hall",
+   "name": "Lewis Hall",
+   "short": "Lewis Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.255175,
+   "lat": 37.873005,
+   "osm": "way/24025034"
+  },
+  {
+   "id": "hildebrand-hall",
+   "name": "Hildebrand Hall",
+   "short": "Hildebrand Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.25572,
+   "lat": 37.872591,
+   "osm": "way/24025035"
+  },
+  {
+   "id": "morrison-hall",
+   "name": "Morrison Hall",
+   "short": "Morrison Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.256469,
+   "lat": 37.870863,
+   "osm": "way/24024670"
+  },
+  {
+   "id": "c-v-starr-east-asian-library",
+   "name": "C V Starr East Asian Library",
+   "short": "C V Starr East Asian Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.260343,
+   "lat": 37.873539,
+   "osm": "way/24024349"
+  },
+  {
+   "id": "bowles-hall",
+   "name": "Bowles Hall",
+   "short": "Bowles Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.253056,
+   "lat": 37.873355,
+   "osm": "way/24025052"
+  },
+  {
+   "id": "morgan-hall",
+   "name": "Morgan Hall",
+   "short": "Morgan Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.264201,
+   "lat": 37.873338,
+   "osm": "way/24024680"
+  },
+  {
+   "id": "zellerbach-playhouse",
+   "name": "Zellerbach Playhouse",
+   "short": "Zellerbach Playhouse",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.261305,
+   "lat": 37.869094,
+   "osm": "way/24025431"
+  },
+  {
+   "id": "donner-laboratory",
+   "name": "Donner Laboratory",
+   "short": "Donner Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.256453,
+   "lat": 37.874538,
+   "osm": "way/24026114"
+  },
+  {
+   "id": "administration-and-academic-center",
+   "name": "Administration & Academic Center",
+   "short": "Administration & Academic Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.248897,
+   "lat": 37.864318,
+   "osm": "relation/1735008"
+  },
+  {
+   "id": "north-gate-hall",
+   "name": "North Gate Hall",
+   "short": "North Gate Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Graduate School of Journalism"
+   ],
+   "lng": -122.259627,
+   "lat": 37.87491,
+   "osm": "way/24025048"
+  },
+  {
+   "id": "california-hall",
+   "name": "California Hall",
+   "short": "California Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.260367,
+   "lat": 37.871884,
+   "osm": "way/24024512"
+  },
+  {
+   "id": "anna-head-school-building",
+   "name": "Anna Head School Building",
+   "short": "Anna Head School Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.256832,
+   "lat": 37.86667,
+   "osm": "way/410615369"
+  },
+  {
+   "id": "hearst-field-annex",
+   "name": "Hearst Field Annex",
+   "short": "Hearst Field Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.25818,
+   "lat": 37.869428,
+   "osm": "way/24025031"
+  },
+  {
+   "id": "eshleman-hall",
+   "name": "Eshleman Hall",
+   "short": "Eshleman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.260395,
+   "lat": 37.868762,
+   "osm": "way/417682513"
+  },
+  {
+   "id": "barker-hall",
+   "name": "Barker Hall",
+   "short": "Barker Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.26548,
+   "lat": 37.873963,
+   "osm": "way/24024683"
+  },
+  {
+   "id": "wellman-hall",
+   "name": "Wellman Hall",
+   "short": "Wellman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.262776,
+   "lat": 37.873121,
+   "osm": "way/24025041"
+  },
+  {
+   "id": "tan-hall",
+   "name": "Tan Hall",
+   "short": "Tan Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.256455,
+   "lat": 37.873112,
+   "osm": "way/24024503"
+  },
+  {
+   "id": "chou-hall-north-academic-building",
+   "name": "Chou Hall (North Academic Building)",
+   "short": "Chou Hall (North Academic Building)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.254365,
+   "lat": 37.872378,
+   "osm": "way/431329214"
+  },
+  {
+   "id": "the-law-building-south",
+   "name": "The Law Building South",
+   "short": "The Law Building South",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Boalt South"
+   ],
+   "lng": -122.253435,
+   "lat": 37.869653,
+   "osm": "way/314724579"
+  },
+  {
+   "id": "haviland-hall",
+   "name": "Haviland Hall",
+   "short": "Haviland Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.261083,
+   "lat": 37.873735,
+   "osm": "way/24025038"
+  },
+  {
+   "id": "stephens-hall",
+   "name": "Stephens Hall",
+   "short": "Stephens Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.257568,
+   "lat": 37.871327,
+   "osm": "way/24025424"
+  },
+  {
+   "id": "main-stacks",
+   "name": "Main Stacks",
+   "short": "Main Stacks",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "David Pierpont Gardner Stacks",
+    "Gardner Stacks"
+   ],
+   "lng": -122.258898,
+   "lat": 37.872657,
+   "osm": "relation/21101300"
+  },
+  {
+   "id": "hesse-hall",
+   "name": "Hesse Hall",
+   "short": "Hesse Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.259376,
+   "lat": 37.874312,
+   "osm": "way/24025438"
+  },
+  {
+   "id": "birge-hall",
+   "name": "Birge Hall",
+   "short": "Birge Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.257252,
+   "lat": 37.872211,
+   "osm": "way/24024501"
+  },
+  {
+   "id": "campbell-hall",
+   "name": "Campbell Hall",
+   "short": "Campbell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.257094,
+   "lat": 37.872976,
+   "osm": "way/24024499"
+  },
+  {
+   "id": "minor-hall",
+   "name": "Minor Hall",
+   "short": "Minor Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.254734,
+   "lat": 37.871474,
+   "osm": "way/24024672"
+  },
+  {
+   "id": "genetics-and-plant-biology",
+   "name": "Genetics and Plant Biology",
+   "short": "Genetics and Plant Biology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.26475,
+   "lat": 37.873424,
+   "osm": "way/24024685"
+  },
+  {
+   "id": "simon-hall",
+   "name": "Simon Hall",
+   "short": "Simon Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.252735,
+   "lat": 37.869842,
+   "osm": "way/27293997"
+  },
+  {
+   "id": "philosophy-hall",
+   "name": "Philosophy Hall",
+   "short": "Philosophy Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Moses Hall"
+   ],
+   "lng": -122.258106,
+   "lat": 37.87095,
+   "osm": "way/24025422"
+  },
+  {
+   "id": "archives",
+   "name": "Archives",
+   "short": "Archives",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.245731,
+   "lat": 37.863529,
+   "osm": "way/128467228"
+  },
+  {
+   "id": "calvin-laboratory",
+   "name": "Calvin Laboratory",
+   "short": "Calvin Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Melvin Calvin Laboratory"
+   ],
+   "lng": -122.253942,
+   "lat": 37.871013,
+   "osm": "way/24025046"
+  },
+  {
+   "id": "gilman-hall",
+   "name": "Gilman Hall",
+   "short": "Gilman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.256324,
+   "lat": 37.87264,
+   "osm": "way/24025037"
+  },
+  {
+   "id": "mclaughlin-hall",
+   "name": "McLaughlin Hall",
+   "short": "McLaughlin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.25905,
+   "lat": 37.873833,
+   "osm": "way/24025435"
+  },
+  {
+   "id": "hargrove-music-library",
+   "name": "Hargrove Music Library",
+   "short": "Hargrove Music Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.256141,
+   "lat": 37.870451,
+   "osm": "way/24025047"
+  },
+  {
+   "id": "banway-building",
+   "name": "Banway Building",
+   "short": "Banway Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.266894,
+   "lat": 37.867903,
+   "osm": "way/43150624"
+  },
+  {
+   "id": "earl-f-cheit-hall",
+   "name": "Earl F. Cheit Hall",
+   "short": "Earl F. Cheit Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.254279,
+   "lat": 37.871816,
+   "osm": "way/1371942534"
+  },
+  {
+   "id": "building-21",
+   "name": "Building 21",
+   "short": "Building 21",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Archives"
+   ],
+   "lng": -122.246502,
+   "lat": 37.864111,
+   "osm": "way/128467247"
+  },
+  {
+   "id": "obrien-hall",
+   "name": "O'Brien Hall",
+   "short": "O'Brien Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.259089,
+   "lat": 37.874383,
+   "osm": "way/24025434"
+  },
+  {
+   "id": "giauque-hall",
+   "name": "Giauque Hall",
+   "short": "Giauque Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.25608,
+   "lat": 37.872613,
+   "osm": "way/24025036"
+  },
+  {
+   "id": "south-hall",
+   "name": "South Hall",
+   "short": "South Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "School of Information"
+   ],
+   "lng": -122.258536,
+   "lat": 37.87134,
+   "osm": "way/24024509"
+  },
+  {
+   "id": "jacobs-hall",
+   "name": "Jacobs Hall",
+   "short": "Jacobs Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.258809,
+   "lat": 37.876035,
+   "osm": "way/440146220"
+  },
+  {
+   "id": "natural-resources-laboratory",
+   "name": "Natural Resources Laboratory",
+   "short": "Natural Resources Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.266865,
+   "lat": 37.874812,
+   "osm": "way/109187417"
+  },
+  {
+   "id": "pimentel-hall",
+   "name": "Pimentel Hall",
+   "short": "Pimentel Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.256033,
+   "lat": 37.873419,
+   "osm": "way/24024504"
+  },
+  {
+   "id": "2251-college-building-archaeological-research-facility",
+   "name": "2251 College Building (Archaeological Research Facility)",
+   "short": "2251 College Building (Archaeological Research Facility)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.253852,
+   "lat": 37.870202,
+   "osm": "way/109191426"
+  },
+  {
+   "id": "goldman-school-of-public-policy",
+   "name": "Goldman School of Public Policy",
+   "short": "Goldman School of Public Policy",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.257875,
+   "lat": 37.875746,
+   "osm": "way/128463201"
+  },
+  {
+   "id": "old-art-gallery",
+   "name": "Old Art Gallery",
+   "short": "Old Art Gallery",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Powerhouse"
+   ],
+   "lng": -122.258681,
+   "lat": 37.87058,
+   "osm": "way/24025029"
+  },
+  {
+   "id": "creekside-center",
+   "name": "Creekside Center",
+   "short": "Creekside Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Dwinelle Annex"
+   ],
+   "lng": -122.261287,
+   "lat": 37.870336,
+   "osm": "way/24025425"
+  },
+  {
+   "id": "durant-hall",
+   "name": "Durant Hall",
+   "short": "Durant Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.260135,
+   "lat": 37.871258,
+   "osm": "way/24025026"
+  },
+  {
+   "id": "blum-hall",
+   "name": "Blum Hall",
+   "short": "Blum Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.258832,
+   "lat": 37.875021,
+   "osm": "way/24025049"
+  },
+  {
+   "id": "bancroft-dance-studio",
+   "name": "Bancroft Dance Studio",
+   "short": "Bancroft Dance Studio",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Unitarian Church"
+   ],
+   "lng": -122.261188,
+   "lat": 37.868696,
+   "osm": "way/109191196"
+  },
+  {
+   "id": "goldman-school-of-public-policy-128463202",
+   "name": "Goldman School of Public Policy",
+   "short": "Goldman School of Public Policy",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.258202,
+   "lat": 37.875702,
+   "osm": "way/128463202"
+  },
+  {
+   "id": "senior-hall",
+   "name": "Senior Hall",
+   "short": "Senior Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.255409,
+   "lat": 37.87187,
+   "osm": "way/25887540"
+  },
+  {
+   "id": "strawberry-canyon-center",
+   "name": "Strawberry Canyon Center",
+   "short": "Strawberry Canyon Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.244278,
+   "lat": 37.873034,
+   "osm": "way/311951334"
+  },
+  {
+   "id": "anthony-hall",
+   "name": "Anthony Hall",
+   "short": "Anthony Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The Pelican Building"
+   ],
+   "lng": -122.258217,
+   "lat": 37.870685,
+   "osm": "way/24025030"
+  },
+  {
+   "id": "berkeley-haas-entrepreneurship-hub",
+   "name": "Berkeley Haas Entrepreneurship Hub",
+   "short": "Berkeley Haas Entrepreneurship Hub",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The eHub at Berkeley"
+   ],
+   "lng": -122.253038,
+   "lat": 37.870775,
+   "osm": "way/118112324"
+  },
+  {
+   "id": "architects-and-engineers",
+   "name": "Architects & Engineers",
+   "short": "A & E",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "A & E"
+   ],
+   "lng": -122.258805,
+   "lat": 37.870166,
+   "osm": "way/109191619"
+  },
+  {
+   "id": "mcenerney-hall",
+   "name": "McEnerney Hall",
+   "short": "McEnerney Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Genevieve McEnerney Hall"
+   ],
+   "lng": -122.264561,
+   "lat": 37.876659,
+   "osm": "way/826209347"
+  },
+  {
+   "id": "founders-building",
+   "name": "Founder's Building",
+   "short": "Founder's Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.264571,
+   "lat": 37.867874,
+   "osm": "way/109192949"
+  },
+  {
+   "id": "main-stacks-21101303",
+   "name": "Main Stacks",
+   "short": "Main Stacks",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.260306,
+   "lat": 37.872777,
+   "osm": "relation/21101303"
+  }
+ ]
+}
