@@ -1,0 +1,16 @@
+{
+  "collegeId": "chapman",
+  "area": {
+    "osm": "relation/2781142",
+    "bbox": [
+      33.7892,
+      -117.85958,
+      33.79783,
+      -117.84884
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public building-code list: searches of chapman.edu (Registrar and class schedule pages) find no building abbreviation key (checked 2026-11-08)."
+}
