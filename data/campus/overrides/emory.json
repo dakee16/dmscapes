@@ -1,0 +1,288 @@
+{
+  "places": {
+    "sorority-complex": {
+      "hide": true
+    },
+    "": {
+      "hide": true
+    },
+    "-51283225": {
+      "hide": true
+    },
+    "a": {
+      "hide": true
+    },
+    "-51310163": {
+      "hide": true
+    },
+    "-51287278": {
+      "hide": true
+    },
+    "-51310965": {
+      "hide": true
+    },
+    "-51306610": {
+      "hide": true
+    },
+    "-51310997": {
+      "hide": true
+    },
+    "-51315359": {
+      "hide": true
+    },
+    "quadrangle-energy-plant": {
+      "hide": true
+    },
+    "campus-services-building-f-north-shop": {
+      "hide": true
+    },
+    "campus-services-building-b": {
+      "hide": true
+    },
+    "campus-services-building-c": {
+      "hide": true
+    },
+    "peavine-facility": {
+      "hide": true
+    },
+    "campus-services-building-d": {
+      "hide": true
+    },
+    "residential-services-building": {
+      "hide": true
+    },
+    "campus-services-building-a-campus-services-administration": {
+      "hide": true
+    },
+    "campus-services-building-e": {
+      "hide": true
+    },
+    "telecommunications": {
+      "hide": true
+    },
+    "emory-national-primate-research-center": {
+      "hide": true
+    },
+    "eps-neuroscience-building": {
+      "hide": true
+    },
+    "eps-dual-function-facility": {
+      "hide": true
+    },
+    "eps-t-12": {
+      "hide": true
+    },
+    "eps-t-14": {
+      "hide": true
+    },
+    "living-links-trailer": {
+      "hide": true
+    },
+    "eps-behavior-management-trailer": {
+      "hide": true
+    },
+    "animal-supv-trailer": {
+      "hide": true
+    },
+    "eps-fmd-trailer": {
+      "hide": true
+    },
+    "emory-university-hospital": {
+      "hide": true
+    },
+    "emory-university-hospital-tower": {
+      "hide": true
+    },
+    "clinic-b": {
+      "hide": true
+    },
+    "emory-clinic-building-a": {
+      "hide": true
+    },
+    "winship-cancer-institute-clinic-c": {
+      "hide": true
+    },
+    "emory-childrens-center": {
+      "hide": true
+    },
+    "a-g-rhodes-health-and-rehab": {
+      "hide": true
+    },
+    "hospital-annex": {
+      "hide": true
+    },
+    "wesley-woods-health-center": {
+      "hide": true
+    },
+    "emory-university-center-for-rehabilitation-medicine": {
+      "hide": true
+    },
+    "emory-conference-center-hotel": {
+      "hide": true
+    },
+    "hope-lodge": {
+      "hide": true
+    },
+    "budd-terrace": {
+      "hide": true
+    },
+    "mason-guest-house": {
+      "hide": true
+    },
+    "houston-mill-house": {
+      "hide": true
+    },
+    "emory-graduate-housing": {
+      "hide": true
+    },
+    "emory-graduate-housing-1268449467": {
+      "hide": true
+    },
+    "woodruff-residential-center": {
+      "hide": true
+    },
+    "eagle-hall": {
+      "hide": true
+    },
+    "raoul-hall": {
+      "hide": true
+    },
+    "harris-hall": {
+      "hide": true
+    },
+    "alabama-hall": {
+      "hide": true
+    },
+    "hamilton-holmes-hall": {
+      "hide": true
+    },
+    "the-1599-building": {
+      "hide": true
+    },
+    "north-decatur-building": {
+      "hide": true
+    },
+    "miller-ward-alumni-house": {
+      "hide": true
+    },
+    "boisfeuillet-jones-center": {
+      "hide": true
+    },
+    "administration": {
+      "hide": true
+    },
+    "black-student-alliance-house": {
+      "hide": true
+    },
+    "dowman-drive-visitor-information-booth": {
+      "hide": true
+    },
+    "the-clifton-school": {
+      "hide": true
+    },
+    "glenn-church-school-building": {
+      "hide": true
+    },
+    "the-depot": {
+      "hide": true
+    },
+    "mcdonough-field-stage": {
+      "hide": true
+    },
+    "kaminsky-park-field-house": {
+      "hide": true
+    },
+    "emory-student-center": {
+      "kind": "dining"
+    }
+  },
+  "notes": {
+    "sorority-complex": "Fraternity or sorority house, not somewhere classes happen.",
+    "": "Fraternity or sorority house, not somewhere classes happen.",
+    "-51283225": "Fraternity or sorority house, not somewhere classes happen.",
+    "a": "Fraternity or sorority house, not somewhere classes happen.",
+    "-51310163": "Fraternity or sorority house, not somewhere classes happen.",
+    "-51287278": "Fraternity or sorority house, not somewhere classes happen.",
+    "-51310965": "Fraternity or sorority house, not somewhere classes happen.",
+    "-51306610": "Fraternity or sorority house, not somewhere classes happen.",
+    "-51310997": "Fraternity or sorority house, not somewhere classes happen.",
+    "-51315359": "Fraternity or sorority house, not somewhere classes happen.",
+    "quadrangle-energy-plant": "Campus services, utility or housing-services building, not somewhere classes happen.",
+    "campus-services-building-f-north-shop": "Campus services, utility or housing-services building, not somewhere classes happen.",
+    "campus-services-building-b": "Campus services, utility or housing-services building, not somewhere classes happen.",
+    "campus-services-building-c": "Campus services, utility or housing-services building, not somewhere classes happen.",
+    "peavine-facility": "Campus services, utility or housing-services building, not somewhere classes happen.",
+    "campus-services-building-d": "Campus services, utility or housing-services building, not somewhere classes happen.",
+    "residential-services-building": "Campus services, utility or housing-services building, not somewhere classes happen.",
+    "campus-services-building-a-campus-services-administration": "Campus services, utility or housing-services building, not somewhere classes happen.",
+    "campus-services-building-e": "Campus services, utility or housing-services building, not somewhere classes happen.",
+    "telecommunications": "Campus services, utility or housing-services building, not somewhere classes happen.",
+    "emory-national-primate-research-center": "Primate research centre building or trailer, not somewhere classes happen.",
+    "eps-neuroscience-building": "Primate research centre building or trailer, not somewhere classes happen.",
+    "eps-dual-function-facility": "Primate research centre building or trailer, not somewhere classes happen.",
+    "eps-t-12": "Primate research centre building or trailer, not somewhere classes happen.",
+    "eps-t-14": "Primate research centre building or trailer, not somewhere classes happen.",
+    "living-links-trailer": "Primate research centre building or trailer, not somewhere classes happen.",
+    "eps-behavior-management-trailer": "Primate research centre building or trailer, not somewhere classes happen.",
+    "animal-supv-trailer": "Primate research centre building or trailer, not somewhere classes happen.",
+    "eps-fmd-trailer": "Primate research centre building or trailer, not somewhere classes happen.",
+    "emory-university-hospital": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "emory-university-hospital-tower": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "clinic-b": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "emory-clinic-building-a": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "winship-cancer-institute-clinic-c": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "emory-childrens-center": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "a-g-rhodes-health-and-rehab": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "hospital-annex": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "wesley-woods-health-center": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "emory-university-center-for-rehabilitation-medicine": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "emory-conference-center-hotel": "Lodging, a hotel, an event house or senior housing, not somewhere classes happen.",
+    "hope-lodge": "Lodging, a hotel, an event house or senior housing, not somewhere classes happen.",
+    "budd-terrace": "Lodging, a hotel, an event house or senior housing, not somewhere classes happen.",
+    "mason-guest-house": "Lodging, a hotel, an event house or senior housing, not somewhere classes happen.",
+    "houston-mill-house": "Lodging, a hotel, an event house or senior housing, not somewhere classes happen.",
+    "emory-graduate-housing": "A residence hall or student housing, not a class building.",
+    "emory-graduate-housing-1268449467": "A residence hall or student housing, not a class building.",
+    "woodruff-residential-center": "A residence hall or student housing, not a class building.",
+    "eagle-hall": "A residence hall or student housing, not a class building.",
+    "raoul-hall": "A residence hall or student housing, not a class building.",
+    "harris-hall": "A residence hall or student housing, not a class building.",
+    "alabama-hall": "A residence hall or student housing, not a class building.",
+    "hamilton-holmes-hall": "A residence hall or student housing, not a class building.",
+    "the-1599-building": "Student-organisation house, alumni house or administrative offices, not somewhere classes happen.",
+    "north-decatur-building": "Student-organisation house, alumni house or administrative offices, not somewhere classes happen.",
+    "miller-ward-alumni-house": "Student-organisation house, alumni house or administrative offices, not somewhere classes happen.",
+    "boisfeuillet-jones-center": "Student-organisation house, alumni house or administrative offices, not somewhere classes happen.",
+    "administration": "Student-organisation house, alumni house or administrative offices, not somewhere classes happen.",
+    "black-student-alliance-house": "Student-organisation house, alumni house or administrative offices, not somewhere classes happen.",
+    "dowman-drive-visitor-information-booth": "Student-organisation house, alumni house or administrative offices, not somewhere classes happen.",
+    "the-clifton-school": "A church building or a separate school, not somewhere Emory classes happen.",
+    "glenn-church-school-building": "A church building or a separate school, not somewhere Emory classes happen.",
+    "the-depot": "A student pub, not a dining hall or class building.",
+    "mcdonough-field-stage": "Athletic field building, not a class building or student gym.",
+    "kaminsky-park-field-house": "Athletic field building, not a class building or student gym.",
+    "emory-student-center": "Emory's main dining hall, Dobbs Common Table, is in the Emory Student Center; its name doesn't say dining."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "longstreet-means -> emory-student-center",
+        "longstreet-means -> alumni-memorial-university-center",
+        "longstreet-means -> callaway-memorial-center",
+        "longstreet-means -> candler-library",
+        "longstreet-means -> modern-languages",
+        "evans-hall -> woodruff-physical-education-center",
+        "evans-hall -> modern-languages",
+        "turman-hall -> callaway-memorial-center",
+        "turman-hall -> candler-library",
+        "turman-hall -> modern-languages",
+        "dobbs-hall -> callaway-memorial-center",
+        "dobbs-hall -> candler-library",
+        "dobbs-hall -> modern-languages",
+        "dobbs-hall -> bowden-hall"
+      ],
+      "maxRatio": 4.5,
+      "why": "The first-year halls stand on the slope above Asbury Circle; the buildings and steep ground between them and the Quadrangle have few mapped paths, and the Quadrangle buildings' mapped doors face the Quad, so walks go round by Asbury Circle and the mapped stairs."
+    }
+  ]
+}
