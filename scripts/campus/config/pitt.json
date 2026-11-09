@@ -1,0 +1,17 @@
+{
+  "collegeId": "pitt",
+  "area": {
+    "osm": "relation/2079309",
+    "bbox": [
+      40.436,
+      -79.96873,
+      40.44879,
+      -79.94891
+    ]
+  },
+  "areaNote": "OSM relation/2079309 also has outlying parcels (College Gardens, Melwood, a site on the North Side); the bbox covers the Oakland campus members only.",
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public building-code list found: searches of pitt.edu turn up only the style guide's school and campus abbreviations and the Help Desk's department codes, not building codes, and the campus map site (www.map.pitt.edu) answers scripted requests with 403 (checked 2026-11-08)."
+}

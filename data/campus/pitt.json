@@ -1,0 +1,797 @@
+{
+ "collegeId": "pitt",
+ "generatedAt": "2026-11-09T18:15:26.843Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/pitt.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -79.96538,
+  40.43842,
+  -79.9492,
+  40.44738
+ ],
+ "halls": [
+  {
+   "dormId": "litchfield-tower-a",
+   "name": "Litchfield Tower A",
+   "lng": -79.956442,
+   "lat": 40.442663,
+   "pin": "manual",
+   "osm": "way/535897027",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hillman-library",
+     "minutes": 4.3
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 5.6
+    }
+   }
+  },
+  {
+   "dormId": "litchfield-tower-b",
+   "name": "Litchfield Tower B",
+   "lng": -79.956442,
+   "lat": 40.442663,
+   "pin": "manual",
+   "osm": "way/535897027",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hillman-library",
+     "minutes": 4.3
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 5.6
+    }
+   }
+  },
+  {
+   "dormId": "litchfield-tower-c",
+   "name": "Litchfield Tower C",
+   "lng": -79.956442,
+   "lat": 40.442663,
+   "pin": "manual",
+   "osm": "way/535897027",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hillman-library",
+     "minutes": 4.3
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 5.6
+    }
+   }
+  },
+  {
+   "dormId": "nordenberg-hall",
+   "name": "Mark A. Nordenberg Hall",
+   "lng": -79.956269,
+   "lat": 40.443914,
+   "pin": "name",
+   "osm": "way/154666270",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hillman-library",
+     "minutes": 4.3
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 5.5
+    }
+   }
+  },
+  {
+   "dormId": "sutherland-hall",
+   "name": "Sutherland Hall",
+   "lng": -79.962611,
+   "lat": 40.445919,
+   "pin": "name",
+   "osm": "way/220389889",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hillman-library",
+     "minutes": 15.8
+    },
+    "gym": {
+     "placeId": "fitzgerald-field-house",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "forbes-hall",
+   "name": "Forbes Hall",
+   "lng": -79.959042,
+   "lat": 40.440419,
+   "pin": "name",
+   "osm": "way/535897431",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hillman-library",
+     "minutes": 7.9
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 8.6
+    }
+   }
+  },
+  {
+   "dormId": "holland-hall",
+   "name": "Holland Hall",
+   "lng": -79.955996,
+   "lat": 40.443059,
+   "pin": "name",
+   "osm": "way/154428332",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hillman-library",
+     "minutes": 3.8
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 6.4
+    }
+   }
+  },
+  {
+   "dormId": "mccormick-hall",
+   "name": "McCormick Hall",
+   "lng": -79.955393,
+   "lat": 40.443242,
+   "pin": "name",
+   "osm": "way/154428328",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hillman-library",
+     "minutes": 3.4
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 6.8
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "petersen-events-center",
+   "name": "Petersen Events Center",
+   "short": "Petersen Events Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The Pete"
+   ],
+   "lng": -79.96233,
+   "lat": 40.44393,
+   "osm": "way/154420417"
+  },
+  {
+   "id": "trees-hall",
+   "name": "Trees Hall",
+   "short": "Trees Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.965385,
+   "lat": 40.444029,
+   "osm": "relation/16453998"
+  },
+  {
+   "id": "victory-heights",
+   "name": "Victory Heights",
+   "short": "Victory Heights",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.961443,
+   "lat": 40.444622,
+   "osm": "way/1537228573"
+  },
+  {
+   "id": "wesley-w-posvar-hall",
+   "name": "Wesley W. Posvar Hall",
+   "short": "Wesley W. Posvar Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Posvar Hall"
+   ],
+   "lng": -79.954147,
+   "lat": 40.441676,
+   "osm": "way/154268802"
+  },
+  {
+   "id": "biomedical-science-tower-and-bst-south",
+   "name": "Biomedical Science Tower and BST South",
+   "short": "Biomedical Science Tower and BST South",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.961815,
+   "lat": 40.441864,
+   "osm": "way/535446756"
+  },
+  {
+   "id": "hillman-library",
+   "name": "Hillman Library",
+   "short": "Hillman Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Hillman"
+   ],
+   "lng": -79.954109,
+   "lat": 40.442554,
+   "osm": "way/121060908"
+  },
+  {
+   "id": "fitzgerald-field-house",
+   "name": "Fitzgerald Field House",
+   "short": "Fitzgerald Field House",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Fitzgerald Fieldhouse"
+   ],
+   "lng": -79.964158,
+   "lat": 40.443491,
+   "osm": "way/316624361"
+  },
+  {
+   "id": "cathedral-of-learning",
+   "name": "Cathedral of Learning",
+   "short": "Cathedral of Learning",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Cathy"
+   ],
+   "lng": -79.953192,
+   "lat": 40.44431,
+   "osm": "way/30678664"
+  },
+  {
+   "id": "recreation-and-wellness-center",
+   "name": "Recreation and Wellness Center",
+   "short": "Recreation and Wellness Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.959268,
+   "lat": 40.444267,
+   "osm": "way/1537228572"
+  },
+  {
+   "id": "benedum-hall",
+   "name": "Benedum Hall",
+   "short": "Benedum Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.958607,
+   "lat": 40.443633,
+   "osm": "relation/15426132"
+  },
+  {
+   "id": "victoria-building",
+   "name": "Victoria Building",
+   "short": "Victoria Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.960652,
+   "lat": 40.441301,
+   "osm": "way/313645798"
+  },
+  {
+   "id": "scaife-hall",
+   "name": "Scaife Hall",
+   "short": "Scaife Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.961352,
+   "lat": 40.442915,
+   "osm": "way/535446758"
+  },
+  {
+   "id": "salk-hall",
+   "name": "Salk Hall",
+   "short": "Salk Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.963124,
+   "lat": 40.442796,
+   "osm": "way/535446762"
+  },
+  {
+   "id": "william-pitt-union",
+   "name": "William Pitt Union",
+   "short": "William Pitt Union",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.954839,
+   "lat": 40.443409,
+   "osm": "way/154245869"
+  },
+  {
+   "id": "cheveron-science-center",
+   "name": "Cheveron Science Center",
+   "short": "Cheveron Science Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.957656,
+   "lat": 40.445869,
+   "osm": "way/543158319"
+  },
+  {
+   "id": "sennott-square",
+   "name": "Sennott Square",
+   "short": "Sennott Square",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.956369,
+   "lat": 40.441532,
+   "osm": "way/154421796"
+  },
+  {
+   "id": "biomedical-science-tower-iii",
+   "name": "Biomedical Science Tower III",
+   "short": "Biomedical Science Tower III",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.960094,
+   "lat": 40.441033,
+   "osm": "way/535446979"
+  },
+  {
+   "id": "barco-law-building",
+   "name": "Barco Law Building",
+   "short": "Barco Law Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "University of Pittsburgh School of Law"
+   ],
+   "lng": -79.955592,
+   "lat": 40.441888,
+   "osm": "way/154421553"
+  },
+  {
+   "id": "bellefield-hall",
+   "name": "Bellefield Hall",
+   "short": "Bellefield Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.95087,
+   "lat": 40.445403,
+   "osm": "way/154108395"
+  },
+  {
+   "id": "frick-fine-arts-building",
+   "name": "Frick Fine Arts Building",
+   "short": "Frick Fine Arts Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.951055,
+   "lat": 40.441612,
+   "osm": "way/810149910"
+  },
+  {
+   "id": "salk-annex",
+   "name": "Salk Annex",
+   "short": "Salk Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.96273,
+   "lat": 40.442572,
+   "osm": "way/1449439654"
+  },
+  {
+   "id": "david-lawrence-hall",
+   "name": "David Lawrence Hall",
+   "short": "David Lawrence Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Lawrence Hall"
+   ],
+   "lng": -79.95513,
+   "lat": 40.442377,
+   "osm": "way/154279114"
+  },
+  {
+   "id": "langley-hall",
+   "name": "Langley Hall",
+   "short": "Langley Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.953699,
+   "lat": 40.446695,
+   "osm": "way/154400674"
+  },
+  {
+   "id": "mervis-hall",
+   "name": "Mervis Hall",
+   "short": "Mervis Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Katz Graduate School of Business"
+   ],
+   "lng": -79.953332,
+   "lat": 40.440821,
+   "osm": "way/154377423"
+  },
+  {
+   "id": "alumni-hall",
+   "name": "Alumni Hall",
+   "short": "Alumni Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.953894,
+   "lat": 40.445584,
+   "osm": "way/154203128"
+  },
+  {
+   "id": "clapp-hall",
+   "name": "Clapp Hall",
+   "short": "Clapp Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.953136,
+   "lat": 40.446202,
+   "osm": "way/154400669"
+  },
+  {
+   "id": "pittsburgh-athletic-association",
+   "name": "Pittsburgh Athletic Association",
+   "short": "Pittsburgh Athletic Association",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.954591,
+   "lat": 40.444939,
+   "osm": "way/220387395"
+  },
+  {
+   "id": "rand-building",
+   "name": "Rand Building",
+   "short": "Rand Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.94931,
+   "lat": 40.446584,
+   "osm": "way/44150736"
+  },
+  {
+   "id": "pitt-public-health",
+   "name": "Pitt Public Health",
+   "short": "Pitt Public Health",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.958486,
+   "lat": 40.442772,
+   "osm": "way/154945606"
+  },
+  {
+   "id": "thackeray-hall",
+   "name": "Thackeray Hall",
+   "short": "Thackeray Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.957263,
+   "lat": 40.444306,
+   "osm": "way/154664992"
+  },
+  {
+   "id": "eberly-hall",
+   "name": "Eberly Hall",
+   "short": "Eberly Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.958374,
+   "lat": 40.445837,
+   "osm": "way/207294536"
+  },
+  {
+   "id": "university-club",
+   "name": "University Club",
+   "short": "University Club",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.956798,
+   "lat": 40.444197,
+   "osm": "way/154664986"
+  },
+  {
+   "id": "darragh-street-apartments",
+   "name": "Darragh Street Apartments",
+   "short": "Darragh Street Apartments",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.964285,
+   "lat": 40.442395,
+   "osm": "way/535446767"
+  },
+  {
+   "id": "twentieth-century-club-building",
+   "name": "Twentieth Century Club Building",
+   "short": "Twentieth Century Club Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.95653,
+   "lat": 40.446213,
+   "osm": "way/810055248"
+  },
+  {
+   "id": "salk-pavilion",
+   "name": "Salk Pavilion",
+   "short": "Salk Pavilion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.963421,
+   "lat": 40.443128,
+   "osm": "way/1447759062"
+  },
+  {
+   "id": "crabtree-hall",
+   "name": "Crabtree Hall",
+   "short": "Crabtree Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.959171,
+   "lat": 40.443143,
+   "osm": "way/154945603"
+  },
+  {
+   "id": "old-engineering-hall",
+   "name": "Old Engineering Hall",
+   "short": "Old Engineering Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.958065,
+   "lat": 40.445002,
+   "osm": "way/156000474"
+  },
+  {
+   "id": "crawford-hall",
+   "name": "Crawford Hall",
+   "short": "Crawford Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.954191,
+   "lat": 40.446954,
+   "osm": "way/154400671"
+  },
+  {
+   "id": "gardner-steel-conference-center",
+   "name": "Gardner Steel Conference Center",
+   "short": "Gardner Steel Conference Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Gardner Steele Conference Center"
+   ],
+   "lng": -79.957727,
+   "lat": 40.444451,
+   "osm": "way/154664987"
+  },
+  {
+   "id": "gsph-annex",
+   "name": "GSPH Annex",
+   "short": "GSPH Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.958504,
+   "lat": 40.442922,
+   "osm": "way/505861382"
+  },
+  {
+   "id": "life-science-annex",
+   "name": "Life Science Annex",
+   "short": "Life Science Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.953658,
+   "lat": 40.446393,
+   "osm": "way/154400668"
+  },
+  {
+   "id": "craig-hall",
+   "name": "Craig Hall",
+   "short": "Craig Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.949201,
+   "lat": 40.446128,
+   "osm": "way/154387896"
+  },
+  {
+   "id": "van-de-graaf-building",
+   "name": "Van de Graaf Building",
+   "short": "Van de Graaf Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "NPL Building"
+   ],
+   "lng": -79.958613,
+   "lat": 40.444739,
+   "osm": "way/207294546"
+  },
+  {
+   "id": "oxford-building",
+   "name": "Oxford Building",
+   "short": "Oxford Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.959469,
+   "lat": 40.440123,
+   "osm": "way/535897618"
+  },
+  {
+   "id": "thaw-hall",
+   "name": "Thaw Hall",
+   "short": "Thaw Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.957629,
+   "lat": 40.445157,
+   "osm": "way/156000475"
+  },
+  {
+   "id": "allen-hall",
+   "name": "Allen Hall",
+   "short": "Allen Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.958355,
+   "lat": 40.444592,
+   "osm": "way/154664983"
+  },
+  {
+   "id": "stephen-foster-memorial",
+   "name": "Stephen Foster Memorial",
+   "short": "Stephen Foster Memorial",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.952751,
+   "lat": 40.443808,
+   "osm": "way/121051329"
+  },
+  {
+   "id": "ohara-student-center",
+   "name": "O'Hara Student Center",
+   "short": "O'Hara Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Concordia Club"
+   ],
+   "lng": -79.957239,
+   "lat": 40.444755,
+   "osm": "way/154664990"
+  },
+  {
+   "id": "information-sciences-building",
+   "name": "Information Sciences Building",
+   "short": "Information Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "IS Building"
+   ],
+   "lng": -79.952693,
+   "lat": 40.447376,
+   "osm": "way/154905396"
+  },
+  {
+   "id": "music-building",
+   "name": "Music Building",
+   "short": "Music Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.952303,
+   "lat": 40.446639,
+   "osm": "way/154464647"
+  },
+  {
+   "id": "space-research-coordination-center",
+   "name": "Space Research Coordination Center",
+   "short": "Space Research Coordination Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SRCC"
+   ],
+   "lng": -79.957244,
+   "lat": 40.445442,
+   "osm": "way/156000476"
+  },
+  {
+   "id": "eureka-building",
+   "name": "Eureka Building",
+   "short": "Eureka Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.960906,
+   "lat": 40.438423,
+   "osm": "way/535897057"
+  },
+  {
+   "id": "log-cabin",
+   "name": "Log Cabin",
+   "short": "Log Cabin",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.951978,
+   "lat": 40.443874,
+   "osm": "way/154258438"
+  }
+ ]
+}
