@@ -1,0 +1,764 @@
+{
+ "collegeId": "vcu",
+ "generatedAt": "2026-11-09T18:15:52.453Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/vcu.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -77.45512,
+  37.54268,
+  -77.44711,
+  37.55391
+ ],
+ "halls": [
+  {
+   "dormId": "gladding-residence-center",
+   "name": "Gladding Residence Center",
+   "lng": -77.451001,
+   "lat": 37.545402,
+   "pin": "name",
+   "osm": "way/753363655",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "university-student-commons",
+     "minutes": 4.8
+    },
+    "gym": {
+     "placeId": "cary-street-gym",
+     "minutes": 5.8
+    },
+    "library": {
+     "placeId": "james-branch-cabell-library",
+     "minutes": 7.7
+    }
+   }
+  },
+  {
+   "dormId": "rhoads-hall",
+   "name": "Rhoads Hall",
+   "lng": -77.44995,
+   "lat": 37.54812,
+   "pin": "name",
+   "osm": "way/229623388",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "shafer-court-dining-center",
+     "minutes": 5
+    },
+    "gym": {
+     "placeId": "cary-street-gym",
+     "minutes": 10.2
+    },
+    "library": {
+     "placeId": "james-branch-cabell-library",
+     "minutes": 6.2
+    }
+   }
+  },
+  {
+   "dormId": "brandt-hall",
+   "name": "Brandt Hall",
+   "lng": -77.450218,
+   "lat": 37.548353,
+   "pin": "name",
+   "osm": "way/229623387",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "shafer-court-dining-center",
+     "minutes": 3.3
+    },
+    "gym": {
+     "placeId": "cary-street-gym",
+     "minutes": 9.6
+    },
+    "library": {
+     "placeId": "james-branch-cabell-library",
+     "minutes": 5
+    }
+   }
+  },
+  {
+   "dormId": "west-grace-north",
+   "name": "West Grace Street Housing (North)",
+   "lng": -77.450796,
+   "lat": 37.5499,
+   "pin": "manual",
+   "osm": "way/252923462",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "shafer-court-dining-center",
+     "minutes": 5.3
+    },
+    "gym": {
+     "placeId": "cary-street-gym",
+     "minutes": 12.7
+    },
+    "library": {
+     "placeId": "james-branch-cabell-library",
+     "minutes": 6.2
+    }
+   }
+  },
+  {
+   "dormId": "west-grace-south",
+   "name": "West Grace Street Housing (South)",
+   "lng": -77.451179,
+   "lat": 37.549495,
+   "pin": "manual",
+   "osm": "way/252923459",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "shafer-court-dining-center",
+     "minutes": 3.3
+    },
+    "gym": {
+     "placeId": "cary-street-gym",
+     "minutes": 10.7
+    },
+    "library": {
+     "placeId": "james-branch-cabell-library",
+     "minutes": 4.2
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "academic-learning-commons",
+   "name": "Academic Learning Commons",
+   "short": "Academic Learning Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.454525,
+   "lat": 37.547541,
+   "osm": "relation/15456764"
+  },
+  {
+   "id": "cary-street-gym",
+   "name": "Cary Street Gym",
+   "short": "Cary Street Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.453452,
+   "lat": 37.544035,
+   "osm": "way/229722628"
+  },
+  {
+   "id": "vcu-snead-hall-school-of-business",
+   "name": "VCU Snead Hall School of Business",
+   "short": "VCU Snead Hall School of Business",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.448086,
+   "lat": 37.544827,
+   "osm": "way/174327783"
+  },
+  {
+   "id": "university-student-commons",
+   "name": "University Student Commons",
+   "short": "University Student Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.45341,
+   "lat": 37.546547,
+   "osm": "way/229722635"
+  },
+  {
+   "id": "james-branch-cabell-library",
+   "name": "James Branch Cabell Library",
+   "short": "James Branch Cabell Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.453589,
+   "lat": 37.547769,
+   "osm": "way/60826456"
+  },
+  {
+   "id": "eugene-p-and-louis-e-trani-center-for-life-sciences",
+   "name": "Eugene P. and Louis E. Trani Center for Life Sciences",
+   "short": "Eugene P. and Louis E. Trani Center for Life Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.454583,
+   "lat": 37.544891,
+   "osm": "way/229722624"
+  },
+  {
+   "id": "t-edward-temple-building",
+   "name": "T. Edward Temple Building",
+   "short": "T. Edward Temple Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.45347,
+   "lat": 37.545374,
+   "osm": "way/229722626"
+  },
+  {
+   "id": "depillars-building",
+   "name": "DePillars Building",
+   "short": "DePillars Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.450405,
+   "lat": 37.55104,
+   "osm": "way/326703384"
+  },
+  {
+   "id": "grace-e-harris-hall",
+   "name": "Grace E. Harris Hall",
+   "short": "Grace E. Harris Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.454826,
+   "lat": 37.546556,
+   "osm": "way/229722617"
+  },
+  {
+   "id": "vcu-college-of-engineering",
+   "name": "VCU College of Engineering",
+   "short": "VCU College of Engineering",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.449588,
+   "lat": 37.545418,
+   "osm": "way/233576417"
+  },
+  {
+   "id": "vcu-engineering-research-building",
+   "name": "VCU Engineering Research Building",
+   "short": "VCU Engineering Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.448325,
+   "lat": 37.544403,
+   "osm": "way/822396334"
+  },
+  {
+   "id": "500-academic-centre",
+   "name": "500 Academic Centre",
+   "short": "500 Academic Centre",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.453908,
+   "lat": 37.551982,
+   "osm": "way/236143128"
+  },
+  {
+   "id": "shafer-court-dining-center",
+   "name": "Shafer Court Dining Center",
+   "short": "Shafer Court Dining Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.452375,
+   "lat": 37.548142,
+   "osm": "way/229629819"
+  },
+  {
+   "id": "stem-building",
+   "name": "STEM Building",
+   "short": "STEM Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.45152,
+   "lat": 37.548288,
+   "osm": "way/229629815"
+  },
+  {
+   "id": "pollak-building",
+   "name": "Pollak Building",
+   "short": "Pollak Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.454188,
+   "lat": 37.549306,
+   "osm": "relation/11269677"
+  },
+  {
+   "id": "we-singleton-center-for-the-performing-arts",
+   "name": "W.E. Singleton Center for the Performing Arts",
+   "short": "W.E. Singleton Center for the Performing Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.454417,
+   "lat": 37.548914,
+   "osm": "way/229722609"
+  },
+  {
+   "id": "grace-e-harris-hall-south",
+   "name": "Grace E. Harris Hall South",
+   "short": "Grace E. Harris Hall South",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.454801,
+   "lat": 37.546073,
+   "osm": "relation/11269672"
+  },
+  {
+   "id": "sports-medicine-center",
+   "name": "Sports Medicine Center",
+   "short": "Sports Medicine Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.45436,
+   "lat": 37.553412,
+   "osm": "way/236488090"
+  },
+  {
+   "id": "hibbs-hall",
+   "name": "Hibbs Hall",
+   "short": "Hibbs Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.453268,
+   "lat": 37.548561,
+   "osm": "way/229722568"
+  },
+  {
+   "id": "oliver-hall-school-of-education",
+   "name": "Oliver Hall - School of Education",
+   "short": "Oliver Hall - School of Education",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.455011,
+   "lat": 37.54522,
+   "osm": "way/229722621"
+  },
+  {
+   "id": "oliver-hall-physical-science-wing",
+   "name": "Oliver Hall - Physical Science Wing",
+   "short": "Oliver Hall - Physical Science Wing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.454527,
+   "lat": 37.545594,
+   "osm": "way/229722620"
+  },
+  {
+   "id": "institute-for-contemporary-art-at-virginia-commonwealth-university",
+   "name": "Institute for Contemporary Art at Virginia Commonwealth University",
+   "short": "Institute for Contemporary Art at Virginia Commonwealth University",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.447968,
+   "lat": 37.548817,
+   "osm": "way/598212113"
+  },
+  {
+   "id": "james-w-black-music-center",
+   "name": "James W. Black Music Center",
+   "short": "James W. Black Music Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.454901,
+   "lat": 37.548171,
+   "osm": "way/229722611"
+  },
+  {
+   "id": "grace-street-center",
+   "name": "Grace Street Center",
+   "short": "Grace Street Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.451718,
+   "lat": 37.550518,
+   "osm": "way/252923466"
+  },
+  {
+   "id": "vcu-brandcenter",
+   "name": "VCU Brandcenter",
+   "short": "VCU Brandcenter",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.447112,
+   "lat": 37.542684,
+   "osm": "way/321384532"
+  },
+  {
+   "id": "school-of-engineering-west-annex-building",
+   "name": "School of Engineering West Annex Building",
+   "short": "School of Engineering West Annex Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.449887,
+   "lat": 37.545081,
+   "osm": "way/233576418"
+  },
+  {
+   "id": "ginter-house",
+   "name": "Ginter House",
+   "short": "Ginter House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.452798,
+   "lat": 37.549019,
+   "osm": "way/229722573"
+  },
+  {
+   "id": "harris-hall-auditorium",
+   "name": "Harris Hall Auditorium",
+   "short": "Harris Hall Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.454331,
+   "lat": 37.546518,
+   "osm": "way/229722618"
+  },
+  {
+   "id": "founders-hall",
+   "name": "Founders Hall",
+   "short": "Founders Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.452339,
+   "lat": 37.548746,
+   "osm": "way/229629817"
+  },
+  {
+   "id": "technology-administration-building",
+   "name": "Technology Administration Building",
+   "short": "Technology Administration Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.448564,
+   "lat": 37.549175,
+   "osm": "way/229623376"
+  },
+  {
+   "id": "w-marshall-st",
+   "name": "W. Marshall St.",
+   "short": "W. Marshall St.",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.451528,
+   "lat": 37.552374,
+   "osm": "way/226503194"
+  },
+  {
+   "id": "scott-house",
+   "name": "Scott House",
+   "short": "Scott House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.453314,
+   "lat": 37.549344,
+   "osm": "way/229722583"
+  },
+  {
+   "id": "shafer-street-playhouse",
+   "name": "Shafer Street Playhouse",
+   "short": "Shafer Street Playhouse",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.452448,
+   "lat": 37.548492,
+   "osm": "way/229629818"
+  },
+  {
+   "id": "grace-street-theater",
+   "name": "Grace Street Theater",
+   "short": "Grace Street Theater",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.452427,
+   "lat": 37.550923,
+   "osm": "way/207643955"
+  },
+  {
+   "id": "ritter-hickok-house",
+   "name": "Ritter-Hickok House",
+   "short": "Ritter-Hickok House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.452051,
+   "lat": 37.548595,
+   "osm": "way/229629816"
+  },
+  {
+   "id": "scherer-hall",
+   "name": "Scherer Hall",
+   "short": "Scherer Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.454054,
+   "lat": 37.549811,
+   "osm": "way/327367178"
+  },
+  {
+   "id": "moseley-house",
+   "name": "Moseley House",
+   "short": "Moseley House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.454238,
+   "lat": 37.548161,
+   "osm": "way/229722612"
+  },
+  {
+   "id": "the-anderson",
+   "name": "The Anderson",
+   "short": "The Anderson",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.453309,
+   "lat": 37.548891,
+   "osm": "way/229722581"
+  },
+  {
+   "id": "vcuarts-qatar-house",
+   "name": "VCUarts Qatar House",
+   "short": "VCUarts Qatar House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.45501,
+   "lat": 37.553909,
+   "osm": "way/427160267"
+  },
+  {
+   "id": "mary-and-frances-youth-center",
+   "name": "Mary and Frances Youth Center",
+   "short": "Mary and Frances Youth Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.45438,
+   "lat": 37.543993,
+   "osm": "way/229722631"
+  },
+  {
+   "id": "meeting-center",
+   "name": "Meeting Center",
+   "short": "Meeting Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.455115,
+   "lat": 37.547437,
+   "osm": "way/229722615"
+  },
+  {
+   "id": "lindsey-house",
+   "name": "Lindsey House",
+   "short": "Lindsey House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.448854,
+   "lat": 37.547368,
+   "osm": "way/268207612"
+  },
+  {
+   "id": "millhiser-house",
+   "name": "Millhiser House",
+   "short": "Millhiser House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.452976,
+   "lat": 37.549877,
+   "osm": "way/327367170"
+  },
+  {
+   "id": "mcadams-house",
+   "name": "McAdams House",
+   "short": "McAdams House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.452846,
+   "lat": 37.549821,
+   "osm": "way/327367169"
+  },
+  {
+   "id": "sitterding-house",
+   "name": "Sitterding House",
+   "short": "Sitterding House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.452981,
+   "lat": 37.546909,
+   "osm": "way/366739200"
+  },
+  {
+   "id": "kearney-house",
+   "name": "Kearney House",
+   "short": "Kearney House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.453895,
+   "lat": 37.549802,
+   "osm": "way/327367168"
+  },
+  {
+   "id": "bowe-house",
+   "name": "Bowe House",
+   "short": "Bowe House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.453726,
+   "lat": 37.549699,
+   "osm": "way/327367118"
+  },
+  {
+   "id": "stagg-house",
+   "name": "Stagg House",
+   "short": "Stagg House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.452783,
+   "lat": 37.549782,
+   "osm": "way/327367181"
+  },
+  {
+   "id": "scott-carriage-house",
+   "name": "Scott Carriage House",
+   "short": "Scott Carriage House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.45362,
+   "lat": 37.548979,
+   "osm": "way/1023090491"
+  },
+  {
+   "id": "stokes-house",
+   "name": "Stokes House",
+   "short": "Stokes House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.453084,
+   "lat": 37.549932,
+   "osm": "way/327367185"
+  },
+  {
+   "id": "crenshaw-house",
+   "name": "Crenshaw House",
+   "short": "Crenshaw House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.453809,
+   "lat": 37.549761,
+   "osm": "way/327367123"
+  },
+  {
+   "id": "buford-house",
+   "name": "Buford House",
+   "short": "Buford House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.453258,
+   "lat": 37.550035,
+   "osm": "way/327367121"
+  },
+  {
+   "id": "valentine-house",
+   "name": "Valentine House",
+   "short": "Valentine House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.453166,
+   "lat": 37.549981,
+   "osm": "way/327367188"
+  },
+  {
+   "id": "millhiser-house-327367173",
+   "name": "Millhiser House",
+   "short": "Millhiser House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.45281,
+   "lat": 37.550051,
+   "osm": "way/327367173"
+  },
+  {
+   "id": "starke-house",
+   "name": "Starke House",
+   "short": "Starke House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.45357,
+   "lat": 37.549697,
+   "osm": "way/327367184"
+  },
+  {
+   "id": "anderson-house",
+   "name": "Anderson House",
+   "short": "Anderson House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.453488,
+   "lat": 37.549612,
+   "osm": "way/327367115"
+  }
+ ]
+}

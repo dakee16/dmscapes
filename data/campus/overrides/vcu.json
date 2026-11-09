@@ -1,0 +1,69 @@
+{
+  "halls": {
+    "west-grace-north": {
+      "pin": [
+        -77.450796,
+        37.5499
+      ]
+    },
+    "west-grace-south": {
+      "pin": [
+        -77.451179,
+        37.549495
+      ]
+    }
+  },
+  "notes": {
+    "west-grace-north": "OSM way/252923462 'West Grace North Student Housing' (830 W Grace St, the address VCU Housing gives at housing.vcu.edu/contact).",
+    "west-grace-south": "OSM way/252923459 'West Grace South Student Housing' (835 W Grace St, the address VCU Housing gives at housing.vcu.edu/contact).",
+    "laurel-and-grace-place": "A parking deck (OSM amenity=parking, 805 W Grace St).",
+    "fire-station-6": "A city fire station.",
+    "7-eleven": "A convenience store.",
+    "vcu-human-resources-building": "Human Resources offices.",
+    "cary-street-field-support-facility": "Field support building for the Cary Street fields.",
+    "cary-street-field-support-facility-306833364": "Field support building for the Cary Street fields.",
+    "richard-t-robertson-alumni-house": "The alumni house; no classes.",
+    "outing-rental-center": "Outdoor gear rental centre.",
+    "depillars-building-326703367": "A second OSM footprint of the DePillars Building (the place is the footprint at 1000 W Broad St)."
+  },
+  "places": {
+    "laurel-and-grace-place": {
+      "hide": true
+    },
+    "fire-station-6": {
+      "hide": true
+    },
+    "7-eleven": {
+      "hide": true
+    },
+    "vcu-human-resources-building": {
+      "hide": true
+    },
+    "cary-street-field-support-facility": {
+      "hide": true
+    },
+    "cary-street-field-support-facility-306833364": {
+      "hide": true
+    },
+    "richard-t-robertson-alumni-house": {
+      "hide": true
+    },
+    "outing-rental-center": {
+      "hide": true
+    },
+    "depillars-building-326703367": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "gladding-residence-center -> sitterding-house",
+        "rhoads-hall -> stem-building",
+        "west-grace-south -> grace-street-center"
+      ],
+      "maxRatio": 3.5,
+      "why": "The Monroe Park campus is a downtown street grid: buildings fill each block, so walks follow the sidewalks to the crossings on W Main, W Franklin and N Laurel Streets."
+    }
+  ]
+}
