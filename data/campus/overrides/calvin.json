@@ -1,0 +1,55 @@
+{
+  "halls": {
+    "kalsbeek-huizenga-vanreken-hall": {
+      "pin": [
+        -85.587241,
+        42.934849
+      ]
+    },
+    "rooks-vandellen-hall": {
+      "pin": [
+        -85.587874,
+        42.932651
+      ]
+    }
+  },
+  "places": {
+    "calvin-crossing": {
+      "hide": true
+    },
+    "van-noord-arena": {
+      "hide": true
+    },
+    "huizenga-tennis-and-track-center": {
+      "hide": true
+    },
+    "venema-aquatic-center": {
+      "hide": true
+    },
+    "prince-conference-center": {
+      "hide": true
+    },
+    "calvin-theological-seminary": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "kalsbeek-huizenga-vanreken-hall": "Pinned on OSM's Kalsbeek-Huizenga-vanReken dormitory (way/225173810, named without the space our list has); Calvin's campus map (calvin.edu/directory/map) shows it at the north end of the Knollcrest residence halls.",
+    "rooks-vandellen-hall": "Pinned on OSM's Rooks-VanDellen dormitory (way/225173801, named without the space our list has); Calvin's campus map (calvin.edu/directory/map) shows it between Bolt-Heyns-Timmer and Noordewier-VanderWerp.",
+    "calvin-crossing": "Calvin Crossing is the pedestrian bridge over the East Beltline (OSM building=bridge), not a class building.",
+    "van-noord-arena": "Varsity basketball and volleyball arena in the Spoelhof Fieldhouse Complex, not a class building or student gym (calvin.edu/athletics/facilities).",
+    "huizenga-tennis-and-track-center": "Varsity tennis and indoor track venue, not a class building or student gym (calvin.edu/athletics/facilities).",
+    "venema-aquatic-center": "The swim and dive pool of the Spoelhof Fieldhouse Complex, a varsity venue rather than a class building; the complex itself stays (calvin.edu/athletics/facilities).",
+    "prince-conference-center": "Calvin's conference centre and guest lodging (calvin.edu/prince-conference-center), not somewhere undergraduates have class.",
+    "calvin-theological-seminary": "A separate graduate seminary on the south edge of campus (calvinseminary.edu), not somewhere undergraduates have class."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "bolt-heyns-timmer-hall -> science-building"
+      ],
+      "maxRatio": 3,
+      "why": "Bolt-Heyns-Timmer's mapped door faces the quad path on its east side, so the walk to the Science Building goes north round the hall and down its west side; OSM maps no path straight across the lawn between them."
+    }
+  ]
+}

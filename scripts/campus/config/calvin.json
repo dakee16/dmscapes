@@ -1,0 +1,16 @@
+{
+  "collegeId": "calvin",
+  "area": {
+    "osm": "way/171258573",
+    "bbox": [
+      42.92483,
+      -85.59352,
+      42.93782,
+      -85.56972
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class building-code list: Calvin's room-reservation guide (https://calvin.edu/offices-services/event-services/room-reservation/ems-quick-reference-guide.pdf) picks buildings by full name, and no Registrar code key turned up; checked 2026-11-08."
+}
