@@ -1,0 +1,313 @@
+{
+ "collegeId": "snhu",
+ "generatedAt": "2026-11-12T23:37:41.635Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/snhu.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -71.45588,
+  43.03797,
+  -71.44826,
+  43.04379
+ ],
+ "halls": [
+  {
+   "dormId": "monadnock-hall",
+   "name": "Monadnock Hall",
+   "lng": -71.450254,
+   "lat": 43.038663,
+   "pin": "name",
+   "osm": "way/517150185",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "athletic-complex",
+     "minutes": 8.2
+    },
+    "dining": {
+     "placeId": "dining-center",
+     "minutes": 3.1
+    },
+    "library": {
+     "placeId": "edward-s-wolak-library-learning-commons",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "windsor-hall",
+   "name": "Windsor Hall",
+   "lng": -71.448265,
+   "lat": 43.04005,
+   "pin": "name",
+   "osm": "way/406163243",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "athletic-complex",
+     "minutes": 12.8
+    },
+    "dining": {
+     "placeId": "dining-center",
+     "minutes": 6
+    },
+    "library": {
+     "placeId": "edward-s-wolak-library-learning-commons",
+     "minutes": 7.7
+    }
+   }
+  },
+  {
+   "dormId": "hampton-hall",
+   "name": "Hampton Hall",
+   "lng": -71.449185,
+   "lat": 43.040305,
+   "pin": "name",
+   "osm": "way/406163242",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "athletic-complex",
+     "minutes": 11.2
+    },
+    "dining": {
+     "placeId": "dining-center",
+     "minutes": 4.4
+    },
+    "library": {
+     "placeId": "edward-s-wolak-library-learning-commons",
+     "minutes": 6.1
+    }
+   }
+  },
+  {
+   "dormId": "kingston-hall",
+   "name": "Kingston Hall",
+   "lng": -71.454592,
+   "lat": 43.040867,
+   "pin": "name",
+   "osm": "way/571072595",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "athletic-complex",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "dining-center",
+     "minutes": 5.9
+    },
+    "library": {
+     "placeId": "edward-s-wolak-library-learning-commons",
+     "minutes": 6.6
+    }
+   }
+  },
+  {
+   "dormId": "washington-hall",
+   "name": "Washington Hall",
+   "lng": -71.453816,
+   "lat": 43.04192,
+   "pin": "name",
+   "osm": "way/345405858",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "athletic-complex",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "dining-center",
+     "minutes": 4.7
+    },
+    "library": {
+     "placeId": "edward-s-wolak-library-learning-commons",
+     "minutes": 5.4
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "athletic-complex",
+   "name": "Athletic Complex",
+   "short": "Athletic Complex",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.455879,
+   "lat": 43.038465,
+   "osm": "way/345405827"
+  },
+  {
+   "id": "freese-student-center",
+   "name": "Freese Student Center",
+   "short": "Freese Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.45396,
+   "lat": 43.039804,
+   "osm": "way/345405766"
+  },
+  {
+   "id": "dining-center",
+   "name": "Dining Center",
+   "short": "Dining Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.451586,
+   "lat": 43.039618,
+   "osm": "way/345405986"
+  },
+  {
+   "id": "exeter-hall",
+   "name": "Exeter Hall",
+   "short": "Exeter Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.454567,
+   "lat": 43.039892,
+   "osm": "way/345405630"
+  },
+  {
+   "id": "green-center",
+   "name": "Green Center",
+   "short": "Green Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.45354,
+   "lat": 43.040412,
+   "osm": "way/345405648"
+  },
+  {
+   "id": "edward-s-wolak-library-learning-commons",
+   "name": "Edward S. Wolak Library Learning Commons",
+   "short": "Edward S. Wolak Library Learning Commons",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.45204,
+   "lat": 43.038865,
+   "osm": "way/531383717"
+  },
+  {
+   "id": "webster-hall",
+   "name": "Webster Hall",
+   "short": "Webster Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.451043,
+   "lat": 43.043794,
+   "osm": "way/406163249"
+  },
+  {
+   "id": "belknap-hall",
+   "name": "Belknap Hall",
+   "short": "Belknap Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.453944,
+   "lat": 43.03858,
+   "osm": "way/345405791"
+  },
+  {
+   "id": "robert-frost-hall",
+   "name": "Robert Frost Hall",
+   "short": "Robert Frost Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.453433,
+   "lat": 43.039177,
+   "osm": "way/345405783"
+  },
+  {
+   "id": "academic-center",
+   "name": "Academic Center",
+   "short": "Academic Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.451021,
+   "lat": 43.040699,
+   "osm": "way/345405955"
+  },
+  {
+   "id": "stark-hall",
+   "name": "Stark Hall",
+   "short": "Stark Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.453957,
+   "lat": 43.040728,
+   "osm": "way/345405675"
+  },
+  {
+   "id": "hospitality-center",
+   "name": "Hospitality Center",
+   "short": "Hospitality Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.452189,
+   "lat": 43.041107,
+   "osm": "way/345405919"
+  },
+  {
+   "id": "gustafson-center",
+   "name": "Gustafson Center",
+   "short": "Gustafson Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.452957,
+   "lat": 43.037972,
+   "osm": "way/571073180"
+  },
+  {
+   "id": "ford-house",
+   "name": "Ford House",
+   "short": "Ford House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.453163,
+   "lat": 43.038391,
+   "osm": "way/585888309"
+  },
+  {
+   "id": "morrissey-house",
+   "name": "Morrissey House",
+   "short": "Morrissey House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.452901,
+   "lat": 43.038567,
+   "osm": "way/585888308"
+  }
+ ]
+}

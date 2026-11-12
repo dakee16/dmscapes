@@ -1,0 +1,16 @@
+{
+  "collegeId": "snhu",
+  "area": {
+    "osm": "way/352883445",
+    "bbox": [
+      43.0309,
+      -71.45968,
+      43.04482,
+      -71.43982
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "SNHU publishes no registrar building-code list; the 2025 campus map (campus.snhu.edu/-/media/files/pdfs/campus-map-final-2025.pdf) labels buildings with map letters (R Academic Center, B Belknap Hall), not schedule codes."
+}
