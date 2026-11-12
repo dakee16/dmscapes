@@ -1,0 +1,207 @@
+{
+ "collegeId": "saint-anselm",
+ "generatedAt": "2026-11-12T23:36:34.576Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/saint-anselm.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -71.50924,
+  42.98274,
+  -71.49875,
+  42.98848
+ ],
+ "halls": [
+  {
+   "dormId": "dominic-hall",
+   "name": "Dominic Hall",
+   "lng": -71.509237,
+   "lat": 42.984025,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "geisel-library",
+     "minutes": 5.3
+    },
+    "gym": {
+     "placeId": "stoutenburgh-gymnasium",
+     "minutes": 6.7
+    }
+   }
+  },
+  {
+   "dormId": "joan-of-arc-hall",
+   "name": "Joan of Arc Hall",
+   "lng": -71.506262,
+   "lat": 42.98328,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "geisel-library",
+     "minutes": 5.8
+    },
+    "gym": {
+     "placeId": "stoutenburgh-gymnasium",
+     "minutes": 4.7
+    }
+   }
+  },
+  {
+   "dormId": "baroody-hall",
+   "name": "Baroody Hall",
+   "lng": -71.505343,
+   "lat": 42.982735,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "geisel-library",
+     "minutes": 6.4
+    },
+    "gym": {
+     "placeId": "stoutenburgh-gymnasium",
+     "minutes": 5.3
+    }
+   }
+  },
+  {
+   "dormId": "alumni-hall",
+   "name": "Alumni Hall",
+   "lng": -71.507478,
+   "lat": 42.9852,
+   "pin": "name",
+   "osm": "way/1188489512",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "geisel-library",
+     "minutes": 3.2
+    },
+    "gym": {
+     "placeId": "stoutenburgh-gymnasium",
+     "minutes": 5.8
+    }
+   }
+  },
+  {
+   "dormId": "joseph-hall",
+   "name": "Joseph Hall",
+   "lng": -71.50769,
+   "lat": 42.985732,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "geisel-library",
+     "minutes": 1.8
+    },
+    "gym": {
+     "placeId": "stoutenburgh-gymnasium",
+     "minutes": 6.3
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "cushing-student-center",
+   "name": "Cushing Student Center",
+   "short": "Cushing Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.505004,
+   "lat": 42.9854,
+   "osm": "way/387755177"
+  },
+  {
+   "id": "perini-lecture-hall",
+   "name": "Perini Lecture Hall",
+   "short": "Perini Lecture Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Goulet Science Center"
+   ],
+   "lng": -71.506176,
+   "lat": 42.985026,
+   "osm": "way/397900646"
+  },
+  {
+   "id": "new-hampshire-institute-of-politics-and-political-library",
+   "name": "New Hampshire Institute of Politics & Political Library",
+   "short": "New Hampshire Institute of Politics & Political Library",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.498754,
+   "lat": 42.986752,
+   "osm": "way/387755176"
+  },
+  {
+   "id": "geisel-library",
+   "name": "Geisel Library",
+   "short": "Geisel Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.506988,
+   "lat": 42.98638,
+   "osm": "way/387619094"
+  },
+  {
+   "id": "stoutenburgh-gymnasium",
+   "name": "Stoutenburgh Gymnasium",
+   "short": "Stoutenburgh Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.504467,
+   "lat": 42.985712,
+   "osm": "way/387755178"
+  },
+  {
+   "id": "poisson-hall",
+   "name": "Poisson Hall",
+   "short": "Poisson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.506185,
+   "lat": 42.986404,
+   "osm": "way/387619097"
+  },
+  {
+   "id": "comiskey-center-fine-arts",
+   "name": "Comiskey Center (Fine Arts)",
+   "short": "Comiskey Center (Fine Arts)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.503583,
+   "lat": 42.988475,
+   "osm": "way/387754198"
+  }
+ ]
+}
