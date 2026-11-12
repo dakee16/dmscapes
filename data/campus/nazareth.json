@@ -1,0 +1,234 @@
+{
+ "collegeId": "nazareth",
+ "generatedAt": "2026-11-12T23:34:26.615Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/nazareth.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -77.52066,
+  43.10023,
+  -77.51474,
+  43.1058
+ ],
+ "halls": [
+  {
+   "dormId": "kearney-hall",
+   "name": "Kearney Hall",
+   "lng": -77.517333,
+   "lat": 43.100229,
+   "pin": "name",
+   "osm": "way/942468826",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "golisano-training-center",
+     "minutes": 12.2
+    },
+    "dining": {
+     "placeId": "otto-a-shults-community-center",
+     "minutes": 6
+    },
+    "library": {
+     "placeId": "lorette-wilmot-library",
+     "minutes": 4.7
+    }
+   }
+  },
+  {
+   "dormId": "lourdes-hall",
+   "name": "Lourdes Hall",
+   "lng": -77.518328,
+   "lat": 43.100843,
+   "pin": "name",
+   "osm": "way/942468823",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "golisano-training-center",
+     "minutes": 9.4
+    },
+    "dining": {
+     "placeId": "otto-a-shults-community-center",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "lorette-wilmot-library",
+     "minutes": 2.9
+    }
+   }
+  },
+  {
+   "dormId": "oconnor-1",
+   "name": "O'Connor 1",
+   "lng": -77.519235,
+   "lat": 43.101378,
+   "pin": "manual",
+   "osm": "way/941686532",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "golisano-training-center",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "otto-a-shults-community-center",
+     "minutes": 0.8
+    },
+    "library": {
+     "placeId": "lorette-wilmot-library",
+     "minutes": 3.6
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "golisano-training-center",
+   "name": "Golisano Training Center",
+   "short": "Golisano Training Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.520657,
+   "lat": 43.1058,
+   "osm": "way/942468809"
+  },
+  {
+   "id": "nazareth-university-arts-center",
+   "name": "Nazareth University Arts Center",
+   "short": "Nazareth University Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.516332,
+   "lat": 43.101701,
+   "osm": "way/951055376"
+  },
+  {
+   "id": "otto-a-shults-community-center",
+   "name": "Otto A. Shults Community Center",
+   "short": "Otto A. Shults Community Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.518495,
+   "lat": 43.10162,
+   "osm": "way/942468819"
+  },
+  {
+   "id": "golisano-academic-center",
+   "name": "Golisano Academic Center",
+   "short": "Golisano Academic Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.518781,
+   "lat": 43.104184,
+   "osm": "way/942468811"
+  },
+  {
+   "id": "lorette-wilmot-library",
+   "name": "Lorette Wilmot Library",
+   "short": "Lorette Wilmot Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.517435,
+   "lat": 43.101764,
+   "osm": "way/942468817"
+  },
+  {
+   "id": "york-wellness-and-rehabilitation-institute",
+   "name": "York Wellness and Rehabilitation Institute",
+   "short": "York Wellness and Rehabilitation Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Carroll Hall"
+   ],
+   "lng": -77.519732,
+   "lat": 43.102054,
+   "osm": "way/942468821"
+  },
+  {
+   "id": "glazer-music-performance-center",
+   "name": "Glazer Music Performance Center",
+   "short": "Glazer Music Performance Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.515448,
+   "lat": 43.101931,
+   "osm": "way/864321050"
+  },
+  {
+   "id": "smyth-hall",
+   "name": "Smyth Hall",
+   "short": "Smyth Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.517707,
+   "lat": 43.102393,
+   "osm": "way/942468816"
+  },
+  {
+   "id": "peckham-hall",
+   "name": "Peckham Hall",
+   "short": "Peckham Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.519161,
+   "lat": 43.103291,
+   "osm": "way/942468812"
+  },
+  {
+   "id": "medaille-hall",
+   "name": "Medaille Hall",
+   "short": "Medaille Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.517721,
+   "lat": 43.10077,
+   "osm": "way/942468824"
+  },
+  {
+   "id": "founders-hall",
+   "name": "Founders Hall",
+   "short": "Founders Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.517106,
+   "lat": 43.100665,
+   "osm": "way/942468825"
+  },
+  {
+   "id": "music-house",
+   "name": "Music House",
+   "short": "Music House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.514738,
+   "lat": 43.102251,
+   "osm": "way/942468834"
+  }
+ ]
+}

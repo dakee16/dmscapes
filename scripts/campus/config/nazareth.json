@@ -1,0 +1,16 @@
+{
+  "collegeId": "nazareth",
+  "area": {
+    "osm": "way/302524883",
+    "bbox": [
+      43.09856,
+      -77.52608,
+      43.10666,
+      -77.51405
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Nazareth publishes no building-code list: the registrar's Information for Faculty page and Academic Advisement's Access Your Course Schedule page (www2.naz.edu) have none, and the Building Hours page (www2.naz.edu/building-hours/) names buildings, with an abbreviation for Golisano Academic Center (GAC) only (checked 2026-11-08)."
+}
