@@ -1,0 +1,16 @@
+{
+  "collegeId": "michigan-tech",
+  "area": {
+    "osm": "relation/21660493",
+    "bbox": [
+      47.09787,
+      -88.56473,
+      47.13361,
+      -88.53338
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class building-code list: Michigan Tech's campus map numbers buildings for facilities (e.g. 34 Memorial Union), the IT classroom directory (https://www.mtu.edu/it/services/learning-technology/classrooms/index.html) lists rooms by building name, and no Registrar code key turned up; checked 2026-11-08."
+}

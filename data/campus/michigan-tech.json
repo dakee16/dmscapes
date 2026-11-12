@@ -1,0 +1,366 @@
+{
+ "collegeId": "michigan-tech",
+ "generatedAt": "2026-11-12T23:33:37.277Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/michigan-tech.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -88.55387,
+  47.11039,
+  -88.54008,
+  47.12065
+ ],
+ "halls": [
+  {
+   "dormId": "wadsworth-hall",
+   "name": "Wadsworth Hall",
+   "lng": -88.544118,
+   "lat": 47.116818,
+   "pin": "name",
+   "osm": "way/129969083",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-development-complex",
+     "minutes": 7.5
+    },
+    "library": {
+     "placeId": "j-r-van-pelt-library",
+     "minutes": 3.2
+    },
+    "dining": {
+     "placeId": "memorial-union-building",
+     "minutes": 4.2
+    }
+   }
+  },
+  {
+   "dormId": "mcnair-hall",
+   "name": "McNair Hall",
+   "lng": -88.540527,
+   "lat": 47.116077,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-development-complex",
+     "minutes": 11.5
+    },
+    "library": {
+     "placeId": "j-r-van-pelt-library",
+     "minutes": 10.6
+    },
+    "dining": {
+     "placeId": "memorial-union-building",
+     "minutes": 11.6
+    }
+   }
+  },
+  {
+   "dormId": "douglass-houghton-hall",
+   "name": "Douglass Houghton Hall",
+   "lng": -88.543778,
+   "lat": 47.118582,
+   "pin": "name",
+   "osm": "way/130051884",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-development-complex",
+     "minutes": 10.2
+    },
+    "library": {
+     "placeId": "j-r-van-pelt-library",
+     "minutes": 3.5
+    },
+    "dining": {
+     "placeId": "memorial-union-building",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "east-hall",
+   "name": "East Hall",
+   "lng": -88.540084,
+   "lat": 47.117028,
+   "pin": "name",
+   "osm": "way/1308038361",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-development-complex",
+     "minutes": 11.1
+    },
+    "library": {
+     "placeId": "j-r-van-pelt-library",
+     "minutes": 7.9
+    },
+    "dining": {
+     "placeId": "memorial-union-building",
+     "minutes": 9.4
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "student-development-complex",
+   "name": "Student Development Complex",
+   "short": "Student Development Complex",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.546647,
+   "lat": 47.112342,
+   "osm": "way/129995535"
+  },
+  {
+   "id": "minerals-and-materials-engineering-building",
+   "name": "Minerals and Materials Engineering Building",
+   "short": "Minerals and Materials Engineering Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.54467,
+   "lat": 47.119262,
+   "osm": "relation/16369087"
+  },
+  {
+   "id": "u-j-noblet-forestry-building",
+   "name": "U J Noblet Forestry Building",
+   "short": "U J Noblet Forestry Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.547759,
+   "lat": 47.115891,
+   "osm": "way/130000443"
+  },
+  {
+   "id": "j-r-van-pelt-library",
+   "name": "J R Van Pelt Library",
+   "short": "J R Van Pelt Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.547963,
+   "lat": 47.118588,
+   "osm": "way/129970111"
+  },
+  {
+   "id": "rozsa-center-for-the-performing-arts",
+   "name": "Rozsa Center for the Performing Arts",
+   "short": "Rozsa Center for the Performing Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.541917,
+   "lat": 47.117549,
+   "osm": "way/129969081"
+  },
+  {
+   "id": "fisher-hall",
+   "name": "Fisher Hall",
+   "short": "Fisher Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.546155,
+   "lat": 47.118132,
+   "osm": "way/129969080"
+  },
+  {
+   "id": "dow-environmental-sciences-and-engineering-building",
+   "name": "Dow Environmental Sciences and Engineering Building",
+   "short": "Dow Environmental Sciences and Engineering Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.546191,
+   "lat": 47.119675,
+   "osm": "way/129965011"
+  },
+  {
+   "id": "gates-tennis-center",
+   "name": "Gates Tennis Center",
+   "short": "Gates Tennis Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.546387,
+   "lat": 47.110392,
+   "osm": "way/129995533"
+  },
+  {
+   "id": "memorial-union-building",
+   "name": "Memorial Union Building",
+   "short": "Memorial Union Building",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.549215,
+   "lat": 47.118849,
+   "osm": "way/129970113"
+  },
+  {
+   "id": "electrical-energy-resources-center",
+   "name": "Electrical Energy Resources Center",
+   "short": "Electrical Energy Resources Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.547093,
+   "lat": 47.119427,
+   "osm": "way/627609903"
+  },
+  {
+   "id": "advanced-technology-development-complex",
+   "name": "Advanced Technology Development Complex",
+   "short": "Advanced Technology Development Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.552393,
+   "lat": 47.111561,
+   "osm": "way/129999390"
+  },
+  {
+   "id": "walker-arts-and-humanities-center",
+   "name": "Walker Arts and Humanities Center",
+   "short": "Walker Arts and Humanities Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.54274,
+   "lat": 47.117688,
+   "osm": "way/129969085"
+  },
+  {
+   "id": "grover-c-dillman-hall",
+   "name": "Grover C Dillman Hall",
+   "short": "Grover C Dillman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.545915,
+   "lat": 47.119117,
+   "osm": "way/129965013"
+  },
+  {
+   "id": "chemical-sciences-and-engineering-building",
+   "name": "Chemical Sciences & Engineering Building",
+   "short": "Chemical Sciences & Engineering Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.548268,
+   "lat": 47.119682,
+   "osm": "way/129965007"
+  },
+  {
+   "id": "h-stem",
+   "name": "H-STEM",
+   "short": "H-STEM",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.547954,
+   "lat": 47.119552,
+   "osm": "way/1206698318"
+  },
+  {
+   "id": "r-l-smith-mechanical-engineering-engineering-mechanics-building",
+   "name": "R L Smith Mechanical Engineering-Engineering Mechanics Building",
+   "short": "R L Smith Mechanical Engineering-Engineering Mechanics Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.549133,
+   "lat": 47.119663,
+   "osm": "way/129965016"
+  },
+  {
+   "id": "great-lakes-research-center",
+   "name": "Great Lakes Research Center",
+   "short": "Great Lakes Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.546426,
+   "lat": 47.120645,
+   "osm": "way/130700792"
+  },
+  {
+   "id": "kanwal-and-ann-rekhi-hall",
+   "name": "Kanwal and Ann Rekhi Hall",
+   "short": "Kanwal and Ann Rekhi Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.546975,
+   "lat": 47.118348,
+   "osm": "way/129970114"
+  },
+  {
+   "id": "academic-office-building",
+   "name": "Academic Office Building",
+   "short": "Academic Office Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.550593,
+   "lat": 47.12011,
+   "osm": "way/129970110"
+  },
+  {
+   "id": "rotc-building",
+   "name": "ROTC Building",
+   "short": "ROTC Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.549737,
+   "lat": 47.120079,
+   "osm": "way/129965019"
+  },
+  {
+   "id": "harold-meese-center",
+   "name": "Harold Meese Center",
+   "short": "Harold Meese Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.55387,
+   "lat": 47.119476,
+   "osm": "way/211215559"
+  },
+  {
+   "id": "annex-building",
+   "name": "Annex Building",
+   "short": "Annex Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.550615,
+   "lat": 47.120489,
+   "osm": "way/129970115"
+  }
+ ]
+}

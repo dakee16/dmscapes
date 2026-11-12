@@ -1,0 +1,51 @@
+{
+  "halls": {
+    "mcnair-hall": {
+      "pin": [
+        -88.540527,
+        47.116077
+      ]
+    }
+  },
+  "places": {
+    "memorial-union-building": {
+      "kind": "dining"
+    },
+    "little-huskies-child-development-center": {
+      "hide": true
+    },
+    "ae-seaman-mineral-museum": {
+      "hide": true
+    },
+    "nordic-waxing-center": {
+      "hide": true
+    },
+    "emergency-services": {
+      "hide": true
+    },
+    "alumni-house": {
+      "hide": true
+    },
+    "administration-building": {
+      "hide": true
+    },
+    "daniell-heights-community-center": {
+      "hide": true
+    },
+    "outdoor-adventure-program": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "mcnair-hall": "Pinned on OSM's East McNair Hall (way/129969079); OSM maps McNair as East and West McNair, which the name rule can't pick between. Michigan Tech's campus map (mtu.edu/map) shows McNair Hall here, east of Hillside Place.",
+    "memorial-union-building": "The Memorial Union Building holds the MUB Commons food court, Michigan Tech's dining spot outside the residence halls (mtu.edu/dining); its name doesn't say dining.",
+    "little-huskies-child-development-center": "Childcare (OSM amenity=childcare), not somewhere classes happen.",
+    "ae-seaman-mineral-museum": "The A. E. Seaman Mineral Museum (OSM tourism=museum), not a class building.",
+    "nordic-waxing-center": "A ski-waxing building at the Tech Trails, an outbuilding rather than a class building.",
+    "emergency-services": "Campus emergency-services building, not somewhere classes happen.",
+    "alumni-house": "Alumni House (mtu.edu/map), not somewhere classes happen.",
+    "administration-building": "The Administration Building at 1400 Townsend Drive (mtu.edu/map), offices rather than classrooms.",
+    "daniell-heights-community-center": "The community centre of the Daniell Heights apartments (OSM amenity=community_centre), a housing amenity rather than a class building.",
+    "outdoor-adventure-program": "Outdoor Adventure Program gear rental (OSM description 'Outdoor gear rentals and area information'), not a class building."
+  }
+}
