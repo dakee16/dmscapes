@@ -1,0 +1,231 @@
+{
+  "halls": {
+    "degraff-hall": {
+      "pin": [
+        -84.294376,
+        30.445246
+      ]
+    },
+    "ragans-hall": {
+      "pin": [
+        -84.299469,
+        30.440123
+      ]
+    },
+    "wildwood-hall": {
+      "pin": [
+        -84.300177,
+        30.440004
+      ]
+    },
+    "jennie-murphree-hall": {
+      "pin": [
+        -84.2929,
+        30.44205
+      ]
+    }
+  },
+  "notes": {
+    "degraff-hall": "OSM maps DeGraff Hall as 'Degraff East' (way/132303122) and 'Degraff West' (way/132303127); pinned to Degraff East.",
+    "ragans-hall": "OSM maps Ragans Hall as 'Ragans Hall 1' to '4' (Learning Way); pinned to Ragans Hall 1 (way/132306485, 923 Learning Way).",
+    "wildwood-hall": "OSM maps Wildwood Hall as 'Wildwood Hall A' (way/155076117, 938 W Jefferson St) and 'B'; pinned to A.",
+    "(blank id: ΔΔΔ)": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-1152241135": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-115688334": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-531498082": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-467675273": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-531283248": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-137486390": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-155076183": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-155076116": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-531498089": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-531283249": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-531498048": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-526505717": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-155076120": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-115687664": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-526505718": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-115687647": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-155076171": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "-115687729": "A fraternity or sorority house (Greek-letter name in OSM), not a class building.",
+    "alumni-center-facility": "The alumni centre; no classes.",
+    "fsu-bookstore": "The bookstore.",
+    "presidents-house": "The president's residence.",
+    "champion-first-credit-union": "A credit union.",
+    "sweet-shop": "A shop.",
+    "the-ups-store": "A shipping shop.",
+    "westminster-house": "A campus ministry house.",
+    "sports-clubs-fields-facility": "A sports-club field building.",
+    "einstein-bros-bagels": "A bagel cafe, not a dining hall.",
+    "westside-courts-pavilion": "A pavilion at the outdoor courts.",
+    "pearl-tyner-welcome-center": "A visitor welcome centre.",
+    "westcott-welcome-center": "A visitor welcome centre.",
+    "turnbull-conference-center": "A conference centre.",
+    "osceola-duplex-dunwoody": "A duplex house.",
+    "jennie-murphree-hall": "OSM way/80792354 is the hall; pinned at its west-wing door (the footway from the W Jefferson St sidewalk ends there, OSM way/947272050) instead of the centroid, which snapped to the Leon Lane service drive behind the hall.",
+    "student-union": "The Student Union holds 1851, FSU's meal-plan dining hall (seminoledining.sodexomyway.com, Locations: 1851 in the Student Union), so it counts as dining; OSM names it only Student Union."
+  },
+  "places": {
+    "": {
+      "hide": true
+    },
+    "-1152241135": {
+      "hide": true
+    },
+    "-115688334": {
+      "hide": true
+    },
+    "-531498082": {
+      "hide": true
+    },
+    "-467675273": {
+      "hide": true
+    },
+    "-531283248": {
+      "hide": true
+    },
+    "-137486390": {
+      "hide": true
+    },
+    "-155076183": {
+      "hide": true
+    },
+    "-155076116": {
+      "hide": true
+    },
+    "-531498089": {
+      "hide": true
+    },
+    "-531283249": {
+      "hide": true
+    },
+    "-531498048": {
+      "hide": true
+    },
+    "-526505717": {
+      "hide": true
+    },
+    "-155076120": {
+      "hide": true
+    },
+    "-115687664": {
+      "hide": true
+    },
+    "-526505718": {
+      "hide": true
+    },
+    "-115687647": {
+      "hide": true
+    },
+    "-155076171": {
+      "hide": true
+    },
+    "-115687729": {
+      "hide": true
+    },
+    "alumni-center-facility": {
+      "hide": true
+    },
+    "fsu-bookstore": {
+      "hide": true
+    },
+    "presidents-house": {
+      "hide": true
+    },
+    "champion-first-credit-union": {
+      "hide": true
+    },
+    "sweet-shop": {
+      "hide": true
+    },
+    "the-ups-store": {
+      "hide": true
+    },
+    "westminster-house": {
+      "hide": true
+    },
+    "sports-clubs-fields-facility": {
+      "hide": true
+    },
+    "einstein-bros-bagels": {
+      "hide": true
+    },
+    "westside-courts-pavilion": {
+      "hide": true
+    },
+    "pearl-tyner-welcome-center": {
+      "hide": true
+    },
+    "westcott-welcome-center": {
+      "hide": true
+    },
+    "turnbull-conference-center": {
+      "hide": true
+    },
+    "osceola-duplex-dunwoody": {
+      "hide": true
+    },
+    "student-union": {
+      "kind": "dining"
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "jennie-murphree-hall -> kuersteiner-building-college-of-music",
+        "jennie-murphree-hall -> williams-building",
+        "jennie-murphree-hall -> kellogg-research-building",
+        "jennie-murphree-hall -> criminology-and-criminal-justice-building",
+        "reynolds-hall -> kuersteiner-building-college-of-music",
+        "reynolds-hall -> williams-building",
+        "reynolds-hall -> kellogg-research-building",
+        "reynolds-hall -> longmire-building",
+        "reynolds-hall -> criminology-and-criminal-justice-building",
+        "bryan-hall -> williams-building",
+        "broward-hall -> williams-building",
+        "cawthon-hall -> longmire-building"
+      ],
+      "maxRatio": 4.6,
+      "why": "OSM joins the two Convocation Way sidewalks only at Call Street and at Pensacola Street (no crossing is mapped at W Jefferson St, OSM ways 552621534/947220184 stop on either kerb), so walks from these halls to the College of Music, Kellogg, Criminology, Williams and Longmire buildings east of Convocation Way go round by one of those corners."
+    },
+    {
+      "pairs": [
+        "jennie-murphree-hall -> johnston",
+        "cawthon-hall -> johnston"
+      ],
+      "maxRatio": 4.2,
+      "why": "OSM has a footway only on the south side of the Johnston Building (none between it and the W Jefferson St sidewalk 40 m north), so walks from the halls on Jefferson Street go round the block and come up from the south."
+    },
+    {
+      "pairs": [
+        "broward-hall -> honors-scholars-and-fellows-building",
+        "broward-hall -> ruge-hall-student-center",
+        "bryan-hall -> ruge-hall-student-center",
+        "gilchrist-hall -> honors-scholars-and-fellows-building"
+      ],
+      "maxRatio": 3.2,
+      "why": "Broward, Bryan and Gilchrist halls sit in a block south of W Jefferson St whose mapped footways leave only by the service lane on its west side and by the Pensacola Street side, so walks north to the Honors building or south to Ruge Hall go round the block."
+    },
+    {
+      "pairs": [
+        "degraff-hall -> sandels",
+        "degraff-hall -> rovetta-business-a",
+        "degraff-hall -> hecht-house"
+      ],
+      "maxRatio": 3,
+      "why": "DeGraff Hall is entered from N Woodward Avenue and the block between it and Call Street (Dittmer, Chemistry, Hecht House) has no mapped footway through it, so walks south go out to Woodward Avenue and round."
+    },
+    {
+      "pairs": [
+        "azalea-hall -> tanner-hall",
+        "magnolia-hall -> shores",
+        "traditions-hall -> mendenhall-b",
+        "ragans-hall -> stavros-center",
+        "mccollum-hall -> west-dining-facility",
+        "dorman-hall -> wellness-building"
+      ],
+      "maxRatio": 3.8,
+      "why": "Short walks (100-190 m straight) between neighbouring buildings with a building, courtyard or parking lot in between and no mapped footway through it, so the mapped route goes round the block."
+    }
+  ]
+}

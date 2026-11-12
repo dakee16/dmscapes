@@ -1,0 +1,1394 @@
+{
+ "collegeId": "fsu",
+ "generatedAt": "2026-11-12T18:41:07.875Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/fsu.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -84.3057,
+  30.43727,
+  -84.28957,
+  30.44796
+ ],
+ "halls": [
+  {
+   "dormId": "azalea-hall",
+   "name": "Azalea Hall",
+   "lng": -84.296654,
+   "lat": 30.439946,
+   "pin": "name",
+   "osm": "way/431914075",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 8.8
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 9.8
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 5.5
+    }
+   }
+  },
+  {
+   "dormId": "broward-hall",
+   "name": "Broward Hall",
+   "lng": -84.293429,
+   "lat": 30.440636,
+   "pin": "name",
+   "osm": "way/80792343",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 11
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 13.4
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 5.7
+    }
+   }
+  },
+  {
+   "dormId": "bryan-hall",
+   "name": "Bryan Hall",
+   "lng": -84.292923,
+   "lat": 30.440713,
+   "pin": "name",
+   "osm": "way/80792344",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 10
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 13.7
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 4.6
+    }
+   }
+  },
+  {
+   "dormId": "cawthon-hall",
+   "name": "Cawthon Hall",
+   "lng": -84.294062,
+   "lat": 30.442484,
+   "pin": "name",
+   "osm": "way/80792342",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 7.6
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 12.6
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 3.1
+    }
+   }
+  },
+  {
+   "dormId": "degraff-hall",
+   "name": "DeGraff Hall",
+   "lng": -84.294376,
+   "lat": 30.445246,
+   "pin": "manual",
+   "osm": "way/132303122",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 7
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 13.7
+    },
+    "library": {
+     "placeId": "claude-pepper-library",
+     "minutes": 6.4
+    }
+   }
+  },
+  {
+   "dormId": "deviney-hall",
+   "name": "Deviney Hall",
+   "lng": -84.296868,
+   "lat": 30.440726,
+   "pin": "name",
+   "osm": "way/431913682",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 7
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 8.1
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "dorman-hall",
+   "name": "Dorman Hall",
+   "lng": -84.29748,
+   "lat": 30.441022,
+   "pin": "name",
+   "osm": "way/431912259",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 7.1
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 8.2
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "gilchrist-hall",
+   "name": "Gilchrist Hall",
+   "lng": -84.294054,
+   "lat": 30.440658,
+   "pin": "name",
+   "osm": "way/80792539",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 10.4
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 12.7
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 5
+    }
+   }
+  },
+  {
+   "dormId": "jennie-murphree-hall",
+   "name": "Jennie Murphree Hall",
+   "lng": -84.2929,
+   "lat": 30.44205,
+   "pin": "manual",
+   "osm": "way/80792354",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 9.4
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 13.3
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 4.3
+    }
+   }
+  },
+  {
+   "dormId": "landis-hall",
+   "name": "Landis Hall",
+   "lng": -84.294968,
+   "lat": 30.440598,
+   "pin": "name",
+   "osm": "way/106455323",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 9.4
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 11.4
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 4.6
+    }
+   }
+  },
+  {
+   "dormId": "magnolia-hall",
+   "name": "Magnolia Hall",
+   "lng": -84.296051,
+   "lat": 30.440277,
+   "pin": "name",
+   "osm": "way/431914236",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 8.8
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 9.8
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 5.6
+    }
+   }
+  },
+  {
+   "dormId": "mccollum-hall",
+   "name": "McCollum Hall",
+   "lng": -84.303756,
+   "lat": 30.447963,
+   "pin": "name",
+   "osm": "way/155076148",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "west-dining-facility",
+     "minutes": 6.6
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 13.5
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 16
+    }
+   }
+  },
+  {
+   "dormId": "ragans-hall",
+   "name": "Ragans Hall",
+   "lng": -84.299469,
+   "lat": 30.440123,
+   "pin": "manual",
+   "osm": "way/132306485",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 8.1
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 5.8
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 9
+    }
+   }
+  },
+  {
+   "dormId": "reynolds-hall",
+   "name": "Reynolds Hall",
+   "lng": -84.293125,
+   "lat": 30.44156,
+   "pin": "name",
+   "osm": "way/80792355",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 8.8
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 12.5
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 3.4
+    }
+   }
+  },
+  {
+   "dormId": "rogers-hall",
+   "name": "Rogers Hall",
+   "lng": -84.302922,
+   "lat": 30.447538,
+   "pin": "name",
+   "osm": "way/155076119",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "west-dining-facility",
+     "minutes": 3.4
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 9.1
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 13.8
+    }
+   }
+  },
+  {
+   "dormId": "salley-hall",
+   "name": "Salley Hall",
+   "lng": -84.303364,
+   "lat": 30.446149,
+   "pin": "name",
+   "osm": "way/155076141",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "west-dining-facility",
+     "minutes": 2.1
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 8.4
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 13.1
+    }
+   }
+  },
+  {
+   "dormId": "traditions-hall",
+   "name": "Traditions Hall",
+   "lng": -84.30017,
+   "lat": 30.441287,
+   "pin": "name",
+   "osm": "way/155922234",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 7.5
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 3.7
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 8.6
+    }
+   }
+  },
+  {
+   "dormId": "wildwood-hall",
+   "name": "Wildwood Hall",
+   "lng": -84.300177,
+   "lat": 30.440004,
+   "pin": "manual",
+   "osm": "way/155076117",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "student-union",
+     "minutes": 9.1
+    },
+    "gym": {
+     "placeId": "tully-gymnasium",
+     "minutes": 6.7
+    },
+    "library": {
+     "placeId": "robert-manning-strozier-library",
+     "minutes": 9.9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "college-of-medicine",
+   "name": "College of Medicine",
+   "short": "College of Medicine",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.305622,
+   "lat": 30.445536,
+   "osm": "relation/2083484"
+  },
+  {
+   "id": "albert-j-dunlap-athletic-training-facility",
+   "name": "Albert J. Dunlap Athletic Training Facility",
+   "short": "Albert J. Dunlap Athletic Training Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.305342,
+   "lat": 30.441042,
+   "osm": "way/338324220"
+  },
+  {
+   "id": "student-union",
+   "name": "Student Union",
+   "short": "Student Union",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Oglesby Union"
+   ],
+   "lng": -84.297416,
+   "lat": 30.4446,
+   "osm": "way/858902887"
+  },
+  {
+   "id": "mendenhall-a",
+   "name": "Mendenhall A",
+   "short": "Mendenhall A",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.299102,
+   "lat": 30.442901,
+   "osm": "way/155076196"
+  },
+  {
+   "id": "university-center-d",
+   "name": "University Center D",
+   "short": "University Center D",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.305306,
+   "lat": 30.438937,
+   "osm": "way/127125928"
+  },
+  {
+   "id": "fine-arts",
+   "name": "Fine Arts",
+   "short": "Fine Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.290116,
+   "lat": 30.444106,
+   "osm": "way/137486344"
+  },
+  {
+   "id": "university-center-a",
+   "name": "University Center A",
+   "short": "University Center A",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.303589,
+   "lat": 30.438867,
+   "osm": "way/127128180"
+  },
+  {
+   "id": "tully-gymnasium",
+   "name": "Tully Gymnasium",
+   "short": "Tully Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.302067,
+   "lat": 30.442499,
+   "osm": "way/155076129"
+  },
+  {
+   "id": "university-center-c",
+   "name": "University Center C",
+   "short": "University Center C",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.305228,
+   "lat": 30.437456,
+   "osm": "way/127128085"
+  },
+  {
+   "id": "stone",
+   "name": "Stone",
+   "short": "Stone",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.305201,
+   "lat": 30.446914,
+   "osm": "way/155076140"
+  },
+  {
+   "id": "housewright-building-college-of-music",
+   "name": "Housewright Building, College of Music",
+   "short": "Housewright Building, College of Music",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Dohnanyi Recital Hall"
+   ],
+   "lng": -84.29143,
+   "lat": 30.442926,
+   "osm": "way/80792346"
+  },
+  {
+   "id": "ruby-diamond-concert-hall",
+   "name": "Ruby Diamond Concert Hall",
+   "short": "Ruby Diamond Concert Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Ruby Diamond Auditorium, Westcott Building"
+   ],
+   "lng": -84.291886,
+   "lat": 30.440759,
+   "osm": "way/80792356"
+  },
+  {
+   "id": "robert-manning-strozier-library",
+   "name": "Robert Manning Strozier Library",
+   "short": "Robert Manning Strozier Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.295012,
+   "lat": 30.443164,
+   "osm": "way/106455325"
+  },
+  {
+   "id": "wellness-building",
+   "name": "Wellness Building",
+   "short": "Wellness Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.299073,
+   "lat": 30.441712,
+   "osm": "way/431915205"
+  },
+  {
+   "id": "king-life-sciences",
+   "name": "King Life Sciences",
+   "short": "King Life Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.305696,
+   "lat": 30.444524,
+   "osm": "way/155076138"
+  },
+  {
+   "id": "classroom-building-hcb",
+   "name": "Classroom Building (HCB)",
+   "short": "Classroom Building (HCB)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.297102,
+   "lat": 30.443232,
+   "osm": "way/107499000"
+  },
+  {
+   "id": "kuersteiner-building-college-of-music",
+   "name": "Kuersteiner Building, College of Music",
+   "short": "Kuersteiner Building, College of Music",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.291453,
+   "lat": 30.442297,
+   "osm": "way/80792352"
+  },
+  {
+   "id": "bellamy",
+   "name": "Bellamy",
+   "short": "Bellamy",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.295858,
+   "lat": 30.443319,
+   "osm": "way/865077781"
+  },
+  {
+   "id": "biology-unit-i",
+   "name": "Biology Unit I",
+   "short": "Biology Unit I",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.301908,
+   "lat": 30.445513,
+   "osm": "way/155076113"
+  },
+  {
+   "id": "rovetta-business-b",
+   "name": "Rovetta Business B",
+   "short": "Rovetta Business B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.295775,
+   "lat": 30.444322,
+   "osm": "way/127081016"
+  },
+  {
+   "id": "askew-student-life-center",
+   "name": "Askew Student Life Center",
+   "short": "Askew Student Life Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.299394,
+   "lat": 30.440989,
+   "osm": "way/155076134"
+  },
+  {
+   "id": "montgomery",
+   "name": "Montgomery",
+   "short": "Montgomery",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.295855,
+   "lat": 30.442019,
+   "osm": "way/107498816"
+  },
+  {
+   "id": "biomedical-research-facility",
+   "name": "Biomedical Research Facility",
+   "short": "Biomedical Research Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.301838,
+   "lat": 30.444407,
+   "osm": "way/155076130"
+  },
+  {
+   "id": "johnston",
+   "name": "Johnston",
+   "short": "Johnston",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.293466,
+   "lat": 30.441186,
+   "osm": "way/127094041"
+  },
+  {
+   "id": "haskin-circus-complex",
+   "name": "Haskin Circus Complex",
+   "short": "Haskin Circus Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.302523,
+   "lat": 30.440441,
+   "osm": "way/155917664"
+  },
+  {
+   "id": "sandels",
+   "name": "Sandels",
+   "short": "Sandels",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.29315,
+   "lat": 30.443212,
+   "osm": "way/80792345"
+  },
+  {
+   "id": "chemistry-sciences-labs",
+   "name": "Chemistry Sciences Labs",
+   "short": "Chemistry Sciences Labs",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.301299,
+   "lat": 30.44391,
+   "osm": "way/155076192"
+  },
+  {
+   "id": "eoas",
+   "name": "EOAS",
+   "short": "EOAS",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Department of Earth, Ocean & Atmospheric Science"
+   ],
+   "lng": -84.298646,
+   "lat": 30.445703,
+   "osm": "way/711855329"
+  },
+  {
+   "id": "love",
+   "name": "Love",
+   "short": "Love",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.299439,
+   "lat": 30.446106,
+   "osm": "way/134801311"
+  },
+  {
+   "id": "diffenbaugh-building",
+   "name": "Diffenbaugh Building",
+   "short": "Diffenbaugh Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.291299,
+   "lat": 30.439995,
+   "osm": "way/127100106"
+  },
+  {
+   "id": "richards",
+   "name": "Richards",
+   "short": "Richards",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.30084,
+   "lat": 30.446318,
+   "osm": "way/134801731"
+  },
+  {
+   "id": "carothers",
+   "name": "Carothers",
+   "short": "Carothers",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.299891,
+   "lat": 30.445578,
+   "osm": "way/134801006"
+  },
+  {
+   "id": "psychology-building-a",
+   "name": "Psychology Building A",
+   "short": "Psychology Building A",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.304403,
+   "lat": 30.444856,
+   "osm": "way/155915591"
+  },
+  {
+   "id": "claude-pepper-library",
+   "name": "Claude Pepper Library",
+   "short": "Claude Pepper Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.292781,
+   "lat": 30.443918,
+   "osm": "way/127094931"
+  },
+  {
+   "id": "west-dining-facility",
+   "name": "West Dining Facility",
+   "short": "West Dining Facility",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.304447,
+   "lat": 30.446371,
+   "osm": "way/155076186"
+  },
+  {
+   "id": "mendenhall-b",
+   "name": "Mendenhall B",
+   "short": "Mendenhall B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.300136,
+   "lat": 30.442229,
+   "osm": "way/155076133"
+  },
+  {
+   "id": "dodd-hall",
+   "name": "Dodd Hall",
+   "short": "Dodd Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.292587,
+   "lat": 30.44005,
+   "osm": "way/127098888"
+  },
+  {
+   "id": "johnston-127094465",
+   "name": "Johnston",
+   "short": "Johnston",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.294051,
+   "lat": 30.441212,
+   "osm": "way/127094465"
+  },
+  {
+   "id": "albert-j-and-judith-a-dunlap-student-success-center",
+   "name": "Albert J. and Judith A. Dunlap Student Success Center",
+   "short": "Albert J. and Judith A. Dunlap Student Success Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.29853,
+   "lat": 30.441134,
+   "osm": "way/155076188"
+  },
+  {
+   "id": "dittmer-chemistry-lab",
+   "name": "Dittmer Chemistry Lab",
+   "short": "Dittmer Chemistry Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.300748,
+   "lat": 30.445148,
+   "osm": "way/155076135"
+  },
+  {
+   "id": "duxbury-hall",
+   "name": "Duxbury Hall",
+   "short": "Duxbury Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.300241,
+   "lat": 30.443581,
+   "osm": "way/155076137"
+  },
+  {
+   "id": "williams-building",
+   "name": "Williams Building",
+   "short": "Williams Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.291907,
+   "lat": 30.44,
+   "osm": "way/127100109"
+  },
+  {
+   "id": "psychology-building-b",
+   "name": "Psychology Building B",
+   "short": "Psychology Building B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.30408,
+   "lat": 30.44531,
+   "osm": "way/155915596"
+  },
+  {
+   "id": "rovetta-business-a",
+   "name": "Rovetta Business A",
+   "short": "Rovetta Business A",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.295283,
+   "lat": 30.443864,
+   "osm": "way/127081019"
+  },
+  {
+   "id": "hoffman-teaching-labs",
+   "name": "Hoffman Teaching Labs",
+   "short": "Hoffman Teaching Labs",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.301105,
+   "lat": 30.444419,
+   "osm": "way/155076172"
+  },
+  {
+   "id": "mcintosh-track-and-field",
+   "name": "McIntosh Track & Field",
+   "short": "McIntosh Track & Field",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.30296,
+   "lat": 30.443324,
+   "osm": "way/155916444"
+  },
+  {
+   "id": "global-and-multicultural-center",
+   "name": "Global and Multicultural Center",
+   "short": "Global and Multicultural Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.298547,
+   "lat": 30.440775,
+   "osm": "way/155076131"
+  },
+  {
+   "id": "collins-research-building",
+   "name": "Collins Research Building",
+   "short": "Collins Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.300857,
+   "lat": 30.446771,
+   "osm": "way/134802152"
+  },
+  {
+   "id": "tanner-hall",
+   "name": "Tanner Hall",
+   "short": "Tanner Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.297649,
+   "lat": 30.44024,
+   "osm": "way/127097393"
+  },
+  {
+   "id": "university-center-b",
+   "name": "University Center B",
+   "short": "University Center B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.303376,
+   "lat": 30.437267,
+   "osm": "way/127126335"
+  },
+  {
+   "id": "shores",
+   "name": "Shores",
+   "short": "Shores",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.295973,
+   "lat": 30.441183,
+   "osm": "way/107498814"
+  },
+  {
+   "id": "honors-scholars-and-fellows-building",
+   "name": "Honors, Scholars and Fellows Building",
+   "short": "Honors, Scholars and Fellows Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.293545,
+   "lat": 30.441946,
+   "osm": "way/132305295"
+  },
+  {
+   "id": "shaw-telecommunications",
+   "name": "Shaw Telecommunications",
+   "short": "Shaw Telecommunications",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.293577,
+   "lat": 30.443815,
+   "osm": "way/127094932"
+  },
+  {
+   "id": "engineering-lab",
+   "name": "Engineering Lab",
+   "short": "Engineering Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.300345,
+   "lat": 30.446076,
+   "osm": "way/134801313"
+  },
+  {
+   "id": "moore-auditorium",
+   "name": "Moore Auditorium",
+   "short": "Moore Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.296561,
+   "lat": 30.444143,
+   "osm": "way/127089054"
+  },
+  {
+   "id": "harpe-johnson",
+   "name": "Harpe-Johnson",
+   "short": "Harpe-Johnson",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.300453,
+   "lat": 30.443012,
+   "osm": "way/155076156"
+  },
+  {
+   "id": "student-services",
+   "name": "Student Services",
+   "short": "Student Services",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.297784,
+   "lat": 30.441764,
+   "osm": "way/107498862"
+  },
+  {
+   "id": "kasha-laboratory",
+   "name": "Kasha Laboratory",
+   "short": "Kasha Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.301322,
+   "lat": 30.445457,
+   "osm": "way/155076114"
+  },
+  {
+   "id": "antarctic-marine-geology-research-facility",
+   "name": "Antarctic Marine Geology Research Facility",
+   "short": "Antarctic Marine Geology Research Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.298994,
+   "lat": 30.44528,
+   "osm": "way/225645599"
+  },
+  {
+   "id": "keen",
+   "name": "Keen",
+   "short": "Keen",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.30138,
+   "lat": 30.445944,
+   "osm": "way/134802109"
+  },
+  {
+   "id": "thagard",
+   "name": "Thagard",
+   "short": "Thagard",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.296419,
+   "lat": 30.442739,
+   "osm": "way/107498813"
+  },
+  {
+   "id": "kellogg-research-building",
+   "name": "Kellogg Research Building",
+   "short": "Kellogg Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.291421,
+   "lat": 30.441656,
+   "osm": "way/80792358"
+  },
+  {
+   "id": "longmire-building",
+   "name": "Longmire Building",
+   "short": "Longmire Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.292138,
+   "lat": 30.442045,
+   "osm": "way/80792353"
+  },
+  {
+   "id": "rogers",
+   "name": "Rogers",
+   "short": "Rogers",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.300029,
+   "lat": 30.444083,
+   "osm": "way/155076177"
+  },
+  {
+   "id": "stiles-smith-team",
+   "name": "Stiles Smith Team",
+   "short": "Stiles Smith Team",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.305032,
+   "lat": 30.441553,
+   "osm": "way/132307774"
+  },
+  {
+   "id": "garnet-and-gold",
+   "name": "Garnet and Gold",
+   "short": "Garnet and Gold",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.299541,
+   "lat": 30.438516,
+   "osm": "way/155076198"
+  },
+  {
+   "id": "fisher-lecture-hall",
+   "name": "Fisher Lecture Hall",
+   "short": "Fisher Lecture Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.300542,
+   "lat": 30.44423,
+   "osm": "way/155076195"
+  },
+  {
+   "id": "fine-arts-annex",
+   "name": "Fine Arts Annex",
+   "short": "Fine Arts Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.29109,
+   "lat": 30.443963,
+   "osm": "way/137486391"
+  },
+  {
+   "id": "criminology-and-criminal-justice-building",
+   "name": "Criminology and Criminal Justice Building",
+   "short": "Criminology and Criminal Justice Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.291348,
+   "lat": 30.441348,
+   "osm": "way/137489141"
+  },
+  {
+   "id": "hecht-house",
+   "name": "Hecht House",
+   "short": "Hecht House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "School of Criminology and Criminal Justice"
+   ],
+   "lng": -84.292323,
+   "lat": 30.443878,
+   "osm": "way/127094929"
+  },
+  {
+   "id": "psychology-department-auditorium",
+   "name": "Psychology Department Auditorium",
+   "short": "Psychology Department Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.303798,
+   "lat": 30.445478,
+   "osm": "way/531955283"
+  },
+  {
+   "id": "ruge-hall-student-center",
+   "name": "Ruge Hall Student Center",
+   "short": "Ruge Hall Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.292972,
+   "lat": 30.439252,
+   "osm": "way/531498049"
+  },
+  {
+   "id": "carraway",
+   "name": "Carraway",
+   "short": "Carraway",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.298629,
+   "lat": 30.445167,
+   "osm": "way/134800732"
+  },
+  {
+   "id": "dodd-hall-auditorium",
+   "name": "Dodd Hall Auditorium",
+   "short": "Dodd Hall Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.292781,
+   "lat": 30.439793,
+   "osm": "way/127098889"
+  },
+  {
+   "id": "the-lab-building-a",
+   "name": "The Lab - Building A",
+   "short": "The Lab - Building A",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.291137,
+   "lat": 30.437887,
+   "osm": "way/115687649"
+  },
+  {
+   "id": "black-student-union",
+   "name": "Black Student Union",
+   "short": "Black Student Union",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.299045,
+   "lat": 30.439379,
+   "osm": "way/707344057"
+  },
+  {
+   "id": "art-teaching-labs",
+   "name": "Art Teaching Labs",
+   "short": "Art Teaching Labs",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.289568,
+   "lat": 30.443332,
+   "osm": "way/137486343"
+  },
+  {
+   "id": "greene-lewis-house",
+   "name": "Greene-Lewis House",
+   "short": "Greene-Lewis House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.289936,
+   "lat": 30.440433,
+   "osm": "way/531317297"
+  },
+  {
+   "id": "the-lab-building-b",
+   "name": "The Lab - Building B",
+   "short": "The Lab - Building B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.29153,
+   "lat": 30.437902,
+   "osm": "way/115687653"
+  },
+  {
+   "id": "stavros-center",
+   "name": "Stavros Center",
+   "short": "Stavros Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.298359,
+   "lat": 30.439841,
+   "osm": "way/132305294"
+  },
+  {
+   "id": "marriage-and-family-clinic",
+   "name": "Marriage and Family Clinic",
+   "short": "Marriage and Family Clinic",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.290075,
+   "lat": 30.439878,
+   "osm": "way/115687652"
+  },
+  {
+   "id": "manley-whitcomb-band-complex",
+   "name": "Manley Whitcomb Band Complex",
+   "short": "Manley Whitcomb Band Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.30102,
+   "lat": 30.441775,
+   "osm": "way/700939339"
+  },
+  {
+   "id": "history-special-projects",
+   "name": "History - Special Projects",
+   "short": "History - Special Projects",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.30333,
+   "lat": 30.447209,
+   "osm": "way/155076167"
+  },
+  {
+   "id": "kemper-lab-ogzeb",
+   "name": "Kemper Lab (OGZEB)",
+   "short": "Kemper Lab (OGZEB)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.300149,
+   "lat": 30.446026,
+   "osm": "way/711855330"
+  }
+ ]
+}
