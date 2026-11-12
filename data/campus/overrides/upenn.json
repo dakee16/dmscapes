@@ -1,0 +1,247 @@
+{
+  "halls": {
+    "the-quad": {
+      "pin": [
+        -75.197305,
+        39.950821
+      ]
+    },
+    "kceh": {
+      "pin": [
+        -75.194265,
+        39.954231
+      ]
+    },
+    "high-rises": {
+      "pin": [
+        -75.200163,
+        39.952349
+      ]
+    },
+    "gregory-college-house": {
+      "pin": [
+        -75.20255,
+        39.952462
+      ]
+    }
+  },
+  "places": {
+    "baker-walkway": {
+      "hide": true
+    },
+    "steinberg-conference-center": {
+      "hide": true
+    },
+    "civic-house": {
+      "hide": true
+    },
+    "english-college-house": {
+      "hide": true
+    },
+    "university-square": {
+      "hide": true
+    },
+    "shops-at-40th-street": {
+      "hide": true
+    },
+    "starbucks": {
+      "hide": true
+    },
+    "doc-magrogans": {
+      "hide": true
+    },
+    "white-dog-cafe": {
+      "hide": true
+    },
+    "masala-kitchen": {
+      "hide": true
+    },
+    "hummus-grill": {
+      "hide": true
+    },
+    "avril-50": {
+      "hide": true
+    },
+    "the-left-bank": {
+      "hide": true
+    },
+    "lot-37": {
+      "hide": true
+    },
+    "sansom-place-east": {
+      "hide": true
+    },
+    "fmc-tower": {
+      "hide": true
+    },
+    "hajoca-corporation-headquarters-and-showroom": {
+      "hide": true
+    },
+    "university-city-district-hq": {
+      "hide": true
+    },
+    "sansom-place-west": {
+      "hide": true
+    },
+    "university-meeting-and-guesthouse": {
+      "hide": true
+    },
+    "hospital-of-the-university-of-pennsylvania": {
+      "hide": true
+    },
+    "perelman-center-for-advanced-medicine": {
+      "hide": true
+    },
+    "ryan-veterinary-hospital": {
+      "hide": true
+    },
+    "the-pavilion-at-penn-medicine": {
+      "hide": true
+    },
+    "penn-center-for-rehabilitation-and-care": {
+      "hide": true
+    },
+    "wistar-institute": {
+      "hide": true
+    },
+    "pennovation-center": {
+      "hide": true
+    },
+    "zeta-psi": {
+      "hide": true
+    },
+    "zbt": {
+      "hide": true
+    },
+    "franklin-building-annex": {
+      "hide": true
+    },
+    "the-daily-pennsylvanian": {
+      "hide": true
+    },
+    "franklin-building": {
+      "hide": true
+    },
+    "hillel": {
+      "hide": true
+    },
+    "sweeten-alumni-building": {
+      "hide": true
+    },
+    "university-of-pennsylvania-press": {
+      "hide": true
+    },
+    "dunning-coaches-center": {
+      "hide": true
+    },
+    "lab-building-walkway-bridge": {
+      "hide": true
+    },
+    "buerger-center": {
+      "hide": true
+    },
+    "colket-translational-research-building": {
+      "hide": true
+    },
+    "3499-civic-center-boulevard": {
+      "hide": true
+    },
+    "3600-civic-center-boulevard": {
+      "hide": true
+    },
+    "translational-research-lab": {
+      "hide": true
+    },
+    "building-250": {
+      "hide": true
+    },
+    "ralston-house": {
+      "hide": true
+    },
+    "walnut-street-west": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "the-quad": "The Quad is at 3700 Spruce Street; OSM maps its houses one by one (McKean, Ware, Riepe's houses...) and its Memorial Tower at 3700 Spruce Street (way/320602388), where it is pinned.",
+    "kceh": "Kings Court English House is OSM's 'King's Court' (way/51368103) and 'English College House' next door; pinned on King's Court.",
+    "high-rises": "The High Rises are Harnwell, Harrison and Rodin College Houses (each its own OSM building); pinned on Harnwell (way/156649525), the middle one.",
+    "gregory-college-house": "Gregory College House is OSM's 'Class of 1925 (Gregory College House)' and 'Van Pelt Manor (Gregory College House)'; pinned on Class of 1925 (way/191305133).",
+    "baker-walkway": "A covered walkway, not a building with classes.",
+    "steinberg-conference-center": "Wharton executive-education hotel, not somewhere undergraduate classes happen.",
+    "civic-house": "Student civic-engagement centre, not somewhere classes happen.",
+    "english-college-house": "The other building of Kings Court English House (a hall), not a class building.",
+    "university-square": "A shop, cafe or restaurant, not a dining hall or class building.",
+    "shops-at-40th-street": "A shop, cafe or restaurant, not a dining hall or class building.",
+    "starbucks": "A shop, cafe or restaurant, not a dining hall or class building.",
+    "doc-magrogans": "A shop, cafe or restaurant, not a dining hall or class building.",
+    "white-dog-cafe": "A shop, cafe or restaurant, not a dining hall or class building.",
+    "masala-kitchen": "A shop, cafe or restaurant, not a dining hall or class building.",
+    "hummus-grill": "A shop, cafe or restaurant, not a dining hall or class building.",
+    "avril-50": "A shop, cafe or restaurant, not a dining hall or class building.",
+    "the-left-bank": "Apartments, an office tower, a company, or a parking lot, not somewhere classes happen.",
+    "lot-37": "Apartments, an office tower, a company, or a parking lot, not somewhere classes happen.",
+    "sansom-place-east": "Apartments, an office tower, a company, or a parking lot, not somewhere classes happen.",
+    "fmc-tower": "Apartments, an office tower, a company, or a parking lot, not somewhere classes happen.",
+    "hajoca-corporation-headquarters-and-showroom": "Apartments, an office tower, a company, or a parking lot, not somewhere classes happen.",
+    "university-city-district-hq": "Apartments, an office tower, a company, or a parking lot, not somewhere classes happen.",
+    "sansom-place-west": "Apartments, an office tower, a company, or a parking lot, not somewhere classes happen.",
+    "university-meeting-and-guesthouse": "University guesthouse, not somewhere classes happen.",
+    "hospital-of-the-university-of-pennsylvania": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "perelman-center-for-advanced-medicine": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "ryan-veterinary-hospital": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "the-pavilion-at-penn-medicine": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "penn-center-for-rehabilitation-and-care": "Hospital or clinic building, not somewhere undergraduate classes happen.",
+    "wistar-institute": "An independent research institute or business incubator, not somewhere classes happen.",
+    "pennovation-center": "An independent research institute or business incubator, not somewhere classes happen.",
+    "zeta-psi": "Fraternity house, not somewhere classes happen.",
+    "zbt": "Fraternity house, not somewhere classes happen.",
+    "franklin-building-annex": "A newspaper, press, administrative office or student centre, not somewhere classes happen.",
+    "the-daily-pennsylvanian": "A newspaper, press, administrative office or student centre, not somewhere classes happen.",
+    "franklin-building": "A newspaper, press, administrative office or student centre, not somewhere classes happen.",
+    "hillel": "A newspaper, press, administrative office or student centre, not somewhere classes happen.",
+    "sweeten-alumni-building": "A newspaper, press, administrative office or student centre, not somewhere classes happen.",
+    "university-of-pennsylvania-press": "A newspaper, press, administrative office or student centre, not somewhere classes happen.",
+    "dunning-coaches-center": "Varsity coaches' offices, not somewhere classes happen.",
+    "lab-building-walkway-bridge": "A bridge between buildings, not a building with classes.",
+    "buerger-center": "CHOP (Children's Hospital of Philadelphia) outpatient clinic at 3500 Civic Center Boulevard (OSM amenity=clinic, chop.edu), not somewhere Penn undergraduates have class.",
+    "colket-translational-research-building": "CHOP research building at 3501 Civic Center Boulevard (OSM amenity=clinic, chop.edu), not somewhere Penn undergraduates have class.",
+    "3499-civic-center-boulevard": "Parking Garage 51 (OSM amenity=parking), not a building with classes.",
+    "3600-civic-center-boulevard": "Penn Medicine office tower at 3600 Civic Center Boulevard (OSM building=office), not somewhere undergraduate classes happen.",
+    "translational-research-lab": "Penn Medicine Translational Research Laboratories at 125 S. 31st Street, a research-lab building, not somewhere undergraduate classes happen.",
+    "building-250": "Building 250 at 3401 Grays Ferry Avenue is on the Pennovation Works site, not somewhere classes happen.",
+    "ralston-house": "Ralston House at 3615 Chestnut Street is Penn's Ralston Center (geriatric care and ageing programmes), not somewhere classes happen.",
+    "walnut-street-west": "Walnut Street West is a Free Library of Philadelphia branch (OSM operator=Free Library of Philadelphia, library=public), not a Penn library."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "the-quad -> john-morgan",
+        "the-quad -> fagin-hall",
+        "the-quad -> clinical-research-building",
+        "the-quad -> goddard-and-richards-laboratories",
+        "the-quad -> stellar-chance-labs",
+        "the-quad -> blockley-hall",
+        "the-quad -> cyclotron",
+        "stouffer-college-house -> john-morgan"
+      ],
+      "maxRatio": 4.5,
+      "why": "The Quad is a closed quadrangle entered only through its mapped gates, and the medical-school buildings south of Spruce Street are reached by the mapped crosswalks, so walks leave by a gate and go round."
+    },
+    {
+      "pairs": [
+        "hill-college-house -> fisher-bennett-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "Hill College House has a single mapped entrance, so walks to Fisher-Bennett Hall go round the building from it."
+    },
+    {
+      "pairs": [
+        "high-rises -> john-m-huntsman-hall",
+        "gutmann-college-house -> penn-dental-school"
+      ],
+      "maxRatio": 3.5,
+      "why": "City blocks: buildings fill the block between the hall's mapped door and the building's with no mapped way through, so walks go round by the streets and walks."
+    }
+  ]
+}

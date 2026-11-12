@@ -1,0 +1,1167 @@
+{
+ "collegeId": "upenn",
+ "generatedAt": "2026-11-12T23:32:40.216Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/upenn.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -75.20372,
+  39.94062,
+  -75.18445,
+  39.95503
+ ],
+ "halls": [
+  {
+   "dormId": "hill-college-house",
+   "name": "Hill College House",
+   "lng": -75.190618,
+   "lat": 39.952995,
+   "pin": "name",
+   "osm": "relation/5235124",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "van-pelt-library",
+     "minutes": 3.6
+    },
+    "gym": {
+     "placeId": "tse-and-cheng-sports-center",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "stouffer-commons",
+     "minutes": 9.9
+    }
+   }
+  },
+  {
+   "dormId": "the-quad",
+   "name": "The Quad (Fisher Hassenfeld, Riepe, Ware)",
+   "lng": -75.197305,
+   "lat": 39.950821,
+   "pin": "manual",
+   "osm": "way/320602388",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "van-pelt-library",
+     "minutes": 5.2
+    },
+    "gym": {
+     "placeId": "pottruck-health-and-fitness-center",
+     "minutes": 5.9
+    },
+    "dining": {
+     "placeId": "stouffer-commons",
+     "minutes": 2
+    }
+   }
+  },
+  {
+   "dormId": "kceh",
+   "name": "Kings Court English House (KCEH)",
+   "lng": -75.194265,
+   "lat": 39.954231,
+   "pin": "manual",
+   "osm": "way/51368103",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "van-pelt-library",
+     "minutes": 4.9
+    },
+    "gym": {
+     "placeId": "pottruck-health-and-fitness-center",
+     "minutes": 4
+    },
+    "dining": {
+     "placeId": "stouffer-commons",
+     "minutes": 8.4
+    }
+   }
+  },
+  {
+   "dormId": "high-rises",
+   "name": "High-Rise Upperclass Apartments (Harnwell, Harrison, Rodin)",
+   "lng": -75.200163,
+   "lat": 39.952349,
+   "pin": "manual",
+   "osm": "way/156649525",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "van-pelt-library",
+     "minutes": 9.2
+    },
+    "gym": {
+     "placeId": "pottruck-health-and-fitness-center",
+     "minutes": 7.8
+    },
+    "dining": {
+     "placeId": "class-of-1920-commons",
+     "minutes": 3.3
+    }
+   }
+  },
+  {
+   "dormId": "lauder-college-house",
+   "name": "Lauder College House",
+   "lng": -75.19114,
+   "lat": 39.95394,
+   "pin": "name",
+   "osm": "way/708554934",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "van-pelt-library",
+     "minutes": 4
+    },
+    "gym": {
+     "placeId": "pottruck-health-and-fitness-center",
+     "minutes": 8.6
+    },
+    "dining": {
+     "placeId": "stouffer-commons",
+     "minutes": 10.2
+    }
+   }
+  },
+  {
+   "dormId": "gutmann-college-house",
+   "name": "Gutmann College House",
+   "lng": -75.202162,
+   "lat": 39.953531,
+   "pin": "name",
+   "osm": "relation/11041533",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "van-pelt-library",
+     "minutes": 10.6
+    },
+    "gym": {
+     "placeId": "pottruck-health-and-fitness-center",
+     "minutes": 7.3
+    },
+    "dining": {
+     "placeId": "class-of-1920-commons",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "stouffer-college-house",
+   "name": "Stouffer College House (Mayer Hall)",
+   "lng": -75.19864,
+   "lat": 39.950838,
+   "pin": "name",
+   "osm": "way/320605203",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "van-pelt-library",
+     "minutes": 6.4
+    },
+    "gym": {
+     "placeId": "pottruck-health-and-fitness-center",
+     "minutes": 7.1
+    },
+    "dining": {
+     "placeId": "stouffer-commons",
+     "minutes": 0.3
+    }
+   }
+  },
+  {
+   "dormId": "gregory-college-house",
+   "name": "Gregory College House",
+   "lng": -75.20255,
+   "lat": 39.952462,
+   "pin": "manual",
+   "osm": "way/191305133",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "van-pelt-library",
+     "minutes": 10.5
+    },
+    "gym": {
+     "placeId": "pottruck-health-and-fitness-center",
+     "minutes": 8.8
+    },
+    "dining": {
+     "placeId": "class-of-1920-commons",
+     "minutes": 5
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "penn-museum",
+   "name": "Penn Museum",
+   "short": "Penn Museum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "University of Pennsylvania Museum of Archaeology and Anthropology"
+   ],
+   "lng": -75.191437,
+   "lat": 39.949176,
+   "osm": "relation/5231601"
+  },
+  {
+   "id": "david-rittenhouse-laboratories",
+   "name": "David Rittenhouse Laboratories",
+   "short": "David Rittenhouse Laboratories",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.189339,
+   "lat": 39.952086,
+   "osm": "way/51469420"
+  },
+  {
+   "id": "john-m-huntsman-hall",
+   "name": "John M. Huntsman Hall",
+   "short": "John M. Huntsman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.198217,
+   "lat": 39.952956,
+   "osm": "way/32119282"
+  },
+  {
+   "id": "john-morgan",
+   "name": "John Morgan",
+   "short": "John Morgan",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.19687,
+   "lat": 39.949494,
+   "osm": "way/297391714"
+  },
+  {
+   "id": "van-pelt-library",
+   "name": "Van Pelt Library",
+   "short": "Van Pelt Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Van Pelt-Dietrich"
+   ],
+   "lng": -75.193914,
+   "lat": 39.952701,
+   "osm": "way/32120084"
+  },
+  {
+   "id": "steinberg-dietrich-hall",
+   "name": "Steinberg-Dietrich Hall",
+   "short": "Steinberg-Dietrich Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.196359,
+   "lat": 39.951804,
+   "osm": "way/51469702"
+  },
+  {
+   "id": "tse-and-cheng-sports-center",
+   "name": "Tse and Cheng Sports Center",
+   "short": "Tse and Cheng Sports Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.188752,
+   "lat": 39.950825,
+   "osm": "way/749686520"
+  },
+  {
+   "id": "class-of-1920-commons",
+   "name": "Class of 1920 Commons",
+   "short": "Class of 1920 Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.199482,
+   "lat": 39.951972,
+   "osm": "way/32119269"
+  },
+  {
+   "id": "towne-building",
+   "name": "Towne Building",
+   "short": "Towne Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Dept. of Mechanical Engineering and Applied Mechanics"
+   ],
+   "lng": -75.190972,
+   "lat": 39.951787,
+   "osm": "way/51469413"
+  },
+  {
+   "id": "pottruck-health-and-fitness-center",
+   "name": "Pottruck Health and Fitness Center",
+   "short": "Pottruck Health and Fitness Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Pottruck Gymnasium"
+   ],
+   "lng": -75.19711,
+   "lat": 39.953866,
+   "osm": "way/35918075"
+  },
+  {
+   "id": "biomedical-research-building-ii-iii",
+   "name": "Biomedical Research Building II/III",
+   "short": "Biomedical Research Building II/III",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.196436,
+   "lat": 39.948189,
+   "osm": "way/190332257"
+  },
+  {
+   "id": "krishna-p-singh-center-for-nanotechnology",
+   "name": "Krishna P. Singh Center for Nanotechnology",
+   "short": "Krishna P. Singh Center for Nanotechnology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.188845,
+   "lat": 39.952844,
+   "osm": "way/328748298"
+  },
+  {
+   "id": "penn-dental-school",
+   "name": "Penn Dental School",
+   "short": "Penn Dental School",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The Robert Schattner Center"
+   ],
+   "lng": -75.203645,
+   "lat": 39.952189,
+   "osm": "way/747954545"
+  },
+  {
+   "id": "annenberg-center-for-the-performing-arts",
+   "name": "Annenberg Center for the Performing Arts",
+   "short": "Annenberg Center for the Performing Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.196472,
+   "lat": 39.95294,
+   "osm": "way/32120984"
+  },
+  {
+   "id": "penn-dental-school-748793576",
+   "name": "Penn Dental School",
+   "short": "Penn Dental School",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Levy Center for Oral Health"
+   ],
+   "lng": -75.203428,
+   "lat": 39.952768,
+   "osm": "way/748793576"
+  },
+  {
+   "id": "hollenback-annex",
+   "name": "Hollenback Annex",
+   "short": "Hollenback Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.189031,
+   "lat": 39.94726,
+   "osm": "way/51469469"
+  },
+  {
+   "id": "fagin-hall",
+   "name": "Fagin Hall",
+   "short": "Fagin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Claire M. Fagin Hall"
+   ],
+   "lng": -75.196044,
+   "lat": 39.949071,
+   "osm": "way/190327582"
+  },
+  {
+   "id": "chemistry-laboratories-1973-wing",
+   "name": "Chemistry Laboratories 1973 Wing",
+   "short": "Chemistry Laboratories 1973 Wing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.192176,
+   "lat": 39.950794,
+   "osm": "way/32120653"
+  },
+  {
+   "id": "college-hall",
+   "name": "College Hall",
+   "short": "College Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.193753,
+   "lat": 39.95148,
+   "osm": "way/51367353"
+  },
+  {
+   "id": "houston-hall",
+   "name": "Houston Hall",
+   "short": "Houston Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.19388,
+   "lat": 39.950939,
+   "osm": "way/51469194"
+  },
+  {
+   "id": "carolyn-lynch-labs",
+   "name": "Carolyn Lynch Labs",
+   "short": "Carolyn Lynch Labs",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.198798,
+   "lat": 39.948779,
+   "osm": "way/190327560"
+  },
+  {
+   "id": "laboratory-for-research-on-the-structure-of-matter-lrsm",
+   "name": "Laboratory for Research on the Structure of Matter (LRSM)",
+   "short": "Laboratory for Research on the Structure of Matter (LRSM)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "LRSM"
+   ],
+   "lng": -75.189601,
+   "lat": 39.95292,
+   "osm": "way/328748538"
+  },
+  {
+   "id": "silverman-hall",
+   "name": "Silverman Hall",
+   "short": "Silverman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.192252,
+   "lat": 39.953986,
+   "osm": "way/749918533"
+  },
+  {
+   "id": "stouffer-commons",
+   "name": "Stouffer Commons",
+   "short": "Stouffer Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.1987,
+   "lat": 39.95091,
+   "osm": "way/59435701"
+  },
+  {
+   "id": "anatomy-chemistry",
+   "name": "Anatomy Chemistry",
+   "short": "Anatomy Chemistry",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.197206,
+   "lat": 39.949015,
+   "osm": "way/297391713"
+  },
+  {
+   "id": "clinical-research-building",
+   "name": "Clinical Research Building",
+   "short": "Clinical Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.195356,
+   "lat": 39.948846,
+   "osm": "way/50033057"
+  },
+  {
+   "id": "james-e-hogwood-memorial-building",
+   "name": "James E. Hogwood Memorial Building",
+   "short": "James E. Hogwood Memorial Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.184454,
+   "lat": 39.95214,
+   "osm": "way/205238784"
+  },
+  {
+   "id": "hill-pavillion",
+   "name": "Hill Pavillion",
+   "short": "Hill Pavillion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.200196,
+   "lat": 39.949923,
+   "osm": "way/59435617"
+  },
+  {
+   "id": "annenberg-school-of-communication",
+   "name": "Annenberg School of Communication",
+   "short": "Annenberg School of Communication",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.195774,
+   "lat": 39.95292,
+   "osm": "way/32122150"
+  },
+  {
+   "id": "mcneil-building",
+   "name": "McNeil Building",
+   "short": "McNeil Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.197897,
+   "lat": 39.952013,
+   "osm": "way/32119217"
+  },
+  {
+   "id": "irvine-auditorium",
+   "name": "Irvine Auditorium",
+   "short": "Irvine Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.192985,
+   "lat": 39.950897,
+   "osm": "way/51469206"
+  },
+  {
+   "id": "lab-building",
+   "name": "Lab Building",
+   "short": "Lab Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.20034,
+   "lat": 39.940616,
+   "osm": "way/709384428"
+  },
+  {
+   "id": "vance-hall",
+   "name": "Vance Hall",
+   "short": "Vance Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.19784,
+   "lat": 39.951324,
+   "osm": "way/32119255"
+  },
+  {
+   "id": "hollenback-center",
+   "name": "Hollenback Center",
+   "short": "Hollenback Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.188449,
+   "lat": 39.947548,
+   "osm": "way/51469455"
+  },
+  {
+   "id": "weightman-hall",
+   "name": "Weightman Hall",
+   "short": "Weightman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.190796,
+   "lat": 39.950645,
+   "osm": "way/85321676"
+  },
+  {
+   "id": "tanenbaum-hall",
+   "name": "Tanenbaum Hall",
+   "short": "Tanenbaum Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.193569,
+   "lat": 39.954159,
+   "osm": "way/335523311"
+  },
+  {
+   "id": "amy-gutmann-hall",
+   "name": "Amy Gutmann Hall",
+   "short": "Amy Gutmann Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.19116,
+   "lat": 39.954495,
+   "osm": "way/1315831054"
+  },
+  {
+   "id": "goddard-and-richards-laboratories",
+   "name": "Goddard & Richards Laboratories",
+   "short": "Goddard & Richards Laboratories",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.197826,
+   "lat": 39.949704,
+   "osm": "way/190327591"
+  },
+  {
+   "id": "roy-and-diana-vagelos-laboratories-of-the-iast",
+   "name": "Roy and Diana Vagelos Laboratories of the IAST",
+   "short": "Roy and Diana Vagelos Laboratories of the IAST",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Vagelos Labs"
+   ],
+   "lng": -75.192099,
+   "lat": 39.951321,
+   "osm": "way/1356813142"
+  },
+  {
+   "id": "stellar-chance-labs",
+   "name": "Stellar Chance Labs",
+   "short": "Stellar Chance Labs",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.196878,
+   "lat": 39.948729,
+   "osm": "way/190327604"
+  },
+  {
+   "id": "fisher-bennett-hall",
+   "name": "Fisher Bennett Hall",
+   "short": "Fisher Bennett Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.191618,
+   "lat": 39.952479,
+   "osm": "way/32119894"
+  },
+  {
+   "id": "golkin-hall",
+   "name": "Golkin Hall",
+   "short": "Golkin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.192991,
+   "lat": 39.953891,
+   "osm": "way/749918539"
+  },
+  {
+   "id": "leidy-laboratories",
+   "name": "Leidy Laboratories",
+   "short": "Leidy Laboratories",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.199022,
+   "lat": 39.949904,
+   "osm": "way/32120762"
+  },
+  {
+   "id": "vagelos-laboratory-for-energy-science-and-technology",
+   "name": "Vagelos Laboratory for Energy Science and Technology",
+   "short": "Vagelos Laboratory for Energy Science and Technology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.188172,
+   "lat": 39.951968,
+   "osm": "way/1461258176"
+  },
+  {
+   "id": "meyerson-hall",
+   "name": "Meyerson Hall",
+   "short": "Meyerson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "School of Design"
+   ],
+   "lng": -75.192657,
+   "lat": 39.952241,
+   "osm": "way/32119587"
+  },
+  {
+   "id": "stiteler-hall",
+   "name": "Stiteler Hall",
+   "short": "Stiteler Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.197126,
+   "lat": 39.952769,
+   "osm": "way/32119156"
+  },
+  {
+   "id": "williams-hall",
+   "name": "Williams Hall",
+   "short": "Williams Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.19481,
+   "lat": 39.950972,
+   "osm": "way/51469263"
+  },
+  {
+   "id": "claudia-cohen-hall",
+   "name": "Claudia Cohen Hall",
+   "short": "Claudia Cohen Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Logan Hall"
+   ],
+   "lng": -75.194744,
+   "lat": 39.951361,
+   "osm": "way/51367397"
+  },
+  {
+   "id": "department-of-earth-and-environmental-science",
+   "name": "Department of Earth and Environmental Science",
+   "short": "Department of Earth and Environmental Science",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Hayden Hall"
+   ],
+   "lng": -75.191293,
+   "lat": 39.951256,
+   "osm": "way/32120655"
+  },
+  {
+   "id": "the-rotunda",
+   "name": "The Rotunda",
+   "short": "The Rotunda",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.203718,
+   "lat": 39.953792,
+   "osm": "way/747954549"
+  },
+  {
+   "id": "gittis-hall",
+   "name": "Gittis Hall",
+   "short": "Gittis Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.192899,
+   "lat": 39.954262,
+   "osm": "way/749918538"
+  },
+  {
+   "id": "moore-school-building",
+   "name": "Moore School Building",
+   "short": "Moore School Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.190502,
+   "lat": 39.952337,
+   "osm": "way/330138972"
+  },
+  {
+   "id": "university-of-pennsylvania-graduate-school-of-education",
+   "name": "University of Pennsylvania Graduate School of Education",
+   "short": "University of Pennsylvania Graduate School of Education",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.197253,
+   "lat": 39.953242,
+   "osm": "way/32119148"
+  },
+  {
+   "id": "the-consortium",
+   "name": "The Consortium",
+   "short": "The Consortium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.197997,
+   "lat": 39.948253,
+   "osm": "way/190327584"
+  },
+  {
+   "id": "blockley-hall",
+   "name": "Blockley Hall",
+   "short": "Blockley Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.197391,
+   "lat": 39.948527,
+   "osm": "way/32120802"
+  },
+  {
+   "id": "annenberg-public-policy-center",
+   "name": "Annenberg Public Policy Center",
+   "short": "Annenberg Public Policy Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.19523,
+   "lat": 39.952637,
+   "osm": "way/51367456"
+  },
+  {
+   "id": "solomon-lab",
+   "name": "Solomon Lab",
+   "short": "Solomon Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.197717,
+   "lat": 39.95291,
+   "osm": "way/32119145"
+  },
+  {
+   "id": "skirkanich-hall",
+   "name": "Skirkanich Hall",
+   "short": "Skirkanich Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.190507,
+   "lat": 39.952046,
+   "osm": "way/190322376"
+  },
+  {
+   "id": "tangen-hall",
+   "name": "Tangen Hall",
+   "short": "Tangen Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.202109,
+   "lat": 39.955028,
+   "osm": "way/202984658"
+  },
+  {
+   "id": "chemistry-building-1958-wing",
+   "name": "Chemistry Building 1958 Wing",
+   "short": "Chemistry Building 1958 Wing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.1917,
+   "lat": 39.950868,
+   "osm": "way/1356813143"
+  },
+  {
+   "id": "charles-addams-fine-arts-hall",
+   "name": "Charles Addams Fine Arts Hall",
+   "short": "Charles Addams Fine Arts Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Charles Addams Hall"
+   ],
+   "lng": -75.195133,
+   "lat": 39.952946,
+   "osm": "way/32122153"
+  },
+  {
+   "id": "graduate-research-wing",
+   "name": "Graduate Research Wing",
+   "short": "Graduate Research Wing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.190886,
+   "lat": 39.952439,
+   "osm": "way/749686513"
+  },
+  {
+   "id": "levine-hall",
+   "name": "Levine Hall",
+   "short": "Levine Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.191097,
+   "lat": 39.952178,
+   "osm": "relation/4626869"
+  },
+  {
+   "id": "the-arch",
+   "name": "The ARCH",
+   "short": "The ARCH",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.195224,
+   "lat": 39.95228,
+   "osm": "way/51469685"
+  },
+  {
+   "id": "lerner-center",
+   "name": "Lerner Center",
+   "short": "Lerner Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.19185,
+   "lat": 39.952114,
+   "osm": "way/32119619"
+  },
+  {
+   "id": "3935-walnut-street",
+   "name": "3935 Walnut Street",
+   "short": "3935 Walnut Street",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.202332,
+   "lat": 39.954402,
+   "osm": "way/51367806"
+  },
+  {
+   "id": "stephan-l-lavin-building",
+   "name": "Stephan L. Lavin Building",
+   "short": "Stephan L. Lavin Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Stephen A. Levin Building"
+   ],
+   "lng": -75.199059,
+   "lat": 39.949565,
+   "osm": "way/32120797"
+  },
+  {
+   "id": "perelman-center-for-political-science-and-economics",
+   "name": "Perelman Center for Political Science & Economics",
+   "short": "Perelman Center for Political Science & Economics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.194421,
+   "lat": 39.953674,
+   "osm": "way/749695309"
+  },
+  {
+   "id": "fox-fels-hall",
+   "name": "Fox-Fels Hall",
+   "short": "Fox-Fels Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.200008,
+   "lat": 39.953449,
+   "osm": "way/191305134"
+  },
+  {
+   "id": "perry-world-house",
+   "name": "Perry World House",
+   "short": "Perry World House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.199251,
+   "lat": 39.952891,
+   "osm": "way/191305130"
+  },
+  {
+   "id": "lauder-fischer-hall",
+   "name": "Lauder Fischer Hall",
+   "short": "Lauder Fischer Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.197429,
+   "lat": 39.951831,
+   "osm": "way/32119197"
+  },
+  {
+   "id": "morgan",
+   "name": "Morgan",
+   "short": "Morgan",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.191997,
+   "lat": 39.95186,
+   "osm": "way/32119604"
+  },
+  {
+   "id": "caster-building",
+   "name": "Caster Building",
+   "short": "Caster Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "School of Social Policy and Practice"
+   ],
+   "lng": -75.197531,
+   "lat": 39.952524,
+   "osm": "way/32119117"
+  },
+  {
+   "id": "chemistry-laboratories-1941-wing",
+   "name": "Chemistry Laboratories 1941 Wing",
+   "short": "Chemistry Laboratories 1941 Wing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Chemistry Laboratories Cret Wing"
+   ],
+   "lng": -75.191838,
+   "lat": 39.950613,
+   "osm": "way/1356813144"
+  },
+  {
+   "id": "mcneil-center",
+   "name": "McNeil Center",
+   "short": "McNeil Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.191656,
+   "lat": 39.953418,
+   "osm": "way/32134555"
+  },
+  {
+   "id": "graduate-student-center",
+   "name": "Graduate Student Center",
+   "short": "Graduate Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.195657,
+   "lat": 39.952341,
+   "osm": "way/164655921"
+  },
+  {
+   "id": "colonial-penn-center",
+   "name": "Colonial Penn Center",
+   "short": "Colonial Penn Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.196579,
+   "lat": 39.952431,
+   "osm": "way/32122180"
+  },
+  {
+   "id": "carriage-house",
+   "name": "Carriage House",
+   "short": "Carriage House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.201776,
+   "lat": 39.952134,
+   "osm": "way/191305132"
+  },
+  {
+   "id": "jaffe-building",
+   "name": "Jaffe Building",
+   "short": "Jaffe Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Elliot and Roslyn Jaffe History of Art Building"
+   ],
+   "lng": -75.192943,
+   "lat": 39.952732,
+   "osm": "way/32119492"
+  },
+  {
+   "id": "kelly-writers-house",
+   "name": "Kelly Writers House",
+   "short": "Kelly Writers House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.199534,
+   "lat": 39.952895,
+   "osm": "way/191305136"
+  },
+  {
+   "id": "locust-house",
+   "name": "Locust House",
+   "short": "Locust House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.196782,
+   "lat": 39.95242,
+   "osm": "way/32122179"
+  },
+  {
+   "id": "albert-m-greenfield-intercultural-center",
+   "name": "Albert M. Greenfield Intercultural Center",
+   "short": "Albert M. Greenfield Intercultural Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.197114,
+   "lat": 39.954707,
+   "osm": "way/1484379727"
+  },
+  {
+   "id": "cyclotron",
+   "name": "Cyclotron",
+   "short": "Cyclotron",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.196333,
+   "lat": 39.948821,
+   "osm": "way/1210674817"
+  }
+ ]
+}

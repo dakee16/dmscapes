@@ -1,0 +1,16 @@
+{
+  "collegeId": "upenn",
+  "area": {
+    "osm": "relation/2594845",
+    "bbox": [
+      39.93981,
+      -75.20444,
+      39.95558,
+      -75.18278
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Penn publishes no list of the letter codes its course schedule uses: Penn Facilities' building pages (facilities.upenn.edu/maps/locations) give numeric building codes (20 S. 36th Street is 9802), and the Classroom Technology Services classroom finder (isc-cts.upenn.edu/finder) no longer resolves (checked 2026-11-08)."
+}
