@@ -1,0 +1,16 @@
+{
+  "collegeId": "gcu",
+  "area": {
+    "osm": "relation/6180064",
+    "bbox": [
+      33.50954,
+      -112.13413,
+      33.51673,
+      -112.11274
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "GCU publishes no registrar building-code list; its campus map (map.gcu.edu, whose app bundle lists every building with a map number and an empty Abbreviation field, and the PDF at map.gcu.edu/src/assets/pdfs/campus-map.pdf) gives map numbers only (checked 2026-11-12)."
+}
