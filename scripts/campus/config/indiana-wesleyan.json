@@ -1,0 +1,16 @@
+{
+  "collegeId": "indiana-wesleyan",
+  "area": {
+    "osm": "way/338916182",
+    "bbox": [
+      40.50987,
+      -85.67023,
+      40.52275,
+      -85.65591
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class building-code list: the catalog's instructional facilities page (https://indwes.smartcatalogiq.com/en/2025-2026/catalog/college-of-arts-and-sciences/instructional-facilities) names buildings in full with a single code (AGS), and no Registrar code key turned up; checked 2026-11-08."
+}

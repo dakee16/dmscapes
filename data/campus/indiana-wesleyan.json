@@ -1,0 +1,315 @@
+{
+ "collegeId": "indiana-wesleyan",
+ "generatedAt": "2026-11-12T23:32:39.397Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/indiana-wesleyan.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -85.66749,
+  40.51044,
+  -85.65736,
+  40.52087
+ ],
+ "halls": [
+  {
+   "dormId": "reed-hall",
+   "name": "Reed Hall",
+   "lng": -85.663399,
+   "lat": 40.520632,
+   "pin": "name",
+   "osm": "way/1120923478",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "barnes-student-center",
+     "minutes": 3.7
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 3.3
+    },
+    "library": {
+     "placeId": "jackson-library",
+     "minutes": 3.7
+    }
+   }
+  },
+  {
+   "dormId": "evans-hall",
+   "name": "Evans Hall",
+   "lng": -85.666061,
+   "lat": 40.517702,
+   "pin": "name",
+   "osm": "way/1120923438",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "barnes-student-center",
+     "minutes": 2.5
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 5.3
+    },
+    "library": {
+     "placeId": "jackson-library",
+     "minutes": 4.4
+    }
+   }
+  },
+  {
+   "dormId": "hodson-hall",
+   "name": "Hodson Hall",
+   "lng": -85.664678,
+   "lat": 40.517709,
+   "pin": "name",
+   "osm": "way/1120923439",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "barnes-student-center",
+     "minutes": 1.9
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 4.1
+    },
+    "library": {
+     "placeId": "jackson-library",
+     "minutes": 4.4
+    }
+   }
+  },
+  {
+   "dormId": "beckett-hall",
+   "name": "Beckett Hall",
+   "lng": -85.660284,
+   "lat": 40.51943,
+   "pin": "name",
+   "osm": "way/1120923551",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "barnes-student-center",
+     "minutes": 3.5
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "jackson-library",
+     "minutes": 7.3
+    }
+   }
+  },
+  {
+   "dormId": "martin-hall",
+   "name": "Martin Hall",
+   "lng": -85.662496,
+   "lat": 40.520662,
+   "pin": "name",
+   "osm": "way/1120923479",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "barnes-student-center",
+     "minutes": 3.2
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 2.7
+    },
+    "library": {
+     "placeId": "jackson-library",
+     "minutes": 5.3
+    }
+   }
+  },
+  {
+   "dormId": "south-hall",
+   "name": "South Hall",
+   "lng": -85.660308,
+   "lat": 40.518836,
+   "pin": "name",
+   "osm": "way/1298270619",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "barnes-student-center",
+     "minutes": 3.8
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 3.5
+    },
+    "library": {
+     "placeId": "jackson-library",
+     "minutes": 7.6
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "barnes-student-center",
+   "name": "Barnes Student Center",
+   "short": "Barnes Student Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.664086,
+   "lat": 40.519197,
+   "osm": "way/1120923538"
+  },
+  {
+   "id": "recreation-and-wellness-center",
+   "name": "Recreation and Wellness Center",
+   "short": "Recreation and Wellness Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.661954,
+   "lat": 40.519571,
+   "osm": "way/1120923554"
+  },
+  {
+   "id": "troyer-fieldhouse",
+   "name": "Troyer Fieldhouse",
+   "short": "Troyer Fieldhouse",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.657364,
+   "lat": 40.510437,
+   "osm": "way/469490488"
+  },
+  {
+   "id": "phillippe-performing-arts-center",
+   "name": "Phillippe Performing Arts Center",
+   "short": "Phillippe Performing Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.662104,
+   "lat": 40.518482,
+   "osm": "way/692877588"
+  },
+  {
+   "id": "center-hall",
+   "name": "Center Hall",
+   "short": "Center Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.661822,
+   "lat": 40.51692,
+   "osm": "way/1120923541"
+  },
+  {
+   "id": "maxwell-center",
+   "name": "Maxwell Center",
+   "short": "Maxwell Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.667489,
+   "lat": 40.517866,
+   "osm": "way/1120923437"
+  },
+  {
+   "id": "jackson-library",
+   "name": "Jackson Library",
+   "short": "Jackson Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.6657,
+   "lat": 40.519523,
+   "osm": "way/1120923537"
+  },
+  {
+   "id": "burns-hall-of-science-and-nursing",
+   "name": "Burns Hall of Science and Nursing",
+   "short": "Burns Hall of Science and Nursing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.665742,
+   "lat": 40.520519,
+   "osm": "way/1120923445"
+  },
+  {
+   "id": "elder-hall",
+   "name": "Elder Hall",
+   "short": "Elder Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.66641,
+   "lat": 40.520865,
+   "osm": "way/1120923571"
+  },
+  {
+   "id": "ott-hall-of-science-and-nursing",
+   "name": "Ott Hall of Science and Nursing",
+   "short": "Ott Hall of Science and Nursing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.665101,
+   "lat": 40.520469,
+   "osm": "way/1120923570"
+  },
+  {
+   "id": "noggle-christian-ministries-center",
+   "name": "Noggle Christian Ministries Center",
+   "short": "Noggle Christian Ministries Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.666874,
+   "lat": 40.520279,
+   "osm": "way/1120923444"
+  },
+  {
+   "id": "beard-arts-center",
+   "name": "Beard Arts Center",
+   "short": "Beard Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.667127,
+   "lat": 40.518866,
+   "osm": "way/1120923441"
+  },
+  {
+   "id": "goodman-hall",
+   "name": "Goodman Hall",
+   "short": "Goodman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.667331,
+   "lat": 40.51939,
+   "osm": "way/1120923443"
+  }
+ ]
+}
