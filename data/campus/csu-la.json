@@ -1,0 +1,271 @@
+{
+ "collegeId": "csu-la",
+ "generatedAt": "2026-11-12T23:31:45.839Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Cal State LA location directory, Buildings (names with abbreviations in parentheses)",
+   "url": "https://www.calstatela.edu/location-categories/buildings",
+   "use": "building codes",
+   "read": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/csu-la.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -118.16982,
+  34.064,
+  -118.16437,
+  34.0739
+ ],
+ "halls": [
+  {
+   "dormId": "south-village",
+   "name": "South Village",
+   "lng": -118.16437,
+   "lat": 34.06775,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "kennedy-library",
+     "minutes": 5.5
+    },
+    "gym": {
+     "placeId": "eagles-nest-gymnasium",
+     "minutes": 5.9
+    }
+   }
+  },
+  {
+   "dormId": "phase-i",
+   "name": "Phase I",
+   "lng": -118.166,
+   "lat": 34.0697,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "kennedy-library",
+     "minutes": 6.3
+    },
+    "gym": {
+     "placeId": "eagles-nest-gymnasium",
+     "minutes": 8
+    }
+   }
+  },
+  {
+   "dormId": "phase-ii",
+   "name": "Phase II",
+   "lng": -118.1653,
+   "lat": 34.0707,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "kennedy-library",
+     "minutes": 9.8
+    },
+    "gym": {
+     "placeId": "eagles-nest-gymnasium",
+     "minutes": 11.5
+    }
+   }
+  },
+  {
+   "dormId": "golden-eagle-apartments",
+   "name": "Golden Eagle Apartments",
+   "lng": -118.1657,
+   "lat": 34.0739,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "kennedy-library",
+     "minutes": 13.1
+    },
+    "gym": {
+     "placeId": "eagles-nest-gymnasium",
+     "minutes": 14.8
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "luckman-fine-arts-complex-music-building",
+   "name": "Luckman Fine Arts Complex;Music Building",
+   "short": "Luckman Fine Arts Complex;Music Building",
+   "kind": "academic",
+   "codes": [
+    "MUS"
+   ],
+   "aliases": [
+    "Music Building",
+    "Music"
+   ],
+   "lng": -118.167611,
+   "lat": 34.068477,
+   "osm": "relation/6408193"
+  },
+  {
+   "id": "kennedy-library",
+   "name": "Kennedy Library",
+   "short": "Kennedy Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -118.167452,
+   "lat": 34.067471,
+   "osm": "way/419973507"
+  },
+  {
+   "id": "engineering-and-technology",
+   "name": "Engineering and Technology",
+   "short": "Engineering and Technology",
+   "kind": "academic",
+   "codes": [
+    "ET"
+   ],
+   "aliases": [],
+   "lng": -118.166194,
+   "lat": 34.066442,
+   "osm": "way/419974113"
+  },
+  {
+   "id": "king-hall",
+   "name": "King Hall",
+   "short": "King Hall",
+   "kind": "academic",
+   "codes": [
+    "KH"
+   ],
+   "aliases": [],
+   "lng": -118.165871,
+   "lat": 34.067897,
+   "osm": "way/419973510"
+  },
+  {
+   "id": "golden-eagle",
+   "name": "Golden Eagle",
+   "short": "Golden Eagle",
+   "kind": "academic",
+   "codes": [
+    "GE"
+   ],
+   "aliases": [],
+   "lng": -118.168668,
+   "lat": 34.067508,
+   "osm": "relation/6243379"
+  },
+  {
+   "id": "eagles-nest-gymnasium",
+   "name": "Eagles Nest Gymnasium",
+   "short": "Eagles Nest Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -118.167541,
+   "lat": 34.066474,
+   "osm": "way/419974069"
+  },
+  {
+   "id": "annenberg-science-complex-la-kretz-ascl",
+   "name": "Annenberg Science Complex La Kretz (ASCL)",
+   "short": "Annenberg Science Complex La Kretz (ASCL)",
+   "kind": "academic",
+   "codes": [
+    "ASCL"
+   ],
+   "aliases": [
+    "Annenberg Science Complex La Kretz"
+   ],
+   "lng": -118.168273,
+   "lat": 34.064915,
+   "osm": "way/419974083"
+  },
+  {
+   "id": "biological-sciences",
+   "name": "Biological Sciences",
+   "short": "Biological Sciences",
+   "kind": "academic",
+   "codes": [
+    "BS"
+   ],
+   "aliases": [],
+   "lng": -118.169311,
+   "lat": 34.065649,
+   "osm": "way/419974087"
+  },
+  {
+   "id": "fine-arts",
+   "name": "Fine Arts",
+   "short": "Fine Arts",
+   "kind": "academic",
+   "codes": [
+    "FA"
+   ],
+   "aliases": [],
+   "lng": -118.166404,
+   "lat": 34.067209,
+   "osm": "way/419974101"
+  },
+  {
+   "id": "salazar-hall",
+   "name": "Salazar Hall",
+   "short": "Salazar Hall",
+   "kind": "academic",
+   "codes": [
+    "SH"
+   ],
+   "aliases": [],
+   "lng": -118.169824,
+   "lat": 34.063998,
+   "osm": "way/146207885"
+  },
+  {
+   "id": "university-student-union",
+   "name": "University Student Union",
+   "short": "University Student Union",
+   "kind": "academic",
+   "codes": [
+    "U-SU"
+   ],
+   "aliases": [],
+   "lng": -118.168928,
+   "lat": 34.06812,
+   "osm": "way/419974426"
+  },
+  {
+   "id": "simpson-tower",
+   "name": "Simpson Tower",
+   "short": "Simpson Tower",
+   "kind": "academic",
+   "codes": [
+    "ST"
+   ],
+   "aliases": [],
+   "lng": -118.169387,
+   "lat": 34.064262,
+   "osm": "way/146207881"
+  }
+ ]
+}

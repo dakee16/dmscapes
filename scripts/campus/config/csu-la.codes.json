@@ -1,0 +1,75 @@
+{
+ "name": "Cal State LA location directory, Buildings (names with abbreviations in parentheses)",
+ "url": "https://www.calstatela.edu/location-categories/buildings",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "ADM",
+   "name": "Administration"
+  },
+  {
+   "code": "ASCL",
+   "name": "Annenberg Science Complex La Kretz"
+  },
+  {
+   "code": "BS",
+   "name": "Biological Sciences"
+  },
+  {
+   "code": "CC",
+   "name": "Career Center"
+  },
+  {
+   "code": "ET",
+   "name": "Engineering and Technology"
+  },
+  {
+   "code": "FA",
+   "name": "Fine Arts"
+  },
+  {
+   "code": "GE",
+   "name": "Golden Eagle"
+  },
+  {
+   "code": "HC",
+   "name": "Student Health Center"
+  },
+  {
+   "code": "KH",
+   "name": "King Hall"
+  },
+  {
+   "code": "MUS",
+   "name": "Music"
+  },
+  {
+   "code": "PE",
+   "name": "Physical Education"
+  },
+  {
+   "code": "PUBS",
+   "name": "Parking, Transportation Service Center, Police/Public Safety"
+  },
+  {
+   "code": "SA",
+   "name": "Student Affairs"
+  },
+  {
+   "code": "SH",
+   "name": "Salazar Hall"
+  },
+  {
+   "code": "ST",
+   "name": "Simpson Tower"
+  },
+  {
+   "code": "TVFM",
+   "name": "TV, Film, Media"
+  },
+  {
+   "code": "U-SU",
+   "name": "University Student Union"
+  }
+ ]
+}
