@@ -1,0 +1,699 @@
+{
+ "collegeId": "northeastern",
+ "generatedAt": "2026-11-12T23:35:41.770Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/northeastern.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -71.09322,
+  42.3351,
+  -71.08616,
+  42.34288
+ ],
+ "halls": [
+  {
+   "dormId": "stetson-east",
+   "name": "Stetson East",
+   "lng": -71.090191,
+   "lat": 42.341368,
+   "pin": "name",
+   "osm": "way/152566866",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "snell-library",
+     "minutes": 5.1
+    },
+    "gym": {
+     "placeId": "roger-m-and-michelle-s-marino-recreation-center",
+     "minutes": 2
+    },
+    "dining": {
+     "placeId": "curry-student-center",
+     "minutes": 5.2
+    }
+   }
+  },
+  {
+   "dormId": "stetson-west",
+   "name": "Stetson West",
+   "lng": -71.090628,
+   "lat": 42.340951,
+   "pin": "name",
+   "osm": "way/29809231",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "snell-library",
+     "minutes": 5.5
+    },
+    "gym": {
+     "placeId": "roger-m-and-michelle-s-marino-recreation-center",
+     "minutes": 1.6
+    },
+    "dining": {
+     "placeId": "curry-student-center",
+     "minutes": 5.6
+    }
+   }
+  },
+  {
+   "dormId": "speare-hall",
+   "name": "Speare Hall",
+   "lng": -71.089643,
+   "lat": 42.340649,
+   "pin": "name",
+   "osm": "way/181033637",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "snell-library",
+     "minutes": 4.2
+    },
+    "gym": {
+     "placeId": "cabot-physical-education-center",
+     "minutes": 2.6
+    },
+    "dining": {
+     "placeId": "curry-student-center",
+     "minutes": 4.3
+    }
+   }
+  },
+  {
+   "dormId": "kennedy-hall",
+   "name": "Kennedy Hall",
+   "lng": -71.090479,
+   "lat": 42.342879,
+   "pin": "name",
+   "osm": "relation/64929",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "snell-library",
+     "minutes": 7.9
+    },
+    "gym": {
+     "placeId": "roger-m-and-michelle-s-marino-recreation-center",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "curry-student-center",
+     "minutes": 8
+    }
+   }
+  },
+  {
+   "dormId": "smith-hall",
+   "name": "Smith Hall",
+   "lng": -71.090577,
+   "lat": 42.342503,
+   "pin": "name",
+   "osm": "way/29801640",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "snell-library",
+     "minutes": 7.3
+    },
+    "gym": {
+     "placeId": "roger-m-and-michelle-s-marino-recreation-center",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "curry-student-center",
+     "minutes": 7.4
+    }
+   }
+  },
+  {
+   "dormId": "melvin-hall",
+   "name": "Melvin Hall",
+   "lng": -71.091159,
+   "lat": 42.342102,
+   "pin": "name",
+   "osm": "way/29738400",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "snell-library",
+     "minutes": 7.6
+    },
+    "gym": {
+     "placeId": "roger-m-and-michelle-s-marino-recreation-center",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "curry-student-center",
+     "minutes": 7.7
+    }
+   }
+  },
+  {
+   "dormId": "white-hall",
+   "name": "White Hall",
+   "lng": -71.09105,
+   "lat": 42.34005,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "snell-library",
+     "minutes": 5.1
+    },
+    "gym": {
+     "placeId": "cabot-physical-education-center",
+     "minutes": 1.4
+    },
+    "dining": {
+     "placeId": "curry-student-center",
+     "minutes": 5.2
+    }
+   }
+  },
+  {
+   "dormId": "international-village",
+   "name": "International Village",
+   "lng": -71.08924,
+   "lat": 42.335102,
+   "pin": "name",
+   "osm": "way/181005838",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "snell-library",
+     "minutes": 6.2
+    },
+    "gym": {
+     "placeId": "barletta-natatorium",
+     "minutes": 7.2
+    },
+    "dining": {
+     "placeId": "curry-student-center",
+     "minutes": 6.9
+    }
+   }
+  },
+  {
+   "dormId": "east-village",
+   "name": "East Village",
+   "lng": -71.086889,
+   "lat": 42.340463,
+   "pin": "name",
+   "osm": "way/485216231",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "snell-library",
+     "minutes": 3.6
+    },
+    "gym": {
+     "placeId": "cabot-physical-education-center",
+     "minutes": 3.7
+    },
+    "dining": {
+     "placeId": "curry-student-center",
+     "minutes": 3.5
+    }
+   }
+  },
+  {
+   "dormId": "west-village-h",
+   "name": "West Village H",
+   "lng": -71.092304,
+   "lat": 42.338556,
+   "pin": "name",
+   "osm": "way/87905235",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "snell-library",
+     "minutes": 5.6
+    },
+    "gym": {
+     "placeId": "cabot-physical-education-center",
+     "minutes": 3.2
+    },
+    "dining": {
+     "placeId": "curry-student-center",
+     "minutes": 6
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "snell-library",
+   "name": "Snell Library",
+   "short": "Snell Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Snell Library, Northeastern University"
+   ],
+   "lng": -71.08798,
+   "lat": 42.338377,
+   "osm": "way/29566437"
+  },
+  {
+   "id": "barletta-natatorium",
+   "name": "Barletta Natatorium",
+   "short": "Barletta Natatorium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.089559,
+   "lat": 42.339194,
+   "osm": "way/181029628"
+  },
+  {
+   "id": "northeastern-exp",
+   "name": "Northeastern EXP",
+   "short": "Northeastern EXP",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.08764,
+   "lat": 42.337067,
+   "osm": "way/997766227"
+  },
+  {
+   "id": "roger-m-and-michelle-s-marino-recreation-center",
+   "name": "Roger M. and Michelle S. Marino Recreation Center",
+   "short": "Roger M. and Michelle S. Marino Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.090353,
+   "lat": 42.340316,
+   "osm": "way/29871354"
+  },
+  {
+   "id": "curry-student-center",
+   "name": "Curry Student Center",
+   "short": "Curry Student Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.087565,
+   "lat": 42.339112,
+   "osm": "way/88150271"
+  },
+  {
+   "id": "cabot-physical-education-center",
+   "name": "Cabot Physical Education Center",
+   "short": "Cabot Physical Education Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.089771,
+   "lat": 42.339546,
+   "osm": "way/29572600"
+  },
+  {
+   "id": "interdisciplinary-science-and-engineering-complex",
+   "name": "Interdisciplinary Science & Engineering Complex",
+   "short": "Interdisciplinary Science & Engineering Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.086924,
+   "lat": 42.337681,
+   "osm": "way/604056696"
+  },
+  {
+   "id": "ryder-hall",
+   "name": "Ryder Hall",
+   "short": "Ryder Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.090629,
+   "lat": 42.336593,
+   "osm": "way/240326474"
+  },
+  {
+   "id": "mugar-life-sciences-building",
+   "name": "Mugar Life Sciences Building",
+   "short": "Mugar Life Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.087149,
+   "lat": 42.339851,
+   "osm": "way/29618478"
+  },
+  {
+   "id": "forsyth-building",
+   "name": "Forsyth Building",
+   "short": "Forsyth Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.089576,
+   "lat": 42.338576,
+   "osm": "way/29803810"
+  },
+  {
+   "id": "maureen-and-richard-j-egan-engineering-and-science-research-center",
+   "name": "Maureen and Richard J. Egan Engineering and Science Research Center",
+   "short": "Maureen and Richard J. Egan Engineering and Science Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.08882,
+   "lat": 42.33774,
+   "osm": "way/88147649"
+  },
+  {
+   "id": "blackman-auditorium",
+   "name": "Blackman Auditorium",
+   "short": "Blackman Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.087879,
+   "lat": 42.339521,
+   "osm": "way/88153153"
+  },
+  {
+   "id": "richards-hall",
+   "name": "Richards Hall",
+   "short": "Richards Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.088815,
+   "lat": 42.339876,
+   "osm": "way/29942264"
+  },
+  {
+   "id": "dodge-hall",
+   "name": "Dodge Hall",
+   "short": "Dodge Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.087803,
+   "lat": 42.340295,
+   "osm": "way/29944923"
+  },
+  {
+   "id": "hayden-hall",
+   "name": "Hayden Hall",
+   "short": "Hayden Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.088467,
+   "lat": 42.339278,
+   "osm": "way/29865738"
+  },
+  {
+   "id": "rennaissance-park",
+   "name": "Rennaissance Park",
+   "short": "Rennaissance Park",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.088222,
+   "lat": 42.335597,
+   "osm": "way/29554005"
+  },
+  {
+   "id": "rubenstein-hall",
+   "name": "Rubenstein Hall",
+   "short": "Rubenstein Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.093225,
+   "lat": 42.338328,
+   "osm": "relation/64073"
+  },
+  {
+   "id": "snell-engineering-center",
+   "name": "Snell Engineering Center",
+   "short": "Snell Engineering Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.088847,
+   "lat": 42.338286,
+   "osm": "way/88147650"
+  },
+  {
+   "id": "hurtig-hall",
+   "name": "Hurtig Hall",
+   "short": "Hurtig Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.086165,
+   "lat": 42.339777,
+   "osm": "way/29650835"
+  },
+  {
+   "id": "lake-hall",
+   "name": "Lake Hall",
+   "short": "Lake Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.090725,
+   "lat": 42.338207,
+   "osm": "way/88149480"
+  },
+  {
+   "id": "dana-research-center",
+   "name": "Dana Research Center",
+   "short": "Dana Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.089306,
+   "lat": 42.338075,
+   "osm": "way/29948394"
+  },
+  {
+   "id": "shillman-hall",
+   "name": "Shillman Hall",
+   "short": "Shillman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.090228,
+   "lat": 42.337585,
+   "osm": "way/29574944"
+  },
+  {
+   "id": "nightingale-hall",
+   "name": "Nightingale Hall",
+   "short": "Nightingale Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.090133,
+   "lat": 42.338132,
+   "osm": "way/88149479"
+  },
+  {
+   "id": "northeastern-university-school-of-law-dockser-hall-nulawlab",
+   "name": "Northeastern University School of Law-Dockser Hall -Nulawlab",
+   "short": "Northeastern University School of Law-Dockser Hall -Nulawlab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.09045,
+   "lat": 42.338688,
+   "osm": "way/181027879"
+  },
+  {
+   "id": "behrakis-health-sciences-center",
+   "name": "Behrakis Health Sciences Center",
+   "short": "Behrakis Health Sciences Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.091519,
+   "lat": 42.336933,
+   "osm": "way/240326471"
+  },
+  {
+   "id": "knowles-center",
+   "name": "Knowles Center",
+   "short": "Knowles Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.090871,
+   "lat": 42.339209,
+   "osm": "way/29738909"
+  },
+  {
+   "id": "robinson-hall",
+   "name": "Robinson Hall",
+   "short": "Robinson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.086721,
+   "lat": 42.339267,
+   "osm": "way/29804783"
+  },
+  {
+   "id": "ell-hall",
+   "name": "Ell Hall",
+   "short": "Ell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.088075,
+   "lat": 42.339794,
+   "osm": "way/88150272"
+  },
+  {
+   "id": "churchill-hall",
+   "name": "Churchill Hall",
+   "short": "Churchill Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.088903,
+   "lat": 42.33877,
+   "osm": "way/29618540"
+  },
+  {
+   "id": "cullinane-hall",
+   "name": "Cullinane Hall",
+   "short": "Cullinane Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.086545,
+   "lat": 42.340105,
+   "osm": "way/29741410"
+  },
+  {
+   "id": "fenway-center",
+   "name": "Fenway Center",
+   "short": "Fenway Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.087841,
+   "lat": 42.342043,
+   "osm": "way/212126995"
+  },
+  {
+   "id": "cahners-hall",
+   "name": "Cahners Hall",
+   "short": "Cahners Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.091527,
+   "lat": 42.341471,
+   "osm": "way/29600467"
+  },
+  {
+   "id": "meserve-hall",
+   "name": "Meserve Hall",
+   "short": "Meserve Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.090864,
+   "lat": 42.337638,
+   "osm": "way/29650860"
+  },
+  {
+   "id": "cargill-hall",
+   "name": "Cargill Hall",
+   "short": "Cargill Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.0916,
+   "lat": 42.338939,
+   "osm": "way/181027878"
+  },
+  {
+   "id": "cushing-hall",
+   "name": "Cushing Hall",
+   "short": "Cushing Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.091409,
+   "lat": 42.341679,
+   "osm": "way/29650811"
+  },
+  {
+   "id": "raytheon-amphitheater",
+   "name": "Raytheon Amphitheater",
+   "short": "Raytheon Amphitheater",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.089254,
+   "lat": 42.337434,
+   "osm": "way/29806482"
+  },
+  {
+   "id": "stearns-center",
+   "name": "Stearns Center",
+   "short": "Stearns Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.091359,
+   "lat": 42.339014,
+   "osm": "way/181027880"
+  },
+  {
+   "id": "kariotis-hall",
+   "name": "Kariotis Hall",
+   "short": "Kariotis Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.090873,
+   "lat": 42.338646,
+   "osm": "way/181027881"
+  },
+  {
+   "id": "holmes-hall",
+   "name": "Holmes Hall",
+   "short": "Holmes Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.090829,
+   "lat": 42.337891,
+   "osm": "way/88149478"
+  }
+ ]
+}
