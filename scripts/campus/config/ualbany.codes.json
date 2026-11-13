@@ -1,0 +1,99 @@
+{
+ "name": "University at Albany Schedule of Classes, Building Codes",
+ "url": "https://www.albany.edu/docs/schedule_of_classes/building_codes.html",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "AS",
+   "name": "Arts and Sciences"
+  },
+  {
+   "code": "BA",
+   "name": "Business Administration"
+  },
+  {
+   "code": "BI",
+   "name": "Biology"
+  },
+  {
+   "code": "CH",
+   "name": "Chemistry"
+  },
+  {
+   "code": "DR",
+   "name": "Draper Hall"
+  },
+  {
+   "code": "DU",
+   "name": "Van Rensselaer Hall"
+  },
+  {
+   "code": "ED",
+   "name": "Education"
+  },
+  {
+   "code": "ES",
+   "name": "Earth Science and Mathematics"
+  },
+  {
+   "code": "FA",
+   "name": "Fine Arts"
+  },
+  {
+   "code": "HS",
+   "name": "Husted Hall"
+  },
+  {
+   "code": "HU",
+   "name": "Humanties"
+  },
+  {
+   "code": "LC",
+   "name": "Lecture Center"
+  },
+  {
+   "code": "LE",
+   "name": "Science Library"
+  },
+  {
+   "code": "LI",
+   "name": "University Library"
+  },
+  {
+   "code": "MI",
+   "name": "Milne Hall"
+  },
+  {
+   "code": "PC",
+   "name": "Performing Arts Center"
+  },
+  {
+   "code": "PH",
+   "name": "Physics"
+  },
+  {
+   "code": "RI",
+   "name": "Richardson Hall"
+  },
+  {
+   "code": "SC",
+   "name": "Sculpture Studio"
+  },
+  {
+   "code": "SS",
+   "name": "Social Science"
+  },
+  {
+   "code": "ST",
+   "name": "Cooper Hall"
+  },
+  {
+   "code": "SW",
+   "name": "East Campus"
+  },
+  {
+   "code": "TB",
+   "name": "Ten Broeck Hall"
+  }
+ ]
+}

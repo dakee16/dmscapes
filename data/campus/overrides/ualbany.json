@@ -1,0 +1,97 @@
+{
+  "halls": {
+    "dutch-quad": {
+      "pin": [
+        -73.82773,
+        42.68552
+      ]
+    },
+    "colonial-quad": {
+      "pin": [
+        -73.82404,
+        42.68901
+      ]
+    },
+    "indigenous-quad": {
+      "pin": [
+        -73.8239,
+        42.68335
+      ]
+    },
+    "state-quad": {
+      "pin": [
+        -73.82027,
+        42.68678
+      ]
+    },
+    "freedom-apartments": {
+      "pin": [
+        -73.8335,
+        42.6885
+      ]
+    }
+  },
+  "codes": {
+    "BA": "way/580566054",
+    "HU": "way/580566058",
+    "AS": "way/580566052",
+    "SW": null
+  },
+  "places": {
+    "dining-management-trailer": {
+      "hide": true
+    },
+    "campus-center": {
+      "kind": "dining"
+    },
+    "broadview-center": {
+      "hide": true
+    },
+    "bubble-gym": {
+      "hide": true
+    },
+    "physical-education": {
+      "kind": "gym"
+    },
+    "hudson": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "dutch-quad": "Dutch Quad is a quad of named halls (Stuyvesant Tower, Beverwyck, Bleecker, Ryckman, Schuyler, Ten Broeck, Ten Eyck, Van Cortlandt, Van Rensselaer; albany.edu/residential-life/housing-options/dutch-quad); pinned at Stuyvesant Tower (OSM way/103599105) in its middle.",
+    "colonial-quad": "Colonial Quad is a quad of named halls (Livingston Tower, Clinton, Delancy, Hamilton, Herkimer, Johnson, Morris, Paine, Steinmetz, Zenger; albany.edu/residential-life/housing-options/colonial-quad); pinned at Livingston Tower (OSM way/103599087) in its middle.",
+    "indigenous-quad": "Indigenous Quad is a quad of named halls (Mohawk Tower, Adirondack, Cayuga, Mahican, Montauk, Oneida, Onondaga, Seneca, Tuscarora; albany.edu/residential-life/housing-options/indigenous-quad); pinned at Mohawk Tower (OSM way/103599110) in its middle.",
+    "state-quad": "State Quad is a quad of named halls (Eastman Tower, Anthony, Cooper, Fulton, Irving, Melville, Steinmetz, Tappan, Whitman; albany.edu/residential-life/housing-options/state-quad); pinned at Eastman Tower (OSM way/103599081) in its middle.",
+    "freedom-apartments": "Freedom Apartments is on Jose Marti Drive off Fuller Road (albany.edu/residential-life/housing-options/freedom-apartments); OSM names its buildings only 'Building #1' to '#7' (263-273 Fuller Road, ways 754070449-754070455), so the pin sits in the middle of that cluster.",
+    "BA": "Business Administration (BA) is the podium building OSM now names Catskill (way/580566054, old_name 'Business Administration Building 27'), not the University Administration Building on Western Avenue the word match picked.",
+    "HU": "The code list spells it 'Humanties'; it is the Humanities building (OSM way/580566058).",
+    "AS": "'Arts and Sciences' on the code list is OSM's 'Arts & Science' (way/580566052).",
+    "SW": "SW is East Campus, UAlbany's health-sciences campus in Rensselaer, not Campus Center East; it isn't on this map.",
+    "dining-management-trailer": "A dining-services office trailer at 1 Physics Lane, not a dining hall.",
+    "campus-center": "The Campus Center holds the uptown campus's central food court and cafes (albany.edu/campus-center), so it is the dining place here; the quads' own dining halls sit inside the quads.",
+    "broadview-center": "Broadview Center (the former SEFCU Arena) is the varsity basketball arena, not a class building or student gym.",
+    "bubble-gym": "The Bubble is the indoor turf practice facility by the stadium, a varsity and club sports venue, not the student gym.",
+    "physical-education": "The Physical Education building holds Campus Recreation's fitness center, pool and gyms (albany.edu/campus-recreation); its name says neither gym nor recreation.",
+    "hudson": "Hudson (OSM way/103746474, formerly Building 25) is a small building by the Parking and Mass Transit office north of Colonial Quad; it is on no class-schedule code list and isn't a class building."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "dutch-quad -> science-library",
+        "dutch-quad -> humanities",
+        "colonial-quad -> catskill",
+        "indigenous-quad -> chemistry",
+        "state-quad -> biology"
+      ],
+      "maxRatio": 4,
+      "why": "The academic podium is a raised platform with the four quads at its corners: the mapped walkways climb onto it from each quad, and the Science Library, Humanities, Catskill, Chemistry and Biology have their mapped doors on the far side of the podium or down on the ring road, so the walk crosses the podium and comes back round the building."
+    },
+    {
+      "pairs": [
+        "indigenous-quad -> physical-education"
+      ],
+      "maxRatio": 3.2,
+      "why": "No mapped path crosses the lawn and parking between Indigenous Quad and the Physical Education building, whose mapped door is on its stadium side, so the walk goes out by the quad walkway and round by the ring road."
+    }
+  ]
+}

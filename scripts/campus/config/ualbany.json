@@ -1,0 +1,12 @@
+{
+  "collegeId": "ualbany",
+  "area": {
+    "osm": "relation/14368807",
+    "bbox": [42.678, -73.835, 42.6935, -73.81]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/ualbany.codes.json"
+  }
+}
