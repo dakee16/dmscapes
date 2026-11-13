@@ -1,0 +1,16 @@
+{
+  "collegeId": "harvard",
+  "area": {
+    "osm": "relation/2415825",
+    "bbox": [
+      42.35929,
+      -71.13616,
+      42.38388,
+      -71.11046
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public building-code list: Harvard course locations are given by building name (e.g. \"Emerson 210\"), and the FAS Registrar's Spaces for Courses page and the ESS Roombook (essroombook.fas.harvard.edu) list buildings and rooms by name, not code (checked 2026-11-08)."
+}
