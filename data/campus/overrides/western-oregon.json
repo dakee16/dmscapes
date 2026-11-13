@@ -1,0 +1,30 @@
+{
+  "places": {
+    "welcome-center": {
+      "hide": true
+    },
+    "university-computing-solutions": {
+      "hide": true
+    },
+    "child-development-center": {
+      "hide": true
+    },
+    "lieuallen-administration-building": {
+      "hide": true
+    },
+    "student-health-and-counseling-center": {
+      "hide": true
+    },
+    "sequoia-commons": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "welcome-center": "The admissions welcome centre (wou.edu campus map), not somewhere classes happen.",
+    "university-computing-solutions": "WOU's IT department building (wou.edu campus map), a service building rather than a class building.",
+    "child-development-center": "Childcare (OSM amenity=kindergarten), not somewhere classes happen.",
+    "lieuallen-administration-building": "The administration building (wou.edu campus map), offices rather than classrooms.",
+    "student-health-and-counseling-center": "The student health and counselling clinic (OSM amenity=clinic), not somewhere classes happen.",
+    "sequoia-commons": "The community building of the Spruce, Noble and Cedar apartment halls (OSM amenity=community_centre), a housing amenity rather than a class building."
+  }
+}
