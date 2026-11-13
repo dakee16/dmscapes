@@ -1,0 +1,16 @@
+{
+  "collegeId": "stanford",
+  "area": {
+    "osm": "way/29268613",
+    "bbox": [
+      37.41899,
+      -122.18607,
+      37.4434,
+      -122.15204
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public building-code list: searches of stanford.edu find no Registrar or ExploreCourses location key (class locations are given by building name), only the Provost's organizational codes, which are departments, not buildings (checked 2026-11-08)."
+}
