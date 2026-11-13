@@ -1,0 +1,17 @@
+{
+  "collegeId": "ucf",
+  "area": {
+    "osm": "relation/1159228",
+    "bbox": [
+      28.58705,
+      -81.20884,
+      28.61186,
+      -81.18663
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/ucf.codes.json"
+  }
+}

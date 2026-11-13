@@ -1,0 +1,174 @@
+{
+  "halls": {
+    "nike": {
+      "pin": [
+        -81.19771,
+        28.59457
+      ]
+    },
+    "hercules": {
+      "pin": [
+        -81.19914,
+        28.59415
+      ]
+    },
+    "libra": {
+      "pin": [
+        -81.19851,
+        28.59851
+      ]
+    },
+    "neptune": {
+      "pin": [
+        -81.19818,
+        28.59387
+      ]
+    },
+    "apollo": {
+      "pin": [
+        -81.20071,
+        28.59843
+      ]
+    },
+    "towers": {
+      "pin": [
+        -81.19659,
+        28.6067
+      ]
+    }
+  },
+  "places": {
+    "technology-commons-i": {
+      "kind": "academic"
+    },
+    "technology-commons-ii": {
+      "kind": "academic"
+    },
+    "addition-financial-arena": {
+      "hide": true
+    },
+    "nicholson-fieldhouse": {
+      "hide": true
+    },
+    "wayne-densch-sports-center": {
+      "hide": true
+    },
+    "leisure-pool-services": {
+      "hide": true
+    },
+    "facilities-and-safety": {
+      "hide": true
+    },
+    "fairwinds-alumni-center": {
+      "hide": true
+    },
+    "duke-energy-welcome-center": {
+      "hide": true
+    },
+    "health-center-and-pharmacy": {
+      "hide": true
+    },
+    "counseling-and-psychological-services": {
+      "hide": true
+    },
+    "burnett-house": {
+      "hide": true
+    },
+    "print-shop": {
+      "hide": true
+    },
+    "kenneth-g-dixon-career-development-center": {
+      "hide": true
+    },
+    "ucf-police-department": {
+      "hide": true
+    },
+    "emergency-operation-center": {
+      "hide": true
+    },
+    "fire-station-65": {
+      "hide": true
+    },
+    "knights-pantry": {
+      "hide": true
+    },
+    "creative-school-for-children": {
+      "hide": true
+    },
+    "creative-school-module-2": {
+      "hide": true
+    },
+    "": {
+      "hide": true
+    },
+    "-608153793": {
+      "hide": true
+    },
+    "fraternity-and-sorority-life": {
+      "hide": true
+    },
+    "bpw-scholarship-house": {
+      "hide": true
+    },
+    "hercules-25": {
+      "hide": true
+    },
+    "housing-administration-building": {
+      "hide": true
+    },
+    "barbara-ying-center": {
+      "hide": true
+    },
+    "ara-dr-research-facility": {
+      "hide": true
+    },
+    "storm-water-research-lab": {
+      "hide": true
+    },
+    "institute-for-simulation-and-training": {
+      "hide": true
+    },
+    "simulation-and-training-technology-center": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "nike": "Pinned at Nike 103 (OSM way/159918670), the middle of the Nike Community buildings 101-107 (housing.ucf.edu/nike).",
+    "hercules": "Pinned at Hercules 108 (OSM way/159918673), the middle of the Hercules Community buildings 108-114 (housing.ucf.edu/hercules).",
+    "libra": "Pinned at Citrus Hall (OSM way/154739821, 4024 Libra Drive), the middle of the Libra Community halls Brevard, Citrus, Flagler, Orange, Seminole and Sumter (housing.ucf.edu/libra).",
+    "neptune": "Pinned at Neptune 157 (OSM way/685488806, 3700 Orlando), the middle of the Neptune Community buildings 156-159 (housing.ucf.edu/neptune).",
+    "apollo": "Pinned at Volusia Hall (OSM way/154739915, 4132 Pyxis Lane), the middle of the Apollo Community halls Lake, Osceola, Polk and Volusia (housing.ucf.edu/apollo).",
+    "towers": "Pinned at Tower III (OSM way/157935013, 4211 East Plaza Drive), the middle of Towers I-IV at Knights Plaza (housing.ucf.edu/towers).",
+    "technology-commons-i": "Technology Commons I is a classroom and IT building, not dining; the commons name rule tagged it dining (map.ucf.edu TC1).",
+    "technology-commons-ii": "Technology Commons II is a classroom and IT building, not dining; the commons name rule tagged it dining (map.ucf.edu TC2).",
+    "addition-financial-arena": "The varsity arena. Not somewhere undergraduates have class.",
+    "nicholson-fieldhouse": "Varsity athletics. Not somewhere undergraduates have class.",
+    "wayne-densch-sports-center": "Varsity athletics. Not somewhere undergraduates have class.",
+    "leisure-pool-services": "Pool plant. Not somewhere undergraduates have class.",
+    "facilities-and-safety": "Facilities. Not somewhere undergraduates have class.",
+    "fairwinds-alumni-center": "Alumni centre. Not somewhere undergraduates have class.",
+    "duke-energy-welcome-center": "Visitor centre. Not somewhere undergraduates have class.",
+    "health-center-and-pharmacy": "Clinic. Not somewhere undergraduates have class.",
+    "counseling-and-psychological-services": "Counselling. Not somewhere undergraduates have class.",
+    "burnett-house": "The president's house. Not somewhere undergraduates have class.",
+    "print-shop": "Print shop. Not somewhere undergraduates have class.",
+    "kenneth-g-dixon-career-development-center": "Career services. Not somewhere undergraduates have class.",
+    "ucf-police-department": "Police. Not somewhere undergraduates have class.",
+    "emergency-operation-center": "Emergency operations. Not somewhere undergraduates have class.",
+    "fire-station-65": "Fire station. Not somewhere undergraduates have class.",
+    "knights-pantry": "Food pantry. Not somewhere undergraduates have class.",
+    "creative-school-for-children": "Childcare. Not somewhere undergraduates have class.",
+    "creative-school-module-2": "Childcare. Not somewhere undergraduates have class.",
+    "": "A sorority house (Greek-letter name in OSM). Not somewhere undergraduates have class.",
+    "-608153793": "A sorority house (Greek-letter name in OSM). Not somewhere undergraduates have class.",
+    "fraternity-and-sorority-life": "Greek life office. Not somewhere undergraduates have class.",
+    "bpw-scholarship-house": "A scholarship house (housing). Not somewhere undergraduates have class.",
+    "hercules-25": "A housing support building in the Hercules Community. Not somewhere undergraduates have class.",
+    "housing-administration-building": "Housing admin. Not somewhere undergraduates have class.",
+    "barbara-ying-center": "A student centre (Global UCF). Not somewhere undergraduates have class.",
+    "ara-dr-research-facility": "A research facility. Not somewhere undergraduates have class.",
+    "storm-water-research-lab": "A research lab. Not somewhere undergraduates have class.",
+    "institute-for-simulation-and-training": "A research institute in Central Florida Research Park south of campus, reached only by the 2 km loop round the east in OSM. Not somewhere undergraduates have class.",
+    "simulation-and-training-technology-center": "A research and military simulation centre in Central Florida Research Park, not a class building. Not somewhere undergraduates have class."
+  }
+}
