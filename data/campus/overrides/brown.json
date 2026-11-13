@@ -1,0 +1,155 @@
+{
+  "halls": {
+    "keeney-quad": {
+      "pin": [
+        -71.403347,
+        41.824277
+      ]
+    }
+  },
+  "places": {
+    "slater-hall": {
+      "hide": true
+    },
+    "west-house": {
+      "hide": true
+    },
+    "graduate-center-e": {
+      "hide": true
+    },
+    "king-house": {
+      "hide": true
+    },
+    "wellness-center-and-residence-hall": {
+      "hide": true
+    },
+    "warren-alpert-medical-school": {
+      "hide": true
+    },
+    "3-davol-square": {
+      "hide": true
+    },
+    "1-davol-square": {
+      "hide": true
+    },
+    "davol-square-marketplace": {
+      "hide": true
+    },
+    "south-street-landing": {
+      "hide": true
+    },
+    "121-south-main-street": {
+      "hide": true
+    },
+    "wexford-innovation-complex": {
+      "hide": true
+    },
+    "26-ship-st": {
+      "hide": true
+    },
+    "biomed-center-acf": {
+      "hide": true
+    },
+    "medical-research-lab": {
+      "hide": true
+    },
+    "citizens-bank": {
+      "hide": true
+    },
+    "wbru": {
+      "hide": true
+    },
+    "department-of-public-safety": {
+      "hide": true
+    },
+    "faculty-club": {
+      "hide": true
+    },
+    "maddock-alumni-center": {
+      "hide": true
+    },
+    "corliss-brackett-house": {
+      "hide": true
+    },
+    "brown-fox-point-early-childhood-education-center": {
+      "hide": true
+    },
+    "hillel-house": {
+      "hide": true
+    },
+    "marston-boat-house": {
+      "hide": true
+    },
+    "meehan-auditorium": {
+      "hide": true
+    },
+    "lacrosse-and-soccer-facility": {
+      "hide": true
+    },
+    "penner-field-house": {
+      "hide": true
+    },
+    "soldiers-memorial-gate": {
+      "hide": true
+    },
+    "carrie-tower": {
+      "hide": true
+    },
+    "hughes-court": {
+      "hide": true
+    },
+    "patriots-court": {
+      "hide": true
+    },
+    "annex": {
+      "hide": true
+    },
+    "sharpe-refectory": {
+      "kind": "dining"
+    },
+    "verney-woolley-hall": {
+      "kind": "dining"
+    },
+    "andrews-commons": {
+      "kind": "dining"
+    }
+  },
+  "notes": {
+    "keeney-quad": "OSM maps Keeney Quadrangle as three paired buildings (Archibald-Bronson, Everett-Poland, Jameson-Mead); pinned on the Everett-Poland Building (OSM way/766362862, 13 Benevolent Street), the middle one (reslife.brown.edu).",
+    "slater-hall": "A Brown residence hall (reslife.brown.edu; OSM designation=Dormitory or the Wellness Center residence), not a class building.",
+    "west-house": "A Brown residence hall (reslife.brown.edu; OSM designation=Dormitory or the Wellness Center residence), not a class building.",
+    "graduate-center-e": "A Brown residence hall (reslife.brown.edu; OSM designation=Dormitory or the Wellness Center residence), not a class building.",
+    "king-house": "A Brown residence hall (reslife.brown.edu; OSM designation=Dormitory or the Wellness Center residence), not a class building.",
+    "wellness-center-and-residence-hall": "A Brown residence hall (reslife.brown.edu; OSM designation=Dormitory or the Wellness Center residence), not a class building.",
+    "warren-alpert-medical-school": "A Jewelry District medical, research, administrative or commercial building (or the animal care facility), not somewhere undergraduates have class.",
+    "3-davol-square": "A Jewelry District medical, research, administrative or commercial building (or the animal care facility), not somewhere undergraduates have class.",
+    "1-davol-square": "A Jewelry District medical, research, administrative or commercial building (or the animal care facility), not somewhere undergraduates have class.",
+    "davol-square-marketplace": "A Jewelry District medical, research, administrative or commercial building (or the animal care facility), not somewhere undergraduates have class.",
+    "south-street-landing": "A Jewelry District medical, research, administrative or commercial building (or the animal care facility), not somewhere undergraduates have class.",
+    "121-south-main-street": "A Jewelry District medical, research, administrative or commercial building (or the animal care facility), not somewhere undergraduates have class.",
+    "wexford-innovation-complex": "A Jewelry District medical, research, administrative or commercial building (or the animal care facility), not somewhere undergraduates have class.",
+    "26-ship-st": "A Jewelry District medical, research, administrative or commercial building (or the animal care facility), not somewhere undergraduates have class.",
+    "biomed-center-acf": "A Jewelry District medical, research, administrative or commercial building (or the animal care facility), not somewhere undergraduates have class.",
+    "medical-research-lab": "A Jewelry District medical, research, administrative or commercial building (or the animal care facility), not somewhere undergraduates have class.",
+    "citizens-bank": "A bank, radio station, public-safety office, faculty club, alumni centre or admissions office, not somewhere classes happen.",
+    "wbru": "A bank, radio station, public-safety office, faculty club, alumni centre or admissions office, not somewhere classes happen.",
+    "department-of-public-safety": "A bank, radio station, public-safety office, faculty club, alumni centre or admissions office, not somewhere classes happen.",
+    "faculty-club": "A bank, radio station, public-safety office, faculty club, alumni centre or admissions office, not somewhere classes happen.",
+    "maddock-alumni-center": "A bank, radio station, public-safety office, faculty club, alumni centre or admissions office, not somewhere classes happen.",
+    "corliss-brackett-house": "A bank, radio station, public-safety office, faculty club, alumni centre or admissions office, not somewhere classes happen.",
+    "brown-fox-point-early-childhood-education-center": "Childcare, not somewhere classes happen.",
+    "hillel-house": "A religious-life building, not somewhere classes happen.",
+    "marston-boat-house": "Varsity boathouse, hockey arena, field facility or field house, not a class building or student gym.",
+    "meehan-auditorium": "Varsity boathouse, hockey arena, field facility or field house, not a class building or student gym.",
+    "lacrosse-and-soccer-facility": "Varsity boathouse, hockey arena, field facility or field house, not a class building or student gym.",
+    "penner-field-house": "Varsity boathouse, hockey arena, field facility or field house, not a class building or student gym.",
+    "soldiers-memorial-gate": "A memorial gate, tower or court (OSM historic=memorial), or an unnamed annex, not a building with classes.",
+    "carrie-tower": "A memorial gate, tower or court (OSM historic=memorial), or an unnamed annex, not a building with classes.",
+    "hughes-court": "A memorial gate, tower or court (OSM historic=memorial), or an unnamed annex, not a building with classes.",
+    "patriots-court": "A memorial gate, tower or court (OSM historic=memorial), or an unnamed annex, not a building with classes.",
+    "annex": "A memorial gate, tower or court (OSM historic=memorial), or an unnamed annex, not a building with classes.",
+    "sharpe-refectory": "The Sharpe Refectory (the Ratty) is Brown's main dining hall (dining.brown.edu); its name doesn't say dining.",
+    "verney-woolley-hall": "Verney-Woolley (the V-Dub) is Brown's Pembroke campus dining hall (dining.brown.edu); its name doesn't say dining.",
+    "andrews-commons": "Andrews Commons is a Brown Dining venue in Andrews Hall (dining.brown.edu); OSM tags it amenity=cafe, which stops the commons name rule."
+  }
+}
