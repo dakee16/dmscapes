@@ -1,0 +1,17 @@
+{
+  "collegeId": "usc",
+  "area": {
+    "osm": "relation/18383936",
+    "bbox": [
+      34.0184,
+      -118.29139,
+      34.02536,
+      -118.27897
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/usc.codes.json"
+  }
+}
