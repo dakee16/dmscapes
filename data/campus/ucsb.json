@@ -1,0 +1,870 @@
+{
+ "collegeId": "ucsb",
+ "generatedAt": "2026-11-13T04:36:04.422Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/ucsb.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -119.87784,
+  34.40778,
+  -119.84001,
+  34.41946
+ ],
+ "halls": [
+  {
+   "dormId": "anacapa",
+   "name": "Anacapa",
+   "lng": -119.843054,
+   "lat": 34.411025,
+   "pin": "name",
+   "osm": "way/221409403",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "davidson-library",
+     "minutes": 6.3
+    },
+    "gym": {
+     "placeId": "old-gym",
+     "minutes": 9.9
+    },
+    "dining": {
+     "placeId": "de-la-guerra-dining-commons",
+     "minutes": 5
+    }
+   }
+  },
+  {
+   "dormId": "manzanita-village",
+   "name": "Manzanita Village",
+   "lng": -119.8518,
+   "lat": 34.41022,
+   "pin": "manual",
+   "osm": "way/221401190",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "davidson-library",
+     "minutes": 11.3
+    },
+    "gym": {
+     "placeId": "old-gym",
+     "minutes": 9.8
+    },
+    "dining": {
+     "placeId": "carrillo-dining-commons",
+     "minutes": 0.8
+    }
+   }
+  },
+  {
+   "dormId": "san-joaquin-villages",
+   "name": "San Joaquin Villages",
+   "lng": -119.87081,
+   "lat": 34.41946,
+   "pin": "manual",
+   "osm": "way/557563250",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "davidson-library",
+     "minutes": 33.9
+    },
+    "gym": {
+     "placeId": "robertson-gymnasium",
+     "minutes": 29.7
+    },
+    "dining": {
+     "placeId": "portola-dining-commons",
+     "minutes": 7.1
+    }
+   }
+  },
+  {
+   "dormId": "san-clemente-villages",
+   "name": "San Clemente Villages",
+   "lng": -119.85656,
+   "lat": 34.41781,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "davidson-library",
+     "minutes": 15.4
+    },
+    "gym": {
+     "placeId": "robertson-gymnasium",
+     "minutes": 11
+    },
+    "dining": {
+     "placeId": "portola-dining-commons",
+     "minutes": 13
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "davidson-library",
+   "name": "Davidson Library",
+   "short": "Davidson Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "UCSB Library"
+   ],
+   "lng": -119.845488,
+   "lat": 34.41379,
+   "osm": "way/355809608"
+  },
+  {
+   "id": "phelps-hall",
+   "name": "Phelps Hall",
+   "short": "Phelps Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.844343,
+   "lat": 34.416144,
+   "osm": "relation/2925122"
+  },
+  {
+   "id": "music",
+   "name": "Music",
+   "short": "Music",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.847146,
+   "lat": 34.412371,
+   "osm": "relation/2927474"
+  },
+  {
+   "id": "engineering-ii",
+   "name": "Engineering II",
+   "short": "Engineering II",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.841374,
+   "lat": 34.41484,
+   "osm": "relation/2925123"
+  },
+  {
+   "id": "robertson-gymnasium",
+   "name": "Robertson Gymnasium",
+   "short": "Robertson Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.849279,
+   "lat": 34.416193,
+   "osm": "way/221239778"
+  },
+  {
+   "id": "humanities-and-social-sciences",
+   "name": "Humanities and Social Sciences",
+   "short": "Humanities and Social Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.850469,
+   "lat": 34.413565,
+   "osm": "relation/13262043"
+  },
+  {
+   "id": "broida-hall",
+   "name": "Broida Hall",
+   "short": "Broida Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.84312,
+   "lat": 34.414092,
+   "osm": "way/221258377"
+  },
+  {
+   "id": "multi-activity-center",
+   "name": "Multi-Activity Center",
+   "short": "Multi-Activity Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.850459,
+   "lat": 34.418968,
+   "osm": "way/221240422"
+  },
+  {
+   "id": "arts",
+   "name": "Arts",
+   "short": "Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.849404,
+   "lat": 34.412553,
+   "osm": "relation/2927470"
+  },
+  {
+   "id": "chemistry",
+   "name": "Chemistry",
+   "short": "Chemistry",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.842659,
+   "lat": 34.415441,
+   "osm": "way/221241519"
+  },
+  {
+   "id": "north-hall",
+   "name": "North Hall",
+   "short": "North Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "NH"
+   ],
+   "lng": -119.846482,
+   "lat": 34.415163,
+   "osm": "way/221404652"
+  },
+  {
+   "id": "de-la-guerra-dining-commons",
+   "name": "De La Guerra Dining Commons",
+   "short": "De La Guerra Dining Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "DLG"
+   ],
+   "lng": -119.844967,
+   "lat": 34.409655,
+   "osm": "way/221235091"
+  },
+  {
+   "id": "harold-frank-hall",
+   "name": "Harold Frank Hall",
+   "short": "Harold Frank Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "HFH",
+    "Engineering 1"
+   ],
+   "lng": -119.841432,
+   "lat": 34.413772,
+   "osm": "relation/2925147"
+  },
+  {
+   "id": "elings-hall",
+   "name": "Elings Hall",
+   "short": "Elings Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.840011,
+   "lat": 34.415358,
+   "osm": "way/221258744"
+  },
+  {
+   "id": "girvetz-hall",
+   "name": "Girvetz Hall",
+   "short": "Girvetz Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.846864,
+   "lat": 34.413558,
+   "osm": "way/221404599"
+  },
+  {
+   "id": "interactive-learning-pavilion",
+   "name": "Interactive Learning Pavilion",
+   "short": "Interactive Learning Pavilion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ILP"
+   ],
+   "lng": -119.845356,
+   "lat": 34.412551,
+   "osm": "way/1159284367"
+  },
+  {
+   "id": "bren-hall",
+   "name": "Bren Hall",
+   "short": "Bren Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.842028,
+   "lat": 34.413183,
+   "osm": "relation/2925045"
+  },
+  {
+   "id": "social-sciences-and-media-studies",
+   "name": "Social Sciences and Media Studies",
+   "short": "Social Sciences and Media Studies",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.84954,
+   "lat": 34.415121,
+   "osm": "way/221239594"
+  },
+  {
+   "id": "noble-hall",
+   "name": "Noble Hall",
+   "short": "Noble Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.843778,
+   "lat": 34.41259,
+   "osm": "way/221242397"
+  },
+  {
+   "id": "carrillo-dining-commons",
+   "name": "Carrillo Dining Commons",
+   "short": "Carrillo Dining Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.852785,
+   "lat": 34.409975,
+   "osm": "way/221401192"
+  },
+  {
+   "id": "theater-and-dance-east",
+   "name": "Theater and Dance East",
+   "short": "TD-E",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "TD East",
+    "TD-E"
+   ],
+   "lng": -119.850662,
+   "lat": 34.41259,
+   "osm": "way/221403272"
+  },
+  {
+   "id": "portola-dining-commons",
+   "name": "Portola Dining Commons",
+   "short": "Portola Dining Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.867187,
+   "lat": 34.417838,
+   "osm": "way/539936496"
+  },
+  {
+   "id": "education",
+   "name": "Education",
+   "short": "Education",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.850321,
+   "lat": 34.415126,
+   "osm": "way/221239593"
+  },
+  {
+   "id": "physical-sciences-north",
+   "name": "Physical Sciences North",
+   "short": "PSBS-N",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PSBS-N"
+   ],
+   "lng": -119.843633,
+   "lat": 34.415434,
+   "osm": "way/221241521"
+  },
+  {
+   "id": "art-design-and-architecture-museum",
+   "name": "Art, Design & Architecture Museum",
+   "short": "Art, Design & Architecture Museum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.849167,
+   "lat": 34.411973,
+   "osm": "way/221404492"
+  },
+  {
+   "id": "engineering-science",
+   "name": "Engineering Science",
+   "short": "Engineering Science",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.841315,
+   "lat": 34.41562,
+   "osm": "way/221258400"
+  },
+  {
+   "id": "south-hall",
+   "name": "South Hall",
+   "short": "South Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SH"
+   ],
+   "lng": -119.847498,
+   "lat": 34.413722,
+   "osm": "way/221404600"
+  },
+  {
+   "id": "ellison-hall",
+   "name": "Ellison Hall",
+   "short": "Ellison Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.845318,
+   "lat": 34.415568,
+   "osm": "way/221241518"
+  },
+  {
+   "id": "kerr-hall",
+   "name": "Kerr Hall",
+   "short": "Kerr Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.846852,
+   "lat": 34.414546,
+   "osm": "way/221404651"
+  },
+  {
+   "id": "ortega-dining-commons",
+   "name": "Ortega Dining Commons",
+   "short": "Ortega Dining Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.847,
+   "lat": 34.410995,
+   "osm": "way/221234879"
+  },
+  {
+   "id": "webb-hall",
+   "name": "Webb Hall",
+   "short": "Webb Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Geological Sciences"
+   ],
+   "lng": -119.843741,
+   "lat": 34.413394,
+   "osm": "way/221242396"
+  },
+  {
+   "id": "life-sciences",
+   "name": "Life Sciences",
+   "short": "Life Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.843705,
+   "lat": 34.411877,
+   "osm": "way/221234034"
+  },
+  {
+   "id": "old-gym",
+   "name": "Old Gym",
+   "short": "Old Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Red Barn"
+   ],
+   "lng": -119.84819,
+   "lat": 34.41456,
+   "osm": "way/221404881"
+  },
+  {
+   "id": "bioengineering",
+   "name": "BioEngineering",
+   "short": "BioEngineering",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.844724,
+   "lat": 34.413106,
+   "osm": "way/410105410"
+  },
+  {
+   "id": "kohn-hall",
+   "name": "Kohn Hall",
+   "short": "Kohn Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.840531,
+   "lat": 34.414397,
+   "osm": "way/221242056"
+  },
+  {
+   "id": "marine-science-institute",
+   "name": "Marine Science Institute",
+   "short": "Marine Science Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.843222,
+   "lat": 34.407959,
+   "osm": "way/221235843"
+  },
+  {
+   "id": "marine-science-research-building",
+   "name": "Marine Science Research Building",
+   "short": "Marine Science Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MSRB"
+   ],
+   "lng": -119.842261,
+   "lat": 34.412542,
+   "osm": "relation/2925039"
+  },
+  {
+   "id": "buchanan-hall",
+   "name": "Buchanan Hall",
+   "short": "Buchanan Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.844592,
+   "lat": 34.41545,
+   "osm": "way/221258374"
+  },
+  {
+   "id": "biology-ii",
+   "name": "Biology II",
+   "short": "Biology II",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "BIOL2"
+   ],
+   "lng": -119.842647,
+   "lat": 34.411955,
+   "osm": "way/221233454"
+  },
+  {
+   "id": "psychology",
+   "name": "Psychology",
+   "short": "Psychology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.845088,
+   "lat": 34.411905,
+   "osm": "way/221234145"
+  },
+  {
+   "id": "theater-and-dance-west",
+   "name": "Theater and Dance West",
+   "short": "TD-W",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "TD West",
+    "TD-W"
+   ],
+   "lng": -119.851393,
+   "lat": 34.412418,
+   "osm": "way/221403275"
+  },
+  {
+   "id": "materials-research-laboratory",
+   "name": "Materials Research Laboratory",
+   "short": "Materials Research Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.841587,
+   "lat": 34.414154,
+   "osm": "way/221242398"
+  },
+  {
+   "id": "college-of-creative-studies",
+   "name": "College of Creative Studies",
+   "short": "College of Creative Studies",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CCS"
+   ],
+   "lng": -119.84584,
+   "lat": 34.411093,
+   "osm": "way/38099471"
+  },
+  {
+   "id": "campbell-hall",
+   "name": "Campbell Hall",
+   "short": "Campbell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.845281,
+   "lat": 34.416273,
+   "osm": "way/221241233"
+  },
+  {
+   "id": "henley-hall",
+   "name": "Henley Hall",
+   "short": "Henley Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.844603,
+   "lat": 34.417105,
+   "osm": "way/945281329"
+  },
+  {
+   "id": "pavillion-gym",
+   "name": "Pavillion Gym",
+   "short": "Pavillion Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.848951,
+   "lat": 34.419098,
+   "osm": "way/32274168"
+  },
+  {
+   "id": "physical-sciences-south",
+   "name": "Physical Sciences South",
+   "short": "PSB-S",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PSB-S"
+   ],
+   "lng": -119.842676,
+   "lat": 34.414524,
+   "osm": "way/221409862"
+  },
+  {
+   "id": "pollock-theater",
+   "name": "Pollock Theater",
+   "short": "Pollock Theater",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.848847,
+   "lat": 34.415069,
+   "osm": "way/221239597"
+  },
+  {
+   "id": "isla-vista-theater",
+   "name": "Isla Vista Theater",
+   "short": "Isla Vista Theater",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.855011,
+   "lat": 34.411347,
+   "osm": "way/38171690"
+  },
+  {
+   "id": "charles-douglass-woodhouse-laboratory",
+   "name": "Charles Douglass Woodhouse Laboratory",
+   "short": "Charles Douglass Woodhouse Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Charles Douglas Woodhouse Laboratory"
+   ],
+   "lng": -119.842745,
+   "lat": 34.413449,
+   "osm": "relation/2927539"
+  },
+  {
+   "id": "psychology-east",
+   "name": "Psychology East",
+   "short": "Psychology East",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.844607,
+   "lat": 34.411988,
+   "osm": "way/221234146"
+  },
+  {
+   "id": "embarcadero-hall",
+   "name": "Embarcadero Hall",
+   "short": "Embarcadero Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.855772,
+   "lat": 34.412112,
+   "osm": "way/38171414"
+  },
+  {
+   "id": "pharmacology",
+   "name": "Pharmacology",
+   "short": "Pharmacology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.843676,
+   "lat": 34.412906,
+   "osm": "way/220504812"
+  },
+  {
+   "id": "ocean-science-education",
+   "name": "Ocean Science Education",
+   "short": "Ocean Science Education",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Outreach Center for Teaching Ocean Science",
+    "OSEB"
+   ],
+   "lng": -119.842199,
+   "lat": 34.412005,
+   "osm": "way/218518103"
+  },
+  {
+   "id": "psychology-221234147",
+   "name": "Psychology",
+   "short": "Psychology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.845045,
+   "lat": 34.412255,
+   "osm": "way/221234147"
+  },
+  {
+   "id": "engineering-science-221258399",
+   "name": "Engineering Science",
+   "short": "Engineering Science",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.841846,
+   "lat": 34.415625,
+   "osm": "way/221258399"
+  },
+  {
+   "id": "theater-and-dance-west-auditorium",
+   "name": "Theater and Dance West Auditorium",
+   "short": "Theater and Dance West Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.851622,
+   "lat": 34.412786,
+   "osm": "way/221403281"
+  },
+  {
+   "id": "military-science",
+   "name": "Military Science",
+   "short": "Military Science",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.843659,
+   "lat": 34.416823,
+   "osm": "way/221409659"
+  },
+  {
+   "id": "cloud-lab",
+   "name": "Cloud Lab",
+   "short": "Cloud Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.843066,
+   "lat": 34.413443,
+   "osm": "way/221408474"
+  },
+  {
+   "id": "building-300",
+   "name": "Building 300",
+   "short": "Building 300",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Campus Learning Resource Building"
+   ],
+   "lng": -119.848146,
+   "lat": 34.414091,
+   "osm": "way/221404882"
+  },
+  {
+   "id": "richard-a-auhll-student-center",
+   "name": "Richard A. Auhll Student Center",
+   "short": "Richard A. Auhll Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CAD Lab"
+   ],
+   "lng": -119.841412,
+   "lat": 34.414796,
+   "osm": "way/689799719"
+  },
+  {
+   "id": "west-creative-studies",
+   "name": "West Creative Studies",
+   "short": "West Creative Studies",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.877842,
+   "lat": 34.40794,
+   "osm": "way/49745058"
+  },
+  {
+   "id": "south-hall-221404598",
+   "name": "South Hall",
+   "short": "South Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.84672,
+   "lat": 34.414096,
+   "osm": "way/221404598"
+  },
+  {
+   "id": "marine-science-institute-221409551",
+   "name": "Marine Science Institute",
+   "short": "Marine Science Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -119.843868,
+   "lat": 34.407779,
+   "osm": "way/221409551"
+  }
+ ]
+}
