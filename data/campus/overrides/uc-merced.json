@@ -1,0 +1,38 @@
+{
+  "halls": {
+    "valley-terraces": { "pin": [-120.42825, 37.36387] }
+  },
+  "places": {
+    "the-pavilion": { "kind": "dining" },
+    "administration-building": { "hide": true },
+    "conference-center": { "hide": true },
+    "terrace-center": { "hide": true },
+    "health-and-athletic-center": { "hide": true },
+    "early-childhood-education-center": { "hide": true },
+    "eh-and-s-facility": { "hide": true },
+    "environmental-health-and-safety": { "hide": true },
+    "telecom-building": { "hide": true },
+    "planning-design-and-construction-management": { "hide": true },
+    "inspection": { "hide": true },
+    "inspection-annex": { "hide": true },
+    "student-services-building": { "hide": true },
+    "student-services-building-424197269": { "hide": true }
+  },
+  "notes": {
+    "valley-terraces": "Pinned at Kings Hall (OSM way/190282875), in the middle of the Valley Terraces halls (Kings, Kern, Fresno, Madera, Stanislaus, Tulare, Calaveras, Merced and San Joaquin halls around the Terrace Center; housing.ucmerced.edu); OSM has no building named Valley Terraces.",
+    "the-pavilion": "The Pavilion is UC Merced's main dining hall (dining.ucmerced.edu); OSM tags it a restaurant.",
+    "administration-building": "Admin. Not somewhere undergraduates have class.",
+    "conference-center": "A conference centre. Not somewhere undergraduates have class.",
+    "terrace-center": "The Valley Terraces housing community centre. Not somewhere undergraduates have class.",
+    "health-and-athletic-center": "Student health and varsity athletics (Gallo and the SAAC are the student gyms). Not somewhere undergraduates have class.",
+    "early-childhood-education-center": "Childcare. Not somewhere undergraduates have class.",
+    "eh-and-s-facility": "EH&S. Not somewhere undergraduates have class.",
+    "environmental-health-and-safety": "EH&S. Not somewhere undergraduates have class.",
+    "telecom-building": "A telecom building. Not somewhere undergraduates have class.",
+    "planning-design-and-construction-management": "Facilities offices. Not somewhere undergraduates have class.",
+    "inspection": "A facilities inspection building. Not somewhere undergraduates have class.",
+    "inspection-annex": "A facilities inspection building. Not somewhere undergraduates have class.",
+    "student-services-building": "Student services offices. Not somewhere undergraduates have class.",
+    "student-services-building-424197269": "Student services offices. Not somewhere undergraduates have class."
+  }
+}

@@ -1,0 +1,312 @@
+{
+ "collegeId": "uc-merced",
+ "generatedAt": "2026-11-13T04:36:57.275Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/uc-merced.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -120.43026,
+  37.36361,
+  -120.42181,
+  37.36729
+ ],
+ "halls": [
+  {
+   "dormId": "tuolumne-hall",
+   "name": "Tuolumne Hall",
+   "lng": -120.426784,
+   "lat": 37.365061,
+   "pin": "name",
+   "osm": "relation/4174595",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "kolligian-library",
+     "minutes": 5.3
+    },
+    "dining": {
+     "placeId": "wallace-dining-center",
+     "minutes": 1.1
+    },
+    "gym": {
+     "placeId": "joseph-e-gallo-recreation-and-wellness-center",
+     "minutes": 1.8
+    }
+   }
+  },
+  {
+   "dormId": "mariposa-hall",
+   "name": "Mariposa Hall",
+   "lng": -120.427612,
+   "lat": 37.365323,
+   "pin": "name",
+   "osm": "way/675901238",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "kolligian-library",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "wallace-dining-center",
+     "minutes": 1.6
+    },
+    "gym": {
+     "placeId": "student-activities-and-athletics-center",
+     "minutes": 1.2
+    }
+   }
+  },
+  {
+   "dormId": "valley-terraces",
+   "name": "Valley Terraces",
+   "lng": -120.42825,
+   "lat": 37.36387,
+   "pin": "manual",
+   "osm": "way/190282875",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "kolligian-library",
+     "minutes": 7
+    },
+    "dining": {
+     "placeId": "wallace-dining-center",
+     "minutes": 1.9
+    },
+    "gym": {
+     "placeId": "joseph-e-gallo-recreation-and-wellness-center",
+     "minutes": 3.6
+    }
+   }
+  },
+  {
+   "dormId": "cathedral-hall",
+   "name": "Cathedral Hall",
+   "lng": -120.430257,
+   "lat": 37.363609,
+   "pin": "name",
+   "osm": "way/424152304",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "kolligian-library",
+     "minutes": 9.3
+    },
+    "dining": {
+     "placeId": "wallace-dining-center",
+     "minutes": 4.3
+    },
+    "gym": {
+     "placeId": "student-activities-and-athletics-center",
+     "minutes": 5.7
+    }
+   }
+  },
+  {
+   "dormId": "tenaya-hall",
+   "name": "Tenaya Hall",
+   "lng": -120.429492,
+   "lat": 37.363613,
+   "pin": "name",
+   "osm": "way/424152724",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "kolligian-library",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "wallace-dining-center",
+     "minutes": 3.4
+    },
+    "gym": {
+     "placeId": "joseph-e-gallo-recreation-and-wellness-center",
+     "minutes": 5
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "science-and-engineering-building-i",
+   "name": "Science and Engineering Building I",
+   "short": "Science and Engineering Building I",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SE"
+   ],
+   "lng": -120.422374,
+   "lat": 37.366382,
+   "osm": "way/180831793"
+  },
+  {
+   "id": "kolligian-library",
+   "name": "Kolligian Library",
+   "short": "Kolligian Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Leo and Dottie Kolligian Library",
+    "KL"
+   ],
+   "lng": -120.424609,
+   "lat": 37.366363,
+   "osm": "way/311711124"
+  },
+  {
+   "id": "biomedical-sciences-and-physics",
+   "name": "Biomedical Sciences and Physics",
+   "short": "Biomedical Sciences and Physics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "BSP"
+   ],
+   "lng": -120.422558,
+   "lat": 37.364658,
+   "osm": "way/831363139"
+  },
+  {
+   "id": "sustainability-research-and-engineering",
+   "name": "Sustainability Research and Engineering",
+   "short": "Sustainability Research and Engineering",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SRE"
+   ],
+   "lng": -120.424197,
+   "lat": 37.364764,
+   "osm": "way/677777416"
+  },
+  {
+   "id": "classroom-and-office-building",
+   "name": "Classroom and Office Building",
+   "short": "Classroom and Office Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "COB1"
+   ],
+   "lng": -120.423416,
+   "lat": 37.367066,
+   "osm": "way/33522712"
+  },
+  {
+   "id": "the-pavilion",
+   "name": "The Pavilion",
+   "short": "The Pavilion",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -120.424742,
+   "lat": 37.364107,
+   "osm": "way/677777417"
+  },
+  {
+   "id": "social-science-and-management-building",
+   "name": "Social Science & Management Building",
+   "short": "Social Science & Management Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SSM"
+   ],
+   "lng": -120.421968,
+   "lat": 37.36729,
+   "osm": "way/202737427"
+  },
+  {
+   "id": "arts-and-computational-sciences",
+   "name": "Arts & Computational Sciences",
+   "short": "Arts & Computational Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ACS"
+   ],
+   "lng": -120.423849,
+   "lat": 37.363813,
+   "osm": "way/831334672"
+  },
+  {
+   "id": "classroom-and-office-building-2",
+   "name": "Classroom and Office Building 2",
+   "short": "Classroom and Office Building 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "COB2"
+   ],
+   "lng": -120.424532,
+   "lat": 37.367022,
+   "osm": "way/424153844"
+  },
+  {
+   "id": "joseph-e-gallo-recreation-and-wellness-center",
+   "name": "Joseph E. Gallo Recreation & Wellness Center",
+   "short": "Joseph E. Gallo Recreation & Wellness Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -120.426213,
+   "lat": 37.365383,
+   "osm": "way/311711660"
+  },
+  {
+   "id": "wallace-dining-center",
+   "name": "Wallace Dining Center",
+   "short": "Wallace Dining Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -120.427079,
+   "lat": 37.364568,
+   "osm": "way/311712106"
+  },
+  {
+   "id": "science-and-engineering-building-2",
+   "name": "Science & Engineering Building 2",
+   "short": "Science & Engineering Building 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SE2"
+   ],
+   "lng": -120.421813,
+   "lat": 37.365779,
+   "osm": "way/564489516"
+  },
+  {
+   "id": "student-activities-and-athletics-center",
+   "name": "Student Activities & Athletics Center",
+   "short": "Student Activities & Athletics Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "SAAC"
+   ],
+   "lng": -120.426839,
+   "lat": 37.365847,
+   "osm": "way/564503754"
+  }
+ ]
+}
