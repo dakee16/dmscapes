@@ -1,0 +1,19 @@
+{
+  "collegeId": "hampton",
+  "area": {
+    "osm": "relation/5708159",
+    "bbox": [
+      37.01156,
+      -76.34218,
+      37.026,
+      -76.32354
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Hampton University's Office of the Registrar pages and campus map (home.hamptonu.edu/visitor HU_Campus_Map.pdf, buildings grouped by category with no codes) publish no building-code list.",
+  "excludeHalls": {
+    "davidson-hall": "Not a current hall: Davidson Hall is on neither Hampton's housing list (home.hamptonu.edu/student-affairs/residence-life-housing/, 22 halls with addresses) nor its campus map (HU_Campus_Map.pdf, 06/19 key), and OSM has no building for it; the school file should drop it."
+  }
+}

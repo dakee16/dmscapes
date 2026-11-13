@@ -1,0 +1,410 @@
+{
+ "collegeId": "hampton",
+ "generatedAt": "2026-11-13T04:31:59.872Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/hampton.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -76.34097,
+  37.0186,
+  -76.33099,
+  37.02412
+ ],
+ "halls": [
+  {
+   "dormId": "virginia-cleveland-hall",
+   "name": "Virginia-Cleveland Hall",
+   "lng": -76.340274,
+   "lat": 37.02068,
+   "pin": "name",
+   "osm": "way/388346867",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "new-dining-facility",
+     "minutes": 5.9
+    },
+    "library": {
+     "placeId": "william-r-and-norma-b-harvey-library",
+     "minutes": 15.3
+    }
+   }
+  },
+  {
+   "dormId": "twitchell-hall",
+   "name": "Twitchell Hall",
+   "lng": -76.340974,
+   "lat": 37.020753,
+   "pin": "name",
+   "osm": "way/388346865",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "new-dining-facility",
+     "minutes": 6.9
+    },
+    "library": {
+     "placeId": "william-r-and-norma-b-harvey-library",
+     "minutes": 16.3
+    }
+   }
+  },
+  {
+   "dormId": "kelsey-hall",
+   "name": "Kelsey Hall",
+   "lng": -76.340619,
+   "lat": 37.021314,
+   "pin": "name",
+   "osm": "way/388346841",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "new-dining-facility",
+     "minutes": 6.4
+    },
+    "library": {
+     "placeId": "william-r-and-norma-b-harvey-library",
+     "minutes": 15.8
+    }
+   }
+  },
+  {
+   "dormId": "moton-hall",
+   "name": "Moton Hall",
+   "lng": -76.3385,
+   "lat": 37.0186,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "new-dining-facility",
+     "minutes": 8.7
+    },
+    "library": {
+     "placeId": "william-r-and-norma-b-harvey-library",
+     "minutes": 18.2
+    }
+   }
+  },
+  {
+   "dormId": "kennedy-hall",
+   "name": "Kennedy Hall",
+   "lng": -76.340006,
+   "lat": 37.021205,
+   "pin": "name",
+   "osm": "way/388346842",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "new-dining-facility",
+     "minutes": 6
+    },
+    "library": {
+     "placeId": "william-r-and-norma-b-harvey-library",
+     "minutes": 15.4
+    }
+   }
+  },
+  {
+   "dormId": "james-hall-suites",
+   "name": "James Hall and Suites",
+   "lng": -76.337,
+   "lat": 37.0192,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "new-dining-facility",
+     "minutes": 8.5
+    },
+    "library": {
+     "placeId": "william-r-and-norma-b-harvey-library",
+     "minutes": 17.9
+    }
+   }
+  },
+  {
+   "dormId": "white-hall",
+   "name": "White Hall",
+   "lng": -76.340253,
+   "lat": 37.022586,
+   "pin": "name",
+   "osm": "way/388346791",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "new-dining-facility",
+     "minutes": 5.5
+    },
+    "library": {
+     "placeId": "william-r-and-norma-b-harvey-library",
+     "minutes": 15
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "jerome-holland-hall",
+   "name": "Jerome Holland Hall",
+   "short": "Jerome Holland Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.331845,
+   "lat": 37.021538,
+   "osm": "way/388346839"
+  },
+  {
+   "id": "student-center",
+   "name": "Student Center",
+   "short": "Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.334749,
+   "lat": 37.021546,
+   "osm": "way/388346861"
+  },
+  {
+   "id": "new-dining-facility",
+   "name": "New Dining Facility",
+   "short": "New Dining Facility",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.338498,
+   "lat": 37.023031,
+   "osm": "way/388346851"
+  },
+  {
+   "id": "william-r-and-norma-b-harvey-library",
+   "name": "William R. and Norma B. Harvey Library",
+   "short": "William R. and Norma B. Harvey Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.33337,
+   "lat": 37.023,
+   "osm": "way/388346875"
+  },
+  {
+   "id": "armstrong-hall",
+   "name": "Armstrong Hall",
+   "short": "Armstrong Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.337251,
+   "lat": 37.021394,
+   "osm": "way/388346780"
+  },
+  {
+   "id": "george-p-phenix-hall",
+   "name": "George P. Phenix Hall",
+   "short": "George P. Phenix Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.335406,
+   "lat": 37.022182,
+   "osm": "way/388346790"
+  },
+  {
+   "id": "william-freeman-and-flemmie-kittrell-hall",
+   "name": "William Freeman and Flemmie Kittrell Hall",
+   "short": "William Freeman and Flemmie Kittrell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.331996,
+   "lat": 37.023267,
+   "osm": "way/388346874"
+  },
+  {
+   "id": "matin-l-king-and-ethel-buckman-hall",
+   "name": "Matin L. King and Ethel Buckman Hall",
+   "short": "Matin L. King and Ethel Buckman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.332959,
+   "lat": 37.022189,
+   "osm": "way/388346846"
+  },
+  {
+   "id": "eva-c-mitchell-hall",
+   "name": "Eva C. Mitchell Hall",
+   "short": "Eva C. Mitchell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.334639,
+   "lat": 37.022079,
+   "osm": "way/388346789"
+  },
+  {
+   "id": "science-and-technology-building",
+   "name": "Science and Technology Building",
+   "short": "Science and Technology Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.33596,
+   "lat": 37.021097,
+   "osm": "way/388346857"
+  },
+  {
+   "id": "scripps-howard-school-of-journalism-and-communications",
+   "name": "Scripps Howard School of Journalism and Communications",
+   "short": "Scripps Howard School of Journalism and Communications",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.338332,
+   "lat": 37.022385,
+   "osm": "way/388346858"
+  },
+  {
+   "id": "turner-hall",
+   "name": "Turner Hall",
+   "short": "Turner Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.336531,
+   "lat": 37.020461,
+   "osm": "way/388346864"
+  },
+  {
+   "id": "dupont-hall",
+   "name": "Dupont Hall",
+   "short": "Dupont Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.337186,
+   "lat": 37.020409,
+   "osm": "way/388346788"
+  },
+  {
+   "id": "ogden-hall",
+   "name": "Ogden Hall",
+   "short": "Ogden Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.339672,
+   "lat": 37.020244,
+   "osm": "way/388346852"
+  },
+  {
+   "id": "research-two-building",
+   "name": "Research Two Building",
+   "short": "Research Two Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.337458,
+   "lat": 37.024118,
+   "osm": "way/388346855"
+  },
+  {
+   "id": "olin-engineering-building",
+   "name": "Olin Engineering Building",
+   "short": "Olin Engineering Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.330995,
+   "lat": 37.021934,
+   "osm": "way/388346853"
+  },
+  {
+   "id": "w-frank-fountain-research-center",
+   "name": "W. Frank Fountain Research Center",
+   "short": "W. Frank Fountain Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.336046,
+   "lat": 37.022795,
+   "osm": "way/388346869"
+  },
+  {
+   "id": "graduate-physics-research-center",
+   "name": "Graduate Physics Research Center",
+   "short": "Graduate Physics Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.336307,
+   "lat": 37.019709,
+   "osm": "way/388346793"
+  },
+  {
+   "id": "academy-building",
+   "name": "Academy Building",
+   "short": "Academy Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.339045,
+   "lat": 37.018762,
+   "osm": "way/388346778"
+  },
+  {
+   "id": "computer-center",
+   "name": "Computer Center",
+   "short": "Computer Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.337733,
+   "lat": 37.019774,
+   "osm": "way/388346784"
+  },
+  {
+   "id": "clark-hall",
+   "name": "Clark Hall",
+   "short": "Clark Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.337695,
+   "lat": 37.019256,
+   "osm": "way/388346783"
+  },
+  {
+   "id": "trustee-hall",
+   "name": "Trustee Hall",
+   "short": "Trustee Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.339097,
+   "lat": 37.021342,
+   "osm": "way/388346863"
+  }
+ ]
+}
