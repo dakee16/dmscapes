@@ -1,0 +1,16 @@
+{
+  "collegeId": "susquehanna",
+  "area": {
+    "osm": "way/554342442",
+    "bbox": [
+      40.79264,
+      -76.88061,
+      40.80111,
+      -76.86576
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class building-code list: the Registrar's pages, the graduate catalog (https://www.susqu.edu/wp-content/uploads/2024/10/2020-21-Graduate-Catalog.pdf) and the editorial style guide carry no building key, and none turned up elsewhere; checked 2026-11-08."
+}
