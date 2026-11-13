@@ -1,0 +1,815 @@
+{
+ "collegeId": "university-of-miami",
+ "generatedAt": "2026-11-13T04:35:51.493Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/university-of-miami.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -80.28531,
+  25.7106,
+  -80.27383,
+  25.72424
+ ],
+ "halls": [
+  {
+   "dormId": "biscayne-college",
+   "name": "Biscayne Residential College (Centennial Village)",
+   "lng": -80.280405,
+   "lat": 25.716096,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "weeks-music-library-and-technology-center",
+     "minutes": 5.2
+    },
+    "gym": {
+     "placeId": "herbert-wellness-center",
+     "minutes": 1.6
+    },
+    "dining": {
+     "placeId": "mahoney-pearson-dining-hall",
+     "minutes": 11
+    }
+   }
+  },
+  {
+   "dormId": "coral-college",
+   "name": "Coral Residential College (Centennial Village)",
+   "lng": -80.280056,
+   "lat": 25.716753,
+   "pin": "manual",
+   "osm": "relation/17960362",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "weeks-music-library-and-technology-center",
+     "minutes": 3.5
+    },
+    "gym": {
+     "placeId": "herbert-wellness-center",
+     "minutes": 1.9
+    },
+    "dining": {
+     "placeId": "mahoney-pearson-dining-hall",
+     "minutes": 9.1
+    }
+   }
+  },
+  {
+   "dormId": "grove-college",
+   "name": "Grove Residential College (Centennial Village)",
+   "lng": -80.279945,
+   "lat": 25.716504,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "weeks-music-library-and-technology-center",
+     "minutes": 5.9
+    },
+    "gym": {
+     "placeId": "herbert-wellness-center",
+     "minutes": 2.8
+    },
+    "dining": {
+     "placeId": "mahoney-pearson-dining-hall",
+     "minutes": 10.7
+    }
+   }
+  },
+  {
+   "dormId": "ibis-college",
+   "name": "Ibis Residential College (Centennial Village)",
+   "lng": -80.279618,
+   "lat": 25.716781,
+   "pin": "manual",
+   "osm": "relation/17960362",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "weeks-music-library-and-technology-center",
+     "minutes": 3.5
+    },
+    "gym": {
+     "placeId": "herbert-wellness-center",
+     "minutes": 1.9
+    },
+    "dining": {
+     "placeId": "mahoney-pearson-dining-hall",
+     "minutes": 9.1
+    }
+   }
+  },
+  {
+   "dormId": "vista-college",
+   "name": "Vista Residential College (Centennial Village)",
+   "lng": -80.281379,
+   "lat": 25.716535,
+   "pin": "name",
+   "osm": "way/1548250391",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "weeks-music-library-and-technology-center",
+     "minutes": 3.9
+    },
+    "gym": {
+     "placeId": "herbert-wellness-center",
+     "minutes": 2.2
+    },
+    "dining": {
+     "placeId": "mahoney-pearson-dining-hall",
+     "minutes": 11.1
+    }
+   }
+  },
+  {
+   "dormId": "eaton-college",
+   "name": "Eaton Residential College",
+   "lng": -80.278627,
+   "lat": 25.71763,
+   "pin": "name",
+   "osm": "way/366186662",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "weeks-music-library-and-technology-center",
+     "minutes": 4.4
+    },
+    "gym": {
+     "placeId": "herbert-wellness-center",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "mahoney-pearson-dining-hall",
+     "minutes": 6.6
+    }
+   }
+  },
+  {
+   "dormId": "mahoney-college",
+   "name": "Mahoney Residential College",
+   "lng": -80.27479,
+   "lat": 25.718264,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "otto-g-richter-library",
+     "minutes": 6.6
+    },
+    "gym": {
+     "placeId": "herbert-wellness-center",
+     "minutes": 10.8
+    },
+    "dining": {
+     "placeId": "mahoney-pearson-dining-hall",
+     "minutes": 2.4
+    }
+   }
+  },
+  {
+   "dormId": "pearson-college",
+   "name": "Pearson Residential College",
+   "lng": -80.273834,
+   "lat": 25.717889,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "otto-g-richter-library",
+     "minutes": 8.2
+    },
+    "gym": {
+     "placeId": "herbert-wellness-center",
+     "minutes": 12.2
+    },
+    "dining": {
+     "placeId": "mahoney-pearson-dining-hall",
+     "minutes": 4
+    }
+   }
+  },
+  {
+   "dormId": "lakeside-village",
+   "name": "Lakeside Village",
+   "lng": -80.276937,
+   "lat": 25.718422,
+   "pin": "name",
+   "osm": "relation/18045300",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "weeks-music-library-and-technology-center",
+     "minutes": 4.7
+    },
+    "gym": {
+     "placeId": "herbert-wellness-center",
+     "minutes": 7.8
+    },
+    "dining": {
+     "placeId": "mahoney-pearson-dining-hall",
+     "minutes": 4.8
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "whitten-university-center",
+   "name": "Whitten University Center",
+   "short": "Whitten University Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Norman A. Whitten University Center"
+   ],
+   "lng": -80.278036,
+   "lat": 25.719766,
+   "osm": "way/366186663"
+  },
+  {
+   "id": "school-of-law",
+   "name": "School of Law",
+   "short": "School of Law",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "University of Miami School of Law"
+   ],
+   "lng": -80.280072,
+   "lat": 25.720702,
+   "osm": "relation/6454872"
+  },
+  {
+   "id": "otto-g-richter-library",
+   "name": "Otto G. Richter Library",
+   "short": "Richter Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Richter Library"
+   ],
+   "lng": -80.278673,
+   "lat": 25.721198,
+   "osm": "way/317634305"
+  },
+  {
+   "id": "herbert-wellness-center",
+   "name": "Herbert Wellness Center",
+   "short": "Herbert Wellness Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Patti & Allan Herbert Wellness Center"
+   ],
+   "lng": -80.281376,
+   "lat": 25.715829,
+   "osm": "way/423879192"
+  },
+  {
+   "id": "cox-science-building",
+   "name": "Cox Science Building",
+   "short": "Cox Science Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.279543,
+   "lat": 25.722196,
+   "osm": "way/435748467"
+  },
+  {
+   "id": "shalala-student-center",
+   "name": "Shalala Student Center",
+   "short": "Shalala Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Donna E. Shalala Student Center",
+    "Student Center Complex"
+   ],
+   "lng": -80.279227,
+   "lat": 25.719382,
+   "osm": "way/366186666"
+  },
+  {
+   "id": "mcarthur-engineering-building",
+   "name": "McArthur Engineering Building",
+   "short": "McArthur Engineering Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "J. Neville McArthur Engineering Building"
+   ],
+   "lng": -80.2787,
+   "lat": 25.722833,
+   "osm": "way/435740418"
+  },
+  {
+   "id": "miami-herbert-business-school",
+   "name": "Miami Herbert Business School",
+   "short": "Miami Herbert Business School",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.276383,
+   "lat": 25.720278,
+   "osm": "relation/3257625"
+  },
+  {
+   "id": "lowe-art-museum",
+   "name": "Lowe Art Museum",
+   "short": "Lowe Art Museum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.275576,
+   "lat": 25.719347,
+   "osm": "relation/6462117"
+  },
+  {
+   "id": "merrick-building",
+   "name": "Merrick Building",
+   "short": "Merrick Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Solomon G. Merrick Building"
+   ],
+   "lng": -80.276325,
+   "lat": 25.721023,
+   "osm": "way/435375321"
+  },
+  {
+   "id": "dooly-memorial-classroom-building",
+   "name": "Dooly Memorial Classroom Building",
+   "short": "Dooly Memorial Classroom Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Oscar E. Dooly Memorial Classroom Building"
+   ],
+   "lng": -80.277426,
+   "lat": 25.722627,
+   "osm": "way/370749755"
+  },
+  {
+   "id": "whitten-learning-center",
+   "name": "Whitten Learning Center",
+   "short": "Whitten Learning Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.275976,
+   "lat": 25.7222,
+   "osm": "way/622469331"
+  },
+  {
+   "id": "schwartz-center-for-nursing-and-health-studies",
+   "name": "Schwartz Center for Nursing and Health Studies",
+   "short": "Schwartz Center for Nursing and Health Studies",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.276697,
+   "lat": 25.722727,
+   "osm": "way/435880257"
+  },
+  {
+   "id": "wolfson-building",
+   "name": "Wolfson Building",
+   "short": "Wolfson Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The Frances L Wolfson Building"
+   ],
+   "lng": -80.275733,
+   "lat": 25.722639,
+   "osm": "relation/18045946"
+  },
+  {
+   "id": "allen-hall",
+   "name": "Allen Hall",
+   "short": "Allen Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.276306,
+   "lat": 25.723115,
+   "osm": "relation/6458130"
+  },
+  {
+   "id": "department-of-art-and-art-history",
+   "name": "Department of Art and Art History",
+   "short": "Department of Art and Art History",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.284869,
+   "lat": 25.710599,
+   "osm": "way/278812504"
+  },
+  {
+   "id": "mahoney-pearson-dining-hall",
+   "name": "Mahoney-Pearson Dining Hall",
+   "short": "Mahoney-Pearson Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.274539,
+   "lat": 25.719713,
+   "osm": "way/1310953548"
+  },
+  {
+   "id": "frost-institute-for-chemistry-and-molecular-science",
+   "name": "Frost Institute for Chemistry and Molecular Science",
+   "short": "Frost Institute for Chemistry and Molecular Science",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.27796,
+   "lat": 25.722575,
+   "osm": "way/1268274037"
+  },
+  {
+   "id": "rehearsal-center",
+   "name": "Rehearsal Center",
+   "short": "Rehearsal Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.280993,
+   "lat": 25.718383,
+   "osm": "way/364271716"
+  },
+  {
+   "id": "jerry-herman-ring-theatre",
+   "name": "Jerry Herman Ring Theatre",
+   "short": "Jerry Herman Ring Theatre",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.280079,
+   "lat": 25.719559,
+   "osm": "way/375165787"
+  },
+  {
+   "id": "ungar-building",
+   "name": "Ungar Building",
+   "short": "Ungar Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.27993,
+   "lat": 25.721526,
+   "osm": "way/436034626"
+  },
+  {
+   "id": "knight-center-for-music-innovation",
+   "name": "Knight Center for Music Innovation",
+   "short": "Knight Center for Music Innovation",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.281194,
+   "lat": 25.718023,
+   "osm": "way/1274267731"
+  },
+  {
+   "id": "lau-founders-hall",
+   "name": "Lau Founders Hall",
+   "short": "Lau Founders Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.284806,
+   "lat": 25.711401,
+   "osm": "way/435236175"
+  },
+  {
+   "id": "weeks-music-library-and-technology-center",
+   "name": "Weeks Music Library and Technology Center",
+   "short": "Weeks Music Library and Technology Center",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Marta and Austin Weeks Music Library and Technology Center"
+   ],
+   "lng": -80.280239,
+   "lat": 25.719121,
+   "osm": "way/364271722"
+  },
+  {
+   "id": "knight-physics-building",
+   "name": "Knight Physics Building",
+   "short": "Knight Physics Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.27933,
+   "lat": 25.723284,
+   "osm": "way/435730070"
+  },
+  {
+   "id": "flipse-building",
+   "name": "Flipse Building",
+   "short": "Flipse Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Fred C. and Helen Donn Filipse Building"
+   ],
+   "lng": -80.280646,
+   "lat": 25.712945,
+   "osm": "way/423877950"
+  },
+  {
+   "id": "murphy-design-studio",
+   "name": "Murphy Design Studio",
+   "short": "Murphy Design Studio",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Thomas P. Murphy Design Studio Building"
+   ],
+   "lng": -80.278199,
+   "lat": 25.71705,
+   "osm": "way/1314475806"
+  },
+  {
+   "id": "1300-campo-sano",
+   "name": "1300 Campo Sano",
+   "short": "1300 Campo Sano",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.278894,
+   "lat": 25.724242,
+   "osm": "way/435235979"
+  },
+  {
+   "id": "gusman-concert-hall",
+   "name": "Gusman Concert Hall",
+   "short": "Gusman Concert Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Maurice Gusman Music Hall"
+   ],
+   "lng": -80.279504,
+   "lat": 25.719669,
+   "osm": "way/366186665"
+  },
+  {
+   "id": "orovitz-building",
+   "name": "Orovitz Building",
+   "short": "Orovitz Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.284151,
+   "lat": 25.710928,
+   "osm": "way/423877687"
+  },
+  {
+   "id": "theatre-arts-building",
+   "name": "Theatre Arts Building",
+   "short": "Theatre Arts Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.28005,
+   "lat": 25.715763,
+   "osm": "way/1307631580"
+  },
+  {
+   "id": "cox-science-annex",
+   "name": "Cox Science Annex",
+   "short": "Cox Science Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.28,
+   "lat": 25.722344,
+   "osm": "way/436122365"
+  },
+  {
+   "id": "frost-north-studio-wing",
+   "name": "Frost North Studio Wing",
+   "short": "Frost North Studio Wing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Patricia Louise Frost Studio Building North"
+   ],
+   "lng": -80.280636,
+   "lat": 25.719271,
+   "osm": "way/375165655"
+  },
+  {
+   "id": "behavioral-medicine-building",
+   "name": "Behavioral Medicine Building",
+   "short": "Behavioral Medicine Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.275137,
+   "lat": 25.720231,
+   "osm": "way/435844075"
+  },
+  {
+   "id": "weeks-recording-studio",
+   "name": "Weeks Recording Studio",
+   "short": "Weeks Recording Studio",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "L. Austin Weeks Recording Studio"
+   ],
+   "lng": -80.280192,
+   "lat": 25.718687,
+   "osm": "way/1337255763"
+  },
+  {
+   "id": "institute-for-cuban-and-cuban-american-studies",
+   "name": "Institute for Cuban and Cuban-American Studies",
+   "short": "Institute for Cuban and Cuban-American Studies",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Casa Bacardi"
+   ],
+   "lng": -80.284412,
+   "lat": 25.7121,
+   "osm": "way/435236009"
+  },
+  {
+   "id": "communication-international-building",
+   "name": "Communication International Building",
+   "short": "Communication International Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.276309,
+   "lat": 25.722472,
+   "osm": "way/955804179"
+  },
+  {
+   "id": "foster-memorial-music-building",
+   "name": "Foster Memorial Music Building",
+   "short": "Foster Memorial Music Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Bertha Foster Memorial Music Building"
+   ],
+   "lng": -80.281204,
+   "lat": 25.71876,
+   "osm": "way/364271718"
+  },
+  {
+   "id": "perez-architecture-center",
+   "name": "Perez Architecture Center",
+   "short": "Perez Architecture Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The Jorge M. Perez Architecture Center"
+   ],
+   "lng": -80.278975,
+   "lat": 25.716866,
+   "osm": "way/1307631582"
+  },
+  {
+   "id": "pick-hall",
+   "name": "Pick Hall",
+   "short": "Pick Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.284753,
+   "lat": 25.712107,
+   "osm": "way/294606210"
+  },
+  {
+   "id": "volpe-classroom-building",
+   "name": "Volpe Classroom Building",
+   "short": "Volpe Classroom Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Arnold Volpe Music Classroom Building"
+   ],
+   "lng": -80.280469,
+   "lat": 25.718923,
+   "osm": "way/364271720"
+  },
+  {
+   "id": "architecture-48",
+   "name": "Architecture 48",
+   "short": "Architecture 48",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.279352,
+   "lat": 25.717116,
+   "osm": "way/436034166"
+  },
+  {
+   "id": "architecture-49",
+   "name": "Architecture 49",
+   "short": "Architecture 49",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.279111,
+   "lat": 25.717379,
+   "osm": "way/435584885"
+  },
+  {
+   "id": "centrex-building",
+   "name": "Centrex Building",
+   "short": "Centrex Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.275433,
+   "lat": 25.722342,
+   "osm": "way/435528570"
+  },
+  {
+   "id": "frost-south-studio-wing",
+   "name": "Frost South Studio Wing",
+   "short": "Frost South Studio Wing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Patricia Louise Frost Studio Building South"
+   ],
+   "lng": -80.281646,
+   "lat": 25.718387,
+   "osm": "way/364271717"
+  },
+  {
+   "id": "studio-arts-building",
+   "name": "Studio Arts Building",
+   "short": "Studio Arts Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.285313,
+   "lat": 25.710626,
+   "osm": "way/435805797"
+  },
+  {
+   "id": "ferre-building",
+   "name": "Ferre Building",
+   "short": "Ferre Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.277073,
+   "lat": 25.721168,
+   "osm": "way/435565895"
+  },
+  {
+   "id": "miller-building-laboratory",
+   "name": "Miller Building Laboratory",
+   "short": "Miller Building Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Miller Buildlab"
+   ],
+   "lng": -80.279038,
+   "lat": 25.716458,
+   "osm": "way/967475915"
+  }
+ ]
+}
