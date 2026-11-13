@@ -1,0 +1,645 @@
+{
+  "halls": {
+    "revelle-college": {
+      "pin": [
+        -117.24159,
+        32.87497
+      ]
+    },
+    "sixth-college": {
+      "pin": [
+        -117.24312,
+        32.88063
+      ]
+    },
+    "erc": {
+      "pin": [
+        -117.24259,
+        32.88488
+      ]
+    },
+    "thurgood-marshall-college": {
+      "pin": [
+        -117.23961,
+        32.88257
+      ]
+    },
+    "seventh-eighth-colleges": {
+      "pin": [
+        -117.24214,
+        32.87254
+      ]
+    }
+  },
+  "places": {
+    "100": {
+      "hide": true
+    },
+    "200": {
+      "hide": true
+    },
+    "300": {
+      "hide": true
+    },
+    "400": {
+      "hide": true
+    },
+    "500": {
+      "hide": true
+    },
+    "600": {
+      "hide": true
+    },
+    "700": {
+      "hide": true
+    },
+    "800": {
+      "hide": true
+    },
+    "900": {
+      "hide": true
+    },
+    "1100": {
+      "hide": true
+    },
+    "1200": {
+      "hide": true
+    },
+    "1300": {
+      "hide": true
+    },
+    "1400": {
+      "hide": true
+    },
+    "1500": {
+      "hide": true
+    },
+    "1600": {
+      "hide": true
+    },
+    "1700": {
+      "hide": true
+    },
+    "1800": {
+      "hide": true
+    },
+    "cafe-ventanas": {
+      "kind": "dining"
+    },
+    "64-degrees": {
+      "kind": "dining"
+    },
+    "canyon-vista-restaurant": {
+      "kind": "dining"
+    },
+    "foodworx": {
+      "kind": "dining"
+    },
+    "oceanview-terrace-lounge": {
+      "kind": "dining"
+    },
+    "the-bistro-at-the-strand": {
+      "kind": "dining"
+    },
+    "argo-hall": {
+      "hide": true
+    },
+    "atlantis-hall": {
+      "hide": true
+    },
+    "beagle-hall": {
+      "hide": true
+    },
+    "meteor-hall": {
+      "hide": true
+    },
+    "challenger-hall": {
+      "hide": true
+    },
+    "discovery-hall": {
+      "hide": true
+    },
+    "galathea-hall": {
+      "hide": true
+    },
+    "tioga-hall": {
+      "hide": true
+    },
+    "tuolumne-apartments": {
+      "hide": true
+    },
+    "alianza": {
+      "hide": true
+    },
+    "malk-hall": {
+      "hide": true
+    },
+    "survivance": {
+      "hide": true
+    },
+    "podemos": {
+      "hide": true
+    },
+    "pulse": {
+      "hide": true
+    },
+    "azad": {
+      "hide": true
+    },
+    "guava": {
+      "hide": true
+    },
+    "holly": {
+      "hide": true
+    },
+    "laurel": {
+      "hide": true
+    },
+    "jacaranda": {
+      "hide": true
+    },
+    "magnolia": {
+      "hide": true
+    },
+    "kalmia": {
+      "hide": true
+    },
+    "c": {
+      "hide": true
+    },
+    "rya": {
+      "hide": true
+    },
+    "residential-services-building": {
+      "hide": true
+    },
+    "housing-dining-and-hospitality-administration-building": {
+      "hide": true
+    },
+    "the-john-m-and-sally-b-thornton-hospital": {
+      "hide": true
+    },
+    "moores-cancer-center": {
+      "hide": true
+    },
+    "jacobs-medical-center": {
+      "hide": true
+    },
+    "outpatient-pavilion": {
+      "hide": true
+    },
+    "sulpizio-cardiovascular-center": {
+      "hide": true
+    },
+    "shiley-eye-institute": {
+      "hide": true
+    },
+    "hamilton-glaucoma-and-jacobs-retina-center": {
+      "hide": true
+    },
+    "perlman-ambulatory-care-center": {
+      "hide": true
+    },
+    "student-health-services": {
+      "hide": true
+    },
+    "student-health-and-well-being-building": {
+      "hide": true
+    },
+    "altman-clinical-and-translational-research-institute": {
+      "hide": true
+    },
+    "stein-clinical-research": {
+      "hide": true
+    },
+    "viterbi-family-vision-research-center": {
+      "hide": true
+    },
+    "la-jolla-institute-for-allergy-and-immunology": {
+      "hide": true
+    },
+    "sanford-consortium-for-regenerative-medicine": {
+      "hide": true
+    },
+    "center-for-novel-therapeutics": {
+      "hide": true
+    },
+    "noaa-southwest-fisheries-science-center-laboratory": {
+      "hide": true
+    },
+    "west-health-institute": {
+      "hide": true
+    },
+    "institute-of-the-americas": {
+      "hide": true
+    },
+    "gildred-latin-american-studies": {
+      "hide": true
+    },
+    "copley-international-conference-center": {
+      "hide": true
+    },
+    "birch-aquarium": {
+      "hide": true
+    },
+    "nigella-hillgarth-education-center": {
+      "hide": true
+    },
+    "fire-station-52": {
+      "hide": true
+    },
+    "exchange": {
+      "hide": true
+    },
+    "environmental-management-facility": {
+      "hide": true
+    },
+    "electric-shop": {
+      "hide": true
+    },
+    "transit-operations-trailer": {
+      "hide": true
+    },
+    "i-5-switch-station": {
+      "hide": true
+    },
+    "bfs-main-building": {
+      "hide": true
+    },
+    "bfs-laboratory-and-growing-rooms": {
+      "hide": true
+    },
+    "stickleback": {
+      "hide": true
+    },
+    "jerboa": {
+      "hide": true
+    },
+    "frog-house": {
+      "hide": true
+    },
+    "central-research-services-facility": {
+      "hide": true
+    },
+    "canyonview-filter-facility": {
+      "hide": true
+    },
+    "canyon-vista-administration-building": {
+      "hide": true
+    },
+    "warren-administrative-module": {
+      "hide": true
+    },
+    "erc-administration": {
+      "hide": true
+    },
+    "erc-laundry-east": {
+      "hide": true
+    },
+    "erc-laundry-south": {
+      "hide": true
+    },
+    "east-campus-office-building": {
+      "hide": true
+    },
+    "chancellors-complex": {
+      "hide": true
+    },
+    "student-services-center": {
+      "hide": true
+    },
+    "career-services-center": {
+      "hide": true
+    },
+    "triton-alumni-and-welcome-center": {
+      "hide": true
+    },
+    "commuter-and-visitor-information": {
+      "hide": true
+    },
+    "camp-matthews-sentry-booth": {
+      "hide": true
+    },
+    "print-labs": {
+      "hide": true
+    },
+    "friends-thrift-shop": {
+      "hide": true
+    },
+    "ida-and-cecil-green-faculty-club": {
+      "hide": true
+    },
+    "international-center-west": {
+      "hide": true
+    },
+    "409-university-center": {
+      "hide": true
+    },
+    "965-university-center": {
+      "hide": true
+    },
+    "torrey-pines-center-south": {
+      "hide": true
+    },
+    "torry-pines-center-north": {
+      "hide": true
+    },
+    "canyonview-recreation-and-athletics-administration": {
+      "hide": true
+    },
+    "spanos-athletic-performance-center": {
+      "hide": true
+    },
+    "spanos-athletic-performance-center-640363497": {
+      "hide": true
+    },
+    "rimac-annex": {
+      "hide": true
+    },
+    "epstein-family-amphitheater": {
+      "hide": true
+    },
+    "fallen-star": {
+      "hide": true
+    },
+    "vela": {
+      "hide": true
+    },
+    "ola": {
+      "hide": true
+    },
+    "vela-1263054989": {
+      "hide": true
+    },
+    "street-corner-urban-market": {
+      "hide": true
+    },
+    "pepper-canyon-market": {
+      "hide": true
+    },
+    "che-cafe-collective": {
+      "hide": true
+    },
+    "stage-room-at-the-pub": {
+      "hide": true
+    },
+    "blue-wave-bistro": {
+      "hide": true
+    },
+    "middle-earth-lounge": {
+      "hide": true
+    },
+    "sixty-four-north": {
+      "hide": true
+    },
+    "t-25": {
+      "hide": true
+    },
+    "t-30": {
+      "hide": true
+    },
+    "t-31": {
+      "hide": true
+    },
+    "old-directors-house-t-16": {
+      "hide": true
+    },
+    "martin-johnson-house-t-29": {
+      "hide": true
+    },
+    "msdc-building-a": {
+      "hide": true
+    },
+    "msdc-building-b": {
+      "hide": true
+    },
+    "msdc-building-c": {
+      "hide": true
+    },
+    "msdc-building-d": {
+      "hide": true
+    },
+    "eelgrass": {
+      "hide": true
+    },
+    "rockweed": {
+      "hide": true
+    },
+    "coralina": {
+      "hide": true
+    },
+    "deep-sea-drilling-west": {
+      "hide": true
+    },
+    "deep-sea-drilling-east": {
+      "hide": true
+    },
+    "deep-sea-drilling-building-c": {
+      "hide": true
+    },
+    "odp-core-building": {
+      "hide": true
+    },
+    "keck-oar-building-1": {
+      "hide": true
+    },
+    "keck-oar-building-2": {
+      "hide": true
+    },
+    "keck-oar-building-3": {
+      "hide": true
+    },
+    "igpp-revelle-lab-building-1000": {
+      "hide": true
+    },
+    "igpp-revelle-lab-building-2000": {
+      "hide": true
+    },
+    "igpp-revelle-lab-building-3000": {
+      "hide": true
+    },
+    "igpp-revelle-lab-building-4000": {
+      "hide": true
+    },
+    "hydraulics-laboratory": {
+      "hide": true
+    },
+    "marine-conservation-facility": {
+      "hide": true
+    },
+    "center-for-coastal-studies": {
+      "hide": true
+    },
+    "marine-ecosystem-sensing-observation-and-modeling-laboratory-mesom": {
+      "hide": true
+    },
+    "hubbs-hall-confrence-center": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "100": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "200": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "300": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "400": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "500": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "600": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "700": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "800": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "900": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "1100": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "1200": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "1300": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "1400": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "1500": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "1600": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "1700": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "1800": "Pepper Canyon apartments, a numbered housing building. Not somewhere undergraduates have class.",
+    "revelle-college": "Pinned at Blake Hall (OSM way/295154441), one of the two halls in the dorm name; Argo Hall is next door. OSM names the halls, not the college.",
+    "sixth-college": "Pinned at Kaleidoscope (OSM way/893580774, 9690 N Torrey Pines Rd), a North Torrey Pines Living and Learning Neighborhood residential building (housing.ucsd.edu, Sixth College); Tapestry is the other named one.",
+    "erc": "Pinned at Oceania Hall (OSM way/31843296), the ERC residence hall between the International House buildings (Asante, Cuzco, Kathmandu, Geneva, Mesa Verde) and the continent halls; OSM has no building named for the college.",
+    "thurgood-marshall-college": "Pinned at Umoja (OSM way/1274990081), a Ridge Walk North Living and Learning Neighborhood residential building beside Alianza and Coalition (housing.ucsd.edu, Marshall); the dorm name says Ridge Walk North.",
+    "seventh-eighth-colleges": "Pinned at Sankofa (OSM way/1078326951, a Theatre District LLN building, with Podemos, Survivance, Pulse and Azad), Seventh College's home by the La Jolla Playhouse (housing.ucsd.edu); Eighth College lives 1 km east in Pepper Canyon West (Guava, Holly, Laurel, Jacaranda, Magnolia, Kalmia), so one pin cannot cover both.",
+    "cafe-ventanas": "Café Ventanas is ERC's dining hall (hdh.ucsd.edu/dining).",
+    "64-degrees": "64 Degrees is Revelle's dining hall (hdh.ucsd.edu/dining).",
+    "canyon-vista-restaurant": "Canyon Vista is Warren's dining hall (hdh.ucsd.edu/dining).",
+    "foodworx": "Foodworx is the Pepper Canyon dining hall (hdh.ucsd.edu/dining).",
+    "oceanview-terrace-lounge": "OceanView Terrace is Marshall's dining hall; OSM names the lounge (hdh.ucsd.edu/dining).",
+    "the-bistro-at-the-strand": "The Bistro at The Strand is the Village dining location, Seventh College's original home (hdh.ucsd.edu/dining).",
+    "argo-hall": "Revelle residence hall (Blake Hall carries the Revelle pin). Not somewhere undergraduates have class.",
+    "atlantis-hall": "Revelle residence hall (the Fleets). Not somewhere undergraduates have class.",
+    "beagle-hall": "Revelle residence hall (the Fleets). Not somewhere undergraduates have class.",
+    "meteor-hall": "Revelle residence hall (the Fleets). Not somewhere undergraduates have class.",
+    "challenger-hall": "Revelle residence hall (the Fleets). Not somewhere undergraduates have class.",
+    "discovery-hall": "Revelle residence hall (the Fleets). Not somewhere undergraduates have class.",
+    "galathea-hall": "Revelle residence hall (the Fleets). Not somewhere undergraduates have class.",
+    "tioga-hall": "Muir residence hall (Tenaya Hall carries the Muir pin). Not somewhere undergraduates have class.",
+    "tuolumne-apartments": "Muir apartments. Not somewhere undergraduates have class.",
+    "alianza": "Ridge Walk North LLN residential building (Umoja carries the Marshall pin). Not somewhere undergraduates have class.",
+    "malk-hall": "Ridge Walk North LLN building beside Umoja and Alianza, student housing area. Not somewhere undergraduates have class.",
+    "survivance": "Theatre District LLN residential building (Sankofa carries the Seventh College pin). Not somewhere undergraduates have class.",
+    "podemos": "Theatre District LLN residential building. Not somewhere undergraduates have class.",
+    "pulse": "Theatre District LLN residential building. Not somewhere undergraduates have class.",
+    "azad": "Theatre District LLN residential building. Not somewhere undergraduates have class.",
+    "guava": "Pepper Canyon West LLN residential building (Eighth College). Not somewhere undergraduates have class.",
+    "holly": "Pepper Canyon West LLN residential building (Eighth College). Not somewhere undergraduates have class.",
+    "laurel": "Pepper Canyon West LLN residential building (Eighth College). Not somewhere undergraduates have class.",
+    "jacaranda": "Pepper Canyon West LLN residential building (Eighth College). Not somewhere undergraduates have class.",
+    "magnolia": "Pepper Canyon West LLN residential building (Eighth College). Not somewhere undergraduates have class.",
+    "kalmia": "Pepper Canyon West LLN residential building (Eighth College). Not somewhere undergraduates have class.",
+    "c": "A one-letter OSM name in the Pepper Canyon apartments, not a class building. Not somewhere undergraduates have class.",
+    "rya": "An unexplained three-letter OSM name in the Pepper Canyon housing area, not a class building. Not somewhere undergraduates have class.",
+    "residential-services-building": "Housing admin. Not somewhere undergraduates have class.",
+    "housing-dining-and-hospitality-administration-building": "HDH offices; the name rule tagged it dining. Not somewhere undergraduates have class.",
+    "the-john-m-and-sally-b-thornton-hospital": "Hospital. Not somewhere undergraduates have class.",
+    "moores-cancer-center": "Hospital. Not somewhere undergraduates have class.",
+    "jacobs-medical-center": "Hospital. Not somewhere undergraduates have class.",
+    "outpatient-pavilion": "Hospital. Not somewhere undergraduates have class.",
+    "sulpizio-cardiovascular-center": "Hospital. Not somewhere undergraduates have class.",
+    "shiley-eye-institute": "Eye clinic. Not somewhere undergraduates have class.",
+    "hamilton-glaucoma-and-jacobs-retina-center": "Eye clinic. Not somewhere undergraduates have class.",
+    "perlman-ambulatory-care-center": "Clinic. Not somewhere undergraduates have class.",
+    "student-health-services": "Clinic. Not somewhere undergraduates have class.",
+    "student-health-and-well-being-building": "Clinic and counselling. Not somewhere undergraduates have class.",
+    "altman-clinical-and-translational-research-institute": "Clinical research building. Not somewhere undergraduates have class.",
+    "stein-clinical-research": "Clinical research building. Not somewhere undergraduates have class.",
+    "viterbi-family-vision-research-center": "Vision research clinic. Not somewhere undergraduates have class.",
+    "la-jolla-institute-for-allergy-and-immunology": "An independent research institute on campus land. Not somewhere undergraduates have class.",
+    "sanford-consortium-for-regenerative-medicine": "A research consortium building, not a class building. Not somewhere undergraduates have class.",
+    "center-for-novel-therapeutics": "A research/incubator building. Not somewhere undergraduates have class.",
+    "noaa-southwest-fisheries-science-center-laboratory": "A NOAA laboratory. Not somewhere undergraduates have class.",
+    "west-health-institute": "An independent institute. Not somewhere undergraduates have class.",
+    "institute-of-the-americas": "An independent institute on the ERC side. Not somewhere undergraduates have class.",
+    "gildred-latin-american-studies": "Part of the Institute of the Americas. Not somewhere undergraduates have class.",
+    "copley-international-conference-center": "A conference centre. Not somewhere undergraduates have class.",
+    "birch-aquarium": "The public aquarium. Not somewhere undergraduates have class.",
+    "nigella-hillgarth-education-center": "The aquarium's education centre. Not somewhere undergraduates have class.",
+    "fire-station-52": "A fire station. Not somewhere undergraduates have class.",
+    "exchange": "A building on the East Campus housing side (Nuevo), not a class building. Not somewhere undergraduates have class.",
+    "environmental-management-facility": "EH&S waste facility. Not somewhere undergraduates have class.",
+    "electric-shop": "Facilities shop. Not somewhere undergraduates have class.",
+    "transit-operations-trailer": "Transit office trailer. Not somewhere undergraduates have class.",
+    "i-5-switch-station": "Electrical switch station. Not somewhere undergraduates have class.",
+    "bfs-main-building": "Biology Field Station. Not somewhere undergraduates have class.",
+    "bfs-laboratory-and-growing-rooms": "Biology Field Station. Not somewhere undergraduates have class.",
+    "stickleback": "Biology Field Station outbuilding (Greenhouse Lane). Not somewhere undergraduates have class.",
+    "jerboa": "Biology Field Station outbuilding (Greenhouse Lane). Not somewhere undergraduates have class.",
+    "frog-house": "Biology Field Station outbuilding (Greenhouse Lane). Not somewhere undergraduates have class.",
+    "central-research-services-facility": "Service building. Not somewhere undergraduates have class.",
+    "canyonview-filter-facility": "Pool filter plant. Not somewhere undergraduates have class.",
+    "canyon-vista-administration-building": "Housing admin. Not somewhere undergraduates have class.",
+    "warren-administrative-module": "College office module. Not somewhere undergraduates have class.",
+    "erc-administration": "College offices. Not somewhere undergraduates have class.",
+    "erc-laundry-east": "Laundry. Not somewhere undergraduates have class.",
+    "erc-laundry-south": "Laundry. Not somewhere undergraduates have class.",
+    "east-campus-office-building": "Offices. Not somewhere undergraduates have class.",
+    "chancellors-complex": "Admin. Not somewhere undergraduates have class.",
+    "student-services-center": "Admin. Not somewhere undergraduates have class.",
+    "career-services-center": "Admin. Not somewhere undergraduates have class.",
+    "triton-alumni-and-welcome-center": "Visitor centre. Not somewhere undergraduates have class.",
+    "commuter-and-visitor-information": "Information booth. Not somewhere undergraduates have class.",
+    "camp-matthews-sentry-booth": "A historic sentry booth. Not somewhere undergraduates have class.",
+    "print-labs": "Print shop. Not somewhere undergraduates have class.",
+    "friends-thrift-shop": "A thrift shop. Not somewhere undergraduates have class.",
+    "ida-and-cecil-green-faculty-club": "The faculty club. Not somewhere undergraduates have class.",
+    "international-center-west": "International students office. Not somewhere undergraduates have class.",
+    "409-university-center": "Admin offices on University Center lane. Not somewhere undergraduates have class.",
+    "965-university-center": "Admin offices on University Center lane. Not somewhere undergraduates have class.",
+    "torrey-pines-center-south": "Office building. Not somewhere undergraduates have class.",
+    "torry-pines-center-north": "Office building. Not somewhere undergraduates have class.",
+    "canyonview-recreation-and-athletics-administration": "Athletics admin; the name rule tagged it a gym. Not somewhere undergraduates have class.",
+    "spanos-athletic-performance-center": "Varsity athletics. Not somewhere undergraduates have class.",
+    "spanos-athletic-performance-center-640363497": "Varsity athletics. Not somewhere undergraduates have class.",
+    "rimac-annex": "Athletics offices. Not somewhere undergraduates have class.",
+    "epstein-family-amphitheater": "An outdoor amphitheatre. Not somewhere undergraduates have class.",
+    "fallen-star": "An artwork on Jacobs Hall. Not somewhere undergraduates have class.",
+    "vela": "Parking. Not somewhere undergraduates have class.",
+    "ola": "Parking. Not somewhere undergraduates have class.",
+    "vela-1263054989": "Parking. Not somewhere undergraduates have class.",
+    "street-corner-urban-market": "A market. Not somewhere undergraduates have class.",
+    "pepper-canyon-market": "A market. Not somewhere undergraduates have class.",
+    "che-cafe-collective": "A cafe and music venue. Not somewhere undergraduates have class.",
+    "stage-room-at-the-pub": "A pub. Not somewhere undergraduates have class.",
+    "blue-wave-bistro": "A fast-food spot. Not somewhere undergraduates have class.",
+    "middle-earth-lounge": "A Muir lounge. Not somewhere undergraduates have class.",
+    "sixty-four-north": "A cafe beside 64 Degrees. Not somewhere undergraduates have class.",
+    "t-25": "SIO historic cottage. Not somewhere undergraduates have class.",
+    "t-30": "SIO historic cottage. Not somewhere undergraduates have class.",
+    "t-31": "SIO historic cottage. Not somewhere undergraduates have class.",
+    "old-directors-house-t-16": "SIO historic cottage. Not somewhere undergraduates have class.",
+    "martin-johnson-house-t-29": "SIO historic cottage. Not somewhere undergraduates have class.",
+    "msdc-building-a": "SIO Marine Science Development Center (boat yard). Not somewhere undergraduates have class.",
+    "msdc-building-b": "SIO Marine Science Development Center. Not somewhere undergraduates have class.",
+    "msdc-building-c": "SIO Marine Science Development Center. Not somewhere undergraduates have class.",
+    "msdc-building-d": "SIO Marine Science Development Center. Not somewhere undergraduates have class.",
+    "eelgrass": "SIO warehouse on Downwind Way. Not somewhere undergraduates have class.",
+    "rockweed": "SIO building on Downwind Way. Not somewhere undergraduates have class.",
+    "coralina": "SIO warehouse on Downwind Way. Not somewhere undergraduates have class.",
+    "deep-sea-drilling-west": "Core repository. Not somewhere undergraduates have class.",
+    "deep-sea-drilling-east": "Core repository. Not somewhere undergraduates have class.",
+    "deep-sea-drilling-building-c": "Core repository. Not somewhere undergraduates have class.",
+    "odp-core-building": "Core repository. Not somewhere undergraduates have class.",
+    "keck-oar-building-1": "SIO research lab. Not somewhere undergraduates have class.",
+    "keck-oar-building-2": "SIO research lab. Not somewhere undergraduates have class.",
+    "keck-oar-building-3": "SIO research lab. Not somewhere undergraduates have class.",
+    "igpp-revelle-lab-building-1000": "IGPP research lab. Not somewhere undergraduates have class.",
+    "igpp-revelle-lab-building-2000": "IGPP research lab. Not somewhere undergraduates have class.",
+    "igpp-revelle-lab-building-3000": "IGPP research lab. Not somewhere undergraduates have class.",
+    "igpp-revelle-lab-building-4000": "IGPP research lab. Not somewhere undergraduates have class.",
+    "hydraulics-laboratory": "SIO research lab. Not somewhere undergraduates have class.",
+    "marine-conservation-facility": "SIO research facility. Not somewhere undergraduates have class.",
+    "center-for-coastal-studies": "SIO research unit. Not somewhere undergraduates have class.",
+    "marine-ecosystem-sensing-observation-and-modeling-laboratory-mesom": "SIO research lab. Not somewhere undergraduates have class.",
+    "hubbs-hall-confrence-center": "A conference centre. Not somewhere undergraduates have class."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "revelle-college -> york-hall",
+        "revelle-college -> natural-science-building"
+      ],
+      "maxRatio": 3.4,
+      "why": "Blake Hall sits inside the Revelle quad loop path; OSM has no footway from Revelle Plaza to York Hall's east-side door nor west across the quad to the Natural Science Building, so both routes go round the quad (Ridge Walk and the service drive)."
+    }
+  ]
+}

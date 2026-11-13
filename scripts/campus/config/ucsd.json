@@ -1,0 +1,16 @@
+{
+  "collegeId": "ucsd",
+  "area": {
+    "osm": "way/25822522",
+    "bbox": [
+      32.86356,
+      -117.25475,
+      32.89413,
+      -117.21837
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No current code list: the Registrar's building-code page (registrar.ucsd.edu/StudentLink/bldg_codes.html) now redirects to the Registrar home page with no replacement, and the campus map's Buildings_Public layer (admin-enterprise-gis.ucsd.edu) has no code field, only free-text aliases (checked 2026-11-08)."
+}
