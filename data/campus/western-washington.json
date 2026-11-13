@@ -1,0 +1,598 @@
+{
+ "collegeId": "western-washington",
+ "generatedAt": "2026-11-13T21:35:22.733Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Western Washington University Campus Directory, Buildings (name and building code)",
+   "url": "https://www.wwu.edu/directory",
+   "use": "building codes",
+   "read": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/western-washington.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -122.48965,
+  48.72679,
+  -122.48335,
+  48.74019
+ ],
+ "halls": [
+  {
+   "dormId": "nash-hall",
+   "name": "Nash Hall",
+   "lng": -122.483805,
+   "lat": 48.74019,
+   "pin": "name",
+   "osm": "way/224996869",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carver-gym",
+     "minutes": 9.1
+    },
+    "library": {
+     "placeId": "wilson-library",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "viking-commons",
+     "minutes": 4.2
+    }
+   }
+  },
+  {
+   "dormId": "mathes-hall",
+   "name": "Mathes Hall",
+   "lng": -122.484703,
+   "lat": 48.739923,
+   "pin": "name",
+   "osm": "way/224996867",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carver-gym",
+     "minutes": 8.6
+    },
+    "library": {
+     "placeId": "wilson-library",
+     "minutes": 3.7
+    },
+    "dining": {
+     "placeId": "viking-commons",
+     "minutes": 2.6
+    }
+   }
+  },
+  {
+   "dormId": "edens-hall",
+   "name": "Edens Hall",
+   "lng": -122.483464,
+   "lat": 48.739075,
+   "pin": "name",
+   "osm": "way/224996885",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carver-gym",
+     "minutes": 6.8
+    },
+    "library": {
+     "placeId": "wilson-library",
+     "minutes": 2.8
+    },
+    "dining": {
+     "placeId": "viking-commons",
+     "minutes": 3.6
+    }
+   }
+  },
+  {
+   "dormId": "higginson-hall",
+   "name": "Higginson Hall",
+   "lng": -122.483349,
+   "lat": 48.739802,
+   "pin": "name",
+   "osm": "way/224996880",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carver-gym",
+     "minutes": 8.4
+    },
+    "library": {
+     "placeId": "wilson-library",
+     "minutes": 3.9
+    },
+    "dining": {
+     "placeId": "viking-commons",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "ridgeway-complex",
+   "name": "Ridgeway Complex",
+   "lng": -122.48965,
+   "lat": 48.73468,
+   "pin": "manual",
+   "osm": "way/367881277",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carver-gym",
+     "minutes": 4.3
+    },
+    "library": {
+     "placeId": "wilson-library",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "viking-commons",
+     "minutes": 10.6
+    }
+   }
+  },
+  {
+   "dormId": "buchanan-towers",
+   "name": "Buchanan Towers",
+   "lng": -122.48682,
+   "lat": 48.726787,
+   "pin": "name",
+   "osm": "way/224996879",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "wade-king-recreation-center",
+     "minutes": 9.4
+    },
+    "library": {
+     "placeId": "wilson-library",
+     "minutes": 16.7
+    },
+    "dining": {
+     "placeId": "viking-commons",
+     "minutes": 21
+    }
+   }
+  },
+  {
+   "dormId": "fairhaven-complex",
+   "name": "Fairhaven Complex",
+   "lng": -122.48557,
+   "lat": 48.72923,
+   "pin": "manual",
+   "osm": "way/224997058",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "wade-king-recreation-center",
+     "minutes": 7.2
+    },
+    "library": {
+     "placeId": "wilson-library",
+     "minutes": 14
+    },
+    "dining": {
+     "placeId": "viking-commons",
+     "minutes": 18.3
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "carver-gym",
+   "name": "Carver Gym",
+   "short": "Carver Gym",
+   "kind": "gym",
+   "codes": [
+    "CV"
+   ],
+   "aliases": [
+    "Carver"
+   ],
+   "lng": -122.48653,
+   "lat": 48.735973,
+   "osm": "way/37651091"
+  },
+  {
+   "id": "wade-king-recreation-center",
+   "name": "Wade King Recreation Center",
+   "short": "Wade King Recreation Center",
+   "kind": "gym",
+   "codes": [
+    "SV"
+   ],
+   "aliases": [],
+   "lng": -122.489081,
+   "lat": 48.731577,
+   "osm": "way/37651099"
+  },
+  {
+   "id": "miller-hall",
+   "name": "Miller Hall",
+   "short": "Miller Hall",
+   "kind": "academic",
+   "codes": [
+    "MH"
+   ],
+   "aliases": [],
+   "lng": -122.484837,
+   "lat": 48.736437,
+   "osm": "relation/16161707"
+  },
+  {
+   "id": "old-main",
+   "name": "Old Main",
+   "short": "Old Main",
+   "kind": "academic",
+   "codes": [
+    "OM"
+   ],
+   "aliases": [],
+   "lng": -122.4841,
+   "lat": 48.737905,
+   "osm": "way/37651086"
+  },
+  {
+   "id": "performing-arts-center",
+   "name": "Performing Arts Center",
+   "short": "Performing Arts Center",
+   "kind": "academic",
+   "codes": [
+    "PA"
+   ],
+   "aliases": [],
+   "lng": -122.487232,
+   "lat": 48.73803,
+   "osm": "way/224996873"
+  },
+  {
+   "id": "haggard-hall",
+   "name": "Haggard Hall",
+   "short": "Haggard Hall",
+   "kind": "academic",
+   "codes": [
+    "HH"
+   ],
+   "aliases": [],
+   "lng": -122.486327,
+   "lat": 48.737365,
+   "osm": "way/37651089"
+  },
+  {
+   "id": "wilson-library",
+   "name": "Wilson Library",
+   "short": "Wilson Library",
+   "kind": "library",
+   "codes": [
+    "WL"
+   ],
+   "aliases": [],
+   "lng": -122.4858,
+   "lat": 48.737797,
+   "osm": "way/37651085"
+  },
+  {
+   "id": "ross-engineering-technology",
+   "name": "Ross Engineering Technology",
+   "short": "Ross Engineering Technology",
+   "kind": "academic",
+   "codes": [
+    "ET"
+   ],
+   "aliases": [],
+   "lng": -122.485582,
+   "lat": 48.734627,
+   "osm": "way/37651093"
+  },
+  {
+   "id": "viking-union",
+   "name": "Viking Union",
+   "short": "Viking Union",
+   "kind": "academic",
+   "codes": [
+    "VU"
+   ],
+   "aliases": [],
+   "lng": -122.486224,
+   "lat": 48.738798,
+   "osm": "way/224996877"
+  },
+  {
+   "id": "viking-commons",
+   "name": "Viking Commons",
+   "short": "Viking Commons",
+   "kind": "dining",
+   "codes": [
+    "VC"
+   ],
+   "aliases": [],
+   "lng": -122.485442,
+   "lat": 48.739073,
+   "osm": "way/224996876"
+  },
+  {
+   "id": "communications-facility",
+   "name": "Communications Facility",
+   "short": "Communications Facility",
+   "kind": "academic",
+   "codes": [
+    "CF"
+   ],
+   "aliases": [],
+   "lng": -122.485254,
+   "lat": 48.73269,
+   "osm": "way/37651075"
+  },
+  {
+   "id": "fine-arts",
+   "name": "Fine Arts",
+   "short": "Fine Arts",
+   "kind": "academic",
+   "codes": [
+    "FI"
+   ],
+   "aliases": [],
+   "lng": -122.485265,
+   "lat": 48.735424,
+   "osm": "way/37651092"
+  },
+  {
+   "id": "science-mathematics-and-technology-education-smate",
+   "name": "Science, Mathematics, and Technology Education (SMATE)",
+   "short": "Science, Mathematics, and Technology Education (SMATE)",
+   "kind": "academic",
+   "codes": [
+    "SL"
+   ],
+   "aliases": [
+    "SMATE / Science Lecture"
+   ],
+   "lng": -122.48715,
+   "lat": 48.735208,
+   "osm": "way/37651070"
+  },
+  {
+   "id": "arntzen-hall",
+   "name": "Arntzen Hall",
+   "short": "Arntzen Hall",
+   "kind": "academic",
+   "codes": [
+    "AH"
+   ],
+   "aliases": [],
+   "lng": -122.485646,
+   "lat": 48.733894,
+   "osm": "way/37651097"
+  },
+  {
+   "id": "bond-hall",
+   "name": "Bond Hall",
+   "short": "Bond Hall",
+   "kind": "academic",
+   "codes": [
+    "BH"
+   ],
+   "aliases": [],
+   "lng": -122.485971,
+   "lat": 48.73662,
+   "osm": "way/37651083"
+  },
+  {
+   "id": "morse-hall-chemistry-building",
+   "name": "Morse Hall (Chemistry Building)",
+   "short": "Morse Hall (Chemistry Building)",
+   "kind": "academic",
+   "codes": [
+    "CB"
+   ],
+   "aliases": [],
+   "lng": -122.486673,
+   "lat": 48.734646,
+   "osm": "way/37651071"
+  },
+  {
+   "id": "biology",
+   "name": "Biology",
+   "short": "Biology",
+   "kind": "academic",
+   "codes": [
+    "BI"
+   ],
+   "aliases": [],
+   "lng": -122.486987,
+   "lat": 48.733967,
+   "osm": "way/37651072"
+  },
+  {
+   "id": "fairhaven-college-of-interdisciplinary-studies",
+   "name": "Fairhaven College of Interdisciplinary Studies",
+   "short": "Fairhaven College of Interdisciplinary Studies",
+   "kind": "academic",
+   "codes": [
+    "FA"
+   ],
+   "aliases": [
+    "Fairhaven Academic Building / Fairhaven College"
+   ],
+   "lng": -122.485715,
+   "lat": 48.730256,
+   "osm": "way/224996902"
+  },
+  {
+   "id": "academic-instructional-west",
+   "name": "Academic Instructional West",
+   "short": "Academic Instructional West",
+   "kind": "academic",
+   "codes": [
+    "AW"
+   ],
+   "aliases": [],
+   "lng": -122.486644,
+   "lat": 48.731982,
+   "osm": "way/1195996988"
+  },
+  {
+   "id": "interdisciplinary-science-building",
+   "name": "Interdisciplinary Science Building",
+   "short": "Interdisciplinary Science Building",
+   "kind": "academic",
+   "codes": [
+    "IS"
+   ],
+   "aliases": [],
+   "lng": -122.487585,
+   "lat": 48.73361,
+   "osm": "way/1195193432"
+  },
+  {
+   "id": "environmental-studies",
+   "name": "Environmental Studies",
+   "short": "Environmental Studies",
+   "kind": "academic",
+   "codes": [
+    "ES"
+   ],
+   "aliases": [],
+   "lng": -122.485503,
+   "lat": 48.733425,
+   "osm": "way/37651095"
+  },
+  {
+   "id": "academic-instructional-center",
+   "name": "Academic Instructional Center",
+   "short": "Academic Instructional Center",
+   "kind": "academic",
+   "codes": [
+    "AI"
+   ],
+   "aliases": [],
+   "lng": -122.48578,
+   "lat": 48.732064,
+   "osm": "way/155325579"
+  },
+  {
+   "id": "kaiser-borsari-hall",
+   "name": "Kaiser Borsari Hall",
+   "short": "Kaiser Borsari Hall",
+   "kind": "academic",
+   "codes": [
+    "KB"
+   ],
+   "aliases": [],
+   "lng": -122.484769,
+   "lat": 48.732479,
+   "osm": "way/1244765601"
+  },
+  {
+   "id": "parks-hall",
+   "name": "Parks Hall",
+   "short": "Parks Hall",
+   "kind": "academic",
+   "codes": [
+    "PH"
+   ],
+   "aliases": [],
+   "lng": -122.486562,
+   "lat": 48.733501,
+   "osm": "way/37651094"
+  },
+  {
+   "id": "humanities-building",
+   "name": "Humanities Building",
+   "short": "Humanities Building",
+   "kind": "academic",
+   "codes": [
+    "HU"
+   ],
+   "aliases": [],
+   "lng": -122.484977,
+   "lat": 48.73737,
+   "osm": "way/37651084"
+  },
+  {
+   "id": "high-street-hall",
+   "name": "High Street Hall",
+   "short": "High Street Hall",
+   "kind": "academic",
+   "codes": [
+    "HS"
+   ],
+   "aliases": [],
+   "lng": -122.488114,
+   "lat": 48.737352,
+   "osm": "way/224996871"
+  },
+  {
+   "id": "college-hall",
+   "name": "College Hall",
+   "short": "College Hall",
+   "kind": "academic",
+   "codes": [
+    "CH"
+   ],
+   "aliases": [],
+   "lng": -122.487082,
+   "lat": 48.737116,
+   "osm": "way/367879514"
+  },
+  {
+   "id": "fraser-hall",
+   "name": "Fraser Hall",
+   "short": "Fraser Hall",
+   "kind": "academic",
+   "codes": [
+    "FR"
+   ],
+   "aliases": [],
+   "lng": -122.484612,
+   "lat": 48.737107,
+   "osm": "way/228455358"
+  },
+  {
+   "id": "art-annex",
+   "name": "Art Annex",
+   "short": "Art Annex",
+   "kind": "academic",
+   "codes": [
+    "AA"
+   ],
+   "aliases": [],
+   "lng": -122.485276,
+   "lat": 48.735844,
+   "osm": "way/43195946"
+  },
+  {
+   "id": "canada-house",
+   "name": "Canada House",
+   "short": "Canada House",
+   "kind": "academic",
+   "codes": [
+    "CA"
+   ],
+   "aliases": [],
+   "lng": -122.487977,
+   "lat": 48.73794,
+   "osm": "way/224996883"
+  }
+ ]
+}

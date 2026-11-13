@@ -1,0 +1,17 @@
+{
+  "collegeId": "western-washington",
+  "area": {
+    "osm": "way/95345602",
+    "bbox": [
+      48.72641,
+      -122.49175,
+      48.74136,
+      -122.48043
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/western-washington.codes.json"
+  }
+}

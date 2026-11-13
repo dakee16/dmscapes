@@ -1,0 +1,55 @@
+{
+  "halls": {
+    "ridgeway-complex": {
+      "pin": [
+        -122.48965,
+        48.73468
+      ]
+    },
+    "fairhaven-complex": {
+      "pin": [
+        -122.48557,
+        48.72923
+      ]
+    }
+  },
+  "codes": {
+    "FA": "way/224996902"
+  },
+  "places": {
+    "commissary": {
+      "hide": true
+    },
+    "physical-plant": {
+      "hide": true
+    },
+    "campus-services": {
+      "hide": true
+    },
+    "alumni-house": {
+      "hide": true
+    },
+    "edens-hall-north": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "ridgeway-complex": "The Ridgeway Complex is the seven halls OSM names Alpha, Beta, Gamma, Delta, Kappa, Omega and Sigma around Ridgeway Commons (WWU campus directory codes RA-RS, RC); pinned at Ridgeway Commons (OSM way/367881277) in the middle of them.",
+    "fairhaven-complex": "The Fairhaven Complex (WWU campus directory code FX) is the twelve Fairhaven Stacks OSM maps as 'Fairhaven Stack 1' to '11/12' (ways 224997056-224997067); pinned at Stack 5 in the middle of them.",
+    "FA": "FA 'Fairhaven Academic Building / Fairhaven College' on the directory list is OSM's 'Fairhaven College of Interdisciplinary Studies' (way/224996902), which the name rules missed.",
+    "commissary": "The Commissary (CM) is dining services' central kitchen and warehouse, not somewhere classes happen.",
+    "physical-plant": "The Physical Plant (PP) is the facilities building, not somewhere classes happen.",
+    "campus-services": "Campus Services (CS) holds facilities, mail and parking offices, not classes.",
+    "alumni-house": "The Alumni House (AL) is an office, not somewhere classes happen.",
+    "edens-hall-north": "Edens Hall North (EN) is a residence hall (wwu.edu/housing), not a class building."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "ridgeway-complex -> interdisciplinary-science-building"
+      ],
+      "maxRatio": 3,
+      "why": "Ridgeway sits on the ridge above the science buildings: the mapped paths leave the complex at its south end and follow the Wade King service road below it, and the Interdisciplinary Science Building's mapped door is on its north-east side, so the walk comes round the building."
+    }
+  ]
+}
