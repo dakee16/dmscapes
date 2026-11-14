@@ -1,0 +1,413 @@
+{
+  "halls": {
+    "mccormick-road": {
+      "pin": [
+        -78.511914,
+        38.034995
+      ]
+    },
+    "alderman-road-hall": {
+      "pin": [
+        -78.517654,
+        38.033356
+      ]
+    },
+    "alderman-road-suite": {
+      "pin": [
+        -78.516116,
+        38.030737
+      ]
+    },
+    "gooch-dillard": {
+      "pin": [
+        -78.516965,
+        38.029863
+      ]
+    }
+  },
+  "places": {
+    "university-of-virginia-hospital": {
+      "hide": true
+    },
+    "uva-health-orthopedic-center": {
+      "hide": true
+    },
+    "jefferson-park-medical-office-building": {
+      "hide": true
+    },
+    "west-complex-outpatient-clinics": {
+      "hide": true
+    },
+    "west-complex": {
+      "hide": true
+    },
+    "primary-care-center": {
+      "hide": true
+    },
+    "emily-couric-clinical-cancer-center": {
+      "hide": true
+    },
+    "outpatient-surgery-center": {
+      "hide": true
+    },
+    "battle-building": {
+      "hide": true
+    },
+    "uva-healthsouth-rehabilitation-hospital": {
+      "hide": true
+    },
+    "focused-ultrasound-center": {
+      "hide": true
+    },
+    "lee-building": {
+      "hide": true
+    },
+    "barringer-wing": {
+      "hide": true
+    },
+    "student-health-and-wellness-center": {
+      "hide": true
+    },
+    "elson-builiding": {
+      "hide": true
+    },
+    "mckim-hall-school-of-medicine-administration": {
+      "hide": true
+    },
+    "old-medical-school-building": {
+      "hide": true
+    },
+    "john-paul-jones-arena": {
+      "hide": true
+    },
+    "davenport-field-at-disharoon-park": {
+      "hide": true
+    },
+    "klockner-stadium": {
+      "hide": true
+    },
+    "athletic-village": {
+      "hide": true
+    },
+    "frank-c-mccue-iii-center": {
+      "hide": true
+    },
+    "hoo-vision": {
+      "hide": true
+    },
+    "carl-smith-clock-tower": {
+      "hide": true
+    },
+    "tickets": {
+      "hide": true
+    },
+    "e3-permit": {
+      "hide": true
+    },
+    "palmer-park": {
+      "hide": true
+    },
+    "pavillion-i": {
+      "hide": true
+    },
+    "pavillion-ii": {
+      "hide": true
+    },
+    "pavillion-iii": {
+      "hide": true
+    },
+    "pavillion-iv": {
+      "hide": true
+    },
+    "pavillion-v": {
+      "hide": true
+    },
+    "pavillion-vi": {
+      "hide": true
+    },
+    "pavillion-vii": {
+      "hide": true
+    },
+    "pavillion-viii": {
+      "hide": true
+    },
+    "pavillion-ix": {
+      "hide": true
+    },
+    "pavillion-x": {
+      "hide": true
+    },
+    "hotel-a": {
+      "hide": true
+    },
+    "hotel-b-washington-hall": {
+      "hide": true
+    },
+    "hotel-c-jefferson-hall": {
+      "hide": true
+    },
+    "hotel-d": {
+      "hide": true
+    },
+    "hotel-e-colonnade-hotel": {
+      "hide": true
+    },
+    "hotel-f-levering-hall": {
+      "hide": true
+    },
+    "mcguffey-portal": {
+      "hide": true
+    },
+    "holmes-portal": {
+      "hide": true
+    },
+    "smith-portal": {
+      "hide": true
+    },
+    "davis-portal": {
+      "hide": true
+    },
+    "peters-portal": {
+      "hide": true
+    },
+    "tucker-portal": {
+      "hide": true
+    },
+    "gildersleeve-portal": {
+      "hide": true
+    },
+    "rogers-portal": {
+      "hide": true
+    },
+    "venable-portal": {
+      "hide": true
+    },
+    "harrison-portal": {
+      "hide": true
+    },
+    "mallet-portal": {
+      "hide": true
+    },
+    "long-portal": {
+      "hide": true
+    },
+    "mary-munford-house": {
+      "hide": true
+    },
+    "roberta-gwathmey-house": {
+      "hide": true
+    },
+    "monroe-hill-houses": {
+      "hide": true
+    },
+    "lewis-house": {
+      "hide": true
+    },
+    "bemiss-house": {
+      "hide": true
+    },
+    "alden-house": {
+      "hide": true
+    },
+    "vaughan-house": {
+      "hide": true
+    },
+    "sprigg-lane-house": {
+      "hide": true
+    },
+    "hoxton-house": {
+      "hide": true
+    },
+    "kappa-sigma": {
+      "hide": true
+    },
+    "sigma-phi": {
+      "hide": true
+    },
+    "chi-phi": {
+      "hide": true
+    },
+    "zeta-psi": {
+      "hide": true
+    },
+    "virginia-guesthouse": {
+      "hide": true
+    },
+    "university-bookstore": {
+      "hide": true
+    },
+    "alumni-hall-university-of-virginia": {
+      "hide": true
+    },
+    "madison-hall-presidents-office": {
+      "hide": true
+    },
+    "presidents-house": {
+      "hide": true
+    },
+    "peabody-hall": {
+      "hide": true
+    },
+    "lorna-sundberg-international-center": {
+      "hide": true
+    },
+    "student-activities-building": {
+      "hide": true
+    },
+    "fontana-food-center": {
+      "hide": true
+    },
+    "environmental-sciences-shop": {
+      "hide": true
+    },
+    "special-materials-handling-facility": {
+      "hide": true
+    },
+    "fontaine-central-energy-plant": {
+      "hide": true
+    },
+    "telephone-exchange": {
+      "hide": true
+    },
+    "emergency-communications-center": {
+      "hide": true
+    },
+    "lane-road-modular-unit": {
+      "hide": true
+    },
+    "peyton-house-modular-unit": {
+      "hide": true
+    },
+    "peyton-house-annex": {
+      "hide": true
+    },
+    "the-crackerbox": {
+      "hide": true
+    },
+    "small-observatory-student-observatory-doghouse": {
+      "hide": true
+    },
+    "national-radio-astronomy-observatory-stone-hall": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "mccormick-road": "The name rule matched 'McCormick Road' to the McCormick Road Chiller Plant; the McCormick Road first-year dorms are ten houses along the road, pinned on Humphreys House (OSM way/338429291) in the middle of them (housing.virginia.edu/area/1110).",
+    "alderman-road-hall": "A group entry for the hall-style Alderman Road dorms (Kellogg, Balz-Dobie); pinned on Kellogg House (OSM way/121836436) (housing.virginia.edu/area/1106).",
+    "alderman-road-suite": "A group entry for the suite-style Alderman Road dorms (Courtenay, Dunglison, Fitzhugh); pinned on Courtenay House (OSM way/44528266) (housing.virginia.edu/area/1106).",
+    "gooch-dillard": "Gooch/Dillard is two groups of houses; pinned on OSM's Gooch Houses (way/44528276), the group nearer the rest of campus (housing.virginia.edu/area/1107).",
+    "university-of-virginia-hospital": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "uva-health-orthopedic-center": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "jefferson-park-medical-office-building": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "west-complex-outpatient-clinics": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "west-complex": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "primary-care-center": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "emily-couric-clinical-cancer-center": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "outpatient-surgery-center": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "battle-building": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "uva-healthsouth-rehabilitation-hospital": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "focused-ultrasound-center": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "lee-building": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "barringer-wing": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "student-health-and-wellness-center": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "elson-builiding": "UVA Health hospital or clinic building (or student health), not somewhere undergraduate classes happen.",
+    "mckim-hall-school-of-medicine-administration": "School of Medicine administrative building, not somewhere classes happen.",
+    "old-medical-school-building": "School of Medicine administrative building, not somewhere classes happen.",
+    "john-paul-jones-arena": "Varsity athletics venue, stadium structure or ticket and parking building, not a class building or student gym.",
+    "davenport-field-at-disharoon-park": "Varsity athletics venue, stadium structure or ticket and parking building, not a class building or student gym.",
+    "klockner-stadium": "Varsity athletics venue, stadium structure or ticket and parking building, not a class building or student gym.",
+    "athletic-village": "Varsity athletics venue, stadium structure or ticket and parking building, not a class building or student gym.",
+    "frank-c-mccue-iii-center": "Varsity athletics venue, stadium structure or ticket and parking building, not a class building or student gym.",
+    "hoo-vision": "Varsity athletics venue, stadium structure or ticket and parking building, not a class building or student gym.",
+    "carl-smith-clock-tower": "Varsity athletics venue, stadium structure or ticket and parking building, not a class building or student gym.",
+    "tickets": "Varsity athletics venue, stadium structure or ticket and parking building, not a class building or student gym.",
+    "e3-permit": "Varsity athletics venue, stadium structure or ticket and parking building, not a class building or student gym.",
+    "palmer-park": "Varsity athletics venue, stadium structure or ticket and parking building, not a class building or student gym.",
+    "pavillion-i": "A Lawn pavilion (a faculty residence), not a class building.",
+    "pavillion-ii": "A Lawn pavilion (a faculty residence), not a class building.",
+    "pavillion-iii": "A Lawn pavilion (a faculty residence), not a class building.",
+    "pavillion-iv": "A Lawn pavilion (a faculty residence), not a class building.",
+    "pavillion-v": "A Lawn pavilion (a faculty residence), not a class building.",
+    "pavillion-vi": "A Lawn pavilion (a faculty residence), not a class building.",
+    "pavillion-vii": "A Lawn pavilion (a faculty residence), not a class building.",
+    "pavillion-viii": "A Lawn pavilion (a faculty residence), not a class building.",
+    "pavillion-ix": "A Lawn pavilion (a faculty residence), not a class building.",
+    "pavillion-x": "A Lawn pavilion (a faculty residence), not a class building.",
+    "hotel-a": "A Range hotel (historic residence and offices), not a class building.",
+    "hotel-b-washington-hall": "A Range hotel (historic residence and offices), not a class building.",
+    "hotel-c-jefferson-hall": "A Range hotel (historic residence and offices), not a class building.",
+    "hotel-d": "A Range hotel (historic residence and offices), not a class building.",
+    "hotel-e-colonnade-hotel": "A Range hotel (historic residence and offices), not a class building.",
+    "hotel-f-levering-hall": "A Range hotel (historic residence and offices), not a class building.",
+    "mcguffey-portal": "A Lawn or Range portal (student rooms beside the colonnades), not a class building.",
+    "holmes-portal": "A Lawn or Range portal (student rooms beside the colonnades), not a class building.",
+    "smith-portal": "A Lawn or Range portal (student rooms beside the colonnades), not a class building.",
+    "davis-portal": "A Lawn or Range portal (student rooms beside the colonnades), not a class building.",
+    "peters-portal": "A Lawn or Range portal (student rooms beside the colonnades), not a class building.",
+    "tucker-portal": "A Lawn or Range portal (student rooms beside the colonnades), not a class building.",
+    "gildersleeve-portal": "A Lawn or Range portal (student rooms beside the colonnades), not a class building.",
+    "rogers-portal": "A Lawn or Range portal (student rooms beside the colonnades), not a class building.",
+    "venable-portal": "A Lawn or Range portal (student rooms beside the colonnades), not a class building.",
+    "harrison-portal": "A Lawn or Range portal (student rooms beside the colonnades), not a class building.",
+    "mallet-portal": "A Lawn or Range portal (student rooms beside the colonnades), not a class building.",
+    "long-portal": "A Lawn or Range portal (student rooms beside the colonnades), not a class building.",
+    "mary-munford-house": "A UVA residence hall or university-owned house (housing.virginia.edu), not a class building.",
+    "roberta-gwathmey-house": "A UVA residence hall or university-owned house (housing.virginia.edu), not a class building.",
+    "monroe-hill-houses": "A UVA residence hall or university-owned house (housing.virginia.edu), not a class building.",
+    "lewis-house": "A UVA residence hall or university-owned house (housing.virginia.edu), not a class building.",
+    "bemiss-house": "A UVA residence hall or university-owned house (housing.virginia.edu), not a class building.",
+    "alden-house": "A UVA residence hall or university-owned house (housing.virginia.edu), not a class building.",
+    "vaughan-house": "A UVA residence hall or university-owned house (housing.virginia.edu), not a class building.",
+    "sprigg-lane-house": "A UVA residence hall or university-owned house (housing.virginia.edu), not a class building.",
+    "hoxton-house": "A UVA residence hall or university-owned house (housing.virginia.edu), not a class building.",
+    "kappa-sigma": "Fraternity house, not somewhere classes happen.",
+    "sigma-phi": "Fraternity house, not somewhere classes happen.",
+    "chi-phi": "Fraternity house, not somewhere classes happen.",
+    "zeta-psi": "Fraternity house, not somewhere classes happen.",
+    "virginia-guesthouse": "Guesthouse, bookstore, alumni hall, admissions or administrative building, not somewhere classes happen.",
+    "university-bookstore": "Guesthouse, bookstore, alumni hall, admissions or administrative building, not somewhere classes happen.",
+    "alumni-hall-university-of-virginia": "Guesthouse, bookstore, alumni hall, admissions or administrative building, not somewhere classes happen.",
+    "madison-hall-presidents-office": "Guesthouse, bookstore, alumni hall, admissions or administrative building, not somewhere classes happen.",
+    "presidents-house": "Guesthouse, bookstore, alumni hall, admissions or administrative building, not somewhere classes happen.",
+    "peabody-hall": "Guesthouse, bookstore, alumni hall, admissions or administrative building, not somewhere classes happen.",
+    "lorna-sundberg-international-center": "Guesthouse, bookstore, alumni hall, admissions or administrative building, not somewhere classes happen.",
+    "student-activities-building": "Guesthouse, bookstore, alumni hall, admissions or administrative building, not somewhere classes happen.",
+    "fontana-food-center": "Service, utility or storage building, not somewhere classes happen.",
+    "environmental-sciences-shop": "Service, utility or storage building, not somewhere classes happen.",
+    "special-materials-handling-facility": "Service, utility or storage building, not somewhere classes happen.",
+    "fontaine-central-energy-plant": "Service, utility or storage building, not somewhere classes happen.",
+    "telephone-exchange": "Service, utility or storage building, not somewhere classes happen.",
+    "emergency-communications-center": "Service, utility or storage building, not somewhere classes happen.",
+    "lane-road-modular-unit": "Service, utility or storage building, not somewhere classes happen.",
+    "peyton-house-modular-unit": "Service, utility or storage building, not somewhere classes happen.",
+    "peyton-house-annex": "Service, utility or storage building, not somewhere classes happen.",
+    "the-crackerbox": "Service, utility or storage building, not somewhere classes happen.",
+    "small-observatory-student-observatory-doghouse": "Service, utility or storage building, not somewhere classes happen.",
+    "national-radio-astronomy-observatory-stone-hall": "The National Radio Astronomy Observatory's headquarters, a separate institution, not a UVA class building."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "mccormick-road -> gilmer-hall"
+      ],
+      "maxRatio": 4,
+      "why": "Humphreys House faces Gilmer Hall across McCormick Road, but the nearest mapped crossing is west at the Chemistry Building, so the walk goes along McCormick Road to it and back along the far side to Gilmer Hall's door."
+    },
+    {
+      "pairs": [
+        "alderman-road-hall -> skipwith-hall",
+        "alderman-road-hall -> high-energy-physics-laboratory",
+        "alderman-road-hall -> high-energy-physics-annex"
+      ],
+      "maxRatio": 3.5,
+      "why": "Skipwith Hall and the High Energy Physics buildings sit on Observatory Hill north and west of Kellogg House with no mapped path up the wooded slope from the Alderman Road dorms, so walks go round by Alderman Road and McCormick Road."
+    },
+    {
+      "pairs": [
+        "alderman-road-suite -> leander-mccormick-observatory"
+      ],
+      "maxRatio": 3,
+      "why": "The Leander McCormick Observatory stands on top of Observatory Hill and is reached only by the winding McCormick Road up the hill."
+    }
+  ]
+}
