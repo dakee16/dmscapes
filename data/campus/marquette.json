@@ -1,0 +1,505 @@
+{
+ "collegeId": "marquette",
+ "generatedAt": "2026-11-14T06:57:23.699Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/marquette.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -87.93734,
+  43.03638,
+  -87.92369,
+  43.04045
+ ],
+ "halls": [
+  {
+   "dormId": "schroeder-hall",
+   "name": "Schroeder Hall",
+   "lng": -87.929148,
+   "lat": 43.039681,
+   "pin": "name",
+   "osm": "way/662656108",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "wellness-helfaer-recreation",
+     "minutes": 7.8
+    },
+    "dining": {
+     "placeId": "alumni-memorial-union",
+     "minutes": 1.9
+    },
+    "library": {
+     "placeId": "raynor-library",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "cobeen-hall",
+   "name": "Cobeen Hall",
+   "lng": -87.926191,
+   "lat": 43.039471,
+   "pin": "name",
+   "osm": "way/53293603",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "wellness-helfaer-recreation",
+     "minutes": 10.6
+    },
+    "dining": {
+     "placeId": "alumni-memorial-union",
+     "minutes": 6.3
+    },
+    "library": {
+     "placeId": "raynor-library",
+     "minutes": 5.5
+    }
+   }
+  },
+  {
+   "dormId": "mashuda-hall",
+   "name": "Mashuda Hall",
+   "lng": -87.937341,
+   "lat": 43.03911,
+   "pin": "name",
+   "osm": "way/662656295",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "wellness-helfaer-recreation",
+     "minutes": 7.8
+    },
+    "dining": {
+     "placeId": "alumni-memorial-union",
+     "minutes": 7.7
+    },
+    "library": {
+     "placeId": "raynor-library",
+     "minutes": 8.5
+    }
+   }
+  },
+  {
+   "dormId": "straz-tower",
+   "name": "Straz Tower",
+   "lng": -87.923692,
+   "lat": 43.038092,
+   "pin": "name",
+   "osm": "way/53814526",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "wellness-helfaer-recreation",
+     "minutes": 12.5
+    },
+    "dining": {
+     "placeId": "alumni-memorial-union",
+     "minutes": 8.8
+    },
+    "library": {
+     "placeId": "raynor-library",
+     "minutes": 7.4
+    }
+   }
+  },
+  {
+   "dormId": "abbottsford-hall",
+   "name": "Abbottsford Hall",
+   "lng": -87.928349,
+   "lat": 43.039344,
+   "pin": "name",
+   "osm": "way/53293608",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "wellness-helfaer-recreation",
+     "minutes": 8.1
+    },
+    "dining": {
+     "placeId": "alumni-memorial-union",
+     "minutes": 3.8
+    },
+    "library": {
+     "placeId": "raynor-library",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "carpenter-tower",
+   "name": "Carpenter Tower",
+   "lng": -87.925574,
+   "lat": 43.039099,
+   "pin": "name",
+   "osm": "way/662656134",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "wellness-helfaer-recreation",
+     "minutes": 10.7
+    },
+    "dining": {
+     "placeId": "alumni-memorial-union",
+     "minutes": 6.3
+    },
+    "library": {
+     "placeId": "raynor-library",
+     "minutes": 5.6
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "wellness-helfaer-recreation",
+   "name": "Wellness + Helfaer Recreation",
+   "short": "Wellness + Helfaer Recreation",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.933533,
+   "lat": 43.036875,
+   "osm": "way/662655865"
+  },
+  {
+   "id": "alumni-memorial-union",
+   "name": "Alumni Memorial Union",
+   "short": "Alumni Memorial Union",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "AMU"
+   ],
+   "lng": -87.930953,
+   "lat": 43.039669,
+   "osm": "way/662656112"
+  },
+  {
+   "id": "school-of-dentistry",
+   "name": "School of Dentistry",
+   "short": "School of Dentistry",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.936144,
+   "lat": 43.038113,
+   "osm": "way/662656150"
+  },
+  {
+   "id": "eckstein-hall",
+   "name": "Eckstein Hall",
+   "short": "Eckstein Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Ray and Kay Eckstein Hall"
+   ],
+   "lng": -87.926967,
+   "lat": 43.037037,
+   "osm": "way/53304305"
+  },
+  {
+   "id": "walter-schroeder-health-sciences-and-education-complex",
+   "name": "Walter Schroeder Health Sciences and Education Complex",
+   "short": "Schroeder Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Schroeder Complex"
+   ],
+   "lng": -87.9321,
+   "lat": 43.037558,
+   "osm": "way/662682509"
+  },
+  {
+   "id": "haggerty-hall-and-olin-engineering-center",
+   "name": "Haggerty Hall & Olin Engineering Center",
+   "short": "Haggerty Hall & Olin Engineering Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.931987,
+   "lat": 43.038292,
+   "osm": "way/662655853"
+  },
+  {
+   "id": "marquette-gymnasium",
+   "name": "Marquette Gymnasium",
+   "short": "Marquette Gymnasium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Old Gym"
+   ],
+   "lng": -87.932287,
+   "lat": 43.036458,
+   "osm": "way/662655885"
+  },
+  {
+   "id": "engineering-hall",
+   "name": "Engineering Hall",
+   "short": "Engineering Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.933627,
+   "lat": 43.038292,
+   "osm": "way/170537528"
+  },
+  {
+   "id": "raynor-library",
+   "name": "Raynor Library",
+   "short": "Raynor Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.929674,
+   "lat": 43.038147,
+   "osm": "way/662682512"
+  },
+  {
+   "id": "obrien-hall",
+   "name": "O’Brien Hall",
+   "short": "O’Brien Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Dr. E. J. And Margaret O’Brien Hall"
+   ],
+   "lng": -87.932383,
+   "lat": 43.039021,
+   "osm": "relation/17974613"
+  },
+  {
+   "id": "cudahy-hall",
+   "name": "Cudahy Hall",
+   "short": "Cudahy Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.928741,
+   "lat": 43.038252,
+   "osm": "way/662655851"
+  },
+  {
+   "id": "william-wehr-physics-building",
+   "name": "William Wehr Physics Building",
+   "short": "William Wehr Physics Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.931152,
+   "lat": 43.03719,
+   "osm": "way/662655866"
+  },
+  {
+   "id": "athletic-and-human-performance-research-center",
+   "name": "Athletic & Human Performance Research Center",
+   "short": "Athletic & Human Performance Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.927555,
+   "lat": 43.039841,
+   "osm": "way/867920266"
+  },
+  {
+   "id": "todd-wehr-chemistry-building",
+   "name": "Todd Wehr Chemistry Building",
+   "short": "Todd Wehr Chemistry Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.930553,
+   "lat": 43.037082,
+   "osm": "way/662655869"
+  },
+  {
+   "id": "holthusen-hall",
+   "name": "Holthusen Hall",
+   "short": "Holthusen Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.929409,
+   "lat": 43.038999,
+   "osm": "way/662656139"
+  },
+  {
+   "id": "david-a-straz-jr-hall",
+   "name": "David A. Straz, Jr Hall",
+   "short": "Straz Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Straz Hall"
+   ],
+   "lng": -87.927771,
+   "lat": 43.037728,
+   "osm": "way/662655855"
+  },
+  {
+   "id": "wehr-life-sciences",
+   "name": "Wehr Life Sciences",
+   "short": "Wehr Life Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.931132,
+   "lat": 43.036653,
+   "osm": "way/662655882"
+  },
+  {
+   "id": "johnston-hall",
+   "name": "Johnston Hall",
+   "short": "Johnston Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.926751,
+   "lat": 43.038276,
+   "osm": "way/662655849"
+  },
+  {
+   "id": "helfaer-theatre",
+   "name": "Helfaer Theatre",
+   "short": "Helfaer Theatre",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.928813,
+   "lat": 43.036792,
+   "osm": "way/53298023"
+  },
+  {
+   "id": "marquette-hall",
+   "name": "Marquette Hall",
+   "short": "Marquette Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.927814,
+   "lat": 43.038311,
+   "osm": "way/662655850"
+  },
+  {
+   "id": "cramer-hall",
+   "name": "Cramer Hall",
+   "short": "Cramer Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.932543,
+   "lat": 43.037448,
+   "osm": "way/662682510"
+  },
+  {
+   "id": "emory-t-clark-hall",
+   "name": "Emory T. Clark Hall",
+   "short": "Clark Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Clark Hall"
+   ],
+   "lng": -87.932268,
+   "lat": 43.036842,
+   "osm": "way/662655876"
+  },
+  {
+   "id": "lalumiere-language-hall",
+   "name": "Lalumiere Language Hall",
+   "short": "Lalumiere Language Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.929554,
+   "lat": 43.036767,
+   "osm": "way/662655874"
+  },
+  {
+   "id": "physician-assistant-studies-building",
+   "name": "Physician Assistant Studies Building",
+   "short": "Physician Assistant Studies Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.934545,
+   "lat": 43.036378,
+   "osm": "way/677183189"
+  },
+  {
+   "id": "coughlin-hall",
+   "name": "Coughlin Hall",
+   "short": "Coughlin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.928548,
+   "lat": 43.037477,
+   "osm": "way/53299789"
+  },
+  {
+   "id": "weasler-auditorium",
+   "name": "Weasler Auditorium",
+   "short": "Weasler Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.931925,
+   "lat": 43.039909,
+   "osm": "way/662732758"
+  },
+  {
+   "id": "707-building",
+   "name": "707 Building",
+   "short": "707 Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.926073,
+   "lat": 43.039048,
+   "osm": "way/662656135"
+  },
+  {
+   "id": "sensenbrenner-hall",
+   "name": "Sensenbrenner Hall",
+   "short": "Sensenbrenner Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.926164,
+   "lat": 43.038342,
+   "osm": "way/662682506"
+  },
+  {
+   "id": "1700-building",
+   "name": "1700 Building",
+   "short": "1700 Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.934495,
+   "lat": 43.04045,
+   "osm": "way/662656103"
+  }
+ ]
+}
