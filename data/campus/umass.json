@@ -1,0 +1,2157 @@
+{
+ "collegeId": "umass",
+ "generatedAt": "2026-11-14T18:36:26.242Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-14"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/umass.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -72.5319,
+  42.38122,
+  -72.51817,
+  42.3982
+ ],
+ "halls": [
+  {
+   "dormId": "baker-hall",
+   "name": "Baker Hall",
+   "lng": -72.519785,
+   "lat": 42.389607,
+   "pin": "name",
+   "osm": "way/217242795",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 11.4
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 13.3
+    },
+    "dining": {
+     "placeId": "franklin-dining-commons",
+     "minutes": 3.9
+    }
+   }
+  },
+  {
+   "dormId": "brett-hall",
+   "name": "Brett Hall",
+   "lng": -72.521538,
+   "lat": 42.389637,
+   "pin": "name",
+   "osm": "way/217243181",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 9.7
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 10.7
+    },
+    "dining": {
+     "placeId": "franklin-dining-commons",
+     "minutes": 2.1
+    }
+   }
+  },
+  {
+   "dormId": "brooks-hall",
+   "name": "Brooks Hall",
+   "lng": -72.521011,
+   "lat": 42.389918,
+   "pin": "name",
+   "osm": "way/217242999",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 10.1
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 11
+    },
+    "dining": {
+     "placeId": "franklin-dining-commons",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "butterfield-hall",
+   "name": "Butterfield Hall",
+   "lng": -72.518172,
+   "lat": 42.388566,
+   "pin": "name",
+   "osm": "way/217242558",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 13.5
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 14.7
+    },
+    "dining": {
+     "placeId": "franklin-dining-commons",
+     "minutes": 5.9
+    }
+   }
+  },
+  {
+   "dormId": "chadbourne-hall",
+   "name": "Chadbourne Hall",
+   "lng": -72.51909,
+   "lat": 42.38938,
+   "pin": "name",
+   "osm": "way/217242668",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 12.6
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 13.6
+    },
+    "dining": {
+     "placeId": "franklin-dining-commons",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "gorman-hall",
+   "name": "Gorman Hall",
+   "lng": -72.521094,
+   "lat": 42.387537,
+   "pin": "name",
+   "osm": "way/217243049",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 10.9
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 12.1
+    },
+    "dining": {
+     "placeId": "franklin-dining-commons",
+     "minutes": 3.7
+    }
+   }
+  },
+  {
+   "dormId": "greenough-hall",
+   "name": "Greenough Hall",
+   "lng": -72.519297,
+   "lat": 42.390035,
+   "pin": "name",
+   "osm": "way/217242715",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 12
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 12.5
+    },
+    "dining": {
+     "placeId": "franklin-dining-commons",
+     "minutes": 5.2
+    }
+   }
+  },
+  {
+   "dormId": "van-meter-hall",
+   "name": "Van Meter Hall",
+   "lng": -72.518339,
+   "lat": 42.389858,
+   "pin": "name",
+   "osm": "way/217242529",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 12.7
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 13.2
+    },
+    "dining": {
+     "placeId": "franklin-dining-commons",
+     "minutes": 6.3
+    }
+   }
+  },
+  {
+   "dormId": "wheeler-hall",
+   "name": "Wheeler Hall",
+   "lng": -72.521303,
+   "lat": 42.388914,
+   "pin": "name",
+   "osm": "way/217243078",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 9.5
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 11.4
+    },
+    "dining": {
+     "placeId": "franklin-dining-commons",
+     "minutes": 1.9
+    }
+   }
+  },
+  {
+   "dormId": "crabtree-hall",
+   "name": "Crabtree Hall",
+   "lng": -72.525097,
+   "lat": 42.394083,
+   "pin": "name",
+   "osm": "way/216996566",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 8.4
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 3.2
+    },
+    "dining": {
+     "placeId": "worcester-commons",
+     "minutes": 1.9
+    }
+   }
+  },
+  {
+   "dormId": "dwight-hall",
+   "name": "Dwight Hall",
+   "lng": -72.52514,
+   "lat": 42.395358,
+   "pin": "name",
+   "osm": "way/216996567",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 10.4
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 1.1
+    },
+    "dining": {
+     "placeId": "worcester-commons",
+     "minutes": 3.9
+    }
+   }
+  },
+  {
+   "dormId": "hamlin-hall",
+   "name": "Hamlin Hall",
+   "lng": -72.526334,
+   "lat": 42.394996,
+   "pin": "name",
+   "osm": "way/216996568",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 9.3
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 2
+    },
+    "dining": {
+     "placeId": "worcester-commons",
+     "minutes": 3.3
+    }
+   }
+  },
+  {
+   "dormId": "johnson-hall",
+   "name": "Johnson Hall",
+   "lng": -72.524509,
+   "lat": 42.395588,
+   "pin": "name",
+   "osm": "way/216996569",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 11
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 2.3
+    },
+    "dining": {
+     "placeId": "worcester-commons",
+     "minutes": 4.5
+    }
+   }
+  },
+  {
+   "dormId": "knowlton-hall",
+   "name": "Knowlton Hall",
+   "lng": -72.52569,
+   "lat": 42.393896,
+   "pin": "name",
+   "osm": "way/216996570",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 8.3
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 3.5
+    },
+    "dining": {
+     "placeId": "worcester-commons",
+     "minutes": 1.8
+    }
+   }
+  },
+  {
+   "dormId": "leach-hall",
+   "name": "Leach Hall",
+   "lng": -72.52575,
+   "lat": 42.395205,
+   "pin": "name",
+   "osm": "way/216996571",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 9.9
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 1.8
+    },
+    "dining": {
+     "placeId": "worcester-commons",
+     "minutes": 3.5
+    }
+   }
+  },
+  {
+   "dormId": "lewis-hall",
+   "name": "Lewis Hall",
+   "lng": -72.523963,
+   "lat": 42.395098,
+   "pin": "name",
+   "osm": "way/216996572",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 10.7
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 3.2
+    },
+    "dining": {
+     "placeId": "worcester-commons",
+     "minutes": 4.2
+    }
+   }
+  },
+  {
+   "dormId": "mary-lyon-hall",
+   "name": "Mary Lyon Hall",
+   "lng": -72.524532,
+   "lat": 42.394307,
+   "pin": "name",
+   "osm": "way/216996573",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 8.8
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 3.2
+    },
+    "dining": {
+     "placeId": "worcester-commons",
+     "minutes": 2.3
+    }
+   }
+  },
+  {
+   "dormId": "thatcher-hall",
+   "name": "Thatcher Hall",
+   "lng": -72.523803,
+   "lat": 42.394473,
+   "pin": "name",
+   "osm": "way/216996578",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 9.8
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 4.1
+    },
+    "dining": {
+     "placeId": "worcester-commons",
+     "minutes": 3.3
+    }
+   }
+  },
+  {
+   "dormId": "dickinson-house",
+   "name": "Dickinson House",
+   "lng": -72.519637,
+   "lat": 42.392137,
+   "pin": "address",
+   "osm": "way/217242684",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 12.1
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 10.1
+    },
+    "dining": {
+     "placeId": "franklin-dining-commons",
+     "minutes": 7
+    }
+   }
+  },
+  {
+   "dormId": "field-hall",
+   "name": "Field Hall",
+   "lng": -72.518646,
+   "lat": 42.391659,
+   "pin": "name",
+   "osm": "way/304031887",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 13.3
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 12.6
+    },
+    "dining": {
+     "placeId": "franklin-dining-commons",
+     "minutes": 7.1
+    }
+   }
+  },
+  {
+   "dormId": "grayson-hall",
+   "name": "Grayson Hall",
+   "lng": -72.518836,
+   "lat": 42.392262,
+   "pin": "name",
+   "osm": "way/217242584",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 13.6
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 11.1
+    },
+    "dining": {
+     "placeId": "franklin-dining-commons",
+     "minutes": 8.4
+    }
+   }
+  },
+  {
+   "dormId": "webster-hall",
+   "name": "Webster Hall",
+   "lng": -72.519438,
+   "lat": 42.391506,
+   "pin": "address",
+   "osm": "way/217242648",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 11.4
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 10.7
+    },
+    "dining": {
+     "placeId": "franklin-dining-commons",
+     "minutes": 6.2
+    }
+   }
+  },
+  {
+   "dormId": "cance-hall",
+   "name": "Cance Hall",
+   "lng": -72.529964,
+   "lat": 42.381216,
+   "pin": "name",
+   "osm": "way/187132539",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 13.3
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 8.4
+    },
+    "dining": {
+     "placeId": "berkshire-dining-commons",
+     "minutes": 1.7
+    }
+   }
+  },
+  {
+   "dormId": "coolidge-hall",
+   "name": "Coolidge Hall",
+   "lng": -72.529875,
+   "lat": 42.38367,
+   "pin": "name",
+   "osm": "way/187132545",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 9.9
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 5
+    },
+    "dining": {
+     "placeId": "hampshire-dining-commons",
+     "minutes": 0.8
+    }
+   }
+  },
+  {
+   "dormId": "crampton-hall",
+   "name": "Crampton Hall",
+   "lng": -72.528996,
+   "lat": 42.38329,
+   "pin": "name",
+   "osm": "way/266763173",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 9.9
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 5.9
+    },
+    "dining": {
+     "placeId": "berkshire-dining-commons",
+     "minutes": 2.6
+    }
+   }
+  },
+  {
+   "dormId": "emerson-hall",
+   "name": "Emerson Hall",
+   "lng": -72.531264,
+   "lat": 42.383538,
+   "pin": "name",
+   "osm": "way/187132542",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 11.7
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 5.5
+    },
+    "dining": {
+     "placeId": "hampshire-dining-commons",
+     "minutes": 2.5
+    }
+   }
+  },
+  {
+   "dormId": "james-hall",
+   "name": "James Hall",
+   "lng": -72.531124,
+   "lat": 42.384085,
+   "pin": "name",
+   "osm": "way/187132546",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 11
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "hampshire-dining-commons",
+     "minutes": 1.8
+    }
+   }
+  },
+  {
+   "dormId": "john-adams-hall",
+   "name": "John Adams Hall",
+   "lng": -72.528813,
+   "lat": 42.381861,
+   "pin": "name",
+   "osm": "way/1391493914",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 11.9
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 7.5
+    },
+    "dining": {
+     "placeId": "berkshire-dining-commons",
+     "minutes": 2.3
+    }
+   }
+  },
+  {
+   "dormId": "john-quincy-adams-hall",
+   "name": "John Quincy Adams Hall",
+   "lng": -72.529138,
+   "lat": 42.382252,
+   "pin": "name",
+   "osm": "way/1391493916",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 11.7
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 7.2
+    },
+    "dining": {
+     "placeId": "berkshire-dining-commons",
+     "minutes": 2
+    }
+   }
+  },
+  {
+   "dormId": "kennedy-hall",
+   "name": "Kennedy Hall",
+   "lng": -72.529623,
+   "lat": 42.384109,
+   "pin": "name",
+   "osm": "way/1391493915",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 10.2
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "hampshire-dining-commons",
+     "minutes": 1
+    }
+   }
+  },
+  {
+   "dormId": "mackimmie-hall",
+   "name": "MacKimmie Hall",
+   "lng": -72.528683,
+   "lat": 42.382788,
+   "pin": "name",
+   "osm": "way/184350151",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 10.8
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 6.7
+    },
+    "dining": {
+     "placeId": "berkshire-dining-commons",
+     "minutes": 4.5
+    }
+   }
+  },
+  {
+   "dormId": "melville-hall",
+   "name": "Melville Hall",
+   "lng": -72.530664,
+   "lat": 42.384667,
+   "pin": "name",
+   "osm": "way/187132544",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 10
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 3.8
+    },
+    "dining": {
+     "placeId": "hampshire-dining-commons",
+     "minutes": 1.5
+    }
+   }
+  },
+  {
+   "dormId": "moore-hall",
+   "name": "Moore Hall",
+   "lng": -72.530704,
+   "lat": 42.382048,
+   "pin": "name",
+   "osm": "way/187132540",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 13.2
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "berkshire-dining-commons",
+     "minutes": 2.6
+    }
+   }
+  },
+  {
+   "dormId": "patterson-hall",
+   "name": "Patterson Hall",
+   "lng": -72.528429,
+   "lat": 42.381806,
+   "pin": "name",
+   "osm": "way/184350150",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 12.6
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 8.2
+    },
+    "dining": {
+     "placeId": "berkshire-dining-commons",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "pierpont-hall",
+   "name": "Pierpont Hall",
+   "lng": -72.530833,
+   "lat": 42.381484,
+   "pin": "name",
+   "osm": "way/187132543",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 14.1
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 9
+    },
+    "dining": {
+     "placeId": "berkshire-dining-commons",
+     "minutes": 3.2
+    }
+   }
+  },
+  {
+   "dormId": "prince-hall",
+   "name": "Prince Hall",
+   "lng": -72.528989,
+   "lat": 42.384024,
+   "pin": "name",
+   "osm": "way/32316563",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 9.4
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 4.4
+    },
+    "dining": {
+     "placeId": "hampshire-dining-commons",
+     "minutes": 1.4
+    }
+   }
+  },
+  {
+   "dormId": "thoreau-hall",
+   "name": "Thoreau Hall",
+   "lng": -72.530121,
+   "lat": 42.384391,
+   "pin": "name",
+   "osm": "way/187132541",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 9.7
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 3.5
+    },
+    "dining": {
+     "placeId": "hampshire-dining-commons",
+     "minutes": 2.5
+    }
+   }
+  },
+  {
+   "dormId": "washington-hall",
+   "name": "Washington Hall",
+   "lng": -72.529309,
+   "lat": 42.381579,
+   "pin": "name",
+   "osm": "way/1391493913",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 12.7
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 7.7
+    },
+    "dining": {
+     "placeId": "berkshire-dining-commons",
+     "minutes": 1.1
+    }
+   }
+  },
+  {
+   "dormId": "brown-hall",
+   "name": "Brown Hall",
+   "lng": -72.522943,
+   "lat": 42.397461,
+   "pin": "name",
+   "osm": "way/216996564",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 14.2
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "worcester-commons",
+     "minutes": 7.7
+    }
+   }
+  },
+  {
+   "dormId": "cashin-hall",
+   "name": "Cashin Hall",
+   "lng": -72.521807,
+   "lat": 42.397503,
+   "pin": "name",
+   "osm": "way/216996565",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 15.4
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "worcester-commons",
+     "minutes": 8.9
+    }
+   }
+  },
+  {
+   "dormId": "mcnamara-hall",
+   "name": "McNamara Hall",
+   "lng": -72.522282,
+   "lat": 42.397947,
+   "pin": "name",
+   "osm": "way/216996574",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 15
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 5.5
+    },
+    "dining": {
+     "placeId": "worcester-commons",
+     "minutes": 8.4
+    }
+   }
+  },
+  {
+   "dormId": "birch-hall",
+   "name": "Birch Hall",
+   "lng": -72.531365,
+   "lat": 42.388044,
+   "pin": "name",
+   "osm": "way/220564408",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 4.6
+    },
+    "gym": {
+     "placeId": "recreation-center",
+     "minutes": 2.1
+    },
+    "dining": {
+     "placeId": "hampshire-dining-commons",
+     "minutes": 8.2
+    }
+   }
+  },
+  {
+   "dormId": "elm-hall",
+   "name": "Elm Hall",
+   "lng": -72.529989,
+   "lat": 42.388121,
+   "pin": "name",
+   "osm": "way/304034779",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 3.1
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 1.9
+    },
+    "dining": {
+     "placeId": "hampshire-dining-commons",
+     "minutes": 7.1
+    }
+   }
+  },
+  {
+   "dormId": "linden-hall",
+   "name": "Linden Hall",
+   "lng": -72.530855,
+   "lat": 42.387049,
+   "pin": "address",
+   "osm": "way/220564407",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 5.3
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 0.5
+    },
+    "dining": {
+     "placeId": "hampshire-dining-commons",
+     "minutes": 5.7
+    }
+   }
+  },
+  {
+   "dormId": "maple-hall",
+   "name": "Maple Hall",
+   "lng": -72.530943,
+   "lat": 42.387585,
+   "pin": "name",
+   "osm": "way/220564409",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 4.2
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 1.8
+    },
+    "dining": {
+     "placeId": "hampshire-dining-commons",
+     "minutes": 7
+    }
+   }
+  },
+  {
+   "dormId": "oak-hall",
+   "name": "Oak Hall",
+   "lng": -72.530272,
+   "lat": 42.387504,
+   "pin": "name",
+   "osm": "way/220564406",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 4.5
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 0.7
+    },
+    "dining": {
+     "placeId": "hampshire-dining-commons",
+     "minutes": 5.9
+    }
+   }
+  },
+  {
+   "dormId": "sycamore-hall",
+   "name": "Sycamore Hall",
+   "lng": -72.530476,
+   "lat": 42.388361,
+   "pin": "name",
+   "osm": "way/304034780",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 2.9
+    },
+    "gym": {
+     "placeId": "boyden-gym",
+     "minutes": 1.9
+    },
+    "dining": {
+     "placeId": "hampshire-dining-commons",
+     "minutes": 7.1
+    }
+   }
+  },
+  {
+   "dormId": "north-apartments",
+   "name": "North Apartments",
+   "lng": -72.524623,
+   "lat": 42.39718,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "web-du-bois-library",
+     "minutes": 13.1
+    },
+    "gym": {
+     "placeId": "totman-gym",
+     "minutes": 3.1
+    },
+    "dining": {
+     "placeId": "worcester-commons",
+     "minutes": 6.6
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "randolph-w-bromery-center-for-the-arts",
+   "name": "Randolph W. Bromery Center for the Arts",
+   "short": "Randolph W. Bromery Center for the Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.5258,
+   "lat": 42.388227,
+   "osm": "way/30698359"
+  },
+  {
+   "id": "murray-d-lincoln-campus-center",
+   "name": "Murray D. Lincoln Campus Center",
+   "short": "Murray D. Lincoln Campus Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.527017,
+   "lat": 42.39177,
+   "osm": "relation/20697676"
+  },
+  {
+   "id": "web-du-bois-library",
+   "name": "W.E.B. Du Bois Library",
+   "short": "W.E.B. Du Bois Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.528137,
+   "lat": 42.389663,
+   "osm": "relation/4054634"
+  },
+  {
+   "id": "isenberg-school-of-management",
+   "name": "Isenberg School of Management",
+   "short": "Isenberg School of Management",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.524857,
+   "lat": 42.387019,
+   "osm": "relation/17798539"
+  },
+  {
+   "id": "furcolo-hall",
+   "name": "Furcolo Hall",
+   "short": "Furcolo Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.526597,
+   "lat": 42.398202,
+   "osm": "relation/2875758"
+  },
+  {
+   "id": "life-science-laboratories",
+   "name": "Life Science Laboratories",
+   "short": "Life Science Laboratories",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "LSL"
+   ],
+   "lng": -72.523777,
+   "lat": 42.392076,
+   "osm": "way/217243843"
+  },
+  {
+   "id": "boyden-gym",
+   "name": "Boyden Gym",
+   "short": "Boyden Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.530462,
+   "lat": 42.386393,
+   "osm": "way/130730304"
+  },
+  {
+   "id": "recreation-center",
+   "name": "Recreation Center",
+   "short": "Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.531667,
+   "lat": 42.38884,
+   "osm": "way/147156712"
+  },
+  {
+   "id": "goessmann-laboratory",
+   "name": "Goessmann Laboratory",
+   "short": "Goessmann Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.527518,
+   "lat": 42.393148,
+   "osm": "way/51648973"
+  },
+  {
+   "id": "lederle-graduate-research-center",
+   "name": "Lederle Graduate Research Center",
+   "short": "Lederle Graduate Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "John. W Lederle Graduate Research Center",
+    "LGRC"
+   ],
+   "lng": -72.527036,
+   "lat": 42.394327,
+   "osm": "way/122196721"
+  },
+  {
+   "id": "integrative-learning-center",
+   "name": "Integrative Learning Center",
+   "short": "Integrative Learning Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ILC"
+   ],
+   "lng": -72.525965,
+   "lat": 42.391021,
+   "osm": "way/292876549"
+  },
+  {
+   "id": "totman-gym",
+   "name": "Totman Gym",
+   "short": "Totman Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.525955,
+   "lat": 42.396178,
+   "osm": "way/216955133"
+  },
+  {
+   "id": "bartlett-hall",
+   "name": "Bartlett Hall",
+   "short": "Bartlett Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.528654,
+   "lat": 42.387916,
+   "osm": "way/147156714"
+  },
+  {
+   "id": "integrated-sciences-building",
+   "name": "Integrated Sciences Building",
+   "short": "Integrated Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ISB"
+   ],
+   "lng": -72.524846,
+   "lat": 42.392491,
+   "osm": "way/217244017"
+  },
+  {
+   "id": "hasbrouck-laboratory",
+   "name": "Hasbrouck Laboratory",
+   "short": "Hasbrouck Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.525851,
+   "lat": 42.391771,
+   "osm": "way/110428293"
+  },
+  {
+   "id": "marcus-hall",
+   "name": "Marcus Hall",
+   "short": "Marcus Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.528589,
+   "lat": 42.393969,
+   "osm": "way/122197832"
+  },
+  {
+   "id": "goodell-hall",
+   "name": "Goodell Hall",
+   "short": "Goodell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.529207,
+   "lat": 42.388717,
+   "osm": "way/147156711"
+  },
+  {
+   "id": "south-college",
+   "name": "South College",
+   "short": "South College",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.529374,
+   "lat": 42.389553,
+   "osm": "way/495323096"
+  },
+  {
+   "id": "berkshire-dining-commons",
+   "name": "Berkshire Dining Commons",
+   "short": "Berkshire Dining Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Berk"
+   ],
+   "lng": -72.529939,
+   "lat": 42.381937,
+   "osm": "way/184350201"
+  },
+  {
+   "id": "franklin-dining-commons",
+   "name": "Franklin Dining Commons",
+   "short": "Franklin Dining Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Frank"
+   ],
+   "lng": -72.522528,
+   "lat": 42.389269,
+   "osm": "way/217243328"
+  },
+  {
+   "id": "worcester-commons",
+   "name": "Worcester Commons",
+   "short": "Worcester Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Woo"
+   ],
+   "lng": -72.52512,
+   "lat": 42.393247,
+   "osm": "way/217056238"
+  },
+  {
+   "id": "thompson-hall",
+   "name": "Thompson Hall",
+   "short": "Thompson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.529818,
+   "lat": 42.390078,
+   "osm": "way/147156729"
+  },
+  {
+   "id": "john-w-olver-design-building",
+   "name": "John W. Olver Design Building",
+   "short": "John W. Olver Design Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.523577,
+   "lat": 42.38823,
+   "osm": "way/483220334"
+  },
+  {
+   "id": "computer-science-building",
+   "name": "Computer Science Building",
+   "short": "Computer Science Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.531221,
+   "lat": 42.395149,
+   "osm": "way/51650200"
+  },
+  {
+   "id": "hampshire-dining-commons",
+   "name": "Hampshire Dining Commons",
+   "short": "Hampshire Dining Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Hamp"
+   ],
+   "lng": -72.530516,
+   "lat": 42.383856,
+   "osm": "way/184350299"
+  },
+  {
+   "id": "conte-national-polymer-research-center",
+   "name": "Conte National Polymer Research Center",
+   "short": "Conte National Polymer Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.528068,
+   "lat": 42.394401,
+   "osm": "way/122196718"
+  },
+  {
+   "id": "computer-science-laboratories",
+   "name": "Computer Science Laboratories",
+   "short": "Computer Science Laboratories",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.530492,
+   "lat": 42.395401,
+   "osm": "way/1456797029"
+  },
+  {
+   "id": "lederle-graduate-research-tower",
+   "name": "Lederle Graduate Research Tower",
+   "short": "Lederle Graduate Research Tower",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "LGRT"
+   ],
+   "lng": -72.527665,
+   "lat": 42.393861,
+   "osm": "way/122196717"
+  },
+  {
+   "id": "machmer-hall",
+   "name": "Machmer Hall",
+   "short": "Machmer Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.529002,
+   "lat": 42.390522,
+   "osm": "way/40693158"
+  },
+  {
+   "id": "morrill-ii",
+   "name": "Morrill II",
+   "short": "Morrill II",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Morrill Science Center II"
+   ],
+   "lng": -72.524467,
+   "lat": 42.389962,
+   "osm": "way/131281207"
+  },
+  {
+   "id": "tobin-hall",
+   "name": "Tobin Hall",
+   "short": "Tobin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.529559,
+   "lat": 42.387504,
+   "osm": "way/147156703"
+  },
+  {
+   "id": "engineering-laboratory-ii",
+   "name": "Engineering Laboratory II",
+   "short": "Engineering Laboratory II",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.531137,
+   "lat": 42.394381,
+   "osm": "way/149698363"
+  },
+  {
+   "id": "marston-hall",
+   "name": "Marston Hall",
+   "short": "Marston Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.529385,
+   "lat": 42.394057,
+   "osm": "way/51649170"
+  },
+  {
+   "id": "sustainable-engineering-laboratories",
+   "name": "Sustainable Engineering Laboratories",
+   "short": "Sustainable Engineering Laboratories",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SEL"
+   ],
+   "lng": -72.528701,
+   "lat": 42.3929,
+   "osm": "way/1554362478"
+  },
+  {
+   "id": "gunness",
+   "name": "Gunness",
+   "short": "Gunness",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.529669,
+   "lat": 42.394532,
+   "osm": "way/149698361"
+  },
+  {
+   "id": "studio-arts-building",
+   "name": "Studio Arts Building",
+   "short": "Studio Arts Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.522778,
+   "lat": 42.387656,
+   "osm": "way/217243375"
+  },
+  {
+   "id": "stockbridge-hall",
+   "name": "Stockbridge Hall",
+   "short": "Stockbridge Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.529481,
+   "lat": 42.392264,
+   "osm": "way/147156749"
+  },
+  {
+   "id": "physical-sciences-building",
+   "name": "Physical Sciences Building",
+   "short": "Physical Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.526673,
+   "lat": 42.393643,
+   "osm": "way/678935094"
+  },
+  {
+   "id": "skinner-hall",
+   "name": "Skinner Hall",
+   "short": "Skinner Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.524674,
+   "lat": 42.391619,
+   "osm": "relation/19208020"
+  },
+  {
+   "id": "morrill-i",
+   "name": "Morrill I",
+   "short": "Morrill I",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Morrill Science Center I"
+   ],
+   "lng": -72.524187,
+   "lat": 42.390975,
+   "osm": "way/267026965"
+  },
+  {
+   "id": "agricultural-engineering-south",
+   "name": "Agricultural Engineering South",
+   "short": "Agricultural Engineering South",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.530872,
+   "lat": 42.391666,
+   "osm": "way/304036836"
+  },
+  {
+   "id": "herter-hall",
+   "name": "Herter Hall",
+   "short": "Herter Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.527166,
+   "lat": 42.38726,
+   "osm": "way/147156701"
+  },
+  {
+   "id": "holdsworth-hall",
+   "name": "Holdsworth Hall",
+   "short": "Holdsworth Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.530943,
+   "lat": 42.392882,
+   "osm": "way/147156754"
+  },
+  {
+   "id": "morrill-iii",
+   "name": "Morrill III",
+   "short": "Morrill III",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Morrill Science Center III"
+   ],
+   "lng": -72.524367,
+   "lat": 42.389442,
+   "osm": "way/267026966"
+  },
+  {
+   "id": "engineering-laboratory-i",
+   "name": "Engineering Laboratory I",
+   "short": "Engineering Laboratory I",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.530447,
+   "lat": 42.394753,
+   "osm": "way/149698371"
+  },
+  {
+   "id": "morrill-iv-north",
+   "name": "Morrill IV North",
+   "short": "Morrill IV North",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Morrill Science Center IV - North"
+   ],
+   "lng": -72.524748,
+   "lat": 42.390881,
+   "osm": "way/110428294"
+  },
+  {
+   "id": "chenoweth-lab-addition",
+   "name": "Chenoweth Lab Addition",
+   "short": "Chenoweth Lab Addition",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.530324,
+   "lat": 42.392082,
+   "osm": "way/304036840"
+  },
+  {
+   "id": "morrill-iv-south",
+   "name": "Morrill IV South",
+   "short": "Morrill IV South",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Morrill Science Center IV - South"
+   ],
+   "lng": -72.52441,
+   "lat": 42.390491,
+   "osm": "way/1353190386"
+  },
+  {
+   "id": "agricultural-engineering-north",
+   "name": "Agricultural Engineering North",
+   "short": "Agricultural Engineering North",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.530996,
+   "lat": 42.392215,
+   "osm": "way/304036834"
+  },
+  {
+   "id": "central-hall",
+   "name": "Central Hall",
+   "short": "Central Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.529516,
+   "lat": 42.387843,
+   "osm": "way/147156738"
+  },
+  {
+   "id": "fernald-hall",
+   "name": "Fernald Hall",
+   "short": "Fernald Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.522395,
+   "lat": 42.388579,
+   "osm": "way/217243423"
+  },
+  {
+   "id": "school-of-public-health-and-health-sciences-hub",
+   "name": "School of Public Health & Health Sciences Hub",
+   "short": "School of Public Health & Health Sciences Hub",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.526683,
+   "lat": 42.396,
+   "osm": "way/1482052846"
+  },
+  {
+   "id": "herter-annex",
+   "name": "Herter Annex",
+   "short": "Herter Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.527307,
+   "lat": 42.387792,
+   "osm": "way/668103247"
+  },
+  {
+   "id": "knowles-engineering-bulding",
+   "name": "Knowles Engineering Bulding",
+   "short": "Knowles Engineering Bulding",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.528958,
+   "lat": 42.393277,
+   "osm": "way/107497663"
+  },
+  {
+   "id": "dickinson-hall",
+   "name": "Dickinson Hall",
+   "short": "Dickinson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.530384,
+   "lat": 42.389072,
+   "osm": "way/147156743"
+  },
+  {
+   "id": "arnold-house",
+   "name": "Arnold House",
+   "short": "Arnold House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.526062,
+   "lat": 42.394439,
+   "osm": "way/216996563"
+  },
+  {
+   "id": "draper-hall",
+   "name": "Draper Hall",
+   "short": "Draper Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.528413,
+   "lat": 42.392357,
+   "osm": "way/147156707"
+  },
+  {
+   "id": "flint-lab",
+   "name": "Flint Lab",
+   "short": "Flint Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.529629,
+   "lat": 42.391671,
+   "osm": "way/147156735"
+  },
+  {
+   "id": "memorial-hall",
+   "name": "Memorial Hall",
+   "short": "Memorial Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.527573,
+   "lat": 42.388422,
+   "osm": "way/147156727"
+  },
+  {
+   "id": "gordon-hall",
+   "name": "Gordon Hall",
+   "short": "Gordon Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.522204,
+   "lat": 42.38489,
+   "osm": "way/217243406"
+  },
+  {
+   "id": "new-africa-house",
+   "name": "New Africa House",
+   "short": "New Africa House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.520687,
+   "lat": 42.388975,
+   "osm": "way/217242975"
+  },
+  {
+   "id": "paige-laboratory",
+   "name": "Paige Laboratory",
+   "short": "Paige Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.529837,
+   "lat": 42.393342,
+   "osm": "way/51649672"
+  },
+  {
+   "id": "french-hall",
+   "name": "French Hall",
+   "short": "French Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.52294,
+   "lat": 42.389981,
+   "osm": "way/217243550"
+  },
+  {
+   "id": "mahar-auditorium",
+   "name": "Mahar Auditorium",
+   "short": "Mahar Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.524219,
+   "lat": 42.386587,
+   "osm": "way/30700447"
+  },
+  {
+   "id": "shade-tree-lab",
+   "name": "Shade Tree Lab",
+   "short": "Shade Tree Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.523686,
+   "lat": 42.389739,
+   "osm": "way/217243736"
+  },
+  {
+   "id": "communication-disorders",
+   "name": "Communication Disorders",
+   "short": "Communication Disorders",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.520815,
+   "lat": 42.382793,
+   "osm": "way/217242980"
+  },
+  {
+   "id": "middlesex-house",
+   "name": "Middlesex House",
+   "short": "Middlesex House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.528508,
+   "lat": 42.385679,
+   "osm": "way/147156717"
+  },
+  {
+   "id": "hampshire-house",
+   "name": "Hampshire House",
+   "short": "Hampshire House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.528616,
+   "lat": 42.38516,
+   "osm": "way/147156730"
+  },
+  {
+   "id": "astronomy",
+   "name": "Astronomy",
+   "short": "Astronomy",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.529688,
+   "lat": 42.394831,
+   "osm": "way/149698370"
+  },
+  {
+   "id": "agricultural-engineering-center",
+   "name": "Agricultural Engineering Center",
+   "short": "Agricultural Engineering Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.531107,
+   "lat": 42.391962,
+   "osm": "way/304036835"
+  },
+  {
+   "id": "crotty-hall",
+   "name": "Crotty Hall",
+   "short": "Crotty Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.522159,
+   "lat": 42.384603,
+   "osm": "way/905886928"
+  },
+  {
+   "id": "clark-hall",
+   "name": "Clark Hall",
+   "short": "Clark Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.523728,
+   "lat": 42.389192,
+   "osm": "way/217243747"
+  },
+  {
+   "id": "berkshire-house",
+   "name": "Berkshire House",
+   "short": "Berkshire House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.528938,
+   "lat": 42.38555,
+   "osm": "way/147156721"
+  },
+  {
+   "id": "chenoweth-laboratory",
+   "name": "Chenoweth Laboratory",
+   "short": "Chenoweth Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.530259,
+   "lat": 42.391622,
+   "osm": "way/304036839"
+  },
+  {
+   "id": "west-experiment-station",
+   "name": "West Experiment Station",
+   "short": "West Experiment Station",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.526728,
+   "lat": 42.393299,
+   "osm": "way/217056244"
+  },
+  {
+   "id": "old-chapel",
+   "name": "Old Chapel",
+   "short": "Old Chapel",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.527961,
+   "lat": 42.388985,
+   "osm": "way/147156753"
+  },
+  {
+   "id": "bowditch-hall",
+   "name": "Bowditch Hall",
+   "short": "Bowditch Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.531901,
+   "lat": 42.392705,
+   "osm": "way/1466891949"
+  },
+  {
+   "id": "munson-hall",
+   "name": "Munson Hall",
+   "short": "Munson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.527648,
+   "lat": 42.386566,
+   "osm": "way/147156704"
+  },
+  {
+   "id": "wilder-hall",
+   "name": "Wilder Hall",
+   "short": "Wilder Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.523743,
+   "lat": 42.390327,
+   "osm": "way/217243792"
+  },
+  {
+   "id": "photography-laboratory",
+   "name": "Photography Laboratory",
+   "short": "Photography Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.530417,
+   "lat": 42.390463,
+   "osm": "way/147156739"
+  },
+  {
+   "id": "agricultural-engineering-annex-a",
+   "name": "Agricultural Engineering Annex A",
+   "short": "Agricultural Engineering Annex A",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.531328,
+   "lat": 42.39221,
+   "osm": "way/147156720"
+  },
+  {
+   "id": "agricultural-engineering-annex-b",
+   "name": "Agricultural Engineering Annex B",
+   "short": "Agricultural Engineering Annex B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.531112,
+   "lat": 42.391554,
+   "osm": "way/147156716"
+  },
+  {
+   "id": "montague-house",
+   "name": "Montague House",
+   "short": "Montague House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.526782,
+   "lat": 42.397792,
+   "osm": "way/217244549"
+  },
+  {
+   "id": "duda",
+   "name": "Duda",
+   "short": "Duda",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.53032,
+   "lat": 42.394476,
+   "osm": "way/149698366"
+  },
+  {
+   "id": "blaisdell-house",
+   "name": "Blaisdell House",
+   "short": "Blaisdell House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.530704,
+   "lat": 42.390064,
+   "osm": "way/217245362"
+  },
+  {
+   "id": "east-experiment-station",
+   "name": "East Experiment Station",
+   "short": "East Experiment Station",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.525567,
+   "lat": 42.393336,
+   "osm": "way/1059389317"
+  }
+ ]
+}

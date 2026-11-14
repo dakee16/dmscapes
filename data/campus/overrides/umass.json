@@ -1,0 +1,188 @@
+{
+  "halls": {
+    "north-apartments": {
+      "pin": [
+        -72.524623,
+        42.39718
+      ]
+    }
+  },
+  "places": {
+    "mullins-center": {
+      "hide": true
+    },
+    "mullins-center-community-ice-rink": {
+      "hide": true
+    },
+    "umass-bubble": {
+      "hide": true
+    },
+    "kennedy-champions-center": {
+      "hide": true
+    },
+    "football-performance-center": {
+      "hide": true
+    },
+    "south-football-building": {
+      "hide": true
+    },
+    "martin-and-richard-jacobson-press-and-skybox-complex": {
+      "hide": true
+    },
+    "george-n-parks-minuteman-marching-band-building": {
+      "hide": true
+    },
+    "curry-hicks-cage": {
+      "hide": true
+    },
+    "grinnell-arena": {
+      "hide": true
+    },
+    "whitmore-administration-building": {
+      "hide": true
+    },
+    "mather-building": {
+      "hide": true
+    },
+    "robsham-visitors-center": {
+      "hide": true
+    },
+    "university-health-services": {
+      "hide": true
+    },
+    "student-union": {
+      "hide": true
+    },
+    "murray-d-lincoln-campus-center-30698361": {
+      "hide": true
+    },
+    "hampden": {
+      "hide": true
+    },
+    "transit-facility": {
+      "hide": true
+    },
+    "former-textbook-annex": {
+      "hide": true
+    },
+    "472-north-pleasant-street": {
+      "hide": true
+    },
+    "north-energy-exchange-center": {
+      "hide": true
+    },
+    "steam-and-condensate-building": {
+      "hide": true
+    },
+    "dcr-amherst-field-office": {
+      "hide": true
+    },
+    "toddler-house": {
+      "hide": true
+    },
+    "bowditch-lodge": {
+      "hide": true
+    },
+    "farley-lodge": {
+      "hide": true
+    },
+    "theta-chi": {
+      "hide": true
+    },
+    "phi-sigma-kappa": {
+      "hide": true
+    },
+    "international-programs-office": {
+      "hide": true
+    },
+    "army-rotc": {
+      "hide": true
+    },
+    "orchard-hill-pavilion": {
+      "hide": true
+    },
+    "orchard-hill-observatory": {
+      "hide": true
+    },
+    "lgrc-lgrt-skyway": {
+      "hide": true
+    },
+    "lgrt-goessmann-skyway": {
+      "hide": true
+    },
+    "psb-goessmann-skyway": {
+      "hide": true
+    },
+    "marcus-marston-skyway": {
+      "hide": true
+    },
+    "worcester-commons": {
+      "kind": "dining"
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "crampton-hall -> hampshire-dining-commons",
+        "mackimmie-hall -> berkshire-dining-commons",
+        "mackimmie-hall -> hampshire-dining-commons"
+      ],
+      "maxRatio": 3.8,
+      "why": "Crampton and MacKimmie have no mapped doors in OSM, so walks start from the nearest mapped path on their east (Sunset Avenue) side, and that path joins the Southwest footways to the Hampshire and Berkshire dining commons only round Crampton's south end or about 90 m north below Prince Hall, so short hops west become loops."
+    },
+    {
+      "pairs": [
+        "maple-hall -> tobin-hall"
+      ],
+      "maxRatio": 3.2,
+      "why": "Oak Hall stands on the straight line, Maple's only mapped door is on its west side and Tobin has no mapped door, so the walk leaves Maple, goes round the north of the CHCRC to the path node on Tobin's east side."
+    },
+    {
+      "pairs": [
+        "north-apartments -> montague-house"
+      ],
+      "maxRatio": 3.0,
+      "why": "OSM joins North Residential Drive to the footway at Montague House's door only at the drive's west end, so the walk runs past Montague to that end and doubles back."
+    }
+  ],
+  "notes": {
+    "north-apartments": "Pinned at the middle of North Apartment buildings A-D (OSM 'North A'-'North D', ways 216955124-216955127, 52-58 Eastman Lane per umass.edu/living), kept as one complex.",
+    "mullins-center": "The Mullins Center is UMass's basketball and hockey arena and concert venue, not a class building (OpenStreetMap way/30698363).",
+    "mullins-center-community-ice-rink": "The Mullins Center's community ice rink, an athletics venue, not a class building (OpenStreetMap).",
+    "umass-bubble": "The UMass Bubble is an athletics practice dome (OSM leisure=sports_centre, way/1457264143), not a class building or the rec gym.",
+    "kennedy-champions-center": "Kennedy Champions Center (190 Commonwealth Avenue) is UMass Athletics' student-athlete center, not a class building (OpenStreetMap way/678037640).",
+    "football-performance-center": "The Football Performance Center is a varsity football facility, not a class building (OpenStreetMap).",
+    "south-football-building": "A varsity football building at McGuirk Stadium, not a class building (OpenStreetMap).",
+    "martin-and-richard-jacobson-press-and-skybox-complex": "The press box and skyboxes at McGuirk Stadium, a varsity venue (OpenStreetMap).",
+    "george-n-parks-minuteman-marching-band-building": "The marching band's rehearsal building, not a general class building (OpenStreetMap).",
+    "curry-hicks-cage": "Curry Hicks Cage is UMass's historic indoor athletics and events hall (OSM tags it pool=yes, way/147156702), not a classroom building.",
+    "grinnell-arena": "Grinnell Arena is an animal-science show arena, not a classroom building (OpenStreetMap way/304034782).",
+    "whitmore-administration-building": "Whitmore is UMass's administration building (bursar, registrar offices), not a class building (OpenStreetMap).",
+    "mather-building": "The Mather Building (37 Olympia Drive) houses undergraduate admissions offices, not classes (OpenStreetMap relation/2875749).",
+    "robsham-visitors-center": "Robsham Visitors Center is the admissions visitor center, not a class building (OpenStreetMap way/217244080).",
+    "university-health-services": "University Health Services is the campus clinic, not a class building (OpenStreetMap).",
+    "student-union": "The Student Union holds student-activity offices, shops and food, not classes (OpenStreetMap way/30698362).",
+    "murray-d-lincoln-campus-center-30698361": "A second OSM outline of the Murray D. Lincoln Campus Center (way/30698361 beside relation/20697676); the other one stays.",
+    "hampden": "Hampden (131 Southwest Circle) is the former Hampden Dining Commons, now a Southwest student center (OSM not:name=Hampden Dining Commons, way/184350144), not a class building.",
+    "transit-facility": "UMass Transit's bus garage (OSM operator=UMass Transit Services, way/149698367), not a class building.",
+    "former-textbook-annex": "The former textbook annex, replaced by a store in 2015 (OSM note on way/304036833), not a class building.",
+    "472-north-pleasant-street": "A number-only name in OSM (relation/19376045); nothing says undergraduates have class there.",
+    "north-energy-exchange-center": "An energy/utility building on North Service Drive (OpenStreetMap way/704071839), not a class building.",
+    "steam-and-condensate-building": "A utility building, not a class building (OpenStreetMap).",
+    "dcr-amherst-field-office": "A Massachusetts DCR field office, not a UMass class building (OpenStreetMap).",
+    "toddler-house": "A childcare building (OSM building=school, way/213384148), not a UMass class building.",
+    "bowditch-lodge": "A childcare building of the campus early-education center (OSM building=school, way/213384152), not a class building.",
+    "farley-lodge": "A childcare building of the campus early-education center (OSM building=school, way/213384154), not a class building.",
+    "theta-chi": "A fraternity house, not a class building (OpenStreetMap).",
+    "phi-sigma-kappa": "A fraternity house, not a class building (OpenStreetMap).",
+    "international-programs-office": "An office building (OSM office=educational_institution, way/217242996), not a class building.",
+    "army-rotc": "The Army ROTC office building (101 Commonwealth Avenue, OpenStreetMap way/147156733), not a general class building.",
+    "orchard-hill-pavilion": "An open shelter on Orchard Hill (OSM amenity=shelter, way/1495880186), not a building with classes.",
+    "orchard-hill-observatory": "The Orchard Hill observatory dome, a telescope site, not a class building (OpenStreetMap way/495323093).",
+    "lgrc-lgrt-skyway": "A skyway between Lederle's buildings, not a building of its own (OpenStreetMap).",
+    "lgrt-goessmann-skyway": "A skyway between Lederle Tower and Goessmann, not a building of its own (OpenStreetMap).",
+    "psb-goessmann-skyway": "A skyway between the Physical Sciences Building and Goessmann, not a building of its own (OpenStreetMap).",
+    "marcus-marston-skyway": "A skyway between Marcus and Marston Halls, not a building of its own (OpenStreetMap).",
+    "worcester-commons": "Worcester Commons is Worcester Dining Commons, one of UMass's four dining commons (OSM operator=UMass Dining, way/217056238; umassdining.com)."
+  }
+}
