@@ -1,0 +1,680 @@
+{
+ "collegeId": "uc-riverside",
+ "generatedAt": "2026-11-14T01:48:35.596Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "UC Riverside Office of the Registrar, General Assignment Classrooms (By Building & Shared Spaces), list of 3/16/26",
+   "url": "https://csc.ucr.edu/sites/default/files/2026-04/general-assignment-classroom-list-3.16.26.xlsx-print-by-building-shared-space.pdf",
+   "use": "building codes",
+   "read": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/uc-riverside.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -117.33164,
+  33.96944,
+  -117.3207,
+  33.97898
+ ],
+ "halls": [
+  {
+   "dormId": "aberdeen-inverness",
+   "name": "Aberdeen-Inverness Hall",
+   "lng": -117.325689,
+   "lat": 33.978359,
+   "pin": "name",
+   "osm": "way/557591510",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center-north",
+     "minutes": 6.1
+    },
+    "library": {
+     "placeId": "orbach-science-library",
+     "minutes": 10.4
+    },
+    "dining": {
+     "placeId": "glasgow",
+     "minutes": 2.3
+    }
+   }
+  },
+  {
+   "dormId": "lothian",
+   "name": "Lothian Hall",
+   "lng": -117.32228,
+   "lat": 33.97622,
+   "pin": "manual",
+   "osm": "way/488204949",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center-north",
+     "minutes": 11
+    },
+    "library": {
+     "placeId": "orbach-science-library",
+     "minutes": 8.8
+    },
+    "dining": {
+     "placeId": "lothian-residential-restaurant",
+     "minutes": 3.7
+    }
+   }
+  },
+  {
+   "dormId": "pentland-hills",
+   "name": "Pentland Hills",
+   "lng": -117.3207,
+   "lat": 33.9785,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center-north",
+     "minutes": 9.8
+    },
+    "library": {
+     "placeId": "orbach-science-library",
+     "minutes": 11.1
+    },
+    "dining": {
+     "placeId": "glasgow",
+     "minutes": 6.3
+    }
+   }
+  },
+  {
+   "dormId": "dundee",
+   "name": "Dundee Hall",
+   "lng": -117.32457,
+   "lat": 33.97861,
+   "pin": "manual",
+   "osm": "way/1031413111",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center-north",
+     "minutes": 5.3
+    },
+    "library": {
+     "placeId": "orbach-science-library",
+     "minutes": 11.4
+    },
+    "dining": {
+     "placeId": "glasgow",
+     "minutes": 3.3
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "student-recreation-center-north",
+   "name": "Student Recreation Center North",
+   "short": "Student Recreation Center North",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.328126,
+   "lat": 33.978893,
+   "osm": "way/675495914"
+  },
+  {
+   "id": "bourns-hall",
+   "name": "Bourns Hall",
+   "short": "Bourns Hall",
+   "kind": "academic",
+   "codes": [
+    "BRNHL"
+   ],
+   "aliases": [],
+   "lng": -117.326993,
+   "lat": 33.97534,
+   "osm": "way/431945808"
+  },
+  {
+   "id": "tomas-rivera-library",
+   "name": "Tomas Rivera Library",
+   "short": "Tomas Rivera Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.327477,
+   "lat": 33.972651,
+   "osm": "way/233678057"
+  },
+  {
+   "id": "spieth-hall",
+   "name": "Spieth Hall",
+   "short": "Spieth Hall",
+   "kind": "academic",
+   "codes": [
+    "SPTH"
+   ],
+   "aliases": [],
+   "lng": -117.326478,
+   "lat": 33.972654,
+   "osm": "way/233678065"
+  },
+  {
+   "id": "humanities-and-social-sciences",
+   "name": "Humanities and Social Sciences",
+   "short": "Humanities and Social Sciences",
+   "kind": "academic",
+   "codes": [
+    "HMNSS"
+   ],
+   "aliases": [],
+   "lng": -117.330925,
+   "lat": 33.972908,
+   "osm": "way/455098612"
+  },
+  {
+   "id": "pierce-hall",
+   "name": "Pierce Hall",
+   "short": "Pierce Hall",
+   "kind": "academic",
+   "codes": [
+    "PRCE"
+   ],
+   "aliases": [
+    "Pierce"
+   ],
+   "lng": -117.327216,
+   "lat": 33.974125,
+   "osm": "way/450023548"
+  },
+  {
+   "id": "orbach-science-library",
+   "name": "Orbach Science Library",
+   "short": "Orbach Science Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.324443,
+   "lat": 33.974531,
+   "osm": "way/303519578"
+  },
+  {
+   "id": "student-recreation-center-south",
+   "name": "Student Recreation Center South",
+   "short": "Student Recreation Center South",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.328191,
+   "lat": 33.978263,
+   "osm": "way/675495916"
+  },
+  {
+   "id": "materials-science-and-engineering",
+   "name": "Materials Science and Engineering",
+   "short": "Materials Science and Engineering",
+   "kind": "academic",
+   "codes": [
+    "MSE"
+   ],
+   "aliases": [
+    "MSE"
+   ],
+   "lng": -117.327923,
+   "lat": 33.976264,
+   "osm": "way/303524632"
+  },
+  {
+   "id": "winston-chung-hall",
+   "name": "Winston Chung Hall",
+   "short": "Winston Chung Hall",
+   "kind": "academic",
+   "codes": [
+    "CHUNG"
+   ],
+   "aliases": [
+    "Chung Hall"
+   ],
+   "lng": -117.325946,
+   "lat": 33.975347,
+   "osm": "way/376930890"
+  },
+  {
+   "id": "highlander-union-building",
+   "name": "Highlander Union Building",
+   "short": "Highlander Union Building",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.328825,
+   "lat": 33.97433,
+   "osm": "way/233678054"
+  },
+  {
+   "id": "olmsted-hall",
+   "name": "Olmsted Hall",
+   "short": "Olmsted Hall",
+   "kind": "academic",
+   "codes": [
+    "OLMH"
+   ],
+   "aliases": [],
+   "lng": -117.32815,
+   "lat": 33.971355,
+   "osm": "way/233678056"
+  },
+  {
+   "id": "glasgow",
+   "name": "Glasgow",
+   "short": "Glasgow",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.324554,
+   "lat": 33.97789,
+   "osm": "way/1031413110"
+  },
+  {
+   "id": "athletics-and-dance",
+   "name": "Athletics and Dance",
+   "short": "Athletics and Dance",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Athletics & Dance"
+   ],
+   "lng": -117.329775,
+   "lat": 33.974789,
+   "osm": "way/233678053"
+  },
+  {
+   "id": "arts",
+   "name": "Arts",
+   "short": "Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Arts Building"
+   ],
+   "lng": -117.331642,
+   "lat": 33.974997,
+   "osm": "way/233678046"
+  },
+  {
+   "id": "physics-building",
+   "name": "Physics Building",
+   "short": "Physics Building",
+   "kind": "academic",
+   "codes": [
+    "PHY"
+   ],
+   "aliases": [
+    "Physics"
+   ],
+   "lng": -117.325313,
+   "lat": 33.974645,
+   "osm": "way/451956614"
+  },
+  {
+   "id": "chemical-sciences",
+   "name": "Chemical Sciences",
+   "short": "Chemical Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Chemical Sciences Building"
+   ],
+   "lng": -117.323055,
+   "lat": 33.97439,
+   "osm": "way/633167867"
+  },
+  {
+   "id": "sproul-hall",
+   "name": "Sproul Hall",
+   "short": "Sproul Hall",
+   "kind": "academic",
+   "codes": [
+    "SPR"
+   ],
+   "aliases": [],
+   "lng": -117.329734,
+   "lat": 33.972788,
+   "osm": "way/455098610"
+  },
+  {
+   "id": "watkins-hall",
+   "name": "Watkins Hall",
+   "short": "Watkins Hall",
+   "kind": "academic",
+   "codes": [
+    "WAT"
+   ],
+   "aliases": [],
+   "lng": -117.328954,
+   "lat": 33.972587,
+   "osm": "way/455098609"
+  },
+  {
+   "id": "geology-building",
+   "name": "Geology Building",
+   "short": "Geology Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Geology"
+   ],
+   "lng": -117.326279,
+   "lat": 33.974448,
+   "osm": "way/675551590"
+  },
+  {
+   "id": "psychology",
+   "name": "Psychology",
+   "short": "Psychology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Psychology Building"
+   ],
+   "lng": -117.327548,
+   "lat": 33.970669,
+   "osm": "way/158533421"
+  },
+  {
+   "id": "school-of-medicine-2",
+   "name": "School of Medicine 2",
+   "short": "School of Medicine 2",
+   "kind": "academic",
+   "codes": [
+    "SOM2"
+   ],
+   "aliases": [],
+   "lng": -117.324195,
+   "lat": 33.973208,
+   "osm": "way/1327972924"
+  },
+  {
+   "id": "batchelor-hall",
+   "name": "Batchelor Hall",
+   "short": "Batchelor Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Batchelor"
+   ],
+   "lng": -117.325246,
+   "lat": 33.972508,
+   "osm": "way/233678067"
+  },
+  {
+   "id": "genomics-building",
+   "name": "Genomics Building",
+   "short": "Genomics Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Genomics"
+   ],
+   "lng": -117.326204,
+   "lat": 33.971552,
+   "osm": "way/233678061"
+  },
+  {
+   "id": "lothian-residential-restaurant",
+   "name": "Lothian Residential Restaurant",
+   "short": "Lothian Residential Restaurant",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.322498,
+   "lat": 33.975626,
+   "osm": "way/488206039"
+  },
+  {
+   "id": "skye-surge-hall",
+   "name": "Skye (Surge) Hall",
+   "short": "Skye (Surge) Hall",
+   "kind": "academic",
+   "codes": [
+    "SKYE"
+   ],
+   "aliases": [
+    "Skye Hall"
+   ],
+   "lng": -117.328875,
+   "lat": 33.975362,
+   "osm": "way/233678052"
+  },
+  {
+   "id": "entomology-building",
+   "name": "Entomology Building",
+   "short": "Entomology Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Entomology"
+   ],
+   "lng": -117.326283,
+   "lat": 33.970747,
+   "osm": "way/233678060"
+  },
+  {
+   "id": "student-success-center",
+   "name": "Student Success Center",
+   "short": "Student Success Center",
+   "kind": "academic",
+   "codes": [
+    "SSC"
+   ],
+   "aliases": [],
+   "lng": -117.330569,
+   "lat": 33.974212,
+   "osm": "way/1472827729"
+  },
+  {
+   "id": "boyce-hall",
+   "name": "Boyce Hall",
+   "short": "Boyce Hall",
+   "kind": "academic",
+   "codes": [
+    "BOYHL"
+   ],
+   "aliases": [],
+   "lng": -117.324905,
+   "lat": 33.973496,
+   "osm": "way/544060339"
+  },
+  {
+   "id": "chass-interdisciplinary-south",
+   "name": "Chass Interdisciplinary South",
+   "short": "Chass Interdisciplinary South",
+   "kind": "academic",
+   "codes": [
+    "INTS"
+   ],
+   "aliases": [
+    "CHASS INTS"
+   ],
+   "lng": -117.330444,
+   "lat": 33.97473,
+   "osm": "way/233678049"
+  },
+  {
+   "id": "fawcett-laboratory",
+   "name": "Fawcett Laboratory",
+   "short": "Fawcett Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Fawcett"
+   ],
+   "lng": -117.32419,
+   "lat": 33.971508,
+   "osm": "way/233678064"
+  },
+  {
+   "id": "biological-sciences",
+   "name": "Biological Sciences",
+   "short": "Biological Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Biological Sciences Building"
+   ],
+   "lng": -117.326077,
+   "lat": 33.972271,
+   "osm": "way/233678066"
+  },
+  {
+   "id": "webber-hall",
+   "name": "Webber Hall",
+   "short": "Webber Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Webber"
+   ],
+   "lng": -117.325367,
+   "lat": 33.973586,
+   "osm": "way/544060340"
+  },
+  {
+   "id": "dundee-b",
+   "name": "Dundee B",
+   "short": "Dundee B",
+   "kind": "academic",
+   "codes": [
+    "DUNDE"
+   ],
+   "aliases": [
+    "Dundee"
+   ],
+   "lng": -117.324204,
+   "lat": 33.97898,
+   "osm": "way/1031413112"
+  },
+  {
+   "id": "humanities",
+   "name": "Humanities",
+   "short": "Humanities",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Humanities Building"
+   ],
+   "lng": -117.328765,
+   "lat": 33.971594,
+   "osm": "way/912201138"
+  },
+  {
+   "id": "science-laboratory",
+   "name": "Science Laboratory",
+   "short": "Science Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Science Laboratory 1"
+   ],
+   "lng": -117.326173,
+   "lat": 33.973916,
+   "osm": "way/675551591"
+  },
+  {
+   "id": "school-of-medicine",
+   "name": "School of Medicine",
+   "short": "School of Medicine",
+   "kind": "academic",
+   "codes": [
+    "SOMED"
+   ],
+   "aliases": [],
+   "lng": -117.324029,
+   "lat": 33.973791,
+   "osm": "way/911758334"
+  },
+  {
+   "id": "university-lecture-hall",
+   "name": "University Lecture Hall",
+   "short": "University Lecture Hall",
+   "kind": "academic",
+   "codes": [
+    "UNLH"
+   ],
+   "aliases": [],
+   "lng": -117.328384,
+   "lat": 33.975664,
+   "osm": "way/260043064"
+  },
+  {
+   "id": "chass-interdisciplinary-north",
+   "name": "Chass Interdisciplinary North",
+   "short": "Chass Interdisciplinary North",
+   "kind": "academic",
+   "codes": [
+    "INTN"
+   ],
+   "aliases": [
+    "CHASS INTN"
+   ],
+   "lng": -117.33047,
+   "lat": 33.975312,
+   "osm": "way/233678048"
+  },
+  {
+   "id": "anderson-hall-1",
+   "name": "Anderson Hall 1",
+   "short": "Anderson Hall 1",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Anderson Hall"
+   ],
+   "lng": -117.325914,
+   "lat": 33.96986,
+   "osm": "way/911790675"
+  },
+  {
+   "id": "life-sciences-1500",
+   "name": "Life Sciences 1500",
+   "short": "Life Sciences 1500",
+   "kind": "academic",
+   "codes": [
+    "LFSC"
+   ],
+   "aliases": [
+    "Life Sciences"
+   ],
+   "lng": -117.326866,
+   "lat": 33.973096,
+   "osm": "way/912699824"
+  },
+  {
+   "id": "anderson-hall-2",
+   "name": "Anderson Hall 2",
+   "short": "Anderson Hall 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Anderson Hall II"
+   ],
+   "lng": -117.326307,
+   "lat": 33.969436,
+   "osm": "way/911790673"
+  }
+ ]
+}

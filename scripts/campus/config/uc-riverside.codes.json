@@ -1,0 +1,99 @@
+{
+ "name": "UC Riverside Office of the Registrar, General Assignment Classrooms (By Building & Shared Spaces), list of 3/16/26",
+ "url": "https://csc.ucr.edu/sites/default/files/2026-04/general-assignment-classroom-list-3.16.26.xlsx-print-by-building-shared-space.pdf",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "BRNHL",
+   "name": "Bourns Hall"
+  },
+  {
+   "code": "MSE",
+   "name": "MSE"
+  },
+  {
+   "code": "SPR",
+   "name": "Sproul Hall"
+  },
+  {
+   "code": "DUNDE",
+   "name": "Dundee"
+  },
+  {
+   "code": "BOYHL",
+   "name": "Boyce Hall"
+  },
+  {
+   "code": "NORD",
+   "name": "North District"
+  },
+  {
+   "code": "INTN",
+   "name": "CHASS INTN"
+  },
+  {
+   "code": "OLMH",
+   "name": "Olmsted Hall"
+  },
+  {
+   "code": "INTS",
+   "name": "CHASS INTS"
+  },
+  {
+   "code": "SBB",
+   "name": "School of Business Building"
+  },
+  {
+   "code": "UNLH",
+   "name": "University Lecture Hall"
+  },
+  {
+   "code": "UTLF",
+   "name": "Undergraduate Teaching and Learning Facility"
+  },
+  {
+   "code": "SOMED",
+   "name": "School of Medicine"
+  },
+  {
+   "code": "PHY",
+   "name": "Physics"
+  },
+  {
+   "code": "CHUNG",
+   "name": "Chung Hall"
+  },
+  {
+   "code": "SOM2",
+   "name": "School of Medicine 2"
+  },
+  {
+   "code": "PRCE",
+   "name": "Pierce"
+  },
+  {
+   "code": "HMNSS",
+   "name": "Humanities and Social Sciences"
+  },
+  {
+   "code": "SKYE",
+   "name": "Skye Hall"
+  },
+  {
+   "code": "SSC",
+   "name": "Student Success Center"
+  },
+  {
+   "code": "WAT",
+   "name": "Watkins Hall"
+  },
+  {
+   "code": "LFSC",
+   "name": "Life Sciences"
+  },
+  {
+   "code": "SPTH",
+   "name": "Spieth Hall"
+  }
+ ]
+}

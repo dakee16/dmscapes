@@ -1,0 +1,17 @@
+{
+  "collegeId": "uc-riverside",
+  "area": {
+    "osm": "relation/1634776",
+    "bbox": [
+      33.96115,
+      -117.34835,
+      33.9848,
+      -117.31665
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/uc-riverside.codes.json"
+  }
+}
