@@ -36,8 +36,11 @@ function hasPlannerToRestore() {
   return Boolean(s.college?.id || s.room || params.get("school") || params.get("typical"));
 }
 
-/** "No room yet?": the typical single, double or triple in place of a school's room. */
-function applyTypicalRoom(occupants: number, via: "chip" | "link"): boolean {
+/**
+ * "No room yet?": the typical single, double or triple in place of a school's room.
+ * via: a chip, the quick-start button (the typical double) or a /plan?typical= link.
+ */
+function applyTypicalRoom(occupants: number, via: "chip" | "quick_start" | "link"): boolean {
   const room = typicalRoom(occupants);
   if (!room) return false;
   const s = usePlannerStore.getState();
@@ -240,8 +243,8 @@ export default function PlanSelectPage() {
             onSelect={handleCollege}
             onRequest={() => setRequestOpen(true)}
             onManual={handleManual}
-            onTypical={(n) => {
-              if (!applyTypicalRoom(n, "chip")) return;
+            onTypical={(n, via) => {
+              if (!applyTypicalRoom(n, via)) return;
               setPendingDimsRoom(null);
               setSelectedRoomKey(null);
               router.push("/plan/style");
