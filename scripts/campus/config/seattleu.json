@@ -1,0 +1,17 @@
+{
+  "collegeId": "seattleu",
+  "area": {
+    "osm": "relation/5282350",
+    "bbox": [
+      47.60619,
+      -122.32082,
+      47.61283,
+      -122.31285
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/seattleu.codes.json"
+  }
+}

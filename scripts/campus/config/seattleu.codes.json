@@ -1,0 +1,155 @@
+{
+ "name": "Seattle University First Hill Campus Map (building directory with codes), FC 2025-08",
+ "url": "https://www.seattleu.edu/media/SUCampusMap18.pdf",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "1103",
+   "name": "1103 East Madison Building"
+  },
+  {
+   "code": "ADAL",
+   "name": "Advancement & Alumni Building"
+  },
+  {
+   "code": "ADMN",
+   "name": "Administration Building"
+  },
+  {
+   "code": "ARRP",
+   "name": "Arrupe Jesuit Residence"
+  },
+  {
+   "code": "ATMA",
+   "name": "Murphy Apartments"
+  },
+  {
+   "code": "BANN",
+   "name": "Bannan Center"
+  },
+  {
+   "code": "BELL",
+   "name": "Bellarmine Hall"
+  },
+  {
+   "code": "CAMP",
+   "name": "Campion Hall"
+  },
+  {
+   "code": "CASY",
+   "name": "Casey Building"
+  },
+  {
+   "code": "CHAF",
+   "name": "Championship Field"
+  },
+  {
+   "code": "CHAP",
+   "name": "Chapel of Saint Ignatius"
+  },
+  {
+   "code": "CHDN",
+   "name": "Chardin Hall"
+  },
+  {
+   "code": "CLMB",
+   "name": "1313 East Columbia Building"
+  },
+  {
+   "code": "CNFA",
+   "name": "Lee Center for the Arts"
+  },
+  {
+   "code": "DOUG",
+   "name": "Douglas Apartments"
+  },
+  {
+   "code": "FINR",
+   "name": "Fine Arts Building"
+  },
+  {
+   "code": "GARR",
+   "name": "Garrand Building"
+  },
+  {
+   "code": "HAWK",
+   "name": "Redhawk Center"
+  },
+  {
+   "code": "HILB",
+   "name": "Vi Hilbert Hall"
+  },
+  {
+   "code": "HRDG",
+   "name": "Harding Building"
+  },
+  {
+   "code": "HUNT",
+   "name": "Hunthausen Hall"
+  },
+  {
+   "code": "JMTW",
+   "name": "James Tower (at Swedish Cherry Hill)"
+  },
+  {
+   "code": "KV17",
+   "name": "Kolvenbach House 1217"
+  },
+  {
+   "code": "KV20",
+   "name": "Kolvenbach House 1220"
+  },
+  {
+   "code": "LDRY",
+   "name": "Laundry Building"
+  },
+  {
+   "code": "LEML",
+   "name": "Lemieux Library & McGoldrick Learning Commons"
+  },
+  {
+   "code": "LOYA",
+   "name": "Loyola Hall"
+  },
+  {
+   "code": "MADI",
+   "name": "Madison Building"
+  },
+  {
+   "code": "OBRN",
+   "name": "O’Brien Center"
+  },
+  {
+   "code": "PAVL",
+   "name": "Pigott Pavilion for Leadership"
+  },
+  {
+   "code": "PIGT",
+   "name": "Pigott Building"
+  },
+  {
+   "code": "SINE",
+   "name": "Sinegal Center for Science & Innovation"
+  },
+  {
+   "code": "SLLH",
+   "name": "Sullivan Hall"
+  },
+  {
+   "code": "STCN",
+   "name": "Student Center"
+  },
+  {
+   "code": "SUPK",
+   "name": "Seattle University Park"
+  },
+  {
+   "code": "XAVR",
+   "name": "Xavier Hall"
+  },
+  {
+   "code": "YOBI",
+   "name": "Yobi Apartments"
+  }
+ ]
+}
