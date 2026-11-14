@@ -117,7 +117,7 @@ export default function SchoolFacts({ collegeId, short, schoolName, campus, fact
             </>
           )}
           Browse <Link href={`/colleges/${collegeId}`}>every {short} building and its room sizes</Link>, or plan a room at{" "}
-          <Link href="/plan">the room planner</Link>.
+          <Link href={`/plan?school=${collegeId}`}>the room planner</Link>.
         </p>
       </div>
     </section>
