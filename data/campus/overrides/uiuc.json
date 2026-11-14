@@ -1,0 +1,174 @@
+{
+  "places": {
+    "ihotel-and-conference-center": {
+      "hide": true
+    },
+    "irwin-indoor-football-facility": {
+      "hide": true
+    },
+    "ubben-basketball-complex": {
+      "hide": true
+    },
+    "atkins-tennis-center": {
+      "hide": true
+    },
+    "susan-and-clint-atkins-baseball-training-center": {
+      "hide": true
+    },
+    "rex-and-alice-a-martin-softball-training-center": {
+      "hide": true
+    },
+    "demirjian-indoor-golf-facility": {
+      "hide": true
+    },
+    "ncsa-petascale-computing-facility": {
+      "hide": true
+    },
+    "caterpillar-building": {
+      "hide": true
+    },
+    "disability-resources-and-educational-services": {
+      "hide": true
+    },
+    "oak-street-library-facility": {
+      "hide": true
+    },
+    "archives-and-special-collections-facility": {
+      "hide": true
+    },
+    "mckinley-health-center": {
+      "hide": true
+    },
+    "christie-clinic": {
+      "hide": true
+    },
+    "alice-campbell-alumni-center": {
+      "hide": true
+    },
+    "university-of-illinois-foundation": {
+      "hide": true
+    },
+    "levis-faculty-center": {
+      "hide": true
+    },
+    "student-services-arcade-building": {
+      "hide": true
+    },
+    "child-development-building": {
+      "hide": true
+    },
+    "wolfe-school": {
+      "hide": true
+    },
+    "university-laboratory-high-school": {
+      "hide": true
+    },
+    "university-high-school-gymnasium": {
+      "hide": true
+    },
+    "yeh-student-center": {
+      "hide": true
+    },
+    "irwin-doctoral-study-hall": {
+      "hide": true
+    },
+    "nevada-building-computer-lab": {
+      "hide": true
+    },
+    "family-and-graduate-housing": {
+      "hide": true
+    },
+    "campus-honors-program": {
+      "hide": true
+    },
+    "mumford-house": {
+      "hide": true
+    },
+    "filler-marching-illini-instructional-tower": {
+      "hide": true
+    },
+    "food-service-building": {
+      "kind": "dining"
+    },
+    "graduate-school-of-library-and-information-science": {
+      "kind": "academic"
+    }
+  },
+  "codes": {
+    "1SIEBL": "way/138519998",
+    "1ECEB": "relation/8840902",
+    "1BIF": "way/1112153050",
+    "1LUMEB": "way/137918154",
+    "1MSEB": "way/137624124",
+    "1NCSA": "way/138520016",
+    "1LIB": "relation/1860882",
+    "1ACESL": "way/83023679",
+    "1SDRP": "way/265726375",
+    "1SISB": "way/225864307",
+    "1KCPA": "way/138183445",
+    "1AESB": "way/137475373",
+    "1CLSL": "way/137759341",
+    "1AEA1": null,
+    "1FARFS": null,
+    "1GFSB": null
+  },
+  "detours": [
+    {
+      "pairs": [
+        "taft-van-doren -> siebel-center-for-design"
+      ],
+      "maxRatio": 3.0,
+      "why": "OSM's sidewalks on the Fourth Street side of Siebel Center for Design stop short of its entrance walk, so the walk from Taft-Van Doren goes round by the footway on its east side."
+    }
+  ],
+  "notes": {
+    "ihotel-and-conference-center": "A hotel and conference centre, not somewhere classes happen (OSM way/138383849, read 2026-11-14).",
+    "irwin-indoor-football-facility": "Varsity football practice facility, not a class or rec building (OSM way/137367398, read 2026-11-14).",
+    "ubben-basketball-complex": "Varsity basketball practice facility (OSM way/138048568, read 2026-11-14).",
+    "atkins-tennis-center": "Varsity tennis venue (OSM relation/8728230, read 2026-11-14).",
+    "susan-and-clint-atkins-baseball-training-center": "Varsity baseball training centre (OSM way/1127856717, read 2026-11-14).",
+    "rex-and-alice-a-martin-softball-training-center": "Varsity softball training centre (OSM way/1127856718, read 2026-11-14).",
+    "demirjian-indoor-golf-facility": "Varsity golf practice facility (OSM way/821806003, read 2026-11-14).",
+    "ncsa-petascale-computing-facility": "A supercomputer data centre, not somewhere classes happen (OSM way/138260136, read 2026-11-14).",
+    "caterpillar-building": "A Research Park company building (SAIC), not a class building (OSM way/138260144, read 2026-11-14).",
+    "disability-resources-and-educational-services": "DRES service offices, not a class building (OSM relation/7997384, read 2026-11-14).",
+    "oak-street-library-facility": "The University Library's high-density storage facility, not a study library (OSM way/620963181, read 2026-11-14).",
+    "archives-and-special-collections-facility": "Archives storage and reading room, not a study library (OSM relation/12218271, read 2026-11-14).",
+    "mckinley-health-center": "Student health centre, not a class building (OSM way/126563307, read 2026-11-14).",
+    "christie-clinic": "A medical clinic (OSM way/585465887, read 2026-11-14).",
+    "alice-campbell-alumni-center": "Alumni association offices (OSM way/175637445, read 2026-11-14).",
+    "university-of-illinois-foundation": "University of Illinois Foundation offices (OSM way/1264844586, read 2026-11-14).",
+    "levis-faculty-center": "Faculty centre and event space, not a class building (OSM way/175637443, read 2026-11-14).",
+    "student-services-arcade-building": "Student service offices, not a class building (OSM way/138484221, read 2026-11-14).",
+    "child-development-building": "The Child Development Laboratory, a childcare and preschool lab (OSM way/175628230, read 2026-11-14).",
+    "wolfe-school": "Colonel Wolfe School, a preschool (OSM way/523946030, read 2026-11-14).",
+    "university-laboratory-high-school": "University Laboratory High School, a high school (OSM way/138519992, read 2026-11-14).",
+    "university-high-school-gymnasium": "University Laboratory High School's gym (OSM way/138520030, read 2026-11-14).",
+    "yeh-student-center": "Student cultural and organisation centre with no Banner code, not a class building (OSM way/552131065, read 2026-11-14).",
+    "irwin-doctoral-study-hall": "A doctoral students' study hall with no Banner code (OSM way/137475332, read 2026-11-14).",
+    "nevada-building-computer-lab": "A computer lab with no Banner code, not a class building (OSM way/175621699, read 2026-11-14).",
+    "family-and-graduate-housing": "Housing office (OSM way/151319478, read 2026-11-14).",
+    "campus-honors-program": "Campus Honors Program office house with no Banner code (OSM way/175621702, read 2026-11-14).",
+    "mumford-house": "A historic farmhouse kept by ACES, not a class building (OSM way/137475377, read 2026-11-14).",
+    "filler-marching-illini-instructional-tower": "A rehearsal-field tower for the Marching Illini, not a class building (OSM way/899290170, read 2026-11-14).",
+    "food-service-building": "The ISR 'Food Service Building' at 1010 W. Illinois St. is the Illinois Street Dining Center (housing.illinois.edu/dine/locations/locations); OSM way/899305029.",
+    "graduate-school-of-library-and-information-science": "The School of Information Sciences building (Banner 1SISB), where iSchool classes meet; 'Library' in its old name made it a library.",
+    "1SIEBL": "Banner 'Siebel Center for Comp Sci' is OSM 'Siebel Center for Computer Science'; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1ECEB": "Banner 'Electrical & Computer Eng Bldg' is OSM 'Electrical and Computer Engineering Building'; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1BIF": "Banner 'Business Instructional Fac' is OSM 'Business Instructional Facility'; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1LUMEB": "Banner 'Sidney Lu Mech Eng Bldg' is OSM 'Sidney Lu Mechanical Engineering Building'; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1MSEB": "Banner 'Materials Science & Eng Bld' is OSM 'Materials Science & Engineering Building'; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1NCSA": "Banner 'Nat Center for Suprcomp Appl' is OSM 'National Center for Supercomputing Applications'; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1LIB": "Banner 'Library' is OSM 'Main Library'; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1ACESL": "Banner 'ACES Lib, Info & Alum Ctr' is OSM 'Funk Library' (alt name ACES Library); the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1SDRP": "Banner 'Student Dining & Res Program' is OSM 'Student Dining and Residential Programs', home of Ikenberry Dining Center; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1SISB": "Banner 'School of Information Sciences Bldg' is OSM 'Graduate School of Library and Information Science' (the iSchool's old name); the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1KCPA": "Banner 'Krannert Center for Perf Arts' is OSM 'Krannert Center for the Performing Arts'; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1AESB": "Banner 'Agricultural Engr Sciences Bld' is OSM 'Agricultural Engineering Sciences'; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1CLSL": "Banner 'Chemical and Life Sci Lab' is OSM 'Chemical & Life Sciences Building A'; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1AEA1": "Banner 'Architecture Annex' is its own building, not OSM 'Architecture Building' (1ARCH); OSM doesn't name the annex; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1FARFS": "Banner 'FAR – Food Service Building' is at Florida Avenue Residence Halls, not the ISR 'Food Service Building' the word rule picked; OSM doesn't map it; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "1GFSB": "Banner 'Gregory Dr. Food Service' isn't the ISR 'Food Service Building' (1010 W. Illinois St.) the word rule picked; the Registrar's Banner building codes (registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/).",
+    "taft-van-doren -> siebel-center-for-design": "Detour checked on the OSM walk network (footways 1108833412/1108833414), 2026-11-14."
+  }
+}

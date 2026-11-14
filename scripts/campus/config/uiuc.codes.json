@@ -1,0 +1,1003 @@
+{
+ "name": "University of Illinois Office of the Registrar, Banner Building Codes",
+ "url": "https://registrar.illinois.edu/faculty-staff/course-catalog-and-scheduling/banner-building-codes/",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "11001N",
+   "name": "1001 W Nevada"
+  },
+  {
+   "code": "11004F",
+   "name": "1004 S Fourth, Police Trng Ins"
+  },
+  {
+   "code": "11010N",
+   "name": "1010 W Nevada"
+  },
+  {
+   "code": "11203/",
+   "name": "1203 1/2 W Nevada"
+  },
+  {
+   "code": "11203N",
+   "name": "1203 W Nevada"
+  },
+  {
+   "code": "11203O",
+   "name": "1203 W Oregon"
+  },
+  {
+   "code": "11205/",
+   "name": "1205 1/2 W Nevada"
+  },
+  {
+   "code": "11205N",
+   "name": "1205 W Nevada"
+  },
+  {
+   "code": "11205O",
+   "name": "1205 W Oregon"
+  },
+  {
+   "code": "11206N",
+   "name": "1206 W. Nevada Street"
+  },
+  {
+   "code": "11207O",
+   "name": "1207 W Oregon"
+  },
+  {
+   "code": "11208N",
+   "name": "1208 W Nevada"
+  },
+  {
+   "code": "11210N",
+   "name": "Asian American House"
+  },
+  {
+   "code": "1408G",
+   "name": "408 S Goodwin"
+  },
+  {
+   "code": "1505GR",
+   "name": "505 E Green"
+  },
+  {
+   "code": "1508SX",
+   "name": "508 S Sixth"
+  },
+  {
+   "code": "1510DA",
+   "name": "510 E Daniel"
+  },
+  {
+   "code": "1805PA",
+   "name": "805 W Pennsylvania"
+  },
+  {
+   "code": "1901OR",
+   "name": "901 W Oregon"
+  },
+  {
+   "code": "1907/N",
+   "name": "907 1/2 W Nevada"
+  },
+  {
+   "code": "1909OR",
+   "name": "909 W Oregon"
+  },
+  {
+   "code": "1911SX",
+   "name": "911 S Sixth"
+  },
+  {
+   "code": "1912IL",
+   "name": "912 W Illinois"
+  },
+  {
+   "code": "1ABL",
+   "name": "Agricultural Bioprocess Lab"
+  },
+  {
+   "code": "1AC",
+   "name": "Alice Campbell Alumni Ctr"
+  },
+  {
+   "code": "1ACESL",
+   "name": "ACES Lib, Info & Alum Ctr"
+  },
+  {
+   "code": "1ADB",
+   "name": "Art and Design Building"
+  },
+  {
+   "code": "1AEA1",
+   "name": "Architecture Annex"
+  },
+  {
+   "code": "1AEA2",
+   "name": "Art-East Annex, Studio 2"
+  },
+  {
+   "code": "1AESB",
+   "name": "Agricultural Engr Sciences Bld"
+  },
+  {
+   "code": "1AH",
+   "name": "Altgeld Hall"
+  },
+  {
+   "code": "1AIRPT",
+   "name": "Willard Airport"
+  },
+  {
+   "code": "1ALLEN",
+   "name": "Allen Residence Hall"
+  },
+  {
+   "code": "1ARC",
+   "name": "Activities & Recreation Center"
+  },
+  {
+   "code": "1ARCD",
+   "name": "Student Services Arcade Bldg"
+  },
+  {
+   "code": "1ARCH",
+   "name": "Architecture Building"
+  },
+  {
+   "code": "1ARMRY",
+   "name": "Armory"
+  },
+  {
+   "code": "1ASL",
+   "name": "Animal Sciences Laboratory"
+  },
+  {
+   "code": "1ASTR",
+   "name": "Astronomy Building"
+  },
+  {
+   "code": "1ATKNS",
+   "name": "Atkins Tennis Center"
+  },
+  {
+   "code": "1ATSB",
+   "name": "Atmospheric Sciences Bldg"
+  },
+  {
+   "code": "1BANNR",
+   "name": "Banner Building"
+  },
+  {
+   "code": "1BEV",
+   "name": "Bevier Hall"
+  },
+  {
+   "code": "1BI",
+   "name": "Beckman Institute"
+  },
+  {
+   "code": "1BIF",
+   "name": "Business Instructional Fac"
+  },
+  {
+   "code": "1BNRL",
+   "name": "Burnsides Research Lab"
+  },
+  {
+   "code": "1BOUS",
+   "name": "Bousfield Hall"
+  },
+  {
+   "code": "1BRCB",
+   "name": "Building Research Council Bldg"
+  },
+  {
+   "code": "1BUR",
+   "name": "Burrill Hall"
+  },
+  {
+   "code": "1CA",
+   "name": "Chemistry Annex"
+  },
+  {
+   "code": "1CAB",
+   "name": "Computing Applications Bldg"
+  },
+  {
+   "code": "1CB",
+   "name": "Ceramics Building"
+  },
+  {
+   "code": "1CDL",
+   "name": "Child Development Laboratory"
+  },
+  {
+   "code": "1CEEB",
+   "name": "Civil & Environmental Engineering Building"
+  },
+  {
+   "code": "1CERFA",
+   "name": "2110 S. Griffith Dr., Bldg 4"
+  },
+  {
+   "code": "1CHRSH",
+   "name": "Christopher Hall"
+  },
+  {
+   "code": "1CIF",
+   "name": "Campus Instructional Facility"
+  },
+  {
+   "code": "1CLSL",
+   "name": "Chemical and Life Sci Lab"
+  },
+  {
+   "code": "1CMPBL",
+   "name": "Campbell Hall"
+  },
+  {
+   "code": "1CRC",
+   "name": "Children\u2019s Research Center"
+  },
+  {
+   "code": "1CRCE",
+   "name": "Campus Recreation Center East"
+  },
+  {
+   "code": "1CROC",
+   "name": "Campus Rec Outdoor Ctr"
+  },
+  {
+   "code": "1CSL",
+   "name": "Coordinated Science Lab"
+  },
+  {
+   "code": "1CWS",
+   "name": "Colonel Wolfe School"
+  },
+  {
+   "code": "1CWVHE",
+   "name": "Ctr Wounded Veterans Higher Ed"
+  },
+  {
+   "code": "1DANCE",
+   "name": "Dance Studio"
+  },
+  {
+   "code": "1DCL",
+   "name": "Digital Computer Laboratory"
+  },
+  {
+   "code": "1DH",
+   "name": "Davenport Hall"
+  },
+  {
+   "code": "1DKH",
+   "name": "David Kinley Hall"
+  },
+  {
+   "code": "1EB",
+   "name": "English Building"
+  },
+  {
+   "code": "1ECDL",
+   "name": "Expanded Child Dev Lab"
+  },
+  {
+   "code": "1ECEB",
+   "name": "Electrical & Computer Eng Bldg"
+  },
+  {
+   "code": "1EDUC",
+   "name": "Education Building"
+  },
+  {
+   "code": "1EH",
+   "name": "Engineering Hall"
+  },
+  {
+   "code": "1ERML",
+   "name": "E R Madigan Laboratory"
+  },
+  {
+   "code": "1ESB",
+   "name": "Engineering Sciences Building"
+  },
+  {
+   "code": "1EVRT",
+   "name": "Everitt Laboratory"
+  },
+  {
+   "code": "1FA",
+   "name": "Foellinger Auditorium"
+  },
+  {
+   "code": "1FARFS",
+   "name": "FAR \u2013 Food Service Building"
+  },
+  {
+   "code": "1FH",
+   "name": "Freer Hall"
+  },
+  {
+   "code": "1FICE",
+   "name": "Fighting Illini Ctr for Excellence"
+  },
+  {
+   "code": "1FSIC",
+   "name": "Fire Service Institute Center"
+  },
+  {
+   "code": "1FTSSB",
+   "name": "Fred Turner Student Serv Bldg"
+  },
+  {
+   "code": "1GARNR",
+   "name": "Garner Hall"
+  },
+  {
+   "code": "1GELIB",
+   "name": "Grainger Engineering Library"
+  },
+  {
+   "code": "1GFSB",
+   "name": "Gregory Dr. Food Service"
+  },
+  {
+   "code": "1GH",
+   "name": "Gregory Hall"
+  },
+  {
+   "code": "1GPHS",
+   "name": "Grad Photo Studio"
+  },
+  {
+   "code": "1GSB",
+   "name": "2116 Griffith"
+  },
+  {
+   "code": "1H1",
+   "name": "Willard Airport: Hangar 1"
+  },
+  {
+   "code": "1H4",
+   "name": "Willard Airport: Hangar 4"
+  },
+  {
+   "code": "1HAB",
+   "name": "Henry Administration Bldg"
+  },
+  {
+   "code": "1HDG",
+   "name": "Harding Band Building"
+  },
+  {
+   "code": "1HFL",
+   "name": "Horticulture Field Laboratory"
+  },
+  {
+   "code": "1HUFF",
+   "name": "Huff Hall"
+  },
+  {
+   "code": "1IBLDG",
+   "name": "I Building"
+  },
+  {
+   "code": "1ICEA",
+   "name": "Ice Arena"
+  },
+  {
+   "code": "1IGB",
+   "name": "Institute for Genomic Biology"
+  },
+  {
+   "code": "1IGPAB",
+   "name": "Inst Gov & Public Affairs Bldg"
+  },
+  {
+   "code": "1IH",
+   "name": "Illini Hall"
+  },
+  {
+   "code": "1ILLGV",
+   "name": "Illini Grove"
+  },
+  {
+   "code": "1IMPE",
+   "name": "Intramural-Phys Ed Bldg"
+  },
+  {
+   "code": "1ISB",
+   "name": "International Studies Building"
+  },
+  {
+   "code": "1ISRL",
+   "name": "Illinois Street Residence Lng"
+  },
+  {
+   "code": "1IU",
+   "name": "Illini Union"
+  },
+  {
+   "code": "1JAPAN",
+   "name": "Japan House"
+  },
+  {
+   "code": "1KAM",
+   "name": "Krannert Art Museum"
+  },
+  {
+   "code": "1KCPA",
+   "name": "Krannert Center for Perf Arts"
+  },
+  {
+   "code": "1KG",
+   "name": "Kenney Gymnasium"
+  },
+  {
+   "code": "1KGA",
+   "name": "Kenney Gymnasium Annex"
+  },
+  {
+   "code": "1KH",
+   "name": "Ceramics Kiln House"
+  },
+  {
+   "code": "1LAR",
+   "name": "Lincoln Avenue Residence Hall"
+  },
+  {
+   "code": "1LAW",
+   "name": "Law Building"
+  },
+  {
+   "code": "1LCLB",
+   "name": "Literatures, Cultures & Linguistics Building"
+  },
+  {
+   "code": "1LER",
+   "name": "Labor and Employment Relations"
+  },
+  {
+   "code": "1LEVIS",
+   "name": "Levis Faculty Center"
+  },
+  {
+   "code": "1LH",
+   "name": "Lincoln Hall"
+  },
+  {
+   "code": "1LIB",
+   "name": "Library"
+  },
+  {
+   "code": "1LMS",
+   "name": "Loomis Laboratory"
+  },
+  {
+   "code": "1LUMEB",
+   "name": "Sidney Lu Mech Eng Bldg"
+  },
+  {
+   "code": "1MEL",
+   "name": "Mechanical Engineering Lab"
+  },
+  {
+   "code": "1MEM",
+   "name": "Memorial Stadium"
+  },
+  {
+   "code": "1MH",
+   "name": "Mumford Hall"
+  },
+  {
+   "code": "1MHC",
+   "name": "McKinley Health Center"
+  },
+  {
+   "code": "1MNTL",
+   "name": "Micro & Nanotechnology Lab"
+  },
+  {
+   "code": "1MOR",
+   "name": "Morrill Hall"
+  },
+  {
+   "code": "1MOTO",
+   "name": "Motorcycle Safety Office"
+  },
+  {
+   "code": "1MRL",
+   "name": "Seitz Materials Research Lab"
+  },
+  {
+   "code": "1MSB",
+   "name": "Medical Sciences Building"
+  },
+  {
+   "code": "1MSEB",
+   "name": "Materials Science & Eng Bld"
+  },
+  {
+   "code": "1MSL",
+   "name": "Meat Science Laboratory"
+  },
+  {
+   "code": "1MTVN",
+   "name": "Mount Vernon"
+  },
+  {
+   "code": "1MUMHS",
+   "name": "Mumford House"
+  },
+  {
+   "code": "1MUSIC",
+   "name": "Music Building"
+  },
+  {
+   "code": "1NCEB",
+   "name": "Newmark Civil Engineering Bldg"
+  },
+  {
+   "code": "1NCSA",
+   "name": "Nat Center for Suprcomp Appl"
+  },
+  {
+   "code": "1NEL",
+   "name": "Nuclear Engineering Lab"
+  },
+  {
+   "code": "1NHB",
+   "name": "Natural History Building"
+  },
+  {
+   "code": "1NOBLE",
+   "name": "Noble Hall"
+  },
+  {
+   "code": "1NOYES",
+   "name": "Noyes Laboratory"
+  },
+  {
+   "code": "1NRAL",
+   "name": "Nuclear Radiations Laboratory"
+  },
+  {
+   "code": "1NRB",
+   "name": "Natural Resources Building"
+  },
+  {
+   "code": "1NRSA",
+   "name": "Natural Res Studies Annex"
+  },
+  {
+   "code": "1NSRC",
+   "name": "National Soybean Res Ctr"
+  },
+  {
+   "code": "1OBSRV",
+   "name": "Observatory"
+  },
+  {
+   "code": "1ONL",
+   "name": "Online"
+  },
+  {
+   "code": "1OPEB",
+   "name": "Optical Physics & Eng Bldg."
+  },
+  {
+   "code": "1OPEL",
+   "name": "Optical Physics & Eng Lab"
+  },
+  {
+   "code": "1PFSB",
+   "name": "Peabody Food Serv Bldg"
+  },
+  {
+   "code": "1PLB",
+   "name": "Pennsylvania Lounge Bld \u2013 PAR"
+  },
+  {
+   "code": "1PSL",
+   "name": "Plant Sciences Laboratory"
+  },
+  {
+   "code": "1PSYCH",
+   "name": "Psychology Building"
+  },
+  {
+   "code": "1Q1",
+   "name": "Willard Airport: Q1"
+  },
+  {
+   "code": "1Q3",
+   "name": "Willard Airport: Q3"
+  },
+  {
+   "code": "1Q4",
+   "name": "Willard Airport: Q4"
+  },
+  {
+   "code": "1Q5",
+   "name": "Willard Airport: Q5"
+  },
+  {
+   "code": "1Q7",
+   "name": "Willard Airport: Q7"
+  },
+  {
+   "code": "1Q8",
+   "name": "Willard Airport: Q8"
+  },
+  {
+   "code": "1RAL",
+   "name": "Roger Adams Laboratory"
+  },
+  {
+   "code": "1REC",
+   "name": "Rehabilitation Educ Ctr"
+  },
+  {
+   "code": "1RICHS",
+   "name": "Richmond Studio"
+  },
+  {
+   "code": "1SCD",
+   "name": "Siebel Center for Design"
+  },
+  {
+   "code": "1SCLPT",
+   "name": "Sculpture Building"
+  },
+  {
+   "code": "1SDRP",
+   "name": "Student Dining & Res Program"
+  },
+  {
+   "code": "1SFARM",
+   "name": "South Farms"
+  },
+  {
+   "code": "1SHS",
+   "name": "Speech & Hearing Science Bldg"
+  },
+  {
+   "code": "1SIEBL",
+   "name": "Siebel Center for Comp Sci"
+  },
+  {
+   "code": "1SISB",
+   "name": "School of Information Sciences Bldg"
+  },
+  {
+   "code": "1SMITH",
+   "name": "Smith Memorial Hall"
+  },
+  {
+   "code": "1SNYDR",
+   "name": "Snyder Hall"
+  },
+  {
+   "code": "1SPUR",
+   "name": "Spurlock Museum"
+  },
+  {
+   "code": "1STDM",
+   "name": "Memorial Stadium"
+  },
+  {
+   "code": "1STKPV",
+   "name": "Stock Pavilion"
+  },
+  {
+   "code": "1SWH",
+   "name": "Wymer Hall"
+  },
+  {
+   "code": "1TB",
+   "name": "Transportation Building"
+  },
+  {
+   "code": "1TH",
+   "name": "Turner Hall"
+  },
+  {
+   "code": "1THBH",
+   "name": "Temple Hoyne Buell Hall"
+  },
+  {
+   "code": "1TL",
+   "name": "Talbot Laboratory"
+  },
+  {
+   "code": "1UGLIB",
+   "name": "Undergraduate Library"
+  },
+  {
+   "code": "1UHS",
+   "name": "University High School"
+  },
+  {
+   "code": "1VANDN",
+   "name": "Van Doren Hall"
+  },
+  {
+   "code": "1VGCRP",
+   "name": "Vegetable Crops Building"
+  },
+  {
+   "code": "1VMBSB",
+   "name": "Vet Med Basic Sciences Bldg"
+  },
+  {
+   "code": "1VMCSL",
+   "name": "VetMed ClinicalSkillsLearnCntr"
+  },
+  {
+   "code": "1VMTH",
+   "name": "Veterinary Teaching Hospital"
+  },
+  {
+   "code": "1WASJA",
+   "name": "Wassaja Hall"
+  },
+  {
+   "code": "1WESTN",
+   "name": "Weston Hall"
+  },
+  {
+   "code": "1WOHLR",
+   "name": "Wohlers Hall"
+  },
+  {
+   "code": "1WRDL",
+   "name": "Wardall Hall \u2013 ISR"
+  },
+  {
+   "code": "1X0CC",
+   "name": "Des Plaines IL"
+  },
+  {
+   "code": "1XAFTB",
+   "name": "American Fed. of Teachers Bldg"
+  },
+  {
+   "code": "1XAPCC",
+   "name": "Monticello IL"
+  },
+  {
+   "code": "1XBARY",
+   "name": "Barry IL"
+  },
+  {
+   "code": "1XBB",
+   "name": "Bradley-Bourbonnais IL"
+  },
+  {
+   "code": "1XBHCE",
+   "name": "Kewanee IL"
+  },
+  {
+   "code": "1XBIS",
+   "name": "Business Innovation Services"
+  },
+  {
+   "code": "1XCARL",
+   "name": "Carle Foundation Hospital"
+  },
+  {
+   "code": "1XCBDL",
+   "name": "Carbondale IL"
+  },
+  {
+   "code": "1XCBG",
+   "name": "Chicago Botanic Garden"
+  },
+  {
+   "code": "1XCCHS",
+   "name": "Champaign IL"
+  },
+  {
+   "code": "1XCHCL",
+   "name": "Christie Clinic"
+  },
+  {
+   "code": "1XCMBI",
+   "name": "Chicago Moody Bible Institute"
+  },
+  {
+   "code": "1XCOMP",
+   "name": "Peoria IL"
+  },
+  {
+   "code": "1XCOMR",
+   "name": "U of I College of Medicine"
+  },
+  {
+   "code": "1XCSC",
+   "name": "Champaign Surgery Center"
+  },
+  {
+   "code": "1XDAN",
+   "name": "Danville IL"
+  },
+  {
+   "code": "1XDEC",
+   "name": "Decatur IL"
+  },
+  {
+   "code": "1XDP",
+   "name": "Discovery Partners Inst. CHI"
+  },
+  {
+   "code": "1XEXTS",
+   "name": "U of I Extension Office"
+  },
+  {
+   "code": "1XFEXT",
+   "name": "Vandalia IL"
+  },
+  {
+   "code": "1XGRAL",
+   "name": "Grayslake IL"
+  },
+  {
+   "code": "1XILLC",
+   "name": "Illini Center"
+  },
+  {
+   "code": "1XJJC",
+   "name": "Joliet IL"
+  },
+  {
+   "code": "1XJWCC",
+   "name": "John Wood Community College"
+  },
+  {
+   "code": "1XKC",
+   "name": "Malta IL"
+  },
+  {
+   "code": "1XKHS",
+   "name": "Kankakee IL"
+  },
+  {
+   "code": "1XLCA",
+   "name": "Canada"
+  },
+  {
+   "code": "1XLEB",
+   "name": "Lebanon IL"
+  },
+  {
+   "code": "1XLEMT",
+   "name": "Lemont IL"
+  },
+  {
+   "code": "1XLLCC",
+   "name": "Springfield IL"
+  },
+  {
+   "code": "1XLUK",
+   "name": "United Kingdom"
+  },
+  {
+   "code": "1XLUL",
+   "name": "Ullin IL"
+  },
+  {
+   "code": "1XMA",
+   "name": "Lisle IL"
+  },
+  {
+   "code": "1XMAC",
+   "name": "Macomb IL"
+  },
+  {
+   "code": "1XMAL",
+   "name": "Malta IL"
+  },
+  {
+   "code": "1XMAX",
+   "name": "West Side Technical Institute"
+  },
+  {
+   "code": "1XMES",
+   "name": "Woodridge IL"
+  },
+  {
+   "code": "1XML",
+   "name": "Malta IL"
+  },
+  {
+   "code": "1XMTVN",
+   "name": "Mount Vernon IL"
+  },
+  {
+   "code": "1XNCHS",
+   "name": "Naperville IL"
+  },
+  {
+   "code": "1XNIU",
+   "name": "Dekalb IL"
+  },
+  {
+   "code": "1XOCC",
+   "name": "Oakton Com Coll Des Plaines IL"
+  },
+  {
+   "code": "1XOSF",
+   "name": "OSF Heart of Mary"
+  },
+  {
+   "code": "1XPAV",
+   "name": "Pavilion Foundation"
+  },
+  {
+   "code": "1XPLLB",
+   "name": "Poland Lublin"
+  },
+  {
+   "code": "1XPLWS",
+   "name": "Poland Warsaw"
+  },
+  {
+   "code": "1XPRT",
+   "name": "Puerto Rican Center"
+  },
+  {
+   "code": "1XQU",
+   "name": "Quincy IL"
+  },
+  {
+   "code": "1XRLC",
+   "name": "Ina IL"
+  },
+  {
+   "code": "1XRMHS",
+   "name": "Rolling Meadows IL"
+  },
+  {
+   "code": "1XSIU",
+   "name": "SIU at Edwardsville"
+  },
+  {
+   "code": "1XU4SC",
+   "name": "Champaign IL"
+  },
+  {
+   "code": "1XUIC",
+   "name": "Chicago IL"
+  },
+  {
+   "code": "1XUIS",
+   "name": "U of I @ Springfield"
+  },
+  {
+   "code": "1XUIVF",
+   "name": "U of I Videoconference Facilit"
+  },
+  {
+   "code": "1XUOPS",
+   "name": "Univ Outreach & Public Service"
+  },
+  {
+   "code": "1XVAD",
+   "name": "VA Illiana HC \u2013 Danville"
+  },
+  {
+   "code": "1XWASH",
+   "name": "Washington DC"
+  },
+  {
+   "code": "1XZJU",
+   "name": "Zhejiang University"
+  }
+ ]
+}
