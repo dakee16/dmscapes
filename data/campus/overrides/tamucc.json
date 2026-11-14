@@ -1,0 +1,43 @@
+{
+  "halls": {
+    "miramar": {
+      "pin": [
+        -97.3191,
+        27.7115
+      ]
+    },
+    "momentum-village": {
+      "pin": [
+        -97.33809,
+        27.70407
+      ]
+    }
+  },
+  "places": {
+    "university-services-center": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "miramar -> university-center",
+        "miramar -> mary-and-jeff-bell-library",
+        "miramar -> doctor-jack-and-susie-dugan-wellness-center"
+      ],
+      "maxRatio": 4,
+      "why": "OSM maps no walkable link between the Miramar and Curlew Lot side of campus and the University Center core (the Curlew Lot's aisles and the core's footways don't join), so these walks go round by the shore path; the real walk is shorter. The fix is joining those paths in OSM."
+    }
+  ],
+  "longWalks": {
+    "momentum-village": {
+      "maxMinutes": 50,
+      "why": "Momentum Village is on TAMU-CC's Momentum Campus, across Ocean Drive and the causeway from the island campus, about 3.7 km on foot from its far buildings; students usually take the campus shuttle, but the walk is real and mapped."
+    }
+  },
+  "notes": {
+    "momentum-village": "Momentum Village, TAMU-CC's apartment-style housing at 7037 Islander Way on the Momentum Campus, across Ocean Drive from the island campus; OSM draws it as a residential area (way/598674349) with no named building, so the pin sits at that area's middle.",
+    "miramar": "Miramar University Housing, building 37 on TAMU-CC's campus map (tamucc.edu/about-us/assets/documents/tamucc-campus-map.pdf): the residence halls either side of Miramar Lane south-east of Sand Dollar Boulevard and the Curlew Lot; OSM names none of its buildings, so the pin sits mid-complex on the footway between its two halves.",
+    "university-services-center": "The University Services Center (USC, building 17 on the campus map) holds administrative offices, not classes."
+  }
+}

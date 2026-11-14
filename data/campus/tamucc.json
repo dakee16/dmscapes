@@ -1,0 +1,230 @@
+{
+ "collegeId": "tamucc",
+ "generatedAt": "2026-11-14T06:52:30.490Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-14"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/tamucc.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -97.33809,
+  27.70407,
+  -97.31852,
+  27.71644
+ ],
+ "halls": [
+  {
+   "dormId": "miramar",
+   "name": "Miramar",
+   "lng": -97.3191,
+   "lat": 27.7115,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "mary-and-jeff-bell-library",
+     "minutes": 19.3
+    },
+    "gym": {
+     "placeId": "doctor-jack-and-susie-dugan-wellness-center",
+     "minutes": 24.1
+    }
+   }
+  },
+  {
+   "dormId": "momentum-village",
+   "name": "Momentum Village",
+   "lng": -97.33809,
+   "lat": 27.70407,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "mary-and-jeff-bell-library",
+     "minutes": 41.7
+    },
+    "gym": {
+     "placeId": "doctor-jack-and-susie-dugan-wellness-center",
+     "minutes": 46
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "university-center",
+   "name": "University Center",
+   "short": "University Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.325711,
+   "lat": 27.711925,
+   "osm": "way/363658591"
+  },
+  {
+   "id": "mary-and-jeff-bell-library",
+   "name": "Mary and Jeff Bell Library",
+   "short": "Mary and Jeff Bell Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.324724,
+   "lat": 27.713569,
+   "osm": "way/172431378"
+  },
+  {
+   "id": "doctor-jack-and-susie-dugan-wellness-center",
+   "name": "Doctor Jack and Susie Dugan Wellness Center",
+   "short": "Dugan Wellness Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Dugan Wellness Center"
+   ],
+   "lng": -97.324462,
+   "lat": 27.711353,
+   "osm": "way/961745866"
+  },
+  {
+   "id": "natural-resources-center",
+   "name": "Natural Resources Center",
+   "short": "Natural Resources Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.32875,
+   "lat": 27.715064,
+   "osm": "way/363658581"
+  },
+  {
+   "id": "corpus-christi-hall",
+   "name": "Corpus Christi Hall",
+   "short": "Corpus Christi Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CCH"
+   ],
+   "lng": -97.324008,
+   "lat": 27.714636,
+   "osm": "way/400851328"
+  },
+  {
+   "id": "performing-arts-center",
+   "name": "Performing Arts Center",
+   "short": "Performing Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PAC"
+   ],
+   "lng": -97.322535,
+   "lat": 27.714341,
+   "osm": "way/363658576"
+  },
+  {
+   "id": "tidal-hall",
+   "name": "Tidal Hall",
+   "short": "Tidal Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.327101,
+   "lat": 27.715471,
+   "osm": "way/598673182"
+  },
+  {
+   "id": "michael-and-karen-oconnor-building",
+   "name": "Michael and Karen O'Connor Building",
+   "short": "Michael and Karen O'Connor Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "OCNR"
+   ],
+   "lng": -97.324764,
+   "lat": 27.714395,
+   "osm": "way/363658582"
+  },
+  {
+   "id": "harte-research-institute",
+   "name": "Harte Research Institute",
+   "short": "Harte Research Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.328778,
+   "lat": 27.716441,
+   "osm": "way/525192099"
+  },
+  {
+   "id": "classroom-east",
+   "name": "Classroom East",
+   "short": "Classroom East",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.322499,
+   "lat": 27.712815,
+   "osm": "way/172431387"
+  },
+  {
+   "id": "conrad-blucher-institute",
+   "name": "Conrad Blucher Institute",
+   "short": "Conrad Blucher Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.328821,
+   "lat": 27.714536,
+   "osm": "way/81401057"
+  },
+  {
+   "id": "modular-building-1",
+   "name": "Modular Building 1",
+   "short": "Modular Building 1",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.318521,
+   "lat": 27.712579,
+   "osm": "way/1191338535"
+  },
+  {
+   "id": "science-lab-1",
+   "name": "Science Lab 1",
+   "short": "Science Lab 1",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.329012,
+   "lat": 27.71477,
+   "osm": "way/363658587"
+  },
+  {
+   "id": "science-lab-2",
+   "name": "Science Lab 2",
+   "short": "Science Lab 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.328925,
+   "lat": 27.714272,
+   "osm": "way/363658589"
+  }
+ ]
+}
