@@ -57,7 +57,8 @@ export default function SchoolStep({
   onTypical,
   resume,
 }: {
-  onSelect: (school: SchoolSummary) => void;
+  /** source: typed search, a featured chip or the A to Z list (lib/analytics college_selected). */
+  onSelect: (school: SchoolSummary, source: "search" | "featured" | "az") => void;
   onRequest: () => void;
   onManual: (values: ManualEntryValues) => void;
   /** "No room yet?": start from the typical single (1), double (2) or triple (3). */
@@ -137,7 +138,7 @@ export default function SchoolStep({
       setActive((i) => Math.max(i - 1, 0));
     } else if (e.key === "Enter") {
       e.preventDefault();
-      if (results[active]) onSelect(results[active]);
+      if (results[active]) onSelect(results[active], q ? "search" : "az");
       else if (q) onRequest();
     } else if (e.key === "Escape" && query) {
       e.preventDefault();
@@ -237,7 +238,7 @@ export default function SchoolStep({
                 className={css.chip}
                 onClick={() => {
                   const s = getSchool(f.id);
-                  if (s) onSelect(s);
+                  if (s) onSelect(s, "featured");
                 }}
               >
                 {f.label}
@@ -352,7 +353,7 @@ export default function SchoolStep({
                   className={css.row}
                   onMouseDown={(e) => e.preventDefault()}
                   onMouseEnter={() => setActive(i)}
-                  onClick={() => onSelect(s)}
+                  onClick={() => onSelect(s, q ? "search" : "az")}
                 >
                   <span className={css.rowNum}>{String(i + 1).padStart(2, "0")}</span>
                   <span className={css.rowName}>
