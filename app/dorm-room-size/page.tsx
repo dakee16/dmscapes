@@ -12,6 +12,8 @@ import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import ScalePlan from "@/components/hall/ScalePlan";
 import SectionRail from "@/components/ds/SectionRail";
+import EmbedChart from "@/components/site/EmbedChart";
+import { dormSizeChart, embedSnippet } from "@/lib/embed";
 import { SCHOOLS } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { dormSizeStats, MAX_SQFT_PER_PERSON, MIN_SCHOOL_ROOMS, type TypeStats } from "@/lib/dorm-sizes";
@@ -240,6 +242,7 @@ export default function DormRoomSizePage() {
               </li>
             ))}
           </ul>
+          <EmbedChart snippet={embedSnippet(dormSizeChart())} />
         </div>
       </section>
 
