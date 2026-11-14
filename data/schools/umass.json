@@ -3,15 +3,19 @@
  "college_name": "University of Massachusetts Amherst",
  "city": "Amherst",
  "state": "MA",
- "aliases": ["umass","u mass"],
+ "aliases": [
+  "umass",
+  "u mass"
+ ],
  "housing_url": "https://www.umass.edu/living/",
  "data_collected": "2026-08-12",
- "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with UMass Amherst housing floor plans and student-sourced specs. UMass Amherst does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Standard blueprints broken down by residential area and room type. Traditional halls feature painted concrete block walls and standard movable furniture.",
+ "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with UMass Amherst housing floor plans and student-sourced specs. UMass Amherst does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Standard blueprints broken down by residential area and room type. Traditional halls feature painted concrete block walls and standard movable furniture. On 2026-11-14 the four group entries (traditional halls, Sylvan, Commonwealth Honors College, North Apartments) were split into the 47 residence halls listed by UMass Residential Life (residence directory at https://www.umass.edu/living/housing-options/residence-directory) plus North Apartments, kept as one complex of buildings A-D; each hall carries its style's typical room sizes and only the room types UMass lists for it, and air conditioning is set only where the hall page says so.",
  "dorms": [
   {
-   "dorm_id": "traditional-halls",
-   "dorm_name": "Traditional Residence Halls (Southwest, Central, Northeast, Orchard Hill)",
-   "hall_url": null,
+   "dorm_id": "baker-hall",
+   "dorm_name": "Baker Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/central-area#baker-hall",
+   "address": "160 Clark Hill Road, Amherst, MA 01003-9205",
    "air_conditioning": null,
    "rooms": [
     {
@@ -56,7 +60,7 @@
      "floor_plan_url": null,
      "data_source": "https://www.umass.edu/living/",
      "data_confidence": "high",
-     "notes": "11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+     "notes": "Typical size for UMass traditional-style halls, not measured for Baker Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
     },
     {
      "room_type": "double",
@@ -100,7 +104,943 @@
      "floor_plan_url": null,
      "data_source": "https://www.umass.edu/living/",
      "data_confidence": "high",
-     "notes": "15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+     "notes": "Typical size for UMass traditional-style halls, not measured for Baker Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Central Residential Area. Multi-year hall. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "brett-hall",
+   "dorm_name": "Brett Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/central-area#brett-hall",
+   "address": "151 Infirmary Way, Amherst, MA 01003-9219",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Brett Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Brett Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Central Residential Area. Multi-year hall. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "brooks-hall",
+   "dorm_name": "Brooks Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/central-area#brooks-hall",
+   "address": "160 Infirmary Way, Amherst, MA 01003-9200",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Brooks Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Brooks Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Central Residential Area. Multi-year hall. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "butterfield-hall",
+   "dorm_name": "Butterfield Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/central-area#butterfield-hall",
+   "address": "171 Clark Hill Road, Amherst, MA 01003-9206",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Butterfield Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Butterfield Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Central Residential Area. First-year hall. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "chadbourne-hall",
+   "dorm_name": "Chadbourne Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/central-area#chadbourne-hall",
+   "address": "110 Orchard Hill Drive, Amherst, MA 01003-9207",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Chadbourne Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Chadbourne Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Central Residential Area. Multi-year hall. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "gorman-hall",
+   "dorm_name": "Gorman Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/central-area#gorman-hall",
+   "address": "90 Butterfield Terrace, Amherst, MA 01003-9202",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Gorman Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Gorman Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Central Residential Area. First-year hall. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "greenough-hall",
+   "dorm_name": "Greenough Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/central-area#greenough-hall",
+   "address": "120 Orchard Hill Drive, Amherst, MA 01003-9224",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Greenough Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Greenough Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Central Residential Area. Multi-year hall. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "van-meter-hall",
+   "dorm_name": "Van Meter Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/central-area#van-meter-hall",
+   "address": "180 Clark Hill Road, Amherst, MA 01003-9223",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Van Meter Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Van Meter Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Central Residential Area. First-year hall. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "wheeler-hall",
+   "dorm_name": "Wheeler Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/central-area#wheeler-hall",
+   "address": "141 Thatcher Road, Amherst, MA 01003-9201",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Wheeler Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Wheeler Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Central Residential Area. First-year hall. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "crabtree-hall",
+   "dorm_name": "Crabtree Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/northeast-area#crabtree-hall",
+   "address": "17 Eastman Lane, Amherst, MA 01003-9226",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Crabtree Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Crabtree Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Northeast Residential Area. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "dwight-hall",
+   "dorm_name": "Dwight Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/northeast-area#dwight-hall",
+   "address": "41 Eastman Lane, Amherst, MA 01003-9228",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Dwight Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
     },
     {
      "room_type": "triple",
@@ -144,15 +1084,2750 @@
      "floor_plan_url": null,
      "data_source": "https://www.umass.edu/living/",
      "data_confidence": "high",
-     "notes": "16.0 x 14.0 ft; converted corner or expanded rooms with bunked/lofted beds."
+     "notes": "Typical size for UMass traditional-style halls, not measured for Dwight Hall. 16.0 x 14.0 ft; converted corner or expanded rooms with bunked/lofted beds."
     }
    ],
-   "notes": "Painted concrete block walls and standard movable furniture layouts."
+   "notes": "Northeast Residential Area. Room types per the UMass residence directory: Double, Triple. Painted concrete block walls and standard movable furniture layouts."
   },
   {
-   "dorm_id": "sylvan-suites",
-   "dorm_name": "Sylvan Residential Area (McNamara, Brown, Cashin)",
-   "hall_url": null,
+   "dorm_id": "hamlin-hall",
+   "dorm_name": "Hamlin Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/northeast-area#hamlin-hall",
+   "address": "739 North Pleasant Street, Amherst, MA 01003-9211",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Hamlin Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Hamlin Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Northeast Residential Area. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "johnson-hall",
+   "dorm_name": "Johnson Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/northeast-area#johnson-hall",
+   "address": "380 Thatcher Road, Amherst, MA 01003-9359",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Johnson Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Johnson Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple / Economy Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 224,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Johnson Hall. 16.0 x 14.0 ft; converted corner or expanded rooms with bunked/lofted beds."
+    }
+   ],
+   "notes": "Northeast Residential Area. Room types per the UMass residence directory: Single, Double, Triple. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "knowlton-hall",
+   "dorm_name": "Knowlton Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/northeast-area#knowlton-hall",
+   "address": "691 North Pleasant Street, Amherst, MA 01003-9212",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Knowlton Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Knowlton Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple / Economy Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 224,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Knowlton Hall. 16.0 x 14.0 ft; converted corner or expanded rooms with bunked/lofted beds."
+    }
+   ],
+   "notes": "Northeast Residential Area. Room types per the UMass residence directory: Single, Double, Triple. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "leach-hall",
+   "dorm_name": "Leach Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/northeast-area#leach-hall",
+   "address": "21 Eastman Lane, Amherst, MA 01003-9227",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Leach Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Leach Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Northeast Residential Area. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "lewis-hall",
+   "dorm_name": "Lewis Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/northeast-area#lewis-hall",
+   "address": "340 Thatcher Road, Amherst, MA 01003-9359",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Lewis Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Lewis Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Northeast Residential Area. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "mary-lyon-hall",
+   "dorm_name": "Mary Lyon Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/northeast-area#mary-lyon-hall",
+   "address": "43 Eastman Lane, Amherst, MA 01003-9208",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Mary Lyon Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Northeast Residential Area. Room types per the UMass residence directory: Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "thatcher-hall",
+   "dorm_name": "Thatcher Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/northeast-area#thatcher-hall",
+   "address": "300 Thatcher Road, Amherst, MA 01003-9359",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Thatcher Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Thatcher Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Northeast Residential Area. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "dickinson-house",
+   "dorm_name": "Dickinson House",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/orchard-hill-area#dickinson-house",
+   "address": "151 Orchard Hill Drive, Amherst, MA 01003-9222",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Dickinson House. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Orchard Hill Residential Area. Room types per the UMass residence directory: Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "field-hall",
+   "dorm_name": "Field Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/orchard-hill-area#field-hall",
+   "address": "171 Orchard Hill Drive, Amherst, MA 01003-9225",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Field Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Orchard Hill Residential Area. Room types per the UMass residence directory: Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "grayson-hall",
+   "dorm_name": "Grayson Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/orchard-hill-area#grayson-hall",
+   "address": "161 Orchard Hill Drive, Amherst, MA 01003-9221",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Grayson Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Orchard Hill Residential Area. Room types per the UMass residence directory: Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "webster-hall",
+   "dorm_name": "Webster Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/orchard-hill-area#webster-hall",
+   "address": "141 Orchard Hill Drive, Amherst, MA 01003-9204",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Webster Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Orchard Hill Residential Area. Room types per the UMass residence directory: Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "cance-hall",
+   "dorm_name": "Cance Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#cance-hall",
+   "address": "191 Fearing Street, Amherst, MA 01003-9218",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Cance Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple / Economy Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 224,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Cance Hall. 16.0 x 14.0 ft; converted corner or expanded rooms with bunked/lofted beds."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Double, Triple. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "coolidge-hall",
+   "dorm_name": "Coolidge Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#coolidge-hall",
+   "address": "630 Massachusetts Avenue, Amherst, MA 01003-9239",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Coolidge Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Coolidge Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Single, Double, Z-Room. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "crampton-hall",
+   "dorm_name": "Crampton Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#crampton-hall",
+   "address": "256 Sunset Avenue, Amherst, MA 01003-9232",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Crampton Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Crampton Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "emerson-hall",
+   "dorm_name": "Emerson Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#emerson-hall",
+   "address": "151 Southwest Circle, Amherst, MA 01003-9237",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Emerson Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Emerson Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple / Economy Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 224,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Emerson Hall. 16.0 x 14.0 ft; converted corner or expanded rooms with bunked/lofted beds."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Single, Double, Triple, Z-Room. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "james-hall",
+   "dorm_name": "James Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#james-hall",
+   "address": "660 Massachusetts Avenue, Amherst, MA 01003-9217",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for James Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for James Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple / Economy Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 224,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for James Hall. 16.0 x 14.0 ft; converted corner or expanded rooms with bunked/lofted beds."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Single, Double, Triple, Z-Room. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "john-adams-hall",
+   "dorm_name": "John Adams Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#john-adams-hall",
+   "address": "161 Fearing Street, Amherst, MA 01003-9234",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for John Adams Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for John Adams Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple / Economy Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 224,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for John Adams Hall. 16.0 x 14.0 ft; converted corner or expanded rooms with bunked/lofted beds."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Single, Double, Triple, Z-Room. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "john-quincy-adams-hall",
+   "dorm_name": "John Quincy Adams Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#john-quincy-adams-hall",
+   "address": "171 Fearing Street, Amherst, MA 01003-9235",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for John Quincy Adams Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for John Quincy Adams Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Single, Double, Z-Room. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "kennedy-hall",
+   "dorm_name": "Kennedy Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#kennedy-hall",
+   "address": "620 Massachusetts Avenue, Amherst, MA 01003-9238",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Kennedy Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Kennedy Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Single, Double, Z-Room. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "mackimmie-hall",
+   "dorm_name": "MacKimmie Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#mackimmie-hall",
+   "address": "230 Sunset Avenue, Amherst, MA 01003-9231",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for MacKimmie Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for MacKimmie Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "melville-hall",
+   "dorm_name": "Melville Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#melville-hall",
+   "address": "650 Massachusetts Avenue, Amherst, MA 01003-9241",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Melville Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Melville Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple / Economy Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 224,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Melville Hall. 16.0 x 14.0 ft; converted corner or expanded rooms with bunked/lofted beds."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Single, Double, Triple, Z-Room. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "moore-hall",
+   "dorm_name": "Moore Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#moore-hall",
+   "address": "111 Southwest Circle, Amherst, MA 01003-9216",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Moore Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple / Economy Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 224,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Moore Hall. 16.0 x 14.0 ft; converted corner or expanded rooms with bunked/lofted beds."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Double, Triple. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "patterson-hall",
+   "dorm_name": "Patterson Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#patterson-hall",
+   "address": "204 Sunset Avenue, Amherst, MA 01003-9213",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Patterson Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Patterson Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "pierpont-hall",
+   "dorm_name": "Pierpont Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#pierpont-hall",
+   "address": "201 Fearing Street, Amherst, MA 01003-9215",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Pierpont Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple / Economy Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 224,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Pierpont Hall. 16.0 x 14.0 ft; converted corner or expanded rooms with bunked/lofted beds."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Double, Triple. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "prince-hall",
+   "dorm_name": "Prince Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#prince-hall",
+   "address": "286 Sunset Avenue, Amherst, MA 01003-9233",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Prince Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Prince Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Single, Double. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "thoreau-hall",
+   "dorm_name": "Thoreau Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#thoreau-hall",
+   "address": "640 Massachusetts Avenue, Amherst, MA 01003-9240",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Thoreau Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Thoreau Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple / Economy Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 224,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Thoreau Hall. 16.0 x 14.0 ft; converted corner or expanded rooms with bunked/lofted beds."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Single, Double, Triple, Z-Room. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "washington-hall",
+   "dorm_name": "Washington Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area#washington-hall",
+   "address": "181 Fearing Street, Amherst, MA 01003-9236",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Washington Hall. 11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for UMass traditional-style halls, not measured for Washington Hall. 15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    }
+   ],
+   "notes": "Southwest Residential Area. Room types per the UMass residence directory: Single, Double, Z-Room. Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "brown-hall",
+   "dorm_name": "Brown Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/suites/sylvan-area#brown-hall",
+   "address": "92 Eastman Lane, Amherst, MA 01003-9210",
    "air_conditioning": null,
    "rooms": [
     {
@@ -197,7 +3872,7 @@
      "floor_plan_url": null,
      "data_source": "https://www.umass.edu/living/",
      "data_confidence": "high",
-     "notes": null
+     "notes": "Typical size for Sylvan suite-style halls, not measured for Brown Hall."
     },
     {
      "room_type": "double",
@@ -241,16 +3916,213 @@
      "floor_plan_url": null,
      "data_source": "https://www.umass.edu/living/",
      "data_confidence": "high",
-     "notes": null
+     "notes": "Typical size for Sylvan suite-style halls, not measured for Brown Hall."
     }
    ],
-   "notes": "6-person or 8-person suites sharing a common living area and private suite bathroom; a 15 x 12 ft common living room per suite."
+   "notes": "Sylvan Residential Area. Multi-year hall. The hall page says each suite mixes single and double rooms around a shared bathroom and living room; the residence directory lists only \"Suite - Single\". Room types per the UMass residence directory: Suite - Single. 6-person or 8-person suites sharing a common living area and private suite bathroom; a 15 x 12 ft common living room per suite."
   },
   {
-   "dorm_id": "chcrc-honors",
-   "dorm_name": "Commonwealth Honors College (Elm, Maple, Birch, Linden, Oak, Sycamore)",
-   "hall_url": null,
+   "dorm_id": "cashin-hall",
+   "dorm_name": "Cashin Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/suites/sylvan-area#cashin-hall",
+   "address": "112 Eastman Lane, Amherst, MA 01003-9220",
    "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Suite Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Sylvan suite-style halls, not measured for Cashin Hall."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Suite Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 161,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Sylvan suite-style halls, not measured for Cashin Hall."
+    }
+   ],
+   "notes": "Sylvan Residential Area. Multi-year hall. The hall page says each suite mixes single and double rooms around a shared bathroom and living room; the residence directory lists only \"Suite - Single\". Room types per the UMass residence directory: Suite - Single. 6-person or 8-person suites sharing a common living area and private suite bathroom; a 15 x 12 ft common living room per suite."
+  },
+  {
+   "dorm_id": "mcnamara-hall",
+   "dorm_name": "McNamara Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/suites/sylvan-area#mcnamara-hall",
+   "address": "102 Eastman Lane, Amherst, MA 01003-9203",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Suite Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Sylvan suite-style halls, not measured for McNamara Hall."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Suite Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 161,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Sylvan suite-style halls, not measured for McNamara Hall."
+    }
+   ],
+   "notes": "Sylvan Residential Area. Multi-year hall. The hall page says each suite mixes single and double rooms around a shared bathroom and living room; the residence directory lists only \"Suite - Single\". Room types per the UMass residence directory: Suite - Single. 6-person or 8-person suites sharing a common living area and private suite bathroom; a 15 x 12 ft common living room per suite."
+  },
+  {
+   "dorm_id": "birch-hall",
+   "dorm_name": "Birch Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/chcrc#birch-hall",
+   "address": "153 Commonwealth Avenue, Amherst, MA 01003-9253",
+   "air_conditioning": true,
    "rooms": [
     {
      "room_type": "single",
@@ -294,7 +4166,7 @@
      "floor_plan_url": null,
      "data_source": "https://www.umass.edu/living/",
      "data_confidence": "high",
-     "notes": null
+     "notes": "Typical size for Commonwealth Honors College Residential Community halls, not measured for Birch Hall."
     },
     {
      "room_type": "double",
@@ -338,16 +4210,507 @@
      "floor_plan_url": null,
      "data_source": "https://www.umass.edu/living/",
      "data_confidence": "high",
-     "notes": null
+     "notes": "Typical size for Commonwealth Honors College Residential Community halls, not measured for Birch Hall."
     }
    ],
-   "notes": "Newer premium suite- and apartment-style spaces with integrated air conditioning; 16 x 12 ft suite living rooms."
+   "notes": "Commonwealth Honors College Residential Community (CHCRC). Multi-year hall. Room types per the UMass residence directory: Suite - Single, Double; Apartment - Single, Double. Newer premium suite- and apartment-style spaces with integrated air conditioning; 16 x 12 ft suite living rooms."
+  },
+  {
+   "dorm_id": "elm-hall",
+   "dorm_name": "Elm Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/chcrc#elm-hall",
+   "address": "145 Commonwealth Avenue, Amherst, MA 01003-9253",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Honors Suite Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 9.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 110,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Commonwealth Honors College Residential Community halls, not measured for Elm Hall."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Honors Suite Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 178,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Commonwealth Honors College Residential Community halls, not measured for Elm Hall."
+    }
+   ],
+   "notes": "Commonwealth Honors College Residential Community (CHCRC). Multi-year hall. Room types per the UMass residence directory: Suite - Single, Double; Apartment - Single, Double. Newer premium suite- and apartment-style spaces with integrated air conditioning; 16 x 12 ft suite living rooms."
+  },
+  {
+   "dorm_id": "linden-hall",
+   "dorm_name": "Linden Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/chcrc#linden-hall",
+   "address": "141 Commonwealth Avenue, Amherst, MA 01003-9253",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Honors Suite Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 9.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 110,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Commonwealth Honors College Residential Community halls, not measured for Linden Hall."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Honors Suite Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 178,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Commonwealth Honors College Residential Community halls, not measured for Linden Hall."
+    }
+   ],
+   "notes": "Commonwealth Honors College Residential Community (CHCRC). Multi-year hall. Room types per the UMass residence directory: Suite - Single, Double; Apartment - Single, Double. Newer premium suite- and apartment-style spaces with integrated air conditioning; 16 x 12 ft suite living rooms."
+  },
+  {
+   "dorm_id": "maple-hall",
+   "dorm_name": "Maple Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/chcrc#maple-hall",
+   "address": "151 Commonwealth Avenue, Amherst, MA 01003-9253",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Honors Suite Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 9.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 110,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Commonwealth Honors College Residential Community halls, not measured for Maple Hall."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Honors Suite Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 178,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Commonwealth Honors College Residential Community halls, not measured for Maple Hall."
+    }
+   ],
+   "notes": "Commonwealth Honors College Residential Community (CHCRC). Multi-year hall. Room types per the UMass residence directory: Suite - Single, Double; Apartment - Single, Double. Newer premium suite- and apartment-style spaces with integrated air conditioning; 16 x 12 ft suite living rooms."
+  },
+  {
+   "dorm_id": "oak-hall",
+   "dorm_name": "Oak Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/chcrc#oak-hall",
+   "address": "143 Commonwealth Avenue, Amherst, MA 01003-9253",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Honors Suite Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 9.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 110,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Commonwealth Honors College Residential Community halls, not measured for Oak Hall."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Honors Suite Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 178,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Commonwealth Honors College Residential Community halls, not measured for Oak Hall."
+    }
+   ],
+   "notes": "Commonwealth Honors College Residential Community (CHCRC). First-year hall. UMass lists Oak and Sycamore as the CHCRC's traditional-style first-year halls; rooms use the CHCRC typical sizes. Room types per the UMass residence directory: Suite - Single, Double; Apartment - Single, Double. Newer premium suite- and apartment-style spaces with integrated air conditioning; 16 x 12 ft suite living rooms."
+  },
+  {
+   "dorm_id": "sycamore-hall",
+   "dorm_name": "Sycamore Hall",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/chcrc#sycamore-hall",
+   "address": "159 Commonwealth Avenue, Amherst, MA 01003-9253",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Honors Suite Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 9.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 110,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Commonwealth Honors College Residential Community halls, not measured for Sycamore Hall."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Honors Suite Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 178,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "Typical size for Commonwealth Honors College Residential Community halls, not measured for Sycamore Hall."
+    }
+   ],
+   "notes": "Commonwealth Honors College Residential Community (CHCRC). First-year hall. UMass lists Oak and Sycamore as the CHCRC's traditional-style first-year halls; rooms use the CHCRC typical sizes. Room types per the UMass residence directory: Single, Double. Newer premium suite- and apartment-style spaces with integrated air conditioning; 16 x 12 ft suite living rooms."
   },
   {
    "dorm_id": "north-apartments",
-   "dorm_name": "North Apartments (Buildings A, B, C, D)",
-   "hall_url": null,
-   "air_conditioning": null,
+   "dorm_name": "North Apartments",
+   "hall_url": "https://www.umass.edu/living/housing-options/residence-directory/apartments/north-apartments",
+   "address": "52-58 Eastman Lane, Amherst, MA 01003",
+   "air_conditioning": true,
    "rooms": [
     {
      "room_type": "single",
@@ -391,10 +4754,10 @@
      "floor_plan_url": null,
      "data_source": "https://www.umass.edu/living/",
      "data_confidence": "high",
-     "notes": "4-bedroom single-occupancy layout with a shared 12.5 x 11 ft kitchen/living room and full kitchen."
+     "notes": "Typical size for the North Apartments. 4-bedroom single-occupancy layout with a shared 12.5 x 11 ft kitchen/living room and full kitchen."
     }
    ],
-   "notes": "4-bedroom single-occupancy apartments; bedrooms modeled individually."
+   "notes": "North Residential Area apartments: one complex of four five-story buildings, North Apartment A (56 Eastman Lane), B (58), C (54) and D (52), multi-year for juniors and seniors, fully air conditioned. 4-bedroom single-occupancy apartments; bedrooms modeled individually."
   }
  ]
 }
