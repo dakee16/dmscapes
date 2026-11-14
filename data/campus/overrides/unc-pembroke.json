@@ -1,0 +1,58 @@
+{
+  "places": {
+    "chavis-university-center": {
+      "kind": "dining"
+    },
+    "chancellors-residence": {
+      "hide": true
+    },
+    "brave-health-center": {
+      "hide": true
+    },
+    "braves-station-aux-services-building": {
+      "hide": true
+    },
+    "oxendine-administration-bldg": {
+      "hide": true
+    },
+    "lumbee-hall": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "chavis-university-center": "The James B. Chavis University Center holds UNCP's dining hall (uncp.edu/campus-life/dining); its name doesn't say dining.",
+    "chancellors-residence": "The chancellor's house (OSM historic=manor), not somewhere classes happen.",
+    "brave-health-center": "The student health clinic (OSM amenity=clinic), not somewhere classes happen.",
+    "braves-station-aux-services-building": "Auxiliary Services (campus card, mail, bookstore operations), a service building rather than a class building.",
+    "oxendine-administration-bldg": "The administration building, offices rather than classrooms (uncp.edu campus map).",
+    "lumbee-hall": "Lumbee Hall holds administrative offices (chancellor, admissions, financial aid, registrar), not classrooms (uncp.edu campus map)."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "pine-hall -> chavis-university-center",
+        "pine-hall -> oxendine-science-building",
+        "pine-hall -> givens-performing-arts-center",
+        "pine-hall -> livermore-library",
+        "pine-hall -> old-main",
+        "pine-hall -> d-f-lowry-building",
+        "pine-hall -> locklear-hall",
+        "pine-hall -> the-annex",
+        "pine-hall -> jacobs-hall",
+        "pine-hall -> hickory-hall",
+        "oak-hall -> the-annex",
+        "north-hall -> locklear-hall",
+        "belk-hall -> locklear-hall"
+      ],
+      "maxRatio": 4,
+      "why": "OSM maps no campus footpaths at UNCP, only streets and parking aisles, and no doors on these halls, so walks from the west-side halls (Pine, Oak, North, Belk) leave by the parking aisles beside them and go round by Faculty Row and the service road north of the halls instead of across the quad."
+    },
+    {
+      "pairs": [
+        "cypress-hall -> pinchbeck-building"
+      ],
+      "maxRatio": 4,
+      "why": "No mapped path joins Cypress Hall to the Pinchbeck Building next to it; the walk goes out to the parking aisles east of them and back."
+    }
+  ]
+}
