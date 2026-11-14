@@ -112,6 +112,9 @@ export type AnalyticsEvent =
   | "creator_applied"
   | "profile_photo_set";
 
+/** The GA4 property components/site/GoogleAnalytics loads. */
+export const GA_ID = "G-DSRNH55V8B";
+
 /** Pages kept out of analytics: workspace, invite and login URLs can carry room ids and invite tokens. */
 export const PRIVATE_PATH = /^\/(rooms|login|account|report)(\/|$)/;
 
@@ -170,7 +173,33 @@ if (typeof window !== "undefined") {
       posthog.opt_out_capturing();
       clearAnalyticsStorage();
     }
+    flushKeyEvents();
   });
+}
+
+type GaWindow = Window & { gtag?: (...args: unknown[]) => void } & Record<string, unknown>;
+const keyEvents: [string, Record<string, unknown>][] = [];
+
+/**
+ * GA4 key events (marked as key events in GA4 Admin), on the same consent as
+ * track(): sent with gtag once analytics is allowed and gtag has loaded
+ * (GoogleAnalytics flushes on load), dropped on Reject. GA sends nothing on a
+ * private page, or after one until the next full load, so a key event raised
+ * then waits and goes with the page. purchase_completed, whose return page is
+ * private, goes from the Stripe webhook instead (lib/purchase-analytics).
+ */
+export function trackKeyEvent(name: "plan_completed" | "signup_completed", params: Record<string, unknown> = {}): void {
+  if (typeof window === "undefined") return;
+  if (keyEvents.length < 10) keyEvents.push([name, params]);
+  flushKeyEvents();
+}
+
+export function flushKeyEvents(): void {
+  const allowed = analyticsAllowed();
+  if (allowed === false) keyEvents.length = 0;
+  const w = window as unknown as GaWindow;
+  if (!allowed || typeof w.gtag !== "function" || w[`ga-disable-${GA_ID}`]) return;
+  for (const [name, params] of keyEvents.splice(0)) w.gtag("event", name, params);
 }
 
 /**
@@ -198,15 +227,25 @@ export function trackSignup(user: {
   } catch {
     return; // storage blocked: no flag, so don't risk counting it twice
   }
-  track("signup_completed", { method: user.app_metadata?.provider === "google" ? "google" : "email" });
+  const method = user.app_metadata?.provider === "google" ? "google" : "email";
+  track("signup_completed", { method });
+  trackKeyEvent("signup_completed", { method });
 }
 
 /**
- * Ids the Stripe webhook sends purchase_completed under (lib/purchase-analytics):
- * PostHog's distinct id, and only while analytics is allowed for this visitor.
+ * Ids the Stripe webhook sends purchase_completed under (lib/purchase-analytics),
+ * only while analytics is allowed for this visitor: PostHog's distinct id, and
+ * GA's client and session ids from its cookies (_ga is GA1.1.<client id>;
+ * _ga_<id> is GS1.1.<session id>.… or GS2.1.s<session id>$…).
  */
-export function checkoutAnalyticsIds(): { ph?: string } {
-  return ensureInit() ? { ph: posthog.get_distinct_id() } : {};
+export function checkoutAnalyticsIds(): { ph?: string; ga?: string; gs?: string } {
+  if (analyticsAllowed() !== true) return {};
+  const cookie = (name: string) => document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`))?.[1] ?? "";
+  return {
+    ph: ensureInit() ? posthog.get_distinct_id() : undefined,
+    ga: /^GA\d\.\d\.(\d+\.\d+)$/.exec(cookie("_ga"))?.[1],
+    gs: /^GS\d\.\d\.s?(\d+)/.exec(cookie(`_ga_${GA_ID.slice(2)}`))?.[1],
+  };
 }
 
 let pageSession: string | null = null;

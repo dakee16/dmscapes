@@ -219,8 +219,10 @@ test("Checkout cannot sell upgrades using a missing or unknown profile", async (
 test("Checkout keeps checked analytics ids on the session only", async () => {
   let created;
   const stripe = { checkout: { sessions: { create: async args => { created = args; return { url: "https://checkout.stripe.com/test" }; } } } };
-  await routes(database("free"), { stripe }).checkout(request({ type: "plus", analytics: { ph: "0193a1b2-c3d4-7e5f-8a9b-0c1d2e3f4a5b" } }));
+  await routes(database("free"), { stripe }).checkout(request({ type: "plus", analytics: { ph: "0193a1b2-c3d4-7e5f-8a9b-0c1d2e3f4a5b", ga: "1234567890.1700000000", gs: "1700000000" } }));
   assert.equal(created.metadata.ph_distinct_id, "0193a1b2-c3d4-7e5f-8a9b-0c1d2e3f4a5b");
+  assert.equal(created.metadata.ga_client_id, "1234567890.1700000000");
+  assert.equal(created.metadata.ga_session_id, "1700000000");
   assert.equal(created.invoice_creation.invoice_data.metadata.ph_distinct_id, undefined);
   assert.equal(created.payment_intent_data.metadata.ph_distinct_id, undefined);
   for (const analytics of [{ ph: "<script>" }, { ph: "x".repeat(101) }, { ph: 42 }, null, "ph"]) {
@@ -269,7 +271,7 @@ test("Webhook preserves an in-flight purchase and retries a failed grant", async
 });
 
 test("Webhook sends purchase_completed after its response, once, and never fails on it", async t => {
-  const keys = ["STRIPE_WEBHOOK_SECRET", "NEXT_PUBLIC_POSTHOG_KEY", "NEXT_PUBLIC_POSTHOG_HOST"];
+  const keys = ["STRIPE_WEBHOOK_SECRET", "NEXT_PUBLIC_POSTHOG_KEY", "NEXT_PUBLIC_POSTHOG_HOST", "GA4_API_SECRET"];
   const env = Object.fromEntries(keys.map(k => [k, process.env[k]]));
   const originalFetch = global.fetch;
   t.after(() => {
@@ -279,6 +281,7 @@ test("Webhook sends purchase_completed after its response, once, and never fails
   process.env.STRIPE_WEBHOOK_SECRET = "test-only";
   process.env.NEXT_PUBLIC_POSTHOG_KEY = "phc_test";
   delete process.env.NEXT_PUBLIC_POSTHOG_HOST;
+  delete process.env.GA4_API_SECRET;
   const sent = [];
   global.fetch = async (url, init) => { sent.push([url, JSON.parse(init.body)]); return new Response(null, { status: 200 }); };
   afterTasks.length = 0; // earlier webhook tests' captures (no distinct id) aren't this test's
@@ -300,8 +303,16 @@ test("Webhook sends purchase_completed after its response, once, and never fails
   await webhookFixture(database("free"), { id: "cs_nokey", payment_status: "paid", amount_total: 499, currency: "usd", metadata })();
   await run();
   assert.equal(sent.length, 1);
-  // PostHog down or slow: the purchase is still granted and the capture resolves quietly.
+  // PostHog or GA down: the purchase is still granted and the capture resolves quietly.
+  // GA4 too, once its secret is set, under the buyer's GA client and session.
   process.env.NEXT_PUBLIC_POSTHOG_KEY = "phc_test";
+  process.env.GA4_API_SECRET = "mp secret";
+  await webhookFixture(database("plus", 1), { id: "cs_ga", payment_status: "paid", amount_total: 299, currency: "usd", metadata: { ...metadata, purchase: "recharge", ga_client_id: "123.456", ga_session_id: "789" } })();
+  await run();
+  assert.equal(sent.length, 3);
+  assert.equal(sent[1][1].properties.plan, "recharge");
+  assert.equal(sent[2][0], "https://www.google-analytics.com/mp/collect?measurement_id=G-DSRNH55V8B&api_secret=mp%20secret");
+  assert.deepEqual(sent[2][1], { client_id: "123.456", events: [{ name: "purchase_completed", params: { plan: "recharge", value: 2.99, currency: "USD", transaction_id: "cs_ga", session_id: "789", engagement_time_msec: 1 } }] });
   global.fetch = async () => { throw new Error("offline"); };
   const down = database("free");
   assert.equal((await webhookFixture(down, { id: "cs_down", payment_status: "paid", amount_total: 1499, currency: "usd", metadata: { ...metadata, purchase: "pro", credit_amount: "10" } })()).status, 200);

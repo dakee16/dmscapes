@@ -1,12 +1,17 @@
 import type Stripe from "stripe";
 
+/** The GA4 property (lib/analytics GA_ID, a client module). */
+const GA_ID = "G-DSRNH55V8B";
+
 /**
  * purchase_completed for a paid checkout, sent from the Stripe webhook so it
  * counts even though the page buyers return to (/account) is kept out of
- * analytics. PostHog gets it under the buyer's own distinct id, which
- * lib/checkout puts in the session metadata only when the buyer allows
- * analytics; no id or no key skips it. Never throws, and gives up after a
- * few seconds, so the webhook's answer to Stripe never depends on it.
+ * analytics. PostHog gets it under the buyer's own distinct id, and GA4 (a
+ * key event) through the Measurement Protocol under their GA client and
+ * session ids; lib/checkout puts those ids in the session metadata only when
+ * the buyer allows analytics. No id, key or GA4_API_SECRET skips that half.
+ * Never throws, and gives up after a few seconds, so the webhook's answer to
+ * Stripe never depends on it.
  */
 export async function capturePurchase(
   session: Stripe.Checkout.Session,
@@ -40,6 +45,28 @@ export async function capturePurchase(
         event: "purchase_completed",
         distinct_id: md.ph_distinct_id,
         properties: { plan, amount, currency },
+      })
+    );
+  }
+  const secret = process.env.GA4_API_SECRET;
+  if (secret && md.ga_client_id) {
+    jobs.push(
+      post(`https://www.google-analytics.com/mp/collect?measurement_id=${GA_ID}&api_secret=${encodeURIComponent(secret)}`, {
+        client_id: md.ga_client_id,
+        events: [
+          {
+            name: "purchase_completed",
+            params: {
+              plan,
+              value: amount,
+              currency,
+              transaction_id: session.id,
+              // Joins the buyer's GA session, so the key event keeps its source.
+              ...(md.ga_session_id ? { session_id: md.ga_session_id } : {}),
+              engagement_time_msec: 1,
+            },
+          },
+        ],
       })
     );
   }

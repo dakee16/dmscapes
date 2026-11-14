@@ -86,7 +86,7 @@ export async function POST(request: Request) {
     if (typeof body.quantity === "number" && Number.isFinite(body.quantity)) {
       quantity = Math.floor(body.quantity);
     }
-    for (const [from, to] of [["ph", "ph_distinct_id"]] as const) {
+    for (const [from, to] of [["ph", "ph_distinct_id"], ["ga", "ga_client_id"], ["gs", "ga_session_id"]] as const) {
       const id = body.analytics?.[from];
       if (typeof id === "string" && /^[\w.-]{1,100}$/.test(id)) tracking[to] = id;
     }

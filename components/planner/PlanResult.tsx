@@ -16,7 +16,7 @@ import BrandLoader from "@/components/site/BrandLoader";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
-import { track } from "@/lib/analytics";
+import { track, trackKeyEvent } from "@/lib/analytics";
 import { roomTypeLabel } from "@/lib/format";
 import { formatDims } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
@@ -199,6 +199,7 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
   useEffect(() => {
     if (hydrated && room && style && !trackedRef.current) {
       trackedRef.current = true;
+      trackKeyEvent("plan_completed"); // design_completed, as a GA4 key event
       track("design_completed");
     }
   }, [hydrated, room, style]);
