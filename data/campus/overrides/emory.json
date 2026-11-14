@@ -194,6 +194,12 @@
     },
     "emory-student-center": {
       "kind": "dining"
+    },
+    "am": {
+      "hide": true
+    },
+    "idb": {
+      "hide": true
     }
   },
   "notes": {
@@ -261,7 +267,9 @@
     "the-depot": "A student pub, not a dining hall or class building.",
     "mcdonough-field-stage": "Athletic field building, not a class building or student gym.",
     "kaminsky-park-field-house": "Athletic field building, not a class building or student gym.",
-    "emory-student-center": "Emory's main dining hall, Dobbs Common Table, is in the Emory Student Center; its name doesn't say dining."
+    "emory-student-center": "Emory's main dining hall, Dobbs Common Table, is in the Emory Student Center; its name doesn't say dining.",
+    "am": "Sigma Alpha Mu, a fraternity house, not a class building.",
+    "idb": "OSM gives this building only a number or placeholder name and no use, and no official list names it, so it can't be told apart as a class building."
   },
   "detours": [
     {

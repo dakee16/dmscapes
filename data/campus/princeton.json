@@ -1,6 +1,6 @@
 {
  "collegeId": "princeton",
- "generatedAt": "2026-11-13T21:36:31.154Z",
+ "generatedAt": "2026-11-14T06:52:49.064Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -1088,17 +1088,6 @@
    "osm": "way/40718026"
   },
   {
-   "id": "1",
-   "name": "#1",
-   "short": "#1",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [],
-   "lng": -74.653747,
-   "lat": 40.340127,
-   "osm": "way/1289748938"
-  },
-  {
    "id": "4-mercer-street",
    "name": "4 Mercer Street",
    "short": "4 Mercer Street",
@@ -1165,28 +1154,6 @@
    "lng": -74.658937,
    "lat": 40.349386,
    "osm": "way/141233380"
-  },
-  {
-   "id": "2",
-   "name": "#2",
-   "short": "#2",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [],
-   "lng": -74.653562,
-   "lat": 40.33989,
-   "osm": "way/1289748936"
-  },
-  {
-   "id": "princeton",
-   "name": "Princeton",
-   "short": "Princeton",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [],
-   "lng": -74.65902,
-   "lat": 40.342096,
-   "osm": "way/429748782"
   },
   {
    "id": "175-nassau-street",

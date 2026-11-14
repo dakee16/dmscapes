@@ -1,6 +1,6 @@
 {
  "collegeId": "uc-berkeley",
- "generatedAt": "2026-11-09T18:17:25.448Z",
+ "generatedAt": "2026-11-14T06:52:52.158Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -1238,19 +1238,6 @@
    "lng": -122.254279,
    "lat": 37.871816,
    "osm": "way/1371942534"
-  },
-  {
-   "id": "building-21",
-   "name": "Building 21",
-   "short": "Building 21",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [
-    "Archives"
-   ],
-   "lng": -122.246502,
-   "lat": 37.864111,
-   "osm": "way/128467247"
   },
   {
    "id": "obrien-hall",

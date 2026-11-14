@@ -1,6 +1,6 @@
 {
  "collegeId": "umd",
- "generatedAt": "2026-11-08T02:07:37.424Z",
+ "generatedAt": "2026-11-14T06:52:53.820Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -1952,17 +1952,6 @@
    "lng": -76.942758,
    "lat": 38.983939,
    "osm": "way/23579330"
-  },
-  {
-   "id": "building-011",
-   "name": "Building 011",
-   "short": "Building 011",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [],
-   "lng": -76.933628,
-   "lat": 38.986151,
-   "osm": "way/24941329"
   },
   {
    "id": "nyumburu-cultural-center",

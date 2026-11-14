@@ -20,6 +20,12 @@
     }
   },
   "places": {
+    "1": {
+      "hide": true
+    },
+    "2": {
+      "hide": true
+    },
     "8": {
       "hide": true
     },
@@ -154,9 +160,14 @@
     },
     "bloomberg-hall": {
       "hide": true
+    },
+    "princeton": {
+      "hide": true
     }
   },
   "notes": {
+    "1": "OSM gives this building only a number or placeholder name and no use, and no official list names it, so it can't be told apart as a class building.",
+    "2": "OSM gives this building only a number or placeholder name and no use, and no official list names it, so it can't be told apart as a class building.",
     "8": "Spelman Hall 8, the other numbered Spelman Halls building OSM draws (a hall), not a class building.",
     "historic-gothic": "A group entry for the collegiate-Gothic dorms of Mathey and Rockefeller Colleges; pinned on Blair Hall (OSM way/40719672), the Mathey College dorm in the middle of that group (housing.princeton.edu).",
     "modern-dorms": "A group entry for Yeh College, New College West and Whitman College; pinned on Hariri Hall (OSM way/1111995513), the Yeh College building nearest the rest of campus in the Yeh/NCW complex (housing.princeton.edu).",
@@ -204,7 +215,8 @@
     "helm-building": "Utility, security, IT, facilities, administrative or press building, not somewhere classes happen.",
     "new-south": "Utility, security, IT, facilities, administrative or press building, not somewhere classes happen.",
     "princeton-university-press": "Utility, security, IT, facilities, administrative or press building, not somewhere classes happen.",
-    "bloomberg-hall": "Bloomberg Hall on Einstein Drive is the Institute for Advanced Study's, a separate institution, not a Princeton class building."
+    "bloomberg-hall": "Bloomberg Hall on Einstein Drive is the Institute for Advanced Study's, a separate institution, not a Princeton class building.",
+    "princeton": "OSM names this building just \"Princeton\" with no use, and no official list names it, so it can't be told apart as a class building."
   },
   "detours": [
     {

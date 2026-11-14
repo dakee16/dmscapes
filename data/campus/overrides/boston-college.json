@@ -44,6 +44,8 @@
     }
   },
   "notes": {
+    "36": "OSM gives this building only a number or placeholder name and no use, and no official list names it, so it can't be told apart as a class building.",
+    "50": "OSM gives this building only a number or placeholder name and no use, and no official list names it, so it can't be told apart as a class building.",
     "claver": "OSM has no named Claver Hall; pin is the centroid of \"Claver Hall\" in BC's campus-map buildings layer (services2.arcgis.com/Fsh2f6TdGBX9G7ic/.../Buildings_Categories/FeatureServer/0).",
     "loyola": "Centroid of \"Loyola Hall\" in BC's campus-map buildings layer (same layer as Claver); OSM has no named Loyola Hall.",
     "gonzaga": "Centroid of \"Gonzaga Hall\" in BC's campus-map buildings layer; OSM has no named Gonzaga Hall.",
@@ -55,8 +57,6 @@
   "detours": [
     {
       "pairs": [
-        "welch -> 50",
-        "williams -> 36",
         "williams -> flanagan"
       ],
       "maxRatio": 3,
@@ -102,5 +102,13 @@
       "maxRatio": 3,
       "why": "Corcoran Commons (way/29673727) has no mapped entrance; its centre snaps to the footway on its west side, so the walk from 66 Commonwealth Avenue goes round by the steps west of it."
     }
-  ]
+  ],
+  "places": {
+    "36": {
+      "hide": true
+    },
+    "50": {
+      "hide": true
+    }
+  }
 }

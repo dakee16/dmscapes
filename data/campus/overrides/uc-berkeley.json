@@ -74,7 +74,8 @@
     "kleeberger-field-house": "Varsity field house, not a class or meal place.",
     "doc-hudson-field-house": "Varsity field house, not a class or meal place.",
     "lower-hearst-structure": "Parking garage, not a class or meal place.",
-    "national-energy-research-scientific-computing-center-nersc": "Lawrence Berkeley National Laboratory computing center up the hill, not a class place."
+    "national-energy-research-scientific-computing-center-nersc": "Lawrence Berkeley National Laboratory computing center up the hill, not a class place.",
+    "building-21": "Archive storage (OSM: Building 21, \"Archives\"), not a class building."
   },
   "places": {
     "residence-hall": {
@@ -190,6 +191,9 @@
     },
     "national-energy-research-scientific-computing-center-nersc": {
       "hide": true
+    },
+    "building-21": {
+      "hide": true
     }
   },
   "detours": [
@@ -198,7 +202,7 @@
         "stern -> donner-laboratory",
         "stern -> latimer-hall"
       ],
-      "maxRatio": 3.0,
+      "maxRatio": 3,
       "why": "Stern Hall sits on the hillside above Gayley Road and its mapped way out runs east and down the slope; walks to Donner and Latimer go down to Gayley Road and back along it, round the College of Chemistry block."
     }
   ]

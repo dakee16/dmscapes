@@ -1,6 +1,6 @@
 {
  "collegeId": "cornell",
- "generatedAt": "2026-11-08T22:33:36.451Z",
+ "generatedAt": "2026-11-14T06:52:50.044Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -16,7 +16,7 @@
   }
  ],
  "bounds": [
-  -76.49105,
+  -76.48946,
   42.44143,
   -76.45615,
   42.45948
@@ -2043,17 +2043,6 @@
    "lng": -76.480552,
    "lat": 42.454306,
    "osm": "way/403931152"
-  },
-  {
-   "id": "614",
-   "name": "614",
-   "short": "614",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [],
-   "lng": -76.491054,
-   "lat": 42.449645,
-   "osm": "way/547196342"
   },
   {
    "id": "wait-ave-coop",

@@ -1,6 +1,6 @@
 {
  "collegeId": "purdue",
- "generatedAt": "2026-11-08T17:02:31.346Z",
+ "generatedAt": "2026-11-14T06:52:59.426Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -1525,19 +1525,6 @@
    "lng": -86.910866,
    "lat": 40.421823,
    "osm": "way/117396626"
-  },
-  {
-   "id": "grounds-maintenance-facility",
-   "name": "Grounds Maintenance Facility",
-   "short": "Grounds Maintenance Facility",
-   "kind": "academic",
-   "codes": [
-    "GMF"
-   ],
-   "aliases": [],
-   "lng": -86.919154,
-   "lat": 40.415405,
-   "osm": "way/945408783"
   },
   {
    "id": "matthews-hall-mthw",

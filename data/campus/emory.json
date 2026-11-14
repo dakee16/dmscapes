@@ -1,6 +1,6 @@
 {
  "collegeId": "emory",
- "generatedAt": "2026-11-09T18:16:37.062Z",
+ "generatedAt": "2026-11-14T06:52:50.222Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -614,19 +614,6 @@
    "osm": "way/775061350"
   },
   {
-   "id": "am",
-   "name": "ΣAM",
-   "short": "ΣAM",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [
-    "Sigma Alpha Mu"
-   ],
-   "lng": -84.326142,
-   "lat": 33.794613,
-   "osm": "way/51306614"
-  },
-  {
    "id": "smith-hall",
    "name": "Smith Hall",
    "short": "Smith Hall",
@@ -647,17 +634,6 @@
    "lng": -84.321241,
    "lat": 33.790735,
    "osm": "way/51290398"
-  },
-  {
-   "id": "idb",
-   "name": "Idb",
-   "short": "Idb",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [],
-   "lng": -84.320265,
-   "lat": 33.803604,
-   "osm": "way/945411730"
   },
   {
    "id": "repe-c",

@@ -1,6 +1,6 @@
 {
  "collegeId": "rowan",
- "generatedAt": "2026-11-08T19:21:55.592Z",
+ "generatedAt": "2026-11-14T06:52:51.437Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -8,6 +8,11 @@
    "license": "ODbL-1.0",
    "use": "building names, footprints and entrances; the walking network",
    "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/rowan.json",
+   "use": "manual pins, year tags, place codes and aliases"
   }
  ],
  "bounds": [
@@ -740,17 +745,6 @@
    "lng": -75.118332,
    "lat": 39.706246,
    "osm": "way/37059388"
-  },
-  {
-   "id": "ice",
-   "name": "ICE",
-   "short": "ICE",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [],
-   "lng": -75.12041,
-   "lat": 39.707699,
-   "osm": "way/354662284"
   },
   {
    "id": "guard-house",

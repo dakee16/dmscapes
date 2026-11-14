@@ -32,6 +32,9 @@
     }
   },
   "places": {
+    "288": {
+      "hide": true
+    },
     "stanford-hospital": {
       "hide": true
     },
@@ -283,6 +286,7 @@
     }
   },
   "notes": {
+    "288": "OSM gives this building only a number or placeholder name and no use, and no official list names it, so it can't be told apart as a class building.",
     "undergraduate-halls": "A group entry for the undergraduate residence halls; pinned on Lucie Stern Hall (OSM relation/22862, 618 Escondido Road), a first-year hall in the east campus cluster with Wilbur, Toyon and Branner (rde.stanford.edu/studenthousing/undergraduate-residences).",
     "gsb-residences": "The Graduate School of Business residences are the Schwab Residential Center (OSM relation/17859516, 680 Jane Stanford Way); OSM's name doesn't say GSB.",
     "escondido-village": "Escondido Village is pinned on Escondido Village Graduate Residences Building A (OSM way/688574367, 757 Campus Drive), the largest building of the complex and the one nearest the academic core.",

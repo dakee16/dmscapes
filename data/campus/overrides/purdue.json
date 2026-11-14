@@ -54,10 +54,14 @@
     "MRRT": "OSM 'Marriot Hall' (sic) is the list's Marriott Hall.",
     "HANS": "OSM 'Hansen Hall' is the list's Hansen (Arthur G.) Life Sciences Research Building.",
     "the-pete-dye-clubhouse": "Golf clubhouse at the Birck Boilermaker Golf Complex, not a class or meal place.",
-    "south-hall": "South Hall opens fall 2026; OSM maps its site as landuse=construction 'South Hall' at 300 McCutcheon Drive (way/1315532367, no building yet), and the pin is that site's middle. The word rule had picked Honors College and Residences South."
+    "south-hall": "South Hall opens fall 2026; OSM maps its site as landuse=construction 'South Hall' at 300 McCutcheon Drive (way/1315532367, no building yet), and the pin is that site's middle. The word rule had picked Honors College and Residences South.",
+    "grounds-maintenance-facility": "A utility or maintenance building, not somewhere classes happen."
   },
   "places": {
     "the-pete-dye-clubhouse": {
+      "hide": true
+    },
+    "grounds-maintenance-facility": {
       "hide": true
     }
   },
@@ -68,14 +72,14 @@
         "mccutcheon -> convergence-center-for-innovation-and-collaboration-conv",
         "south-hall -> convergence-center-for-innovation-and-collaboration-conv"
       ],
-      "maxRatio": 4.0,
+      "maxRatio": 4,
       "why": "Convergence's only mapped way in is its service drive from the south; no mapped path leads to it from State Street on its north side, so walks from the halls across State Street go round by the road to its east."
     },
     {
       "pairs": [
         "shreve -> hull-all-american-marching-band-complex"
       ],
-      "maxRatio": 3.0,
+      "maxRatio": 3,
       "why": "The fire station's yard lies between Shreve and the band complex with no mapped path across, so walks go round by the road on its east side."
     }
   ]

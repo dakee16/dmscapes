@@ -1,6 +1,6 @@
 {
  "collegeId": "arizona",
- "generatedAt": "2026-11-08T16:57:54.691Z",
+ "generatedAt": "2026-11-14T06:52:51.300Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -2317,19 +2317,6 @@
    "lng": -110.948688,
    "lat": 32.235192,
    "osm": "way/34228294"
-  },
-  {
-   "id": "1702",
-   "name": "1702",
-   "short": "1702",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [
-    "Leased Out"
-   ],
-   "lng": -110.946585,
-   "lat": 32.235684,
-   "osm": "way/399725111"
   },
   {
    "id": "chili-con-sol",

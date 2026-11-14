@@ -1,6 +1,6 @@
 {
  "collegeId": "virginia-tech",
- "generatedAt": "2026-11-08T11:46:37.878Z",
+ "generatedAt": "2026-11-14T06:53:00.227Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -1563,23 +1563,6 @@
    "lng": -80.424084,
    "lat": 37.225737,
    "osm": "way/32953605"
-  },
-  {
-   "id": "north-chiller-plant",
-   "name": "North Chiller Plant",
-   "short": "North Chiller Plant",
-   "kind": "academic",
-   "codes": [
-    "AIRCN"
-   ],
-   "aliases": [
-    "AIRCN",
-    "Air Conditioning Facility",
-    "Air Conditioning Plant"
-   ],
-   "lng": -80.421839,
-   "lat": 37.232118,
-   "osm": "way/43531161"
   },
   {
    "id": "fralin-life-science-institute",

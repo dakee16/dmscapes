@@ -1,0 +1,10 @@
+{
+  "places": {
+    "ice": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "ice": "OSM names this building only \"ICE\" with no use, and no official list names it, so it can't be told apart as a class building."
+  }
+}

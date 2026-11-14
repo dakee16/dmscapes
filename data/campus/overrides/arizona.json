@@ -32,6 +32,9 @@
     }
   },
   "places": {
+    "1702": {
+      "hide": true
+    },
     "graham": {
       "hide": true
     },
@@ -46,6 +49,7 @@
     }
   },
   "notes": {
+    "1702": "OSM tags this building \"Leased Out\" and names it only by number; not a class building.",
     "graham-greenlee": "Midpoint of OSM's Graham (way/33197031) and Greenlee (way/33197004), the two halls of Graham-Greenlee (alias \"Graham-Greenlee Hall\" for both in UA Planning, Design & Construction's Residence Life Housing layer (services.maps.arizona.edu/pdc/rest/services/campus_features/MapServer/38)).",
     "manzanita-mohave": "Midpoint of OSM's Manzanita Hall (way/34156275) and Mohave Hall (way/34156278), alias \"Manzi-Mo\" for both in UA Planning, Design & Construction's Residence Life Housing layer (services.maps.arizona.edu/pdc/rest/services/campus_features/MapServer/38).",
     "navajo-pinal-stadium": "OSM names neither building; midpoint of Navajo Residence Hall (1557 E 6 St) and Pinal Residence Hall (1511 E 6 St) in UA Planning, Design & Construction's Residence Life Housing layer (services.maps.arizona.edu/pdc/rest/services/campus_features/MapServer/38).",

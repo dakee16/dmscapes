@@ -1,6 +1,6 @@
 {
  "collegeId": "boston-college",
- "generatedAt": "2026-11-08T08:22:52.241Z",
+ "generatedAt": "2026-11-14T06:53:24.908Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -1344,17 +1344,6 @@
    "osm": "way/29923717"
   },
   {
-   "id": "50",
-   "name": "50",
-   "short": "50",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [],
-   "lng": -71.172078,
-   "lat": 42.334436,
-   "osm": "way/29779917"
-  },
-  {
    "id": "rahner-house",
    "name": "Rahner House",
    "short": "Rahner House",
@@ -1386,17 +1375,6 @@
    "lng": -71.171865,
    "lat": 42.335005,
    "osm": "way/29636293"
-  },
-  {
-   "id": "36",
-   "name": "36",
-   "short": "36",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [],
-   "lng": -71.172534,
-   "lat": 42.333964,
-   "osm": "way/29886325"
   }
  ]
 }

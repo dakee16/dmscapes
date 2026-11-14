@@ -172,6 +172,9 @@
     },
     "the-diner": {
       "kind": "dining"
+    },
+    "building-011": {
+      "hide": true
     }
   },
   "notes": {
@@ -227,6 +230,7 @@
     "hvac-building": "Service or utility building, not somewhere classes happen.",
     "the-university-of-maryland-physics-vortex": "An outdoor physics exhibit, not a building with classes.",
     "apiary": "Bee yard, not a building with classes.",
-    "the-diner": "UMD Dining's North Campus dining hall (OSM amenity=restaurant at 4028 Stadium Drive, way/23579583); its name doesn't say dining."
+    "the-diner": "UMD Dining's North Campus dining hall (OSM amenity=restaurant at 4028 Stadium Drive, way/23579583); its name doesn't say dining.",
+    "building-011": "OSM gives this building only a number or placeholder name and no use, and no official list names it, so it can't be told apart as a class building."
   }
 }

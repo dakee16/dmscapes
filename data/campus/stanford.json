@@ -1,6 +1,6 @@
 {
  "collegeId": "stanford",
- "generatedAt": "2026-11-13T04:34:17.476Z",
+ "generatedAt": "2026-11-14T06:52:51.759Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -1713,17 +1713,6 @@
    "lng": -122.168249,
    "lat": 37.422636,
    "osm": "way/232805666"
-  },
-  {
-   "id": "288",
-   "name": "288",
-   "short": "288",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [],
-   "lng": -122.179617,
-   "lat": 37.430052,
-   "osm": "way/232715598"
   },
   {
    "id": "harmony-house",

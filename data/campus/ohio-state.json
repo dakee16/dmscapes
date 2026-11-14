@@ -1,6 +1,6 @@
 {
  "collegeId": "ohio-state",
- "generatedAt": "2026-11-08T08:17:40.516Z",
+ "generatedAt": "2026-11-14T06:52:58.685Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -2352,20 +2352,6 @@
    "osm": "way/154204806"
   },
   {
-   "id": "maintenance-building",
-   "name": "Maintenance Building",
-   "short": "Service Building Annex",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [
-    "Service Building Annex",
-    "Maintenance Building - Lima"
-   ],
-   "lng": -83.017548,
-   "lat": 40.002217,
-   "osm": "way/154204784"
-  },
-  {
    "id": "biological-science-building",
    "name": "Biological Science Building",
    "short": "Biological Science Building",
@@ -2599,21 +2585,6 @@
    "lng": -83.009647,
    "lat": 39.999162,
    "osm": "way/154204623"
-  },
-  {
-   "id": "south-campus-central-chiller-plant",
-   "name": "South Campus Central Chiller Plant",
-   "short": "Chiller Plant",
-   "kind": "academic",
-   "codes": [],
-   "aliases": [
-    "Chiller Plant",
-    "S Campus",
-    "Chiller Plant, South Campus Central"
-   ],
-   "lng": -83.021407,
-   "lat": 39.996634,
-   "osm": "way/372894876"
   },
   {
    "id": "independence-hall",

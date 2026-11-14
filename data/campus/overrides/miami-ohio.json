@@ -1,0 +1,10 @@
+{
+  "places": {
+    "north-chiller-plant": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "north-chiller-plant": "A utility or maintenance building, not somewhere classes happen."
+  }
+}
