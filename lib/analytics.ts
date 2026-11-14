@@ -201,6 +201,14 @@ export function trackSignup(user: {
   track("signup_completed", { method: user.app_metadata?.provider === "google" ? "google" : "email" });
 }
 
+/**
+ * Ids the Stripe webhook sends purchase_completed under (lib/purchase-analytics):
+ * PostHog's distinct id, and only while analytics is allowed for this visitor.
+ */
+export function checkoutAnalyticsIds(): { ph?: string } {
+  return ensureInit() ? { ph: posthog.get_distinct_id() } : {};
+}
+
 let pageSession: string | null = null;
 
 /**
