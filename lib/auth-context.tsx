@@ -13,10 +13,10 @@ import {
   useState,
 } from "react";
 import type { User } from "@supabase/supabase-js";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { clearAuthParamsFromUrl } from "@/lib/auth-url";
-import { track } from "@/lib/analytics";
+import { track, trackSignup } from "@/lib/analytics";
 import { isPaid } from "@/lib/plan";
 import { takeResume } from "@/lib/hall-finder";
 import UsernamePrompt from "@/components/auth/UsernamePrompt";
@@ -176,6 +176,7 @@ async function enforceSessionLimit(accessToken: string): Promise<void> {
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const supabase = useMemo(() => getBrowserClient(), []);
   const router = useRouter();
+  const pathname = usePathname();
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
@@ -404,6 +405,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const t = setTimeout(clearAuthParamsFromUrl, 600);
     return () => clearTimeout(t);
   }, []);
+
+  // A brand-new account: signup_completed (lib/analytics), rechecked per page in case it landed on a private one.
+  useEffect(() => {
+    if (user) trackSignup(user);
+  }, [user, pathname]);
 
   const openAuthModal = useCallback(
     (reason: AuthModalReason = "profile") => {

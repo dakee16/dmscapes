@@ -31,6 +31,7 @@ export type AnalyticsEvent =
   | "school_submitted"
   | "auth_modal_opened"
   | "auth_completed"
+  | "signup_completed"
   | "username_set"
   | "save_prompt_shown"
   | "design_saved"
@@ -111,6 +112,9 @@ export type AnalyticsEvent =
   | "creator_applied"
   | "profile_photo_set";
 
+/** Pages kept out of analytics: workspace, invite and login URLs can carry room ids and invite tokens. */
+export const PRIVATE_PATH = /^\/(rooms|login|account|report)(\/|$)/;
+
 let initialized = false;
 
 function ensureInit(): boolean {
@@ -128,7 +132,7 @@ function ensureInit(): boolean {
       before_send: (event) => {
         if (!event) return null;
         const privatePath = (value: unknown) => {
-          try { return /^\/(rooms|login|account|report)(\/|$)/.test(new URL(String(value), location.origin).pathname); } catch { return false; }
+          try { return PRIVATE_PATH.test(new URL(String(value), location.origin).pathname); } catch { return false; }
         };
         return privatePath(location.href) || privatePath(event.properties?.$current_url) || privatePath(event.properties?.$referrer) ? null : event;
       },
@@ -167,6 +171,34 @@ if (typeof window !== "undefined") {
       clearAnalyticsStorage();
     }
   });
+}
+
+/**
+ * signup_completed, once per account, with method "email" or "google". An account's first
+ * session is the one signed in at the moment it was confirmed (the email link, or Google's
+ * first sign-in); every later sign-in moves last_sign_in_at on. Counted within a day of that
+ * sign-in, on a page analytics may see (a sign-up that lands on /login or /account counts on
+ * the next page), and flagged per account so reloads and other tabs don't count it again.
+ */
+export function trackSignup(user: {
+  id: string;
+  created_at?: string;
+  email_confirmed_at?: string;
+  last_sign_in_at?: string;
+  app_metadata?: { provider?: string };
+}): void {
+  const key = `dormscape-signup-tracked-${user.id}`;
+  try {
+    if (window.localStorage.getItem(key)) return;
+    const signedIn = Date.parse(user.last_sign_in_at ?? "");
+    const confirmed = Date.parse(user.email_confirmed_at ?? user.created_at ?? "");
+    if (!(Math.abs(signedIn - confirmed) < 60_000 && Date.now() - signedIn < 86_400_000)) return;
+    if (PRIVATE_PATH.test(window.location.pathname)) return;
+    window.localStorage.setItem(key, "1");
+  } catch {
+    return; // storage blocked: no flag, so don't risk counting it twice
+  }
+  track("signup_completed", { method: user.app_metadata?.provider === "google" ? "google" : "email" });
 }
 
 let pageSession: string | null = null;
