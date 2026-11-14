@@ -1,0 +1,1663 @@
+{
+ "collegeId": "texas-am",
+ "generatedAt": "2026-11-14T06:54:02.069Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Texas A&M Facilities (FCOR) campus basemap, University Building layer: building names and abbreviations (BldgName, BldgAbbrev, Longitude/Latitude)",
+   "url": "https://gis.tamu.edu/arcgis/rest/services/FCOR/TAMU_Basemap_20261008/MapServer/2",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/texas-am.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -96.35798,
+  30.5976,
+  -96.33345,
+  30.62272
+ ],
+ "halls": [
+  {
+   "dormId": "commons",
+   "name": "Commons-Style Halls",
+   "lng": -96.336307,
+   "lat": 30.614675,
+   "pin": "manual",
+   "osm": "relation/2083292",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "southside-rec-center",
+     "minutes": 11.2
+    },
+    "library": {
+     "placeId": "sterling-c-evans-library",
+     "minutes": 8.6
+    },
+    "dining": {
+     "placeId": "duncan-dining-hall",
+     "minutes": 4.2
+    }
+   }
+  },
+  {
+   "dormId": "corridor",
+   "name": "Corridor-Style Halls",
+   "lng": -96.334517,
+   "lat": 30.614422,
+   "pin": "manual",
+   "osm": "way/155052679",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "southside-rec-center",
+     "minutes": 13.9
+    },
+    "library": {
+     "placeId": "sterling-c-evans-library",
+     "minutes": 11.3
+    },
+    "dining": {
+     "placeId": "duncan-dining-hall",
+     "minutes": 5
+    }
+   }
+  },
+  {
+   "dormId": "modular",
+   "name": "Modular-Style Halls",
+   "lng": -96.344567,
+   "lat": 30.615915,
+   "pin": "manual",
+   "osm": "way/155052667",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 15.9
+    },
+    "library": {
+     "placeId": "cushing-memorial-library",
+     "minutes": 7.5
+    },
+    "dining": {
+     "placeId": "sbisa-dining-hall",
+     "minutes": 3.2
+    }
+   }
+  },
+  {
+   "dormId": "ramp",
+   "name": "Ramp-Style Halls",
+   "lng": -96.345629,
+   "lat": 30.615192,
+   "pin": "manual",
+   "osm": "way/1012223005",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 14.9
+    },
+    "library": {
+     "placeId": "cushing-memorial-library",
+     "minutes": 8.9
+    },
+    "dining": {
+     "placeId": "sbisa-dining-hall",
+     "minutes": 4.5
+    }
+   }
+  },
+  {
+   "dormId": "balcony",
+   "name": "Balcony-Style Halls",
+   "lng": -96.345726,
+   "lat": 30.615594,
+   "pin": "manual",
+   "osm": "way/1012223006",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 16.2
+    },
+    "library": {
+     "placeId": "cushing-memorial-library",
+     "minutes": 9
+    },
+    "dining": {
+     "placeId": "sbisa-dining-hall",
+     "minutes": 3.7
+    }
+   }
+  },
+  {
+   "dormId": "hullabaloo",
+   "name": "Hullabaloo Hall",
+   "lng": -96.346348,
+   "lat": 30.616479,
+   "pin": "name",
+   "osm": "way/260847573",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 17.1
+    },
+    "library": {
+     "placeId": "cushing-memorial-library",
+     "minutes": 9.2
+    },
+    "dining": {
+     "placeId": "sbisa-dining-hall",
+     "minutes": 3.6
+    }
+   }
+  },
+  {
+   "dormId": "white-creek",
+   "name": "White Creek Apartments",
+   "lng": -96.35581,
+   "lat": 30.6081,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "penberthy-intramural-sports-center",
+     "minutes": 16.8
+    },
+    "library": {
+     "placeId": "west-campus-library",
+     "minutes": 11.3
+    },
+    "dining": {
+     "placeId": "west-campus-dining-facility",
+     "minutes": 11.7
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "student-recreation-center",
+   "name": "Student Recreation Center",
+   "short": "Student Recreation Center",
+   "kind": "gym",
+   "codes": [
+    "SREC"
+   ],
+   "aliases": [],
+   "lng": -96.342718,
+   "lat": 30.607074,
+   "osm": "way/91084650"
+  },
+  {
+   "id": "memorial-student-center",
+   "name": "Memorial Student Center",
+   "short": "Memorial Student Center",
+   "kind": "academic",
+   "codes": [
+    "MSC"
+   ],
+   "aliases": [
+    "MSC"
+   ],
+   "lng": -96.341463,
+   "lat": 30.612276,
+   "osm": "relation/2083295"
+  },
+  {
+   "id": "zachry-engineering-education-complex",
+   "name": "Zachry Engineering Education Complex",
+   "short": "Zachry Engineering Education Complex",
+   "kind": "academic",
+   "codes": [
+    "ZACH"
+   ],
+   "aliases": [
+    "ZACH",
+    "Zachry Engineering Center"
+   ],
+   "lng": -96.340322,
+   "lat": 30.621359,
+   "osm": "way/451759287"
+  },
+  {
+   "id": "sterling-c-evans-library",
+   "name": "Sterling C. Evans Library",
+   "short": "Sterling C. Evans Library",
+   "kind": "library",
+   "codes": [
+    "LIBR",
+    "EVANS"
+   ],
+   "aliases": [
+    "LIBR",
+    "Evans Library"
+   ],
+   "lng": -96.339269,
+   "lat": 30.616797,
+   "osm": "way/249571643"
+  },
+  {
+   "id": "duncan-dining-hall",
+   "name": "Duncan Dining Hall",
+   "short": "Duncan Dining Hall",
+   "kind": "dining",
+   "codes": [
+    "DCAN"
+   ],
+   "aliases": [],
+   "lng": -96.335378,
+   "lat": 30.612062,
+   "osm": "way/86199582"
+  },
+  {
+   "id": "interdisciplinary-life-sciences-building",
+   "name": "Interdisciplinary Life Sciences Building",
+   "short": "Interdisciplinary Life Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "ILSB"
+   ],
+   "aliases": [
+    "ILSB"
+   ],
+   "lng": -96.343704,
+   "lat": 30.614304,
+   "osm": "way/91084667"
+  },
+  {
+   "id": "physical-education-activities-program-building",
+   "name": "Physical Education Activities Program Building",
+   "short": "Physical Education Activities Program Building",
+   "kind": "academic",
+   "codes": [
+    "PEAP"
+   ],
+   "aliases": [
+    "PEAP",
+    "Physical Education Activity Program Building"
+   ],
+   "lng": -96.34941,
+   "lat": 30.604494,
+   "osm": "way/332218359"
+  },
+  {
+   "id": "rudder-theatre-complex",
+   "name": "Rudder Theatre Complex",
+   "short": "Rudder Theatre Complex",
+   "kind": "academic",
+   "codes": [
+    "RDER"
+   ],
+   "aliases": [
+    "RDER",
+    "Rudder Tower"
+   ],
+   "lng": -96.339928,
+   "lat": 30.613326,
+   "osm": "way/155052476"
+  },
+  {
+   "id": "wehner-building",
+   "name": "Wehner Building",
+   "short": "Wehner Building",
+   "kind": "academic",
+   "codes": [
+    "WCBA"
+   ],
+   "aliases": [],
+   "lng": -96.350895,
+   "lat": 30.610527,
+   "osm": "way/155052572"
+  },
+  {
+   "id": "commons",
+   "name": "Commons",
+   "short": "Commons",
+   "kind": "dining",
+   "codes": [
+    "COMM"
+   ],
+   "aliases": [
+    "COMM"
+   ],
+   "lng": -96.33603,
+   "lat": 30.615362,
+   "osm": "way/155052765"
+  },
+  {
+   "id": "sbisa-dining-hall",
+   "name": "Sbisa Dining Hall",
+   "short": "Sbisa Dining Hall",
+   "kind": "dining",
+   "codes": [
+    "SBSA"
+   ],
+   "aliases": [
+    "SBSA"
+   ],
+   "lng": -96.34379,
+   "lat": 30.617166,
+   "osm": "way/155052496"
+  },
+  {
+   "id": "blocker-building",
+   "name": "Blocker Building",
+   "short": "Blocker Building",
+   "kind": "academic",
+   "codes": [
+    "BLOC"
+   ],
+   "aliases": [
+    "BLOC"
+   ],
+   "lng": -96.342128,
+   "lat": 30.619556,
+   "osm": "way/95151462"
+  },
+  {
+   "id": "southside-rec-center",
+   "name": "Southside Rec Center",
+   "short": "Southside Rec Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -96.333451,
+   "lat": 30.615739,
+   "osm": "way/1099383188"
+  },
+  {
+   "id": "allen-building",
+   "name": "Allen Building",
+   "short": "Allen Building",
+   "kind": "academic",
+   "codes": [
+    "ALLN"
+   ],
+   "aliases": [],
+   "lng": -96.352462,
+   "lat": 30.597601,
+   "osm": "way/199697590"
+  },
+  {
+   "id": "emerging-technologies-building",
+   "name": "Emerging Technologies Building",
+   "short": "Emerging Technologies Building",
+   "kind": "academic",
+   "codes": [
+    "ETB"
+   ],
+   "aliases": [
+    "ETB"
+   ],
+   "lng": -96.339194,
+   "lat": 30.622721,
+   "osm": "way/167553463"
+  },
+  {
+   "id": "veterinary-medicine-building-1",
+   "name": "Veterinary Medicine Building 1",
+   "short": "Veterinary Medicine Building 1",
+   "kind": "academic",
+   "codes": [
+    "VENI"
+   ],
+   "aliases": [
+    "Veterinary Medicine Building 1 - VENI"
+   ],
+   "lng": -96.357018,
+   "lat": 30.611557,
+   "osm": "way/1206223586"
+  },
+  {
+   "id": "john-d-white-70-robert-l-walker-58-music-activity-center",
+   "name": "John D. White 70 - Robert L. Walker 58 Music Activity Center",
+   "short": "John D. White 70 - Robert L. Walker 58 Music Activity Center",
+   "kind": "academic",
+   "codes": [
+    "MAC"
+   ],
+   "aliases": [
+    "John D. White '70 - Robert L. Walker '58 Music Activities Center"
+   ],
+   "lng": -96.334244,
+   "lat": 30.610029,
+   "osm": "way/951877261"
+  },
+  {
+   "id": "medical-sciences-library",
+   "name": "Medical Sciences Library",
+   "short": "Medical Sciences Library",
+   "kind": "library",
+   "codes": [
+    "WTRC"
+   ],
+   "aliases": [
+    "West Campus Teaching and Research Collaborative"
+   ],
+   "lng": -96.351683,
+   "lat": 30.611978,
+   "osm": "way/155052626"
+  },
+  {
+   "id": "innovative-learning-classroom-building",
+   "name": "Innovative Learning Classroom Building",
+   "short": "Innovative Learning Classroom Building",
+   "kind": "academic",
+   "codes": [
+    "ILCB"
+   ],
+   "aliases": [
+    "ILCB"
+   ],
+   "lng": -96.344247,
+   "lat": 30.611974,
+   "osm": "way/1039186230"
+  },
+  {
+   "id": "veterinary-medicine-building-3",
+   "name": "Veterinary Medicine Building 3",
+   "short": "Veterinary Medicine Building 3",
+   "kind": "academic",
+   "codes": [
+    "VICI"
+   ],
+   "aliases": [
+    "Veterinary Medicine Building 3 - VICI"
+   ],
+   "lng": -96.357306,
+   "lat": 30.612345,
+   "osm": "way/1206223584"
+  },
+  {
+   "id": "thompson-hall",
+   "name": "Thompson Hall",
+   "short": "Thompson Hall",
+   "kind": "academic",
+   "codes": [
+    "THOM"
+   ],
+   "aliases": [],
+   "lng": -96.341284,
+   "lat": 30.617233,
+   "osm": "way/155052702"
+  },
+  {
+   "id": "wisenbaker-engineering-building",
+   "name": "Wisenbaker Engineering Building",
+   "short": "Wisenbaker Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "WEB"
+   ],
+   "aliases": [
+    "WEB"
+   ],
+   "lng": -96.338855,
+   "lat": 30.620802,
+   "osm": "way/915378602"
+  },
+  {
+   "id": "normon-e-borlaug-building",
+   "name": "Normon E. Borlaug Building",
+   "short": "Normon E. Borlaug Building",
+   "kind": "academic",
+   "codes": [
+    "SCIC"
+   ],
+   "aliases": [
+    "Norman E. Borlaug Building"
+   ],
+   "lng": -96.349526,
+   "lat": 30.608061,
+   "osm": "way/155052576"
+  },
+  {
+   "id": "kleberg-center",
+   "name": "Kleberg Center",
+   "short": "Kleberg Center",
+   "kind": "academic",
+   "codes": [
+    "KLCT"
+   ],
+   "aliases": [],
+   "lng": -96.347367,
+   "lat": 30.610621,
+   "osm": "way/155052487"
+  },
+  {
+   "id": "biochemistry-biophysics-building",
+   "name": "Biochemistry/Biophysics Building",
+   "short": "Biochemistry/Biophysics Building",
+   "kind": "academic",
+   "codes": [
+    "BICH"
+   ],
+   "aliases": [],
+   "lng": -96.349235,
+   "lat": 30.610732,
+   "osm": "way/155052502"
+  },
+  {
+   "id": "jack-e-brown-chemical-engineering-building",
+   "name": "Jack E. Brown Chemical Engineering Building",
+   "short": "Jack E. Brown Chemical Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "CHEN"
+   ],
+   "aliases": [
+    "CHEN"
+   ],
+   "lng": -96.341806,
+   "lat": 30.620851,
+   "osm": "way/155052538"
+  },
+  {
+   "id": "frederick-e-giesecke-engineering-research-building",
+   "name": "Frederick E. Giesecke Engineering Research Building",
+   "short": "Frederick E. Giesecke Engineering Research Building",
+   "kind": "academic",
+   "codes": [
+    "GERB"
+   ],
+   "aliases": [
+    "GERB",
+    "Giesecke Engineering Research Building"
+   ],
+   "lng": -96.357063,
+   "lat": 30.602149,
+   "osm": "way/520421200"
+  },
+  {
+   "id": "reynolds-medical-sciences-building",
+   "name": "Reynolds Medical Sciences Building",
+   "short": "Reynolds Medical Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "REYN"
+   ],
+   "aliases": [],
+   "lng": -96.352079,
+   "lat": 30.611225,
+   "osm": "way/155052718"
+  },
+  {
+   "id": "langford-architecture-center-building-a",
+   "name": "Langford Architecture Center Building A",
+   "short": "Langford Architecture Center Building A",
+   "kind": "academic",
+   "codes": [
+    "ARCA"
+   ],
+   "aliases": [
+    "ARCA"
+   ],
+   "lng": -96.337639,
+   "lat": 30.618806,
+   "osm": "way/155052696"
+  },
+  {
+   "id": "agriculture-and-life-sciences-building",
+   "name": "Agriculture and Life Sciences Building",
+   "short": "Agriculture and Life Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "AGLS"
+   ],
+   "aliases": [
+    "AGLS"
+   ],
+   "lng": -96.350994,
+   "lat": 30.605497,
+   "osm": "way/1034278661"
+  },
+  {
+   "id": "heep-center",
+   "name": "HEEP Center",
+   "short": "HEEP Center",
+   "kind": "academic",
+   "codes": [
+    "HPCT"
+   ],
+   "aliases": [],
+   "lng": -96.348068,
+   "lat": 30.611398,
+   "osm": "way/1486173174"
+  },
+  {
+   "id": "veterinary-medicine-building-2",
+   "name": "Veterinary Medicine Building 2",
+   "short": "Veterinary Medicine Building 2",
+   "kind": "academic",
+   "codes": [
+    "VIDI"
+   ],
+   "aliases": [
+    "Veterinary Medicine Building 2 - VIDI"
+   ],
+   "lng": -96.357982,
+   "lat": 30.611822,
+   "osm": "way/1206223585"
+  },
+  {
+   "id": "engineering-innovation-center",
+   "name": "Engineering Innovation Center",
+   "short": "Engineering Innovation Center",
+   "kind": "academic",
+   "codes": [
+    "EIC"
+   ],
+   "aliases": [],
+   "lng": -96.341452,
+   "lat": 30.618602,
+   "osm": "way/307098417"
+  },
+  {
+   "id": "halbouty-geosciences-building",
+   "name": "Halbouty Geosciences Building",
+   "short": "Halbouty Geosciences Building",
+   "kind": "academic",
+   "codes": [
+    "HALB"
+   ],
+   "aliases": [],
+   "lng": -96.340589,
+   "lat": 30.618921,
+   "osm": "way/155052559"
+  },
+  {
+   "id": "rosenthal-meat-science-and-technology-center",
+   "name": "Rosenthal Meat Science & Technology Center",
+   "short": "Rosenthal Meat Science & Technology Center",
+   "kind": "academic",
+   "codes": [
+    "MSTC"
+   ],
+   "aliases": [],
+   "lng": -96.348304,
+   "lat": 30.609844,
+   "osm": "way/155052762"
+  },
+  {
+   "id": "mitchell-physics-building",
+   "name": "Mitchell Physics Building",
+   "short": "Mitchell Physics Building",
+   "kind": "academic",
+   "codes": [
+    "MPHY"
+   ],
+   "aliases": [
+    "MPHY"
+   ],
+   "lng": -96.342438,
+   "lat": 30.620254,
+   "osm": "way/136806238"
+  },
+  {
+   "id": "sterling-c-evans-library-annex",
+   "name": "Sterling C. Evans Library Annex",
+   "short": "Sterling C. Evans Library Annex",
+   "kind": "library",
+   "codes": [
+    "ANNEX"
+   ],
+   "aliases": [
+    "LIBR",
+    "Evans Library Annex"
+   ],
+   "lng": -96.338368,
+   "lat": 30.616287,
+   "osm": "way/307098419"
+  },
+  {
+   "id": "west-campus-library",
+   "name": "West Campus Library",
+   "short": "West Campus Library",
+   "kind": "library",
+   "codes": [
+    "WCL"
+   ],
+   "aliases": [],
+   "lng": -96.350192,
+   "lat": 30.611549,
+   "osm": "way/155052747"
+  },
+  {
+   "id": "chemistry",
+   "name": "Chemistry",
+   "short": "Chemistry",
+   "kind": "academic",
+   "codes": [
+    "CHEM"
+   ],
+   "aliases": [
+    "CHEM"
+   ],
+   "lng": -96.340194,
+   "lat": 30.617886,
+   "osm": "way/155052768"
+  },
+  {
+   "id": "heldenfels-hall",
+   "name": "Heldenfels Hall",
+   "short": "Heldenfels Hall",
+   "kind": "academic",
+   "codes": [
+    "HELD"
+   ],
+   "aliases": [],
+   "lng": -96.338735,
+   "lat": 30.615133,
+   "osm": "way/91100278"
+  },
+  {
+   "id": "james-j-cain-51-building",
+   "name": "James J. Cain '51 Building",
+   "short": "James J. Cain '51 Building",
+   "kind": "academic",
+   "codes": [
+    "JCAIN"
+   ],
+   "aliases": [
+    "JCAIN"
+   ],
+   "lng": -96.340981,
+   "lat": 30.619756,
+   "osm": "way/307097868"
+  },
+  {
+   "id": "john-h-lindsey-building",
+   "name": "John H. Lindsey Building",
+   "short": "John H. Lindsey Building",
+   "kind": "academic",
+   "codes": [
+    "LIND"
+   ],
+   "aliases": [],
+   "lng": -96.333637,
+   "lat": 30.611816,
+   "osm": "way/260847133"
+  },
+  {
+   "id": "liberal-arts-and-arts-and-humanities-building",
+   "name": "Liberal Arts and Arts & Humanities Building",
+   "short": "Liberal Arts and Arts & Humanities Building",
+   "kind": "academic",
+   "codes": [
+    "LAAH"
+   ],
+   "aliases": [
+    "LAAH"
+   ],
+   "lng": -96.337977,
+   "lat": 30.61769,
+   "osm": "way/260795474"
+  },
+  {
+   "id": "gilchrist-building",
+   "name": "Gilchrist Building",
+   "short": "Gilchrist Building",
+   "kind": "academic",
+   "codes": [
+    "GGB"
+   ],
+   "aliases": [
+    "GGB",
+    "Gibb Gilchrist Building"
+   ],
+   "lng": -96.353413,
+   "lat": 30.601472,
+   "osm": "way/411525268"
+  },
+  {
+   "id": "teague-building",
+   "name": "Teague Building",
+   "short": "Teague Building",
+   "kind": "academic",
+   "codes": [
+    "TEAG",
+    "CSA"
+   ],
+   "aliases": [
+    "Teague Research Center",
+    "Computing Services Annex"
+   ],
+   "lng": -96.336198,
+   "lat": 30.617118,
+   "osm": "way/95151464"
+  },
+  {
+   "id": "health-technologies-building",
+   "name": "Health Technologies Building",
+   "short": "Health Technologies Building",
+   "kind": "academic",
+   "codes": [
+    "HTB"
+   ],
+   "aliases": [],
+   "lng": -96.355509,
+   "lat": 30.604794,
+   "osm": "way/261142789"
+  },
+  {
+   "id": "biological-sciences-building-east",
+   "name": "Biological Sciences Building East",
+   "short": "Biological Sciences Building East",
+   "kind": "academic",
+   "codes": [
+    "BSBE"
+   ],
+   "aliases": [
+    "Biological Sciences Bldg East"
+   ],
+   "lng": -96.339366,
+   "lat": 30.615826,
+   "osm": "way/91100223"
+  },
+  {
+   "id": "scoates-hall",
+   "name": "Scoates Hall",
+   "short": "Scoates Hall",
+   "kind": "academic",
+   "codes": [
+    "SCTS"
+   ],
+   "aliases": [],
+   "lng": -96.338351,
+   "lat": 30.618507,
+   "osm": "way/155052524"
+  },
+  {
+   "id": "harrington-education-center-classroom-building",
+   "name": "Harrington Education Center Classroom Building",
+   "short": "Harrington Education Center Classroom Building",
+   "kind": "academic",
+   "codes": [
+    "HECC"
+   ],
+   "aliases": [
+    "HECC"
+   ],
+   "lng": -96.340434,
+   "lat": 30.61687,
+   "osm": "way/91100321"
+  },
+  {
+   "id": "chemistry-155052621",
+   "name": "Chemistry",
+   "short": "Chemistry",
+   "kind": "academic",
+   "codes": [
+    "CHAN"
+   ],
+   "aliases": [
+    "CHAN"
+   ],
+   "lng": -96.339588,
+   "lat": 30.618489,
+   "osm": "way/155052621"
+  },
+  {
+   "id": "mitchell-institute",
+   "name": "Mitchell Institute",
+   "short": "Mitchell Institute",
+   "kind": "academic",
+   "codes": [
+    "MIST"
+   ],
+   "aliases": [
+    "MIST",
+    "Mitchell Inst for Fundamental Phys & Astronomy"
+   ],
+   "lng": -96.342914,
+   "lat": 30.620037,
+   "osm": "relation/20590041"
+  },
+  {
+   "id": "west-campus-dining-facility",
+   "name": "West Campus Dining Facility",
+   "short": "West Campus Dining Facility",
+   "kind": "dining",
+   "codes": [
+    "WCDF"
+   ],
+   "aliases": [],
+   "lng": -96.348633,
+   "lat": 30.610222,
+   "osm": "way/1485893455"
+  },
+  {
+   "id": "academic-building",
+   "name": "Academic Building",
+   "short": "Academic Building",
+   "kind": "academic",
+   "codes": [
+    "ACAD"
+   ],
+   "aliases": [
+    "ACAD"
+   ],
+   "lng": -96.340791,
+   "lat": 30.61576,
+   "osm": "way/86199626"
+  },
+  {
+   "id": "pavillion",
+   "name": "Pavillion",
+   "short": "Pavillion",
+   "kind": "academic",
+   "codes": [
+    "PAV"
+   ],
+   "aliases": [
+    "Pavilion"
+   ],
+   "lng": -96.338027,
+   "lat": 30.616823,
+   "osm": "way/91100297"
+  },
+  {
+   "id": "cve-lab-building",
+   "name": "CVE Lab Building",
+   "short": "CVE Lab Building",
+   "kind": "academic",
+   "codes": [
+    "CVLB"
+   ],
+   "aliases": [
+    "CVLB"
+   ],
+   "lng": -96.339496,
+   "lat": 30.61999,
+   "osm": "way/915378579"
+  },
+  {
+   "id": "biological-sciences-building-west",
+   "name": "Biological Sciences Building West",
+   "short": "Biological Sciences Building West",
+   "kind": "academic",
+   "codes": [
+    "BSBW"
+   ],
+   "aliases": [
+    "Biological Sciences Bldg West"
+   ],
+   "lng": -96.339704,
+   "lat": 30.615624,
+   "osm": "way/91100345"
+  },
+  {
+   "id": "plant-pathology-and-microbiology-building",
+   "name": "Plant Pathology and Microbiology Building",
+   "short": "Plant Pathology and Microbiology Building",
+   "kind": "academic",
+   "codes": [
+    "PLPM"
+   ],
+   "aliases": [],
+   "lng": -96.349008,
+   "lat": 30.609386,
+   "osm": "way/951912555"
+  },
+  {
+   "id": "psychology-building",
+   "name": "Psychology Building",
+   "short": "Psychology Building",
+   "kind": "academic",
+   "codes": [
+    "PSYC"
+   ],
+   "aliases": [],
+   "lng": -96.339782,
+   "lat": 30.614683,
+   "osm": "way/91100325"
+  },
+  {
+   "id": "peterson-building",
+   "name": "Peterson Building",
+   "short": "Peterson Building",
+   "kind": "academic",
+   "codes": [
+    "PETR"
+   ],
+   "aliases": [
+    "PETR"
+   ],
+   "lng": -96.338594,
+   "lat": 30.615969,
+   "osm": "way/91100266"
+  },
+  {
+   "id": "hj-bill-and-reta-haynes-engineering-building",
+   "name": "H.J. (Bill) and Reta Haynes Engineering Building",
+   "short": "H.J. (Bill) and Reta Haynes Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "HEB"
+   ],
+   "aliases": [],
+   "lng": -96.338934,
+   "lat": 30.619786,
+   "osm": "way/260840980"
+  },
+  {
+   "id": "harrington-education-center",
+   "name": "Harrington Education Center",
+   "short": "Harrington Education Center",
+   "kind": "academic",
+   "codes": [
+    "EDCT"
+   ],
+   "aliases": [
+    "Harrington Education Center Office Tower"
+   ],
+   "lng": -96.340923,
+   "lat": 30.61655,
+   "osm": "way/91100317"
+  },
+  {
+   "id": "harvey-r-bright-building",
+   "name": "Harvey R. Bright Building",
+   "short": "Harvey R. Bright Building",
+   "kind": "academic",
+   "codes": [
+    "HRBB"
+   ],
+   "aliases": [
+    "HRBB",
+    "Bright Building"
+   ],
+   "lng": -96.338844,
+   "lat": 30.619009,
+   "osm": "way/951877260"
+  },
+  {
+   "id": "wildlife-fisheries-and-ecological-sciences-building",
+   "name": "Wildlife Fisheries & Ecological Sciences Building",
+   "short": "Wildlife Fisheries & Ecological Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "WFES"
+   ],
+   "aliases": [
+    "WFES"
+   ],
+   "lng": -96.35061,
+   "lat": 30.606435,
+   "osm": "way/418863347"
+  },
+  {
+   "id": "animal-industries-building",
+   "name": "Animal Industries Building",
+   "short": "Animal Industries Building",
+   "kind": "academic",
+   "codes": [
+    "AIEN"
+   ],
+   "aliases": [
+    "AI Engineering Building"
+   ],
+   "lng": -96.33722,
+   "lat": 30.617253,
+   "osm": "way/155052716"
+  },
+  {
+   "id": "anthropology-building",
+   "name": "Anthropology Building",
+   "short": "Anthropology Building",
+   "kind": "academic",
+   "codes": [
+    "ANTH"
+   ],
+   "aliases": [],
+   "lng": -96.339019,
+   "lat": 30.617746,
+   "osm": "way/91100247"
+  },
+  {
+   "id": "eller-oceanography-and-meteorology-building",
+   "name": "Eller Oceanography and Meteorology Building",
+   "short": "O&M;OMB",
+   "kind": "academic",
+   "codes": [
+    "OMB"
+   ],
+   "aliases": [
+    "O&M",
+    "OMB"
+   ],
+   "lng": -96.336704,
+   "lat": 30.617727,
+   "osm": "way/155052692"
+  },
+  {
+   "id": "reed-mcdonald-building",
+   "name": "Reed-McDonald Building",
+   "short": "Reed-McDonald Building",
+   "kind": "academic",
+   "codes": [
+    "RDMC"
+   ],
+   "aliases": [],
+   "lng": -96.340997,
+   "lat": 30.618302,
+   "osm": "way/307098416"
+  },
+  {
+   "id": "cater-mattil-hall",
+   "name": "Cater-Mattil Hall",
+   "short": "Cater-Mattil Hall",
+   "kind": "academic",
+   "codes": [
+    "CMAT"
+   ],
+   "aliases": [],
+   "lng": -96.34817,
+   "lat": 30.613191,
+   "osm": "way/155052734"
+  },
+  {
+   "id": "heep-laboratory-building",
+   "name": "HEEP Laboratory Building",
+   "short": "HEEP Laboratory Building",
+   "kind": "academic",
+   "codes": [
+    "HLB"
+   ],
+   "aliases": [
+    "HLB"
+   ],
+   "lng": -96.337507,
+   "lat": 30.616206,
+   "osm": "way/91100329"
+  },
+  {
+   "id": "langford-architecture-center-building-c",
+   "name": "Langford Architecture Center Building C",
+   "short": "Langford Architecture Center Building C",
+   "kind": "academic",
+   "codes": [
+    "ARCC"
+   ],
+   "aliases": [
+    "ARCC",
+    "Architecture Building C"
+   ],
+   "lng": -96.338005,
+   "lat": 30.619356,
+   "osm": "way/155052606"
+  },
+  {
+   "id": "engineering-activities-building-a",
+   "name": "Engineering Activities Building A",
+   "short": "Engineering Activities Building A",
+   "kind": "academic",
+   "codes": [
+    "EABA"
+   ],
+   "aliases": [
+    "EABA",
+    "Engineering Activities Bldg A"
+   ],
+   "lng": -96.337021,
+   "lat": 30.615842,
+   "osm": "way/155052534"
+  },
+  {
+   "id": "francis-hall",
+   "name": "Francis Hall",
+   "short": "Francis Hall",
+   "kind": "academic",
+   "codes": [
+    "FRAN"
+   ],
+   "aliases": [],
+   "lng": -96.339788,
+   "lat": 30.617303,
+   "osm": "way/91100301"
+  },
+  {
+   "id": "dwight-look-engineering-building",
+   "name": "Dwight Look Engineering Building",
+   "short": "Dwight Look Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "DLEB"
+   ],
+   "aliases": [
+    "DLEB"
+   ],
+   "lng": -96.339893,
+   "lat": 30.620176,
+   "osm": "way/915378578"
+  },
+  {
+   "id": "joe-c-richardson-petroleum-engineering-building",
+   "name": "Joe C. Richardson Petroleum Engineering Building",
+   "short": "Joe C. Richardson Petroleum Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "RICH"
+   ],
+   "aliases": [
+    "RICH"
+   ],
+   "lng": -96.339386,
+   "lat": 30.619475,
+   "osm": "way/260841144"
+  },
+  {
+   "id": "doherty-building",
+   "name": "Doherty Building",
+   "short": "Doherty Building",
+   "kind": "academic",
+   "codes": [
+    "DRTY"
+   ],
+   "aliases": [],
+   "lng": -96.339939,
+   "lat": 30.619245,
+   "osm": "way/155052513"
+  },
+  {
+   "id": "engineering-activities-building-c",
+   "name": "Engineering Activities Building C",
+   "short": "Engineering Activities Building C",
+   "kind": "academic",
+   "codes": [
+    "EABC"
+   ],
+   "aliases": [
+    "EABC",
+    "Engineering Activities Bldg C"
+   ],
+   "lng": -96.337869,
+   "lat": 30.615253,
+   "osm": "way/155052530"
+  },
+  {
+   "id": "physical-education-boot-camp-and-archery-annex",
+   "name": "Physical Education Boot Camp and Archery Annex",
+   "short": "Physical Education Boot Camp and Archery Annex",
+   "kind": "academic",
+   "codes": [
+    "PEBC"
+   ],
+   "aliases": [],
+   "lng": -96.351269,
+   "lat": 30.601741,
+   "osm": "way/550895693"
+  },
+  {
+   "id": "military-sciences-building",
+   "name": "Military Sciences Building",
+   "short": "Military Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "MILS"
+   ],
+   "aliases": [],
+   "lng": -96.339374,
+   "lat": 30.614249,
+   "osm": "way/155052510"
+  },
+  {
+   "id": "computer-science-center",
+   "name": "Computer Science Center",
+   "short": "Computer Science Center",
+   "kind": "academic",
+   "codes": [
+    "CSC"
+   ],
+   "aliases": [
+    "Computing Services Center"
+   ],
+   "lng": -96.336794,
+   "lat": 30.616723,
+   "osm": "way/155052705"
+  },
+  {
+   "id": "ymca-building",
+   "name": "YMCA Building",
+   "short": "YMCA Building",
+   "kind": "academic",
+   "codes": [
+    "YMCA"
+   ],
+   "aliases": [],
+   "lng": -96.342298,
+   "lat": 30.615177,
+   "osm": "way/155052548"
+  },
+  {
+   "id": "cushing-memorial-library",
+   "name": "Cushing Memorial Library",
+   "short": "Cushing Memorial Library",
+   "kind": "library",
+   "codes": [
+    "CUSH"
+   ],
+   "aliases": [
+    "CUSH"
+   ],
+   "lng": -96.339949,
+   "lat": 30.616338,
+   "osm": "way/249571645"
+  },
+  {
+   "id": "school-of-public-health-lab-bldg-1519",
+   "name": "School of Public Health - Lab Bldg 1519",
+   "short": "School of Public Health - Lab Bldg 1519",
+   "kind": "academic",
+   "codes": [
+    "SPHB"
+   ],
+   "aliases": [
+    "School of Public Health - Lab Bldg"
+   ],
+   "lng": -96.35446,
+   "lat": 30.609945,
+   "osm": "way/633044835"
+  },
+  {
+   "id": "langford-architecture-center-building-b",
+   "name": "Langford Architecture Center Building B",
+   "short": "Langford Architecture Center Building B",
+   "kind": "academic",
+   "codes": [
+    "ARCB"
+   ],
+   "aliases": [
+    "ARCB",
+    "Architecture Building B"
+   ],
+   "lng": -96.338307,
+   "lat": 30.619232,
+   "osm": "way/155052709"
+  },
+  {
+   "id": "glasscock-building",
+   "name": "Glasscock Building",
+   "short": "Glasscock Building",
+   "kind": "academic",
+   "codes": [
+    "GLAS"
+   ],
+   "aliases": [
+    "Melbern G. Glasscock Building"
+   ],
+   "lng": -96.338497,
+   "lat": 30.617324,
+   "osm": "way/91100255"
+  },
+  {
+   "id": "bolton-hall",
+   "name": "Bolton Hall",
+   "short": "Bolton Hall",
+   "kind": "academic",
+   "codes": [
+    "BLTN"
+   ],
+   "aliases": [],
+   "lng": -96.341678,
+   "lat": 30.616173,
+   "osm": "way/155052520"
+  },
+  {
+   "id": "ash-ii-leadership-learning-center",
+   "name": "Ash II Leadership Learning Center",
+   "short": "Ash II Leadership Learning Center",
+   "kind": "academic",
+   "codes": [
+    "ASH2"
+   ],
+   "aliases": [],
+   "lng": -96.336772,
+   "lat": 30.61404,
+   "osm": "way/86199577"
+  },
+  {
+   "id": "student-computing-center",
+   "name": "Student Computing Center",
+   "short": "Student Computing Center",
+   "kind": "academic",
+   "codes": [
+    "SCC"
+   ],
+   "aliases": [
+    "SCC"
+   ],
+   "lng": -96.338011,
+   "lat": 30.615928,
+   "osm": "way/307098420"
+  },
+  {
+   "id": "engineering-activities-building-b",
+   "name": "Engineering Activities Building B",
+   "short": "Engineering Activities Building B",
+   "kind": "academic",
+   "codes": [
+    "EABB"
+   ],
+   "aliases": [
+    "EABB",
+    "Engineering Activities Bldg B"
+   ],
+   "lng": -96.337441,
+   "lat": 30.615548,
+   "osm": "way/155052516"
+  },
+  {
+   "id": "heaton-hall",
+   "name": "Heaton Hall",
+   "short": "Heaton Hall",
+   "kind": "academic",
+   "codes": [
+    "HEAT"
+   ],
+   "aliases": [],
+   "lng": -96.342282,
+   "lat": 30.616706,
+   "osm": "way/155052724"
+  },
+  {
+   "id": "plank-leadership-learning-center",
+   "name": "Plank Leadership Learning Center",
+   "short": "Plank Leadership Learning Center",
+   "kind": "academic",
+   "codes": [
+    "PLNK"
+   ],
+   "aliases": [],
+   "lng": -96.337396,
+   "lat": 30.613619,
+   "osm": "way/86199572"
+  },
+  {
+   "id": "butler-hall",
+   "name": "Butler Hall",
+   "short": "Butler Hall",
+   "kind": "academic",
+   "codes": [
+    "BTLR"
+   ],
+   "aliases": [],
+   "lng": -96.338973,
+   "lat": 30.614842,
+   "osm": "way/91100258"
+  },
+  {
+   "id": "coke-building",
+   "name": "Coke Building",
+   "short": "Coke Building",
+   "kind": "academic",
+   "codes": [
+    "COKE"
+   ],
+   "aliases": [],
+   "lng": -96.341748,
+   "lat": 30.614619,
+   "osm": "way/91100333"
+  },
+  {
+   "id": "penberthy-intramural-sports-center",
+   "name": "Penberthy Intramural Sports Center",
+   "short": "Penberthy Intramural Sports Center",
+   "kind": "gym",
+   "codes": [
+    "PISC"
+   ],
+   "aliases": [],
+   "lng": -96.346795,
+   "lat": 30.602004,
+   "osm": "way/413449792"
+  },
+  {
+   "id": "beasley-laboratory",
+   "name": "Beasley Laboratory",
+   "short": "Beasley Laboratory",
+   "kind": "academic",
+   "codes": [
+    "BEAS"
+   ],
+   "aliases": [],
+   "lng": -96.354215,
+   "lat": 30.616866,
+   "osm": "way/407982449"
+  },
+  {
+   "id": "fermier-hall",
+   "name": "Fermier Hall",
+   "short": "Fermier Hall",
+   "kind": "academic",
+   "codes": [
+    "FERM"
+   ],
+   "aliases": [],
+   "lng": -96.34176,
+   "lat": 30.616841,
+   "osm": "way/155052726"
+  },
+  {
+   "id": "adriance-laboratory",
+   "name": "Adriance Laboratory",
+   "short": "Adriance Laboratory",
+   "kind": "academic",
+   "codes": [
+    "0510"
+   ],
+   "aliases": [
+    "Adriance Lab"
+   ],
+   "lng": -96.353213,
+   "lat": 30.610349,
+   "osm": "way/951897045"
+  },
+  {
+   "id": "leach-teaching-gardens-pavilion",
+   "name": "Leach Teaching Gardens Pavilion",
+   "short": "Leach Teaching Gardens Pavilion",
+   "kind": "academic",
+   "codes": [
+    "LTGP"
+   ],
+   "aliases": [
+    "LTGP",
+    "Teaching Gardens Pavilion"
+   ],
+   "lng": -96.351703,
+   "lat": 30.60716,
+   "osm": "way/661590581"
+  },
+  {
+   "id": "buzbee-leadership-learning-center",
+   "name": "Buzbee Leadership Learning Center",
+   "short": "Buzbee Leadership Learning Center",
+   "kind": "academic",
+   "codes": [
+    "BUZB"
+   ],
+   "aliases": [],
+   "lng": -96.33708,
+   "lat": 30.612523,
+   "osm": "relation/11488690"
+  },
+  {
+   "id": "ash-i-leadership-learning-center",
+   "name": "Ash I Leadership Learning Center",
+   "short": "Ash I Leadership Learning Center",
+   "kind": "academic",
+   "codes": [
+    "ASH1"
+   ],
+   "aliases": [
+    "H. Grady Ash, Jr. '58 Leadership Learning Center"
+   ],
+   "lng": -96.335583,
+   "lat": 30.613495,
+   "osm": "relation/11488689"
+  },
+  {
+   "id": "munnerlyn-astronomy-and-space-sciences-engineering",
+   "name": "Munnerlyn Astronomy & Space Sciences Engineering",
+   "short": "Munnerlyn Astronomy & Space Sciences Engineering",
+   "kind": "academic",
+   "codes": [
+    "MASS"
+   ],
+   "aliases": [],
+   "lng": -96.344151,
+   "lat": 30.618909,
+   "osm": "way/155052680"
+  },
+  {
+   "id": "school-of-public-health-classroom-bldg",
+   "name": "School of Public Health - Classroom Bldg",
+   "short": "School of Public Health - Classroom Bldg",
+   "kind": "academic",
+   "codes": [
+    "SPHC"
+   ],
+   "aliases": [],
+   "lng": -96.353898,
+   "lat": 30.609998,
+   "osm": "way/155052601"
+  },
+  {
+   "id": "omar-smith-instructional-tennis-center",
+   "name": "Omar Smith Instructional Tennis Center",
+   "short": "Omar Smith Instructional Tennis Center",
+   "kind": "academic",
+   "codes": [
+    "WCTC"
+   ],
+   "aliases": [],
+   "lng": -96.349571,
+   "lat": 30.602106,
+   "osm": "way/1418228789"
+  }
+ ]
+}

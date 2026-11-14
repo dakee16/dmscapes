@@ -1,0 +1,704 @@
+{
+  "halls": {
+    "commons": {
+      "pin": [
+        -96.336307,
+        30.614675
+      ]
+    },
+    "corridor": {
+      "pin": [
+        -96.334517,
+        30.614422
+      ]
+    },
+    "modular": {
+      "pin": [
+        -96.344567,
+        30.615915
+      ]
+    },
+    "ramp": {
+      "pin": [
+        -96.345629,
+        30.615192
+      ]
+    },
+    "balcony": {
+      "pin": [
+        -96.345726,
+        30.615594
+      ]
+    },
+    "white-creek": {
+      "pin": [
+        -96.35581,
+        30.6081
+      ]
+    }
+  },
+  "places": {
+    "reed-arena": {
+      "hide": true
+    },
+    "blue-bell-park": {
+      "hide": true
+    },
+    "george-p-mitchell-tennis-center": {
+      "hide": true
+    },
+    "davis-player-development-center": {
+      "hide": true
+    },
+    "player-development-center-west-campus": {
+      "hide": true
+    },
+    "track-and-field-support-center": {
+      "hide": true
+    },
+    "softball-building": {
+      "hide": true
+    },
+    "julia-and-mark-ellis-79-soccer-building": {
+      "hide": true
+    },
+    "the-golf-club-at-texas-a-and-m": {
+      "hide": true
+    },
+    "golf-course-maintenance-building": {
+      "hide": true
+    },
+    "equine-athletic-riding-arena": {
+      "hide": true
+    },
+    "equine-initiative-warm-up-arena-2": {
+      "hide": true
+    },
+    "equine-initiative-outreach-bldg": {
+      "hide": true
+    },
+    "penberthy-recsports-pavilion-1578": {
+      "hide": true
+    },
+    "penberthy-south-control-building": {
+      "hide": true
+    },
+    "veterinary-large-animal-hospital": {
+      "hide": true
+    },
+    "veterinary-teaching-hospital": {
+      "hide": true
+    },
+    "veterinary-small-animal-hospital": {
+      "hide": true
+    },
+    "a-p-beutel-health-center": {
+      "hide": true
+    },
+    "human-clinical-research-lab": {
+      "hide": true
+    },
+    "texas-a-and-m-veterinary-medical-diagnostic-laboratory": {
+      "hide": true
+    },
+    "former-tvmdl-building": {
+      "hide": true
+    },
+    "tvmc-surgery-building": {
+      "hide": true
+    },
+    "veterinary-anatomic-pathology": {
+      "hide": true
+    },
+    "theriogenology-facility-equine-reproduction": {
+      "hide": true
+    },
+    "pearce-animal-pavilion-1160": {
+      "hide": true
+    },
+    "schubot-exotic-bird-health-center": {
+      "hide": true
+    },
+    "laboratory-animal-care-building": {
+      "hide": true
+    },
+    "vivarium-iii": {
+      "hide": true
+    },
+    "wildlife-and-exotic-animal-ctr": {
+      "hide": true
+    },
+    "physical-plant-administration-and-shops": {
+      "hide": true
+    },
+    "purchasing-and-stores": {
+      "hide": true
+    },
+    "general-services-complex": {
+      "hide": true
+    },
+    "koldus-building": {
+      "hide": true
+    },
+    "student-services-building": {
+      "hide": true
+    },
+    "jack-k-williams-administration-building": {
+      "hide": true
+    },
+    "business-management-services-building": {
+      "hide": true
+    },
+    "texas-a-and-m-university-system-state-headquarters": {
+      "hide": true
+    },
+    "annenberg-presidential-conference-center": {
+      "hide": true
+    },
+    "clayton-w-williams-jr-alumni-center": {
+      "hide": true
+    },
+    "hagler-center": {
+      "hide": true
+    },
+    "sanders-corps-of-cadets-center": {
+      "hide": true
+    },
+    "wp-luse-foundation-building": {
+      "hide": true
+    },
+    "veterinary-medicine-administration": {
+      "hide": true
+    },
+    "school-of-public-health-admin-bldg-1518": {
+      "hide": true
+    },
+    "agrilife-services-building": {
+      "hide": true
+    },
+    "the-agrilife-center": {
+      "hide": true
+    },
+    "office-of-the-state-chemist-building": {
+      "hide": true
+    },
+    "tti-state-headquarters-and-research-building": {
+      "hide": true
+    },
+    "2-research-park": {
+      "hide": true
+    },
+    "1111-research-parkway-building": {
+      "hide": true
+    },
+    "centeq-building": {
+      "hide": true
+    },
+    "transportation-services-hq": {
+      "hide": true
+    },
+    "polo-road-building": {
+      "hide": true
+    },
+    "mechanical-engineering-office-building": {
+      "hide": true
+    },
+    "west-campus-office-pavilion": {
+      "hide": true
+    },
+    "west-campus-office-building-01": {
+      "hide": true
+    },
+    "west-campus-office-building-02": {
+      "hide": true
+    },
+    "west-campus-office-building-03": {
+      "hide": true
+    },
+    "west-campus-office-building-04": {
+      "hide": true
+    },
+    "west-campus-office-building-05": {
+      "hide": true
+    },
+    "west-campus-office-building-06": {
+      "hide": true
+    },
+    "environmental-health-and-safety-office-annex": {
+      "hide": true
+    },
+    "utilities-and-energy-services-central-office": {
+      "hide": true
+    },
+    "utilities-and-energy-services-business-office": {
+      "hide": true
+    },
+    "scotts-turf-lab-1-admin-bldg": {
+      "hide": true
+    },
+    "james-a-baker-iii-pavilion": {
+      "hide": true
+    },
+    "civilian-lounge-a1": {
+      "hide": true
+    },
+    "civilian-lounge-a2": {
+      "hide": true
+    },
+    "civilian-lounge-a3": {
+      "hide": true
+    },
+    "vending-machine-booth": {
+      "hide": true
+    },
+    "the-hub-bicycle-maintenance-shack": {
+      "hide": true
+    },
+    "metal-building": {
+      "hide": true
+    },
+    "donald-l-houston-building": {
+      "hide": true
+    },
+    "satellite-utility-plant-no-1": {
+      "hide": true
+    },
+    "satellite-utility-plant-no-2": {
+      "hide": true
+    },
+    "supplemental-utility-plant-3": {
+      "hide": true
+    },
+    "west-campus-switching-station": {
+      "hide": true
+    },
+    "west-campus-data-center": {
+      "hide": true
+    },
+    "break-room-at-central-utility-plant": {
+      "hide": true
+    },
+    "plumbing-fabrication-shop": {
+      "hide": true
+    },
+    "utilities-inventory-warehouse-building-1": {
+      "hide": true
+    },
+    "warehouse": {
+      "hide": true
+    },
+    "fleet-services": {
+      "hide": true
+    },
+    "phys-plant-grounds-maintenance": {
+      "hide": true
+    },
+    "grounds-shop-warehouse": {
+      "hide": true
+    },
+    "grounds-maintenance-supply-bldg": {
+      "hide": true
+    },
+    "grounds-maintenance-office-shop-stor": {
+      "hide": true
+    },
+    "farm-service-implement-1": {
+      "hide": true
+    },
+    "farm-service-implement-2": {
+      "hide": true
+    },
+    "farm-service-shop": {
+      "hide": true
+    },
+    "scotts-turf-lab-2-shop-bldg": {
+      "hide": true
+    },
+    "hensel-park-telecom-building": {
+      "hide": true
+    },
+    "hensel-park-telecom-building-2": {
+      "hide": true
+    },
+    "ag-engineering-power-and-machinery-building": {
+      "hide": true
+    },
+    "ag-engineering-research-lab-and-shop": {
+      "hide": true
+    },
+    "university-apartments-community-maintenance-bldg": {
+      "hide": true
+    },
+    "institute-for-preclinical-studies-a": {
+      "hide": true
+    },
+    "institute-for-genomic-medicine": {
+      "hide": true
+    },
+    "national-center-for-therapeutics-manufacturing": {
+      "hide": true
+    },
+    "cyclotron-building": {
+      "hide": true
+    },
+    "nuclear-magnetic-resonance-facility": {
+      "hide": true
+    },
+    "testing-and-characterization-facility": {
+      "hide": true
+    },
+    "electron-beam-food-research-facility": {
+      "hide": true
+    },
+    "global-health-research-complex": {
+      "hide": true
+    },
+    "vet-med-research-bldg-addition": {
+      "hide": true
+    },
+    "veterinary-research-building": {
+      "hide": true
+    },
+    "mosquito-research-lab": {
+      "hide": true
+    },
+    "virus-vector-research-lab": {
+      "hide": true
+    },
+    "cuse-research-labs": {
+      "hide": true
+    },
+    "cuse-insect-testing-lab": {
+      "hide": true
+    },
+    "cuse-toxicology-hut": {
+      "hide": true
+    },
+    "cuse-chemistry": {
+      "hide": true
+    },
+    "center-for-urban-and-structural-entomology-cuse": {
+      "hide": true
+    },
+    "rollins-urban-and-structural-entomology-facility": {
+      "hide": true
+    },
+    "entomology-research-lab": {
+      "hide": true
+    },
+    "biological-control-facility": {
+      "hide": true
+    },
+    "grazingland-animal-nutrition-lab": {
+      "hide": true
+    },
+    "small-upland-fowl-res-lab-1579": {
+      "hide": true
+    },
+    "perennial-grass-breeding-and-genetics": {
+      "hide": true
+    },
+    "variety-testing-and-sorghum-breeding": {
+      "hide": true
+    },
+    "soil-and-crop-sci-dry-processing": {
+      "hide": true
+    },
+    "soil-testing-lab": {
+      "hide": true
+    },
+    "cotton-ginning-lab": {
+      "hide": true
+    },
+    "turfgrass-field-lab": {
+      "hide": true
+    },
+    "horticulture-field-laboratory": {
+      "hide": true
+    },
+    "nursery-floral-field-laboratory": {
+      "hide": true
+    },
+    "agronomy-field-lab": {
+      "hide": true
+    },
+    "price-hobgood-ag-engineering-research-lab": {
+      "hide": true
+    },
+    "offshore-technology-research-center": {
+      "hide": true
+    },
+    "forest-science-laboratory-building": {
+      "hide": true
+    },
+    "international-ocean-discovery-building": {
+      "hide": true
+    },
+    "the-gardens-f": {
+      "hide": true
+    },
+    "the-gardens-g": {
+      "hide": true
+    },
+    "the-gardens-h": {
+      "hide": true
+    },
+    "the-gardens-j": {
+      "hide": true
+    },
+    "the-gardens-k": {
+      "hide": true
+    },
+    "the-gardens-l": {
+      "hide": true
+    },
+    "the-gardens-m": {
+      "hide": true
+    },
+    "the-gardens-n": {
+      "hide": true
+    },
+    "the-gardens-p": {
+      "hide": true
+    },
+    "the-gardens-q": {
+      "hide": true
+    },
+    "the-gardens-community-center": {
+      "hide": true
+    },
+    "gardens-laundry": {
+      "hide": true
+    },
+    "white-creek-community-center": {
+      "hide": true
+    },
+    "white-creek-apartments-activity-center-1589": {
+      "hide": true
+    },
+    "becky-gates-childrens-center": {
+      "hide": true
+    },
+    "all-faiths-chapel": {
+      "hide": true
+    },
+    "george-bush-presidential-library-and-museum": {
+      "hide": true
+    },
+    "omar-smith-instructional-tennis-center": {
+      "kind": "academic"
+    },
+    "lechner-hall": {
+      "hide": true
+    },
+    "mitchell-institute-307739584": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "commons": "Pinned at Aston Hall (FCOR basemap point ASTO), the middle of the Southside commons-style halls Aston, Dunn, Krueger and Mosher (reslife.tamu.edu, hall styles).",
+    "corridor": "Pinned at Eppright Hall (FCOR basemap point EPPR), the middle of the Southside corridor-style halls Appelt, Eppright, Rudder, Underwood and Wells (reslife.tamu.edu, hall styles); Lechner and Hart on Northside share the style.",
+    "modular": "Pinned at Haas Hall (FCOR basemap point HAAS), the middle of the Northside modular halls Clements, Haas and McFadden (reslife.tamu.edu, hall styles).",
+    "ramp": "Pinned at Keathley Hall (FCOR basemap point KEAT), the middle of the Northside ramp-style halls Fowler, Hughes, Keathley, Schuhmacher and Walton (reslife.tamu.edu, hall styles).",
+    "balcony": "Pinned at Moses Hall (FCOR basemap point MOSE), among the Northside balcony-style halls Davis-Gary, Moses, Hobby and Neeley (reslife.tamu.edu, hall styles).",
+    "white-creek": "Pinned at White Creek Apartments B (OSM way/521350273, FCOR 1591), the middle of the three White Creek buildings on West Campus (reslife.tamu.edu/white-creek).",
+    "reed-arena": "Varsity athletics venue or facility. Not somewhere undergraduates have class.",
+    "blue-bell-park": "Varsity athletics venue or facility. Not somewhere undergraduates have class.",
+    "george-p-mitchell-tennis-center": "Varsity athletics venue or facility. Not somewhere undergraduates have class.",
+    "davis-player-development-center": "Varsity athletics venue or facility. Not somewhere undergraduates have class.",
+    "player-development-center-west-campus": "Varsity athletics venue or facility. Not somewhere undergraduates have class.",
+    "track-and-field-support-center": "Varsity athletics venue or facility. Not somewhere undergraduates have class.",
+    "softball-building": "Varsity athletics venue or facility. Not somewhere undergraduates have class.",
+    "julia-and-mark-ellis-79-soccer-building": "Varsity athletics venue or facility. Not somewhere undergraduates have class.",
+    "the-golf-club-at-texas-a-and-m": "The campus golf course clubhouse (FCOR GOLF). Not somewhere undergraduates have class.",
+    "golf-course-maintenance-building": "Golf course maintenance shop (FCOR 0655). Not somewhere undergraduates have class.",
+    "omar-smith-instructional-tennis-center": "Omar Smith Instructional Tennis Center (FCOR WCTC) is where Kinesiology tennis activity classes meet, so it stays as a class building rather than a gym.",
+    "equine-athletic-riding-arena": "Varsity athletics venue or facility. Not somewhere undergraduates have class.",
+    "equine-initiative-warm-up-arena-2": "Varsity athletics venue or facility. Not somewhere undergraduates have class.",
+    "equine-initiative-outreach-bldg": "Varsity athletics venue or facility. Not somewhere undergraduates have class.",
+    "penberthy-recsports-pavilion-1578": "Varsity athletics venue or facility. Not somewhere undergraduates have class.",
+    "penberthy-south-control-building": "Varsity athletics venue or facility. Not somewhere undergraduates have class.",
+    "veterinary-large-animal-hospital": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "veterinary-teaching-hospital": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "veterinary-small-animal-hospital": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "a-p-beutel-health-center": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "human-clinical-research-lab": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "texas-a-and-m-veterinary-medical-diagnostic-laboratory": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "former-tvmdl-building": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "tvmc-surgery-building": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "veterinary-anatomic-pathology": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "theriogenology-facility-equine-reproduction": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "pearce-animal-pavilion-1160": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "schubot-exotic-bird-health-center": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "laboratory-animal-care-building": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "vivarium-iii": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "wildlife-and-exotic-animal-ctr": "Hospital, clinic or animal hospital. Not somewhere undergraduates have class.",
+    "physical-plant-administration-and-shops": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "purchasing-and-stores": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "general-services-complex": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "koldus-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "student-services-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "jack-k-williams-administration-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "business-management-services-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "texas-a-and-m-university-system-state-headquarters": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "annenberg-presidential-conference-center": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "clayton-w-williams-jr-alumni-center": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "hagler-center": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "sanders-corps-of-cadets-center": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "wp-luse-foundation-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "veterinary-medicine-administration": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "school-of-public-health-admin-bldg-1518": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "agrilife-services-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "the-agrilife-center": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "office-of-the-state-chemist-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "tti-state-headquarters-and-research-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "2-research-park": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "1111-research-parkway-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "centeq-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "transportation-services-hq": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "polo-road-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "mechanical-engineering-office-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "west-campus-office-pavilion": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "west-campus-office-building-01": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "west-campus-office-building-02": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "west-campus-office-building-03": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "west-campus-office-building-04": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "west-campus-office-building-05": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "west-campus-office-building-06": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "environmental-health-and-safety-office-annex": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "utilities-and-energy-services-central-office": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "utilities-and-energy-services-business-office": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "scotts-turf-lab-1-admin-bldg": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "james-a-baker-iii-pavilion": "Rec sports pavilion at the Penberthy fields (FCOR JABP). Not somewhere undergraduates have class.",
+    "civilian-lounge-a1": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "civilian-lounge-a2": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "civilian-lounge-a3": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "vending-machine-booth": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "the-hub-bicycle-maintenance-shack": "Bike maintenance shack (FCOR HUB, \"The HUB-Bike Maintenance Shack\"). Not somewhere undergraduates have class.",
+    "metal-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "donald-l-houston-building": "Admin, services or offices. Not somewhere undergraduates have class.",
+    "satellite-utility-plant-no-1": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "satellite-utility-plant-no-2": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "supplemental-utility-plant-3": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "west-campus-switching-station": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "west-campus-data-center": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "break-room-at-central-utility-plant": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "plumbing-fabrication-shop": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "utilities-inventory-warehouse-building-1": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "warehouse": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "fleet-services": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "phys-plant-grounds-maintenance": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "grounds-shop-warehouse": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "grounds-maintenance-supply-bldg": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "grounds-maintenance-office-shop-stor": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "farm-service-implement-1": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "farm-service-implement-2": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "farm-service-shop": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "scotts-turf-lab-2-shop-bldg": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "hensel-park-telecom-building": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "hensel-park-telecom-building-2": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "ag-engineering-power-and-machinery-building": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "ag-engineering-research-lab-and-shop": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "university-apartments-community-maintenance-bldg": "Utility plant, shop, warehouse or maintenance. Not somewhere undergraduates have class.",
+    "institute-for-preclinical-studies-a": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "institute-for-genomic-medicine": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "national-center-for-therapeutics-manufacturing": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "cyclotron-building": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "nuclear-magnetic-resonance-facility": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "testing-and-characterization-facility": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "electron-beam-food-research-facility": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "global-health-research-complex": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "vet-med-research-bldg-addition": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "veterinary-research-building": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "mosquito-research-lab": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "virus-vector-research-lab": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "cuse-research-labs": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "cuse-insect-testing-lab": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "cuse-toxicology-hut": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "cuse-chemistry": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "center-for-urban-and-structural-entomology-cuse": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "rollins-urban-and-structural-entomology-facility": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "entomology-research-lab": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "biological-control-facility": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "grazingland-animal-nutrition-lab": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "small-upland-fowl-res-lab-1579": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "perennial-grass-breeding-and-genetics": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "variety-testing-and-sorghum-breeding": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "soil-and-crop-sci-dry-processing": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "soil-testing-lab": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "cotton-ginning-lab": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "turfgrass-field-lab": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "horticulture-field-laboratory": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "nursery-floral-field-laboratory": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "agronomy-field-lab": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "price-hobgood-ag-engineering-research-lab": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "offshore-technology-research-center": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "forest-science-laboratory-building": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "international-ocean-discovery-building": "Research facility, not a class building. Not somewhere undergraduates have class.",
+    "the-gardens-f": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "the-gardens-g": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "the-gardens-h": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "the-gardens-j": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "the-gardens-k": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "the-gardens-l": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "the-gardens-m": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "the-gardens-n": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "the-gardens-p": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "the-gardens-q": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "the-gardens-community-center": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "gardens-laundry": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "white-creek-community-center": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "white-creek-apartments-activity-center-1589": "Student housing or a housing community building. Not somewhere undergraduates have class.",
+    "becky-gates-childrens-center": "Childcare, chapel or museum. Not somewhere undergraduates have class.",
+    "all-faiths-chapel": "Childcare, chapel or museum. Not somewhere undergraduates have class.",
+    "george-bush-presidential-library-and-museum": "Childcare, chapel or museum. Not somewhere undergraduates have class.",
+    "lechner-hall": "Lechner Hall (FCOR LECH, \"Lechner Residence Hall\") is a Northside corridor-style residence hall (reslife.tamu.edu hall styles), not a class building.",
+    "mitchell-institute-307739584": "OSM way/307739584 is a second outline of the Mitchell Institute (FCOR MIST), already listed as mitchell-institute from relation/20590041.",
+    "0862": "FCOR 0862 \"Butler Building\" is a West Campus building near Adriance Lab, not Butler Hall (BTLR) on Southside; the word match joined them, so it is dropped."
+  },
+  "codes": {
+    "0862": null
+  },
+  "detours": [
+    {
+      "pairs": [
+        "commons -> teague-building",
+        "commons -> pavillion",
+        "commons -> eller-oceanography-and-meteorology-building",
+        "commons -> heep-laboratory-building",
+        "commons -> engineering-activities-building-a",
+        "commons -> engineering-activities-building-b",
+        "commons -> engineering-activities-building-c",
+        "commons -> computer-science-center",
+        "commons -> student-computing-center",
+        "commons -> plank-leadership-learning-center",
+        "corridor -> commons",
+        "corridor -> teague-building",
+        "corridor -> eller-oceanography-and-meteorology-building",
+        "corridor -> engineering-activities-building-a",
+        "corridor -> engineering-activities-building-b",
+        "corridor -> computer-science-center",
+        "corridor -> student-computing-center",
+        "corridor -> ash-ii-leadership-learning-center"
+      ],
+      "maxRatio": 4.8,
+      "why": "OSM maps no footway through the Southside Commons block (Aston, Dunn, Krueger and Mosher joined round the Commons, whose only mapped access is on Lubbock Street), and its sidewalks stop short of Mosher Lane without joining, so walks from Aston and Eppright go south and round by Lubbock Street."
+    },
+    {
+      "pairs": [
+        "commons -> southside-rec-center",
+        "corridor -> southside-rec-center"
+      ],
+      "maxRatio": 6.5,
+      "why": "Mosher Lane dead-ends in OSM about 15 m short of the path to the Southside Rec Center, so walks from Aston and Eppright go round the Commons block by Lubbock Street and Spence Street to reach it."
+    },
+    {
+      "pairs": [
+        "ramp -> cater-mattil-hall",
+        "balcony -> cater-mattil-hall"
+      ],
+      "maxRatio": 2.9,
+      "why": "Cater-Mattil Hall is across Wellborn Road and the railroad from Northside, crossed only at the Old Main Drive underpass to the south, so walks from Keathley and Moses go down to it and back up Olsen Boulevard."
+    }
+  ]
+}
