@@ -1,4 +1,46 @@
 {
+  "arizona": {
+    "halls": 22,
+    "places": [
+      {
+        "placeId": "student-union-memorial-center",
+        "days": 21
+      },
+      {
+        "placeId": "mlk-center",
+        "days": 10
+      },
+      {
+        "placeId": "civil-engineering",
+        "days": 21
+      },
+      {
+        "placeId": "engineering",
+        "days": 10
+      },
+      {
+        "placeId": "administration",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "yuma",
+        "name": "Yuma",
+        "weekly": 92.2
+      },
+      {
+        "dormId": "pima",
+        "name": "Pima",
+        "weekly": 112.2
+      },
+      {
+        "dormId": "maricopa",
+        "name": "Maricopa",
+        "weekly": 116.6
+      }
+    ]
+  },
   "arizona-state": {
     "halls": 11,
     "places": [
@@ -38,6 +80,422 @@
         "dormId": "tooker-house",
         "name": "Tooker House (Fulton Schools Residential Community)",
         "weekly": 165.6
+      }
+    ]
+  },
+  "auburn": {
+    "halls": 6,
+    "places": [
+      {
+        "placeId": "haley-center",
+        "days": 21
+      },
+      {
+        "placeId": "tichenor-hall",
+        "days": 10
+      },
+      {
+        "placeId": "cater-hall",
+        "days": 21
+      },
+      {
+        "placeId": "petrie-hall",
+        "days": 10
+      },
+      {
+        "placeId": "ross-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "concourse-hall",
+        "name": "Concourse Hall",
+        "weekly": 64
+      },
+      {
+        "dormId": "the-quad",
+        "name": "The Quad",
+        "weekly": 76.2
+      },
+      {
+        "dormId": "the-village",
+        "name": "The Village",
+        "weekly": 248.2
+      }
+    ]
+  },
+  "boston-college": {
+    "halls": 30,
+    "places": [
+      {
+        "placeId": "lyons-hall",
+        "days": 21
+      },
+      {
+        "placeId": "devlin-hall",
+        "days": 10
+      },
+      {
+        "placeId": "mcguinn-hall",
+        "days": 21
+      },
+      {
+        "placeId": "faber",
+        "days": 10
+      },
+      {
+        "placeId": "service-building",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "roncalli",
+        "name": "Roncalli",
+        "weekly": 120.4
+      },
+      {
+        "dormId": "gonzaga",
+        "name": "Gonzaga",
+        "weekly": 152.2
+      },
+      {
+        "dormId": "fitzpatrick",
+        "name": "Fitzpatrick",
+        "weekly": 156
+      }
+    ]
+  },
+  "boston-university": {
+    "halls": 14,
+    "places": [
+      {
+        "placeId": "marsh-chapel",
+        "days": 21
+      },
+      {
+        "placeId": "photonics-center",
+        "days": 10
+      },
+      {
+        "placeId": "george-sherman-union",
+        "days": 21
+      },
+      {
+        "placeId": "morse-auditorium",
+        "days": 10
+      },
+      {
+        "placeId": "college-of-fine-arts",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "central-campus-apartments",
+        "name": "Central Campus Apartments",
+        "weekly": 133.4
+      },
+      {
+        "dormId": "warren-towers",
+        "name": "Warren Towers",
+        "weekly": 135.2
+      },
+      {
+        "dormId": "south-campus-apartments",
+        "name": "South Campus Apartments",
+        "weekly": 167.4
+      }
+    ]
+  },
+  "brown": {
+    "halls": 4,
+    "places": [
+      {
+        "placeId": "lyman-hall",
+        "days": 21
+      },
+      {
+        "placeId": "gardner-house",
+        "days": 10
+      },
+      {
+        "placeId": "macmillan-hall",
+        "days": 21
+      },
+      {
+        "placeId": "page-robinson-hall",
+        "days": 10
+      },
+      {
+        "placeId": "university-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "hegeman-hall",
+        "name": "Hegeman Hall",
+        "weekly": 65.8
+      },
+      {
+        "dormId": "keeney-quad",
+        "name": "Keeney Quadrangle",
+        "weekly": 109.8
+      },
+      {
+        "dormId": "metcalf-hall",
+        "name": "Metcalf Hall",
+        "weekly": 160.6
+      }
+    ]
+  },
+  "caltech": {
+    "halls": 6,
+    "places": [
+      {
+        "placeId": "schlinger-laboratory",
+        "days": 21
+      },
+      {
+        "placeId": "baxter-lecture-hall",
+        "days": 10
+      },
+      {
+        "placeId": "beckman-institute",
+        "days": 21
+      },
+      {
+        "placeId": "alles",
+        "days": 10
+      },
+      {
+        "placeId": "dabney-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "bechtel-residence",
+        "name": "Bechtel Residence",
+        "weekly": 123.2
+      },
+      {
+        "dormId": "south-houses",
+        "name": "The South Houses (Blacker, Dabney, Fleming, Ricketts)",
+        "weekly": 125.4
+      },
+      {
+        "dormId": "north-houses",
+        "name": "The North Houses (Lloyd, Page, Ruddock/Venerable)",
+        "weekly": 131.8
+      }
+    ]
+  },
+  "calvin": {
+    "halls": 6,
+    "places": [
+      {
+        "placeId": "science-building",
+        "days": 21
+      },
+      {
+        "placeId": "engineering-building",
+        "days": 10
+      },
+      {
+        "placeId": "hiemenga-hall",
+        "days": 21
+      },
+      {
+        "placeId": "preserve-house",
+        "days": 10
+      }
+    ],
+    "top": [
+      {
+        "dormId": "bolt-heyns-timmer-hall",
+        "name": "Bolt-Heyns-Timmer Hall",
+        "weekly": 161.8
+      },
+      {
+        "dormId": "rooks-vandellen-hall",
+        "name": "Rooks-Van Dellen Hall",
+        "weekly": 165
+      },
+      {
+        "dormId": "schultze-eldersveld-hall",
+        "name": "Schultze-Eldersveld Hall",
+        "weekly": 169.4
+      }
+    ]
+  },
+  "carnegie-mellon": {
+    "halls": 14,
+    "places": [
+      {
+        "placeId": "wean-hall",
+        "days": 21
+      },
+      {
+        "placeId": "porter-hall",
+        "days": 10
+      },
+      {
+        "placeId": "baker-hall",
+        "days": 21
+      },
+      {
+        "placeId": "hamburg-hall",
+        "days": 10
+      },
+      {
+        "placeId": "cyert-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "etower",
+        "name": "E-Tower",
+        "weekly": 109.4
+      },
+      {
+        "dormId": "morewood-gardens",
+        "name": "Morewood Gardens",
+        "weekly": 123.6
+      },
+      {
+        "dormId": "west-wing",
+        "name": "West Wing",
+        "weekly": 132.8
+      }
+    ]
+  },
+  "carroll-university": {
+    "halls": 12,
+    "places": [
+      {
+        "placeId": "walter-young-center",
+        "days": 21
+      },
+      {
+        "placeId": "voorhees-hall",
+        "days": 10
+      },
+      {
+        "placeId": "macallister-hall",
+        "days": 21
+      },
+      {
+        "placeId": "charles-street-hall",
+        "days": 10
+      },
+      {
+        "placeId": "business-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "steele-hall",
+        "name": "Steele Hall",
+        "weekly": 61.8
+      },
+      {
+        "dormId": "a-paul-jones-honors-hall",
+        "name": "A. Paul Jones Honors Hall",
+        "weekly": 67.4
+      },
+      {
+        "dormId": "shirley-hilger-hall",
+        "name": "Shirley Hilger Hall",
+        "weekly": 80.2
+      }
+    ]
+  },
+  "chapman": {
+    "halls": 5,
+    "places": [
+      {
+        "placeId": "memorial-hall",
+        "days": 21
+      },
+      {
+        "placeId": "beckman-hall",
+        "days": 10
+      },
+      {
+        "placeId": "irvine-lecture-hall",
+        "days": 21
+      },
+      {
+        "placeId": "legal-affairs",
+        "days": 10
+      },
+      {
+        "placeId": "barrera-structure",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "pralle-sodaro-hall",
+        "name": "Pralle-Sodaro Hall",
+        "weekly": 192.2
+      },
+      {
+        "dormId": "henley-hall",
+        "name": "Henley Hall",
+        "weekly": 218.2
+      },
+      {
+        "dormId": "sandhu-residence-center",
+        "name": "Sandhu Residence Center",
+        "weekly": 225.4
+      }
+    ]
+  },
+  "clemson": {
+    "halls": 22,
+    "places": [
+      {
+        "placeId": "olin-hall",
+        "days": 21
+      },
+      {
+        "placeId": "rhodes-annex",
+        "days": 10
+      },
+      {
+        "placeId": "humanities-hall",
+        "days": 21
+      },
+      {
+        "placeId": "martin-hall",
+        "days": 10
+      },
+      {
+        "placeId": "jordan-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "mauldin-hall",
+        "name": "Mauldin Hall",
+        "weekly": 118
+      },
+      {
+        "dormId": "barnett-hall",
+        "name": "Barnett Hall",
+        "weekly": 134.8
+      },
+      {
+        "dormId": "manning-hall",
+        "name": "Manning Hall",
+        "weekly": 135.2
       }
     ]
   },
@@ -83,6 +541,1250 @@
       }
     ]
   },
+  "cornell": {
+    "halls": 9,
+    "places": [
+      {
+        "placeId": "kennedy-hall",
+        "days": 21
+      },
+      {
+        "placeId": "dolgen-hall",
+        "days": 10
+      },
+      {
+        "placeId": "dale-r-corson-hall",
+        "days": 21
+      },
+      {
+        "placeId": "bailey-hall",
+        "days": 10
+      },
+      {
+        "placeId": "caldwell-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "balch-hall",
+        "name": "Balch Hall",
+        "weekly": 232.4
+      },
+      {
+        "dormId": "risley",
+        "name": "Risley Residential College",
+        "weekly": 244.4
+      },
+      {
+        "dormId": "clara-dickson-hall",
+        "name": "Clara Dickson Hall",
+        "weekly": 274.6
+      }
+    ]
+  },
+  "csu-la": {
+    "halls": 4,
+    "places": [
+      {
+        "placeId": "biological-sciences",
+        "days": 21
+      },
+      {
+        "placeId": "simpson-tower",
+        "days": 10
+      },
+      {
+        "placeId": "golden-eagle",
+        "days": 21
+      },
+      {
+        "placeId": "fine-arts",
+        "days": 10
+      }
+    ],
+    "top": [
+      {
+        "dormId": "south-village",
+        "name": "South Village",
+        "weekly": 150.6
+      },
+      {
+        "dormId": "phase-i",
+        "name": "Phase I",
+        "weekly": 176.6
+      },
+      {
+        "dormId": "phase-ii",
+        "name": "Phase II",
+        "weekly": 245.6
+      }
+    ]
+  },
+  "cu-boulder": {
+    "halls": 4,
+    "places": [
+      {
+        "placeId": "environmental-design",
+        "days": 21
+      },
+      {
+        "placeId": "porter-biosciences",
+        "days": 10
+      },
+      {
+        "placeId": "visual-arts-complex",
+        "days": 21
+      },
+      {
+        "placeId": "eaton-humanities",
+        "days": 10
+      },
+      {
+        "placeId": "mathematics",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "baker-hall",
+        "name": "Baker Hall",
+        "weekly": 94.2
+      },
+      {
+        "dormId": "libby-hall",
+        "name": "Libby Hall",
+        "weekly": 102
+      },
+      {
+        "dormId": "farrand-hall",
+        "name": "Farrand Hall",
+        "weekly": 135.2
+      }
+    ]
+  },
+  "dartmouth": {
+    "halls": 52,
+    "places": [
+      {
+        "placeId": "webster-hall",
+        "days": 21
+      },
+      {
+        "placeId": "carpenter-hall",
+        "days": 10
+      },
+      {
+        "placeId": "steele-hall",
+        "days": 21
+      },
+      {
+        "placeId": "kemeny-hall",
+        "days": 10
+      },
+      {
+        "placeId": "parkhurst-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "wheeler",
+        "name": "Wheeler",
+        "weekly": 68.6
+      },
+      {
+        "dormId": "north-massachusetts",
+        "name": "North Massachusetts",
+        "weekly": 89.4
+      },
+      {
+        "dormId": "russell-sage",
+        "name": "Russell Sage",
+        "weekly": 93.6
+      }
+    ]
+  },
+  "duke": {
+    "halls": 11,
+    "places": [
+      {
+        "placeId": "bryan-research",
+        "days": 21
+      },
+      {
+        "placeId": "wilkinson-building",
+        "days": 10
+      },
+      {
+        "placeId": "hudson-hall",
+        "days": 21
+      },
+      {
+        "placeId": "north-building",
+        "days": 10
+      },
+      {
+        "placeId": "rueben-cooke",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "few",
+        "name": "Few Quad",
+        "weekly": 204.6
+      },
+      {
+        "dormId": "kilgo",
+        "name": "Kilgo Quad",
+        "weekly": 227.4
+      },
+      {
+        "dormId": "crowell",
+        "name": "Crowell Quad",
+        "weekly": 241
+      }
+    ]
+  },
+  "emory": {
+    "halls": 6,
+    "places": [
+      {
+        "placeId": "anthropology",
+        "days": 21
+      },
+      {
+        "placeId": "cox-hall",
+        "days": 10
+      },
+      {
+        "placeId": "convocation-hall",
+        "days": 21
+      },
+      {
+        "placeId": "bowden-hall",
+        "days": 10
+      },
+      {
+        "placeId": "emerson-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "dobbs-hall",
+        "name": "Dobbs Hall",
+        "weekly": 111.4
+      },
+      {
+        "dormId": "hopkins-hall",
+        "name": "Hopkins Hall",
+        "weekly": 136.6
+      },
+      {
+        "dormId": "few-hall",
+        "name": "Few Hall",
+        "weekly": 155
+      }
+    ]
+  },
+  "fsu": {
+    "halls": 18,
+    "places": [
+      {
+        "placeId": "mendenhall-a",
+        "days": 21
+      },
+      {
+        "placeId": "wellness-building",
+        "days": 10
+      },
+      {
+        "placeId": "student-services",
+        "days": 21
+      },
+      {
+        "placeId": "mendenhall-b",
+        "days": 10
+      },
+      {
+        "placeId": "duxbury-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "traditions-hall",
+        "name": "Traditions Hall",
+        "weekly": 111.6
+      },
+      {
+        "dormId": "ragans-hall",
+        "name": "Ragans Hall",
+        "weekly": 126
+      },
+      {
+        "dormId": "deviney-hall",
+        "name": "Deviney Hall",
+        "weekly": 133
+      }
+    ]
+  },
+  "gcu": {
+    "halls": 6,
+    "places": [
+      {
+        "placeId": "cathedral-rock",
+        "days": 21
+      },
+      {
+        "placeId": "college-of-theology",
+        "days": 10
+      },
+      {
+        "placeId": "college-of-education",
+        "days": 21
+      },
+      {
+        "placeId": "colter-offices",
+        "days": 10
+      },
+      {
+        "placeId": "engineering",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "sedona-hall",
+        "name": "Sedona Hall",
+        "weekly": 201.6
+      },
+      {
+        "dormId": "saguaro-hall",
+        "name": "Saguaro Hall",
+        "weekly": 256.4
+      },
+      {
+        "dormId": "juniper-hall",
+        "name": "Juniper Hall",
+        "weekly": 313.4
+      }
+    ]
+  },
+  "georgetown": {
+    "halls": 10,
+    "places": [
+      {
+        "placeId": "old-north",
+        "days": 21
+      },
+      {
+        "placeId": "white-gravenor-hall",
+        "days": 10
+      },
+      {
+        "placeId": "john-hurley-house",
+        "days": 21
+      },
+      {
+        "placeId": "regents-hall",
+        "days": 10
+      },
+      {
+        "placeId": "mortara-building",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "copley-hall",
+        "name": "Copley Hall",
+        "weekly": 72.6
+      },
+      {
+        "dormId": "harbin-hall",
+        "name": "Harbin Hall",
+        "weekly": 90.2
+      },
+      {
+        "dormId": "alumni-square",
+        "name": "Alumni Square",
+        "weekly": 90.6
+      }
+    ]
+  },
+  "georgia-tech": {
+    "halls": 49,
+    "places": [
+      {
+        "placeId": "sigma-alpha-epsilon",
+        "days": 21
+      },
+      {
+        "placeId": "methodist-center-wesley-foundation",
+        "days": 10
+      },
+      {
+        "placeId": "sigma-nu",
+        "days": 21
+      },
+      {
+        "placeId": "architecture-west",
+        "days": 10
+      },
+      {
+        "placeId": "zeta-tau-alpha",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "goldin-house",
+        "name": "Goldin House",
+        "weekly": 109.4
+      },
+      {
+        "dormId": "stein-house",
+        "name": "Stein House",
+        "weekly": 109.4
+      },
+      {
+        "dormId": "gray-house",
+        "name": "Gray House",
+        "weekly": 115.6
+      }
+    ]
+  },
+  "gmu": {
+    "halls": 8,
+    "places": [
+      {
+        "placeId": "horizon-hall",
+        "days": 21
+      },
+      {
+        "placeId": "david-king-hall",
+        "days": 10
+      },
+      {
+        "placeId": "krug-hall",
+        "days": 21
+      },
+      {
+        "placeId": "sandbridge",
+        "days": 10
+      },
+      {
+        "placeId": "hanover-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "southside",
+        "name": "Southside",
+        "weekly": 86.2
+      },
+      {
+        "dormId": "piedmont-hall",
+        "name": "Piedmont Hall",
+        "weekly": 87.4
+      },
+      {
+        "dormId": "commonwealth-hall",
+        "name": "Commonwealth Hall",
+        "weekly": 94
+      }
+    ]
+  },
+  "hampton": {
+    "halls": 7,
+    "places": [
+      {
+        "placeId": "dupont-hall",
+        "days": 21
+      },
+      {
+        "placeId": "clark-hall",
+        "days": 10
+      },
+      {
+        "placeId": "trustee-hall",
+        "days": 21
+      },
+      {
+        "placeId": "ogden-hall",
+        "days": 10
+      },
+      {
+        "placeId": "academy-building",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "james-hall-suites",
+        "name": "James Hall and Suites",
+        "weekly": 95
+      },
+      {
+        "dormId": "virginia-cleveland-hall",
+        "name": "Virginia-Cleveland Hall",
+        "weekly": 102.2
+      },
+      {
+        "dormId": "twitchell-hall",
+        "name": "Twitchell Hall",
+        "weekly": 102.4
+      }
+    ]
+  },
+  "harvard": {
+    "halls": 6,
+    "places": [
+      {
+        "placeId": "holden-chapel",
+        "days": 21
+      },
+      {
+        "placeId": "littauer-center-29530404",
+        "days": 10
+      },
+      {
+        "placeId": "thayer-hall",
+        "days": 21
+      },
+      {
+        "placeId": "lehman-hall",
+        "days": 10
+      },
+      {
+        "placeId": "westengard-house",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "historical-yards",
+        "name": "The Historical Yards",
+        "weekly": 59.4
+      },
+      {
+        "dormId": "first-year-houses",
+        "name": "First-Year & Undergraduate Houses",
+        "weekly": 76.2
+      },
+      {
+        "dormId": "canaday-hall",
+        "name": "Canaday Hall (Crimson Yard Moderns)",
+        "weekly": 76.8
+      }
+    ]
+  },
+  "indiana": {
+    "halls": 18,
+    "places": [
+      {
+        "placeId": "ballantine-hall",
+        "days": 21
+      },
+      {
+        "placeId": "william-and-charlotte-l-bryan-house",
+        "days": 10
+      },
+      {
+        "placeId": "woodburn-hall",
+        "days": 21
+      },
+      {
+        "placeId": "chemistry",
+        "days": 10
+      },
+      {
+        "placeId": "goodbody-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "read",
+        "name": "Read",
+        "weekly": 165.2
+      },
+      {
+        "dormId": "university-east",
+        "name": "University East",
+        "weekly": 212.4
+      },
+      {
+        "dormId": "collins",
+        "name": "Collins",
+        "weekly": 233
+      }
+    ]
+  },
+  "indiana-wesleyan": {
+    "halls": 6,
+    "places": [
+      {
+        "placeId": "beard-arts-center",
+        "days": 21
+      },
+      {
+        "placeId": "maxwell-center",
+        "days": 10
+      },
+      {
+        "placeId": "elder-hall",
+        "days": 21
+      },
+      {
+        "placeId": "center-hall",
+        "days": 10
+      }
+    ],
+    "top": [
+      {
+        "dormId": "hodson-hall",
+        "name": "Hodson Hall",
+        "weekly": 107.6
+      },
+      {
+        "dormId": "evans-hall",
+        "name": "Evans Hall",
+        "weekly": 108.8
+      },
+      {
+        "dormId": "reed-hall",
+        "name": "Reed Hall",
+        "weekly": 129
+      }
+    ]
+  },
+  "iowa": {
+    "halls": 10,
+    "places": [
+      {
+        "placeId": "jessup-hall",
+        "days": 21
+      },
+      {
+        "placeId": "maclean-hall",
+        "days": 10
+      },
+      {
+        "placeId": "trowbridge-hall",
+        "days": 21
+      },
+      {
+        "placeId": "phillips-hall",
+        "days": 10
+      },
+      {
+        "placeId": "blank-honors-center",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "daum",
+        "name": "Daum Hall",
+        "weekly": 118.2
+      },
+      {
+        "dormId": "catlett",
+        "name": "Catlett Hall",
+        "weekly": 144
+      },
+      {
+        "dormId": "stanley",
+        "name": "Stanley Hall",
+        "weekly": 145.4
+      }
+    ]
+  },
+  "johns-hopkins": {
+    "halls": 7,
+    "places": [
+      {
+        "placeId": "ames-hall",
+        "days": 21
+      },
+      {
+        "placeId": "maryland-hall",
+        "days": 10
+      },
+      {
+        "placeId": "garland-hall",
+        "days": 21
+      },
+      {
+        "placeId": "remsen-hall",
+        "days": 10
+      },
+      {
+        "placeId": "shriver-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "amr-ii",
+        "name": "Alumni Memorial Residence II (AMR II)",
+        "weekly": 126.2
+      },
+      {
+        "dormId": "amr-iii-a",
+        "name": "AMR III A",
+        "weekly": 127.8
+      },
+      {
+        "dormId": "wolman-hall",
+        "name": "Wolman Hall",
+        "weekly": 127.8
+      }
+    ]
+  },
+  "marquette": {
+    "halls": 6,
+    "places": [
+      {
+        "placeId": "cudahy-hall",
+        "days": 21
+      },
+      {
+        "placeId": "helfaer-theatre",
+        "days": 10
+      },
+      {
+        "placeId": "wehr-life-sciences",
+        "days": 21
+      },
+      {
+        "placeId": "johnston-hall",
+        "days": 10
+      },
+      {
+        "placeId": "walter-schroeder-health-sciences-and-education-complex",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "abbottsford-hall",
+        "name": "Abbottsford Hall",
+        "weekly": 89.4
+      },
+      {
+        "dormId": "schroeder-hall",
+        "name": "Schroeder Hall",
+        "weekly": 114.8
+      },
+      {
+        "dormId": "cobeen-hall",
+        "name": "Cobeen Hall",
+        "weekly": 133.4
+      }
+    ]
+  },
+  "miami-ohio": {
+    "halls": 11,
+    "places": [
+      {
+        "placeId": "upham-hall",
+        "days": 21
+      },
+      {
+        "placeId": "shideler-hall",
+        "days": 10
+      },
+      {
+        "placeId": "macmillan-hall",
+        "days": 21
+      },
+      {
+        "placeId": "kreger-hall",
+        "days": 10
+      },
+      {
+        "placeId": "shriver-center",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "hamilton-hall",
+        "name": "Hamilton Hall",
+        "weekly": 101
+      },
+      {
+        "dormId": "richard-hall",
+        "name": "Richard Hall",
+        "weekly": 129
+      },
+      {
+        "dormId": "maplestreet-station",
+        "name": "Maplestreet Station",
+        "weekly": 131.2
+      }
+    ]
+  },
+  "michigan-tech": {
+    "halls": 4,
+    "places": [
+      {
+        "placeId": "rotc-building",
+        "days": 21
+      },
+      {
+        "placeId": "h-stem",
+        "days": 10
+      },
+      {
+        "placeId": "harold-meese-center",
+        "days": 21
+      },
+      {
+        "placeId": "fisher-hall",
+        "days": 10
+      }
+    ],
+    "top": [
+      {
+        "dormId": "wadsworth-hall",
+        "name": "Wadsworth Hall",
+        "weekly": 115
+      },
+      {
+        "dormId": "douglass-houghton-hall",
+        "name": "Douglass Houghton Hall",
+        "weekly": 127.2
+      },
+      {
+        "dormId": "east-hall",
+        "name": "East Hall",
+        "weekly": 210.8
+      }
+    ]
+  },
+  "mit": {
+    "halls": 16,
+    "places": [
+      {
+        "placeId": "12-su-building",
+        "days": 21
+      },
+      {
+        "placeId": "38",
+        "days": 10
+      },
+      {
+        "placeId": "6-eastman-labs",
+        "days": 21
+      },
+      {
+        "placeId": "56-whitaker-building",
+        "days": 10
+      },
+      {
+        "placeId": "11-homberg-building",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "east-campus",
+        "name": "East Campus",
+        "weekly": 113.2
+      },
+      {
+        "dormId": "maseeh-hall",
+        "name": "Fariborz Maseeh Hall",
+        "weekly": 191.4
+      },
+      {
+        "dormId": "mccormick-hall",
+        "name": "McCormick Hall",
+        "weekly": 201.8
+      }
+    ]
+  },
+  "msu": {
+    "halls": 11,
+    "places": [
+      {
+        "placeId": "bessey-hall",
+        "days": 21
+      },
+      {
+        "placeId": "erickson-hall",
+        "days": 10
+      },
+      {
+        "placeId": "computer-center",
+        "days": 21
+      },
+      {
+        "placeId": "international-center",
+        "days": 10
+      },
+      {
+        "placeId": "wells-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "phillips-hall",
+        "name": "Phillips Hall",
+        "weekly": 205.8
+      },
+      {
+        "dormId": "snyder-hall",
+        "name": "Snyder Hall",
+        "weekly": 250
+      },
+      {
+        "dormId": "landon-hall",
+        "name": "Landon Hall",
+        "weekly": 278.6
+      }
+    ]
+  },
+  "nazareth": {
+    "halls": 3,
+    "places": [
+      {
+        "placeId": "smyth-hall",
+        "days": 21
+      },
+      {
+        "placeId": "medaille-hall",
+        "days": 10
+      },
+      {
+        "placeId": "peckham-hall",
+        "days": 21
+      },
+      {
+        "placeId": "music-house",
+        "days": 10
+      }
+    ],
+    "top": [
+      {
+        "dormId": "oconnor-1",
+        "name": "O'Connor 1",
+        "weekly": 69.6
+      },
+      {
+        "dormId": "lourdes-hall",
+        "name": "Lourdes Hall",
+        "weekly": 76
+      },
+      {
+        "dormId": "kearney-hall",
+        "name": "Kearney Hall",
+        "weekly": 128.8
+      }
+    ]
+  },
+  "nc-state": {
+    "halls": 22,
+    "places": [
+      {
+        "placeId": "thomas-hall",
+        "days": 21
+      },
+      {
+        "placeId": "dabney-hall",
+        "days": 10
+      },
+      {
+        "placeId": "price-music-center",
+        "days": 21
+      },
+      {
+        "placeId": "phytotron",
+        "days": 10
+      },
+      {
+        "placeId": "broughton-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "alexander-hall",
+        "name": "Alexander Hall",
+        "weekly": 84.6
+      },
+      {
+        "dormId": "turlington-hall",
+        "name": "Turlington Hall",
+        "weekly": 86.4
+      },
+      {
+        "dormId": "carroll-hall",
+        "name": "Carroll Hall",
+        "weekly": 93.6
+      }
+    ]
+  },
+  "northeastern": {
+    "halls": 10,
+    "places": [
+      {
+        "placeId": "forsyth-building",
+        "days": 21
+      },
+      {
+        "placeId": "hayden-hall",
+        "days": 10
+      },
+      {
+        "placeId": "knowles-center",
+        "days": 21
+      },
+      {
+        "placeId": "holmes-hall",
+        "days": 10
+      },
+      {
+        "placeId": "dodge-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "white-hall",
+        "name": "White Hall",
+        "weekly": 108.4
+      },
+      {
+        "dormId": "speare-hall",
+        "name": "Speare Hall",
+        "weekly": 111.8
+      },
+      {
+        "dormId": "west-village-h",
+        "name": "West Village H",
+        "weekly": 116
+      }
+    ]
+  },
+  "northwestern": {
+    "halls": 7,
+    "places": [
+      {
+        "placeId": "shanley-hall",
+        "days": 21
+      },
+      {
+        "placeId": "loder-hall",
+        "days": 10
+      },
+      {
+        "placeId": "chambers-hall",
+        "days": 21
+      },
+      {
+        "placeId": "silverman-hall",
+        "days": 10
+      },
+      {
+        "placeId": "ford-design-center",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "sargent-hall",
+        "name": "Sargent Hall",
+        "weekly": 174.2
+      },
+      {
+        "dormId": "bobb-hall",
+        "name": "Bobb-McCulloch Hall",
+        "weekly": 184
+      },
+      {
+        "dormId": "east-fairchild",
+        "name": "East Fairchild",
+        "weekly": 191.8
+      }
+    ]
+  },
+  "notre-dame": {
+    "halls": 32,
+    "places": [
+      {
+        "placeId": "hayes-healy-center",
+        "days": 21
+      },
+      {
+        "placeId": "oshaughnessy-hall",
+        "days": 10
+      },
+      {
+        "placeId": "washington-hall",
+        "days": 21
+      },
+      {
+        "placeId": "geddes-hall",
+        "days": 10
+      },
+      {
+        "placeId": "law-school",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "cavanaugh-hall",
+        "name": "Cavanaugh Hall",
+        "weekly": 87
+      },
+      {
+        "dormId": "walsh-hall",
+        "name": "Walsh Hall",
+        "weekly": 88.4
+      },
+      {
+        "dormId": "breen-phillips-hall",
+        "name": "Breen-Phillips Hall",
+        "weekly": 92
+      }
+    ]
+  },
+  "nyu": {
+    "halls": 20,
+    "places": [
+      {
+        "placeId": "brown-building",
+        "days": 21
+      },
+      {
+        "placeId": "africa-house",
+        "days": 10
+      },
+      {
+        "placeId": "tisch-hall",
+        "days": 21
+      },
+      {
+        "placeId": "furman-hall",
+        "days": 10
+      },
+      {
+        "placeId": "wilf-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "washington-square-village",
+        "name": "Washington Square Village",
+        "weekly": 89.4
+      },
+      {
+        "dormId": "weinstein",
+        "name": "Weinstein Hall",
+        "weekly": 97.6
+      },
+      {
+        "dormId": "lipton-hall",
+        "name": "Lipton Hall",
+        "weekly": 122.6
+      }
+    ]
+  },
+  "ohio-state": {
+    "halls": 34,
+    "places": [
+      {
+        "placeId": "independence-hall",
+        "days": 21
+      },
+      {
+        "placeId": "cockins-hall",
+        "days": 10
+      },
+      {
+        "placeId": "dreese-laboratories",
+        "days": 21
+      },
+      {
+        "placeId": "bricker-hall",
+        "days": 10
+      },
+      {
+        "placeId": "lazenby-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "mendoza-house",
+        "name": "Mendoza House",
+        "weekly": 146.2
+      },
+      {
+        "dormId": "scott-house",
+        "name": "Scott House",
+        "weekly": 155
+      },
+      {
+        "dormId": "blackburn-house",
+        "name": "Blackburn House",
+        "weekly": 163
+      }
+    ]
+  },
+  "ole-miss": {
+    "halls": 17,
+    "places": [
+      {
+        "placeId": "odom-hall",
+        "days": 21
+      },
+      {
+        "placeId": "meek-hall",
+        "days": 10
+      },
+      {
+        "placeId": "leavell-hall",
+        "days": 21
+      },
+      {
+        "placeId": "bondurant-hall-282547800",
+        "days": 10
+      },
+      {
+        "placeId": "the-lyceum",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "minor-hall",
+        "name": "Minor Hall",
+        "weekly": 94
+      },
+      {
+        "dormId": "burns-hall",
+        "name": "Burns Hall",
+        "weekly": 103.8
+      },
+      {
+        "dormId": "residence-hall-3",
+        "name": "Residence Hall 3 (RH3)",
+        "weekly": 104
+      }
+    ]
+  },
   "penn-state": {
     "halls": 61,
     "places": [
@@ -122,6 +1824,1010 @@
         "dormId": "hamilton-hall",
         "name": "Hamilton Hall",
         "weekly": 138.2
+      }
+    ]
+  },
+  "pitt": {
+    "halls": 8,
+    "places": [
+      {
+        "placeId": "thackeray-hall",
+        "days": 21
+      },
+      {
+        "placeId": "benedum-hall",
+        "days": 10
+      },
+      {
+        "placeId": "william-pitt-union",
+        "days": 21
+      },
+      {
+        "placeId": "eberly-hall",
+        "days": 10
+      },
+      {
+        "placeId": "david-lawrence-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "mccormick-hall",
+        "name": "McCormick Hall",
+        "weekly": 84.6
+      },
+      {
+        "dormId": "holland-hall",
+        "name": "Holland Hall",
+        "weekly": 85
+      },
+      {
+        "dormId": "nordenberg-hall",
+        "name": "Mark A. Nordenberg Hall",
+        "weekly": 88
+      }
+    ]
+  },
+  "princeton": {
+    "halls": 3,
+    "places": [
+      {
+        "placeId": "20-washington-road",
+        "days": 21
+      },
+      {
+        "placeId": "laura-wooten-hall",
+        "days": 10
+      },
+      {
+        "placeId": "fisher-hall-40718029",
+        "days": 21
+      },
+      {
+        "placeId": "171-nassau-court",
+        "days": 10
+      },
+      {
+        "placeId": "murray-theater",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "historic-gothic",
+        "name": "Historic Gothic Dorms (Mathey, Rockefeller)",
+        "weekly": 185.8
+      },
+      {
+        "dormId": "spelman-hall",
+        "name": "Spelman Hall (Apartment-Style)",
+        "weekly": 226.2
+      },
+      {
+        "dormId": "modern-dorms",
+        "name": "Modern & Standardized Dorms (Yeh, New College West, Whitman)",
+        "weekly": 272.4
+      }
+    ]
+  },
+  "purdue": {
+    "halls": 19,
+    "places": [
+      {
+        "placeId": "stone-hall-ston",
+        "days": 21
+      },
+      {
+        "placeId": "beering-hall-brng",
+        "days": 10
+      },
+      {
+        "placeId": "marriot-hall",
+        "days": 21
+      },
+      {
+        "placeId": "whistler-hall",
+        "days": 10
+      },
+      {
+        "placeId": "smith-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "hawkins",
+        "name": "Hawkins",
+        "weekly": 148.2
+      },
+      {
+        "dormId": "windsor",
+        "name": "Windsor",
+        "weekly": 163.4
+      },
+      {
+        "dormId": "honors-college",
+        "name": "Honors College and Residences",
+        "weekly": 185
+      }
+    ]
+  },
+  "rice": {
+    "halls": 11,
+    "places": [
+      {
+        "placeId": "brochstein-pavilion",
+        "days": 21
+      },
+      {
+        "placeId": "rice-memorial-center",
+        "days": 10
+      },
+      {
+        "placeId": "humanities-building",
+        "days": 21
+      },
+      {
+        "placeId": "george-r-brown-hall",
+        "days": 10
+      },
+      {
+        "placeId": "pcf-4",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "will-rice-college",
+        "name": "Will Rice College",
+        "weekly": 92.2
+      },
+      {
+        "dormId": "baker-college",
+        "name": "Baker College",
+        "weekly": 107.8
+      },
+      {
+        "dormId": "hanszen-college",
+        "name": "Hanszen College",
+        "weekly": 128.2
+      }
+    ]
+  },
+  "rowan": {
+    "halls": 3,
+    "places": [
+      {
+        "placeId": "hawthorn-hall",
+        "days": 21
+      },
+      {
+        "placeId": "science-hall",
+        "days": 10
+      },
+      {
+        "placeId": "townhouse-5",
+        "days": 21
+      },
+      {
+        "placeId": "guard-house",
+        "days": 10
+      },
+      {
+        "placeId": "townhouse-7",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "mimosa-hall",
+        "name": "Mimosa Hall",
+        "weekly": 115.4
+      },
+      {
+        "dormId": "chestnut-hall",
+        "name": "Chestnut Hall",
+        "weekly": 229.4
+      },
+      {
+        "dormId": "holly-pointe-commons",
+        "name": "Holly Pointe Commons",
+        "weekly": 291.4
+      }
+    ]
+  },
+  "rutgers": {
+    "halls": 16,
+    "places": [
+      {
+        "placeId": "scott-hall",
+        "days": 21
+      },
+      {
+        "placeId": "voorhees-hall",
+        "days": 10
+      },
+      {
+        "placeId": "milledoler-hall",
+        "days": 21
+      },
+      {
+        "placeId": "geology-hall",
+        "days": 10
+      },
+      {
+        "placeId": "miller-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "sojourner-truth-apartments",
+        "name": "Sojourner Truth Apartments",
+        "weekly": 101.2
+      },
+      {
+        "dormId": "university-center-easton-avenue",
+        "name": "University Center at Easton Avenue",
+        "weekly": 128
+      },
+      {
+        "dormId": "honors-college",
+        "name": "Honors College",
+        "weekly": 138.6
+      }
+    ]
+  },
+  "saint-anselm": {
+    "halls": 5,
+    "places": [
+      {
+        "placeId": "perini-lecture-hall",
+        "days": 21
+      },
+      {
+        "placeId": "poisson-hall",
+        "days": 10
+      }
+    ],
+    "top": [
+      {
+        "dormId": "joseph-hall",
+        "name": "Joseph Hall",
+        "weekly": 33
+      },
+      {
+        "dormId": "alumni-hall",
+        "name": "Alumni Hall",
+        "weekly": 35.6
+      },
+      {
+        "dormId": "joan-of-arc-hall",
+        "name": "Joan of Arc Hall",
+        "weekly": 45.8
+      }
+    ]
+  },
+  "seattleu": {
+    "halls": 4,
+    "places": [
+      {
+        "placeId": "pigott-building",
+        "days": 21
+      },
+      {
+        "placeId": "loyola-hall",
+        "days": 10
+      },
+      {
+        "placeId": "fine-arts-building",
+        "days": 21
+      },
+      {
+        "placeId": "obrien-center",
+        "days": 10
+      },
+      {
+        "placeId": "james-tower",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "bellarmine-hall",
+        "name": "Bellarmine Hall",
+        "weekly": 127.2
+      },
+      {
+        "dormId": "xavier-hall",
+        "name": "Xavier Hall",
+        "weekly": 128.2
+      },
+      {
+        "dormId": "campion-hall",
+        "name": "Campion Hall",
+        "weekly": 171
+      }
+    ]
+  },
+  "snhu": {
+    "halls": 5,
+    "places": [
+      {
+        "placeId": "green-center",
+        "days": 21
+      },
+      {
+        "placeId": "robert-frost-hall",
+        "days": 10
+      },
+      {
+        "placeId": "hospitality-center",
+        "days": 21
+      },
+      {
+        "placeId": "gustafson-center",
+        "days": 10
+      },
+      {
+        "placeId": "webster-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "washington-hall",
+        "name": "Washington Hall",
+        "weekly": 117.6
+      },
+      {
+        "dormId": "kingston-hall",
+        "name": "Kingston Hall",
+        "weekly": 147.6
+      },
+      {
+        "dormId": "monadnock-hall",
+        "name": "Monadnock Hall",
+        "weekly": 153.4
+      }
+    ]
+  },
+  "stanford": {
+    "halls": 5,
+    "places": [
+      {
+        "placeId": "sequoia-hall",
+        "days": 21
+      },
+      {
+        "placeId": "gilbert-hall",
+        "days": 10
+      },
+      {
+        "placeId": "packard",
+        "days": 21
+      },
+      {
+        "placeId": "mccullough",
+        "days": 10
+      },
+      {
+        "placeId": "shriram-center-for-bioengineering-and-chemical-engineering",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "undergraduate-halls",
+        "name": "Undergraduate Residence Halls",
+        "weekly": 299.6
+      },
+      {
+        "dormId": "lyman-residences",
+        "name": "Lyman Graduate Residences",
+        "weekly": 338.4
+      },
+      {
+        "dormId": "gsb-residences",
+        "name": "Graduate School of Business Residences",
+        "weekly": 355.8
+      }
+    ]
+  },
+  "susquehanna": {
+    "halls": 5,
+    "places": [
+      {
+        "placeId": "fisher-science-hall",
+        "days": 21
+      },
+      {
+        "placeId": "art-studio",
+        "days": 10
+      },
+      {
+        "placeId": "estill-field-house",
+        "days": 21
+      },
+      {
+        "placeId": "writers-institute",
+        "days": 10
+      }
+    ],
+    "top": [
+      {
+        "dormId": "seibert-hall",
+        "name": "Seibert Hall",
+        "weekly": 42.6
+      },
+      {
+        "dormId": "hassinger-hall",
+        "name": "Hassinger Hall",
+        "weekly": 74
+      },
+      {
+        "dormId": "reed-hall",
+        "name": "Reed Hall",
+        "weekly": 88.8
+      }
+    ]
+  },
+  "syracuse": {
+    "halls": 18,
+    "places": [
+      {
+        "placeId": "hall-of-languages",
+        "days": 21
+      },
+      {
+        "placeId": "steele-hall",
+        "days": 10
+      },
+      {
+        "placeId": "maxwell-hall",
+        "days": 21
+      },
+      {
+        "placeId": "link-hall",
+        "days": 10
+      },
+      {
+        "placeId": "bowne-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "riley-hall",
+        "name": "Riley Hall",
+        "weekly": 144.8
+      },
+      {
+        "dormId": "shaw-hall",
+        "name": "Shaw Hall",
+        "weekly": 170.8
+      },
+      {
+        "dormId": "watson-hall",
+        "name": "Watson Hall",
+        "weekly": 173.4
+      }
+    ]
+  },
+  "tamucc": {
+    "halls": 2,
+    "places": [
+      {
+        "placeId": "corpus-christi-hall",
+        "days": 21
+      },
+      {
+        "placeId": "tidal-hall",
+        "days": 10
+      },
+      {
+        "placeId": "university-center",
+        "days": 21
+      },
+      {
+        "placeId": "science-lab-2",
+        "days": 10
+      },
+      {
+        "placeId": "classroom-east",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "miramar",
+        "name": "Miramar",
+        "weekly": 425
+      },
+      {
+        "dormId": "momentum-village",
+        "name": "Momentum Village",
+        "weekly": 1025.8
+      }
+    ]
+  },
+  "temple": {
+    "halls": 5,
+    "places": [
+      {
+        "placeId": "speakman-hall",
+        "days": 21
+      },
+      {
+        "placeId": "paley-hall",
+        "days": 10
+      },
+      {
+        "placeId": "conwell-hall",
+        "days": 21
+      },
+      {
+        "placeId": "mitten-hall",
+        "days": 10
+      },
+      {
+        "placeId": "ritter-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "morgan-hall",
+        "name": "Morgan Hall (Mitchell & Hilarie Morgan)",
+        "weekly": 121.6
+      },
+      {
+        "dormId": "1300",
+        "name": "1300 Residence Hall",
+        "weekly": 127
+      },
+      {
+        "dormId": "temple-towers",
+        "name": "Temple Towers",
+        "weekly": 137
+      }
+    ]
+  },
+  "tennessee": {
+    "halls": 13,
+    "places": [
+      {
+        "placeId": "future-haslam-college-of-business-building-ii",
+        "days": 21
+      },
+      {
+        "placeId": "student-union",
+        "days": 10
+      },
+      {
+        "placeId": "claxton-hall",
+        "days": 21
+      },
+      {
+        "placeId": "burchfiel-geography-building",
+        "days": 10
+      },
+      {
+        "placeId": "international-house",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "hess-hall",
+        "name": "Hess Hall",
+        "weekly": 146.8
+      },
+      {
+        "dormId": "clement-hall",
+        "name": "Clement Hall",
+        "weekly": 148.6
+      },
+      {
+        "dormId": "brown-hall",
+        "name": "Brown Hall",
+        "weekly": 175.2
+      }
+    ]
+  },
+  "texas-am": {
+    "halls": 7,
+    "places": [
+      {
+        "placeId": "fermier-hall",
+        "days": 21
+      },
+      {
+        "placeId": "academic-building",
+        "days": 10
+      },
+      {
+        "placeId": "francis-hall",
+        "days": 21
+      },
+      {
+        "placeId": "ymca-building",
+        "days": 10
+      },
+      {
+        "placeId": "chemistry-155052621",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "modular",
+        "name": "Modular-Style Halls",
+        "weekly": 158.2
+      },
+      {
+        "dormId": "ramp",
+        "name": "Ramp-Style Halls",
+        "weekly": 193.4
+      },
+      {
+        "dormId": "balcony",
+        "name": "Balcony-Style Halls",
+        "weekly": 195
+      }
+    ]
+  },
+  "tufts": {
+    "halls": 10,
+    "places": [
+      {
+        "placeId": "fung-house",
+        "days": 21
+      },
+      {
+        "placeId": "ballou-hall",
+        "days": 10
+      },
+      {
+        "placeId": "eaton-hall",
+        "days": 21
+      },
+      {
+        "placeId": "stratton-hall",
+        "days": 10
+      },
+      {
+        "placeId": "goddard-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "metcalf-hall",
+        "name": "Metcalf Hall",
+        "weekly": 73.2
+      },
+      {
+        "dormId": "richardson-house",
+        "name": "Richardson House",
+        "weekly": 80.6
+      },
+      {
+        "dormId": "bush-hall",
+        "name": "Bush Hall",
+        "weekly": 112.4
+      }
+    ]
+  },
+  "ualbany": {
+    "halls": 6,
+    "places": [
+      {
+        "placeId": "lecture-center",
+        "days": 21
+      },
+      {
+        "placeId": "catskill",
+        "days": 10
+      },
+      {
+        "placeId": "humanities",
+        "days": 21
+      },
+      {
+        "placeId": "chemistry",
+        "days": 10
+      }
+    ],
+    "top": [
+      {
+        "dormId": "state-quad",
+        "name": "State Quad",
+        "weekly": 145
+      },
+      {
+        "dormId": "dutch-quad",
+        "name": "Dutch Quad",
+        "weekly": 150.4
+      },
+      {
+        "dormId": "indigenous-quad",
+        "name": "Indigenous Quad",
+        "weekly": 150.4
+      }
+    ]
+  },
+  "uc-berkeley": {
+    "halls": 8,
+    "places": [
+      {
+        "placeId": "main-stacks-21101303",
+        "days": 21
+      },
+      {
+        "placeId": "mclaughlin-hall",
+        "days": 10
+      },
+      {
+        "placeId": "birge-hall",
+        "days": 21
+      },
+      {
+        "placeId": "south-hall",
+        "days": 10
+      },
+      {
+        "placeId": "durant-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "stern",
+        "name": "Stern",
+        "weekly": 201.2
+      },
+      {
+        "dormId": "foothill",
+        "name": "Foothill",
+        "weekly": 203.4
+      },
+      {
+        "dormId": "blackwell-hall",
+        "name": "Blackwell Hall",
+        "weekly": 221.4
+      }
+    ]
+  },
+  "uc-davis": {
+    "halls": 5,
+    "places": [
+      {
+        "placeId": "chemistry-building",
+        "days": 21
+      },
+      {
+        "placeId": "haring-hall",
+        "days": 10
+      },
+      {
+        "placeId": "walker-hall",
+        "days": 21
+      },
+      {
+        "placeId": "robbins-hall",
+        "days": 10
+      },
+      {
+        "placeId": "bainer-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "mid-size-halls",
+        "name": "Mid-Size 11 x 15 Halls (Currant, Live Oak, Wall, Potter, Campbell, Sequoia, Madrone)",
+        "weekly": 256
+      },
+      {
+        "dormId": "regan-hall",
+        "name": "Regan Hall",
+        "weekly": 265.8
+      },
+      {
+        "dormId": "classic-halls",
+        "name": "Classic 10.5 x 13.5 Halls (Gilmore, Bixby, Malcolm, Ryerson)",
+        "weekly": 297.4
+      }
+    ]
+  },
+  "uc-irvine": {
+    "halls": 6,
+    "places": [
+      {
+        "placeId": "rowland-hall",
+        "days": 21
+      },
+      {
+        "placeId": "steinhaus-hall",
+        "days": 10
+      },
+      {
+        "placeId": "engineering-tower",
+        "days": 21
+      },
+      {
+        "placeId": "starbucks",
+        "days": 10
+      },
+      {
+        "placeId": "natural-sciences-ii",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "campus-village",
+        "name": "Campus Village",
+        "weekly": 138.6
+      },
+      {
+        "dormId": "middle-earth",
+        "name": "Middle Earth",
+        "weekly": 196.6
+      },
+      {
+        "dormId": "mesa-court",
+        "name": "Mesa Court",
+        "weekly": 375.8
+      }
+    ]
+  },
+  "uc-merced": {
+    "halls": 5,
+    "places": [],
+    "top": [
+      {
+        "dormId": "cathedral-hall",
+        "name": "Cathedral Hall",
+        "weekly": 0
+      },
+      {
+        "dormId": "mariposa-hall",
+        "name": "Mariposa Hall",
+        "weekly": 0
+      },
+      {
+        "dormId": "tenaya-hall",
+        "name": "Tenaya Hall",
+        "weekly": 0
+      }
+    ]
+  },
+  "uc-riverside": {
+    "halls": 4,
+    "places": [
+      {
+        "placeId": "life-sciences-1500",
+        "days": 21
+      },
+      {
+        "placeId": "science-laboratory",
+        "days": 10
+      },
+      {
+        "placeId": "biological-sciences",
+        "days": 21
+      },
+      {
+        "placeId": "boyce-hall",
+        "days": 10
+      },
+      {
+        "placeId": "physics-building",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "lothian",
+        "name": "Lothian Hall",
+        "weekly": 230
+      },
+      {
+        "dormId": "aberdeen-inverness",
+        "name": "Aberdeen-Inverness Hall",
+        "weekly": 268.8
+      },
+      {
+        "dormId": "dundee",
+        "name": "Dundee Hall",
+        "weekly": 292.4
+      }
+    ]
+  },
+  "ucf": {
+    "halls": 6,
+    "places": [
+      {
+        "placeId": "college-of-sciences",
+        "days": 21
+      },
+      {
+        "placeId": "engineering-i",
+        "days": 10
+      },
+      {
+        "placeId": "student-union",
+        "days": 21
+      },
+      {
+        "placeId": "chemistry-building",
+        "days": 10
+      },
+      {
+        "placeId": "health-sciences-i",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "libra",
+        "name": "Libra Community",
+        "weekly": 126.6
+      },
+      {
+        "dormId": "apollo",
+        "name": "Apollo Community",
+        "weekly": 148
+      },
+      {
+        "dormId": "towers",
+        "name": "Towers at Knights Plaza",
+        "weekly": 213.8
+      }
+    ]
+  },
+  "uchicago": {
+    "halls": 6,
+    "places": [
+      {
+        "placeId": "rosenwald-hall",
+        "days": 21
+      },
+      {
+        "placeId": "kelly-hall",
+        "days": 10
+      },
+      {
+        "placeId": "ryerson-laboratory",
+        "days": 21
+      },
+      {
+        "placeId": "wieboldt-hall",
+        "days": 10
+      },
+      {
+        "placeId": "cobb-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "snell-hitchcock",
+        "name": "Snell-Hitchcock Hall",
+        "weekly": 104.2
+      },
+      {
+        "dormId": "max-palevsky",
+        "name": "Max Palevsky Residential Commons",
+        "weekly": 187
+      },
+      {
+        "dormId": "woodlawn-commons",
+        "name": "Woodlawn Residential Commons",
+        "weekly": 203.4
       }
     ]
   },
@@ -167,6 +2873,468 @@
       }
     ]
   },
+  "uconn": {
+    "halls": 30,
+    "places": [
+      {
+        "placeId": "susan-v-herbst-hall",
+        "days": 21
+      },
+      {
+        "placeId": "school-of-business",
+        "days": 10
+      },
+      {
+        "placeId": "engineering-ii",
+        "days": 21
+      },
+      {
+        "placeId": "art-ceramic-studio",
+        "days": 10
+      },
+      {
+        "placeId": "chemistry-building",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "alsop",
+        "name": "Alsop Hall",
+        "weekly": 154.2
+      },
+      {
+        "dormId": "hollister",
+        "name": "Hollister Hall",
+        "weekly": 169.6
+      },
+      {
+        "dormId": "chandler-lancaster",
+        "name": "Chandler/Lancaster Hall",
+        "weekly": 175.2
+      }
+    ]
+  },
+  "ucsb": {
+    "halls": 4,
+    "places": [
+      {
+        "placeId": "bioengineering",
+        "days": 21
+      },
+      {
+        "placeId": "broida-hall",
+        "days": 10
+      },
+      {
+        "placeId": "buchanan-hall",
+        "days": 21
+      },
+      {
+        "placeId": "south-hall-221404598",
+        "days": 10
+      },
+      {
+        "placeId": "north-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "anacapa",
+        "name": "Anacapa",
+        "weekly": 158.2
+      },
+      {
+        "dormId": "manzanita-village",
+        "name": "Manzanita Village",
+        "weekly": 322.8
+      },
+      {
+        "dormId": "san-clemente-villages",
+        "name": "San Clemente Villages",
+        "weekly": 391.6
+      }
+    ]
+  },
+  "ucsd": {
+    "halls": 7,
+    "places": [
+      {
+        "placeId": "mandeville-center",
+        "days": 21
+      },
+      {
+        "placeId": "biology",
+        "days": 10
+      },
+      {
+        "placeId": "bonner-hall",
+        "days": 21
+      },
+      {
+        "placeId": "mcgill-hall",
+        "days": 10
+      },
+      {
+        "placeId": "peterson-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "john-muir-college",
+        "name": "John Muir College (Tioga & Tenaya Halls)",
+        "weekly": 138.2
+      },
+      {
+        "dormId": "revelle-college",
+        "name": "Revelle College (Blake & Argo Halls)",
+        "weekly": 158.8
+      },
+      {
+        "dormId": "sixth-college",
+        "name": "Sixth College (North Torrey Pines LLN)",
+        "weekly": 162.8
+      }
+    ]
+  },
+  "udel": {
+    "halls": 15,
+    "places": [
+      {
+        "placeId": "gore-hall",
+        "days": 21
+      },
+      {
+        "placeId": "wolf-hall",
+        "days": 10
+      },
+      {
+        "placeId": "evans-hall",
+        "days": 21
+      },
+      {
+        "placeId": "hullihen-hall",
+        "days": 10
+      },
+      {
+        "placeId": "lammot-du-pont-lab",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "n-central",
+        "name": "North Central (Brown, Harter, Sharp, Sypherd)",
+        "weekly": 119
+      },
+      {
+        "dormId": "caesar-rodney",
+        "name": "Caesar Rodney",
+        "weekly": 126
+      },
+      {
+        "dormId": "lanethomp",
+        "name": "Lane and Thompson",
+        "weekly": 157.8
+      }
+    ]
+  },
+  "uga": {
+    "halls": 30,
+    "places": [
+      {
+        "placeId": "journalism-building",
+        "days": 21
+      },
+      {
+        "placeId": "fine-arts-building",
+        "days": 10
+      },
+      {
+        "placeId": "tate-student-center",
+        "days": 21
+      },
+      {
+        "placeId": "leconte-hall",
+        "days": 10
+      },
+      {
+        "placeId": "milledge-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "brown-hall",
+        "name": "Brown Hall",
+        "weekly": 92.4
+      },
+      {
+        "dormId": "payne-hall",
+        "name": "Payne Hall",
+        "weekly": 99.4
+      },
+      {
+        "dormId": "reed-hall",
+        "name": "Reed Hall",
+        "weekly": 118
+      }
+    ]
+  },
+  "umbc": {
+    "halls": 6,
+    "places": [
+      {
+        "placeId": "meyerhoff-hall",
+        "days": 21
+      },
+      {
+        "placeId": "sherman-hall",
+        "days": 10
+      },
+      {
+        "placeId": "physics",
+        "days": 21
+      },
+      {
+        "placeId": "naval-rotc-building",
+        "days": 10
+      },
+      {
+        "placeId": "surge-facility",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "erickson-hall",
+        "name": "Erickson Hall",
+        "weekly": 172.2
+      },
+      {
+        "dormId": "susquehanna-hall",
+        "name": "Susquehanna Hall",
+        "weekly": 193.8
+      },
+      {
+        "dormId": "chesapeake-hall",
+        "name": "Chesapeake Hall",
+        "weekly": 206.6
+      }
+    ]
+  },
+  "umd": {
+    "halls": 39,
+    "places": [
+      {
+        "placeId": "geology-building",
+        "days": 21
+      },
+      {
+        "placeId": "symons-hall",
+        "days": 10
+      },
+      {
+        "placeId": "patuxent-building",
+        "days": 21
+      },
+      {
+        "placeId": "h-j-patterson-hall",
+        "days": 10
+      },
+      {
+        "placeId": "mitchell-building",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "st-marys",
+        "name": "St. Mary's",
+        "weekly": 117
+      },
+      {
+        "dormId": "dorchester",
+        "name": "Dorchester",
+        "weekly": 127.6
+      },
+      {
+        "dormId": "worcester",
+        "name": "Worcester",
+        "weekly": 155.4
+      }
+    ]
+  },
+  "umn": {
+    "halls": 10,
+    "places": [
+      {
+        "placeId": "vincent-hall",
+        "days": 21
+      },
+      {
+        "placeId": "smith-hall",
+        "days": 10
+      },
+      {
+        "placeId": "morrill-hall",
+        "days": 21
+      },
+      {
+        "placeId": "johnston-hall",
+        "days": 10
+      },
+      {
+        "placeId": "mechanical-engineering",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "comstock",
+        "name": "Comstock",
+        "weekly": 135
+      },
+      {
+        "dormId": "yudof",
+        "name": "Yudof",
+        "weekly": 137
+      },
+      {
+        "dormId": "17th-avenue",
+        "name": "17th Avenue",
+        "weekly": 142.6
+      }
+    ]
+  },
+  "unc": {
+    "halls": 37,
+    "places": [
+      {
+        "placeId": "carroll-hall",
+        "days": 21
+      },
+      {
+        "placeId": "dey-hall",
+        "days": 10
+      },
+      {
+        "placeId": "campus-y",
+        "days": 21
+      },
+      {
+        "placeId": "sitterson-hall",
+        "days": 10
+      },
+      {
+        "placeId": "morehead-laboratory",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "old-west",
+        "name": "Old West",
+        "weekly": 79.8
+      },
+      {
+        "dormId": "old-east",
+        "name": "Old East",
+        "weekly": 90
+      },
+      {
+        "dormId": "grimes",
+        "name": "Grimes",
+        "weekly": 131.6
+      }
+    ]
+  },
+  "unc-pembroke": {
+    "halls": 5,
+    "places": [
+      {
+        "placeId": "locklear-hall",
+        "days": 21
+      },
+      {
+        "placeId": "education-center",
+        "days": 10
+      },
+      {
+        "placeId": "the-annex",
+        "days": 21
+      },
+      {
+        "placeId": "old-main",
+        "days": 10
+      },
+      {
+        "placeId": "hickory-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "north-hall",
+        "name": "North Hall",
+        "weekly": 121.8
+      },
+      {
+        "dormId": "belk-hall",
+        "name": "Belk Hall",
+        "weekly": 137.8
+      },
+      {
+        "dormId": "oak-hall",
+        "name": "Oak Hall",
+        "weekly": 156.2
+      }
+    ]
+  },
+  "university-of-alabama": {
+    "halls": 16,
+    "places": [
+      {
+        "placeId": "tuomey-hall",
+        "days": 21
+      },
+      {
+        "placeId": "hardaway-hall-annex",
+        "days": 10
+      },
+      {
+        "placeId": "lloyd-hall",
+        "days": 21
+      },
+      {
+        "placeId": "presidents-hall",
+        "days": 10
+      },
+      {
+        "placeId": "oliver-barnard-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "bryant",
+        "name": "Bryant Hall",
+        "weekly": 176
+      },
+      {
+        "dormId": "paty",
+        "name": "Paty Hall",
+        "weekly": 186.6
+      },
+      {
+        "dormId": "john-england-jr",
+        "name": "John England Jr. Hall",
+        "weekly": 219.8
+      }
+    ]
+  },
   "university-of-florida": {
     "halls": 24,
     "places": [
@@ -206,6 +3374,799 @@
         "dormId": "keys-residential-complex",
         "name": "Keys Residential Complex",
         "weekly": 122
+      }
+    ]
+  },
+  "university-of-miami": {
+    "halls": 9,
+    "places": [
+      {
+        "placeId": "gusman-concert-hall",
+        "days": 21
+      },
+      {
+        "placeId": "school-of-law",
+        "days": 10
+      },
+      {
+        "placeId": "rehearsal-center",
+        "days": 21
+      },
+      {
+        "placeId": "architecture-49",
+        "days": 10
+      },
+      {
+        "placeId": "cox-science-building",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "eaton-college",
+        "name": "Eaton Residential College",
+        "weekly": 110
+      },
+      {
+        "dormId": "coral-college",
+        "name": "Coral Residential College (Centennial Village)",
+        "weekly": 123.2
+      },
+      {
+        "dormId": "ibis-college",
+        "name": "Ibis Residential College (Centennial Village)",
+        "weekly": 123.2
+      }
+    ]
+  },
+  "university-of-michigan": {
+    "halls": 20,
+    "places": [
+      {
+        "placeId": "homer-a-neal-lab",
+        "days": 21
+      },
+      {
+        "placeId": "haven-hall",
+        "days": 10
+      },
+      {
+        "placeId": "weiser-tower",
+        "days": 21
+      },
+      {
+        "placeId": "east-hall",
+        "days": 10
+      },
+      {
+        "placeId": "lawyers-club",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "martha-cook-building",
+        "name": "Martha Cook Building",
+        "weekly": 82.2
+      },
+      {
+        "dormId": "east-quadrangle",
+        "name": "East Quadrangle",
+        "weekly": 126.2
+      },
+      {
+        "dormId": "helen-newberry",
+        "name": "Helen Newberry",
+        "weekly": 151.8
+      }
+    ]
+  },
+  "uno": {
+    "halls": 2,
+    "places": [
+      {
+        "placeId": "computer-center",
+        "days": 21
+      },
+      {
+        "placeId": "science-building",
+        "days": 10
+      },
+      {
+        "placeId": "fine-arts-building",
+        "days": 21
+      },
+      {
+        "placeId": "milneburg-hall",
+        "days": 10
+      },
+      {
+        "placeId": "engineering-building",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "privateer-place",
+        "name": "Privateer Place",
+        "weekly": 188.6
+      },
+      {
+        "dormId": "pontchartrain-halls",
+        "name": "Pontchartrain Halls",
+        "weekly": 218.2
+      }
+    ]
+  },
+  "upenn": {
+    "halls": 8,
+    "places": [
+      {
+        "placeId": "colonial-penn-center",
+        "days": 21
+      },
+      {
+        "placeId": "the-arch",
+        "days": 10
+      },
+      {
+        "placeId": "mcneil-building",
+        "days": 21
+      },
+      {
+        "placeId": "claudia-cohen-hall",
+        "days": 10
+      },
+      {
+        "placeId": "perry-world-house",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "the-quad",
+        "name": "The Quad (Fisher Hassenfeld, Riepe, Ware)",
+        "weekly": 99.8
+      },
+      {
+        "dormId": "stouffer-college-house",
+        "name": "Stouffer College House (Mayer Hall)",
+        "weekly": 122.2
+      },
+      {
+        "dormId": "kceh",
+        "name": "Kings Court English House (KCEH)",
+        "weekly": 143
+      }
+    ]
+  },
+  "usao": {
+    "halls": 3,
+    "places": [
+      {
+        "placeId": "jourdan-house",
+        "days": 21
+      },
+      {
+        "placeId": "austin-hall",
+        "days": 10
+      },
+      {
+        "placeId": "alumni-chapel",
+        "days": 21
+      },
+      {
+        "placeId": "art-annex",
+        "days": 10
+      },
+      {
+        "placeId": "canning-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "robertson-hall",
+        "name": "Robertson Hall",
+        "weekly": 96
+      },
+      {
+        "dormId": "lawson-court",
+        "name": "Lawson Court",
+        "weekly": 108.4
+      },
+      {
+        "dormId": "sparks-hall",
+        "name": "Sparks Hall",
+        "weekly": 113.4
+      }
+    ]
+  },
+  "usc": {
+    "halls": 10,
+    "places": [
+      {
+        "placeId": "stonier-hall",
+        "days": 21
+      },
+      {
+        "placeId": "zumberge-hall",
+        "days": 10
+      },
+      {
+        "placeId": "vivian-hall",
+        "days": 21
+      },
+      {
+        "placeId": "hoffman-hall",
+        "days": 10
+      },
+      {
+        "placeId": "powell-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "parkside-arts-humanities",
+        "name": "Parkside Arts & Humanities Residential College",
+        "weekly": 115.8
+      },
+      {
+        "dormId": "parkside-international",
+        "name": "Parkside International Residential College",
+        "weekly": 156.6
+      },
+      {
+        "dormId": "marks-hall",
+        "name": "Marks Hall",
+        "weekly": 176
+      }
+    ]
+  },
+  "ut-austin": {
+    "halls": 15,
+    "places": [
+      {
+        "placeId": "computation-center",
+        "days": 21
+      },
+      {
+        "placeId": "mezes-hall",
+        "days": 10
+      },
+      {
+        "placeId": "robert-a-welch-hall",
+        "days": 21
+      },
+      {
+        "placeId": "parlin-hall",
+        "days": 10
+      },
+      {
+        "placeId": "mary-e-gearing-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "moore-hill",
+        "name": "Moore-Hill Hall",
+        "weekly": 84.2
+      },
+      {
+        "dormId": "andrews",
+        "name": "Andrews Hall",
+        "weekly": 119.8
+      },
+      {
+        "dormId": "carothers",
+        "name": "Carothers Hall",
+        "weekly": 143.8
+      }
+    ]
+  },
+  "ut-chattanooga": {
+    "halls": 11,
+    "places": [
+      {
+        "placeId": "utc-bretske-hall",
+        "days": 21
+      },
+      {
+        "placeId": "cross-roads",
+        "days": 10
+      },
+      {
+        "placeId": "derthick-hall",
+        "days": 21
+      },
+      {
+        "placeId": "utc-founders-hall",
+        "days": 10
+      },
+      {
+        "placeId": "utc-grote-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "stagmaier-hall",
+        "name": "Stagmaier Hall",
+        "weekly": 89.8
+      },
+      {
+        "dormId": "walker-apartments",
+        "name": "Walker Apartments",
+        "weekly": 121
+      },
+      {
+        "dormId": "uc-foundation-apartments",
+        "name": "UC Foundation Apartments",
+        "weekly": 126.6
+      }
+    ]
+  },
+  "uva": {
+    "halls": 4,
+    "places": [
+      {
+        "placeId": "bryan-hall",
+        "days": 21
+      },
+      {
+        "placeId": "new-cabell-hall",
+        "days": 10
+      },
+      {
+        "placeId": "james-monroe-hall",
+        "days": 21
+      },
+      {
+        "placeId": "clark-hall",
+        "days": 10
+      },
+      {
+        "placeId": "robertson-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "mccormick-road",
+        "name": "McCormick Road",
+        "weekly": 204.6
+      },
+      {
+        "dormId": "alderman-road-suite",
+        "name": "Alderman Road (Suite-Style: Courtenay, Dunglison, Fitzhugh)",
+        "weekly": 366.2
+      },
+      {
+        "dormId": "alderman-road-hall",
+        "name": "Alderman Road (Hall-Style: Kellogg, Balz-Dobie)",
+        "weekly": 368
+      }
+    ]
+  },
+  "uw": {
+    "halls": 12,
+    "places": [
+      {
+        "placeId": "mary-gates-hall",
+        "days": 21
+      },
+      {
+        "placeId": "gerberding-hall",
+        "days": 10
+      },
+      {
+        "placeId": "gowen-hall",
+        "days": 21
+      },
+      {
+        "placeId": "guggenheim-hall",
+        "days": 10
+      },
+      {
+        "placeId": "kane-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "mcmahon-hall",
+        "name": "McMahon Hall",
+        "weekly": 155.4
+      },
+      {
+        "dormId": "alder-hall",
+        "name": "Alder Hall",
+        "weekly": 158
+      },
+      {
+        "dormId": "oak-hall",
+        "name": "Oak Hall",
+        "weekly": 167.2
+      }
+    ]
+  },
+  "uw-madison": {
+    "halls": 19,
+    "places": [
+      {
+        "placeId": "sterling-hall",
+        "days": 21
+      },
+      {
+        "placeId": "bascom-hall",
+        "days": 10
+      },
+      {
+        "placeId": "van-hise-hall",
+        "days": 21
+      },
+      {
+        "placeId": "south-hall",
+        "days": 10
+      },
+      {
+        "placeId": "morgridge-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "waters",
+        "name": "Waters Residence Hall",
+        "weekly": 100.6
+      },
+      {
+        "dormId": "barnard",
+        "name": "Barnard Residence Hall",
+        "weekly": 121.8
+      },
+      {
+        "dormId": "chadbourne",
+        "name": "Chadbourne Residence Hall",
+        "weekly": 156
+      }
+    ]
+  },
+  "vanderbilt": {
+    "halls": 17,
+    "places": [
+      {
+        "placeId": "molecular-biology",
+        "days": 21
+      },
+      {
+        "placeId": "werthan-building",
+        "days": 10
+      },
+      {
+        "placeId": "buttrick-hall",
+        "days": 21
+      },
+      {
+        "placeId": "tibbot-art-center",
+        "days": 10
+      },
+      {
+        "placeId": "garland-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "mctyeire-international-house",
+        "name": "McTyeire International House",
+        "weekly": 150
+      },
+      {
+        "dormId": "e-bronson-ingram-college",
+        "name": "E. Bronson Ingram College",
+        "weekly": 177.8
+      },
+      {
+        "dormId": "moore-college",
+        "name": "Moore College",
+        "weekly": 188.4
+      }
+    ]
+  },
+  "vcu": {
+    "halls": 5,
+    "places": [
+      {
+        "placeId": "millhiser-house",
+        "days": 21
+      },
+      {
+        "placeId": "scott-carriage-house",
+        "days": 10
+      },
+      {
+        "placeId": "founders-hall",
+        "days": 21
+      },
+      {
+        "placeId": "grace-street-theater",
+        "days": 10
+      },
+      {
+        "placeId": "500-academic-centre",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "west-grace-south",
+        "name": "West Grace Street Housing (South)",
+        "weekly": 84
+      },
+      {
+        "dormId": "west-grace-north",
+        "name": "West Grace Street Housing (North)",
+        "weekly": 110.4
+      },
+      {
+        "dormId": "brandt-hall",
+        "name": "Brandt Hall",
+        "weekly": 125.4
+      }
+    ]
+  },
+  "virginia-tech": {
+    "halls": 24,
+    "places": [
+      {
+        "placeId": "burruss-hall",
+        "days": 21
+      },
+      {
+        "placeId": "williams-hall",
+        "days": 10
+      },
+      {
+        "placeId": "patton-hall",
+        "days": 21
+      },
+      {
+        "placeId": "davidson-hall",
+        "days": 10
+      },
+      {
+        "placeId": "cowgill-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "campbell-east",
+        "name": "Campbell (East)",
+        "weekly": 114.6
+      },
+      {
+        "dormId": "campbell-main",
+        "name": "Campbell (Main)",
+        "weekly": 114.6
+      },
+      {
+        "dormId": "eggleston-west",
+        "name": "Eggleston (West)",
+        "weekly": 126
+      }
+    ]
+  },
+  "western-oregon": {
+    "halls": 4,
+    "places": [
+      {
+        "placeId": "campbell-hall",
+        "days": 21
+      },
+      {
+        "placeId": "natural-sciences",
+        "days": 10
+      },
+      {
+        "placeId": "maaske-hall",
+        "days": 21
+      },
+      {
+        "placeId": "smith-music-hall",
+        "days": 10
+      },
+      {
+        "placeId": "terry-house",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "heritage-hall",
+        "name": "Heritage Hall",
+        "weekly": 122.8
+      },
+      {
+        "dormId": "ackerman-hall",
+        "name": "Ackerman Hall",
+        "weekly": 128.8
+      },
+      {
+        "dormId": "barnum-hall",
+        "name": "Barnum Hall",
+        "weekly": 153.6
+      }
+    ]
+  },
+  "western-washington": {
+    "halls": 7,
+    "places": [
+      {
+        "placeId": "bond-hall",
+        "days": 21
+      },
+      {
+        "placeId": "fraser-hall",
+        "days": 10
+      },
+      {
+        "placeId": "fine-arts",
+        "days": 21
+      },
+      {
+        "placeId": "high-street-hall",
+        "days": 10
+      },
+      {
+        "placeId": "viking-union",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "edens-hall",
+        "name": "Edens Hall",
+        "weekly": 116.6
+      },
+      {
+        "dormId": "higginson-hall",
+        "name": "Higginson Hall",
+        "weekly": 144
+      },
+      {
+        "dormId": "mathes-hall",
+        "name": "Mathes Hall",
+        "weekly": 144.2
+      }
+    ]
+  },
+  "wustl": {
+    "halls": 25,
+    "places": [
+      {
+        "placeId": "duncker-hall",
+        "days": 21
+      },
+      {
+        "placeId": "wilson-hall",
+        "days": 10
+      },
+      {
+        "placeId": "brookings-hall",
+        "days": 21
+      },
+      {
+        "placeId": "bryan-hall",
+        "days": 10
+      },
+      {
+        "placeId": "compton-laboratory",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "village-house",
+        "name": "Village House",
+        "weekly": 233.6
+      },
+      {
+        "dormId": "gregg-house",
+        "name": "Gregg House",
+        "weekly": 264.4
+      },
+      {
+        "dormId": "koenig-house",
+        "name": "Koenig House",
+        "weekly": 267.4
+      }
+    ]
+  },
+  "wvu": {
+    "halls": 4,
+    "places": [
+      {
+        "placeId": "e-moore-hall",
+        "days": 21
+      },
+      {
+        "placeId": "mountainlair",
+        "days": 10
+      },
+      {
+        "placeId": "clark-hall",
+        "days": 21
+      },
+      {
+        "placeId": "woodburn-hall-wvu",
+        "days": 10
+      },
+      {
+        "placeId": "eisland-hall-wvu",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "boreman-hall",
+        "name": "Boreman Hall",
+        "weekly": 117.8
+      },
+      {
+        "dormId": "stalnaker-hall",
+        "name": "Stalnaker Hall",
+        "weekly": 123.4
+      },
+      {
+        "dormId": "dadisman-hall",
+        "name": "Dadisman Hall",
+        "weekly": 178.8
+      }
+    ]
+  },
+  "yale": {
+    "halls": 5,
+    "places": [
+      {
+        "placeId": "stoeckel-hall",
+        "days": 21
+      },
+      {
+        "placeId": "kirtland-hall",
+        "days": 10
+      },
+      {
+        "placeId": "rosenfeld-hall",
+        "days": 21
+      },
+      {
+        "placeId": "yale-law-school",
+        "days": 10
+      },
+      {
+        "placeId": "lanman-wright-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "old-campus",
+        "name": "Undergraduate Residential Colleges & Old Campus",
+        "weekly": 123.8
+      },
+      {
+        "dormId": "254-prospect",
+        "name": "254 Prospect Street",
+        "weekly": 312
+      },
+      {
+        "dormId": "276-prospect",
+        "name": "276 Prospect Street",
+        "weekly": 317.2
       }
     ]
   }
