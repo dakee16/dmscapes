@@ -38,12 +38,13 @@ export function getDorm(schoolId: string, dormId: string) {
 }
 
 /**
- * Whether a hall's page is worth indexing: at least one room with a measured
- * length and width. The hall page noindexes otherwise, and the sitemap leaves
- * it out, so the two always agree.
+ * Whether a hall's page is worth indexing: at least one room whose length and
+ * width the school publishes (estimated sizes don't count; same rule as
+ * isPublished in lib/room-preview). The hall page noindexes otherwise but stays
+ * linked, and the sitemap leaves it out, so the two always agree.
  */
 export function hallIsIndexable(dorm: DormSummary): boolean {
-  return dorm.rooms.some((r) => r.length_ft && r.width_ft);
+  return dorm.rooms.some((r) => r.length_ft && r.width_ft && !r.dims_estimated);
 }
 
 /** Every (school, dorm) pair, for generateStaticParams. */
