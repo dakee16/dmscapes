@@ -10,6 +10,7 @@ import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import FounderLink from "@/components/site/FounderLink";
 import { COMPETITORS, checkedOn, compareRows, shortCompetitorName } from "@/lib/compare";
+import { META as DORM_PLANNERS } from "@/content/compare/dorm-room-planners";
 import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, guidePageJsonLd, itemListJsonLd } from "@/lib/seo";
 import dsz from "@/components/dorm-size/DormSize.module.css";
 import css from "@/components/compare/Compare.module.css";
@@ -48,7 +49,10 @@ export default function CompareIndexPage() {
           guidePageJsonLd({ path: PATH, name: "Which planner fits your dorm?", description: DESCRIPTION, datePublished: "2026-10-28", dateModified: latest.checked }),
           itemListJsonLd(
             "Dorm room planner comparisons",
-            COMPETITORS.map((c) => ({ name: `dormscape vs ${shortCompetitorName(c)}`, path: `/compare/${c.slug}` }))
+            [
+              ...COMPETITORS.map((c) => ({ name: `dormscape vs ${shortCompetitorName(c)}`, path: `/compare/${c.slug}` })),
+              { name: DORM_PLANNERS.name, path: "/compare/dorm-room-planners" },
+            ]
           ),
         ]}
       />
@@ -84,6 +88,12 @@ export default function CompareIndexPage() {
                 </Link>
               </li>
             ))}
+            <li data-reveal="">
+              <Link href="/compare/dorm-room-planners">
+                <strong>{DORM_PLANNERS.name}</strong>
+                <span>{DORM_PLANNERS.summary}</span>
+              </Link>
+            </li>
           </ul>
         </div>
       </section>

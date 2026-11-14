@@ -5,6 +5,7 @@ import { SITE_URL as BASE } from "@/lib/seo";
 import SCHOOL_DATES from "@/lib/school-dates.json";
 import { BED_RULES_CHECKED } from "@/lib/bed-rules";
 import { COMPETITORS } from "@/lib/compare";
+import { CHECKED as DORM_PLANNERS_CHECKED } from "@/content/compare/dorm-room-planners";
 import { PILOT_SCHOOLS, hallFinderLive } from "@/lib/hall-finder";
 import { HALL_FINDER_BUILT, hallFinderUpdated } from "@/lib/hall-finder-seo";
 
@@ -46,6 +47,7 @@ export function sitemapEntries(group: string): MetadataRoute.Sitemap {
         { url: `${BASE}/twin-xl-sheets`, lastModified: NEWEST_DATA, changeFrequency: "monthly", priority: 0.6 },
         { url: `${BASE}/compare`, changeFrequency: "monthly", priority: 0.5 },
         ...COMPETITORS.map((c) => ({ url: `${BASE}/compare/${c.slug}`, lastModified: c.checked, changeFrequency: "monthly" as const, priority: 0.5 })),
+        { url: `${BASE}/compare/dorm-room-planners`, lastModified: DORM_PLANNERS_CHECKED, changeFrequency: "monthly", priority: 0.5 },
         { url: `${BASE}/pricing`, changeFrequency: "monthly", priority: 0.7 },
         { url: `${BASE}/my-room`, changeFrequency: "monthly", priority: 0.6 },
         { url: `${BASE}/blog`, lastModified: NEWEST_POST, changeFrequency: "weekly", priority: 0.7 },
