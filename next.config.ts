@@ -31,6 +31,25 @@ function routeRoots(): string[] | null {
   return anyPath ? null : [...roots].sort();
 }
 
+/**
+ * Short links (/psu -> /colleges/penn-state?utm_source=short), read from
+ * lib/short-links.json. A slug that would shadow a route or public/ entry, or
+ * that points at a school we don't have, throws, failing the build.
+ */
+function shortLinks() {
+  const read = (file: string) => JSON.parse(fs.readFileSync(path.join(process.cwd(), file), "utf8"));
+  const links: Record<string, string> = read("lib/short-links.json");
+  const schools = new Set((read("lib/schools-index.json") as { id: string }[]).map((s) => s.id));
+  const roots = routeRoots();
+  if (!roots) throw new Error("lib/short-links.json: can't list the app's route roots to check short links against");
+  return Object.entries(links).map(([slug, school]) => {
+    if (!/^[a-z0-9-]+$/.test(slug)) throw new Error(`lib/short-links.json: "${slug}" isn't a lowercase slug`);
+    if (roots.includes(slug)) throw new Error(`lib/short-links.json: /${slug} would shadow an existing route or public/ entry`);
+    if (!schools.has(school)) throw new Error(`lib/short-links.json: /${slug} points at "${school}", which isn't in lib/schools-index.json`);
+    return { source: `/${slug}`, destination: `/colleges/${school}?utm_source=short`, permanent: true };
+  });
+}
+
 // ---------------------------------------------------------------------------
 // Content-Security-Policy
 //
@@ -156,14 +175,18 @@ export default function nextConfig(phase: string): NextConfig {
     },
     // Hall pages retired when UIUC and UMass were split from hall-style groups into their real
     // halls (2026-11-14): each old group page goes to its school's page, which lists the halls.
+    // Then the short links (shortLinks above).
     async redirects() {
       const retired = {
         uiuc: ["traditional-halls", "premium-suites", "l-shaped-triples"],
         umass: ["traditional-halls", "sylvan-suites", "chcrc-honors"],
       };
-      return Object.entries(retired).flatMap(([school, halls]) =>
-        halls.map((hall) => ({ source: `/colleges/${school}/${hall}`, destination: `/colleges/${school}`, permanent: true })),
-      );
+      return [
+        ...Object.entries(retired).flatMap(([school, halls]) =>
+          halls.map((hall) => ({ source: `/colleges/${school}/${hall}`, destination: `/colleges/${school}`, permanent: true })),
+        ),
+        ...shortLinks(),
+      ];
     },
     async headers() {
       return [
