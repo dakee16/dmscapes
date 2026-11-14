@@ -8,7 +8,10 @@ import { useBuyGate } from "@/lib/buy-gate";
 import type { ProductClickRequest } from "@/lib/api-types";
 
 export function logProductClick(p: Product): void {
-  track("product_clicked", { product_id: p.id, price: p.price, category: p.category });
+  const props = { product_id: p.id, price: p.price, category: p.category };
+  track("product_clicked", props);
+  // The same click as affiliate_click, the name affiliate reports look for. Every catalog link is Amazon.
+  track("affiliate_click", { ...props, retailer: "amazon" });
   const body: ProductClickRequest = {
     session_id: sessionId(),
     product_id: p.id,

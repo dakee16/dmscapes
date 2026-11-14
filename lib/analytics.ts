@@ -24,6 +24,7 @@ export type AnalyticsEvent =
   | "budget_set"
   | "design_completed"
   | "product_clicked"
+  | "affiliate_click"
   | "product_swapped"
   | "layout_edited"
   | "share_clicked"

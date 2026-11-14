@@ -24,7 +24,9 @@ export default function BuyAllButton({
   const url = cartUrl(products);
   const proceed = () => {
     signalBuyIntent();
-    track("product_clicked", { product_id: "buy_all", price: total, category: "cart" });
+    const props = { product_id: "buy_all", price: total, category: "cart" };
+    track("product_clicked", props);
+    track("affiliate_click", { ...props, retailer: "amazon" });
   };
 
   return (
