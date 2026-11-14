@@ -1,0 +1,225 @@
+{
+  "halls": {
+    "historic-gothic": {
+      "pin": [
+        -74.661313,
+        40.347531
+      ]
+    },
+    "modern-dorms": {
+      "pin": [
+        -74.654317,
+        40.342744
+      ]
+    },
+    "spelman-hall": {
+      "pin": [
+        -74.659006,
+        40.344522
+      ]
+    }
+  },
+  "places": {
+    "8": {
+      "hide": true
+    },
+    "cuyler-hall": {
+      "hide": true
+    },
+    "patton-hall": {
+      "hide": true
+    },
+    "dod-hall": {
+      "hide": true
+    },
+    "little-hall": {
+      "hide": true
+    },
+    "joline-hall": {
+      "hide": true
+    },
+    "campbell-hall": {
+      "hide": true
+    },
+    "witherspoon-hall": {
+      "hide": true
+    },
+    "edwards-hall": {
+      "hide": true
+    },
+    "brown-hall": {
+      "hide": true
+    },
+    "foulke-hall": {
+      "hide": true
+    },
+    "feinberg-hall": {
+      "hide": true
+    },
+    "buyers-hall": {
+      "hide": true
+    },
+    "college-road-apartments": {
+      "hide": true
+    },
+    "mccosh-health-center": {
+      "hide": true
+    },
+    "frist-health-center": {
+      "hide": true
+    },
+    "university-now-day-nursery": {
+      "hide": true
+    },
+    "center-for-jewish-life": {
+      "hide": true
+    },
+    "colonial-club": {
+      "hide": true
+    },
+    "campus-club": {
+      "hide": true
+    },
+    "tiger": {
+      "hide": true
+    },
+    "roots-ocean-prime": {
+      "hide": true
+    },
+    "the-dinky-bar-and-kitchen": {
+      "hide": true
+    },
+    "wawa": {
+      "hide": true
+    },
+    "skillman-furniture": {
+      "hide": true
+    },
+    "garden-theater": {
+      "hide": true
+    },
+    "palmer-guest-house": {
+      "hide": true
+    },
+    "palmer-house-cottage": {
+      "hide": true
+    },
+    "prospect-house": {
+      "hide": true
+    },
+    "maclean-house": {
+      "hide": true
+    },
+    "springdale-clubhouse": {
+      "hide": true
+    },
+    "nassau-swim-club": {
+      "hide": true
+    },
+    "class-of-1887-boathouse": {
+      "hide": true
+    },
+    "caldwell-field-house": {
+      "hide": true
+    },
+    "hobey-baker-memorial-ice-rink": {
+      "hide": true
+    },
+    "1912-pavilion": {
+      "hide": true
+    },
+    "chilled-water-plant": {
+      "hide": true
+    },
+    "south-guard-booth": {
+      "hide": true
+    },
+    "office-of-information-technology": {
+      "hide": true
+    },
+    "macmillan": {
+      "hide": true
+    },
+    "macmillan-annex": {
+      "hide": true
+    },
+    "helm-building": {
+      "hide": true
+    },
+    "new-south": {
+      "hide": true
+    },
+    "princeton-university-press": {
+      "hide": true
+    },
+    "bloomberg-hall": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "8": "Spelman Hall 8, the other numbered Spelman Halls building OSM draws (a hall), not a class building.",
+    "historic-gothic": "A group entry for the collegiate-Gothic dorms of Mathey and Rockefeller Colleges; pinned on Blair Hall (OSM way/40719672), the Mathey College dorm in the middle of that group (housing.princeton.edu).",
+    "modern-dorms": "A group entry for Yeh College, New College West and Whitman College; pinned on Hariri Hall (OSM way/1111995513), the Yeh College building nearest the rest of campus in the Yeh/NCW complex (housing.princeton.edu).",
+    "spelman-hall": "OSM names the eight Spelman Halls only by number; pinned on building 7 (OSM way/140564441), south of Dillon Gymnasium where Princeton's campus map places Spelman Halls (housing.princeton.edu).",
+    "cuyler-hall": "A Princeton dormitory or university apartment building (housing.princeton.edu), not a class building.",
+    "patton-hall": "A Princeton dormitory or university apartment building (housing.princeton.edu), not a class building.",
+    "dod-hall": "A Princeton dormitory or university apartment building (housing.princeton.edu), not a class building.",
+    "little-hall": "A Princeton dormitory or university apartment building (housing.princeton.edu), not a class building.",
+    "joline-hall": "A Princeton dormitory or university apartment building (housing.princeton.edu), not a class building.",
+    "campbell-hall": "A Princeton dormitory or university apartment building (housing.princeton.edu), not a class building.",
+    "witherspoon-hall": "A Princeton dormitory or university apartment building (housing.princeton.edu), not a class building.",
+    "edwards-hall": "A Princeton dormitory or university apartment building (housing.princeton.edu), not a class building.",
+    "brown-hall": "A Princeton dormitory or university apartment building (housing.princeton.edu), not a class building.",
+    "foulke-hall": "A Princeton dormitory or university apartment building (housing.princeton.edu), not a class building.",
+    "feinberg-hall": "A Princeton dormitory or university apartment building (housing.princeton.edu), not a class building.",
+    "buyers-hall": "A Princeton dormitory or university apartment building (housing.princeton.edu), not a class building.",
+    "college-road-apartments": "A Princeton dormitory or university apartment building (housing.princeton.edu), not a class building.",
+    "mccosh-health-center": "The student health centre, not somewhere classes happen.",
+    "frist-health-center": "The student health centre, not somewhere classes happen.",
+    "university-now-day-nursery": "Childcare, not somewhere classes happen.",
+    "center-for-jewish-life": "A religious-life building, not somewhere classes happen.",
+    "colonial-club": "An eating club (or former eating club), not somewhere classes happen.",
+    "campus-club": "An eating club (or former eating club), not somewhere classes happen.",
+    "tiger": "An eating club (or former eating club), not somewhere classes happen.",
+    "roots-ocean-prime": "A restaurant, shop or cinema, not a dining hall or class building.",
+    "the-dinky-bar-and-kitchen": "A restaurant, shop or cinema, not a dining hall or class building.",
+    "wawa": "A restaurant, shop or cinema, not a dining hall or class building.",
+    "skillman-furniture": "A restaurant, shop or cinema, not a dining hall or class building.",
+    "garden-theater": "A restaurant, shop or cinema, not a dining hall or class building.",
+    "palmer-guest-house": "A guest house, the faculty club or the alumni house, not somewhere classes happen.",
+    "palmer-house-cottage": "A guest house, the faculty club or the alumni house, not somewhere classes happen.",
+    "prospect-house": "A guest house, the faculty club or the alumni house, not somewhere classes happen.",
+    "maclean-house": "A guest house, the faculty club or the alumni house, not somewhere classes happen.",
+    "springdale-clubhouse": "Golf clubhouse, private swim club, varsity boathouse, field house, rink or athletics pavilion, not a class building or student gym.",
+    "nassau-swim-club": "Golf clubhouse, private swim club, varsity boathouse, field house, rink or athletics pavilion, not a class building or student gym.",
+    "class-of-1887-boathouse": "Golf clubhouse, private swim club, varsity boathouse, field house, rink or athletics pavilion, not a class building or student gym.",
+    "caldwell-field-house": "Golf clubhouse, private swim club, varsity boathouse, field house, rink or athletics pavilion, not a class building or student gym.",
+    "hobey-baker-memorial-ice-rink": "Golf clubhouse, private swim club, varsity boathouse, field house, rink or athletics pavilion, not a class building or student gym.",
+    "1912-pavilion": "Golf clubhouse, private swim club, varsity boathouse, field house, rink or athletics pavilion, not a class building or student gym.",
+    "chilled-water-plant": "Utility, security, IT, facilities, administrative or press building, not somewhere classes happen.",
+    "south-guard-booth": "Utility, security, IT, facilities, administrative or press building, not somewhere classes happen.",
+    "office-of-information-technology": "Utility, security, IT, facilities, administrative or press building, not somewhere classes happen.",
+    "macmillan": "Utility, security, IT, facilities, administrative or press building, not somewhere classes happen.",
+    "macmillan-annex": "Utility, security, IT, facilities, administrative or press building, not somewhere classes happen.",
+    "helm-building": "Utility, security, IT, facilities, administrative or press building, not somewhere classes happen.",
+    "new-south": "Utility, security, IT, facilities, administrative or press building, not somewhere classes happen.",
+    "princeton-university-press": "Utility, security, IT, facilities, administrative or press building, not somewhere classes happen.",
+    "bloomberg-hall": "Bloomberg Hall on Einstein Drive is the Institute for Advanced Study's, a separate institution, not a Princeton class building."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "historic-gothic -> 11-university-place"
+      ],
+      "maxRatio": 3,
+      "why": "Blair Hall's mapped entrance is on its courtyard side to the east, and 11 University Place lies behind the hall to the west across University Place, so the walk goes round the end of Blair Hall and along University Place."
+    },
+    {
+      "pairs": [
+        "spelman-hall -> mccarter-theater-center"
+      ],
+      "maxRatio": 3,
+      "why": "The paths mapped from Spelman Hall 7 leave the Spelman group northward, and McCarter Theatre's mapped door faces University Place to the south-west, so the walk goes north round the Spelman buildings and back down to it."
+    }
+  ]
+}

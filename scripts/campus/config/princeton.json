@@ -1,0 +1,16 @@
+{
+  "collegeId": "princeton",
+  "area": {
+    "osm": "relation/6365145",
+    "bbox": [
+      40.32029,
+      -74.6706,
+      40.35563,
+      -74.63247
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Princeton's Office of the Registrar course offerings name rooms by building (e.g. 'Friend Center 101') with no code key, and Facilities' building table is a sign-in-only ArcGIS layer (pu_bl, token required)."
+}
