@@ -1,0 +1,25 @@
+{
+  "halls": {
+    "pontchartrain-halls": { "pin": [-90.064416, 30.025817] },
+    "privateer-place": { "pin": [-90.071862, 30.030071] }
+  },
+  "places": {
+    "university-center": { "kind": "dining" }
+  },
+  "codes": {
+    "CSB": "way/1494034598"
+  },
+  "detours": [
+    {
+      "pairs": ["pontchartrain-halls -> human-performance-center"],
+      "maxRatio": 3.2,
+      "why": "The Human Performance Center's mapped door is on its east side; from Pontchartrain North the walk crosses the service drive at the parking lot and goes round the building, with no mapped path through the trees between them."
+    }
+  ],
+  "notes": {
+    "CSB": "The Bulletin's Chemical Sciences Building (CSB) is the building OSM names 'Chemistry-Sciences Annex', the only chemistry building on Science Row beside the Science Building (lsuneworleans.edu/virtual-tour/chemistry).",
+    "pontchartrain-halls": "Pontchartrain Halls are two OSM buildings (Pontchartrain Hall North and South); pinned on North, which holds the Office of Residential Life (uno.edu/housing/contact), at its south end facing the walk between the two.",
+    "privateer-place": "Privateer Place apartments have no OSM building footprints (only the landuse area way/29014202); pinned on the clubhouse by the pool, just north of the complex entrance the operator's Google Maps link points to (campuslivingvillages.com Privateer Place page, goo.gl/maps/UJt7VHZzyHdkvKEk8 -> 30.029801, -90.071893), placed from Esri imagery.",
+    "university-center": "The University Center holds The Galley, UNO's cafeteria, plus Chick-fil-A and Subway (uno.edu/virtual-tour/uc); its name doesn't say dining."
+  }
+}

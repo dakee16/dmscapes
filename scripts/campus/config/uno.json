@@ -1,0 +1,17 @@
+{
+  "collegeId": "uno",
+  "area": {
+    "osm": "way/38499519",
+    "bbox": [
+      30.02371,
+      -90.07322,
+      30.03307,
+      -90.05796
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/uno.codes.json"
+  }
+}

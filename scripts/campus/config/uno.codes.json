@@ -1,0 +1,159 @@
+{
+ "name": "University of New Orleans, The Bulletin: Registration - Building Abbreviations",
+ "url": "https://www.uno.edu/registrar/bulletin/uno-bulletin",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "AD",
+   "name": "Administration Building"
+  },
+  {
+   "code": "ADC",
+   "name": "Alumni and Development Center"
+  },
+  {
+   "code": "ARENA POOL",
+   "name": "Keifer LSU New Orleans Lakefront Arena"
+  },
+  {
+   "code": "BIEN",
+   "name": "Bienville Hall"
+  },
+  {
+   "code": "BIO",
+   "name": "Biology Building"
+  },
+  {
+   "code": "CC",
+   "name": "Computer Center"
+  },
+  {
+   "code": "CHAPELLE",
+   "name": "Off Campus Site - Chapelle High School"
+  },
+  {
+   "code": "COM",
+   "name": "Commons"
+  },
+  {
+   "code": "CPB",
+   "name": "Campus Police"
+  },
+  {
+   "code": "CSB",
+   "name": "Chemical Sciences Building"
+  },
+  {
+   "code": "DWNTWN",
+   "name": "Downtown Center"
+  },
+  {
+   "code": "DWNTWN THEA",
+   "name": "Downtown Theater"
+  },
+  {
+   "code": "ED",
+   "name": "Bicentennial Education Center"
+  },
+  {
+   "code": "EHRET",
+   "name": "John Ehret High School"
+  },
+  {
+   "code": "EN",
+   "name": "Engineering Building"
+  },
+  {
+   "code": "FA",
+   "name": "Fine Arts Building"
+  },
+  {
+   "code": "GP",
+   "name": "Geology & Psychology Building"
+  },
+  {
+   "code": "HPC",
+   "name": "Human Performance Center"
+  },
+  {
+   "code": "HDLC",
+   "name": "Historic District Landmarks Commission"
+  },
+  {
+   "code": "INTERNET",
+   "name": "Internet"
+  },
+  {
+   "code": "JEFCTR",
+   "name": "Jefferson Center"
+  },
+  {
+   "code": "KH",
+   "name": "Kirschman Hall"
+  },
+  {
+   "code": "LA",
+   "name": "Liberal Arts Building"
+  },
+  {
+   "code": "LIB",
+   "name": "Earl K. Long Library"
+  },
+  {
+   "code": "LUMCOM",
+   "name": "LUMCON"
+  },
+  {
+   "code": "MATH",
+   "name": "Mathematics Building"
+  },
+  {
+   "code": "MCD35",
+   "name": "McDonogh 35 High School"
+  },
+  {
+   "code": "MH",
+   "name": "Milneburg Hall (formerly Business Administration Building)"
+  },
+  {
+   "code": "MICHOUD",
+   "name": "Off Campus Site - Michoud Facility"
+  },
+  {
+   "code": "NIMS",
+   "name": "Robert E. Nims Center for the Entertainment Arts"
+  },
+  {
+   "code": "PAC",
+   "name": "Performing Arts Center"
+  },
+  {
+   "code": "PRVTER",
+   "name": "Privateer Place"
+  },
+  {
+   "code": "SC",
+   "name": "Science Building"
+  },
+  {
+   "code": "SCHOOL SITE",
+   "name": "Check with department for exact location"
+  },
+  {
+   "code": "SLDL",
+   "name": "Slidell Center"
+  },
+  {
+   "code": "SSC",
+   "name": "Stennis Space Center"
+  },
+  {
+   "code": "TULANE",
+   "name": "Off Campus Site - Tulane University"
+  },
+  {
+   "code": "UC",
+   "name": "University Center"
+  }
+ ]
+}
