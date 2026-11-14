@@ -22,6 +22,7 @@ import { formatDims } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { hasHallFinder } from "@/lib/hall-finder";
 import ResultTip from "@/components/hall-finder/ResultTip";
+import { designCompleted } from "@/components/growth/ReferralPrompt";
 import { fitTemplateToRoom } from "@/lib/layout-fit";
 import { placeInPolygon } from "@/lib/place-in-polygon";
 import { syncProductFurniture } from "@/lib/product-model";
@@ -200,6 +201,7 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
     if (hydrated && room && style && !trackedRef.current) {
       trackedRef.current = true;
       track("design_completed");
+      designCompleted();
     }
   }, [hydrated, room, style]);
 
