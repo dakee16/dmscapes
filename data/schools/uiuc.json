@@ -6,12 +6,933 @@
  "aliases": ["uiuc","u of i"],
  "housing_url": "https://housing.illinois.edu/",
  "data_collected": "2026-08-12",
- "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with UIUC housing floor plans and student-sourced specs. UIUC does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Room shapes shift across floors, corners, and architectural cuts (L-shaped/window-alcove variants). Standard usable clearings and structural minimums provide the tier baselines below. Closets are ~3 x 3 ft structural drop-ins.",
+ "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with UIUC housing floor plans and student-sourced specs. UIUC does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Room shapes shift across floors, corners, and architectural cuts (L-shaped/window-alcove variants). Standard usable clearings and structural minimums provide the tier baselines below. Closets are ~3 x 3 ft structural drop-ins. On 2026-11-14 the group entries were split into the 15 undergraduate residence halls listed by University Housing (https://housing.illinois.edu/living-communities/halls/undergraduate), each carrying its hall style's typical room sizes (traditional: single and double; newer premium: double); the triple is added only where the hall's page lists triples or shows a triple floor plan.",
  "dorms": [
   {
-   "dorm_id": "traditional-halls",
-   "dorm_name": "Traditional Halls (Six Pack, Ikenberry, FAR/PAR/LAR)",
-   "hall_url": null,
+   "dorm_id": "allen",
+   "dorm_name": "Allen Hall",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/allen",
+   "address": "1005 W. Gregory Dr., Urbana, IL 61801",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Shared Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Shared Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 19,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 228,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. Main bounding walls average 12 x 19 ft. L-shaped variants break into a 12 x 13 ft main bay plus an 8 x 6 ft modular alcove."
+    }
+   ],
+   "notes": "Unit One/Allen Hall, Urbana North. Community and gender-inclusive bathrooms. Room types listed: doubles and singles; the hall page also shows triple and quad layouts (allen-triple.pdf, allen-quad.pdf). Quads aren't modeled here."
+  },
+  {
+   "dorm_id": "barton-lundgren",
+   "dorm_name": "Barton and Lundgren Halls",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/barton-lundgren",
+   "address": "1205 S. Fourth St., Champaign, IL 61820 (Barton); 1201 S. Fourth St., Champaign, IL 61820 (Lundgren)",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Shared Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+    }
+   ],
+   "notes": "Ikenberry Commons North. Community bathrooms; a quiet, academically focused hall. Room types listed: doubles and singles."
+  },
+  {
+   "dorm_id": "bousfield",
+   "dorm_name": "Bousfield Hall",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/bousfield",
+   "address": "1214 S. First St., Champaign, IL 61820",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Premium Double (Suite / Semi-Private)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 169,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's newer premium halls (Nugent, Wassaja, Bousfield), not measured in this hall. 13 x 13 or 14 x 12 ft of main bedroom footprint (excluding entry vestibule / private bath)."
+    }
+   ],
+   "notes": "Ikenberry Commons South. Suite-style: doubles and single suites share an in-suite bathroom (private-bath singles are ADA only); upper-division community. Single suites aren't modeled here."
+  },
+  {
+   "dorm_id": "busey-evans",
+   "dorm_name": "Busey-Evans Halls",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/busey-evans",
+   "address": "1111 W. Nevada St., Urbana, IL 61801 (Busey); 1115 W. Nevada St., Urbana, IL 61801 (Evans)",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Shared Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Shared Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 19,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 228,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. Main bounding walls average 12 x 19 ft. L-shaped variants break into a 12 x 13 ft main bay plus an 8 x 6 ft modular alcove."
+    }
+   ],
+   "notes": "Busey Hall and Evans Hall, Urbana North. Community bathrooms with private shower stalls. Room types listed: doubles and singles; the hall page also shows a triple room layout."
+  },
+  {
+   "dorm_id": "far",
+   "dorm_name": "Florida Avenue Residence Halls (FAR)",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/far",
+   "address": "1005 College Ct., Urbana, IL 61801 (Oglesby); 901 College Ct., Urbana, IL 61801 (Trelease)",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Shared Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+    }
+   ],
+   "notes": "Oglesby Hall and Trelease Hall, Urbana South. Community bathrooms in Oglesby, individual-use in Trelease. Room types listed: doubles and singles."
+  },
+  {
+   "dorm_id": "hopkins",
+   "dorm_name": "Hopkins Hall",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/hopkins",
+   "address": "1208 S. First St., Champaign, IL 61820",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Shared Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Shared Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 19,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 228,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. Main bounding walls average 12 x 19 ft. L-shaped variants break into a 12 x 13 ft main bay plus an 8 x 6 ft modular alcove."
+    }
+   ],
+   "notes": "Ikenberry Commons North. Community bathrooms. Room types listed: doubles and singles; the hall page also shows triple and large-double floor plans."
+  },
+  {
+   "dorm_id": "isr",
+   "dorm_name": "Illinois Street Residence Halls (ISR)",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/isr",
+   "address": "918 W. Illinois St., Urbana, IL 61801 (Townsend); 1012 W. Illinois St., Urbana, IL 61801 (Wardall)",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Shared Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Shared Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 19,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 228,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. Main bounding walls average 12 x 19 ft. L-shaped variants break into a 12 x 13 ft main bay plus an 8 x 6 ft modular alcove."
+    }
+   ],
+   "notes": "Townsend Hall and Wardall Hall, Urbana North. Individual-use bathrooms. Room types listed: doubles, singles and triples."
+  },
+  {
+   "dorm_id": "lar",
+   "dorm_name": "Lincoln Avenue Residence Halls (LAR)",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/lar",
+   "address": "1003 S. Lincoln Ave., Urbana, IL 61801 (Leonard); 1005 S. Lincoln Ave., Urbana, IL 61801 (Shelden)",
    "air_conditioning": null,
    "rooms": [
     {
@@ -62,7 +983,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.illinois.edu/",
      "data_confidence": "medium",
-     "notes": "9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
     },
     {
      "room_type": "double",
@@ -112,16 +1033,67 @@
      "floor_plan_url": null,
      "data_source": "https://housing.illinois.edu/",
      "data_confidence": "medium",
-     "notes": "12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Shared Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 19,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 228,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. Main bounding walls average 12 x 19 ft. L-shaped variants break into a 12 x 13 ft main bay plus an 8 x 6 ft modular alcove."
     }
    ],
-   "notes": "Traditional residence halls with painted concrete block walls."
+   "notes": "Leonard Hall and Shelden Hall, Urbana North. Community bathrooms. Room types listed: doubles and singles; the hall page also shows a triple floor plan (lar_triple.pdf). The hall page doesn't mention air conditioning."
   },
   {
-   "dorm_id": "premium-suites",
-   "dorm_name": "Newer Premium Halls (Bousfield, Wassaja, Nugent)",
-   "hall_url": null,
-   "air_conditioning": null,
+   "dorm_id": "nugent",
+   "dorm_name": "Nugent Hall",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/nugent",
+   "address": "207 E. Gregory Dr., Champaign, IL 61820",
+   "air_conditioning": true,
    "rooms": [
     {
      "room_type": "double",
@@ -171,17 +1143,228 @@
      "floor_plan_url": null,
      "data_source": "https://housing.illinois.edu/",
      "data_confidence": "medium",
-     "notes": "13 x 13 or 14 x 12 ft of main bedroom footprint (excluding entry vestibule / private bath)."
+     "notes": "Typical size for UIUC's newer premium halls (Nugent, Wassaja, Bousfield), not measured in this hall. 13 x 13 or 14 x 12 ft of main bedroom footprint (excluding entry vestibule / private bath)."
     }
    ],
-   "notes": "Suite/semi-private style with private bathrooms."
+   "notes": "Ikenberry Commons North. L-shaped doubles; singles are for ADA and SureHands only. Community and individual-use bathrooms; mostly upper-division students."
   },
   {
-   "dorm_id": "l-shaped-triples",
-   "dorm_name": "Shared & L-Shaped Triples",
-   "hall_url": null,
-   "air_conditioning": null,
+   "dorm_id": "par",
+   "dorm_name": "Pennsylvania Avenue Residence Halls (PAR)",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/par",
+   "address": "1002 College Ct., Urbana, IL 61801 (Babcock); 902 College Ct., Urbana, IL 61801 (Saunders); 1001 W. Pennsylvania Ave., Urbana, IL 61801 (Carr); 901 W. Pennsylvania Ave., Urbana, IL 61801 (Blaisdell)",
+   "air_conditioning": true,
    "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Shared Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+    }
+   ],
+   "notes": "Babcock, Blaisdell, Carr and Saunders Halls, Urbana South. Individual-use bathrooms. Room types listed: doubles and singles."
+  },
+  {
+   "dorm_id": "scott",
+   "dorm_name": "Scott Hall",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/scott",
+   "address": "202 E. Peabody Dr., Champaign, IL 61820",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Shared Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+    },
     {
      "room_type": "triple",
      "room_type_official": "Shared Triple",
@@ -230,10 +1413,500 @@
      "floor_plan_url": null,
      "data_source": "https://housing.illinois.edu/",
      "data_confidence": "medium",
-     "notes": "Main bounding walls average 12 x 19 ft. L-shaped variants break into a 12 x 13 ft main bay plus an 8 x 6 ft modular alcove."
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. Main bounding walls average 12 x 19 ft. L-shaped variants break into a 12 x 13 ft main bay plus an 8 x 6 ft modular alcove."
     }
    ],
-   "notes": "Shared triples and L-shaped triple variants."
+   "notes": "Ikenberry Commons South. Community bathrooms; home to the Transfer Community. Room types listed: doubles, singles and triples."
+  },
+  {
+   "dorm_id": "snyder",
+   "dorm_name": "Snyder Hall",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/snyder",
+   "address": "206 E. Peabody Dr., Champaign, IL 61820",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Shared Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Shared Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 19,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 228,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. Main bounding walls average 12 x 19 ft. L-shaped variants break into a 12 x 13 ft main bay plus an 8 x 6 ft modular alcove."
+    }
+   ],
+   "notes": "Ikenberry Commons South. Community bathrooms; substance-free community. Room types listed: doubles and singles; the hall page also shows triple floor plans."
+  },
+  {
+   "dorm_id": "taft-van-doren",
+   "dorm_name": "Taft-Van Doren Hall",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/taft-van-doren",
+   "address": "1213 S. Fourth St., Champaign, IL 61820 (Taft); 1215 S. Fourth St., Champaign, IL 61820 (Van Doren)",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Shared Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+    }
+   ],
+   "notes": "Taft Hall and Van Doren Hall, Ikenberry Commons South. Community bathrooms; first-year students. Room types listed: doubles and singles. The hall page doesn't mention air conditioning."
+  },
+  {
+   "dorm_id": "wassaja",
+   "dorm_name": "Wassaja Hall",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/wassaja",
+   "address": "1202 S. First St., Champaign, IL 61820",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Premium Double (Suite / Semi-Private)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 169,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's newer premium halls (Nugent, Wassaja, Bousfield), not measured in this hall. 13 x 13 or 14 x 12 ft of main bedroom footprint (excluding entry vestibule / private bath)."
+    }
+   ],
+   "notes": "Ikenberry Commons North. Doubles and singles with private individual-use bathrooms, clustered into small communities. Singles aren't modeled here."
+  },
+  {
+   "dorm_id": "weston",
+   "dorm_name": "Weston Hall",
+   "hall_url": "https://housing.illinois.edu/living-communities/halls/weston",
+   "address": "204 E. Peabody Dr., Champaign, IL 61820",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Shared Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. 12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Shared Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 19,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 228,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Typical size for UIUC's traditional halls, not measured in this hall. Main bounding walls average 12 x 19 ft. L-shaped variants break into a 12 x 13 ft main bay plus an 8 x 6 ft modular alcove."
+    }
+   ],
+   "notes": "Ikenberry Commons North. Community bathrooms; a first-year hall. Room types listed: doubles and singles; the hall page also shows triple floor plans."
   }
  ]
 }
