@@ -5,6 +5,7 @@
 .table td { vertical-align: top; }
 
 .picks { margin: 36px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.trio { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .pick { padding: 26px 28px; border-radius: 22px; background: #fff; box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08); }
 .pick[data-us] { box-shadow: 0 0 0 2.5px var(--ds-ink), 8px 8px 0 var(--ds-ink); }
 .pick h3 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
@@ -35,6 +36,7 @@
 
 @media (max-width: 800px) {
   .picks,
+  .trio,
   .cards { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
