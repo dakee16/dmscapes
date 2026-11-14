@@ -1,0 +1,133 @@
+{
+  "places": {
+    "student-union": {
+      "kind": "library"
+    },
+    "thunder-alley": {
+      "kind": "dining"
+    },
+    "canyon-activities-center": {
+      "kind": "gym"
+    },
+    "22-antelope-gymnasium-and-west-lecture-halls": {
+      "kind": "academic"
+    },
+    "colter-offices": {
+      "short": "Building 43",
+      "aliases": [
+        "Building 43"
+      ]
+    },
+    "lopes-performance-center": {
+      "hide": true
+    },
+    "gcu-arena": {
+      "hide": true
+    },
+    "jerry-colangelo-museum": {
+      "hide": true
+    },
+    "papago-apartments-north": {
+      "hide": true
+    },
+    "papago-apartments-south": {
+      "hide": true
+    },
+    "71-grand-canyon-education": {
+      "hide": true
+    },
+    "gcu-hotel": {
+      "hide": true
+    },
+    "gcu-hotel-587721188": {
+      "hide": true
+    },
+    "student-advising-center": {
+      "hide": true
+    },
+    "student-life": {
+      "hide": true
+    },
+    "academic-administration": {
+      "hide": true
+    },
+    "lope-shop": {
+      "hide": true
+    },
+    "kaibab": {
+      "hide": true
+    },
+    "echo": {
+      "hide": true
+    },
+    "200b": {
+      "hide": true
+    },
+    "200c": {
+      "hide": true
+    },
+    "the-quad-kitchen": {
+      "hide": true
+    },
+    "colangelo-college-of-business-907842167": {
+      "hide": true
+    },
+    "technology-839176444": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "student-union": "The GCU Library is on the Student Union's upper floors (building 29, map.gcu.edu: 'dine, study ... or visit the library'); OSM tags it student_union_and_library.",
+    "thunder-alley": "Thunderground (building 11, OSM 'Thunder Alley') is GCU's dining facility between the Student Union and the rec centre (map.gcu.edu).",
+    "canyon-activities-center": "Canyon Activity Center (building 58) is the student rec centre: multipurpose courts, climbing wall and fitness (map.gcu.edu).",
+    "22-antelope-gymnasium-and-west-lecture-halls": "Antelope Gym is a 2,000-seat event venue joined to the West Lecture Halls (building 22, map.gcu.edu), so it ranks as a class building rather than a fitness gym.",
+    "colter-offices": "OSM calls it Colter Offices, but GCU's map lists building 43 at this spot as 'Classrooms' (map.gcu.edu), so it stays and is shown as Building 43.",
+    "lopes-performance-center": "Lopes Performance Center (building 12) is GCU's athletic training and performance centre, not a class building (map.gcu.edu).",
+    "gcu-arena": "The 7,000-seat basketball arena (building 38), a varsity venue, not a class building (map.gcu.edu).",
+    "jerry-colangelo-museum": "Basketball practice gym and the Jerry Colangelo Museum (building 2), not a class building (map.gcu.edu).",
+    "papago-apartments-north": "Student apartments (building 47), not a class building (map.gcu.edu).",
+    "papago-apartments-south": "Student apartments (building 48), not a class building (map.gcu.edu).",
+    "71-grand-canyon-education": "Grand Canyon Education, Inc.'s office building on 27th Avenue (building 71), not somewhere classes happen (map.gcu.edu).",
+    "gcu-hotel": "The campus hotel (building 67, 'Educational Residencies Only'), not a class building (map.gcu.edu).",
+    "gcu-hotel-587721188": "The hotel's check-in and restaurant building (building 68), not a class building (map.gcu.edu).",
+    "student-advising-center": "Student Advising Center and Lope Tech store (building 18), student services rather than classes (map.gcu.edu).",
+    "student-life": "Student Life Building (building 26): Residence Life, Housing and Spiritual Life offices, not classes (map.gcu.edu).",
+    "academic-administration": "GCU's map says 'No classrooms are located in this building' (building 23, map.gcu.edu).",
+    "lope-shop": "The campus store (building 24), not a class building (map.gcu.edu).",
+    "kaibab": "Kaibab (building 25) holds the Commuter Lounge and Inclusion Lounge, not classrooms (map.gcu.edu).",
+    "echo": "Echo (building 4) holds the International Students and Veterans offices and a community recreation room, not classrooms (map.gcu.edu).",
+    "200b": "Facilities Offices (building 200B), a service building (map.gcu.edu).",
+    "200c": "Facilities Offices (building 200C), a service building (map.gcu.edu).",
+    "the-quad-kitchen": "A barbecue restaurant on the Promenade (OSM amenity=restaurant), a food outlet rather than the dining hall or a class building.",
+    "colangelo-college-of-business-907842167": "The east wing of the Colangelo College of Business (building 42); the west wing carries the place so the building isn't listed twice.",
+    "technology-839176444": "The west part of the Technology Building (building 57); the east part carries the place so the building isn't listed twice."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "juniper-hall -> student-union"
+      ],
+      "maxRatio": 3,
+      "why": "Juniper's mapped door opens west between it and Willow, and the four north halls' block connects to campus only by the service drive south of it, so the walk to the Student Union goes round the block and past Thunderground."
+    },
+    {
+      "pairs": [
+        "saguaro-hall -> joshua-south",
+        "sedona-hall -> joshua-north",
+        "sedona-hall -> joshua-south"
+      ],
+      "maxRatio": 3,
+      "why": "Sedona and Saguaro sit west of the Agave Apartments and business-college block, which has no mapped east-west path, so walks to the Joshua buildings go round by the north service road and 30th Drive."
+    },
+    {
+      "pairs": [
+        "saguaro-hall -> colangelo-college-of-business",
+        "saguaro-hall -> colter-offices",
+        "sedona-hall -> colangelo-college-of-business",
+        "sedona-hall -> colter-offices"
+      ],
+      "maxRatio": 9,
+      "why": "OSM maps the doors of the Colangelo College of Business and Building 43 on courtyard paths that reach only 30th Drive on their east side, and the service lane between them and Sedona/Saguaro has no mapped link to those paths, so the walk loops south round the Papago apartments and back up 30th Drive."
+    }
+  ]
+}

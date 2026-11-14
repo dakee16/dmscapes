@@ -1,0 +1,96 @@
+{
+  "halls": {
+    "morgan-hall": {
+      "pin": [
+        -75.15712,
+        39.97838
+      ]
+    }
+  },
+  "places": {
+    "howard-gittis-student-center": {
+      "kind": "dining"
+    },
+    "liacouras-center": {
+      "hide": true
+    },
+    "temple-university-aramark-student-training-and-recreation-star-complex": {
+      "hide": true
+    },
+    "student-pavilion": {
+      "hide": true
+    },
+    "paley-hall-786344433": {
+      "hide": true
+    },
+    "the-shops-at-north-avenue": {
+      "hide": true
+    },
+    "paul-l-dunbar-school": {
+      "hide": true
+    },
+    "1926-1938-n-liacouras-walk": {
+      "hide": true
+    },
+    "oxford-village": {
+      "hide": true
+    },
+    "oxford-village-962235473": {
+      "hide": true
+    },
+    "bell-tower": {
+      "hide": true
+    },
+    "mcdonalds": {
+      "hide": true
+    },
+    "c-and-p-beauty-supply": {
+      "hide": true
+    },
+    "yummy-pho": {
+      "hide": true
+    },
+    "owls-nest": {
+      "hide": true
+    },
+    "philly-style": {
+      "hide": true
+    },
+    "temple-rainbow": {
+      "hide": true
+    },
+    "temple-star": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "johnson-hardwick -> architecture-building"
+      ],
+      "maxRatio": 2.7,
+      "why": "Johnson & Hardwick's only mapped access is its Broad Street front, so the walk to the Architecture Building behind it goes round the block by Norris Street."
+    }
+  ],
+  "notes": {
+    "morgan-hall": "Pinned on Morgan Hall North (OSM way/335244610) at its Broad Street and Cecil B. Moore Avenue corner; OSM splits Morgan Hall into North and South towers, so the name rule found two buildings.",
+    "howard-gittis-student-center": "The Howard Gittis Student Center holds the campus food court (Temple dining); the meal-plan dining halls sit inside Morgan Hall and Johnson & Hardwick, which are halls here.",
+    "liacouras-center": "The Liacouras Center is Temple's basketball and events arena (OSM way/540537145), not a student gym or a class building.",
+    "temple-university-aramark-student-training-and-recreation-star-complex": "The Aramark STAR Complex is the varsity teams' practice facility and fields (OSM way/543968021), not a student gym or a class building.",
+    "student-pavilion": "The Student Pavilion is Campus Recreation's indoor turf for club and intramural sports (OSM way/192992781), not a class building or a fitness gym.",
+    "paley-hall-786344433": "A second OSM outline (way/786344433) of Paley Hall, already listed as paley-hall from way/134472802.",
+    "the-shops-at-north-avenue": "Retail row on Broad Street (OSM way/134472711). Not somewhere undergraduates have class.",
+    "paul-l-dunbar-school": "Paul L. Dunbar School is a School District of Philadelphia K-8 school (OSM way/337289220), not a Temple building.",
+    "1926-1938-n-liacouras-walk": "An address-only OSM name (way/682746086) for row houses on Liacouras Walk, with no Temple building name.",
+    "oxford-village": "Oxford Village is a private student apartment complex (OSM way/962235472). Housing, not class.",
+    "oxford-village-962235473": "Second building of the private Oxford Village apartments (OSM way/962235473). Housing, not class.",
+    "bell-tower": "The Bell Tower is a landmark on Beury Beach (OSM way/786344424), not a building with classrooms.",
+    "mcdonalds": "Fast-food restaurant on Broad Street (OSM way/973971958). Not somewhere undergraduates have class.",
+    "c-and-p-beauty-supply": "Shop on Broad Street (OSM way/929278840). Not somewhere undergraduates have class.",
+    "yummy-pho": "Restaurant on Broad Street (OSM way/973544570). Not somewhere undergraduates have class.",
+    "owls-nest": "Restaurant on Broad Street (OSM way/973544567). Not somewhere undergraduates have class.",
+    "philly-style": "Restaurant on Broad Street (OSM way/973544571). Not somewhere undergraduates have class.",
+    "temple-rainbow": "Restaurant on Broad Street (OSM way/929278842). Not somewhere undergraduates have class.",
+    "temple-star": "Restaurant on Diamond Street (OSM way/973544581). Not somewhere undergraduates have class."
+  }
+}

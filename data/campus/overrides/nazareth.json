@@ -1,0 +1,43 @@
+{
+  "halls": {
+    "oconnor-1": {
+      "pin": [
+        -77.519235,
+        43.101378
+      ]
+    }
+  },
+  "places": {
+    "otto-a-shults-community-center": {
+      "kind": "dining"
+    },
+    "health-and-counseling-services": {
+      "hide": true
+    },
+    "stone-west-admissions-house": {
+      "hide": true
+    },
+    "la-maison-francaise": {
+      "hide": true
+    },
+    "casa-hispana": {
+      "hide": true
+    },
+    "casa-italiana": {
+      "hide": true
+    },
+    "alumni-pavilion": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "oconnor-1": "Pinned on OSM's O'Connor Complex Building 1 (way/941686532), the north building of the O'Connor apartment complex west of Lourdes Hall (Nazareth campus map, www2.naz.edu/campus-map).",
+    "otto-a-shults-community-center": "The Shults Center holds Nazareth's dining hall along with Kidera Gym and the bookstore (www2.naz.edu/dining); its name doesn't say dining.",
+    "health-and-counseling-services": "The student health and counselling clinic, not somewhere classes happen.",
+    "stone-west-admissions-house": "The admissions office house at 4141 East Avenue, not somewhere classes happen.",
+    "la-maison-francaise": "A residential language house (Nazareth's French house), student housing rather than a class building.",
+    "casa-hispana": "A residential language house (Nazareth's Spanish house), student housing rather than a class building.",
+    "casa-italiana": "A residential language house (Nazareth's Italian house), student housing rather than a class building.",
+    "alumni-pavilion": "An open-sided pavilion (OSM amenity=shelter), not a class building."
+  }
+}

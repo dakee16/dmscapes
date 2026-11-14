@@ -1,0 +1,147 @@
+{
+  "halls": {
+    "ruffin-jr": {
+      "pin": [
+        -79.048094,
+        35.911814
+      ]
+    },
+    "horton": {
+      "pin": [
+        -79.043779,
+        35.903109
+      ]
+    },
+    "koury": {
+      "pin": [
+        -79.043478,
+        35.903672
+      ]
+    },
+    "ram-village-5": {
+      "pin": [
+        -79.042383,
+        35.901583
+      ]
+    }
+  },
+  "notes": {
+    "ruffin-jr": "'Ruffin Jr Residence Hall', 103 Emerson Dr (building 117) in the UNC Facilities BuildingFeatures layer (https://gismaps.unc.edu/arcgis/rest/services/BuildingFeatures/FeatureServer/0); the pin is its centre, inside OSM's 'Ruffin Residence Hall' (way/44342830, same address).",
+    "horton": "'Horton Res Hall', 411 Skipper Bowles Dr (building 136) in the UNC Facilities BuildingFeatures layer (https://gismaps.unc.edu/arcgis/rest/services/BuildingFeatures/FeatureServer/0); the pin is its centre. OSM has no named building for it.",
+    "koury": "'Koury Res Hall', 480 Ehringhaus Dr (building 138) in the UNC Facilities BuildingFeatures layer (https://gismaps.unc.edu/arcgis/rest/services/BuildingFeatures/FeatureServer/0); the pin is its centre. The name rule had picked Koury Natatorium.",
+    "ram-village-5": "UNC Housing's Ram Village 5 page gives 520 Williamson Drive; the UNC Facilities BuildingFeatures layer (https://gismaps.unc.edu/arcgis/rest/services/BuildingFeatures/FeatureServer/0) has 'Ram Village At 520 Williamson Drive' (building 642), and the pin is its centre.",
+    "carolina-soccer-and-lacrosse-team-building": "Varsity team building, not a class or meal place.",
+    "loudermilk-center-for-excellence": "Athletics center at Kenan Stadium, not a class or meal place.",
+    "eddie-smith-field-house": "Varsity practice field house, not a class or meal place.",
+    "outdoor-education-center": "Carolina Outdoor Education Center (ropes course base) off Country Club Road, not a class or meal place.",
+    "william-r-kenen-junior-center": "Kenan football center, not a class or meal place.",
+    "baity-hill-office": "Baity Hill housing office, not a class or meal place.",
+    "george-watts-hill-alumni-center": "Alumni center, not a class or meal place.",
+    "unc-general-alumni-association": "Alumni association offices, not a class or meal place.",
+    "unc-medical-center": "UNC Hospitals, not a class or meal place.",
+    "north-carolina-surgical-hospital": "Hospital, not a class or meal place.",
+    "n-c-cancer-hospital": "Hospital, not a class or meal place.",
+    "the-carolina-inn": "Hotel, not a class or meal place.",
+    "ambulatory-care-center": "Outpatient clinic, not a class or meal place.",
+    "family-practice-clinic": "Clinic, not a class or meal place.",
+    "houpt-physician-office-building": "Physician offices, not a class or meal place.",
+    "carolina-basketball-museum": "Museum in the Ernie Williamson Athletics Center, not a class or meal place.",
+    "morehead-patterson-bell-tower": "Bell tower, not a class or meal place.",
+    "trailer-46": "Unnamed trailer, not a class or meal place.",
+    "trailer-47": "Unnamed trailer, not a class or meal place.",
+    "trailer-48": "Unnamed trailer, not a class or meal place.",
+    "545b": "Numbered outbuilding with no name, not a class or meal place.",
+    "545c": "Numbered outbuilding with no name, not a class or meal place.",
+    "aviary-biology": "Research aviary, not a class or meal place.",
+    "paul-green-cabin": "Historic cabin in the botanical woods, not a class or meal place.",
+    "herb-house": "Garden outbuilding, not a class or meal place."
+  },
+  "places": {
+    "carolina-soccer-and-lacrosse-team-building": {
+      "hide": true
+    },
+    "loudermilk-center-for-excellence": {
+      "hide": true
+    },
+    "eddie-smith-field-house": {
+      "hide": true
+    },
+    "outdoor-education-center": {
+      "hide": true
+    },
+    "william-r-kenen-junior-center": {
+      "hide": true
+    },
+    "baity-hill-office": {
+      "hide": true
+    },
+    "george-watts-hill-alumni-center": {
+      "hide": true
+    },
+    "unc-general-alumni-association": {
+      "hide": true
+    },
+    "unc-medical-center": {
+      "hide": true
+    },
+    "north-carolina-surgical-hospital": {
+      "hide": true
+    },
+    "n-c-cancer-hospital": {
+      "hide": true
+    },
+    "the-carolina-inn": {
+      "hide": true
+    },
+    "ambulatory-care-center": {
+      "hide": true
+    },
+    "family-practice-clinic": {
+      "hide": true
+    },
+    "houpt-physician-office-building": {
+      "hide": true
+    },
+    "carolina-basketball-museum": {
+      "hide": true
+    },
+    "morehead-patterson-bell-tower": {
+      "hide": true
+    },
+    "trailer-46": {
+      "hide": true
+    },
+    "trailer-47": {
+      "hide": true
+    },
+    "trailer-48": {
+      "hide": true
+    },
+    "545b": {
+      "hide": true
+    },
+    "545c": {
+      "hide": true
+    },
+    "aviary-biology": {
+      "hide": true
+    },
+    "paul-green-cabin": {
+      "hide": true
+    },
+    "herb-house": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "ram-village-1 -> mccoll-building",
+        "ram-village-2 -> mccoll-building",
+        "ram-village-2 -> steven-d-bell-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "Ram Village sits above the Ridge Road parking lot with no mapped path or stair down its south side; walks to the business school leave by the drive to the east and come back along Ridge Road."
+    }
+  ]
+}

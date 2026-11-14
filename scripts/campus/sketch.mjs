@@ -9,7 +9,9 @@
 //                                          routes to its nearest dining hall, library and gym
 //   data/campus/sketch.json                halls ranked, the sample week and its top three halls
 //                                          with their weekly minutes, so the card matches the finder
+// Every SVG goes through svg-slim.mjs on the way out: the same pixels in about half the bytes.
 import fs from "node:fs";
+import { slimSvg } from "./svg-slim.mjs";
 
 const read = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 const ids = process.argv.slice(2).length ? process.argv.slice(2) : read("data/campus/index.json");
@@ -224,7 +226,7 @@ for (const id of ids) {
     hallFill: (dormId) => (rankOf.has(dormId) ? shade(rankOf.get(dormId) / Math.max(ranked.length - 1, 1)) : null),
   });
   fs.mkdirSync("public/hall-finder", { recursive: true });
-  fs.writeFileSync(`public/hall-finder/${id}.svg`, card.svg);
+  fs.writeFileSync(`public/hall-finder/${id}.svg`, slimSvg(card.svg));
   out[id] = {
     halls: ranked.length,
     places: picked.map((p, i) => ({ placeId: p.id, days: WEEK[i] })),
@@ -247,8 +249,9 @@ for (const id of ids) {
       return { at: xy([p.lng, p.lat]), osm: p.osm, label: p.name.length <= 24 ? p.name : (p.short ?? p.name), minutes: hall.near[k].minutes, route: paths[p.id] ? decode(paths[p.id]).map(xy) : [] };
     });
     const map = draw({ hall, hallLabel: hall.name, stops, hallFill: null, lean: true, size: 22 });
-    fs.writeFileSync(`${dir}/${hall.dormId}.svg`, map.svg);
-    total += map.svg.length;
+    const svg = slimSvg(map.svg);
+    fs.writeFileSync(`${dir}/${hall.dormId}.svg`, svg);
+    total += svg.length;
     count++;
   }
   console.log(`${id}: ${count} hall maps, ${(total / 1024 / Math.max(count, 1)).toFixed(1)} KB each on average`);

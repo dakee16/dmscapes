@@ -1,0 +1,17 @@
+{
+  "collegeId": "northeastern",
+  "area": {
+    "osm": "way/301210399",
+    "bbox": [
+      42.33466,
+      -71.09366,
+      42.34326,
+      -71.08355
+    ]
+  },
+  "areaNote": "OSM way/301210399 (amenity=university, the main Huntington Avenue campus). relation/3905196, the first Nominatim hit, is only a few scattered parcels and left most academic buildings outside it.",
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public building-code list: the Office of the University Registrar's site has no building abbreviation key, class schedules give rooms by building name, and the campus map (northeastern.edu/campusmap, an ArcGIS Experience) labels buildings by name only (checked 2026-11-07)."
+}

@@ -1,0 +1,16 @@
+{
+  "collegeId": "georgetown",
+  "area": {
+    "osm": "way/66678720",
+    "bbox": [
+      38.90513,
+      -77.07926,
+      38.91262,
+      -77.06906
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Georgetown publishes no building-code list: the registrar's Schedule of Classes site (schedule.georgetown.edu) and its scheduling and classroom-reservations pages (registrar.georgetown.edu/scheduling/classroom-reservations/) have none (checked 2026-11-08)."
+}

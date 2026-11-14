@@ -1,0 +1,50 @@
+{
+  "halls": {
+    "dominic-hall": {
+      "pin": [
+        -71.5092373,
+        42.9840249
+      ]
+    },
+    "joan-of-arc-hall": {
+      "pin": [
+        -71.5062624,
+        42.9832804
+      ]
+    },
+    "baroody-hall": {
+      "pin": [
+        -71.5053428,
+        42.9827353
+      ]
+    },
+    "joseph-hall": {
+      "pin": [
+        -71.5076897,
+        42.9857322
+      ]
+    }
+  },
+  "places": {
+    "sullivan-ice-arena": {
+      "hide": true
+    },
+    "new-hampshire-institute-of-politics-and-political-library": {
+      "kind": "academic"
+    },
+    "perini-lecture-hall": {
+      "aliases": [
+        "Goulet Science Center"
+      ]
+    }
+  },
+  "notes": {
+    "dominic-hall": "Pinned at the Dominic Hall marker of Saint Anselm's interactive campus map (Google My Maps 1Eb1T_S9sbgUqXotpIHsAj0QvlyjOK3-k, embedded at anselm.edu/about/anselmian-hub/interactive-campus-map); OSM doesn't name the building.",
+    "joan-of-arc-hall": "Pinned at the St. Joan of Arc Hall marker of Saint Anselm's interactive campus map (Google My Maps 1Eb1T_S9sbgUqXotpIHsAj0QvlyjOK3-k, embedded at anselm.edu/about/anselmian-hub/interactive-campus-map); OSM doesn't name the building.",
+    "baroody-hall": "Pinned at the Baroody Hall marker of Saint Anselm's interactive campus map (Google My Maps 1Eb1T_S9sbgUqXotpIHsAj0QvlyjOK3-k, embedded at anselm.edu/about/anselmian-hub/interactive-campus-map); OSM doesn't name the building.",
+    "joseph-hall": "Pinned at the Joseph Hall marker of Saint Anselm's interactive campus map (Google My Maps 1Eb1T_S9sbgUqXotpIHsAj0QvlyjOK3-k, embedded at anselm.edu/about/anselmian-hub/interactive-campus-map); OSM doesn't name the building.",
+    "sullivan-ice-arena": "Thomas F. Sullivan Ice Arena is the hockey arena, a varsity venue rather than the student gym (anselm.edu campus map).",
+    "new-hampshire-institute-of-politics-and-political-library": "The NH Institute of Politics is an institute with classrooms and events (anselm.edu/about/offices-centers-institutes/centers-institutes/new-hampshire-institute-politics); Geisel Library is the college library, so NHIOP ranks as a class building.",
+    "perini-lecture-hall": "OSM names the Goulet Science Center building by its Perini Lecture Hall; the alias lets schedules that say Goulet match it (anselm.edu campus map marks Goulet Science Center at this building)."
+  }
+}

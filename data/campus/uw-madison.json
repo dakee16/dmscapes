@@ -1,0 +1,2332 @@
+{
+ "collegeId": "uw-madison",
+ "generatedAt": "2026-11-08T16:58:07.635Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "UW–Madison Facilities Planning & Management, Facility List (official facility numbers and names; Madison rows)",
+   "url": "https://facilities.fpm.wisc.edu/facility-list/",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/uw-madison.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -89.43436,
+  43.0668,
+  -89.39532,
+  43.07963
+ ],
+ "halls": [
+  {
+   "dormId": "adams",
+   "name": "Adams Residence Hall",
+   "lng": -89.411989,
+   "lat": 43.07788,
+   "pin": "name",
+   "osm": "way/173710620",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bakke-recreation-and-wellbeing-center",
+     "minutes": 10.3
+    },
+    "library": {
+     "placeId": "steenbock-memorial-library",
+     "minutes": 3.6
+    },
+    "dining": {
+     "placeId": "wendt-commons",
+     "minutes": 11.2
+    }
+   }
+  },
+  {
+   "dormId": "barnard",
+   "name": "Barnard Residence Hall",
+   "lng": -89.402227,
+   "lat": 43.07368,
+   "pin": "name",
+   "osm": "way/39201162",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "nicholas-recreation-center",
+     "minutes": 6.7
+    },
+    "library": {
+     "placeId": "wisconsin-historical-society",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "gordon-dining-and-event-center",
+     "minutes": 6
+    }
+   }
+  },
+  {
+   "dormId": "bradley",
+   "name": "Bradley Residence Hall",
+   "lng": -89.416437,
+   "lat": 43.07791,
+   "pin": "name",
+   "osm": "way/37862321",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bakke-recreation-and-wellbeing-center",
+     "minutes": 5.9
+    },
+    "library": {
+     "placeId": "steenbock-memorial-library",
+     "minutes": 5.9
+    },
+    "dining": {
+     "placeId": "wendt-commons",
+     "minutes": 14.7
+    }
+   }
+  },
+  {
+   "dormId": "chadbourne",
+   "name": "Chadbourne Residence Hall",
+   "lng": -89.40121,
+   "lat": 43.073806,
+   "pin": "name",
+   "osm": "way/39201164",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "nicholas-recreation-center",
+     "minutes": 5.8
+    },
+    "library": {
+     "placeId": "wisconsin-historical-society",
+     "minutes": 2.9
+    },
+    "dining": {
+     "placeId": "gordon-dining-and-event-center",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "cole",
+   "name": "Cole Residence Hall",
+   "lng": -89.414976,
+   "lat": 43.077364,
+   "pin": "name",
+   "osm": "way/37970663",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bakke-recreation-and-wellbeing-center",
+     "minutes": 7.1
+    },
+    "library": {
+     "placeId": "steenbock-memorial-library",
+     "minutes": 4.1
+    },
+    "dining": {
+     "placeId": "wendt-commons",
+     "minutes": 13.1
+    }
+   }
+  },
+  {
+   "dormId": "dejope",
+   "name": "Dejope Residence Hall",
+   "lng": -89.417777,
+   "lat": 43.077755,
+   "pin": "name",
+   "osm": "way/173709889",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bakke-recreation-and-wellbeing-center",
+     "minutes": 3.6
+    },
+    "library": {
+     "placeId": "steenbock-memorial-library",
+     "minutes": 5.9
+    },
+    "dining": {
+     "placeId": "wendt-commons",
+     "minutes": 14.5
+    }
+   }
+  },
+  {
+   "dormId": "kronshage",
+   "name": "Kronshage Residence Hall",
+   "lng": -89.41466,
+   "lat": 43.078107,
+   "pin": "manual",
+   "osm": "way/37902549",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bakke-recreation-and-wellbeing-center",
+     "minutes": 8.1
+    },
+    "library": {
+     "placeId": "steenbock-memorial-library",
+     "minutes": 5.7
+    },
+    "dining": {
+     "placeId": "wendt-commons",
+     "minutes": 14.3
+    }
+   }
+  },
+  {
+   "dormId": "leopold",
+   "name": "Leopold Residence Hall",
+   "lng": -89.41405,
+   "lat": 43.07752,
+   "pin": "name",
+   "osm": "way/193571969",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bakke-recreation-and-wellbeing-center",
+     "minutes": 8.1
+    },
+    "library": {
+     "placeId": "steenbock-memorial-library",
+     "minutes": 4.4
+    },
+    "dining": {
+     "placeId": "wendt-commons",
+     "minutes": 13.3
+    }
+   }
+  },
+  {
+   "dormId": "lowell",
+   "name": "Lowell Center",
+   "lng": -89.395811,
+   "lat": 43.076267,
+   "pin": "name",
+   "osm": "way/102332638",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "armory-and-gymnasium",
+     "minutes": 4.8
+    },
+    "library": {
+     "placeId": "memorial-library",
+     "minutes": 3.5
+    },
+    "dining": {
+     "placeId": "gordon-dining-and-event-center",
+     "minutes": 8.8
+    }
+   }
+  },
+  {
+   "dormId": "merit",
+   "name": "Merit Residence Hall",
+   "lng": -89.401438,
+   "lat": 43.070762,
+   "pin": "name",
+   "osm": "way/102201656",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "nicholas-recreation-center",
+     "minutes": 2.2
+    },
+    "library": {
+     "placeId": "wisconsin-historical-society",
+     "minutes": 6.8
+    },
+    "dining": {
+     "placeId": "gordon-dining-and-event-center",
+     "minutes": 2.9
+    }
+   }
+  },
+  {
+   "dormId": "ogg",
+   "name": "Ogg Residence Hall",
+   "lng": -89.400036,
+   "lat": 43.070544,
+   "pin": "name",
+   "osm": "way/107584430",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "nicholas-recreation-center",
+     "minutes": 0.9
+    },
+    "library": {
+     "placeId": "wisconsin-historical-society",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "gordon-dining-and-event-center",
+     "minutes": 1.7
+    }
+   }
+  },
+  {
+   "dormId": "phillips",
+   "name": "Phillips Residence Hall",
+   "lng": -89.417987,
+   "lat": 43.078552,
+   "pin": "name",
+   "osm": "way/37862322",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bakke-recreation-and-wellbeing-center",
+     "minutes": 6
+    },
+    "library": {
+     "placeId": "steenbock-memorial-library",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "wendt-commons",
+     "minutes": 16.8
+    }
+   }
+  },
+  {
+   "dormId": "sellery",
+   "name": "Sellery Residence Hall",
+   "lng": -89.40004,
+   "lat": 43.071674,
+   "pin": "name",
+   "osm": "way/153640713",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "nicholas-recreation-center",
+     "minutes": 1.8
+    },
+    "library": {
+     "placeId": "wisconsin-historical-society",
+     "minutes": 5.6
+    },
+    "dining": {
+     "placeId": "gordon-dining-and-event-center",
+     "minutes": 1.2
+    }
+   }
+  },
+  {
+   "dormId": "slichter",
+   "name": "Slichter Residence Hall",
+   "lng": -89.412208,
+   "lat": 43.077129,
+   "pin": "name",
+   "osm": "way/37965212",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bakke-recreation-and-wellbeing-center",
+     "minutes": 9.3
+    },
+    "library": {
+     "placeId": "steenbock-memorial-library",
+     "minutes": 2.6
+    },
+    "dining": {
+     "placeId": "wendt-commons",
+     "minutes": 10.7
+    }
+   }
+  },
+  {
+   "dormId": "smith",
+   "name": "Smith Residence Hall",
+   "lng": -89.400402,
+   "lat": 43.069046,
+   "pin": "name",
+   "osm": "way/102239119",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "nicholas-recreation-center",
+     "minutes": 3.7
+    },
+    "library": {
+     "placeId": "wisconsin-historical-society",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "gordon-dining-and-event-center",
+     "minutes": 4.5
+    }
+   }
+  },
+  {
+   "dormId": "sullivan",
+   "name": "Sullivan Residence Hall",
+   "lng": -89.415511,
+   "lat": 43.077604,
+   "pin": "name",
+   "osm": "way/37550632",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bakke-recreation-and-wellbeing-center",
+     "minutes": 7.2
+    },
+    "library": {
+     "placeId": "steenbock-memorial-library",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "wendt-commons",
+     "minutes": 13.6
+    }
+   }
+  },
+  {
+   "dormId": "tripp",
+   "name": "Tripp Residence Hall",
+   "lng": -89.410966,
+   "lat": 43.077994,
+   "pin": "name",
+   "osm": "way/173710621",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bakke-recreation-and-wellbeing-center",
+     "minutes": 11.2
+    },
+    "library": {
+     "placeId": "steenbock-memorial-library",
+     "minutes": 4.5
+    },
+    "dining": {
+     "placeId": "wendt-commons",
+     "minutes": 11.3
+    }
+   }
+  },
+  {
+   "dormId": "waters",
+   "name": "Waters Residence Hall",
+   "lng": -89.406945,
+   "lat": 43.07695,
+   "pin": "name",
+   "osm": "way/37751511",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "armory-and-gymnasium",
+     "minutes": 10.7
+    },
+    "library": {
+     "placeId": "steenbock-memorial-library",
+     "minutes": 7.3
+    },
+    "dining": {
+     "placeId": "wendt-commons",
+     "minutes": 9.9
+    }
+   }
+  },
+  {
+   "dormId": "witte",
+   "name": "Witte Residence Hall",
+   "lng": -89.396919,
+   "lat": 43.071594,
+   "pin": "name",
+   "osm": "way/153630414",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "nicholas-recreation-center",
+     "minutes": 3.4
+    },
+    "library": {
+     "placeId": "memorial-library",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "gordon-dining-and-event-center",
+     "minutes": 3.9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "uw-health-university-hospital",
+   "name": "UW Health University Hospital",
+   "short": "UW Health University Hospital",
+   "kind": "academic",
+   "codes": [
+    "8366"
+   ],
+   "aliases": [
+    "UW Hospitals and Clinics",
+    "UW Health East Hospital"
+   ],
+   "lng": -89.431962,
+   "lat": 43.076375,
+   "osm": "way/870590639"
+  },
+  {
+   "id": "kellner-family-athletic-center",
+   "name": "Kellner Family Athletic Center",
+   "short": "Kellner Family Athletic Center",
+   "kind": "gym",
+   "codes": [
+    "2302"
+   ],
+   "aliases": [
+    "The Kellner Family Athletic Center"
+   ],
+   "lng": -89.411025,
+   "lat": 43.069882,
+   "osm": "way/1543013592"
+  },
+  {
+   "id": "wisconsin-institutes-for-medical-research",
+   "name": "Wisconsin Institutes for Medical Research",
+   "short": "Wisconsin Institutes for Medical Research",
+   "kind": "academic",
+   "codes": [
+    "1485"
+   ],
+   "aliases": [
+    "WIMR"
+   ],
+   "lng": -89.431778,
+   "lat": 43.078042,
+   "osm": "way/175079855"
+  },
+  {
+   "id": "bakke-recreation-and-wellbeing-center",
+   "name": "Bakke Recreation & Wellbeing Center",
+   "short": "Bakke Recreation & Wellbeing Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.420025,
+   "lat": 43.077044,
+   "osm": "way/916831421"
+  },
+  {
+   "id": "engineering-hall",
+   "name": "Engineering Hall",
+   "short": "Engineering Hall",
+   "kind": "academic",
+   "codes": [
+    "0080",
+    "0099",
+    "0408",
+    "0682"
+   ],
+   "aliases": [
+    "Agrl Engineering Bldg",
+    "Agrl Engineering Lab",
+    "Engineering Mall"
+   ],
+   "lng": -89.410325,
+   "lat": 43.071775,
+   "osm": "way/56997838"
+  },
+  {
+   "id": "nielsen-tennis-stadium",
+   "name": "Nielsen Tennis Stadium",
+   "short": "Nielsen Tennis Stadium",
+   "kind": "gym",
+   "codes": [
+    "0038"
+   ],
+   "aliases": [],
+   "lng": -89.430277,
+   "lat": 43.079628,
+   "osm": "way/38064535"
+  },
+  {
+   "id": "grainger-hall",
+   "name": "Grainger Hall",
+   "short": "Grainger Hall",
+   "kind": "academic",
+   "codes": [
+    "0140"
+   ],
+   "aliases": [],
+   "lng": -89.401568,
+   "lat": 43.072712,
+   "osm": "way/153060483"
+  },
+  {
+   "id": "veterinary-medicine-south",
+   "name": "Veterinary Medicine South",
+   "short": "Veterinary Medicine South",
+   "kind": "academic",
+   "codes": [
+    "0093"
+   ],
+   "aliases": [
+    "Vet Med South"
+   ],
+   "lng": -89.420246,
+   "lat": 43.075138,
+   "osm": "way/38019751"
+  },
+  {
+   "id": "health-sciences-learning-center",
+   "name": "Health Sciences Learning Center",
+   "short": "Health Sciences Learning Center",
+   "kind": "academic",
+   "codes": [
+    "1480"
+   ],
+   "aliases": [
+    "HSLC"
+   ],
+   "lng": -89.430256,
+   "lat": 43.077531,
+   "osm": "way/107463323"
+  },
+  {
+   "id": "vilas-communication-hall",
+   "name": "Vilas Communication Hall",
+   "short": "Vilas Communication Hall",
+   "kind": "academic",
+   "codes": [
+    "0545"
+   ],
+   "aliases": [
+    "Vilas Hall"
+   ],
+   "lng": -89.399872,
+   "lat": 43.072689,
+   "osm": "way/153060489"
+  },
+  {
+   "id": "nicholas-recreation-center",
+   "name": "Nicholas Recreation Center",
+   "short": "Nicholas Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.398271,
+   "lat": 43.070537,
+   "osm": "way/1000383053"
+  },
+  {
+   "id": "chemistry-building",
+   "name": "Chemistry Building",
+   "short": "Chemistry Building",
+   "kind": "academic",
+   "codes": [
+    "0047"
+   ],
+   "aliases": [
+    "Chemistry Bldg"
+   ],
+   "lng": -89.40478,
+   "lat": 43.072688,
+   "osm": "way/153060482"
+  },
+  {
+   "id": "mosse-humanities-building",
+   "name": "Mosse Humanities Building",
+   "short": "Mosse Humanities Building",
+   "kind": "academic",
+   "codes": [
+    "0469"
+   ],
+   "aliases": [
+    "Humanities Bldg"
+   ],
+   "lng": -89.400052,
+   "lat": 43.074182,
+   "osm": "relation/2075103"
+  },
+  {
+   "id": "wisconsin-institute-for-discovery",
+   "name": "Wisconsin Institute for Discovery",
+   "short": "Wisconsin Institute for Discovery",
+   "kind": "academic",
+   "codes": [
+    "0211"
+   ],
+   "aliases": [
+    "MIR"
+   ],
+   "lng": -89.408068,
+   "lat": 43.072914,
+   "osm": "relation/21721799"
+  },
+  {
+   "id": "medical-sciences-center",
+   "name": "Medical Sciences Center",
+   "short": "Medical Sciences Center",
+   "kind": "academic",
+   "codes": [
+    "0450"
+   ],
+   "aliases": [
+    "MSC"
+   ],
+   "lng": -89.407272,
+   "lat": 43.073961,
+   "osm": "relation/19566386"
+  },
+  {
+   "id": "rennebohm-hall",
+   "name": "Rennebohm Hall",
+   "short": "Rennebohm Hall",
+   "kind": "academic",
+   "codes": [
+    "0034"
+   ],
+   "aliases": [
+    "UW Madison School of Pharmacy"
+   ],
+   "lng": -89.42818,
+   "lat": 43.078485,
+   "osm": "way/107463313"
+  },
+  {
+   "id": "union-south",
+   "name": "Union South",
+   "short": "Union South",
+   "kind": "academic",
+   "codes": [
+    "0088"
+   ],
+   "aliases": [],
+   "lng": -89.408074,
+   "lat": 43.071858,
+   "osm": "way/153660065"
+  },
+  {
+   "id": "memorial-union",
+   "name": "Memorial Union",
+   "short": "Memorial Union",
+   "kind": "academic",
+   "codes": [
+    "0008"
+   ],
+   "aliases": [],
+   "lng": -89.39991,
+   "lat": 43.076422,
+   "osm": "relation/19355831"
+  },
+  {
+   "id": "art-lofts",
+   "name": "Art Lofts",
+   "short": "Art Lofts",
+   "kind": "academic",
+   "codes": [
+    "0220"
+   ],
+   "aliases": [],
+   "lng": -89.39532,
+   "lat": 43.069059,
+   "osm": "way/102234779"
+  },
+  {
+   "id": "mechanical-engineering-building",
+   "name": "Mechanical Engineering Building",
+   "short": "Mechanical Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "0407"
+   ],
+   "aliases": [
+    "Mechanical Engineering"
+   ],
+   "lng": -89.412449,
+   "lat": 43.072771,
+   "osm": "way/56997835"
+  },
+  {
+   "id": "veterinary-medicine-north",
+   "name": "Veterinary Medicine North",
+   "short": "Veterinary Medicine North",
+   "kind": "academic",
+   "codes": [
+    "0793"
+   ],
+   "aliases": [
+    "Vet Med North"
+   ],
+   "lng": -89.420749,
+   "lat": 43.07594,
+   "osm": "relation/17899257"
+  },
+  {
+   "id": "forest-products-laboratory",
+   "name": "Forest Products Laboratory",
+   "short": "Forest Products Laboratory",
+   "kind": "academic",
+   "codes": [
+    "0036"
+   ],
+   "aliases": [
+    "Forest Products Lab"
+   ],
+   "lng": -89.427899,
+   "lat": 43.074647,
+   "osm": "way/38342302"
+  },
+  {
+   "id": "memorial-library",
+   "name": "Memorial Library",
+   "short": "Memorial Library",
+   "kind": "library",
+   "codes": [
+    "0015"
+   ],
+   "aliases": [],
+   "lng": -89.397979,
+   "lat": 43.075362,
+   "osm": "way/101606146"
+  },
+  {
+   "id": "morgridge-hall",
+   "name": "Morgridge Hall",
+   "short": "Morgridge Hall",
+   "kind": "academic",
+   "codes": [
+    "0215"
+   ],
+   "aliases": [],
+   "lng": -89.406797,
+   "lat": 43.072834,
+   "osm": "way/1391651477"
+  },
+  {
+   "id": "microbial-sciences-building",
+   "name": "Microbial Sciences Building",
+   "short": "Microbial Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "0060"
+   ],
+   "aliases": [
+    "Microbial Sciences Bldg"
+   ],
+   "lng": -89.411984,
+   "lat": 43.075748,
+   "osm": "way/38855860"
+  },
+  {
+   "id": "computer-sciences-building",
+   "name": "Computer Sciences Building",
+   "short": "Computer Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "0155"
+   ],
+   "aliases": [
+    "Comp Sci"
+   ],
+   "lng": -89.406729,
+   "lat": 43.071474,
+   "osm": "way/153660099"
+  },
+  {
+   "id": "chamberlin-hall",
+   "name": "Chamberlin Hall",
+   "short": "Chamberlin Hall",
+   "kind": "academic",
+   "codes": [
+    "0055",
+    "0571"
+   ],
+   "aliases": [
+    "Thomas C. Chamberlin Hall",
+    "Chamberlin House"
+   ],
+   "lng": -89.405455,
+   "lat": 43.073882,
+   "osm": "way/39201159"
+  },
+  {
+   "id": "babcock-hall",
+   "name": "Babcock Hall",
+   "short": "Babcock Hall",
+   "kind": "academic",
+   "codes": [
+    "0106"
+   ],
+   "aliases": [],
+   "lng": -89.413731,
+   "lat": 43.074803,
+   "osm": "way/38856035"
+  },
+  {
+   "id": "engineering-centers-building",
+   "name": "Engineering Centers Building",
+   "short": "Engineering Centers Building",
+   "kind": "academic",
+   "codes": [
+    "0481"
+   ],
+   "aliases": [
+    "Engineering Centers"
+   ],
+   "lng": -89.413418,
+   "lat": 43.072729,
+   "osm": "way/56997836"
+  },
+  {
+   "id": "signe-skott-cooper-hall",
+   "name": "Signe Skott Cooper Hall",
+   "short": "Signe Skott Cooper Hall",
+   "kind": "academic",
+   "codes": [
+    "0044"
+   ],
+   "aliases": [
+    "UW Madison School of Nursing",
+    "Cooper Hall"
+   ],
+   "lng": -89.42806,
+   "lat": 43.077521,
+   "osm": "way/174188355"
+  },
+  {
+   "id": "bascom-hall",
+   "name": "Bascom Hall",
+   "short": "Bascom Hall",
+   "kind": "academic",
+   "codes": [
+    "0050"
+   ],
+   "aliases": [],
+   "lng": -89.404354,
+   "lat": 43.075339,
+   "osm": "relation/17672451"
+  },
+  {
+   "id": "helen-c-white-hall",
+   "name": "Helen C. White Hall",
+   "short": "Helen C. White Hall",
+   "kind": "academic",
+   "codes": [
+    "0018"
+   ],
+   "aliases": [
+    "White Hall"
+   ],
+   "lng": -89.401346,
+   "lat": 43.076697,
+   "osm": "way/37749300"
+  },
+  {
+   "id": "field-house",
+   "name": "Field House",
+   "short": "Field House",
+   "kind": "gym",
+   "codes": [
+    "0029"
+   ],
+   "aliases": [],
+   "lng": -89.412688,
+   "lat": 43.068634,
+   "osm": "way/175346220"
+  },
+  {
+   "id": "nancy-nicholas-hall",
+   "name": "Nancy Nicholas Hall",
+   "short": "Nancy Nicholas Hall",
+   "kind": "academic",
+   "codes": [
+    "0085"
+   ],
+   "aliases": [],
+   "lng": -89.40877,
+   "lat": 43.075716,
+   "osm": "way/38855398"
+  },
+  {
+   "id": "law-building",
+   "name": "Law Building",
+   "short": "Law Building",
+   "kind": "academic",
+   "codes": [
+    "0430"
+   ],
+   "aliases": [
+    "Law Bldg"
+   ],
+   "lng": -89.402281,
+   "lat": 43.074551,
+   "osm": "way/38855393"
+  },
+  {
+   "id": "gordon-dining-and-event-center",
+   "name": "Gordon Dining and Event Center",
+   "short": "Gordon Dining and Event Center",
+   "kind": "dining",
+   "codes": [
+    "1249"
+   ],
+   "aliases": [
+    "Gordon Dining"
+   ],
+   "lng": -89.398362,
+   "lat": 43.071212,
+   "osm": "way/193492268"
+  },
+  {
+   "id": "wisconsin-historical-society",
+   "name": "Wisconsin Historical Society",
+   "short": "Wisconsin Historical Society",
+   "kind": "library",
+   "codes": [
+    "0016"
+   ],
+   "aliases": [
+    "Historical Society"
+   ],
+   "lng": -89.40005,
+   "lat": 43.075409,
+   "osm": "way/37804099"
+  },
+  {
+   "id": "genetics-biotechnology-center-building",
+   "name": "Genetics-Biotechnology Center Building",
+   "short": "Genetics-Biotechnology Center Building",
+   "kind": "academic",
+   "codes": [
+    "0082"
+   ],
+   "aliases": [
+    "Genetics-Biotech"
+   ],
+   "lng": -89.409386,
+   "lat": 43.07383,
+   "osm": "way/39015620"
+  },
+  {
+   "id": "nicholas-johnson-pavilion-and-plaza",
+   "name": "Nicholas-Johnson Pavilion and Plaza",
+   "short": "Nicholas-Johnson Pavilion and Plaza",
+   "kind": "gym",
+   "codes": [
+    "0226"
+   ],
+   "aliases": [
+    "Nicholas-Johnson"
+   ],
+   "lng": -89.397933,
+   "lat": 43.069369,
+   "osm": "way/175151219"
+  },
+  {
+   "id": "weeks-hall-for-geological-sciences",
+   "name": "Weeks Hall for Geological Sciences",
+   "short": "Weeks Hall",
+   "kind": "academic",
+   "codes": [
+    "0521"
+   ],
+   "aliases": [
+    "Weeks Hall"
+   ],
+   "lng": -89.406216,
+   "lat": 43.070573,
+   "osm": "relation/2071317"
+  },
+  {
+   "id": "educational-sciences",
+   "name": "Educational Sciences",
+   "short": "Educational Sciences",
+   "kind": "academic",
+   "codes": [
+    "0154"
+   ],
+   "aliases": [],
+   "lng": -89.403297,
+   "lat": 43.071842,
+   "osm": "way/153640720"
+  },
+  {
+   "id": "deluca-biochemistry-laboratories",
+   "name": "DeLuca Biochemistry Laboratories",
+   "short": "DeLuca Biochemistry Laboratories",
+   "kind": "academic",
+   "codes": [
+    "0205"
+   ],
+   "aliases": [
+    "Biochemistry Labs"
+   ],
+   "lng": -89.411981,
+   "lat": 43.074165,
+   "osm": "way/37516023"
+  },
+  {
+   "id": "pyle-center",
+   "name": "Pyle Center",
+   "short": "Pyle Center",
+   "kind": "academic",
+   "codes": [
+    "0006"
+   ],
+   "aliases": [
+    "University of Wisconsin Extension"
+   ],
+   "lng": -89.397781,
+   "lat": 43.076272,
+   "osm": "way/37965574"
+  },
+  {
+   "id": "hamel-music-center",
+   "name": "Hamel Music Center",
+   "short": "Hamel Music Center",
+   "kind": "academic",
+   "codes": [
+    "0585"
+   ],
+   "aliases": [],
+   "lng": -89.397979,
+   "lat": 43.073664,
+   "osm": "way/484383229"
+  },
+  {
+   "id": "cereal-crops-research-unit",
+   "name": "Cereal Crops Research Unit",
+   "short": "Cereal Crops Research Unit",
+   "kind": "academic",
+   "codes": [
+    "0121"
+   ],
+   "aliases": [
+    "Cereal Crops"
+   ],
+   "lng": -89.425696,
+   "lat": 43.07408,
+   "osm": "relation/3979952"
+  },
+  {
+   "id": "van-vleck-hall",
+   "name": "Van Vleck Hall",
+   "short": "Van Vleck Hall",
+   "kind": "academic",
+   "codes": [
+    "0048"
+   ],
+   "aliases": [],
+   "lng": -89.404937,
+   "lat": 43.074807,
+   "osm": "relation/19576438"
+  },
+  {
+   "id": "deluca-biochemical-sciences-building",
+   "name": "DeLuca Biochemical Sciences Building",
+   "short": "DeLuca Biochemical Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "0204"
+   ],
+   "aliases": [
+    "Biochemical Sciences"
+   ],
+   "lng": -89.411034,
+   "lat": 43.074315,
+   "osm": "way/173506603"
+  },
+  {
+   "id": "levy-hall",
+   "name": "Levy Hall",
+   "short": "Levy Hall",
+   "kind": "academic",
+   "codes": [
+    "1069"
+   ],
+   "aliases": [],
+   "lng": -89.40155,
+   "lat": 43.071778,
+   "osm": "way/1531310168"
+  },
+  {
+   "id": "biotron-laboratory",
+   "name": "Biotron Laboratory",
+   "short": "Biotron Laboratory",
+   "kind": "academic",
+   "codes": [
+    "0045"
+   ],
+   "aliases": [
+    "Biotron Lab"
+   ],
+   "lng": -89.422498,
+   "lat": 43.075984,
+   "osm": "way/37691896"
+  },
+  {
+   "id": "service-memorial-institute",
+   "name": "Service Memorial Institute",
+   "short": "Service Memorial Institute",
+   "kind": "academic",
+   "codes": [
+    "0451A"
+   ],
+   "aliases": [
+    "Service Memorial Inst"
+   ],
+   "lng": -89.406924,
+   "lat": 43.074394,
+   "osm": "way/39015623"
+  },
+  {
+   "id": "van-hise-hall",
+   "name": "Van Hise Hall",
+   "short": "Van Hise Hall",
+   "kind": "academic",
+   "codes": [
+    "0482"
+   ],
+   "aliases": [],
+   "lng": -89.406799,
+   "lat": 43.075577,
+   "osm": "way/37727228"
+  },
+  {
+   "id": "birge-hall",
+   "name": "Birge Hall",
+   "short": "Birge Hall",
+   "kind": "academic",
+   "codes": [
+    "0054"
+   ],
+   "aliases": [],
+   "lng": -89.403831,
+   "lat": 43.074431,
+   "osm": "way/38855394"
+  },
+  {
+   "id": "brogden-psychology-building",
+   "name": "Brogden Psychology Building",
+   "short": "Brogden Psychology Building",
+   "kind": "academic",
+   "codes": [
+    "0470"
+   ],
+   "aliases": [
+    "Psychology Bldg"
+   ],
+   "lng": -89.406228,
+   "lat": 43.072595,
+   "osm": "way/153063309"
+  },
+  {
+   "id": "ingraham-hall",
+   "name": "Ingraham Hall",
+   "short": "Ingraham Hall",
+   "kind": "academic",
+   "codes": [
+    "0056"
+   ],
+   "aliases": [
+    "Mark H. Ingraham Hall"
+   ],
+   "lng": -89.405366,
+   "lat": 43.075489,
+   "osm": "way/38855397"
+  },
+  {
+   "id": "animal-science-building",
+   "name": "Animal Science Building",
+   "short": "Animal Science Building",
+   "kind": "academic",
+   "codes": [
+    "0118"
+   ],
+   "aliases": [
+    "Animal Science Bldg"
+   ],
+   "lng": -89.415299,
+   "lat": 43.076099,
+   "osm": "way/37550805"
+  },
+  {
+   "id": "fluno-center",
+   "name": "Fluno Center",
+   "short": "Fluno Center",
+   "kind": "academic",
+   "codes": [
+    "0139"
+   ],
+   "aliases": [],
+   "lng": -89.396553,
+   "lat": 43.072884,
+   "osm": "way/103242254"
+  },
+  {
+   "id": "meat-science-and-animal-biologics-discovery",
+   "name": "Meat Science and Animal Biologics Discovery",
+   "short": "Meat Science and Animal Biologics Discovery",
+   "kind": "academic",
+   "codes": [
+    "0149"
+   ],
+   "aliases": [
+    "Meat Sci & Animal Bio"
+   ],
+   "lng": -89.418677,
+   "lat": 43.07605,
+   "osm": "way/490171328"
+  },
+  {
+   "id": "sterling-hall",
+   "name": "Sterling Hall",
+   "short": "Sterling Hall",
+   "kind": "academic",
+   "codes": [
+    "0057"
+   ],
+   "aliases": [],
+   "lng": -89.405572,
+   "lat": 43.074544,
+   "osm": "way/39201158"
+  },
+  {
+   "id": "chazen-museum-of-art",
+   "name": "Chazen Museum of Art",
+   "short": "Chazen Museum of Art",
+   "kind": "academic",
+   "codes": [
+    "0524"
+   ],
+   "aliases": [
+    "Chazen Bldg"
+   ],
+   "lng": -89.3987,
+   "lat": 43.073881,
+   "osm": "way/295708135"
+  },
+  {
+   "id": "stock-pavilion",
+   "name": "Stock Pavilion",
+   "short": "Stock Pavilion",
+   "kind": "academic",
+   "codes": [
+    "0090"
+   ],
+   "aliases": [],
+   "lng": -89.41515,
+   "lat": 43.074837,
+   "osm": "way/37516017"
+  },
+  {
+   "id": "poultry-research-laboratory",
+   "name": "Poultry Research Laboratory",
+   "short": "Poultry Research Laboratory",
+   "kind": "academic",
+   "codes": [
+    "0110"
+   ],
+   "aliases": [
+    "Poultry Research Lab"
+   ],
+   "lng": -89.417919,
+   "lat": 43.076116,
+   "osm": "way/37691887"
+  },
+  {
+   "id": "dairy-cattle-instruction-and-research-center",
+   "name": "Dairy Cattle Instruction & Research Center",
+   "short": "Dairy Cattle Instruction & Research Center",
+   "kind": "academic",
+   "codes": [
+    "0092"
+   ],
+   "aliases": [
+    "Dairy Cattle Center"
+   ],
+   "lng": -89.417125,
+   "lat": 43.074854,
+   "osm": "way/38263360"
+  },
+  {
+   "id": "livestock-laboratory",
+   "name": "Livestock Laboratory",
+   "short": "Livestock Laboratory",
+   "kind": "academic",
+   "codes": [
+    "0115",
+    "0775"
+   ],
+   "aliases": [
+    "Livestock Lab",
+    "Inventory-Livestock"
+   ],
+   "lng": -89.416878,
+   "lat": 43.075753,
+   "osm": "way/37722267"
+  },
+  {
+   "id": "education-building",
+   "name": "Education Building",
+   "short": "Education Building",
+   "kind": "academic",
+   "codes": [
+    "0400"
+   ],
+   "aliases": [
+    "Education Bldg"
+   ],
+   "lng": -89.40228,
+   "lat": 43.075748,
+   "osm": "way/37751914"
+  },
+  {
+   "id": "russell-laboratories",
+   "name": "Russell Laboratories",
+   "short": "Russell Laboratories",
+   "kind": "academic",
+   "codes": [
+    "0114"
+   ],
+   "aliases": [
+    "Russell Labs"
+   ],
+   "lng": -89.413583,
+   "lat": 43.075486,
+   "osm": "way/37516020"
+  },
+  {
+   "id": "800-university-bay",
+   "name": "800 University Bay",
+   "short": "800 University Bay",
+   "kind": "academic",
+   "codes": [
+    "0771"
+   ],
+   "aliases": [
+    "University Bay Office Building",
+    "UBOB",
+    "University Bay Dr 800"
+   ],
+   "lng": -89.434365,
+   "lat": 43.074863,
+   "osm": "way/108065751"
+  },
+  {
+   "id": "deluca-biochemistry-building",
+   "name": "DeLuca Biochemistry Building",
+   "short": "DeLuca Biochemistry Building",
+   "kind": "academic",
+   "codes": [
+    "0084"
+   ],
+   "aliases": [
+    "Biochemistry Bldg"
+   ],
+   "lng": -89.410912,
+   "lat": 43.073838,
+   "osm": "way/412585896"
+  },
+  {
+   "id": "materials-science-and-engineering",
+   "name": "Materials Science and Engineering",
+   "short": "Materials Science and Engineering",
+   "kind": "academic",
+   "codes": [
+    "0520"
+   ],
+   "aliases": [
+    "Mat Sci & Eng Bldg"
+   ],
+   "lng": -89.411285,
+   "lat": 43.073001,
+   "osm": "way/60320800"
+  },
+  {
+   "id": "steenbock-memorial-library",
+   "name": "Steenbock Memorial Library",
+   "short": "Steenbock Memorial Library",
+   "kind": "library",
+   "codes": [
+    "0079"
+   ],
+   "aliases": [
+    "Steenbock Memorial Lbry"
+   ],
+   "lng": -89.413368,
+   "lat": 43.07611,
+   "osm": "way/37550815"
+  },
+  {
+   "id": "conrad-a-elvehjem-building",
+   "name": "Conrad A. Elvehjem Building",
+   "short": "Conrad A. Elvehjem Building",
+   "kind": "academic",
+   "codes": [
+    "0544"
+   ],
+   "aliases": [
+    "Elvehjem Bldg"
+   ],
+   "lng": -89.399459,
+   "lat": 43.073882,
+   "osm": "relation/18849422"
+  },
+  {
+   "id": "horticulture",
+   "name": "Horticulture",
+   "short": "Horticulture",
+   "kind": "academic",
+   "codes": [
+    "0087B"
+   ],
+   "aliases": [],
+   "lng": -89.412009,
+   "lat": 43.074753,
+   "osm": "way/38856040"
+  },
+  {
+   "id": "agricultural-hall",
+   "name": "Agricultural Hall",
+   "short": "Agricultural Hall",
+   "kind": "academic",
+   "codes": [
+    "0070"
+   ],
+   "aliases": [],
+   "lng": -89.410288,
+   "lat": 43.075716,
+   "osm": "way/38953076"
+  },
+  {
+   "id": "wisconsin-energy-institute",
+   "name": "Wisconsin Energy Institute",
+   "short": "Wisconsin Energy Institute",
+   "kind": "academic",
+   "codes": [
+    "0752"
+   ],
+   "aliases": [
+    "WEI"
+   ],
+   "lng": -89.41403,
+   "lat": 43.073747,
+   "osm": "way/193490363"
+  },
+  {
+   "id": "teacher-education",
+   "name": "Teacher Education",
+   "short": "Teacher Education",
+   "kind": "academic",
+   "codes": [
+    "0153"
+   ],
+   "aliases": [],
+   "lng": -89.403614,
+   "lat": 43.071313,
+   "osm": "way/153640719"
+  },
+  {
+   "id": "armory-and-gymnasium",
+   "name": "Armory and Gymnasium",
+   "short": "Armory and Gymnasium",
+   "kind": "gym",
+   "codes": [
+    "0020"
+   ],
+   "aliases": [
+    "Red Gym"
+   ],
+   "lng": -89.39845,
+   "lat": 43.076318,
+   "osm": "way/37804098"
+  },
+  {
+   "id": "engineering-research-building",
+   "name": "Engineering Research Building",
+   "short": "Engineering Research Building",
+   "kind": "academic",
+   "codes": [
+    "0762"
+   ],
+   "aliases": [
+    "Engineering Research"
+   ],
+   "lng": -89.411625,
+   "lat": 43.072609,
+   "osm": "way/56997837"
+  },
+  {
+   "id": "lathrop-hall",
+   "name": "Lathrop Hall",
+   "short": "Lathrop Hall",
+   "kind": "academic",
+   "codes": [
+    "0032"
+   ],
+   "aliases": [],
+   "lng": -89.403016,
+   "lat": 43.073693,
+   "osm": "way/39201161"
+  },
+  {
+   "id": "uw-madison-police-and-security-building",
+   "name": "UW-Madison Police and Security Building",
+   "short": "UW-Madison Police and Security Building",
+   "kind": "academic",
+   "codes": [
+    "0550"
+   ],
+   "aliases": [
+    "Police & Security"
+   ],
+   "lng": -89.409957,
+   "lat": 43.06915,
+   "osm": "way/103321352"
+  },
+  {
+   "id": "science-hall",
+   "name": "Science Hall",
+   "short": "Science Hall",
+   "kind": "academic",
+   "codes": [
+    "0046",
+    "0053"
+   ],
+   "aliases": [
+    "Social Science Bldg"
+   ],
+   "lng": -89.401123,
+   "lat": 43.07587,
+   "osm": "way/37723611"
+  },
+  {
+   "id": "porter-boathouse",
+   "name": "Porter Boathouse",
+   "short": "Porter Boathouse",
+   "kind": "academic",
+   "codes": [
+    "0172"
+   ],
+   "aliases": [],
+   "lng": -89.412487,
+   "lat": 43.078307,
+   "osm": "way/38019748"
+  },
+  {
+   "id": "wendt-commons",
+   "name": "Wendt Commons",
+   "short": "Wendt Commons",
+   "kind": "dining",
+   "codes": [
+    "0404"
+   ],
+   "aliases": [
+    "Kurt Frank Wendt Commons"
+   ],
+   "lng": -89.408653,
+   "lat": 43.071467,
+   "osm": "way/37257115"
+  },
+  {
+   "id": "martin-and-florence-below-alumni-center",
+   "name": "Martin and Florence Below Alumni Center",
+   "short": "Below Alumni Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Below Alumni Center"
+   ],
+   "lng": -89.397845,
+   "lat": 43.076756,
+   "osm": "relation/18858953"
+  },
+  {
+   "id": "king-hall",
+   "name": "King Hall",
+   "short": "King Hall",
+   "kind": "academic",
+   "codes": [
+    "0074A"
+   ],
+   "aliases": [],
+   "lng": -89.410861,
+   "lat": 43.076299,
+   "osm": "way/38953060"
+  },
+  {
+   "id": "noland-hall",
+   "name": "Noland Hall",
+   "short": "Noland Hall",
+   "kind": "academic",
+   "codes": [
+    "0402"
+   ],
+   "aliases": [
+    "Noland Hall, Lowell E"
+   ],
+   "lng": -89.404536,
+   "lat": 43.071531,
+   "osm": "way/139958467"
+  },
+  {
+   "id": "nutritional-sciences",
+   "name": "Nutritional Sciences",
+   "short": "Nutritional Sciences",
+   "kind": "academic",
+   "codes": [
+    "0449"
+   ],
+   "aliases": [],
+   "lng": -89.408928,
+   "lat": 43.074819,
+   "osm": "way/38855842"
+  },
+  {
+   "id": "meriter-laboratories",
+   "name": "Meriter Laboratories",
+   "short": "Meriter Laboratories",
+   "kind": "academic",
+   "codes": [
+    "1045",
+    "6035"
+   ],
+   "aliases": [
+    "Meriter-Park",
+    "Meriter-Capital"
+   ],
+   "lng": -89.402878,
+   "lat": 43.066798,
+   "osm": "way/178802176"
+  },
+  {
+   "id": "enzyme-institute",
+   "name": "Enzyme Institute",
+   "short": "Enzyme Institute",
+   "kind": "academic",
+   "codes": [
+    "0479"
+   ],
+   "aliases": [],
+   "lng": -89.415395,
+   "lat": 43.073762,
+   "osm": "way/153660095"
+  },
+  {
+   "id": "stovall-building-wisconsin-state-laboratory-of-hygiene",
+   "name": "Stovall Building (Wisconsin State Laboratory of Hygiene)",
+   "short": "Stovall Building (Wisconsin State Laboratory of Hygiene)",
+   "kind": "academic",
+   "codes": [
+    "0476"
+   ],
+   "aliases": [
+    "Stovall Bldg"
+   ],
+   "lng": -89.40985,
+   "lat": 43.074786,
+   "osm": "way/38855843"
+  },
+  {
+   "id": "medical-sciences",
+   "name": "Medical Sciences",
+   "short": "Medical Sciences",
+   "kind": "academic",
+   "codes": [
+    "0451C"
+   ],
+   "aliases": [],
+   "lng": -89.406684,
+   "lat": 43.074793,
+   "osm": "way/172992066"
+  },
+  {
+   "id": "harlow-primate-laboratory",
+   "name": "Harlow Primate Laboratory",
+   "short": "Harlow Primate Laboratory",
+   "kind": "academic",
+   "codes": [
+    "0527"
+   ],
+   "aliases": [
+    "Harlow Center"
+   ],
+   "lng": -89.406171,
+   "lat": 43.068584,
+   "osm": "way/172980982"
+  },
+  {
+   "id": "extension-building",
+   "name": "Extension Building",
+   "short": "Extension Building",
+   "kind": "academic",
+   "codes": [
+    "0500"
+   ],
+   "aliases": [
+    "Extension Bldg"
+   ],
+   "lng": -89.397897,
+   "lat": 43.074223,
+   "osm": "way/101606150"
+  },
+  {
+   "id": "uw-foundation",
+   "name": "UW Foundation",
+   "short": "UW Foundation",
+   "kind": "academic",
+   "codes": [
+    "0493"
+   ],
+   "aliases": [],
+   "lng": -89.417431,
+   "lat": 43.073643,
+   "osm": "way/173503696"
+  },
+  {
+   "id": "kellner-hall",
+   "name": "Kellner Hall",
+   "short": "Kellner Hall",
+   "kind": "academic",
+   "codes": [
+    "0460"
+   ],
+   "aliases": [],
+   "lng": -89.412028,
+   "lat": 43.068984,
+   "osm": "way/175346221"
+  },
+  {
+   "id": "water-science-and-engineering-laboratory",
+   "name": "Water Science & Engineering Laboratory",
+   "short": "Water Science & Engineering Laboratory",
+   "kind": "academic",
+   "codes": [
+    "0403"
+   ],
+   "aliases": [
+    "Water Sci & Eng"
+   ],
+   "lng": -89.401889,
+   "lat": 43.07711,
+   "osm": "way/37749299"
+  },
+  {
+   "id": "bradley-memorial-building",
+   "name": "Bradley Memorial Building",
+   "short": "Bradley Memorial Building",
+   "kind": "academic",
+   "codes": [
+    "0452"
+   ],
+   "aliases": [
+    "Bradley Memorial Bldg"
+   ],
+   "lng": -89.407574,
+   "lat": 43.074613,
+   "osm": "way/38855410"
+  },
+  {
+   "id": "william-s-middleton-office-building",
+   "name": "William S. Middleton Office Building",
+   "short": "William S. Middleton Office Building",
+   "kind": "academic",
+   "codes": [
+    "0455"
+   ],
+   "aliases": [
+    "Middleton"
+   ],
+   "lng": -89.408199,
+   "lat": 43.074786,
+   "osm": "way/38855412"
+  },
+  {
+   "id": "wisconsin-alumni-research-foundation-office-building",
+   "name": "Wisconsin Alumni Research Foundation Office Building",
+   "short": "Wisconsin Alumni Research Foundation Office Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "WARF Office Building"
+   ],
+   "lng": -89.426048,
+   "lat": 43.076243,
+   "osm": "way/37256547"
+  },
+  {
+   "id": "school-of-social-work-building",
+   "name": "School of Social Work Building",
+   "short": "School of Social Work Building",
+   "kind": "academic",
+   "codes": [
+    "0453"
+   ],
+   "aliases": [
+    "School of Social Work"
+   ],
+   "lng": -89.408205,
+   "lat": 43.074313,
+   "osm": "way/39015624"
+  },
+  {
+   "id": "502-herrick-dr",
+   "name": "502 Herrick Dr.",
+   "short": "502 Herrick Dr.",
+   "kind": "academic",
+   "codes": [
+    "0111"
+   ],
+   "aliases": [
+    "Herrick Dr 502"
+   ],
+   "lng": -89.423001,
+   "lat": 43.074379,
+   "osm": "way/173708703"
+  },
+  {
+   "id": "music-hall",
+   "name": "Music Hall",
+   "short": "Music Hall",
+   "kind": "academic",
+   "codes": [
+    "0485"
+   ],
+   "aliases": [],
+   "lng": -89.40138,
+   "lat": 43.074623,
+   "osm": "way/39201163"
+  },
+  {
+   "id": "muscle-and-meat-science-research-laboratory",
+   "name": "Muscle & Meat Science Research Laboratory",
+   "short": "Muscle & Meat Science Research Laboratory",
+   "kind": "academic",
+   "codes": [
+    "0123"
+   ],
+   "aliases": [
+    "Meat Sci & Muscle Bio"
+   ],
+   "lng": -89.41643,
+   "lat": 43.074522,
+   "osm": "way/38263351"
+  },
+  {
+   "id": "university-club",
+   "name": "University Club",
+   "short": "University Club",
+   "kind": "academic",
+   "codes": [
+    "0515B"
+   ],
+   "aliases": [],
+   "lng": -89.399299,
+   "lat": 43.074579,
+   "osm": "relation/18793475"
+  },
+  {
+   "id": "atmospheric-and-oceanic-sciences",
+   "name": "Atmospheric & Oceanic Sciences",
+   "short": "Atmospheric & Oceanic Sciences",
+   "kind": "academic",
+   "codes": [
+    "0156"
+   ],
+   "aliases": [
+    "AOSS"
+   ],
+   "lng": -89.406934,
+   "lat": 43.070736,
+   "osm": "way/153660089"
+  },
+  {
+   "id": "goodnight-hall",
+   "name": "Goodnight Hall",
+   "short": "Goodnight Hall",
+   "kind": "academic",
+   "codes": [
+    "0508"
+   ],
+   "aliases": [],
+   "lng": -89.418689,
+   "lat": 43.078842,
+   "osm": "way/37862323"
+  },
+  {
+   "id": "mcardle-building",
+   "name": "McArdle Building",
+   "short": "McArdle Building",
+   "kind": "academic",
+   "codes": [
+    "0468"
+   ],
+   "aliases": [
+    "McArdle Bldg"
+   ],
+   "lng": -89.408939,
+   "lat": 43.074433,
+   "osm": "way/39015616"
+  },
+  {
+   "id": "athletic-operations-building",
+   "name": "Athletic Operations Building",
+   "short": "Athletic Operations Building",
+   "kind": "academic",
+   "codes": [
+    "0584"
+   ],
+   "aliases": [
+    "Athletic Operations Bldg"
+   ],
+   "lng": -89.413471,
+   "lat": 43.068864,
+   "osm": "way/175344876"
+  },
+  {
+   "id": "radio-hall",
+   "name": "Radio Hall",
+   "short": "Radio Hall",
+   "kind": "academic",
+   "codes": [
+    "0405"
+   ],
+   "aliases": [],
+   "lng": -89.401646,
+   "lat": 43.075986,
+   "osm": "way/37723613"
+  },
+  {
+   "id": "rust-schreiner-hall",
+   "name": "Rust-Schreiner Hall",
+   "short": "Rust-Schreiner Hall",
+   "kind": "academic",
+   "codes": [
+    "0158"
+   ],
+   "aliases": [],
+   "lng": -89.406987,
+   "lat": 43.070337,
+   "osm": "way/173499562"
+  },
+  {
+   "id": "1910-linden-dr",
+   "name": "1910 Linden Dr.",
+   "short": "1910 Linden Dr.",
+   "kind": "academic",
+   "codes": [
+    "0103"
+   ],
+   "aliases": [
+    "Linden Dr 1910"
+   ],
+   "lng": -89.417917,
+   "lat": 43.075718,
+   "osm": "way/37691885"
+  },
+  {
+   "id": "bardeen-medical-laboratories",
+   "name": "Bardeen Medical Laboratories",
+   "short": "Bardeen Medical Laboratories",
+   "kind": "academic",
+   "codes": [
+    "0451B"
+   ],
+   "aliases": [
+    "Bardeen Medical Labs"
+   ],
+   "lng": -89.407027,
+   "lat": 43.074861,
+   "osm": "way/38855411"
+  },
+  {
+   "id": "soils-building",
+   "name": "Soils Building",
+   "short": "Soils Building",
+   "kind": "academic",
+   "codes": [
+    "0074B"
+   ],
+   "aliases": [
+    "Soils"
+   ],
+   "lng": -89.411294,
+   "lat": 43.076517,
+   "osm": "way/38953059"
+  },
+  {
+   "id": "mcclain-athletic-facility",
+   "name": "McClain Athletic Facility",
+   "short": "McClain Athletic Facility",
+   "kind": "gym",
+   "codes": [
+    "0021"
+   ],
+   "aliases": [
+    "McClain Athletic Facility (Inactive)"
+   ],
+   "lng": -89.411937,
+   "lat": 43.071028,
+   "osm": "way/58675200"
+  },
+  {
+   "id": "moore-hall",
+   "name": "Moore Hall",
+   "short": "Moore Hall",
+   "kind": "academic",
+   "codes": [
+    "0087A"
+   ],
+   "aliases": [
+    "Moore Hall-Agronomy"
+   ],
+   "lng": -89.411614,
+   "lat": 43.074733,
+   "osm": "way/38856041"
+  },
+  {
+   "id": "arthur-d-hasler-laboratory-of-limnology",
+   "name": "Arthur D. Hasler Laboratory of Limnology",
+   "short": "Arthur D. Hasler Laboratory of Limnology",
+   "kind": "academic",
+   "codes": [
+    "0483"
+   ],
+   "aliases": [
+    "Hasler Lab of Limnology"
+   ],
+   "lng": -89.402968,
+   "lat": 43.077246,
+   "osm": "way/37749302"
+  },
+  {
+   "id": "robert-m-bock-laboratories",
+   "name": "Robert M. Bock Laboratories",
+   "short": "Robert M. Bock Laboratories",
+   "kind": "academic",
+   "codes": [
+    "0033"
+   ],
+   "aliases": [
+    "Bock Labs"
+   ],
+   "lng": -89.41113,
+   "lat": 43.074859,
+   "osm": "way/38856044"
+  },
+  {
+   "id": "wisconsin-primate-center",
+   "name": "Wisconsin Primate Center",
+   "short": "Wisconsin Primate Center",
+   "kind": "academic",
+   "codes": [
+    "0526"
+   ],
+   "aliases": [
+    "Primate Center"
+   ],
+   "lng": -89.406964,
+   "lat": 43.068582,
+   "osm": "way/172980983"
+  },
+  {
+   "id": "hiram-smith-hall",
+   "name": "Hiram Smith Hall",
+   "short": "Hiram Smith Hall",
+   "kind": "academic",
+   "codes": [
+    "0076"
+   ],
+   "aliases": [
+    "Smith Hall, Hiram"
+   ],
+   "lng": -89.411571,
+   "lat": 43.075994,
+   "osm": "way/38953056"
+  },
+  {
+   "id": "taylor-hall",
+   "name": "Taylor Hall",
+   "short": "Taylor Hall",
+   "kind": "academic",
+   "codes": [
+    "0464"
+   ],
+   "aliases": [],
+   "lng": -89.409384,
+   "lat": 43.074262,
+   "osm": "way/39015618"
+  },
+  {
+   "id": "south-hall",
+   "name": "South Hall",
+   "short": "South Hall",
+   "kind": "academic",
+   "codes": [
+    "0051"
+   ],
+   "aliases": [],
+   "lng": -89.403124,
+   "lat": 43.074796,
+   "osm": "way/39201168"
+  },
+  {
+   "id": "north-hall",
+   "name": "North Hall",
+   "short": "North Hall",
+   "kind": "academic",
+   "codes": [
+    "0052"
+   ],
+   "aliases": [],
+   "lng": -89.402941,
+   "lat": 43.075693,
+   "osm": "way/37751913"
+  },
+  {
+   "id": "washburn-observatory",
+   "name": "Washburn Observatory",
+   "short": "Washburn Observatory",
+   "kind": "academic",
+   "codes": [
+    "0510"
+   ],
+   "aliases": [
+    "Observatory, Washburn"
+   ],
+   "lng": -89.408927,
+   "lat": 43.076174,
+   "osm": "way/37751417"
+  },
+  {
+   "id": "hiram-smith-hall-annex",
+   "name": "Hiram Smith Hall Annex",
+   "short": "Hiram Smith Hall Annex",
+   "kind": "academic",
+   "codes": [
+    "0077"
+   ],
+   "aliases": [
+    "Smith Annex, Hiram"
+   ],
+   "lng": -89.411293,
+   "lat": 43.075992,
+   "osm": "way/38953057"
+  },
+  {
+   "id": "plant-sciences",
+   "name": "Plant Sciences",
+   "short": "Plant Sciences",
+   "kind": "academic",
+   "codes": [
+    "0087C"
+   ],
+   "aliases": [],
+   "lng": -89.412237,
+   "lat": 43.074577,
+   "osm": "way/173508078"
+  },
+  {
+   "id": "robert-m-lafollette-school-of-public-affairs",
+   "name": "Robert M. Lafollette School of Public Affairs",
+   "short": "Robert M. Lafollette School of Public Affairs",
+   "kind": "academic",
+   "codes": [
+    "0512"
+   ],
+   "aliases": [
+    "Observ Hill Office Bldg"
+   ],
+   "lng": -89.407631,
+   "lat": 43.07622,
+   "osm": "way/38953095"
+  },
+  {
+   "id": "agricultural-heating-station",
+   "name": "Agricultural Heating Station",
+   "short": "Agricultural Heating Station",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Agricultural Bulletin Building"
+   ],
+   "lng": -89.411607,
+   "lat": 43.076332,
+   "osm": "way/38953058"
+  },
+  {
+   "id": "brat-stand",
+   "name": "Brat Stand",
+   "short": "Brat Stand",
+   "kind": "academic",
+   "codes": [
+    "1758"
+   ],
+   "aliases": [
+    "Mem Union Brat Stand"
+   ],
+   "lng": -89.399939,
+   "lat": 43.076807,
+   "osm": "way/565832283"
+  },
+  {
+   "id": "carillon-tower",
+   "name": "Carillon Tower",
+   "short": "Carillon Tower",
+   "kind": "academic",
+   "codes": [
+    "0487"
+   ],
+   "aliases": [],
+   "lng": -89.405051,
+   "lat": 43.076116,
+   "osm": "way/158973590"
+  },
+  {
+   "id": "mcclimon-memorial-track-press-box",
+   "name": "McClimon Memorial Track Press Box",
+   "short": "McClimon Memorial Track Press Box",
+   "kind": "academic",
+   "codes": [
+    "0040",
+    "0043"
+   ],
+   "aliases": [
+    "McClimon Track",
+    "McClimon Press Box"
+   ],
+   "lng": -89.427019,
+   "lat": 43.077587,
+   "osm": "way/175121416"
+  }
+ ]
+}

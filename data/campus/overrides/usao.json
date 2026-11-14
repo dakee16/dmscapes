@@ -1,0 +1,22 @@
+{
+  "places": {
+    "lawson-court-apartments": {
+      "hide": true
+    },
+    "lawson-court-apartments-369123681": {
+      "hide": true
+    },
+    "lawson-court-apartments-369123673": {
+      "hide": true
+    },
+    "stevens-alumni-house": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "lawson-court-apartments": "Another building of Lawson Court (a hall), not a class building.",
+    "lawson-court-apartments-369123681": "Another building of Lawson Court (a hall), not a class building.",
+    "lawson-court-apartments-369123673": "Another building of Lawson Court (a hall), not a class building.",
+    "stevens-alumni-house": "Alumni house, not somewhere classes happen."
+  }
+}

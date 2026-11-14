@@ -1,0 +1,20 @@
+{
+  "codes": {
+    "BANN": "way/117996757",
+    "FINR": "way/117996761",
+    "SUPK": null
+  },
+  "places": {
+    "student-center": { "kind": "dining" },
+    "chapel-of-saint-ignatius": { "hide": true },
+    "1313-east-columbia-building": { "hide": true }
+  },
+  "notes": {
+    "BANN": "The campus map's Bannan Center is OSM's two buildings at 817 11th Ave (Bannan Engineering and Bannan Science); the code goes on the larger, Bannan Engineering, so schedules saying BANN land there.",
+    "FINR": "The campus map's Fine Arts Building is Seattle U's at 1011 E Madison St (OSM way/117996761); the name match had picked Seattle Central's Fine Arts Building on E Pine St.",
+    "SUPK": "Seattle University Park is open space, not a class building; the word match had joined it to an unrelated 'Union Park' building west of campus.",
+    "student-center": "The Student Center holds Cherry Street Market, Seattle U's main dining hall (seattleu.edu dining); OSM names it only Student Center.",
+    "chapel-of-saint-ignatius": "Chapel (religious building). Not somewhere undergraduates have class.",
+    "1313-east-columbia-building": "Offices: Public Safety, Facilities Services, Human Resources, Budget and Procurement (seattleu.edu office directory). Not somewhere undergraduates have class."
+  }
+}

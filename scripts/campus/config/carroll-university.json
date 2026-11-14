@@ -1,0 +1,16 @@
+{
+  "collegeId": "carroll-university",
+  "area": {
+    "osm": "relation/6049437",
+    "bbox": [
+      42.99974,
+      -88.2365,
+      43.0078,
+      -88.22178
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Carroll University publishes no building-code list: its registrar page (carrollu.edu/academics/registrar/) has none and links only to the interactive campus map (carrollu.edu/map/), which titles each location by name (checked 2026-11-07)."
+}

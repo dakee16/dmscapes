@@ -1,0 +1,21 @@
+{
+  "collegeId": "tufts",
+  "area": {
+    "osm": "relation/3567946",
+    "bbox": [
+      42.40138,
+      -71.12512,
+      42.4115,
+      -71.11058
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Tufts publishes no building-code list: the AS&E registrar pages (students.tufts.edu/registrar) have none, and the official Medford/Somerville campus map (campusmaps.tufts.edu/docs/Tufts_Medford-Som_Map.pdf) indexes buildings by name and map grid only (checked 2026-11-07).",
+  "excludeHalls": {
+    "1023-beacon-street": "SMFA at Tufts residence on Beacon Street by Kenmore Square in Boston, about 6 km from the Medford/Somerville campus; its students' classes are at the SMFA building on the Fenway (Tufts first-year housing page lists it under SMFA).",
+    "1025-beacon-street": "SMFA at Tufts residence on Beacon Street by Kenmore Square in Boston, about 6 km from the Medford/Somerville campus; its students' classes are at the SMFA building on the Fenway (Tufts first-year housing page lists it under SMFA).",
+    "1047-beacon-street": "SMFA at Tufts residence on Beacon Street by Kenmore Square in Boston, about 6 km from the Medford/Somerville campus; its students' classes are at the SMFA building on the Fenway (Tufts first-year housing page lists it under SMFA)."
+  }
+}

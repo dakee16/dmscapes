@@ -1,0 +1,17 @@
+{
+  "collegeId": "miami-ohio",
+  "area": {
+    "osm": "way/183831887",
+    "bbox": [
+      39.49566,
+      -84.73945,
+      39.52318,
+      -84.71707
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/miami-ohio.codes.json"
+  }
+}

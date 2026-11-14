@@ -1,0 +1,393 @@
+{
+ "collegeId": "ualbany",
+ "generatedAt": "2026-11-13T15:53:14.943Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "University at Albany Schedule of Classes, Building Codes",
+   "url": "https://www.albany.edu/docs/schedule_of_classes/building_codes.html",
+   "use": "building codes",
+   "read": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/ualbany.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -73.8335,
+  42.68136,
+  -73.8187,
+  42.6899
+ ],
+ "halls": [
+  {
+   "dormId": "dutch-quad",
+   "name": "Dutch Quad",
+   "lng": -73.82773,
+   "lat": 42.68552,
+   "pin": "manual",
+   "osm": "way/103599105",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "campus-center",
+     "minutes": 5.1
+    },
+    "library": {
+     "placeId": "university-main-library",
+     "minutes": 6.4
+    },
+    "gym": {
+     "placeId": "physical-education",
+     "minutes": 9.4
+    }
+   }
+  },
+  {
+   "dormId": "colonial-quad",
+   "name": "Colonial Quad",
+   "lng": -73.82404,
+   "lat": 42.68901,
+   "pin": "manual",
+   "osm": "way/103599087",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "campus-center",
+     "minutes": 9.1
+    },
+    "library": {
+     "placeId": "university-main-library",
+     "minutes": 7.4
+    },
+    "gym": {
+     "placeId": "physical-education",
+     "minutes": 15.2
+    }
+   }
+  },
+  {
+   "dormId": "indigenous-quad",
+   "name": "Indigenous Quad",
+   "lng": -73.8239,
+   "lat": 42.68335,
+   "pin": "manual",
+   "osm": "way/103599110",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "campus-center",
+     "minutes": 6.2
+    },
+    "library": {
+     "placeId": "science-library",
+     "minutes": 3.6
+    },
+    "gym": {
+     "placeId": "physical-education",
+     "minutes": 11.5
+    }
+   }
+  },
+  {
+   "dormId": "state-quad",
+   "name": "State Quad",
+   "lng": -73.82027,
+   "lat": 42.68678,
+   "pin": "manual",
+   "osm": "way/103599081",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "campus-center",
+     "minutes": 8.5
+    },
+    "library": {
+     "placeId": "university-main-library",
+     "minutes": 6.8
+    },
+    "gym": {
+     "placeId": "physical-education",
+     "minutes": 17
+    }
+   }
+  },
+  {
+   "dormId": "empire-commons",
+   "name": "Empire Commons",
+   "lng": -73.827883,
+   "lat": 42.689896,
+   "pin": "name",
+   "osm": "way/103746415",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "campus-center",
+     "minutes": 9
+    },
+    "library": {
+     "placeId": "university-main-library",
+     "minutes": 9.5
+    },
+    "gym": {
+     "placeId": "physical-education",
+     "minutes": 15
+    }
+   }
+  },
+  {
+   "dormId": "freedom-apartments",
+   "name": "Freedom Apartments",
+   "lng": -73.8335,
+   "lat": 42.6885,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "campus-center",
+     "minutes": 12.1
+    },
+    "library": {
+     "placeId": "university-main-library",
+     "minutes": 13.4
+    },
+    "gym": {
+     "placeId": "physical-education",
+     "minutes": 13
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "lecture-center",
+   "name": "Lecture Center",
+   "short": "Lecture Center",
+   "kind": "academic",
+   "codes": [
+    "LC"
+   ],
+   "aliases": [],
+   "lng": -73.82395,
+   "lat": 42.686171,
+   "osm": "way/580566062"
+  },
+  {
+   "id": "campus-center",
+   "name": "Campus Center",
+   "short": "Campus Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.82488,
+   "lat": 42.6853,
+   "osm": "way/580566040"
+  },
+  {
+   "id": "university-main-library",
+   "name": "University Main Library",
+   "short": "University Main Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.825094,
+   "lat": 42.686868,
+   "osm": "way/103599058"
+  },
+  {
+   "id": "physical-education",
+   "name": "Physical Education",
+   "short": "Physical Education",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.827746,
+   "lat": 42.682587,
+   "osm": "way/103599096"
+  },
+  {
+   "id": "science-library",
+   "name": "Science Library",
+   "short": "Science Library",
+   "kind": "library",
+   "codes": [
+    "LE"
+   ],
+   "aliases": [],
+   "lng": -73.825496,
+   "lat": 42.684686,
+   "osm": "way/103599130"
+  },
+  {
+   "id": "performing-arts-center",
+   "name": "Performing Arts Center",
+   "short": "Performing Arts Center",
+   "kind": "academic",
+   "codes": [
+    "PC"
+   ],
+   "aliases": [],
+   "lng": -73.822896,
+   "lat": 42.685542,
+   "osm": "way/103599103"
+  },
+  {
+   "id": "biology",
+   "name": "Biology",
+   "short": "Biology",
+   "kind": "academic",
+   "codes": [
+    "BI"
+   ],
+   "aliases": [],
+   "lng": -73.821904,
+   "lat": 42.68496,
+   "osm": "way/580566045"
+  },
+  {
+   "id": "social-science",
+   "name": "Social Science",
+   "short": "Social Science",
+   "kind": "academic",
+   "codes": [
+    "SS"
+   ],
+   "aliases": [],
+   "lng": -73.826013,
+   "lat": 42.687373,
+   "osm": "way/580566056"
+  },
+  {
+   "id": "humanities",
+   "name": "Humanities",
+   "short": "Humanities",
+   "kind": "academic",
+   "codes": [
+    "HU"
+   ],
+   "aliases": [
+    "Humanties"
+   ],
+   "lng": -73.826008,
+   "lat": 42.686563,
+   "osm": "way/580566058"
+  },
+  {
+   "id": "arts-and-science",
+   "name": "Arts & Science",
+   "short": "Arts & Science",
+   "kind": "academic",
+   "codes": [
+    "AS"
+   ],
+   "aliases": [
+    "Arts and Sciences"
+   ],
+   "lng": -73.823996,
+   "lat": 42.686972,
+   "osm": "way/580566052"
+  },
+  {
+   "id": "fine-arts-and-art-museum",
+   "name": "Fine Arts & Art Museum",
+   "short": "Fine Arts & Art Museum",
+   "kind": "academic",
+   "codes": [
+    "FA"
+   ],
+   "aliases": [
+    "Fine Arts"
+   ],
+   "lng": -73.822859,
+   "lat": 42.686313,
+   "osm": "way/103599097"
+  },
+  {
+   "id": "catskill",
+   "name": "Catskill",
+   "short": "Catskill",
+   "kind": "academic",
+   "codes": [
+    "BA"
+   ],
+   "aliases": [
+    "Business Administration Building 27",
+    "Business Administration"
+   ],
+   "lng": -73.824949,
+   "lat": 42.687524,
+   "osm": "way/580566054"
+  },
+  {
+   "id": "chemistry",
+   "name": "Chemistry",
+   "short": "Chemistry",
+   "kind": "academic",
+   "codes": [
+    "CH"
+   ],
+   "aliases": [],
+   "lng": -73.82295,
+   "lat": 42.684786,
+   "osm": "way/580566043"
+  },
+  {
+   "id": "physics",
+   "name": "Physics",
+   "short": "Physics",
+   "kind": "academic",
+   "codes": [
+    "PH"
+   ],
+   "aliases": [],
+   "lng": -73.823815,
+   "lat": 42.685279,
+   "osm": "way/580566041"
+  },
+  {
+   "id": "boor-sculpture-studio",
+   "name": "Boor Sculpture Studio",
+   "short": "Boor Sculpture Studio",
+   "kind": "academic",
+   "codes": [
+    "SC"
+   ],
+   "aliases": [
+    "Sculpture Studio"
+   ],
+   "lng": -73.818699,
+   "lat": 42.681357,
+   "osm": "way/101293254"
+  },
+  {
+   "id": "taconic",
+   "name": "Taconic",
+   "short": "Taconic",
+   "kind": "academic",
+   "codes": [
+    "ED"
+   ],
+   "aliases": [
+    "Education"
+   ],
+   "lng": -73.825131,
+   "lat": 42.68605,
+   "osm": "way/580566060"
+  }
+ ]
+}

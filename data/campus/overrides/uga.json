@@ -1,0 +1,67 @@
+{
+  "halls": {
+    "university-village": {
+      "pin": [
+        -83.375196,
+        33.935722
+      ]
+    },
+    "expanded-busbee-hall": {
+      "pin": [
+        -83.368146,
+        33.938051
+      ]
+    },
+    "expanded-mcwhorter-hall": {
+      "pin": [
+        -83.367208,
+        33.938237
+      ]
+    },
+    "expanded-rooker-hall": {
+      "pin": [
+        -83.367912,
+        33.937044
+      ]
+    },
+    "expanded-vandiver-hall": {
+      "pin": [
+        -83.367416,
+        33.937444
+      ]
+    }
+  },
+  "notes": {
+    "university-village": "OSM has University Village as Buildings A to L (College Station Rd); pinned to Building C (way/598413080), nearest the middle of the complex.",
+    "expanded-busbee-hall": "housing.uga.edu/expanded-busbee-hall gives its mailing address as Busbee Hall (East Campus Village), so it is pinned to OSM's Busbee Hall, way/598413128.",
+    "expanded-mcwhorter-hall": "housing.uga.edu/expanded-mcwhorter-hall gives its mailing address as McWhorter Hall, so it is pinned to OSM's McWhorter Hall, way/598413123.",
+    "expanded-rooker-hall": "housing.uga.edu/expanded-rooker-hall gives its mailing address as Rooker Hall, so it is pinned to OSM's Rooker Hall, way/598413131.",
+    "expanded-vandiver-hall": "housing.uga.edu/expanded-vandiver-hall gives its mailing address as Vandiver Hall, so it is pinned to OSM's Vandiver Hall, way/598413118."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "building-1516 -> rhodes-animal-science-center-a"
+      ],
+      "maxRatio": 3.5,
+      "why": "The Rhodes Animal Science Center complex lies on the straight line with no mapped path through it, so the walk goes round it."
+    },
+    {
+      "pairs": [
+        "building-2266 -> denmark-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "Building 2266 is still a construction site in OSM (way/1490812995) with no mapped path out its north side, so the walk leaves to the south and comes round."
+    },
+    {
+      "pairs": [
+        "reed-hall -> journalism-building",
+        "reed-hall -> instructional-plaza",
+        "rutherford-hall -> speirs-hall",
+        "soule-hall -> speirs-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "Buildings and service yards fill the block on the straight line with no mapped path through, so walks go round by the streets."
+    }
+  ]
+}

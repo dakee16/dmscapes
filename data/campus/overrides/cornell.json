@@ -1,0 +1,43 @@
+{
+  "halls": {
+    "new-north-campus": {
+      "pin": [
+        -76.476071,
+        42.454668
+      ]
+    },
+    "low-rises": {
+      "pin": [
+        -76.475735,
+        42.45624
+      ]
+    },
+    "west-campus-houses": {
+      "pin": [
+        -76.489241,
+        42.447769
+      ]
+    }
+  },
+  "notes": {
+    "614": "OSM gives this building only a number or placeholder name and no use, and no official list names it, so it can't be told apart as a class building.",
+    "new-north-campus": "One entry for four North Campus halls; pin is the mean of OSM's Hu Shih Hall, Toni Morrison Hall, Ruth Bader Ginsburg Hall (north and south) and McClintock Hall centroids (ways 931488905, 931491817, 931488900, 931488899, 931488904).",
+    "low-rises": "Midpoint of OSM's Low Rise 6 and Low Rise 7 (ways 403931135, 403931136).",
+    "west-campus-houses": "One entry for five West Campus houses; pin is the mean of OSM's Carl Becker, Hans Bethe, Alice Cook, William T Keeton and Flora Rose House centroids (ways 540527775, 324135852, 216649615, 216649559, 324135849), so its minutes are approximate for any one house."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "risley -> olin-chemistry-research-laboratory",
+        "balch-hall -> olin-chemistry-research-laboratory"
+      ],
+      "maxRatio": 4,
+      "why": "Fall Creek gorge lies between North Campus and Olin Laboratory; walks cross on the mapped footbridge east of Risley, and Olin (way/116671008) has no mapped entrance, its centre snapping to the service drive off Sciences Drive on its south side."
+    }
+  ],
+  "places": {
+    "614": {
+      "hide": true
+    }
+  }
+}

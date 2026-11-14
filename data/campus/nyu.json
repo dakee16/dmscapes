@@ -1,0 +1,975 @@
+{
+ "collegeId": "nyu",
+ "generatedAt": "2026-11-08T16:52:21.840Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/nyu.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -74.00309,
+  40.71718,
+  -73.98318,
+  40.73929
+ ],
+ "halls": [
+  {
+   "dormId": "181-mercer",
+   "name": "The Residential College at Paulson",
+   "lng": -73.99748,
+   "lat": 40.726569,
+   "pin": "address",
+   "osm": "way/247848680",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 8.8
+    }
+   }
+  },
+  {
+   "dormId": "alumni-hall",
+   "name": "Alumni Hall",
+   "lng": -73.988983,
+   "lat": 40.730299,
+   "pin": "manual",
+   "osm": "way/241844938",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 12.2
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 8.2
+    }
+   }
+  },
+  {
+   "dormId": "brittany-hall",
+   "name": "Brittany Hall",
+   "lng": -73.991817,
+   "lat": 40.732087,
+   "pin": "name",
+   "osm": "way/247855557",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 10.2
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 6
+    }
+   }
+  },
+  {
+   "dormId": "broome-street",
+   "name": "Broome Street",
+   "lng": -73.989091,
+   "lat": 40.717987,
+   "pin": "name",
+   "osm": "way/1015980339",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 23.2
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 26
+    }
+   }
+  },
+  {
+   "dormId": "carlyle-court",
+   "name": "Carlyle Court",
+   "lng": -73.99121,
+   "lat": 40.73628,
+   "pin": "name",
+   "osm": "way/248773783",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 13.3
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 8.9
+    }
+   }
+  },
+  {
+   "dormId": "coral-tower",
+   "name": "Coral Tower",
+   "lng": -73.986708,
+   "lat": 40.733375,
+   "pin": "name",
+   "osm": "way/249657691",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 17.1
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 12.9
+    }
+   }
+  },
+  {
+   "dormId": "founders-hall",
+   "name": "Founders Hall",
+   "lng": -73.989295,
+   "lat": 40.732047,
+   "pin": "name",
+   "osm": "way/247857074",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 13.7
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 9.4
+    }
+   }
+  },
+  {
+   "dormId": "gramercy-green",
+   "name": "Gramercy Green",
+   "lng": -73.98318,
+   "lat": 40.739287,
+   "pin": "name",
+   "osm": "way/264761241",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 25.4
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 21.1
+    }
+   }
+  },
+  {
+   "dormId": "greenwich-hall",
+   "name": "Greenwich Hall",
+   "lng": -74.003089,
+   "lat": 40.732328,
+   "pin": "name",
+   "osm": "way/249665655",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 9.7
+    },
+    "dining": {
+     "placeId": "lipton-dining-hall",
+     "minutes": 5.6
+    }
+   }
+  },
+  {
+   "dormId": "lafayette-hall",
+   "name": "Lafayette Hall",
+   "lng": -74.002094,
+   "lat": 40.71718,
+   "pin": "name",
+   "osm": "way/249842305",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 21.3
+    },
+    "dining": {
+     "placeId": "lipton-dining-hall",
+     "minutes": 24.3
+    }
+   }
+  },
+  {
+   "dormId": "lipton-hall",
+   "name": "Lipton Hall",
+   "lng": -73.999527,
+   "lat": 40.731639,
+   "pin": "name",
+   "osm": "way/248163468",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "lipton-dining-hall",
+     "minutes": 0.7
+    }
+   }
+  },
+  {
+   "dormId": "palladium-hall",
+   "name": "Palladium Hall",
+   "lng": -73.988407,
+   "lat": 40.733307,
+   "pin": "name",
+   "osm": "way/586442726",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 15.9
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 11.6
+    }
+   }
+  },
+  {
+   "dormId": "rubin-hall",
+   "name": "Rubin Hall",
+   "lng": -73.995022,
+   "lat": 40.733452,
+   "pin": "name",
+   "osm": "way/247862827",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 7.9
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "second-street",
+   "name": "Second Street",
+   "lng": -73.991863,
+   "lat": 40.725456,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 9
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 11.7
+    }
+   }
+  },
+  {
+   "dormId": "seventh-street",
+   "name": "Seventh Street",
+   "lng": -73.988865,
+   "lat": 40.728075,
+   "pin": "name",
+   "osm": "way/241833357",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 13.9
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 10.7
+    }
+   }
+  },
+  {
+   "dormId": "sixth-street",
+   "name": "Sixth Street",
+   "lng": -73.990551,
+   "lat": 40.728134,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 10.3
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 8.6
+    }
+   }
+  },
+  {
+   "dormId": "third-avenue-north",
+   "name": "Third Avenue North",
+   "lng": -73.988153,
+   "lat": 40.731581,
+   "pin": "manual",
+   "osm": "way/247852541",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 14.9
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 10.9
+    }
+   }
+  },
+  {
+   "dormId": "university-hall",
+   "name": "University Hall",
+   "lng": -73.989208,
+   "lat": 40.733714,
+   "pin": "name",
+   "osm": "way/247862519",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 14.9
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 10.6
+    }
+   }
+  },
+  {
+   "dormId": "weinstein",
+   "name": "Weinstein Hall",
+   "lng": -73.995005,
+   "lat": 40.731007,
+   "pin": "name",
+   "osm": "way/247858030",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 0.8
+    }
+   }
+  },
+  {
+   "dormId": "washington-square-village",
+   "name": "Washington Square Village",
+   "lng": -73.997428,
+   "lat": 40.728764,
+   "pin": "manual",
+   "osm": "way/248234598",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "elmer-holmes-bobst-library",
+     "minutes": 1.5
+    },
+    "dining": {
+     "placeId": "weinstein-dining-facilities-and-sidestein-market",
+     "minutes": 4.8
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "vanderbilt-hall",
+   "name": "Vanderbilt Hall",
+   "short": "Vanderbilt Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.999489,
+   "lat": 40.730544,
+   "osm": "relation/3343762"
+  },
+  {
+   "id": "elmer-holmes-bobst-library",
+   "name": "Elmer Holmes Bobst Library",
+   "short": "Elmer Holmes Bobst Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.997218,
+   "lat": 40.729429,
+   "osm": "way/248166208"
+  },
+  {
+   "id": "henry-kaufman-management-center",
+   "name": "Henry Kaufman Management Center",
+   "short": "Henry Kaufman Management Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "KMC"
+   ],
+   "lng": -73.996552,
+   "lat": 40.729108,
+   "osm": "way/248166212"
+  },
+  {
+   "id": "helen-and-martin-kimmel-center-for-university-life",
+   "name": "Helen and Martin Kimmel Center for University Life",
+   "short": "Helen and Martin Kimmel Center for University Life",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Kimmel"
+   ],
+   "lng": -73.997904,
+   "lat": 40.729785,
+   "osm": "way/155075464"
+  },
+  {
+   "id": "silver-center-for-arts-and-science",
+   "name": "Silver Center for Arts and Science",
+   "short": "Silver Center for Arts and Science",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995601,
+   "lat": 40.730343,
+   "osm": "way/248166211"
+  },
+  {
+   "id": "furman-hall",
+   "name": "Furman Hall",
+   "short": "Furman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.998786,
+   "lat": 40.730037,
+   "osm": "way/248166286"
+  },
+  {
+   "id": "tisch-school-of-the-arts",
+   "name": "Tisch School of the Arts",
+   "short": "Tisch School of the Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.993832,
+   "lat": 40.729616,
+   "osm": "way/247842670"
+  },
+  {
+   "id": "warren-weaver-hall",
+   "name": "Warren Weaver Hall",
+   "short": "Warren Weaver Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995674,
+   "lat": 40.728672,
+   "osm": "way/248166268"
+  },
+  {
+   "id": "global-center-for-academic-and-spiritual-life",
+   "name": "Global Center for Academic and Spiritual Life",
+   "short": "Global Center for Academic and Spiritual Life",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.998188,
+   "lat": 40.729884,
+   "osm": "way/690622135"
+  },
+  {
+   "id": "gallatin-school-of-individualized-study",
+   "name": "Gallatin School of Individualized Study",
+   "short": "Gallatin School of Individualized Study",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.993933,
+   "lat": 40.729363,
+   "osm": "way/247842671"
+  },
+  {
+   "id": "iris-and-b-gerald-cantor-film-center",
+   "name": "Iris and B. Gerald Cantor Film Center",
+   "short": "Iris and B. Gerald Cantor Film Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.994442,
+   "lat": 40.731185,
+   "osm": "way/247858050"
+  },
+  {
+   "id": "department-of-psychology",
+   "name": "Department of Psychology",
+   "short": "Department of Psychology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.994418,
+   "lat": 40.728965,
+   "osm": "way/247842672"
+  },
+  {
+   "id": "tisch-hall",
+   "name": "Tisch Hall",
+   "short": "Tisch Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.996221,
+   "lat": 40.728781,
+   "osm": "way/248166267"
+  },
+  {
+   "id": "brown-building",
+   "name": "Brown Building",
+   "short": "Brown Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Asch Building"
+   ],
+   "lng": -73.99537,
+   "lat": 40.730079,
+   "osm": "way/248166209"
+  },
+  {
+   "id": "languages-and-literature-building",
+   "name": "Languages and Literature Building",
+   "short": "Languages and Literature Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.994731,
+   "lat": 40.731289,
+   "osm": "way/247858048"
+  },
+  {
+   "id": "weitz-and-luxenberg-building",
+   "name": "Weitz & Luxenberg Building",
+   "short": "Weitz & Luxenberg Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.993804,
+   "lat": 40.728409,
+   "osm": "way/247838697"
+  },
+  {
+   "id": "paulette-goddard-hall",
+   "name": "Paulette Goddard Hall",
+   "short": "Paulette Goddard Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.996213,
+   "lat": 40.729633,
+   "osm": "way/248166266"
+  },
+  {
+   "id": "academic-resource-center",
+   "name": "Academic Resource Center",
+   "short": "Academic Resource Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ARC"
+   ],
+   "lng": -73.995676,
+   "lat": 40.729697,
+   "osm": "way/248166272"
+  },
+  {
+   "id": "mark-and-debra-leslie-entrepreneurs-lab",
+   "name": "Mark and Debra Leslie Entrepreneurs Lab",
+   "short": "Mark and Debra Leslie Entrepreneurs Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995215,
+   "lat": 40.729477,
+   "osm": "way/248166305"
+  },
+  {
+   "id": "frederick-loewe-theatre",
+   "name": "Frederick Loewe Theatre",
+   "short": "Frederick Loewe Theatre",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995895,
+   "lat": 40.729464,
+   "osm": "way/248166210"
+  },
+  {
+   "id": "wilf-hall",
+   "name": "Wilf Hall",
+   "short": "Wilf Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -74.000024,
+   "lat": 40.730887,
+   "osm": "way/248163464"
+  },
+  {
+   "id": "waverly-building",
+   "name": "Waverly Building",
+   "short": "Waverly Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995175,
+   "lat": 40.730308,
+   "osm": "way/248166287"
+  },
+  {
+   "id": "weinstein-dining-facilities-and-sidestein-market",
+   "name": "Weinstein Dining facilities and Sidestein Market",
+   "short": "Weinstein Dining facilities and Sidestein Market",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.994865,
+   "lat": 40.730921,
+   "osm": "way/247858019"
+  },
+  {
+   "id": "lipton-dining-hall",
+   "name": "Lipton Dining Hall",
+   "short": "Lipton Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.999594,
+   "lat": 40.731503,
+   "osm": "way/248163466"
+  },
+  {
+   "id": "194-mercer-street",
+   "name": "194 Mercer Street",
+   "short": "194 Mercer Street",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.996758,
+   "lat": 40.726163,
+   "osm": "way/247848733"
+  },
+  {
+   "id": "19-west-fourth-street-department-of-politics",
+   "name": "19 West Fourth Street-Department of Politics",
+   "short": "19 West Fourth Street-Department of Politics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995086,
+   "lat": 40.729073,
+   "osm": "way/248166310"
+  },
+  {
+   "id": "joseph-and-violet-pless-building",
+   "name": "Joseph and Violet Pless Building",
+   "short": "Joseph and Violet Pless Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.996023,
+   "lat": 40.729889,
+   "osm": "way/248166289"
+  },
+  {
+   "id": "center-for-neural-science",
+   "name": "Center for Neural Science",
+   "short": "Center for Neural Science",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.994433,
+   "lat": 40.729158,
+   "osm": "way/247842674"
+  },
+  {
+   "id": "andre-and-bella-meyer-hall-of-physics",
+   "name": "Andre and Bella Meyer Hall of Physics",
+   "short": "Andre and Bella Meyer Hall of Physics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.994139,
+   "lat": 40.728991,
+   "osm": "way/247842677"
+  },
+  {
+   "id": "nyu-department-of-philosophy",
+   "name": "NYU Department of Philosophy",
+   "short": "NYU Department of Philosophy",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.994233,
+   "lat": 40.729515,
+   "osm": "way/247842675"
+  },
+  {
+   "id": "ruth-lewis-farkas-house",
+   "name": "Ruth Lewis Farkas House",
+   "short": "Ruth Lewis Farkas House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995636,
+   "lat": 40.731133,
+   "osm": "way/248166216"
+  },
+  {
+   "id": "kimball-hall",
+   "name": "Kimball Hall",
+   "short": "Kimball Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.994811,
+   "lat": 40.730114,
+   "osm": "way/248166265"
+  },
+  {
+   "id": "arthur-l-carter-hall",
+   "name": "Arthur L. Carter Hall",
+   "short": "Arthur L. Carter Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.99497,
+   "lat": 40.729356,
+   "osm": "way/248166219"
+  },
+  {
+   "id": "rufus-d-smith-hall",
+   "name": "Rufus D. Smith Hall",
+   "short": "Rufus D. Smith Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.994799,
+   "lat": 40.730598,
+   "osm": "way/247858044"
+  },
+  {
+   "id": "school-of-global-public-health",
+   "name": "School of Global Public Health",
+   "short": "School of Global Public Health",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.993619,
+   "lat": 40.728641,
+   "osm": "way/247838661"
+  },
+  {
+   "id": "john-j-creedon-house",
+   "name": "John J. Creedon House",
+   "short": "John J. Creedon House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995513,
+   "lat": 40.730995,
+   "osm": "way/248166215"
+  },
+  {
+   "id": "244-greene-street-department-of-english",
+   "name": "244 Greene Street-Department of English",
+   "short": "244 Greene Street-Department of English",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995032,
+   "lat": 40.729921,
+   "osm": "way/248166241"
+  },
+  {
+   "id": "pless-annex",
+   "name": "Pless Annex",
+   "short": "Pless Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995847,
+   "lat": 40.729816,
+   "osm": "way/248166247"
+  },
+  {
+   "id": "center-for-genomics-and-systems-biology",
+   "name": "Center for Genomics and Systems Biology",
+   "short": "Center for Genomics and Systems Biology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.99458,
+   "lat": 40.730008,
+   "osm": "way/248166234"
+  },
+  {
+   "id": "king-juan-carlos-i-of-spain-center",
+   "name": "King Juan Carlos I of Spain Center",
+   "short": "King Juan Carlos I of Spain Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.998564,
+   "lat": 40.730284,
+   "osm": "way/248166257"
+  },
+  {
+   "id": "hagop-kevorkian-center-for-near-eastern-studies",
+   "name": "Hagop Kevorkian Center for Near Eastern Studies",
+   "short": "Hagop Kevorkian Center for Near Eastern Studies",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.998872,
+   "lat": 40.730443,
+   "osm": "way/248166283"
+  },
+  {
+   "id": "285-mercer-street",
+   "name": "285 Mercer Street",
+   "short": "285 Mercer Street",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.994313,
+   "lat": 40.729865,
+   "osm": "way/248166280"
+  },
+  {
+   "id": "heyman-hall",
+   "name": "Heyman Hall",
+   "short": "Heyman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.998794,
+   "lat": 40.730411,
+   "osm": "way/248166254"
+  },
+  {
+   "id": "jane-eisner-and-william-b-bram-house",
+   "name": "Jane Eisner and William B. Bram House",
+   "short": "Jane Eisner and William B. Bram House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995634,
+   "lat": 40.730993,
+   "osm": "way/248166214"
+  },
+  {
+   "id": "nyu-law-jean-monnet-center",
+   "name": "NYU Law Jean Monnet Center",
+   "short": "NYU Law Jean Monnet Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.997874,
+   "lat": 40.732075,
+   "osm": "way/248166242"
+  },
+  {
+   "id": "nyu-la-maison-francaise",
+   "name": "NYU - La Maison Française",
+   "short": "NYU - La Maison Française",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995359,
+   "lat": 40.73118,
+   "osm": "way/248166294"
+  },
+  {
+   "id": "nyu-deutsches-haus",
+   "name": "NYU - Deutsches Haus",
+   "short": "NYU - Deutsches Haus",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.99518,
+   "lat": 40.731384,
+   "osm": "way/247858016"
+  },
+  {
+   "id": "draper-interdisciplinary-graduate-program",
+   "name": "Draper Interdisciplinary Graduate Program",
+   "short": "Draper Interdisciplinary Graduate Program",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995058,
+   "lat": 40.731538,
+   "osm": "way/247858045"
+  },
+  {
+   "id": "africa-house",
+   "name": "Africa House",
+   "short": "Africa House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.995283,
+   "lat": 40.73138,
+   "osm": "way/247858027"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+  "halls": {
+    "mary-markley-hall": {
+      "pin": [
+        -83.728849,
+        42.28089
+      ]
+    },
+    "wolverine-village-dr-e-royster-harper-hall": {
+      "pin": [
+        -83.745016,
+        42.269945
+      ]
+    }
+  },
+  "places": {
+    "university-hospital": {
+      "hide": true
+    },
+    "cancer-center": {
+      "hide": true
+    },
+    "mott-childrens-hospital-and-von-voigtlander-womens-hospital": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "mary-markley-hall": "Centre of OSM's Markley Hall (way/1021335897, wikipedia \"en:Mary Markley Hall\"), the dormitory on Washington Heights.",
+    "wolverine-village-dr-e-royster-harper-hall": "Centre of OSM's Wolverine Village Building 5 (way/1429018505), whose alt_name is \"Dr. E. Royster Harper Hall\".",
+    "university-hospital": "Michigan Medicine's University Hospital, a hospital rather than somewhere classes or meals happen.",
+    "cancer-center": "Rogel Cancer Center, a hospital building rather than somewhere classes happen.",
+    "mott-childrens-hospital-and-von-voigtlander-womens-hospital": "C.S. Mott Children's and Von Voigtlander Women's Hospital, a hospital rather than somewhere classes or meals happen."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "alice-lloyd-hall -> henry-vaughan-public-health-building"
+      ],
+      "maxRatio": 3,
+      "why": "The Vaughan building (relation/7360877) has no mapped entrance; its centre snaps to the end of a sidewalk spur reached from the east, so the walk from Alice Lloyd goes east past it along the sidewalk and doubles back."
+    },
+    {
+      "pairs": [
+        "alice-lloyd-hall -> simpson-memorial-institute"
+      ],
+      "maxRatio": 3,
+      "why": "Simpson Memorial Institute (way/384164268) has no mapped entrance; its centre snaps to the East Medical Center Drive sidewalk on its north side, so the walk goes down Observatory Street to Medical Center Drive and back up."
+    },
+    {
+      "pairs": [
+        "mary-markley-hall -> thomas-francis-jr-public-health-building"
+      ],
+      "maxRatio": 3,
+      "why": "Markley's mapped entrances open north onto East Medical Center Drive and the Thomas Francis building (relation/7360878) is reached from the west, off the Washington Heights sidewalk; no mapped path runs between them, so the walk goes round by Medical Center Drive."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "halls": {
+    "south-village": {
+      "pin": [-118.16437, 34.06775]
+    },
+    "phase-i": {
+      "pin": [-118.166, 34.0697]
+    },
+    "phase-ii": {
+      "pin": [-118.1653, 34.0707]
+    },
+    "golden-eagle-apartments": {
+      "pin": [-118.1657, 34.0739]
+    }
+  },
+  "places": {
+    "student-affairs": { "hide": true },
+    "health-center": { "hide": true },
+    "career-center": { "hide": true }
+  },
+  "notes": {
+    "south-village": "OSM has South Village (way/1082451200, 5500 Paseo Rancho Castilla; building 50 on Cal State LA's campus map, Campus Map Oct2024 Access.pdf) but its centroid snapped to the service road north of it and every walk went round by the housing complex; the pin sits at the foot of the mapped stairs (OSM way/258001692) at the hall's north-west corner that climb to the campus core.",
+    "phase-i": "Housing Phase I, building 34 on Cal State LA's campus map (Campus Map Oct2024 Access.pdf) and the south half of the Phase I & Phase II housing map (calstatela.edu housing_map_and_floorplans.pdf), south of Phase II above Circle Drive; OSM names none of its buildings.",
+    "phase-ii": "Housing Phase II, building 36 on Cal State LA's campus map (Campus Map Oct2024 Access.pdf): the clusters OSM names Building 3, 4 and 5 (ways 419974394, 419974384, 419974389) by the Paseo Rancho Castilla and Mariondale Avenue corner; pinned at the middle of the cluster.",
+    "golden-eagle-apartments": "Golden Eagle Apartments, building 37 on Cal State LA's campus map (Campus Map Oct2024 Access.pdf) and the GEA housing map (housing_map_and_floorplans.pdf): the block west of Mariondale Avenue between Dobbs Street and Valley Boulevard, a block north of Paseo Rancho Castilla; OSM has no building for it.",
+    "student-affairs": "Student Affairs is the admissions, financial aid and records building (Cal State LA location directory), not somewhere classes happen.",
+    "health-center": "The Student Health Center is a clinic (building 14 on the campus map), not somewhere classes happen.",
+    "career-center": "The Career Center (building 17 on the campus map) is a student-services office, not somewhere classes happen."
+  }
+}

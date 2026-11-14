@@ -1,0 +1,16 @@
+{
+  "collegeId": "ucsb",
+  "area": {
+    "osm": "relation/12409275",
+    "bbox": [
+      34.40473,
+      -119.88511,
+      34.42439,
+      -119.83606
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No current public code list: the Registrar site (registrar.sa.ucsb.edu) publishes none, the campus map (www.map.ucsb.edu, a Concept3D map) offers no downloadable building list, and the only list found is a 2010 copy of an old Registrar page (checked 2026-11-08)."
+}

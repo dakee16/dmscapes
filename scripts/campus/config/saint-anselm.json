@@ -1,0 +1,16 @@
+{
+  "collegeId": "saint-anselm",
+  "area": {
+    "osm": "way/862891495",
+    "bbox": [
+      42.97948,
+      -71.51406,
+      42.98959,
+      -71.49738
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Saint Anselm publishes no building-code list: its online catalog (catalog.anselm.edu) and the Student Handbook PDFs on anselm.edu name classrooms by building and room number (Poisson Hall 104, Dana Center 1D) (checked 2026-11-08)."
+}

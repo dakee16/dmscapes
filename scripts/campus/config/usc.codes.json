@@ -1,0 +1,879 @@
+{
+ "name": "USC Facilities Planning and Management, University Park Campus base map building index (code, number, name, grid), January 16, 2026",
+ "url": "https://fpm.usc.edu/wp-content/uploads/2026/01/UPC_BaseMapGrid_36x48_20260116.pdf",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "ABA",
+   "name": "ANNA BING ARNOLD CHILD CARE CENTER"
+  },
+  {
+   "code": "ABM",
+   "name": "AMERICAN BUTTON MANUFACTURING"
+  },
+  {
+   "code": "ABX",
+   "name": "ANNA BING ARNOLD CHILD CARE CENTER ANNEX"
+  },
+  {
+   "code": "ACB",
+   "name": "AHMANSON CENTER FOR BIOLOGICAL RESEARCH"
+  },
+  {
+   "code": "ACC",
+   "name": "ELAINE & KENNETH LEVENTHAL SCHOOL OF ACCOUNTING"
+  },
+  {
+   "code": "ACX",
+   "name": "AHMANSON CENTER FOR BIOLOGICAL RESEARCH ANIMAL SECTION"
+  },
+  {
+   "code": "ADM",
+   "name": "GEORGE FINLEY BOVARD ADMINISTRATION BUILDING & KENNETH NORRIS JR. AUDITORIUM"
+  },
+  {
+   "code": "ADX",
+   "name": "ALPHA DELTA CHI HOUSE"
+  },
+  {
+   "code": "AES",
+   "name": "ALICE AND ELEONORE SCHOENFELD SYMPHONIC HALL"
+  },
+  {
+   "code": "AFF",
+   "name": "ALLYSON FELIX FIELD"
+  },
+  {
+   "code": "AHF",
+   "name": "ALLAN HANCOCK FOUNDATION"
+  },
+  {
+   "code": "AHN",
+   "name": "DOSAN AHN CHANG HO FAMILY HOUSE"
+  },
+  {
+   "code": "ALM",
+   "name": "WIDNEY ALUMNI HOUSE"
+  },
+  {
+   "code": "ANH",
+   "name": "ANNENBERG HOUSE"
+  },
+  {
+   "code": "ANN",
+   "name": "WALLIS ANNENBERG HALL"
+  },
+  {
+   "code": "ASC",
+   "name": "ANNENBERG SCHOOL FOR COMMUNICATION"
+  },
+  {
+   "code": "BAA",
+   "name": "BELAIRE APARTMENTS"
+  },
+  {
+   "code": "BDF",
+   "name": "JOHN G. BROOKS MEMORIAL PAVILION & DEDEAUX FIELD"
+  },
+  {
+   "code": "BFC",
+   "name": "RONALD H BLOOM FAMILY FOOTBALL PERFORMANCE CENTER"
+  },
+  {
+   "code": "BHE",
+   "name": "BIEGLER HALL OF ENGINEERING"
+  },
+  {
+   "code": "BIM",
+   "name": "BRITTINGHAM INTRAMURAL FIELD"
+  },
+  {
+   "code": "BIT",
+   "name": "BING THEATRE"
+  },
+  {
+   "code": "BKS",
+   "name": "PERTUSATI UNIVERSITY BOOKSTORE"
+  },
+  {
+   "code": "BMH",
+   "name": "MRS. WILLIS H. BOOTH FERRIS REHEARSAL HALL"
+  },
+  {
+   "code": "BRI",
+   "name": "BRIDGE MEMORIAL HALL"
+  },
+  {
+   "code": "BSR",
+   "name": "CECELE & MICHAEL BIRNKRANT RESIDENCE HALL"
+  },
+  {
+   "code": "CAL",
+   "name": "CAROLE LITTLE BUILDING"
+  },
+  {
+   "code": "CAO",
+   "name": "CENTURY APARTMENTS OFFICE BUILDING"
+  },
+  {
+   "code": "CAP",
+   "name": "CENTURY APARTMENTS"
+  },
+  {
+   "code": "CAR",
+   "name": "CARDINAL GARDENS"
+  },
+  {
+   "code": "CAS",
+   "name": "COLLEGE ACADEMIC SERVICES BUILDING"
+  },
+  {
+   "code": "CBG",
+   "name": "CBG-UNIVERSITY GARDENS APTS."
+  },
+  {
+   "code": "CDR",
+   "name": "CASA DE ROSAS"
+  },
+  {
+   "code": "CEM",
+   "name": "CENTER FOR ELECTRON MICROSCOPY AND MICROANALYSIS"
+  },
+  {
+   "code": "CEN",
+   "name": "CENTENNIAL APARTMENTS"
+  },
+  {
+   "code": "CIC",
+   "name": "JESSIE & CHARLES CALE AND RAY IRANI RESIDENTIAL COLLEGE"
+  },
+  {
+   "code": "CLH",
+   "name": "COLLEGE HOUSE"
+  },
+  {
+   "code": "CLS",
+   "name": "LOS ANGELES MEMORIAL COLISEUM"
+  },
+  {
+   "code": "CNG",
+   "name": "CARDINAL 'N' GOLD"
+  },
+  {
+   "code": "COH",
+   "name": "COCKINS HOUSE"
+  },
+  {
+   "code": "COL",
+   "name": "COLLEGE RESIDENCE HALL"
+  },
+  {
+   "code": "CRC",
+   "name": "A.C. ALLEN COWLINGS AND ILLIUM RESIDENTIAL COLLEGE"
+  },
+  {
+   "code": "CTF",
+   "name": "COLICH TRACK & FIELD CENTER"
+  },
+  {
+   "code": "CTV",
+   "name": "CARSON TELEVISION CENTER"
+  },
+  {
+   "code": "CUB",
+   "name": "USC CREDIT UNION BUILDING"
+  },
+  {
+   "code": "DAB",
+   "name": "DRAMATIC ARTS BUILDING"
+  },
+  {
+   "code": "DCC",
+   "name": "CHARLOTTE S. & DAVRER. DAVIDSON CONTINUENCE CENTERING EDUCATION CONFER"
+  },
+  {
+   "code": "DEN",
+   "name": "EILEEN & KENNETH T. NORRIS DENTAL SCIENCE CENTER"
+  },
+  {
+   "code": "DMC",
+   "name": "JOHN MEDICINE CROW CENTER FOR PUBLIC AND INTERNATIONAL AFFAIRS"
+  },
+  {
+   "code": "DML",
+   "name": "EDWARD L. DOHENY JR. MEMORIAL LIBRARY"
+  },
+  {
+   "code": "DMT",
+   "name": "DAVID X. MARKS TOWER"
+  },
+  {
+   "code": "DMV",
+   "name": "DEPARTMENT OF MOTOR VEHICLES"
+  },
+  {
+   "code": "DNI",
+   "name": "DORNSIFE NEUROSCIENCE IMAGING CENTER"
+  },
+  {
+   "code": "DRB",
+   "name": "CORWIN D. DENNEY RESEARCH CENTER"
+  },
+  {
+   "code": "ECT",
+   "name": "EARLY CHILDHOOD TRAINING CENTER"
+  },
+  {
+   "code": "EEB",
+   "name": "HUGHES AIRCRAFT ELECTRICAL ENGINEERING CENTER"
+  },
+  {
+   "code": "EGG",
+   "name": "EGG COMPANY II"
+  },
+  {
+   "code": "ELB",
+   "name": "EAST LIBRARY BUILDING"
+  },
+  {
+   "code": "EPS",
+   "name": "FIGUEROA STREET STRUCTURE"
+  },
+  {
+   "code": "ESH",
+   "name": "ROGER AND MICHELE DEDEAUX ENGEMANN STUDENT HEALTH CENTER"
+  },
+  {
+   "code": "EVA",
+   "name": "UNIVERSITY PARK ELECTRICAL VAULT A"
+  },
+  {
+   "code": "EVB",
+   "name": "UNIVERSITY PARK ELECTRICAL VAULT B"
+  },
+  {
+   "code": "EVK",
+   "name": "ELISABETH VON KLEINSMID MEMORIAL RESIDENCE HALL"
+  },
+  {
+   "code": "FIG",
+   "name": "FIGUEROA BUILDING"
+  },
+  {
+   "code": "FMH",
+   "name": "FORTHMANN HOUSE"
+  },
+  {
+   "code": "FMT",
+   "name": "FAIRMONT APARTMENT"
+  },
+  {
+   "code": "FPM",
+   "name": "USC FACILITIES PLANNING AND MANAGEMENT"
+  },
+  {
+   "code": "FSA",
+   "name": "FOUNDERS APARTMENTS"
+  },
+  {
+   "code": "FTO",
+   "name": "FACILITIES TRAILER ONE"
+  },
+  {
+   "code": "GAP",
+   "name": "GALEN ATHLETIC PAVILION"
+  },
+  {
+   "code": "GCS",
+   "name": "DR. ALLEN AND CHARLOTTE GINSBURG HUMAN-CENTERED COMPUTATION HALL"
+  },
+  {
+   "code": "GEC",
+   "name": "GALEN EVENT CENTER"
+  },
+  {
+   "code": "GEH",
+   "name": "MAX KADE CENTER 1"
+  },
+  {
+   "code": "GER",
+   "name": "ETHEL PERCY ANDRUS GERONTOLOGY CENTER"
+  },
+  {
+   "code": "GEX",
+   "name": "MAX KADE CENTER 2"
+  },
+  {
+   "code": "GFS",
+   "name": "GRACE FORD SALVATORI HALL OF LETTERS, ARTS & SCIENCES"
+  },
+  {
+   "code": "GPC",
+   "name": "GOLF PRACTICE COURSE"
+  },
+  {
+   "code": "GTT",
+   "name": "GALEN CENTER TILLY TOWER"
+  },
+  {
+   "code": "HAP",
+   "name": "HELENA APARTMENTS"
+  },
+  {
+   "code": "HAR",
+   "name": "MAY ORMEROD HARRIS HALL, QUINN WING & FISHER GALLERY"
+  },
+  {
+   "code": "HED",
+   "name": "HEDCO PETROLEUM & CHEMICAL ENGINEERING BUILDING"
+  },
+  {
+   "code": "HER",
+   "name": "HERITAGE HALL"
+  },
+  {
+   "code": "HHR",
+   "name": "HONOR'S HOUSE RESIDENCE"
+  },
+  {
+   "code": "HIL",
+   "name": "HILLVIEW APARTMENTS"
+  },
+  {
+   "code": "HNB",
+   "name": "HEDCO NEUROSCIENCES BUILDING"
+  },
+  {
+   "code": "HOH",
+   "name": "H. LESLIE HOFFMAN HALL OF BUSINESS ADMINISTRATION"
+  },
+  {
+   "code": "HRH",
+   "name": "MAY ORMEROD HARRIS RESIDENCE HALL"
+  },
+  {
+   "code": "HSH",
+   "name": "HAZEL & STANLEY HALL FINANCIAL SERVICES BUILDING"
+  },
+  {
+   "code": "HUC",
+   "name": "HEBREW UNION COLLEGE"
+  },
+  {
+   "code": "IFT",
+   "name": "ICKOVICS FAMILY TRUST BUILDING"
+  },
+  {
+   "code": "IRC",
+   "name": "INTERNATIONALLY THEMED RESIDENTIAL COLLEGE"
+  },
+  {
+   "code": "IYH",
+   "name": "USC JIMMY IOVINE AND ANDRE YOUNG HALL"
+  },
+  {
+   "code": "JEF",
+   "name": "JEFFERSON BUILDING"
+  },
+  {
+   "code": "JEP",
+   "name": "JOINT EDUCATIONAL PROJECT HOUSE"
+  },
+  {
+   "code": "JFF",
+   "name": "JILL AND FRANK FERTITTA HALL"
+  },
+  {
+   "code": "JWS",
+   "name": "JOHN WILLIAMS SCORING STAGE"
+  },
+  {
+   "code": "KAP",
+   "name": "KAPRIELIAN HALL"
+  },
+  {
+   "code": "KCH",
+   "name": "KERCKHOFF CARRIAGE HOUSE"
+  },
+  {
+   "code": "KDC",
+   "name": "GLORYA KAUFMAN INTERNATIONAL DANCE CENTER"
+  },
+  {
+   "code": "KER",
+   "name": "KERCKHOFF HALL"
+  },
+  {
+   "code": "KOH",
+   "name": "FRANK L. KING OLYMPIC HALL OF CHAMPIONS"
+  },
+  {
+   "code": "KSH",
+   "name": "UNIVERSITY CLUB AT KING STOOPS HALL"
+  },
+  {
+   "code": "LAB",
+   "name": "LA SORBONNE APARTMENTS"
+  },
+  {
+   "code": "LAW",
+   "name": "ELVON & MABEL MUSICK LAW BUILDING (CENTER)"
+  },
+  {
+   "code": "LHI",
+   "name": "DONALD P. & KATHERINE B. LOKER HYDROCARBON INSTITUTE"
+  },
+  {
+   "code": "LJS",
+   "name": "LAIRD J. STABLER MEMORIAL HALL"
+  },
+  {
+   "code": "LRC",
+   "name": "GENERAL WILLIAM LYON UNIVERSITY CENTER"
+  },
+  {
+   "code": "LTS",
+   "name": "KATHERINE B. LOKER TRACK STADIUM"
+  },
+  {
+   "code": "LVL",
+   "name": "THOMAS & DOROTHY LEAVEY LIBRARY"
+  },
+  {
+   "code": "MAB",
+   "name": "MANOR APARTMENTS"
+  },
+  {
+   "code": "MBC",
+   "name": "MACDONALD BECKET CENTER"
+  },
+  {
+   "code": "MCB",
+   "name": "MICHELSON CENTER FOR CONVERGENT BIOSCIENCE"
+  },
+  {
+   "code": "MCC",
+   "name": "MCCLINTOCK BUILDING"
+  },
+  {
+   "code": "MCK",
+   "name": "MCCLINTOCK APARTMENTS BUILDING TWO"
+  },
+  {
+   "code": "MCO",
+   "name": "MCCLINTOCK APARTMENTS BUILDING ONE"
+  },
+  {
+   "code": "MCT",
+   "name": "MCCULLOCH TOWNHOMES"
+  },
+  {
+   "code": "MES",
+   "name": "JOHN MACK ELEMENTARY SCHOOL"
+  },
+  {
+   "code": "MHC",
+   "name": "THE KATHLEEN L. MCCARTHY HONORS COLLEGE"
+  },
+  {
+   "code": "MHP",
+   "name": "SEELEY WINTERSMITH MUDD MEMORIAL HALL (OF PHILOSOPHY)"
+  },
+  {
+   "code": "MNS",
+   "name": "MERLE NORMAN STADIUM"
+  },
+  {
+   "code": "MRC",
+   "name": "PRIAM RESIDENTIAL COLLEGE"
+  },
+  {
+   "code": "MRF",
+   "name": "MONTGOMERY ROSS FISHER BUILDING (SCHOOL OF SOCIAL WORK)"
+  },
+  {
+   "code": "MTS",
+   "name": "DAVID X. MARKS TENNIS STADIUM"
+  },
+  {
+   "code": "MTX",
+   "name": "MARKS TENNIS STADIUM (COURT AREA)"
+  },
+  {
+   "code": "MUS",
+   "name": "ALBERT S. RAUBENHEIMER MUSIC FACULTY MEMORIAL BUILDING"
+  },
+  {
+   "code": "NBC",
+   "name": "SHELLY & OFER NEMIROVSKY AND DAVID C. BOHNETT RESIDENTIAL COLLEGE"
+  },
+  {
+   "code": "NCT",
+   "name": "EILEEN L. NORRIS CINEMA THEATRE"
+  },
+  {
+   "code": "NSC",
+   "name": "NEWSTORY CHURCH"
+  },
+  {
+   "code": "OCW",
+   "name": "HAROLD E. AND LILLIAN M. MOULTON ORGANIC CHEMISTRY WING"
+  },
+  {
+   "code": "OHE",
+   "name": "OLIN HALL OF ENGINEERING"
+  },
+  {
+   "code": "ONE",
+   "name": "ONE INSTITUTE"
+  },
+  {
+   "code": "OSP",
+   "name": "OUR SAVIOR PARISH & USC CARUSO CATHOLIC CENTER"
+  },
+  {
+   "code": "PCA",
+   "name": "PACIFIC APARTMENTS"
+  },
+  {
+   "code": "PCE",
+   "name": "JERRY & NANCY NEELY PETROLEUM & CHEMICAL ENGINEERING BUILDING"
+  },
+  {
+   "code": "PED",
+   "name": "PHYSICAL EDUCATION BUILDING"
+  },
+  {
+   "code": "PHE",
+   "name": "CHARLES LEE POWELL HALL"
+  },
+  {
+   "code": "PKS",
+   "name": "PARKSIDE APARTMENTS I"
+  },
+  {
+   "code": "PRB",
+   "name": "PARKSIDE RESIDENTIAL BUILDING"
+  },
+  {
+   "code": "PSA",
+   "name": "DOWNEY WAY STRUCTURE"
+  },
+  {
+   "code": "PSB",
+   "name": "JEFFERSON BOULEVARD STRUCTURE"
+  },
+  {
+   "code": "PSD",
+   "name": "ROYAL STREET STRUCTURE"
+  },
+  {
+   "code": "PSO",
+   "name": "FLOWER STREET STRUCTURE"
+  },
+  {
+   "code": "PSX",
+   "name": "MCCARTHY WAY STRUCTURE"
+  },
+  {
+   "code": "PTD",
+   "name": "MARIANNE & J.DOUGLAS PARDEE TOWER"
+  },
+  {
+   "code": "RAN",
+   "name": "HOFFMAN CONTRACTS RESEARCH BUILDING"
+  },
+  {
+   "code": "RGA",
+   "name": "REGENT APARTMENTS"
+  },
+  {
+   "code": "RGL",
+   "name": "RALPH AND GOLDY LEWIS HALL"
+  },
+  {
+   "code": "RHM",
+   "name": "VIRGINIA RAMO HALL OF MUSIC"
+  },
+  {
+   "code": "RRB",
+   "name": "ROBERT GLEN RAPP ENGINEERING RESEARCH BUILDING"
+  },
+  {
+   "code": "RRI",
+   "name": "RAY R. IRANI HALL"
+  },
+  {
+   "code": "RTA",
+   "name": "REGAL TROJAN APARTMENTS"
+  },
+  {
+   "code": "RTH",
+   "name": "RONALD TUTOR HALL OF ENGINEERING"
+  },
+  {
+   "code": "RWS",
+   "name": "RAWLINSON STADIUM"
+  },
+  {
+   "code": "RYL",
+   "name": "ROYAL STREET"
+  },
+  {
+   "code": "RZC",
+   "name": "ROBERT ZEMECKIS CENTER FOR DIGITAL ARTS"
+  },
+  {
+   "code": "SAI",
+   "name": "STARDUST APARTMENTS"
+  },
+  {
+   "code": "SAL",
+   "name": "HENRY SALVATORI COMPUTER SCIENCE CENTER"
+  },
+  {
+   "code": "SCA",
+   "name": "SCHOOL OF CINEMATIC ARTS"
+  },
+  {
+   "code": "SCB",
+   "name": "SCHOOL OF CINEMATIC ARTS-BUILDING B"
+  },
+  {
+   "code": "SCC",
+   "name": "SCHOOL OF CINEMATIC ARTS-BUILDING C"
+  },
+  {
+   "code": "SCD",
+   "name": "SCENE DOCK THEATRE"
+  },
+  {
+   "code": "SCE",
+   "name": "SCHOOL OF CINEMATIC ARTS-BUILDING E"
+  },
+  {
+   "code": "SCI",
+   "name": "SCHOOL OF CINEMATIC ARTS BUILDING I"
+  },
+  {
+   "code": "SCS",
+   "name": "USC SCHOOL OF CINEMATIC ARTS STATION"
+  },
+  {
+   "code": "SCX",
+   "name": "SCHOOL OF CINEMATIC ARTS-BUILDING D"
+  },
+  {
+   "code": "SGA",
+   "name": "SEVEN GABLES APARTMENTS"
+  },
+  {
+   "code": "SGM",
+   "name": "SEELEY G. MUDD BUILDING"
+  },
+  {
+   "code": "SHP",
+   "name": "SHRINE PARKING STRUCTURE"
+  },
+  {
+   "code": "SHR",
+   "name": "SHRINE AUDITORIUM"
+  },
+  {
+   "code": "SHS",
+   "name": "JOHN STAUFFER HALL OF SCIENCE"
+  },
+  {
+   "code": "SIE",
+   "name": "SIERRA APARTMENTS"
+  },
+  {
+   "code": "SKS",
+   "name": "STEVEN & KATHRYN SAMPLE HALL"
+  },
+  {
+   "code": "SLH",
+   "name": "JOHN STAUFFER SCIENCE LECTURE HALL"
+  },
+  {
+   "code": "SNA",
+   "name": "SENATOR APARTMENTS"
+  },
+  {
+   "code": "SOS",
+   "name": "SOCIAL SCIENCES BUILDING"
+  },
+  {
+   "code": "SPA",
+   "name": "SHRINE PLACE APARTMENTS"
+  },
+  {
+   "code": "SSA",
+   "name": "SEVERANCE STREET APARTMENTS"
+  },
+  {
+   "code": "SSC",
+   "name": "FRANK R. SEAVER SCIENCE CENTER"
+  },
+  {
+   "code": "SSH",
+   "name": "SEVERANCE STREET HOUSE"
+  },
+  {
+   "code": "SSL",
+   "name": "SEAVER SCIENCE LIBRARY"
+  },
+  {
+   "code": "STO",
+   "name": "STONIER HALL"
+  },
+  {
+   "code": "STU",
+   "name": "GWYNN WILSON STUDENT UNION"
+  },
+  {
+   "code": "SUN",
+   "name": "SUNSET APARTMENTS"
+  },
+  {
+   "code": "SWC",
+   "name": "SOCIAL WORK CENTER"
+  },
+  {
+   "code": "TAP",
+   "name": "TROYLAND APARTMENTS"
+  },
+  {
+   "code": "TCC",
+   "name": "RONALD TUTOR CAMPUS CENTER"
+  },
+  {
+   "code": "TES",
+   "name": "THERMAL ENERGY STORAGE TANK"
+  },
+  {
+   "code": "TGF",
+   "name": "TOWN & GOWN"
+  },
+  {
+   "code": "THH",
+   "name": "MARK TAPER HALL OF HUMANITIES"
+  },
+  {
+   "code": "TMC",
+   "name": "THE MUSIC COMPLEX"
+  },
+  {
+   "code": "TMY",
+   "name": "TRANSPORTATION SERVICES MAINTENANCE YARD"
+  },
+  {
+   "code": "TPA",
+   "name": "TWIN PALMS APARTMENTS"
+  },
+  {
+   "code": "TRF",
+   "name": "TEMPORARY RESEARCH FACILITY-DORNSIFE"
+  },
+  {
+   "code": "TRH",
+   "name": "TROY HALL"
+  },
+  {
+   "code": "TSA",
+   "name": "TERRACE APARTMENTS"
+  },
+  {
+   "code": "TSH",
+   "name": "THIRTIETH STREET HOUSE"
+  },
+  {
+   "code": "TST",
+   "name": "THIRTIETH STREET HOUSE TWO"
+  },
+  {
+   "code": "TTL",
+   "name": "TECHNICAL THEATRE LABORATORY"
+  },
+  {
+   "code": "TYL",
+   "name": "JOHN & ALICE TYLER BUILDING"
+  },
+  {
+   "code": "UAC",
+   "name": "UYTENGSU AQUATICS CENTER"
+  },
+  {
+   "code": "UGB",
+   "name": "UNIVERSITY GARDENS BUILDING"
+  },
+  {
+   "code": "UGW",
+   "name": "UNIVERSITY GATEWAY"
+  },
+  {
+   "code": "UHR",
+   "name": "USC RESTAURANT"
+  },
+  {
+   "code": "UPV",
+   "name": "UNIVERSITY PARK TELEPHONE VAULT"
+  },
+  {
+   "code": "UPX",
+   "name": "GRAND AVENUE STRUCTURE"
+  },
+  {
+   "code": "URA",
+   "name": "UNIVERSITY REGENT APARTMENTS"
+  },
+  {
+   "code": "URC",
+   "name": "UNIVERSITY RELIGIOUS CENTER"
+  },
+  {
+   "code": "VES",
+   "name": "VERMONT ELEMENTARY SCHOOL (ECE)"
+  },
+  {
+   "code": "VFS",
+   "name": "VITERBI FLOWER STREET BUILDING"
+  },
+  {
+   "code": "VHE",
+   "name": "VIVIAN HALL OF ENGINEERING"
+  },
+  {
+   "code": "VIS",
+   "name": "VISTA APARTMENTS"
+  },
+  {
+   "code": "VPD",
+   "name": "VERNA & PETER DAUTERIVE HALL"
+  },
+  {
+   "code": "WAH",
+   "name": "RAY & NADINE WATT HALL OF ARCHITECTURE & FINE ARTS"
+  },
+  {
+   "code": "WIN",
+   "name": "WINDSOR APARTMENTS"
+  },
+  {
+   "code": "WPH",
+   "name": "WAITE PHILLIPS HALL OF EDUCATION"
+  },
+  {
+   "code": "WTO",
+   "name": "WEBB TOWER"
+  },
+  {
+   "code": "ZHS",
+   "name": "JAMES H. ZUMBERGE HALL OF SCIENCE"
+  },
+  {
+   "code": "ZMT",
+   "name": "ZONE MANAGEMENT TRAILER"
+  }
+ ]
+}

@@ -1,0 +1,607 @@
+{
+ "name": "NC State Facilities building pages, 'Building Abbreviation' (every precinct; read from the site's building listing, facilities.ofa.ncsu.edu/wp-json/wp/v2/building)",
+ "url": "https://facilities.ofa.ncsu.edu/precinct/north/",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "AEX",
+   "name": "Alexander Residence Hall"
+  },
+  {
+   "code": "AFC",
+   "name": "Avent Ferry Residence Hall Complex"
+  },
+  {
+   "code": "AFH",
+   "name": "Avent Ferry Technology Center"
+  },
+  {
+   "code": "ALC",
+   "name": "Dorothy and Roy Park Alumni Center"
+  },
+  {
+   "code": "AS1",
+   "name": "Administrative Services I"
+  },
+  {
+   "code": "AS2",
+   "name": "Administrative Services II"
+  },
+  {
+   "code": "AS3",
+   "name": "Administrative Services III"
+  },
+  {
+   "code": "AZH",
+   "name": "Bobby G. Wilder Visitor Center"
+  },
+  {
+   "code": "BAG",
+   "name": "Bagwell Residence Hall"
+  },
+  {
+   "code": "BEC",
+   "name": "Becton Residence Hall"
+  },
+  {
+   "code": "BER",
+   "name": "Berry Residence Hall"
+  },
+  {
+   "code": "BH2",
+   "name": "4101 Beryl Road"
+  },
+  {
+   "code": "BI",
+   "name": "Biltmore Hall (Robertson Wing)"
+  },
+  {
+   "code": "BM",
+   "name": "Bureau of Mines"
+  },
+  {
+   "code": "BOS",
+   "name": "Bostian Hall"
+  },
+  {
+   "code": "BOW",
+   "name": "Bowen Residence Hall"
+  },
+  {
+   "code": "BR",
+   "name": "Broughton Hall"
+  },
+  {
+   "code": "BRA",
+   "name": "Bragaw Residence Hall"
+  },
+  {
+   "code": "BRC",
+   "name": "Biological Resources Facility"
+  },
+  {
+   "code": "BS",
+   "name": "Brooks Hall"
+  },
+  {
+   "code": "BTC",
+   "name": "BTEC \u2013 Golden LEAF Biomanufacturing Training and Education Center"
+  },
+  {
+   "code": "BU",
+   "name": "Burlington Laboratory"
+  },
+  {
+   "code": "BUT",
+   "name": "Butler Communications Building"
+  },
+  {
+   "code": "CAC",
+   "name": "Case Academic Center"
+  },
+  {
+   "code": "CAL",
+   "name": "Caldwell Hall"
+  },
+  {
+   "code": "CAP",
+   "name": "Cates Avenue Steam Plant"
+  },
+  {
+   "code": "CAR",
+   "name": "Carroll Residence Hall"
+  },
+  {
+   "code": "CF1",
+   "name": "Carter-Finley Stadium \u2013 North End Zone"
+  },
+  {
+   "code": "CG",
+   "name": "Carmichael Gymnasium"
+  },
+  {
+   "code": "CGA",
+   "name": "Carmichael Recreation Center"
+  },
+  {
+   "code": "CH",
+   "name": "Clark Hall"
+  },
+  {
+   "code": "CHB",
+   "name": "Cherry Building"
+  },
+  {
+   "code": "CHC",
+   "name": "Campus Health Center"
+  },
+  {
+   "code": "COL",
+   "name": "Reynolds Coliseum"
+  },
+  {
+   "code": "COX",
+   "name": "Cox Hall"
+  },
+  {
+   "code": "CRA",
+   "name": "CVM Research Building"
+  },
+  {
+   "code": "CTP",
+   "name": "Centennial Campus Central Utility Plant (CCUP)"
+  },
+  {
+   "code": "DAB",
+   "name": "Dabney Hall"
+  },
+  {
+   "code": "DCL",
+   "name": "David Clark Labs"
+  },
+  {
+   "code": "DEA",
+   "name": "Dearstyne Avian Health Center"
+  },
+  {
+   "code": "DHL",
+   "name": "D.H. Hill Jr. Library (East Wing)"
+  },
+  {
+   "code": "DIN",
+   "name": "Fountain Dining Hall"
+  },
+  {
+   "code": "DSW",
+   "name": "D.S. Weaver Labs"
+  },
+  {
+   "code": "EB3",
+   "name": "Engineering Building III"
+  },
+  {
+   "code": "EC",
+   "name": "D.H. Hill Jr. Library (Erdahl-Cloyd West Wing)"
+  },
+  {
+   "code": "EHS",
+   "name": "Environmental Health and Safety Center"
+  },
+  {
+   "code": "ERC",
+   "name": "Constructed Facilities Lab"
+  },
+  {
+   "code": "FHD",
+   "name": "Doak Field \u2013 Field House and Seats"
+  },
+  {
+   "code": "FIW",
+   "name": "Friday Institute"
+  },
+  {
+   "code": "FOX",
+   "name": "Fox Science Teaching Laboratory"
+  },
+  {
+   "code": "FSF",
+   "name": "Fleet Services Facility"
+  },
+  {
+   "code": "FWH",
+   "name": "Fitts-Woolard Hall"
+  },
+  {
+   "code": "GA",
+   "name": "Gardner Hall"
+  },
+  {
+   "code": "GC2",
+   "name": "Carol Johnson Poole Clubhouse"
+  },
+  {
+   "code": "GOL",
+   "name": "Gold Residence Hall"
+  },
+  {
+   "code": "GRL",
+   "name": "Grinnells Lab"
+  },
+  {
+   "code": "GRM",
+   "name": "Gregg Museum of Art and Design"
+  },
+  {
+   "code": "HH",
+   "name": "Holmes Hall"
+  },
+  {
+   "code": "HLB",
+   "name": "Hillsborough Building"
+  },
+  {
+   "code": "HOL",
+   "name": "Holladay Hall"
+  },
+  {
+   "code": "HRH",
+   "name": "Harris Hall"
+  },
+  {
+   "code": "HWP",
+   "name": "Hodges Wood Products"
+  },
+  {
+   "code": "IPF",
+   "name": "Close-King Indoor Practice Facility"
+  },
+  {
+   "code": "JHA",
+   "name": "Jordan Hall Addition"
+  },
+  {
+   "code": "JHL",
+   "name": "James B. Hunt Jr. Centennial Campus Library"
+  },
+  {
+   "code": "JOR",
+   "name": "Jordan Hall"
+  },
+  {
+   "code": "JVC",
+   "name": "Joyner Visitor Center"
+  },
+  {
+   "code": "JWT",
+   "name": "J.W. Isenhour Tennis Center"
+  },
+  {
+   "code": "KAM",
+   "name": "Kamphoefner Hall"
+  },
+  {
+   "code": "KCH",
+   "name": "Koch Hall"
+  },
+  {
+   "code": "KI",
+   "name": "Kilgore Hall"
+  },
+  {
+   "code": "KS1",
+   "name": "Keystone Science Center"
+  },
+  {
+   "code": "KVR",
+   "name": "E.S. King Village Commons"
+  },
+  {
+   "code": "LAU",
+   "name": "Language and Computer Laboratories"
+  },
+  {
+   "code": "LEE",
+   "name": "Lee Residence Hall"
+  },
+  {
+   "code": "LEZ",
+   "name": "Leazar Hall"
+  },
+  {
+   "code": "LMP",
+   "name": "111 Lampe Drive"
+  },
+  {
+   "code": "MAE",
+   "name": "Mechanical and Aerospace Engineering Lab (MAE Lab)"
+  },
+  {
+   "code": "MBT",
+   "name": "Memorial Belltower"
+  },
+  {
+   "code": "MCK",
+   "name": "McKimmon Conference and Training Center"
+  },
+  {
+   "code": "MET",
+   "name": "Metcalf Residence Hall"
+  },
+  {
+   "code": "MN",
+   "name": "Mann Hall"
+  },
+  {
+   "code": "MRC",
+   "name": "Monteith Engineering Research Center"
+  },
+  {
+   "code": "N",
+   "name": "Nelson Hall"
+  },
+  {
+   "code": "NIN",
+   "name": "1911 Building"
+  },
+  {
+   "code": "NOR",
+   "name": "North Residence Hall"
+  },
+  {
+   "code": "OWN",
+   "name": "Owen Residence Hall"
+  },
+  {
+   "code": "PA",
+   "name": "Page Hall"
+  },
+  {
+   "code": "PCR",
+   "name": "The Point \u2013 Chancellor\u2019s Residence"
+  },
+  {
+   "code": "PH",
+   "name": "Peele Hall"
+  },
+  {
+   "code": "PHY",
+   "name": "Phytotron"
+  },
+  {
+   "code": "PIC",
+   "name": "Poulton Innovation Center"
+  },
+  {
+   "code": "PK",
+   "name": "Polk Hall"
+  },
+  {
+   "code": "PLX",
+   "name": "Pylon 10"
+  },
+  {
+   "code": "PMC",
+   "name": "Price Music Center"
+  },
+  {
+   "code": "POE",
+   "name": "Poe Hall"
+  },
+  {
+   "code": "PRI",
+   "name": "Primrose Hall"
+  },
+  {
+   "code": "PS",
+   "name": "Park Shops"
+  },
+  {
+   "code": "PSB",
+   "name": "Plant Sciences Building"
+  },
+  {
+   "code": "PSC",
+   "name": "Public Safety Center"
+  },
+  {
+   "code": "PT",
+   "name": "Patterson Hall"
+  },
+  {
+   "code": "PT1",
+   "name": "Partners Building I"
+  },
+  {
+   "code": "PT2",
+   "name": "Partners Building II"
+  },
+  {
+   "code": "PT3",
+   "name": "Partners Building III"
+  },
+  {
+   "code": "PUL",
+   "name": "Pullen Hall"
+  },
+  {
+   "code": "QC",
+   "name": "Quad Commons"
+  },
+  {
+   "code": "RB1",
+   "name": "Research Building I"
+  },
+  {
+   "code": "RD",
+   "name": "Riddick Hall"
+  },
+  {
+   "code": "RE2",
+   "name": "Research Building II"
+  },
+  {
+   "code": "RE3",
+   "name": "Research Building III"
+  },
+  {
+   "code": "RE4",
+   "name": "Research Building IV"
+  },
+  {
+   "code": "RI",
+   "name": "Ricks Hall"
+  },
+  {
+   "code": "RME",
+   "name": "Ruby McSwain Education Center"
+  },
+  {
+   "code": "SAS",
+   "name": "SAS Hall"
+  },
+  {
+   "code": "SC",
+   "name": "Scott Hall"
+  },
+  {
+   "code": "SFS",
+   "name": "Schaub Food Science Building"
+  },
+  {
+   "code": "SOH",
+   "name": "Solar House"
+  },
+  {
+   "code": "SS1",
+   "name": "Sullivan Shops Building I"
+  },
+  {
+   "code": "SS2",
+   "name": "Sullivan Shops Building II"
+  },
+  {
+   "code": "SS3",
+   "name": "Sullivan Shops Building III"
+  },
+  {
+   "code": "SUL",
+   "name": "Sullivan Residence Hall"
+  },
+  {
+   "code": "SYM",
+   "name": "Syme Residence Hall"
+  },
+  {
+   "code": "T",
+   "name": "Tompkins Hall"
+  },
+  {
+   "code": "TAC",
+   "name": "Terry Companion Vet Med Center"
+  },
+  {
+   "code": "TEX",
+   "name": "Textiles Complex"
+  },
+  {
+   "code": "THM",
+   "name": "Thomas Hall"
+  },
+  {
+   "code": "TOX",
+   "name": "Toxicology Building"
+  },
+  {
+   "code": "TPS",
+   "name": "Frank Thompson Hall"
+  },
+  {
+   "code": "TSU",
+   "name": "Talley Student Union"
+  },
+  {
+   "code": "TUC",
+   "name": "Tucker Residence Hall"
+  },
+  {
+   "code": "TUR",
+   "name": "Turlington Residence Hall"
+  },
+  {
+   "code": "VET",
+   "name": "CVM Main Building"
+  },
+  {
+   "code": "VRB",
+   "name": "Varsity Research Building"
+  },
+  {
+   "code": "WAT",
+   "name": "Watauga Residence Hall"
+  },
+  {
+   "code": "WB",
+   "name": "Weisiger-Brown Athletic Facility"
+  },
+  {
+   "code": "WBS",
+   "name": "Western Blvd. Business Service"
+  },
+  {
+   "code": "WCP",
+   "name": "West Chiller Plant"
+  },
+  {
+   "code": "WD1",
+   "name": "Wood Residence Hall Buildings"
+  },
+  {
+   "code": "WDB",
+   "name": "West Dunn Building"
+  },
+  {
+   "code": "WEL",
+   "name": "Welch Residence Hall"
+  },
+  {
+   "code": "WI",
+   "name": "Withers Hall"
+  },
+  {
+   "code": "WMF",
+   "name": "Wendell H. Murphy Football Center"
+  },
+  {
+   "code": "WMS",
+   "name": "Williams Hall"
+  },
+  {
+   "code": "WN",
+   "name": "Winston Hall"
+  },
+  {
+   "code": "WR1",
+   "name": "Wolf Ridge Apartments"
+  },
+  {
+   "code": "WSC",
+   "name": "Witherspoon Student Center"
+  },
+  {
+   "code": "WSL",
+   "name": "Winslow Hall"
+  },
+  {
+   "code": "WSP",
+   "name": "Dail Softball Stadium Pressbox and Seating"
+  },
+  {
+   "code": "WVA",
+   "name": "Wolf Village Apartment Buildings"
+  },
+  {
+   "code": "YDS",
+   "name": "Yarbrough Central Utility Plant (YCUP)"
+  }
+ ]
+}

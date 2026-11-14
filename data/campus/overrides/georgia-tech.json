@@ -1,0 +1,159 @@
+{
+  "halls": {
+    "bud-val-peterson": {
+      "pin": [
+        -84.406675,
+        33.78006
+      ]
+    },
+    "center-street-north": {
+      "pin": [
+        -84.402494,
+        33.780366
+      ]
+    },
+    "center-street-south": {
+      "pin": [
+        -84.401854,
+        33.779855
+      ]
+    },
+    "crecine": {
+      "pin": [
+        -84.403217,
+        33.780178
+      ]
+    },
+    "eighth-street-south": {
+      "pin": [
+        -84.4051,
+        33.779873
+      ]
+    },
+    "glc": {
+      "pin": [
+        -84.396684,
+        33.781752
+      ]
+    },
+    "goldin-house": {
+      "pin": [
+        -84.391395,
+        33.775313
+      ]
+    },
+    "stein-house": {
+      "pin": [
+        -84.391395,
+        33.775313
+      ]
+    },
+    "gray-house": {
+      "pin": [
+        -84.391596,
+        33.774861
+      ]
+    },
+    "hayes-house": {
+      "pin": [
+        -84.391596,
+        33.774861
+      ]
+    },
+    "zbar-apartments": {
+      "pin": [
+        -84.404846,
+        33.77756
+      ]
+    },
+    "north-avenue-east": {
+      "pin": [
+        -84.39085,
+        33.769421
+      ]
+    },
+    "north-avenue-north": {
+      "pin": [
+        -84.390915,
+        33.770548
+      ]
+    },
+    "north-avenue-south": {
+      "pin": [
+        -84.391828,
+        33.769392
+      ]
+    },
+    "north-avenue-west": {
+      "pin": [
+        -84.391821,
+        33.770491
+      ]
+    }
+  },
+  "notes": {
+    "bud-val-peterson": "OSM way/1451249433 'Bud and Val Peterson Residence Hall' (operator Georgia Tech, opening_date 2026-08-10) is still mapped as a construction site, not a building; pinned at its centre, beside 920 Curran St.",
+    "center-street-north": "OSM has two buildings named 'Center Street Apartments' (way/43330545 at 454 9th St and way/43330596); North is the northern one, way/43330545. The name rule had matched 'Eighth Street Apartments South'.",
+    "center-street-south": "The southern of OSM's two 'Center Street Apartments' buildings, way/43330596.",
+    "crecine": "OSM way/43330499 'John Patrick Crecine Apartments'.",
+    "eighth-street-south": "OSM way/42822878 'Eighth Street Apartments South' (535 8th St).",
+    "glc": "GLC is Georgia Tech's Graduate Living Center: OSM way/42795626 'Graduate Living Center' (307 10th St; the school file gives 301 10th St).",
+    "goldin-house": "OSM relation/3249305 'Jack C. Stein and Goldin Houses' (733 Techwood Dr), one building for both houses.",
+    "stein-house": "OSM relation/3249305 'Jack C. Stein and Goldin Houses' (733 Techwood Dr), one building for both houses.",
+    "gray-house": "OSM way/42706775 'Hayes and Gray Houses' (733 Techwood Dr), one building for both houses.",
+    "hayes-house": "OSM way/42706775 'Hayes and Gray Houses' (733 Techwood Dr), one building for both houses.",
+    "zbar-apartments": "OSM way/42825900 'Zbar Residence Hall' (501 6th St).",
+    "north-avenue-east": "OSM way/43891014 'North Avenue Apartments East'. The address rule had put all four North Avenue halls on the complex's gym (same 120 North Ave address).",
+    "north-avenue-north": "OSM relation/4041025 'North Avenue Apartments North'.",
+    "north-avenue-south": "OSM way/43890968 'North Avenue Apartments South'.",
+    "north-avenue-west": "OSM way/43890894 'North Avenue Apartments West'.",
+    "alpha-chi-omega": "A sorority house, not a class or dining building.",
+    "office-of-information-technology-planning-and-programming": "OIT's planning offices; no classes or meals.",
+    "georgia-tech-hotel-and-conference-center": "A hotel and conference centre, not a class or dining building.",
+    "west-village-dining-commons-516716114": "A second OSM footprint (way/516716114) of West Village Dining Commons; the place is way/516716115, the food court with code 209.",
+    "north-avenue-apartments-gym": "The North Avenue Apartments complex's own gym building, not a campus recreation centre."
+  },
+  "places": {
+    "alpha-chi-omega": {
+      "hide": true
+    },
+    "office-of-information-technology-planning-and-programming": {
+      "hide": true
+    },
+    "georgia-tech-hotel-and-conference-center": {
+      "hide": true
+    },
+    "west-village-dining-commons-516716114": {
+      "hide": true
+    },
+    "north-avenue-apartments-gym": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "perry -> global-learning-and-conference-center"
+      ],
+      "maxRatio": 3.5,
+      "why": "The Downtown Connector (I-75/85) runs between the Techwood halls and Tech Square; the walk crosses it on the Fifth Street bridge."
+    },
+    {
+      "pairs": [
+        "north-avenue-east -> north-avenue-dining-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "OSM maps no path from North Avenue East into the complex's courtyard, so the walk leaves by North Avenue and comes back in off Centennial Olympic Park Drive."
+    },
+    {
+      "pairs": [
+        "fitten -> west-village-dining-commons",
+        "center-street-south -> georgia-tech-research-institute-north-building",
+        "eighth-street-south -> institute-of-paper-science-and-technology",
+        "montag -> commander-building"
+      ],
+      "maxRatio": 3.5,
+      "why": "Buildings and parking fill the block on the straight line with no mapped path through, so walks go round by the streets and sidewalks."
+    }
+  ]
+}

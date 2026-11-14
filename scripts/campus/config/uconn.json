@@ -1,0 +1,24 @@
+{
+  "collegeId": "uconn",
+  "area": {
+    "osm": "relation/13084337",
+    "bbox": [
+      41.79826,
+      -72.27273,
+      41.82551,
+      -72.23847
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "title": "UConn ITS Storrs Campus Classroom Buildings (map layer: building names and the codes class schedules use)",
+    "url": "https://clear-gis.uconn.edu/arcgis/rest/services/ITS_ATS/Storrs_Campus_Classroom_Buildings/MapServer/0",
+    "arcgis": "https://clear-gis.uconn.edu/arcgis/rest/services/ITS_ATS/Storrs_Campus_Classroom_Buildings/MapServer/0",
+    "fields": {
+      "name": "Name",
+      "code": "COMM_Code",
+      "aliases": []
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "halls": {
+    "white-hall": {
+      "pin": [
+        -71.09105,
+        42.34005
+      ]
+    }
+  },
+  "places": {
+    "ruggles": {
+      "hide": true
+    },
+    "ymca": {
+      "hide": true
+    },
+    "burstein-hall": {
+      "hide": true
+    },
+    "rotc-office": {
+      "hide": true
+    },
+    "asian-american-center": {
+      "hide": true
+    },
+    "latinx-student-cultural-center": {
+      "hide": true
+    },
+    "davenport-commons-a": {
+      "hide": true
+    },
+    "badger-and-rosen-squashbusters-center": {
+      "hide": true
+    },
+    "curry-student-center": {
+      "kind": "dining"
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "stetson-east -> cahners-hall",
+        "speare-hall -> cahners-hall",
+        "white-hall -> cahners-hall"
+      ],
+      "maxRatio": 3.2,
+      "why": "Cahners Hall (110 The Fenway) is behind Stetson West and the Hemenway Street apartments; OSM has no footway through that block, so the walk from Speare Place or Forsyth Street goes round the Stetson halls to the Hemenway Street crossing north of them."
+    },
+    {
+      "pairs": [
+        "west-village-h -> forsyth-building",
+        "white-hall -> forsyth-building",
+        "white-hall -> churchill-hall"
+      ],
+      "maxRatio": 3.4,
+      "why": "The Forsyth Building and Churchill Hall have their only mapped footways on the Snell Library quad side, so walks from Forsyth Street or Huntington Avenue go past them and come back through the quad."
+    }
+  ],
+  "notes": {
+    "white-hall": "White Hall, 21 Forsyth St at Huntington Ave (huntnewsnu.com, Aug 2023: closed indefinitely for water damage); the building is OSM way/29943150 ('21 Forsyth Street' on Nominatim), which the fetch's name/housenumber query left out of the cache, so pinned by hand at its Forsyth Street side.",
+    "ruggles": "Ruggles MBTA station, not a class building.",
+    "ymca": "The Huntington Avenue YMCA, not Northeastern's gym (Marino and Cabot are).",
+    "burstein-hall": "A one-storey retail building (Wollaston's Market and Student Financial Services) on West Village, no classes.",
+    "rotc-office": "The ROTC office at 335 Huntington Ave, an office.",
+    "asian-american-center": "A student cultural centre (109 Hemenway St), no classes.",
+    "latinx-student-cultural-center": "A student cultural centre (104 Forsyth St), no classes.",
+    "davenport-commons-a": "Undergraduate housing (OSM description), not a dining commons; the name rule tagged it dining.",
+    "badger-and-rosen-squashbusters-center": "SquashBusters' youth-programme squash centre on campus, not a student gym.",
+    "curry-student-center": "Curry Student Center holds the campus food court (Northeastern Dining: Curry Student Center locations), so it counts as dining; the meal-plan halls are inside Stetson East, Stetson West and International Village, which are halls here."
+  }
+}

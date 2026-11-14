@@ -1,0 +1,479 @@
+{
+  "halls": {
+    "the-village": {
+      "pin": [
+        -85.49353,
+        32.60468
+      ]
+    }
+  },
+  "places": {
+    "tau-kappa-epsilon": {
+      "hide": true
+    },
+    "sigma-nu-fraternity": {
+      "hide": true
+    },
+    "kappa-alpha-activities-building": {
+      "hide": true
+    },
+    "pi-kappa-phi-activities-building": {
+      "hide": true
+    },
+    "pi-kappa-phi": {
+      "hide": true
+    },
+    "phi-kappa-tau": {
+      "hide": true
+    },
+    "pi-kappa-alpha-frat": {
+      "hide": true
+    },
+    "sigma-phi-epsilon": {
+      "hide": true
+    },
+    "theta-chi-activities-building": {
+      "hide": true
+    },
+    "beta-theta-pi-activities-building": {
+      "hide": true
+    },
+    "farmhouse": {
+      "hide": true
+    },
+    "sigma-chi": {
+      "hide": true
+    },
+    "sc-activities-bldg": {
+      "hide": true
+    },
+    "sn-activities-bldg": {
+      "hide": true
+    },
+    "theta-xi": {
+      "hide": true
+    },
+    "agr-act": {
+      "hide": true
+    },
+    "andrews-forestry-research-laboratory": {
+      "hide": true
+    },
+    "seed-processing-plant": {
+      "hide": true
+    },
+    "research-park-building-1": {
+      "hide": true
+    },
+    "woltosz-engineering-research-lab": {
+      "hide": true
+    },
+    "national-soil-dynamics-laboratory": {
+      "hide": true
+    },
+    "gavin-engineering-research-laboratory": {
+      "hide": true
+    },
+    "walter-mri-research-building": {
+      "hide": true
+    },
+    "pharmacy-research-building": {
+      "hide": true
+    },
+    "forest-products-laboratory": {
+      "hide": true
+    },
+    "crop-improvement-association": {
+      "hide": true
+    },
+    "plant-science-research-center": {
+      "hide": true
+    },
+    "pesticide-research-laboratory": {
+      "hide": true
+    },
+    "soil-and-plant-samples-building": {
+      "hide": true
+    },
+    "biological-research-facility": {
+      "hide": true
+    },
+    "alabama-pesticide-laboratory": {
+      "hide": true
+    },
+    "fahbeatoxic-research-laboratory": {
+      "hide": true
+    },
+    "bee-lab": {
+      "hide": true
+    },
+    "aviary-research-laboratory-1": {
+      "hide": true
+    },
+    "seedling-stress-lab": {
+      "hide": true
+    },
+    "aviary-research-laboratory-2": {
+      "hide": true
+    },
+    "televison-and-etv-lab": {
+      "hide": true
+    },
+    "federal-usda": {
+      "hide": true
+    },
+    "federal-usda-895336086": {
+      "hide": true
+    },
+    "federal-usda-895336088": {
+      "hide": true
+    },
+    "fedral": {
+      "hide": true
+    },
+    "fedral-327472039": {
+      "hide": true
+    },
+    "fedral-327472027": {
+      "hide": true
+    },
+    "fedral-326932923": {
+      "hide": true
+    },
+    "facilities-management-complex": {
+      "hide": true
+    },
+    "energy-plant": {
+      "hide": true
+    },
+    "facilities": {
+      "hide": true
+    },
+    "cooling-towers": {
+      "hide": true
+    },
+    "facilities-280799317": {
+      "hide": true
+    },
+    "risk-management-and-safety": {
+      "hide": true
+    },
+    "facilities-323722550": {
+      "hide": true
+    },
+    "telecommunication-and-etv-office": {
+      "hide": true
+    },
+    "environmental-health-and-safety-building": {
+      "hide": true
+    },
+    "telecommunication-and-etv-studio": {
+      "hide": true
+    },
+    "facilities-323722553": {
+      "hide": true
+    },
+    "dudley-shop": {
+      "hide": true
+    },
+    "facility-management-8": {
+      "hide": true
+    },
+    "television-and-etv-scene-shop": {
+      "hide": true
+    },
+    "facility-management-4": {
+      "hide": true
+    },
+    "telecom-tower-building": {
+      "hide": true
+    },
+    "langdon-steam-plant": {
+      "hide": true
+    },
+    "satellite-uplink-building": {
+      "hide": true
+    },
+    "impound-lot-guard-shack": {
+      "hide": true
+    },
+    "campus-security": {
+      "hide": true
+    },
+    "environ-health-and-safety-bldg-2": {
+      "hide": true
+    },
+    "environ-health-and-safety-bldg-3": {
+      "hide": true
+    },
+    "pool-equip-bldg": {
+      "hide": true
+    },
+    "beard-eaves-memorial-coliseum": {
+      "hide": true
+    },
+    "martin-aquatics-center": {
+      "hide": true
+    },
+    "plainsman-park": {
+      "hide": true
+    },
+    "athletic-complex": {
+      "hide": true
+    },
+    "watson-field-house": {
+      "hide": true
+    },
+    "charlotte-lowder-student-athlete-development-center": {
+      "hide": true
+    },
+    "moore-softball-complex": {
+      "hide": true
+    },
+    "wilson-livestock-arena": {
+      "hide": true
+    },
+    "plainsman-park-strength-and-rehabilitation-center": {
+      "hide": true
+    },
+    "hutsell-rosen-track-restrooms": {
+      "hide": true
+    },
+    "soccer-field-pressbox": {
+      "hide": true
+    },
+    "indoor-practice-facility": {
+      "hide": true
+    },
+    "band-field-pavallion": {
+      "hide": true
+    },
+    "president-garden-pavilion": {
+      "hide": true
+    },
+    "agriculture-heritage-park-pavillion": {
+      "hide": true
+    },
+    "donald-e-davis-pavillion": {
+      "hide": true
+    },
+    "header-house-2": {
+      "hide": true
+    },
+    "screenhouse": {
+      "hide": true
+    },
+    "screenhouse-1298912624": {
+      "hide": true
+    },
+    "shade-house": {
+      "hide": true
+    },
+    "graves-cottage": {
+      "hide": true
+    },
+    "herdsman-house": {
+      "hide": true
+    },
+    "auburn-university-hotel-and-dixon-conference-center": {
+      "hide": true
+    },
+    "edward-via-college-of-osteopathic-medicine-vcom": {
+      "hide": true
+    },
+    "julie-collins-smith-museum-of-fine-art": {
+      "hide": true
+    },
+    "alumni-center": {
+      "hide": true
+    },
+    "auburn-university-medical-clinic": {
+      "hide": true
+    },
+    "mises-institute": {
+      "hide": true
+    },
+    "presidents-house": {
+      "hide": true
+    },
+    "presidents-garden-house": {
+      "hide": true
+    },
+    "university-chapel": {
+      "hide": true
+    },
+    "jay-and-susie-gogue-performing-arts-center": {
+      "hide": true
+    },
+    "pebble-hill": {
+      "hide": true
+    },
+    "extension-hall": {
+      "hide": true
+    },
+    "mary-martin-hall": {
+      "hide": true
+    },
+    "samford-hall": {
+      "hide": true
+    },
+    "ingram-hall": {
+      "hide": true
+    },
+    "draughon-village": {
+      "hide": true
+    },
+    "draughon-village-laundry": {
+      "hide": true
+    },
+    "village-mailroom": {
+      "hide": true
+    },
+    "village-community-room-building": {
+      "hide": true
+    },
+    "": {
+      "hide": true
+    },
+    "wellness-kitchen": {
+      "kind": "dining"
+    }
+  },
+  "notes": {
+    "the-village": "The Village is the cluster of residence halls (Aubie, Eagle, Hawk, Plainsman, Talon, Tiger and War Eagle; auburn.edu/housing) around the Village Community Room Building (OSM way/323720445), where the pin sits.",
+    "tau-kappa-epsilon": "Tau Kappa Epsilon is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building N0301).",
+    "sigma-nu-fraternity": "Sigma Nu Fraternity is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building P0202).",
+    "kappa-alpha-activities-building": "Kappa Alpha Activities Building is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building M0901/M0801).",
+    "pi-kappa-phi-activities-building": "Pi Kappa Phi Activities Building is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building M1102).",
+    "pi-kappa-phi": "Pi Kappa Phi is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building M1101/M1103).",
+    "phi-kappa-tau": "Phi Kappa Tau is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building N0201).",
+    "pi-kappa-alpha-frat": "Pi Kappa Alpha frat is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building N0203).",
+    "sigma-phi-epsilon": "Sigma Phi Epsilon is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building M0205).",
+    "theta-chi-activities-building": "Theta Chi Activities Building is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building M1001/M1002).",
+    "beta-theta-pi-activities-building": "Beta Theta Pi Activities Building is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building N1001).",
+    "farmhouse": "FarmHouse is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building P0302).",
+    "sigma-chi": "Sigma Chi is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building P0201).",
+    "sc-activities-bldg": "S.C Activities Bldg is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building P0303).",
+    "sn-activities-bldg": "S.N Activities Bldg is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building P0304).",
+    "theta-xi": "Theta Xi is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building N0202).",
+    "agr-act": "A.G.R ACT is a fraternity or sorority house or activities building, not a class building (Auburn Facilities Management building layer, building M1202).",
+    "andrews-forestry-research-laboratory": "Andrews Forestry Research Laboratory is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building S1704).",
+    "seed-processing-plant": "Seed Processing Plant is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building U1701).",
+    "research-park-building-1": "Research Park Building 1 is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building Q1701).",
+    "woltosz-engineering-research-lab": "Woltosz Engineering Research Lab is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building V0305).",
+    "national-soil-dynamics-laboratory": "National Soil Dynamics Laboratory is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building T0903).",
+    "gavin-engineering-research-laboratory": "Gavin Engineering Research Laboratory is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building W0201).",
+    "walter-mri-research-building": "Walter MRI Research Building is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building Q1702).",
+    "pharmacy-research-building": "Pharmacy Research Building is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building S1301).",
+    "forest-products-laboratory": "Forest Products Laboratory is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building S1602).",
+    "crop-improvement-association": "Crop Improvement Association is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building T1701).",
+    "plant-science-research-center": "Plant Science Research Center is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building U1502).",
+    "pesticide-research-laboratory": "Pesticide Research Laboratory is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building U1606).",
+    "soil-and-plant-samples-building": "Soil & Plant Samples Building is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building U1615).",
+    "biological-research-facility": "Biological Research Facility is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building X0708).",
+    "alabama-pesticide-laboratory": "Alabama Pesticide Laboratory is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building U1703).",
+    "fahbeatoxic-research-laboratory": "Fahbeatoxic Research Laboratory is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building U1602).",
+    "bee-lab": "Bee Lab is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building L0801).",
+    "aviary-research-laboratory-1": "Aviary Research Laboratory 1 is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building L0804).",
+    "seedling-stress-lab": "Seedling Stress Lab is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building U1613).",
+    "aviary-research-laboratory-2": "Aviary Research Laboratory 2 is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building L0805).",
+    "televison-and-etv-lab": "Televison and ETV Lab is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building S0903).",
+    "federal-usda": "Federal (USDA) is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building S1707).",
+    "federal-usda-895336086": "Federal (USDA) is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building S1705).",
+    "federal-usda-895336088": "Federal (USDA) is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building S1706).",
+    "fedral": "Fedral is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building T1001).",
+    "fedral-327472039": "Fedral is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building T1002).",
+    "fedral-327472027": "Fedral is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building U0911).",
+    "fedral-326932923": "Fedral is a research laboratory, research park or federal (USDA) research building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building T0904).",
+    "facilities-management-complex": "Facilities Management Complex is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building J0701).",
+    "energy-plant": "Energy Plant is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building P0402).",
+    "facilities": "Facilities is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building K0702).",
+    "cooling-towers": "Cooling Towers is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer).",
+    "facilities-280799317": "Facilities is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building J0803).",
+    "risk-management-and-safety": "Risk Management and Safety is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building K0804).",
+    "facilities-323722550": "Facilities is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building J0802).",
+    "telecommunication-and-etv-office": "Telecommunication and ETV Office is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building S0907).",
+    "environmental-health-and-safety-building": "Environmental Health and Safety Building is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building M1702).",
+    "telecommunication-and-etv-studio": "Telecommunication and ETV Studio is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building T0902).",
+    "facilities-323722553": "Facilities is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building J0904/J0902).",
+    "dudley-shop": "Dudley Shop is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building W0707).",
+    "facility-management-8": "Facility Management 8 is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building K0803).",
+    "television-and-etv-scene-shop": "Television and ETV Scene Shop is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building S0904).",
+    "facility-management-4": "Facility Management 4 is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building J0801).",
+    "telecom-tower-building": "Telecom Tower Building is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building N0602).",
+    "langdon-steam-plant": "Langdon Steam Plant is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building X0305).",
+    "satellite-uplink-building": "Satellite Uplink Building is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building N0601).",
+    "impound-lot-guard-shack": "Impound Lot Guard Shack is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building M0503).",
+    "campus-security": "Campus Security is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building R0201).",
+    "environ-health-and-safety-bldg-2": "Environ Health & Safety Bldg 2 is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building M1706).",
+    "environ-health-and-safety-bldg-3": "Environ. Health & Safety Bldg 3 is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building M1707).",
+    "pool-equip-bldg": "Pool Equip. Bldg is a facilities, utility, safety or broadcast service building, not somewhere classes happen (Auburn Facilities Management building layer, building Q0610).",
+    "beard-eaves-memorial-coliseum": "Beard–Eaves–Memorial Coliseum is a varsity athletics venue or support building, not a class building or student gym (Auburn Facilities Management building layer, building S0601).",
+    "martin-aquatics-center": "Martin Aquatics Center is a varsity athletics venue or support building, not a class building or student gym (Auburn Facilities Management building layer, building R0602).",
+    "plainsman-park": "Plainsman Park is a varsity athletics venue or support building, not a class building or student gym (Auburn Facilities Management building layer, building T0603).",
+    "athletic-complex": "Athletic Complex is a varsity athletics venue or support building, not a class building or student gym (Auburn Facilities Management building layer, building S0801).",
+    "watson-field-house": "Watson Field House is a varsity athletics venue or support building, not a class building or student gym (Auburn Facilities Management building layer, building R0803).",
+    "charlotte-lowder-student-athlete-development-center": "Charlotte Lowder Student Athlete Development Center is a varsity athletics venue or support building, not a class building or student gym (Auburn Facilities Management building layer, building S0802).",
+    "moore-softball-complex": "Moore Softball Complex is a varsity athletics venue or support building, not a class building or student gym (Auburn Facilities Management building layer, building N0801).",
+    "wilson-livestock-arena": "Wilson Livestock Arena is a varsity athletics venue or support building, not a class building or student gym (Auburn Facilities Management building layer, building S1102).",
+    "plainsman-park-strength-and-rehabilitation-center": "Plainsman Park Strength and Rehabilitation Center is a varsity athletics venue or support building, not a class building or student gym (Auburn Facilities Management building layer, building T0604).",
+    "hutsell-rosen-track-restrooms": "Hutsell Rosen Track Restrooms is a varsity athletics venue or support building, not a class building or student gym (Auburn Facilities Management building layer, building R1004).",
+    "soccer-field-pressbox": "Soccer Field Pressbox is a varsity athletics venue or support building, not a class building or student gym (Auburn Facilities Management building layer, building Q0901).",
+    "indoor-practice-facility": "Indoor Practice Facility is a varsity athletics venue or support building, not a class building or student gym (Auburn Facilities Management building layer, building R0804).",
+    "band-field-pavallion": "Band Field Pavallion is a varsity athletics venue or support building, not a class building or student gym (Auburn Facilities Management building layer, building L0502).",
+    "president-garden-pavilion": "President Garden Pavilion is a farm, garden or greenhouse outbuilding, not somewhere classes happen (Auburn Facilities Management building layer, building Y0902).",
+    "agriculture-heritage-park-pavillion": "Agriculture Heritage Park Pavillion is a farm, garden or greenhouse outbuilding, not somewhere classes happen (Auburn Facilities Management building layer, building S1103).",
+    "donald-e-davis-pavillion": "Donald E. Davis Pavillion is a farm, garden or greenhouse outbuilding, not somewhere classes happen (Auburn Facilities Management building layer, building X0901).",
+    "header-house-2": "Header House 2 is a farm, garden or greenhouse outbuilding, not somewhere classes happen (Auburn Facilities Management building layer, building U0904).",
+    "screenhouse": "Screenhouse is a farm, garden or greenhouse outbuilding, not somewhere classes happen (Auburn Facilities Management building layer, building U1611).",
+    "screenhouse-1298912624": "Screenhouse is a farm, garden or greenhouse outbuilding, not somewhere classes happen (Auburn Facilities Management building layer, building U1614).",
+    "shade-house": "Shade House is a farm, garden or greenhouse outbuilding, not somewhere classes happen (Auburn Facilities Management building layer, building U0907).",
+    "graves-cottage": "Graves Cottage is a farm, garden or greenhouse outbuilding, not somewhere classes happen (Auburn Facilities Management building layer, building U0803/U0915).",
+    "herdsman-house": "Herdsman House is a farm, garden or greenhouse outbuilding, not somewhere classes happen (Auburn Facilities Management building layer, building R0901).",
+    "auburn-university-hotel-and-dixon-conference-center": "Auburn University Hotel and Dixon Conference Center is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building Y0401).",
+    "edward-via-college-of-osteopathic-medicine-vcom": "Edward Via College of Osteopathic Medicine (VCOM) is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building S1401).",
+    "julie-collins-smith-museum-of-fine-art": "Julie Collins Smith Museum of Fine Art is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building Q1501).",
+    "alumni-center": "Alumni Center is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building Y0602).",
+    "auburn-university-medical-clinic": "Auburn University Medical Clinic is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building U1203).",
+    "mises-institute": "Mises Institute is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building S0201).",
+    "presidents-house": "President's House is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building Y0802).",
+    "presidents-garden-house": "President's Garden House is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building Y0901).",
+    "university-chapel": "University Chapel is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building Y0304).",
+    "jay-and-susie-gogue-performing-arts-center": "Jay and Susie Gogue Performing Arts Center is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer).",
+    "pebble-hill": "Pebble Hill is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building A0008/A00019).",
+    "extension-hall": "Extension Hall is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building W0604).",
+    "mary-martin-hall": "Mary Martin Hall is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building X0401).",
+    "samford-hall": "Samford Hall is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building X0304).",
+    "ingram-hall": "Ingram Hall is an administrative, residence, hotel, clinic, museum, chapel or outside-institution building, not somewhere undergraduates have class (Auburn Facilities Management building layer, building Y0301).",
+    "draughon-village": "Draughon Village is student housing (the Village or Draughon Village) or its service building, not a class building (Auburn Facilities Management building layer, building M0304/M0404).",
+    "draughon-village-laundry": "Draughon Village Laundry is student housing (the Village or Draughon Village) or its service building, not a class building (Auburn Facilities Management building layer, building M0401).",
+    "village-mailroom": "Village Mailroom is student housing (the Village or Draughon Village) or its service building, not a class building (Auburn Facilities Management building layer, building Q0301).",
+    "village-community-room-building": "Village Community Room Building is student housing (the Village or Draughon Village) or its service building, not a class building (Auburn Facilities Management building layer, building R0302).",
+    "": "An OSM building with no name that the facilities layer gives a number but no usable name; dropped.",
+    "wellness-kitchen": "The Wellness Kitchen is an Auburn Campus Dining hall beside the Village (auburn.edu/dining), so its kind is dining."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "boyd-hall -> terrell-dining-hall",
+        "sasnett-hall -> college-of-education"
+      ],
+      "maxRatio": 3,
+      "why": "Boyd and Sasnett Halls have their mapped entrances on their east sides while Terrell Dining Hall and the College of Education stand to their north-west with doors facing west and north, so these short walks go out the east door and round the far side of the hall."
+    },
+    {
+      "pairs": [
+        "sasnett-hall -> stem-and-agricultural-sciences-complex-building-a"
+      ],
+      "maxRatio": 3,
+      "why": "Sasnett Hall's mapped entrance is on its east side and STEM Building A's mapped door is on its east side too, so the walk goes out past Boyd Hall and comes round the complex to the door."
+    },
+    {
+      "pairs": [
+        "south-donahue -> stem-and-agricultural-sciences-complex-building-c"
+      ],
+      "maxRatio": 3,
+      "why": "South Donahue Hall's mapped entrance is on Donahue Drive at its north end and no mapped path crosses the parking deck and lots east of it, so the walk goes up Donahue Drive and back down through the Hill halls to the STEM complex."
+    }
+  ]
+}

@@ -9,7 +9,7 @@ import SchoolFacts from "@/components/hall-finder/SchoolFacts";
 import { getSchool } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { breadcrumbJsonLd, fitDescription, fitTitle, pageMetadata } from "@/lib/seo";
-import { PILOT_SCHOOLS, hallFinderLive, rankedHalls } from "@/lib/hall-finder";
+import { PILOT_SCHOOLS, hallFinderLive, hasCodeList, rankedHalls } from "@/lib/hall-finder";
 import { loadCampus } from "@/lib/hall-finder-server";
 import { datedPageJsonLd, hallFinderAppJsonLd, schoolFaqs } from "@/lib/hall-finder-seo";
 import { faqPageJsonLd } from "@/lib/blog";
@@ -51,7 +51,7 @@ export default async function HallFinderPage(props: { params: Promise<{ collegeI
   // Vercel redeploys). Without it, uploads stay .ics only.
   const imagesOn = Boolean(process.env.ANTHROPIC_API_KEY);
   const areas = [...new Set(campus.halls.filter((h) => h.lng !== null && h.lat !== null).map((h) => facts[h.dormId]?.area).filter((a): a is string => Boolean(a)))].sort();
-  const faqs = schoolFaqs({ short, ranked, areas, imagesOn });
+  const faqs = schoolFaqs({ short, ranked, areas, imagesOn, codes: hasCodeList(campus) });
   const path = `/colleges/${collegeId}/hall-finder`;
   const appLd = hallFinderAppJsonLd({
     collegeId,

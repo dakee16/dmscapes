@@ -1,0 +1,235 @@
+{
+ "name": "Western Washington University Campus Directory, Buildings (name and building code)",
+ "url": "https://www.wwu.edu/directory",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "AI",
+   "name": "Academic Instructional Center"
+  },
+  {
+   "code": "AW",
+   "name": "Academic Instructional West"
+  },
+  {
+   "code": "AC",
+   "name": "Administrative Services Center"
+  },
+  {
+   "code": "CG",
+   "name": "Alma Clark Glass Hall"
+  },
+  {
+   "code": "AL",
+   "name": "Alumni House"
+  },
+  {
+   "code": "AB",
+   "name": "Archives Building"
+  },
+  {
+   "code": "AH",
+   "name": "Arntzen Hall"
+  },
+  {
+   "code": "AA",
+   "name": "Art Annex"
+  },
+  {
+   "code": "BI",
+   "name": "Biology"
+  },
+  {
+   "code": "BW",
+   "name": "Birnam Wood (Buildings 1 - 7)"
+  },
+  {
+   "code": "BC",
+   "name": "Birnam Wood Community Building"
+  },
+  {
+   "code": "BL",
+   "name": "Birnam Wood Laundry Building"
+  },
+  {
+   "code": "BH",
+   "name": "Bond Hall"
+  },
+  {
+   "code": "BT",
+   "name": "Buchanan Towers"
+  },
+  {
+   "code": "CS",
+   "name": "Campus Services"
+  },
+  {
+   "code": "CA",
+   "name": "Canada House"
+  },
+  {
+   "code": "CV",
+   "name": "Carver"
+  },
+  {
+   "code": "CH",
+   "name": "College Hall"
+  },
+  {
+   "code": "CM",
+   "name": "Commissary"
+  },
+  {
+   "code": "CF",
+   "name": "Communications Facility"
+  },
+  {
+   "code": "EH",
+   "name": "Edens Hall"
+  },
+  {
+   "code": "EN",
+   "name": "Edens Hall North"
+  },
+  {
+   "code": "ES",
+   "name": "Environmental Studies"
+  },
+  {
+   "code": "FA",
+   "name": "Fairhaven Academic Building / Fairhaven College"
+  },
+  {
+   "code": "FS",
+   "name": "Fairhaven Cabin - South"
+  },
+  {
+   "code": "FX",
+   "name": "Fairhaven Complex"
+  },
+  {
+   "code": "FI",
+   "name": "Fine Arts"
+  },
+  {
+   "code": "FR",
+   "name": "Fraser Hall"
+  },
+  {
+   "code": "HH",
+   "name": "Haggard Hall"
+  },
+  {
+   "code": "HG",
+   "name": "Higginson Hall"
+  },
+  {
+   "code": "HS",
+   "name": "High Street Hall"
+  },
+  {
+   "code": "HU",
+   "name": "Humanities Building"
+  },
+  {
+   "code": "IS",
+   "name": "Interdisciplinary Science Building"
+  },
+  {
+   "code": "KB",
+   "name": "Kaiser Borsari Hall"
+  },
+  {
+   "code": "MA",
+   "name": "Mathes Hall"
+  },
+  {
+   "code": "MH",
+   "name": "Miller Hall"
+  },
+  {
+   "code": "CB",
+   "name": "Morse Hall (Chemistry Building)"
+  },
+  {
+   "code": "NA",
+   "name": "Nash Hall"
+  },
+  {
+   "code": "OM",
+   "name": "Old Main"
+  },
+  {
+   "code": "PH",
+   "name": "Parks Hall"
+  },
+  {
+   "code": "PA",
+   "name": "Performing Arts Center"
+  },
+  {
+   "code": "PP",
+   "name": "Physical Plant"
+  },
+  {
+   "code": "RA",
+   "name": "Ridgeway Alpha"
+  },
+  {
+   "code": "RB",
+   "name": "Ridgeway Beta"
+  },
+  {
+   "code": "RC",
+   "name": "Ridgeway Commons"
+  },
+  {
+   "code": "RD",
+   "name": "Ridgeway Delta"
+  },
+  {
+   "code": "RG",
+   "name": "Ridgeway Gamma"
+  },
+  {
+   "code": "RK",
+   "name": "Ridgeway Kappa"
+  },
+  {
+   "code": "RO",
+   "name": "Ridgeway Omega"
+  },
+  {
+   "code": "RS",
+   "name": "Ridgeway Sigma"
+  },
+  {
+   "code": "ET",
+   "name": "Ross Engineering Technology"
+  },
+  {
+   "code": "SL",
+   "name": "SMATE / Science Lecture"
+  },
+  {
+   "code": "SP",
+   "name": "Steam Plant"
+  },
+  {
+   "code": "VC",
+   "name": "Viking Commons"
+  },
+  {
+   "code": "VU",
+   "name": "Viking Union"
+  },
+  {
+   "code": "SV",
+   "name": "Wade King Recreation Center"
+  },
+  {
+   "code": "WL",
+   "name": "Wilson Library"
+  }
+ ]
+}

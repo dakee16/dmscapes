@@ -1,0 +1,1638 @@
+{
+ "collegeId": "indiana",
+ "generatedAt": "2026-11-08T17:03:07.969Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Indiana University Office of the Registrar, Academic Building Codes (Bloomington)",
+   "url": "https://registrar.indiana.edu/information/building-codes.html",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/indiana.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -86.52748,
+  39.16287,
+  -86.49739,
+  39.1832
+ ],
+ "halls": [
+  {
+   "dormId": "ashton",
+   "name": "Ashton",
+   "lng": -86.512127,
+   "lat": 39.170036,
+   "pin": "name",
+   "osm": "relation/19678094",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreational-sports-center",
+     "minutes": 7.5
+    },
+    "library": {
+     "placeId": "herman-b-wells-library",
+     "minutes": 5.8
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 9.9
+    }
+   }
+  },
+  {
+   "dormId": "briscoe",
+   "name": "Briscoe",
+   "lng": -86.519963,
+   "lat": 39.178425,
+   "pin": "name",
+   "osm": "relation/20666929",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jay-wilkinson-hall",
+     "minutes": 3.4
+    },
+    "library": {
+     "placeId": "herman-b-wells-library",
+     "minutes": 11.7
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 6.4
+    }
+   }
+  },
+  {
+   "dormId": "campus-view",
+   "name": "Campus View",
+   "lng": -86.508919,
+   "lat": 39.173616,
+   "pin": "name",
+   "osm": "way/154884425",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreational-sports-center",
+     "minutes": 7.5
+    },
+    "library": {
+     "placeId": "herman-b-wells-library",
+     "minutes": 11.8
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 12.5
+    }
+   }
+  },
+  {
+   "dormId": "collins",
+   "name": "Collins",
+   "lng": -86.523991,
+   "lat": 39.17074,
+   "pin": "manual",
+   "osm": "way/271047498",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "simon-skjodt-assembly-hall",
+     "minutes": 16.8
+    },
+    "library": {
+     "placeId": "herman-b-wells-library",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 11.6
+    }
+   }
+  },
+  {
+   "dormId": "eigenmann",
+   "name": "Eigenmann",
+   "lng": -86.508614,
+   "lat": 39.1709,
+   "pin": "name",
+   "osm": "way/106172065",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreational-sports-center",
+     "minutes": 8.5
+    },
+    "library": {
+     "placeId": "herman-b-wells-library",
+     "minutes": 9.8
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 13
+    }
+   }
+  },
+  {
+   "dormId": "forest",
+   "name": "Forest",
+   "lng": -86.512447,
+   "lat": 39.164949,
+   "pin": "manual",
+   "osm": "relation/8766154",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreational-sports-center",
+     "minutes": 16.9
+    },
+    "library": {
+     "placeId": "simon-music-library-and-recital-center",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 18.6
+    }
+   }
+  },
+  {
+   "dormId": "foster",
+   "name": "Foster",
+   "lng": -86.518021,
+   "lat": 39.175089,
+   "pin": "manual",
+   "osm": "way/154884428",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jay-wilkinson-hall",
+     "minutes": 8
+    },
+    "library": {
+     "placeId": "herman-b-wells-library",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 0.6
+    }
+   }
+  },
+  {
+   "dormId": "mcnutt",
+   "name": "McNutt",
+   "lng": -86.519898,
+   "lat": 39.176444,
+   "pin": "name",
+   "osm": "relation/13741441",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jay-wilkinson-hall",
+     "minutes": 4.6
+    },
+    "library": {
+     "placeId": "herman-b-wells-library",
+     "minutes": 7.6
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 2.7
+    }
+   }
+  },
+  {
+   "dormId": "read",
+   "name": "Read",
+   "lng": -86.514892,
+   "lat": 39.166098,
+   "pin": "name",
+   "osm": "way/175832787",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreational-sports-center",
+     "minutes": 14
+    },
+    "library": {
+     "placeId": "simon-music-library-and-recital-center",
+     "minutes": 1.9
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 14
+    }
+   }
+  },
+  {
+   "dormId": "spruce",
+   "name": "Spruce",
+   "lng": -86.511749,
+   "lat": 39.165748,
+   "pin": "name",
+   "osm": "way/271048216",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreational-sports-center",
+     "minutes": 15.3
+    },
+    "library": {
+     "placeId": "simon-music-library-and-recital-center",
+     "minutes": 5.7
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 17.3
+    }
+   }
+  },
+  {
+   "dormId": "teter",
+   "name": "Teter",
+   "lng": -86.513426,
+   "lat": 39.17051,
+   "pin": "name",
+   "osm": "way/1508426323",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreational-sports-center",
+     "minutes": 7.7
+    },
+    "library": {
+     "placeId": "herman-b-wells-library",
+     "minutes": 4
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 8.7
+    }
+   }
+  },
+  {
+   "dormId": "third-and-union",
+   "name": "3rd and Union",
+   "lng": -86.510179,
+   "lat": 39.164585,
+   "pin": "name",
+   "osm": "way/175832771",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreational-sports-center",
+     "minutes": 17.2
+    },
+    "library": {
+     "placeId": "simon-music-library-and-recital-center",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 19.6
+    }
+   }
+  },
+  {
+   "dormId": "tulip-tree",
+   "name": "Tulip Tree",
+   "lng": -86.504379,
+   "lat": 39.172519,
+   "pin": "name",
+   "osm": "way/105432339",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreational-sports-center",
+     "minutes": 13.8
+    },
+    "library": {
+     "placeId": "herman-b-wells-library",
+     "minutes": 17.7
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 19.6
+    }
+   }
+  },
+  {
+   "dormId": "union-street-center",
+   "name": "Union Street Center",
+   "lng": -86.511244,
+   "lat": 39.169761,
+   "pin": "name",
+   "osm": "way/258941928",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreational-sports-center",
+     "minutes": 10
+    },
+    "library": {
+     "placeId": "herman-b-wells-library",
+     "minutes": 8.1
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 12.5
+    }
+   }
+  },
+  {
+   "dormId": "university-east",
+   "name": "University East",
+   "lng": -86.514143,
+   "lat": 39.164857,
+   "pin": "manual",
+   "osm": "way/175832775",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreational-sports-center",
+     "minutes": 16.9
+    },
+    "library": {
+     "placeId": "simon-music-library-and-recital-center",
+     "minutes": 3.3
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 17.2
+    }
+   }
+  },
+  {
+   "dormId": "walnut-grove",
+   "name": "Walnut Grove",
+   "lng": -86.520787,
+   "lat": 39.177132,
+   "pin": "name",
+   "osm": "relation/14416174",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jay-wilkinson-hall",
+     "minutes": 4.8
+    },
+    "library": {
+     "placeId": "herman-b-wells-library",
+     "minutes": 8.9
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 4.1
+    }
+   }
+  },
+  {
+   "dormId": "wells",
+   "name": "Wells",
+   "lng": -86.516878,
+   "lat": 39.172396,
+   "pin": "name",
+   "osm": "way/380912606",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreational-sports-center",
+     "minutes": 9.8
+    },
+    "library": {
+     "placeId": "herman-b-wells-library",
+     "minutes": 2.8
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 5.8
+    }
+   }
+  },
+  {
+   "dormId": "willkie",
+   "name": "Willkie",
+   "lng": -86.510393,
+   "lat": 39.166177,
+   "pin": "manual",
+   "osm": "relation/14097389",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreational-sports-center",
+     "minutes": 14.1
+    },
+    "library": {
+     "placeId": "simon-music-library-and-recital-center",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "gresham-dining-hall",
+     "minutes": 17.4
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "simon-skjodt-assembly-hall",
+   "name": "Simon Skjodt Assembly Hall",
+   "short": "Simon Skjodt Assembly Hall",
+   "kind": "gym",
+   "codes": [
+    "AS"
+   ],
+   "aliases": [],
+   "lng": -86.522249,
+   "lat": 39.180854,
+   "osm": "way/104956220"
+  },
+  {
+   "id": "student-recreational-sports-center",
+   "name": "Student Recreational Sports Center",
+   "short": "Student Recreational Sports Center",
+   "kind": "gym",
+   "codes": [
+    "RB"
+   ],
+   "aliases": [
+    "Student Recreational Sports & Aquatic Center"
+   ],
+   "lng": -86.512382,
+   "lat": 39.173525,
+   "osm": "way/154762727"
+  },
+  {
+   "id": "indiana-memorial-union",
+   "name": "Indiana Memorial Union",
+   "short": "Indiana Memorial Union",
+   "kind": "academic",
+   "codes": [
+    "UB"
+   ],
+   "aliases": [
+    "IMU",
+    "Indiana Memorial Union Building"
+   ],
+   "lng": -86.523539,
+   "lat": 39.16765,
+   "osm": "relation/11547668"
+  },
+  {
+   "id": "school-of-public-health",
+   "name": "School of Public Health",
+   "short": "School of Public Health",
+   "kind": "academic",
+   "codes": [
+    "PH"
+   ],
+   "aliases": [],
+   "lng": -86.520981,
+   "lat": 39.169944,
+   "osm": "way/154762578"
+  },
+  {
+   "id": "john-mellencamp-pavilion",
+   "name": "John Mellencamp Pavilion",
+   "short": "Mellencamp Pavilion",
+   "kind": "gym",
+   "codes": [
+    "MV"
+   ],
+   "aliases": [
+    "Mellencamp Pavilion"
+   ],
+   "lng": -86.524412,
+   "lat": 39.183201,
+   "osm": "way/154762714"
+  },
+  {
+   "id": "harry-gladstein-fieldhouse",
+   "name": "Harry Gladstein Fieldhouse",
+   "short": "Gladstein Fieldhouse",
+   "kind": "gym",
+   "codes": [
+    "NF"
+   ],
+   "aliases": [
+    "Gladstein Fieldhouse"
+   ],
+   "lng": -86.520406,
+   "lat": 39.180872,
+   "osm": "way/154762716"
+  },
+  {
+   "id": "herman-b-wells-library",
+   "name": "Herman B Wells Library",
+   "short": "Herman B Wells Library",
+   "kind": "library",
+   "codes": [
+    "LI"
+   ],
+   "aliases": [
+    "Wells Library"
+   ],
+   "lng": -86.516776,
+   "lat": 39.171014,
+   "osm": "way/104897592"
+  },
+  {
+   "id": "musical-arts-center",
+   "name": "Musical Arts Center",
+   "short": "Musical Arts Center",
+   "kind": "academic",
+   "codes": [
+    "MC"
+   ],
+   "aliases": [],
+   "lng": -86.517581,
+   "lat": 39.166562,
+   "osm": "way/106191737"
+  },
+  {
+   "id": "biology-building",
+   "name": "Biology Building",
+   "short": "Biology Building",
+   "kind": "academic",
+   "codes": [
+    "JH"
+   ],
+   "aliases": [
+    "Jordan Hall"
+   ],
+   "lng": -86.520983,
+   "lat": 39.164843,
+   "osm": "way/106168438"
+  },
+  {
+   "id": "henry-l-smith-research-center",
+   "name": "Henry L. Smith Research Center",
+   "short": "Smith Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Smith Research Center"
+   ],
+   "lng": -86.49967,
+   "lat": 39.173659,
+   "osm": "relation/19608601"
+  },
+  {
+   "id": "simon-music-library-and-recital-center",
+   "name": "Simon Music Library and Recital Center",
+   "short": "Simon Music Library and Recital Center",
+   "kind": "library",
+   "codes": [
+    "SM"
+   ],
+   "aliases": [
+    "Music Library and Recital Center, Bess Meshulam Simon"
+   ],
+   "lng": -86.517444,
+   "lat": 39.165329,
+   "osm": "way/154762572"
+  },
+  {
+   "id": "ruth-lilly-auxiliary-library-facility",
+   "name": "Ruth Lilly Auxiliary Library Facility",
+   "short": "Ruth Lilly Auxiliary Library Facility",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.497391,
+   "lat": 39.17489,
+   "osm": "way/192560481"
+  },
+  {
+   "id": "chemistry",
+   "name": "Chemistry",
+   "short": "Chemistry",
+   "kind": "academic",
+   "codes": [
+    "CH",
+    "CX"
+   ],
+   "aliases": [
+    "Chemistry Addition"
+   ],
+   "lng": -86.522728,
+   "lat": 39.166023,
+   "osm": "way/105106404"
+  },
+  {
+   "id": "wendell-w-wright-education-building",
+   "name": "Wendell W. Wright Education Building",
+   "short": "Wright Building",
+   "kind": "academic",
+   "codes": [
+    "ED"
+   ],
+   "aliases": [
+    "Indiana University Bloomington Open Search School of Education",
+    "Wright Building"
+   ],
+   "lng": -86.512512,
+   "lat": 39.167129,
+   "osm": "way/106191729"
+  },
+  {
+   "id": "radio-television-center",
+   "name": "Radio-Television Center",
+   "short": "Radio-Television Center",
+   "kind": "academic",
+   "codes": [
+    "TV"
+   ],
+   "aliases": [],
+   "lng": -86.518751,
+   "lat": 39.169532,
+   "osm": "way/104954264"
+  },
+  {
+   "id": "ballantine-hall",
+   "name": "Ballantine Hall",
+   "short": "Ballantine Hall",
+   "kind": "academic",
+   "codes": [
+    "BH"
+   ],
+   "aliases": [],
+   "lng": -86.521333,
+   "lat": 39.166103,
+   "osm": "way/104951768"
+  },
+  {
+   "id": "global-and-international-studies-building",
+   "name": "Global and International Studies Building",
+   "short": "Global and International Studies Building",
+   "kind": "academic",
+   "codes": [
+    "GA"
+   ],
+   "aliases": [
+    "GISB"
+   ],
+   "lng": -86.517493,
+   "lat": 39.170016,
+   "osm": "way/298875832"
+  },
+  {
+   "id": "lowell-e-baier-hall",
+   "name": "Lowell E. Baier Hall",
+   "short": "Lowell E. Baier Hall",
+   "kind": "academic",
+   "codes": [
+    "LW"
+   ],
+   "aliases": [
+    "Lowell E. Baier Hall (Maurer School of Law)"
+   ],
+   "lng": -86.526412,
+   "lat": 39.165075,
+   "osm": "way/105106840"
+  },
+  {
+   "id": "jay-wilkinson-hall",
+   "name": "Jay Wilkinson Hall",
+   "short": "Wilkinson Hall",
+   "kind": "gym",
+   "codes": [
+    "VW"
+   ],
+   "aliases": [
+    "Wilkinson Hall",
+    "Wilkinson Hall (Volleyball/Wrestling)"
+   ],
+   "lng": -86.519728,
+   "lat": 39.180111,
+   "osm": "way/758782719"
+  },
+  {
+   "id": "oneill-school-of-public-and-environmental-affairs-spea",
+   "name": "O'Neill School of Public and Environmental Affairs (SPEA)",
+   "short": "O'Neill School of Public and Environmental Affairs (SPEA)",
+   "kind": "academic",
+   "codes": [
+    "PV"
+   ],
+   "aliases": [
+    "SPEA",
+    "O'Neill School of Public and Environmental Affairs"
+   ],
+   "lng": -86.517644,
+   "lat": 39.172375,
+   "osm": "way/154762535"
+  },
+  {
+   "id": "hodge-hall",
+   "name": "Hodge Hall",
+   "short": "Hodge Hall",
+   "kind": "academic",
+   "codes": [
+    "HH"
+   ],
+   "aliases": [
+    "Hodge Hall (Kelley School of Business)"
+   ],
+   "lng": -86.518361,
+   "lat": 39.17201,
+   "osm": "way/154762706"
+  },
+  {
+   "id": "sidney-and-lois-eskenazi-museum-of-art",
+   "name": "Sidney and Lois Eskenazi Museum of Art",
+   "short": "Sidney and Lois Eskenazi Museum of Art",
+   "kind": "academic",
+   "codes": [
+    "FV"
+   ],
+   "aliases": [],
+   "lng": -86.519717,
+   "lat": 39.169153,
+   "osm": "way/154762561"
+  },
+  {
+   "id": "swain-west",
+   "name": "Swain West",
+   "short": "Swain West",
+   "kind": "academic",
+   "codes": [
+    "SW"
+   ],
+   "aliases": [],
+   "lng": -86.524915,
+   "lat": 39.164791,
+   "osm": "way/154762580"
+  },
+  {
+   "id": "cyberinfrastructure-building",
+   "name": "Cyberinfrastructure Building",
+   "short": "Cyberinfrastructure Building",
+   "kind": "academic",
+   "codes": [
+    "CR"
+   ],
+   "aliases": [
+    "Cyberinfrastructure Building (CIB)"
+   ],
+   "lng": -86.501738,
+   "lat": 39.172257,
+   "osm": "way/173388727"
+  },
+  {
+   "id": "bill-and-gayle-cook-hall",
+   "name": "Bill and Gayle Cook Hall",
+   "short": "Cook Hall",
+   "kind": "gym",
+   "codes": [
+    "BD"
+   ],
+   "aliases": [
+    "Cook Hall"
+   ],
+   "lng": -86.520953,
+   "lat": 39.180086,
+   "osm": "way/174417450"
+  },
+  {
+   "id": "iu-auditorium",
+   "name": "IU Auditorium",
+   "short": "IU Auditorium",
+   "kind": "academic",
+   "codes": [
+    "AD"
+   ],
+   "aliases": [
+    "Auditorium"
+   ],
+   "lng": -86.517945,
+   "lat": 39.168457,
+   "osm": "way/174418522"
+  },
+  {
+   "id": "indiana-university-museum-of-archaeology-and-anthropology",
+   "name": "Indiana University Museum of Archaeology and Anthropology",
+   "short": "Indiana University Museum of Archaeology and Anthropology",
+   "kind": "academic",
+   "codes": [
+    "M2"
+   ],
+   "aliases": [
+    "IU Museum of Archaeology & Anthropology"
+   ],
+   "lng": -86.526163,
+   "lat": 39.169975,
+   "osm": "way/154762636"
+  },
+  {
+   "id": "student-services",
+   "name": "Student Services",
+   "short": "Student Services",
+   "kind": "academic",
+   "codes": [
+    "CU"
+   ],
+   "aliases": [],
+   "lng": -86.508673,
+   "lat": 39.16907,
+   "osm": "way/896860032"
+  },
+  {
+   "id": "franklin-hall",
+   "name": "Franklin Hall",
+   "short": "Franklin Hall",
+   "kind": "academic",
+   "codes": [
+    "FF"
+   ],
+   "aliases": [],
+   "lng": -86.526395,
+   "lat": 39.167028,
+   "osm": "way/105431161"
+  },
+  {
+   "id": "luddy-hall",
+   "name": "Luddy Hall",
+   "short": "Luddy Hall",
+   "kind": "academic",
+   "codes": [
+    "IF"
+   ],
+   "aliases": [
+    "Luddy Hall (School of Informatics)"
+   ],
+   "lng": -86.523056,
+   "lat": 39.172947,
+   "osm": "way/630774103"
+  },
+  {
+   "id": "studio-arts-annex",
+   "name": "Studio Arts Annex",
+   "short": "Studio Arts Annex",
+   "kind": "academic",
+   "codes": [
+    "AZ"
+   ],
+   "aliases": [],
+   "lng": -86.52441,
+   "lat": 39.174988,
+   "osm": "way/955365344"
+  },
+  {
+   "id": "indiana-institute-on-disability-and-community",
+   "name": "Indiana Institute on Disability and Community",
+   "short": "Indiana Institute on Disability and Community",
+   "kind": "academic",
+   "codes": [
+    "MZ"
+   ],
+   "aliases": [
+    "Disability and Community"
+   ],
+   "lng": -86.498803,
+   "lat": 39.174651,
+   "osm": "relation/16639615"
+  },
+  {
+   "id": "fine-arts-building",
+   "name": "Fine Arts Building",
+   "short": "Fine Arts Building",
+   "kind": "academic",
+   "codes": [
+    "FA"
+   ],
+   "aliases": [
+    "Fine Arts"
+   ],
+   "lng": -86.518957,
+   "lat": 39.169034,
+   "osm": "way/258942606"
+  },
+  {
+   "id": "ray-e-cramer-marching-hundred-hall",
+   "name": "Ray E. Cramer Marching Hundred Hall",
+   "short": "Marching Hundred Hall",
+   "kind": "academic",
+   "codes": [
+    "MG"
+   ],
+   "aliases": [
+    "Marching Hundred Hall",
+    "Marching Hundred Hall (Ray E. Cramer)"
+   ],
+   "lng": -86.523053,
+   "lat": 39.17861,
+   "osm": "way/1015720902"
+  },
+  {
+   "id": "gresham-dining-hall",
+   "name": "Gresham Dining Hall",
+   "short": "Gresham Dining Hall",
+   "kind": "dining",
+   "codes": [
+    "GR"
+   ],
+   "aliases": [],
+   "lng": -86.518277,
+   "lat": 39.174324,
+   "osm": "way/154762537"
+  },
+  {
+   "id": "multidisciplinary-science-building-ii",
+   "name": "Multidisciplinary Science Building II",
+   "short": "Multidisciplinary Science Building II",
+   "kind": "academic",
+   "codes": [
+    "S2"
+   ],
+   "aliases": [],
+   "lng": -86.520665,
+   "lat": 39.172877,
+   "osm": "way/172198732"
+  },
+  {
+   "id": "cedar-hall",
+   "name": "Cedar Hall",
+   "short": "Cedar Hall",
+   "kind": "academic",
+   "codes": [
+    "AC"
+   ],
+   "aliases": [],
+   "lng": -86.509812,
+   "lat": 39.170654,
+   "osm": "way/175830860"
+  },
+  {
+   "id": "simon-hall",
+   "name": "Simon Hall",
+   "short": "Simon Hall",
+   "kind": "academic",
+   "codes": [
+    "SI"
+   ],
+   "aliases": [
+    "Simon Hall (Science)"
+   ],
+   "lng": -86.522239,
+   "lat": 39.16516,
+   "osm": "way/178180575"
+  },
+  {
+   "id": "innovation-center",
+   "name": "Innovation Center",
+   "short": "Innovation Center",
+   "kind": "academic",
+   "codes": [
+    "IR"
+   ],
+   "aliases": [],
+   "lng": -86.500191,
+   "lat": 39.172041,
+   "osm": "way/158126982"
+  },
+  {
+   "id": "student-building",
+   "name": "Student Building",
+   "short": "Student Building",
+   "kind": "academic",
+   "codes": [
+    "SB"
+   ],
+   "aliases": [
+    "Student Building (Frances Morgan Swain)"
+   ],
+   "lng": -86.525575,
+   "lat": 39.167135,
+   "osm": "way/106168476"
+  },
+  {
+   "id": "ernie-pyle-hall",
+   "name": "Ernie Pyle Hall",
+   "short": "Ernie Pyle Hall",
+   "kind": "academic",
+   "codes": [
+    "EP"
+   ],
+   "aliases": [],
+   "lng": -86.523017,
+   "lat": 39.168185,
+   "osm": "way/105431890"
+  },
+  {
+   "id": "music-east-studio-building",
+   "name": "Music East Studio Building",
+   "short": "Music East Studio Building",
+   "kind": "academic",
+   "codes": [
+    "JS"
+   ],
+   "aliases": [
+    "East Studio Building"
+   ],
+   "lng": -86.515413,
+   "lat": 39.164665,
+   "osm": "way/203432578"
+  },
+  {
+   "id": "iu-student-health-center",
+   "name": "IU Student Health Center",
+   "short": "IU Student Health Center",
+   "kind": "academic",
+   "codes": [
+    "HC"
+   ],
+   "aliases": [],
+   "lng": -86.515118,
+   "lat": 39.172118,
+   "osm": "way/105429335"
+  },
+  {
+   "id": "woodburn-hall",
+   "name": "Woodburn Hall",
+   "short": "Woodburn Hall",
+   "kind": "academic",
+   "codes": [
+    "WH"
+   ],
+   "aliases": [],
+   "lng": -86.520056,
+   "lat": 39.168114,
+   "osm": "way/105106406"
+  },
+  {
+   "id": "music-addition",
+   "name": "Music Addition",
+   "short": "Music Addition",
+   "kind": "academic",
+   "codes": [
+    "MA"
+   ],
+   "aliases": [],
+   "lng": -86.518277,
+   "lat": 39.165255,
+   "osm": "way/105431152"
+  },
+  {
+   "id": "goodbody-hall",
+   "name": "Goodbody Hall",
+   "short": "Goodbody Hall",
+   "kind": "academic",
+   "codes": [
+    "GB"
+   ],
+   "aliases": [],
+   "lng": -86.520349,
+   "lat": 39.165383,
+   "osm": "way/104951775"
+  },
+  {
+   "id": "margaret-mccalla-school",
+   "name": "Margaret McCalla School",
+   "short": "Margaret McCalla School",
+   "kind": "academic",
+   "codes": [
+    "FX"
+   ],
+   "aliases": [
+    "McCalla School"
+   ],
+   "lng": -86.527478,
+   "lat": 39.170829,
+   "osm": "way/268989248"
+  },
+  {
+   "id": "virgil-t-devault-alumni-center",
+   "name": "Virgil T. DeVault Alumni Center",
+   "short": "DeVault Alumni Center",
+   "kind": "academic",
+   "codes": [
+    "AM"
+   ],
+   "aliases": [
+    "DeVault Alumni Center"
+   ],
+   "lng": -86.521825,
+   "lat": 39.17873,
+   "osm": "way/947219951"
+  },
+  {
+   "id": "classroom-office-building",
+   "name": "Classroom–Office Building",
+   "short": "Classroom–Office Building",
+   "kind": "academic",
+   "codes": [
+    "C2"
+   ],
+   "aliases": [
+    "Classroom Building"
+   ],
+   "lng": -86.523787,
+   "lat": 39.16379,
+   "osm": "way/156649359"
+  },
+  {
+   "id": "bryan-hall",
+   "name": "Bryan Hall",
+   "short": "Bryan Hall",
+   "kind": "academic",
+   "codes": [
+    "BY"
+   ],
+   "aliases": [],
+   "lng": -86.526545,
+   "lat": 39.166115,
+   "osm": "way/105106631"
+  },
+  {
+   "id": "indiana-university-school-of-optometry",
+   "name": "Indiana University School of Optometry",
+   "short": "Indiana University School of Optometry",
+   "kind": "academic",
+   "codes": [
+    "OP"
+   ],
+   "aliases": [
+    "Optometry Building"
+   ],
+   "lng": -86.523301,
+   "lat": 39.162871,
+   "osm": "way/105429970"
+  },
+  {
+   "id": "lilly-library",
+   "name": "Lilly Library",
+   "short": "Lilly Library",
+   "kind": "library",
+   "codes": [
+    "LL"
+   ],
+   "aliases": [],
+   "lng": -86.518982,
+   "lat": 39.167914,
+   "osm": "way/174418525"
+  },
+  {
+   "id": "merrill-hall",
+   "name": "Merrill Hall",
+   "short": "Merrill Hall",
+   "kind": "academic",
+   "codes": [
+    "MU"
+   ],
+   "aliases": [],
+   "lng": -86.518285,
+   "lat": 39.164814,
+   "osm": "way/105431160"
+  },
+  {
+   "id": "sycamore-hall",
+   "name": "Sycamore Hall",
+   "short": "Sycamore Hall",
+   "kind": "academic",
+   "codes": [
+    "SY"
+   ],
+   "aliases": [],
+   "lng": -86.519033,
+   "lat": 39.165283,
+   "osm": "way/104951744"
+  },
+  {
+   "id": "stephen-l-and-connie-j-ferguson-international-center",
+   "name": "Stephen L. & Connie J. Ferguson International Center",
+   "short": "Ferguson International Center",
+   "kind": "academic",
+   "codes": [
+    "EI"
+   ],
+   "aliases": [
+    "Ferguson International Center"
+   ],
+   "lng": -86.515674,
+   "lat": 39.169198,
+   "osm": "way/1106220018"
+  },
+  {
+   "id": "myers-hall",
+   "name": "Myers Hall",
+   "short": "Myers Hall",
+   "kind": "academic",
+   "codes": [
+    "MY"
+   ],
+   "aliases": [],
+   "lng": -86.522295,
+   "lat": 39.164752,
+   "osm": "way/154762554"
+  },
+  {
+   "id": "clarence-e-edmondson-hall",
+   "name": "Clarence E. Edmondson Hall",
+   "short": "Edmondson Hall",
+   "kind": "academic",
+   "codes": [
+    "EO"
+   ],
+   "aliases": [
+    "Edmondson Hall"
+   ],
+   "lng": -86.52442,
+   "lat": 39.171206,
+   "osm": "way/271047499"
+  },
+  {
+   "id": "memorial-hall",
+   "name": "Memorial Hall",
+   "short": "Memorial Hall",
+   "kind": "academic",
+   "codes": [
+    "MM"
+   ],
+   "aliases": [],
+   "lng": -86.519688,
+   "lat": 39.164811,
+   "osm": "way/1093463599"
+  },
+  {
+   "id": "morrison-hall",
+   "name": "Morrison Hall",
+   "short": "Morrison Hall",
+   "kind": "academic",
+   "codes": [
+    "MO"
+   ],
+   "aliases": [],
+   "lng": -86.519723,
+   "lat": 39.165494,
+   "osm": "way/105431156"
+  },
+  {
+   "id": "maxwell-hall",
+   "name": "Maxwell Hall",
+   "short": "Maxwell Hall",
+   "kind": "academic",
+   "codes": [
+    "MX"
+   ],
+   "aliases": [],
+   "lng": -86.524709,
+   "lat": 39.167049,
+   "osm": "way/106168464"
+  },
+  {
+   "id": "rawles-hall",
+   "name": "Rawles Hall",
+   "short": "Rawles Hall",
+   "kind": "academic",
+   "codes": [
+    "RH"
+   ],
+   "aliases": [],
+   "lng": -86.523386,
+   "lat": 39.164726,
+   "osm": "way/154762622"
+  },
+  {
+   "id": "lindley-hall",
+   "name": "Lindley Hall",
+   "short": "Lindley Hall",
+   "kind": "academic",
+   "codes": [
+    "LH"
+   ],
+   "aliases": [],
+   "lng": -86.523598,
+   "lat": 39.165343,
+   "osm": "way/154762549"
+  },
+  {
+   "id": "kirkwood-hall",
+   "name": "Kirkwood Hall",
+   "short": "Kirkwood Hall",
+   "kind": "academic",
+   "codes": [
+    "KH"
+   ],
+   "aliases": [],
+   "lng": -86.523577,
+   "lat": 39.165967,
+   "osm": "way/105106397"
+  },
+  {
+   "id": "music-practice-building",
+   "name": "Music Practice Building",
+   "short": "Music Practice Building",
+   "kind": "academic",
+   "codes": [
+    "P"
+   ],
+   "aliases": [
+    "Music Practice"
+   ],
+   "lng": -86.519412,
+   "lat": 39.163764,
+   "osm": "way/244864258"
+  },
+  {
+   "id": "mies-building-for-the-eskenazi-school-of-art-architecture-design",
+   "name": "Mies Building for the Eskenazi School of Art, Architecture + Design",
+   "short": "Mies Building for the Eskenazi School of Art, Architecture + Design",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Mies van der Rohe Building"
+   ],
+   "lng": -86.516643,
+   "lat": 39.16914,
+   "osm": "way/1084168115"
+  },
+  {
+   "id": "myles-brand-hall",
+   "name": "Myles Brand Hall",
+   "short": "Myles Brand Hall",
+   "kind": "academic",
+   "codes": [
+    "I"
+   ],
+   "aliases": [],
+   "lng": -86.523158,
+   "lat": 39.171976,
+   "osm": "way/154762733"
+  },
+  {
+   "id": "wylie-hall",
+   "name": "Wylie Hall",
+   "short": "Wylie Hall",
+   "kind": "academic",
+   "codes": [
+    "WY"
+   ],
+   "aliases": [],
+   "lng": -86.523582,
+   "lat": 39.166493,
+   "osm": "way/105106402"
+  },
+  {
+   "id": "marcellus-neal-and-frances-marshall-black-culture-center",
+   "name": "Marcellus Neal and Frances Marshall Black Culture Center",
+   "short": "Marcellus Neal and Frances Marshall Black Culture Center",
+   "kind": "academic",
+   "codes": [
+    "TH"
+   ],
+   "aliases": [
+    "Lee Norvelle Theatre and Drama Center / Marcellus Neal and Frances Marshall Black Culture Center"
+   ],
+   "lng": -86.51677,
+   "lat": 39.168144,
+   "osm": "way/174418521"
+  },
+  {
+   "id": "hutton-honors-college",
+   "name": "Hutton Honors College",
+   "short": "Hutton Honors College",
+   "kind": "academic",
+   "codes": [
+    "HU"
+   ],
+   "aliases": [],
+   "lng": -86.524057,
+   "lat": 39.168765,
+   "osm": "way/178096815"
+  },
+  {
+   "id": "swain-east",
+   "name": "Swain East",
+   "short": "Swain East",
+   "kind": "academic",
+   "codes": [
+    "SE"
+   ],
+   "aliases": [],
+   "lng": -86.524197,
+   "lat": 39.164724,
+   "osm": "way/1308356779"
+  },
+  {
+   "id": "mason-hall",
+   "name": "Mason Hall",
+   "short": "Mason Hall",
+   "kind": "academic",
+   "codes": [
+    "MQ"
+   ],
+   "aliases": [],
+   "lng": -86.509938,
+   "lat": 39.167849,
+   "osm": "way/271048501"
+  },
+  {
+   "id": "john-w-cravens-hall",
+   "name": "John W. Cravens Hall",
+   "short": "John W. Cravens Hall",
+   "kind": "academic",
+   "codes": [
+    "ME"
+   ],
+   "aliases": [
+    "Cravens Hall"
+   ],
+   "lng": -86.523994,
+   "lat": 39.171479,
+   "osm": "way/271047500"
+  },
+  {
+   "id": "iu-cinema",
+   "name": "IU Cinema",
+   "short": "IU Cinema",
+   "kind": "academic",
+   "codes": [
+    "CN"
+   ],
+   "aliases": [],
+   "lng": -86.517386,
+   "lat": 39.168537,
+   "osm": "way/174418523"
+  },
+  {
+   "id": "harlos-house",
+   "name": "Harlos House",
+   "short": "Harlos House",
+   "kind": "academic",
+   "codes": [
+    "HS"
+   ],
+   "aliases": [],
+   "lng": -86.51657,
+   "lat": 39.172454,
+   "osm": "way/172193616"
+  },
+  {
+   "id": "karl-f-schuessler-institute-of-social-research",
+   "name": "Karl F. Schuessler Institute of Social Research",
+   "short": "Karl F. Schuessler Institute of Social Research",
+   "kind": "academic",
+   "codes": [
+    "S7"
+   ],
+   "aliases": [
+    "Institute for Social Research"
+   ],
+   "lng": -86.519799,
+   "lat": 39.163776,
+   "osm": "way/132274397"
+  },
+  {
+   "id": "owen-hall",
+   "name": "Owen Hall",
+   "short": "Owen Hall",
+   "kind": "academic",
+   "codes": [
+    "OW"
+   ],
+   "aliases": [],
+   "lng": -86.523829,
+   "lat": 39.16697,
+   "osm": "way/106168461"
+  },
+  {
+   "id": "griggs-lounge",
+   "name": "Griggs Lounge",
+   "short": "Griggs Lounge",
+   "kind": "academic",
+   "codes": [
+    "GG"
+   ],
+   "aliases": [],
+   "lng": -86.511351,
+   "lat": 39.171035,
+   "osm": "way/258941926"
+  },
+  {
+   "id": "william-and-charlotte-l-bryan-house",
+   "name": "William and Charlotte L. Bryan House",
+   "short": "Bryan House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Bryan House"
+   ],
+   "lng": -86.519283,
+   "lat": 39.166858,
+   "osm": "way/172221732"
+  },
+  {
+   "id": "howard-s-howdy-wilcox-house",
+   "name": "Howard S. “Howdy” Wilcox House",
+   "short": "Wilcox House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Wilcox House"
+   ],
+   "lng": -86.517855,
+   "lat": 39.181137,
+   "osm": "way/896860039"
+  },
+  {
+   "id": "leo-r-dowling-international-center",
+   "name": "Leo R. Dowling International Center",
+   "short": "International Center",
+   "kind": "academic",
+   "codes": [
+    "IC"
+   ],
+   "aliases": [
+    "International Center"
+   ],
+   "lng": -86.515827,
+   "lat": 39.16679,
+   "osm": "way/104951763"
+  },
+  {
+   "id": "center-on-representative-government",
+   "name": "Center on Representative Government",
+   "short": "Center on Representative Government",
+   "kind": "academic",
+   "codes": [
+    "M3"
+   ],
+   "aliases": [
+    "Center for Representative Government"
+   ],
+   "lng": -86.527153,
+   "lat": 39.16779,
+   "osm": "way/847196648"
+  },
+  {
+   "id": "daniel-kirkwood-observatory",
+   "name": "Daniel Kirkwood Observatory",
+   "short": "Kirkwood Observatory",
+   "kind": "academic",
+   "codes": [
+    "OB"
+   ],
+   "aliases": [
+    "Kirkwood Observatory"
+   ],
+   "lng": -86.526068,
+   "lat": 39.165748,
+   "osm": "way/105106444"
+  },
+  {
+   "id": "harris-house",
+   "name": "Harris House",
+   "short": "Harris House",
+   "kind": "academic",
+   "codes": [
+    "HR"
+   ],
+   "aliases": [],
+   "lng": -86.52444,
+   "lat": 39.168683,
+   "osm": "way/702177751"
+  },
+  {
+   "id": "jimmy-johns",
+   "name": "Jimmy John's",
+   "short": "Jimmy John's",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Jimmy John's Gourmet Sandwiches"
+   ],
+   "lng": -86.51,
+   "lat": 39.171717,
+   "osm": "way/472484588"
+  }
+ ]
+}

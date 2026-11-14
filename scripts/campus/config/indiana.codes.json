@@ -1,0 +1,503 @@
+{
+ "name": "Indiana University Office of the Registrar, Academic Building Codes (Bloomington)",
+ "url": "https://registrar.indiana.edu/information/building-codes.html",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "AC",
+   "name": "Cedar Hall"
+  },
+  {
+   "code": "AD",
+   "name": "Auditorium"
+  },
+  {
+   "code": "AG",
+   "name": "422 N. Indiana Ave."
+  },
+  {
+   "code": "AH",
+   "name": "The Health Services Building"
+  },
+  {
+   "code": "AM",
+   "name": "DeVault Alumni Center"
+  },
+  {
+   "code": "AN",
+   "name": "701 E. 8th St."
+  },
+  {
+   "code": "AS",
+   "name": "Simon Skjodt Assembly Hall"
+  },
+  {
+   "code": "AT",
+   "name": "Armstrong Stadium/Tardy Center"
+  },
+  {
+   "code": "AZ",
+   "name": "Studio Arts Annex"
+  },
+  {
+   "code": "BC",
+   "name": "Buskirk-Chumley Theatre"
+  },
+  {
+   "code": "BD",
+   "name": "Cook Hall"
+  },
+  {
+   "code": "BH",
+   "name": "Ballantine Hall"
+  },
+  {
+   "code": "BQ",
+   "name": "Briscoe Quad"
+  },
+  {
+   "code": "BY",
+   "name": "Bryan Hall"
+  },
+  {
+   "code": "C2",
+   "name": "Classroom-Office Building"
+  },
+  {
+   "code": "CG",
+   "name": "Godfrey Grad & Exec Ed Ctr"
+  },
+  {
+   "code": "CH",
+   "name": "Chemistry"
+  },
+  {
+   "code": "CN",
+   "name": "IU Cinema"
+  },
+  {
+   "code": "CO",
+   "name": "Eskenazi Wood and Metal Shop"
+  },
+  {
+   "code": "CR",
+   "name": "Cyberinfrastructure Building (CIB)"
+  },
+  {
+   "code": "CU",
+   "name": "Student Services"
+  },
+  {
+   "code": "CX",
+   "name": "Chemistry Addition"
+  },
+  {
+   "code": "CY",
+   "name": "Multidisciplinary Engineering & Sciences Hall (MESH)"
+  },
+  {
+   "code": "ED",
+   "name": "Wendell W. Wright Education Building"
+  },
+  {
+   "code": "EG",
+   "name": "Eigenmann Hall"
+  },
+  {
+   "code": "EI",
+   "name": "Ferguson International Center"
+  },
+  {
+   "code": "EO",
+   "name": "Edmondson Hall"
+  },
+  {
+   "code": "EP",
+   "name": "Ernie Pyle Hall"
+  },
+  {
+   "code": "FA",
+   "name": "Fine Arts"
+  },
+  {
+   "code": "FE",
+   "name": "800 N. Indiana Ave."
+  },
+  {
+   "code": "FF",
+   "name": "Franklin Hall"
+  },
+  {
+   "code": "FK",
+   "name": "504 N. Fess Ave."
+  },
+  {
+   "code": "FQ",
+   "name": "Martin Hall"
+  },
+  {
+   "code": "FR",
+   "name": "Forest Quad"
+  },
+  {
+   "code": "FV",
+   "name": "Sidney & Lois Eskenazi Museum of Art"
+  },
+  {
+   "code": "FX",
+   "name": "McCalla School"
+  },
+  {
+   "code": "FY",
+   "name": "501 N. Park Ave."
+  },
+  {
+   "code": "GA",
+   "name": "Global & International Studies Building"
+  },
+  {
+   "code": "GB",
+   "name": "Goodbody Hall"
+  },
+  {
+   "code": "GF",
+   "name": "Bill Garrett Fieldhouse"
+  },
+  {
+   "code": "GG",
+   "name": "Griggs Lounge"
+  },
+  {
+   "code": "GI",
+   "name": "Intercollegiate Athletics Gym"
+  },
+  {
+   "code": "GR",
+   "name": "Gresham Dining Hall"
+  },
+  {
+   "code": "GT",
+   "name": "IU Golf Teaching and Training Center"
+  },
+  {
+   "code": "GY",
+   "name": "Geological Sciences"
+  },
+  {
+   "code": "HC",
+   "name": "IU Student Health Center"
+  },
+  {
+   "code": "HH",
+   "name": "Hodge Hall (Kelley School of Business)"
+  },
+  {
+   "code": "HL",
+   "name": "Alice McDonald Nelson Halls of Residence"
+  },
+  {
+   "code": "HR",
+   "name": "Harris House"
+  },
+  {
+   "code": "HS",
+   "name": "Harlos House"
+  },
+  {
+   "code": "HU",
+   "name": "Hutton Honors College"
+  },
+  {
+   "code": "I",
+   "name": "Myles Brand Hall"
+  },
+  {
+   "code": "IC",
+   "name": "International Center"
+  },
+  {
+   "code": "IF",
+   "name": "Luddy Hall (School of Informatics)"
+  },
+  {
+   "code": "IR",
+   "name": "Innovation Center"
+  },
+  {
+   "code": "IS",
+   "name": "Jenkinson Hall"
+  },
+  {
+   "code": "JH",
+   "name": "Biology Building"
+  },
+  {
+   "code": "JS",
+   "name": "East Studio Building"
+  },
+  {
+   "code": "KH",
+   "name": "Kirkwood Hall"
+  },
+  {
+   "code": "LH",
+   "name": "Lindley Hall"
+  },
+  {
+   "code": "LI",
+   "name": "Wells Library"
+  },
+  {
+   "code": "LL",
+   "name": "Lilly Library"
+  },
+  {
+   "code": "LS",
+   "name": "4th & Indiana - Lewis Building"
+  },
+  {
+   "code": "LU",
+   "name": "Luddy Center for Artificial Intelligence"
+  },
+  {
+   "code": "LW",
+   "name": "Lowell E. Baier Hall (Maurer School of Law)"
+  },
+  {
+   "code": "M2",
+   "name": "IU Museum of Archaeology & Anthropology"
+  },
+  {
+   "code": "M3",
+   "name": "Center for Representative Government"
+  },
+  {
+   "code": "MA",
+   "name": "Music Addition"
+  },
+  {
+   "code": "MC",
+   "name": "Musical Arts Center"
+  },
+  {
+   "code": "ME",
+   "name": "Cravens Hall"
+  },
+  {
+   "code": "MG",
+   "name": "Marching Hundred Hall (Ray E. Cramer)"
+  },
+  {
+   "code": "MM",
+   "name": "Memorial Hall"
+  },
+  {
+   "code": "MN",
+   "name": "McNutt Central"
+  },
+  {
+   "code": "MO",
+   "name": "Morrison Hall"
+  },
+  {
+   "code": "MQ",
+   "name": "Mason Hall"
+  },
+  {
+   "code": "MS",
+   "name": "Memorial Stadium"
+  },
+  {
+   "code": "MU",
+   "name": "Merrill Hall"
+  },
+  {
+   "code": "MV",
+   "name": "Mellencamp Pavilion"
+  },
+  {
+   "code": "MX",
+   "name": "Maxwell Hall"
+  },
+  {
+   "code": "MY",
+   "name": "Myers Hall"
+  },
+  {
+   "code": "MZ",
+   "name": "Disability and Community"
+  },
+  {
+   "code": "NA",
+   "name": "Building Not Yet Assigned"
+  },
+  {
+   "code": "NF",
+   "name": "Gladstein Fieldhouse"
+  },
+  {
+   "code": "OB",
+   "name": "Kirkwood Observatory"
+  },
+  {
+   "code": "OC",
+   "name": "Off-Campus Class"
+  },
+  {
+   "code": "OD",
+   "name": "Outdoor Pool"
+  },
+  {
+   "code": "OP",
+   "name": "Optometry Building"
+  },
+  {
+   "code": "OW",
+   "name": "Owen Hall"
+  },
+  {
+   "code": "P",
+   "name": "Music Practice"
+  },
+  {
+   "code": "PH",
+   "name": "School of Public Health"
+  },
+  {
+   "code": "PJ",
+   "name": "618 E. 3rd St."
+  },
+  {
+   "code": "PV",
+   "name": "O'Neill School of Public and Environmental Affairs"
+  },
+  {
+   "code": "PY",
+   "name": "Psychology"
+  },
+  {
+   "code": "R2",
+   "name": "Journal of American History"
+  },
+  {
+   "code": "RA",
+   "name": "Spruce Hall"
+  },
+  {
+   "code": "RB",
+   "name": "Student Recreational Sports & Aquatic Center"
+  },
+  {
+   "code": "RE",
+   "name": "Read Hall"
+  },
+  {
+   "code": "RH",
+   "name": "Rawles Hall"
+  },
+  {
+   "code": "RP",
+   "name": "Researcy & Teaching Preserve"
+  },
+  {
+   "code": "S2",
+   "name": "Multidisciplinary Science Building II"
+  },
+  {
+   "code": "S7",
+   "name": "Institute for Social Research"
+  },
+  {
+   "code": "SB",
+   "name": "Student Building (Frances Morgan Swain)"
+  },
+  {
+   "code": "SE",
+   "name": "Swain East"
+  },
+  {
+   "code": "SH",
+   "name": "Shea Hall"
+  },
+  {
+   "code": "SI",
+   "name": "Simon Hall (Science)"
+  },
+  {
+   "code": "SM",
+   "name": "Music Library and Recital Center, Bess Meshulam Simon"
+  },
+  {
+   "code": "SW",
+   "name": "Swain West"
+  },
+  {
+   "code": "SY",
+   "name": "Sycamore Hall"
+  },
+  {
+   "code": "TE",
+   "name": "Teter Quad"
+  },
+  {
+   "code": "TH",
+   "name": "Lee Norvelle Theatre and Drama Center / Marcellus Neal and Frances Marshall Black Culture Center"
+  },
+  {
+   "code": "TP",
+   "name": "Tennis Center"
+  },
+  {
+   "code": "TT",
+   "name": "Tulip Tree Apartments"
+  },
+  {
+   "code": "TV",
+   "name": "Radio-Television Center"
+  },
+  {
+   "code": "UB",
+   "name": "Indiana Memorial Union Building"
+  },
+  {
+   "code": "VD",
+   "name": "Eskenazi School/Mies Van Der Rohe Building"
+  },
+  {
+   "code": "VW",
+   "name": "Wilkinson Hall (Volleyball/Wrestling)"
+  },
+  {
+   "code": "WB",
+   "name": "Web Courses (class meets online)"
+  },
+  {
+   "code": "WH",
+   "name": "Woodburn Hall"
+  },
+  {
+   "code": "WI",
+   "name": "Wilkie Quad"
+  },
+  {
+   "code": "WN",
+   "name": "Persimmon A & B"
+  },
+  {
+   "code": "WS",
+   "name": "Chestnut C & D"
+  },
+  {
+   "code": "WT",
+   "name": "Wright Quad"
+  },
+  {
+   "code": "WU",
+   "name": "1127 E. Atwater Ave."
+  },
+  {
+   "code": "WY",
+   "name": "Wylie Hall"
+  }
+ ]
+}

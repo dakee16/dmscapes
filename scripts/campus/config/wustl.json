@@ -1,0 +1,17 @@
+{
+  "collegeId": "wustl",
+  "area": {
+    "osm": "relation/18459816",
+    "bbox": [
+      38.64004,
+      -90.31736,
+      38.65145,
+      -90.30084
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/wustl.codes.json"
+  }
+}

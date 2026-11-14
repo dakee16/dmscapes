@@ -1,0 +1,118 @@
+{
+  "halls": {
+    "litchfield-tower-a": {
+      "pin": [
+        -79.956442,
+        40.442663
+      ]
+    },
+    "litchfield-tower-b": {
+      "pin": [
+        -79.956442,
+        40.442663
+      ]
+    },
+    "litchfield-tower-c": {
+      "pin": [
+        -79.956442,
+        40.442663
+      ]
+    }
+  },
+  "places": {
+    "the-oaklander-hotel": {
+      "hide": true
+    },
+    "fanny-edel-falk-laboratory-school": {
+      "hide": true
+    },
+    "fraternity-housing": {
+      "hide": true
+    },
+    "fraternity-housing-535864398": {
+      "hide": true
+    },
+    "fraternity-housing-535864397": {
+      "hide": true
+    },
+    "fraternity-house": {
+      "hide": true
+    },
+    "pitt-sports-dome": {
+      "hide": true
+    },
+    "cost-sports-center": {
+      "hide": true
+    },
+    "petersen-sports-complex-support-building": {
+      "hide": true
+    },
+    "chilled-water-plant": {
+      "hide": true
+    },
+    "falk-medical-building": {
+      "hide": true
+    },
+    "western-psychiatric-hospital": {
+      "hide": true
+    },
+    "bellefield-towers": {
+      "hide": true
+    },
+    "bellefield-presbyterian-church-bell-tower": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "the-oaklander-hotel": "A hotel, not somewhere classes or meals happen.",
+    "fanny-edel-falk-laboratory-school": "Falk Laboratory School, a K-8 school, not somewhere classes or meals happen.",
+    "fraternity-housing": "Fraternity housing, not somewhere classes or meals happen.",
+    "fraternity-housing-535864398": "Fraternity housing, not somewhere classes or meals happen.",
+    "fraternity-housing-535864397": "Fraternity housing, not somewhere classes or meals happen.",
+    "fraternity-house": "A fraternity house, not somewhere classes or meals happen.",
+    "pitt-sports-dome": "Varsity indoor practice dome, not somewhere classes or meals happen.",
+    "cost-sports-center": "Varsity athletics center, not somewhere classes or meals happen.",
+    "petersen-sports-complex-support-building": "Varsity sports complex support building, not somewhere classes or meals happen.",
+    "chilled-water-plant": "A utility plant, not somewhere classes or meals happen.",
+    "falk-medical-building": "UPMC medical office building, not somewhere classes or meals happen.",
+    "western-psychiatric-hospital": "A hospital, not somewhere classes or meals happen.",
+    "bellefield-towers": "An office tower, not somewhere classes or meals happen.",
+    "bellefield-presbyterian-church-bell-tower": "A church bell tower, not somewhere classes or meals happen.",
+    "litchfield-tower-a": "OSM maps the three Litchfield Towers as one footprint, Litchfield Towers Complex (way/535897027); Towers A, B and C share its centre.",
+    "litchfield-tower-b": "Same pin as Litchfield Tower A.",
+    "litchfield-tower-c": "Same pin as Litchfield Tower A."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "sutherland-hall -> eberly-hall",
+        "sutherland-hall -> cheveron-science-center"
+      ],
+      "maxRatio": 4,
+      "why": "Sutherland Hall sits on the hillside above the main campus; the mapped way down is the winding footpath to the buildings below, about three times the straight line."
+    },
+    {
+      "pairs": [
+        "nordenberg-hall -> thackeray-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "A road lies between them; the walk crosses at the mapped crossing to the south, and Thackeray Hall (way/154664992) has no mapped entrance, its centre snapping to the service drive behind it."
+    },
+    {
+      "pairs": [
+        "forbes-hall -> biomedical-science-tower-iii"
+      ],
+      "maxRatio": 3.5,
+      "why": "Forbes Hall's mapped path leaves south to Semple Street, and BST III (way/535446979) has no mapped entrance, its centre snapping to the service drive north of it, so the walk crosses at the mapped crossing and goes round."
+    },
+    {
+      "pairs": [
+        "litchfield-tower-a -> sennott-square",
+        "litchfield-tower-b -> sennott-square",
+        "litchfield-tower-c -> sennott-square"
+      ],
+      "maxRatio": 3,
+      "why": "The Litchfield Towers footprint (way/535897027) has no mapped entrance; its centre snaps to the plaza on its north side, and Sennott Square's centre snaps to the service drive behind it across the street to the south, so the walk goes round both."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "collegeId": "umass",
+  "area": {
+    "osm": "relation/9361144",
+    "bbox": [
+      42.37359,
+      -72.54165,
+      42.40485,
+      -72.50454
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class building-code list: the campus map's building index (https://www.umass.edu/sites/default/files/2022-07/UMassAmherstCampusMap2022.pdf) gives names and grid squares only, the MyUMass map service (maps.umass.edu) did not answer, and no Registrar code key turned up; checked 2026-11-08."
+}

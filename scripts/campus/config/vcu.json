@@ -1,0 +1,19 @@
+{
+  "collegeId": "vcu",
+  "area": {
+    "osm": "relation/13083991",
+    "bbox": [
+      37.54198,
+      -77.45622,
+      37.55442,
+      -77.44545
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "VCU's registrar Schedule of Classes pages (registrar.vcu.edu/academic-schedules/schedule-of-classes) give no building key; the Monroe Park map list (maps.vcu.edu/monroepark/list.html, Concept3D) has names only, and the letter codes on the parking map (parking.vcu.edu MPC map) are parking decks and lots.",
+  "excludeHalls": {
+    "cabaniss-hall": "Cabaniss Hall (615 N 8th St, OSM way/224258003) is on VCU's MCV (medical) campus downtown, about 2 km east of the Monroe Park campus this map covers."
+  }
+}

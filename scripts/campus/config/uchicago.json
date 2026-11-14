@@ -1,0 +1,17 @@
+{
+  "collegeId": "uchicago",
+  "area": {
+    "osm": "relation/13117436",
+    "bbox": [
+      41.7834,
+      -87.60615,
+      41.79497,
+      -87.58944
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class building-code list: UChicago's public buildings layer (UChicago Retained Buildings - Public v2, https://services.arcgis.com/ppFhFO7kjyIF441C/arcgis/rest/services/UChicago_Retained_Buildings_-_Public_v2/FeatureServer/0) has internal ids (e.g. O16) and names, not schedule codes, and no Registrar code key turned up; checked 2026-11-08.",
+  "areaNote": "OSM 'The University of Chicago' (relation/13117436, found on Nominatim by 'The University of Chicago'); bbox is that outline's."
+}

@@ -1,0 +1,19 @@
+{
+  "collegeId": "marquette",
+  "area": {
+    "osm": "relation/7211743",
+    "bbox": [
+      43.03147,
+      -87.93906,
+      43.04158,
+      -87.9192
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class building-code list: Marquette's building names page (https://www.marquette.edu/tools/building-names.php) gives campus-map numbers only, and the Registrar's 25Live tips (https://www.marquette.edu/mucentral/registrar/faculty/documents/25LiveTips.pdf) carry no code key; checked 2026-11-08.",
+  "excludeHalls": {
+    "mccormick-community": "Not a current hall: McCormick Hall closed after 2018-19 and was demolished in 2019 (O'Brien Hall, the business school, now stands on the site), and no McCormick hall or community is on Marquette's residence hall list (marquette.edu/residence-life/residence-halls/) or building names page (marquette.edu/tools/building-names.php); the school file should drop it."
+  }
+}

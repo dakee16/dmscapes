@@ -1,0 +1,374 @@
+{
+ "collegeId": "seattleu",
+ "generatedAt": "2026-11-14T06:58:37.790Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Seattle University First Hill Campus Map (building directory with codes), FC 2025-08",
+   "url": "https://www.seattleu.edu/media/SUCampusMap18.pdf",
+   "use": "building codes",
+   "read": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/seattleu.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -122.31983,
+  47.60672,
+  -122.30948,
+  47.61185
+ ],
+ "halls": [
+  {
+   "dormId": "campion-hall",
+   "name": "Campion Hall",
+   "lng": -122.319556,
+   "lat": 47.606721,
+   "pin": "name",
+   "osm": "way/228885727",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-f-eisminger-fitness-center",
+     "minutes": 8.3
+    },
+    "library": {
+     "placeId": "lemieux-library-and-mcgoldrick-learning-commons",
+     "minutes": 3.1
+    },
+    "dining": {
+     "placeId": "student-center",
+     "minutes": 2.9
+    }
+   }
+  },
+  {
+   "dormId": "bellarmine-hall",
+   "name": "Bellarmine Hall",
+   "lng": -122.317162,
+   "lat": 47.608653,
+   "pin": "name",
+   "osm": "way/118107149",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-f-eisminger-fitness-center",
+     "minutes": 6.3
+    },
+    "library": {
+     "placeId": "lemieux-library-and-mcgoldrick-learning-commons",
+     "minutes": 1.7
+    },
+    "dining": {
+     "placeId": "student-center",
+     "minutes": 1
+    }
+   }
+  },
+  {
+   "dormId": "xavier-hall",
+   "name": "Xavier Hall",
+   "lng": -122.317313,
+   "lat": 47.611823,
+   "pin": "name",
+   "osm": "way/118121860",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-f-eisminger-fitness-center",
+     "minutes": 10.4
+    },
+    "library": {
+     "placeId": "lemieux-library-and-mcgoldrick-learning-commons",
+     "minutes": 5.3
+    },
+    "dining": {
+     "placeId": "student-center",
+     "minutes": 5.5
+    }
+   }
+  },
+  {
+   "dormId": "chardin-hall",
+   "name": "Chardin Hall",
+   "lng": -122.318542,
+   "lat": 47.606752,
+   "pin": "name",
+   "osm": "way/228885700",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-f-eisminger-fitness-center",
+     "minutes": 5.9
+    },
+    "library": {
+     "placeId": "lemieux-library-and-mcgoldrick-learning-commons",
+     "minutes": 4.5
+    },
+    "dining": {
+     "placeId": "student-center",
+     "minutes": 4.7
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "redhawk-center",
+   "name": "Redhawk Center",
+   "short": "Redhawk Center",
+   "kind": "gym",
+   "codes": [
+    "HAWK"
+   ],
+   "aliases": [
+    "Connolly Center"
+   ],
+   "lng": -122.313395,
+   "lat": 47.607319,
+   "osm": "way/80716727"
+  },
+  {
+   "id": "james-tower",
+   "name": "James Tower",
+   "short": "James Tower",
+   "kind": "academic",
+   "codes": [
+    "JMTW"
+   ],
+   "aliases": [
+    "James Tower (at Swedish Cherry Hill)"
+   ],
+   "lng": -122.309481,
+   "lat": 47.607047,
+   "osm": "way/333363885"
+  },
+  {
+   "id": "seattle-university-school-of-law",
+   "name": "Seattle University School of Law",
+   "short": "Seattle University School of Law",
+   "kind": "academic",
+   "codes": [
+    "SLLH"
+   ],
+   "aliases": [
+    "Sullivan Hall"
+   ],
+   "lng": -122.317537,
+   "lat": 47.609607,
+   "osm": "way/118107155"
+  },
+  {
+   "id": "lemieux-library-and-mcgoldrick-learning-commons",
+   "name": "Lemieux Library & McGoldrick Learning Commons",
+   "short": "Lemieux Library & McGoldrick Learning Commons",
+   "kind": "library",
+   "codes": [
+    "LEML"
+   ],
+   "aliases": [],
+   "lng": -122.318869,
+   "lat": 47.608832,
+   "osm": "way/118121856"
+  },
+  {
+   "id": "pigott-building",
+   "name": "Pigott Building",
+   "short": "Pigott Building",
+   "kind": "academic",
+   "codes": [
+    "PIGT"
+   ],
+   "aliases": [],
+   "lng": -122.318762,
+   "lat": 47.610716,
+   "osm": "way/117996770"
+  },
+  {
+   "id": "student-center",
+   "name": "Student Center",
+   "short": "Student Center",
+   "kind": "dining",
+   "codes": [
+    "STCN"
+   ],
+   "aliases": [],
+   "lng": -122.318184,
+   "lat": 47.608347,
+   "osm": "way/118121861"
+  },
+  {
+   "id": "center-for-science-and-innovation",
+   "name": "Center for Science and Innovation",
+   "short": "Center for Science and Innovation",
+   "kind": "academic",
+   "codes": [
+    "SINE"
+   ],
+   "aliases": [
+    "Sinegal Center for Science & Innovation"
+   ],
+   "lng": -122.317373,
+   "lat": 47.610072,
+   "osm": "way/862399814"
+  },
+  {
+   "id": "obrien-center",
+   "name": "O'Brien Center",
+   "short": "O'Brien Center",
+   "kind": "academic",
+   "codes": [
+    "OBRN"
+   ],
+   "aliases": [],
+   "lng": -122.315881,
+   "lat": 47.608418,
+   "osm": "way/228858866"
+  },
+  {
+   "id": "james-c-pigott-pavilion-for-leadership",
+   "name": "James C. Pigott Pavilion for Leadership",
+   "short": "James C. Pigott Pavilion for Leadership",
+   "kind": "academic",
+   "codes": [
+    "PAVL"
+   ],
+   "aliases": [
+    "Pigott Pavilion for Leadership"
+   ],
+   "lng": -122.317564,
+   "lat": 47.608774,
+   "osm": "way/118121855"
+  },
+  {
+   "id": "bannan-engineering-building",
+   "name": "Bannan Engineering Building",
+   "short": "Bannan Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "BANN"
+   ],
+   "aliases": [
+    "Bannan Center"
+   ],
+   "lng": -122.318804,
+   "lat": 47.609482,
+   "osm": "way/117996757"
+  },
+  {
+   "id": "administration-building",
+   "name": "Administration Building",
+   "short": "Administration Building",
+   "kind": "academic",
+   "codes": [
+    "ADMN"
+   ],
+   "aliases": [],
+   "lng": -122.319651,
+   "lat": 47.611137,
+   "osm": "way/117996756"
+  },
+  {
+   "id": "lee-center-for-the-arts",
+   "name": "Lee Center for the Arts",
+   "short": "Lee Center for the Arts",
+   "kind": "academic",
+   "codes": [
+    "CNFA"
+   ],
+   "aliases": [],
+   "lng": -122.317142,
+   "lat": 47.610682,
+   "osm": "way/118107151"
+  },
+  {
+   "id": "fine-arts-building",
+   "name": "Fine Arts Building",
+   "short": "Fine Arts Building",
+   "kind": "academic",
+   "codes": [
+    "FINR"
+   ],
+   "aliases": [],
+   "lng": -122.318819,
+   "lat": 47.611714,
+   "osm": "way/117996761"
+  },
+  {
+   "id": "casey-building",
+   "name": "Casey Building",
+   "short": "Casey Building",
+   "kind": "academic",
+   "codes": [
+    "CASY"
+   ],
+   "aliases": [],
+   "lng": -122.319747,
+   "lat": 47.610151,
+   "osm": "way/117996774"
+  },
+  {
+   "id": "loyola-hall",
+   "name": "Loyola Hall",
+   "short": "Loyola Hall",
+   "kind": "academic",
+   "codes": [
+    "LOYA"
+   ],
+   "aliases": [],
+   "lng": -122.319733,
+   "lat": 47.609533,
+   "osm": "way/117996768"
+  },
+  {
+   "id": "william-f-eisminger-fitness-center",
+   "name": "William F. Eisminger Fitness Center",
+   "short": "William F. Eisminger Fitness Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.313726,
+   "lat": 47.606801,
+   "osm": "way/1132697773"
+  },
+  {
+   "id": "hunthausen-hall",
+   "name": "Hunthausen Hall",
+   "short": "Hunthausen Hall",
+   "kind": "academic",
+   "codes": [
+    "HUNT"
+   ],
+   "aliases": [],
+   "lng": -122.318334,
+   "lat": 47.611845,
+   "osm": "way/117996763"
+  },
+  {
+   "id": "garrand-building",
+   "name": "Garrand Building",
+   "short": "Garrand Building",
+   "kind": "academic",
+   "codes": [
+    "GARR"
+   ],
+   "aliases": [],
+   "lng": -122.319833,
+   "lat": 47.61059,
+   "osm": "way/117996765"
+  }
+ ]
+}

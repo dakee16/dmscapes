@@ -1,0 +1,16 @@
+{
+  "collegeId": "northwestern",
+  "area": {
+    "osm": "relation/2105485",
+    "bbox": [
+      42.0469,
+      -87.69472,
+      42.06875,
+      -87.66925
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Northwestern's registrar publishes no building-code list; the only public abbreviation list found is a 2013 Facilities design-standards PDF (northwestern.edu/facilities/docs/25-0000-nu-ddc-standards-20131218.pdf) that predates newer buildings such as the Kellogg Global Hub, so it isn't used (checked 2026-11-08)."
+}

@@ -1,0 +1,119 @@
+{
+ "name": "UC Irvine Classroom Technologies (Office of Information Technology), classroom building pages: building name and code as used in the Schedule of Classes (WebSOC Meeting Place)",
+ "url": "https://classrooms.uci.edu/classroom-table/",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "AIRB",
+   "name": "Anteater Instruction & Research Building"
+  },
+  {
+   "code": "ALP",
+   "name": "Anteater Learning Pavilion"
+  },
+  {
+   "code": "BS3",
+   "name": "Biological Sciences III"
+  },
+  {
+   "code": "DBH",
+   "name": "Donald Bren Hall"
+  },
+  {
+   "code": "EH",
+   "name": "Engineering Hall"
+  },
+  {
+   "code": "ELH",
+   "name": "Engineering Lecture Hall"
+  },
+  {
+   "code": "HG",
+   "name": "Humanities Gateway"
+  },
+  {
+   "code": "HH",
+   "name": "Humanities Hall"
+  },
+  {
+   "code": "HIB",
+   "name": "Humanities Instructional Building"
+  },
+  {
+   "code": "IAB",
+   "name": "Intercollegiate Athletics Building"
+  },
+  {
+   "code": "ICS",
+   "name": "Information & Computer Science"
+  },
+  {
+   "code": "MM",
+   "name": "Music & Media"
+  },
+  {
+   "code": "MPAA",
+   "name": "Multipurpose Academic & Admin Building"
+  },
+  {
+   "code": "MSTB",
+   "name": "Multipurpose Science & Technology Building"
+  },
+  {
+   "code": "NS1",
+   "name": "Natural Sciences I"
+  },
+  {
+   "code": "PCB",
+   "name": "Parkview Classroom Bldg"
+  },
+  {
+   "code": "PSCB",
+   "name": "Physical Sciences Classroom Building"
+  },
+  {
+   "code": "PSLH",
+   "name": "Physical Sciences Lecture Hall"
+  },
+  {
+   "code": "RH",
+   "name": "Rowland Hall"
+  },
+  {
+   "code": "SE1",
+   "name": "Social Ecology I"
+  },
+  {
+   "code": "SE2",
+   "name": "Social Ecology II"
+  },
+  {
+   "code": "SH",
+   "name": "Steinhaus Hall"
+  },
+  {
+   "code": "SSH",
+   "name": "Social Science Hall"
+  },
+  {
+   "code": "SSL",
+   "name": "Social Science Lab"
+  },
+  {
+   "code": "SSLH",
+   "name": "Social Science Lecture Hall"
+  },
+  {
+   "code": "SSPA",
+   "name": "Social Science Plaza A"
+  },
+  {
+   "code": "SST",
+   "name": "Social Science Tower"
+  },
+  {
+   "code": "SSTR",
+   "name": "Social Science Trailer"
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+  "collegeId": "rutgers",
+  "area": {
+    "osm": "way/182590138",
+    "bbox": [
+      40.49752,
+      -74.45607,
+      40.50627,
+      -74.4449
+    ]
+  },
+  "areaNote": "OSM \"Rutgers College Avenue Campus\" (way/182590138). Rutgers–New Brunswick is four campuses joined by buses; Hall Finder ranks the College Avenue halls by walking only (owner decision), the others are excluded below.",
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/rutgers.codes.json"
+  },
+  "excludeHalls": {
+    "allen-hall": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "best-neighborhood": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "barr-hall": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "buell-apartments": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "crosby-suites": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "johnson-apartments": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "judson-suites": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "marvin-apartments": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "mattia-hall": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "mccormick-suites": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "metzger-hall": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "morrow-suites": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "nichols-apartments": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "richardson-apartments": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "silvers-apartments": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "thomas-suites": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "winkler-suites": "Busch campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "helyar-house": "Cook/Douglass campus, about 2 km south of College Avenue (OSM relation/10996236); reached by campus bus (campus field in data/schools/rutgers.json)",
+    "henderson-apartments": "Cook/Douglass campus, about 2 km south of College Avenue (OSM relation/10996236); reached by campus bus (campus field in data/schools/rutgers.json)",
+    "jameson-hall": "Cook/Douglass campus, about 2 km south of College Avenue (OSM relation/10996236); reached by campus bus (campus field in data/schools/rutgers.json)",
+    "katzenbach-hall": "Cook/Douglass campus, about 2 km south of College Avenue (OSM relation/10996236); reached by campus bus (campus field in data/schools/rutgers.json)",
+    "lippincott-hall": "Cook/Douglass campus, about 2 km south of College Avenue (OSM relation/10996236); reached by campus bus (campus field in data/schools/rutgers.json)",
+    "new-gibbons": "Cook/Douglass campus, about 2 km south of College Avenue (OSM relation/10996236); reached by campus bus (campus field in data/schools/rutgers.json)",
+    "newell-apartments": "Cook/Douglass campus, about 2 km south of College Avenue (OSM relation/10996236); reached by campus bus (campus field in data/schools/rutgers.json)",
+    "nicholas-hall": "Cook/Douglass campus, about 2 km south of College Avenue (OSM relation/10996236); reached by campus bus (campus field in data/schools/rutgers.json)",
+    "perry-hall": "Cook/Douglass campus, about 2 km south of College Avenue (OSM relation/10996236); reached by campus bus (campus field in data/schools/rutgers.json)",
+    "starkey-apartments": "Cook/Douglass campus, about 2 km south of College Avenue (OSM relation/10996236); reached by campus bus (campus field in data/schools/rutgers.json)",
+    "voorhees-residence-hall": "Cook/Douglass campus, about 2 km south of College Avenue (OSM relation/10996236); reached by campus bus (campus field in data/schools/rutgers.json)",
+    "woodbury-bunting-cobb-hall": "Cook/Douglass campus, about 2 km south of College Avenue (OSM relation/10996236); reached by campus bus (campus field in data/schools/rutgers.json)",
+    "livingston-apartments": "Livingston campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "lynton-towers-north": "Livingston campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "lynton-towers-south": "Livingston campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "quad-i": "Livingston campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "quad-ii": "Livingston campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)",
+    "quad-iii": "Livingston campus in Piscataway, across the Raritan River from College Avenue; reached by campus bus (campus field in data/schools/rutgers.json)"
+  }
+}

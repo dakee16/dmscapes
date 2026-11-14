@@ -1,0 +1,2879 @@
+{
+ "name": "UW\u2013Madison Facilities Planning & Management, Facility List (official facility numbers and names; Madison rows)",
+ "url": "https://facilities.fpm.wisc.edu/facility-list/",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "0002",
+   "name": "Olin House"
+  },
+  {
+   "code": "0004",
+   "name": "Olin House Garage"
+  },
+  {
+   "code": "0006",
+   "name": "Pyle Center"
+  },
+  {
+   "code": "0007",
+   "name": "Lincoln Statue"
+  },
+  {
+   "code": "0008",
+   "name": "Memorial Union"
+  },
+  {
+   "code": "0010",
+   "name": "Tong Family Marina"
+  },
+  {
+   "code": "0011",
+   "name": "Vet Med-Charmany"
+  },
+  {
+   "code": "0013",
+   "name": "Hagenah Fountain"
+  },
+  {
+   "code": "0015",
+   "name": "Memorial Library"
+  },
+  {
+   "code": "0016",
+   "name": "Historical Society"
+  },
+  {
+   "code": "0017",
+   "name": "Vet Med-Charm-Svc Bldg"
+  },
+  {
+   "code": "0018",
+   "name": "White Hall"
+  },
+  {
+   "code": "0019",
+   "name": "Civil War Guard House"
+  },
+  {
+   "code": "0020",
+   "name": "Red Gym"
+  },
+  {
+   "code": "0021",
+   "name": "McClain Athletic Facility (Inactive)"
+  },
+  {
+   "code": "0022",
+   "name": "Camp Randall Stadium"
+  },
+  {
+   "code": "0023",
+   "name": "Athl Ticket Shelt-Port"
+  },
+  {
+   "code": "0024",
+   "name": "Camp Randall Arch"
+  },
+  {
+   "code": "0026",
+   "name": "Nick"
+  },
+  {
+   "code": "0027",
+   "name": "U Bay Fields Bldg"
+  },
+  {
+   "code": "0029",
+   "name": "Field House"
+  },
+  {
+   "code": "0032",
+   "name": "Lathrop Hall"
+  },
+  {
+   "code": "0033",
+   "name": "Bock Labs"
+  },
+  {
+   "code": "0034",
+   "name": "Rennebohm Hall"
+  },
+  {
+   "code": "0035",
+   "name": "Meiklejohn House"
+  },
+  {
+   "code": "0036",
+   "name": "Forest Products Lab"
+  },
+  {
+   "code": "0037",
+   "name": "Park-Langdon Kiosk"
+  },
+  {
+   "code": "0038",
+   "name": "Nielsen Tennis Stadium"
+  },
+  {
+   "code": "0039",
+   "name": "WARF"
+  },
+  {
+   "code": "0040",
+   "name": "McClimon Track"
+  },
+  {
+   "code": "0041",
+   "name": "McClimon Rstrms & Strge"
+  },
+  {
+   "code": "0043",
+   "name": "McClimon Press Box"
+  },
+  {
+   "code": "0044",
+   "name": "Cooper Hall"
+  },
+  {
+   "code": "0045",
+   "name": "Biotron Lab"
+  },
+  {
+   "code": "0046",
+   "name": "Social Science Bldg"
+  },
+  {
+   "code": "0047",
+   "name": "Chemistry Bldg"
+  },
+  {
+   "code": "0048",
+   "name": "Van Vleck Hall"
+  },
+  {
+   "code": "0050",
+   "name": "Bascom Hall"
+  },
+  {
+   "code": "0051",
+   "name": "South Hall"
+  },
+  {
+   "code": "0052",
+   "name": "North Hall"
+  },
+  {
+   "code": "0053",
+   "name": "Science Hall"
+  },
+  {
+   "code": "0054",
+   "name": "Birge Hall"
+  },
+  {
+   "code": "0055",
+   "name": "Chamberlin Hall"
+  },
+  {
+   "code": "0056",
+   "name": "Ingraham Hall"
+  },
+  {
+   "code": "0057",
+   "name": "Sterling Hall"
+  },
+  {
+   "code": "0060",
+   "name": "Microbial Sciences Bldg"
+  },
+  {
+   "code": "0061",
+   "name": "Park St N 604"
+  },
+  {
+   "code": "0062",
+   "name": "Lake Safety Tower"
+  },
+  {
+   "code": "0070",
+   "name": "Agricultural Hall"
+  },
+  {
+   "code": "0071",
+   "name": "Hoard Memorial"
+  },
+  {
+   "code": "0072",
+   "name": "Ag Dean's Res"
+  },
+  {
+   "code": "0073",
+   "name": "Allen Centennial Garden"
+  },
+  {
+   "code": "0074A",
+   "name": "King Hall"
+  },
+  {
+   "code": "0074B",
+   "name": "Soils"
+  },
+  {
+   "code": "0075",
+   "name": "Greenhouse-King Hall"
+  },
+  {
+   "code": "0076",
+   "name": "Smith Hall, Hiram"
+  },
+  {
+   "code": "0077",
+   "name": "Smith Annex, Hiram"
+  },
+  {
+   "code": "0078",
+   "name": "Agrl Bulletin Bldg"
+  },
+  {
+   "code": "0079",
+   "name": "Steenbock Memorial Lbry"
+  },
+  {
+   "code": "0080",
+   "name": "Agrl Engineering Bldg"
+  },
+  {
+   "code": "0081",
+   "name": "Bakke Ctr"
+  },
+  {
+   "code": "0082",
+   "name": "Genetics-Biotech"
+  },
+  {
+   "code": "0084",
+   "name": "Biochemistry Bldg"
+  },
+  {
+   "code": "0085",
+   "name": "Nancy Nicholas Hall"
+  },
+  {
+   "code": "0087A",
+   "name": "Moore Hall-Agronomy"
+  },
+  {
+   "code": "0087B",
+   "name": "Horticulture"
+  },
+  {
+   "code": "0087C",
+   "name": "Plant Sciences"
+  },
+  {
+   "code": "0088",
+   "name": "Union South"
+  },
+  {
+   "code": "0090",
+   "name": "Stock Pavilion"
+  },
+  {
+   "code": "0092",
+   "name": "Dairy Cattle Center"
+  },
+  {
+   "code": "0093",
+   "name": "Vet Med South"
+  },
+  {
+   "code": "0094",
+   "name": "Biomedical Sci Labs"
+  },
+  {
+   "code": "0095",
+   "name": "Horse Barn"
+  },
+  {
+   "code": "0096",
+   "name": "Dairy Forage Res Ctr-US"
+  },
+  {
+   "code": "0099",
+   "name": "Agrl Engineering Lab"
+  },
+  {
+   "code": "0102",
+   "name": "Henry Mall 445"
+  },
+  {
+   "code": "0103",
+   "name": "Linden Dr 1910"
+  },
+  {
+   "code": "0104",
+   "name": "Parking Ramp 36"
+  },
+  {
+   "code": "0105",
+   "name": "Dairy Barn"
+  },
+  {
+   "code": "0106",
+   "name": "Babcock Hall"
+  },
+  {
+   "code": "0108",
+   "name": "Herrick Dr 505"
+  },
+  {
+   "code": "0109",
+   "name": "Herrick Dr 509"
+  },
+  {
+   "code": "0110",
+   "name": "Poultry Research Lab"
+  },
+  {
+   "code": "0111",
+   "name": "Herrick Dr 502"
+  },
+  {
+   "code": "0113",
+   "name": "University Ave 1800 (Inactive)"
+  },
+  {
+   "code": "0114",
+   "name": "Russell Labs"
+  },
+  {
+   "code": "0115",
+   "name": "Livestock Lab"
+  },
+  {
+   "code": "0115A",
+   "name": "Livestock Lab Silo"
+  },
+  {
+   "code": "0116",
+   "name": "Schuman Shelter"
+  },
+  {
+   "code": "0118",
+   "name": "Animal Science Bldg"
+  },
+  {
+   "code": "0121",
+   "name": "Cereal Crops"
+  },
+  {
+   "code": "0122",
+   "name": "Greenhouse-Walnut St"
+  },
+  {
+   "code": "0123",
+   "name": "Meat Sci & Muscle Bio"
+  },
+  {
+   "code": "0124",
+   "name": "Mills St N 30"
+  },
+  {
+   "code": "0125",
+   "name": "P Plant-Grounds Strg"
+  },
+  {
+   "code": "0126",
+   "name": "Vet Diagnostic Lab-WI"
+  },
+  {
+   "code": "0128",
+   "name": "Linden Dr 2115"
+  },
+  {
+   "code": "0129",
+   "name": "Naval ROTC"
+  },
+  {
+   "code": "0130",
+   "name": "Picnic Pt-Grounds"
+  },
+  {
+   "code": "0131",
+   "name": "Arboretum-Root Cellar"
+  },
+  {
+   "code": "0132",
+   "name": "Arboretum-Shelter Hse"
+  },
+  {
+   "code": "0134",
+   "name": "Arboretum-Shop"
+  },
+  {
+   "code": "0136",
+   "name": "Humphrey Hall"
+  },
+  {
+   "code": "0137",
+   "name": "Jorns Hall"
+  },
+  {
+   "code": "0139",
+   "name": "Fluno Center"
+  },
+  {
+   "code": "0140",
+   "name": "Grainger Hall"
+  },
+  {
+   "code": "0141",
+   "name": "Centennial Research"
+  },
+  {
+   "code": "0142",
+   "name": "Parking Ramp 20"
+  },
+  {
+   "code": "0149",
+   "name": "Meat Sci & Animal Bio"
+  },
+  {
+   "code": "0152",
+   "name": "Parking Ramp 46"
+  },
+  {
+   "code": "0153",
+   "name": "Teacher Education"
+  },
+  {
+   "code": "0154",
+   "name": "Educational Sciences"
+  },
+  {
+   "code": "0155",
+   "name": "Comp Sci"
+  },
+  {
+   "code": "0156",
+   "name": "AOSS"
+  },
+  {
+   "code": "0158",
+   "name": "Rust-Schreiner Hall"
+  },
+  {
+   "code": "0170",
+   "name": "Band Storage Bldg"
+  },
+  {
+   "code": "0171",
+   "name": "Goodman Complex"
+  },
+  {
+   "code": "0172",
+   "name": "Porter Boathouse"
+  },
+  {
+   "code": "0173",
+   "name": "McClimon Ticket Booth"
+  },
+  {
+   "code": "0174",
+   "name": "Goodman Storage 3"
+  },
+  {
+   "code": "0175",
+   "name": "Goodman Main"
+  },
+  {
+   "code": "0176",
+   "name": "Goodman Ticket Bth"
+  },
+  {
+   "code": "0187",
+   "name": "Allen Garden-Gazebo"
+  },
+  {
+   "code": "0188",
+   "name": "Allen Garden-Pavilion"
+  },
+  {
+   "code": "0189",
+   "name": "Allen Garden-Service"
+  },
+  {
+   "code": "0190",
+   "name": "Allen Garden-Pergola"
+  },
+  {
+   "code": "0191",
+   "name": "Allen Garden-Bridge"
+  },
+  {
+   "code": "0192",
+   "name": "Allen Garden-Pools"
+  },
+  {
+   "code": "0193",
+   "name": "Allen Garden-Fountain"
+  },
+  {
+   "code": "0194",
+   "name": "Allen Garden-Bird"
+  },
+  {
+   "code": "0195",
+   "name": "Allen Garden-Fence"
+  },
+  {
+   "code": "0204",
+   "name": "Biochemical Sciences"
+  },
+  {
+   "code": "0205",
+   "name": "Biochemistry Labs"
+  },
+  {
+   "code": "0206",
+   "name": "Smith Greenhouses"
+  },
+  {
+   "code": "0211",
+   "name": "MIR"
+  },
+  {
+   "code": "0212",
+   "name": "WID"
+  },
+  {
+   "code": "0215",
+   "name": "Morgridge Hall"
+  },
+  {
+   "code": "0220",
+   "name": "Art Lofts"
+  },
+  {
+   "code": "0223",
+   "name": "P Plant-Grounds Strg 2"
+  },
+  {
+   "code": "0224",
+   "name": "Camp Randall Park"
+  },
+  {
+   "code": "0225",
+   "name": "Kohl Center"
+  },
+  {
+   "code": "0226",
+   "name": "Nicholas-Johnson"
+  },
+  {
+   "code": "0227",
+   "name": "LaBahn Arena"
+  },
+  {
+   "code": "0249",
+   "name": "Meat Microbiology Lab"
+  },
+  {
+   "code": "0270",
+   "name": "Band Practice Field"
+  },
+  {
+   "code": "0400",
+   "name": "Education Bldg"
+  },
+  {
+   "code": "0401",
+   "name": "Integrative Bio Rsrch"
+  },
+  {
+   "code": "0402",
+   "name": "Noland Hall, Lowell E"
+  },
+  {
+   "code": "0403",
+   "name": "Water Sci & Eng"
+  },
+  {
+   "code": "0404",
+   "name": "Wendt Commons"
+  },
+  {
+   "code": "0405",
+   "name": "Radio Hall"
+  },
+  {
+   "code": "0407",
+   "name": "Mechanical Engineering"
+  },
+  {
+   "code": "0408",
+   "name": "Engineering Hall"
+  },
+  {
+   "code": "0430",
+   "name": "Law Bldg"
+  },
+  {
+   "code": "0435",
+   "name": "Eagle Heights Gardens"
+  },
+  {
+   "code": "0449",
+   "name": "Nutritional Sciences"
+  },
+  {
+   "code": "0450",
+   "name": "MSC"
+  },
+  {
+   "code": "0451A",
+   "name": "Service Memorial Inst"
+  },
+  {
+   "code": "0451B",
+   "name": "Bardeen Medical Labs"
+  },
+  {
+   "code": "0451C",
+   "name": "Medical Sciences"
+  },
+  {
+   "code": "0452",
+   "name": "Bradley Memorial Bldg"
+  },
+  {
+   "code": "0453",
+   "name": "School of Social Work"
+  },
+  {
+   "code": "0455",
+   "name": "Middleton"
+  },
+  {
+   "code": "0456",
+   "name": "WISPIC"
+  },
+  {
+   "code": "0458",
+   "name": "Goodman Storage 1"
+  },
+  {
+   "code": "0459",
+   "name": "Waisman Center"
+  },
+  {
+   "code": "0460",
+   "name": "Kellner Hall"
+  },
+  {
+   "code": "0464",
+   "name": "Taylor Hall"
+  },
+  {
+   "code": "0465",
+   "name": "Linden Dr 2105"
+  },
+  {
+   "code": "0467",
+   "name": "East Campus Mall 333"
+  },
+  {
+   "code": "0468",
+   "name": "McArdle Bldg"
+  },
+  {
+   "code": "0469",
+   "name": "Humanities Bldg"
+  },
+  {
+   "code": "0470",
+   "name": "Psychology Bldg"
+  },
+  {
+   "code": "0473",
+   "name": "Civil War Marker"
+  },
+  {
+   "code": "0475",
+   "name": "Lifesaving Station"
+  },
+  {
+   "code": "0476",
+   "name": "Stovall Bldg"
+  },
+  {
+   "code": "0479",
+   "name": "Enzyme Institute"
+  },
+  {
+   "code": "0481",
+   "name": "Engineering Centers"
+  },
+  {
+   "code": "0482",
+   "name": "Van Hise Hall"
+  },
+  {
+   "code": "0483",
+   "name": "Hasler Lab of Limnology"
+  },
+  {
+   "code": "0485",
+   "name": "Music Hall"
+  },
+  {
+   "code": "0486",
+   "name": "Engineering Dr 1410 (inactive)"
+  },
+  {
+   "code": "0487",
+   "name": "Carillon Tower"
+  },
+  {
+   "code": "0489",
+   "name": "Alumni House"
+  },
+  {
+   "code": "0491",
+   "name": "Lakeshore Nature Preserve-Garage"
+  },
+  {
+   "code": "0492",
+   "name": "Frautschi Ctr"
+  },
+  {
+   "code": "0493",
+   "name": "UW Foundation"
+  },
+  {
+   "code": "0495",
+   "name": "Picnic Pt Toilets 2"
+  },
+  {
+   "code": "0496",
+   "name": "Parking Garage 93"
+  },
+  {
+   "code": "0498",
+   "name": "Inventory-Equip Outside"
+  },
+  {
+   "code": "0499",
+   "name": "Lakeshore Preserve"
+  },
+  {
+   "code": "0500",
+   "name": "Extension Bldg"
+  },
+  {
+   "code": "0502",
+   "name": "Lowell Center"
+  },
+  {
+   "code": "0504",
+   "name": "Charter St N 45"
+  },
+  {
+   "code": "0506",
+   "name": "Bradley Hall"
+  },
+  {
+   "code": "0507",
+   "name": "Phillips Hall"
+  },
+  {
+   "code": "0508",
+   "name": "Goodnight Hall"
+  },
+  {
+   "code": "0510",
+   "name": "Observatory, Washburn"
+  },
+  {
+   "code": "0512",
+   "name": "Observ Hill Office Bldg"
+  },
+  {
+   "code": "0515A",
+   "name": "East Campus Mall 432"
+  },
+  {
+   "code": "0515B",
+   "name": "University Club"
+  },
+  {
+   "code": "0520",
+   "name": "Mat Sci & Eng Bldg"
+  },
+  {
+   "code": "0521",
+   "name": "Weeks Hall"
+  },
+  {
+   "code": "0524",
+   "name": "Chazen Bldg"
+  },
+  {
+   "code": "0526",
+   "name": "Primate Center"
+  },
+  {
+   "code": "0527",
+   "name": "Harlow Center"
+  },
+  {
+   "code": "0532",
+   "name": "P Plant-Grounds Strg 3"
+  },
+  {
+   "code": "0535",
+   "name": "Univ Bay Dr 901-Garage"
+  },
+  {
+   "code": "0536",
+   "name": "Parking Ramp 17"
+  },
+  {
+   "code": "0538",
+   "name": "Fire Protection Material"
+  },
+  {
+   "code": "0542",
+   "name": "MSN Roads & Grounds"
+  },
+  {
+   "code": "0544",
+   "name": "Elvehjem Bldg"
+  },
+  {
+   "code": "0545",
+   "name": "Vilas Hall"
+  },
+  {
+   "code": "0547",
+   "name": "University Bay Dr 901"
+  },
+  {
+   "code": "0549",
+   "name": "Env Health & Safety"
+  },
+  {
+   "code": "0550",
+   "name": "Police & Security"
+  },
+  {
+   "code": "0555",
+   "name": "Cole Hall"
+  },
+  {
+   "code": "0556",
+   "name": "Sullivan Hall"
+  },
+  {
+   "code": "0557",
+   "name": "Chadbourne Hall"
+  },
+  {
+   "code": "0558",
+   "name": "Slichter Hall"
+  },
+  {
+   "code": "0559",
+   "name": "Waters Hall"
+  },
+  {
+   "code": "0560",
+   "name": "Barnard Hall"
+  },
+  {
+   "code": "0562",
+   "name": "Central Kitchen"
+  },
+  {
+   "code": "0563B",
+   "name": "Tripp Hall-Bashford"
+  },
+  {
+   "code": "0563F",
+   "name": "Tripp Hall-Frankenburger"
+  },
+  {
+   "code": "0563G",
+   "name": "Tripp Hall-Gregory"
+  },
+  {
+   "code": "0563H",
+   "name": "Tripp Hall-High"
+  },
+  {
+   "code": "0563L",
+   "name": "Tripp Hall-Fallows"
+  },
+  {
+   "code": "0563M",
+   "name": "Tripp Hall-Mail & Main"
+  },
+  {
+   "code": "0563S",
+   "name": "Tripp Hall-Spooner"
+  },
+  {
+   "code": "0563T",
+   "name": "Tripp Hall-Botkin"
+  },
+  {
+   "code": "0563V",
+   "name": "Tripp Hall-Vilas"
+  },
+  {
+   "code": "0564F",
+   "name": "Adams Hall-Faville"
+  },
+  {
+   "code": "0564L",
+   "name": "Adams Hall-Lafollette"
+  },
+  {
+   "code": "0564M",
+   "name": "Adams Hall-Mail & Main"
+  },
+  {
+   "code": "0564N",
+   "name": "Adams Hall-Noyes"
+  },
+  {
+   "code": "0564O",
+   "name": "Adams Hall-Oschner"
+  },
+  {
+   "code": "0564R",
+   "name": "Adams Hall-Richardson"
+  },
+  {
+   "code": "0564S",
+   "name": "Adams Hall-Siebecker"
+  },
+  {
+   "code": "0564T",
+   "name": "Adams Hall-Tarrant"
+  },
+  {
+   "code": "0564W",
+   "name": "Adams Hall-Winslow"
+  },
+  {
+   "code": "0565",
+   "name": "Carson Gulley Center"
+  },
+  {
+   "code": "0566",
+   "name": "Residence Halls Garage"
+  },
+  {
+   "code": "0567",
+   "name": "Dejope Hall"
+  },
+  {
+   "code": "0568",
+   "name": "Turner House"
+  },
+  {
+   "code": "0569",
+   "name": "Gilman House"
+  },
+  {
+   "code": "0570",
+   "name": "Mack House"
+  },
+  {
+   "code": "0571",
+   "name": "Chamberlin House"
+  },
+  {
+   "code": "0572",
+   "name": "Jones House"
+  },
+  {
+   "code": "0573",
+   "name": "Swenson House"
+  },
+  {
+   "code": "0574C",
+   "name": "Kronshage-Conover"
+  },
+  {
+   "code": "0574H",
+   "name": "Kronshage-Holt Center"
+  },
+  {
+   "code": "0574K",
+   "name": "Kronshage-Kronshage Hse"
+  },
+  {
+   "code": "0574S",
+   "name": "Kronshage-Showerman"
+  },
+  {
+   "code": "0575",
+   "name": "Merit Hall"
+  },
+  {
+   "code": "0576",
+   "name": "Leopold Hall"
+  },
+  {
+   "code": "0580",
+   "name": "Harvey St Apts-Grounds"
+  },
+  {
+   "code": "0581",
+   "name": "Harvey St Apts-Svc Bldg"
+  },
+  {
+   "code": "0584",
+   "name": "Athletic Operations Bldg"
+  },
+  {
+   "code": "0585",
+   "name": "Hamel Music Center"
+  },
+  {
+   "code": "0587",
+   "name": "Brittingham House"
+  },
+  {
+   "code": "0588",
+   "name": "Brittingham Carriage Hse"
+  },
+  {
+   "code": "0590",
+   "name": "Brittingham Tool Hse"
+  },
+  {
+   "code": "0591",
+   "name": "Brittingham Squash Hse"
+  },
+  {
+   "code": "0592",
+   "name": "Brittingham Grounds"
+  },
+  {
+   "code": "0593",
+   "name": "Harvey St Apts-Bldg 1"
+  },
+  {
+   "code": "0594",
+   "name": "Harvey St Apts-Bldg 3"
+  },
+  {
+   "code": "0595",
+   "name": "Harvey St Apts-Bldg 2"
+  },
+  {
+   "code": "0596",
+   "name": "Harvey St Apts-Bldg 4"
+  },
+  {
+   "code": "0597",
+   "name": "Harvey St Apts-Bldg 5"
+  },
+  {
+   "code": "0598",
+   "name": "Harvey St Apts-Bldg 6"
+  },
+  {
+   "code": "0599",
+   "name": "Harvey St Apts-Bldg 7"
+  },
+  {
+   "code": "0601",
+   "name": "Arboretum-Greenhouse"
+  },
+  {
+   "code": "0602",
+   "name": "Arboretum-Grounds"
+  },
+  {
+   "code": "0603",
+   "name": "Arboretum-Laboratory"
+  },
+  {
+   "code": "0604",
+   "name": "Arboretum-McKay Center"
+  },
+  {
+   "code": "0605",
+   "name": "Arboretum-Machine Shed"
+  },
+  {
+   "code": "0606",
+   "name": "Arboretum-Comfort Sta"
+  },
+  {
+   "code": "0607",
+   "name": "Arboretum-Security Res"
+  },
+  {
+   "code": "0608",
+   "name": "Lake Wingra-Storage"
+  },
+  {
+   "code": "0610",
+   "name": "Arboretum-Maintenance"
+  },
+  {
+   "code": "0612",
+   "name": "Arboretum-Seed Storage"
+  },
+  {
+   "code": "0613",
+   "name": "Arboretum-Barracks"
+  },
+  {
+   "code": "0614",
+   "name": "Arboretum-Woods"
+  },
+  {
+   "code": "0623",
+   "name": "Pasque Flower Hill"
+  },
+  {
+   "code": "0629",
+   "name": "East Fields"
+  },
+  {
+   "code": "0631",
+   "name": "Effigy: Bird Form"
+  },
+  {
+   "code": "0632",
+   "name": "Ho-Chunk 12 Clans"
+  },
+  {
+   "code": "0633",
+   "name": "Divine Nine Plaza"
+  },
+  {
+   "code": "0639",
+   "name": "U Bay Fields"
+  },
+  {
+   "code": "0640",
+   "name": "Gugel Outlot"
+  },
+  {
+   "code": "0641",
+   "name": "Mineral Point Rd 3817"
+  },
+  {
+   "code": "0647",
+   "name": "WHA AM & FM Antenna"
+  },
+  {
+   "code": "0648",
+   "name": "WHA AM & FM Tower"
+  },
+  {
+   "code": "0649",
+   "name": "WHA AM Transmitter"
+  },
+  {
+   "code": "0653",
+   "name": "SVM CIF-Barn 4"
+  },
+  {
+   "code": "0654",
+   "name": "SVM CIF-Barn 3"
+  },
+  {
+   "code": "0655",
+   "name": "SVM CIF-Grounds"
+  },
+  {
+   "code": "0657",
+   "name": "SVM CIF-Dairy Barn 2"
+  },
+  {
+   "code": "0666",
+   "name": "SVM CIF-Pole Barn 1"
+  },
+  {
+   "code": "0669",
+   "name": "SVM CIF-Milk House"
+  },
+  {
+   "code": "0670",
+   "name": "Library Mall"
+  },
+  {
+   "code": "0675",
+   "name": "Frautschi Point Lot"
+  },
+  {
+   "code": "0676",
+   "name": "Willow Creek Woods"
+  },
+  {
+   "code": "0679",
+   "name": "Multiple Bldg Projects"
+  },
+  {
+   "code": "0680",
+   "name": "Muir Woods"
+  },
+  {
+   "code": "0681",
+   "name": "Goodspeed Pier"
+  },
+  {
+   "code": "0682",
+   "name": "Engineering Mall"
+  },
+  {
+   "code": "0683",
+   "name": "East Campus Mall"
+  },
+  {
+   "code": "0685",
+   "name": "Botany Garden"
+  },
+  {
+   "code": "0686",
+   "name": "Henry Mall"
+  },
+  {
+   "code": "0687",
+   "name": "Alumni Park"
+  },
+  {
+   "code": "0689",
+   "name": "West Fields"
+  },
+  {
+   "code": "0690",
+   "name": "U Ridge-Greens"
+  },
+  {
+   "code": "0691",
+   "name": "U Ridge-Grounds"
+  },
+  {
+   "code": "0692",
+   "name": "U Ridge-Club House"
+  },
+  {
+   "code": "0693",
+   "name": "U Ridge-Maintenance"
+  },
+  {
+   "code": "0694",
+   "name": "U Ridge-Storage"
+  },
+  {
+   "code": "0698",
+   "name": "U Ridge-Golf"
+  },
+  {
+   "code": "0734",
+   "name": "Walnut St 501"
+  },
+  {
+   "code": "0735",
+   "name": "Raymer's Cove Lot"
+  },
+  {
+   "code": "0743",
+   "name": "University Ave 3500"
+  },
+  {
+   "code": "0745",
+   "name": "Olin Ave E 122"
+  },
+  {
+   "code": "0750",
+   "name": "Bus Passenger Shelters"
+  },
+  {
+   "code": "0751",
+   "name": "Parking Ramp 75"
+  },
+  {
+   "code": "0752",
+   "name": "WEI"
+  },
+  {
+   "code": "0755",
+   "name": "UW Hosp-Rsch Park"
+  },
+  {
+   "code": "0756",
+   "name": "University Ave 1922"
+  },
+  {
+   "code": "0757",
+   "name": "Elm Dr Bike Shelter"
+  },
+  {
+   "code": "0762",
+   "name": "Engineering Research"
+  },
+  {
+   "code": "0766",
+   "name": "Maquina Sculpture Svc (Inactive)"
+  },
+  {
+   "code": "0767",
+   "name": "University Ave 2870"
+  },
+  {
+   "code": "0768",
+   "name": "Phillip A. Levy Engineering Center"
+  },
+  {
+   "code": "0770",
+   "name": "University Ave 2880"
+  },
+  {
+   "code": "0771",
+   "name": "University Bay Dr 800"
+  },
+  {
+   "code": "0773",
+   "name": "University Ave 3330"
+  },
+  {
+   "code": "0774",
+   "name": "Inventory-Motor Vehicles"
+  },
+  {
+   "code": "0775",
+   "name": "Inventory-Livestock"
+  },
+  {
+   "code": "0778",
+   "name": "Brooks St N 207"
+  },
+  {
+   "code": "0779",
+   "name": "Soccer Practice Field"
+  },
+  {
+   "code": "0782",
+   "name": "Capitol Ct 1220"
+  },
+  {
+   "code": "0788",
+   "name": "Brooks St N 209"
+  },
+  {
+   "code": "0789",
+   "name": "North Athletic Field"
+  },
+  {
+   "code": "0793",
+   "name": "Vet Med North"
+  },
+  {
+   "code": "0796",
+   "name": "Whitney Way N 610"
+  },
+  {
+   "code": "0797",
+   "name": "American Parkway 4600"
+  },
+  {
+   "code": "0799",
+   "name": "Observatory Rec Area"
+  },
+  {
+   "code": "0805",
+   "name": "Eagle Heights Woods"
+  },
+  {
+   "code": "0993",
+   "name": "Tooman Arena"
+  },
+  {
+   "code": "0999",
+   "name": "Monroe St 1930"
+  },
+  {
+   "code": "1008",
+   "name": "Clymer Pl 923 (Inactive)"
+  },
+  {
+   "code": "1015",
+   "name": "Meriter-McConnell Hall"
+  },
+  {
+   "code": "1017",
+   "name": "Phy Ed Strg 3"
+  },
+  {
+   "code": "1020",
+   "name": "McClimon Shelter-S"
+  },
+  {
+   "code": "1021",
+   "name": "McClimon Shelter-N"
+  },
+  {
+   "code": "1023",
+   "name": "McClimon Concessions"
+  },
+  {
+   "code": "1024",
+   "name": "McClimon Storage"
+  },
+  {
+   "code": "1026",
+   "name": "Goodman Storage 2"
+  },
+  {
+   "code": "1029",
+   "name": "East Recreation Building"
+  },
+  {
+   "code": "1035",
+   "name": "Eagle Heights Garage"
+  },
+  {
+   "code": "1045",
+   "name": "Meriter-Park"
+  },
+  {
+   "code": "1050",
+   "name": "Class of 1918 Marsh"
+  },
+  {
+   "code": "1051",
+   "name": "Picnic Pt-Biccore"
+  },
+  {
+   "code": "1052",
+   "name": "Picnic Pt-Storage"
+  },
+  {
+   "code": "1053",
+   "name": "Picnic Pt-Bath House"
+  },
+  {
+   "code": "1055",
+   "name": "Veterans Admin Hospital"
+  },
+  {
+   "code": "1060",
+   "name": "Brooks St N 215-217"
+  },
+  {
+   "code": "1062",
+   "name": "Spring St 1101"
+  },
+  {
+   "code": "1064",
+   "name": "Delaplaine Ct 1100"
+  },
+  {
+   "code": "1069",
+   "name": "Levy Hall"
+  },
+  {
+   "code": "1072",
+   "name": "Johnson St W 702"
+  },
+  {
+   "code": "1075",
+   "name": "Goodman Practice"
+  },
+  {
+   "code": "1077",
+   "name": "Fleet & Service Garage"
+  },
+  {
+   "code": "1078",
+   "name": "Park St N 21"
+  },
+  {
+   "code": "1079",
+   "name": "Smith Hall"
+  },
+  {
+   "code": "1082",
+   "name": "Bernard Ct 206"
+  },
+  {
+   "code": "1083",
+   "name": "Vet Med Hay 2"
+  },
+  {
+   "code": "1084",
+   "name": "Bernard Ct 204"
+  },
+  {
+   "code": "1085",
+   "name": "Dayton St W 908"
+  },
+  {
+   "code": "1086",
+   "name": "Dayton St W 910/912"
+  },
+  {
+   "code": "1094",
+   "name": "Johnson St W 724"
+  },
+  {
+   "code": "1095",
+   "name": "Monroe St 1433"
+  },
+  {
+   "code": "1098",
+   "name": "Inventory-Boats & Motors"
+  },
+  {
+   "code": "1139",
+   "name": "Stoughton Rd S 2109"
+  },
+  {
+   "code": "1145",
+   "name": "Sellery Shed"
+  },
+  {
+   "code": "1200",
+   "name": "Apartment Office"
+  },
+  {
+   "code": "1201",
+   "name": "Univ Houses 1"
+  },
+  {
+   "code": "1202",
+   "name": "Univ Houses 2"
+  },
+  {
+   "code": "1203",
+   "name": "Univ Houses 3"
+  },
+  {
+   "code": "1205",
+   "name": "Univ Houses 5"
+  },
+  {
+   "code": "1206",
+   "name": "Univ Houses 6"
+  },
+  {
+   "code": "1207",
+   "name": "Univ Houses 7"
+  },
+  {
+   "code": "1209",
+   "name": "Univ Houses 9"
+  },
+  {
+   "code": "1210",
+   "name": "Univ Houses 10"
+  },
+  {
+   "code": "1211",
+   "name": "Univ Houses 11"
+  },
+  {
+   "code": "1213",
+   "name": "Univ Houses 13"
+  },
+  {
+   "code": "1214",
+   "name": "Univ Houses 14"
+  },
+  {
+   "code": "1215",
+   "name": "Univ Houses 15"
+  },
+  {
+   "code": "1217",
+   "name": "Univ Houses 17"
+  },
+  {
+   "code": "1218",
+   "name": "Univ Houses 18"
+  },
+  {
+   "code": "1219",
+   "name": "Univ Houses 19"
+  },
+  {
+   "code": "1221",
+   "name": "Univ Houses 21"
+  },
+  {
+   "code": "1222",
+   "name": "Univ Houses 22"
+  },
+  {
+   "code": "1223",
+   "name": "Univ Houses 23"
+  },
+  {
+   "code": "1225",
+   "name": "Univ Houses 25"
+  },
+  {
+   "code": "1226",
+   "name": "Univ Houses 26"
+  },
+  {
+   "code": "1227",
+   "name": "Univ Houses 27"
+  },
+  {
+   "code": "1229",
+   "name": "Univ Houses 29"
+  },
+  {
+   "code": "1230",
+   "name": "Univ Houses 30"
+  },
+  {
+   "code": "1231",
+   "name": "Univ Houses 31"
+  },
+  {
+   "code": "1233",
+   "name": "Univ Houses 33"
+  },
+  {
+   "code": "1234",
+   "name": "Univ Houses 34"
+  },
+  {
+   "code": "1235",
+   "name": "Univ Houses 35"
+  },
+  {
+   "code": "1237",
+   "name": "Univ Houses 37"
+  },
+  {
+   "code": "1238",
+   "name": "Univ Houses 38"
+  },
+  {
+   "code": "1241",
+   "name": "Univ Houses 41"
+  },
+  {
+   "code": "1243",
+   "name": "Ogg Hall"
+  },
+  {
+   "code": "1245",
+   "name": "Sellery Hall"
+  },
+  {
+   "code": "1246",
+   "name": "Witte Hall"
+  },
+  {
+   "code": "1249",
+   "name": "Gordon Dining"
+  },
+  {
+   "code": "1250",
+   "name": "Apartment Warehouse"
+  },
+  {
+   "code": "1280",
+   "name": "Eagle Heights 208"
+  },
+  {
+   "code": "1281",
+   "name": "Eagle Heights 209"
+  },
+  {
+   "code": "1282",
+   "name": "Eagle Heights 201"
+  },
+  {
+   "code": "1283",
+   "name": "Eagle Heights 203"
+  },
+  {
+   "code": "1284",
+   "name": "Eagle Heights 205"
+  },
+  {
+   "code": "1285",
+   "name": "Eagle Heights 202"
+  },
+  {
+   "code": "1286",
+   "name": "Eagle Heights 204"
+  },
+  {
+   "code": "1287",
+   "name": "Eagle Heights 206"
+  },
+  {
+   "code": "1288",
+   "name": "Eagle Heights 207"
+  },
+  {
+   "code": "1290",
+   "name": "Eagle Heights 106"
+  },
+  {
+   "code": "1291",
+   "name": "Eagle Heights 108"
+  },
+  {
+   "code": "1292",
+   "name": "Eagle Heights 101"
+  },
+  {
+   "code": "1293",
+   "name": "Eagle Heights 104"
+  },
+  {
+   "code": "1294",
+   "name": "Eagle Heights 107"
+  },
+  {
+   "code": "1295",
+   "name": "Eagle Heights 102"
+  },
+  {
+   "code": "1296",
+   "name": "Eagle Heights 103"
+  },
+  {
+   "code": "1297",
+   "name": "Eagle Heights 105"
+  },
+  {
+   "code": "1298",
+   "name": "Eagle Heights 109"
+  },
+  {
+   "code": "1299",
+   "name": "Univ Apt Comm Ctr"
+  },
+  {
+   "code": "1301",
+   "name": "Eagle Heights 301"
+  },
+  {
+   "code": "1302",
+   "name": "Eagle Heights 302"
+  },
+  {
+   "code": "1303",
+   "name": "Eagle Heights 304"
+  },
+  {
+   "code": "1304",
+   "name": "Eagle Heights 306"
+  },
+  {
+   "code": "1305",
+   "name": "Eagle Heights 307"
+  },
+  {
+   "code": "1306",
+   "name": "Eagle Heights 308"
+  },
+  {
+   "code": "1307",
+   "name": "Eagle Heights 303"
+  },
+  {
+   "code": "1308",
+   "name": "Eagle Heights 309"
+  },
+  {
+   "code": "1309",
+   "name": "Eagle Heights 305"
+  },
+  {
+   "code": "1311",
+   "name": "Eagle Heights 401"
+  },
+  {
+   "code": "1312",
+   "name": "Eagle Heights 403"
+  },
+  {
+   "code": "1313",
+   "name": "Eagle Heights 405"
+  },
+  {
+   "code": "1314",
+   "name": "Eagle Heights 408"
+  },
+  {
+   "code": "1315",
+   "name": "Eagle Heights 404"
+  },
+  {
+   "code": "1316",
+   "name": "Eagle Heights 406"
+  },
+  {
+   "code": "1317",
+   "name": "Eagle Heights 402"
+  },
+  {
+   "code": "1318",
+   "name": "Eagle Heights 407"
+  },
+  {
+   "code": "1321",
+   "name": "Eagle Heights 502"
+  },
+  {
+   "code": "1322",
+   "name": "Eagle Heights 503"
+  },
+  {
+   "code": "1323",
+   "name": "Eagle Heights 504"
+  },
+  {
+   "code": "1324",
+   "name": "Eagle Heights 506"
+  },
+  {
+   "code": "1325",
+   "name": "Eagle Heights 509"
+  },
+  {
+   "code": "1326",
+   "name": "Eagle Heights 505"
+  },
+  {
+   "code": "1327",
+   "name": "Eagle Heights 501"
+  },
+  {
+   "code": "1328",
+   "name": "Eagle Heights 507"
+  },
+  {
+   "code": "1329",
+   "name": "Eagle Heights 508"
+  },
+  {
+   "code": "1331",
+   "name": "Eagle Heights 602"
+  },
+  {
+   "code": "1332",
+   "name": "Eagle Heights 604"
+  },
+  {
+   "code": "1333",
+   "name": "Eagle Heights 605"
+  },
+  {
+   "code": "1334",
+   "name": "Eagle Heights 606"
+  },
+  {
+   "code": "1335",
+   "name": "Eagle Heights 608"
+  },
+  {
+   "code": "1336",
+   "name": "Eagle Heights 610"
+  },
+  {
+   "code": "1337",
+   "name": "Eagle Heights 603"
+  },
+  {
+   "code": "1338",
+   "name": "Eagle Heights 607"
+  },
+  {
+   "code": "1339",
+   "name": "Eagle Heights 601"
+  },
+  {
+   "code": "1340",
+   "name": "Eagle Heights 609"
+  },
+  {
+   "code": "1341A",
+   "name": "Eagle Heights 701"
+  },
+  {
+   "code": "1341B",
+   "name": "Eagle Heights 702"
+  },
+  {
+   "code": "1341C",
+   "name": "Eagle Heights 703"
+  },
+  {
+   "code": "1342A",
+   "name": "Eagle Heights 704"
+  },
+  {
+   "code": "1342B",
+   "name": "Eagle Heights 705"
+  },
+  {
+   "code": "1343",
+   "name": "Eagle Heights 706"
+  },
+  {
+   "code": "1344",
+   "name": "Eagle Heights 707"
+  },
+  {
+   "code": "1345",
+   "name": "Eagle Heights 708"
+  },
+  {
+   "code": "1346A",
+   "name": "Eagle Heights 801&802"
+  },
+  {
+   "code": "1346B",
+   "name": "Eagle Heights 803&804"
+  },
+  {
+   "code": "1346C",
+   "name": "Eagle Heights 805&806"
+  },
+  {
+   "code": "1346D",
+   "name": "Eagle Heights 807&808"
+  },
+  {
+   "code": "1347A",
+   "name": "Eagle Heights 809-811"
+  },
+  {
+   "code": "1347B",
+   "name": "Eagle Heights 812&813"
+  },
+  {
+   "code": "1347C",
+   "name": "Eagle Heights 814&815"
+  },
+  {
+   "code": "1347D",
+   "name": "Eagle Heights 816&817"
+  },
+  {
+   "code": "1347E",
+   "name": "Eagle Heights 818&819"
+  },
+  {
+   "code": "1348A",
+   "name": "Eagle Heights 901-903"
+  },
+  {
+   "code": "1348B",
+   "name": "Eagle Heights 904&905"
+  },
+  {
+   "code": "1348C",
+   "name": "Eagle Heights 906&907"
+  },
+  {
+   "code": "1348D",
+   "name": "Eagle Heights 908&909"
+  },
+  {
+   "code": "1348E",
+   "name": "Eagle Heights 910&911"
+  },
+  {
+   "code": "1349",
+   "name": "Eagle Heights 912-914"
+  },
+  {
+   "code": "1350",
+   "name": "Eagle Heights 915-917"
+  },
+  {
+   "code": "1351A",
+   "name": "Eagle Heights 918&919"
+  },
+  {
+   "code": "1351B",
+   "name": "Eagle Heights 920&921"
+  },
+  {
+   "code": "1351C",
+   "name": "Eagle Heights 922&923"
+  },
+  {
+   "code": "1351D",
+   "name": "Eagle Heights 924&925"
+  },
+  {
+   "code": "1352",
+   "name": "Eagle Heights 926-928"
+  },
+  {
+   "code": "1353",
+   "name": "Eagle Heights 929-931"
+  },
+  {
+   "code": "1354",
+   "name": "Eagle Heights 932-934"
+  },
+  {
+   "code": "1355A",
+   "name": "Eagle Heights 935-937"
+  },
+  {
+   "code": "1355B",
+   "name": "Eagle Heights 938&939"
+  },
+  {
+   "code": "1355C",
+   "name": "Eagle Heights 940&941"
+  },
+  {
+   "code": "1355D",
+   "name": "Eagle Heights 942-944"
+  },
+  {
+   "code": "1355E",
+   "name": "Eagle Heights 945&946"
+  },
+  {
+   "code": "1359",
+   "name": "Apartment Storage"
+  },
+  {
+   "code": "1400",
+   "name": "CSC - UW-Hospital"
+  },
+  {
+   "code": "1420",
+   "name": "CSC Helicopter Pad"
+  },
+  {
+   "code": "1425",
+   "name": "Parking Garage 63"
+  },
+  {
+   "code": "1426",
+   "name": "AmFam Children's Hosp"
+  },
+  {
+   "code": "1435",
+   "name": "UW Med FCB"
+  },
+  {
+   "code": "1480",
+   "name": "HSLC"
+  },
+  {
+   "code": "1485",
+   "name": "WIMR"
+  },
+  {
+   "code": "1486",
+   "name": "WIMR Shed"
+  },
+  {
+   "code": "1701",
+   "name": "Emer Phone-702"
+  },
+  {
+   "code": "1702",
+   "name": "Emer Phone-1590"
+  },
+  {
+   "code": "1703",
+   "name": "Emer Phone-1202"
+  },
+  {
+   "code": "1704",
+   "name": "Emer Phone-445"
+  },
+  {
+   "code": "1705",
+   "name": "Emer Phone-2101"
+  },
+  {
+   "code": "1706",
+   "name": "Emer Phone-Ashman Bridge"
+  },
+  {
+   "code": "1707",
+   "name": "Emer Phone-Lake Path"
+  },
+  {
+   "code": "1708",
+   "name": "Kronshage Dock Phone"
+  },
+  {
+   "code": "1710",
+   "name": "Emer Phone-1402"
+  },
+  {
+   "code": "1712",
+   "name": "Emer Phone-2000"
+  },
+  {
+   "code": "1718",
+   "name": "Emer Phone-Fleet Garage"
+  },
+  {
+   "code": "1719",
+   "name": "Emer Phone-502"
+  },
+  {
+   "code": "1721",
+   "name": "Emer Phone-Frautschi Pt"
+  },
+  {
+   "code": "1758",
+   "name": "Mem Union Brat Stand"
+  },
+  {
+   "code": "1999",
+   "name": "Brooks St N 219-221"
+  },
+  {
+   "code": "2302",
+   "name": "The Kellner Family Athletic Center"
+  },
+  {
+   "code": "4099",
+   "name": "Kuband Antenna"
+  },
+  {
+   "code": "6035",
+   "name": "Meriter-Capital"
+  },
+  {
+   "code": "8004",
+   "name": "Emil St 1402"
+  },
+  {
+   "code": "8005",
+   "name": "Washington Ave W 625"
+  },
+  {
+   "code": "8010",
+   "name": "Marsh Ct 15"
+  },
+  {
+   "code": "8017",
+   "name": "University Ave 4702"
+  },
+  {
+   "code": "8020",
+   "name": "Marshall Ct 2828"
+  },
+  {
+   "code": "8022",
+   "name": "Johnson St W 1221"
+  },
+  {
+   "code": "8029",
+   "name": "Bernard Ct 210 (Inactive)"
+  },
+  {
+   "code": "8030",
+   "name": "Science Dr 440"
+  },
+  {
+   "code": "8032",
+   "name": "Maquina Sculpture"
+  },
+  {
+   "code": "8034",
+   "name": "Tokay Blvd 5752"
+  },
+  {
+   "code": "8035",
+   "name": "ML King Blvd 210"
+  },
+  {
+   "code": "8042",
+   "name": "Park St S 2300"
+  },
+  {
+   "code": "8043",
+   "name": "Dayton St W 924"
+  },
+  {
+   "code": "8044",
+   "name": "University Ave 1403"
+  },
+  {
+   "code": "8051",
+   "name": "Park St S 20"
+  },
+  {
+   "code": "8053",
+   "name": "Midvale Blvd N 310"
+  },
+  {
+   "code": "8054",
+   "name": "Dayton St W 1014"
+  },
+  {
+   "code": "8059",
+   "name": "Research Park Blvd 5901 (Inactive)"
+  },
+  {
+   "code": "8064",
+   "name": "State Lab Hygiene-Ag Dr"
+  },
+  {
+   "code": "8069",
+   "name": "UW Health West"
+  },
+  {
+   "code": "8071",
+   "name": "UW Health East"
+  },
+  {
+   "code": "8072",
+   "name": "Park St S 2238"
+  },
+  {
+   "code": "8080",
+   "name": "Allen Garden-Benches"
+  },
+  {
+   "code": "8081",
+   "name": "Allen Garden-Fons Vitae"
+  },
+  {
+   "code": "8082",
+   "name": "Allen Garden-Arch"
+  },
+  {
+   "code": "8083",
+   "name": "Science Dr 545"
+  },
+  {
+   "code": "8089",
+   "name": "Thai Pavilion & Garden"
+  },
+  {
+   "code": "8093",
+   "name": "Tandem Press"
+  },
+  {
+   "code": "8094",
+   "name": "Rosa Rd S 505 (inactive)"
+  },
+  {
+   "code": "8098",
+   "name": "Washington Ave W 222"
+  },
+  {
+   "code": "8105",
+   "name": "Charmany Dr 510"
+  },
+  {
+   "code": "8106",
+   "name": "Pennsylvania Ave 2180"
+  },
+  {
+   "code": "8107",
+   "name": "Pennsylvania Ave 2228"
+  },
+  {
+   "code": "8122",
+   "name": "State St 711"
+  },
+  {
+   "code": "8124",
+   "name": "Science Dr 555-585"
+  },
+  {
+   "code": "8126",
+   "name": "Regent St 700"
+  },
+  {
+   "code": "8128",
+   "name": "Science Dr 565-575"
+  },
+  {
+   "code": "8133",
+   "name": "Lakeside St E 330"
+  },
+  {
+   "code": "8135",
+   "name": "Element Way 5510"
+  },
+  {
+   "code": "8136",
+   "name": "Westfield Rd S 301"
+  },
+  {
+   "code": "8137",
+   "name": "Dayton St W 914"
+  },
+  {
+   "code": "8140",
+   "name": "Charter St N 26 Bldg #1"
+  },
+  {
+   "code": "8141",
+   "name": "Charter St N 26 Bldg #2"
+  },
+  {
+   "code": "8142",
+   "name": "Charter St N 26 Bldg #3"
+  },
+  {
+   "code": "8150",
+   "name": "Dayton St W 926"
+  },
+  {
+   "code": "8151",
+   "name": "Charter St N 222"
+  },
+  {
+   "code": "8225",
+   "name": "Walkway 449-468"
+  },
+  {
+   "code": "8245",
+   "name": "Sellery Retail"
+  },
+  {
+   "code": "8304",
+   "name": "MRI Cassette Bldg"
+  },
+  {
+   "code": "8319",
+   "name": "Excelsior 8010"
+  },
+  {
+   "code": "8326",
+   "name": "UW Health Odana"
+  },
+  {
+   "code": "8328",
+   "name": "UW Health W Towne"
+  },
+  {
+   "code": "8329",
+   "name": "UW Health E Towne"
+  },
+  {
+   "code": "8331",
+   "name": "UW Medical Foundation"
+  },
+  {
+   "code": "8350",
+   "name": "Marshall Ct 2701"
+  },
+  {
+   "code": "8353",
+   "name": "Marshall Ct 2707"
+  },
+  {
+   "code": "8354",
+   "name": "Rosa Rd S 504"
+  },
+  {
+   "code": "8356",
+   "name": "Femrite Dr 5830"
+  },
+  {
+   "code": "8357",
+   "name": "Agriculture Dr 2811"
+  },
+  {
+   "code": "8364",
+   "name": "UW Health Digestive"
+  },
+  {
+   "code": "8366",
+   "name": "UW Health East Hospital"
+  },
+  {
+   "code": "8375",
+   "name": "DHS Madison Region"
+  },
+  {
+   "code": "8376",
+   "name": "DHS STI Unit"
+  },
+  {
+   "code": "8404",
+   "name": "Lake Mendota Dr 2526"
+  },
+  {
+   "code": "8409",
+   "name": "Park S 1"
+  },
+  {
+   "code": "8467",
+   "name": "East Campus Mall 353"
+  },
+  {
+   "code": "8468",
+   "name": "East Campus Mall 365"
+  },
+  {
+   "code": "9004",
+   "name": "Rec Sports Temp Bldg (inactive)"
+  },
+  {
+   "code": "9011",
+   "name": "Linden Dr Temp Bridge"
+  },
+  {
+   "code": "9200",
+   "name": "Soils & Plant Anlys Lab"
+  },
+  {
+   "code": "9502",
+   "name": "Parking Lot 132"
+  },
+  {
+   "code": "9504",
+   "name": "Parking Lot 4"
+  },
+  {
+   "code": "9506",
+   "name": "Parking Lot 5"
+  },
+  {
+   "code": "9507",
+   "name": "Parking Garage 6"
+  },
+  {
+   "code": "9508",
+   "name": "Parking Garage 7"
+  },
+  {
+   "code": "9509",
+   "name": "Parking Lot 8"
+  },
+  {
+   "code": "9510",
+   "name": "Parking Lot 9"
+  },
+  {
+   "code": "9511",
+   "name": "Parking Lot 10"
+  },
+  {
+   "code": "9512",
+   "name": "Parking Lot 11"
+  },
+  {
+   "code": "9513",
+   "name": "Parking Lot 12"
+  },
+  {
+   "code": "9514",
+   "name": "Parking Lot 13"
+  },
+  {
+   "code": "9516",
+   "name": "Parking Lot 16"
+  },
+  {
+   "code": "9518",
+   "name": "Parking Lot 18"
+  },
+  {
+   "code": "9519",
+   "name": "Parking Lot 19"
+  },
+  {
+   "code": "9520",
+   "name": "Parking Lot 21"
+  },
+  {
+   "code": "9522",
+   "name": "Parking Garage 23"
+  },
+  {
+   "code": "9524",
+   "name": "Parking Lot 26-East"
+  },
+  {
+   "code": "9525",
+   "name": "Parking Lot 26-Upper"
+  },
+  {
+   "code": "9526",
+   "name": "Parking Lot 26-Lower"
+  },
+  {
+   "code": "9527",
+   "name": "Parking Garage 27"
+  },
+  {
+   "code": "9529",
+   "name": "Parking Lot 28"
+  },
+  {
+   "code": "9530",
+   "name": "Parking Ramp 29"
+  },
+  {
+   "code": "9531",
+   "name": "Parking Lot 30"
+  },
+  {
+   "code": "9533",
+   "name": "Parking Lot 34"
+  },
+  {
+   "code": "9534",
+   "name": "Parking Lot 35"
+  },
+  {
+   "code": "9535",
+   "name": "Parking Lot 37"
+  },
+  {
+   "code": "9536",
+   "name": "Parking Lot 26-West"
+  },
+  {
+   "code": "9537",
+   "name": "Parking Garage 38"
+  },
+  {
+   "code": "9538",
+   "name": "Parking Lot 39"
+  },
+  {
+   "code": "9539",
+   "name": "Parking Lot 40"
+  },
+  {
+   "code": "9540",
+   "name": "Parking Lot 41"
+  },
+  {
+   "code": "9542",
+   "name": "Parking Lot 44"
+  },
+  {
+   "code": "9544",
+   "name": "Parking Lot 45"
+  },
+  {
+   "code": "9546",
+   "name": "Parking Lot 51"
+  },
+  {
+   "code": "9547",
+   "name": "Parking Lot 81-North"
+  },
+  {
+   "code": "9549",
+   "name": "Parking Lot 53"
+  },
+  {
+   "code": "9551",
+   "name": "Parking Lot 54"
+  },
+  {
+   "code": "9552",
+   "name": "Parking Lot 86"
+  },
+  {
+   "code": "9553",
+   "name": "Parking Lot 56"
+  },
+  {
+   "code": "9554",
+   "name": "Parking Lot 57"
+  },
+  {
+   "code": "9555",
+   "name": "Parking Lot 58"
+  },
+  {
+   "code": "9556",
+   "name": "Parking Lot 59"
+  },
+  {
+   "code": "9557",
+   "name": "Parking Lot 60"
+  },
+  {
+   "code": "9559",
+   "name": "Parking Lot 74"
+  },
+  {
+   "code": "9561",
+   "name": "Parking Lot 137"
+  },
+  {
+   "code": "9562",
+   "name": "Parking Lot 64"
+  },
+  {
+   "code": "9563",
+   "name": "Parking Lot 65"
+  },
+  {
+   "code": "9564",
+   "name": "Parking Lot 14"
+  },
+  {
+   "code": "9566",
+   "name": "Parking Lot 68"
+  },
+  {
+   "code": "9567",
+   "name": "Parking Lot 69"
+  },
+  {
+   "code": "9570",
+   "name": "Parking Lot 72"
+  },
+  {
+   "code": "9573",
+   "name": "Parking Ramp 76"
+  },
+  {
+   "code": "9575",
+   "name": "Parking Lot 81-South"
+  },
+  {
+   "code": "9576",
+   "name": "Parking Lot 82"
+  },
+  {
+   "code": "9577",
+   "name": "Parking Garage 83"
+  },
+  {
+   "code": "9579",
+   "name": "Parking Lot 88"
+  },
+  {
+   "code": "9580",
+   "name": "Parking Lot 91"
+  },
+  {
+   "code": "9581",
+   "name": "Parking Lot 48"
+  },
+  {
+   "code": "9582",
+   "name": "Parking Lot 92"
+  },
+  {
+   "code": "9585",
+   "name": "Parking Garage 95"
+  },
+  {
+   "code": "9587",
+   "name": "Parking Lot 87"
+  },
+  {
+   "code": "9588",
+   "name": "Parking Garage 80"
+  },
+  {
+   "code": "9589",
+   "name": "Parking Garage 15"
+  },
+  {
+   "code": "9590",
+   "name": "Parking Lot 85"
+  },
+  {
+   "code": "9593",
+   "name": "Parking Lot 33"
+  },
+  {
+   "code": "9594",
+   "name": "Parking Lot 94"
+  },
+  {
+   "code": "9598",
+   "name": "Parking Ramp 67"
+  },
+  {
+   "code": "9601",
+   "name": "Parking Lot 101"
+  },
+  {
+   "code": "9602",
+   "name": "Parking Lt 102"
+  },
+  {
+   "code": "9605",
+   "name": "Parking Lot 105"
+  },
+  {
+   "code": "9606",
+   "name": "Parking Lot 106"
+  },
+  {
+   "code": "9609",
+   "name": "Parking Lot 109"
+  },
+  {
+   "code": "9610",
+   "name": "Parking Lot 110"
+  },
+  {
+   "code": "9613",
+   "name": "Parking Lot 113"
+  },
+  {
+   "code": "9614",
+   "name": "Parking Lot 114"
+  },
+  {
+   "code": "9615",
+   "name": "Parking Lot 115"
+  },
+  {
+   "code": "9616",
+   "name": "Parking Lot 116"
+  },
+  {
+   "code": "9620",
+   "name": "Parking Lot 120"
+  },
+  {
+   "code": "9621",
+   "name": "Parking Lot 121"
+  },
+  {
+   "code": "9623",
+   "name": "Parking Lot 123"
+  },
+  {
+   "code": "9624",
+   "name": "Parking Lot 124"
+  },
+  {
+   "code": "9625",
+   "name": "Parking Lot 125"
+  },
+  {
+   "code": "9627",
+   "name": "Parking Lot 127"
+  },
+  {
+   "code": "9630",
+   "name": "Parking Lot 130"
+  },
+  {
+   "code": "9631",
+   "name": "Parking Lot 131"
+  },
+  {
+   "code": "9633",
+   "name": "Parking Lot 133"
+  },
+  {
+   "code": "9634",
+   "name": "Parking Lot 134"
+  },
+  {
+   "code": "9635",
+   "name": "Parking Lot 135"
+  },
+  {
+   "code": "9636",
+   "name": "Parking Lot 136"
+  },
+  {
+   "code": "9638",
+   "name": "Parking Lot 138"
+  },
+  {
+   "code": "9639",
+   "name": "Parking Lot 139"
+  },
+  {
+   "code": "9650",
+   "name": "Parking Lot 50"
+  },
+  {
+   "code": "9652",
+   "name": "Parking Lot 61"
+  },
+  {
+   "code": "9655",
+   "name": "Parking Lot 55"
+  },
+  {
+   "code": "9657",
+   "name": "Parking Lot 107"
+  },
+  {
+   "code": "9669",
+   "name": "Park & Ride Lot 202"
+  },
+  {
+   "code": "9671",
+   "name": "Park & Ride Lot 206"
+  },
+  {
+   "code": "9672",
+   "name": "Parking Lot 2"
+  },
+  {
+   "code": "9701",
+   "name": "Arboretum-Parking Lot 1"
+  },
+  {
+   "code": "9702",
+   "name": "Arboretum-Parking Lot 2"
+  },
+  {
+   "code": "9703",
+   "name": "Arboretum-Parking Lot 3"
+  },
+  {
+   "code": "9704",
+   "name": "Arboretum-Parking Lot 4"
+  },
+  {
+   "code": "9705",
+   "name": "Arboretum-Parking Lot 5"
+  },
+  {
+   "code": "9706",
+   "name": "Arboretum-Parking Lot 6"
+  },
+  {
+   "code": "9707",
+   "name": "Arboretum-Parking Lot 7"
+  },
+  {
+   "code": "9708",
+   "name": "Arboretum-Parking Lot 8"
+  },
+  {
+   "code": "9709",
+   "name": "Arboretum-Parking Lot 9"
+  },
+  {
+   "code": "9710",
+   "name": "Arboretum-Parking Lot 10"
+  },
+  {
+   "code": "9711",
+   "name": "Arboretum-Arbor Dr Lot"
+  }
+ ]
+}

@@ -1,0 +1,1140 @@
+{
+ "collegeId": "vanderbilt",
+ "generatedAt": "2026-11-08T08:26:26.414Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/vanderbilt.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -86.80828,
+  36.1386,
+  -86.79549,
+  36.14991
+ ],
+ "halls": [
+  {
+   "dormId": "crawford",
+   "name": "Crawford House",
+   "lng": -86.797826,
+   "lat": 36.140023,
+   "pin": "name",
+   "osm": "way/544597175",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "memorial-gymnasium",
+     "minutes": 15.7
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "peabody-library",
+     "minutes": 4.6
+    }
+   }
+  },
+  {
+   "dormId": "east",
+   "name": "East House",
+   "lng": -86.798285,
+   "lat": 36.140341,
+   "pin": "name",
+   "osm": "way/370613542",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "memorial-gymnasium",
+     "minutes": 14.6
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 3
+    },
+    "library": {
+     "placeId": "peabody-library",
+     "minutes": 3.6
+    }
+   }
+  },
+  {
+   "dormId": "gillette",
+   "name": "Gillette House",
+   "lng": -86.798189,
+   "lat": 36.141025,
+   "pin": "name",
+   "osm": "way/422234455",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "memorial-gymnasium",
+     "minutes": 14.7
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 2.5
+    },
+    "library": {
+     "placeId": "peabody-library",
+     "minutes": 3.6
+    }
+   }
+  },
+  {
+   "dormId": "hank-ingram",
+   "name": "Hank Ingram House",
+   "lng": -86.796762,
+   "lat": 36.140692,
+   "pin": "name",
+   "osm": "way/544597172",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "memorial-gymnasium",
+     "minutes": 16
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 2.2
+    },
+    "library": {
+     "placeId": "peabody-library",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "memorial",
+   "name": "Memorial House",
+   "lng": -86.797756,
+   "lat": 36.140647,
+   "pin": "name",
+   "osm": "way/422239142",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "memorial-gymnasium",
+     "minutes": 14.8
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 2.4
+    },
+    "library": {
+     "placeId": "peabody-library",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "murray",
+   "name": "Murray House",
+   "lng": -86.796902,
+   "lat": 36.139938,
+   "pin": "name",
+   "osm": "way/544597174",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "memorial-gymnasium",
+     "minutes": 16.9
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "peabody-library",
+     "minutes": 5.8
+    }
+   }
+  },
+  {
+   "dormId": "north",
+   "name": "North House",
+   "lng": -86.799563,
+   "lat": 36.141146,
+   "pin": "name",
+   "osm": "way/307017789",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "memorial-gymnasium",
+     "minutes": 13.2
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 4
+    },
+    "library": {
+     "placeId": "peabody-library",
+     "minutes": 2.8
+    }
+   }
+  },
+  {
+   "dormId": "stambaugh",
+   "name": "Stambaugh House",
+   "lng": -86.797326,
+   "lat": 36.140278,
+   "pin": "name",
+   "osm": "way/544597173",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "memorial-gymnasium",
+     "minutes": 16.2
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 3.3
+    },
+    "library": {
+     "placeId": "peabody-library",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "sutherland",
+   "name": "Sutherland House",
+   "lng": -86.797405,
+   "lat": 36.139696,
+   "pin": "name",
+   "osm": "way/544597176",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "memorial-gymnasium",
+     "minutes": 16.6
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 3.7
+    },
+    "library": {
+     "placeId": "peabody-library",
+     "minutes": 5.6
+    }
+   }
+  },
+  {
+   "dormId": "west",
+   "name": "West House",
+   "lng": -86.799646,
+   "lat": 36.140466,
+   "pin": "name",
+   "osm": "way/307017788",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "memorial-gymnasium",
+     "minutes": 13.8
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 4.1
+    },
+    "library": {
+     "placeId": "peabody-library",
+     "minutes": 3.2
+    }
+   }
+  },
+  {
+   "dormId": "warren-college",
+   "name": "Warren College",
+   "lng": -86.801326,
+   "lat": 36.149583,
+   "pin": "name",
+   "osm": "way/782304968",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "historic-old-gym",
+     "minutes": 5.5
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 15.4
+    },
+    "library": {
+     "placeId": "jean-and-alexander-heard-library",
+     "minutes": 7.6
+    }
+   }
+  },
+  {
+   "dormId": "moore-college",
+   "name": "Moore College",
+   "lng": -86.802256,
+   "lat": 36.149341,
+   "pin": "name",
+   "osm": "way/1050096509",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "historic-old-gym",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 15.1
+    },
+    "library": {
+     "placeId": "jean-and-alexander-heard-library",
+     "minutes": 7.3
+    }
+   }
+  },
+  {
+   "dormId": "e-bronson-ingram-college",
+   "name": "E. Bronson Ingram College",
+   "lng": -86.803629,
+   "lat": 36.148622,
+   "pin": "name",
+   "osm": "relation/10625821",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "historic-old-gym",
+     "minutes": 2.6
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 14.9
+    },
+    "library": {
+     "placeId": "jean-and-alexander-heard-library",
+     "minutes": 7.2
+    }
+   }
+  },
+  {
+   "dormId": "rothschild-college",
+   "name": "Rothschild College",
+   "lng": -86.806457,
+   "lat": 36.147285,
+   "pin": "name",
+   "osm": "relation/14057334",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "memorial-gymnasium",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 16.9
+    },
+    "library": {
+     "placeId": "eskind-biomedical-library",
+     "minutes": 9
+    }
+   }
+  },
+  {
+   "dormId": "zeppos-college",
+   "name": "Zeppos College",
+   "lng": -86.807557,
+   "lat": 36.146846,
+   "pin": "name",
+   "osm": "relation/14026186",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "memorial-gymnasium",
+     "minutes": 4.4
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 17.4
+    },
+    "library": {
+     "placeId": "eskind-biomedical-library",
+     "minutes": 9.5
+    }
+   }
+  },
+  {
+   "dormId": "carmichael-college",
+   "name": "Oliver C. Carmichael College",
+   "lng": -86.805679,
+   "lat": 36.147603,
+   "pin": "name",
+   "osm": "relation/19167610",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "historic-old-gym",
+     "minutes": 1.8
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 16.5
+    },
+    "library": {
+     "placeId": "jean-and-alexander-heard-library",
+     "minutes": 8.8
+    }
+   }
+  },
+  {
+   "dormId": "mctyeire-international-house",
+   "name": "McTyeire International House",
+   "lng": -86.803248,
+   "lat": 36.143764,
+   "pin": "manual",
+   "osm": "way/261715430",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "memorial-gymnasium",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "commons-center",
+     "minutes": 10.6
+    },
+    "library": {
+     "placeId": "eskind-biomedical-library",
+     "minutes": 2.8
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "memorial-gymnasium",
+   "name": "Memorial Gymnasium",
+   "short": "Memorial Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.807307,
+   "lat": 36.144502,
+   "osm": "way/544597209"
+  },
+  {
+   "id": "vanderbilt-law-school",
+   "name": "Vanderbilt Law School",
+   "short": "Vanderbilt Law School",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.800336,
+   "lat": 36.147984,
+   "osm": "relation/7779786"
+  },
+  {
+   "id": "featheringill-jacobs-hall",
+   "name": "Featheringill / Jacobs Hall",
+   "short": "Featheringill / Jacobs Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.803118,
+   "lat": 36.144784,
+   "osm": "way/178414029"
+  },
+  {
+   "id": "blair-school-of-music",
+   "name": "Blair School of Music",
+   "short": "Blair School of Music",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.806217,
+   "lat": 36.138601,
+   "osm": "way/256716167"
+  },
+  {
+   "id": "stevenson-center-complex",
+   "name": "Stevenson Center Complex",
+   "short": "Stevenson Center Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.801892,
+   "lat": 36.144662,
+   "osm": "way/544597163"
+  },
+  {
+   "id": "commons-center",
+   "name": "Commons Center",
+   "short": "Commons Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.797118,
+   "lat": 36.141791,
+   "osm": "way/370608816"
+  },
+  {
+   "id": "biological-sciences-building-medical-research-building-iii",
+   "name": "Biological Sciences Building/Medical Research Building III",
+   "short": "Biological Sciences Building/Medical Research Building III",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.800582,
+   "lat": 36.144534,
+   "osm": "way/544597154"
+  },
+  {
+   "id": "curb-center-john-seigenthaler-center",
+   "name": "Curb Center/John Seigenthaler Center",
+   "short": "Curb Center/John Seigenthaler Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.796263,
+   "lat": 36.143137,
+   "osm": "way/544597169"
+  },
+  {
+   "id": "divinity-school",
+   "name": "Divinity School",
+   "short": "Divinity School",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.800794,
+   "lat": 36.146508,
+   "osm": "relation/7779785"
+  },
+  {
+   "id": "preston-cancer-research-building",
+   "name": "Preston Cancer Research Building",
+   "short": "Preston Cancer Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.802715,
+   "lat": 36.140365,
+   "osm": "way/370611114"
+  },
+  {
+   "id": "sarratt-student-center",
+   "name": "Sarratt Student Center",
+   "short": "Sarratt Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.803592,
+   "lat": 36.146392,
+   "osm": "way/1465205624"
+  },
+  {
+   "id": "science-and-engineering-building",
+   "name": "Science and Engineering Building",
+   "short": "Science and Engineering Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.805866,
+   "lat": 36.142974,
+   "osm": "way/461630342"
+  },
+  {
+   "id": "langford-auditorium",
+   "name": "Langford Auditorium",
+   "short": "Langford Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.80246,
+   "lat": 36.142719,
+   "osm": "way/370611111"
+  },
+  {
+   "id": "jean-and-alexander-heard-library",
+   "name": "Jean & Alexander Heard Library",
+   "short": "Jean & Alexander Heard Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.80025,
+   "lat": 36.145716,
+   "osm": "way/544413710"
+  },
+  {
+   "id": "rand-hall",
+   "name": "Rand Hall",
+   "short": "Rand Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.803047,
+   "lat": 36.14643,
+   "osm": "way/1465205768"
+  },
+  {
+   "id": "student-life-center",
+   "name": "Student Life Center",
+   "short": "Student Life Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.805885,
+   "lat": 36.144388,
+   "osm": "way/544597207"
+  },
+  {
+   "id": "light-hall",
+   "name": "Light Hall",
+   "short": "Light Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.802437,
+   "lat": 36.142185,
+   "osm": "way/544597164"
+  },
+  {
+   "id": "wyatt-center",
+   "name": "Wyatt Center",
+   "short": "Wyatt Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.799007,
+   "lat": 36.139986,
+   "osm": "way/234871501"
+  },
+  {
+   "id": "wilson-hall",
+   "name": "Wilson Hall",
+   "short": "Wilson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.800706,
+   "lat": 36.148943,
+   "osm": "way/544413702"
+  },
+  {
+   "id": "power-house",
+   "name": "Power House",
+   "short": "Power House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.803731,
+   "lat": 36.145725,
+   "osm": "way/544662573"
+  },
+  {
+   "id": "robinson-research-building",
+   "name": "Robinson Research Building",
+   "short": "Robinson Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.802615,
+   "lat": 36.141348,
+   "osm": "way/370611113"
+  },
+  {
+   "id": "owen-graduate-school-of-management",
+   "name": "Owen Graduate School of Management",
+   "short": "Owen Graduate School of Management",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.800022,
+   "lat": 36.147136,
+   "osm": "way/285022929"
+  },
+  {
+   "id": "buttrick-hall",
+   "name": "Buttrick Hall",
+   "short": "Buttrick Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.80257,
+   "lat": 36.145824,
+   "osm": "way/180245096"
+  },
+  {
+   "id": "eskind-biomedical-library",
+   "name": "Eskind Biomedical Library",
+   "short": "Eskind Biomedical Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.802448,
+   "lat": 36.143148,
+   "osm": "way/510204324"
+  },
+  {
+   "id": "tibbot-art-center",
+   "name": "Tibbot Art Center",
+   "short": "Tibbot Art Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.79941,
+   "lat": 36.144618,
+   "osm": "way/544413714"
+  },
+  {
+   "id": "garland-hall",
+   "name": "Garland Hall",
+   "short": "Garland Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.801476,
+   "lat": 36.146517,
+   "osm": "way/261715432"
+  },
+  {
+   "id": "kennedy-center",
+   "name": "Kennedy Center",
+   "short": "Kennedy Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.799498,
+   "lat": 36.143186,
+   "osm": "way/544597179"
+  },
+  {
+   "id": "martha-river-ingram-center-for-the-performing-arts",
+   "name": "Martha River Ingram Center for the Performing Arts",
+   "short": "Martha River Ingram Center for the Performing Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.80558,
+   "lat": 36.13865,
+   "osm": "way/256716252"
+  },
+  {
+   "id": "werthan-building",
+   "name": "Werthan Building",
+   "short": "Werthan Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.800264,
+   "lat": 36.143673,
+   "osm": "way/544597155"
+  },
+  {
+   "id": "baker-building",
+   "name": "Baker Building",
+   "short": "Baker Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.80037,
+   "lat": 36.149907,
+   "osm": "way/544413699"
+  },
+  {
+   "id": "e-bronson-ingram-studio-art-center",
+   "name": "E. Bronson Ingram Studio Art Center",
+   "short": "E. Bronson Ingram Studio Art Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.805367,
+   "lat": 36.143885,
+   "osm": "relation/10033309"
+  },
+  {
+   "id": "bryan-building",
+   "name": "Bryan Building",
+   "short": "Bryan Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.803616,
+   "lat": 36.145222,
+   "osm": "way/261715431"
+  },
+  {
+   "id": "kissam-center",
+   "name": "Kissam Center",
+   "short": "Kissam Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.801804,
+   "lat": 36.149438,
+   "osm": "way/1050096510"
+  },
+  {
+   "id": "hill-center",
+   "name": "Hill Center",
+   "short": "Hill Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.796525,
+   "lat": 36.141722,
+   "osm": "way/370608815"
+  },
+  {
+   "id": "dayani-center",
+   "name": "Dayani Center",
+   "short": "Dayani Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.801478,
+   "lat": 36.139164,
+   "osm": "way/370608825"
+  },
+  {
+   "id": "furman-hall",
+   "name": "Furman Hall",
+   "short": "Furman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.801337,
+   "lat": 36.147959,
+   "osm": "way/261715434"
+  },
+  {
+   "id": "vu-rotc",
+   "name": "VU ROTC",
+   "short": "VU ROTC",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.797084,
+   "lat": 36.144156,
+   "osm": "way/792242791"
+  },
+  {
+   "id": "kirkland-hall",
+   "name": "Kirkland Hall",
+   "short": "Kirkland Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.802798,
+   "lat": 36.148214,
+   "osm": "way/544397715"
+  },
+  {
+   "id": "olin-hall",
+   "name": "Olin Hall",
+   "short": "Olin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.805273,
+   "lat": 36.142948,
+   "osm": "way/461630341"
+  },
+  {
+   "id": "godchaux-nursing-annex",
+   "name": "Godchaux Nursing Annex",
+   "short": "Godchaux Nursing Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.800404,
+   "lat": 36.14504,
+   "osm": "way/544413711"
+  },
+  {
+   "id": "calhoun-hall",
+   "name": "Calhoun Hall",
+   "short": "Calhoun Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.801444,
+   "lat": 36.147259,
+   "osm": "way/261715433"
+  },
+  {
+   "id": "medical-arts",
+   "name": "Medical Arts",
+   "short": "Medical Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.800443,
+   "lat": 36.142408,
+   "osm": "way/370611108"
+  },
+  {
+   "id": "home-economics-building",
+   "name": "Home Economics Building",
+   "short": "Home Economics Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.797485,
+   "lat": 36.1431,
+   "osm": "way/544597166"
+  },
+  {
+   "id": "mayborn-building",
+   "name": "Mayborn Building",
+   "short": "Mayborn Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.797685,
+   "lat": 36.142523,
+   "osm": "way/370608830"
+  },
+  {
+   "id": "hobbs-laboratory",
+   "name": "Hobbs Laboratory",
+   "short": "Hobbs Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.797796,
+   "lat": 36.141402,
+   "osm": "way/544597182"
+  },
+  {
+   "id": "molecular-biology",
+   "name": "Molecular Biology",
+   "short": "Molecular Biology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.801078,
+   "lat": 36.144956,
+   "osm": "way/544597263"
+  },
+  {
+   "id": "keck-free-electron-laser-center",
+   "name": "Keck Free Electron Laser Center",
+   "short": "Keck Free Electron Laser Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.803346,
+   "lat": 36.144216,
+   "osm": "way/544597158"
+  },
+  {
+   "id": "cohen-memorial-hall",
+   "name": "Cohen Memorial Hall",
+   "short": "Cohen Memorial Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.7994,
+   "lat": 36.141545,
+   "osm": "way/486160405"
+  },
+  {
+   "id": "neely-auditorium",
+   "name": "Neely Auditorium",
+   "short": "Neely Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.803015,
+   "lat": 36.147403,
+   "osm": "way/261715435"
+  },
+  {
+   "id": "alumni-hall",
+   "name": "Alumni Hall",
+   "short": "Alumni Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.803329,
+   "lat": 36.147954,
+   "osm": "way/544397714"
+  },
+  {
+   "id": "stevenson-center-for-mathematics",
+   "name": "Stevenson Center for Mathematics",
+   "short": "Stevenson Center for Mathematics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.801536,
+   "lat": 36.145274,
+   "osm": "way/544413713"
+  },
+  {
+   "id": "peabody-library",
+   "name": "Peabody Library",
+   "short": "Peabody Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.799204,
+   "lat": 36.142494,
+   "osm": "way/544597178"
+  },
+  {
+   "id": "payne-building",
+   "name": "Payne Building",
+   "short": "Payne Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.79818,
+   "lat": 36.142396,
+   "osm": "way/370608831"
+  },
+  {
+   "id": "peabody-administation-building",
+   "name": "Peabody Administation Building",
+   "short": "Peabody Administation Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.799245,
+   "lat": 36.141999,
+   "osm": "way/544597177"
+  },
+  {
+   "id": "jesup-psychology-building",
+   "name": "Jesup Psychology Building",
+   "short": "Jesup Psychology Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.79826,
+   "lat": 36.141444,
+   "osm": "way/544597181"
+  },
+  {
+   "id": "vanderbilt-university-special-collections-and-archives",
+   "name": "Vanderbilt University Special Collections and Archives",
+   "short": "Vanderbilt University Special Collections and Archives",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.797748,
+   "lat": 36.145613,
+   "osm": "way/463653434"
+  },
+  {
+   "id": "frist-hall",
+   "name": "Frist Hall",
+   "short": "Frist Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.80061,
+   "lat": 36.145203,
+   "osm": "way/544413712"
+  },
+  {
+   "id": "benson-science-hall",
+   "name": "Benson Science Hall",
+   "short": "Benson Science Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.802056,
+   "lat": 36.147105,
+   "osm": "way/544413708"
+  },
+  {
+   "id": "parmer-field-house",
+   "name": "Parmer Field House",
+   "short": "Parmer Field House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.808278,
+   "lat": 36.14471,
+   "osm": "way/544597255"
+  },
+  {
+   "id": "historic-old-gym",
+   "name": "Historic Old Gym",
+   "short": "Historic Old Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.8046,
+   "lat": 36.148389,
+   "osm": "way/544597264"
+  },
+  {
+   "id": "nuclear-magnetic-resonance-facility",
+   "name": "Nuclear Magnetic Resonance Facility",
+   "short": "Nuclear Magnetic Resonance Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.802079,
+   "lat": 36.145336,
+   "osm": "way/180245281"
+  },
+  {
+   "id": "english-language-center",
+   "name": "English Language Center",
+   "short": "English Language Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.795491,
+   "lat": 36.143052,
+   "osm": "way/544597193"
+  },
+  {
+   "id": "old-central",
+   "name": "Old Central",
+   "short": "Old Central",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.802351,
+   "lat": 36.147024,
+   "osm": "way/544413709"
+  },
+  {
+   "id": "24th-annex",
+   "name": "24th Annex",
+   "short": "24th Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.804078,
+   "lat": 36.144152,
+   "osm": "way/778186583"
+  }
+ ]
+}

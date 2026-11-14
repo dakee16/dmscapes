@@ -1,0 +1,239 @@
+{
+  "halls": {
+    "first-year-houses": {
+      "pin": [
+        -71.117125,
+        42.373909
+      ]
+    },
+    "gropius-complex": {
+      "pin": [
+        -71.117761,
+        42.3796
+      ]
+    },
+    "historical-yards": {
+      "pin": [
+        -71.117858,
+        42.374997
+      ]
+    },
+    "canaday-hall": {
+      "pin": [
+        -71.116027,
+        42.37543
+      ]
+    },
+    "river-houses": {
+      "pin": [
+        -71.120964,
+        42.370422
+      ]
+    }
+  },
+  "places": {
+    "chase-hall": {
+      "hide": true
+    },
+    "gallatin-hall": {
+      "hide": true
+    },
+    "hamilton-hall": {
+      "hide": true
+    },
+    "mcculloch-hall": {
+      "hide": true
+    },
+    "mellon-hall": {
+      "hide": true
+    },
+    "morris-hall": {
+      "hide": true
+    },
+    "esteves-hall": {
+      "hide": true
+    },
+    "mcarthur-hall": {
+      "hide": true
+    },
+    "shad-hall": {
+      "hide": true
+    },
+    "currier-house": {
+      "hide": true
+    },
+    "bertram-hall": {
+      "hide": true
+    },
+    "barnard-hall": {
+      "hide": true
+    },
+    "briggs-hall": {
+      "hide": true
+    },
+    "whitman-hall": {
+      "hide": true
+    },
+    "eliot-hall": {
+      "hide": true
+    },
+    "daniels-hall": {
+      "hide": true
+    },
+    "jordan-north": {
+      "hide": true
+    },
+    "jordan-south": {
+      "hide": true
+    },
+    "claverly-hall": {
+      "hide": true
+    },
+    "apthorp-house": {
+      "hide": true
+    },
+    "20-dewolfe-street": {
+      "hide": true
+    },
+    "10-dewolfe-street": {
+      "hide": true
+    },
+    "prescott-hall": {
+      "hide": true
+    },
+    "conant-hall": {
+      "hide": true
+    },
+    "cronkhite-center": {
+      "hide": true
+    },
+    "pfohorzeimer-faculty-deans-residence": {
+      "hide": true
+    },
+    "deans-house": {
+      "hide": true
+    },
+    "loeb-house": {
+      "hide": true
+    },
+    "loeb-house-29891070": {
+      "hide": true
+    },
+    "the-spee-club": {
+      "hide": true
+    },
+    "the-fly-club": {
+      "hide": true
+    },
+    "the-owl-club": {
+      "hide": true
+    },
+    "the-harvard-crimson": {
+      "hide": true
+    },
+    "harvard-lampoon-building": {
+      "hide": true
+    },
+    "harvard-faculty-club": {
+      "hide": true
+    },
+    "harvard-office-for-the-arts-the-pheonix-club": {
+      "hide": true
+    },
+    "wadsworth-house": {
+      "hide": true
+    },
+    "blackstone-south": {
+      "hide": true
+    },
+    "widener-gate-lodge": {
+      "hide": true
+    },
+    "clinical-wing": {
+      "hide": true
+    },
+    "eliot-kirland-link": {
+      "hide": true
+    },
+    "pagliuca-harvard-life-lab": {
+      "hide": true
+    },
+    "bright-landry-hockey-center": {
+      "hide": true
+    },
+    "lavietes-basketball-pavillion": {
+      "hide": true
+    },
+    "dillon-field-house": {
+      "hide": true
+    },
+    "gordon-indoor-track": {
+      "hide": true
+    },
+    "memorial-hall": {
+      "kind": "dining"
+    },
+    "blodgett-pool": {
+      "kind": "gym"
+    },
+    "quadrangle-recreational-athletic-center": {
+      "kind": "gym"
+    }
+  },
+  "notes": {
+    "first-year-houses": "A group entry for the first-year dormitories in Harvard Yard; pinned on Weld Hall (OSM way/29824449), a first-year dorm in the middle of the Old Yard (college.harvard.edu/student-life/housing/first-year-housing).",
+    "gropius-complex": "The Gropius Complex is the Law School's Ames, Dane, Holmes, Shaw and Story Halls on Everett Street; pinned on Ames Hall (OSM way/323368921), the middle building of the five (hls.harvard.edu/dept/dos/housing).",
+    "historical-yards": "A group entry for Harvard Yard's oldest dormitories (Massachusetts, Hollis, Stoughton, Holworthy); pinned on Hollis Hall (OSM way/29630925) in the Old Yard.",
+    "canaday-hall": "OSM maps Canaday Hall as three parts (AB, CD, EFG); pinned on Canaday Hall CD (OSM way/1188763600), the middle one.",
+    "river-houses": "A group entry for Eliot, Dunster and Adams Houses; pinned on Eliot House (OSM way/32965954, 101 Dunster Street), the first named, on its east wing so the pin sits inside the courtyard building's footprint.",
+    "chase-hall": "A Harvard Business School MBA residence hall (hbs.edu/mba/student-life/living-on-campus), not a class building.",
+    "gallatin-hall": "A Harvard Business School MBA residence hall (hbs.edu/mba/student-life/living-on-campus), not a class building.",
+    "hamilton-hall": "A Harvard Business School MBA residence hall (hbs.edu/mba/student-life/living-on-campus), not a class building.",
+    "mcculloch-hall": "A Harvard Business School MBA residence hall (hbs.edu/mba/student-life/living-on-campus), not a class building.",
+    "mellon-hall": "A Harvard Business School MBA residence hall (hbs.edu/mba/student-life/living-on-campus), not a class building.",
+    "morris-hall": "A Harvard Business School MBA residence hall (hbs.edu/mba/student-life/living-on-campus), not a class building.",
+    "esteves-hall": "A Harvard Business School Executive Education residence (hbs.edu/exec-ed), not a class building.",
+    "mcarthur-hall": "A Harvard Business School Executive Education residence (hbs.edu/exec-ed), not a class building.",
+    "shad-hall": "Shad Hall is Harvard Business School's own gym, for HBS students and staff only, not an undergraduate gym.",
+    "currier-house": "An undergraduate residence in the Radcliffe Quadrangle (Cabot, Currier and Pforzheimer Houses and the Jordan co-ops), not a class building.",
+    "bertram-hall": "An undergraduate residence in the Radcliffe Quadrangle (Cabot, Currier and Pforzheimer Houses and the Jordan co-ops), not a class building.",
+    "barnard-hall": "An undergraduate residence in the Radcliffe Quadrangle (Cabot, Currier and Pforzheimer Houses and the Jordan co-ops), not a class building.",
+    "briggs-hall": "An undergraduate residence in the Radcliffe Quadrangle (Cabot, Currier and Pforzheimer Houses and the Jordan co-ops), not a class building.",
+    "whitman-hall": "An undergraduate residence in the Radcliffe Quadrangle (Cabot, Currier and Pforzheimer Houses and the Jordan co-ops), not a class building.",
+    "eliot-hall": "An undergraduate residence in the Radcliffe Quadrangle (Cabot, Currier and Pforzheimer Houses and the Jordan co-ops), not a class building.",
+    "daniels-hall": "An undergraduate residence in the Radcliffe Quadrangle (Cabot, Currier and Pforzheimer Houses and the Jordan co-ops), not a class building.",
+    "jordan-north": "An undergraduate residence in the Radcliffe Quadrangle (Cabot, Currier and Pforzheimer Houses and the Jordan co-ops), not a class building.",
+    "jordan-south": "An undergraduate residence in the Radcliffe Quadrangle (Cabot, Currier and Pforzheimer Houses and the Jordan co-ops), not a class building.",
+    "claverly-hall": "Harvard student housing (Adams, Leverett and Dunster Houses' annex buildings and Prescott Street), not a class building.",
+    "apthorp-house": "Harvard student housing (Adams, Leverett and Dunster Houses' annex buildings and Prescott Street), not a class building.",
+    "20-dewolfe-street": "Harvard student housing (Adams, Leverett and Dunster Houses' annex buildings and Prescott Street), not a class building.",
+    "10-dewolfe-street": "Harvard student housing (Adams, Leverett and Dunster Houses' annex buildings and Prescott Street), not a class building.",
+    "prescott-hall": "Harvard student housing (Adams, Leverett and Dunster Houses' annex buildings and Prescott Street), not a class building.",
+    "conant-hall": "Graduate student housing (GSAS Conant Hall; the Cronkhite Graduate Center), not a class building.",
+    "cronkhite-center": "Graduate student housing (GSAS Conant Hall; the Cronkhite Graduate Center), not a class building.",
+    "pfohorzeimer-faculty-deans-residence": "A residence or administrative house (a faculty deans' residence; Loeb House holds the Harvard Corporation's offices), not somewhere classes happen.",
+    "deans-house": "A residence or administrative house (a faculty deans' residence; Loeb House holds the Harvard Corporation's offices), not somewhere classes happen.",
+    "loeb-house": "A residence or administrative house (a faculty deans' residence; Loeb House holds the Harvard Corporation's offices), not somewhere classes happen.",
+    "loeb-house-29891070": "A residence or administrative house (a faculty deans' residence; Loeb House holds the Harvard Corporation's offices), not somewhere classes happen.",
+    "the-spee-club": "A final club, not somewhere classes happen.",
+    "the-fly-club": "A final club, not somewhere classes happen.",
+    "the-owl-club": "A final club, not somewhere classes happen.",
+    "the-harvard-crimson": "A student publication's building, not somewhere classes happen.",
+    "harvard-lampoon-building": "A student publication's building, not somewhere classes happen.",
+    "harvard-faculty-club": "The Harvard Faculty Club, not somewhere classes happen.",
+    "harvard-office-for-the-arts-the-pheonix-club": "Administrative offices or a gate lodge (Office for the Arts, Wadsworth House, Blackstone South, the Widener gate lodge), not somewhere classes happen.",
+    "wadsworth-house": "Administrative offices or a gate lodge (Office for the Arts, Wadsworth House, Blackstone South, the Widener gate lodge), not somewhere classes happen.",
+    "blackstone-south": "Administrative offices or a gate lodge (Office for the Arts, Wadsworth House, Blackstone South, the Widener gate lodge), not somewhere classes happen.",
+    "widener-gate-lodge": "Administrative offices or a gate lodge (Office for the Arts, Wadsworth House, Blackstone South, the Widener gate lodge), not somewhere classes happen.",
+    "clinical-wing": "Harvard University Health Services' clinical wing in the Smith Campus Center, not somewhere classes happen.",
+    "eliot-kirland-link": "A link between two Houses, not a building with classes.",
+    "pagliuca-harvard-life-lab": "A start-up incubator (the Pagliuca Harvard Life Lab), not somewhere classes happen.",
+    "bright-landry-hockey-center": "Varsity athletics venue or offices, not a class building or student gym.",
+    "lavietes-basketball-pavillion": "Varsity athletics venue or offices, not a class building or student gym.",
+    "dillon-field-house": "Varsity athletics venue or offices, not a class building or student gym.",
+    "gordon-indoor-track": "Varsity athletics venue or offices, not a class building or student gym.",
+    "memorial-hall": "Memorial Hall holds Annenberg Hall, the first-year dining hall (dining.harvard.edu/annenberg-hall), and Sanders Theatre; its name doesn't say dining.",
+    "blodgett-pool": "Blodgett Pool is the recreational and varsity swimming pool at the Soldiers Field athletic complex (recreation.gocrimson.com).",
+    "quadrangle-recreational-athletic-center": "The QRAC is the Radcliffe Quad's student gym (recreation.gocrimson.com); 'Recreational' doesn't match the build's gym name rule."
+  }
+}

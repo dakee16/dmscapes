@@ -1,0 +1,672 @@
+{
+ "collegeId": "emory",
+ "generatedAt": "2026-11-14T06:52:50.222Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/emory.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -84.33333,
+  33.78924,
+  -84.30856,
+  33.80481
+ ],
+ "halls": [
+  {
+   "dormId": "longstreet-means",
+   "name": "Longstreet-Means Hall",
+   "lng": -84.323098,
+   "lat": 33.794649,
+   "pin": "name",
+   "osm": "way/167777685",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "woodruff-physical-education-center",
+     "minutes": 8.6
+    },
+    "library": {
+     "placeId": "pitts-theology-library",
+     "minutes": 9.7
+    },
+    "dining": {
+     "placeId": "emory-student-center",
+     "minutes": 5
+    }
+   }
+  },
+  {
+   "dormId": "few-hall",
+   "name": "Few Hall",
+   "lng": -84.324716,
+   "lat": 33.794573,
+   "pin": "name",
+   "osm": "way/167837141",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "woodruff-physical-education-center",
+     "minutes": 3.4
+    },
+    "library": {
+     "placeId": "pitts-theology-library",
+     "minutes": 6.7
+    },
+    "dining": {
+     "placeId": "emory-student-center",
+     "minutes": 2.5
+    }
+   }
+  },
+  {
+   "dormId": "evans-hall",
+   "name": "Evans Hall",
+   "lng": -84.325367,
+   "lat": 33.79465,
+   "pin": "name",
+   "osm": "way/167837152",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "woodruff-physical-education-center",
+     "minutes": 5.3
+    },
+    "library": {
+     "placeId": "pitts-theology-library",
+     "minutes": 8.6
+    },
+    "dining": {
+     "placeId": "emory-student-center",
+     "minutes": 4.4
+    }
+   }
+  },
+  {
+   "dormId": "turman-hall",
+   "name": "Turman Hall",
+   "lng": -84.3229,
+   "lat": 33.794035,
+   "pin": "name",
+   "osm": "way/216261215",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "woodruff-physical-education-center",
+     "minutes": 8
+    },
+    "library": {
+     "placeId": "pitts-theology-library",
+     "minutes": 9.1
+    },
+    "dining": {
+     "placeId": "emory-student-center",
+     "minutes": 4.4
+    }
+   }
+  },
+  {
+   "dormId": "dobbs-hall",
+   "name": "Dobbs Hall",
+   "lng": -84.324626,
+   "lat": 33.792876,
+   "pin": "name",
+   "osm": "relation/1629347",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "woodruff-physical-education-center",
+     "minutes": 3.7
+    },
+    "library": {
+     "placeId": "pitts-theology-library",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "emory-student-center",
+     "minutes": 2.1
+    }
+   }
+  },
+  {
+   "dormId": "hopkins-hall",
+   "name": "Hopkins Hall",
+   "lng": -84.321617,
+   "lat": 33.790618,
+   "pin": "name",
+   "osm": "way/287210917",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "woodruff-physical-education-center",
+     "minutes": 8.4
+    },
+    "library": {
+     "placeId": "robert-w-woodruff-library",
+     "minutes": 3.4
+    },
+    "dining": {
+     "placeId": "emory-student-center",
+     "minutes": 6.3
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "woodruff-physical-education-center",
+   "name": "Woodruff Physical Education Center",
+   "short": "Woodruff Physical Education Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "WoodPEC"
+   ],
+   "lng": -84.325985,
+   "lat": 33.793285,
+   "osm": "way/42614607"
+  },
+  {
+   "id": "macmillan-gambrell-hall",
+   "name": "Macmillan - Gambrell Hall",
+   "short": "Macmillan - Gambrell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.320153,
+   "lat": 33.789909,
+   "osm": "way/51300212"
+  },
+  {
+   "id": "robert-w-woodruff-library",
+   "name": "Robert W. Woodruff Library",
+   "short": "Robert W. Woodruff Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.322914,
+   "lat": 33.790516,
+   "osm": "way/41169862"
+  },
+  {
+   "id": "health-sciences-research-building-ii",
+   "name": "Health Sciences Research Building II",
+   "short": "Health Sciences Research Building II",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.318412,
+   "lat": 33.79477,
+   "osm": "way/1268449466"
+  },
+  {
+   "id": "woodruff-memorial-building",
+   "name": "Woodruff Memorial Building",
+   "short": "Woodruff Memorial Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.322494,
+   "lat": 33.793,
+   "osm": "relation/1629346"
+  },
+  {
+   "id": "health-sciences-research-building-i",
+   "name": "Health Sciences Research Building I",
+   "short": "Health Sciences Research Building I",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.317602,
+   "lat": 33.794305,
+   "osm": "way/167773028"
+  },
+  {
+   "id": "donna-and-marvin-schwartz-center-for-performing-arts",
+   "name": "Donna and Marvin Schwartz Center for Performing Arts",
+   "short": "Donna and Marvin Schwartz Center for Performing Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Schwarz Center"
+   ],
+   "lng": -84.321849,
+   "lat": 33.789243,
+   "osm": "way/51313299"
+  },
+  {
+   "id": "emory-university-school-of-medicine",
+   "name": "Emory University School of Medicine",
+   "short": "Emory University School of Medicine",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.321835,
+   "lat": 33.793845,
+   "osm": "way/40859912"
+  },
+  {
+   "id": "atwood-chemistry-center",
+   "name": "Atwood Chemistry Center",
+   "short": "Atwood Chemistry Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.326865,
+   "lat": 33.791112,
+   "osm": "way/167837145"
+  },
+  {
+   "id": "mathematics-and-science-center",
+   "name": "Mathematics and Science Center",
+   "short": "Mathematics and Science Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.326787,
+   "lat": 33.790218,
+   "osm": "way/41109068"
+  },
+  {
+   "id": "emory-student-center",
+   "name": "Emory Student Center",
+   "short": "Emory Student Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.323971,
+   "lat": 33.793647,
+   "osm": "way/761840928"
+  },
+  {
+   "id": "goizueta-business-school-building",
+   "name": "Goizueta Business School Building",
+   "short": "Goizueta Business School Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.321377,
+   "lat": 33.790001,
+   "osm": "way/51304281"
+  },
+  {
+   "id": "oxford-road-building",
+   "name": "Oxford Road Building",
+   "short": "Oxford Road Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.326834,
+   "lat": 33.789462,
+   "osm": "way/167837142"
+  },
+  {
+   "id": "woodruff-health-sciences-administration-building",
+   "name": "Woodruff Health Sciences Administration Building",
+   "short": "Woodruff Health Sciences Administration Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Woodruff Health Sciences Center Administration Building"
+   ],
+   "lng": -84.321665,
+   "lat": 33.794405,
+   "osm": "way/40859913"
+  },
+  {
+   "id": "goodrich-c-white-hall",
+   "name": "Goodrich C. White Hall",
+   "short": "Goodrich C. White Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.325918,
+   "lat": 33.79078,
+   "osm": "way/41109069"
+  },
+  {
+   "id": "goizueta-foundation-building",
+   "name": "Goizueta Foundation Building",
+   "short": "Goizueta Foundation Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.32227,
+   "lat": 33.790058,
+   "osm": "way/65956875"
+  },
+  {
+   "id": "student-activity-and-academic-center",
+   "name": "Student Activity & Academic Center",
+   "short": "Student Activity & Academic Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.308562,
+   "lat": 33.79676,
+   "osm": "way/51287229"
+  },
+  {
+   "id": "cox-hall",
+   "name": "Cox Hall",
+   "short": "Cox Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.323184,
+   "lat": 33.792403,
+   "osm": "way/51305052"
+  },
+  {
+   "id": "psychology-and-interdisciplinary-sciences",
+   "name": "Psychology and Interdisciplinary Sciences",
+   "short": "Psychology and Interdisciplinary Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PAIS"
+   ],
+   "lng": -84.327511,
+   "lat": 33.7911,
+   "osm": "way/167837153"
+  },
+  {
+   "id": "alumni-memorial-university-center",
+   "name": "Alumni Memorial University Center",
+   "short": "Alumni Memorial University Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The DUC"
+   ],
+   "lng": -84.323033,
+   "lat": 33.793575,
+   "osm": "relation/7249634"
+  },
+  {
+   "id": "callaway-memorial-center",
+   "name": "Callaway Memorial Center",
+   "short": "Callaway Memorial Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.324189,
+   "lat": 33.791439,
+   "osm": "way/51287336"
+  },
+  {
+   "id": "candler-library",
+   "name": "Candler Library",
+   "short": "Candler Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.323534,
+   "lat": 33.791295,
+   "osm": "way/43317371"
+  },
+  {
+   "id": "pitts-theology-library",
+   "name": "Pitts Theology Library",
+   "short": "Pitts Theology Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.325597,
+   "lat": 33.791455,
+   "osm": "way/294784067"
+  },
+  {
+   "id": "emerson-hall",
+   "name": "Emerson Hall",
+   "short": "Emerson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.326281,
+   "lat": 33.791388,
+   "osm": "way/51295534"
+  },
+  {
+   "id": "candler-school-of-theology",
+   "name": "Candler School of Theology",
+   "short": "Candler School of Theology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.325855,
+   "lat": 33.791666,
+   "osm": "way/167837151"
+  },
+  {
+   "id": "rich-building",
+   "name": "Rich Building",
+   "short": "Rich Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.323109,
+   "lat": 33.789646,
+   "osm": "relation/1629348"
+  },
+  {
+   "id": "tarbutton-hall",
+   "name": "Tarbutton Hall",
+   "short": "Tarbutton Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.324967,
+   "lat": 33.792014,
+   "osm": "way/41109062"
+  },
+  {
+   "id": "convocation-hall",
+   "name": "Convocation Hall",
+   "short": "Convocation Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Pitts Theology Library"
+   ],
+   "lng": -84.325176,
+   "lat": 33.790864,
+   "osm": "way/41109070"
+  },
+  {
+   "id": "emory-clairmont-tower",
+   "name": "Emory Clairmont Tower",
+   "short": "Emory Clairmont Tower",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.309779,
+   "lat": 33.797017,
+   "osm": "way/51291645"
+  },
+  {
+   "id": "michael-c-carlos-museum",
+   "name": "Michael C. Carlos Museum",
+   "short": "Michael C. Carlos Museum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.324174,
+   "lat": 33.790448,
+   "osm": "way/51284602"
+  },
+  {
+   "id": "visual-arts-building",
+   "name": "Visual Arts Building",
+   "short": "Visual Arts Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.328638,
+   "lat": 33.796713,
+   "osm": "way/51297673"
+  },
+  {
+   "id": "anthropology",
+   "name": "Anthropology",
+   "short": "Anthropology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Geosciences"
+   ],
+   "lng": -84.32445,
+   "lat": 33.792289,
+   "osm": "way/41109063"
+  },
+  {
+   "id": "the-luce-center-at-emory-university",
+   "name": "The Luce Center at Emory University",
+   "short": "The Luce Center at Emory University",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.320021,
+   "lat": 33.801777,
+   "osm": "way/43621278"
+  },
+  {
+   "id": "modern-languages",
+   "name": "Modern Languages",
+   "short": "Modern Languages",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Psychology"
+   ],
+   "lng": -84.324747,
+   "lat": 33.791718,
+   "osm": "way/41109064"
+  },
+  {
+   "id": "michael-c-carlos-hall",
+   "name": "Michael C. Carlos Hall",
+   "short": "Michael C. Carlos Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.324589,
+   "lat": 33.790207,
+   "osm": "way/288252107"
+  },
+  {
+   "id": "autism-resource-center",
+   "name": "Autism Resource center",
+   "short": "Autism Resource center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.308913,
+   "lat": 33.799365,
+   "osm": "way/239890982"
+  },
+  {
+   "id": "bowden-hall",
+   "name": "Bowden Hall",
+   "short": "Bowden Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.323782,
+   "lat": 33.790748,
+   "osm": "way/41380318"
+  },
+  {
+   "id": "tufts-house",
+   "name": "Tufts House",
+   "short": "Tufts House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.318715,
+   "lat": 33.792733,
+   "osm": "way/51290085"
+  },
+  {
+   "id": "1817-clifton-road",
+   "name": "1817 Clifton Road",
+   "short": "1817 Clifton Road",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.333335,
+   "lat": 33.804805,
+   "osm": "way/775061350"
+  },
+  {
+   "id": "smith-hall",
+   "name": "Smith Hall",
+   "short": "Smith Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.321942,
+   "lat": 33.79078,
+   "osm": "way/287210916"
+  },
+  {
+   "id": "thomas-hall",
+   "name": "Thomas Hall",
+   "short": "Thomas Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.321241,
+   "lat": 33.790735,
+   "osm": "way/51290398"
+  },
+  {
+   "id": "repe-c",
+   "name": "Repe C",
+   "short": "Repe C",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.319418,
+   "lat": 33.803846,
+   "osm": "way/945411729"
+  },
+  {
+   "id": "repe-d",
+   "name": "Repe D",
+   "short": "Repe D",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.319762,
+   "lat": 33.803741,
+   "osm": "way/945411733"
+  },
+  {
+   "id": "asbury-house",
+   "name": "Asbury House",
+   "short": "Asbury House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.330754,
+   "lat": 33.797593,
+   "osm": "way/669782051"
+  }
+ ]
+}

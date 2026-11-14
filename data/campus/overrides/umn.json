@@ -1,0 +1,165 @@
+{
+  "notes": {
+    "east-building": "Part of the M Health Fairview Riverside hospital campus south-east of the West Bank, not a class or meal place.",
+    "west-building": "Part of the M Health Fairview Riverside hospital campus south-east of the West Bank, not a class or meal place.",
+    "west-building-165264373": "Part of the M Health Fairview Riverside hospital campus south-east of the West Bank, not a class or meal place.",
+    "red-ramp": "Part of the M Health Fairview Riverside hospital campus south-east of the West Bank, not a class or meal place.",
+    "yellow-ramp": "Part of the M Health Fairview Riverside hospital campus south-east of the West Bank, not a class or meal place.",
+    "north-building": "Part of the M Health Fairview Riverside hospital campus south-east of the West Bank, not a class or meal place.",
+    "riverside-professional-builiding": "Part of the M Health Fairview Riverside hospital campus south-east of the West Bank, not a class or meal place.",
+    "2512-building": "Part of the M Health Fairview Riverside hospital campus south-east of the West Bank, not a class or meal place.",
+    "health-partners-riverside-urgent-care": "Part of the M Health Fairview Riverside hospital campus south-east of the West Bank, not a class or meal place.",
+    "university-of-minnesota-masonic-childrens-hospital": "Part of the M Health Fairview Riverside hospital campus south-east of the West Bank, not a class or meal place.",
+    "childrens-rehabilitation-center": "Part of the M Health Fairview Riverside hospital campus south-east of the West Bank, not a class or meal place.",
+    "st-catherine-university": "St. Catherine University's Minneapolis campus, another school.",
+    "st-catherine-university-south-bldg": "St. Catherine University's Minneapolis campus, another school.",
+    "minneapolis-energy-center-riverside-plant": "Power plant, not a class or meal place.",
+    "east-gateway-district-steam-distribution": "Steam plant, not a class or meal place.",
+    "4th-street-switch-station": "Electrical switch station, not a class or meal place.",
+    "university-of-minnesota-medical-center-east-bank-hospital": "Hospital, not a class or meal place.",
+    "university-of-minnesota-health-clinics-and-surgery-center": "Clinics, not a class or meal place.",
+    "ymca-child-care": "Child care, not a class or meal place.",
+    "grace-university-lutheran-church": "Church, not a class or meal place.",
+    "phi-chi-medical-fraternity": "Fraternity house, not a class or meal place.",
+    "mayo-meditation-space": "Meditation room, not a class or meal place.",
+    "3m-arena": "Varsity hockey arena, not a class or meal place.",
+    "gibson-nagurski-football-practice-facility": "Varsity football practice facility, not a gym students use.",
+    "bierman-field-athletic-building": "Athletics offices, not a class or meal place.",
+    "bierman-field-clubhouse": "Ballfield clubhouse, not a class or meal place.",
+    "mcnamara-alumni-center": "Alumni center, not a class or meal place.",
+    "advanced-operations-center": "Facilities operations building, not a class or meal place.",
+    "university-office-plaza": "Office building, not a class or meal place."
+  },
+  "places": {
+    "east-building": {
+      "hide": true
+    },
+    "west-building": {
+      "hide": true
+    },
+    "west-building-165264373": {
+      "hide": true
+    },
+    "red-ramp": {
+      "hide": true
+    },
+    "yellow-ramp": {
+      "hide": true
+    },
+    "north-building": {
+      "hide": true
+    },
+    "riverside-professional-builiding": {
+      "hide": true
+    },
+    "2512-building": {
+      "hide": true
+    },
+    "health-partners-riverside-urgent-care": {
+      "hide": true
+    },
+    "university-of-minnesota-masonic-childrens-hospital": {
+      "hide": true
+    },
+    "childrens-rehabilitation-center": {
+      "hide": true
+    },
+    "st-catherine-university": {
+      "hide": true
+    },
+    "st-catherine-university-south-bldg": {
+      "hide": true
+    },
+    "minneapolis-energy-center-riverside-plant": {
+      "hide": true
+    },
+    "east-gateway-district-steam-distribution": {
+      "hide": true
+    },
+    "4th-street-switch-station": {
+      "hide": true
+    },
+    "university-of-minnesota-medical-center-east-bank-hospital": {
+      "hide": true
+    },
+    "university-of-minnesota-health-clinics-and-surgery-center": {
+      "hide": true
+    },
+    "ymca-child-care": {
+      "hide": true
+    },
+    "grace-university-lutheran-church": {
+      "hide": true
+    },
+    "phi-chi-medical-fraternity": {
+      "hide": true
+    },
+    "mayo-meditation-space": {
+      "hide": true
+    },
+    "3m-arena": {
+      "hide": true
+    },
+    "gibson-nagurski-football-practice-facility": {
+      "hide": true
+    },
+    "bierman-field-athletic-building": {
+      "hide": true
+    },
+    "bierman-field-clubhouse": {
+      "hide": true
+    },
+    "mcnamara-alumni-center": {
+      "hide": true
+    },
+    "advanced-operations-center": {
+      "hide": true
+    },
+    "university-office-plaza": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "comstock -> ted-mann-concert-hall",
+        "yudof -> ted-mann-concert-hall"
+      ],
+      "maxRatio": 3.0,
+      "why": "The Mississippi lies between the East Bank halls and the West Bank arts buildings; the mapped crossing is the Washington Avenue Bridge, north of the straight line."
+    },
+    {
+      "pairs": [
+        "sanford -> education-sciences-building",
+        "wilkins -> education-sciences-building"
+      ],
+      "maxRatio": 3.5,
+      "why": "The old plant's coal yard (Coal Unloading Facility and Coal Storage Building) lies between Sanford and Wilkins and the Education Sciences Building, below the bluff; the mapped way goes round by the street to the east."
+    },
+    {
+      "pairs": [
+        "17th-avenue -> nolte-center",
+        "17th-avenue -> pillsbury-hall"
+      ],
+      "maxRatio": 5.5,
+      "why": "The blocks between 17th Avenue Hall and the Knoll (houses and the Nolte Center garage) have no mapped path through; walks go south and round by the Mall to Pillsbury Hall and Nolte Center."
+    },
+    {
+      "pairs": [
+        "wilkins -> 10-church-street-building",
+        "wilkins -> nolte-center"
+      ],
+      "maxRatio": 3.0,
+      "why": "Roy Wilkins Hall's mapped way out is along University Avenue; the blocks between it and the Knoll have no mapped path through, so walks go round by the streets to Nolte Center and 10 Church Street."
+    },
+    {
+      "pairs": [
+        "centennial -> diehl-hall",
+        "pioneer -> variety-club-research-center",
+        "yudof -> dwan-variety-club-cardiovascular-research-center"
+      ],
+      "maxRatio": 3.0,
+      "why": "The health sciences buildings (Mayo, Phillips-Wangensteen, Diehl, the Variety Club centers) form one built-up block with few mapped ways through; walks from the halls go round by Washington Avenue to its far side."
+    }
+  ]
+}

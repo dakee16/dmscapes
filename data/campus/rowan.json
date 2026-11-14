@@ -1,0 +1,761 @@
+{
+ "collegeId": "rowan",
+ "generatedAt": "2026-11-14T06:52:51.437Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/rowan.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -75.12711,
+  39.70542,
+  -75.1119,
+  39.7136
+ ],
+ "halls": [
+  {
+   "dormId": "holly-pointe-commons",
+   "name": "Holly Pointe Commons",
+   "lng": -75.112019,
+   "lat": 39.70729,
+   "pin": "name",
+   "osm": "way/354604131",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-rec-center-esbjornson-gym",
+     "minutes": 9.4
+    },
+    "library": {
+     "placeId": "campbell-library",
+     "minutes": 9.4
+    }
+   }
+  },
+  {
+   "dormId": "chestnut-hall",
+   "name": "Chestnut Hall",
+   "lng": -75.11389,
+   "lat": 39.709609,
+   "pin": "name",
+   "osm": "way/37059392",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-rec-center-esbjornson-gym",
+     "minutes": 5.7
+    },
+    "library": {
+     "placeId": "campbell-library",
+     "minutes": 5.7
+    }
+   }
+  },
+  {
+   "dormId": "mimosa-hall",
+   "name": "Mimosa Hall",
+   "lng": -75.11763,
+   "lat": 39.709734,
+   "pin": "name",
+   "osm": "way/37059357",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-rec-center-esbjornson-gym",
+     "minutes": 1.3
+    },
+    "library": {
+     "placeId": "campbell-library",
+     "minutes": 0.9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "student-rec-center-esbjornson-gym",
+   "name": "Student Rec. Center/Esbjornson Gym",
+   "short": "Student Rec. Center/Esbjornson Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.118649,
+   "lat": 39.710595,
+   "osm": "way/37059397"
+  },
+  {
+   "id": "rowan-boulevard-apartments",
+   "name": "Rowan Boulevard Apartments",
+   "short": "Rowan Boulevard Apartments",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.111897,
+   "lat": 39.705984,
+   "osm": "way/52584015"
+  },
+  {
+   "id": "wilson-hall",
+   "name": "Wilson Hall",
+   "short": "Wilson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.121337,
+   "lat": 39.711274,
+   "osm": "way/37059384"
+  },
+  {
+   "id": "chamberlain-student-center",
+   "name": "Chamberlain Student Center",
+   "short": "Chamberlain Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.117861,
+   "lat": 39.70868,
+   "osm": "way/37059343"
+  },
+  {
+   "id": "james-hall",
+   "name": "James Hall",
+   "short": "James Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.119454,
+   "lat": 39.711686,
+   "osm": "way/37059375"
+  },
+  {
+   "id": "science-hall",
+   "name": "Science Hall",
+   "short": "Science Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.120652,
+   "lat": 39.709754,
+   "osm": "way/37059337"
+  },
+  {
+   "id": "bozorth-hall",
+   "name": "Bozorth Hall",
+   "short": "Bozorth Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.121632,
+   "lat": 39.707962,
+   "osm": "way/37059361"
+  },
+  {
+   "id": "memorial-hall",
+   "name": "Memorial Hall",
+   "short": "Memorial Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.119639,
+   "lat": 39.707684,
+   "osm": "way/37059362"
+  },
+  {
+   "id": "college-of-engineering-expansion",
+   "name": "College of Engineering Expansion",
+   "short": "College of Engineering Expansion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.12194,
+   "lat": 39.712961,
+   "osm": "way/354604128"
+  },
+  {
+   "id": "rowan-hall",
+   "name": "Rowan Hall",
+   "short": "Rowan Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.12233,
+   "lat": 39.712135,
+   "osm": "way/37059413"
+  },
+  {
+   "id": "campbell-library",
+   "name": "Campbell Library",
+   "short": "Campbell Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.119026,
+   "lat": 39.70907,
+   "osm": "way/37059381"
+  },
+  {
+   "id": "evergreen-hall",
+   "name": "Evergreen Hall",
+   "short": "Evergreen Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.116749,
+   "lat": 39.707069,
+   "osm": "relation/453185"
+  },
+  {
+   "id": "rohrer-college-of-business",
+   "name": "Rohrer College of Business",
+   "short": "Rohrer College of Business",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.122525,
+   "lat": 39.71005,
+   "osm": "way/354604129"
+  },
+  {
+   "id": "bunce-hall",
+   "name": "Bunce Hall",
+   "short": "Bunce Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.120763,
+   "lat": 39.707058,
+   "osm": "way/37059356"
+  },
+  {
+   "id": "robinson-hall",
+   "name": "Robinson Hall",
+   "short": "Robinson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.120242,
+   "lat": 39.710559,
+   "osm": "way/37059370"
+  },
+  {
+   "id": "westby-hall",
+   "name": "Westby Hall",
+   "short": "Westby Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.121599,
+   "lat": 39.709936,
+   "osm": "way/37059412"
+  },
+  {
+   "id": "courtyard-rowan-university",
+   "name": "Courtyard - Rowan University",
+   "short": "Courtyard - Rowan University",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Courtyard by Marriott"
+   ],
+   "lng": -75.113561,
+   "lat": 39.706548,
+   "osm": "way/238184140"
+  },
+  {
+   "id": "holly-pointe-commons",
+   "name": "Holly Pointe Commons",
+   "short": "Holly Pointe Commons",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.112652,
+   "lat": 39.707986,
+   "osm": "way/1357645787"
+  },
+  {
+   "id": "triad",
+   "name": "Triad",
+   "short": "Triad",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.125821,
+   "lat": 39.711561,
+   "osm": "way/37059354"
+  },
+  {
+   "id": "john-green-team-house",
+   "name": "John Green Team House",
+   "short": "John Green Team House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.118838,
+   "lat": 39.7136,
+   "osm": "way/37059399"
+  },
+  {
+   "id": "savitz-hall",
+   "name": "Savitz Hall",
+   "short": "Savitz Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.119679,
+   "lat": 39.709338,
+   "osm": "way/37059387"
+  },
+  {
+   "id": "discovery-hall",
+   "name": "Discovery Hall",
+   "short": "Discovery Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.115622,
+   "lat": 39.707761,
+   "osm": "way/900161935"
+  },
+  {
+   "id": "wellness-center-winans-hall",
+   "name": "Wellness Center (Winans Hall)",
+   "short": "Wellness Center (Winans Hall)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.116989,
+   "lat": 39.708251,
+   "osm": "way/37059338"
+  },
+  {
+   "id": "bole-hall",
+   "name": "Bole Hall",
+   "short": "Bole Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.120481,
+   "lat": 39.706055,
+   "osm": "way/37059322"
+  },
+  {
+   "id": "willow-hall",
+   "name": "Willow Hall",
+   "short": "Willow Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.116066,
+   "lat": 39.70982,
+   "osm": "way/37059366"
+  },
+  {
+   "id": "magnolia-hall",
+   "name": "Magnolia Hall",
+   "short": "Magnolia Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.115107,
+   "lat": 39.709652,
+   "osm": "way/37059355"
+  },
+  {
+   "id": "bole-hall-annex",
+   "name": "Bole Hall Annex",
+   "short": "Bole Hall Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.119573,
+   "lat": 39.706409,
+   "osm": "way/37059382"
+  },
+  {
+   "id": "mullica-hall",
+   "name": "Mullica Hall",
+   "short": "Mullica Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.115769,
+   "lat": 39.706898,
+   "osm": "way/37059360"
+  },
+  {
+   "id": "holly-pointe-commons-1357645788",
+   "name": "Holly Pointe Commons",
+   "short": "Holly Pointe Commons",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.112727,
+   "lat": 39.708163,
+   "osm": "way/1357645788"
+  },
+  {
+   "id": "edgewood-park-apartments",
+   "name": "Edgewood Park Apartments",
+   "short": "Edgewood Park Apartments",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.115913,
+   "lat": 39.710688,
+   "osm": "way/37059336"
+  },
+  {
+   "id": "edgewood-park-apartments-37059348",
+   "name": "Edgewood Park Apartments",
+   "short": "Edgewood Park Apartments",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.114611,
+   "lat": 39.710125,
+   "osm": "way/37059348"
+  },
+  {
+   "id": "edgewood-park-apartments-37059310",
+   "name": "Edgewood Park Apartments",
+   "short": "Edgewood Park Apartments",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.115356,
+   "lat": 39.710291,
+   "osm": "way/37059310"
+  },
+  {
+   "id": "edgewood-park-apartments-37059378",
+   "name": "Edgewood Park Apartments",
+   "short": "Edgewood Park Apartments",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.116347,
+   "lat": 39.711078,
+   "osm": "way/37059378"
+  },
+  {
+   "id": "oak-hall",
+   "name": "Oak Hall",
+   "short": "Oak Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.118646,
+   "lat": 39.706931,
+   "osm": "way/37059405"
+  },
+  {
+   "id": "laurel-hall",
+   "name": "Laurel Hall",
+   "short": "Laurel Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.119335,
+   "lat": 39.707149,
+   "osm": "way/37059313"
+  },
+  {
+   "id": "hawthorn-hall",
+   "name": "Hawthorn Hall",
+   "short": "Hawthorn Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.121264,
+   "lat": 39.70876,
+   "osm": "way/37059403"
+  },
+  {
+   "id": "townhouse-community-center",
+   "name": "Townhouse Community Center",
+   "short": "Townhouse Community Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.122224,
+   "lat": 39.708624,
+   "osm": "way/37059390"
+  },
+  {
+   "id": "townhouse-7",
+   "name": "Townhouse 7",
+   "short": "Townhouse 7",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.12281,
+   "lat": 39.708136,
+   "osm": "way/37059314"
+  },
+  {
+   "id": "townhouse-1",
+   "name": "Townhouse 1",
+   "short": "Townhouse 1",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.121705,
+   "lat": 39.709104,
+   "osm": "way/37059386"
+  },
+  {
+   "id": "hollybush",
+   "name": "Hollybush",
+   "short": "Hollybush",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.117916,
+   "lat": 39.706309,
+   "osm": "way/37059373"
+  },
+  {
+   "id": "townhouse-14",
+   "name": "Townhouse 14",
+   "short": "Townhouse 14",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.123964,
+   "lat": 39.709432,
+   "osm": "way/37059321"
+  },
+  {
+   "id": "townhouse-12",
+   "name": "Townhouse 12",
+   "short": "Townhouse 12",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.123492,
+   "lat": 39.709644,
+   "osm": "way/37059389"
+  },
+  {
+   "id": "townhouse-10",
+   "name": "Townhouse 10",
+   "short": "Townhouse 10",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.123067,
+   "lat": 39.709157,
+   "osm": "way/37059350"
+  },
+  {
+   "id": "townhouse-3",
+   "name": "Townhouse 3",
+   "short": "Townhouse 3",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.122162,
+   "lat": 39.709247,
+   "osm": "way/37059312"
+  },
+  {
+   "id": "townhouse-6",
+   "name": "Townhouse 6",
+   "short": "Townhouse 6",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.122411,
+   "lat": 39.709009,
+   "osm": "way/37059400"
+  },
+  {
+   "id": "townhouse-5",
+   "name": "Townhouse 5",
+   "short": "Townhouse 5",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.122542,
+   "lat": 39.709321,
+   "osm": "way/37059383"
+  },
+  {
+   "id": "townhouse13",
+   "name": "Townhouse13",
+   "short": "Townhouse13",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.123955,
+   "lat": 39.709744,
+   "osm": "way/37059325"
+  },
+  {
+   "id": "townhouse-16",
+   "name": "Townhouse 16",
+   "short": "Townhouse 16",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.123457,
+   "lat": 39.709134,
+   "osm": "way/37059339"
+  },
+  {
+   "id": "townhouse-17",
+   "name": "Townhouse 17",
+   "short": "Townhouse 17",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.123847,
+   "lat": 39.709096,
+   "osm": "way/37059323"
+  },
+  {
+   "id": "townhouse-11",
+   "name": "Townhouse 11",
+   "short": "Townhouse 11",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.123148,
+   "lat": 39.709495,
+   "osm": "way/37059411"
+  },
+  {
+   "id": "townhouse-15",
+   "name": "Townhouse 15",
+   "short": "Townhouse 15",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.123552,
+   "lat": 39.709396,
+   "osm": "way/37059374"
+  },
+  {
+   "id": "townhouse-9",
+   "name": "Townhouse 9",
+   "short": "Townhouse 9",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.123273,
+   "lat": 39.708882,
+   "osm": "way/37059414"
+  },
+  {
+   "id": "townhouse-4",
+   "name": "Townhouse 4",
+   "short": "Townhouse 4",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.122014,
+   "lat": 39.708937,
+   "osm": "way/37059398"
+  },
+  {
+   "id": "townhouse-8",
+   "name": "Townhouse 8",
+   "short": "Townhouse 8",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.123154,
+   "lat": 39.708604,
+   "osm": "way/37059333"
+  },
+  {
+   "id": "carriage-house",
+   "name": "Carriage House",
+   "short": "Carriage House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.118653,
+   "lat": 39.706243,
+   "osm": "way/37059335"
+  },
+  {
+   "id": "townhouse-2",
+   "name": "Townhouse 2",
+   "short": "Townhouse 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.121713,
+   "lat": 39.708888,
+   "osm": "way/37059349"
+  },
+  {
+   "id": "600-whitney-avenue",
+   "name": "600 Whitney Avenue",
+   "short": "600 Whitney Avenue",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.118764,
+   "lat": 39.705421,
+   "osm": "way/248107913"
+  },
+  {
+   "id": "rotc",
+   "name": "ROTC",
+   "short": "ROTC",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.127115,
+   "lat": 39.711495,
+   "osm": "way/37059395"
+  },
+  {
+   "id": "north-halls-gazebo",
+   "name": "North Halls Gazebo",
+   "short": "North Halls Gazebo",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.115384,
+   "lat": 39.709249,
+   "osm": "way/238218835"
+  },
+  {
+   "id": "carriage-house-37059388",
+   "name": "Carriage House",
+   "short": "Carriage House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.118332,
+   "lat": 39.706246,
+   "osm": "way/37059388"
+  },
+  {
+   "id": "guard-house",
+   "name": "Guard House",
+   "short": "Guard House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.119972,
+   "lat": 39.70839,
+   "osm": "way/591025059"
+  }
+ ]
+}

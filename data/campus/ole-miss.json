@@ -1,0 +1,1211 @@
+{
+ "collegeId": "ole-miss",
+ "generatedAt": "2026-11-08T17:07:38.998Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/ole-miss.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -89.55375,
+  34.35801,
+  -89.53026,
+  34.37075
+ ],
+ "halls": [
+  {
+   "dormId": "pittman-hall",
+   "name": "Pittman Hall",
+   "lng": -89.538054,
+   "lat": 34.368186,
+   "pin": "name",
+   "osm": "way/318269857",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 10.4
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 5.6
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 4.6
+    }
+   }
+  },
+  {
+   "dormId": "minor-hall",
+   "name": "Minor Hall",
+   "lng": -89.538791,
+   "lat": 34.367797,
+   "pin": "name",
+   "osm": "way/318269701",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 8.9
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 4.2
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 2.7
+    }
+   }
+  },
+  {
+   "dormId": "burns-hall",
+   "name": "Burns Hall",
+   "lng": -89.538173,
+   "lat": 34.367748,
+   "pin": "name",
+   "osm": "way/318269856",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 9.3
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 4.5
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 3.5
+    }
+   }
+  },
+  {
+   "dormId": "residence-hall-1",
+   "name": "Residence Hall 1 (RH1)",
+   "lng": -89.533947,
+   "lat": 34.370402,
+   "pin": "name",
+   "osm": "way/596185229",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 13.8
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 9.5
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 9.9
+    }
+   }
+  },
+  {
+   "dormId": "residence-hall-2",
+   "name": "Residence Hall 2 (RH2)",
+   "lng": -89.539517,
+   "lat": 34.368112,
+   "pin": "name",
+   "osm": "way/560123965",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 9.5
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 3.4
+    }
+   }
+  },
+  {
+   "dormId": "residence-hall-3",
+   "name": "Residence Hall 3 (RH3)",
+   "lng": -89.539561,
+   "lat": 34.367617,
+   "pin": "name",
+   "osm": "way/560123964",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 9.3
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 3.1
+    }
+   }
+  },
+  {
+   "dormId": "residential-college-south",
+   "name": "Residential College South",
+   "lng": -89.531131,
+   "lat": 34.368538,
+   "pin": "name",
+   "osm": "way/318280445",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 14
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 11.4
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 12.6
+    }
+   }
+  },
+  {
+   "dormId": "luckyday-residential-college",
+   "name": "Luckyday Residential College",
+   "lng": -89.530257,
+   "lat": 34.368929,
+   "pin": "manual",
+   "osm": "way/318280244",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 13.5
+    },
+    "library": {
+     "placeId": "library-annex",
+     "minutes": 9.3
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 13
+    }
+   }
+  },
+  {
+   "dormId": "martin-hall",
+   "name": "Martin Hall",
+   "lng": -89.536793,
+   "lat": 34.370751,
+   "pin": "name",
+   "osm": "way/188827023",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 14.7
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 9.9
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 10.3
+    }
+   }
+  },
+  {
+   "dormId": "stockard-hall",
+   "name": "Stockard Hall",
+   "lng": -89.537503,
+   "lat": 34.370749,
+   "pin": "name",
+   "osm": "way/188827024",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 13.1
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 8.4
+    }
+   }
+  },
+  {
+   "dormId": "deaton-hall",
+   "name": "Deaton Hall",
+   "lng": -89.535453,
+   "lat": 34.368027,
+   "pin": "name",
+   "osm": "way/318283082",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 9.1
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 5.9
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 6.8
+    }
+   }
+  },
+  {
+   "dormId": "hefley-hall",
+   "name": "Hefley Hall",
+   "lng": -89.533773,
+   "lat": 34.368048,
+   "pin": "name",
+   "osm": "way/318283485",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 9.3
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 6.6
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 8.1
+    }
+   }
+  },
+  {
+   "dormId": "brown-hall",
+   "name": "Brown Hall",
+   "lng": -89.533988,
+   "lat": 34.368887,
+   "pin": "name",
+   "osm": "way/318283258",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 10.6
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 7.9
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 8.8
+    }
+   }
+  },
+  {
+   "dormId": "stewart-hall",
+   "name": "Stewart Hall",
+   "lng": -89.535564,
+   "lat": 34.368714,
+   "pin": "name",
+   "osm": "way/318283108",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 9.9
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 6.7
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 7.6
+    }
+   }
+  },
+  {
+   "dormId": "crosby-hall",
+   "name": "Crosby Hall",
+   "lng": -89.534657,
+   "lat": 34.369838,
+   "pin": "name",
+   "osm": "way/318285187",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 11.9
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 7.6
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 8
+    }
+   }
+  },
+  {
+   "dormId": "campus-walk-apartments",
+   "name": "Campus Walk Apartments",
+   "lng": -89.547964,
+   "lat": 34.364054,
+   "pin": "manual",
+   "osm": "way/271948958",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 17
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 14.9
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 14.5
+    }
+   }
+  },
+  {
+   "dormId": "northgate-apartments",
+   "name": "Northgate Apartments",
+   "lng": -89.533167,
+   "lat": 34.369567,
+   "pin": "manual",
+   "osm": "way/318284667",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "turner-center",
+     "minutes": 12.4
+    },
+    "library": {
+     "placeId": "john-davis-williams-library",
+     "minutes": 9.2
+    },
+    "dining": {
+     "placeId": "paul-b-johnson-sr-commons",
+     "minutes": 9.5
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "tad-smith-coliseum",
+   "name": "Tad Smith Coliseum",
+   "short": "Tad Smith Coliseum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Tad Pad"
+   ],
+   "lng": -89.53935,
+   "lat": 34.362155,
+   "osm": "way/135662222"
+  },
+  {
+   "id": "jamie-l-whitten-national-center-for-physical-accoustics",
+   "name": "Jamie L Whitten National Center for Physical Accoustics",
+   "short": "Jamie L Whitten National Center for Physical Accoustics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.541876,
+   "lat": 34.360592,
+   "osm": "way/271954335"
+  },
+  {
+   "id": "ole-miss-student-union",
+   "name": "Ole Miss Student Union",
+   "short": "Ole Miss Student Union",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Gertrude C. Ford Ole Miss Student Union",
+    "Union"
+   ],
+   "lng": -89.534434,
+   "lat": 34.366957,
+   "osm": "way/187869327"
+  },
+  {
+   "id": "turner-center",
+   "name": "Turner Center",
+   "short": "Turner Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.537238,
+   "lat": 34.363427,
+   "osm": "way/188826778"
+  },
+  {
+   "id": "john-davis-williams-library",
+   "name": "John Davis Williams Library",
+   "short": "John Davis Williams Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.537387,
+   "lat": 34.365477,
+   "osm": "way/188498900"
+  },
+  {
+   "id": "robert-c-khayat-law-center",
+   "name": "Robert C Khayat Law Center",
+   "short": "Robert C Khayat Law Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.542449,
+   "lat": 34.362719,
+   "osm": "way/271954088"
+  },
+  {
+   "id": "gillom-sports-center",
+   "name": "Gillom Sports Center",
+   "short": "Gillom Sports Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.545074,
+   "lat": 34.358339,
+   "osm": "way/271772894"
+  },
+  {
+   "id": "duff-center-for-science-and-technology-innovation",
+   "name": "Duff Center for Science and Technology Innovation",
+   "short": "Duff Center for Science and Technology Innovation",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.534087,
+   "lat": 34.363977,
+   "osm": "way/1244786202"
+  },
+  {
+   "id": "coulter-hall",
+   "name": "Coulter Hall",
+   "short": "Coulter Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.531492,
+   "lat": 34.364558,
+   "osm": "way/318275096"
+  },
+  {
+   "id": "paul-b-johnson-sr-commons",
+   "name": "Paul B. Johnson, Sr. Commons",
+   "short": "Paul B. Johnson, Sr. Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.53901,
+   "lat": 34.366203,
+   "osm": "way/188827026"
+  },
+  {
+   "id": "kinard-hall",
+   "name": "Kinard Hall",
+   "short": "Kinard Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.540842,
+   "lat": 34.367975,
+   "osm": "way/188498492"
+  },
+  {
+   "id": "carrier-hall",
+   "name": "Carrier Hall",
+   "short": "Carrier Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.535125,
+   "lat": 34.364267,
+   "osm": "way/318273986"
+  },
+  {
+   "id": "lamar-hall",
+   "name": "Lamar Hall",
+   "short": "Lamar Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.531118,
+   "lat": 34.366878,
+   "osm": "way/318280064"
+  },
+  {
+   "id": "center-for-manufacturing-excellence",
+   "name": "Center for Manufacturing Excellence",
+   "short": "Center for Manufacturing Excellence",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.535855,
+   "lat": 34.364143,
+   "osm": "way/318273959"
+  },
+  {
+   "id": "meek-hall",
+   "name": "Meek Hall",
+   "short": "Meek Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.536715,
+   "lat": 34.367241,
+   "osm": "way/318276286"
+  },
+  {
+   "id": "insight-park",
+   "name": "Insight Park",
+   "short": "Insight Park",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.548393,
+   "lat": 34.358285,
+   "osm": "way/271772349"
+  },
+  {
+   "id": "martindale-cole-student-services-center",
+   "name": "Martindale-Cole Student Services Center",
+   "short": "Martindale-Cole Student Services Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.537588,
+   "lat": 34.364636,
+   "osm": "way/188504263"
+  },
+  {
+   "id": "john-w-white-ppd-administration-building",
+   "name": "John W White PPD Administration Building",
+   "short": "John W White PPD Administration Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.548493,
+   "lat": 34.360672,
+   "osm": "way/271771258"
+  },
+  {
+   "id": "national-food-service-management-institute",
+   "name": "National Food Service Management Institute",
+   "short": "National Food Service Management Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.541546,
+   "lat": 34.358967,
+   "osm": "way/272125531"
+  },
+  {
+   "id": "farley-hall",
+   "name": "Farley Hall",
+   "short": "Farley Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.532249,
+   "lat": 34.367021,
+   "osm": "way/318282634"
+  },
+  {
+   "id": "the-lyceum",
+   "name": "The Lyceum",
+   "short": "The Lyceum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.536098,
+   "lat": 34.365452,
+   "osm": "way/187869639"
+  },
+  {
+   "id": "lewis-hall",
+   "name": "Lewis Hall",
+   "short": "Lewis Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.536891,
+   "lat": 34.364602,
+   "osm": "way/318273636"
+  },
+  {
+   "id": "brevard-hall",
+   "name": "Brevard Hall",
+   "short": "Brevard Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.536018,
+   "lat": 34.364661,
+   "osm": "way/188504264"
+  },
+  {
+   "id": "bishop-hall",
+   "name": "Bishop Hall",
+   "short": "Bishop Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.539167,
+   "lat": 34.36488,
+   "osm": "way/188498461"
+  },
+  {
+   "id": "weir-hall",
+   "name": "Weir Hall",
+   "short": "Weir Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.537512,
+   "lat": 34.365955,
+   "osm": "way/282549381"
+  },
+  {
+   "id": "shoemaker-hall",
+   "name": "Shoemaker Hall",
+   "short": "Shoemaker Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.533429,
+   "lat": 34.364667,
+   "osm": "way/188504265"
+  },
+  {
+   "id": "sam-gerard-hall",
+   "name": "Sam-Gerard Hall",
+   "short": "Sam-Gerard Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.541116,
+   "lat": 34.36723,
+   "osm": "way/271952806"
+  },
+  {
+   "id": "guyton-hall",
+   "name": "Guyton Hall",
+   "short": "Guyton Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.542907,
+   "lat": 34.366118,
+   "osm": "way/271952366"
+  },
+  {
+   "id": "e-f-yerby-conference-center",
+   "name": "E. F. Yerby Conference Center",
+   "short": "E. F. Yerby Conference Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.530545,
+   "lat": 34.365547,
+   "osm": "way/318276618"
+  },
+  {
+   "id": "sally-mcdonnell-barksdale-honors-college",
+   "name": "Sally McDonnell Barksdale Honors College",
+   "short": "Sally McDonnell Barksdale Honors College",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.531914,
+   "lat": 34.367391,
+   "osm": "way/318284119"
+  },
+  {
+   "id": "hume-hall",
+   "name": "Hume Hall",
+   "short": "Hume Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.534147,
+   "lat": 34.364354,
+   "osm": "way/318274354"
+  },
+  {
+   "id": "coy-waller-research-center",
+   "name": "Coy Waller Research Center",
+   "short": "Coy Waller Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.548855,
+   "lat": 34.359165,
+   "osm": "way/271771229"
+  },
+  {
+   "id": "barnard-observatory",
+   "name": "Barnard Observatory",
+   "short": "Barnard Observatory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.533424,
+   "lat": 34.367127,
+   "osm": "relation/16256538"
+  },
+  {
+   "id": "bryant-hall",
+   "name": "Bryant Hall",
+   "short": "Bryant Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.534912,
+   "lat": 34.366275,
+   "osm": "way/969209390"
+  },
+  {
+   "id": "library-annex",
+   "name": "Library Annex",
+   "short": "Library Annex",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.5321,
+   "lat": 34.363317,
+   "osm": "way/273062269"
+  },
+  {
+   "id": "bondurant-hall",
+   "name": "Bondurant Hall",
+   "short": "Bondurant Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.538657,
+   "lat": 34.365255,
+   "osm": "way/282547852"
+  },
+  {
+   "id": "triplett-alumni-center",
+   "name": "Triplett Alumni Center",
+   "short": "Triplett Alumni Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.530849,
+   "lat": 34.366211,
+   "osm": "way/318277030"
+  },
+  {
+   "id": "powers-hall",
+   "name": "Powers Hall",
+   "short": "Powers Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.541775,
+   "lat": 34.366599,
+   "osm": "way/271952690"
+  },
+  {
+   "id": "lenoir-house",
+   "name": "Lenoir House",
+   "short": "Lenoir House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.533291,
+   "lat": 34.368426,
+   "osm": "way/318284523"
+  },
+  {
+   "id": "anderson-hall",
+   "name": "Anderson Hall",
+   "short": "Anderson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.535203,
+   "lat": 34.363873,
+   "osm": "way/1094533339"
+  },
+  {
+   "id": "george-peabody-building",
+   "name": "George Peabody Building",
+   "short": "George Peabody Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.535773,
+   "lat": 34.366188,
+   "osm": "way/969209391"
+  },
+  {
+   "id": "croft-institute-for-international-studies",
+   "name": "Croft Institute for International Studies",
+   "short": "Croft Institute for International Studies",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.534301,
+   "lat": 34.36586,
+   "osm": "way/187869326"
+  },
+  {
+   "id": "small-business-development-center",
+   "name": "Small Business Development Center",
+   "short": "Small Business Development Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.540945,
+   "lat": 34.358005,
+   "osm": "way/272125814"
+  },
+  {
+   "id": "v-b-harrison-student-health-center",
+   "name": "V. B. Harrison Student Health Center",
+   "short": "V. B. Harrison Student Health Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.537262,
+   "lat": 34.367513,
+   "osm": "way/318276224"
+  },
+  {
+   "id": "lester-hall",
+   "name": "Lester Hall",
+   "short": "Lester Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.540804,
+   "lat": 34.366914,
+   "osm": "way/271952808"
+  },
+  {
+   "id": "barnard-hall",
+   "name": "Barnard Hall",
+   "short": "Barnard Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.535363,
+   "lat": 34.367453,
+   "osm": "way/318275683"
+  },
+  {
+   "id": "baxter-hall",
+   "name": "Baxter Hall",
+   "short": "Baxter Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.541453,
+   "lat": 34.366977,
+   "osm": "way/271952807"
+  },
+  {
+   "id": "medicinal-plant-garden",
+   "name": "Medicinal Plant Garden",
+   "short": "Medicinal Plant Garden",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.553751,
+   "lat": 34.358273,
+   "osm": "way/271332435"
+  },
+  {
+   "id": "george-hall",
+   "name": "George Hall",
+   "short": "George Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.538294,
+   "lat": 34.367162,
+   "osm": "way/271952830"
+  },
+  {
+   "id": "carrier-house",
+   "name": "Carrier House",
+   "short": "Carrier House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.5452,
+   "lat": 34.365709,
+   "osm": "way/271950756"
+  },
+  {
+   "id": "isom-hall",
+   "name": "Isom Hall",
+   "short": "Isom Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.535054,
+   "lat": 34.367156,
+   "osm": "way/318275673"
+  },
+  {
+   "id": "somerville-hall",
+   "name": "Somerville Hall",
+   "short": "Somerville Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.53559,
+   "lat": 34.367078,
+   "osm": "way/318275708"
+  },
+  {
+   "id": "leavell-hall",
+   "name": "Leavell Hall",
+   "short": "Leavell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.539019,
+   "lat": 34.366853,
+   "osm": "way/188826908"
+  },
+  {
+   "id": "trent-lott-leadership-institute",
+   "name": "Trent Lott Leadership Institute",
+   "short": "Trent Lott Leadership Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.537372,
+   "lat": 34.366545,
+   "osm": "way/969209393"
+  },
+  {
+   "id": "bondurant-hall-282547798",
+   "name": "Bondurant Hall",
+   "short": "Bondurant Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.539094,
+   "lat": 34.365292,
+   "osm": "way/282547798"
+  },
+  {
+   "id": "graduate-house",
+   "name": "Graduate House",
+   "short": "Graduate House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.536939,
+   "lat": 34.36595,
+   "osm": "way/282549589"
+  },
+  {
+   "id": "falkner-hall",
+   "name": "Falkner Hall",
+   "short": "Falkner Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.538435,
+   "lat": 34.366798,
+   "osm": "way/188507255"
+  },
+  {
+   "id": "howry-hall",
+   "name": "Howry Hall",
+   "short": "Howry Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.538189,
+   "lat": 34.366671,
+   "osm": "way/188507367"
+  },
+  {
+   "id": "vardaman-hall",
+   "name": "Vardaman Hall",
+   "short": "Vardaman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.53985,
+   "lat": 34.366831,
+   "osm": "way/188826906"
+  },
+  {
+   "id": "bondurant-hall-282547800",
+   "name": "Bondurant Hall",
+   "short": "Bondurant Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.538231,
+   "lat": 34.365205,
+   "osm": "way/282547800"
+  },
+  {
+   "id": "hill-hall",
+   "name": "Hill Hall",
+   "short": "Hill Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.539344,
+   "lat": 34.366774,
+   "osm": "way/188826907"
+  },
+  {
+   "id": "longstreet-hall",
+   "name": "Longstreet Hall",
+   "short": "Longstreet Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.539558,
+   "lat": 34.366901,
+   "osm": "way/188826909"
+  },
+  {
+   "id": "odom-hall",
+   "name": "Odom Hall",
+   "short": "Odom Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.537612,
+   "lat": 34.366486,
+   "osm": "way/969209392"
+  },
+  {
+   "id": "barr-hall",
+   "name": "Barr Hall",
+   "short": "Barr Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.538706,
+   "lat": 34.366718,
+   "osm": "way/188507257"
+  },
+  {
+   "id": "george-street-university-house",
+   "name": "George Street University House",
+   "short": "George Street University House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.537061,
+   "lat": 34.3651,
+   "osm": "way/1094894097"
+  },
+  {
+   "id": "deupree-hall",
+   "name": "Deupree Hall",
+   "short": "Deupree Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.537121,
+   "lat": 34.366442,
+   "osm": "way/969209394"
+  },
+  {
+   "id": "ventress-hall",
+   "name": "Ventress Hall",
+   "short": "Ventress Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.533726,
+   "lat": 34.365444,
+   "osm": "way/318274467"
+  },
+  {
+   "id": "kennon-observatory",
+   "name": "Kennon Observatory",
+   "short": "Kennon Observatory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.536485,
+   "lat": 34.364288,
+   "osm": "way/318273664"
+  },
+  {
+   "id": "national-center-for-computational-hydroscience-annex-1",
+   "name": "National Center for Computational Hydroscience Annex 1",
+   "short": "National Center for Computational Hydroscience Annex 1",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.54074,
+   "lat": 34.358186,
+   "osm": "way/272125973"
+  },
+  {
+   "id": "national-center-for-computational-hydroscience-annex-2",
+   "name": "National Center for Computational Hydroscience Annex 2",
+   "short": "National Center for Computational Hydroscience Annex 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -89.540548,
+   "lat": 34.358074,
+   "osm": "way/318249786"
+  }
+ ]
+}

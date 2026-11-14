@@ -1,0 +1,35 @@
+{
+  "places": {
+    "operations-center": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "operations-center": "SNHU's facilities operations building (campus.snhu.edu campus map), a service building rather than a class building."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "monadnock-hall -> edward-s-wolak-library-learning-commons"
+      ],
+      "maxRatio": 3.5,
+      "why": "OSM maps no doors here: Monadnock's nearest path node is at its south-east corner and the library's at its north entrance, with no mapped path across the green between them, so the walk goes round both buildings."
+    },
+    {
+      "pairs": [
+        "windsor-hall -> academic-center",
+        "hampton-hall -> academic-center"
+      ],
+      "maxRatio": 3.5,
+      "why": "Windsor and Hampton sit east of the Academic Center across a green with no mapped path, and the Academic Center's nearest path node is on its north side, so walks go round by the quad paths and the road north of it."
+    },
+    {
+      "pairs": [
+        "kingston-hall -> freese-student-center",
+        "kingston-hall -> exeter-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "Kingston Hall's nearest mapped path is on its west side, away from Freese and Exeter, so the walk leaves west and doubles back round the hall to reach them."
+    }
+  ]
+}

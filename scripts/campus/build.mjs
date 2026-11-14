@@ -7,8 +7,13 @@
 //   data/campus/<id>.minutes.json            server only: { places: [ids], halls: { dormId: [minutes] } }
 //   data/campus/paths/<id>/<dormId>.json     server only: { placeId: encoded polyline }
 //   data/campus/index.json                   the pilot list: adds <id>
+//   data/campus/built.json                   { <id>: generatedAt }, so pages can date Hall Finder
+//                                            (sitemap lastmod, the guide's "updated") without
+//                                            reading every campus file
 // data/campus/overrides/<id>.json (pins, year tags, place codes/aliases/kind) wins over OSM. Its
 // detours and longWalks lists are read only by scripts/check-campus.mjs.
+// A school with no public building-code list (config "codes": null, with a "noCodes" reason) is
+// built from names alone: its named academic buildings are kept and schedules match them by name.
 import fs from "node:fs";
 import path from "node:path";
 
@@ -22,7 +27,7 @@ const overrides = read(OVERRIDES, {});
 const cache = (name) => read(`scripts/campus/cache/${id}/${name}.json`, null);
 const osm = cache("buildings");
 const walk = cache("walk");
-const codeList = cache("codes");
+const codeList = config.codes?.arcgis ? cache("codes") : null;
 const codeFile = config.codes?.file ? read(config.codes.file) : null;
 if (!osm || !walk) throw new Error(`no cache for ${id}; run node scripts/campus/fetch.mjs ${id}`);
 
@@ -297,7 +302,7 @@ function byWords(names, list, bothWays) {
 }
 
 const hallBuildings = new Set();
-const report = { ambiguous: [], unpinned: [], unsnapped: [], offCampus: [], noCodeOrAlias: [], beyondWalk: [], wordMatched: [], unreached: [] };
+const report = { ambiguous: [], unpinned: [], unsnapped: [], offCampus: [], noCodeOrAlias: [], nameOnly: [], beyondWalk: [], wordMatched: [], unreached: [] };
 // Halls on another campus (config.excludeHalls, with the reason) aren't on this walking map.
 const halls = school.dorms.filter((d) => !config.excludeHalls?.[d.dorm_id]).map((d) => {
   const ov = overrides.halls?.[d.dorm_id] ?? {};
@@ -378,6 +383,10 @@ const official = listed.concat((codeList?.features ?? [])
 // ---- Places: named OSM buildings in the campus area that aren't halls or outbuildings.
 const NOT_PLACES = new Set(["dormitory", "residential", "apartments", "house", "detached", "semidetached_house", "terrace", "garage", "garages", "carport", "parking", "shed", "hut", "roof", "service", "transformer_tower", "water_tower", "silo", "barn", "cowshed", "stable", "farm_auxiliary", "greenhouse", "storage_tank", "bunker", "kiosk", "toilets", "ruins", "construction", "stadium", "grandstand"]);
 const OUTBUILDING = /\b(bus|parking|garage|deck|substation|shed|shelter|barn|silo|kiosk|storage|greenhouse|hangar|heliport|pump ?house)\b/i;
+// Schools with no official building list keep named buildings, so the obvious non-class ones go.
+const OFFICIAL_LIST = Boolean(codeList || codeFile);
+const WORSHIP = new Set(["church", "chapel", "cathedral", "temple", "mosque", "synagogue", "shrine", "religious"]);
+const UTILITY = /\b((power|physical|heating|central|chiller|steam|cogeneration) plant|chiller|boiler|utilit(y|ies)|maintenance|facilities|warehouse|receiving|shipping|mail (services|center)|police|public safety|motor pool|fleet|grounds|transformer|generator|incinerator|recycling|waste)\b/i;
 function kindOf(t) {
   const name = t.name ?? "";
   if (t.amenity === "library" || t.building === "library" || /\blibrar(y|ies)\b/i.test(name)) return "library";
@@ -471,10 +480,15 @@ for (const b of candidates) {
   const codes = ov.codes ?? uniqBy(offs.map((o) => o.code), (c) => c.toUpperCase());
   // An academic building nobody lists (no official code, no alias anywhere) is a heating plant,
   // not somewhere a schedule sends you. Dining, gyms and libraries are found by kind instead.
+  // With no official list to lean on, a named building on campus stays (schedules name it),
+  // unless its name says it's a utility or service building.
   const kind = ov.kind ?? kindOf(b.tags);
   if (kind === "academic" && !codes.length && !(ov.aliases ?? aliases).length) {
-    report.noCodeOrAlias.push(id);
-    continue;
+    if (OFFICIAL_LIST || UTILITY.test(b.tags.name) || WORSHIP.has(b.tags.building) || b.tags.amenity === "place_of_worship") {
+      report.noCodeOrAlias.push(id);
+      continue;
+    }
+    report.nameOnly.push(id);
   }
   const snap = seedsFor(b);
   if (!snap.via) {
@@ -672,6 +686,9 @@ fs.writeFileSync(`data/campus/${id}.minutes.json`, JSON.stringify(minutes));
 // The pilot list the app reads (lib/hall-finder.ts PILOT_SCHOOLS).
 const PILOTS = "data/campus/index.json";
 fs.writeFileSync(PILOTS, JSON.stringify([...new Set([...read(PILOTS, []), id])].sort()) + "\n");
+const BUILT = "data/campus/built.json";
+const built = { ...read(BUILT, {}), [id]: campus.generatedAt };
+fs.writeFileSync(BUILT, JSON.stringify(Object.fromEntries(Object.entries(built).sort()), null, 2) + "\n");
 
 // ---- Report
 const kb = (f) => `${(fs.statSync(f).size / 1024).toFixed(1)} KB`;

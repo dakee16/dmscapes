@@ -1,0 +1,16 @@
+{
+  "collegeId": "temple",
+  "area": {
+    "osm": "way/509782889",
+    "bbox": [
+      39.97609,
+      -75.16096,
+      39.9864,
+      -75.15158
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Temple publishes no current building-code list: the registrar's pages (registrar.temple.edu, including the Course Schedule Matrix) have none, and the lettered building keys on older campus maps (a 2012 map and a 2021 copy on fox.temple.edu) are out of date (checked 2026-11-08)."
+}

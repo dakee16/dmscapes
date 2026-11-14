@@ -1,0 +1,34 @@
+{
+  "halls": {
+    "north-morlan-hall": {
+      "pin": [
+        -117.849305,
+        33.797195
+      ]
+    },
+    "south-morlan-hall": {
+      "pin": [
+        -117.849305,
+        33.797195
+      ]
+    }
+  },
+  "places": {
+    "davis-apartments": {
+      "hide": true
+    },
+    "harris-apartments": {
+      "hide": true
+    },
+    "morlan-hall": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "north-morlan-hall": "OSM maps Morlan Hall as one building (way/946699833); North and South Morlan share its centre.",
+    "south-morlan-hall": "Same pin as North Morlan Hall.",
+    "davis-apartments": "Student apartments, not somewhere classes or meals happen.",
+    "harris-apartments": "Student apartments, not somewhere classes or meals happen.",
+    "morlan-hall": "OSM's Morlan Hall is the North and South Morlan residence hall, not a class building; its centre falls outside its footprint, so the halls' pin doesn't claim it."
+  }
+}

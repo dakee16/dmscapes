@@ -1,0 +1,156 @@
+{
+  "halls": {
+    "lothian": {
+      "pin": [
+        -117.32228,
+        33.97622
+      ]
+    },
+    "pentland-hills": {
+      "pin": [
+        -117.3207,
+        33.9785
+      ]
+    },
+    "dundee": {
+      "pin": [
+        -117.32457,
+        33.97861
+      ]
+    }
+  },
+  "codes": {
+    "MSE": "way/303524632",
+    "INTN": "way/233678048",
+    "INTS": "way/233678049"
+  },
+  "places": {
+    "glasgow": {
+      "kind": "dining"
+    },
+    "lothian-residential-restaurant": {
+      "kind": "dining"
+    },
+    "highlander-union-building": {
+      "kind": "dining"
+    },
+    "psychology": {
+      "aliases": [
+        "Psychology Building"
+      ]
+    },
+    "arts": {
+      "aliases": [
+        "Arts Building"
+      ]
+    },
+    "athletics-and-dance": {
+      "aliases": [
+        "Athletics & Dance"
+      ]
+    },
+    "entomology-building": {
+      "aliases": [
+        "Entomology"
+      ]
+    },
+    "genomics-building": {
+      "aliases": [
+        "Genomics"
+      ]
+    },
+    "biological-sciences": {
+      "aliases": [
+        "Biological Sciences Building"
+      ]
+    },
+    "batchelor-hall": {
+      "aliases": [
+        "Batchelor"
+      ]
+    },
+    "webber-hall": {
+      "aliases": [
+        "Webber"
+      ]
+    },
+    "chemical-sciences": {
+      "aliases": [
+        "Chemical Sciences Building"
+      ]
+    },
+    "geology-building": {
+      "aliases": [
+        "Geology"
+      ]
+    },
+    "science-laboratory": {
+      "aliases": [
+        "Science Laboratory 1"
+      ]
+    },
+    "humanities": {
+      "aliases": [
+        "Humanities Building"
+      ]
+    },
+    "fawcett-laboratory": {
+      "aliases": [
+        "Fawcett"
+      ]
+    },
+    "anderson-hall-1": {
+      "aliases": [
+        "Anderson Hall"
+      ]
+    },
+    "anderson-hall-2": {
+      "aliases": [
+        "Anderson Hall II"
+      ]
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "aberdeen-inverness -> student-recreation-center-south"
+      ],
+      "maxRatio": 3.3,
+      "why": "Aberdeen-Inverness's mapped exits lead north to W Linden Street and no footway runs west along the block to the SRC South door, so the walk goes round by Linden Street and the SRC North side."
+    },
+    {
+      "pairs": [
+        "lothian -> orbach-science-library",
+        "lothian -> chemical-sciences"
+      ],
+      "maxRatio": 3.7,
+      "why": "The Lothian footways (OSM ways 836257018 and 488210168) stop short of the path down to Big Springs Road (OSM way 488208722), so OSM sends Lothian's walks south by the hillside path north and west round Aberdeen-Inverness."
+    }
+  ],
+  "notes": {
+    "lothian": "Pinned at East Lothian (OSM way/488204949); Lothian Hall is East and West Lothian with the Lothian Residential Restaurant between them (housing.ucr.edu/lothian).",
+    "pentland-hills": "Pinned beside Pentland Way (One Pentland Way, housing.ucr.edu/pentland-hills) next to Scotty's and the Multipurpose Room, the complex's commons (OSM ways 544057996 and 753610462); OSM does not name the 17 residence buildings, so there is no footprint to pin on.",
+    "dundee": "Pinned at Dundee A (OSM way/1031413111); Dundee B next door holds the DUNDE general-assignment classrooms and stays a place (housing.ucr.edu/dundee).",
+    "MSE": "Registrar code MSE (listed only as \"MSE\") is the Materials Science and Engineering building, OSM way/303524632.",
+    "INTN": "Registrar code INTN (\"CHASS INTN\") is CHASS Interdisciplinary North, OSM way/233678048.",
+    "INTS": "Registrar code INTS (\"CHASS INTS\") is CHASS Interdisciplinary South, OSM way/233678049.",
+    "glasgow": "Glasgow is the dining hall by Dundee and Aberdeen-Inverness (dining.ucr.edu); OSM gives it no tag.",
+    "lothian-residential-restaurant": "Lothian Residential Restaurant is Lothian's dining hall (dining.ucr.edu); OSM tags it a cafe.",
+    "highlander-union-building": "The HUB holds the campus food court (dining.ucr.edu, HUB locations), so it counts as dining.",
+    "psychology": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "arts": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "athletics-and-dance": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "entomology-building": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "genomics-building": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "biological-sciences": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "batchelor-hall": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "webber-hall": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "chemical-sciences": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "geology-building": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "science-laboratory": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "humanities": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "fawcett-laboratory": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "anderson-hall-1": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out.",
+    "anderson-hall-2": "Kept by alias: a department classroom or teaching-lab building (campusmap.ucr.edu) that the Registrar's general-assignment classroom list leaves out."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collegeId": "uc-davis",
+  "area": {
+    "osm": "relation/5267472",
+    "bbox": [
+      38.51538,
+      -121.81249,
+      38.54688,
+      -121.73157
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "UC Davis Registrar's scheduling resources (registrar.ucdavis.edu) give no building-code list; the campus directory's CampusAbbreviations.pdf (org.ucdavis.edu/directory-search) mixes department and office abbreviations and isn't the schedule's building codes."
+}

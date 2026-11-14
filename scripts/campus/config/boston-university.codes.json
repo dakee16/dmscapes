@@ -1,0 +1,291 @@
+{
+ "name": "Boston University Event & Classroom Reservations (25Live), Building Codes",
+ "url": "https://www.bu.edu/reservations/25live/building-codes",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "AAS",
+   "name": "African-American Studies"
+  },
+  {
+   "code": "AGG",
+   "name": "Agganis Arena"
+  },
+  {
+   "code": "ASC",
+   "name": "Academic Support Center"
+  },
+  {
+   "code": "BAB",
+   "name": "Babcock Street"
+  },
+  {
+   "code": "BRB",
+   "name": "Biology Research Building"
+  },
+  {
+   "code": "BSC",
+   "name": "Biological Science Center"
+  },
+  {
+   "code": "CAS",
+   "name": "College of Arts & Sciences"
+  },
+  {
+   "code": "CDS",
+   "name": "Dahn Family Center for Computing & Data Sciences"
+  },
+  {
+   "code": "CFA",
+   "name": "College of Fine Arts"
+  },
+  {
+   "code": "CGS",
+   "name": "College of General Studies"
+  },
+  {
+   "code": "CLN",
+   "name": "Clinical Psychology"
+  },
+  {
+   "code": "COM",
+   "name": "College of Communication"
+  },
+  {
+   "code": "CRW",
+   "name": "DeWolfe Crew Boathouse"
+  },
+  {
+   "code": "CSE",
+   "name": "Case Physical Education Center"
+  },
+  {
+   "code": "EGL",
+   "name": "English Faculty Offices"
+  },
+  {
+   "code": "EIB",
+   "name": "Editorial Institute Building"
+  },
+  {
+   "code": "EIL",
+   "name": "Eilberg Lounge (Case Center)"
+  },
+  {
+   "code": "EMA",
+   "name": "Engineering Manufacturing Annex"
+  },
+  {
+   "code": "EMB",
+   "name": "Engineering Manufacturing Building"
+  },
+  {
+   "code": "ENG",
+   "name": "College of Engineering"
+  },
+  {
+   "code": "EOP",
+   "name": "Center for English Language & Orientation Programs"
+  },
+  {
+   "code": "EPC",
+   "name": "Engineering Product Innovation Center"
+  },
+  {
+   "code": "ERA",
+   "name": "Engineering Research Annex"
+  },
+  {
+   "code": "ERB",
+   "name": "Engineering Research Building"
+  },
+  {
+   "code": "FAB",
+   "name": "Fenway Activities Building"
+  },
+  {
+   "code": "FCB",
+   "name": "Fenway Classroom Building"
+  },
+  {
+   "code": "FCC",
+   "name": "Fenway Campus Center"
+  },
+  {
+   "code": "FLR",
+   "name": "Fuller Building"
+  },
+  {
+   "code": "FOB",
+   "name": "Faculty Office Building (Alden Hall)"
+  },
+  {
+   "code": "FRC",
+   "name": "Fitness & Recreation Center"
+  },
+  {
+   "code": "GDP",
+   "name": "Global Development Policy Center"
+  },
+  {
+   "code": "GSU",
+   "name": "George Sherman Student Union"
+  },
+  {
+   "code": "HAR",
+   "name": "Rafik B. Hariri Building, Questrom School of Business"
+  },
+  {
+   "code": "HAW",
+   "name": "Hawes Building"
+  },
+  {
+   "code": "HIS",
+   "name": "History and American Studies"
+  },
+  {
+   "code": "IEC",
+   "name": "International Education Center"
+  },
+  {
+   "code": "IRB",
+   "name": "International Relations Building"
+  },
+  {
+   "code": "IRC",
+   "name": "International Relations Center"
+  },
+  {
+   "code": "JSC",
+   "name": "Judaic Studies Center"
+  },
+  {
+   "code": "KCB",
+   "name": "Kenmore Classroom Building"
+  },
+  {
+   "code": "KHC",
+   "name": "Kilachand Honors College"
+  },
+  {
+   "code": "Law",
+   "name": "Law School"
+  },
+  {
+   "code": "LEV",
+   "name": "Leventhal Center"
+  },
+  {
+   "code": "LNG",
+   "name": "Romance Studies, Modern Foreign Languages & Comparative Literature"
+  },
+  {
+   "code": "LSE",
+   "name": "Life Science & Engineering Building"
+  },
+  {
+   "code": "MCH",
+   "name": "Marsh Chapel"
+  },
+  {
+   "code": "MCS",
+   "name": "Math & Computer Science"
+  },
+  {
+   "code": "MET",
+   "name": "Metropolitan College"
+  },
+  {
+   "code": "MOR",
+   "name": "Morse Auditorium"
+  },
+  {
+   "code": "MUG",
+   "name": "Mugar Memorial Library"
+  },
+  {
+   "code": "PHO",
+   "name": "Photonics Building"
+  },
+  {
+   "code": "PLS",
+   "name": "Anthropology, Philosophy, Political Science, African Studies Center"
+  },
+  {
+   "code": "PRB",
+   "name": "Physics Research Building"
+  },
+  {
+   "code": "PSY",
+   "name": "Psychology"
+  },
+  {
+   "code": "PTH",
+   "name": "Playwrights\u2019 Theatre"
+  },
+  {
+   "code": "REL",
+   "name": "CAS Religion"
+  },
+  {
+   "code": "SAC",
+   "name": "Sargent Activities Center"
+  },
+  {
+   "code": "SAL",
+   "name": "Sailing Docks"
+  },
+  {
+   "code": "SAR",
+   "name": "Sargent College"
+  },
+  {
+   "code": "SCI",
+   "name": "Metcalf Science Center"
+  },
+  {
+   "code": "SHA",
+   "name": "School of Hospitality Administration"
+  },
+  {
+   "code": "SLB",
+   "name": "Science Library Building"
+  },
+  {
+   "code": "SOC",
+   "name": "Sociology"
+  },
+  {
+   "code": "SSW",
+   "name": "School of Social Work"
+  },
+  {
+   "code": "STH",
+   "name": "School of Theology"
+  },
+  {
+   "code": "STO",
+   "name": "Stone Science Building"
+  },
+  {
+   "code": "THA",
+   "name": "Joan & Edgar Booth Theatre"
+  },
+  {
+   "code": "TTC",
+   "name": "Track & Tennis Center"
+  },
+  {
+   "code": "WEA",
+   "name": "Wheelock College of Education & Human Development Annex"
+  },
+  {
+   "code": "WED",
+   "name": "Wheelock College of Education & Human Development"
+  },
+  {
+   "code": "YAW",
+   "name": "Yawkey Center for Student Services"
+  }
+ ]
+}

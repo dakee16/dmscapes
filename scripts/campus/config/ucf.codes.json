@@ -1,0 +1,1177 @@
+{
+ "name": "UCF Campus Map building list (map.ucf.edu/locations.json): names, abbreviations and map points",
+ "url": "https://map.ucf.edu/locations.json",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "A-H",
+   "name": "Ferrell Commons - A-H",
+   "lng": -81.1995,
+   "lat": 28.598025
+  },
+  {
+   "code": "ADP",
+   "name": "Alpha Delta Pi - Sorority",
+   "lng": -81.205782,
+   "lat": 28.604545
+  },
+  {
+   "code": "ADRF",
+   "name": "Ara Dr. Research Facility",
+   "lng": -81.191202,
+   "lat": 28.591346
+  },
+  {
+   "code": "ALUM",
+   "name": "FAIRWINDS Alumni Center",
+   "lng": -81.198873,
+   "lat": 28.605674
+  },
+  {
+   "code": "ARB",
+   "name": "Arboretum",
+   "lng": -81.19681,
+   "lat": 28.600592
+  },
+  {
+   "code": "ARF",
+   "name": "AMPAC",
+   "lng": -81.191727,
+   "lat": 28.59137
+  },
+  {
+   "code": "ARNA",
+   "name": "Addition Financial Arena",
+   "lng": -81.197016,
+   "lat": 28.60762
+  },
+  {
+   "code": "ATO",
+   "name": "Alpha Tau Omega - Fraternity",
+   "lng": -81.205251,
+   "lat": 28.606785
+  },
+  {
+   "code": "AZD",
+   "name": "Alpha Xi Delta - Sorority",
+   "lng": -81.205889,
+   "lat": 28.603856
+  },
+  {
+   "code": "BA1",
+   "name": "Business Administration I",
+   "lng": -81.199216,
+   "lat": 28.601011
+  },
+  {
+   "code": "BA2",
+   "name": "Business Administration II",
+   "lng": -81.198631,
+   "lat": 28.600696
+  },
+  {
+   "code": "BAND",
+   "name": "Band Practice Facility",
+   "lng": -81.199799,
+   "lat": 28.591802
+  },
+  {
+   "code": "BBS",
+   "name": "Burnett School of Biomedical Sciences",
+   "lng": -81.2795,
+   "lat": 28.3677
+  },
+  {
+   "code": "BFRC",
+   "name": "Biology Field Research Center",
+   "lng": -81.191127,
+   "lat": 28.591441
+  },
+  {
+   "code": "BHC",
+   "name": "Burnett Honors College",
+   "lng": -81.202392,
+   "lat": 28.602272
+  },
+  {
+   "code": "BIO",
+   "name": "Biological Sciences Building",
+   "lng": -81.198548,
+   "lat": 28.600157
+  },
+  {
+   "code": "BKA",
+   "name": "Biomolecular Research Annex",
+   "lng": -81.192183,
+   "lat": 28.588727
+  },
+  {
+   "code": "BPW",
+   "name": "BPW Scholarship House",
+   "lng": -81.203696,
+   "lat": 28.595224
+  },
+  {
+   "code": "BRE",
+   "name": "Brevard Hall",
+   "lng": -81.198841,
+   "lat": 28.598859
+  },
+  {
+   "code": "BTG",
+   "name": "Biological Transgenic Greenhouse",
+   "lng": -81.192146,
+   "lat": 28.591309
+  },
+  {
+   "code": "BYC",
+   "name": "Barbara Ying Center",
+   "lng": -81.202751,
+   "lat": 28.595384
+  },
+  {
+   "code": "CAH",
+   "name": "College of Arts & Humanities",
+   "lng": -81.202665,
+   "lat": 28.604402
+  },
+  {
+   "code": "CAPS",
+   "name": "Counseling and Psychological Services",
+   "lng": -81.198811,
+   "lat": 28.599342
+  },
+  {
+   "code": "CB1",
+   "name": "Classroom Building I",
+   "lng": -81.20042,
+   "lat": 28.603491
+  },
+  {
+   "code": "CB2",
+   "name": "Classroom Building II",
+   "lng": -81.200069,
+   "lat": 28.604229
+  },
+  {
+   "code": "CHEM",
+   "name": "Chemistry",
+   "lng": -81.19978,
+   "lat": 28.599882
+  },
+  {
+   "code": "CIT",
+   "name": "Citrus Hall",
+   "lng": -81.198411,
+   "lat": 28.598322
+  },
+  {
+   "code": "CMMS",
+   "name": "Barbara Ying Center - CMMS",
+   "lng": -81.202451,
+   "lat": 28.594987
+  },
+  {
+   "code": "CPS",
+   "name": "Partnership 1",
+   "lng": -81.197443,
+   "lat": 28.586026
+  },
+  {
+   "code": "CROL",
+   "name": "CREOL",
+   "lng": -81.197473,
+   "lat": 28.6012
+  },
+  {
+   "code": "CS2",
+   "name": "Creative School II",
+   "lng": -81.19736,
+   "lat": 28.597095
+  },
+  {
+   "code": "CSAL",
+   "name": "Wayne Densch Center for Student-Athlete Leadership",
+   "lng": -81.191693,
+   "lat": 28.608284
+  },
+  {
+   "code": "CSB",
+   "name": "College of Sciences Building",
+   "lng": -81.200313,
+   "lat": 28.601023
+  },
+  {
+   "code": "CSC1",
+   "name": "Creative School for Children 1",
+   "lng": -81.197516,
+   "lat": 28.59698
+  },
+  {
+   "code": "CSC3",
+   "name": "Creative School Module 2",
+   "lng": -81.197183,
+   "lat": 28.597201
+  },
+  {
+   "code": "CSEL",
+   "name": "Kenneth G. Dixon Career Development Center",
+   "lng": -81.199093,
+   "lat": 28.605281
+  },
+  {
+   "code": "DDD",
+   "name": "Delta Delta Delta - Sorority",
+   "lng": -81.205906,
+   "lat": 28.605344
+  },
+  {
+   "code": "DLC",
+   "name": "UCF Digital Learning Center",
+   "lng": -81.1978,
+   "lat": 28.5872
+  },
+  {
+   "code": "DPAC",
+   "name": "Dr. Phillips Academic Commons",
+   "lng": -81.385273,
+   "lat": 28.547299
+  },
+  {
+   "code": "DTC",
+   "name": "Executive Development Center - UCF College of Business",
+   "lng": -81.379772,
+   "lat": 28.541089
+  },
+  {
+   "code": "ED",
+   "name": "Education Complex and Gym",
+   "lng": -81.203878,
+   "lat": 28.600055
+  },
+  {
+   "code": "ENG1",
+   "name": "Engineering I",
+   "lng": -81.198508,
+   "lat": 28.601407
+  },
+  {
+   "code": "ENG2",
+   "name": "Engineering II",
+   "lng": -81.198685,
+   "lat": 28.601982
+  },
+  {
+   "code": "ENP",
+   "name": "Engineering Research Pavilion",
+   "lng": -81.193865,
+   "lat": 28.602319
+  },
+  {
+   "code": "EOC",
+   "name": "Emergency Operation Center",
+   "lng": -81.196652,
+   "lat": 28.592439
+  },
+  {
+   "code": "ERL",
+   "name": "Engine Research Lab",
+   "lng": -81.18867,
+   "lat": 28.591678
+  },
+  {
+   "code": "ESTB",
+   "name": "Emergency Services Training Building",
+   "lng": -81.190757,
+   "lat": 28.611651
+  },
+  {
+   "code": "FC-A",
+   "name": "All Knight Study",
+   "lng": -81.198932,
+   "lat": 28.597521
+  },
+  {
+   "code": "FC-B",
+   "name": "SDES Information Technology",
+   "lng": -81.20008,
+   "lat": 28.598218
+  },
+  {
+   "code": "FC-E",
+   "name": "SRC Auditorium",
+   "lng": -81.199431,
+   "lat": 28.597641
+  },
+  {
+   "code": "FC-F",
+   "name": "Student Accessibility Services",
+   "lng": -81.19913,
+   "lat": 28.597875
+  },
+  {
+   "code": "FCA",
+   "name": "Live Oak Ballroom/Magnolia Room",
+   "lng": -81.200428,
+   "lat": 28.597889
+  },
+  {
+   "code": "FCC",
+   "name": "Office of Student Rights and Responsibilities",
+   "lng": -81.199825,
+   "lat": 28.598343
+  },
+  {
+   "code": "FCD",
+   "name": "'63 South Dining Hall",
+   "lng": -81.199782,
+   "lat": 28.597864
+  },
+  {
+   "code": "FCG",
+   "name": "Knight's Pantry",
+   "lng": -81.199514,
+   "lat": 28.598048
+  },
+  {
+   "code": "FIEA",
+   "name": "FIEA - Florida Interactive Entertainment Academy",
+   "lng": -81.384948,
+   "lat": 28.546742
+  },
+  {
+   "code": "FLA",
+   "name": "Flagler Hall",
+   "lng": -81.197832,
+   "lat": 28.598248
+  },
+  {
+   "code": "FS65",
+   "name": "Fire Station #65",
+   "lng": -81.191529,
+   "lat": 28.611537
+  },
+  {
+   "code": "FSC",
+   "name": "Facilities and Safety",
+   "lng": -81.196228,
+   "lat": 28.59153
+  },
+  {
+   "code": "G409",
+   "name": "Alpha Epsilon Phi - Sorority",
+   "lng": -81.203964,
+   "lat": 28.605705
+  },
+  {
+   "code": "G411",
+   "name": "Kappa Alpha Theta - Sorority",
+   "lng": -81.205777,
+   "lat": 28.606362
+  },
+  {
+   "code": "G415",
+   "name": "Fraternity and Sorority Life",
+   "lng": -81.206549,
+   "lat": 28.603438
+  },
+  {
+   "code": "G416",
+   "name": "Chi Omega - Sorority",
+   "lng": -81.206775,
+   "lat": 28.603758
+  },
+  {
+   "code": "G417",
+   "name": "Kappa Kappa Gamma - Sorority",
+   "lng": -81.206764,
+   "lat": 28.604154
+  },
+  {
+   "code": "H108",
+   "name": "Hercules 108",
+   "lng": -81.199034,
+   "lat": 28.594276
+  },
+  {
+   "code": "H109",
+   "name": "Hercules 109",
+   "lng": -81.19942,
+   "lat": 28.594493
+  },
+  {
+   "code": "H110",
+   "name": "Hercules 110",
+   "lng": -81.199656,
+   "lat": 28.594182
+  },
+  {
+   "code": "H111",
+   "name": "Hercules 111",
+   "lng": -81.199565,
+   "lat": 28.593579
+  },
+  {
+   "code": "H112",
+   "name": "Hercules 112",
+   "lng": -81.200144,
+   "lat": 28.593562
+  },
+  {
+   "code": "H113",
+   "name": "Hercules 113",
+   "lng": -81.200294,
+   "lat": 28.594347
+  },
+  {
+   "code": "H114",
+   "name": "Hercules 114",
+   "lng": -81.20052,
+   "lat": 28.594125
+  },
+  {
+   "code": "H115",
+   "name": "Hercules 115",
+   "lng": -81.200488,
+   "lat": 28.594091
+  },
+  {
+   "code": "HAB",
+   "name": "Housing Administration",
+   "lng": -81.198438,
+   "lat": 28.597601
+  },
+  {
+   "code": "HC",
+   "name": "Health Center & Pharmacy",
+   "lng": -81.199291,
+   "lat": 28.599372
+  },
+  {
+   "code": "HEC",
+   "name": "L3Harris Engineering Center",
+   "lng": -81.197714,
+   "lat": 28.600642
+  },
+  {
+   "code": "HPH",
+   "name": "Howard Phillips Hall",
+   "lng": -81.202633,
+   "lat": 28.600145
+  },
+  {
+   "code": "HS1",
+   "name": "Health Sciences I",
+   "lng": -81.198819,
+   "lat": 28.602895
+  },
+  {
+   "code": "HS2",
+   "name": "Health Sciences II",
+   "lng": -81.198218,
+   "lat": 28.603159
+  },
+  {
+   "code": "IC",
+   "name": "Innovative Center",
+   "lng": -81.199736,
+   "lat": 28.589618
+  },
+  {
+   "code": "JEP",
+   "name": "John Euliano Park",
+   "lng": -81.19545,
+   "lat": 28.609809
+  },
+  {
+   "code": "JTWC",
+   "name": "John T. Washington Center",
+   "lng": -81.202134,
+   "lat": 28.600842
+  },
+  {
+   "code": "KC",
+   "name": "Knight's Circle",
+   "lng": -81.20847,
+   "lat": 28.610332
+  },
+  {
+   "code": "KD",
+   "name": "Kappa Delta - Sorority",
+   "lng": -81.204886,
+   "lat": 28.605259
+  },
+  {
+   "code": "KP1",
+   "name": "Knights Plaza I",
+   "lng": -81.198465,
+   "lat": 28.606909
+  },
+  {
+   "code": "KS",
+   "name": "Kappa Sigma - Fraternity",
+   "lng": -81.204291,
+   "lat": 28.606578
+  },
+  {
+   "code": "KSK",
+   "name": "Reflections Kiosk",
+   "lng": -81.201362,
+   "lat": 28.599311
+  },
+  {
+   "code": "KTRS",
+   "name": "Knightro's",
+   "lng": -81.196781,
+   "lat": 28.607407
+  },
+  {
+   "code": "LAK",
+   "name": "Lake Hall",
+   "lng": -81.201158,
+   "lat": 28.598722
+  },
+  {
+   "code": "LC55",
+   "name": "Lake Claire #55",
+   "lng": -81.204404,
+   "lat": 28.603564
+  },
+  {
+   "code": "LC56",
+   "name": "Lake Claire #56",
+   "lng": -81.204741,
+   "lat": 28.603503
+  },
+  {
+   "code": "LC57",
+   "name": "Lake Claire #57",
+   "lng": -81.205096,
+   "lat": 28.603635
+  },
+  {
+   "code": "LC58",
+   "name": "Lake Claire #58",
+   "lng": -81.204978,
+   "lat": 28.603941
+  },
+  {
+   "code": "LC59",
+   "name": "Lake Claire #59",
+   "lng": -81.204564,
+   "lat": 28.603922
+  },
+  {
+   "code": "LC60",
+   "name": "Lake Claire #60",
+   "lng": -81.203958,
+   "lat": 28.604037
+  },
+  {
+   "code": "LC61",
+   "name": "Lake Claire #61",
+   "lng": -81.204245,
+   "lat": 28.604249
+  },
+  {
+   "code": "LC62",
+   "name": "Lake Claire #62",
+   "lng": -81.204253,
+   "lat": 28.604485
+  },
+  {
+   "code": "LC63",
+   "name": "Lake Claire #63",
+   "lng": -81.203878,
+   "lat": 28.604454
+  },
+  {
+   "code": "LC64",
+   "name": "Lake Claire #64",
+   "lng": -81.203717,
+   "lat": 28.60419
+  },
+  {
+   "code": "LC65",
+   "name": "Lake Claire Community Office and Center",
+   "lng": -81.203234,
+   "lat": 28.604313
+  },
+  {
+   "code": "LC66",
+   "name": "Lake Claire #66",
+   "lng": -81.203154,
+   "lat": 28.604685
+  },
+  {
+   "code": "LC67",
+   "name": "Lake Claire #67",
+   "lng": -81.203427,
+   "lat": 28.604944
+  },
+  {
+   "code": "LC68",
+   "name": "Lake Claire #68",
+   "lng": -81.203374,
+   "lat": 28.605203
+  },
+  {
+   "code": "LC69",
+   "name": "Lake Claire #69",
+   "lng": -81.203062,
+   "lat": 28.605184
+  },
+  {
+   "code": "LC70",
+   "name": "Lake Claire #70",
+   "lng": -81.202918,
+   "lat": 28.604982
+  },
+  {
+   "code": "LCC",
+   "name": "Libra Community Center",
+   "lng": -81.198556,
+   "lat": 28.598702
+  },
+  {
+   "code": "LIB",
+   "name": "John C. Hitt Library",
+   "lng": -81.201598,
+   "lat": 28.60005
+  },
+  {
+   "code": "LKCR",
+   "name": "Lake Claire Recreational Area",
+   "lng": -81.203386,
+   "lat": 28.606596
+  },
+  {
+   "code": "LMR",
+   "name": "Luminar",
+   "lng": -81.192393,
+   "lat": 28.590037
+  },
+  {
+   "code": "LNCC",
+   "name": "UCF Lake Nona Cancer Center",
+   "lng": -81.290607,
+   "lat": 28.365845
+  },
+  {
+   "code": "LPS",
+   "name": "Leisure Pool Services",
+   "lng": -81.19824,
+   "lat": 28.59552
+  },
+  {
+   "code": "LYNX",
+   "name": "LYNX/UCF Transit Center",
+   "lng": -81.205145,
+   "lat": 28.600633
+  },
+  {
+   "code": "MH",
+   "name": "Millican Hall",
+   "lng": -81.202467,
+   "lat": 28.598854
+  },
+  {
+   "code": "MIRC",
+   "name": "Morgridge International Reading Center",
+   "lng": -81.204543,
+   "lat": 28.598445
+  },
+  {
+   "code": "MMAE",
+   "name": "MMAE Laboratory",
+   "lng": -81.188431,
+   "lat": 28.591969
+  },
+  {
+   "code": "MSB",
+   "name": "Mathematical Sciences Building",
+   "lng": -81.20074,
+   "lat": 28.599608
+  },
+  {
+   "code": "N101",
+   "name": "Nike 101",
+   "lng": -81.198315,
+   "lat": 28.594907
+  },
+  {
+   "code": "N102",
+   "name": "Nike 102",
+   "lng": -81.198283,
+   "lat": 28.594474
+  },
+  {
+   "code": "N103",
+   "name": "Nike 103",
+   "lng": -81.197966,
+   "lat": 28.594561
+  },
+  {
+   "code": "N104",
+   "name": "Nike 104",
+   "lng": -81.197725,
+   "lat": 28.595162
+  },
+  {
+   "code": "N105",
+   "name": "Nike 105",
+   "lng": -81.19706,
+   "lat": 28.594841
+  },
+  {
+   "code": "N106",
+   "name": "Nike 106",
+   "lng": -81.197478,
+   "lat": 28.594078
+  },
+  {
+   "code": "N107",
+   "name": "Nike 107",
+   "lng": -81.197145,
+   "lat": 28.594257
+  },
+  {
+   "code": "N156",
+   "name": "Neptune 156",
+   "lng": -81.19728,
+   "lat": 28.593302
+  },
+  {
+   "code": "N157",
+   "name": "Neptune 157",
+   "lng": -81.19831,
+   "lat": 28.593848
+  },
+  {
+   "code": "N158",
+   "name": "Neptune 158",
+   "lng": -81.19876,
+   "lat": 28.593848
+  },
+  {
+   "code": "NFH",
+   "name": "Nicholson Fieldhouse",
+   "lng": -81.194238,
+   "lat": 28.60704
+  },
+  {
+   "code": "NSC",
+   "name": "Nicholson School of Communication and Media",
+   "lng": -81.202762,
+   "lat": 28.603748
+  },
+  {
+   "code": "NV",
+   "name": "Northview",
+   "lng": -81.20931,
+   "lat": 28.608255
+  },
+  {
+   "code": "OBSV",
+   "name": "Robinson Observatory",
+   "lng": -81.190628,
+   "lat": 28.591728
+  },
+  {
+   "code": "OCPS",
+   "name": "Orange County School System",
+   "lng": -81.202032,
+   "lat": 28.604333
+  },
+  {
+   "code": "ORG",
+   "name": "Orange Hall",
+   "lng": -81.198712,
+   "lat": 28.598129
+  },
+  {
+   "code": "OSC",
+   "name": "Osceola Hall",
+   "lng": -81.200923,
+   "lat": 28.597645
+  },
+  {
+   "code": "OTC3",
+   "name": "Orlando Tech Center Building 300",
+   "lng": -81.195708,
+   "lat": 28.588398
+  },
+  {
+   "code": "OTC5",
+   "name": "Orlando Tech Center - Bldg. 500",
+   "lng": -81.195842,
+   "lat": 28.589698
+  },
+  {
+   "code": "OTC6",
+   "name": "Orlando Tech Center - Bldg. 600",
+   "lng": -81.196534,
+   "lat": 28.590084
+  },
+  {
+   "code": "P2",
+   "name": "Partnership 2",
+   "lng": -81.198905,
+   "lat": 28.585816
+  },
+  {
+   "code": "P3",
+   "name": "Partnership 3",
+   "lng": -81.19939,
+   "lat": 28.585109
+  },
+  {
+   "code": "PAC",
+   "name": "Performing Arts Center",
+   "lng": -81.204398,
+   "lat": 28.602053
+  },
+  {
+   "code": "PAC",
+   "name": "Performing Arts Center Music",
+   "lng": -81.204468,
+   "lat": 28.601961
+  },
+  {
+   "code": "PAC",
+   "name": "Performing Arts Center Theatre",
+   "lng": -81.204511,
+   "lat": 28.602623
+  },
+  {
+   "code": "PBP",
+   "name": "Pi Beta Phi - Sorority",
+   "lng": -81.205353,
+   "lat": 28.605834
+  },
+  {
+   "code": "PG-B",
+   "name": "Parking Garage B & Transportation Services",
+   "lng": -81.199812,
+   "lat": 28.597234
+  },
+  {
+   "code": "POL",
+   "name": "Polk Hall",
+   "lng": -81.201383,
+   "lat": 28.597568
+  },
+  {
+   "code": "PRNT",
+   "name": "Print Shop",
+   "lng": -81.196394,
+   "lat": 28.597333
+  },
+  {
+   "code": "PRS",
+   "name": "Burnett House",
+   "lng": -81.205053,
+   "lat": 28.596113
+  },
+  {
+   "code": "PSB",
+   "name": "Physical Sciences Building",
+   "lng": -81.197891,
+   "lat": 28.599768
+  },
+  {
+   "code": "PSY",
+   "name": "Psychology Building",
+   "lng": -81.199458,
+   "lat": 28.604586
+  },
+  {
+   "code": "PVL",
+   "name": "Research Pavilion",
+   "lng": -81.195681,
+   "lat": 28.586627
+  },
+  {
+   "code": "R1",
+   "name": "Research 1",
+   "lng": -81.19746,
+   "lat": 28.602386
+  },
+  {
+   "code": "RAC",
+   "name": "Roth Athletic Center",
+   "lng": -81.194216,
+   "lat": 28.606862
+  },
+  {
+   "code": "RCS",
+   "name": "Recycling Center Shed",
+   "lng": -81.197977,
+   "lat": 28.591667
+  },
+  {
+   "code": "RFM",
+   "name": "Recreation Services Field Maintenance",
+   "lng": -81.204398,
+   "lat": 28.593805
+  },
+  {
+   "code": "RH",
+   "name": "Rehearsal Hall",
+   "lng": -81.201963,
+   "lat": 28.601539
+  },
+  {
+   "code": "RP",
+   "name": "Reflecting Pond",
+   "lng": -81.201957,
+   "lat": 28.599603
+  },
+  {
+   "code": "RSB",
+   "name": "Recreation Support Building",
+   "lng": -81.200555,
+   "lat": 28.593414
+  },
+  {
+   "code": "RSFR",
+   "name": "Recreation Services Field Restroom",
+   "lng": -81.204012,
+   "lat": 28.593522
+  },
+  {
+   "code": "RSP",
+   "name": "Recreation Service Pavilion",
+   "lng": -81.203765,
+   "lat": 28.591874
+  },
+  {
+   "code": "RSSP",
+   "name": "Rec Services Soccer Field Pavilion",
+   "lng": -81.203572,
+   "lat": 28.591986
+  },
+  {
+   "code": "RWC",
+   "name": "Recreation and Wellness Center",
+   "lng": -81.199141,
+   "lat": 28.596075
+  },
+  {
+   "code": "SBDC",
+   "name": "Small Business Development Center",
+   "lng": -81.3399,
+   "lat": 28.5567
+  },
+  {
+   "code": "SBS",
+   "name": "Softball Stadium",
+   "lng": -81.190349,
+   "lat": 28.604851
+  },
+  {
+   "code": "SEC",
+   "name": "Siemens Energy Center",
+   "lng": -81.188659,
+   "lat": 28.591776
+  },
+  {
+   "code": "SEM",
+   "name": "Seminole Hall",
+   "lng": -81.198138,
+   "lat": 28.59794
+  },
+  {
+   "code": "SPRK",
+   "name": "SPRK",
+   "lng": -81.198063,
+   "lat": 28.604803
+  },
+  {
+   "code": "SS",
+   "name": "Acrisure Bounce House (Football Stadium)",
+   "lng": -81.192639,
+   "lat": 28.608199
+  },
+  {
+   "code": "STTC",
+   "name": "Simulation, Training and Technology Center",
+   "lng": -81.197306,
+   "lat": 28.588567
+  },
+  {
+   "code": "STUN",
+   "name": "Student Union",
+   "lng": -81.200528,
+   "lat": 28.60167
+  },
+  {
+   "code": "SUM",
+   "name": "Sumter Hall",
+   "lng": -81.198339,
+   "lat": 28.598812
+  },
+  {
+   "code": "SWL",
+   "name": "Storm Water Research Lab",
+   "lng": -81.189335,
+   "lat": 28.591667
+  },
+  {
+   "code": "SX",
+   "name": "Sigma Chi - Fraternity",
+   "lng": -81.206426,
+   "lat": 28.607068
+  },
+  {
+   "code": "T1",
+   "name": "Tower I",
+   "lng": -81.198331,
+   "lat": 28.608019
+  },
+  {
+   "code": "T2",
+   "name": "Tower II",
+   "lng": -81.197403,
+   "lat": 28.609621
+  },
+  {
+   "code": "T3",
+   "name": "Tower III",
+   "lng": -81.19648,
+   "lat": 28.606597
+  },
+  {
+   "code": "T4",
+   "name": "Tower IV",
+   "lng": -81.195761,
+   "lat": 28.605542
+  },
+  {
+   "code": "TA",
+   "name": "Teaching Academy",
+   "lng": -81.203964,
+   "lat": 28.599236
+  },
+  {
+   "code": "TC1",
+   "name": "Technology Commons I",
+   "lng": -81.200536,
+   "lat": 28.600352
+  },
+  {
+   "code": "TC2",
+   "name": "Technology Commons II",
+   "lng": -81.200058,
+   "lat": 28.600504
+  },
+  {
+   "code": "TCH",
+   "name": "Trevor Colbourn Hall",
+   "lng": -81.20328,
+   "lat": 28.601917
+  },
+  {
+   "code": "TCH",
+   "name": "University Writing Center",
+   "lng": -81.202781,
+   "lat": 28.601238
+  },
+  {
+   "code": "TH",
+   "name": "Theatre",
+   "lng": -81.199769,
+   "lat": 28.60039
+  },
+  {
+   "code": "TRNP",
+   "name": "Timothy R. Newman Nature Pavilion",
+   "lng": -81.194007,
+   "lat": 28.602231
+  },
+  {
+   "code": "TSS",
+   "name": "Track & Soccer Stadium",
+   "lng": -81.195225,
+   "lat": 28.60768
+  },
+  {
+   "code": "UCFH",
+   "name": "UCF House",
+   "lng": -81.205118,
+   "lat": 28.596232
+  },
+  {
+   "code": "UPD",
+   "name": "Public Safety Building (Police)",
+   "lng": -81.19593,
+   "lat": 28.59206
+  },
+  {
+   "code": "UTWR",
+   "name": "University Tower",
+   "lng": -81.199098,
+   "lat": 28.587915
+  },
+  {
+   "code": "UWC",
+   "name": "Duke Energy UCF Welcome Center",
+   "lng": -81.202671,
+   "lat": 28.597959
+  },
+  {
+   "code": "VAB",
+   "name": "Art Gallery",
+   "lng": -81.203658,
+   "lat": 28.602782
+  },
+  {
+   "code": "VAB",
+   "name": "Visual Arts Building",
+   "lng": -81.20347,
+   "lat": 28.60273
+  },
+  {
+   "code": "VC",
+   "name": "Veterans Commemorative Site",
+   "lng": -81.199439,
+   "lat": 28.603577
+  },
+  {
+   "code": "VOL",
+   "name": "Volusia Hall",
+   "lng": -81.200729,
+   "lat": 28.598449
+  },
+  {
+   "code": "VPI",
+   "name": "Visitor and Parking Information Center",
+   "lng": -81.203376,
+   "lat": 28.596985
+  },
+  {
+   "code": "WDSC",
+   "name": "Wayne Densch Sports Center",
+   "lng": -81.194259,
+   "lat": 28.606164
+  },
+  {
+   "code": "WT",
+   "name": "Water Tower",
+   "lng": -81.196888,
+   "lat": 28.597837
+  },
+  {
+   "code": "ZTA",
+   "name": "Zeta Tau Alpha - Sorority",
+   "lng": -81.206463,
+   "lat": 28.60493
+  },
+  {
+   "code": "orlando-shakes",
+   "name": "Orlando Shakespeare Theatre in Partnership with UCF",
+   "lng": -81.366742,
+   "lat": 28.573376
+  }
+ ]
+}

@@ -1,0 +1,1163 @@
+{
+ "collegeId": "cu-boulder",
+ "generatedAt": "2026-11-13T15:52:27.492Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "CU Boulder Facilities Management campus map, UCB Building Footprints (building names and codes)",
+   "url": "https://services.arcgis.com/b3fMqPOmotX6SV4k/arcgis/rest/services/University_of_Colorado_Boulder_Campus_Map/FeatureServer/8",
+   "use": "building codes and aliases",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/cu-boulder.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -105.27587,
+  40.00116,
+  -105.26179,
+  40.01173
+ ],
+ "halls": [
+  {
+   "dormId": "baker-hall",
+   "name": "Baker Hall",
+   "lng": -105.267829,
+   "lat": 40.006845,
+   "pin": "name",
+   "osm": "way/28775916",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "cu-student-recreation-center",
+     "minutes": 5.4
+    },
+    "library": {
+     "placeId": "norlin-library",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "center-for-community-c4c",
+     "minutes": 4.8
+    }
+   }
+  },
+  {
+   "dormId": "willard-hall",
+   "name": "Willard Hall",
+   "lng": -105.266264,
+   "lat": 40.005175,
+   "pin": "name",
+   "osm": "way/28775935",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "cu-student-recreation-center",
+     "minutes": 8.1
+    },
+    "library": {
+     "placeId": "norlin-library",
+     "minutes": 7.8
+    },
+    "dining": {
+     "placeId": "center-for-community-c4c",
+     "minutes": 0.7
+    }
+   }
+  },
+  {
+   "dormId": "farrand-hall",
+   "name": "Farrand Hall",
+   "lng": -105.265781,
+   "lat": 40.005999,
+   "pin": "name",
+   "osm": "way/28775431",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "cu-student-recreation-center",
+     "minutes": 7.7
+    },
+    "library": {
+     "placeId": "norlin-library",
+     "minutes": 7.4
+    },
+    "dining": {
+     "placeId": "center-for-community-c4c",
+     "minutes": 1.8
+    }
+   }
+  },
+  {
+   "dormId": "libby-hall",
+   "name": "Libby Hall",
+   "lng": -105.266372,
+   "lat": 40.006853,
+   "pin": "name",
+   "osm": "way/28826998",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "cu-student-recreation-center",
+     "minutes": 5.5
+    },
+    "library": {
+     "placeId": "norlin-library",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "center-for-community-c4c",
+     "minutes": 3.8
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "cu-student-recreation-center",
+   "name": "CU Student Recreation Center",
+   "short": "CU Student Recreation Center",
+   "kind": "gym",
+   "codes": [
+    "REC"
+   ],
+   "aliases": [
+    "REC",
+    "STUDENT RECREATION CENTER"
+   ],
+   "lng": -105.268935,
+   "lat": 40.010246,
+   "osm": "way/46275951"
+  },
+  {
+   "id": "norlin-library",
+   "name": "Norlin Library",
+   "short": "Norlin Library",
+   "kind": "library",
+   "codes": [
+    "LIBR"
+   ],
+   "aliases": [
+    "LIBR"
+   ],
+   "lng": -105.270749,
+   "lat": 40.008739,
+   "osm": "way/28828232"
+  },
+  {
+   "id": "university-memorial-center",
+   "name": "University Memorial Center",
+   "short": "University Memorial Center",
+   "kind": "academic",
+   "codes": [
+    "UMC"
+   ],
+   "aliases": [
+    "UMC"
+   ],
+   "lng": -105.271561,
+   "lat": 40.006784,
+   "osm": "way/46217915"
+  },
+  {
+   "id": "imig-music",
+   "name": "Imig Music",
+   "short": "Imig Music",
+   "kind": "academic",
+   "codes": [
+    "MUS"
+   ],
+   "aliases": [
+    "MUS",
+    "IMIG MUSIC BUILDING"
+   ],
+   "lng": -105.268987,
+   "lat": 40.006068,
+   "osm": "way/46371936"
+  },
+  {
+   "id": "center-for-community-c4c",
+   "name": "Center for Community (C4C)",
+   "short": "Center for Community (C4C)",
+   "kind": "dining",
+   "codes": [
+    "C4C"
+   ],
+   "aliases": [
+    "C4C",
+    "CENTER FOR COMMUNITY"
+   ],
+   "lng": -105.26494,
+   "lat": 40.004402,
+   "osm": "way/81175983"
+  },
+  {
+   "id": "wolf-law",
+   "name": "Wolf Law",
+   "short": "Wolf Law",
+   "kind": "academic",
+   "codes": [
+    "WLAW"
+   ],
+   "aliases": [
+    "WLAW",
+    "WOLF LAW BUILDING"
+   ],
+   "lng": -105.26233,
+   "lat": 40.001158,
+   "osm": "relation/12098405"
+  },
+  {
+   "id": "koelbel-building-leeds-school-of-business",
+   "name": "Koelbel Building/Leeds School of Business",
+   "short": "Koelbel Building/Leeds School of Business",
+   "kind": "academic",
+   "codes": [
+    "KOBL"
+   ],
+   "aliases": [
+    "KOBL"
+   ],
+   "lng": -105.263464,
+   "lat": 40.005717,
+   "osm": "way/136249436"
+  },
+  {
+   "id": "ofelia-miramontes-and-leonard-baca-education-building",
+   "name": "Ofelia Miramontes and Leonard Baca Education Building",
+   "short": "Ofelia Miramontes and Leonard Baca Education Building",
+   "kind": "academic",
+   "codes": [
+    "MBE"
+   ],
+   "aliases": [
+    "MBE",
+    "OFELIA MIRAMONTES AND LEONARD BACA EDUCATION BLDG"
+   ],
+   "lng": -105.263401,
+   "lat": 40.001975,
+   "osm": "way/46938905"
+  },
+  {
+   "id": "the-center-for-academic-success-and-engagement",
+   "name": "The Center for Academic Success and Engagement",
+   "short": "The Center for Academic Success and Engagement",
+   "kind": "academic",
+   "codes": [
+    "CASE"
+   ],
+   "aliases": [
+    "CENTER FOR ACADEMIC SUCCESS AND ENGAGEMENT"
+   ],
+   "lng": -105.270161,
+   "lat": 40.006277,
+   "osm": "way/542955658"
+  },
+  {
+   "id": "ekeley-sciences-building",
+   "name": "Ekeley Sciences Building",
+   "short": "Ekeley Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "EKLC",
+    "CIRE"
+   ],
+   "aliases": [
+    "EKLC",
+    "CIRES COOPERATIVE INST FOR RESEARCH IN ENV SCIENCE"
+   ],
+   "lng": -105.271764,
+   "lat": 40.008104,
+   "osm": "way/46217914"
+  },
+  {
+   "id": "cristol-chemistry-and-biochemistry",
+   "name": "Cristol Chemistry and Biochemistry",
+   "short": "Cristol Chemistry and Biochemistry",
+   "kind": "academic",
+   "codes": [
+    "CHEM"
+   ],
+   "aliases": [
+    "CHEM",
+    "CRISTOL CHEMISTRY AND BIOCHEMISTRY BUILDING"
+   ],
+   "lng": -105.271248,
+   "lat": 40.007524,
+   "osm": "way/205305292"
+  },
+  {
+   "id": "joint-institute-for-lab-astrophysics",
+   "name": "Joint Institute for Lab Astrophysics",
+   "short": "Joint Institute for Lab Astrophysics",
+   "kind": "academic",
+   "codes": [
+    "JILA"
+   ],
+   "aliases": [
+    "JILA"
+   ],
+   "lng": -105.268647,
+   "lat": 40.007221,
+   "osm": "way/28828204"
+  },
+  {
+   "id": "hellems-arts-and-sciences",
+   "name": "Hellems Arts and Sciences",
+   "short": "Hellems Arts and Sciences",
+   "kind": "academic",
+   "codes": [
+    "HLMS"
+   ],
+   "aliases": [
+    "HLMS",
+    "HELLEMS ARTS AND SCIENCES BUILDING"
+   ],
+   "lng": -105.272758,
+   "lat": 40.007466,
+   "osm": "way/46200736"
+  },
+  {
+   "id": "carlson-gymnasium",
+   "name": "Carlson Gymnasium",
+   "short": "Carlson Gymnasium",
+   "kind": "academic",
+   "codes": [
+    "CARL"
+   ],
+   "aliases": [
+    "CARL"
+   ],
+   "lng": -105.268502,
+   "lat": 40.009439,
+   "osm": "way/28828202"
+  },
+  {
+   "id": "mathematics",
+   "name": "Mathematics",
+   "short": "Mathematics",
+   "kind": "academic",
+   "codes": [
+    "MATH"
+   ],
+   "aliases": [
+    "MATH",
+    "MATHEMATICS BUILDING"
+   ],
+   "lng": -105.264528,
+   "lat": 40.007732,
+   "osm": "way/46493395"
+  },
+  {
+   "id": "civil-and-environmental-wing",
+   "name": "Civil & Environmental Wing",
+   "short": "Civil & Environmental Wing",
+   "kind": "academic",
+   "codes": [
+    "ECCE"
+   ],
+   "aliases": [
+    "ECCE",
+    "ENGINEERING CIVIL AND ENVIRONMENTAL WING"
+   ],
+   "lng": -105.262647,
+   "lat": 40.006948,
+   "osm": "way/205668773"
+  },
+  {
+   "id": "ramaley-biology",
+   "name": "Ramaley Biology",
+   "short": "Ramaley Biology",
+   "kind": "academic",
+   "codes": [
+    "RAMY"
+   ],
+   "aliases": [
+    "RAMY",
+    "RAMALEY BIOLOGY BUILDING"
+   ],
+   "lng": -105.269742,
+   "lat": 40.008965,
+   "osm": "way/46275944"
+  },
+  {
+   "id": "electrical-wing",
+   "name": "Electrical Wing",
+   "short": "Electrical Wing",
+   "kind": "academic",
+   "codes": [
+    "ECEE"
+   ],
+   "aliases": [
+    "ECEE",
+    "ENGINEERING ELECTRICAL WING"
+   ],
+   "lng": -105.262601,
+   "lat": 40.007518,
+   "osm": "way/205668776"
+  },
+  {
+   "id": "visual-arts-complex",
+   "name": "Visual Arts Complex",
+   "short": "Visual Arts Complex",
+   "kind": "academic",
+   "codes": [
+    "VAC"
+   ],
+   "aliases": [
+    "VAC"
+   ],
+   "lng": -105.270484,
+   "lat": 40.007494,
+   "osm": "relation/3905175"
+  },
+  {
+   "id": "duane-physics-and-astrophysics",
+   "name": "Duane Physics and Astrophysics",
+   "short": "Duane Physics and Astrophysics",
+   "kind": "academic",
+   "codes": [
+    "DUAN"
+   ],
+   "aliases": [
+    "DUAN",
+    "DUANE PHYSICS"
+   ],
+   "lng": -105.267505,
+   "lat": 40.007949,
+   "osm": "way/46371901"
+  },
+  {
+   "id": "macky-auditorium",
+   "name": "Macky Auditorium",
+   "short": "Macky Auditorium",
+   "kind": "academic",
+   "codes": [
+    "MCKY"
+   ],
+   "aliases": [
+    "MCKY"
+   ],
+   "lng": -105.272766,
+   "lat": 40.009959,
+   "osm": "way/46146360"
+  },
+  {
+   "id": "muenzinger-psychology",
+   "name": "Muenzinger Psychology",
+   "short": "Muenzinger Psychology",
+   "kind": "academic",
+   "codes": [
+    "MUEN"
+   ],
+   "aliases": [
+    "MUEN",
+    "MUENZINGER PSYCHOLOGY AND NUEROSCIENCE BUILDING"
+   ],
+   "lng": -105.269012,
+   "lat": 40.008529,
+   "osm": "way/206450883"
+  },
+  {
+   "id": "chemical-wing",
+   "name": "Chemical Wing",
+   "short": "Chemical Wing",
+   "kind": "academic",
+   "codes": [
+    "ECES",
+    "ECSL"
+   ],
+   "aliases": [
+    "ECCH",
+    "ENVIRONMENTAL SUSTAINABILITY WING",
+    "ENGINEERING STORES AND LABS"
+   ],
+   "lng": -105.26301,
+   "lat": 40.006562,
+   "osm": "way/205668772"
+  },
+  {
+   "id": "university-theatre",
+   "name": "University Theatre",
+   "short": "University Theatre",
+   "kind": "academic",
+   "codes": [
+    "THTR"
+   ],
+   "aliases": [
+    "THTR"
+   ],
+   "lng": -105.273545,
+   "lat": 40.008095,
+   "osm": "way/46197735"
+  },
+  {
+   "id": "benson-earth-sciences",
+   "name": "Benson Earth Sciences",
+   "short": "Benson Earth Sciences",
+   "kind": "academic",
+   "codes": [
+    "BESC"
+   ],
+   "aliases": [
+    "BESC",
+    "BENSON EARTH SCIENCES BUILDING"
+   ],
+   "lng": -105.265873,
+   "lat": 40.007964,
+   "osm": "way/46493421"
+  },
+  {
+   "id": "aerospace-wing",
+   "name": "Aerospace Wing",
+   "short": "Aerospace Wing",
+   "kind": "academic",
+   "codes": [
+    "ECNW"
+   ],
+   "aliases": [
+    "ECAE",
+    "ENGINEERING CENTER NORTH WING"
+   ],
+   "lng": -105.263137,
+   "lat": 40.007881,
+   "osm": "way/205668771"
+  },
+  {
+   "id": "classroom-wing",
+   "name": "Classroom Wing",
+   "short": "Classroom Wing",
+   "kind": "academic",
+   "codes": [
+    "ECCR"
+   ],
+   "aliases": [
+    "ECCR",
+    "ENGINEERING CLASSROOM WING"
+   ],
+   "lng": -105.263585,
+   "lat": 40.006909,
+   "osm": "way/205668774"
+  },
+  {
+   "id": "porter-biosciences",
+   "name": "Porter Biosciences",
+   "short": "Porter Biosciences",
+   "kind": "academic",
+   "codes": [
+    "PORT"
+   ],
+   "aliases": [
+    "PORT"
+   ],
+   "lng": -105.26892,
+   "lat": 40.00894,
+   "osm": "way/28828203"
+  },
+  {
+   "id": "mechanical-wing",
+   "name": "Mechanical Wing",
+   "short": "Mechanical Wing",
+   "kind": "academic",
+   "codes": [
+    "ECME"
+   ],
+   "aliases": [
+    "ECME",
+    "ENGINEERING MECHANICAL WING"
+   ],
+   "lng": -105.263565,
+   "lat": 40.00763,
+   "osm": "way/205668778"
+  },
+  {
+   "id": "atlas-center",
+   "name": "ATLAS Center",
+   "short": "ATLAS Center",
+   "kind": "academic",
+   "codes": [
+    "ATLS"
+   ],
+   "aliases": [
+    "ATLS",
+    "ROSER ATLAS CENTER"
+   ],
+   "lng": -105.269937,
+   "lat": 40.007602,
+   "osm": "way/149825017"
+  },
+  {
+   "id": "ketchum-arts-and-sciences-building",
+   "name": "Ketchum Arts and Sciences Building",
+   "short": "Ketchum Arts and Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "KTCH"
+   ],
+   "aliases": [
+    "KTCH"
+   ],
+   "lng": -105.270221,
+   "lat": 40.008063,
+   "osm": "way/46223800"
+  },
+  {
+   "id": "gold-biosciences-building",
+   "name": "Gold Biosciences Building",
+   "short": "Gold Biosciences Building",
+   "kind": "academic",
+   "codes": [
+    "GOLD"
+   ],
+   "aliases": [
+    "GOLD"
+   ],
+   "lng": -105.268243,
+   "lat": 40.008671,
+   "osm": "way/206450882"
+  },
+  {
+   "id": "environmental-design",
+   "name": "Environmental Design",
+   "short": "Environmental Design",
+   "kind": "academic",
+   "codes": [
+    "ENVD"
+   ],
+   "aliases": [
+    "ENVD",
+    "ENVIRONMENTAL DESIGN BUILDING"
+   ],
+   "lng": -105.26924,
+   "lat": 40.006971,
+   "osm": "way/46371958"
+  },
+  {
+   "id": "fiske-planetarium",
+   "name": "Fiske Planetarium",
+   "short": "Fiske Planetarium",
+   "kind": "academic",
+   "codes": [
+    "FISK"
+   ],
+   "aliases": [
+    "FISK",
+    "FISKE PLANETARIUM AND SCIENCE CENTER"
+   ],
+   "lng": -105.263486,
+   "lat": 40.003582,
+   "osm": "way/46938901"
+  },
+  {
+   "id": "laboratory-for-atmospheric-and-space-physics",
+   "name": "Laboratory for Atmospheric and Space Physics",
+   "short": "Laboratory for Atmospheric and Space Physics",
+   "kind": "academic",
+   "codes": [
+    "DDW"
+   ],
+   "aliases": [
+    "LASP",
+    "DUANE D-WING"
+   ],
+   "lng": -105.268373,
+   "lat": 40.007951,
+   "osm": "way/46371891"
+  },
+  {
+   "id": "gallogly-discovery-learning-center",
+   "name": "Gallogly Discovery Learning Center",
+   "short": "Gallogly Discovery Learning Center",
+   "kind": "academic",
+   "codes": [
+    "DLC"
+   ],
+   "aliases": [
+    "DLC"
+   ],
+   "lng": -105.261798,
+   "lat": 40.007621,
+   "osm": "relation/9826677"
+  },
+  {
+   "id": "eaton-humanities",
+   "name": "Eaton Humanities",
+   "short": "Eaton Humanities",
+   "kind": "academic",
+   "codes": [
+    "HUMN"
+   ],
+   "aliases": [
+    "HUMN",
+    "EATON HUMANITIES BUILDING"
+   ],
+   "lng": -105.27183,
+   "lat": 40.009204,
+   "osm": "way/203657375"
+  },
+  {
+   "id": "museum-collections-bruce-curtis-building",
+   "name": "Museum Collections - Bruce Curtis Building",
+   "short": "Museum Collections - Bruce Curtis Building",
+   "kind": "academic",
+   "codes": [
+    "MCOL"
+   ],
+   "aliases": [
+    "MCOL",
+    "BRUCE CURTIS BUILDING"
+   ],
+   "lng": -105.274143,
+   "lat": 40.007489,
+   "osm": "way/46198370"
+  },
+  {
+   "id": "institute-of-behavioral-science",
+   "name": "Institute of Behavioral Science",
+   "short": "Institute of Behavioral Science",
+   "kind": "academic",
+   "codes": [
+    "JESS"
+   ],
+   "aliases": [
+    "IBS",
+    "RICHARD JESSOR BUILDING"
+   ],
+   "lng": -105.274433,
+   "lat": 40.011366,
+   "osm": "way/209345512"
+  },
+  {
+   "id": "lucile-berkeley-buchanan-building",
+   "name": "Lucile Berkeley Buchanan Building",
+   "short": "Lucile Berkeley Buchanan Building",
+   "kind": "academic",
+   "codes": [
+    "LBB"
+   ],
+   "aliases": [
+    "EDUC"
+   ],
+   "lng": -105.273558,
+   "lat": 40.007439,
+   "osm": "way/46198371"
+  },
+  {
+   "id": "claire-small-arts-and-sciences",
+   "name": "Claire Small Arts and Sciences",
+   "short": "Claire Small Arts and Sciences",
+   "kind": "academic",
+   "codes": [
+    "CLRE"
+   ],
+   "aliases": [
+    "CLRE",
+    "CLARE SMALL ARTS AND SCIENCES"
+   ],
+   "lng": -105.270065,
+   "lat": 40.010492,
+   "osm": "way/46275955"
+  },
+  {
+   "id": "integrated-teaching-and-learning-laboratory",
+   "name": "Integrated Teaching and Learning Laboratory",
+   "short": "Integrated Teaching and Learning Laboratory",
+   "kind": "academic",
+   "codes": [
+    "ITLL"
+   ],
+   "aliases": [
+    "ITLL",
+    "DRESCHER UNDRGRD ENG INT TEACHING AND LEARNING LAB"
+   ],
+   "lng": -105.26179,
+   "lat": 40.006924,
+   "osm": "relation/9826676"
+  },
+  {
+   "id": "hale-science",
+   "name": "Hale Science",
+   "short": "Hale Science",
+   "kind": "academic",
+   "codes": [
+    "HALE"
+   ],
+   "aliases": [
+    "HALE",
+    "HALE SCIENCE BUILDING"
+   ],
+   "lng": -105.274962,
+   "lat": 40.009195,
+   "osm": "way/46187194"
+  },
+  {
+   "id": "administration-wing",
+   "name": "Administration Wing",
+   "short": "Administration Wing",
+   "kind": "academic",
+   "codes": [
+    "ECAD"
+   ],
+   "aliases": [
+    "ECAD",
+    "ENGINEERING ADMINISTRATION WING"
+   ],
+   "lng": -105.262679,
+   "lat": 40.007249,
+   "osm": "relation/2762971"
+  },
+  {
+   "id": "office-tower",
+   "name": "Office Tower",
+   "short": "Office Tower",
+   "kind": "academic",
+   "codes": [
+    "ECOT"
+   ],
+   "aliases": [
+    "ECOT",
+    "ENGINEERING OFFICE TOWER"
+   ],
+   "lng": -105.263267,
+   "lat": 40.007287,
+   "osm": "way/205668780"
+  },
+  {
+   "id": "armory-building",
+   "name": "Armory Building",
+   "short": "Armory Building",
+   "kind": "academic",
+   "codes": [
+    "ARMR"
+   ],
+   "aliases": [
+    "ARMR",
+    "ARMORY"
+   ],
+   "lng": -105.273905,
+   "lat": 40.010965,
+   "osm": "way/209345511"
+  },
+  {
+   "id": "computer-science-department-wing",
+   "name": "Computer Science Department Wing",
+   "short": "Computer Science Department Wing",
+   "kind": "academic",
+   "codes": [
+    "ECCS"
+   ],
+   "aliases": [
+    "ECCS",
+    "ENGINEERING COMPUTER SCIENCE DEPT"
+   ],
+   "lng": -105.263691,
+   "lat": 40.006589,
+   "osm": "way/205668775"
+  },
+  {
+   "id": "museum-of-natural-history-henderson-building",
+   "name": "Museum of Natural History - Henderson Building",
+   "short": "Museum of Natural History - Henderson Building",
+   "kind": "academic",
+   "codes": [
+    "HEND"
+   ],
+   "aliases": [
+    "HEND",
+    "HENDERSON BUILDING (MUSEUM)"
+   ],
+   "lng": -105.272776,
+   "lat": 40.006896,
+   "osm": "way/46202571"
+  },
+  {
+   "id": "department-of-economics",
+   "name": "Department of Economics",
+   "short": "Department of Economics",
+   "kind": "academic",
+   "codes": [
+    "ECON"
+   ],
+   "aliases": [
+    "ECON",
+    "ECONOMICS BUILDING"
+   ],
+   "lng": -105.274538,
+   "lat": 40.00783,
+   "osm": "way/46195525"
+  },
+  {
+   "id": "mckenna-languages",
+   "name": "McKenna Languages",
+   "short": "McKenna Languages",
+   "kind": "academic",
+   "codes": [
+    "MKNA"
+   ],
+   "aliases": [
+    "MKNA",
+    "MCKENNA LANGUAGES BUILDING"
+   ],
+   "lng": -105.273626,
+   "lat": 40.009692,
+   "osm": "way/46194266"
+  },
+  {
+   "id": "speech-language-and-hearing-sciences-building",
+   "name": "Speech, Language, and Hearing Sciences Building",
+   "short": "Speech, Language, and Hearing Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "SLHS"
+   ],
+   "aliases": [
+    "SLHS",
+    "SPEECH LANGUAGE AND HEARING SCIENCES"
+   ],
+   "lng": -105.262511,
+   "lat": 40.003883,
+   "osm": "way/46938894"
+  },
+  {
+   "id": "guggenheim-geography",
+   "name": "Guggenheim Geography",
+   "short": "Guggenheim Geography",
+   "kind": "academic",
+   "codes": [
+    "GUGG"
+   ],
+   "aliases": [
+    "GUGG",
+    "GUGGENHEIM GEOGRAPHY BUILDING"
+   ],
+   "lng": -105.274231,
+   "lat": 40.008172,
+   "osm": "way/46197734"
+  },
+  {
+   "id": "old-main",
+   "name": "Old Main",
+   "short": "Old Main",
+   "kind": "academic",
+   "codes": [
+    "MAIN"
+   ],
+   "aliases": [
+    "MAIN"
+   ],
+   "lng": -105.273351,
+   "lat": 40.009215,
+   "osm": "way/46194626"
+  },
+  {
+   "id": "international-english-center-and-division-of-continuing-education",
+   "name": "International English Center and Division of Continuing Education",
+   "short": "International English Center and Division of Continuing Education",
+   "kind": "academic",
+   "codes": [
+    "IEC"
+   ],
+   "aliases": [
+    "INTERNATIONAL ENGLISH CENTER"
+   ],
+   "lng": -105.27587,
+   "lat": 40.006108,
+   "osm": "way/103498255"
+  },
+  {
+   "id": "stores-and-labs",
+   "name": "Stores & Labs",
+   "short": "Stores & Labs",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ECSL"
+   ],
+   "lng": -105.26268,
+   "lat": 40.006706,
+   "osm": "way/205668783"
+  },
+  {
+   "id": "sommers-bausch-observatory",
+   "name": "Sommers-Bausch Observatory",
+   "short": "Sommers-Bausch Observatory",
+   "kind": "academic",
+   "codes": [
+    "OBSV"
+   ],
+   "aliases": [
+    "OBSV"
+   ],
+   "lng": -105.262971,
+   "lat": 40.003653,
+   "osm": "way/46938893"
+  },
+  {
+   "id": "continuing-education-building",
+   "name": "Continuing Education Building",
+   "short": "Continuing Education Building",
+   "kind": "academic",
+   "codes": [
+    "CEDU"
+   ],
+   "aliases": [
+    "CEDU",
+    "CONTINUING EDUCATION CENTER"
+   ],
+   "lng": -105.274401,
+   "lat": 40.01085,
+   "osm": "way/209345513"
+  },
+  {
+   "id": "department-of-information-science",
+   "name": "Department of Information Science",
+   "short": "Department of Information Science",
+   "kind": "academic",
+   "codes": [
+    "INFO"
+   ],
+   "aliases": [
+    "COLLEGE OF MEDIA, COMMUNICATION AND INFORMATION"
+   ],
+   "lng": -105.269817,
+   "lat": 40.006944,
+   "osm": "way/1246144743"
+  },
+  {
+   "id": "south-tower",
+   "name": "South Tower",
+   "short": "South Tower",
+   "kind": "academic",
+   "codes": [
+    "ECST"
+   ],
+   "aliases": [
+    "ECST",
+    "ENGINEERING SOUTH TOWER"
+   ],
+   "lng": -105.263172,
+   "lat": 40.006763,
+   "osm": "way/205668781"
+  },
+  {
+   "id": "woodbury-arts-and-sciences",
+   "name": "Woodbury Arts and Sciences",
+   "short": "Woodbury Arts and Sciences",
+   "kind": "academic",
+   "codes": [
+    "WDBY"
+   ],
+   "aliases": [
+    "WDBY",
+    "WOODBURY ARTS AND SCIENCES BUILDING"
+   ],
+   "lng": -105.272313,
+   "lat": 40.009233,
+   "osm": "way/46194627"
+  },
+  {
+   "id": "albert-and-vera-ramirez-temporary-building-1",
+   "name": "Albert and Vera Ramírez Temporary Building 1",
+   "short": "Albert and Vera Ramírez Temporary Building 1",
+   "kind": "academic",
+   "codes": [
+    "TB01"
+   ],
+   "aliases": [
+    "TB01"
+   ],
+   "lng": -105.270543,
+   "lat": 40.010469,
+   "osm": "way/46275953"
+  },
+  {
+   "id": "north-tower",
+   "name": "North Tower",
+   "short": "North Tower",
+   "kind": "academic",
+   "codes": [
+    "ECNT"
+   ],
+   "aliases": [
+    "ECNT",
+    "ENGINEERING NORTH TOWER"
+   ],
+   "lng": -105.263082,
+   "lat": 40.007728,
+   "osm": "way/205668779"
+  },
+  {
+   "id": "cooperative-institute-for-research-in-environmental-sciences-building",
+   "name": "Cooperative Institute for Research in Environmental Sciences Building",
+   "short": "Cooperative Institute for Research in Environmental Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CIRE"
+   ],
+   "lng": -105.271471,
+   "lat": 40.007788,
+   "osm": "way/205305291"
+  },
+  {
+   "id": "gates-woodruff-womens-studies-cottage",
+   "name": "Gates Woodruff Womens Studies Cottage",
+   "short": "Gates Woodruff Womens Studies Cottage",
+   "kind": "academic",
+   "codes": [
+    "COTT"
+   ],
+   "aliases": [
+    "COTT"
+   ],
+   "lng": -105.274821,
+   "lat": 40.008167,
+   "osm": "way/46195447"
+  },
+  {
+   "id": "denison-arts-and-sciences",
+   "name": "Denison Arts and Sciences",
+   "short": "Denison Arts and Sciences",
+   "kind": "academic",
+   "codes": [
+    "DEN"
+   ],
+   "aliases": [
+    "DEN",
+    "DENISON ARTS AND SCIENCES BUILDING"
+   ],
+   "lng": -105.2734,
+   "lat": 40.006942,
+   "osm": "way/46202565"
+  },
+  {
+   "id": "temporary-building-no-82",
+   "name": "Temporary Building No. 82",
+   "short": "Temporary Building No. 82",
+   "kind": "academic",
+   "codes": [
+    "TB82"
+   ],
+   "aliases": [
+    "TB82",
+    "TEMPORARY BUILDING 82"
+   ],
+   "lng": -105.27559,
+   "lat": 40.011728,
+   "osm": "way/264355132"
+  }
+ ]
+}

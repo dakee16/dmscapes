@@ -118,6 +118,10 @@ export interface Campus {
  *  minute matrix (scripts/check-campus.mjs checks it). A school can list more halls than this. */
 export const rankedHalls = (campus: Pick<Campus, "halls">): number => campus.halls.filter((h) => h.lng !== null && h.lat !== null).length;
 
+/** Whether the school publishes an official building-code list we match schedules to; without
+ *  one (scripts/campus/build.mjs, config "codes": null) classes are matched by building name. */
+export const hasCodeList = (campus: Pick<Campus, "sources">): boolean => campus.sources.some((s) => /^building codes/.test(s.use ?? ""));
+
 /** What the finder shows about each hall, from data/schools (server page reads it at build). */
 export interface HallFacts {
   area: string | null;

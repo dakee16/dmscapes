@@ -1,0 +1,86 @@
+{
+  "halls": {
+    "wood-hall": {
+      "pin": [
+        -78.673203,
+        35.780517
+      ]
+    },
+    "wolf-village-apartments": {
+      "pin": [
+        -78.684776,
+        35.786275
+      ]
+    },
+    "wolf-ridge": {
+      "pin": [
+        -78.674248,
+        35.770029
+      ]
+    }
+  },
+  "places": {
+    "sullivan-shops-ii": {
+      "hide": true
+    },
+    "biological-resources-facility": {
+      "hide": true
+    },
+    "west-chiller-plant": {
+      "hide": true
+    },
+    "administrative-services-i": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "wood-hall": "OSM maps Wood Hall as three buildings (Wood Hall A, B, C; way/47933251, way/47933260, way/47933247), so no single name matched; pinned on Wood Hall A. NC State Facilities lists them together as WD1, Wood Residence Hall Buildings.",
+    "wolf-village-apartments": "Wolf Village is the group of apartment buildings A\u2013H on Wolf Village Way (OSM Arctic, Caspian, Red, Timber, Mackenzie, Gray, Hudson halls); pinned on Gray Hall, Building G (way/47692850), in the middle. NC State Facilities: WVA, Wolf Village Apartment Buildings.",
+    "wolf-ridge": "Wolf Ridge Apartments, 1900 Entrepreneur Drive (NC State Facilities WR1); OSM has its buildings as Tower Hall (1910), Lakeview Hall (1913) and Plaza Hall (1940) Entrepreneur Drive; pinned on Tower Hall (way/297297481).",
+    "sullivan-shops-ii": "Facilities shops building, not somewhere classes happen.",
+    "biological-resources-facility": "Laboratory animal facility, not somewhere classes happen.",
+    "west-chiller-plant": "Chiller plant (utility), not somewhere classes happen.",
+    "administrative-services-i": "Administrative offices, not somewhere classes happen."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "owen-hall -> thomas-hall",
+        "tucker-hall -> thomas-hall",
+        "bowen-hall -> thomas-hall",
+        "carroll-hall -> thomas-hall",
+        "metcalf-hall -> thomas-hall"
+      ],
+      "maxRatio": 4,
+      "why": "Thomas Hall's mapped door is on its north side by the railroad; the buildings between it and these halls have no mapped way through, so walks go round its west end."
+    },
+    {
+      "pairs": [
+        "wood-hall -> carmichael-gymnasium",
+        "wood-hall -> weisiger-brown-athletic-facility",
+        "wood-hall -> carmichael-gymnasium-238493964",
+        "wood-hall -> carmichael-recreation-center",
+        "wood-hall -> clark-hall",
+        "wood-hall -> holmes-hall",
+        "wood-hall -> carmichael-gymnasium-238493965"
+      ],
+      "maxRatio": 3.5,
+      "why": "No mapped path crosses the athletics fields and the Weisiger-Brown facility north of Wood Hall, so walks go west along Warren Carroll Drive and round."
+    },
+    {
+      "pairs": [
+        "alexander-hall -> reynolds-coliseum"
+      ],
+      "maxRatio": 3.5,
+      "why": "Reynolds Coliseum's mapped doors are on its east side, so walks from Alexander Hall to its west go round the building."
+    },
+    {
+      "pairs": [
+        "syme-hall -> sas-hall",
+        "north-hall -> poe-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "No mapped path crosses the ground between these halls and the building's mapped door, so walks go round by the nearest mapped walks."
+    }
+  ]
+}

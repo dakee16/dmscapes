@@ -1,0 +1,1143 @@
+{
+ "collegeId": "auburn",
+ "generatedAt": "2026-11-14T01:48:44.521Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Auburn University Facilities Management, 'Access Control Mode' building layer (ArcGIS Online, 2018-08-28_Building_with_Code): building names and building numbers",
+   "url": "https://www.arcgis.com/home/item.html?id=90974b597d1d4a06b71b9bd414d64b8b",
+   "use": "building codes and aliases",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/auburn.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -85.503,
+  32.5856,
+  -85.4814,
+  32.60625
+ ],
+ "halls": [
+  {
+   "dormId": "boyd-hall",
+   "name": "Boyd Hall",
+   "lng": -85.484946,
+   "lat": 32.596132,
+   "pin": "name",
+   "osm": "way/184992161",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "ralph-brown-draughon-library-and-mell-classroom-building",
+     "minutes": 12.7
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 16.7
+    },
+    "dining": {
+     "placeId": "terrell-dining-hall",
+     "minutes": 3.4
+    }
+   }
+  },
+  {
+   "dormId": "sasnett-hall",
+   "name": "Sasnett Hall",
+   "lng": -85.486923,
+   "lat": 32.596125,
+   "pin": "name",
+   "osm": "way/184992163",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "ralph-brown-draughon-library-and-mell-classroom-building",
+     "minutes": 13.9
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 15.5
+    },
+    "dining": {
+     "placeId": "terrell-dining-hall",
+     "minutes": 2.5
+    }
+   }
+  },
+  {
+   "dormId": "the-quad",
+   "name": "The Quad",
+   "lng": -85.484831,
+   "lat": 32.602401,
+   "pin": "name",
+   "osm": "way/483354914",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "ralph-brown-draughon-library-and-mell-classroom-building",
+     "minutes": 2.1
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 11.2
+    },
+    "dining": {
+     "placeId": "the-edge-at-central-dining",
+     "minutes": 5
+    }
+   }
+  },
+  {
+   "dormId": "the-village",
+   "name": "The Village",
+   "lng": -85.49353,
+   "lat": 32.60468,
+   "pin": "manual",
+   "osm": "way/323720445",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "ralph-brown-draughon-library-and-mell-classroom-building",
+     "minutes": 13.3
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 6.6
+    },
+    "dining": {
+     "placeId": "villiage-dining-hall",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "concourse-hall",
+   "name": "Concourse Hall",
+   "lng": -85.485771,
+   "lat": 32.602908,
+   "pin": "name",
+   "osm": "way/1485168149",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "ralph-brown-draughon-library-and-mell-classroom-building",
+     "minutes": 3.1
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 10.9
+    },
+    "dining": {
+     "placeId": "the-edge-at-central-dining",
+     "minutes": 4.8
+    }
+   }
+  },
+  {
+   "dormId": "south-donahue",
+   "name": "South Donahue Hall",
+   "lng": -85.489666,
+   "lat": 32.598112,
+   "pin": "name",
+   "osm": "way/323715173",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "ralph-brown-draughon-library-and-mell-classroom-building",
+     "minutes": 12.4
+    },
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "wellness-kitchen",
+     "minutes": 2.3
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "ralph-brown-draughon-library-and-mell-classroom-building",
+   "name": "Ralph Brown Draughon Library and Mell Classroom Building",
+   "short": "Ralph Brown Draughon Library and Mell Classroom Building",
+   "kind": "library",
+   "codes": [
+    "X0402"
+   ],
+   "aliases": [
+    "RBD",
+    "Draughon Library a",
+    "Mell Classrooms"
+   ],
+   "lng": -85.482853,
+   "lat": 32.603048,
+   "osm": "way/39662055"
+  },
+  {
+   "id": "recreation-and-wellness-center",
+   "name": "Recreation and Wellness Center",
+   "short": "Recreation and Wellness Center",
+   "kind": "gym",
+   "codes": [
+    "R0603"
+   ],
+   "aliases": [],
+   "lng": -85.492582,
+   "lat": 32.601091,
+   "osm": "way/323715175"
+  },
+  {
+   "id": "haley-center",
+   "name": "Haley Center",
+   "short": "Haley Center",
+   "kind": "academic",
+   "codes": [
+    "V0401"
+   ],
+   "aliases": [],
+   "lng": -85.486806,
+   "lat": 32.603395,
+   "osm": "relation/7114723"
+  },
+  {
+   "id": "student-activities-center",
+   "name": "Student Activities Center",
+   "short": "Student Activities Center",
+   "kind": "gym",
+   "codes": [
+    "R0601"
+   ],
+   "aliases": [
+    "Student Activity Center"
+   ],
+   "lng": -85.494189,
+   "lat": 32.600226,
+   "osm": "way/278130319"
+  },
+  {
+   "id": "melton-student-center",
+   "name": "Melton Student Center",
+   "short": "Melton Student Center",
+   "kind": "academic",
+   "codes": [
+    "V0504"
+   ],
+   "aliases": [
+    "MSC",
+    "Students Center"
+   ],
+   "lng": -85.486905,
+   "lat": 32.602347,
+   "osm": "way/483138878"
+  },
+  {
+   "id": "shelby-center-for-engineering-technology",
+   "name": "Shelby Center for Engineering Technology",
+   "short": "Shelby Center",
+   "kind": "academic",
+   "codes": [
+    "U0202"
+   ],
+   "aliases": [
+    "Shelby Center",
+    " "
+   ],
+   "lng": -85.487483,
+   "lat": 32.606034,
+   "osm": "way/483138883"
+  },
+  {
+   "id": "lowder-business-building",
+   "name": "Lowder Business Building",
+   "short": "Lowder Business Building",
+   "kind": "academic",
+   "codes": [
+    "T0202"
+   ],
+   "aliases": [
+    "Lowder Hall",
+    "Starbucks"
+   ],
+   "lng": -85.489003,
+   "lat": 32.605872,
+   "osm": "way/39662224"
+  },
+  {
+   "id": "wilmore-laboratories",
+   "name": "Wilmore Laboratories",
+   "short": "Wilmore Laboratories",
+   "kind": "academic",
+   "codes": [
+    "W0205"
+   ],
+   "aliases": [],
+   "lng": -85.484391,
+   "lat": 32.605665,
+   "osm": "way/483354933"
+  },
+  {
+   "id": "funchess-hall",
+   "name": "Funchess Hall",
+   "short": "Funchess Hall",
+   "kind": "academic",
+   "codes": [
+    "Y0701"
+   ],
+   "aliases": [],
+   "lng": -85.482368,
+   "lat": 32.599859,
+   "osm": "relation/4582036"
+  },
+  {
+   "id": "college-of-education",
+   "name": "College of Education",
+   "short": "College of Education",
+   "kind": "academic",
+   "codes": [
+    "V0803"
+   ],
+   "aliases": [
+    "Dobbs Residency Hall"
+   ],
+   "lng": -85.487101,
+   "lat": 32.597585,
+   "osm": "way/1481268236"
+  },
+  {
+   "id": "ww-walker-building",
+   "name": "W.W. Walker Building",
+   "short": "W.W. Walker Building",
+   "kind": "academic",
+   "codes": [
+    "U0303"
+   ],
+   "aliases": [
+    "Walker Building"
+   ],
+   "lng": -85.487996,
+   "lat": 32.604504,
+   "osm": "way/483138870"
+  },
+  {
+   "id": "goodwin-hall",
+   "name": "Goodwin Hall",
+   "short": "Goodwin Hall",
+   "kind": "academic",
+   "codes": [
+    "V0802"
+   ],
+   "aliases": [
+    "Goodwin Hall Addition"
+   ],
+   "lng": -85.485965,
+   "lat": 32.598483,
+   "osm": "way/311016683"
+  },
+  {
+   "id": "leach-science-center",
+   "name": "Leach Science Center",
+   "short": "Leach Science Center",
+   "kind": "academic",
+   "codes": [
+    "U0801"
+   ],
+   "aliases": [],
+   "lng": -85.488274,
+   "lat": 32.598572,
+   "osm": "way/185010506"
+  },
+  {
+   "id": "forestry-and-wildlife-sciences-building",
+   "name": "Forestry and Wildlife Sciences Building",
+   "short": "Forestry and Wildlife Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "U1005"
+   ],
+   "aliases": [
+    "Forestry and Wildlife Sciences"
+   ],
+   "lng": -85.487994,
+   "lat": 32.59493,
+   "osm": "way/483354915"
+  },
+  {
+   "id": "brown-kopel-engineering-student-achievement-center",
+   "name": "Brown-Kopel Engineering Student Achievement Center",
+   "short": "Brown-Kopel Engineering Student Achievement Center",
+   "kind": "academic",
+   "codes": [
+    "W0305"
+   ],
+   "aliases": [
+    "B.K.",
+    "Brown-Kopel Engg Student Achievement Center"
+   ],
+   "lng": -85.485537,
+   "lat": 32.605374,
+   "osm": "way/727944377"
+  },
+  {
+   "id": "information-technology-building",
+   "name": "Information Technology Building",
+   "short": "Information Technology Building",
+   "kind": "academic",
+   "codes": [
+    "W1102"
+   ],
+   "aliases": [
+    "Office of Information Technology"
+   ],
+   "lng": -85.485614,
+   "lat": 32.594557,
+   "osm": "way/487098199"
+  },
+  {
+   "id": "nursing-building",
+   "name": "Nursing Building",
+   "short": "Nursing Building",
+   "kind": "academic",
+   "codes": [
+    "T1301"
+   ],
+   "aliases": [
+    "Nursing Bldg"
+   ],
+   "lng": -85.490858,
+   "lat": 32.591923,
+   "osm": "way/675337644"
+  },
+  {
+   "id": "telfair-peet-theatre",
+   "name": "Telfair Peet Theatre",
+   "short": "Telfair Peet Theatre",
+   "kind": "academic",
+   "codes": [
+    "V0801"
+   ],
+   "aliases": [
+    "Peet Theater"
+   ],
+   "lng": -85.487032,
+   "lat": 32.598445,
+   "osm": "way/323845875"
+  },
+  {
+   "id": "broun-hall",
+   "name": "Broun Hall",
+   "short": "Broun Hall",
+   "kind": "academic",
+   "codes": [
+    "V0302",
+    "W0503"
+   ],
+   "aliases": [
+    "Brown Hall",
+    "Broun Residence Hall"
+   ],
+   "lng": -85.486693,
+   "lat": 32.604871,
+   "osm": "way/178534217"
+  },
+  {
+   "id": "parker-hall",
+   "name": "Parker Hall",
+   "short": "Parker Hall",
+   "kind": "academic",
+   "codes": [
+    "V0603"
+   ],
+   "aliases": [],
+   "lng": -85.486386,
+   "lat": 32.600521,
+   "osm": "way/127012139"
+  },
+  {
+   "id": "mcwhorter-center",
+   "name": "McWhorter Center",
+   "short": "McWhorter Center",
+   "kind": "academic",
+   "codes": [
+    "P0801"
+   ],
+   "aliases": [],
+   "lng": -85.496245,
+   "lat": 32.598046,
+   "osm": "way/325336671"
+  },
+  {
+   "id": "terrell-dining-hall",
+   "name": "Terrell Dining Hall",
+   "short": "Terrell Dining Hall",
+   "kind": "dining",
+   "codes": [
+    "W0901"
+   ],
+   "aliases": [],
+   "lng": -85.48592,
+   "lat": 32.596667,
+   "osm": "way/127012379"
+  },
+  {
+   "id": "villiage-dining-hall",
+   "name": "Villiage Dining Hall",
+   "short": "Villiage Dining Hall",
+   "kind": "dining",
+   "codes": [
+    "S0409"
+   ],
+   "aliases": [
+    "Village Dinning Hall"
+   ],
+   "lng": -85.4919,
+   "lat": 32.603659,
+   "osm": "way/127013035"
+  },
+  {
+   "id": "horton-hargrave-business-building",
+   "name": "Horton-Hargrave Business Building",
+   "short": "Horton-Hargrave Business Building",
+   "kind": "academic",
+   "codes": [
+    "T0203"
+   ],
+   "aliases": [
+    "Graduate Business Bldg."
+   ],
+   "lng": -85.489998,
+   "lat": 32.605845,
+   "osm": "way/727942784"
+  },
+  {
+   "id": "casic-building",
+   "name": "CASIC Building",
+   "short": "CASIC Building",
+   "kind": "academic",
+   "codes": [
+    "R1701",
+    "R1702"
+   ],
+   "aliases": [
+    "Hubbard CASIC",
+    "CASIC Suppoet Bldg"
+   ],
+   "lng": -85.493111,
+   "lat": 32.585595,
+   "osm": "way/325018270"
+  },
+  {
+   "id": "wallace-center",
+   "name": "Wallace Center",
+   "short": "Wallace Center",
+   "kind": "academic",
+   "codes": [
+    "S0407"
+   ],
+   "aliases": [
+    "Wallace Hall"
+   ],
+   "lng": -85.491306,
+   "lat": 32.603576,
+   "osm": "way/185004512"
+  },
+  {
+   "id": "stem-and-agricultural-sciences-complex-building-a",
+   "name": "Stem and Agricultural Sciences Complex Building A",
+   "short": "Stem and Agricultural Sciences Complex Building A",
+   "kind": "academic",
+   "codes": [
+    "W0802"
+   ],
+   "aliases": [
+    "Burton Hall"
+   ],
+   "lng": -85.485946,
+   "lat": 32.59774,
+   "osm": "way/1486897905"
+  },
+  {
+   "id": "poultry-science-building",
+   "name": "Poultry Science Building",
+   "short": "Poultry Science Building",
+   "kind": "academic",
+   "codes": [
+    "W1009"
+   ],
+   "aliases": [],
+   "lng": -85.484898,
+   "lat": 32.595378,
+   "osm": "way/127118681"
+  },
+  {
+   "id": "sciences-center-laboratory",
+   "name": "Sciences Center Laboratory",
+   "short": "Sciences Center Laboratory",
+   "kind": "academic",
+   "codes": [
+    "W0610"
+   ],
+   "aliases": [
+    "Science Center Laboratory"
+   ],
+   "lng": -85.485034,
+   "lat": 32.600736,
+   "osm": "way/483138876"
+  },
+  {
+   "id": "kinesiology",
+   "name": "Kinesiology",
+   "short": "Kinesiology",
+   "kind": "academic",
+   "codes": [
+    "Q0609"
+   ],
+   "aliases": [
+    "Kinesiology Building"
+   ],
+   "lng": -85.494732,
+   "lat": 32.601154,
+   "osm": "way/323715172"
+  },
+  {
+   "id": "upchurch-hall",
+   "name": "Upchurch Hall",
+   "short": "Upchurch Hall",
+   "kind": "academic",
+   "codes": [
+    "X0702"
+   ],
+   "aliases": [],
+   "lng": -85.483223,
+   "lat": 32.599562,
+   "osm": "way/123486669"
+  },
+  {
+   "id": "wiggins-hall",
+   "name": "Wiggins Hall",
+   "short": "Wiggins Hall",
+   "kind": "academic",
+   "codes": [
+    "U0304"
+   ],
+   "aliases": [],
+   "lng": -85.488041,
+   "lat": 32.605344,
+   "osm": "way/127119258"
+  },
+  {
+   "id": "chemistry-building",
+   "name": "Chemistry Building",
+   "short": "Chemistry Building",
+   "kind": "academic",
+   "codes": [
+    "W0706"
+   ],
+   "aliases": [],
+   "lng": -85.485188,
+   "lat": 32.599619,
+   "osm": "way/278439871"
+  },
+  {
+   "id": "3-d-arts-studio-building",
+   "name": "3-D Arts Studio Building",
+   "short": "3-D Arts Studio Building",
+   "kind": "academic",
+   "codes": [
+    "K0701"
+   ],
+   "aliases": [],
+   "lng": -85.503003,
+   "lat": 32.599845,
+   "osm": "way/166971641"
+  },
+  {
+   "id": "rouse-life-sciences-building",
+   "name": "Rouse Life Sciences Building",
+   "short": "Rouse Life Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "Y0709"
+   ],
+   "aliases": [
+    "Rouse Life Science Building"
+   ],
+   "lng": -85.482467,
+   "lat": 32.599125,
+   "osm": "way/483138874"
+  },
+  {
+   "id": "stem-and-agricultural-sciences-complex-building-b",
+   "name": "Stem and Agricultural Sciences Complex Building B",
+   "short": "Stem and Agricultural Sciences Complex Building B",
+   "kind": "academic",
+   "codes": [
+    "W0803"
+   ],
+   "aliases": [
+    "Hollifield Recidency Hall"
+   ],
+   "lng": -85.485073,
+   "lat": 32.597648,
+   "osm": "way/1486897906"
+  },
+  {
+   "id": "davis-aerospace-engineering-hall",
+   "name": "Davis Aerospace Engineering Hall",
+   "short": "Davis Aerospace Engineering Hall",
+   "kind": "academic",
+   "codes": [
+    "X0204"
+   ],
+   "aliases": [
+    "Davis Hall"
+   ],
+   "lng": -85.483073,
+   "lat": 32.605787,
+   "osm": "way/323715164"
+  },
+  {
+   "id": "the-edge-at-central-dining",
+   "name": "The Edge at Central Dining",
+   "short": "The Edge at Central Dining",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.487486,
+   "lat": 32.600276,
+   "osm": "way/1162952295"
+  },
+  {
+   "id": "nichols-center",
+   "name": "Nichols Center",
+   "short": "Nichols Center",
+   "kind": "academic",
+   "codes": [
+    "S0304"
+   ],
+   "aliases": [
+    "Nicols Center",
+    " "
+   ],
+   "lng": -85.491516,
+   "lat": 32.604434,
+   "osm": "way/185004491"
+  },
+  {
+   "id": "ross-hall",
+   "name": "Ross Hall",
+   "short": "Ross Hall",
+   "kind": "academic",
+   "codes": [
+    "X0303"
+   ],
+   "aliases": [],
+   "lng": -85.483862,
+   "lat": 32.605102,
+   "osm": "way/239266172"
+  },
+  {
+   "id": "sciences-center-classrooms",
+   "name": "Sciences Center Classrooms",
+   "short": "Sciences Center Classrooms",
+   "kind": "academic",
+   "codes": [
+    "W0608"
+   ],
+   "aliases": [
+    "Science Center Building"
+   ],
+   "lng": -85.485646,
+   "lat": 32.600271,
+   "osm": "way/483354924"
+  },
+  {
+   "id": "dudley-hall-jcu",
+   "name": "Dudley Hall (JCU)",
+   "short": "Dudley Hall (JCU)",
+   "kind": "academic",
+   "codes": [
+    "V0702"
+   ],
+   "aliases": [
+    "Dudley Hall"
+   ],
+   "lng": -85.485895,
+   "lat": 32.59895,
+   "osm": "way/323722559"
+  },
+  {
+   "id": "harbert-center",
+   "name": "Harbert Center",
+   "short": "Harbert Center",
+   "kind": "academic",
+   "codes": [
+    "X0203"
+   ],
+   "aliases": [],
+   "lng": -85.48333,
+   "lat": 32.60625,
+   "osm": "way/323715166"
+  },
+  {
+   "id": "biggin-hall",
+   "name": "Biggin Hall",
+   "short": "Biggin Hall",
+   "kind": "academic",
+   "codes": [
+    "Y0201"
+   ],
+   "aliases": [
+    "Biggns Hall",
+    "Biggin House"
+   ],
+   "lng": -85.482591,
+   "lat": 32.606179,
+   "osm": "way/323715167"
+  },
+  {
+   "id": "cary-hall",
+   "name": "Cary Hall",
+   "short": "Cary Hall",
+   "kind": "academic",
+   "codes": [
+    "T0302"
+   ],
+   "aliases": [],
+   "lng": -85.489769,
+   "lat": 32.604589,
+   "osm": "way/225305659"
+  },
+  {
+   "id": "stem-and-agricultural-sciences-complex-building-c",
+   "name": "Stem and Agricultural Sciences Complex Building C",
+   "short": "Stem and Agricultural Sciences Complex Building C",
+   "kind": "academic",
+   "codes": [
+    "W0903"
+   ],
+   "aliases": [
+    "M Residence Hall"
+   ],
+   "lng": -85.485157,
+   "lat": 32.596904,
+   "osm": "way/1486897907"
+  },
+  {
+   "id": "miller-gorrie-center",
+   "name": "Miller Gorrie Center",
+   "short": "Miller Gorrie Center",
+   "kind": "academic",
+   "codes": [
+    "W0805"
+   ],
+   "aliases": [
+    "Gorrie Center"
+   ],
+   "lng": -85.485002,
+   "lat": 32.598411,
+   "osm": "way/185010512"
+  },
+  {
+   "id": "ramsay-hall",
+   "name": "Ramsay Hall",
+   "short": "Ramsay Hall",
+   "kind": "academic",
+   "codes": [
+    "W0202"
+   ],
+   "aliases": [
+    "Rasmsey Hall"
+   ],
+   "lng": -85.484397,
+   "lat": 32.606222,
+   "osm": "way/483354932"
+  },
+  {
+   "id": "thach-hall",
+   "name": "Thach Hall",
+   "short": "Thach Hall",
+   "kind": "academic",
+   "codes": [
+    "V0303"
+   ],
+   "aliases": [],
+   "lng": -85.486855,
+   "lat": 32.604333,
+   "osm": "way/483138882"
+  },
+  {
+   "id": "smith-hall",
+   "name": "Smith Hall",
+   "short": "Smith Hall",
+   "kind": "academic",
+   "codes": [
+    "X0705"
+   ],
+   "aliases": [
+    "Smith Hall, M.W"
+   ],
+   "lng": -85.483372,
+   "lat": 32.598653,
+   "osm": "way/123489102"
+  },
+  {
+   "id": "tichenor-hall",
+   "name": "Tichenor Hall",
+   "short": "Tichenor Hall",
+   "kind": "academic",
+   "codes": [
+    "W0302"
+   ],
+   "aliases": [],
+   "lng": -85.48569,
+   "lat": 32.604366,
+   "osm": "way/127111379"
+  },
+  {
+   "id": "comer-hall",
+   "name": "Comer Hall",
+   "short": "Comer Hall",
+   "kind": "academic",
+   "codes": [
+    "X0601"
+   ],
+   "aliases": [],
+   "lng": -85.482679,
+   "lat": 32.600333,
+   "osm": "way/123356191"
+  },
+  {
+   "id": "duncan-hall",
+   "name": "Duncan Hall",
+   "short": "Duncan Hall",
+   "kind": "academic",
+   "codes": [
+    "X0602",
+    "W0804"
+   ],
+   "aliases": [
+    "Duncan Residence Hall"
+   ],
+   "lng": -85.484397,
+   "lat": 32.600298,
+   "osm": "way/483138875"
+  },
+  {
+   "id": "wellness-kitchen",
+   "name": "Wellness Kitchen",
+   "short": "Wellness Kitchen",
+   "kind": "dining",
+   "codes": [
+    "T0701"
+   ],
+   "aliases": [],
+   "lng": -85.490876,
+   "lat": 32.59873,
+   "osm": "way/325336680"
+  },
+  {
+   "id": "petrie-hall",
+   "name": "Petrie Hall",
+   "short": "Petrie Hall",
+   "kind": "academic",
+   "codes": [
+    "U0401"
+   ],
+   "aliases": [],
+   "lng": -85.488061,
+   "lat": 32.603643,
+   "osm": "way/277743670"
+  },
+  {
+   "id": "miller-hall",
+   "name": "Miller Hall",
+   "short": "Miller Hall",
+   "kind": "academic",
+   "codes": [
+    "U0302"
+   ],
+   "aliases": [],
+   "lng": -85.488837,
+   "lat": 32.604454,
+   "osm": "way/225305658"
+  },
+  {
+   "id": "sciences-center-auditorium",
+   "name": "Sciences Center Auditorium",
+   "short": "Sciences Center Auditorium",
+   "kind": "academic",
+   "codes": [
+    "W0609"
+   ],
+   "aliases": [
+    "Science Center Auditorium Bdg"
+   ],
+   "lng": -85.485732,
+   "lat": 32.600739,
+   "osm": "way/483354925"
+  },
+  {
+   "id": "dudley-commons",
+   "name": "Dudley Commons",
+   "short": "Dudley Commons",
+   "kind": "dining",
+   "codes": [
+    "V0704"
+   ],
+   "aliases": [],
+   "lng": -85.486231,
+   "lat": 32.599163,
+   "osm": "way/670615743"
+  },
+  {
+   "id": "swingle-hall",
+   "name": "Swingle Hall",
+   "short": "Swingle Hall",
+   "kind": "academic",
+   "codes": [
+    "W0801"
+   ],
+   "aliases": [],
+   "lng": -85.484324,
+   "lat": 32.59861,
+   "osm": "way/483138871"
+  },
+  {
+   "id": "smith-hall-280795400",
+   "name": "Smith Hall",
+   "short": "Smith Hall",
+   "kind": "academic",
+   "codes": [
+    "Y0302"
+   ],
+   "aliases": [
+    "Smith Hall O.D"
+   ],
+   "lng": -85.481403,
+   "lat": 32.604783,
+   "osm": "way/280795400"
+  },
+  {
+   "id": "dawson-building",
+   "name": "Dawson Building",
+   "short": "Dawson Building",
+   "kind": "academic",
+   "codes": [
+    "T0401"
+   ],
+   "aliases": [],
+   "lng": -85.4901,
+   "lat": 32.603612,
+   "osm": "way/225305661"
+  },
+  {
+   "id": "corley-building",
+   "name": "Corley Building",
+   "short": "Corley Building",
+   "kind": "academic",
+   "codes": [
+    "X0701"
+   ],
+   "aliases": [],
+   "lng": -85.484242,
+   "lat": 32.599694,
+   "osm": "way/483354927"
+  },
+  {
+   "id": "langdon-hall",
+   "name": "Langdon Hall",
+   "short": "Langdon Hall",
+   "kind": "academic",
+   "codes": [
+    "X0301"
+   ],
+   "aliases": [],
+   "lng": -85.482834,
+   "lat": 32.605388,
+   "osm": "way/323720438"
+  },
+  {
+   "id": "cater-hall",
+   "name": "Cater Hall",
+   "short": "Cater Hall",
+   "kind": "academic",
+   "codes": [
+    "W0403"
+   ],
+   "aliases": [],
+   "lng": -85.484834,
+   "lat": 32.603328,
+   "osm": "way/483354909"
+  },
+  {
+   "id": "hargis-hall",
+   "name": "Hargis Hall",
+   "short": "Hargis Hall",
+   "kind": "academic",
+   "codes": [
+    "Y0202"
+   ],
+   "aliases": [],
+   "lng": -85.48247,
+   "lat": 32.605829,
+   "osm": "way/483354930"
+  },
+  {
+   "id": "langdon-annex",
+   "name": "Langdon Annex",
+   "short": "Langdon Annex",
+   "kind": "academic",
+   "codes": [
+    "X0302"
+   ],
+   "aliases": [],
+   "lng": -85.483148,
+   "lat": 32.605228,
+   "osm": "way/323720441"
+  },
+  {
+   "id": "intramural-field-house",
+   "name": "Intramural Field House",
+   "short": "Intramural Field House",
+   "kind": "gym",
+   "codes": [
+    "P0901"
+   ],
+   "aliases": [],
+   "lng": -85.495736,
+   "lat": 32.596827,
+   "osm": "way/328810687"
+  },
+  {
+   "id": "foy-hall",
+   "name": "Foy Hall",
+   "short": "Foy Hall",
+   "kind": "academic",
+   "codes": [
+    "W0301"
+   ],
+   "aliases": [],
+   "lng": -85.484892,
+   "lat": 32.604678,
+   "osm": "way/127111378"
+  }
+ ]
+}

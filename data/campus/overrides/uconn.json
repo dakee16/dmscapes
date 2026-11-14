@@ -1,0 +1,175 @@
+{
+  "halls": {
+    "vinton": {
+      "pin": [
+        -72.254477,
+        41.814363
+      ]
+    },
+    "kingston": {
+      "pin": [
+        -72.253975,
+        41.814868
+      ]
+    },
+    "allen": {
+      "pin": [
+        -72.254065,
+        41.814692
+      ]
+    },
+    "keller": {
+      "pin": [
+        -72.253678,
+        41.814518
+      ]
+    },
+    "fenwick": {
+      "pin": [
+        -72.253686,
+        41.814346
+      ]
+    },
+    "wade": {
+      "pin": [
+        -72.253555,
+        41.814211
+      ]
+    },
+    "hamilton": {
+      "pin": [
+        -72.253333,
+        41.814165
+      ]
+    },
+    "jefferson": {
+      "pin": [
+        -72.253062,
+        41.813729
+      ]
+    },
+    "colt": {
+      "pin": [
+        -72.253033,
+        41.813897
+      ]
+    },
+    "webster": {
+      "pin": [
+        -72.253412,
+        41.813507
+      ]
+    },
+    "sherman": {
+      "pin": [
+        -72.253639,
+        41.813513
+      ]
+    },
+    "trumbull": {
+      "pin": [
+        -72.253944,
+        41.813777
+      ]
+    },
+    "sousa": {
+      "pin": [
+        -72.25397,
+        41.813949
+      ]
+    },
+    "morgan": {
+      "pin": [
+        -72.254358,
+        41.814087
+      ]
+    },
+    "lafayette": {
+      "pin": [
+        -72.254125,
+        41.814068
+      ]
+    },
+    "baldwin": {
+      "pin": [
+        -72.258077,
+        41.812176
+      ]
+    },
+    "mcconaughy": {
+      "pin": [
+        -72.258418,
+        41.812196
+      ]
+    },
+    "chandler-lancaster": {
+      "pin": [
+        -72.251522,
+        41.804078
+      ]
+    },
+    "shakespeare-troy": {
+      "pin": [
+        -72.251021,
+        41.80439
+      ]
+    },
+    "whitney": {
+      "pin": [
+        -72.247405,
+        41.809909
+      ]
+    },
+    "hicks": {
+      "pin": [
+        -72.248694,
+        41.81148
+      ]
+    },
+    "grange": {
+      "pin": [
+        -72.248547,
+        41.811222
+      ]
+    }
+  },
+  "notes": {
+    "vinton": "'Vinton Hall' (property 0257A, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "kingston": "'Kingston Hall' (property 0258B, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "allen": "'Allen Hall' (property 0258A, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "keller": "'Keller Hall' (property 0256A, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "fenwick": "'Fenwick Hall' (property 0256B, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "wade": "'Wade Hall' (property 0256C, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "hamilton": "'Hamilton Hall' (property 0256D, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "jefferson": "'Jefferson Hall' (property 0254A, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "colt": "'Colt Hall' (property 0254B, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "webster": "'Webster Hall' (property 0253A, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "sherman": "'Sherman Hall' (property 0253B, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "trumbull": "'Trumbull Hall' (property 0255A, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "sousa": "'Sousa Hall' (property 0255B, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "morgan": "'Morgan Hall' (property 0255D, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "lafayette": "'Lafayette Hall' (property 0255C, Towers Dorms) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "baldwin": "'Baldwin Hall' (property 0158, North Campus Dorm) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "mcconaughy": "'McConaughy Hall' (property 0159, North Campus Dorm) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is the centre of its footprint parts. OSM has the footprint but no name.",
+    "chandler-lancaster": "Chandler Hall (0226A) and Lancaster Hall (0226B), one joined West Campus building at 625 Gilbert Road in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is between the two halves.",
+    "shakespeare-troy": "'Shakespear Hall' and 'Troy Hall' (West Campus, Gilbert Road) in the UConn Buildings layer (https://services1.arcgis.com/6ItOFXGFmdtfeOZb/arcgis/rest/services/Buildings/FeatureServer/0); the pin is between the two.",
+    "whitney": "OSM 'Edwina Whitney Residence Hall' (way/626973148), the UConn Buildings layer's 'Whitney Hall & Cafeteria' (0127); the word rule couldn't choose it over the Pratt & Whitney Engineering Building.",
+    "hicks": "OSM 'Elizabeth Hicks Residence Hall' (way/230067923), the UConn Buildings layer's 'Hicks Hall' (0176), about 15 m away.",
+    "grange": "'Grange Hall' (0177, 1346 Storrs Road) in the UConn Buildings layer; the pin is its centre, about 25 m from OSM's 'Grange East Residence Hall' (way/230067924).",
+    "rizza-performance-center": "Varsity athletes' performance center, not a gym students use."
+  },
+  "places": {
+    "rizza-performance-center": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "wade -> roger-a-gelfenbien-towers-dining-hall"
+      ],
+      "maxRatio": 3.0,
+      "why": "Wade sits mid-quad in Towers, and the mapped path nearest it loops round the north of the quad; no mapped path cuts across the quad to the dining hall's south-west side, so the walk goes round."
+    }
+  ]
+}

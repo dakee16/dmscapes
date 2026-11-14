@@ -1,0 +1,16 @@
+{
+  "collegeId": "tamucc",
+  "area": {
+    "osm": "way/172952227",
+    "bbox": [
+      27.703,
+      -97.34,
+      27.718,
+      -97.316
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public building-code list: the Registrar's faculty-staff course building guides (tamucc.edu/academics/registrar/faculty-staff) cover meeting times, not buildings, and the catalog appendices list subject prefixes only (checked 2026-11-08)."
+}

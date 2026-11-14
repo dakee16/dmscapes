@@ -1,0 +1,361 @@
+{
+  "halls": {
+    "manzanita-village": {
+      "pin": [
+        -119.8518,
+        34.41022
+      ]
+    },
+    "san-joaquin-villages": {
+      "pin": [
+        -119.87081,
+        34.41946
+      ]
+    },
+    "san-clemente-villages": {
+      "pin": [
+        -119.85656,
+        34.41781
+      ]
+    }
+  },
+  "places": {
+    "student-health-center": {
+      "hide": true
+    },
+    "koegl-autism-center": {
+      "hide": true
+    },
+    "counseling-and-career-services": {
+      "hide": true
+    },
+    "thunderdome": {
+      "hide": true
+    },
+    "intercollegiate-athletics": {
+      "hide": true
+    },
+    "student-affairs-administrative-services-building": {
+      "hide": true
+    },
+    "cheadle-hall": {
+      "hide": true
+    },
+    "environmental-health-and-safety": {
+      "hide": true
+    },
+    "the-club-and-guest-house": {
+      "hide": true
+    },
+    "orfalea-family-childrens-center": {
+      "hide": true
+    },
+    "mosher-alumni-house": {
+      "hide": true
+    },
+    "university-house": {
+      "hide": true
+    },
+    "multicultural-center": {
+      "hide": true
+    },
+    "student-resource-building": {
+      "hide": true
+    },
+    "student-communications-building": {
+      "hide": true
+    },
+    "el-centro": {
+      "hide": true
+    },
+    "de-anza-resource-center": {
+      "hide": true
+    },
+    "corwin-pavillion": {
+      "hide": true
+    },
+    "university-center": {
+      "hide": true
+    },
+    "the-arbor": {
+      "hide": true
+    },
+    "coral-tree-cafe": {
+      "hide": true
+    },
+    "tenaya-market-and-eatery": {
+      "hide": true
+    },
+    "miramar-food-pantry": {
+      "hide": true
+    },
+    "grade-and-high-school": {
+      "hide": true
+    },
+    "storke-tower": {
+      "hide": true
+    },
+    "filter-building": {
+      "hide": true
+    },
+    "marine-operations-facility": {
+      "hide": true
+    },
+    "energy-services": {
+      "hide": true
+    },
+    "wood-shop": {
+      "hide": true
+    },
+    "carpentry-and-paint-shop": {
+      "hide": true
+    },
+    "bunker": {
+      "hide": true
+    },
+    "associated-students-bike-shop": {
+      "hide": true
+    },
+    "associated-students-recycling-and-department-of-public-worms": {
+      "hide": true
+    },
+    "head-house": {
+      "hide": true
+    },
+    "reef-aquarium": {
+      "hide": true
+    },
+    "rec-cen-pottery-studio": {
+      "hide": true
+    },
+    "casitas-fitness-center": {
+      "hide": true
+    },
+    "charles-t-munger-physics-residence": {
+      "hide": true
+    },
+    "santa-ynez-laundry-room": {
+      "hide": true
+    },
+    "laundry": {
+      "hide": true
+    },
+    "storke-fsh-laundry-room": {
+      "hide": true
+    },
+    "storke-fsh-community-center": {
+      "hide": true
+    },
+    "san-clemente-center": {
+      "hide": true
+    },
+    "jameson-community-center": {
+      "hide": true
+    },
+    "gibralter-community-center": {
+      "hide": true
+    },
+    "cachuma-community-center": {
+      "hide": true
+    },
+    "calaveras-lounge": {
+      "hide": true
+    },
+    "ramona-lounge": {
+      "hide": true
+    },
+    "office-of-apartment-living": {
+      "hide": true
+    },
+    "office-of-residential-life-tb335": {
+      "hide": true
+    },
+    "centennial-house": {
+      "hide": true
+    },
+    "study": {
+      "hide": true
+    },
+    "study-558198087": {
+      "hide": true
+    },
+    "study-558190380": {
+      "hide": true
+    },
+    "rec": {
+      "hide": true
+    },
+    "rec-558190379": {
+      "hide": true
+    },
+    "ra": {
+      "hide": true
+    },
+    "castaic": {
+      "hide": true
+    },
+    "weisman": {
+      "hide": true
+    },
+    "new-horizons": {
+      "hide": true
+    },
+    "central-dining-room": {
+      "hide": true
+    },
+    "classrooms": {
+      "hide": true
+    },
+    "miramar-center": {
+      "hide": true
+    },
+    "loma-pelona-center": {
+      "hide": true
+    },
+    "mark-villa": {
+      "hide": true
+    },
+    "del-sol": {
+      "hide": true
+    },
+    "del-mar": {
+      "hide": true
+    },
+    "de-la-playa": {
+      "hide": true
+    },
+    "adult-cottages-c": {
+      "hide": true
+    },
+    "adult-cottages-b": {
+      "hide": true
+    },
+    "educational-addition-a": {
+      "hide": true
+    },
+    "educational-addition-b": {
+      "hide": true
+    },
+    "cliff-house": {
+      "hide": true
+    },
+    "la-colina-classroom": {
+      "hide": true
+    },
+    "la-colina-offices": {
+      "hide": true
+    },
+    "la-colina-classroom-and-office": {
+      "hide": true
+    },
+    "la-colina-classroom-218666027": {
+      "hide": true
+    },
+    "cameron-hall": {
+      "hide": true
+    },
+    "coal-oil-point-reserve-main-office": {
+      "hide": true
+    },
+    "snowy-plover-docent-office": {
+      "hide": true
+    },
+    "dovecote": {
+      "hide": true
+    },
+    "building-383": {
+      "hide": true
+    },
+    "building-387": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "manzanita-village": "Pinned at Madulce (OSM way/221401190), a hall in the middle of Manzanita Village (housing.ucsb.edu: Manzanita Village halls are named for Santa Barbara County places, Camuesa to Zaca); OSM has no building named for the village.",
+    "san-joaquin-villages": "Pinned at Laguna Village (OSM way/557563250), one of San Joaquin Villages' five villages with Berryessa, Havasu, Nacimiento and Toluca (housing.ucsb.edu), the one nearest Portola Dining Commons.",
+    "san-clemente-villages": "Pinned at Castaic (OSM way/42751731), one of the San Clemente Villages apartment buildings beside the San Clemente Center (housing.ucsb.edu); OSM has no building named for the villages.",
+    "student-health-center": "Clinic. Not somewhere undergraduates have class.",
+    "koegl-autism-center": "Clinic. Not somewhere undergraduates have class.",
+    "counseling-and-career-services": "Counselling offices. Not somewhere undergraduates have class.",
+    "thunderdome": "The varsity arena. Not somewhere undergraduates have class.",
+    "intercollegiate-athletics": "Varsity athletics offices. Not somewhere undergraduates have class.",
+    "student-affairs-administrative-services-building": "Admin. Not somewhere undergraduates have class.",
+    "cheadle-hall": "The administration building. Not somewhere undergraduates have class.",
+    "environmental-health-and-safety": "EH&S offices. Not somewhere undergraduates have class.",
+    "the-club-and-guest-house": "The faculty club and guest house. Not somewhere undergraduates have class.",
+    "orfalea-family-childrens-center": "Childcare. Not somewhere undergraduates have class.",
+    "mosher-alumni-house": "Alumni house. Not somewhere undergraduates have class.",
+    "university-house": "The chancellor's residence. Not somewhere undergraduates have class.",
+    "multicultural-center": "A student centre, no classes. Not somewhere undergraduates have class.",
+    "student-resource-building": "Student services. Not somewhere undergraduates have class.",
+    "student-communications-building": "Student media offices. Not somewhere undergraduates have class.",
+    "el-centro": "A student centre. Not somewhere undergraduates have class.",
+    "de-anza-resource-center": "A housing resource centre. Not somewhere undergraduates have class.",
+    "corwin-pavillion": "An events pavilion in the UCen. Not somewhere undergraduates have class.",
+    "university-center": "The UCen (student union: bookstore, food court), no classes. Not somewhere undergraduates have class.",
+    "the-arbor": "A cafe and shop. Not somewhere undergraduates have class.",
+    "coral-tree-cafe": "A cafe. Not somewhere undergraduates have class.",
+    "tenaya-market-and-eatery": "A market. Not somewhere undergraduates have class.",
+    "miramar-food-pantry": "A food pantry. Not somewhere undergraduates have class.",
+    "grade-and-high-school": "A school on the Devereux campus. Not somewhere undergraduates have class.",
+    "storke-tower": "The bell tower. Not somewhere undergraduates have class.",
+    "filter-building": "A pool filter plant. Not somewhere undergraduates have class.",
+    "marine-operations-facility": "Boat and dive operations. Not somewhere undergraduates have class.",
+    "energy-services": "Facilities. Not somewhere undergraduates have class.",
+    "wood-shop": "Facilities shop. Not somewhere undergraduates have class.",
+    "carpentry-and-paint-shop": "Facilities shop. Not somewhere undergraduates have class.",
+    "bunker": "A storage bunker. Not somewhere undergraduates have class.",
+    "associated-students-bike-shop": "A bike shop. Not somewhere undergraduates have class.",
+    "associated-students-recycling-and-department-of-public-worms": "A recycling and composting yard. Not somewhere undergraduates have class.",
+    "head-house": "A greenhouse head house. Not somewhere undergraduates have class.",
+    "reef-aquarium": "The REEF outreach touch tanks. Not somewhere undergraduates have class.",
+    "rec-cen-pottery-studio": "A pottery studio. Not somewhere undergraduates have class.",
+    "casitas-fitness-center": "A residential fitness room, not the Rec Cen; the name rule tagged it a gym. Not somewhere undergraduates have class.",
+    "charles-t-munger-physics-residence": "Housing (KITP visitors). Not somewhere undergraduates have class.",
+    "santa-ynez-laundry-room": "Laundry. Not somewhere undergraduates have class.",
+    "laundry": "Laundry. Not somewhere undergraduates have class.",
+    "storke-fsh-laundry-room": "Laundry. Not somewhere undergraduates have class.",
+    "storke-fsh-community-center": "A family-housing community centre. Not somewhere undergraduates have class.",
+    "san-clemente-center": "A housing community centre. Not somewhere undergraduates have class.",
+    "jameson-community-center": "A housing community centre. Not somewhere undergraduates have class.",
+    "gibralter-community-center": "A housing community centre. Not somewhere undergraduates have class.",
+    "cachuma-community-center": "A housing community centre. Not somewhere undergraduates have class.",
+    "calaveras-lounge": "A housing lounge. Not somewhere undergraduates have class.",
+    "ramona-lounge": "A housing lounge. Not somewhere undergraduates have class.",
+    "office-of-apartment-living": "Housing office. Not somewhere undergraduates have class.",
+    "office-of-residential-life-tb335": "Housing office. Not somewhere undergraduates have class.",
+    "centennial-house": "An events house. Not somewhere undergraduates have class.",
+    "study": "A San Joaquin Villages study room. Not somewhere undergraduates have class.",
+    "study-558198087": "A San Joaquin Villages study room. Not somewhere undergraduates have class.",
+    "study-558190380": "A San Joaquin Villages study room. Not somewhere undergraduates have class.",
+    "rec": "A San Joaquin Villages rec room. Not somewhere undergraduates have class.",
+    "rec-558190379": "A San Joaquin Villages rec room. Not somewhere undergraduates have class.",
+    "ra": "A San Joaquin Villages RA building. Not somewhere undergraduates have class.",
+    "castaic": "A San Clemente Villages building. Not somewhere undergraduates have class.",
+    "weisman": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "new-horizons": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "central-dining-room": "Devereux (West Campus) dining room, not a UCSB commons; the name rule tagged it dining. Not somewhere undergraduates have class.",
+    "classrooms": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "miramar-center": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "loma-pelona-center": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "mark-villa": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "del-sol": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "del-mar": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "de-la-playa": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "adult-cottages-c": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "adult-cottages-b": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "educational-addition-a": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "educational-addition-b": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "cliff-house": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "la-colina-classroom": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "la-colina-offices": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "la-colina-classroom-and-office": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "la-colina-classroom-218666027": "Devereux (West Campus) building. Not somewhere undergraduates have class.",
+    "cameron-hall": "West Campus Point faculty housing. Not somewhere undergraduates have class.",
+    "coal-oil-point-reserve-main-office": "Nature reserve office. Not somewhere undergraduates have class.",
+    "snowy-plover-docent-office": "Nature reserve office. Not somewhere undergraduates have class.",
+    "dovecote": "An abandoned dovecote. Not somewhere undergraduates have class.",
+    "building-383": "A prefabricated office module. Not somewhere undergraduates have class.",
+    "building-387": "A prefabricated office module. Not somewhere undergraduates have class."
+  }
+}

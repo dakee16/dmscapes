@@ -1,0 +1,473 @@
+{
+  "halls": {
+    "standard-10x20-halls": {
+      "pin": [
+        -121.75777,
+        38.54597
+      ]
+    },
+    "classic-halls": {
+      "pin": [
+        -121.75744,
+        38.54442
+      ]
+    },
+    "mid-size-halls": {
+      "pin": [
+        -121.75846,
+        38.53508
+      ]
+    },
+    "suite-style-halls": {
+      "pin": [
+        -121.76336,
+        38.5469
+      ]
+    },
+    "regan-hall": {
+      "pin": [
+        -121.75673,
+        38.54417
+      ]
+    }
+  },
+  "places": {
+    "pritchard-veterinary-medical-teaching-hospital": {
+      "hide": true
+    },
+    "gourley-clinical-teaching-center": {
+      "hide": true
+    },
+    "vet-med-teach-hosp-ward": {
+      "hide": true
+    },
+    "vmth-office-annex": {
+      "hide": true
+    },
+    "center-for-companion-animal-health": {
+      "hide": true
+    },
+    "university-of-california-davis-center-for-equine-health": {
+      "hide": true
+    },
+    "vet-med-equine-athletic-performance-lab": {
+      "hide": true
+    },
+    "cowell-building-occupational-health": {
+      "hide": true
+    },
+    "student-health-and-wellness-center": {
+      "hide": true
+    },
+    "uc-davis-health-davis-campus-clinic": {
+      "hide": true
+    },
+    "law-school-clinics": {
+      "hide": true
+    },
+    "mrak-hall": {
+      "hide": true
+    },
+    "conference-center": {
+      "hide": true
+    },
+    "international-center": {
+      "hide": true
+    },
+    "university-extension-building": {
+      "hide": true
+    },
+    "university-services-building": {
+      "hide": true
+    },
+    "unitrans": {
+      "hide": true
+    },
+    "segundo-services-center": {
+      "hide": true
+    },
+    "blue-ridge-office-building": {
+      "hide": true
+    },
+    "transportation-services": {
+      "hide": true
+    },
+    "walter-a-buehler-alumni-center": {
+      "hide": true
+    },
+    "housing-administration": {
+      "hide": true
+    },
+    "central-cage-wash-facility": {
+      "hide": true
+    },
+    "campus-data-center": {
+      "hide": true
+    },
+    "materiel-management-office": {
+      "hide": true
+    },
+    "sol-at-west-village": {
+      "hide": true
+    },
+    "iet-communications-resources": {
+      "hide": true
+    },
+    "aggie-surplus": {
+      "hide": true
+    },
+    "telecommunications-building": {
+      "hide": true
+    },
+    "hopkins-services-complex-auxiliary": {
+      "hide": true
+    },
+    "foundation-plant-services-office": {
+      "hide": true
+    },
+    "fps-office-trailer": {
+      "hide": true
+    },
+    "fps-trinchero-family-estates-building": {
+      "hide": true
+    },
+    "heitman-staff-learning-center": {
+      "hide": true
+    },
+    "student-affairs-annex": {
+      "hide": true
+    },
+    "university-house": {
+      "hide": true
+    },
+    "mondavi-center-admin": {
+      "hide": true
+    },
+    "eichorn-family-house": {
+      "hide": true
+    },
+    "educational-opportunity-program": {
+      "hide": true
+    },
+    "annual-fund-trailer": {
+      "hide": true
+    },
+    "office": {
+      "hide": true
+    },
+    "office-40478110": {
+      "hide": true
+    },
+    "west-entry-trailer": {
+      "hide": true
+    },
+    "the-grove": {
+      "hide": true
+    },
+    "arboretum-headquarters": {
+      "hide": true
+    },
+    "honda-house-visitor-center": {
+      "hide": true
+    },
+    "human-and-community-development-administration": {
+      "hide": true
+    },
+    "frank-g-parsons-seed-certification-center": {
+      "hide": true
+    },
+    "central-heating-and-cooling-plant": {
+      "hide": true
+    },
+    "chcp-cooling-tower": {
+      "hide": true
+    },
+    "chcp-electrical": {
+      "hide": true
+    },
+    "regan-mechanical": {
+      "hide": true
+    },
+    "tercero-mechanical": {
+      "hide": true
+    },
+    "tercero-equipment": {
+      "hide": true
+    },
+    "laundry-room-a": {
+      "hide": true
+    },
+    "animal-husbandry-dairy-scale": {
+      "hide": true
+    },
+    "nuclear-magnetic-resonance-trailer": {
+      "hide": true
+    },
+    "growth-chamber-building": {
+      "hide": true
+    },
+    "shields-grove-gazebo": {
+      "hide": true
+    },
+    "temporary-building-016-the-house": {
+      "hide": true
+    },
+    "temporary-building-190": {
+      "hide": true
+    },
+    "tb-9": {
+      "hide": true
+    },
+    "tb-207": {
+      "hide": true
+    },
+    "tb-206": {
+      "hide": true
+    },
+    "tb-119": {
+      "hide": true
+    },
+    "tb-116": {
+      "hide": true
+    },
+    "tb-118": {
+      "hide": true
+    },
+    "tb-124": {
+      "hide": true
+    },
+    "tb-123": {
+      "hide": true
+    },
+    "tb-140": {
+      "hide": true
+    },
+    "tb-117": {
+      "hide": true
+    },
+    "tb-120": {
+      "hide": true
+    },
+    "hutchison-child-development-center": {
+      "hide": true
+    },
+    "child-care-and-community-center": {
+      "hide": true
+    },
+    "child-development-center": {
+      "hide": true
+    },
+    "human-and-community-development-child-development": {
+      "hide": true
+    },
+    "primero-grove-community": {
+      "hide": true
+    },
+    "davis-student-cooperative": {
+      "hide": true
+    },
+    "agrarian-effort-student-cooperative-housing": {
+      "hide": true
+    },
+    "pierce-student-cooperative": {
+      "hide": true
+    },
+    "orchard-house": {
+      "hide": true
+    },
+    "orchard-park-south-community-center": {
+      "hide": true
+    },
+    "community-center": {
+      "hide": true
+    },
+    "aggie-stadium-north": {
+      "hide": true
+    },
+    "aggie-stadium-east": {
+      "hide": true
+    },
+    "aggie-stadium-west": {
+      "hide": true
+    },
+    "university-credit-union-center": {
+      "hide": true
+    },
+    "schaal-aquatic-center": {
+      "hide": true
+    },
+    "scrubs-cafe": {
+      "hide": true
+    },
+    "segundo-market": {
+      "hide": true
+    },
+    "hyatt-place-uc-davis": {
+      "hide": true
+    },
+    "outdoor-adventures": {
+      "hide": true
+    },
+    "putah-creek-lodge": {
+      "hide": true
+    },
+    "rifle-range": {
+      "hide": true
+    },
+    "western-human-nutrition-research-center": {
+      "hide": true
+    },
+    "contained-research-facility": {
+      "hide": true
+    },
+    "advanced-transportation-infrastructure-research-center": {
+      "hide": true
+    },
+    "watershed-science-research-center": {
+      "hide": true
+    },
+    "advanced-materials-research-laboratory": {
+      "hide": true
+    },
+    "plant-reproductive-biology-facility": {
+      "hide": true
+    },
+    "center-for-immunology-and-infectious-diseases": {
+      "hide": true
+    },
+    "center-for-neuroscience": {
+      "hide": true
+    },
+    "honey-and-pollination-center": {
+      "hide": true
+    },
+    "ag-field-station": {
+      "hide": true
+    },
+    "heidrick-western-center-for-agricultural-equipment": {
+      "hide": true
+    },
+    "gallagher-hall": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "standard-10x20-halls": "Pinned at Segundo North - OE Thompson Hall (OSM way/25475921), the middle of the Miller, Alder and Thompson trio in Segundo (housing.ucdavis.edu); Kearney and Laben, the other two standard halls, are in Tercero 1 km south.",
+    "classic-halls": "Pinned at Fred H. Bixby Hall (OSM way/25292039); Gilmore, Bixby, Malcolm and Ryerson surround Segundo Dining Commons (housing.ucdavis.edu, Segundo).",
+    "mid-size-halls": "Pinned at Campbell Hall (OSM way/72644550), the middle of the Tercero mid-size halls Campbell, Currant, Live Oak, Madrone, Potter, Sequoia and Wall (housing.ucdavis.edu, Tercero).",
+    "suite-style-halls": "Pinned at Yosemite Hall (OSM relation/308711) in Cuarto, with Tahoe, Shasta and Emerson beside it (housing.ucdavis.edu, Cuarto).",
+    "regan-hall": "Pinned at Regan - Campo Hall (OSM way/43092112), the middle of the Regan Hall complex (Campo, Nova, Rienda, Sereno, Talara and the Regan Central Commons; housing.ucdavis.edu, Segundo).",
+    "pritchard-veterinary-medical-teaching-hospital": "Hospital or clinic. Not somewhere undergraduates have class.",
+    "gourley-clinical-teaching-center": "Hospital or clinic. Not somewhere undergraduates have class.",
+    "vet-med-teach-hosp-ward": "Hospital or clinic. Not somewhere undergraduates have class.",
+    "vmth-office-annex": "Hospital or clinic. Not somewhere undergraduates have class.",
+    "center-for-companion-animal-health": "Hospital or clinic. Not somewhere undergraduates have class.",
+    "university-of-california-davis-center-for-equine-health": "Hospital or clinic. Not somewhere undergraduates have class.",
+    "vet-med-equine-athletic-performance-lab": "Hospital or clinic. Not somewhere undergraduates have class.",
+    "cowell-building-occupational-health": "Hospital or clinic. Not somewhere undergraduates have class.",
+    "student-health-and-wellness-center": "Hospital or clinic. Not somewhere undergraduates have class.",
+    "uc-davis-health-davis-campus-clinic": "Hospital or clinic. Not somewhere undergraduates have class.",
+    "law-school-clinics": "Hospital or clinic. Not somewhere undergraduates have class.",
+    "mrak-hall": "Admin or service building. Not somewhere undergraduates have class.",
+    "conference-center": "Admin or service building. Not somewhere undergraduates have class.",
+    "international-center": "Admin or service building. Not somewhere undergraduates have class.",
+    "university-extension-building": "Admin or service building. Not somewhere undergraduates have class.",
+    "university-services-building": "Admin or service building. Not somewhere undergraduates have class.",
+    "unitrans": "Admin or service building. Not somewhere undergraduates have class.",
+    "segundo-services-center": "Admin or service building. Not somewhere undergraduates have class.",
+    "blue-ridge-office-building": "Admin or service building. Not somewhere undergraduates have class.",
+    "transportation-services": "Admin or service building. Not somewhere undergraduates have class.",
+    "walter-a-buehler-alumni-center": "Admin or service building. Not somewhere undergraduates have class.",
+    "housing-administration": "Admin or service building. Not somewhere undergraduates have class.",
+    "central-cage-wash-facility": "Admin or service building. Not somewhere undergraduates have class.",
+    "campus-data-center": "Admin or service building. Not somewhere undergraduates have class.",
+    "materiel-management-office": "Admin or service building. Not somewhere undergraduates have class.",
+    "sol-at-west-village": "Admin or service building. Not somewhere undergraduates have class.",
+    "iet-communications-resources": "Admin or service building. Not somewhere undergraduates have class.",
+    "aggie-surplus": "Admin or service building. Not somewhere undergraduates have class.",
+    "telecommunications-building": "Admin or service building. Not somewhere undergraduates have class.",
+    "hopkins-services-complex-auxiliary": "Admin or service building. Not somewhere undergraduates have class.",
+    "foundation-plant-services-office": "Admin or service building. Not somewhere undergraduates have class.",
+    "fps-office-trailer": "Admin or service building. Not somewhere undergraduates have class.",
+    "fps-trinchero-family-estates-building": "Admin or service building. Not somewhere undergraduates have class.",
+    "heitman-staff-learning-center": "Admin or service building. Not somewhere undergraduates have class.",
+    "student-affairs-annex": "Admin or service building. Not somewhere undergraduates have class.",
+    "university-house": "Admin or service building. Not somewhere undergraduates have class.",
+    "mondavi-center-admin": "Admin or service building. Not somewhere undergraduates have class.",
+    "eichorn-family-house": "Admin or service building. Not somewhere undergraduates have class.",
+    "educational-opportunity-program": "Admin or service building. Not somewhere undergraduates have class.",
+    "annual-fund-trailer": "Admin or service building. Not somewhere undergraduates have class.",
+    "office": "Admin or service building. Not somewhere undergraduates have class.",
+    "office-40478110": "Admin or service building. Not somewhere undergraduates have class.",
+    "west-entry-trailer": "Admin or service building. Not somewhere undergraduates have class.",
+    "the-grove": "Admin or service building. Not somewhere undergraduates have class.",
+    "arboretum-headquarters": "Admin or service building. Not somewhere undergraduates have class.",
+    "honda-house-visitor-center": "Admin or service building. Not somewhere undergraduates have class.",
+    "human-and-community-development-administration": "Admin or service building. Not somewhere undergraduates have class.",
+    "frank-g-parsons-seed-certification-center": "Admin or service building. Not somewhere undergraduates have class.",
+    "central-heating-and-cooling-plant": "Utility or plant building. Not somewhere undergraduates have class.",
+    "chcp-cooling-tower": "Utility or plant building. Not somewhere undergraduates have class.",
+    "chcp-electrical": "Utility or plant building. Not somewhere undergraduates have class.",
+    "regan-mechanical": "Utility or plant building. Not somewhere undergraduates have class.",
+    "tercero-mechanical": "Utility or plant building. Not somewhere undergraduates have class.",
+    "tercero-equipment": "Utility or plant building. Not somewhere undergraduates have class.",
+    "laundry-room-a": "Utility or plant building. Not somewhere undergraduates have class.",
+    "animal-husbandry-dairy-scale": "Utility or plant building. Not somewhere undergraduates have class.",
+    "nuclear-magnetic-resonance-trailer": "Utility or plant building. Not somewhere undergraduates have class.",
+    "growth-chamber-building": "Utility or plant building. Not somewhere undergraduates have class.",
+    "shields-grove-gazebo": "Utility or plant building. Not somewhere undergraduates have class.",
+    "temporary-building-016-the-house": "A temporary office building. Not somewhere undergraduates have class.",
+    "temporary-building-190": "A temporary office building. Not somewhere undergraduates have class.",
+    "tb-9": "A temporary office building. Not somewhere undergraduates have class.",
+    "tb-207": "A temporary office building. Not somewhere undergraduates have class.",
+    "tb-206": "A temporary office building. Not somewhere undergraduates have class.",
+    "tb-119": "A temporary office building. Not somewhere undergraduates have class.",
+    "tb-116": "A temporary office building. Not somewhere undergraduates have class.",
+    "tb-118": "A temporary office building. Not somewhere undergraduates have class.",
+    "tb-124": "A temporary office building. Not somewhere undergraduates have class.",
+    "tb-123": "A temporary office building. Not somewhere undergraduates have class.",
+    "tb-140": "A temporary office building. Not somewhere undergraduates have class.",
+    "tb-117": "A temporary office building. Not somewhere undergraduates have class.",
+    "tb-120": "A temporary office building. Not somewhere undergraduates have class.",
+    "hutchison-child-development-center": "Childcare. Not somewhere undergraduates have class.",
+    "child-care-and-community-center": "Childcare. Not somewhere undergraduates have class.",
+    "child-development-center": "Childcare. Not somewhere undergraduates have class.",
+    "human-and-community-development-child-development": "Childcare. Not somewhere undergraduates have class.",
+    "primero-grove-community": "Student housing or a housing community centre. Not somewhere undergraduates have class.",
+    "davis-student-cooperative": "Student housing or a housing community centre. Not somewhere undergraduates have class.",
+    "agrarian-effort-student-cooperative-housing": "Student housing or a housing community centre. Not somewhere undergraduates have class.",
+    "pierce-student-cooperative": "Student housing or a housing community centre. Not somewhere undergraduates have class.",
+    "orchard-house": "Student housing or a housing community centre. Not somewhere undergraduates have class.",
+    "orchard-park-south-community-center": "Student housing or a housing community centre. Not somewhere undergraduates have class.",
+    "community-center": "Student housing or a housing community centre. Not somewhere undergraduates have class.",
+    "aggie-stadium-north": "Varsity athletics venue. Not somewhere undergraduates have class.",
+    "aggie-stadium-east": "Varsity athletics venue. Not somewhere undergraduates have class.",
+    "aggie-stadium-west": "Varsity athletics venue. Not somewhere undergraduates have class.",
+    "university-credit-union-center": "Varsity athletics venue. Not somewhere undergraduates have class.",
+    "schaal-aquatic-center": "Varsity athletics venue. Not somewhere undergraduates have class.",
+    "scrubs-cafe": "Cafe, market, hotel or rental shop. Not somewhere undergraduates have class.",
+    "segundo-market": "Cafe, market, hotel or rental shop. Not somewhere undergraduates have class.",
+    "hyatt-place-uc-davis": "Cafe, market, hotel or rental shop. Not somewhere undergraduates have class.",
+    "outdoor-adventures": "Cafe, market, hotel or rental shop. Not somewhere undergraduates have class.",
+    "putah-creek-lodge": "Cafe, market, hotel or rental shop. Not somewhere undergraduates have class.",
+    "rifle-range": "Cafe, market, hotel or rental shop. Not somewhere undergraduates have class.",
+    "western-human-nutrition-research-center": "A research facility, not a class building. Not somewhere undergraduates have class.",
+    "contained-research-facility": "A research facility, not a class building. Not somewhere undergraduates have class.",
+    "advanced-transportation-infrastructure-research-center": "A research facility, not a class building. Not somewhere undergraduates have class.",
+    "watershed-science-research-center": "A research facility, not a class building. Not somewhere undergraduates have class.",
+    "advanced-materials-research-laboratory": "A research facility, not a class building. Not somewhere undergraduates have class.",
+    "plant-reproductive-biology-facility": "A research facility, not a class building. Not somewhere undergraduates have class.",
+    "center-for-immunology-and-infectious-diseases": "A research facility, not a class building. Not somewhere undergraduates have class.",
+    "center-for-neuroscience": "A research facility, not a class building. Not somewhere undergraduates have class.",
+    "honey-and-pollination-center": "A research facility, not a class building. Not somewhere undergraduates have class.",
+    "ag-field-station": "A research facility, not a class building. Not somewhere undergraduates have class.",
+    "heidrick-western-center-for-agricultural-equipment": "A research facility, not a class building. Not somewhere undergraduates have class.",
+    "gallagher-hall": "Graduate school of management only. Not somewhere undergraduates have class."
+  },
+  "longWalks": {
+    "suite-style-halls": {
+      "maxMinutes": 50,
+      "why": "Cuarto (Yosemite, Tahoe, Shasta, Emerson) sits north of Russell Boulevard at the top of campus, and the Neurosciences Building is at the south end of the Health Sciences District beyond Hutchison Drive, a real 3.7 km walk down La Rue Road."
+    }
+  }
+}

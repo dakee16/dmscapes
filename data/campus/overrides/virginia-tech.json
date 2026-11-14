@@ -1,0 +1,44 @@
+{
+  "halls": {
+    "aj-e": {
+      "pin": [
+        -80.420772,
+        37.223176
+      ]
+    },
+    "aj-w": {
+      "pin": [
+        -80.421145,
+        37.223054
+      ]
+    },
+    "eggleston-main": {
+      "pin": [
+        -80.42012,
+        37.227624
+      ]
+    },
+    "eggleston-west": {
+      "pin": [
+        -80.420012,
+        37.226772
+      ]
+    }
+  },
+  "notes": {
+    "aj-e": "OSM 'East Ambler Johnston Hall' (way/1459997826, 700 Washington Street); the name rules couldn't choose between East and West.",
+    "aj-w": "OSM 'West Ambler Johnston Hall' (way/60193822, 720 Washington Street).",
+    "eggleston-main": "OSM 'Main Eggleston Hall' (relation/1360469, 440 Drillfield Drive).",
+    "eggleston-west": "OSM 'West Eggleston Hall' (relation/1360466, 410 Drillfield Drive).",
+    "football-locker-room": "Varsity football locker room, not a gym students use.",
+    "north-chiller-plant": "A utility or maintenance building, not somewhere classes happen."
+  },
+  "places": {
+    "football-locker-room": {
+      "hide": true
+    },
+    "north-chiller-plant": {
+      "hide": true
+    }
+  }
+}

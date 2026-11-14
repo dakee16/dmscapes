@@ -1,0 +1,17 @@
+{
+  "collegeId": "nc-state",
+  "area": {
+    "osm": "relation/6431764",
+    "bbox": [
+      35.762,
+      -78.705,
+      35.797,
+      -78.655
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/nc-state.codes.json"
+  }
+}

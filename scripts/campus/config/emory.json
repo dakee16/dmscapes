@@ -1,0 +1,16 @@
+{
+  "collegeId": "emory",
+  "area": {
+    "osm": "relation/14642692",
+    "bbox": [
+      33.78823,
+      -84.33575,
+      33.80739,
+      -84.30648
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Emory publishes no building-code list for class schedules: the registrar's abbreviation guides (registrar.emory.edu) cover course titles only, and the Communications style guide's Campuses and Buildings page (communications.emory.edu/resources/style-guide/emory-specifics/campuses-buildings.html) gives building names (checked 2026-11-08)."
+}

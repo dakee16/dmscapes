@@ -1,0 +1,2720 @@
+{
+ "collegeId": "uga",
+ "generatedAt": "2026-11-08T08:19:30.869Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "UGA Office of University Architects, Building Index by Number (August 2023)",
+   "url": "https://www.architects.uga.edu/sites/default/files/documents/field/maps/current/buildingindex-bynumber-2023.pdf",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/uga.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -83.38285,
+  33.93169,
+  -83.36443,
+  33.9595
+ ],
+ "halls": [
+  {
+   "dormId": "black-diallo-miller-hall",
+   "name": "Black-Diallo-Miller Hall",
+   "lng": -83.379434,
+   "lat": 33.950664,
+   "pin": "name",
+   "osm": "way/1068391666",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 16.3
+    },
+    "library": {
+     "placeId": "richard-b-russell-special-collections-library",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "bolton-dining-commons",
+     "minutes": 3.3
+    }
+   }
+  },
+  {
+   "dormId": "boggs-hall",
+   "name": "Boggs Hall",
+   "lng": -83.378379,
+   "lat": 33.948593,
+   "pin": "name",
+   "osm": "way/154066198",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 12.4
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 7.1
+    },
+    "dining": {
+     "placeId": "dining-learning-and-well-being-center",
+     "minutes": 2
+    }
+   }
+  },
+  {
+   "dormId": "brown-hall",
+   "name": "Brown Hall",
+   "lng": -83.37609,
+   "lat": 33.953338,
+   "pin": "name",
+   "osm": "way/41377552",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 19
+    },
+    "library": {
+     "placeId": "alexander-campbell-king-law-library",
+     "minutes": 3.3
+    },
+    "dining": {
+     "placeId": "bolton-dining-commons",
+     "minutes": 4.6
+    }
+   }
+  },
+  {
+   "dormId": "brumby-hall",
+   "name": "Brumby Hall",
+   "lng": -83.382848,
+   "lat": 33.949662,
+   "pin": "name",
+   "osm": "way/154066211",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 17.3
+    },
+    "library": {
+     "placeId": "richard-b-russell-special-collections-library",
+     "minutes": 10.9
+    },
+    "dining": {
+     "placeId": "dining-learning-and-well-being-center",
+     "minutes": 5.9
+    }
+   }
+  },
+  {
+   "dormId": "building-1516",
+   "name": "Building 1516",
+   "lng": -83.367098,
+   "lat": 33.936704,
+   "pin": "name",
+   "osm": "way/598413126",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ramsey-center",
+     "minutes": 6.2
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 20.4
+    },
+    "dining": {
+     "placeId": "joe-frank-harris-commons",
+     "minutes": 6
+    }
+   }
+  },
+  {
+   "dormId": "building-2266",
+   "name": "Building 2266",
+   "lng": -83.377082,
+   "lat": 33.954678,
+   "pin": "name",
+   "osm": "way/1490812995",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 21.5
+    },
+    "library": {
+     "placeId": "richard-b-russell-special-collections-library",
+     "minutes": 2.1
+    },
+    "dining": {
+     "placeId": "bolton-dining-commons",
+     "minutes": 7
+    }
+   }
+  },
+  {
+   "dormId": "busbee-hall",
+   "name": "Busbee Hall",
+   "lng": -83.368114,
+   "lat": 33.938038,
+   "pin": "name",
+   "osm": "way/598413128",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ramsey-center",
+     "minutes": 3.6
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 17.7
+    },
+    "dining": {
+     "placeId": "joe-frank-harris-commons",
+     "minutes": 3.4
+    }
+   }
+  },
+  {
+   "dormId": "church-hall",
+   "name": "Church Hall",
+   "lng": -83.378287,
+   "lat": 33.948971,
+   "pin": "name",
+   "osm": "way/154066224",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 12.7
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 7.2
+    },
+    "dining": {
+     "placeId": "dining-learning-and-well-being-center",
+     "minutes": 2
+    }
+   }
+  },
+  {
+   "dormId": "creswell-hall",
+   "name": "Creswell Hall",
+   "lng": -83.38003,
+   "lat": 33.94999,
+   "pin": "name",
+   "osm": "way/154066244",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 15.9
+    },
+    "library": {
+     "placeId": "richard-b-russell-special-collections-library",
+     "minutes": 8.7
+    },
+    "dining": {
+     "placeId": "dining-learning-and-well-being-center",
+     "minutes": 3.4
+    }
+   }
+  },
+  {
+   "dormId": "expanded-busbee-hall",
+   "name": "Expanded Busbee Hall",
+   "lng": -83.368146,
+   "lat": 33.938051,
+   "pin": "manual",
+   "osm": "way/598413128",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ramsey-center",
+     "minutes": 3.6
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 17.7
+    },
+    "dining": {
+     "placeId": "joe-frank-harris-commons",
+     "minutes": 3.4
+    }
+   }
+  },
+  {
+   "dormId": "expanded-mcwhorter-hall",
+   "name": "Expanded McWhorter Hall",
+   "lng": -83.367208,
+   "lat": 33.938237,
+   "pin": "manual",
+   "osm": "way/598413123",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ramsey-center",
+     "minutes": 4.6
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 18.5
+    },
+    "dining": {
+     "placeId": "joe-frank-harris-commons",
+     "minutes": 4.5
+    }
+   }
+  },
+  {
+   "dormId": "expanded-rooker-hall",
+   "name": "Expanded Rooker Hall",
+   "lng": -83.367912,
+   "lat": 33.937044,
+   "pin": "manual",
+   "osm": "way/598413131",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ramsey-center",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 19.2
+    },
+    "dining": {
+     "placeId": "joe-frank-harris-commons",
+     "minutes": 4.8
+    }
+   }
+  },
+  {
+   "dormId": "expanded-vandiver-hall",
+   "name": "Expanded Vandiver Hall",
+   "lng": -83.367416,
+   "lat": 33.937444,
+   "pin": "manual",
+   "osm": "way/598413118",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ramsey-center",
+     "minutes": 5.4
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 19.4
+    },
+    "dining": {
+     "placeId": "joe-frank-harris-commons",
+     "minutes": 5.2
+    }
+   }
+  },
+  {
+   "dormId": "hill-hall",
+   "name": "Hill Hall",
+   "lng": -83.378084,
+   "lat": 33.949442,
+   "pin": "name",
+   "osm": "way/100397116",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 14.1
+    },
+    "library": {
+     "placeId": "richard-b-russell-special-collections-library",
+     "minutes": 7.3
+    },
+    "dining": {
+     "placeId": "bolton-dining-commons",
+     "minutes": 2.3
+    }
+   }
+  },
+  {
+   "dormId": "lipscomb-hall",
+   "name": "Lipscomb Hall",
+   "lng": -83.378281,
+   "lat": 33.950953,
+   "pin": "name",
+   "osm": "way/154066317",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 15.9
+    },
+    "library": {
+     "placeId": "richard-b-russell-special-collections-library",
+     "minutes": 4.7
+    },
+    "dining": {
+     "placeId": "bolton-dining-commons",
+     "minutes": 1.5
+    }
+   }
+  },
+  {
+   "dormId": "mary-lyndon-hall",
+   "name": "Mary Lyndon Hall",
+   "lng": -83.377029,
+   "lat": 33.945996,
+   "pin": "name",
+   "osm": "way/598413221",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 8.7
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 3.7
+    },
+    "dining": {
+     "placeId": "snelling-dining-commons",
+     "minutes": 2.9
+    }
+   }
+  },
+  {
+   "dormId": "mcwhorter-hall",
+   "name": "McWhorter Hall",
+   "lng": -83.367128,
+   "lat": 33.938204,
+   "pin": "name",
+   "osm": "way/598413123",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ramsey-center",
+     "minutes": 4.6
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 18.5
+    },
+    "dining": {
+     "placeId": "joe-frank-harris-commons",
+     "minutes": 4.5
+    }
+   }
+  },
+  {
+   "dormId": "mell-hall",
+   "name": "Mell Hall",
+   "lng": -83.378726,
+   "lat": 33.950847,
+   "pin": "name",
+   "osm": "way/154066300",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 16.3
+    },
+    "library": {
+     "placeId": "richard-b-russell-special-collections-library",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "bolton-dining-commons",
+     "minutes": 1.8
+    }
+   }
+  },
+  {
+   "dormId": "morris-hall",
+   "name": "Morris Hall",
+   "lng": -83.376882,
+   "lat": 33.953885,
+   "pin": "name",
+   "osm": "way/251563389",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 19.7
+    },
+    "library": {
+     "placeId": "richard-b-russell-special-collections-library",
+     "minutes": 2.2
+    },
+    "dining": {
+     "placeId": "bolton-dining-commons",
+     "minutes": 5.3
+    }
+   }
+  },
+  {
+   "dormId": "myers-hall",
+   "name": "Myers Hall",
+   "lng": -83.377807,
+   "lat": 33.946677,
+   "pin": "name",
+   "osm": "way/598413220",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 9.5
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "oglethorpe-dining-commons",
+     "minutes": 4.2
+    }
+   }
+  },
+  {
+   "dormId": "oglethorpe-house",
+   "name": "Oglethorpe House",
+   "lng": -83.379349,
+   "lat": 33.947679,
+   "pin": "name",
+   "osm": "way/303361988",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 11.7
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 7.2
+    },
+    "dining": {
+     "placeId": "oglethorpe-dining-commons",
+     "minutes": 2.2
+    }
+   }
+  },
+  {
+   "dormId": "payne-hall",
+   "name": "Payne Hall",
+   "lng": -83.371838,
+   "lat": 33.9517,
+   "pin": "name",
+   "osm": "way/41411318",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ramsey-center",
+     "minutes": 20.6
+    },
+    "library": {
+     "placeId": "uga-main-library",
+     "minutes": 5.8
+    },
+    "dining": {
+     "placeId": "bolton-dining-commons",
+     "minutes": 8.7
+    }
+   }
+  },
+  {
+   "dormId": "reed-hall",
+   "name": "Reed Hall",
+   "lng": -83.372674,
+   "lat": 33.951042,
+   "pin": "name",
+   "osm": "way/598413257",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ramsey-center",
+     "minutes": 19.5
+    },
+    "library": {
+     "placeId": "alexander-campbell-king-law-library",
+     "minutes": 7.7
+    },
+    "dining": {
+     "placeId": "bolton-dining-commons",
+     "minutes": 7.9
+    }
+   }
+  },
+  {
+   "dormId": "rooker-hall",
+   "name": "Rooker Hall",
+   "lng": -83.367908,
+   "lat": 33.937106,
+   "pin": "name",
+   "osm": "way/598413131",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ramsey-center",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 19.2
+    },
+    "dining": {
+     "placeId": "joe-frank-harris-commons",
+     "minutes": 4.8
+    }
+   }
+  },
+  {
+   "dormId": "russell-hall",
+   "name": "Russell Hall",
+   "lng": -83.381509,
+   "lat": 33.949934,
+   "pin": "name",
+   "osm": "way/154066215",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 17
+    },
+    "library": {
+     "placeId": "richard-b-russell-special-collections-library",
+     "minutes": 10.1
+    },
+    "dining": {
+     "placeId": "dining-learning-and-well-being-center",
+     "minutes": 4.8
+    }
+   }
+  },
+  {
+   "dormId": "rutherford-hall",
+   "name": "Rutherford Hall",
+   "lng": -83.376673,
+   "lat": 33.946975,
+   "pin": "name",
+   "osm": "way/602268464",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 9.8
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 2.9
+    },
+    "dining": {
+     "placeId": "snelling-dining-commons",
+     "minutes": 3.9
+    }
+   }
+  },
+  {
+   "dormId": "soule-hall",
+   "name": "Soule Hall",
+   "lng": -83.375987,
+   "lat": 33.946221,
+   "pin": "name",
+   "osm": "way/154066366",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+     "minutes": 9.3
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 2.8
+    },
+    "dining": {
+     "placeId": "snelling-dining-commons",
+     "minutes": 3.3
+    }
+   }
+  },
+  {
+   "dormId": "university-village",
+   "name": "University Village",
+   "lng": -83.375196,
+   "lat": 33.935722,
+   "pin": "manual",
+   "osm": "way/598413080",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ramsey-center",
+     "minutes": 8.8
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 18.1
+    },
+    "dining": {
+     "placeId": "joe-frank-harris-commons",
+     "minutes": 10.7
+    }
+   }
+  },
+  {
+   "dormId": "university-village-east",
+   "name": "University Village East",
+   "lng": -83.366306,
+   "lat": 33.938422,
+   "pin": "name",
+   "osm": "way/598413122",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ramsey-center",
+     "minutes": 5.3
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 18.6
+    },
+    "dining": {
+     "placeId": "joe-frank-harris-commons",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "vandiver-hall",
+   "name": "Vandiver Hall",
+   "lng": -83.36731,
+   "lat": 33.937524,
+   "pin": "name",
+   "osm": "way/598413118",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ramsey-center",
+     "minutes": 5.4
+    },
+    "library": {
+     "placeId": "shirley-mathis-mcbay-science-library",
+     "minutes": 19.4
+    },
+    "dining": {
+     "placeId": "joe-frank-harris-commons",
+     "minutes": 5.2
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "ramsey-center",
+   "name": "Ramsey Center",
+   "short": "Ramsey Center",
+   "kind": "gym",
+   "codes": [
+    "1690"
+   ],
+   "aliases": [],
+   "lng": -83.371332,
+   "lat": 33.937733,
+   "osm": "relation/8386480"
+  },
+  {
+   "id": "chicopee-main-building-1",
+   "name": "Chicopee Main Building 1",
+   "short": "Chicopee Main Building 1",
+   "kind": "academic",
+   "codes": [
+    "0101"
+   ],
+   "aliases": [
+    "Chicopee Main Building No.1"
+   ],
+   "lng": -83.364429,
+   "lat": 33.959499,
+   "osm": "relation/13781218"
+  },
+  {
+   "id": "william-porter-payne-and-porter-otis-payne-indoor-athletic-facility",
+   "name": "William Porter Payne & Porter Otis Payne Indoor Athletic Facility",
+   "short": "William Porter Payne & Porter Otis Payne Indoor Athletic Facility",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.380276,
+   "lat": 33.942326,
+   "osm": "way/605948511"
+  },
+  {
+   "id": "college-of-veterinary-medicine",
+   "name": "College of Veterinary Medicine",
+   "short": "College of Veterinary Medicine",
+   "kind": "academic",
+   "codes": [
+    "1070"
+   ],
+   "aliases": [
+    "College of Veterinary Medicine 1"
+   ],
+   "lng": -83.375057,
+   "lat": 33.94093,
+   "osm": "relation/8386479"
+  },
+  {
+   "id": "tate-student-center",
+   "name": "Tate Student Center",
+   "short": "Tate Center",
+   "kind": "academic",
+   "codes": [
+    "0672"
+   ],
+   "aliases": [
+    "Dean William Tate Student Center",
+    "Tate Center"
+   ],
+   "lng": -83.375284,
+   "lat": 33.950519,
+   "osm": "way/607164503"
+  },
+  {
+   "id": "driftmier-engineering-center",
+   "name": "Driftmier Engineering Center",
+   "short": "Driftmier Engineering Center",
+   "kind": "academic",
+   "codes": [
+    "1090"
+   ],
+   "aliases": [],
+   "lng": -83.375092,
+   "lat": 33.938829,
+   "osm": "relation/17249577"
+  },
+  {
+   "id": "butts-mehre-heritage-hall",
+   "name": "Butts-Mehre Heritage Hall",
+   "short": "Butts-Mehre Heritage Hall",
+   "kind": "academic",
+   "codes": [
+    "1671"
+   ],
+   "aliases": [
+    "Butts-Mehre Building"
+   ],
+   "lng": -83.381286,
+   "lat": 33.942198,
+   "osm": "way/179642805"
+  },
+  {
+   "id": "coliseum-training-facility",
+   "name": "Coliseum Training Facility",
+   "short": "Coliseum Training Facility",
+   "kind": "academic",
+   "codes": [
+    "1687"
+   ],
+   "aliases": [],
+   "lng": -83.377496,
+   "lat": 33.942166,
+   "osm": "way/154067930"
+  },
+  {
+   "id": "lamar-dodd-school-of-art",
+   "name": "Lamar Dodd School of Art",
+   "short": "Lamar Dodd School of Art",
+   "kind": "academic",
+   "codes": [
+    "1694"
+   ],
+   "aliases": [],
+   "lng": -83.369166,
+   "lat": 33.940412,
+   "osm": "relation/8386481"
+  },
+  {
+   "id": "stem-research-building",
+   "name": "STEM Research Building",
+   "short": "STEM Research Building",
+   "kind": "academic",
+   "codes": [
+    "1131"
+   ],
+   "aliases": [
+    "Interdisciplinary STEM Research Bldg"
+   ],
+   "lng": -83.371776,
+   "lat": 33.944098,
+   "osm": "way/1054894853"
+  },
+  {
+   "id": "cedar-street-building-b",
+   "name": "Cedar Street Building B",
+   "short": "Cedar Street Building B",
+   "kind": "academic",
+   "codes": [
+    "1000"
+   ],
+   "aliases": [
+    "Biological Sciences Building"
+   ],
+   "lng": -83.372723,
+   "lat": 33.947978,
+   "osm": "way/598413226"
+  },
+  {
+   "id": "zell-b-miller-student-learning-center",
+   "name": "Zell B. Miller Student Learning Center",
+   "short": "Zell B. Miller Student Learning Center",
+   "kind": "academic",
+   "codes": [
+    "0081"
+   ],
+   "aliases": [
+    "MLC",
+    "Zell B. Miller Learning Center"
+   ],
+   "lng": -83.375773,
+   "lat": 33.951696,
+   "osm": "way/598413270"
+  },
+  {
+   "id": "fred-c-davison-life-sciences-complex",
+   "name": "Fred C. Davison Life Sciences Complex",
+   "short": "Fred C. Davison Life Sciences Complex",
+   "kind": "academic",
+   "codes": [
+    "1057"
+   ],
+   "aliases": [
+    "Davison Life Sciences Complex"
+   ],
+   "lng": -83.372356,
+   "lat": 33.943206,
+   "osm": "way/598413190"
+  },
+  {
+   "id": "cedar-street-building-c",
+   "name": "Cedar Street Building C",
+   "short": "Cedar Street Building C",
+   "kind": "academic",
+   "codes": [
+    "1001"
+   ],
+   "aliases": [
+    "Chemistry Building",
+    "Chemistry"
+   ],
+   "lng": -83.374118,
+   "lat": 33.948496,
+   "osm": "way/41411337"
+  },
+  {
+   "id": "uga-main-library",
+   "name": "UGA Main Library",
+   "short": "UGA Main Library",
+   "kind": "library",
+   "codes": [
+    "0054"
+   ],
+   "aliases": [
+    "Main Library"
+   ],
+   "lng": -83.373778,
+   "lat": 33.954036,
+   "osm": "way/41377559"
+  },
+  {
+   "id": "ecology",
+   "name": "Ecology",
+   "short": "Ecology",
+   "kind": "academic",
+   "codes": [
+    "1033"
+   ],
+   "aliases": [],
+   "lng": -83.373279,
+   "lat": 33.944341,
+   "osm": "relation/8386483"
+  },
+  {
+   "id": "dan-magill-tennis-complex",
+   "name": "Dan Magill Tennis Complex",
+   "short": "Dan Magill Tennis Complex",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.377654,
+   "lat": 33.940349,
+   "osm": "way/1363187900"
+  },
+  {
+   "id": "science-learning-center",
+   "name": "Science Learning Center",
+   "short": "Science Learning Center",
+   "kind": "academic",
+   "codes": [
+    "1035"
+   ],
+   "aliases": [],
+   "lng": -83.376246,
+   "lat": 33.942737,
+   "osm": "way/590626679"
+  },
+  {
+   "id": "hugh-hodgson-school-of-music",
+   "name": "Hugh Hodgson School of Music",
+   "short": "Hugh Hodgson School of Music",
+   "kind": "academic",
+   "codes": [
+    "1691"
+   ],
+   "aliases": [],
+   "lng": -83.368721,
+   "lat": 33.941227,
+   "osm": "way/598413142"
+  },
+  {
+   "id": "georgia-museum-of-art",
+   "name": "Georgia Museum of Art",
+   "short": "Georgia Museum of Art",
+   "kind": "academic",
+   "codes": [
+    "1693"
+   ],
+   "aliases": [],
+   "lng": -83.370147,
+   "lat": 33.941108,
+   "osm": "way/598413146"
+  },
+  {
+   "id": "richard-b-russell-special-collections-library",
+   "name": "Richard B. Russell Special Collections Library",
+   "short": "Richard B. Russell Special Collections Library",
+   "kind": "library",
+   "codes": [
+    "0740"
+   ],
+   "aliases": [
+    "Russell Special Collections Building"
+   ],
+   "lng": -83.378214,
+   "lat": 33.95406,
+   "osm": "way/184632504"
+  },
+  {
+   "id": "rhodes-animal-science-center-b",
+   "name": "Rhodes Animal Science Center - B",
+   "short": "Rhodes Animal Science Center - B",
+   "kind": "academic",
+   "codes": [
+    "1502"
+   ],
+   "aliases": [
+    "Edgar L. Rhodes Center for Animal and Dairy Science - B"
+   ],
+   "lng": -83.368608,
+   "lat": 33.935828,
+   "osm": "way/598413117"
+  },
+  {
+   "id": "journalism-building",
+   "name": "Journalism Building",
+   "short": "Journalism Building",
+   "kind": "academic",
+   "codes": [
+    "0062"
+   ],
+   "aliases": [],
+   "lng": -83.373964,
+   "lat": 33.952203,
+   "osm": "way/598413278"
+  },
+  {
+   "id": "paul-d-coverdell-center",
+   "name": "Paul D. Coverdell Center",
+   "short": "Coverdell Center",
+   "kind": "academic",
+   "codes": [
+    "1111"
+   ],
+   "aliases": [
+    "Coverdell Center"
+   ],
+   "lng": -83.376753,
+   "lat": 33.941074,
+   "osm": "way/598413111"
+  },
+  {
+   "id": "university-of-georgia-bookstore",
+   "name": "University of Georgia Bookstore",
+   "short": "University of Georgia Bookstore",
+   "kind": "academic",
+   "codes": [
+    "0671"
+   ],
+   "aliases": [
+    "University Bookstore"
+   ],
+   "lng": -83.374762,
+   "lat": 33.951438,
+   "osm": "way/598413269"
+  },
+  {
+   "id": "miller-plant-science",
+   "name": "Miller Plant Science",
+   "short": "Miller Plant Science",
+   "kind": "academic",
+   "codes": [
+    "1061"
+   ],
+   "aliases": [],
+   "lng": -83.375074,
+   "lat": 33.942391,
+   "osm": "way/598413187"
+  },
+  {
+   "id": "brooks-hall",
+   "name": "Brooks Hall",
+   "short": "Brooks Hall",
+   "kind": "academic",
+   "codes": [
+    "0055"
+   ],
+   "aliases": [],
+   "lng": -83.375258,
+   "lat": 33.954187,
+   "osm": "relation/19662881"
+  },
+  {
+   "id": "physics-building",
+   "name": "Physics Building",
+   "short": "Physics Building",
+   "kind": "academic",
+   "codes": [
+    "1003"
+   ],
+   "aliases": [],
+   "lng": -83.376126,
+   "lat": 33.948164,
+   "osm": "way/598413230"
+  },
+  {
+   "id": "jackson-street-building",
+   "name": "Jackson Street Building",
+   "short": "Jackson Street Building",
+   "kind": "academic",
+   "codes": [
+    "0040"
+   ],
+   "aliases": [],
+   "lng": -83.372806,
+   "lat": 33.955227,
+   "osm": "way/41377564"
+  },
+  {
+   "id": "university-health-center",
+   "name": "University Health Center",
+   "short": "University Health Center",
+   "kind": "academic",
+   "codes": [
+    "1701"
+   ],
+   "aliases": [
+    "UGA Health Center",
+    "UHC"
+   ],
+   "lng": -83.37217,
+   "lat": 33.935926,
+   "osm": "way/179802845"
+  },
+  {
+   "id": "wilson-pharmacy-building",
+   "name": "Wilson Pharmacy Building",
+   "short": "Wilson Pharmacy Building",
+   "kind": "academic",
+   "codes": [
+    "1041"
+   ],
+   "aliases": [
+    "Robert C. Wilson Pharmacy Building",
+    "R. C. Wilson Pharmacy"
+   ],
+   "lng": -83.375429,
+   "lat": 33.944184,
+   "osm": "way/598413199"
+  },
+  {
+   "id": "perfoming-arts-center",
+   "name": "Perfoming Arts Center",
+   "short": "Perfoming Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PAC"
+   ],
+   "lng": -83.369543,
+   "lat": 33.941983,
+   "osm": "way/598413139"
+  },
+  {
+   "id": "psychology-building",
+   "name": "Psychology Building",
+   "short": "Psychology Building",
+   "kind": "academic",
+   "codes": [
+    "0064"
+   ],
+   "aliases": [],
+   "lng": -83.372924,
+   "lat": 33.952537,
+   "osm": "way/598413277"
+  },
+  {
+   "id": "alexander-campbell-king-law-library",
+   "name": "Alexander Campbell King Law Library",
+   "short": "Alexander Campbell King Law Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.374762,
+   "lat": 33.955023,
+   "osm": "way/41411188"
+  },
+  {
+   "id": "animal-health-research-center",
+   "name": "Animal Health Research Center",
+   "short": "Animal Health Research Center",
+   "kind": "academic",
+   "codes": [
+    "1077"
+   ],
+   "aliases": [],
+   "lng": -83.37295,
+   "lat": 33.940921,
+   "osm": "way/598413103"
+  },
+  {
+   "id": "food-science-building",
+   "name": "Food Science Building",
+   "short": "Food Science Building",
+   "kind": "academic",
+   "codes": [
+    "1020"
+   ],
+   "aliases": [],
+   "lng": -83.37216,
+   "lat": 33.946073,
+   "osm": "way/598413215"
+  },
+  {
+   "id": "joe-frank-harris-commons",
+   "name": "Joe Frank Harris Commons",
+   "short": "Joe Frank Harris Commons",
+   "kind": "dining",
+   "codes": [
+    "1511"
+   ],
+   "aliases": [],
+   "lng": -83.370834,
+   "lat": 33.939088,
+   "osm": "way/598413119"
+  },
+  {
+   "id": "bolton-dining-commons",
+   "name": "Bolton Dining Commons",
+   "short": "Bolton Dining Commons",
+   "kind": "dining",
+   "codes": [
+    "2265"
+   ],
+   "aliases": [],
+   "lng": -83.377506,
+   "lat": 33.951029,
+   "osm": "way/595172296"
+  },
+  {
+   "id": "aderhold-hall",
+   "name": "Aderhold Hall",
+   "short": "Aderhold Hall",
+   "kind": "academic",
+   "codes": [
+    "1060"
+   ],
+   "aliases": [
+    "Aderhold"
+   ],
+   "lng": -83.372965,
+   "lat": 33.941768,
+   "osm": "way/598413188"
+  },
+  {
+   "id": "instructional-plaza",
+   "name": "Instructional Plaza",
+   "short": "Instructional Plaza",
+   "kind": "academic",
+   "codes": [
+    "0066"
+   ],
+   "aliases": [],
+   "lng": -83.37344,
+   "lat": 33.952428,
+   "osm": "relation/277238"
+  },
+  {
+   "id": "fine-arts-building",
+   "name": "Fine Arts Building",
+   "short": "Fine Arts Building",
+   "kind": "academic",
+   "codes": [
+    "0060"
+   ],
+   "aliases": [],
+   "lng": -83.375875,
+   "lat": 33.952516,
+   "osm": "way/598413275"
+  },
+  {
+   "id": "baldwin-hall",
+   "name": "Baldwin Hall",
+   "short": "Baldwin Hall",
+   "kind": "academic",
+   "codes": [
+    "0050"
+   ],
+   "aliases": [],
+   "lng": -83.372312,
+   "lat": 33.953708,
+   "osm": "way/41377566"
+  },
+  {
+   "id": "marine-science-building",
+   "name": "Marine Science Building",
+   "short": "Marine Science Building",
+   "kind": "academic",
+   "codes": [
+    "1030"
+   ],
+   "aliases": [
+    "Marine Science / Dance"
+   ],
+   "lng": -83.376054,
+   "lat": 33.94528,
+   "osm": "way/598413196"
+  },
+  {
+   "id": "geography-and-geology-building",
+   "name": "Geography and Geology Building",
+   "short": "Geography and Geology Building",
+   "kind": "academic",
+   "codes": [
+    "1002"
+   ],
+   "aliases": [
+    "Geography and Geology"
+   ],
+   "lng": -83.375408,
+   "lat": 33.948713,
+   "osm": "way/598413231"
+  },
+  {
+   "id": "shirley-mathis-mcbay-science-library",
+   "name": "Shirley Mathis McBay Science Library",
+   "short": "Shirley Mathis McBay Science Library",
+   "kind": "library",
+   "codes": [
+    "1621"
+   ],
+   "aliases": [
+    "Science Library"
+   ],
+   "lng": -83.375329,
+   "lat": 33.946044,
+   "osm": "way/598413225"
+  },
+  {
+   "id": "rhodes-animal-science-center-c",
+   "name": "Rhodes Animal Science Center - C",
+   "short": "Rhodes Animal Science Center - C",
+   "kind": "academic",
+   "codes": [
+    "1503"
+   ],
+   "aliases": [
+    "Edgar L. Rhodes Center for Animal and Dairy Science - C"
+   ],
+   "lng": -83.368466,
+   "lat": 33.936347,
+   "osm": "way/598413116"
+  },
+  {
+   "id": "memorial-hall",
+   "name": "Memorial Hall",
+   "short": "Memorial Hall",
+   "kind": "academic",
+   "codes": [
+    "0670"
+   ],
+   "aliases": [],
+   "lng": -83.373617,
+   "lat": 33.95127,
+   "osm": "way/41411322"
+  },
+  {
+   "id": "oglethorpe-dining-commons",
+   "name": "Oglethorpe Dining Commons",
+   "short": "Oglethorpe Dining Commons",
+   "kind": "dining",
+   "codes": [
+    "2257"
+   ],
+   "aliases": [],
+   "lng": -83.379447,
+   "lat": 33.947101,
+   "osm": "way/303362048"
+  },
+  {
+   "id": "dining-learning-and-well-being-center",
+   "name": "Dining, Learning and Well-being Center",
+   "short": "Dining, Learning and Well-being Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.379529,
+   "lat": 33.948715,
+   "osm": "way/1509280402"
+  },
+  {
+   "id": "cedar-street-building-a",
+   "name": "Cedar Street Building A",
+   "short": "Cedar Street Building A",
+   "kind": "academic",
+   "codes": [
+    "1013"
+   ],
+   "aliases": [
+    "Building 1013",
+    "Poultry Science"
+   ],
+   "lng": -83.372544,
+   "lat": 33.946813,
+   "osm": "way/598413227"
+  },
+  {
+   "id": "pharmacy-south",
+   "name": "Pharmacy South",
+   "short": "Pharmacy South",
+   "kind": "academic",
+   "codes": [
+    "1038"
+   ],
+   "aliases": [],
+   "lng": -83.375918,
+   "lat": 33.943428,
+   "osm": "way/598413193"
+  },
+  {
+   "id": "correll-hall",
+   "name": "Correll Hall",
+   "short": "Correll Hall",
+   "kind": "academic",
+   "codes": [
+    "0739"
+   ],
+   "aliases": [],
+   "lng": -83.377433,
+   "lat": 33.952798,
+   "osm": "way/598206489"
+  },
+  {
+   "id": "barrow-hall",
+   "name": "Barrow Hall",
+   "short": "Barrow Hall",
+   "kind": "academic",
+   "codes": [
+    "1021"
+   ],
+   "aliases": [],
+   "lng": -83.373715,
+   "lat": 33.946511,
+   "osm": "way/598413217"
+  },
+  {
+   "id": "robert-e-park-hall",
+   "name": "Robert E. Park Hall",
+   "short": "Park Hall",
+   "kind": "academic",
+   "codes": [
+    "0056"
+   ],
+   "aliases": [
+    "Park Hall"
+   ],
+   "lng": -83.375248,
+   "lat": 33.953336,
+   "osm": "way/41377556"
+  },
+  {
+   "id": "conner-hall",
+   "name": "Conner Hall",
+   "short": "Conner Hall",
+   "kind": "academic",
+   "codes": [
+    "1011"
+   ],
+   "aliases": [],
+   "lng": -83.37384,
+   "lat": 33.947503,
+   "osm": "way/41411335"
+  },
+  {
+   "id": "four-towers",
+   "name": "Four Towers",
+   "short": "Four Towers",
+   "kind": "academic",
+   "codes": [
+    "2835"
+   ],
+   "aliases": [],
+   "lng": -83.370247,
+   "lat": 33.935972,
+   "osm": "way/595609739"
+  },
+  {
+   "id": "snelling-dining-commons",
+   "name": "Snelling Dining Commons",
+   "short": "Snelling Dining Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.376408,
+   "lat": 33.944729,
+   "osm": "way/598413202"
+  },
+  {
+   "id": "gilbert-hall",
+   "name": "Gilbert Hall",
+   "short": "Gilbert Hall",
+   "kind": "academic",
+   "codes": [
+    "0640"
+   ],
+   "aliases": [],
+   "lng": -83.376068,
+   "lat": 33.955508,
+   "osm": "way/41377558"
+  },
+  {
+   "id": "hodgson-oil-building",
+   "name": "Hodgson Oil Building",
+   "short": "Hodgson Oil Building",
+   "kind": "academic",
+   "codes": [
+    "0019"
+   ],
+   "aliases": [],
+   "lng": -83.370923,
+   "lat": 33.957206,
+   "osm": "way/154066461"
+  },
+  {
+   "id": "rankin-m-smith-senior-student-athlete-academic-center",
+   "name": "Rankin M. Smith, Senior Student Athlete Academic Center",
+   "short": "Rankin M. Smith, Senior Student Athlete Academic Center",
+   "kind": "academic",
+   "codes": [
+    "1673"
+   ],
+   "aliases": [
+    "Student Athlete Academic Center"
+   ],
+   "lng": -83.378842,
+   "lat": 33.942056,
+   "osm": "way/154156168"
+  },
+  {
+   "id": "holmes-hunter-academic-building",
+   "name": "Holmes-Hunter Academic Building",
+   "short": "Holmes-Hunter Academic Building",
+   "kind": "academic",
+   "codes": [
+    "0120"
+   ],
+   "aliases": [],
+   "lng": -83.37544,
+   "lat": 33.957204,
+   "osm": "way/41377547"
+  },
+  {
+   "id": "rhodes-animal-science-center-a",
+   "name": "Rhodes Animal Science Center - A",
+   "short": "Rhodes Animal Science Center - A",
+   "kind": "academic",
+   "codes": [
+    "1501"
+   ],
+   "aliases": [
+    "Edgar L. Rhodes Center for Animal and Dairy Science - A"
+   ],
+   "lng": -83.369077,
+   "lat": 33.935363,
+   "osm": "way/598413127"
+  },
+  {
+   "id": "amos-hall",
+   "name": "Amos Hall",
+   "short": "Amos Hall",
+   "kind": "academic",
+   "codes": [
+    "0736"
+   ],
+   "aliases": [],
+   "lng": -83.377403,
+   "lat": 33.952266,
+   "osm": "way/598206490"
+  },
+  {
+   "id": "clark-howell-hall",
+   "name": "Clark Howell Hall",
+   "short": "Clark Howell Hall",
+   "kind": "academic",
+   "codes": [
+    "0290"
+   ],
+   "aliases": [],
+   "lng": -83.376968,
+   "lat": 33.949508,
+   "osm": "way/598413232"
+  },
+  {
+   "id": "dawson-hall",
+   "name": "Dawson Hall",
+   "short": "Dawson Hall",
+   "kind": "academic",
+   "codes": [
+    "1010"
+   ],
+   "aliases": [],
+   "lng": -83.37569,
+   "lat": 33.947056,
+   "osm": "way/154066265"
+  },
+  {
+   "id": "ceramics-building",
+   "name": "Ceramics Building",
+   "short": "Ceramics Building",
+   "kind": "academic",
+   "codes": [
+    "2131"
+   ],
+   "aliases": [
+    "Ceramics"
+   ],
+   "lng": -83.369716,
+   "lat": 33.943365,
+   "osm": "way/598413150"
+  },
+  {
+   "id": "hardman-hall",
+   "name": "Hardman Hall",
+   "short": "Hardman Hall",
+   "kind": "academic",
+   "codes": [
+    "1031"
+   ],
+   "aliases": [],
+   "lng": -83.374155,
+   "lat": 33.945079,
+   "osm": "way/598413185"
+  },
+  {
+   "id": "building-2130",
+   "name": "Building 2130",
+   "short": "Building 2130",
+   "kind": "academic",
+   "codes": [
+    "2130"
+   ],
+   "aliases": [],
+   "lng": -83.369813,
+   "lat": 33.942851,
+   "osm": "way/598413151"
+  },
+  {
+   "id": "environmental-health-sciences",
+   "name": "Environmental Health Sciences",
+   "short": "Environmental Health Sciences",
+   "kind": "academic",
+   "codes": [
+    "1050"
+   ],
+   "aliases": [],
+   "lng": -83.374808,
+   "lat": 33.94332,
+   "osm": "way/598413189"
+  },
+  {
+   "id": "wildlife-health",
+   "name": "Wildlife Health",
+   "short": "Wildlife Health",
+   "kind": "academic",
+   "codes": [
+    "1082"
+   ],
+   "aliases": [],
+   "lng": -83.374718,
+   "lat": 33.939502,
+   "osm": "way/598413104"
+  },
+  {
+   "id": "sanford-hall",
+   "name": "Sanford Hall",
+   "short": "Sanford Hall",
+   "kind": "academic",
+   "codes": [
+    "0058",
+    "0678"
+   ],
+   "aliases": [
+    "Sanford Stadium"
+   ],
+   "lng": -83.375011,
+   "lat": 33.953694,
+   "osm": "way/41377563"
+  },
+  {
+   "id": "sanford-and-barbara-orkin-hall",
+   "name": "Sanford and Barbara Orkin Hall",
+   "short": "Sanford and Barbara Orkin Hall",
+   "kind": "academic",
+   "codes": [
+    "0737"
+   ],
+   "aliases": [
+    "Orkin Hall"
+   ],
+   "lng": -83.377821,
+   "lat": 33.951902,
+   "osm": "way/857196613"
+  },
+  {
+   "id": "alpha-chi-omega",
+   "name": "Alpha Chi Omega",
+   "short": "Alpha Chi Omega",
+   "kind": "academic",
+   "codes": [
+    "2218"
+   ],
+   "aliases": [
+    "Alpha Chi Omega Sorority"
+   ],
+   "lng": -83.378952,
+   "lat": 33.946407,
+   "osm": "way/607240007"
+  },
+  {
+   "id": "district-energy-plant-1",
+   "name": "District Energy Plant #1",
+   "short": "District Energy Plant #1",
+   "kind": "academic",
+   "codes": [
+    "0741"
+   ],
+   "aliases": [],
+   "lng": -83.379201,
+   "lat": 33.951993,
+   "osm": "way/598206486"
+  },
+  {
+   "id": "speirs-hall",
+   "name": "Speirs Hall",
+   "short": "Speirs Hall",
+   "kind": "academic",
+   "codes": [
+    "1010"
+   ],
+   "aliases": [],
+   "lng": -83.375276,
+   "lat": 33.946941,
+   "osm": "way/598212185"
+  },
+  {
+   "id": "baptist-collegiate-ministries",
+   "name": "Baptist Collegiate Ministries",
+   "short": "Baptist Collegiate Ministries",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "BCM"
+   ],
+   "lng": -83.376928,
+   "lat": 33.9533,
+   "osm": "way/154066534"
+  },
+  {
+   "id": "child-development-laboratory",
+   "name": "Child Development Laboratory",
+   "short": "Child Development Laboratory",
+   "kind": "academic",
+   "codes": [
+    "1652"
+   ],
+   "aliases": [],
+   "lng": -83.376707,
+   "lat": 33.943556,
+   "osm": "way/598413205"
+  },
+  {
+   "id": "vet-medicine-11",
+   "name": "Vet Medicine 11",
+   "short": "Vet Medicine 11",
+   "kind": "academic",
+   "codes": [
+    "1067"
+   ],
+   "aliases": [],
+   "lng": -83.373335,
+   "lat": 33.939889,
+   "osm": "way/598413098"
+  },
+  {
+   "id": "jw-fanning-institute-for-leadership-development",
+   "name": "J.W. Fanning Institute for Leadership Development",
+   "short": "J.W. Fanning Institute for Leadership Development",
+   "kind": "academic",
+   "codes": [
+    "1675"
+   ],
+   "aliases": [
+    "J.W. Fanning Building"
+   ],
+   "lng": -83.380264,
+   "lat": 33.944815,
+   "osm": "way/607240014"
+  },
+  {
+   "id": "school-of-social-work-building",
+   "name": "School of Social Work Building",
+   "short": "School of Social Work Building",
+   "kind": "academic",
+   "codes": [
+    "0033"
+   ],
+   "aliases": [],
+   "lng": -83.369286,
+   "lat": 33.95286,
+   "osm": "way/598413256"
+  },
+  {
+   "id": "ivester-hall",
+   "name": "Ivester Hall",
+   "short": "Ivester Hall",
+   "kind": "academic",
+   "codes": [
+    "0734"
+   ],
+   "aliases": [],
+   "lng": -83.377152,
+   "lat": 33.951881,
+   "osm": "way/857196614"
+  },
+  {
+   "id": "dean-rusk-hall",
+   "name": "Dean Rusk Hall",
+   "short": "Dean Rusk Hall",
+   "kind": "academic",
+   "codes": [
+    "0045"
+   ],
+   "aliases": [],
+   "lng": -83.37437,
+   "lat": 33.954021,
+   "osm": "way/41377554"
+  },
+  {
+   "id": "university-village-community-office",
+   "name": "University Village Community Office",
+   "short": "University Village Community Office",
+   "kind": "academic",
+   "codes": [
+    "2221",
+    "2222",
+    "2224",
+    "2225",
+    "2226",
+    "2227",
+    "2228",
+    "2229",
+    "2230",
+    "2231",
+    "2238"
+   ],
+   "aliases": [
+    "University Village A",
+    "University Village B",
+    "University Village D",
+    "University Village E",
+    "University Village F",
+    "University Village G",
+    "University Village H",
+    "University Village J",
+    "University Village K",
+    "University Village L"
+   ],
+   "lng": -83.37772,
+   "lat": 33.93169,
+   "osm": "way/607564396"
+  },
+  {
+   "id": "caldwell-hall",
+   "name": "Caldwell Hall",
+   "short": "Caldwell Hall",
+   "kind": "academic",
+   "codes": [
+    "0046"
+   ],
+   "aliases": [],
+   "lng": -83.375303,
+   "lat": 33.954911,
+   "osm": "way/41377561"
+  },
+  {
+   "id": "athens-veterinary-diagnostic-laboratory",
+   "name": "Athens Veterinary Diagnostic Laboratory",
+   "short": "Athens Veterinary Diagnostic Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "DLAB"
+   ],
+   "lng": -83.374904,
+   "lat": 33.940614,
+   "osm": "way/598413092"
+  },
+  {
+   "id": "milledge-hall",
+   "name": "Milledge Hall",
+   "short": "Milledge Hall",
+   "kind": "academic",
+   "codes": [
+    "0271"
+   ],
+   "aliases": [],
+   "lng": -83.37228,
+   "lat": 33.951592,
+   "osm": "way/41411320"
+  },
+  {
+   "id": "hoke-smith-annex",
+   "name": "Hoke Smith Annex",
+   "short": "Hoke Smith Annex",
+   "kind": "academic",
+   "codes": [
+    "1042"
+   ],
+   "aliases": [],
+   "lng": -83.378949,
+   "lat": 33.943903,
+   "osm": "way/598413191"
+  },
+  {
+   "id": "terrell-hall",
+   "name": "Terrell Hall",
+   "short": "Terrell Hall",
+   "kind": "academic",
+   "codes": [
+    "0023"
+   ],
+   "aliases": [],
+   "lng": -83.374181,
+   "lat": 33.956791,
+   "osm": "way/41377545"
+  },
+  {
+   "id": "leconte-hall",
+   "name": "LeConte Hall",
+   "short": "LeConte Hall",
+   "kind": "academic",
+   "codes": [
+    "0053"
+   ],
+   "aliases": [],
+   "lng": -83.373432,
+   "lat": 33.953433,
+   "osm": "way/41377567"
+  },
+  {
+   "id": "hosch-law-library-annex",
+   "name": "Hosch Law Library Annex",
+   "short": "Hosch Law Library Annex",
+   "kind": "library",
+   "codes": [
+    "0043"
+   ],
+   "aliases": [
+    "Law Library Annex"
+   ],
+   "lng": -83.375471,
+   "lat": 33.955386,
+   "osm": "way/41789529"
+  },
+  {
+   "id": "denmark-hall",
+   "name": "Denmark Hall",
+   "short": "Denmark Hall",
+   "kind": "academic",
+   "codes": [
+    "0044"
+   ],
+   "aliases": [],
+   "lng": -83.375624,
+   "lat": 33.9547,
+   "osm": "way/41790312"
+  },
+  {
+   "id": "tucker-hall",
+   "name": "Tucker Hall",
+   "short": "Tucker Hall",
+   "kind": "academic",
+   "codes": [
+    "1250"
+   ],
+   "aliases": [],
+   "lng": -83.371138,
+   "lat": 33.942653,
+   "osm": "way/598413175"
+  },
+  {
+   "id": "administration-building",
+   "name": "Administration Building",
+   "short": "Administration Building",
+   "kind": "academic",
+   "codes": [
+    "0631"
+   ],
+   "aliases": [],
+   "lng": -83.374042,
+   "lat": 33.956245,
+   "osm": "way/41377541"
+  },
+  {
+   "id": "cedar-street-building-d",
+   "name": "Cedar Street Building D",
+   "short": "Cedar Street Building D",
+   "kind": "academic",
+   "codes": [
+    "1004"
+   ],
+   "aliases": [
+    "Chemistry Annex"
+   ],
+   "lng": -83.374824,
+   "lat": 33.948248,
+   "osm": "way/41411312"
+  },
+  {
+   "id": "peabody-hall",
+   "name": "Peabody Hall",
+   "short": "Peabody Hall",
+   "kind": "academic",
+   "codes": [
+    "0042"
+   ],
+   "aliases": [],
+   "lng": -83.373552,
+   "lat": 33.954927,
+   "osm": "way/41377555"
+  },
+  {
+   "id": "moore-rooker-hall",
+   "name": "Moore-Rooker Hall",
+   "short": "Moore-Rooker Hall",
+   "kind": "academic",
+   "codes": [
+    "0738"
+   ],
+   "aliases": [],
+   "lng": -83.377798,
+   "lat": 33.952355,
+   "osm": "way/598206488"
+  },
+  {
+   "id": "studio-225",
+   "name": "Studio 225",
+   "short": "Studio 225",
+   "kind": "academic",
+   "codes": [
+    "0766"
+   ],
+   "aliases": [],
+   "lng": -83.37876,
+   "lat": 33.956603,
+   "osm": "way/598206462"
+  },
+  {
+   "id": "vet-medicine-9",
+   "name": "Vet Medicine 9",
+   "short": "Vet Medicine 9",
+   "kind": "academic",
+   "codes": [
+    "1065"
+   ],
+   "aliases": [
+    "Pet Health Building"
+   ],
+   "lng": -83.373921,
+   "lat": 33.940555,
+   "osm": "way/598413097"
+  },
+  {
+   "id": "human-resources",
+   "name": "Human Resources",
+   "short": "Human Resources",
+   "kind": "academic",
+   "codes": [
+    "0620"
+   ],
+   "aliases": [],
+   "lng": -83.373535,
+   "lat": 33.956701,
+   "osm": "way/41411305"
+  },
+  {
+   "id": "hoke-smith-cooperative-extension-building",
+   "name": "Hoke Smith Cooperative Extension Building",
+   "short": "Hoke Smith Cooperative Extension Building",
+   "kind": "academic",
+   "codes": [
+    "1043"
+   ],
+   "aliases": [
+    "Coop. Ext. Serv. - Hoke Smith"
+   ],
+   "lng": -83.379522,
+   "lat": 33.944354,
+   "osm": "way/598413192"
+  },
+  {
+   "id": "thomas-street-sculpture",
+   "name": "Thomas Street Sculpture",
+   "short": "Thomas Street Sculpture",
+   "kind": "academic",
+   "codes": [
+    "2691"
+   ],
+   "aliases": [],
+   "lng": -83.371935,
+   "lat": 33.956842,
+   "osm": "way/41411306"
+  },
+  {
+   "id": "pi-kappa-alpha",
+   "name": "Pi Kappa Alpha",
+   "short": "Pi Kappa Alpha",
+   "kind": "academic",
+   "codes": [
+    "2294"
+   ],
+   "aliases": [
+    "Pi Kappa Alpha Fraternity"
+   ],
+   "lng": -83.369791,
+   "lat": 33.945823,
+   "osm": "way/598413156"
+  },
+  {
+   "id": "benson-hall",
+   "name": "Benson Hall",
+   "short": "Benson Hall",
+   "kind": "academic",
+   "codes": [
+    "0735"
+   ],
+   "aliases": [],
+   "lng": -83.377039,
+   "lat": 33.952326,
+   "osm": "way/598206453"
+  },
+  {
+   "id": "soil-tillage-laboratory",
+   "name": "Soil Tillage Laboratory",
+   "short": "Soil Tillage Laboratory",
+   "kind": "academic",
+   "codes": [
+    "1094",
+    "2409"
+   ],
+   "aliases": [
+    "Soil Building 2"
+   ],
+   "lng": -83.373928,
+   "lat": 33.938941,
+   "osm": "way/598413102"
+  },
+  {
+   "id": "thomas-street-art-studio",
+   "name": "Thomas Street Art Studio",
+   "short": "Thomas Street Art Studio",
+   "kind": "academic",
+   "codes": [
+    "2606"
+   ],
+   "aliases": [],
+   "lng": -83.371971,
+   "lat": 33.957104,
+   "osm": "way/41411309"
+  },
+  {
+   "id": "vet-medicine-10",
+   "name": "Vet Medicine 10",
+   "short": "Vet Medicine 10",
+   "kind": "academic",
+   "codes": [
+    "1066"
+   ],
+   "aliases": [],
+   "lng": -83.373688,
+   "lat": 33.940242,
+   "osm": "way/598413100"
+  },
+  {
+   "id": "sigma-nu",
+   "name": "Sigma Nu",
+   "short": "Sigma Nu",
+   "kind": "academic",
+   "codes": [
+    "2291"
+   ],
+   "aliases": [
+    "Sigma Nu Fraternity"
+   ],
+   "lng": -83.370309,
+   "lat": 33.946513,
+   "osm": "way/598413155"
+  },
+  {
+   "id": "lake-herrick-pavilion",
+   "name": "Lake Herrick Pavilion",
+   "short": "Lake Herrick Pavilion",
+   "kind": "academic",
+   "codes": [
+    "2440"
+   ],
+   "aliases": [],
+   "lng": -83.371833,
+   "lat": 33.931762,
+   "osm": "way/184624909"
+  },
+  {
+   "id": "uga-chapel",
+   "name": "UGA Chapel",
+   "short": "UGA Chapel",
+   "kind": "academic",
+   "codes": [
+    "0022"
+   ],
+   "aliases": [
+    "Chapel"
+   ],
+   "lng": -83.375215,
+   "lat": 33.956679,
+   "osm": "way/41377544"
+  },
+  {
+   "id": "hirsch-hall",
+   "name": "Hirsch Hall",
+   "short": "Hirsch Hall",
+   "kind": "academic",
+   "codes": [
+    "0043"
+   ],
+   "aliases": [],
+   "lng": -83.374474,
+   "lat": 33.954695,
+   "osm": "way/41789531"
+  },
+  {
+   "id": "facilities-management-north",
+   "name": "Facilities Management North",
+   "short": "Facilities Management North",
+   "kind": "academic",
+   "codes": [
+    "0758"
+   ],
+   "aliases": [],
+   "lng": -83.379636,
+   "lat": 33.953647,
+   "osm": "way/598206469"
+  },
+  {
+   "id": "athenaeum",
+   "name": "Athenaeum",
+   "short": "Athenaeum",
+   "kind": "academic",
+   "codes": [
+    "0768"
+   ],
+   "aliases": [
+    "The Athenaeum"
+   ],
+   "lng": -83.379366,
+   "lat": 33.956485,
+   "osm": "way/598206481"
+  },
+  {
+   "id": "jewelry-and-metalwork-art-studios",
+   "name": "Jewelry & Metalwork Art Studios",
+   "short": "Jewelry & Metalwork Art Studios",
+   "kind": "academic",
+   "codes": [
+    "2680"
+   ],
+   "aliases": [
+    "Jewelry and Metalwork"
+   ],
+   "lng": -83.371563,
+   "lat": 33.957064,
+   "osm": "way/41411311"
+  },
+  {
+   "id": "tau-epsilon-phi",
+   "name": "Tau Epsilon Phi",
+   "short": "Tau Epsilon Phi",
+   "kind": "academic",
+   "codes": [
+    "2292"
+   ],
+   "aliases": [
+    "Tau Epsilon Phi Fraternity"
+   ],
+   "lng": -83.369853,
+   "lat": 33.946257,
+   "osm": "way/598413154"
+  },
+  {
+   "id": "military-building-army-rotc",
+   "name": "Military Building Army ROTC",
+   "short": "Military Building Army ROTC",
+   "kind": "academic",
+   "codes": [
+    "0061"
+   ],
+   "aliases": [],
+   "lng": -83.374983,
+   "lat": 33.952594,
+   "osm": "way/41411316"
+  },
+  {
+   "id": "life-sciences-fermentation-lab",
+   "name": "Life Sciences Fermentation Lab",
+   "short": "Life Sciences Fermentation Lab",
+   "kind": "academic",
+   "codes": [
+    "1058"
+   ],
+   "aliases": [],
+   "lng": -83.371802,
+   "lat": 33.943243,
+   "osm": "way/598413183"
+  },
+  {
+   "id": "new-college",
+   "name": "New College",
+   "short": "New College",
+   "kind": "academic",
+   "codes": [
+    "0030"
+   ],
+   "aliases": [],
+   "lng": -83.374937,
+   "lat": 33.956175,
+   "osm": "way/41377543"
+  },
+  {
+   "id": "business-services-building",
+   "name": "Business Services Building",
+   "short": "Business Services Building",
+   "kind": "academic",
+   "codes": [
+    "0110",
+    "0121"
+   ],
+   "aliases": [
+    "Business Services",
+    "Business Services Annex"
+   ],
+   "lng": -83.37332,
+   "lat": 33.9578,
+   "osm": "way/1231128589"
+  },
+  {
+   "id": "food-processing-lab",
+   "name": "Food Processing Lab",
+   "short": "Food Processing Lab",
+   "kind": "academic",
+   "codes": [
+    "1022"
+   ],
+   "aliases": [],
+   "lng": -83.373454,
+   "lat": 33.946211,
+   "osm": "way/598413216"
+  },
+  {
+   "id": "moore-hall",
+   "name": "Moore Hall",
+   "short": "Moore Hall",
+   "kind": "academic",
+   "codes": [
+    "0025"
+   ],
+   "aliases": [],
+   "lng": -83.375813,
+   "lat": 33.95652,
+   "osm": "way/41377542"
+  },
+  {
+   "id": "candler-hall",
+   "name": "Candler Hall",
+   "short": "Candler Hall",
+   "kind": "academic",
+   "codes": [
+    "0031"
+   ],
+   "aliases": [],
+   "lng": -83.376144,
+   "lat": 33.956079,
+   "osm": "way/41377549"
+  },
+  {
+   "id": "old-college",
+   "name": "Old College",
+   "short": "Old College",
+   "kind": "academic",
+   "codes": [
+    "0130"
+   ],
+   "aliases": [],
+   "lng": -83.374511,
+   "lat": 33.955797,
+   "osm": "way/41378338"
+  },
+  {
+   "id": "meigs-hall",
+   "name": "Meigs Hall",
+   "short": "Meigs Hall",
+   "kind": "academic",
+   "codes": [
+    "0024"
+   ],
+   "aliases": [],
+   "lng": -83.376283,
+   "lat": 33.956567,
+   "osm": "way/41377548"
+  },
+  {
+   "id": "thomas-street-south",
+   "name": "Thomas Street South",
+   "short": "Thomas Street South",
+   "kind": "academic",
+   "codes": [
+    "2600"
+   ],
+   "aliases": [],
+   "lng": -83.372203,
+   "lat": 33.956826,
+   "osm": "way/41790314"
+  },
+  {
+   "id": "office-of-service-learning",
+   "name": "Office of Service-Learning",
+   "short": "Office of Service-Learning",
+   "kind": "academic",
+   "codes": [
+    "2627"
+   ],
+   "aliases": [],
+   "lng": -83.381066,
+   "lat": 33.945391,
+   "osm": "way/303361658"
+  },
+  {
+   "id": "tanner-building",
+   "name": "Tanner Building",
+   "short": "Tanner Building",
+   "kind": "academic",
+   "codes": [
+    "0123"
+   ],
+   "aliases": [],
+   "lng": -83.373048,
+   "lat": 33.956897,
+   "osm": "way/41411307"
+  },
+  {
+   "id": "mens-tennis-clubhouse",
+   "name": "Men's Tennis Clubhouse",
+   "short": "Men's Tennis Clubhouse",
+   "kind": "academic",
+   "codes": [
+    "1679"
+   ],
+   "aliases": [],
+   "lng": -83.379436,
+   "lat": 33.940519,
+   "osm": "way/303403976"
+  },
+  {
+   "id": "vet-medicine-6",
+   "name": "Vet Medicine 6",
+   "short": "Vet Medicine 6",
+   "kind": "academic",
+   "codes": [
+    "1073"
+   ],
+   "aliases": [],
+   "lng": -83.375313,
+   "lat": 33.939638,
+   "osm": "way/598413099"
+  },
+  {
+   "id": "treanor-house",
+   "name": "Treanor House",
+   "short": "Treanor House",
+   "kind": "academic",
+   "codes": [
+    "1657"
+   ],
+   "aliases": [],
+   "lng": -83.38003,
+   "lat": 33.945347,
+   "osm": "way/607240008"
+  },
+  {
+   "id": "womens-tennis-clubhouse",
+   "name": "Women's Tennis Clubhouse",
+   "short": "Women's Tennis Clubhouse",
+   "kind": "academic",
+   "codes": [
+    "1678"
+   ],
+   "aliases": [],
+   "lng": -83.37819,
+   "lat": 33.940495,
+   "osm": "way/598413113"
+  },
+  {
+   "id": "omega-tau-sigma-fraternity",
+   "name": "Omega Tau Sigma Fraternity",
+   "short": "Omega Tau Sigma Fraternity",
+   "kind": "academic",
+   "codes": [
+    "2256"
+   ],
+   "aliases": [],
+   "lng": -83.378538,
+   "lat": 33.939781,
+   "osm": "way/303403966"
+  },
+  {
+   "id": "ita-national-collegiate-tennis-hall-of-fame",
+   "name": "ITA National Collegiate Tennis Hall of Fame",
+   "short": "ITA National Collegiate Tennis Hall of Fame",
+   "kind": "academic",
+   "codes": [
+    "1670"
+   ],
+   "aliases": [
+    "Tennis Hall of Fame"
+   ],
+   "lng": -83.379065,
+   "lat": 33.940717,
+   "osm": "way/303403958"
+  },
+  {
+   "id": "lustrat-house",
+   "name": "Lustrat House",
+   "short": "Lustrat House",
+   "kind": "academic",
+   "codes": [
+    "0632"
+   ],
+   "aliases": [],
+   "lng": -83.373844,
+   "lat": 33.955772,
+   "osm": "way/41377568"
+  },
+  {
+   "id": "district-energy-plant-2",
+   "name": "District Energy Plant #2",
+   "short": "District Energy Plant #2",
+   "kind": "academic",
+   "codes": [
+    "1617"
+   ],
+   "aliases": [],
+   "lng": -83.37283,
+   "lat": 33.944924,
+   "osm": "way/1054894854"
+  },
+  {
+   "id": "vet-medicine-2",
+   "name": "Vet Medicine 2",
+   "short": "Vet Medicine 2",
+   "kind": "academic",
+   "codes": [
+    "1072"
+   ],
+   "aliases": [],
+   "lng": -83.374635,
+   "lat": 33.940368,
+   "osm": "way/598413105"
+  },
+  {
+   "id": "lumpkin-house",
+   "name": "Lumpkin House",
+   "short": "Lumpkin House",
+   "kind": "academic",
+   "codes": [
+    "1012"
+   ],
+   "aliases": [],
+   "lng": -83.373936,
+   "lat": 33.947801,
+   "osm": "way/598413228"
+  },
+  {
+   "id": "phi-kappa-hall",
+   "name": "Phi Kappa Hall",
+   "short": "Phi Kappa Hall",
+   "kind": "academic",
+   "codes": [
+    "0020"
+   ],
+   "aliases": [],
+   "lng": -83.37424,
+   "lat": 33.957134,
+   "osm": "way/41377546"
+  },
+  {
+   "id": "geology-hydrothermal-lab",
+   "name": "Geology Hydrothermal Lab",
+   "short": "Geology Hydrothermal Lab",
+   "kind": "academic",
+   "codes": [
+    "0090"
+   ],
+   "aliases": [],
+   "lng": -83.375998,
+   "lat": 33.949396,
+   "osm": "way/598413233"
+  },
+  {
+   "id": "cobb-house",
+   "name": "Cobb House",
+   "short": "Cobb House",
+   "kind": "academic",
+   "codes": [
+    "1656"
+   ],
+   "aliases": [],
+   "lng": -83.379887,
+   "lat": 33.945601,
+   "osm": "way/607240009"
+  },
+  {
+   "id": "vet-medicine-5d",
+   "name": "Vet Medicine 5D",
+   "short": "Vet Medicine 5D",
+   "kind": "academic",
+   "codes": [
+    "1683"
+   ],
+   "aliases": [],
+   "lng": -83.374142,
+   "lat": 33.939693,
+   "osm": "way/598413094"
+  },
+  {
+   "id": "demosthenian-hall",
+   "name": "Demosthenian Hall",
+   "short": "Demosthenian Hall",
+   "kind": "academic",
+   "codes": [
+    "0021"
+   ],
+   "aliases": [],
+   "lng": -83.375208,
+   "lat": 33.956904,
+   "osm": "way/41377550"
+  },
+  {
+   "id": "waddel-hall",
+   "name": "Waddel Hall",
+   "short": "Waddel Hall",
+   "kind": "academic",
+   "codes": [
+    "0041"
+   ],
+   "aliases": [],
+   "lng": -83.373885,
+   "lat": 33.955411,
+   "osm": "way/41377557"
+  },
+  {
+   "id": "vet-medicine-5c",
+   "name": "Vet Medicine 5C",
+   "short": "Vet Medicine 5C",
+   "kind": "academic",
+   "codes": [
+    "1682"
+   ],
+   "aliases": [],
+   "lng": -83.373995,
+   "lat": 33.939562,
+   "osm": "way/598413095"
+  }
+ ]
+}

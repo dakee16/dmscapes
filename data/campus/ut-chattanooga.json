@@ -1,0 +1,611 @@
+{
+ "collegeId": "ut-chattanooga",
+ "generatedAt": "2026-11-08T17:15:47.512Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/ut-chattanooga.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -85.30423,
+  35.04274,
+  -85.29322,
+  35.04993
+ ],
+ "halls": [
+  {
+   "dormId": "west-campus",
+   "name": "West Campus",
+   "lng": -85.302248,
+   "lat": 35.049151,
+   "pin": "name",
+   "osm": "way/611908668",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "utc-maclellan-gym",
+     "minutes": 5.3
+    },
+    "library": {
+     "placeId": "utc-library",
+     "minutes": 4.1
+    }
+   }
+  },
+  {
+   "dormId": "lockmiller-apartments",
+   "name": "Lockmiller Apartments",
+   "lng": -85.296222,
+   "lat": 35.04459,
+   "pin": "name",
+   "osm": "way/46847034",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "utc-maclellan-gym",
+     "minutes": 8.7
+    },
+    "library": {
+     "placeId": "utc-library",
+     "minutes": 8.3
+    }
+   }
+  },
+  {
+   "dormId": "boling-apartments",
+   "name": "Boling Apartments",
+   "lng": -85.300796,
+   "lat": 35.048656,
+   "pin": "name",
+   "osm": "way/66960556",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "utc-arc",
+     "minutes": 3.8
+    },
+    "library": {
+     "placeId": "utc-library",
+     "minutes": 2.8
+    }
+   }
+  },
+  {
+   "dormId": "walker-apartments",
+   "name": "Walker Apartments",
+   "lng": -85.298711,
+   "lat": 35.044052,
+   "pin": "name",
+   "osm": "way/80094470",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "utc-maclellan-gym",
+     "minutes": 8.3
+    },
+    "library": {
+     "placeId": "utc-library",
+     "minutes": 7.7
+    }
+   }
+  },
+  {
+   "dormId": "stagmaier-hall",
+   "name": "Stagmaier Hall",
+   "lng": -85.298324,
+   "lat": 35.045246,
+   "pin": "name",
+   "osm": "way/66955070",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "utc-maclellan-gym",
+     "minutes": 6.9
+    },
+    "library": {
+     "placeId": "utc-library",
+     "minutes": 6.4
+    }
+   }
+  },
+  {
+   "dormId": "stophel-apartments",
+   "name": "Stophel Apartments",
+   "lng": -85.300474,
+   "lat": 35.043835,
+   "pin": "name",
+   "osm": "way/148770952",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "utc-maclellan-gym",
+     "minutes": 9.9
+    },
+    "library": {
+     "placeId": "utc-library",
+     "minutes": 7.3
+    }
+   }
+  },
+  {
+   "dormId": "johnson-obear-apartments",
+   "name": "Johnson Obear Apartments",
+   "lng": -85.302706,
+   "lat": 35.048568,
+   "pin": "name",
+   "osm": "relation/2325867",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "utc-maclellan-gym",
+     "minutes": 7.3
+    },
+    "library": {
+     "placeId": "utc-library",
+     "minutes": 5.9
+    }
+   }
+  },
+  {
+   "dormId": "decosimo-apartments",
+   "name": "Decosimo Apartments",
+   "lng": -85.301833,
+   "lat": 35.044414,
+   "pin": "name",
+   "osm": "way/511373988",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "utc-maclellan-gym",
+     "minutes": 11.5
+    },
+    "library": {
+     "placeId": "utc-library",
+     "minutes": 8.9
+    }
+   }
+  },
+  {
+   "dormId": "guerry-apartments",
+   "name": "Guerry Apartments",
+   "lng": -85.303164,
+   "lat": 35.044601,
+   "pin": "name",
+   "osm": "way/80094426",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "utc-maclellan-gym",
+     "minutes": 8.6
+    },
+    "library": {
+     "placeId": "utc-library",
+     "minutes": 6
+    }
+   }
+  },
+  {
+   "dormId": "palmetto-place-apartments",
+   "name": "Palmetto Place Apartments",
+   "lng": -85.296572,
+   "lat": 35.042921,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "utc-maclellan-gym",
+     "minutes": 11.7
+    },
+    "library": {
+     "placeId": "utc-library",
+     "minutes": 11.1
+    }
+   }
+  },
+  {
+   "dormId": "uc-foundation-apartments",
+   "name": "UC Foundation Apartments",
+   "lng": -85.298613,
+   "lat": 35.044513,
+   "pin": "name",
+   "osm": "way/469499484",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "utc-maclellan-gym",
+     "minutes": 8.5
+    },
+    "library": {
+     "placeId": "utc-library",
+     "minutes": 8
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "utc-university-center",
+   "name": "UTC University Center",
+   "short": "UTC University Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.298361,
+   "lat": 35.047897,
+   "osm": "way/45277690"
+  },
+  {
+   "id": "utc-arc",
+   "name": "UTC ARC",
+   "short": "UTC ARC",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.299492,
+   "lat": 35.049926,
+   "osm": "way/150237683"
+  },
+  {
+   "id": "utc-fine-arts-center",
+   "name": "UTC Fine Arts Center",
+   "short": "UTC Fine Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.295592,
+   "lat": 35.045645,
+   "osm": "way/66955759"
+  },
+  {
+   "id": "utc-maclellan-gym",
+   "name": "UTC Maclellan Gym",
+   "short": "UTC Maclellan Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.299725,
+   "lat": 35.048352,
+   "osm": "way/45277695"
+  },
+  {
+   "id": "utc-ecs-building",
+   "name": "UTC ECS Building",
+   "short": "UTC ECS Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.295368,
+   "lat": 35.046517,
+   "osm": "way/66956455"
+  },
+  {
+   "id": "utc-admin-building",
+   "name": "UTC Admin Building",
+   "short": "UTC Admin Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.293219,
+   "lat": 35.047271,
+   "osm": "way/66957546"
+  },
+  {
+   "id": "utc-lupton-hall",
+   "name": "UTC Lupton Hall",
+   "short": "UTC Lupton Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.29748,
+   "lat": 35.046505,
+   "osm": "way/45277634"
+  },
+  {
+   "id": "utc-library",
+   "name": "UTC Library",
+   "short": "UTC Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.300192,
+   "lat": 35.047424,
+   "osm": "way/309137786"
+  },
+  {
+   "id": "utc-mapp-building",
+   "name": "UTC Mapp Building",
+   "short": "UTC Mapp Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.304235,
+   "lat": 35.045403,
+   "osm": "way/150237844"
+  },
+  {
+   "id": "utc-state-building",
+   "name": "UTC State Building",
+   "short": "UTC State Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.303326,
+   "lat": 35.046145,
+   "osm": "way/150237847"
+  },
+  {
+   "id": "utc-metro-building",
+   "name": "UTC Metro Building",
+   "short": "UTC Metro Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.303656,
+   "lat": 35.04702,
+   "osm": "way/148490310"
+  },
+  {
+   "id": "utc-challenger-center",
+   "name": "UTC Challenger Center",
+   "short": "UTC Challenger Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.294677,
+   "lat": 35.04777,
+   "osm": "way/66956650"
+  },
+  {
+   "id": "utc-holt-hall",
+   "name": "UTC Holt Hall",
+   "short": "UTC Holt Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.296577,
+   "lat": 35.047657,
+   "osm": "way/45277643"
+  },
+  {
+   "id": "utc-grote-hall",
+   "name": "UTC Grote Hall",
+   "short": "UTC Grote Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.297221,
+   "lat": 35.047325,
+   "osm": "way/45277619"
+  },
+  {
+   "id": "utc-fletcher-hall",
+   "name": "UTC Fletcher Hall",
+   "short": "UTC Fletcher Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.301046,
+   "lat": 35.046122,
+   "osm": "way/46846885"
+  },
+  {
+   "id": "lawson-center",
+   "name": "Lawson Center",
+   "short": "Lawson Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.302027,
+   "lat": 35.04825,
+   "osm": "way/731218651"
+  },
+  {
+   "id": "utc-hooper-hall",
+   "name": "UTC Hooper Hall",
+   "short": "UTC Hooper Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.299701,
+   "lat": 35.046068,
+   "osm": "way/45277698"
+  },
+  {
+   "id": "multidisciplinary-research-building",
+   "name": "Multidisciplinary Research Building",
+   "short": "Multidisciplinary Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.29927,
+   "lat": 35.042742,
+   "osm": "way/80094478"
+  },
+  {
+   "id": "cross-roads",
+   "name": "Cross Roads",
+   "short": "Cross Roads",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.297822,
+   "lat": 35.046001,
+   "osm": "way/45277697"
+  },
+  {
+   "id": "utc-hunter-hall",
+   "name": "UTC Hunter Hall",
+   "short": "UTC Hunter Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.298908,
+   "lat": 35.04551,
+   "osm": "way/46846882"
+  },
+  {
+   "id": "utc-doctors-building",
+   "name": "UTC Doctor's Building",
+   "short": "UTC Doctor's Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.29673,
+   "lat": 35.043862,
+   "osm": "way/80094448"
+  },
+  {
+   "id": "utc-cadek-hall",
+   "name": "UTC Cadek Hall",
+   "short": "UTC Cadek Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.297007,
+   "lat": 35.045613,
+   "osm": "way/46847028"
+  },
+  {
+   "id": "derthick-hall",
+   "name": "Derthick Hall",
+   "short": "Derthick Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.299393,
+   "lat": 35.047279,
+   "osm": "way/661547362"
+  },
+  {
+   "id": "utc-stacy-town-center",
+   "name": "UTC Stacy Town Center",
+   "short": "UTC Stacy Town Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.30116,
+   "lat": 35.044504,
+   "osm": "way/49533186"
+  },
+  {
+   "id": "utc-brock-hall",
+   "name": "UTC Brock Hall",
+   "short": "UTC Brock Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.298271,
+   "lat": 35.046929,
+   "osm": "way/45277609"
+  },
+  {
+   "id": "utc-davenport-hall",
+   "name": "UTC Davenport Hall",
+   "short": "UTC Davenport Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.302143,
+   "lat": 35.04753,
+   "osm": "way/80094461"
+  },
+  {
+   "id": "utc-founders-hall",
+   "name": "UTC Founders Hall",
+   "short": "UTC Founders Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.300334,
+   "lat": 35.046011,
+   "osm": "way/46846884"
+  },
+  {
+   "id": "utc-bretske-hall",
+   "name": "UTC Bretske Hall",
+   "short": "UTC Bretske Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.299,
+   "lat": 35.046299,
+   "osm": "way/66967666"
+  },
+  {
+   "id": "utc-pfeiffer-hall",
+   "name": "UTC Pfeiffer Hall",
+   "short": "UTC Pfeiffer Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.298439,
+   "lat": 35.045474,
+   "osm": "way/469499485"
+  },
+  {
+   "id": "utc-patten-house",
+   "name": "UTC Patten House",
+   "short": "UTC Patten House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.294906,
+   "lat": 35.044828,
+   "osm": "way/185381352"
+  },
+  {
+   "id": "utc-development-house",
+   "name": "UTC Development House",
+   "short": "UTC Development House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.300478,
+   "lat": 35.046923,
+   "osm": "way/66961593"
+  },
+  {
+   "id": "utc-rotc-building",
+   "name": "UTC ROTC Building",
+   "short": "UTC ROTC Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.30074,
+   "lat": 35.047879,
+   "osm": "way/80094464"
+  },
+  {
+   "id": "alternative-energy-lab",
+   "name": "Alternative Energy Lab",
+   "short": "Alternative Energy Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.298522,
+   "lat": 35.043068,
+   "osm": "way/962473829"
+  }
+ ]
+}

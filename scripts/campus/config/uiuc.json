@@ -1,0 +1,17 @@
+{
+  "collegeId": "uiuc",
+  "area": {
+    "osm": "relation/12299045",
+    "bbox": [
+      40.095,
+      -88.242,
+      40.118,
+      -88.214
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/uiuc.codes.json"
+  }
+}

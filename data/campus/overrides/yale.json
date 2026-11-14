@@ -1,0 +1,173 @@
+{
+  "halls": {
+    "es-harkness-hall": {
+      "pin": [
+        -72.934131,
+        41.30445
+      ]
+    },
+    "276-prospect": {
+      "pin": [
+        -72.923979,
+        41.319209
+      ]
+    },
+    "254-prospect": {
+      "pin": [
+        -72.924029,
+        41.318799
+      ]
+    },
+    "bauer-hall": {
+      "pin": [
+        -72.921742,
+        41.323427
+      ]
+    },
+    "old-campus": {
+      "pin": [
+        -72.92863,
+        41.309782
+      ]
+    }
+  },
+  "places": {
+    "pauli-murray-college": {
+      "hide": true
+    },
+    "benjamin-franklin-college": {
+      "hide": true
+    },
+    "silliman-college": {
+      "hide": true
+    },
+    "branford-college": {
+      "hide": true
+    },
+    "hopper-college": {
+      "hide": true
+    },
+    "saybrook-college": {
+      "hide": true
+    },
+    "timothy-dwight-college": {
+      "hide": true
+    },
+    "jonathan-edwards-college": {
+      "hide": true
+    },
+    "berkeley-college": {
+      "hide": true
+    },
+    "pierson-college": {
+      "hide": true
+    },
+    "trumbull-college": {
+      "hide": true
+    },
+    "morse-college": {
+      "hide": true
+    },
+    "ezra-stiles-college": {
+      "hide": true
+    },
+    "132-davenport": {
+      "hide": true
+    },
+    "vanderbilt-hall": {
+      "hide": true
+    },
+    "bingham-hall": {
+      "hide": true
+    },
+    "durfee-building": {
+      "hide": true
+    },
+    "welch-hall": {
+      "hide": true
+    },
+    "farnam-hall": {
+      "hide": true
+    },
+    "mcclellan-hall": {
+      "hide": true
+    },
+    "sterling-hall-of-medicine": {
+      "hide": true
+    },
+    "yale-school-of-medicine-business-center": {
+      "hide": true
+    },
+    "slifka-center-for-jewish-life": {
+      "hide": true
+    },
+    "battell-chapel": {
+      "hide": true
+    },
+    "ingalls-ice-rink": {
+      "hide": true
+    },
+    "schwarzman-center": {
+      "kind": "dining"
+    },
+    "curtis-hall": {
+      "hide": true
+    },
+    "bellamy-hall": {
+      "hide": true
+    },
+    "fisher-hall": {
+      "hide": true
+    }
+  },
+  "codes": {
+    "BASSLB": null
+  },
+  "notes": {
+    "es-harkness-hall": "Edward S. Harkness Hall, the medical-campus dormitory at 367 Cedar Street, is OSM's Harkness Memorial Hall (relation/5638036); pinned there (housing.yale.edu/graduate-housing).",
+    "276-prospect": "OSM draws 276 Prospect Street with an address but no name (way/217182138); pinned on it (housing.yale.edu/graduate-housing).",
+    "254-prospect": "OSM draws 254 Prospect Street with an address but no name (way/217182136); pinned on it (housing.yale.edu/graduate-housing).",
+    "bauer-hall": "Bauer Hall is the residence wing of the Sterling Divinity Quadrangle at 409 Prospect Street; pinned on OSM's Yale Divinity School building (relation/5730472).",
+    "old-campus": "A group entry for the residential colleges and Old Campus; pinned on Lanman-Wright Hall (OSM way/139759946, 206 Elm Street), a first-year dormitory on Old Campus (yalecollege.yale.edu/campus-life/residential-colleges).",
+    "BASSLB": "The word rule matched Bass Library (BASSLB) to the Bass Center for Molecular and Structural Biology on Science Hill; Bass Library is the underground library on Cross Campus, which OSM draws as its own buildings.",
+    "pauli-murray-college": "A residential college (undergraduate housing), not a class building.",
+    "benjamin-franklin-college": "A residential college (undergraduate housing), not a class building.",
+    "silliman-college": "A residential college (undergraduate housing), not a class building.",
+    "branford-college": "A residential college (undergraduate housing), not a class building.",
+    "hopper-college": "A residential college (undergraduate housing), not a class building.",
+    "saybrook-college": "A residential college (undergraduate housing), not a class building.",
+    "timothy-dwight-college": "A residential college (undergraduate housing), not a class building.",
+    "jonathan-edwards-college": "A residential college (undergraduate housing), not a class building.",
+    "berkeley-college": "A residential college (undergraduate housing), not a class building.",
+    "pierson-college": "A residential college (undergraduate housing), not a class building.",
+    "trumbull-college": "A residential college (undergraduate housing), not a class building.",
+    "morse-college": "A residential college (undergraduate housing), not a class building.",
+    "ezra-stiles-college": "A residential college (undergraduate housing), not a class building.",
+    "132-davenport": "A residential college (undergraduate housing), not a class building.",
+    "vanderbilt-hall": "An Old Campus first-year dormitory, not a class building.",
+    "bingham-hall": "An Old Campus first-year dormitory, not a class building.",
+    "durfee-building": "An Old Campus first-year dormitory, not a class building.",
+    "welch-hall": "An Old Campus first-year dormitory, not a class building.",
+    "farnam-hall": "An Old Campus first-year dormitory, not a class building.",
+    "mcclellan-hall": "An Old Campus first-year dormitory, not a class building.",
+    "sterling-hall-of-medicine": "School of Medicine building (clinical teaching and business offices), not somewhere undergraduate classes happen.",
+    "yale-school-of-medicine-business-center": "School of Medicine building (clinical teaching and business offices), not somewhere undergraduate classes happen.",
+    "slifka-center-for-jewish-life": "A religious-life building, not somewhere classes happen.",
+    "battell-chapel": "A religious-life building, not somewhere classes happen.",
+    "ingalls-ice-rink": "Varsity hockey rink, not a class building or student gym.",
+    "schwarzman-center": "The Schwarzman Center holds Commons, the campus-wide dining hall (schwarzman.yale.edu/commons); its name doesn't say dining and the FAS code list leaves it uncoded.",
+    "curtis-hall": "A Sterling Divinity Quadrangle residence building on Canner Street (OSM alt_name Curtis/Bellamy/Fisher Building), Divinity School housing, not a class building.",
+    "bellamy-hall": "A Sterling Divinity Quadrangle residence building on Canner Street (OSM alt_name Curtis/Bellamy/Fisher Building), Divinity School housing, not a class building.",
+    "fisher-hall": "A Sterling Divinity Quadrangle residence building on Canner Street (OSM alt_name Curtis/Bellamy/Fisher Building), Divinity School housing, not a class building."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "276-prospect -> class-of-1954-chemistry-research-building",
+        "254-prospect -> class-of-1954-chemistry-research-building"
+      ],
+      "maxRatio": 4,
+      "why": "254 and 276 Prospect Street face the Class of 1954 Chemistry Research Building across Prospect Street, whose only mapped crossing nearby is at the Edwards Street junction to the north, so walks go up to it and back down the far side."
+    }
+  ]
+}

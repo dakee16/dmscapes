@@ -1,0 +1,395 @@
+{
+  "halls": {
+    "undergraduate-halls": {
+      "pin": [
+        -122.165652,
+        37.424416
+      ]
+    },
+    "gsb-residences": {
+      "pin": [
+        -122.161886,
+        37.426511
+      ]
+    },
+    "escondido-village": {
+      "pin": [
+        -122.158687,
+        37.424901
+      ]
+    },
+    "munger-residences": {
+      "pin": [
+        -122.165638,
+        37.423253
+      ]
+    },
+    "lyman-residences": {
+      "pin": [
+        -122.181471,
+        37.425875
+      ]
+    }
+  },
+  "places": {
+    "288": {
+      "hide": true
+    },
+    "stanford-hospital": {
+      "hide": true
+    },
+    "stanford-hospital-891732466": {
+      "hide": true
+    },
+    "lucile-packard-childrens-hospital-west": {
+      "hide": true
+    },
+    "lucile-packard-childrens-hospital-main": {
+      "hide": true
+    },
+    "stanford-cancer-center": {
+      "hide": true
+    },
+    "stanford-neuroscience-health-center": {
+      "hide": true
+    },
+    "stanford-comprehensive-ent-clinic": {
+      "hide": true
+    },
+    "hoover-pavilion": {
+      "hide": true
+    },
+    "blake-wilbur-building": {
+      "hide": true
+    },
+    "medical-school-office-building": {
+      "hide": true
+    },
+    "comparative-medicine-pavilion": {
+      "hide": true
+    },
+    "school-of-medicine-loading-dock": {
+      "hide": true
+    },
+    "florence-moore-hall": {
+      "hide": true
+    },
+    "roble-hall": {
+      "hide": true
+    },
+    "kimball-hall": {
+      "hide": true
+    },
+    "munger-building-2": {
+      "hide": true
+    },
+    "munger-building-4": {
+      "hide": true
+    },
+    "munger-building-5": {
+      "hide": true
+    },
+    "xanadu": {
+      "hide": true
+    },
+    "the-well-house-robert-s-moore-n": {
+      "hide": true
+    },
+    "avanti": {
+      "hide": true
+    },
+    "beefeaters": {
+      "hide": true
+    },
+    "middle-earth": {
+      "hide": true
+    },
+    "bollard": {
+      "hide": true
+    },
+    "modular-1": {
+      "hide": true
+    },
+    "modular-2": {
+      "hide": true
+    },
+    "modular-3": {
+      "hide": true
+    },
+    "modular-4": {
+      "hide": true
+    },
+    "modular-5": {
+      "hide": true
+    },
+    "oak": {
+      "hide": true
+    },
+    "birch": {
+      "hide": true
+    },
+    "laurel": {
+      "hide": true
+    },
+    "poplar": {
+      "hide": true
+    },
+    "acacia": {
+      "hide": true
+    },
+    "juniper": {
+      "hide": true
+    },
+    "lbre-district-work-center": {
+      "hide": true
+    },
+    "lbre-office-09-105": {
+      "hide": true
+    },
+    "district-work-center-campus-drive": {
+      "hide": true
+    },
+    "memorial-way-district-work-center": {
+      "hide": true
+    },
+    "steamfitters-shop-09-130": {
+      "hide": true
+    },
+    "carpenters-shop-09-135": {
+      "hide": true
+    },
+    "peninsula-sanitary-service-09-950": {
+      "hide": true
+    },
+    "central-process-steam-building": {
+      "hide": true
+    },
+    "environmental-safety-facility-building-a": {
+      "hide": true
+    },
+    "environmental-safety-facility-building-b": {
+      "hide": true
+    },
+    "environmental-safety-facility-building-c": {
+      "hide": true
+    },
+    "environmental-safety-facility-annex": {
+      "hide": true
+    },
+    "environmental-health-and-safety": {
+      "hide": true
+    },
+    "it-offices-09-190": {
+      "hide": true
+    },
+    "forsythe-data-center": {
+      "hide": true
+    },
+    "northwest-data-center-and-communications-hub": {
+      "hide": true
+    },
+    "lasuen-restroom": {
+      "hide": true
+    },
+    "stanford-mausoleum": {
+      "hide": true
+    },
+    "palo-alto-fire-station-6": {
+      "hide": true
+    },
+    "fire-truck-house": {
+      "hide": true
+    },
+    "fire-training-tower-09-210": {
+      "hide": true
+    },
+    "stanford-bookstore": {
+      "hide": true
+    },
+    "stanford-station-post-office": {
+      "hide": true
+    },
+    "stanford-federal-credit-union": {
+      "hide": true
+    },
+    "bank-of-america": {
+      "hide": true
+    },
+    "annettes-cafe": {
+      "hide": true
+    },
+    "coupa-cafe": {
+      "hide": true
+    },
+    "arrillaga-golf-shop": {
+      "hide": true
+    },
+    "clubhouse": {
+      "hide": true
+    },
+    "maples-pavilion": {
+      "hide": true
+    },
+    "burnham-pavilion": {
+      "hide": true
+    },
+    "burnham-pavilion-232805658": {
+      "hide": true
+    },
+    "arrillaga-family-sports-center": {
+      "hide": true
+    },
+    "sam-mcdonald-track-house": {
+      "hide": true
+    },
+    "frances-c-arrillaga-alumni-center": {
+      "hide": true
+    },
+    "faculty-club": {
+      "hide": true
+    },
+    "press": {
+      "hide": true
+    },
+    "lorry-i-lokey-stanford-daily-building": {
+      "hide": true
+    },
+    "owen-house": {
+      "hide": true
+    },
+    "kappa-sigma": {
+      "hide": true
+    },
+    "sigma-chi": {
+      "hide": true
+    },
+    "sigma-nu": {
+      "hide": true
+    },
+    "windhover": {
+      "hide": true
+    },
+    "elliott-program-center": {
+      "hide": true
+    },
+    "black-community-service-center": {
+      "hide": true
+    },
+    "bechtel-international-center": {
+      "hide": true
+    },
+    "east-wing": {
+      "kind": "library"
+    },
+    "bing-wing": {
+      "kind": "library"
+    }
+  },
+  "notes": {
+    "288": "OSM gives this building only a number or placeholder name and no use, and no official list names it, so it can't be told apart as a class building.",
+    "undergraduate-halls": "A group entry for the undergraduate residence halls; pinned on Lucie Stern Hall (OSM relation/22862, 618 Escondido Road), a first-year hall in the east campus cluster with Wilbur, Toyon and Branner (rde.stanford.edu/studenthousing/undergraduate-residences).",
+    "gsb-residences": "The Graduate School of Business residences are the Schwab Residential Center (OSM relation/17859516, 680 Jane Stanford Way); OSM's name doesn't say GSB.",
+    "escondido-village": "Escondido Village is pinned on Escondido Village Graduate Residences Building A (OSM way/688574367, 757 Campus Drive), the largest building of the complex and the one nearest the academic core.",
+    "munger-residences": "OSM maps the Munger Graduate Residences as Munger Building 1-5; pinned on Munger Building 1 (OSM way/232805723, 566 Arguello Way).",
+    "lyman-residences": "OSM maps the Lyman Graduate Residences as Lyman Building 1 and 3 with Lyman Commons; pinned on Lyman Building 1 (OSM way/232715864, 121 Campus Drive West).",
+    "stanford-hospital": "Stanford Health Care hospital or clinic building, not somewhere undergraduate classes happen.",
+    "stanford-hospital-891732466": "Stanford Health Care hospital or clinic building, not somewhere undergraduate classes happen.",
+    "lucile-packard-childrens-hospital-west": "Stanford Health Care hospital or clinic building, not somewhere undergraduate classes happen.",
+    "lucile-packard-childrens-hospital-main": "Stanford Health Care hospital or clinic building, not somewhere undergraduate classes happen.",
+    "stanford-cancer-center": "Stanford Health Care hospital or clinic building, not somewhere undergraduate classes happen.",
+    "stanford-neuroscience-health-center": "Stanford Health Care hospital or clinic building, not somewhere undergraduate classes happen.",
+    "stanford-comprehensive-ent-clinic": "Stanford Health Care hospital or clinic building, not somewhere undergraduate classes happen.",
+    "hoover-pavilion": "Stanford Health Care hospital or clinic building, not somewhere undergraduate classes happen.",
+    "blake-wilbur-building": "Stanford Health Care hospital or clinic building, not somewhere undergraduate classes happen.",
+    "medical-school-office-building": "School of Medicine offices, animal facility or loading dock, not somewhere classes happen.",
+    "comparative-medicine-pavilion": "School of Medicine offices, animal facility or loading dock, not somewhere classes happen.",
+    "school-of-medicine-loading-dock": "School of Medicine offices, animal facility or loading dock, not somewhere classes happen.",
+    "florence-moore-hall": "An undergraduate residence hall (rde.stanford.edu/studenthousing/undergraduate-residences), not a class building.",
+    "roble-hall": "An undergraduate residence hall (rde.stanford.edu/studenthousing/undergraduate-residences), not a class building.",
+    "kimball-hall": "An undergraduate residence hall (rde.stanford.edu/studenthousing/undergraduate-residences), not a class building.",
+    "munger-building-2": "Part of the Munger Graduate Residences (a hall), not a class building.",
+    "munger-building-4": "Part of the Munger Graduate Residences (a hall), not a class building.",
+    "munger-building-5": "Part of the Munger Graduate Residences (a hall), not a class building.",
+    "xanadu": "A Row student residence on Mayfield Avenue (Xanadu; Robert Moore North), not a class building.",
+    "the-well-house-robert-s-moore-n": "A Row student residence on Mayfield Avenue (Xanadu; Robert Moore North), not a class building.",
+    "avanti": "A private cafeteria at 591 Los Arboles Avenue (OSM amenity=fast_food, access=private), not a dining hall or class building.",
+    "beefeaters": "A private cafeteria at 591 Los Arboles Avenue (OSM amenity=fast_food, access=private), not a dining hall or class building.",
+    "middle-earth": "A private cafeteria at 591 Los Arboles Avenue (OSM amenity=fast_food, access=private), not a dining hall or class building.",
+    "bollard": "A private cafeteria at 591 Los Arboles Avenue (OSM amenity=fast_food, access=private), not a dining hall or class building.",
+    "modular-1": "Childcare (OSM building=kindergarten), not somewhere classes happen.",
+    "modular-2": "Childcare (OSM building=kindergarten), not somewhere classes happen.",
+    "modular-3": "Childcare (OSM building=kindergarten), not somewhere classes happen.",
+    "modular-4": "Childcare (OSM building=kindergarten), not somewhere classes happen.",
+    "modular-5": "Childcare (OSM building=kindergarten), not somewhere classes happen.",
+    "oak": "One of six small outbuildings north of Panama Street named for trees (OSM building=yes, no address or use), not a class building.",
+    "birch": "One of six small outbuildings north of Panama Street named for trees (OSM building=yes, no address or use), not a class building.",
+    "laurel": "One of six small outbuildings north of Panama Street named for trees (OSM building=yes, no address or use), not a class building.",
+    "poplar": "One of six small outbuildings north of Panama Street named for trees (OSM building=yes, no address or use), not a class building.",
+    "acacia": "One of six small outbuildings north of Panama Street named for trees (OSM building=yes, no address or use), not a class building.",
+    "juniper": "One of six small outbuildings north of Panama Street named for trees (OSM building=yes, no address or use), not a class building.",
+    "lbre-district-work-center": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "lbre-office-09-105": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "district-work-center-campus-drive": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "memorial-way-district-work-center": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "steamfitters-shop-09-130": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "carpenters-shop-09-135": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "peninsula-sanitary-service-09-950": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "central-process-steam-building": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "environmental-safety-facility-building-a": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "environmental-safety-facility-building-b": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "environmental-safety-facility-building-c": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "environmental-safety-facility-annex": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "environmental-health-and-safety": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "it-offices-09-190": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "forsythe-data-center": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "northwest-data-center-and-communications-hub": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "lasuen-restroom": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "stanford-mausoleum": "Facilities, safety, data-centre or service building (or a restroom or the mausoleum), not somewhere classes happen.",
+    "palo-alto-fire-station-6": "Fire station or fire-training building, not somewhere classes happen.",
+    "fire-truck-house": "Fire station or fire-training building, not somewhere classes happen.",
+    "fire-training-tower-09-210": "Fire station or fire-training building, not somewhere classes happen.",
+    "stanford-bookstore": "A shop, bank, post office, cafe or the golf clubhouse, not a dining hall or class building.",
+    "stanford-station-post-office": "A shop, bank, post office, cafe or the golf clubhouse, not a dining hall or class building.",
+    "stanford-federal-credit-union": "A shop, bank, post office, cafe or the golf clubhouse, not a dining hall or class building.",
+    "bank-of-america": "A shop, bank, post office, cafe or the golf clubhouse, not a dining hall or class building.",
+    "annettes-cafe": "A shop, bank, post office, cafe or the golf clubhouse, not a dining hall or class building.",
+    "coupa-cafe": "A shop, bank, post office, cafe or the golf clubhouse, not a dining hall or class building.",
+    "arrillaga-golf-shop": "A shop, bank, post office, cafe or the golf clubhouse, not a dining hall or class building.",
+    "clubhouse": "A shop, bank, post office, cafe or the golf clubhouse, not a dining hall or class building.",
+    "maples-pavilion": "Varsity athletics venue or offices, not a class building or student gym.",
+    "burnham-pavilion": "Varsity athletics venue or offices, not a class building or student gym.",
+    "burnham-pavilion-232805658": "Varsity athletics venue or offices, not a class building or student gym.",
+    "arrillaga-family-sports-center": "Varsity athletics venue or offices, not a class building or student gym.",
+    "sam-mcdonald-track-house": "Varsity athletics venue or offices, not a class building or student gym.",
+    "frances-c-arrillaga-alumni-center": "Alumni centre, faculty club, university press, student newspaper or housing office, not somewhere classes happen.",
+    "faculty-club": "Alumni centre, faculty club, university press, student newspaper or housing office, not somewhere classes happen.",
+    "press": "Alumni centre, faculty club, university press, student newspaper or housing office, not somewhere classes happen.",
+    "lorry-i-lokey-stanford-daily-building": "Alumni centre, faculty club, university press, student newspaper or housing office, not somewhere classes happen.",
+    "owen-house": "Alumni centre, faculty club, university press, student newspaper or housing office, not somewhere classes happen.",
+    "kappa-sigma": "Fraternity house, not somewhere classes happen.",
+    "sigma-chi": "Fraternity house, not somewhere classes happen.",
+    "sigma-nu": "Fraternity house, not somewhere classes happen.",
+    "windhover": "A contemplative centre, event space or student-services centre, not somewhere classes happen.",
+    "elliott-program-center": "A contemplative centre, event space or student-services centre, not somewhere classes happen.",
+    "black-community-service-center": "A contemplative centre, event space or student-services centre, not somewhere classes happen.",
+    "bechtel-international-center": "A contemplative centre, event space or student-services centre, not somewhere classes happen.",
+    "east-wing": "The East Wing at 557 Escondido Mall is half of Cecil H. Green Library (library.stanford.edu/libraries/cecil-h-green-library); OSM names only the wing.",
+    "bing-wing": "The Bing Wing at 459 Lasuen Mall is half of Cecil H. Green Library (library.stanford.edu/libraries/cecil-h-green-library); OSM names only the wing."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "undergraduate-halls -> stanford-center-for-research-and-development-in-education"
+      ],
+      "maxRatio": 3,
+      "why": "Stern Hall's mapped doors open onto its inner courtyards and CERAS sits behind it to the west with no mapped path through the Stern courtyards, so the walk leaves Stern north to Escondido Mall and comes back round."
+    },
+    {
+      "pairs": [
+        "gsb-residences -> arrillaga-family-dining-commons"
+      ],
+      "maxRatio": 3,
+      "why": "Schwab Residential Center's mapped entrance is on its north side and the GSB blocks fill the ground between it and the dining commons to the south-west, so the walk goes round by Serra Street and Campus Drive East."
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "halls": {
+    "birnkrant-college": {
+      "pin": [
+        -118.282417,
+        34.021445
+      ]
+    },
+    "new-north-college": {
+      "pin": [
+        -118.282098,
+        34.021035
+      ]
+    },
+    "fluor-tower": {
+      "pin": [
+        -118.288282,
+        34.024946
+      ]
+    },
+    "marks-hall": {
+      "pin": [
+        -118.282239,
+        34.019075
+      ]
+    }
+  },
+  "places": {
+    "galen-center": {
+      "hide": true
+    },
+    "uytengsu-aquatics-center": {
+      "hide": true
+    },
+    "heritage-hall": {
+      "hide": true
+    },
+    "engemann-student-health-center": {
+      "hide": true
+    },
+    "university-religious-center": {
+      "hide": true
+    },
+    "united-university-church": {
+      "hide": true
+    },
+    "usc-facilities-planning-and-management": {
+      "hide": true
+    },
+    "widney-alumni-house": {
+      "hide": true
+    },
+    "town-and-gown": {
+      "hide": true
+    },
+    "amy-king-dundon-berchtold-university-club-of-usc": {
+      "hide": true
+    },
+    "university-gateway": {
+      "hide": true
+    }
+  },
+  "codes": {
+    "ANH": null,
+    "CAR": null,
+    "COH": null,
+    "FMH": null,
+    "HHR": null,
+    "DMC": "relation/6095465",
+    "ADM": "way/406923885",
+    "SCA": "way/406923930",
+    "SCB": "way/406923935",
+    "SCC": "way/406923931",
+    "SCE": "way/406923932",
+    "SCI": "way/406923933",
+    "GCS": "way/1340874365",
+    "SKS": "way/154906731",
+    "BIT": "way/406923884",
+    "NCT": "way/406923907",
+    "BMH": "way/406923912",
+    "SHS": "way/442277370",
+    "AHN": "way/406923880",
+    "ACX": null
+  },
+  "notes": {
+    "ANH": "The word rule matched Annenberg House to OSM's College House; they are different buildings.",
+    "CAR": "The word rule matched Cardinal Gardens to OSM's University Gardens Building; they are different buildings.",
+    "COH": "The word rule matched Cockins House to OSM's College House; they are different buildings.",
+    "FMH": "The word rule matched Forthmann House to OSM's College House; they are different buildings.",
+    "HHR": "The word rule matched Honor's House Residence to OSM's College House; they are different buildings.",
+    "DMC": "The FPM list's 'John Medicine Crow Center for Public and International Affairs' is OSM's 'Dr. Joseph Medicine Crow Center for International and Public Affairs'.",
+    "ADM": "The FPM list's 'George Finley Bovard Administration Building & Kenneth Norris Jr. Auditorium' is OSM's 'Bovard Administration Building'.",
+    "SCA": "OSM names the cinema complex buildings 'School of Cinematic Arts - SCA/SCB/SCC/SCE/SCI', with the code in the name.",
+    "SCB": "OSM's 'School of Cinematic Arts -SCB'.",
+    "SCC": "OSM's 'School of Cinematic Arts - SCC'.",
+    "SCE": "OSM's 'School of Cinematic Arts - SCE'.",
+    "SCI": "OSM's 'School of Cinematic Arts - SCI'.",
+    "GCS": "The FPM list's 'Dr. Allen and Charlotte Ginsburg Human-Centered Computation Hall' is OSM's 'Ginsburg Hall'.",
+    "SKS": "The FPM list's 'Steven & Kathryn Sample Hall' is OSM's 'Steven and Katherine Sample Hall'.",
+    "BIT": "The FPM list's 'Bing Theatre' is OSM's 'Bing Theater'.",
+    "NCT": "The FPM list's 'Eileen L. Norris Cinema Theatre' is OSM's 'Kenneth and Eileen Norris Cinema Center'.",
+    "BMH": "The FPM list's 'Mrs. Willis H. Booth Ferris Rehearsal Hall' is OSM's 'Mrs Willis H Booth Ferris Memorial Hall'.",
+    "SHS": "The FPM list's 'John Stauffer Hall of Science' is OSM's 'Stauffer Hall' (Stauffer Science Lecture Hall, SLH, is its own building).",
+    "AHN": "The FPM list's 'Dosan Ahn Chang Ho Family House' is OSM's 'Ahn House'.",
+    "birnkrant-college": "OSM doesn't name it; pinned at the centre USC Housing's interactive map (housing.usc.edu/index.php/interactive-map/) gives Birnkrant Residential College (BSR).",
+    "new-north-college": "OSM doesn't name it; pinned at the centre USC Housing's interactive map (housing.usc.edu/index.php/interactive-map/) gives New North Residential College.",
+    "fluor-tower": "OSM doesn't name it; pinned at the emergency phone USC Housing's interactive map (housing.usc.edu/index.php/interactive-map/) places 'in both elevators of Fluor Tower'.",
+    "ACX": "The word rule matched the Ahmanson Center's animal section (ACX) to the main Ahmanson Center for Biological Research building (ACB).",
+    "marks-hall": "OSM doesn't name Marks Hall; pinned at 631 Childs Way (USC FPM dorm address list, fpm.usc.edu/usc-dorm-address-information; Nominatim way/1061517963), the low building between Marks Tower and Childs Way.",
+    "galen-center": "Varsity athletics venue or offices, not a class building or student gym.",
+    "uytengsu-aquatics-center": "Varsity athletics venue or offices, not a class building or student gym.",
+    "heritage-hall": "Varsity athletics venue or offices, not a class building or student gym.",
+    "engemann-student-health-center": "The student health centre (a clinic), not somewhere classes happen.",
+    "university-religious-center": "A religious building, not somewhere classes happen.",
+    "united-university-church": "A religious building, not somewhere classes happen.",
+    "usc-facilities-planning-and-management": "Facilities offices, the alumni house, an event venue or the faculty club, not somewhere classes happen.",
+    "widney-alumni-house": "Facilities offices, the alumni house, an event venue or the faculty club, not somewhere classes happen.",
+    "town-and-gown": "Facilities offices, the alumni house, an event venue or the faculty club, not somewhere classes happen.",
+    "amy-king-dundon-berchtold-university-club-of-usc": "Facilities offices, the alumni house, an event venue or the faculty club, not somewhere classes happen.",
+    "university-gateway": "University Gateway is a private student apartment and retail block at Figueroa and Jefferson, not a class building."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "north-residential-college -> usc-iovine-and-young-academy",
+        "north-residential-college -> hughes-aircraft-electrical-engineering-center",
+        "north-residential-college -> powell-hall"
+      ],
+      "maxRatio": 3,
+      "why": "North Residential College's mapped entrance is on its south side (Downey Way) and no mapped path crosses between the hall and the buildings just north of it, so walks to them go round the hall's block by McClintock Avenue."
+    }
+  ]
+}

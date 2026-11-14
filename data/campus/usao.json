@@ -1,0 +1,198 @@
+{
+ "collegeId": "usao",
+ "generatedAt": "2026-11-08T11:42:35.311Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/usao.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -97.95716,
+  35.02985,
+  -97.95289,
+  35.03336
+ ],
+ "halls": [
+  {
+   "dormId": "sparks-hall",
+   "name": "Sparks Hall",
+   "lng": -97.956028,
+   "lat": 35.032786,
+   "pin": "name",
+   "osm": "way/368507175",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "original-gymnasium",
+     "minutes": 9.1
+    },
+    "library": {
+     "placeId": "nash-library",
+     "minutes": 4.8
+    }
+   }
+  },
+  {
+   "dormId": "robertson-hall",
+   "name": "Robertson Hall",
+   "lng": -97.95394,
+   "lat": 35.03057,
+   "pin": "name",
+   "osm": "way/368991473",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "original-gymnasium",
+     "minutes": 5.7
+    },
+    "library": {
+     "placeId": "nash-library",
+     "minutes": 2.9
+    }
+   }
+  },
+  {
+   "dormId": "lawson-court",
+   "name": "Lawson Court",
+   "lng": -97.953358,
+   "lat": 35.032124,
+   "pin": "name",
+   "osm": "way/369123714",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "original-gymnasium",
+     "minutes": 8.2
+    },
+    "library": {
+     "placeId": "nash-library",
+     "minutes": 1.9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "gary-hall",
+   "name": "Gary Hall",
+   "short": "Gary Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.953989,
+   "lat": 35.033361,
+   "osm": "way/368992126"
+  },
+  {
+   "id": "willard-hall",
+   "name": "Willard Hall",
+   "short": "Willard Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.956023,
+   "lat": 35.030042,
+   "osm": "way/368504639"
+  },
+  {
+   "id": "austin-hall",
+   "name": "Austin Hall",
+   "short": "Austin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.956473,
+   "lat": 35.030656,
+   "osm": "way/368505782"
+  },
+  {
+   "id": "original-gymnasium",
+   "name": "Original Gymnasium",
+   "short": "Original Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.957162,
+   "lat": 35.029984,
+   "osm": "way/368504842"
+  },
+  {
+   "id": "nash-library",
+   "name": "Nash Library",
+   "short": "Nash Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.953792,
+   "lat": 35.031388,
+   "osm": "way/369123506"
+  },
+  {
+   "id": "art-annex",
+   "name": "Art Annex",
+   "short": "Art Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.957044,
+   "lat": 35.032114,
+   "osm": "way/368987911"
+  },
+  {
+   "id": "addams-hall",
+   "name": "Addams Hall",
+   "short": "Addams Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.956427,
+   "lat": 35.033353,
+   "osm": "way/368507174"
+  },
+  {
+   "id": "canning-hall",
+   "name": "Canning Hall",
+   "short": "Canning Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.953932,
+   "lat": 35.033022,
+   "osm": "way/368992259"
+  },
+  {
+   "id": "alumni-chapel",
+   "name": "Alumni Chapel",
+   "short": "Alumni Chapel",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.952889,
+   "lat": 35.030609,
+   "osm": "way/368990599"
+  },
+  {
+   "id": "jourdan-house",
+   "name": "Jourdan House",
+   "short": "Jourdan House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -97.955113,
+   "lat": 35.02985,
+   "osm": "way/368991795"
+  }
+ ]
+}

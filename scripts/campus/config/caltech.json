@@ -1,0 +1,17 @@
+{
+  "collegeId": "caltech",
+  "area": {
+    "osm": "way/29111188",
+    "bbox": [
+      34.13242,
+      -118.12928,
+      34.14174,
+      -118.12141
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/caltech.codes.json"
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "halls": {
+    "mahoney-college": {
+      "pin": [
+        -80.27479,
+        25.718264
+      ]
+    },
+    "pearson-college": {
+      "pin": [
+        -80.273834,
+        25.717889
+      ]
+    },
+    "ibis-college": {
+      "pin": [
+        -80.279618,
+        25.716781
+      ]
+    },
+    "biscayne-college": {
+      "pin": [
+        -80.280405,
+        25.716096
+      ]
+    },
+    "grove-college": {
+      "pin": [
+        -80.279945,
+        25.716504
+      ]
+    },
+    "coral-college": {
+      "pin": [
+        -80.280056,
+        25.716753
+      ]
+    }
+  },
+  "places": {
+    "the-lennar-foundation-medical-center": {
+      "hide": true
+    },
+    "hecht-athletic-center": {
+      "hide": true
+    },
+    "fieldhouse": {
+      "hide": true
+    },
+    "soffer-indoor-practice-facility": {
+      "hide": true
+    },
+    "klotz-player-development-center": {
+      "hide": true
+    },
+    "fraser-baseball-building": {
+      "hide": true
+    },
+    "neil-schiff-tennis-house": {
+      "hide": true
+    },
+    "gables-one-tower": {
+      "hide": true
+    },
+    "newman-alumni-center": {
+      "hide": true
+    },
+    "ashe-administration-building": {
+      "hide": true
+    },
+    "student-services-building": {
+      "hide": true
+    },
+    "toppel-career-center": {
+      "hide": true
+    },
+    "merritt-panhellenic-building": {
+      "hide": true
+    },
+    "central-energy-plant-1-lennar": {
+      "hide": true
+    },
+    "central-energy-plant-2": {
+      "hide": true
+    },
+    "wesley-foundation": {
+      "hide": true
+    },
+    "braman-miller-center-for-jewish-life": {
+      "hide": true
+    },
+    "soflo-baptist-christian-ministry": {
+      "hide": true
+    },
+    "christian-science-organization": {
+      "hide": true
+    },
+    "sigma-alpha-epsilon": {
+      "hide": true
+    },
+    "zeta-beta-tau": {
+      "hide": true
+    },
+    "alpha-epsilon-pi": {
+      "hide": true
+    },
+    "sigma-chi": {
+      "hide": true
+    },
+    "sigma-chi-278823400": {
+      "hide": true
+    },
+    "pi-kapppa-phi": {
+      "hide": true
+    },
+    "lambda-chi-alpha": {
+      "hide": true
+    },
+    "stanford-drive-gatehouse": {
+      "hide": true
+    },
+    "memorial-drive-gatehouse": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "mahoney-college": "OSM's building for Mahoney Residential College has no name or building tag, so the cache misses it; pinned at its address, 1101 Stanford Drive (Nominatim way/1013234311; housing.miami.edu), beside the Mahoney-Pearson Dining Hall.",
+    "pearson-college": "OSM's building for Pearson Residential College has no name or building tag, so the cache misses it; pinned at its address, 5185 Ponce de Leon Boulevard (Nominatim way/190557243; housing.miami.edu), the east tower of the Mahoney-Pearson pair.",
+    "ibis-college": "Coral and Ibis Residential Colleges share one OSM building (relation/17960362, 'Centennial Village - Coral & Ibis Residential Colleges', 1239 Dickenson Drive); Coral matched it by name, and Ibis is pinned on its east end so the two get separate spots.",
+    "biscayne-college": "Centennial Village Phase II (Biscayne and Grove) stands on the former Hecht Residential College site at 1231 Dickenson Drive, which OSM hasn't drawn yet; pinned at Nominatim's 1231 Dickenson Drive address point (node/12365937853), the west end of the Centennial Village block.",
+    "grove-college": "Centennial Village Phase II (Biscayne and Grove) stands on the former Hecht Residential College site at 1231 Dickenson Drive, which OSM hasn't drawn yet; pinned at Nominatim's 1231 Dickenson Drive building (way/347014472) in the Centennial Village block.",
+    "the-lennar-foundation-medical-center": "A UHealth clinic (the Lennar Foundation Medical Center), not somewhere classes happen.",
+    "hecht-athletic-center": "Varsity athletics venue or offices, not a class building or student gym.",
+    "fieldhouse": "Varsity athletics venue or offices, not a class building or student gym.",
+    "soffer-indoor-practice-facility": "Varsity athletics venue or offices, not a class building or student gym.",
+    "klotz-player-development-center": "Varsity athletics venue or offices, not a class building or student gym.",
+    "fraser-baseball-building": "Varsity athletics venue or offices, not a class building or student gym.",
+    "neil-schiff-tennis-house": "Varsity athletics venue or offices, not a class building or student gym.",
+    "gables-one-tower": "Administrative, alumni, student-services or student-organisation building, not somewhere classes happen.",
+    "newman-alumni-center": "Administrative, alumni, student-services or student-organisation building, not somewhere classes happen.",
+    "ashe-administration-building": "Administrative, alumni, student-services or student-organisation building, not somewhere classes happen.",
+    "student-services-building": "Administrative, alumni, student-services or student-organisation building, not somewhere classes happen.",
+    "toppel-career-center": "Administrative, alumni, student-services or student-organisation building, not somewhere classes happen.",
+    "merritt-panhellenic-building": "Administrative, alumni, student-services or student-organisation building, not somewhere classes happen.",
+    "central-energy-plant-1-lennar": "A central energy plant, not somewhere classes happen.",
+    "central-energy-plant-2": "A central energy plant, not somewhere classes happen.",
+    "wesley-foundation": "A religious-life building, not somewhere classes happen.",
+    "braman-miller-center-for-jewish-life": "A religious-life building, not somewhere classes happen.",
+    "soflo-baptist-christian-ministry": "A religious-life building, not somewhere classes happen.",
+    "christian-science-organization": "A religious-life building, not somewhere classes happen.",
+    "sigma-alpha-epsilon": "Fraternity house, not somewhere classes happen.",
+    "zeta-beta-tau": "Fraternity house, not somewhere classes happen.",
+    "alpha-epsilon-pi": "Fraternity house, not somewhere classes happen.",
+    "sigma-chi": "Fraternity house, not somewhere classes happen.",
+    "sigma-chi-278823400": "Fraternity house, not somewhere classes happen.",
+    "pi-kapppa-phi": "Fraternity house, not somewhere classes happen.",
+    "lambda-chi-alpha": "Fraternity house, not somewhere classes happen.",
+    "stanford-drive-gatehouse": "A gatehouse, not a building with classes.",
+    "memorial-drive-gatehouse": "A gatehouse, not a building with classes.",
+    "coral-college": "Coral and Ibis Residential Colleges share one OSM building (relation/17960362, Centennial Village - Coral & Ibis Residential Colleges, 1239 Dickenson Drive); pinned at its centre, where the build matched it by name before Ibis took a hand pin on the same building."
+  }
+}

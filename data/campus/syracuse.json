@@ -1,0 +1,994 @@
+{
+ "collegeId": "syracuse",
+ "generatedAt": "2026-11-08T08:25:25.840Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/syracuse.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -76.14113,
+  43.01964,
+  -76.1203,
+  43.04657
+ ],
+ "halls": [
+  {
+   "dormId": "boland-hall",
+   "name": "Boland Hall",
+   "lng": -76.140227,
+   "lat": 43.038393,
+   "pin": "name",
+   "osm": "way/930067084",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 9.7
+    },
+    "library": {
+     "placeId": "carnegie-library",
+     "minutes": 9.4
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 15.4
+    }
+   }
+  },
+  {
+   "dormId": "booth-hall",
+   "name": "Booth Hall",
+   "lng": -76.129094,
+   "lat": 43.041028,
+   "pin": "name",
+   "osm": "way/930351175",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 11.1
+    },
+    "library": {
+     "placeId": "belfer-archive",
+     "minutes": 4.8
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 15.4
+    }
+   }
+  },
+  {
+   "dormId": "brewster-hall",
+   "name": "Brewster Hall",
+   "lng": -76.140498,
+   "lat": 43.037934,
+   "pin": "name",
+   "osm": "way/930067083",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 9.9
+    },
+    "library": {
+     "placeId": "carnegie-library",
+     "minutes": 9.5
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 15.6
+    }
+   }
+  },
+  {
+   "dormId": "brockway-hall",
+   "name": "Brockway Hall",
+   "lng": -76.141133,
+   "lat": 43.038264,
+   "pin": "name",
+   "osm": "way/930067085",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 11.1
+    },
+    "library": {
+     "placeId": "carnegie-library",
+     "minutes": 10.7
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 16.8
+    }
+   }
+  },
+  {
+   "dormId": "day-hall",
+   "name": "Day Hall",
+   "lng": -76.131202,
+   "lat": 43.033807,
+   "pin": "name",
+   "osm": "way/156759728",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 6.7
+    },
+    "library": {
+     "placeId": "carnegie-library",
+     "minutes": 7.8
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 1.1
+    }
+   }
+  },
+  {
+   "dormId": "dellplain-hall",
+   "name": "DellPlain Hall",
+   "lng": -76.12901,
+   "lat": 43.039988,
+   "pin": "name",
+   "osm": "way/930362690",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 9.6
+    },
+    "library": {
+     "placeId": "belfer-archive",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 13.9
+    }
+   }
+  },
+  {
+   "dormId": "ernie-davis-hall",
+   "name": "Ernie Davis Hall",
+   "lng": -76.1297,
+   "lat": 43.039899,
+   "pin": "name",
+   "osm": "way/930326503",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 9.5
+    },
+    "library": {
+     "placeId": "e-s-bird-library",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 13.8
+    }
+   }
+  },
+  {
+   "dormId": "flint-hall",
+   "name": "Flint Hall",
+   "lng": -76.132417,
+   "lat": 43.035213,
+   "pin": "name",
+   "osm": "relation/17727542",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 4.4
+    },
+    "library": {
+     "placeId": "carnegie-library",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 2.6
+    }
+   }
+  },
+  {
+   "dormId": "haven-hall",
+   "name": "Haven Hall",
+   "lng": -76.130735,
+   "lat": 43.042106,
+   "pin": "name",
+   "osm": "relation/17727504",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 11.4
+    },
+    "library": {
+     "placeId": "belfer-archive",
+     "minutes": 4.8
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 16.1
+    }
+   }
+  },
+  {
+   "dormId": "lawrinson-hall",
+   "name": "Lawrinson Hall",
+   "lng": -76.13882,
+   "lat": 43.034736,
+   "pin": "name",
+   "osm": "way/157851000",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 7.2
+    },
+    "library": {
+     "placeId": "carnegie-library",
+     "minutes": 8.7
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 12.9
+    }
+   }
+  },
+  {
+   "dormId": "oren-lyons-hall",
+   "name": "Oren Lyons Hall",
+   "lng": -76.126621,
+   "lat": 43.03668,
+   "pin": "name",
+   "osm": "way/930341726",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 9.2
+    },
+    "library": {
+     "placeId": "carnegie-library",
+     "minutes": 9.4
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 13.4
+    }
+   }
+  },
+  {
+   "dormId": "riley-hall",
+   "name": "Riley Hall",
+   "lng": -76.133867,
+   "lat": 43.041202,
+   "pin": "manual",
+   "osm": "way/156759792",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 8.2
+    },
+    "library": {
+     "placeId": "belfer-archive",
+     "minutes": 4.4
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 13.6
+    }
+   }
+  },
+  {
+   "dormId": "sadler-hall",
+   "name": "Sadler Hall",
+   "lng": -76.138543,
+   "lat": 43.035353,
+   "pin": "name",
+   "osm": "way/209411350",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "flanagan-gymnasium",
+     "minutes": 5.7
+    },
+    "library": {
+     "placeId": "carnegie-library",
+     "minutes": 7.2
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 11.5
+    }
+   }
+  },
+  {
+   "dormId": "shaw-hall",
+   "name": "Shaw Hall",
+   "lng": -76.129001,
+   "lat": 43.036776,
+   "pin": "name",
+   "osm": "way/178422041",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 6.1
+    },
+    "library": {
+     "placeId": "carnegie-library",
+     "minutes": 6.2
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 10.2
+    }
+   }
+  },
+  {
+   "dormId": "walnut-hall",
+   "name": "Walnut Hall",
+   "lng": -76.131853,
+   "lat": 43.041773,
+   "pin": "name",
+   "osm": "way/930337425",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 10.1
+    },
+    "library": {
+     "placeId": "belfer-archive",
+     "minutes": 3.5
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 14.8
+    }
+   }
+  },
+  {
+   "dormId": "washington-arms",
+   "name": "Washington Arms",
+   "lng": -76.131774,
+   "lat": 43.044356,
+   "pin": "name",
+   "osm": "way/686313614",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 13.3
+    },
+    "library": {
+     "placeId": "belfer-archive",
+     "minutes": 6.7
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 18.1
+    }
+   }
+  },
+  {
+   "dormId": "watson-hall",
+   "name": "Watson Hall",
+   "lng": -76.130864,
+   "lat": 43.039925,
+   "pin": "name",
+   "osm": "relation/6926691",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 9
+    },
+    "library": {
+     "placeId": "belfer-archive",
+     "minutes": 4.1
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 13.4
+    }
+   }
+  },
+  {
+   "dormId": "milton-hall",
+   "name": "Milton Hall",
+   "lng": -76.135952,
+   "lat": 43.042128,
+   "pin": "manual",
+   "osm": "way/470016917",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "archbold-gymnasium",
+     "minutes": 11.9
+    },
+    "library": {
+     "placeId": "belfer-archive",
+     "minutes": 8.1
+    },
+    "dining": {
+     "placeId": "graham-dining-hall",
+     "minutes": 17.2
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "manley-field-house",
+   "name": "Manley Field House",
+   "short": "Manley Field House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.126902,
+   "lat": 43.024445,
+   "osm": "way/164827507"
+  },
+  {
+   "id": "schine-student-center",
+   "name": "Schine Student Center",
+   "short": "Schine Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.133773,
+   "lat": 43.039954,
+   "osm": "way/156759693"
+  },
+  {
+   "id": "archbold-gymnasium",
+   "name": "Archbold Gymnasium",
+   "short": "Archbold Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.13483,
+   "lat": 43.036166,
+   "osm": "way/156759752"
+  },
+  {
+   "id": "dinnen-hall",
+   "name": "Dinnen Hall",
+   "short": "Dinnen Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.138769,
+   "lat": 43.036273,
+   "osm": "way/303091434"
+  },
+  {
+   "id": "center-for-science-and-technology",
+   "name": "Center for Science and Technology",
+   "short": "Center for Science and Technology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.130702,
+   "lat": 43.038246,
+   "osm": "way/171527244"
+  },
+  {
+   "id": "syracuse-university-womens-building",
+   "name": "Syracuse University Womens Building",
+   "short": "Syracuse University Womens Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.130156,
+   "lat": 43.03483,
+   "osm": "way/156759770"
+  },
+  {
+   "id": "e-s-bird-library",
+   "name": "E. S. Bird Library",
+   "short": "E. S. Bird Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Bird Library"
+   ],
+   "lng": -76.132605,
+   "lat": 43.039896,
+   "osm": "way/156759761"
+  },
+  {
+   "id": "comstock-art-facility",
+   "name": "Comstock Art Facility",
+   "short": "Comstock Art Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.127633,
+   "lat": 43.026639,
+   "osm": "way/930326497"
+  },
+  {
+   "id": "national-veterans-resource-center",
+   "name": "National Veterans Resource Center",
+   "short": "National Veterans Resource Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.136239,
+   "lat": 43.041087,
+   "osm": "way/156759702"
+  },
+  {
+   "id": "center-for-science-and-technology-1433089768",
+   "name": "Center for Science and Technology",
+   "short": "Center for Science and Technology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.130727,
+   "lat": 43.037487,
+   "osm": "way/1433089768"
+  },
+  {
+   "id": "syracuse-stage",
+   "name": "Syracuse Stage",
+   "short": "Syracuse Stage",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "John D. Archbold Theatre"
+   ],
+   "lng": -76.138232,
+   "lat": 43.046572,
+   "osm": "way/165403304"
+  },
+  {
+   "id": "sims-hall",
+   "name": "Sims Hall",
+   "short": "Sims Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.131919,
+   "lat": 43.036728,
+   "osm": "way/156759826"
+  },
+  {
+   "id": "white-hall",
+   "name": "White Hall",
+   "short": "White Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.137379,
+   "lat": 43.037239,
+   "osm": "way/156759798"
+  },
+  {
+   "id": "syracuse-university-whitman-school-of-management",
+   "name": "Syracuse University Whitman School of Management",
+   "short": "Syracuse University Whitman School of Management",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Whitman"
+   ],
+   "lng": -76.133955,
+   "lat": 43.042154,
+   "osm": "way/930327367"
+  },
+  {
+   "id": "eggers-hall",
+   "name": "Eggers Hall",
+   "short": "Eggers Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.135909,
+   "lat": 43.038024,
+   "osm": "way/156759725"
+  },
+  {
+   "id": "shaffer-art-building",
+   "name": "Shaffer Art Building",
+   "short": "Shaffer Art Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.132393,
+   "lat": 43.036751,
+   "osm": "way/1292960278"
+  },
+  {
+   "id": "marshall-square-mall",
+   "name": "Marshall Square Mall",
+   "short": "Marshall Square Mall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.134945,
+   "lat": 43.042127,
+   "osm": "way/249476119"
+  },
+  {
+   "id": "flanagan-gymnasium",
+   "name": "Flanagan Gymnasium",
+   "short": "Flanagan Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.134021,
+   "lat": 43.035841,
+   "osm": "way/156759712"
+  },
+  {
+   "id": "huntington-hall",
+   "name": "Huntington Hall",
+   "short": "Huntington Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.135152,
+   "lat": 43.041213,
+   "osm": "way/732470831"
+  },
+  {
+   "id": "carnegie-library",
+   "name": "Carnegie Library",
+   "short": "Carnegie Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.134018,
+   "lat": 43.03659,
+   "osm": "way/156759716"
+  },
+  {
+   "id": "link-hall",
+   "name": "Link Hall",
+   "short": "Link Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.132715,
+   "lat": 43.037618,
+   "osm": "way/156759676"
+  },
+  {
+   "id": "lyman-hall",
+   "name": "Lyman Hall",
+   "short": "Lyman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.132082,
+   "lat": 43.0385,
+   "osm": "way/156759739"
+  },
+  {
+   "id": "newhouse-3",
+   "name": "Newhouse 3",
+   "short": "Newhouse 3",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.135891,
+   "lat": 43.03995,
+   "osm": "way/156759824"
+  },
+  {
+   "id": "newhouse-2",
+   "name": "Newhouse 2",
+   "short": "Newhouse 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.135274,
+   "lat": 43.040265,
+   "osm": "way/156759778"
+  },
+  {
+   "id": "slocum-hall",
+   "name": "Slocum Hall",
+   "short": "Slocum Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.131967,
+   "lat": 43.037683,
+   "osm": "way/198761981"
+  },
+  {
+   "id": "bowne-hall",
+   "name": "Bowne Hall",
+   "short": "Bowne Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.133224,
+   "lat": 43.036622,
+   "osm": "way/156759705"
+  },
+  {
+   "id": "crouse-college",
+   "name": "Crouse College",
+   "short": "Crouse College",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.136924,
+   "lat": 43.038473,
+   "osm": "way/156759793"
+  },
+  {
+   "id": "physics-building",
+   "name": "Physics Building",
+   "short": "Physics Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.134724,
+   "lat": 43.037043,
+   "osm": "way/156759802"
+  },
+  {
+   "id": "hinds-hall",
+   "name": "Hinds Hall",
+   "short": "Hinds Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.13345,
+   "lat": 43.038236,
+   "osm": "way/156759804"
+  },
+  {
+   "id": "heroy-geology-laboratory",
+   "name": "Heroy Geology Laboratory",
+   "short": "Heroy Geology Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.136472,
+   "lat": 43.037321,
+   "osm": "way/156759727"
+  },
+  {
+   "id": "maxwell-hall",
+   "name": "Maxwell Hall",
+   "short": "Maxwell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.136234,
+   "lat": 43.038433,
+   "osm": "way/156759696"
+  },
+  {
+   "id": "hall-of-languages",
+   "name": "Hall of Languages",
+   "short": "Hall of Languages",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.134521,
+   "lat": 43.038576,
+   "osm": "way/156759790"
+  },
+  {
+   "id": "graham-dining-hall",
+   "name": "Graham Dining Hall",
+   "short": "Graham Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.131558,
+   "lat": 43.034379,
+   "osm": "way/156759748"
+  },
+  {
+   "id": "newhouse-1",
+   "name": "Newhouse 1",
+   "short": "Newhouse 1",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.135193,
+   "lat": 43.039762,
+   "osm": "way/156759695"
+  },
+  {
+   "id": "h-b-crouse-building",
+   "name": "H. B. Crouse Building",
+   "short": "H. B. Crouse Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.134473,
+   "lat": 43.038215,
+   "osm": "way/156759784"
+  },
+  {
+   "id": "machinery-hall",
+   "name": "Machinery Hall",
+   "short": "Machinery Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.132722,
+   "lat": 43.038203,
+   "osm": "way/156759749"
+  },
+  {
+   "id": "macnaughton-hall",
+   "name": "MacNaughton Hall",
+   "short": "MacNaughton Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.137506,
+   "lat": 43.037881,
+   "osm": "way/219449865"
+  },
+  {
+   "id": "crouse-hinds-hall",
+   "name": "Crouse Hinds Hall",
+   "short": "Crouse Hinds Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.137094,
+   "lat": 43.040223,
+   "osm": "way/470016922"
+  },
+  {
+   "id": "smith-hall",
+   "name": "Smith Hall",
+   "short": "Smith Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.13322,
+   "lat": 43.038614,
+   "osm": "way/156759740"
+  },
+  {
+   "id": "steele-hall",
+   "name": "Steele Hall",
+   "short": "Steele Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.135566,
+   "lat": 43.037351,
+   "osm": "way/156759825"
+  },
+  {
+   "id": "winnick-hillel-center-for-jewish-life",
+   "name": "Winnick Hillel Center For Jewish Life",
+   "short": "Winnick Hillel Center For Jewish Life",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.133214,
+   "lat": 43.04392,
+   "osm": "way/683154898"
+  },
+  {
+   "id": "university-college-part-time-study",
+   "name": "University College (Part-Time Study)",
+   "short": "University College (Part-Time Study)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.134786,
+   "lat": 43.042456,
+   "osm": "way/317206408"
+  },
+  {
+   "id": "skybarn",
+   "name": "Skybarn",
+   "short": "Skybarn",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.120771,
+   "lat": 43.019739,
+   "osm": "way/930025485"
+  },
+  {
+   "id": "syracuse-university-school-of-nursing",
+   "name": "Syracuse University School of Nursing",
+   "short": "Syracuse University School of Nursing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.129068,
+   "lat": 43.041852,
+   "osm": "way/930351173"
+  },
+  {
+   "id": "belfer-archive",
+   "name": "Belfer Archive",
+   "short": "Belfer Archive",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.132011,
+   "lat": 43.039838,
+   "osm": "way/930364135"
+  },
+  {
+   "id": "haft-hall",
+   "name": "Haft Hall",
+   "short": "Haft Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.127941,
+   "lat": 43.036673,
+   "osm": "way/930393684"
+  },
+  {
+   "id": "carriage-house",
+   "name": "Carriage House",
+   "short": "Carriage House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.120304,
+   "lat": 43.019636,
+   "osm": "way/930025486"
+  },
+  {
+   "id": "holden-observatory",
+   "name": "Holden Observatory",
+   "short": "Holden Observatory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.137135,
+   "lat": 43.037848,
+   "osm": "relation/13172228"
+  }
+ ]
+}

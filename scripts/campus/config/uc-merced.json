@@ -1,0 +1,16 @@
+{
+  "collegeId": "uc-merced",
+  "area": {
+    "osm": "way/170555864",
+    "bbox": [
+      37.35906,
+      -120.43216,
+      37.37127,
+      -120.413
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public building-code list: the Registrar site (registrar.ucmerced.edu) publishes classroom scheduling practices and time blocks but no building abbreviation key, and searches of ucmerced.edu find none (checked 2026-11-08)."
+}

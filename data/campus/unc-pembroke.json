@@ -1,0 +1,401 @@
+{
+ "collegeId": "unc-pembroke",
+ "generatedAt": "2026-11-14T01:48:24.460Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/unc-pembroke.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -79.20497,
+  34.68505,
+  -79.19776,
+  34.69973
+ ],
+ "halls": [
+  {
+   "dormId": "north-hall",
+   "name": "North Hall",
+   "lng": -79.202,
+   "lat": 34.686745,
+   "pin": "name",
+   "osm": "way/1196919065",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jones-athletic-center",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "chavis-university-center",
+     "minutes": 3.6
+    },
+    "library": {
+     "placeId": "livermore-library",
+     "minutes": 1.8
+    }
+   }
+  },
+  {
+   "dormId": "belk-hall",
+   "name": "Belk Hall",
+   "lng": -79.202342,
+   "lat": 34.686517,
+   "pin": "name",
+   "osm": "way/1196919062",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jones-athletic-center",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "chavis-university-center",
+     "minutes": 4.6
+    },
+    "library": {
+     "placeId": "livermore-library",
+     "minutes": 1.6
+    }
+   }
+  },
+  {
+   "dormId": "oak-hall",
+   "name": "Oak Hall",
+   "lng": -79.202548,
+   "lat": 34.68815,
+   "pin": "name",
+   "osm": "way/1196919069",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jones-athletic-center",
+     "minutes": 3.5
+    },
+    "dining": {
+     "placeId": "chavis-university-center",
+     "minutes": 4.9
+    },
+    "library": {
+     "placeId": "livermore-library",
+     "minutes": 5.3
+    }
+   }
+  },
+  {
+   "dormId": "cypress-hall",
+   "name": "Cypress Hall",
+   "lng": -79.200072,
+   "lat": 34.695083,
+   "pin": "name",
+   "osm": "way/1196913437",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jones-athletic-center",
+     "minutes": 10.9
+    },
+    "dining": {
+     "placeId": "chavis-university-center",
+     "minutes": 15.4
+    },
+    "library": {
+     "placeId": "livermore-library",
+     "minutes": 16.9
+    }
+   }
+  },
+  {
+   "dormId": "pine-hall",
+   "name": "Pine Hall",
+   "lng": -79.202658,
+   "lat": 34.687654,
+   "pin": "name",
+   "osm": "way/1196919068",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jones-athletic-center",
+     "minutes": 5.7
+    },
+    "dining": {
+     "placeId": "chavis-university-center",
+     "minutes": 8.3
+    },
+    "library": {
+     "placeId": "livermore-library",
+     "minutes": 8.8
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "jones-athletic-center",
+   "name": "Jones Athletic Center",
+   "short": "Jones Athletic Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.201425,
+   "lat": 34.689301,
+   "osm": "way/1196927910"
+  },
+  {
+   "id": "chavis-university-center",
+   "name": "Chavis University Center",
+   "short": "Chavis University Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.200315,
+   "lat": 34.688281,
+   "osm": "way/1196927913"
+  },
+  {
+   "id": "oxendine-science-building",
+   "name": "Oxendine Science Building",
+   "short": "Oxendine Science Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.19997,
+   "lat": 34.685049,
+   "osm": "way/1196927920"
+  },
+  {
+   "id": "weinstein-health-sciences-building",
+   "name": "Weinstein Health Sciences Building",
+   "short": "Weinstein Health Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.200484,
+   "lat": 34.693303,
+   "osm": "way/1196908394"
+  },
+  {
+   "id": "james-a-thomas-hall",
+   "name": "James A. Thomas Hall",
+   "short": "James A. Thomas Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.19927,
+   "lat": 34.691416,
+   "osm": "way/1196908383"
+  },
+  {
+   "id": "givens-performing-arts-center",
+   "name": "Givens Performing Arts Center",
+   "short": "Givens Performing Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.199653,
+   "lat": 34.689275,
+   "osm": "way/1196927911"
+  },
+  {
+   "id": "livermore-library",
+   "name": "Livermore Library",
+   "short": "Livermore Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.201777,
+   "lat": 34.685669,
+   "osm": "way/1196927918"
+  },
+  {
+   "id": "caton-fieldhouse",
+   "name": "Caton Fieldhouse",
+   "short": "Caton Fieldhouse",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.204248,
+   "lat": 34.69015,
+   "osm": "way/1196927925"
+  },
+  {
+   "id": "old-main",
+   "name": "Old Main",
+   "short": "Old Main",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.200584,
+   "lat": 34.685183,
+   "osm": "way/1196927919"
+  },
+  {
+   "id": "d-f-lowry-building",
+   "name": "D. F. Lowry Building",
+   "short": "D. F. Lowry Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.201022,
+   "lat": 34.686896,
+   "osm": "way/1196927914"
+  },
+  {
+   "id": "locklear-hall",
+   "name": "Locklear Hall",
+   "short": "Locklear Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.200357,
+   "lat": 34.686643,
+   "osm": "way/1196927916"
+  },
+  {
+   "id": "sampson-building",
+   "name": "Sampson Building",
+   "short": "Sampson Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.199547,
+   "lat": 34.692084,
+   "osm": "way/1196908386"
+  },
+  {
+   "id": "business-administration-building",
+   "name": "Business Administration Building",
+   "short": "Business Administration Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.201582,
+   "lat": 34.687745,
+   "osm": "way/1196919067"
+  },
+  {
+   "id": "dial-humanities-building",
+   "name": "Dial Humanities Building",
+   "short": "Dial Humanities Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.199836,
+   "lat": 34.690777,
+   "osm": "way/1196908384"
+  },
+  {
+   "id": "pinchbeck-building",
+   "name": "Pinchbeck Building",
+   "short": "Pinchbeck Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.199915,
+   "lat": 34.696239,
+   "osm": "way/1196927933"
+  },
+  {
+   "id": "the-annex",
+   "name": "The Annex",
+   "short": "The Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.20019,
+   "lat": 34.688874,
+   "osm": "way/1196927912"
+  },
+  {
+   "id": "education-center",
+   "name": "Education Center",
+   "short": "Education Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.201927,
+   "lat": 34.687271,
+   "osm": "way/1196919066"
+  },
+  {
+   "id": "jacobs-hall",
+   "name": "Jacobs Hall",
+   "short": "Jacobs Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.199685,
+   "lat": 34.686609,
+   "osm": "way/1196927917"
+  },
+  {
+   "id": "hickory-hall",
+   "name": "Hickory Hall",
+   "short": "Hickory Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.202369,
+   "lat": 34.685923,
+   "osm": "way/1196919061"
+  },
+  {
+   "id": "taley-and-jordan-hunt-braves-resource-center",
+   "name": "Taley & Jordan Hunt Braves Resource Center",
+   "short": "Taley & Jordan Hunt Braves Resource Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.204895,
+   "lat": 34.687342,
+   "osm": "way/1196919050"
+  },
+  {
+   "id": "pine-cottage",
+   "name": "Pine Cottage",
+   "short": "Pine Cottage",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.201937,
+   "lat": 34.697982,
+   "osm": "way/1526840463"
+  },
+  {
+   "id": "dogwood-building",
+   "name": "Dogwood Building",
+   "short": "Dogwood Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.204967,
+   "lat": 34.686981,
+   "osm": "way/1196927932"
+  },
+  {
+   "id": "rotc-building",
+   "name": "ROTC Building",
+   "short": "ROTC Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.197761,
+   "lat": 34.699728,
+   "osm": "way/1526840471"
+  }
+ ]
+}

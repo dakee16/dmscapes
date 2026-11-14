@@ -1,0 +1,883 @@
+{
+ "name": "Purdue University campus map, West Lafayette Campus: Building Names and Abbreviations (modification date August 2026)",
+ "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "2550",
+   "name": "2550 Northwestern Ave. Purdue Research Park"
+  },
+  {
+   "code": "3WST",
+   "name": "Third and West"
+  },
+  {
+   "code": "AACC",
+   "name": "Asian American and Asian Resource and Cultural Center"
+  },
+  {
+   "code": "AAPF",
+   "name": "Ag Alumni Seed Phenotyping Facility"
+  },
+  {
+   "code": "ABE",
+   "name": "Agricultural and Biological Engineering"
+  },
+  {
+   "code": "ADDL",
+   "name": "Willie M. Reed Animal Disease Diagnostic Laboratory"
+  },
+  {
+   "code": "ADM",
+   "name": "ADM Agricultural Innovation Center"
+  },
+  {
+   "code": "ADPA-C",
+   "name": "Aspire at Discovery Park"
+  },
+  {
+   "code": "AERO",
+   "name": "Aerospace Science Laboratory"
+  },
+  {
+   "code": "AET",
+   "name": "Amelia Earhart Terminal"
+  },
+  {
+   "code": "AGAD",
+   "name": "Agricultural Administration Building"
+  },
+  {
+   "code": "AHF",
+   "name": "Animal Holding Facility"
+  },
+  {
+   "code": "AQUA",
+   "name": "Burke (Morgan J.) Boilermaker Aquatic Center"
+  },
+  {
+   "code": "AR",
+   "name": "Armory"
+  },
+  {
+   "code": "ARMS",
+   "name": "Armstrong (Neil) Hall of Engineering"
+  },
+  {
+   "code": "ASB",
+   "name": "Airport Service Building (Shop Services)"
+  },
+  {
+   "code": "BALY",
+   "name": "Bailey (Ralph and Bettye) Hall"
+  },
+  {
+   "code": "BBCH",
+   "name": "Purdue Baseball Clubhouse"
+  },
+  {
+   "code": "BBPB",
+   "name": "Purdue Baseball Press Box"
+  },
+  {
+   "code": "BCC",
+   "name": "Black Cultural Center"
+  },
+  {
+   "code": "BCHM",
+   "name": "Biochemistry Building"
+  },
+  {
+   "code": "BHEE",
+   "name": "Brown (Max W & Maileen) Family Hall"
+  },
+  {
+   "code": "BIDC",
+   "name": "Bechtel Innovation Design Center"
+  },
+  {
+   "code": "BIND",
+   "name": "Bindley Bioscience Center"
+  },
+  {
+   "code": "BOWN",
+   "name": "Bowen (Robert L. & Terry L. ) Laboratory"
+  },
+  {
+   "code": "BREQ",
+   "name": "Brunner (David and Bonnie) Equine Hospital"
+  },
+  {
+   "code": "BRES",
+   "name": "Brees (Drew and Brittany) Student-Athlete Academic Center"
+  },
+  {
+   "code": "BRFM",
+   "name": "Brunner (David and Bonnie) Farm Animal Hospital"
+  },
+  {
+   "code": "BRK",
+   "name": "Birck Nanotechnology Center"
+  },
+  {
+   "code": "BRNG",
+   "name": "Beering (Steven C.) Hall of Liberal Arts and Education"
+  },
+  {
+   "code": "BRUN",
+   "name": "Brunner (David and Bonnie) Small Animal Hospital"
+  },
+  {
+   "code": "BRWN",
+   "name": "Brown (Herbert C.) Laboratory of Chemistry"
+  },
+  {
+   "code": "BTV",
+   "name": "Boiler Television Building"
+  },
+  {
+   "code": "CARY",
+   "name": "Cary (Franklin Levering) Quadrangle"
+  },
+  {
+   "code": "CHAF",
+   "name": "Chaffee Hall"
+  },
+  {
+   "code": "CHAS",
+   "name": "Chaney-Hale Hall of Science"
+  },
+  {
+   "code": "CL50",
+   "name": "Class of 1950 Lecture Hall"
+  },
+  {
+   "code": "COMP",
+   "name": "Composites Laboratory"
+  },
+  {
+   "code": "CONT",
+   "name": "Continuum"
+  },
+  {
+   "code": "CONV",
+   "name": "Convergence"
+  },
+  {
+   "code": "CREC",
+   "name": "Córdova (France A.) Recreational Sports Center"
+  },
+  {
+   "code": "CRTN",
+   "name": "Creighton (Hobart and Russell) Hall of Animal Sciences"
+  },
+  {
+   "code": "DANL",
+   "name": "Daniel (William H.) Turfgrass Research Center"
+  },
+  {
+   "code": "DAUC",
+   "name": "Dauch (Dick and Sandy) Alumni Center"
+  },
+  {
+   "code": "DLR",
+   "name": "Hall for Discovery and Learning Research"
+  },
+  {
+   "code": "DMNT",
+   "name": "DeMent (Clayton W.) Fire Station"
+  },
+  {
+   "code": "DOYL",
+   "name": "Doyle (Leo Philip) Laboratory"
+  },
+  {
+   "code": "DRUG",
+   "name": "Drug Discovery"
+  },
+  {
+   "code": "DSAI",
+   "name": "Hall of Data Science and AI"
+  },
+  {
+   "code": "DUDL",
+   "name": "Dudley Hall"
+  },
+  {
+   "code": "DUHM",
+   "name": "Duhme (Ophelia) Residence Hall"
+  },
+  {
+   "code": "DYE",
+   "name": "Pete Dye Clubhouse"
+  },
+  {
+   "code": "ECEC",
+   "name": "Purdue University Early Care and Education Center"
+  },
+  {
+   "code": "EEL",
+   "name": "Entomology Environmental Laboratory"
+  },
+  {
+   "code": "EHSA",
+   "name": "Equine Health Sciences Annex"
+  },
+  {
+   "code": "EHSB",
+   "name": "Equine Health Sciences Building"
+  },
+  {
+   "code": "ELLT",
+   "name": "Elliott (Edward C.) Hall of Music"
+  },
+  {
+   "code": "ERHT",
+   "name": "Earhart (Amelia) Residence Hall"
+  },
+  {
+   "code": "FLEX",
+   "name": "Flex Laboratories"
+  },
+  {
+   "code": "FOPN",
+   "name": "Flight Operations Building"
+  },
+  {
+   "code": "FORD",
+   "name": "Ford (Fred and Mary) Dining Court"
+  },
+  {
+   "code": "FORS",
+   "name": "Forestry Building"
+  },
+  {
+   "code": "FPRD",
+   "name": "Forest Products Building"
+  },
+  {
+   "code": "FRNY",
+   "name": "Forney Hall of Chemical Engineering"
+  },
+  {
+   "code": "FST",
+   "name": "First Street Towers"
+  },
+  {
+   "code": "FWLR",
+   "name": "Fowler (Harriet O. and James M., Jr.) Memorial House"
+  },
+  {
+   "code": "GCMB",
+   "name": "Golf Course Maintenance Barn"
+  },
+  {
+   "code": "GMF",
+   "name": "Grounds Maintenance Facility"
+  },
+  {
+   "code": "GMGF",
+   "name": "Grounds Maintenance Greenhouse Facilities"
+  },
+  {
+   "code": "GRIS",
+   "name": "Grissom Hall"
+  },
+  {
+   "code": "GRS",
+   "name": "Grounds Service Building"
+  },
+  {
+   "code": "GSMB",
+   "name": "Golf Storage Maintenance Building"
+  },
+  {
+   "code": "HAAS",
+   "name": "Haas (Felix) Hall"
+  },
+  {
+   "code": "HAGL",
+   "name": "Hagle (Marc and Sharon) Hall"
+  },
+  {
+   "code": "HAMP",
+   "name": "Hampton (Delon and Elizabeth) Hall of Civil Engineering"
+  },
+  {
+   "code": "HANS",
+   "name": "Hansen (Arthur G.) Life Sciences Research Building"
+  },
+  {
+   "code": "HARF",
+   "name": "Hypersonics and Applied Research Facility"
+  },
+  {
+   "code": "HARR",
+   "name": "Harrison (Benjamin) Residence Hall"
+  },
+  {
+   "code": "HAWK",
+   "name": "Hawkins (George A.) Hall"
+  },
+  {
+   "code": "HCRS",
+   "name": "Honors College and Residences South"
+  },
+  {
+   "code": "HERL",
+   "name": "Herrick Acoustics"
+  },
+  {
+   "code": "HGR4-7",
+   "name": "Hangars, Numbers 4 through 7"
+  },
+  {
+   "code": "HGRH",
+   "name": "Horticultural Greenhouse"
+  },
+  {
+   "code": "HIKS",
+   "name": "Hicks (John W.) Undergraduate Library"
+  },
+  {
+   "code": "HILL",
+   "name": "Hillenbrand Residence Hall"
+  },
+  {
+   "code": "HLAB",
+   "name": "Herrick Laboratories"
+  },
+  {
+   "code": "HLTP",
+   "name": "Hilltop Apartments"
+  },
+  {
+   "code": "HMMT",
+   "name": "Hazardous Materials Management Trailer"
+  },
+  {
+   "code": "HNLY",
+   "name": "Hanley (Bill and Sally) Hall"
+  },
+  {
+   "code": "HOCK",
+   "name": "Hockmeyer (Wayne T. and Mary T.) Hall of Structural Biology"
+  },
+  {
+   "code": "HORT",
+   "name": "Horticulture Building"
+  },
+  {
+   "code": "HOVD",
+   "name": "Hovde (Frederick L.) Hall of Administration"
+  },
+  {
+   "code": "HULL",
+   "name": "Hull All-American Marching Band"
+  },
+  {
+   "code": "JNSN",
+   "name": "Johnson (Helen R.) Hall of Nursing"
+  },
+  {
+   "code": "KFPC",
+   "name": "Kozuch Football Performance Complex"
+  },
+  {
+   "code": "KNOY",
+   "name": "Knoy (Maurice G.) Hall of Technology"
+  },
+  {
+   "code": "KRAN",
+   "name": "Krannert Building"
+  },
+  {
+   "code": "KRCH",
+   "name": "Krach Leadership Center"
+  },
+  {
+   "code": "LAMB",
+   "name": "Lambert (Ward L.) Fieldhouse and Gymnasium"
+  },
+  {
+   "code": "LCCP",
+   "name": "Latino Cultural Center at Purdue"
+  },
+  {
+   "code": "LEES",
+   "name": "Lee-Such Tower"
+  },
+  {
+   "code": "LG",
+   "name": "Lambert Green"
+  },
+  {
+   "code": "LILY",
+   "name": "Lilly Hall of Life Sciences"
+  },
+  {
+   "code": "LMBS",
+   "name": "Lambertus Hall"
+  },
+  {
+   "code": "LMSB",
+   "name": "Laboratory Materials Storage Building"
+  },
+  {
+   "code": "LMST",
+   "name": "Laboratory Materials Storage Trailer"
+  },
+  {
+   "code": "LOLC",
+   "name": "Land O’Lakes Center for Experiential Learning"
+  },
+  {
+   "code": "LSA",
+   "name": "Life Science Animal Building"
+  },
+  {
+   "code": "LSPS",
+   "name": "Life Science Plant and Soils Laboratory"
+  },
+  {
+   "code": "LSR",
+   "name": "Life Science Ranges (Greenhouse and Service Building)"
+  },
+  {
+   "code": "LWSN",
+   "name": "Lawson (Richard and Patricia) Computer Science Building"
+  },
+  {
+   "code": "LYLE",
+   "name": "Lyles-Porter Hall"
+  },
+  {
+   "code": "LYNN",
+   "name": "Lynn (Charles J.) Hall of Veterinary Medicine"
+  },
+  {
+   "code": "MACK",
+   "name": "Mackey (Guy J.) Arena"
+  },
+  {
+   "code": "MANN",
+   "name": "Mann (Gerald D. and Edna E.) Hall"
+  },
+  {
+   "code": "MATH",
+   "name": "Mathematical Sciences Building"
+  },
+  {
+   "code": "MCUT",
+   "name": "McCutcheon (John T.) Residence Hall"
+  },
+  {
+   "code": "ME",
+   "name": "Mechanical Engineering Building"
+  },
+  {
+   "code": "MJIS",
+   "name": "Jischke (Martin C.) Hall of Biomedical Engineering"
+  },
+  {
+   "code": "MMDC",
+   "name": "Materials Management and Distribution Center"
+  },
+  {
+   "code": "MMS1",
+   "name": "Materials Management Storage Building 1"
+  },
+  {
+   "code": "MOLL",
+   "name": "Mollenkopf Athletic Center"
+  },
+  {
+   "code": "MRDH",
+   "name": "Meredith (Virginia C.) Residence Hall"
+  },
+  {
+   "code": "MRDS",
+   "name": "Meredith (Virginia C.) Residence Hall South"
+  },
+  {
+   "code": "MRGN",
+   "name": "Morgan (Burton D.) Center for Entrepreneurship"
+  },
+  {
+   "code": "MRRT",
+   "name": "Marriott Hall"
+  },
+  {
+   "code": "MSEE",
+   "name": "Materials and Electrical Engineering Building"
+  },
+  {
+   "code": "MTHW",
+   "name": "Matthews Hall"
+  },
+  {
+   "code": "NACC",
+   "name": "Native American Educational and Cultural Center"
+  },
+  {
+   "code": "NISW",
+   "name": "Niswonger Aviation Technology Building"
+  },
+  {
+   "code": "NLSN",
+   "name": "Nelson (Philip E.) Hall of Food Science"
+  },
+  {
+   "code": "OLMN",
+   "name": "Ollman (Melvin L.) Golfcart Barn"
+  },
+  {
+   "code": "OWEN",
+   "name": "Owen (Richard) Residence Hall"
+  },
+  {
+   "code": "PAGE",
+   "name": "Page (Thomas A.) Pavilion"
+  },
+  {
+   "code": "PAO",
+   "name": "Pao (Yue-Kong) Hall of Visual and Performing Arts"
+  },
+  {
+   "code": "PDYE",
+   "name": "Pete Dye Clubhouse"
+  },
+  {
+   "code": "PFEN",
+   "name": "Pfendler (David C.) Hall of Agriculture"
+  },
+  {
+   "code": "PFSB",
+   "name": "Physical Facilities Service Building"
+  },
+  {
+   "code": "PGG",
+   "name": "Grant Street Parking Garage"
+  },
+  {
+   "code": "PGH",
+   "name": "Harrison Street Parking Garage"
+  },
+  {
+   "code": "PGMD",
+   "name": "McCutcheon Drive Parking Garage"
+  },
+  {
+   "code": "PGNW",
+   "name": "Northwestern Avenue Parking Garage"
+  },
+  {
+   "code": "PGSC",
+   "name": "Purdue Graduate Student Center"
+  },
+  {
+   "code": "PGU",
+   "name": "University Street Parking Garage"
+  },
+  {
+   "code": "PGW",
+   "name": "Wood Street Parking Garage"
+  },
+  {
+   "code": "PHYS",
+   "name": "Physics Building"
+  },
+  {
+   "code": "PJEC",
+   "name": "Jischke (Patty) Early Care and Education Center Purdue"
+  },
+  {
+   "code": "PKRF",
+   "name": "Parker (Frieda) Residence Hall"
+  },
+  {
+   "code": "PKRW",
+   "name": "Parker (Winifred) Residence Hall"
+  },
+  {
+   "code": "PMRI",
+   "name": "Purdue Magnetic Resonance Imaging Facility"
+  },
+  {
+   "code": "PMU",
+   "name": "Purdue Memorial Union"
+  },
+  {
+   "code": "PMUC",
+   "name": "Purdue Memorial Union Club"
+  },
+  {
+   "code": "POTR",
+   "name": "Potter (A.A.) Engineering Center"
+  },
+  {
+   "code": "PRCE",
+   "name": "Peirce Hall"
+  },
+  {
+   "code": "PSYC",
+   "name": "Psychological Sciences Building"
+  },
+  {
+   "code": "PUSH",
+   "name": "Purdue University Student Health Center"
+  },
+  {
+   "code": "PVAB",
+   "name": "Purdue Village Administration Building"
+  },
+  {
+   "code": "RAIL",
+   "name": "American Railway Building"
+  },
+  {
+   "code": "RAWL",
+   "name": "Rawls (Jerry S.) Hall"
+  },
+  {
+   "code": "RHPH",
+   "name": "Heine (Robert E.) Pharmacy Building"
+  },
+  {
+   "code": "SBCH",
+   "name": "Purdue Softball Clubhouse"
+  },
+  {
+   "code": "SBPB",
+   "name": "Purdue Softball Press Box"
+  },
+  {
+   "code": "SC",
+   "name": "Stanley Coulter Hall"
+  },
+  {
+   "code": "SCHM",
+   "name": "Helen B. Schleman Hall"
+  },
+  {
+   "code": "SCHO",
+   "name": "Global Policy Research Institute (Schowe House)"
+  },
+  {
+   "code": "SCHW",
+   "name": "Schwartz (Dennis J. and Mary Lou) Tennis Center"
+  },
+  {
+   "code": "SCPA",
+   "name": "Slayter Center of Performing Arts"
+  },
+  {
+   "code": "SH",
+   "name": "South Hall"
+  },
+  {
+   "code": "SHLY",
+   "name": "Shealy (Frances M.) Residence Hall"
+  },
+  {
+   "code": "SHRV",
+   "name": "Shreve (Eleanor B.) Residence Hall"
+  },
+  {
+   "code": "SIML",
+   "name": "Holleman-Niswonger Simulator Center"
+  },
+  {
+   "code": "SMLY",
+   "name": "Smalley (John C.) Center for Housing and Food Services"
+  },
+  {
+   "code": "SMTH",
+   "name": "Smith Hall"
+  },
+  {
+   "code": "SOCC",
+   "name": "Purdue Women’s Soccer Building"
+  },
+  {
+   "code": "SOIL",
+   "name": "Soil Erosion Laboratory, National"
+  },
+  {
+   "code": "SPUR",
+   "name": "Spurgeon (Tom) Golf Training Center"
+  },
+  {
+   "code": "SRPL",
+   "name": "Surplus Operations Building"
+  },
+  {
+   "code": "STDM",
+   "name": "Ross-Ade Stadium (includes Ross-Ade Pavilion [RAP])"
+  },
+  {
+   "code": "STEW",
+   "name": "Stewart Center (includes Welcome Center)"
+  },
+  {
+   "code": "STON",
+   "name": "Stone (Winthrop E.) Hall"
+  },
+  {
+   "code": "TARK",
+   "name": "Tarkington (Newton Booth) Residence Hall"
+  },
+  {
+   "code": "TEL",
+   "name": "Telecommunications Building"
+  },
+  {
+   "code": "TERM",
+   "name": "Terminal Building"
+  },
+  {
+   "code": "TERY",
+   "name": "Terry (Oliver P.) House"
+  },
+  {
+   "code": "TREC",
+   "name": "Turf Recreation Exercise Center"
+  },
+  {
+   "code": "TSWF",
+   "name": "Transportation Service Wash Facility"
+  },
+  {
+   "code": "UC",
+   "name": "University Church"
+  },
+  {
+   "code": "UNIV",
+   "name": "University Hall"
+  },
+  {
+   "code": "UPOB",
+   "name": "Utility Plant Office Building"
+  },
+  {
+   "code": "UPOF",
+   "name": "Utility Plant Office Facility"
+  },
+  {
+   "code": "UPSB",
+   "name": "Utility Plant Storage Building"
+  },
+  {
+   "code": "VA1",
+   "name": "Veterinary Animal Isolation Building 1"
+  },
+  {
+   "code": "VA2",
+   "name": "Veterinary Animal Isolation Building 2"
+  },
+  {
+   "code": "VAWT",
+   "name": "Vawter (Everett B.) Residence Hall"
+  },
+  {
+   "code": "VCPR",
+   "name": "Veterinary Center for Paralysis Research"
+  },
+  {
+   "code": "VLAB",
+   "name": "Veterinary Laboratory Animal Building"
+  },
+  {
+   "code": "VMIF",
+   "name": "Veterinary Medicine Isolation Facility"
+  },
+  {
+   "code": "VOIN",
+   "name": "Voinoff (Samuel) Golf Pavilion"
+  },
+  {
+   "code": "VPRB",
+   "name": "Veterinary Pathobiology Research Building"
+  },
+  {
+   "code": "VPTH",
+   "name": "Veterinary Pathology Building"
+  },
+  {
+   "code": "WADE",
+   "name": "Wade (Walter W.) Utility Plant"
+  },
+  {
+   "code": "WALC",
+   "name": "Wilmeth (Thomas S. and Harvey D.) Active Learning Center"
+  },
+  {
+   "code": "WANG",
+   "name": "Wang (Seng-Liang) Hall"
+  },
+  {
+   "code": "WARN",
+   "name": "Warren (Martha E. and Eugene K.) Residence Hall"
+  },
+  {
+   "code": "WDCT",
+   "name": "Wiley Dining Court"
+  },
+  {
+   "code": "WEST",
+   "name": "Westwood (President’s Home)"
+  },
+  {
+   "code": "WGLR",
+   "name": "Women’s Golf Locker Room"
+  },
+  {
+   "code": "WILY",
+   "name": "Wiley (Harvey W.) Residence Hall"
+  },
+  {
+   "code": "WOOD",
+   "name": "Wood (Elizabeth G. and William R.) Residence Hall"
+  },
+  {
+   "code": "WSLR",
+   "name": "Whistler (Roy L.) Hall of Agricultural Research"
+  },
+  {
+   "code": "WTHR",
+   "name": "Wetherill (Richard Benbridge) Laboratory of Chemistry"
+  },
+  {
+   "code": "YONG",
+   "name": "Young (Ernest C.) Hall"
+  },
+  {
+   "code": "ZL1",
+   "name": "Combustion Research Laboratory"
+  },
+  {
+   "code": "ZL2",
+   "name": "Gas Dynamics Research Laboratory"
+  },
+  {
+   "code": "ZL3",
+   "name": "High Pressure Research Laboratory"
+  },
+  {
+   "code": "ZL4",
+   "name": "Propulsion Research Laboratory"
+  },
+  {
+   "code": "ZL5",
+   "name": "Turbomachinery Fluid Dynamics Laboratory"
+  },
+  {
+   "code": "ZL8",
+   "name": "High Pressure Combustion Laboratory"
+  },
+  {
+   "code": "ZL9",
+   "name": "Zucrow High Speed Propulsion Lab"
+  }
+ ]
+}

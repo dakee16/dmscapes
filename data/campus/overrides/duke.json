@@ -1,0 +1,293 @@
+{
+  "halls": {
+    "craven": {
+      "pin": [
+        -78.93885,
+        35.9996
+      ]
+    },
+    "crowell": {
+      "pin": [
+        -78.94019,
+        35.999053
+      ]
+    },
+    "keohane": {
+      "pin": [
+        -78.938042,
+        35.998978
+      ]
+    },
+    "kilgo": {
+      "pin": [
+        -78.94006,
+        35.999699
+      ]
+    },
+    "edens": {
+      "pin": [
+        -78.936247,
+        35.998886
+      ]
+    },
+    "wannamaker": {
+      "pin": [
+        -78.939199,
+        35.99857
+      ]
+    },
+    "few": {
+      "pin": [
+        -78.937857,
+        36.000191
+      ]
+    },
+    "hollows": {
+      "pin": [
+        -78.9376,
+        35.997751
+      ]
+    },
+    "300-swift": {
+      "pin": [
+        -78.922187,
+        36.002883
+      ]
+    },
+    "the-blue-light": {
+      "pin": [
+        -78.922288,
+        36.005525
+      ]
+    }
+  },
+  "places": {
+    "trinity-residence-hall": {
+      "hide": true
+    },
+    "gilbert-addoms-residence-hall": {
+      "hide": true
+    },
+    "blackwell-residence-hall": {
+      "hide": true
+    },
+    "randolph-residence-hall": {
+      "hide": true
+    },
+    "southgate-residence-hall": {
+      "hide": true
+    },
+    "bell-tower-residence-hall": {
+      "hide": true
+    },
+    "wilson-residence-hall": {
+      "hide": true
+    },
+    "brown-residence-hall": {
+      "hide": true
+    },
+    "bassett-residence-hall": {
+      "hide": true
+    },
+    "east-house-residence-hall": {
+      "hide": true
+    },
+    "jarvis-residence-hall": {
+      "hide": true
+    },
+    "edens-quad-3a": {
+      "hide": true
+    },
+    "edens-quad-2a": {
+      "hide": true
+    },
+    "craven-house-x": {
+      "hide": true
+    },
+    "hospital-south": {
+      "hide": true
+    },
+    "duke-university-hospital": {
+      "hide": true
+    },
+    "duke-medicine-pavillion": {
+      "hide": true
+    },
+    "duke-cancer-center": {
+      "hide": true
+    },
+    "duke-eye-center": {
+      "hide": true
+    },
+    "cancer-center-isolation-facility": {
+      "hide": true
+    },
+    "duke-clinic": {
+      "hide": true
+    },
+    "eye-center-addition": {
+      "hide": true
+    },
+    "mcgovern-davison-childrens-health-center": {
+      "hide": true
+    },
+    "child-care-facility": {
+      "hide": true
+    },
+    "the-little-school": {
+      "hide": true
+    },
+    "home-depot-smart-house": {
+      "hide": true
+    },
+    "karsh-alumni-and-visitors-center": {
+      "hide": true
+    },
+    "devils-den": {
+      "hide": true
+    },
+    "food-factory-at-devils-bistro": {
+      "hide": true
+    },
+    "twinnies-cafe": {
+      "hide": true
+    },
+    "environmental-safety-building": {
+      "hide": true
+    },
+    "learning-and-organizational-development": {
+      "hide": true
+    },
+    "oit-telecommunications-building": {
+      "hide": true
+    },
+    "pascal-field-house": {
+      "hide": true
+    },
+    "cameron-indoor-stadium": {
+      "hide": true
+    },
+    "sheffield-tennis-center": {
+      "hide": true
+    },
+    "krzyzewski-center": {
+      "hide": true
+    },
+    "blue-devil-tower": {
+      "hide": true
+    },
+    "schwartz-butters-athletic-center": {
+      "hide": true
+    },
+    "national-pan-hellenic-council-commons": {
+      "hide": true
+    },
+    "mill-village-commons": {
+      "hide": true
+    },
+    "student-rural-health-coalition-of-north-carolina": {
+      "hide": true
+    },
+    "duke-graduate-and-professional-students-council": {
+      "hide": true
+    },
+    "bishops-house": {
+      "hide": true
+    },
+    "international-house": {
+      "hide": true
+    },
+    "richard-h-brodhead-center-west-union": {
+      "kind": "dining"
+    }
+  },
+  "notes": {
+    "craven": "Pinned at Duke's campus map (maps.duke.edu, its location API dm-graphql.api.oit.duke.edu): Craven Quad House R (map id 28), the middle of the quad; OSM has each house (Craven House A\u2013AA) but no quad building.",
+    "crowell": "Pinned at Duke's campus map (maps.duke.edu, its location API dm-graphql.api.oit.duke.edu): Crowell Quad House EE (map id 11), nearest the middle of the quad.",
+    "keohane": "Pinned at Duke's campus map (maps.duke.edu, its location API dm-graphql.api.oit.duke.edu): Keohane Quad House B (map id 186), nearest the middle of the quad.",
+    "kilgo": "Pinned at Duke's campus map (maps.duke.edu, its location API dm-graphql.api.oit.duke.edu): Kilgo Quad House K (map id 17), nearest the middle of the quad.",
+    "edens": "Pinned at Duke's campus map (maps.duke.edu, its location API dm-graphql.api.oit.duke.edu): Edens Quad House 2C (map id 191), nearest the middle of the quad.",
+    "wannamaker": "Pinned at Duke's campus map (maps.duke.edu, its location API dm-graphql.api.oit.duke.edu): Wannamaker Quad House 2 (map id 75), nearest the middle of the quad.",
+    "few": "Pinned at Duke's campus map (maps.duke.edu, its location API dm-graphql.api.oit.duke.edu): Few Quad House GG (map id 326), nearest the middle of the quad; OSM doesn't name the Few buildings.",
+    "hollows": "Pinned at Duke's campus map (maps.duke.edu, its location API dm-graphql.api.oit.duke.edu): Hollows Quad Building A (map id 365); OSM doesn't name the Hollows buildings.",
+    "300-swift": "Pinned at Duke's campus map (maps.duke.edu, its location API dm-graphql.api.oit.duke.edu): 300 Swift Apartments (map id 372), OSM's unnamed 300 Swift Avenue building (way/311900265).",
+    "the-blue-light": "Pinned at Duke's campus map (maps.duke.edu, its location API dm-graphql.api.oit.duke.edu): The Blue Light Living (map id 4407); OSM doesn't name it.",
+    "trinity-residence-hall": "An East Campus residence hall (East Campus halls aren't on this map), not a class building.",
+    "gilbert-addoms-residence-hall": "An East Campus residence hall (East Campus halls aren't on this map), not a class building.",
+    "blackwell-residence-hall": "An East Campus residence hall (East Campus halls aren't on this map), not a class building.",
+    "randolph-residence-hall": "An East Campus residence hall (East Campus halls aren't on this map), not a class building.",
+    "southgate-residence-hall": "An East Campus residence hall (East Campus halls aren't on this map), not a class building.",
+    "bell-tower-residence-hall": "An East Campus residence hall (East Campus halls aren't on this map), not a class building.",
+    "wilson-residence-hall": "An East Campus residence hall (East Campus halls aren't on this map), not a class building.",
+    "brown-residence-hall": "An East Campus residence hall (East Campus halls aren't on this map), not a class building.",
+    "bassett-residence-hall": "An East Campus residence hall (East Campus halls aren't on this map), not a class building.",
+    "east-house-residence-hall": "An East Campus residence hall (East Campus halls aren't on this map), not a class building.",
+    "jarvis-residence-hall": "An East Campus residence hall (East Campus halls aren't on this map), not a class building.",
+    "edens-quad-3a": "Part of a West Campus quad (a hall), not a class building.",
+    "edens-quad-2a": "Part of a West Campus quad (a hall), not a class building.",
+    "craven-house-x": "Part of a West Campus quad (a hall), not a class building.",
+    "hospital-south": "Duke Health hospital or clinic building, not somewhere undergraduate classes happen.",
+    "duke-university-hospital": "Duke Health hospital or clinic building, not somewhere undergraduate classes happen.",
+    "duke-medicine-pavillion": "Duke Health hospital or clinic building, not somewhere undergraduate classes happen.",
+    "duke-cancer-center": "Duke Health hospital or clinic building, not somewhere undergraduate classes happen.",
+    "duke-eye-center": "Duke Health hospital or clinic building, not somewhere undergraduate classes happen.",
+    "cancer-center-isolation-facility": "Duke Health hospital or clinic building, not somewhere undergraduate classes happen.",
+    "duke-clinic": "Duke Health hospital or clinic building, not somewhere undergraduate classes happen.",
+    "eye-center-addition": "Duke Health hospital or clinic building, not somewhere undergraduate classes happen.",
+    "mcgovern-davison-childrens-health-center": "Duke Health hospital or clinic building, not somewhere undergraduate classes happen.",
+    "child-care-facility": "Childcare, not somewhere classes happen.",
+    "the-little-school": "Childcare, not somewhere classes happen.",
+    "home-depot-smart-house": "A student residence (the Smart Home), not a class building.",
+    "karsh-alumni-and-visitors-center": "Alumni and visitor centre, not somewhere classes happen.",
+    "devils-den": "A cafe or food outlet, not a dining hall or class building.",
+    "food-factory-at-devils-bistro": "A cafe or food outlet, not a dining hall or class building.",
+    "twinnies-cafe": "A cafe or food outlet, not a dining hall or class building.",
+    "environmental-safety-building": "Administrative or service building, not somewhere classes happen.",
+    "learning-and-organizational-development": "Administrative or service building, not somewhere classes happen.",
+    "oit-telecommunications-building": "Administrative or service building, not somewhere classes happen.",
+    "pascal-field-house": "Varsity athletics venue or offices, not a class building or student gym.",
+    "cameron-indoor-stadium": "Varsity athletics venue or offices, not a class building or student gym.",
+    "sheffield-tennis-center": "Varsity athletics venue or offices, not a class building or student gym.",
+    "krzyzewski-center": "Varsity athletics venue or offices, not a class building or student gym.",
+    "blue-devil-tower": "Varsity athletics venue or offices, not a class building or student gym.",
+    "schwartz-butters-athletic-center": "Varsity athletics venue or offices, not a class building or student gym.",
+    "national-pan-hellenic-council-commons": "A student lounge commons, not a dining hall or class building.",
+    "mill-village-commons": "A student lounge commons, not a dining hall or class building.",
+    "student-rural-health-coalition-of-north-carolina": "A student organisation office, not somewhere classes happen.",
+    "duke-graduate-and-professional-students-council": "A student organisation office, not somewhere classes happen.",
+    "bishops-house": "Office or residence house, not somewhere classes happen.",
+    "international-house": "Duke International House, student-services offices, not somewhere classes happen.",
+    "richard-h-brodhead-center-west-union": "The Brodhead Center (West Union) is West Campus's main dining hall; its name doesn't say dining."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "craven -> bryan-center",
+        "craven -> richard-h-brodhead-center-west-union",
+        "craven -> rubenstein-library",
+        "craven -> flowers-building",
+        "craven -> thomas-a-langford-building",
+        "craven -> gray-building",
+        "kilgo -> rubenstein-library",
+        "kilgo -> gray-building",
+        "wannamaker -> rubenstein-library",
+        "wannamaker -> card-gymnasium",
+        "few -> rubenstein-library",
+        "few -> gray-building"
+      ],
+      "maxRatio": 3.5,
+      "why": "West Campus's residence quads are closed in by joined Gothic buildings and OSM maps few of the arches through them, so walks leave each quad by its mapped openings and go round to the main quad."
+    },
+    {
+      "pairs": [
+        "crowell -> wilson-recreation-center",
+        "wannamaker -> wilson-recreation-center",
+        "wannamaker -> intramural-building",
+        "hollows -> wilson-recreation-center",
+        "hollows -> intramural-building"
+      ],
+      "maxRatio": 3.6,
+      "why": "Wilson Recreation Center and the Intramural Building sit below Towerview Road with their mapped doors on the service drive behind them; no mapped path leads down to them from the quads, so walks go down Wannamaker Drive and round by that drive."
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "halls": {
+    "riley-hall": {
+      "pin": [
+        -76.133867,
+        43.041202
+      ]
+    },
+    "milton-hall": {
+      "pin": [
+        -76.135952,
+        43.042128
+      ]
+    },
+    "skyhalls": {
+      "pin": [
+        -76.117851,
+        43.016927
+      ]
+    }
+  },
+  "places": {
+    "baker-laboratory": {
+      "hide": true
+    },
+    "walters-hall": {
+      "hide": true
+    },
+    "illick-hall": {
+      "hide": true
+    },
+    "f-franklin-moon-library": {
+      "hide": true
+    },
+    "gateway-center": {
+      "hide": true
+    },
+    "marshall-hall": {
+      "hide": true
+    },
+    "bray-hall": {
+      "hide": true
+    },
+    "jahn-laboratory": {
+      "hide": true
+    },
+    "campus-west-apts": {
+      "hide": true
+    },
+    "sadler-hall-extension": {
+      "hide": true
+    },
+    "lubin-family-welcome-center": {
+      "hide": true
+    },
+    "welcome-center": {
+      "hide": true
+    },
+    "tolley-administrative-building": {
+      "hide": true
+    },
+    "slutzker-center-for-international-services": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "riley-hall": "Syracuse housing gives Riley Hall as the former Sheraton Hotel at 801 University Avenue (housingmealplans.syr.edu/residential-facilities/residence-halls/); OSM's 801 University Avenue building (way/156759792) is that hotel, noted as being converted to dorms in 2024.",
+    "milton-hall": "Syracuse housing gives Milton Hall as the former 'The Marshall' at 727 South Crouse Avenue; OSM's 'The Marshall' (way/470016917) at that address.",
+    "skyhalls": "Skyhall I, II and III on South Campus (OSM way/722946456, way/722946451, way/685093802 on Lambreth Lane); pinned on Skyhall 2, the middle one.",
+    "baker-laboratory": "SUNY ESF building (ESF Campus Drive), a separate college beside Syracuse University, not a Syracuse University class building.",
+    "walters-hall": "SUNY ESF building (ESF Campus Drive), a separate college beside Syracuse University, not a Syracuse University class building.",
+    "illick-hall": "SUNY ESF building (ESF Campus Drive), a separate college beside Syracuse University, not a Syracuse University class building.",
+    "f-franklin-moon-library": "SUNY ESF building (ESF Campus Drive), a separate college beside Syracuse University, not a Syracuse University class building.",
+    "gateway-center": "SUNY ESF building (ESF Campus Drive), a separate college beside Syracuse University, not a Syracuse University class building.",
+    "marshall-hall": "SUNY ESF building (ESF Campus Drive), a separate college beside Syracuse University, not a Syracuse University class building.",
+    "bray-hall": "SUNY ESF building (ESF Campus Drive), a separate college beside Syracuse University, not a Syracuse University class building.",
+    "jahn-laboratory": "SUNY ESF building (ESF Campus Drive), a separate college beside Syracuse University, not a Syracuse University class building.",
+    "campus-west-apts": "Student housing (or part of a hall), not a class building.",
+    "sadler-hall-extension": "Student housing (or part of a hall), not a class building.",
+    "lubin-family-welcome-center": "Admissions and visitor centre, not somewhere classes happen.",
+    "welcome-center": "Admissions and visitor centre, not somewhere classes happen.",
+    "tolley-administrative-building": "Administrative offices, not somewhere classes happen.",
+    "slutzker-center-for-international-services": "Administrative offices, not somewhere classes happen."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "day-hall -> syracuse-university-womens-building",
+        "flint-hall -> syracuse-university-womens-building",
+        "flint-hall -> sims-hall",
+        "flint-hall -> flanagan-gymnasium",
+        "shaw-hall -> graham-dining-hall"
+      ],
+      "maxRatio": 5,
+      "why": "Day Hall, Flint Hall and Graham Dining Hall sit on top of Mount Olympus, a steep hill whose only mapped ways up are the Mount steps and drive on its west side, so walks between the hilltop and the buildings below go round by them."
+    },
+    {
+      "pairs": [
+        "riley-hall -> huntington-hall",
+        "milton-hall -> huntington-hall",
+        "milton-hall -> national-veterans-resource-center"
+      ],
+      "maxRatio": 5,
+      "why": "City blocks between Marshall Street and University Place: buildings fill the blocks between these halls' doors and Huntington Hall's and the Veterans Resource Center's, with no mapped way through, so walks go round by the streets."
+    }
+  ]
+}

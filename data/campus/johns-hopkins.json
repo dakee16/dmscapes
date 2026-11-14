@@ -1,0 +1,821 @@
+{
+ "collegeId": "johns-hopkins",
+ "generatedAt": "2026-11-08T17:57:57.549Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  }
+ ],
+ "bounds": [
+  -76.625,
+  39.32108,
+  -76.61565,
+  39.33524
+ ],
+ "halls": [
+  {
+   "dormId": "amr-ii",
+   "name": "Alumni Memorial Residence II (AMR II)",
+   "lng": -76.619131,
+   "lat": 39.331396,
+   "pin": "name",
+   "osm": "way/180508461",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "white-athletic-center",
+     "minutes": 2.3
+    },
+    "library": {
+     "placeId": "milton-s-eisenhower-library",
+     "minutes": 3.4
+    },
+    "dining": {
+     "placeId": "brody-learning-commons",
+     "minutes": 4.1
+    }
+   }
+  },
+  {
+   "dormId": "amr-iii-a",
+   "name": "AMR III A",
+   "lng": -76.619898,
+   "lat": 39.331507,
+   "pin": "name",
+   "osm": "way/180508471",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "oconnor-recreation-center",
+     "minutes": 2.2
+    },
+    "library": {
+     "placeId": "milton-s-eisenhower-library",
+     "minutes": 3.4
+    },
+    "dining": {
+     "placeId": "brody-learning-commons",
+     "minutes": 4.1
+    }
+   }
+  },
+  {
+   "dormId": "amr-iii-b",
+   "name": "AMR III B",
+   "lng": -76.619781,
+   "lat": 39.331878,
+   "pin": "name",
+   "osm": "way/180508477",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "white-athletic-center",
+     "minutes": 1.4
+    },
+    "library": {
+     "placeId": "milton-s-eisenhower-library",
+     "minutes": 4.2
+    },
+    "dining": {
+     "placeId": "brody-learning-commons",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "mccoy-hall",
+   "name": "McCoy Hall",
+   "lng": -76.616778,
+   "lat": 39.329396,
+   "pin": "name",
+   "osm": "way/336374481",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "oconnor-recreation-center",
+     "minutes": 6.7
+    },
+    "library": {
+     "placeId": "milton-s-eisenhower-library",
+     "minutes": 3.1
+    },
+    "dining": {
+     "placeId": "brody-learning-commons",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "wolman-hall",
+   "name": "Wolman Hall",
+   "lng": -76.616827,
+   "lat": 39.328955,
+   "pin": "name",
+   "osm": "way/336375719",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "oconnor-recreation-center",
+     "minutes": 6.8
+    },
+    "library": {
+     "placeId": "milton-s-eisenhower-library",
+     "minutes": 2.9
+    },
+    "dining": {
+     "placeId": "brody-learning-commons",
+     "minutes": 3.6
+    }
+   }
+  },
+  {
+   "dormId": "scott-bates-commons",
+   "name": "Scott-Bates Commons",
+   "lng": -76.616555,
+   "lat": 39.328515,
+   "pin": "name",
+   "osm": "way/337103760",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "oconnor-recreation-center",
+     "minutes": 8.3
+    },
+    "library": {
+     "placeId": "milton-s-eisenhower-library",
+     "minutes": 4.4
+    },
+    "dining": {
+     "placeId": "brody-learning-commons",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "bradford-apartments",
+   "name": "Bradford Apartments",
+   "lng": -76.615654,
+   "lat": 39.328456,
+   "pin": "name",
+   "osm": "way/336370300",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "oconnor-recreation-center",
+     "minutes": 9.9
+    },
+    "library": {
+     "placeId": "milton-s-eisenhower-library",
+     "minutes": 5.5
+    },
+    "dining": {
+     "placeId": "brody-learning-commons",
+     "minutes": 6.2
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "white-athletic-center",
+   "name": "White Athletic Center",
+   "short": "White Athletic Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Newton H. White Jr. Athletic Center"
+   ],
+   "lng": -76.621232,
+   "lat": 39.332765,
+   "osm": "way/180508506"
+  },
+  {
+   "id": "bloomberg-student-center",
+   "name": "Bloomberg Student Center",
+   "short": "Bloomberg Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.61844,
+   "lat": 39.32786,
+   "osm": "way/1423472449"
+  },
+  {
+   "id": "bloomberg-center",
+   "name": "Bloomberg Center",
+   "short": "Bloomberg Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.623324,
+   "lat": 39.331707,
+   "osm": "way/51724694"
+  },
+  {
+   "id": "wyman-park-building",
+   "name": "Wyman Park Building",
+   "short": "Wyman Park Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.622913,
+   "lat": 39.325068,
+   "osm": "relation/13354736"
+  },
+  {
+   "id": "oconnor-recreation-center",
+   "name": "O'Connor Recreation Center",
+   "short": "O'Connor Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Ralph S. O'Connor Recreation Center"
+   ],
+   "lng": -76.621283,
+   "lat": 39.332116,
+   "osm": "way/51724699"
+  },
+  {
+   "id": "gilman-hall",
+   "name": "Gilman Hall",
+   "short": "Gilman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.62158,
+   "lat": 39.328974,
+   "osm": "way/180508492"
+  },
+  {
+   "id": "maryland-hall",
+   "name": "Maryland Hall",
+   "short": "Maryland Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.619766,
+   "lat": 39.327762,
+   "osm": "relation/2408709"
+  },
+  {
+   "id": "muller-building",
+   "name": "Muller Building",
+   "short": "Muller Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Steven Muller Building"
+   ],
+   "lng": -76.623312,
+   "lat": 39.332741,
+   "osm": "way/180508455"
+  },
+  {
+   "id": "krieger-hall",
+   "name": "Krieger Hall",
+   "short": "Krieger Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.619942,
+   "lat": 39.328426,
+   "osm": "way/180508503"
+  },
+  {
+   "id": "maxine-f-singer-building",
+   "name": "Maxine F. Singer Building",
+   "short": "Maxine F. Singer Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.625002,
+   "lat": 39.330973,
+   "osm": "way/51724697"
+  },
+  {
+   "id": "jenkins-merganthaler-hall",
+   "name": "Jenkins-Merganthaler Hall",
+   "short": "Jenkins-Merganthaler Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620878,
+   "lat": 39.329567,
+   "osm": "way/965755599"
+  },
+  {
+   "id": "remsen-hall",
+   "name": "Remsen Hall",
+   "short": "Remsen Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620075,
+   "lat": 39.329606,
+   "osm": "way/180508504"
+  },
+  {
+   "id": "san-martin-center",
+   "name": "San Martin Center",
+   "short": "San Martin Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.624282,
+   "lat": 39.330509,
+   "osm": "way/51724698"
+  },
+  {
+   "id": "schelle-pavilion",
+   "name": "Schelle Pavilion",
+   "short": "Schelle Pavilion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620538,
+   "lat": 39.333839,
+   "osm": "way/51724390"
+  },
+  {
+   "id": "bascom-undergraduate-teaching-labs",
+   "name": "Bascom Undergraduate Teaching Labs",
+   "short": "Bascom Undergraduate Teaching Labs",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620577,
+   "lat": 39.331184,
+   "osm": "way/271583785"
+  },
+  {
+   "id": "hackerman-hall",
+   "name": "Hackerman Hall",
+   "short": "Hackerman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620913,
+   "lat": 39.32684,
+   "osm": "way/134681897"
+  },
+  {
+   "id": "johns-hopkins-education-building",
+   "name": "Johns Hopkins Education Building",
+   "short": "Johns Hopkins Education Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Seton High School"
+   ],
+   "lng": -76.617694,
+   "lat": 39.322238,
+   "osm": "relation/4757410"
+  },
+  {
+   "id": "ames-hall",
+   "name": "Ames Hall",
+   "short": "Ames Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620795,
+   "lat": 39.32849,
+   "osm": "way/180508501"
+  },
+  {
+   "id": "levering-hall",
+   "name": "Levering Hall",
+   "short": "Levering Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.621686,
+   "lat": 39.328112,
+   "osm": "way/180508458"
+  },
+  {
+   "id": "olin-hall",
+   "name": "Olin Hall",
+   "short": "Olin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.623695,
+   "lat": 39.328088,
+   "osm": "way/180508507"
+  },
+  {
+   "id": "garland-hall",
+   "name": "Garland Hall",
+   "short": "Garland Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.621617,
+   "lat": 39.327344,
+   "osm": "way/134682012"
+  },
+  {
+   "id": "malone-hall",
+   "name": "Malone Hall",
+   "short": "Malone Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620838,
+   "lat": 39.326204,
+   "osm": "way/298618895"
+  },
+  {
+   "id": "shriver-hall",
+   "name": "Shriver Hall",
+   "short": "Shriver Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620272,
+   "lat": 39.326552,
+   "osm": "way/134680371"
+  },
+  {
+   "id": "milton-s-eisenhower-library",
+   "name": "Milton S. Eisenhower Library",
+   "short": "MSE Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "MSE Library"
+   ],
+   "lng": -76.619409,
+   "lat": 39.329058,
+   "osm": "way/180508454"
+  },
+  {
+   "id": "homewood-early-learning-center",
+   "name": "Homewood Early Learning Center",
+   "short": "Homewood Early Learning Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.622876,
+   "lat": 39.335243,
+   "osm": "way/1569841592"
+  },
+  {
+   "id": "clark-hall",
+   "name": "Clark Hall",
+   "short": "Clark Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.622236,
+   "lat": 39.326812,
+   "osm": "way/180508465"
+  },
+  {
+   "id": "hodson-hall",
+   "name": "Hodson Hall",
+   "short": "Hodson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.622306,
+   "lat": 39.327549,
+   "osm": "way/337107478"
+  },
+  {
+   "id": "mudd-hall",
+   "name": "Mudd Hall",
+   "short": "Mudd Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620551,
+   "lat": 39.330732,
+   "osm": "way/180508459"
+  },
+  {
+   "id": "johns-hopkins-club",
+   "name": "Johns Hopkins Club",
+   "short": "Johns Hopkins Club",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.622256,
+   "lat": 39.330192,
+   "osm": "way/180508464"
+  },
+  {
+   "id": "chemistry-building",
+   "name": "Chemistry Building",
+   "short": "Chemistry Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.621416,
+   "lat": 39.330419,
+   "osm": "way/180508457"
+  },
+  {
+   "id": "latrobe-hall",
+   "name": "Latrobe Hall",
+   "short": "Latrobe Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620773,
+   "lat": 39.327721,
+   "osm": "way/180508505"
+  },
+  {
+   "id": "croft-hall",
+   "name": "Croft Hall",
+   "short": "Croft Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "New Engineering Building (NEB)"
+   ],
+   "lng": -76.619619,
+   "lat": 39.327137,
+   "osm": "way/134681371"
+  },
+  {
+   "id": "brody-learning-commons",
+   "name": "Brody Learning Commons",
+   "short": "Brody Learning Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.619405,
+   "lat": 39.328435,
+   "osm": "way/167364633"
+  },
+  {
+   "id": "levi-hall",
+   "name": "Levi Hall",
+   "short": "Levi Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620929,
+   "lat": 39.330848,
+   "osm": "way/180508490"
+  },
+  {
+   "id": "biology-east",
+   "name": "Biology East",
+   "short": "Biology East",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620191,
+   "lat": 39.330878,
+   "osm": "way/180508489"
+  },
+  {
+   "id": "homewood-early-learning-center-442592150",
+   "name": "Homewood Early Learning Center",
+   "short": "Homewood Early Learning Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.624571,
+   "lat": 39.326338,
+   "osm": "way/442592150"
+  },
+  {
+   "id": "amr-iii-building-c",
+   "name": "AMR III Building C",
+   "short": "AMR III Building C",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.619732,
+   "lat": 39.331617,
+   "osm": "way/859933672"
+  },
+  {
+   "id": "cordish-lacrosse-center",
+   "name": "Cordish Lacrosse Center",
+   "short": "Cordish Lacrosse Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620151,
+   "lat": 39.333013,
+   "osm": "way/337096270"
+  },
+  {
+   "id": "imagine-center-for-integrative-learning",
+   "name": "Imagine Center for Integrative Learning",
+   "short": "Imagine Center for Integrative Learning",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.621866,
+   "lat": 39.334577,
+   "osm": "way/180508453"
+  },
+  {
+   "id": "shaffer-hall",
+   "name": "Shaffer Hall",
+   "short": "Shaffer Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.619905,
+   "lat": 39.327161,
+   "osm": "way/134681110"
+  },
+  {
+   "id": "mason-hall",
+   "name": "Mason Hall",
+   "short": "Mason Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.62151,
+   "lat": 39.325885,
+   "osm": "way/180508460"
+  },
+  {
+   "id": "barton-hall",
+   "name": "Barton Hall",
+   "short": "Barton Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620719,
+   "lat": 39.32713,
+   "osm": "way/134680644"
+  },
+  {
+   "id": "stavros-niarchos-foundation-agora-institute",
+   "name": "Stavros Niarchos Foundation - Agora Institute",
+   "short": "Stavros Niarchos Foundation - Agora Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.62315,
+   "lat": 39.325864,
+   "osm": "way/1312934764"
+  },
+  {
+   "id": "dunning-hall",
+   "name": "Dunning Hall",
+   "short": "Dunning Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620146,
+   "lat": 39.330218,
+   "osm": "way/180508472"
+  },
+  {
+   "id": "rotc-building",
+   "name": "ROTC Building",
+   "short": "ROTC Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.621889,
+   "lat": 39.333259,
+   "osm": "way/51724700"
+  },
+  {
+   "id": "hopkins-inn",
+   "name": "Hopkins Inn",
+   "short": "Hopkins Inn",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.616504,
+   "lat": 39.329693,
+   "osm": "way/336371811"
+  },
+  {
+   "id": "macaulay-hall",
+   "name": "Macaulay Hall",
+   "short": "Macaulay Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.620879,
+   "lat": 39.33019,
+   "osm": "way/180508473"
+  },
+  {
+   "id": "glass-pavilion",
+   "name": "Glass Pavilion",
+   "short": "Glass Pavilion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.621749,
+   "lat": 39.328452,
+   "osm": "way/180508479"
+  },
+  {
+   "id": "johns-hopkins-university-press",
+   "name": "Johns Hopkins University Press",
+   "short": "Johns Hopkins University Press",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.616786,
+   "lat": 39.321076,
+   "osm": "way/336374686"
+  },
+  {
+   "id": "homewood-museum",
+   "name": "Homewood Museum",
+   "short": "Homewood Museum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.618947,
+   "lat": 39.329735,
+   "osm": "way/180508452"
+  },
+  {
+   "id": "campus-security-auto-shop",
+   "name": "Campus Security Auto Shop",
+   "short": "Campus Security Auto Shop",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.624226,
+   "lat": 39.325103,
+   "osm": "way/336385474"
+  },
+  {
+   "id": "steinwald-house",
+   "name": "Steinwald House",
+   "short": "Steinwald House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.617198,
+   "lat": 39.327578,
+   "osm": "way/336375710"
+  },
+  {
+   "id": "center-for-government-excellence",
+   "name": "Center for Government Excellence",
+   "short": "Center for Government Excellence",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.622501,
+   "lat": 39.329022,
+   "osm": "way/348785846"
+  },
+  {
+   "id": "abel-wolman-house",
+   "name": "Abel Wolman House",
+   "short": "Abel Wolman House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.61718,
+   "lat": 39.327697,
+   "osm": "way/336375238"
+  },
+  {
+   "id": "gatehouse",
+   "name": "Gatehouse",
+   "short": "Gatehouse",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "News-Letter Office"
+   ],
+   "lng": -76.618001,
+   "lat": 39.326527,
+   "osm": "way/193901020"
+  },
+  {
+   "id": "homewood-privy",
+   "name": "Homewood Privy",
+   "short": "Homewood Privy",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.619003,
+   "lat": 39.330337,
+   "osm": "way/336379456"
+  }
+ ]
+}

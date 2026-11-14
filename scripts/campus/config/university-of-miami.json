@@ -1,0 +1,16 @@
+{
+  "collegeId": "university-of-miami",
+  "area": {
+    "osm": "relation/18035880",
+    "bbox": [
+      25.70971,
+      -80.28566,
+      25.72479,
+      -80.27219
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No current full class building-code list: the Registrar's general-purpose classroom table (https://registrar.miami.edu/faculty-and-staff/classroom-management/general-purpose-classroom-information/gpc-rooms-capacities-and-technologies/index.html) gives numeric facility numbers for 16 classroom buildings only, and the lettered list (https://www.dcie.miami.edu/_assets/sharepoint-content/Sharepoint%20Assets/cstudies-summer/BUILDINGABBR.0.1.pdf) is an old one that still names Bank United Center (renamed in 2015); checked 2026-11-08."
+}

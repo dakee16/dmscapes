@@ -1,0 +1,17 @@
+{
+  "collegeId": "rice",
+  "area": {
+    "osm": "way/45185995",
+    "bbox": [
+      29.71046,
+      -95.41258,
+      29.72266,
+      -95.3933
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/rice.codes.json"
+  }
+}

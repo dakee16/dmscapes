@@ -1,0 +1,17 @@
+{
+  "collegeId": "csu-la",
+  "area": {
+    "osm": "way/46337238",
+    "bbox": [
+      34.06142,
+      -118.17414,
+      34.07163,
+      -118.16254
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/csu-la.codes.json"
+  }
+}

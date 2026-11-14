@@ -1,0 +1,17 @@
+{
+  "collegeId": "iowa",
+  "area": {
+    "bbox": [
+      41.652,
+      -91.55,
+      41.678,
+      -91.527
+    ],
+    "note": "OSM has no outline for the main University of Iowa campus (Nominatim's only 'University of Iowa' area is way/261136511, a 0.05 km\u00b2 site by Old Highway 218); this box holds the residence halls, Mayflower (N Dubuque St) to Hillcrest and Petersen (west campus), and the classroom buildings either side of the Iowa River."
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/iowa.codes.json"
+  }
+}

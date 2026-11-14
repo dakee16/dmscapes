@@ -1,0 +1,16 @@
+{
+  "collegeId": "vanderbilt",
+  "area": {
+    "osm": "way/131042264",
+    "bbox": [
+      36.13688,
+      -86.81438,
+      36.15064,
+      -86.79451
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Vanderbilt publishes no building-code list for class schedules: the registrar's site (registrar.vanderbilt.edu) has none, and the Campus Planning building directory (cpc-fis.vanderbilt.edu/map/campusviewer/InfoPages/BuildingDirectory.html) doesn't load from outside Vanderbilt's network (checked 2026-11-07)."
+}

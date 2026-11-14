@@ -1,0 +1,1534 @@
+{
+ "collegeId": "wustl",
+ "generatedAt": "2026-11-08T08:20:48.594Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "WashU Facilities, Building List - Danforth (building numbers)",
+   "url": "https://wustl.box.com/s/309oqijb4df7myoxwxemzslpzch9vh11",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/wustl.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -90.31588,
+  38.64338,
+  -90.30148,
+  38.65114
+ ],
+ "halls": [
+  {
+   "dormId": "danforth-house",
+   "name": "Danforth House",
+   "lng": -90.315481,
+   "lat": 38.644679,
+   "pin": "name",
+   "osm": "way/136596335",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 10.9
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 7.3
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 3.3
+    }
+   }
+  },
+  {
+   "dormId": "dardick-house",
+   "name": "Dardick House",
+   "lng": -90.315392,
+   "lat": 38.645789,
+   "pin": "name",
+   "osm": "way/136596326",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 9.9
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 4.3
+    }
+   }
+  },
+  {
+   "dormId": "dauten-hall",
+   "name": "Dauten Hall",
+   "lng": -90.315501,
+   "lat": 38.645275,
+   "pin": "name",
+   "osm": "way/185357789",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 10.6
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 7.2
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 4.2
+    }
+   }
+  },
+  {
+   "dormId": "hitzeman-hall",
+   "name": "Hitzeman Hall",
+   "lng": -90.312538,
+   "lat": 38.643444,
+   "pin": "name",
+   "osm": "way/185357790",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 10.6
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 2.2
+    }
+   }
+  },
+  {
+   "dormId": "hurd-hall",
+   "name": "Hurd Hall",
+   "lng": -90.31295,
+   "lat": 38.643379,
+   "pin": "name",
+   "osm": "way/185357791",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 10.9
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 5.6
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 2.2
+    }
+   }
+  },
+  {
+   "dormId": "koenig-house",
+   "name": "Koenig House",
+   "lng": -90.311789,
+   "lat": 38.644872,
+   "pin": "name",
+   "osm": "way/543845059",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 8.1
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 3.5
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 2.1
+    }
+   }
+  },
+  {
+   "dormId": "lee-hall",
+   "name": "Lee Hall",
+   "lng": -90.314724,
+   "lat": 38.645331,
+   "pin": "name",
+   "osm": "way/185357792",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 9.5
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 3.3
+    }
+   }
+  },
+  {
+   "dormId": "lien-house",
+   "name": "Lien House",
+   "lng": -90.313223,
+   "lat": 38.645583,
+   "pin": "name",
+   "osm": "way/136596334",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 7
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 3.5
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 2.4
+    }
+   }
+  },
+  {
+   "dormId": "myers-hall",
+   "name": "Myers Hall",
+   "lng": -90.313331,
+   "lat": 38.643521,
+   "pin": "name",
+   "osm": "way/185357794",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 10.4
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 1.7
+    }
+   }
+  },
+  {
+   "dormId": "park-house",
+   "name": "Park House",
+   "lng": -90.314896,
+   "lat": 38.643633,
+   "pin": "name",
+   "osm": "way/185357796",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 10.9
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 7.4
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 2.3
+    }
+   }
+  },
+  {
+   "dormId": "rutledge-hall",
+   "name": "Rutledge Hall",
+   "lng": -90.315187,
+   "lat": 38.645066,
+   "pin": "name",
+   "osm": "way/185357798",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 10.1
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 6.6
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 3.6
+    }
+   }
+  },
+  {
+   "dormId": "shanedling-hall",
+   "name": "Shanedling Hall",
+   "lng": -90.315775,
+   "lat": 38.645011,
+   "pin": "name",
+   "osm": "way/185357799",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 10.8
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 7.4
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 4.4
+    }
+   }
+  },
+  {
+   "dormId": "thomas-eliot-a-house",
+   "name": "Thomas Eliot \"A\" House",
+   "lng": -90.313238,
+   "lat": 38.643999,
+   "pin": "name",
+   "osm": "way/136596333",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 9.4
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 5.7
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 0.6
+    }
+   }
+  },
+  {
+   "dormId": "umrath-house",
+   "name": "Umrath House",
+   "lng": -90.313744,
+   "lat": 38.644935,
+   "pin": "name",
+   "osm": "way/185357800",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 8.7
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 2.9
+    }
+   }
+  },
+  {
+   "dormId": "beaumont-hall",
+   "name": "Beaumont Hall",
+   "lng": -90.314579,
+   "lat": 38.644882,
+   "pin": "name",
+   "osm": "way/185357787",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 9.7
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 6.1
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 2.8
+    }
+   }
+  },
+  {
+   "dormId": "gregg-house",
+   "name": "Gregg House",
+   "lng": -90.312512,
+   "lat": 38.646025,
+   "pin": "name",
+   "osm": "way/136596328",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 6.5
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 3
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 3.5
+    }
+   }
+  },
+  {
+   "dormId": "liggett-house",
+   "name": "Liggett House",
+   "lng": -90.312088,
+   "lat": 38.644597,
+   "pin": "name",
+   "osm": "way/136596327",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 8.2
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 4.2
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 2.1
+    }
+   }
+  },
+  {
+   "dormId": "mudd-house",
+   "name": "Mudd House",
+   "lng": -90.314003,
+   "lat": 38.643506,
+   "pin": "name",
+   "osm": "way/185357793",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 10.5
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 1.8
+    }
+   }
+  },
+  {
+   "dormId": "nemerov-house",
+   "name": "Nemerov House",
+   "lng": -90.314326,
+   "lat": 38.645684,
+   "pin": "name",
+   "osm": "way/136596325",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 8.9
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 3.5
+    }
+   }
+  },
+  {
+   "dormId": "shepley-house",
+   "name": "Shepley House",
+   "lng": -90.31588,
+   "lat": 38.644302,
+   "pin": "name",
+   "osm": "way/136596331",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 11.2
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 7.7
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 3.6
+    }
+   }
+  },
+  {
+   "dormId": "thomas-eliot-b-house",
+   "name": "Thomas Eliot \"B\" House",
+   "lng": -90.313067,
+   "lat": 38.644464,
+   "pin": "manual",
+   "osm": "way/543845047",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 9.1
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 0.4
+    }
+   }
+  },
+  {
+   "dormId": "wheeler-house",
+   "name": "Wheeler House",
+   "lng": -90.315741,
+   "lat": 38.643773,
+   "pin": "name",
+   "osm": "way/136596330",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 11.7
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 8.2
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 3.4
+    }
+   }
+  },
+  {
+   "dormId": "zetcher-house",
+   "name": "Zetcher House",
+   "lng": -90.312986,
+   "lat": 38.644906,
+   "pin": "name",
+   "osm": "way/543845052",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 7.3
+    },
+    "library": {
+     "placeId": "gaylord-music-library",
+     "minutes": 3.6
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 0.8
+    }
+   }
+  },
+  {
+   "dormId": "lopata-house",
+   "name": "Lopata House",
+   "lng": -90.314467,
+   "lat": 38.65114,
+   "pin": "name",
+   "osm": "way/77848867",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "olin-library",
+     "minutes": 9.4
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 12.4
+    }
+   }
+  },
+  {
+   "dormId": "village-house",
+   "name": "Village House",
+   "lng": -90.314058,
+   "lat": 38.650592,
+   "pin": "name",
+   "osm": "way/112889071",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sumers-recreation-center",
+     "minutes": 5.5
+    },
+    "library": {
+     "placeId": "olin-library",
+     "minutes": 7.9
+    },
+    "dining": {
+     "placeId": "risa-commons",
+     "minutes": 10.9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "sumers-recreation-center",
+   "name": "Sumers Recreation Center",
+   "short": "Sumers Recreation Center",
+   "kind": "gym",
+   "codes": [
+    "121"
+   ],
+   "aliases": [],
+   "lng": -90.314821,
+   "lat": 38.649253,
+   "osm": "way/112889065"
+  },
+  {
+   "id": "olin-library",
+   "name": "Olin Library",
+   "short": "Olin Library",
+   "kind": "library",
+   "codes": [
+    "141"
+   ],
+   "aliases": [],
+   "lng": -90.307729,
+   "lat": 38.648584,
+   "osm": "way/185357795"
+  },
+  {
+   "id": "simon-hall",
+   "name": "Simon Hall",
+   "short": "Simon Hall",
+   "kind": "academic",
+   "codes": [
+    "124"
+   ],
+   "aliases": [],
+   "lng": -90.311584,
+   "lat": 38.648122,
+   "osm": "relation/12372248"
+  },
+  {
+   "id": "mallinckrodt-student-center",
+   "name": "Mallinckrodt Student Center",
+   "short": "Mallinckrodt Student Center",
+   "kind": "academic",
+   "codes": [
+    "193"
+   ],
+   "aliases": [
+    "Mallinckrodt Center-Danforth"
+   ],
+   "lng": -90.309491,
+   "lat": 38.647452,
+   "osm": "way/111861293"
+  },
+  {
+   "id": "danforth-university-center",
+   "name": "Danforth University Center",
+   "short": "Danforth University Center",
+   "kind": "academic",
+   "codes": [
+    "226",
+    "599"
+   ],
+   "aliases": [
+    "DUC",
+    "Misc-Danforth"
+   ],
+   "lng": -90.310499,
+   "lat": 38.647803,
+   "osm": "way/136596323"
+  },
+  {
+   "id": "anheuser-busch-hall",
+   "name": "Anheuser-Busch Hall",
+   "short": "Anheuser-Busch Hall",
+   "kind": "academic",
+   "codes": [
+    "250"
+   ],
+   "aliases": [],
+   "lng": -90.31207,
+   "lat": 38.649713,
+   "osm": "relation/1159116"
+  },
+  {
+   "id": "brauer-hall",
+   "name": "Brauer Hall",
+   "short": "Brauer Hall",
+   "kind": "academic",
+   "codes": [
+    "206"
+   ],
+   "aliases": [
+    "Stephen F And Camilla T Brauer Hall"
+   ],
+   "lng": -90.302258,
+   "lat": 38.648965,
+   "osm": "way/697027368"
+  },
+  {
+   "id": "seigle-hall",
+   "name": "Seigle Hall",
+   "short": "Seigle Hall",
+   "kind": "academic",
+   "codes": [
+    "228"
+   ],
+   "aliases": [],
+   "lng": -90.312659,
+   "lat": 38.648954,
+   "osm": "way/120125030"
+  },
+  {
+   "id": "scott-rudolph-hall",
+   "name": "Scott Rudolph Hall",
+   "short": "Scott Rudolph Hall",
+   "kind": "academic",
+   "codes": [
+    "204"
+   ],
+   "aliases": [],
+   "lng": -90.304473,
+   "lat": 38.64911,
+   "osm": "way/44076461"
+  },
+  {
+   "id": "wrighton-hall",
+   "name": "Wrighton Hall",
+   "short": "Wrighton Hall",
+   "kind": "academic",
+   "codes": [
+    "254"
+   ],
+   "aliases": [
+    "Mark S. Wrighton Hall"
+   ],
+   "lng": -90.309036,
+   "lat": 38.649564,
+   "osm": "way/44077043"
+  },
+  {
+   "id": "mildred-lane-kemper-art-museum",
+   "name": "Mildred Lane Kemper Art Museum",
+   "short": "Mildred Lane Kemper Art Museum",
+   "kind": "academic",
+   "codes": [
+    "203"
+   ],
+   "aliases": [
+    "Kemper Art Museum"
+   ],
+   "lng": -90.302659,
+   "lat": 38.647149,
+   "osm": "way/120125032"
+  },
+  {
+   "id": "millbrook-building",
+   "name": "Millbrook Building",
+   "short": "Millbrook Building",
+   "kind": "academic",
+   "codes": [
+    "218",
+    "219",
+    "220",
+    "221",
+    "138"
+   ],
+   "aliases": [
+    "Millbrook Apts 1",
+    "Millbrook Apts 2",
+    "Millbrook Apts 3",
+    "Millbrook Apts 4",
+    "Millbrook Bldg"
+   ],
+   "lng": -90.309315,
+   "lat": 38.650271,
+   "osm": "way/185357802"
+  },
+  {
+   "id": "charles-f-knight-center",
+   "name": "Charles F. Knight Center",
+   "short": "Charles F. Knight Center",
+   "kind": "academic",
+   "codes": [
+    "253"
+   ],
+   "aliases": [
+    "Charles Knight Executive Education Center"
+   ],
+   "lng": -90.311291,
+   "lat": 38.64966,
+   "osm": "way/112889068"
+  },
+  {
+   "id": "whitaker-hall",
+   "name": "Whitaker Hall",
+   "short": "Whitaker Hall",
+   "kind": "academic",
+   "codes": [
+    "202"
+   ],
+   "aliases": [
+    "Whitaker Hall For Biomedical Engineering"
+   ],
+   "lng": -90.303171,
+   "lat": 38.649095,
+   "osm": "way/44076320"
+  },
+  {
+   "id": "somers-family-hall",
+   "name": "Somers Family Hall",
+   "short": "Somers Family Hall",
+   "kind": "academic",
+   "codes": [
+    "249"
+   ],
+   "aliases": [],
+   "lng": -90.30756,
+   "lat": 38.647076,
+   "osm": "way/111861292"
+  },
+  {
+   "id": "hillman-hall",
+   "name": "Hillman Hall",
+   "short": "Hillman Hall",
+   "kind": "academic",
+   "codes": [
+    "257"
+   ],
+   "aliases": [],
+   "lng": -90.304734,
+   "lat": 38.646837,
+   "osm": "way/461391323"
+  },
+  {
+   "id": "mcmillan-hall",
+   "name": "McMillan Hall",
+   "short": "McMillan Hall",
+   "kind": "academic",
+   "codes": [
+    "137",
+    "150"
+   ],
+   "aliases": [
+    "McMillan Hall Addition"
+   ],
+   "lng": -90.309861,
+   "lat": 38.649524,
+   "osm": "way/44076776"
+  },
+  {
+   "id": "brookings-hall",
+   "name": "Brookings Hall",
+   "short": "Brookings Hall",
+   "kind": "academic",
+   "codes": [
+    "105"
+   ],
+   "aliases": [],
+   "lng": -90.30508,
+   "lat": 38.648025,
+   "osm": "way/44076778"
+  },
+  {
+   "id": "weil-hall",
+   "name": "Weil Hall",
+   "short": "Weil Hall",
+   "kind": "academic",
+   "codes": [
+    "209"
+   ],
+   "aliases": [],
+   "lng": -90.303379,
+   "lat": 38.647149,
+   "osm": "way/846607740"
+  },
+  {
+   "id": "jubel-hall",
+   "name": "Jubel Hall",
+   "short": "Jubel Hall",
+   "kind": "academic",
+   "codes": [
+    "208"
+   ],
+   "aliases": [
+    "Jubel Hall - (Phase 3)"
+   ],
+   "lng": -90.303251,
+   "lat": 38.64852,
+   "osm": "way/846607742"
+  },
+  {
+   "id": "mcdonnell-hall",
+   "name": "McDonnell Hall",
+   "short": "McDonnell Hall",
+   "kind": "academic",
+   "codes": [
+    "247"
+   ],
+   "aliases": [
+    "McDonnell Hall - Danforth"
+   ],
+   "lng": -90.306599,
+   "lat": 38.647186,
+   "osm": "way/111861297"
+  },
+  {
+   "id": "mckelvey-hall",
+   "name": "McKelvey Hall",
+   "short": "McKelvey Hall",
+   "kind": "academic",
+   "codes": [
+    "213"
+   ],
+   "aliases": [
+    "James M. McKelvey, Sr. Hall"
+   ],
+   "lng": -90.30151,
+   "lat": 38.648244,
+   "osm": "way/917590653"
+  },
+  {
+   "id": "knight-hall",
+   "name": "Knight Hall",
+   "short": "Knight Hall",
+   "kind": "academic",
+   "codes": [
+    "125"
+   ],
+   "aliases": [],
+   "lng": -90.310754,
+   "lat": 38.649714,
+   "osm": "way/899660192"
+  },
+  {
+   "id": "green-hall",
+   "name": "Green Hall",
+   "short": "Green Hall",
+   "kind": "academic",
+   "codes": [
+    "207"
+   ],
+   "aliases": [
+    "Preston M. Green Hall"
+   ],
+   "lng": -90.301482,
+   "lat": 38.64885,
+   "osm": "way/185357805"
+  },
+  {
+   "id": "urbauer-hall",
+   "name": "Urbauer Hall",
+   "short": "Urbauer Hall",
+   "kind": "academic",
+   "codes": [
+    "116"
+   ],
+   "aliases": [],
+   "lng": -90.306061,
+   "lat": 38.649357,
+   "osm": "way/120125029"
+  },
+  {
+   "id": "compton-laboratory",
+   "name": "Compton Laboratory",
+   "short": "Compton Laboratory",
+   "kind": "academic",
+   "codes": [
+    "109"
+   ],
+   "aliases": [
+    "Compton Hall"
+   ],
+   "lng": -90.305229,
+   "lat": 38.649406,
+   "osm": "way/111861294"
+  },
+  {
+   "id": "village-east",
+   "name": "Village East",
+   "short": "Village East",
+   "kind": "academic",
+   "codes": [
+    "217"
+   ],
+   "aliases": [],
+   "lng": -90.311824,
+   "lat": 38.650712,
+   "osm": "way/303356811"
+  },
+  {
+   "id": "busch-hall",
+   "name": "Busch Hall",
+   "short": "Busch Hall",
+   "kind": "academic",
+   "codes": [
+    "107"
+   ],
+   "aliases": [],
+   "lng": -90.305702,
+   "lat": 38.64749,
+   "osm": "way/461391336"
+  },
+  {
+   "id": "cupples-i-hall",
+   "name": "Cupples I Hall",
+   "short": "Cupples I Hall",
+   "kind": "academic",
+   "codes": [
+    "111"
+   ],
+   "aliases": [
+    "Cupples Hall I"
+   ],
+   "lng": -90.305512,
+   "lat": 38.648675,
+   "osm": "way/44077048"
+  },
+  {
+   "id": "umrath-hall",
+   "name": "Umrath Hall",
+   "short": "Umrath Hall",
+   "kind": "academic",
+   "codes": [
+    "153"
+   ],
+   "aliases": [],
+   "lng": -90.309574,
+   "lat": 38.647981,
+   "osm": "way/44078280"
+  },
+  {
+   "id": "earl-e-and-myrtle-e-walker-hall",
+   "name": "Earl E. and Myrtle E. Walker Hall",
+   "short": "Walker Hall",
+   "kind": "academic",
+   "codes": [
+    "205"
+   ],
+   "aliases": [
+    "Walker Hall"
+   ],
+   "lng": -90.301951,
+   "lat": 38.646862,
+   "osm": "way/120125036"
+  },
+  {
+   "id": "ann-w-olin-womens-building",
+   "name": "Ann W. Olin Women's Building",
+   "short": "Ann W. Olin Women's Building",
+   "kind": "academic",
+   "codes": [
+    "156"
+   ],
+   "aliases": [
+    "Women's Building"
+   ],
+   "lng": -90.308472,
+   "lat": 38.649384,
+   "osm": "way/112889073"
+  },
+  {
+   "id": "louderman-hall",
+   "name": "Louderman Hall",
+   "short": "Louderman Hall",
+   "kind": "academic",
+   "codes": [
+    "135"
+   ],
+   "aliases": [],
+   "lng": -90.307748,
+   "lat": 38.649316,
+   "osm": "way/899660193"
+  },
+  {
+   "id": "cupples-ii-hall",
+   "name": "Cupples II Hall",
+   "short": "Cupples II Hall",
+   "kind": "academic",
+   "codes": [
+    "112"
+   ],
+   "aliases": [
+    "Cupples Hall II"
+   ],
+   "lng": -90.306836,
+   "lat": 38.649169,
+   "osm": "way/111861296"
+  },
+  {
+   "id": "crow-hall",
+   "name": "Crow Hall",
+   "short": "Crow Hall",
+   "kind": "academic",
+   "codes": [
+    "110"
+   ],
+   "aliases": [],
+   "lng": -90.305354,
+   "lat": 38.649025,
+   "osm": "way/111861298"
+  },
+  {
+   "id": "rebstock-hall",
+   "name": "Rebstock Hall",
+   "short": "Rebstock Hall",
+   "kind": "academic",
+   "codes": [
+    "145"
+   ],
+   "aliases": [],
+   "lng": -90.308036,
+   "lat": 38.647634,
+   "osm": "way/112889074"
+  },
+  {
+   "id": "brown-hall",
+   "name": "Brown Hall",
+   "short": "Brown Hall",
+   "kind": "academic",
+   "codes": [
+    "106"
+   ],
+   "aliases": [],
+   "lng": -90.305633,
+   "lat": 38.647109,
+   "osm": "way/120125039"
+  },
+  {
+   "id": "givens-hall",
+   "name": "Givens Hall",
+   "short": "Givens Hall",
+   "kind": "academic",
+   "codes": [
+    "131"
+   ],
+   "aliases": [],
+   "lng": -90.303477,
+   "lat": 38.646681,
+   "osm": "way/120125031"
+  },
+  {
+   "id": "bryan-hall",
+   "name": "Bryan Hall",
+   "short": "Bryan Hall",
+   "kind": "academic",
+   "codes": [
+    "195"
+   ],
+   "aliases": [],
+   "lng": -90.307084,
+   "lat": 38.649515,
+   "osm": "way/111861290"
+  },
+  {
+   "id": "mcmillen-laboratory",
+   "name": "McMillen Laboratory",
+   "short": "McMillen Laboratory",
+   "kind": "academic",
+   "codes": [
+    "196"
+   ],
+   "aliases": [
+    "McMillen Lab-Chemistry"
+   ],
+   "lng": -90.307686,
+   "lat": 38.649618,
+   "osm": "way/899660194"
+  },
+  {
+   "id": "bixby-hall",
+   "name": "Bixby Hall",
+   "short": "Bixby Hall",
+   "kind": "academic",
+   "codes": [
+    "104"
+   ],
+   "aliases": [],
+   "lng": -90.302073,
+   "lat": 38.646544,
+   "osm": "way/120125033"
+  },
+  {
+   "id": "goldfarb-hall",
+   "name": "Goldfarb Hall",
+   "short": "Goldfarb Hall",
+   "kind": "academic",
+   "codes": [
+    "251"
+   ],
+   "aliases": [],
+   "lng": -90.30587,
+   "lat": 38.646883,
+   "osm": "way/120125028"
+  },
+  {
+   "id": "wilson-hall",
+   "name": "Wilson Hall",
+   "short": "Wilson Hall",
+   "kind": "academic",
+   "codes": [
+    "154"
+   ],
+   "aliases": [],
+   "lng": -90.307019,
+   "lat": 38.647556,
+   "osm": "way/111861291"
+  },
+  {
+   "id": "jolley-hall",
+   "name": "Jolley Hall",
+   "short": "Jolley Hall",
+   "kind": "academic",
+   "codes": [
+    "129"
+   ],
+   "aliases": [],
+   "lng": -90.306627,
+   "lat": 38.649456,
+   "osm": "way/120125041"
+  },
+  {
+   "id": "eads-hall",
+   "name": "Eads Hall",
+   "short": "Eads Hall",
+   "kind": "academic",
+   "codes": [
+    "115"
+   ],
+   "aliases": [],
+   "lng": -90.306918,
+   "lat": 38.648227,
+   "osm": "way/697249228"
+  },
+  {
+   "id": "bauer-hall",
+   "name": "Bauer Hall",
+   "short": "Bauer Hall",
+   "kind": "academic",
+   "codes": [
+    "133"
+   ],
+   "aliases": [],
+   "lng": -90.310613,
+   "lat": 38.649483,
+   "osm": "way/911296886"
+  },
+  {
+   "id": "lopata-hall",
+   "name": "Lopata Hall",
+   "short": "Lopata Hall",
+   "kind": "academic",
+   "codes": [
+    "122",
+    "324"
+   ],
+   "aliases": [
+    "Lopata House"
+   ],
+   "lng": -90.306187,
+   "lat": 38.649117,
+   "osm": "way/120125037"
+  },
+  {
+   "id": "ridgley-hall",
+   "name": "Ridgley Hall",
+   "short": "Ridgley Hall",
+   "kind": "academic",
+   "codes": [
+    "146"
+   ],
+   "aliases": [],
+   "lng": -90.30617,
+   "lat": 38.648133,
+   "osm": "way/697249227"
+  },
+  {
+   "id": "graham-chapel",
+   "name": "Graham Chapel",
+   "short": "Graham Chapel",
+   "kind": "academic",
+   "codes": [
+    "132"
+   ],
+   "aliases": [],
+   "lng": -90.308884,
+   "lat": 38.648239,
+   "osm": "way/185357811"
+  },
+  {
+   "id": "january-hall",
+   "name": "January Hall",
+   "short": "January Hall",
+   "kind": "academic",
+   "codes": [
+    "134"
+   ],
+   "aliases": [],
+   "lng": -90.306363,
+   "lat": 38.64774,
+   "osm": "way/381112558"
+  },
+  {
+   "id": "academy-building",
+   "name": "Academy Building",
+   "short": "Academy Building",
+   "kind": "academic",
+   "codes": [
+    "199"
+   ],
+   "aliases": [
+    "Academy Bldg"
+   ],
+   "lng": -90.307276,
+   "lat": 38.650669,
+   "osm": "way/1224654251"
+  },
+  {
+   "id": "duncker-hall",
+   "name": "Duncker Hall",
+   "short": "Duncker Hall",
+   "kind": "academic",
+   "codes": [
+    "114"
+   ],
+   "aliases": [],
+   "lng": -90.306199,
+   "lat": 38.648539,
+   "osm": "way/245729305"
+  },
+  {
+   "id": "bayer-laboratory",
+   "name": "Bayer Laboratory",
+   "short": "Bayer Laboratory",
+   "kind": "academic",
+   "codes": [
+    "139"
+   ],
+   "aliases": [
+    "Bayer Lab Bldg"
+   ],
+   "lng": -90.307534,
+   "lat": 38.647406,
+   "osm": "way/112889064"
+  },
+  {
+   "id": "sumers-welcome-center",
+   "name": "Sumers Welcome Center",
+   "short": "Sumers Welcome Center",
+   "kind": "academic",
+   "codes": [
+    "210"
+   ],
+   "aliases": [
+    "Sumers Welcome Center Pavilion"
+   ],
+   "lng": -90.303989,
+   "lat": 38.647419,
+   "osm": "way/846607745"
+  },
+  {
+   "id": "risa-commons",
+   "name": "Risa Commons",
+   "short": "Risa Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Risa Zwerling Wrighton Commons"
+   ],
+   "lng": -90.313578,
+   "lat": 38.644388,
+   "osm": "way/543845050"
+  },
+  {
+   "id": "sever-hall",
+   "name": "Sever Hall",
+   "short": "Sever Hall",
+   "kind": "academic",
+   "codes": [
+    "149"
+   ],
+   "aliases": [],
+   "lng": -90.30637,
+   "lat": 38.648852,
+   "osm": "way/185357814"
+  },
+  {
+   "id": "schnuck-pavilion",
+   "name": "Schnuck Pavilion",
+   "short": "Schnuck Pavilion",
+   "kind": "academic",
+   "codes": [
+    "211"
+   ],
+   "aliases": [],
+   "lng": -90.303836,
+   "lat": 38.648383,
+   "osm": "way/846607752"
+  },
+  {
+   "id": "environmental-health-and-safety-facility",
+   "name": "Environmental Health and  Safety Facility",
+   "short": "Environmental Health and  Safety Facility",
+   "kind": "academic",
+   "codes": [
+    "225"
+   ],
+   "aliases": [
+    "Environmental Health & Safety"
+   ],
+   "lng": -90.307892,
+   "lat": 38.64999,
+   "osm": "way/185357813"
+  },
+  {
+   "id": "goldfarb-plant-growth-facility",
+   "name": "Goldfarb Plant Growth Facility",
+   "short": "Goldfarb Plant Growth Facility",
+   "kind": "academic",
+   "codes": [
+    "140"
+   ],
+   "aliases": [],
+   "lng": -90.308604,
+   "lat": 38.647271,
+   "osm": "way/120125038"
+  },
+  {
+   "id": "gaylord-music-library",
+   "name": "Gaylord Music Library",
+   "short": "Gaylord Music Library",
+   "kind": "library",
+   "codes": [
+    "130"
+   ],
+   "aliases": [],
+   "lng": -90.31123,
+   "lat": 38.646369,
+   "osm": "way/917590742"
+  },
+  {
+   "id": "music-classroom-building",
+   "name": "Music Classroom Building",
+   "short": "Music Classroom Building",
+   "kind": "academic",
+   "codes": [
+    "252"
+   ],
+   "aliases": [
+    "Music Classroom Bldg"
+   ],
+   "lng": -90.311863,
+   "lat": 38.646406,
+   "osm": "way/917590739"
+  },
+  {
+   "id": "blewett-hall",
+   "name": "Blewett Hall",
+   "short": "Blewett Hall",
+   "kind": "academic",
+   "codes": [
+    "240"
+   ],
+   "aliases": [
+    "Blewett Hall I (A)"
+   ],
+   "lng": -90.311517,
+   "lat": 38.646524,
+   "osm": "way/917590741"
+  },
+  {
+   "id": "radiochemistry-building",
+   "name": "Radiochemistry Building",
+   "short": "Radiochemistry Building",
+   "kind": "academic",
+   "codes": [
+    "144"
+   ],
+   "aliases": [
+    "Radiochemistry Bldg"
+   ],
+   "lng": -90.307475,
+   "lat": 38.649911,
+   "osm": "way/966641069"
+  },
+  {
+   "id": "science-building",
+   "name": "Science Building",
+   "short": "Science Building",
+   "kind": "academic",
+   "codes": [
+    "243"
+   ],
+   "aliases": [
+    "Life Science Bldg"
+   ],
+   "lng": -90.302518,
+   "lat": 38.645451,
+   "osm": "way/505571726"
+  }
+ ]
+}

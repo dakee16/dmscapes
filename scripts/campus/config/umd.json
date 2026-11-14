@@ -1,0 +1,16 @@
+{
+  "collegeId": "umd",
+  "area": {
+    "osm": "relation/14718558",
+    "bbox": [
+      38.96717,
+      -76.96581,
+      39.00757,
+      -76.91841
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "UMD publishes building numbers, not the letter codes Testudo schedules use: the Facilities Management building inventory (facilities.umd.edu/info-resources/building-inventory) and the campus map's public ArcGIS layer (services9.arcgis.com/1rOwFRpAwrxe0rBl BuildingAllSearch) list names and numbers only, and the registrar and Facilities glossary pages have no letter-code list (checked 2026-11-07)."
+}

@@ -1,0 +1,31 @@
+{
+  "places": {
+    "barnes-student-center": {
+      "kind": "dining"
+    },
+    "wesley-seminary": {
+      "hide": true
+    },
+    "john-wesley-administration-building": {
+      "hide": true
+    },
+    "alumni-center": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "barnes-student-center": "The Barnes Student Center holds Baldwin Dining Commons, IWU's main dining hall (indwes.edu/undergraduate/campus-map); its name doesn't say dining.",
+    "wesley-seminary": "Wesley Seminary is IWU's graduate seminary (wesleyseminary.indwes.edu), not somewhere undergraduates have class.",
+    "john-wesley-administration-building": "The administration building (indwes.edu/undergraduate/campus-map), offices rather than classrooms.",
+    "alumni-center": "Alumni centre (indwes.edu/undergraduate/campus-map), not somewhere classes happen."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "evans-hall -> maxwell-center"
+      ],
+      "maxRatio": 3.5,
+      "why": "Evans Hall's nearest mapped path is on its east side and the Maxwell Center's on its west; OSM maps no path across the lawn between them, so the walk goes down to University Boulevard and back up."
+    }
+  ]
+}

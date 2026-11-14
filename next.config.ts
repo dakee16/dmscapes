@@ -154,6 +154,17 @@ export default function nextConfig(phase: string): NextConfig {
       formats: ["image/avif", "image/webp"],
       qualities: [70, 75, 80],
     },
+    // Hall pages retired when UIUC and UMass were split from hall-style groups into their real
+    // halls (2026-11-14): each old group page goes to its school's page, which lists the halls.
+    async redirects() {
+      const retired = {
+        uiuc: ["traditional-halls", "premium-suites", "l-shaped-triples"],
+        umass: ["traditional-halls", "sylvan-suites", "chcrc-honors"],
+      };
+      return Object.entries(retired).flatMap(([school, halls]) =>
+        halls.map((hall) => ({ source: `/colleges/${school}/${hall}`, destination: `/colleges/${school}`, permanent: true })),
+      );
+    },
     async headers() {
       return [
         {

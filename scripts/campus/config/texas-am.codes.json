@@ -1,0 +1,5175 @@
+{
+ "name": "Texas A&M Facilities (FCOR) campus basemap, University Building layer: building names and abbreviations (BldgName, BldgAbbrev, Longitude/Latitude)",
+ "url": "https://gis.tamu.edu/arcgis/rest/services/FCOR/TAMU_Basemap_20261008/MapServer/2",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "MS0007",
+   "name": "Maintenance Machine Shed",
+   "lng": -96.416733,
+   "lat": 30.519536
+  },
+  {
+   "code": "0010",
+   "name": "Implement Barn",
+   "lng": -96.41673,
+   "lat": 30.51997
+  },
+  {
+   "code": "SS0014",
+   "name": "Implement Storage Shed",
+   "lng": -96.415932,
+   "lat": 30.51973
+  },
+  {
+   "code": "ARTF",
+   "name": "Aquaculture Research Teaching Facility",
+   "lng": -96.438265,
+   "lat": 30.545066
+  },
+  {
+   "code": "0040",
+   "name": "Farm Service Office Bldg",
+   "lng": -96.436769,
+   "lat": 30.549388
+  },
+  {
+   "code": "0041",
+   "name": "Farm Service Lab & Office",
+   "lng": -96.436529,
+   "lat": 30.549446
+  },
+  {
+   "code": "0042",
+   "name": "Farm Service East Wing",
+   "lng": -96.436206,
+   "lat": 30.549316
+  },
+  {
+   "code": "0043",
+   "name": "Farm Service Maint Shed",
+   "lng": -96.436207,
+   "lat": 30.548995
+  },
+  {
+   "code": "0044",
+   "name": "Farm Service Chemical Storage",
+   "lng": -96.436062,
+   "lat": 30.548375
+  },
+  {
+   "code": "0045",
+   "name": "Farm Service West Wing Shed",
+   "lng": -96.436625,
+   "lat": 30.548996
+  },
+  {
+   "code": "0046",
+   "name": "Farm Service Northwest Shed",
+   "lng": -96.436773,
+   "lat": 30.549212
+  },
+  {
+   "code": "0047",
+   "name": "Aquatic Research Center",
+   "lng": -96.437703,
+   "lat": 30.545131
+  },
+  {
+   "code": "0050",
+   "name": "Field Lab Equipment Shed",
+   "lng": -96.435833,
+   "lat": 30.548733
+  },
+  {
+   "code": "0051",
+   "name": "Field Lab Implement Shed",
+   "lng": -96.436664,
+   "lat": 30.548553
+  },
+  {
+   "code": "0052",
+   "name": "Fish Holding Shed",
+   "lng": -96.437839,
+   "lat": 30.544975
+  },
+  {
+   "code": "0053",
+   "name": "Hatchery",
+   "lng": -96.437606,
+   "lat": 30.545029
+  },
+  {
+   "code": "0054",
+   "name": "Sample Processing Laboratory",
+   "lng": -96.43619,
+   "lat": 30.548357
+  },
+  {
+   "code": "0055",
+   "name": "Storage Shed",
+   "lng": -96.436999,
+   "lat": 30.548858
+  },
+  {
+   "code": "0057",
+   "name": "Field Equipment Storage",
+   "lng": -96.438933,
+   "lat": 30.544854
+  },
+  {
+   "code": "0060",
+   "name": "Rainwater Restroom",
+   "lng": -96.421327,
+   "lat": 30.531685
+  },
+  {
+   "code": "WCOB01",
+   "name": "West Campus Office Building 01",
+   "lng": -96.3549,
+   "lat": 30.607
+  },
+  {
+   "code": "WCOB02",
+   "name": "West Campus Office Building 02",
+   "lng": -96.3546,
+   "lat": 30.6068
+  },
+  {
+   "code": "WCOB03",
+   "name": "West Campus Office Building 03",
+   "lng": -96.3548,
+   "lat": 30.6066
+  },
+  {
+   "code": "WCOB04",
+   "name": "West Campus Office Building 04",
+   "lng": -96.3552,
+   "lat": 30.6063
+  },
+  {
+   "code": "WCOB06",
+   "name": "West Campus Office Building 06",
+   "lng": -96.3555,
+   "lat": 30.6064
+  },
+  {
+   "code": "WCOB05",
+   "name": "West Campus Office Building 05",
+   "lng": -96.3554,
+   "lat": 30.6061
+  },
+  {
+   "code": "OWB",
+   "name": "Over Winter Building",
+   "lng": -96.439,
+   "lat": 30.5447
+  },
+  {
+   "code": "MH",
+   "name": "Marine Hatchery",
+   "lng": -96.4388,
+   "lat": 30.5444
+  },
+  {
+   "code": "0082",
+   "name": "Feed Shed",
+   "lng": -96.4386,
+   "lat": 30.5439
+  },
+  {
+   "code": "0113",
+   "name": "Farm Superintendent House",
+   "lng": -96.415792,
+   "lat": 30.517661
+  },
+  {
+   "code": "0114",
+   "name": "Office Metal Building",
+   "lng": -96.415836,
+   "lat": 30.51912
+  },
+  {
+   "code": "ES0139",
+   "name": "ESTI Private Sector Office",
+   "lng": -96.356791,
+   "lat": 30.581107
+  },
+  {
+   "code": "ES0145",
+   "name": "ESTI Technical Equipment Storage",
+   "lng": -96.349651,
+   "lat": 30.577124
+  },
+  {
+   "code": "ES0149",
+   "name": "ESTI Haz Mat Office",
+   "lng": -96.34994,
+   "lat": 30.578136
+  },
+  {
+   "code": "SEBHC",
+   "name": "Schubot Exotic Bird Health Center",
+   "lng": -96.35842,
+   "lat": 30.620824
+  },
+  {
+   "code": "EQIB",
+   "name": "Equine Initiative Barn",
+   "lng": -96.371698,
+   "lat": 30.61466
+  },
+  {
+   "code": "EQWA1",
+   "name": "Equine Initiative Warm Up Arena #1",
+   "lng": -96.3713,
+   "lat": 30.6152
+  },
+  {
+   "code": "HLSRWA",
+   "name": "Houston Livestock Show & Rodeo Western Arena",
+   "lng": -96.370474,
+   "lat": 30.615577
+  },
+  {
+   "code": "EQLB1",
+   "name": "Equine Initiative Concessions/Locker Bldg",
+   "lng": -96.370475,
+   "lat": 30.615054
+  },
+  {
+   "code": "EQLB2",
+   "name": "Equine Initiative Equestrian/Locker Bldg",
+   "lng": -96.370075,
+   "lat": 30.615184
+  },
+  {
+   "code": "EQHSA",
+   "name": "Hunt Seat Arena",
+   "lng": -96.370063,
+   "lat": 30.614628
+  },
+  {
+   "code": "EQEB",
+   "name": "Equine Initiative Education Bldg",
+   "lng": -96.369405,
+   "lat": 30.615203
+  },
+  {
+   "code": "EQOB",
+   "name": "Equine Initiative Outreach Bldg",
+   "lng": -96.369671,
+   "lat": 30.615818
+  },
+  {
+   "code": "EQWA2",
+   "name": "Equine Initiative Warm Up Arena #2",
+   "lng": -96.371,
+   "lat": 30.6144
+  },
+  {
+   "code": "EQHSB",
+   "name": "Equine Initiative Horse Stall Bldg",
+   "lng": -96.3722,
+   "lat": 30.6145
+  },
+  {
+   "code": "EQES",
+   "name": "Equine Initiative Equipment Shed",
+   "lng": -96.372474,
+   "lat": 30.615201
+  },
+  {
+   "code": "EQCCSB",
+   "name": "Cross Country Track Storage Building",
+   "lng": -96.3724,
+   "lat": 30.616
+  },
+  {
+   "code": "EQNR",
+   "name": "Equine Nutrition and Reproduction",
+   "lng": -96.36569,
+   "lat": 30.62359
+  },
+  {
+   "code": "DESMAH",
+   "name": "Dr. David E. Schob Military Appreciation Home",
+   "lng": -96.322133,
+   "lat": 30.629928
+  },
+  {
+   "code": "0249",
+   "name": "Cold Storage - Corps Dining",
+   "lng": -96.33485,
+   "lat": 30.61192
+  },
+  {
+   "code": "0256",
+   "name": "CUP Modular"
+  },
+  {
+   "code": "ETB",
+   "name": "Emerging Technologies Building",
+   "lng": -96.339186,
+   "lat": 30.622698
+  },
+  {
+   "code": "PRG",
+   "name": "Polo Road Garage"
+  },
+  {
+   "code": "PRB",
+   "name": "Polo Road Building"
+  },
+  {
+   "code": "LAAH",
+   "name": "Liberal Arts and Arts & Humanities Building",
+   "lng": -96.337963,
+   "lat": 30.617678
+  },
+  {
+   "code": "0276",
+   "name": "TX Forest Service Greenhouse",
+   "lng": -96.35208,
+   "lat": 30.616431
+  },
+  {
+   "code": "0278",
+   "name": "TX Forest Service Greenhouse",
+   "lng": -96.351755,
+   "lat": 30.616113
+  },
+  {
+   "code": "0279",
+   "name": "TX Forest Service GH Headhouse",
+   "lng": -96.351913,
+   "lat": 30.61609
+  },
+  {
+   "code": "SSRC",
+   "name": "Southside Recreation Center"
+  },
+  {
+   "code": "0289",
+   "name": "Central Utility Plant Electrical Building",
+   "lng": -96.34203,
+   "lat": 30.617593
+  },
+  {
+   "code": "WELL",
+   "name": "Wells Residence Hall",
+   "lng": -96.334907,
+   "lat": 30.614848
+  },
+  {
+   "code": "RUDD",
+   "name": "Rudder Residence Hall",
+   "lng": -96.334172,
+   "lat": 30.615004
+  },
+  {
+   "code": "EPPR",
+   "name": "Eppright Residence Hall",
+   "lng": -96.334517,
+   "lat": 30.614422
+  },
+  {
+   "code": "APPE",
+   "name": "Appelt Residence Hall",
+   "lng": -96.335393,
+   "lat": 30.614311
+  },
+  {
+   "code": "LECH",
+   "name": "Lechner Residence Hall",
+   "lng": -96.34388,
+   "lat": 30.616168
+  },
+  {
+   "code": "MIST",
+   "name": "Mitchell Inst for Fundamental Phys & Astronomy",
+   "lng": -96.342917,
+   "lat": 30.620037
+  },
+  {
+   "code": "MPHY",
+   "name": "Mitchell Physics Building",
+   "lng": -96.342438,
+   "lat": 30.620257
+  },
+  {
+   "code": "0298",
+   "name": "ESTI Electrical Building",
+   "lng": -96.354347,
+   "lat": 30.580456
+  },
+  {
+   "code": "0299",
+   "name": "ESTI Control Building",
+   "lng": -96.354885,
+   "lat": 30.580556
+  },
+  {
+   "code": "0301",
+   "name": "ESTI Pump Operations Building",
+   "lng": -96.355114,
+   "lat": 30.584955
+  },
+  {
+   "code": "0302",
+   "name": "ESTI Pump Operations Building",
+   "lng": -96.355793,
+   "lat": 30.585436
+  },
+  {
+   "code": "0303",
+   "name": "ESTI Pump Operations Building",
+   "lng": -96.355769,
+   "lat": 30.584798
+  },
+  {
+   "code": "0304",
+   "name": "ESTI Pump Operations Building",
+   "lng": -96.355246,
+   "lat": 30.584317
+  },
+  {
+   "code": "0308",
+   "name": "ESTI Breathing Apparatus Maze",
+   "lng": -96.354796,
+   "lat": 30.579311
+  },
+  {
+   "code": "0312",
+   "name": "ESTI Rail Tank Car Loading Rack Fires",
+   "lng": -96.3554,
+   "lat": 30.581
+  },
+  {
+   "code": "0315",
+   "name": "ESTI Pump Maintenance Building",
+   "lng": -96.355619,
+   "lat": 30.583053
+  },
+  {
+   "code": "0320",
+   "name": "ESTI Sprinkler Systems",
+   "lng": -96.3561,
+   "lat": 30.5812
+  },
+  {
+   "code": "0322",
+   "name": "ESTI Marine Vessle Project",
+   "lng": -96.3555,
+   "lat": 30.579
+  },
+  {
+   "code": "0323",
+   "name": "ESTI Hay Barn",
+   "lng": -96.353966,
+   "lat": 30.580829
+  },
+  {
+   "code": "0324",
+   "name": "ESTI Wood Storage",
+   "lng": -96.3537,
+   "lat": 30.5807
+  },
+  {
+   "code": "CVLB",
+   "name": "CVE Lab Building",
+   "lng": -96.3395,
+   "lat": 30.62
+  },
+  {
+   "code": "0326",
+   "name": "ESTI Pump Alley Fires",
+   "lng": -96.3566,
+   "lat": 30.582
+  },
+  {
+   "code": "0327",
+   "name": "ESTI Loading Terminal Fires",
+   "lng": -96.356,
+   "lat": 30.5815
+  },
+  {
+   "code": "0328",
+   "name": "ESTI API Storage Tank Fires",
+   "lng": -96.3556,
+   "lat": 30.5812
+  },
+  {
+   "code": "0329",
+   "name": "ESTI Tank & Dike Fires",
+   "lng": -96.3552,
+   "lat": 30.5809
+  },
+  {
+   "code": "0330",
+   "name": "ESTI Pump Maintenance Shelter"
+  },
+  {
+   "code": "0334",
+   "name": "ESTI Pipe Rack Fires",
+   "lng": -96.3551,
+   "lat": 30.5823
+  },
+  {
+   "code": "0335",
+   "name": "ESTI Process Unit Fires",
+   "lng": -96.3553,
+   "lat": 30.5818
+  },
+  {
+   "code": "0337",
+   "name": "ESTI Automobile Fires",
+   "lng": -96.3556,
+   "lat": 30.5799
+  },
+  {
+   "code": "0338",
+   "name": "ESTI Bobtail/Transport Fires",
+   "lng": -96.3559,
+   "lat": 30.5797
+  },
+  {
+   "code": "0339",
+   "name": "ESTI Multi-User Shelter",
+   "lng": -96.3548,
+   "lat": 30.5805
+  },
+  {
+   "code": "0342",
+   "name": "ESTI Field Maintenance Office",
+   "lng": -96.355537,
+   "lat": 30.578711
+  },
+  {
+   "code": "0344",
+   "name": "ESTI Recruit Classroom/Fire Station",
+   "lng": -96.35692,
+   "lat": 30.580869
+  },
+  {
+   "code": "0347",
+   "name": "ESTI Annual School/Extension Offices/Gym",
+   "lng": -96.357054,
+   "lat": 30.581268
+  },
+  {
+   "code": "0348",
+   "name": "ESTI Pump/Vehicle Maintenance",
+   "lng": -96.355719,
+   "lat": 30.58322
+  },
+  {
+   "code": "0350",
+   "name": "Albritton Bell Tower",
+   "lng": -96.344661,
+   "lat": 30.61311
+  },
+  {
+   "code": "HRBB",
+   "name": "Bright Building",
+   "lng": -96.338799,
+   "lat": 30.618997
+  },
+  {
+   "code": "0354",
+   "name": "ESTI Hazardous Material Classroom",
+   "lng": -96.349691,
+   "lat": 30.577589
+  },
+  {
+   "code": "HUB",
+   "name": "The HUB-Bike Maintenance Shack",
+   "lng": -96.336288,
+   "lat": 30.616181
+  },
+  {
+   "code": "0357",
+   "name": "Aggie Express - Pavilion",
+   "lng": -96.338223,
+   "lat": 30.616546
+  },
+  {
+   "code": "DPDC",
+   "name": "Davis Football Player Development Center",
+   "lng": -96.338522,
+   "lat": 30.608595
+  },
+  {
+   "code": "ARCB",
+   "name": "Architecture Building B",
+   "lng": -96.338301,
+   "lat": 30.619223
+  },
+  {
+   "code": "BFC",
+   "name": "Bright-Slocum Center Texas A&M Football",
+   "lng": -96.339169,
+   "lat": 30.608881
+  },
+  {
+   "code": "KYLE",
+   "name": "Kyle Field",
+   "lng": -96.340453,
+   "lat": 30.609936
+  },
+  {
+   "code": "CLAC",
+   "name": "Williams Alumni Center",
+   "lng": -96.3363,
+   "lat": 30.6084
+  },
+  {
+   "code": "CHAN",
+   "name": "Chemistry",
+   "lng": -96.339562,
+   "lat": 30.61848
+  },
+  {
+   "code": "SUP3",
+   "name": "Satellite Utility Plant No. 3",
+   "lng": -96.339007,
+   "lat": 30.613779
+  },
+  {
+   "code": "SSG",
+   "name": "Southside Parking Garage",
+   "lng": -96.333626,
+   "lat": 30.613677
+  },
+  {
+   "code": "UCG",
+   "name": "University Center Parking Garage",
+   "lng": -96.338727,
+   "lat": 30.612043
+  },
+  {
+   "code": "JJKB",
+   "name": "Koldus Building",
+   "lng": -96.339285,
+   "lat": 30.612192
+  },
+  {
+   "code": "SCCT",
+   "name": "Sam Houston Sanders Corps of Cadets Center",
+   "lng": -96.337483,
+   "lat": 30.612078
+  },
+  {
+   "code": "DLEB",
+   "name": "Dwight Look Engineering Building",
+   "lng": -96.339894,
+   "lat": 30.620177
+  },
+  {
+   "code": "CHEN",
+   "name": "Jack E. Brown Chemical Engineering Building",
+   "lng": -96.341804,
+   "lat": 30.620853
+  },
+  {
+   "code": "RICH",
+   "name": "Joe C. Richardson Petroleum Engineering Building",
+   "lng": -96.339362,
+   "lat": 30.619482
+  },
+  {
+   "code": "NSG",
+   "name": "Northside Parking Garage",
+   "lng": -96.343441,
+   "lat": 30.619147
+  },
+  {
+   "code": "0389",
+   "name": "Grounds Maintenance Potting Shed",
+   "lng": -96.343811,
+   "lat": 30.628284
+  },
+  {
+   "code": "JCAIN",
+   "name": "James J. Cain '51 Building",
+   "lng": -96.340961,
+   "lat": 30.619749
+  },
+  {
+   "code": "MEOB",
+   "name": "Mechanical Engineering Office Building",
+   "lng": -96.340372,
+   "lat": 30.619642
+  },
+  {
+   "code": "LIND",
+   "name": "John H. Lindsey Building",
+   "lng": -96.333618,
+   "lat": 30.611823
+  },
+  {
+   "code": "UNDE",
+   "name": "Underwood Residence Hall",
+   "lng": -96.335698,
+   "lat": 30.614102
+  },
+  {
+   "code": "ARCA",
+   "name": "Langford Architecture Center Building A",
+   "lng": -96.337631,
+   "lat": 30.618798
+  },
+  {
+   "code": "SPEN",
+   "name": "Spence Hall-Dorm 1",
+   "lng": -96.337051,
+   "lat": 30.614255
+  },
+  {
+   "code": "KIES",
+   "name": "Kiest Hall-Dorm 2",
+   "lng": -96.337582,
+   "lat": 30.613893
+  },
+  {
+   "code": "BRIG",
+   "name": "Briggs Hall-Dorm 3",
+   "lng": -96.33657,
+   "lat": 30.613994
+  },
+  {
+   "code": "FOUN",
+   "name": "Fountain Hall-Dorm 4",
+   "lng": -96.337399,
+   "lat": 30.613432
+  },
+  {
+   "code": "GAIN",
+   "name": "Gainer Hall-Dorm 5",
+   "lng": -96.335964,
+   "lat": 30.613852
+  },
+  {
+   "code": "LACY",
+   "name": "Lacy Hall-Dorm 6",
+   "lng": -96.337394,
+   "lat": 30.612902
+  },
+  {
+   "code": "LEON",
+   "name": "Leonard Hall-Dorm 7",
+   "lng": -96.335966,
+   "lat": 30.613299
+  },
+  {
+   "code": "HARL",
+   "name": "Harrell Hall-Dorm 8",
+   "lng": -96.336765,
+   "lat": 30.612757
+  },
+  {
+   "code": "WHTE",
+   "name": "Whiteley Hall-Dorm 9",
+   "lng": -96.33577,
+   "lat": 30.612844
+  },
+  {
+   "code": "WHIT",
+   "name": "White Hall-Dorm 10",
+   "lng": -96.336301,
+   "lat": 30.612482
+  },
+  {
+   "code": "HARR",
+   "name": "Harrington Hall-Dorm 11",
+   "lng": -96.334936,
+   "lat": 30.612722
+  },
+  {
+   "code": "UTAY",
+   "name": "Utay Hall-Dorm 12",
+   "lng": -96.336361,
+   "lat": 30.611751
+  },
+  {
+   "code": "MOSE",
+   "name": "Moses Residence Hall",
+   "lng": -96.345726,
+   "lat": 30.615594
+  },
+  {
+   "code": "DAVI",
+   "name": "Davis-Gary Residence Hall",
+   "lng": -96.346435,
+   "lat": 30.615533
+  },
+  {
+   "code": "HART",
+   "name": "Hart Residence Hall",
+   "lng": -96.340557,
+   "lat": 30.614288
+  },
+  {
+   "code": "LEGE",
+   "name": "Legett Residence Hall",
+   "lng": -96.342324,
+   "lat": 30.616182
+  },
+  {
+   "code": "MILN",
+   "name": "Milner Hall",
+   "lng": -96.342879,
+   "lat": 30.616879
+  },
+  {
+   "code": "WALT",
+   "name": "Walton Residence Hall",
+   "lng": -96.345219,
+   "lat": 30.616892
+  },
+  {
+   "code": "HOTA",
+   "name": "Hotard Hall",
+   "lng": -96.344513,
+   "lat": 30.618224
+  },
+  {
+   "code": "HEND",
+   "name": "Henderson Hall",
+   "lng": -96.344461,
+   "lat": 30.614773
+  },
+  {
+   "code": "HUGH",
+   "name": "Hughes Residence Hall",
+   "lng": -96.345185,
+   "lat": 30.615515
+  },
+  {
+   "code": "FOWL",
+   "name": "Fowler Residence Hall",
+   "lng": -96.345383,
+   "lat": 30.614932
+  },
+  {
+   "code": "KEAT",
+   "name": "Keathley Residence Hall",
+   "lng": -96.345629,
+   "lat": 30.615192
+  },
+  {
+   "code": "SCHU",
+   "name": "Schuhmacher Residence Hall",
+   "lng": -96.345465,
+   "lat": 30.617154
+  },
+  {
+   "code": "ARCC",
+   "name": "Architecture Building C",
+   "lng": -96.337992,
+   "lat": 30.619355
+  },
+  {
+   "code": "MOSH",
+   "name": "Mosher Residence Hall",
+   "lng": -96.335169,
+   "lat": 30.61545
+  },
+  {
+   "code": "CYCL",
+   "name": "Luedecke Building (Cyclotron)",
+   "lng": -96.341324,
+   "lat": 30.620328
+  },
+  {
+   "code": "EDCT",
+   "name": "Harrington Education Center Office Tower",
+   "lng": -96.340897,
+   "lat": 30.616554
+  },
+  {
+   "code": "RDMC",
+   "name": "Reed-McDonald Building",
+   "lng": -96.340978,
+   "lat": 30.618302
+  },
+  {
+   "code": "HECC",
+   "name": "Harrington Education Center Classroom Building",
+   "lng": -96.340422,
+   "lat": 30.616879
+  },
+  {
+   "code": "COMM",
+   "name": "Commons",
+   "lng": -96.335948,
+   "lat": 30.615285
+  },
+  {
+   "code": "KRUE",
+   "name": "Krueger Residence Hall",
+   "lng": -96.335541,
+   "lat": 30.615948
+  },
+  {
+   "code": "DUNN",
+   "name": "Dunn Residence Hall",
+   "lng": -96.336811,
+   "lat": 30.615075
+  },
+  {
+   "code": "OMB",
+   "name": "Eller Oceanography & Meteorology Building",
+   "lng": -96.336654,
+   "lat": 30.617721
+  },
+  {
+   "code": "PETR",
+   "name": "Peterson Building",
+   "lng": -96.33858,
+   "lat": 30.615977
+  },
+  {
+   "code": "TEAG",
+   "name": "Teague Research Center",
+   "lng": -96.336075,
+   "lat": 30.61729
+  },
+  {
+   "code": "RDER",
+   "name": "Rudder Tower",
+   "lng": -96.339957,
+   "lat": 30.613251
+  },
+  {
+   "code": "ASTO",
+   "name": "Aston Residence Hall",
+   "lng": -96.336307,
+   "lat": 30.614675
+  },
+  {
+   "code": "ADAM",
+   "name": "Adams Band Hall",
+   "lng": -96.334652,
+   "lat": 30.612308
+  },
+  {
+   "code": "BSBW",
+   "name": "Biological Sciences Bldg West",
+   "lng": -96.339645,
+   "lat": 30.615618
+  },
+  {
+   "code": "DCAN",
+   "name": "Duncan Dining Hall",
+   "lng": -96.335435,
+   "lat": 30.612033
+  },
+  {
+   "code": "MSC",
+   "name": "Memorial Student Center",
+   "lng": -96.341378,
+   "lat": 30.612309
+  },
+  {
+   "code": "MILS",
+   "name": "Military Sciences Building",
+   "lng": -96.339354,
+   "lat": 30.614257
+  },
+  {
+   "code": "EABC",
+   "name": "Engineering Activities Bldg C",
+   "lng": -96.337841,
+   "lat": 30.615265
+  },
+  {
+   "code": "EABB",
+   "name": "Engineering Activities Bldg B",
+   "lng": -96.337424,
+   "lat": 30.615547
+  },
+  {
+   "code": "EABA",
+   "name": "Engineering Activities Bldg A",
+   "lng": -96.33699,
+   "lat": 30.615844
+  },
+  {
+   "code": "COKE",
+   "name": "Coke Building",
+   "lng": -96.34171,
+   "lat": 30.614612
+  },
+  {
+   "code": "ACAD",
+   "name": "Academic Building",
+   "lng": -96.340765,
+   "lat": 30.615774
+  },
+  {
+   "code": "PSYC",
+   "name": "Psychology Building",
+   "lng": -96.339777,
+   "lat": 30.614685
+  },
+  {
+   "code": "BTLR",
+   "name": "Butler Hall",
+   "lng": -96.33893,
+   "lat": 30.614837
+  },
+  {
+   "code": "BSBE",
+   "name": "Biological Sciences Bldg East",
+   "lng": -96.339324,
+   "lat": 30.615807
+  },
+  {
+   "code": "LIBR",
+   "name": "Sterling C. Evans Library",
+   "lng": -96.339047,
+   "lat": 30.616607
+  },
+  {
+   "code": "EVANS",
+   "name": "Evans Library",
+   "lng": -96.33922,
+   "lat": 30.61683
+  },
+  {
+   "code": "CUSH",
+   "name": "Cushing Memorial Library",
+   "lng": -96.3399,
+   "lat": 30.61636
+  },
+  {
+   "code": "ANNEX",
+   "name": "Evans Library Annex",
+   "lng": -96.33834,
+   "lat": 30.6163
+  },
+  {
+   "code": "SCC",
+   "name": "Student Computing Center",
+   "lng": -96.33802,
+   "lat": 30.61594
+  },
+  {
+   "code": "CCG",
+   "name": "Central Campus Parking Garage",
+   "lng": -96.33772,
+   "lat": 30.616476
+  },
+  {
+   "code": "GLAS",
+   "name": "Melbern G. Glasscock Building",
+   "lng": -96.338482,
+   "lat": 30.617326
+  },
+  {
+   "code": "PAV",
+   "name": "Pavilion",
+   "lng": -96.338014,
+   "lat": 30.61683
+  },
+  {
+   "code": "AIEN",
+   "name": "AI Engineering Building",
+   "lng": -96.337198,
+   "lat": 30.617248
+  },
+  {
+   "code": "ADMN",
+   "name": "Jack K. Williams Administration Building",
+   "lng": -96.336464,
+   "lat": 30.618693
+  },
+  {
+   "code": "YMCA",
+   "name": "YMCA Building",
+   "lng": -96.34228,
+   "lat": 30.615176
+  },
+  {
+   "code": "FRAN",
+   "name": "Francis Hall",
+   "lng": -96.339761,
+   "lat": 30.617308
+  },
+  {
+   "code": "ANTH",
+   "name": "Anthropology Building",
+   "lng": -96.33901,
+   "lat": 30.617745
+  },
+  {
+   "code": "SCTS",
+   "name": "Scoates Hall",
+   "lng": -96.338343,
+   "lat": 30.618511
+  },
+  {
+   "code": "BLTN",
+   "name": "Bolton Hall",
+   "lng": -96.341661,
+   "lat": 30.616189
+  },
+  {
+   "code": "HEAT",
+   "name": "Heaton Hall",
+   "lng": -96.342259,
+   "lat": 30.616704
+  },
+  {
+   "code": "FERM",
+   "name": "Fermier Hall",
+   "lng": -96.341728,
+   "lat": 30.616839
+  },
+  {
+   "code": "THOM",
+   "name": "Thompson Hall",
+   "lng": -96.341263,
+   "lat": 30.617234
+  },
+  {
+   "code": "CHEM",
+   "name": "Chemistry",
+   "lng": -96.339923,
+   "lat": 30.617993
+  },
+  {
+   "code": "HALB",
+   "name": "Halbouty Geosciences Building",
+   "lng": -96.340592,
+   "lat": 30.61893
+  },
+  {
+   "code": "HEB",
+   "name": "H.J. (Bill) and Reta Haynes Engineering Building",
+   "lng": -96.33892,
+   "lat": 30.619782
+  },
+  {
+   "code": "SBSA",
+   "name": "Sbisa Dining Hall",
+   "lng": -96.343761,
+   "lat": 30.617156
+  },
+  {
+   "code": "UCO",
+   "name": "Utilities & Energy Services Central Office",
+   "lng": -96.34319,
+   "lat": 30.618434
+  },
+  {
+   "code": "CUP",
+   "name": "Central Utility Plant",
+   "lng": -96.342234,
+   "lat": 30.618122
+  },
+  {
+   "code": "EIC",
+   "name": "Engineering Innovation Center",
+   "lng": -96.341432,
+   "lat": 30.618601
+  },
+  {
+   "code": "NGLE",
+   "name": "Nagle Hall",
+   "lng": -96.340523,
+   "lat": 30.614948
+  },
+  {
+   "code": "VTH",
+   "name": "Veterinary Teaching Hospital",
+   "lng": -96.35333,
+   "lat": 30.612942
+  },
+  {
+   "code": "0510",
+   "name": "Adriance Lab",
+   "lng": -96.353204,
+   "lat": 30.610331
+  },
+  {
+   "code": "HLB",
+   "name": "HEEP Laboratory Building",
+   "lng": -96.337493,
+   "lat": 30.616208
+  },
+  {
+   "code": "CHPL",
+   "name": "All Faiths Chapel",
+   "lng": -96.343635,
+   "lat": 30.615401
+  },
+  {
+   "code": "DRTY",
+   "name": "Doherty Building",
+   "lng": -96.339996,
+   "lat": 30.619224
+  },
+  {
+   "code": "MASS",
+   "name": "Munnerlyn Astronomy & Space Sciences Engineering",
+   "lng": -96.344123,
+   "lat": 30.618911
+  },
+  {
+   "code": "CSC",
+   "name": "Computing Services Center",
+   "lng": -96.336864,
+   "lat": 30.616773
+  },
+  {
+   "code": "CSA",
+   "name": "Computing Services Annex",
+   "lng": -96.336352,
+   "lat": 30.616955
+  },
+  {
+   "code": "ZACH",
+   "name": "Zachry Engineering Education Complex",
+   "lng": -96.340241,
+   "lat": 30.621252
+  },
+  {
+   "code": "BEUT",
+   "name": "Beutel Health Center",
+   "lng": -96.342705,
+   "lat": 30.615644
+  },
+  {
+   "code": "HELD",
+   "name": "Heldenfels Hall",
+   "lng": -96.33869,
+   "lat": 30.615123
+  },
+  {
+   "code": "BLOC",
+   "name": "Blocker Building",
+   "lng": -96.34212,
+   "lat": 30.619539
+  },
+  {
+   "code": "0547",
+   "name": "Break Room at Central Utility Plant",
+   "lng": -96.342963,
+   "lat": 30.617946
+  },
+  {
+   "code": "CLEM",
+   "name": "Clements Residence Hall",
+   "lng": -96.345483,
+   "lat": 30.614447
+  },
+  {
+   "code": "HAAS",
+   "name": "Haas Residence Hall",
+   "lng": -96.344567,
+   "lat": 30.615915
+  },
+  {
+   "code": "MCFA",
+   "name": "McFadden Residence Hall",
+   "lng": -96.344281,
+   "lat": 30.615653
+  },
+  {
+   "code": "NEEL",
+   "name": "Neeley Residence Hall",
+   "lng": -96.344396,
+   "lat": 30.617973
+  },
+  {
+   "code": "HOBB",
+   "name": "Hobby Residence Hall",
+   "lng": -96.344122,
+   "lat": 30.617739
+  },
+  {
+   "code": "0655",
+   "name": "Golf Course Maintenance Shop",
+   "lng": -96.331118,
+   "lat": 30.614853
+  },
+  {
+   "code": "GOLF",
+   "name": "Golf Course Clubhouse",
+   "lng": -96.334021,
+   "lat": 30.616802
+  },
+  {
+   "code": "0673",
+   "name": "Golf Course Restroom",
+   "lng": -96.328113,
+   "lat": 30.619538
+  },
+  {
+   "code": "0677",
+   "name": "Golf Course Pump House",
+   "lng": -96.328644,
+   "lat": 30.618223
+  },
+  {
+   "code": "WEB",
+   "name": "Wisenbaker Engineering Building",
+   "lng": -96.33894,
+   "lat": 30.620765
+  },
+  {
+   "code": "0685",
+   "name": "Grounds Maintenance-Tractor Shed",
+   "lng": -96.343875,
+   "lat": 30.626603
+  },
+  {
+   "code": "0687",
+   "name": "ESTI Industrial Classroom",
+   "lng": -96.356369,
+   "lat": 30.583219
+  },
+  {
+   "code": "0688",
+   "name": "ESTI Industrial Technician Office/Shop",
+   "lng": -96.356337,
+   "lat": 30.578823
+  },
+  {
+   "code": "0689",
+   "name": "ESTI Warehouse Building",
+   "lng": -96.356039,
+   "lat": 30.578573
+  },
+  {
+   "code": "0700",
+   "name": "ESTI 3-Story Project",
+   "lng": -96.3553,
+   "lat": 30.5805
+  },
+  {
+   "code": "0715",
+   "name": "Chemistry Chemical Storage",
+   "lng": -96.339965,
+   "lat": 30.618134
+  },
+  {
+   "code": "0717",
+   "name": "Storage and Lab-Cyclotron",
+   "lng": -96.340926,
+   "lat": 30.620077
+  },
+  {
+   "code": "0718",
+   "name": "Storage-Cyclotron",
+   "lng": -96.340967,
+   "lat": 30.620286
+  },
+  {
+   "code": "0720",
+   "name": "ESTI Chemical Complex Fires",
+   "lng": -96.3545,
+   "lat": 30.5812
+  },
+  {
+   "code": "0721",
+   "name": "ESTI Warehouse Fires",
+   "lng": -96.3559,
+   "lat": 30.5809
+  },
+  {
+   "code": "0726",
+   "name": "Grounds Maintenance Greenhouse 4",
+   "lng": -96.344918,
+   "lat": 30.627239
+  },
+  {
+   "code": "0728",
+   "name": "Grounds Maintenance Greenhouse 5",
+   "lng": -96.344837,
+   "lat": 30.627311
+  },
+  {
+   "code": "0729",
+   "name": "Biology Greenhouse",
+   "lng": -96.342829,
+   "lat": 30.630251
+  },
+  {
+   "code": "0732",
+   "name": "Grounds Maintenance Greenhouse",
+   "lng": -96.345185,
+   "lat": 30.626882
+  },
+  {
+   "code": "0733",
+   "name": "Grounds Maintenance Greenhouse",
+   "lng": -96.345064,
+   "lat": 30.626984
+  },
+  {
+   "code": "0742",
+   "name": "Grounds Maintenance Storage",
+   "lng": -96.343942,
+   "lat": 30.626922
+  },
+  {
+   "code": "0744",
+   "name": "Wind Tunnel Compressor Building",
+   "lng": -96.357766,
+   "lat": 30.590169
+  },
+  {
+   "code": "GMSB",
+   "name": "Grounds Maintenance Supply Bldg",
+   "lng": -96.344257,
+   "lat": 30.626556
+  },
+  {
+   "code": "0754",
+   "name": "Easterwood Shops",
+   "lng": -96.357803,
+   "lat": 30.589633
+  },
+  {
+   "code": "0755",
+   "name": "Easterwood General Aviation Terminal",
+   "lng": -96.358667,
+   "lat": 30.589973
+  },
+  {
+   "code": "WIND",
+   "name": "Nicks Low Speed Wind Tunnel",
+   "lng": -96.35772,
+   "lat": 30.590407
+  },
+  {
+   "code": "STL",
+   "name": "Soil Testing Lab",
+   "lng": -96.359766,
+   "lat": 30.622719
+  },
+  {
+   "code": "ERLB",
+   "name": "Entomology Research Lab",
+   "lng": -96.350967,
+   "lat": 30.6145
+  },
+  {
+   "code": "0816",
+   "name": "Water Distribution Pump Station No. 1",
+   "lng": -96.357793,
+   "lat": 30.623694
+  },
+  {
+   "code": "0817",
+   "name": "Well Field Pump Station",
+   "lng": -96.479374,
+   "lat": 30.654256
+  },
+  {
+   "code": "0824",
+   "name": "Grounds Maintenance Implement Shed",
+   "lng": -96.344459,
+   "lat": 30.627333
+  },
+  {
+   "code": "0828",
+   "name": "Grounds Shop Warehouse",
+   "lng": -96.344613,
+   "lat": 30.626983
+  },
+  {
+   "code": "0829",
+   "name": "Grounds Maintenance Office Shop/Stor",
+   "lng": -96.344479,
+   "lat": 30.626868
+  },
+  {
+   "code": "0831",
+   "name": "Grounds Maintenance Greenhouse",
+   "lng": -96.344969,
+   "lat": 30.627085
+  },
+  {
+   "code": "INSC",
+   "name": "CUSE-Chemistry",
+   "lng": -96.35144,
+   "lat": 30.614937
+  },
+  {
+   "code": "0862",
+   "name": "Butler Building",
+   "lng": -96.351097,
+   "lat": 30.61521
+  },
+  {
+   "code": "0943",
+   "name": "TVMC-Barn No 2",
+   "lng": -96.35697,
+   "lat": 30.61381
+  },
+  {
+   "code": "AGRL",
+   "name": "Agronomy Field Lab",
+   "lng": -96.353527,
+   "lat": 30.61594
+  },
+  {
+   "code": "0955",
+   "name": "Soil/Crop Cotton Genetic Greenhouse",
+   "lng": -96.353904,
+   "lat": 30.616376
+  },
+  {
+   "code": "PGBG",
+   "name": "Perennial Grass Breeding and Genetics",
+   "lng": -96.358433,
+   "lat": 30.621734
+  },
+  {
+   "code": "PRCH",
+   "name": "Purchasing & Stores",
+   "lng": -96.352603,
+   "lat": 30.617165
+  },
+  {
+   "code": "FLSV",
+   "name": "Fleet Services",
+   "lng": -96.35349,
+   "lat": 30.617783
+  },
+  {
+   "code": "0959",
+   "name": "Plant Science Greenhouse",
+   "lng": -96.354594,
+   "lat": 30.616954
+  },
+  {
+   "code": "SCSFGH",
+   "name": "SCS Forage Greenhouse",
+   "lng": -96.354503,
+   "lat": 30.616855
+  },
+  {
+   "code": "0961",
+   "name": "Cotton Greenhouse",
+   "lng": -96.354412,
+   "lat": 30.616757
+  },
+  {
+   "code": "0962",
+   "name": "Plant Science Grain Sorghum Greenhouse",
+   "lng": -96.354316,
+   "lat": 30.616674
+  },
+  {
+   "code": "0963",
+   "name": "Hort & Plant Science Greenhouse",
+   "lng": -96.354241,
+   "lat": 30.616594
+  },
+  {
+   "code": "0964",
+   "name": "Agronomy Greenhouse",
+   "lng": -96.354168,
+   "lat": 30.616514
+  },
+  {
+   "code": "BEAS",
+   "name": "Beasley Laboratory",
+   "lng": -96.354195,
+   "lat": 30.61687
+  },
+  {
+   "code": "0966",
+   "name": "Purchasing & Stores-General Storage",
+   "lng": -96.351867,
+   "lat": 30.617778
+  },
+  {
+   "code": "0967",
+   "name": "Purchasing & Stores-Volatile Storage",
+   "lng": -96.351576,
+   "lat": 30.617371
+  },
+  {
+   "code": "TRSV",
+   "name": "Transit Services",
+   "lng": -96.354204,
+   "lat": 30.618316
+  },
+  {
+   "code": "PPGM",
+   "name": "Phys Plant-Grounds Maintenance",
+   "lng": -96.354766,
+   "lat": 30.618877
+  },
+  {
+   "code": "WCDC",
+   "name": "Fred Dollar Food Services Commissary",
+   "lng": -96.353842,
+   "lat": 30.619691
+  },
+  {
+   "code": "LARR",
+   "name": "Laboratory Animal Care Building",
+   "lng": -96.352999,
+   "lat": 30.615172
+  },
+  {
+   "code": "0973",
+   "name": "CMP-Animal Housing Unit",
+   "lng": -96.35876,
+   "lat": 30.616395
+  },
+  {
+   "code": "0974",
+   "name": "CMP-Animal Housing Unit",
+   "lng": -96.358908,
+   "lat": 30.616298
+  },
+  {
+   "code": "0975",
+   "name": "CMP-Animal Housing Unit",
+   "lng": -96.359057,
+   "lat": 30.6162
+  },
+  {
+   "code": "0976",
+   "name": "CMP-Animal Housing Unit",
+   "lng": -96.35887,
+   "lat": 30.616638
+  },
+  {
+   "code": "0977",
+   "name": "CMP-Animal Housing Unit",
+   "lng": -96.359001,
+   "lat": 30.616502
+  },
+  {
+   "code": "0978",
+   "name": "CMP-Quarantine Unit",
+   "lng": -96.361094,
+   "lat": 30.614983
+  },
+  {
+   "code": "TURF",
+   "name": "Turfgrass Field Lab",
+   "lng": -96.357862,
+   "lat": 30.619202
+  },
+  {
+   "code": "0980",
+   "name": "Murray Case Sells Storage Bldg",
+   "lng": -96.351837,
+   "lat": 30.617979
+  },
+  {
+   "code": "0983",
+   "name": "Trans Center Paint Storage",
+   "lng": -96.352892,
+   "lat": 30.61787
+  },
+  {
+   "code": "VMCA",
+   "name": "TVMC-Caged Animals",
+   "lng": -96.358046,
+   "lat": 30.614727
+  },
+  {
+   "code": "CPLX",
+   "name": "Cardiovascular Pathology Lab Annex",
+   "lng": -96.358129,
+   "lat": 30.615082
+  },
+  {
+   "code": "0991",
+   "name": "VMP Shop",
+   "lng": -96.358437,
+   "lat": 30.615234
+  },
+  {
+   "code": "0992",
+   "name": "TVMC-Experimental Animal Building",
+   "lng": -96.358761,
+   "lat": 30.615104
+  },
+  {
+   "code": "0995",
+   "name": "Water Distribution Pump Station No. 2",
+   "lng": -96.35758,
+   "lat": 30.623937
+  },
+  {
+   "code": "0996",
+   "name": "Oil Tanks Boiler House",
+   "lng": -96.358232,
+   "lat": 30.624151
+  },
+  {
+   "code": "TICK",
+   "name": "Tick Research Facility",
+   "lng": -96.358928,
+   "lat": 30.6148
+  },
+  {
+   "code": "1000",
+   "name": "Farm Service Office",
+   "lng": -96.356892,
+   "lat": 30.619975
+  },
+  {
+   "code": "1001",
+   "name": "Farm Service Implement #1",
+   "lng": -96.357351,
+   "lat": 30.61957
+  },
+  {
+   "code": "1002",
+   "name": "Farm Service Implement #2",
+   "lng": -96.357725,
+   "lat": 30.619955
+  },
+  {
+   "code": "1003",
+   "name": "Farm Service Shop",
+   "lng": -96.357666,
+   "lat": 30.619685
+  },
+  {
+   "code": "VMB3",
+   "name": "TVMC-Barn No 3",
+   "lng": -96.358521,
+   "lat": 30.615535
+  },
+  {
+   "code": "VIV3",
+   "name": "Vivarium III",
+   "lng": -96.352894,
+   "lat": 30.614299
+  },
+  {
+   "code": "VMA",
+   "name": "Veterinary Medicine Administration",
+   "lng": -96.352534,
+   "lat": 30.612983
+  },
+  {
+   "code": "NFFL",
+   "name": "Nursery Floral Field Laboratory",
+   "lng": -96.342965,
+   "lat": 30.630015
+  },
+  {
+   "code": "1029",
+   "name": "Agronomy Implement Storage",
+   "lng": -96.353978,
+   "lat": 30.615751
+  },
+  {
+   "code": "AESH",
+   "name": "AG Engr Res Lab & Shop",
+   "lng": -96.34845,
+   "lat": 30.61373
+  },
+  {
+   "code": "AEPM",
+   "name": "Ag Engineering Power & Machinery Building",
+   "lng": -96.349053,
+   "lat": 30.614195
+  },
+  {
+   "code": "CPL",
+   "name": "Cardiovascular Pathology Laboratory",
+   "lng": -96.357858,
+   "lat": 30.616122
+  },
+  {
+   "code": "1041",
+   "name": "Former TVMDL Building",
+   "lng": -96.353241,
+   "lat": 30.614026
+  },
+  {
+   "code": "FSLB",
+   "name": "Forest Science Laboratory Building",
+   "lng": -96.352269,
+   "lat": 30.61597
+  },
+  {
+   "code": "1043",
+   "name": "Mosquito Research Lab",
+   "lng": -96.351285,
+   "lat": 30.615577
+  },
+  {
+   "code": "1044",
+   "name": "TVMC-Poultry Research",
+   "lng": -96.363802,
+   "lat": 30.612663
+  },
+  {
+   "code": "1045",
+   "name": "USDA Greenhouse 1",
+   "lng": -96.357578,
+   "lat": 30.620865
+  },
+  {
+   "code": "1047",
+   "name": "Virus-Vector Research Lab",
+   "lng": -96.35707,
+   "lat": 30.620299
+  },
+  {
+   "code": "1049",
+   "name": "USDA Greenhouse 2",
+   "lng": -96.3573,
+   "lat": 30.6205
+  },
+  {
+   "code": "1050",
+   "name": "CUSE-Research Labs",
+   "lng": -96.351775,
+   "lat": 30.615334
+  },
+  {
+   "code": "CUSE",
+   "name": "Center for Urban and Structural Entomology (CUSE)",
+   "lng": -96.351512,
+   "lat": 30.61517
+  },
+  {
+   "code": "1052",
+   "name": "Grazingland Animal Nutrition Lab",
+   "lng": -96.357888,
+   "lat": 30.621179
+  },
+  {
+   "code": "1054",
+   "name": "Forage and Turf Greenhouse",
+   "lng": -96.354086,
+   "lat": 30.616221
+  },
+  {
+   "code": "1056",
+   "name": "Soil & Crop Sci Greenhouse",
+   "lng": -96.354192,
+   "lat": 30.616148
+  },
+  {
+   "code": "1057",
+   "name": "Soil & Crop Sci Greenhouse",
+   "lng": -96.354298,
+   "lat": 30.616074
+  },
+  {
+   "code": "1058",
+   "name": "Soil & Crop Sci Greenhouse",
+   "lng": -96.354422,
+   "lat": 30.616017
+  },
+  {
+   "code": "1059",
+   "name": "Soil & Crop Sci Greenhouse",
+   "lng": -96.354511,
+   "lat": 30.615926
+  },
+  {
+   "code": "1060",
+   "name": "Greenhouse-Small Grains",
+   "lng": -96.354277,
+   "lat": 30.61579
+  },
+  {
+   "code": "1063",
+   "name": "Greenhouse-Cotton Taxonomy",
+   "lng": -96.3541,
+   "lat": 30.6156
+  },
+  {
+   "code": "1064",
+   "name": "Soil & Crop Sciences Greenhouse",
+   "lng": -96.3544,
+   "lat": 30.6153
+  },
+  {
+   "code": "1065",
+   "name": "Soil & Crop Sci Dry Processing",
+   "lng": -96.35401,
+   "lat": 30.614942
+  },
+  {
+   "code": "1066",
+   "name": "Cotton Ginning Lab",
+   "lng": -96.353643,
+   "lat": 30.615188
+  },
+  {
+   "code": "1067",
+   "name": "Agronomy Field Crop Laboratory",
+   "lng": -96.354837,
+   "lat": 30.615245
+  },
+  {
+   "code": "1068",
+   "name": "Crop Testing",
+   "lng": -96.354632,
+   "lat": 30.613928
+  },
+  {
+   "code": "1075",
+   "name": "Ecology & Natural Resources Teaching Pavilion",
+   "lng": -96.3651,
+   "lat": 30.57365
+  },
+  {
+   "code": "1077",
+   "name": "SCSC Small Grain Greenhouse",
+   "lng": -96.354674,
+   "lat": 30.615589
+  },
+  {
+   "code": "1078",
+   "name": "Soil & Crop Peanut Greenhouse",
+   "lng": -96.354798,
+   "lat": 30.615702
+  },
+  {
+   "code": "1079",
+   "name": "SCSC-Weed Sci Greenhouse",
+   "lng": -96.354923,
+   "lat": 30.615797
+  },
+  {
+   "code": "1083",
+   "name": "Research Park Maintenance Building",
+   "lng": -96.360226,
+   "lat": 30.598901
+  },
+  {
+   "code": "WCS",
+   "name": "West Campus Switching Station",
+   "lng": -96.3479,
+   "lat": 30.613623
+  },
+  {
+   "code": "VSAH",
+   "name": "Veterinary Small Animal Hospital",
+   "lng": -96.353642,
+   "lat": 30.612187
+  },
+  {
+   "code": "1086",
+   "name": "CMP-Housing Unit",
+   "lng": -96.359165,
+   "lat": 30.616444
+  },
+  {
+   "code": "1087",
+   "name": "CMP-Quarantine Unit",
+   "lng": -96.360803,
+   "lat": 30.61525
+  },
+  {
+   "code": "UEOA",
+   "name": "Utilities & Energy Services Energy Office",
+   "lng": -96.353452,
+   "lat": 30.588812
+  },
+  {
+   "code": "1091",
+   "name": "Easterwood Hangar 1091",
+   "lng": -96.357906,
+   "lat": 30.589474
+  },
+  {
+   "code": "1092",
+   "name": "Easterwood Hangar 1092",
+   "lng": -96.359219,
+   "lat": 30.59235
+  },
+  {
+   "code": "1094",
+   "name": "TVMC-Poultry Disease Research",
+   "lng": -96.357568,
+   "lat": 30.616317
+  },
+  {
+   "code": "1095",
+   "name": "Nuclear Science Center",
+   "lng": -96.363846,
+   "lat": 30.580279
+  },
+  {
+   "code": "1129",
+   "name": "Floriculture Greenhouse",
+   "lng": -96.342961,
+   "lat": 30.63015
+  },
+  {
+   "code": "1140",
+   "name": "ESTI Extinguisher Refill Building",
+   "lng": -96.354205,
+   "lat": 30.577965
+  },
+  {
+   "code": "1142",
+   "name": "ESTI Marine Classroom/First Aid",
+   "lng": -96.355181,
+   "lat": 30.579647
+  },
+  {
+   "code": "1143",
+   "name": "ESTI Fixed System Classroom",
+   "lng": -96.35558,
+   "lat": 30.580727
+  },
+  {
+   "code": "1144",
+   "name": "ESTI Industrial Classroom",
+   "lng": -96.356733,
+   "lat": 30.582726
+  },
+  {
+   "code": "BCC",
+   "name": "Biological Control Facility",
+   "lng": -96.350388,
+   "lat": 30.614965
+  },
+  {
+   "code": "1149",
+   "name": "Billy Bryant Barn",
+   "lng": -96.374064,
+   "lat": 30.611133
+  },
+  {
+   "code": "EQCT",
+   "name": "Equine Center Stable",
+   "lng": -96.376663,
+   "lat": 30.61419
+  },
+  {
+   "code": "1152",
+   "name": "Equine Center Restroom",
+   "lng": -96.376569,
+   "lat": 30.614917
+  },
+  {
+   "code": "FREE",
+   "name": "Freeman Arena",
+   "lng": -96.3762,
+   "lat": 30.6153
+  },
+  {
+   "code": "1154",
+   "name": "Electrical Distribution Storage",
+   "lng": -96.361357,
+   "lat": 30.622422
+  },
+  {
+   "code": "PLNT",
+   "name": "Facilities Services",
+   "lng": -96.355183,
+   "lat": 30.620499
+  },
+  {
+   "code": "WRHS",
+   "name": "Warehouse",
+   "lng": -96.355638,
+   "lat": 30.621041
+  },
+  {
+   "code": "PRPV",
+   "name": "Pearce Animal Pavilion",
+   "lng": -96.343573,
+   "lat": 30.599558
+  },
+  {
+   "code": "1161",
+   "name": "Reed House",
+   "lng": -96.347509,
+   "lat": 30.594792
+  },
+  {
+   "code": "1165",
+   "name": "Environmental Health and Safety Storage #1",
+   "lng": -96.361723,
+   "lat": 30.622379
+  },
+  {
+   "code": "1166",
+   "name": "CUSE-Special Project Lab & Storage",
+   "lng": -96.35168,
+   "lat": 30.615444
+  },
+  {
+   "code": "1167",
+   "name": "CUSE-Insect Testing Lab",
+   "lng": -96.351482,
+   "lat": 30.615526
+  },
+  {
+   "code": "1168",
+   "name": "CUSE-Shop & Storage",
+   "lng": -96.35137,
+   "lat": 30.61538
+  },
+  {
+   "code": "1169",
+   "name": "CUSE-Toxicology Hut",
+   "lng": -96.351433,
+   "lat": 30.615287
+  },
+  {
+   "code": "1171",
+   "name": "Environmental Health and Safety Storage #2",
+   "lng": -96.362914,
+   "lat": 30.581081
+  },
+  {
+   "code": "1172",
+   "name": "Flammable Mat Storage",
+   "lng": -96.354996,
+   "lat": 30.619351
+  },
+  {
+   "code": "1173",
+   "name": "Soil & Crop Greenhouse",
+   "lng": -96.354515,
+   "lat": 30.615571
+  },
+  {
+   "code": "1176",
+   "name": "Hort/FS Greenhouse",
+   "lng": -96.349928,
+   "lat": 30.608877
+  },
+  {
+   "code": "1177",
+   "name": "Horticulture/Forest Science Greenhouse",
+   "lng": -96.350086,
+   "lat": 30.608876
+  },
+  {
+   "code": "1178",
+   "name": "Horticulture/Forest Science Greenhouse",
+   "lng": -96.350316,
+   "lat": 30.60888
+  },
+  {
+   "code": "1179",
+   "name": "Forest Science Greenhouse",
+   "lng": -96.350471,
+   "lat": 30.608877
+  },
+  {
+   "code": "NEEB",
+   "name": "Nuclear Engineering Education Building",
+   "lng": -96.363129,
+   "lat": 30.579495
+  },
+  {
+   "code": "VAPA",
+   "name": "Veterinary Anatomic Pathology",
+   "lng": -96.354141,
+   "lat": 30.613616
+  },
+  {
+   "code": "1185",
+   "name": "Parsons Cav Caretaker Facility",
+   "lng": -96.373299,
+   "lat": 30.610619
+  },
+  {
+   "code": "1186",
+   "name": "TVMC-Isolation Laboratory",
+   "lng": -96.355421,
+   "lat": 30.611887
+  },
+  {
+   "code": "LFB",
+   "name": "W.P. Luse Foundation Building",
+   "lng": -96.356646,
+   "lat": 30.609466
+  },
+  {
+   "code": "1188",
+   "name": "Forest Science Storage",
+   "lng": -96.352002,
+   "lat": 30.616165
+  },
+  {
+   "code": "1190",
+   "name": "Floriculture Research Greenhouse",
+   "lng": -96.342564,
+   "lat": 30.629381
+  },
+  {
+   "code": "1191",
+   "name": "Floriculture Growing Facility",
+   "lng": -96.342765,
+   "lat": 30.629448
+  },
+  {
+   "code": "VMSB",
+   "name": "TVMC-Surgery Building",
+   "lng": -96.356,
+   "lat": 30.614441
+  },
+  {
+   "code": "1193",
+   "name": "Wildlife & Exotic Animal Ctr",
+   "lng": -96.359691,
+   "lat": 30.620235
+  },
+  {
+   "code": "VLAH",
+   "name": "Veterinary Large Animal Hospital",
+   "lng": -96.354849,
+   "lat": 30.612544
+  },
+  {
+   "code": "1195",
+   "name": "Non Surgical Animal Procedure",
+   "lng": -96.356355,
+   "lat": 30.614501
+  },
+  {
+   "code": "1196",
+   "name": "Animal Housing Unit",
+   "lng": -96.359271,
+   "lat": 30.616075
+  },
+  {
+   "code": "VRB",
+   "name": "Veterinary Research Building",
+   "lng": -96.354856,
+   "lat": 30.611134
+  },
+  {
+   "code": "1198",
+   "name": "LARR Support Personnel Bldg",
+   "lng": -96.359514,
+   "lat": 30.616176
+  },
+  {
+   "code": "1200",
+   "name": "McFerrin '65 Parsons Mounted Cavalry Headquarters",
+   "lng": -96.373,
+   "lat": 30.6098
+  },
+  {
+   "code": "FARM",
+   "name": "Poultry Science Headquarters",
+   "lng": -96.349822,
+   "lat": 30.587894
+  },
+  {
+   "code": "POSC",
+   "name": "Poultry Sci Handling & Judging",
+   "lng": -96.349931,
+   "lat": 30.587479
+  },
+  {
+   "code": "PSNP",
+   "name": "Poultry Sci Nutrition & Phys",
+   "lng": -96.350456,
+   "lat": 30.587425
+  },
+  {
+   "code": "1204",
+   "name": "Poultry Sci Environmental Res",
+   "lng": -96.350359,
+   "lat": 30.587112
+  },
+  {
+   "code": "1205",
+   "name": "Poultry Science Feed Mixing",
+   "lng": -96.350804,
+   "lat": 30.587166
+  },
+  {
+   "code": "1206",
+   "name": "Poultry Sci Equipment Storage",
+   "lng": -96.351082,
+   "lat": 30.587041
+  },
+  {
+   "code": "1207",
+   "name": "Poultry Sci Repro & Embryology",
+   "lng": -96.351562,
+   "lat": 30.58637
+  },
+  {
+   "code": "1208",
+   "name": "Poultry Sci Comparative Rearing",
+   "lng": -96.350988,
+   "lat": 30.586559
+  },
+  {
+   "code": "1209",
+   "name": "Poultry Sci Integrated Repro",
+   "lng": -96.351933,
+   "lat": 30.58655
+  },
+  {
+   "code": "1210",
+   "name": "PS Intensive Mgt & Rearing",
+   "lng": -96.352073,
+   "lat": 30.586842
+  },
+  {
+   "code": "1211",
+   "name": "Poultry Science Broiler #1",
+   "lng": -96.351306,
+   "lat": 30.586776
+  },
+  {
+   "code": "1212",
+   "name": "Poultry Science Broiler #2",
+   "lng": -96.351456,
+   "lat": 30.587089
+  },
+  {
+   "code": "1213",
+   "name": "Poultry Science Caged Layer #1",
+   "lng": -96.351229,
+   "lat": 30.587493
+  },
+  {
+   "code": "1214",
+   "name": "Poultry Science Caged Layer #2",
+   "lng": -96.350611,
+   "lat": 30.587712
+  },
+  {
+   "code": "1215",
+   "name": "PS Environmental Biotechnology",
+   "lng": -96.350307,
+   "lat": 30.588132
+  },
+  {
+   "code": "1216",
+   "name": "PS Gamebird Repro & Management",
+   "lng": -96.351432,
+   "lat": 30.58811
+  },
+  {
+   "code": "1217",
+   "name": "PS Gamebird Rearing & Flt Pen",
+   "lng": -96.351442,
+   "lat": 30.588455
+  },
+  {
+   "code": "1218",
+   "name": "Refuse Collection Maintenance",
+   "lng": -96.349558,
+   "lat": 30.586765
+  },
+  {
+   "code": "1220",
+   "name": "TVMC-Animal Isolation Bldg #1",
+   "lng": -96.363628,
+   "lat": 30.613129
+  },
+  {
+   "code": "1221",
+   "name": "TVMC-Animal Isolation Bldg #2",
+   "lng": -96.363465,
+   "lat": 30.613276
+  },
+  {
+   "code": "1222",
+   "name": "TVMC-Animal Isolation Bldg #3",
+   "lng": -96.363303,
+   "lat": 30.613423
+  },
+  {
+   "code": "1223",
+   "name": "TVMC-Animal Isolation Bldg #4",
+   "lng": -96.363128,
+   "lat": 30.613585
+  },
+  {
+   "code": "1224",
+   "name": "TVMC-Animal Isolation Bldg #5",
+   "lng": -96.362966,
+   "lat": 30.613733
+  },
+  {
+   "code": "1225",
+   "name": "TVMC-Animal Isolation Bldg #6",
+   "lng": -96.362803,
+   "lat": 30.613881
+  },
+  {
+   "code": "1226",
+   "name": "TVMC-Animal Isolation Bldg #7",
+   "lng": -96.36347,
+   "lat": 30.613
+  },
+  {
+   "code": "1227",
+   "name": "TVMC-Animal Isolation Bldg #8",
+   "lng": -96.36331,
+   "lat": 30.613147
+  },
+  {
+   "code": "1228",
+   "name": "TVMC-Animal Isolation Bldg #9",
+   "lng": -96.363147,
+   "lat": 30.613295
+  },
+  {
+   "code": "VMTF",
+   "name": "Theriogenology Facility, Equine Reproduction",
+   "lng": -96.356299,
+   "lat": 30.613221
+  },
+  {
+   "code": "1234",
+   "name": "Dry Feed Storage Facility",
+   "lng": -96.355343,
+   "lat": 30.614031
+  },
+  {
+   "code": "1236",
+   "name": "Small Horse Barn",
+   "lng": -96.373838,
+   "lat": 30.610657
+  },
+  {
+   "code": "EAA",
+   "name": "Equine Athletic Riding Arena",
+   "lng": -96.3568,
+   "lat": 30.6127
+  },
+  {
+   "code": "OBSR",
+   "name": "Robotic Observatory",
+   "lng": -96.366881,
+   "lat": 30.572554
+  },
+  {
+   "code": "OBSV",
+   "name": "Physics Teaching Observatory",
+   "lng": -96.367043,
+   "lat": 30.572728
+  },
+  {
+   "code": "1241",
+   "name": "LARR Support Shop B",
+   "lng": -96.3597,
+   "lat": 30.6162
+  },
+  {
+   "code": "1242",
+   "name": "Utilities Water Operations Building F & B Storage",
+   "lng": -96.358541,
+   "lat": 30.623732
+  },
+  {
+   "code": "1243",
+   "name": "Plumbing Fabrication Shop",
+   "lng": -96.362003,
+   "lat": 30.621417
+  },
+  {
+   "code": "1244",
+   "name": "Utilities Inventory Warehouse Building 1",
+   "lng": -96.361687,
+   "lat": 30.621733
+  },
+  {
+   "code": "1245",
+   "name": "Cable Wire Storage",
+   "lng": -96.361656,
+   "lat": 30.622058
+  },
+  {
+   "code": "1246",
+   "name": "Generator Storage Building",
+   "lng": -96.361407,
+   "lat": 30.62196
+  },
+  {
+   "code": "1247",
+   "name": "Environmental Health and Safety Office Annex",
+   "lng": -96.361829,
+   "lat": 30.622528
+  },
+  {
+   "code": "VWSH",
+   "name": "Transportation Car/Bus Wash Building",
+   "lng": -96.353377,
+   "lat": 30.618191
+  },
+  {
+   "code": "1249",
+   "name": "Telecommunications Optical Remote Building",
+   "lng": -96.353664,
+   "lat": 30.619282
+  },
+  {
+   "code": "1259",
+   "name": "Airport-Aircraft Hangar J",
+   "lng": -96.357619,
+   "lat": 30.589207
+  },
+  {
+   "code": "1260",
+   "name": "Airport Hangar",
+   "lng": -96.357362,
+   "lat": 30.588999
+  },
+  {
+   "code": "1262",
+   "name": "McKenzie Terminal Building",
+   "lng": -96.366569,
+   "lat": 30.593557
+  },
+  {
+   "code": "1265",
+   "name": "Hot Rapid Refuel Shop",
+   "lng": -96.367583,
+   "lat": 30.594613
+  },
+  {
+   "code": "1266",
+   "name": "Easterwood Airport ARFF Station",
+   "lng": -96.367153,
+   "lat": 30.587221
+  },
+  {
+   "code": "ALLEMO",
+   "name": "Aerospace Laboratory for Lasers, ElectroMagnetics and Optics"
+  },
+  {
+   "code": "1268",
+   "name": "Natl Aerothermochemistry Lab, Bldg 1",
+   "lng": -96.358066,
+   "lat": 30.59064
+  },
+  {
+   "code": "1269",
+   "name": "Low Speed Wind Tunnel Shop",
+   "lng": -96.357792,
+   "lat": 30.590707
+  },
+  {
+   "code": "1271",
+   "name": "Natl Aerothermochemistry Lab, Bldg 2",
+   "lng": -96.357935,
+   "lat": 30.590728
+  },
+  {
+   "code": "1272",
+   "name": "Easterwood Airport Control Tower",
+   "lng": -96.3589,
+   "lat": 30.5903
+  },
+  {
+   "code": "1273",
+   "name": "Easterwood Airport Electrical Vault",
+   "lng": -96.3588,
+   "lat": 30.5904
+  },
+  {
+   "code": "KSWT",
+   "name": "Klebanoff-Saric Wind Tunnel (Unsteady Wind Tunnel)",
+   "lng": -96.357954,
+   "lat": 30.591036
+  },
+  {
+   "code": "1275",
+   "name": "Easterwood FBO and Hangar",
+   "lng": -96.3592,
+   "lat": 30.5914
+  },
+  {
+   "code": "1279",
+   "name": "McKenzie Telecom Hub",
+   "lng": -96.3569,
+   "lat": 30.5837
+  },
+  {
+   "code": "1280",
+   "name": "ESTI Bathroom",
+   "lng": -96.355511,
+   "lat": 30.584816
+  },
+  {
+   "code": "1283",
+   "name": "ESTI Industrial Bunker Gear Drying Building",
+   "lng": -96.356221,
+   "lat": 30.583093
+  },
+  {
+   "code": "1285",
+   "name": "ESTI Multi-Use Shelter",
+   "lng": -96.3493,
+   "lat": 30.5776
+  },
+  {
+   "code": "1286",
+   "name": "ESTI Warehouse Shelter",
+   "lng": -96.3501,
+   "lat": 30.577
+  },
+  {
+   "code": "1287",
+   "name": "ESTI EMS Shop/Storage Building",
+   "lng": -96.355848,
+   "lat": 30.578464
+  },
+  {
+   "code": "1293",
+   "name": "Turbomachinery Propulsion Test Facility",
+   "lng": -96.349737,
+   "lat": 30.595249
+  },
+  {
+   "code": "1295",
+   "name": "Turbo Machine Storage Facility",
+   "lng": -96.355727,
+   "lat": 30.590198
+  },
+  {
+   "code": "1296",
+   "name": "Easterwood Maintenance Support Facility",
+   "lng": -96.357316,
+   "lat": 30.589663
+  },
+  {
+   "code": "1297",
+   "name": "Land, Air, Space Robotics",
+   "lng": -96.356793,
+   "lat": 30.58951
+  },
+  {
+   "code": "1298",
+   "name": "Turbo Lab Support Building",
+   "lng": -96.356033,
+   "lat": 30.590576
+  },
+  {
+   "code": "TURBO",
+   "name": "Turbomachinery Laboratory",
+   "lng": -96.355676,
+   "lat": 30.590723
+  },
+  {
+   "code": "1302",
+   "name": "Class of 1974 Artillery Storage Building"
+  },
+  {
+   "code": "1303",
+   "name": "Dorothy and Artie McFerrin '65 Arena"
+  },
+  {
+   "code": "1307",
+   "name": "Nuclear Science Center Laboratory",
+   "lng": -96.364598,
+   "lat": 30.580212
+  },
+  {
+   "code": "ENRTA",
+   "name": "Ecology & Natural Resources Teaching Area",
+   "lng": -96.363405,
+   "lat": 30.577744
+  },
+  {
+   "code": "1310",
+   "name": "Ecology & Natural Resources Teaching Building",
+   "lng": -96.363611,
+   "lat": 30.577778
+  },
+  {
+   "code": "1322",
+   "name": "ESTI Apartment Complex Fires",
+   "lng": -96.3553,
+   "lat": 30.5807
+  },
+  {
+   "code": "1323",
+   "name": "ESTI Commercial/Retail Complex Fires",
+   "lng": -96.3555,
+   "lat": 30.5806
+  },
+  {
+   "code": "1324",
+   "name": "ESTI Commercial/Retail Complex Fires",
+   "lng": -96.3553,
+   "lat": 30.5803
+  },
+  {
+   "code": "1325",
+   "name": "ESTI Pump Seal Fires",
+   "lng": -96.356,
+   "lat": 30.5795
+  },
+  {
+   "code": "1326",
+   "name": "ESTI LPG Fires",
+   "lng": -96.3562,
+   "lat": 30.5794
+  },
+  {
+   "code": "1327",
+   "name": "ESTI Hose Evolutions",
+   "lng": -96.3524,
+   "lat": 30.5794
+  },
+  {
+   "code": "1328",
+   "name": "ESTI Hose Loads",
+   "lng": -96.3521,
+   "lat": 30.5794
+  },
+  {
+   "code": "1329",
+   "name": "ESTI Salvage & Overhaul",
+   "lng": -96.3516,
+   "lat": 30.5792
+  },
+  {
+   "code": "1330",
+   "name": "ESTI Interior Shoring Shelter",
+   "lng": -96.3512,
+   "lat": 30.5765
+  },
+  {
+   "code": "1331",
+   "name": "ESTI Breaching/Breaking Tunnel System",
+   "lng": -96.3513,
+   "lat": 30.5763
+  },
+  {
+   "code": "1332",
+   "name": "ESTI Exterior Shoring Shelter",
+   "lng": -96.3508,
+   "lat": 30.5765
+  },
+  {
+   "code": "1333",
+   "name": "ESTI Lifting/Moving Shelter",
+   "lng": -96.3508,
+   "lat": 30.5762
+  },
+  {
+   "code": "1334",
+   "name": "ESTI Crane Operations Shelter",
+   "lng": -96.3503,
+   "lat": 30.5764
+  },
+  {
+   "code": "1335",
+   "name": "ESTI Marine Engine Room Fires",
+   "lng": -96.3552,
+   "lat": 30.5789
+  },
+  {
+   "code": "1338",
+   "name": "ESTI Marine Ship Superstructure Fires",
+   "lng": -96.3553,
+   "lat": 30.5791
+  },
+  {
+   "code": "1344",
+   "name": "Les W. Bunte Jr. Administration and Classroom Complex"
+  },
+  {
+   "code": "SOC",
+   "name": "ESTI H. D. Smith Operations Complex",
+   "lng": -96.356988,
+   "lat": 30.582513
+  },
+  {
+   "code": "1346",
+   "name": "ESTI Structural Burn Trng Complex"
+  },
+  {
+   "code": "1349",
+   "name": "ESTI Rescue/Disaster City Canine Support",
+   "lng": -96.349632,
+   "lat": 30.576865
+  },
+  {
+   "code": "1350",
+   "name": "ESTI Bathroom (Hazardous Materials Area)",
+   "lng": -96.349575,
+   "lat": 30.579798
+  },
+  {
+   "code": "1351",
+   "name": "ESTI Bathroom (Marine Area)",
+   "lng": -96.355176,
+   "lat": 30.579856
+  },
+  {
+   "code": "1352",
+   "name": "ESTI Bathroom (Industrial Area)",
+   "lng": -96.356692,
+   "lat": 30.58286
+  },
+  {
+   "code": "1353",
+   "name": "ESTI Industrial Classrooms A & B",
+   "lng": -96.355896,
+   "lat": 30.583379
+  },
+  {
+   "code": "1354",
+   "name": "ESTI Industrial Office",
+   "lng": -96.356517,
+   "lat": 30.583142
+  },
+  {
+   "code": "1355",
+   "name": "ESTI Industrial Classrooms A & B",
+   "lng": -96.356361,
+   "lat": 30.583083
+  },
+  {
+   "code": "1356",
+   "name": "ESTI Industrial Office",
+   "lng": -96.356672,
+   "lat": 30.582999
+  },
+  {
+   "code": "1357",
+   "name": "ESTI Industrial Classrooms A & B",
+   "lng": -96.356592,
+   "lat": 30.582867
+  },
+  {
+   "code": "1358",
+   "name": "ESTI Business Office",
+   "lng": -96.348846,
+   "lat": 30.578125
+  },
+  {
+   "code": "1359",
+   "name": "ESTI Hazardous Materials Classroom-Marketing Office",
+   "lng": -96.349068,
+   "lat": 30.578221
+  },
+  {
+   "code": "1360",
+   "name": "ESTI Marine/EHS Office",
+   "lng": -96.355353,
+   "lat": 30.579726
+  },
+  {
+   "code": "1362",
+   "name": "ESTI Marines Ship Deck Fires Shelter",
+   "lng": -96.3553,
+   "lat": 30.5792
+  },
+  {
+   "code": "1363",
+   "name": "ESTI Field Maintenance Shop",
+   "lng": -96.355617,
+   "lat": 30.57831
+  },
+  {
+   "code": "1364",
+   "name": "EMS Classroom/EMS Storage",
+   "lng": -96.349292,
+   "lat": 30.578316
+  },
+  {
+   "code": "1365",
+   "name": "ESTI EMS Classroom",
+   "lng": -96.349739,
+   "lat": 30.578506
+  },
+  {
+   "code": "1366",
+   "name": "ESTI Industrial Classrooms A&B",
+   "lng": -96.355981,
+   "lat": 30.583453
+  },
+  {
+   "code": "1367",
+   "name": "ESTI EMS Office",
+   "lng": -96.349515,
+   "lat": 30.578411
+  },
+  {
+   "code": "1368",
+   "name": "ESTI Vendor Store",
+   "lng": -96.356071,
+   "lat": 30.583527
+  },
+  {
+   "code": "EOTC",
+   "name": "Emergency Operations Training Center",
+   "lng": -96.351485,
+   "lat": 30.578872
+  },
+  {
+   "code": "1375",
+   "name": "ESTI Tunneling System",
+   "lng": -96.3504,
+   "lat": 30.5754
+  },
+  {
+   "code": "1376",
+   "name": "ESTI Single Family Building Collapse",
+   "lng": -96.3507,
+   "lat": 30.5752
+  },
+  {
+   "code": "1377",
+   "name": "ESTI Office Complex Building Collapse",
+   "lng": -96.351,
+   "lat": 30.5755
+  },
+  {
+   "code": "1379",
+   "name": "ESTI Multi-Purpose Building Collapse",
+   "lng": -96.351,
+   "lat": 30.5749
+  },
+  {
+   "code": "1380",
+   "name": "ESTI Industrial Complex Bldg Collapse",
+   "lng": -96.3519,
+   "lat": 30.5752
+  },
+  {
+   "code": "1381",
+   "name": "ESTI Passenger Train (7 Cars)",
+   "lng": -96.3499,
+   "lat": 30.5756
+  },
+  {
+   "code": "1382",
+   "name": "Rescue/Disaster City Warehouse",
+   "lng": -96.350103,
+   "lat": 30.576284
+  },
+  {
+   "code": "1383",
+   "name": "ESTI Strip Mall Collapse",
+   "lng": -96.3513,
+   "lat": 30.5752
+  },
+  {
+   "code": "1384",
+   "name": "ESTI Interior Shoring Project",
+   "lng": -96.351,
+   "lat": 30.5764
+  },
+  {
+   "code": "1385",
+   "name": "ESTI WMD Restroom",
+   "lng": -96.348588,
+   "lat": 30.577921
+  },
+  {
+   "code": "1386",
+   "name": "ESTI Curriculum Office",
+   "lng": -96.348836,
+   "lat": 30.577773
+  },
+  {
+   "code": "1387",
+   "name": "ESTI Leadership/Certification/Evaluation Office",
+   "lng": -96.349074,
+   "lat": 30.577743
+  },
+  {
+   "code": "1388",
+   "name": "TEEX Emergency Services Lab",
+   "lng": -96.350323,
+   "lat": 30.578824
+  },
+  {
+   "code": "1391",
+   "name": "Pat Barrett Bunker Gear Drying Facility",
+   "lng": -96.355671,
+   "lat": 30.580861
+  },
+  {
+   "code": "1392",
+   "name": "TEEX-ESTI (FTS) Rescue Training Facility",
+   "lng": -96.350672,
+   "lat": 30.574406
+  },
+  {
+   "code": "1393",
+   "name": "TEEX-ESTI SCBA Facility",
+   "lng": -96.3542,
+   "lat": 30.5786
+  },
+  {
+   "code": "1394",
+   "name": "TEEX ESTI Protective Housing Project Building",
+   "lng": -96.3494,
+   "lat": 30.5764
+  },
+  {
+   "code": "MAC",
+   "name": "John D. White '70 - Robert L. Walker '58 Music Activities Center",
+   "lng": -96.3342,
+   "lat": 30.61
+  },
+  {
+   "code": "BUZB",
+   "name": "Buzbee Leadership Learning Center",
+   "lng": -96.337085,
+   "lat": 30.612519
+  },
+  {
+   "code": "ASH1",
+   "name": "H. Grady Ash, Jr. '58 Leadership Learning Center",
+   "lng": -96.335598,
+   "lat": 30.61353
+  },
+  {
+   "code": "PLNK",
+   "name": "Plank Leadership Learning Center",
+   "lng": -96.3374,
+   "lat": 30.6136
+  },
+  {
+   "code": "ASH2",
+   "name": "Ash, II Leadership Learning Center",
+   "lng": -96.3368,
+   "lat": 30.614
+  },
+  {
+   "code": "1412",
+   "name": "Civilian Lounge-A2",
+   "lng": -96.345412,
+   "lat": 30.61585
+  },
+  {
+   "code": "CVLNA3",
+   "name": "Civilian Lounge-A3",
+   "lng": -96.346165,
+   "lat": 30.615245
+  },
+  {
+   "code": "HLBL",
+   "name": "Hullabaloo Residence Hall",
+   "lng": -96.346322,
+   "lat": 30.61646
+  },
+  {
+   "code": "1427",
+   "name": "Civilian Lounge-A1",
+   "lng": -96.344898,
+   "lat": 30.615219
+  },
+  {
+   "code": "1430",
+   "name": "Civilian Lounge-C1",
+   "lng": -96.345373,
+   "lat": 30.617056
+  },
+  {
+   "code": "1440",
+   "name": "Golf Cart Storage Building",
+   "lng": -96.3317,
+   "lat": 30.6152
+  },
+  {
+   "code": "1441",
+   "name": "EMS Vehicle Cover",
+   "lng": -96.342783,
+   "lat": 30.61592
+  },
+  {
+   "code": "1450",
+   "name": "Gardens Laundry",
+   "lng": -96.342236,
+   "lat": 30.626246
+  },
+  {
+   "code": "1451",
+   "name": "The Gardens J",
+   "lng": -96.342476,
+   "lat": 30.626925
+  },
+  {
+   "code": "1452",
+   "name": "The Gardens K",
+   "lng": -96.342201,
+   "lat": 30.626694
+  },
+  {
+   "code": "1453",
+   "name": "The Gardens L",
+   "lng": -96.341925,
+   "lat": 30.626466
+  },
+  {
+   "code": "1454",
+   "name": "The Gardens F",
+   "lng": -96.34288,
+   "lat": 30.626476
+  },
+  {
+   "code": "1455",
+   "name": "The Gardens G",
+   "lng": -96.342426,
+   "lat": 30.626099
+  },
+  {
+   "code": "1456",
+   "name": "The Gardens H",
+   "lng": -96.341869,
+   "lat": 30.625635
+  },
+  {
+   "code": "1457",
+   "name": "The Gardens M",
+   "lng": -96.341958,
+   "lat": 30.62771
+  },
+  {
+   "code": "1458",
+   "name": "The Gardens N",
+   "lng": -96.341665,
+   "lat": 30.627976
+  },
+  {
+   "code": "1459",
+   "name": "The Gardens P",
+   "lng": -96.341477,
+   "lat": 30.627456
+  },
+  {
+   "code": "1460",
+   "name": "The Gardens Q",
+   "lng": -96.341077,
+   "lat": 30.62732
+  },
+  {
+   "code": "GCLC",
+   "name": "Gardens Community Learning Center",
+   "lng": -96.341384,
+   "lat": 30.627067
+  },
+  {
+   "code": "1462",
+   "name": "The Gardens - storage shed",
+   "lng": -96.34172,
+   "lat": 30.626118
+  },
+  {
+   "code": "1466",
+   "name": "Metal Horse Barn",
+   "lng": -96.358578,
+   "lat": 30.615786
+  },
+  {
+   "code": "1480",
+   "name": "Field Leadership Reaction Course Storage Bldg"
+  },
+  {
+   "code": "1481",
+   "name": "Field Leadership Reaction Course Portable Bldg"
+  },
+  {
+   "code": "1487",
+   "name": "UEO Modular Annex"
+  },
+  {
+   "code": "UESIT",
+   "name": "UES IT Modular Building",
+   "lng": -96.3508,
+   "lat": 30.6155
+  },
+  {
+   "code": "1489",
+   "name": "Utilities Energy Office Expansion",
+   "lng": -96.3533,
+   "lat": 30.589
+  },
+  {
+   "code": "1490",
+   "name": "Cabin At Challenge Course",
+   "lng": -96.379928,
+   "lat": 30.61471
+  },
+  {
+   "code": "1491",
+   "name": "Shed At Challenge Course",
+   "lng": -96.379875,
+   "lat": 30.61471
+  },
+  {
+   "code": "1492",
+   "name": "Classroom At Challenge Course",
+   "lng": -96.37968,
+   "lat": 30.615077
+  },
+  {
+   "code": "1493",
+   "name": "Agronomy Road - T8 PCR",
+   "lng": -96.3517,
+   "lat": 30.6168
+  },
+  {
+   "code": "EESS",
+   "name": "Enterprise Electrical Switching Station",
+   "lng": -96.3559,
+   "lat": 30.6038
+  },
+  {
+   "code": "SWST",
+   "name": "12.47 KV Switching Station",
+   "lng": -96.350533,
+   "lat": 30.616046
+  },
+  {
+   "code": "UBO",
+   "name": "Utilities & Energy Services Business Office",
+   "lng": -96.351064,
+   "lat": 30.615803
+  },
+  {
+   "code": "SUP1",
+   "name": "Satellite Utility Plant No. 1",
+   "lng": -96.347123,
+   "lat": 30.608218
+  },
+  {
+   "code": "SUP2",
+   "name": "Satellite Utility Plant No. 2",
+   "lng": -96.353644,
+   "lat": 30.614709
+  },
+  {
+   "code": "ILSQ",
+   "name": "Instructional Laboratory & Innovative Learning Building"
+  },
+  {
+   "code": "KLCT",
+   "name": "Kleberg Center",
+   "lng": -96.347359,
+   "lat": 30.610608
+  },
+  {
+   "code": "HPCT",
+   "name": "HEEP Center",
+   "lng": -96.348057,
+   "lat": 30.611388
+  },
+  {
+   "code": "CMAT",
+   "name": "Cater-Mattil Hall",
+   "lng": -96.348159,
+   "lat": 30.613204
+  },
+  {
+   "code": "REYN",
+   "name": "Reynolds Medical Sciences Building",
+   "lng": -96.351973,
+   "lat": 30.611201
+  },
+  {
+   "code": "MSTC",
+   "name": "Rosenthal Meat Science & Technology Center",
+   "lng": -96.348295,
+   "lat": 30.609836
+  },
+  {
+   "code": "HFSB",
+   "name": "Horticulture/Forest Science Building",
+   "lng": -96.350301,
+   "lat": 30.609234
+  },
+  {
+   "code": "BICH",
+   "name": "Biochemistry/Biophysics Building",
+   "lng": -96.349215,
+   "lat": 30.610725
+  },
+  {
+   "code": "HOBG",
+   "name": "Price Hobgood Ag Engineering Research Lab",
+   "lng": -96.349152,
+   "lat": 30.613489
+  },
+  {
+   "code": "WTRC",
+   "name": "West Campus Teaching and Research Collaborative",
+   "lng": -96.351638,
+   "lat": 30.612008
+  },
+  {
+   "code": "WCBA",
+   "name": "Wehner Building",
+   "lng": -96.350805,
+   "lat": 30.610607
+  },
+  {
+   "code": "WCL",
+   "name": "West Campus Library",
+   "lng": -96.350164,
+   "lat": 30.61157
+  },
+  {
+   "code": "SCIG",
+   "name": "Southern Crop Improvement Greenhouse",
+   "lng": -96.349956,
+   "lat": 30.607377
+  },
+  {
+   "code": "SCIC",
+   "name": "Norman E. Borlaug Building",
+   "lng": -96.349489,
+   "lat": 30.608094
+  },
+  {
+   "code": "PLPM",
+   "name": "Plant Pathology and Microbiology Building",
+   "lng": -96.349,
+   "lat": 30.6094
+  },
+  {
+   "code": "1516",
+   "name": "Horticulture Field Laboratory",
+   "lng": -96.350683,
+   "lat": 30.608398
+  },
+  {
+   "code": "1517",
+   "name": "Horticulture Cabin",
+   "lng": -96.425408,
+   "lat": 30.524193
+  },
+  {
+   "code": "SPHA",
+   "name": "School of Public Health - Admin Bldg",
+   "lng": -96.3544,
+   "lat": 30.6095
+  },
+  {
+   "code": "SPHB",
+   "name": "School of Public Health - Lab Bldg",
+   "lng": -96.3544,
+   "lat": 30.6099
+  },
+  {
+   "code": "SPHC",
+   "name": "School of Public Health - Classroom Bldg",
+   "lng": -96.3539,
+   "lat": 30.61
+  },
+  {
+   "code": "PTGH",
+   "name": "AgriLife Phenotyping Greenhouse"
+  },
+  {
+   "code": "WCDF",
+   "name": "West Campus Dining Facility"
+  },
+  {
+   "code": "WRB",
+   "name": "Wayne Roberts '85 Building"
+  },
+  {
+   "code": "1524",
+   "name": "Aplin Center",
+   "lng": -96.345518,
+   "lat": 30.609748
+  },
+  {
+   "code": "NMR",
+   "name": "Nuclear Magnetic Resonance Facility",
+   "lng": -96.349826,
+   "lat": 30.610227
+  },
+  {
+   "code": "1526",
+   "name": "Aplin Center BBQ Pavilion",
+   "lng": -96.346197,
+   "lat": 30.60873
+  },
+  {
+   "code": "ILSB",
+   "name": "Interdisciplinary Life Sciences Building",
+   "lng": -96.343648,
+   "lat": 30.614294
+  },
+  {
+   "code": "LTGP",
+   "name": "Teaching Gardens Pavilion",
+   "lng": -96.3517,
+   "lat": 30.6072
+  },
+  {
+   "code": "AGLS",
+   "name": "Agriculture and Life Sciences Building",
+   "lng": -96.350945,
+   "lat": 30.605536
+  },
+  {
+   "code": "AGSV",
+   "name": "AgriLife Services Building",
+   "lng": -96.35117,
+   "lat": 30.6062
+  },
+  {
+   "code": "WFES",
+   "name": "Wildlife, Fisheries & Ecological Sciences Building",
+   "lng": -96.3506,
+   "lat": 30.6064
+  },
+  {
+   "code": "AGCT",
+   "name": "The Shirley and Joe Swinbank '74 AgriLife Center",
+   "lng": -96.34995,
+   "lat": 30.60613
+  },
+  {
+   "code": "PEAP",
+   "name": "Physical Education Activity Program Building",
+   "lng": -96.349399,
+   "lat": 30.604463
+  },
+  {
+   "code": "PEBC",
+   "name": "Physical Education Boot Camp and Archery Annex",
+   "lng": -96.351236,
+   "lat": 30.601722
+  },
+  {
+   "code": "HCRB",
+   "name": "Human Clinical Research Building",
+   "lng": -96.351,
+   "lat": 30.6044
+  },
+  {
+   "code": "ILCB",
+   "name": "Innovative Learning Classroom Building"
+  },
+  {
+   "code": "SBG",
+   "name": "Gene Stallings Blvd Garage",
+   "lng": -96.3434,
+   "lat": 30.6115
+  },
+  {
+   "code": "SSB",
+   "name": "Student Services Building",
+   "lng": -96.3413,
+   "lat": 30.6141
+  },
+  {
+   "code": "OLSN",
+   "name": "Olsen Field at Bluebell Park",
+   "lng": -96.341526,
+   "lat": 30.605389
+  },
+  {
+   "code": "REED",
+   "name": "Reed Arena",
+   "lng": -96.346208,
+   "lat": 30.605848
+  },
+  {
+   "code": "1555",
+   "name": "Track & Field Support Center"
+  },
+  {
+   "code": "PISC",
+   "name": "Penberthy Intramural Sports Center",
+   "lng": -96.346774,
+   "lat": 30.602008
+  },
+  {
+   "code": "CMCB",
+   "name": "Cox-McFerrin Center for Aggie Basketball",
+   "lng": -96.345798,
+   "lat": 30.605314
+  },
+  {
+   "code": "WCG",
+   "name": "West Campus Parking Garage",
+   "lng": -96.344417,
+   "lat": 30.608451
+  },
+  {
+   "code": "SREC",
+   "name": "Student Recreation Center",
+   "lng": -96.342678,
+   "lat": 30.607109
+  },
+  {
+   "code": "MTC",
+   "name": "George P. Mitchell '40 Tennis Center",
+   "lng": -96.348868,
+   "lat": 30.602875
+  },
+  {
+   "code": "1563",
+   "name": "Equipment Storage Bldg at Mt. Aggie",
+   "lng": -96.3493,
+   "lat": 30.6014
+  },
+  {
+   "code": "1566",
+   "name": "Julia And Mark Ellis '79 Soccer Building",
+   "lng": -96.343303,
+   "lat": 30.604076
+  },
+  {
+   "code": "1567",
+   "name": "Softball Building",
+   "lng": -96.343609,
+   "lat": 30.604329
+  },
+  {
+   "code": "1568",
+   "name": "Varsity Soccer Press Box",
+   "lng": -96.34396,
+   "lat": 30.604267
+  },
+  {
+   "code": "1569",
+   "name": "Mitchell Tennis Center Ticket Booth",
+   "lng": -96.347986,
+   "lat": 30.60319
+  },
+  {
+   "code": "WCTC",
+   "name": "Omar Smith Instructional Tennis Center",
+   "lng": -96.349554,
+   "lat": 30.602085
+  },
+  {
+   "code": "1571",
+   "name": "West Campus Office Pavilion",
+   "lng": -96.343546,
+   "lat": 30.603891
+  },
+  {
+   "code": "1572",
+   "name": "Soccer/Intramural Restroom",
+   "lng": -96.34441,
+   "lat": 30.603349
+  },
+  {
+   "code": "1578",
+   "name": "Penberthy RecSports Pavilion",
+   "lng": -96.347291,
+   "lat": 30.599945
+  },
+  {
+   "code": "1579",
+   "name": "Small Upland Fowl Res Lab (Mothballed in 2014)",
+   "lng": -96.350229,
+   "lat": 30.5934
+  },
+  {
+   "code": "1581",
+   "name": "Penberthy RecSports Maintenance Bldg",
+   "lng": -96.349932,
+   "lat": 30.600161
+  },
+  {
+   "code": "PDCWC",
+   "name": "Player Development Center-West Campus",
+   "lng": -96.345526,
+   "lat": 30.603679
+  },
+  {
+   "code": "DDSS",
+   "name": "Davis Diamond Softball Stadium",
+   "lng": -96.3461,
+   "lat": 30.6026
+  },
+  {
+   "code": "EBCS",
+   "name": "E.B. Cushing Stadium",
+   "lng": -96.3449,
+   "lat": 30.6018
+  },
+  {
+   "code": "1585",
+   "name": "12th Man Productions Building",
+   "lng": -96.3429,
+   "lat": 30.6019
+  },
+  {
+   "code": "1586",
+   "name": "Penberthy South Restroom",
+   "lng": -96.3454,
+   "lat": 30.5982
+  },
+  {
+   "code": "1587",
+   "name": "Penberthy South Control Building",
+   "lng": -96.3439,
+   "lat": 30.596
+  },
+  {
+   "code": "1588",
+   "name": "Penberthy Athletics Maintenance Bldg",
+   "lng": -96.345916,
+   "lat": 30.601262
+  },
+  {
+   "code": "1589",
+   "name": "White Creek Apartments Activity Center",
+   "lng": -96.3562,
+   "lat": 30.6076
+  },
+  {
+   "code": "1590",
+   "name": "White Creek Apartments A",
+   "lng": -96.3567,
+   "lat": 30.6076
+  },
+  {
+   "code": "1591",
+   "name": "White Creek Apartments B",
+   "lng": -96.3559,
+   "lat": 30.6082
+  },
+  {
+   "code": "1592",
+   "name": "White Creek Apartments C",
+   "lng": -96.3559,
+   "lat": 30.6071
+  },
+  {
+   "code": "WCCC",
+   "name": "White Creek Community Center",
+   "lng": -96.3538,
+   "lat": 30.6076
+  },
+  {
+   "code": "TCF",
+   "name": "Testing and Characterization Facility",
+   "lng": -96.358,
+   "lat": 30.6048
+  },
+  {
+   "code": "2RPK",
+   "name": "2 Research Park",
+   "lng": -96.3589,
+   "lat": 30.6004
+  },
+  {
+   "code": "GGB",
+   "name": "Gibb Gilchrist Building",
+   "lng": -96.353386,
+   "lat": 30.601468
+  },
+  {
+   "code": "SODB",
+   "name": "Scientific Ocean Drilling Building",
+   "lng": -96.354447,
+   "lat": 30.603476
+  },
+  {
+   "code": "ONRP",
+   "name": "1111 Research Parkway Bldg",
+   "lng": -96.359086,
+   "lat": 30.605582
+  },
+  {
+   "code": "DLH",
+   "name": "Donald L. Houston Building",
+   "lng": -96.357643,
+   "lat": 30.606558
+  },
+  {
+   "code": "OTRC",
+   "name": "Offshore Technology Research Center",
+   "lng": -96.355753,
+   "lat": 30.602619
+  },
+  {
+   "code": "CEN",
+   "name": "Centeq Building",
+   "lng": -96.35904,
+   "lat": 30.60237
+  },
+  {
+   "code": "BPLM",
+   "name": "George Bush Presidential Library & Museum",
+   "lng": -96.3532,
+   "lat": 30.5964
+  },
+  {
+   "code": "ALLN",
+   "name": "Allen Building",
+   "lng": -96.352445,
+   "lat": 30.597601
+  },
+  {
+   "code": "BPCC",
+   "name": "Annenberg Presidential Conference Center",
+   "lng": -96.353623,
+   "lat": 30.597375
+  },
+  {
+   "code": "WCSS",
+   "name": "West Campus Social Sciences Building",
+   "lng": -96.353859,
+   "lat": 30.602129
+  },
+  {
+   "code": "HTB",
+   "name": "Health Technologies Building",
+   "lng": -96.355535,
+   "lat": 30.604806
+  },
+  {
+   "code": "GERB",
+   "name": "Giesecke Engineering Research Building",
+   "lng": -96.3571,
+   "lat": 30.6021
+  },
+  {
+   "code": "EBRF",
+   "name": "Electron Beam Food Research Facility",
+   "lng": -96.356473,
+   "lat": 30.60567
+  },
+  {
+   "code": "MFTF",
+   "name": "R.A. \"Murray\" Fasken '38 Indoor Track & Field"
+  },
+  {
+   "code": "CFPC",
+   "name": "Coolidge Football Indoor Performance Center"
+  },
+  {
+   "code": "SAWC",
+   "name": "Adam C. Sinn '00 Academic & Wellness Center"
+  },
+  {
+   "code": "1641",
+   "name": "Creamery in Aggie Park"
+  },
+  {
+   "code": "1642",
+   "name": "Events Pavilion in Aggie Park"
+  },
+  {
+   "code": "1643",
+   "name": "Amphitheater in Aggie Park"
+  },
+  {
+   "code": "1644",
+   "name": "Distinguished Alumni Memorial in Aggie Park"
+  },
+  {
+   "code": "RPSW",
+   "name": "Research Park Switching Station",
+   "lng": -96.355014,
+   "lat": 30.602124
+  },
+  {
+   "code": "GTERP",
+   "name": "GTE Optical Remote Module (ODM) Facility @ Research Park",
+   "lng": -96.3545,
+   "lat": 30.6026
+  },
+  {
+   "code": "1701",
+   "name": "Texas A&M Polo Club Stables",
+   "lng": -96.373449,
+   "lat": 30.607653
+  },
+  {
+   "code": "1717",
+   "name": "Well Field Utility Building",
+   "lng": -96.479442,
+   "lat": 30.654459
+  },
+  {
+   "code": "TGLC",
+   "name": "Wahlberg Aggie Golf Learning Center",
+   "lng": -96.385909,
+   "lat": 30.601574
+  },
+  {
+   "code": "GSTOR",
+   "name": "Traditions Golf Storage Building",
+   "lng": -96.3865,
+   "lat": 30.601
+  },
+  {
+   "code": "1722",
+   "name": "Traditions Basketball Pavilion"
+  },
+  {
+   "code": "1750",
+   "name": "Reproductive Sciences Bldg. A",
+   "lng": -96.439539,
+   "lat": 30.632399
+  },
+  {
+   "code": "1751",
+   "name": "Reproductive Sciences Bldg. B",
+   "lng": -96.4399,
+   "lat": 30.6327
+  },
+  {
+   "code": "1752",
+   "name": "Reproductive Sciences Bldg. C",
+   "lng": -96.4392,
+   "lat": 30.6333
+  },
+  {
+   "code": "1753",
+   "name": "Reproductive Sciences Bldg. D",
+   "lng": -96.440108,
+   "lat": 30.632379
+  },
+  {
+   "code": "1754",
+   "name": "Reproductive Sciences Bldg. E",
+   "lng": -96.439411,
+   "lat": 30.632953
+  },
+  {
+   "code": "1755",
+   "name": "Reproductive Sciences Bldg. F",
+   "lng": -96.439306,
+   "lat": 30.63214
+  },
+  {
+   "code": "1756",
+   "name": "Reproductive Sciences Bldg. G",
+   "lng": -96.4393,
+   "lat": 30.632
+  },
+  {
+   "code": "1757",
+   "name": "Reproductive Sciences Bldg. H",
+   "lng": -96.439,
+   "lat": 30.6323
+  },
+  {
+   "code": "1758",
+   "name": "Reproductive Sciences Bldg. I",
+   "lng": -96.439144,
+   "lat": 30.632204
+  },
+  {
+   "code": "1759",
+   "name": "Reproductive Sciences Bldg. J",
+   "lng": -96.438752,
+   "lat": 30.632025
+  },
+  {
+   "code": "GSC",
+   "name": "General Services Complex",
+   "lng": -96.357412,
+   "lat": 30.622176
+  },
+  {
+   "code": "ENTO",
+   "name": "Rollins Urban and Structural Entomology Facility",
+   "lng": -96.359937,
+   "lat": 30.621941
+  },
+  {
+   "code": "STLA",
+   "name": "Scotts Turf Lab 1 (Admin Bldg)",
+   "lng": -96.365,
+   "lat": 30.6192
+  },
+  {
+   "code": "STLS",
+   "name": "Scotts Turf Lab 2 (Shop Bldg)",
+   "lng": -96.3655,
+   "lat": 30.6194
+  },
+  {
+   "code": "GHRC",
+   "name": "Global Health Research Complex",
+   "lng": -96.3576,
+   "lat": 30.618
+  },
+  {
+   "code": "VMDL",
+   "name": "TVMDL Building",
+   "lng": -96.3566,
+   "lat": 30.6189
+  },
+  {
+   "code": "OTSC",
+   "name": "Office of the State Chemist Building",
+   "lng": -96.355341,
+   "lat": 30.617583
+  },
+  {
+   "code": "VMR",
+   "name": "Vet Med Research Bldg Addition",
+   "lng": -96.354692,
+   "lat": 30.611583
+  },
+  {
+   "code": "VENI",
+   "name": "Veterinary Medicine Building 1 - VENI",
+   "lng": -96.357,
+   "lat": 30.6116
+  },
+  {
+   "code": "VIDI",
+   "name": "Veterinary Medicine Building 2 - VIDI",
+   "lng": -96.358,
+   "lat": 30.6118
+  },
+  {
+   "code": "VICI",
+   "name": "Veterinary Medicine Building 3 - VICI",
+   "lng": -96.3573,
+   "lat": 30.6124
+  },
+  {
+   "code": "1815",
+   "name": "Cold Storage (right)"
+  },
+  {
+   "code": "1816",
+   "name": "Cold Storage (left)"
+  },
+  {
+   "code": "CVTRC",
+   "name": "Linda and Dennis Clark '68 Small Animal Teaching Hospital"
+  },
+  {
+   "code": "TIGM",
+   "name": "Texas A&M Institute For Genomic Medicine",
+   "lng": -96.357151,
+   "lat": 30.610554
+  },
+  {
+   "code": "TIPS A",
+   "name": "Texas A&M Institute for Preclinical Studies A",
+   "lng": -96.357534,
+   "lat": 30.609218
+  },
+  {
+   "code": "TIPS B",
+   "name": "Texas A&M Institute for Preclinical Studies B",
+   "lng": -96.358602,
+   "lat": 30.609307
+  },
+  {
+   "code": "TIPS C",
+   "name": "Texas A&M Institute for Preclinical Studies C",
+   "lng": -96.358285,
+   "lat": 30.610014
+  },
+  {
+   "code": "NCTM",
+   "name": "National Center for Therapeutics Manufacturing",
+   "lng": -96.361531,
+   "lat": 30.607905
+  },
+  {
+   "code": "MSRB",
+   "name": "Multi-Species Research Building",
+   "lng": -96.3621,
+   "lat": 30.6093
+  },
+  {
+   "code": "2200",
+   "name": "Poultry Tunnel Ventilation Facility"
+  },
+  {
+   "code": "TALX",
+   "name": "Richard & Patsy Wallrath Texas A&M AgriLife Extension Service Building",
+   "lng": -96.25281,
+   "lat": 30.561191
+  },
+  {
+   "code": "2929",
+   "name": "USAR Gateway Facility",
+   "lng": -96.24928,
+   "lat": 30.553493
+  },
+  {
+   "code": "2945",
+   "name": "TX-TF1 Warehouse",
+   "lng": -96.248424,
+   "lat": 30.553059
+  },
+  {
+   "code": "GERG",
+   "name": "GERG Main Office Building",
+   "lng": -96.2947,
+   "lat": 30.571
+  },
+  {
+   "code": "3051",
+   "name": "GERG East Lab & Office Building",
+   "lng": -96.2942,
+   "lat": 30.5715
+  },
+  {
+   "code": "3054",
+   "name": "GERG Warehouse",
+   "lng": -96.2946,
+   "lat": 30.5713
+  },
+  {
+   "code": "3055",
+   "name": "GERG Solvent Shed",
+   "lng": -96.2943,
+   "lat": 30.5711
+  },
+  {
+   "code": "3056",
+   "name": "GERG Gas Shed",
+   "lng": -96.2944,
+   "lat": 30.5711
+  },
+  {
+   "code": "3057",
+   "name": "GERG Autonomous Vehicle Bldg",
+   "lng": -96.294899,
+   "lat": 30.5715
+  },
+  {
+   "code": "3058",
+   "name": "GERG Ocean Technology Center",
+   "lng": -96.294142,
+   "lat": 30.571362
+  },
+  {
+   "code": "TWNR",
+   "name": "Texas A&M AgriLife Water & Natural Resources",
+   "lng": -96.30496,
+   "lat": 30.62
+  },
+  {
+   "code": "3098",
+   "name": "Business Management Services Record Storage",
+   "lng": -96.3215,
+   "lat": 30.618011
+  },
+  {
+   "code": "AMSA",
+   "name": "Texas A&M System Annex",
+   "lng": -96.321754,
+   "lat": 30.617918
+  },
+  {
+   "code": "HGLR",
+   "name": "Hagler Center",
+   "lng": -96.3374,
+   "lat": 30.6072
+  },
+  {
+   "code": "3190",
+   "name": "Becky Gates Childrens Center Multipurpose Bldg",
+   "lng": -96.343025,
+   "lat": 30.628205
+  },
+  {
+   "code": "3194",
+   "name": "KAMU Technical Operations Building"
+  },
+  {
+   "code": "3195",
+   "name": "Hensel Park Telecom Building #2",
+   "lng": -96.3432,
+   "lat": 30.6295
+  },
+  {
+   "code": "3196",
+   "name": "Hensel Park Telecom Building",
+   "lng": -96.34317,
+   "lat": 30.629798
+  },
+  {
+   "code": "GCMB",
+   "name": "Gardens Community Maintenance Building",
+   "lng": -96.341225,
+   "lat": 30.626102
+  },
+  {
+   "code": "GCC",
+   "name": "Gardens Community Center",
+   "lng": -96.340194,
+   "lat": 30.626718
+  },
+  {
+   "code": "BGCC",
+   "name": "Becky Gates Childrens Center",
+   "lng": -96.342708,
+   "lat": 30.628322
+  },
+  {
+   "code": "MCB",
+   "name": "Moore-Connally Building",
+   "lng": -96.327717,
+   "lat": 30.636791
+  },
+  {
+   "code": "3201",
+   "name": "Moore/Connally Satellite Plant",
+   "lng": -96.327121,
+   "lat": 30.637119
+  },
+  {
+   "code": "AMSB",
+   "name": "Texas A&M System Agency Office Building",
+   "lng": -96.243582,
+   "lat": 30.551793
+  },
+  {
+   "code": "USB",
+   "name": "University Services Building",
+   "lng": -96.296234,
+   "lat": 30.646424
+  },
+  {
+   "code": "3698",
+   "name": "HSC Mobile Clinics Storage Building"
+  },
+  {
+   "code": "HPEB",
+   "name": "Health Professionals Education Bldg (old HSC 1000)",
+   "lng": -96.3941,
+   "lat": 30.5987
+  },
+  {
+   "code": "MREB",
+   "name": "Medical Research & Education Bldg (old HSC 1001)",
+   "lng": -96.394107,
+   "lat": 30.597941
+  },
+  {
+   "code": "HSCUP",
+   "name": "HSC Central Utility Plant (old HSC 1002)"
+  },
+  {
+   "code": "3703",
+   "name": "HSC Telecommunications Bldg (old HSC 1003)",
+   "lng": -96.3912,
+   "lat": 30.5955
+  },
+  {
+   "code": "3704",
+   "name": "Medical Research & Educ Bldg Annex (old HSC 1004)"
+  },
+  {
+   "code": "3705",
+   "name": "Medical Research & Education Bldg 2 (old HSC 1005)"
+  },
+  {
+   "code": "3707",
+   "name": "Borski Building (old HSC 9007)"
+  },
+  {
+   "code": "CB1",
+   "name": "Clinical Building 1 (old HSC 2000)",
+   "lng": -96.3957,
+   "lat": 30.5988
+  },
+  {
+   "code": "4001",
+   "name": "White (G.R.) Conference Center",
+   "lng": -96.41021,
+   "lat": 30.561718
+  },
+  {
+   "code": "4002",
+   "name": "Beef Cattle Center Headquarters",
+   "lng": -96.412736,
+   "lat": 30.560369
+  },
+  {
+   "code": "4003",
+   "name": "Beef Cattle Center Feed Mill",
+   "lng": -96.413114,
+   "lat": 30.559527
+  },
+  {
+   "code": "4004",
+   "name": "Beef Cattle Center Equip Storage",
+   "lng": -96.413239,
+   "lat": 30.559833
+  },
+  {
+   "code": "4010",
+   "name": "Nutrition/Physiology Center",
+   "lng": -96.411668,
+   "lat": 30.558851
+  },
+  {
+   "code": "4011",
+   "name": "Equipment Storage/Diet Prep",
+   "lng": -96.412127,
+   "lat": 30.55887
+  },
+  {
+   "code": "4012",
+   "name": "Sheep Feeding",
+   "lng": -96.4125,
+   "lat": 30.5587
+  },
+  {
+   "code": "4013",
+   "name": "Cattle Feeding",
+   "lng": -96.4123,
+   "lat": 30.5584
+  },
+  {
+   "code": "4014",
+   "name": "Cattle Processing",
+   "lng": -96.4118,
+   "lat": 30.5586
+  },
+  {
+   "code": "4015",
+   "name": "Interdisciplinary Barn",
+   "lng": -96.4129,
+   "lat": 30.5582
+  },
+  {
+   "code": "4016",
+   "name": "Farrowing/Nursery",
+   "lng": -96.412648,
+   "lat": 30.559001
+  },
+  {
+   "code": "4017",
+   "name": "Compost Shed",
+   "lng": -96.4127,
+   "lat": 30.5576
+  },
+  {
+   "code": "4020",
+   "name": "Sheep & Goat Center",
+   "lng": -96.409466,
+   "lat": 30.560116
+  },
+  {
+   "code": "4021",
+   "name": "Livestock Housing",
+   "lng": -96.408889,
+   "lat": 30.559984
+  },
+  {
+   "code": "4022",
+   "name": "Isolation Barn",
+   "lng": -96.40893,
+   "lat": 30.56031
+  },
+  {
+   "code": "4025",
+   "name": "Thomsen Animal Euthenics Center",
+   "lng": -96.408799,
+   "lat": 30.559204
+  },
+  {
+   "code": "4026",
+   "name": "Sheep Feeding Barn-Burleson County",
+   "lng": -96.417679,
+   "lat": 30.518782
+  },
+  {
+   "code": "4027",
+   "name": "Beef Research Unit-Burleson County",
+   "lng": -96.414867,
+   "lat": 30.520875
+  },
+  {
+   "code": "4028",
+   "name": "Farm Service Field Support",
+   "lng": -96.4358,
+   "lat": 30.5491
+  },
+  {
+   "code": "4030",
+   "name": "HortTREC Greenhouse Complex",
+   "lng": -96.4302,
+   "lat": 30.522
+  },
+  {
+   "code": "4031",
+   "name": "HortTREC Complex Headhouse",
+   "lng": -96.4305,
+   "lat": 30.5223
+  },
+  {
+   "code": "4032",
+   "name": "HortTREC Winteringhouse West",
+   "lng": -96.4301,
+   "lat": 30.5224
+  },
+  {
+   "code": "4033",
+   "name": "HortTREC Winteringhouse East",
+   "lng": -96.4299,
+   "lat": 30.5222
+  },
+  {
+   "code": "4034",
+   "name": "HortTREC Headhouse North",
+   "lng": -96.43,
+   "lat": 30.5227
+  },
+  {
+   "code": "4035",
+   "name": "HortTREC Pesticide Locker",
+   "lng": -96.4312,
+   "lat": 30.5222
+  },
+  {
+   "code": "4036",
+   "name": "HortTREC Greenhouse North",
+   "lng": -96.4301,
+   "lat": 30.5226
+  },
+  {
+   "code": "4037",
+   "name": "HortTREC Office-Warehouse",
+   "lng": -96.4307,
+   "lat": 30.5226
+  },
+  {
+   "code": "4038",
+   "name": "HortTREC Farm Shop"
+  },
+  {
+   "code": "WWTP",
+   "name": "Wastewater Treatment Plant",
+   "lng": -96.369802,
+   "lat": 30.564349
+  },
+  {
+   "code": "TPPP",
+   "name": "WWTP Primary Pump Building",
+   "lng": -96.37034,
+   "lat": 30.564889
+  },
+  {
+   "code": "TPSP",
+   "name": "WWTP Secondary Pump Building",
+   "lng": -96.370901,
+   "lat": 30.565701
+  },
+  {
+   "code": "TPDB",
+   "name": "WWTP Disinfection Building",
+   "lng": -96.371343,
+   "lat": 30.565492
+  },
+  {
+   "code": "TPBB",
+   "name": "WWTP Digester Boiler Building",
+   "lng": -96.369709,
+   "lat": 30.565006
+  },
+  {
+   "code": "TPES",
+   "name": "WWTP Equipment Storage Building",
+   "lng": -96.370116,
+   "lat": 30.564138
+  },
+  {
+   "code": "4056",
+   "name": "WWTP Electrical Building",
+   "lng": -96.37001,
+   "lat": 30.56533
+  },
+  {
+   "code": "4057",
+   "name": "WWTP Disinfection Supply Building",
+   "lng": -96.287104,
+   "lat": 30.56954
+  },
+  {
+   "code": "JABP",
+   "name": "James A. Baker, III Pavilion",
+   "lng": -96.345218,
+   "lat": 30.599612
+  },
+  {
+   "code": "4542",
+   "name": "TVMC-Wildlife & Exotic Animals",
+   "lng": -96.360522,
+   "lat": 30.620058
+  },
+  {
+   "code": "4633",
+   "name": "Veterinary Support Building",
+   "lng": -96.35653,
+   "lat": 30.16478
+  },
+  {
+   "code": "FSSB",
+   "name": "Variety Testing and Sorghum Breeding",
+   "lng": -96.354407,
+   "lat": 30.614113
+  },
+  {
+   "code": "5200",
+   "name": "Metal Building",
+   "lng": -96.363038,
+   "lat": 30.628181
+  },
+  {
+   "code": "5446",
+   "name": "Ground Water Storage Tank",
+   "lng": -96.472,
+   "lat": 30.6435
+  },
+  {
+   "code": "5447",
+   "name": "Water and Valve Hut",
+   "lng": -96.4721,
+   "lat": 30.6433
+  },
+  {
+   "code": "5460",
+   "name": "High Tank (Water Supply)",
+   "lng": -96.472,
+   "lat": 30.6438
+  },
+  {
+   "code": "TAC1",
+   "name": "RELLIS Academic Complex Phase 1",
+   "lng": -96.4666,
+   "lat": 30.6412
+  },
+  {
+   "code": "TAC2",
+   "name": "RELLIS Academic Complex Phase 2"
+  },
+  {
+   "code": "ELTC",
+   "name": "TEEX Hangar/Classrooms",
+   "lng": -96.474823,
+   "lat": 30.633589
+  },
+  {
+   "code": "6069",
+   "name": "Nautical Archeology - Research Support Bldg",
+   "lng": -96.474899,
+   "lat": 30.6386
+  },
+  {
+   "code": "6501",
+   "name": "TEES - Energy Systems Lab Office Building"
+  },
+  {
+   "code": "6502",
+   "name": "TEES - Energy Systems Lab",
+   "lng": -96.474641,
+   "lat": 30.644721
+  },
+  {
+   "code": "6503",
+   "name": "TEES Energy Lab A"
+  },
+  {
+   "code": "6504",
+   "name": "TEES Energy Lab B"
+  },
+  {
+   "code": "6776",
+   "name": "RELLIS Multiuse Facility 6776",
+   "lng": -96.459092,
+   "lat": 30.637451
+  },
+  {
+   "code": "6777",
+   "name": "RELLIS Multiuse Facility 6777",
+   "lng": -96.460282,
+   "lat": 30.63636
+  },
+  {
+   "code": "6860",
+   "name": "Construction Science Field Lab Classroom Bldg at RELLIS"
+  },
+  {
+   "code": "6884",
+   "name": "Honey Bee/Apiary Services Building",
+   "lng": -96.465809,
+   "lat": 30.63436
+  },
+  {
+   "code": "ARBC",
+   "name": "Animal Reproductive Biotechnology Center"
+  },
+  {
+   "code": "CHAP",
+   "name": "RELLIS - Chapel & Assembly Hall",
+   "lng": -96.469652,
+   "lat": 30.638502
+  },
+  {
+   "code": "RNCH",
+   "name": "Architecture - Fabrication and Design Lab",
+   "lng": -96.470683,
+   "lat": 30.639281
+  },
+  {
+   "code": "7008",
+   "name": "Architecture - Fabrication & Design Expansion",
+   "lng": -96.4707,
+   "lat": 30.6396
+  },
+  {
+   "code": "7030",
+   "name": "TTI Sediment & Erosion Control Lab",
+   "lng": -96.479083,
+   "lat": 30.631053
+  },
+  {
+   "code": "7039",
+   "name": "RELLIS Office Trailer 7039",
+   "lng": -96.4749,
+   "lat": 30.6328
+  },
+  {
+   "code": "7040",
+   "name": "RELLIS Office Trailer 7040",
+   "lng": -96.4749,
+   "lat": 30.6332
+  },
+  {
+   "code": "7041",
+   "name": "RELLIS High Bay Facility 7041",
+   "lng": -96.4749,
+   "lat": 30.6326
+  },
+  {
+   "code": "7042",
+   "name": "RELLIS High Bay Facility 7042",
+   "lng": -96.4749,
+   "lat": 30.6325
+  },
+  {
+   "code": "7043",
+   "name": "RELLIS High Bay Facility 7043",
+   "lng": -96.4751,
+   "lat": 30.633
+  },
+  {
+   "code": "7044",
+   "name": "RELLIS High Bay Facility 7044",
+   "lng": -96.4753,
+   "lat": 30.633
+  },
+  {
+   "code": "7045",
+   "name": "Veterinary Emergency Team Maintenance Bay",
+   "lng": -96.4748,
+   "lat": 30.633
+  },
+  {
+   "code": "7046",
+   "name": "TEES-Aerospace Hangar",
+   "lng": -96.475111,
+   "lat": 30.637083
+  },
+  {
+   "code": "7047",
+   "name": "RELLIS High Bay Facility 7047"
+  },
+  {
+   "code": "7048",
+   "name": "RELLIS High Bay Facility 7048"
+  },
+  {
+   "code": "7057",
+   "name": "TEES-Coastal Engineering Lab",
+   "lng": -96.474591,
+   "lat": 30.63606
+  },
+  {
+   "code": "7058",
+   "name": "TDEM Warehouse at RELLIS"
+  },
+  {
+   "code": "CRLFD",
+   "name": "Nautical Archaeology Conservation Projects"
+  },
+  {
+   "code": "7063",
+   "name": "Naut. Arch.-Conservation Research Lab",
+   "lng": -96.475179,
+   "lat": 30.63877
+  },
+  {
+   "code": "7064",
+   "name": "Naut. Arch. - Conservation Projects",
+   "lng": -96.474844,
+   "lat": 30.638783
+  },
+  {
+   "code": "7065",
+   "name": "CRL- Storage",
+   "lng": -96.475058,
+   "lat": 30.638609
+  },
+  {
+   "code": "7066",
+   "name": "TEEX - LAW Driving Track Pavilion",
+   "lng": -96.487193,
+   "lat": 30.6381
+  },
+  {
+   "code": "7067",
+   "name": "TEEX - LAW Driving Track Restroom",
+   "lng": -96.487277,
+   "lat": 30.63819
+  },
+  {
+   "code": "7077",
+   "name": "CONTROL TOWER (STRUCTURE ONLY)"
+  },
+  {
+   "code": "RCUP",
+   "name": "RELLIS Central Utility Plant",
+   "lng": -96.4746,
+   "lat": 30.641
+  },
+  {
+   "code": "7090",
+   "name": "TTI Proving Ground Research Hangar",
+   "lng": -96.475025,
+   "lat": 30.643691
+  },
+  {
+   "code": "7091",
+   "name": "TTI Office Building",
+   "lng": -96.475408,
+   "lat": 30.643713
+  },
+  {
+   "code": "7092",
+   "name": "TTI Proving Ground Research Support",
+   "lng": -96.4744,
+   "lat": 30.643768
+  },
+  {
+   "code": "7093",
+   "name": "TTI Machining Facility",
+   "lng": -96.474365,
+   "lat": 30.643139
+  },
+  {
+   "code": "7095",
+   "name": "TTI Research Storage Building",
+   "lng": -96.474804,
+   "lat": 30.64215
+  },
+  {
+   "code": "7096",
+   "name": "TTI Environmental & Emissions Research Facility",
+   "lng": -96.475233,
+   "lat": 30.64184
+  },
+  {
+   "code": "7097",
+   "name": "Grid Interactions Research Facility"
+  },
+  {
+   "code": "7185",
+   "name": "RELLIS Agriculture & Workforce Education Complex 1"
+  },
+  {
+   "code": "7186",
+   "name": "RELLIS Agriculture & Workforce Education Complex 2"
+  },
+  {
+   "code": "7187",
+   "name": "RELLIS Agriculture & Workforce Education Complex 3"
+  },
+  {
+   "code": "7240",
+   "name": "TEEX Copy Center",
+   "lng": -96.471929,
+   "lat": 30.637614
+  },
+  {
+   "code": "7439",
+   "name": "Telecommunications Optical Remote Bldg-RELLIS",
+   "lng": -96.472494,
+   "lat": 30.643684
+  },
+  {
+   "code": "7441",
+   "name": "RELLIS Water Distribution Pump Station",
+   "lng": -96.471809,
+   "lat": 30.643565
+  },
+  {
+   "code": "7500",
+   "name": "TTI Research Pendulum Test Facility",
+   "lng": -96.475165,
+   "lat": 30.644616
+  },
+  {
+   "code": "7751",
+   "name": "TEEX - LAW Office Bldg",
+   "lng": -96.468756,
+   "lat": 30.640799
+  },
+  {
+   "code": "7752",
+   "name": "TEEX - LAW Gym",
+   "lng": -96.469303,
+   "lat": 30.64039
+  },
+  {
+   "code": "7899",
+   "name": "TEEX Electrical Power Training Storage",
+   "lng": -96.473377,
+   "lat": 30.635701
+  },
+  {
+   "code": "7900",
+   "name": "TEEX ITSI Offices",
+   "lng": -96.471193,
+   "lat": 30.632674
+  },
+  {
+   "code": "7901",
+   "name": "TEEX ITSI",
+   "lng": -96.472455,
+   "lat": 30.633191
+  },
+  {
+   "code": "7903",
+   "name": "TEEX Covered Training Area",
+   "lng": -96.4724,
+   "lat": 30.6326
+  },
+  {
+   "code": "7904",
+   "name": "ESTI Haz Mat Classroom",
+   "lng": -96.349227,
+   "lat": 30.577429
+  },
+  {
+   "code": "7905",
+   "name": "ESTI Haz Mat Warehouse",
+   "lng": -96.349135,
+   "lat": 30.57711
+  },
+  {
+   "code": "7906",
+   "name": "TEEX ITSI Shop",
+   "lng": -96.47232,
+   "lat": 30.633355
+  },
+  {
+   "code": "7907",
+   "name": "ESTI Haz Mat Technician Shop",
+   "lng": -96.349283,
+   "lat": 30.577667
+  },
+  {
+   "code": "7908",
+   "name": "TEEX EUPWTI Building",
+   "lng": -96.4724,
+   "lat": 30.6337
+  },
+  {
+   "code": "7909",
+   "name": "TEEX EUPWTI Building",
+   "lng": -96.4717,
+   "lat": 30.6335
+  },
+  {
+   "code": "7910",
+   "name": "ESTI Haz Mat Storage",
+   "lng": -96.350506,
+   "lat": 30.578639
+  },
+  {
+   "code": "7911",
+   "name": "TEEX EUPWTI Parking",
+   "lng": -96.473,
+   "lat": 30.634
+  },
+  {
+   "code": "7912",
+   "name": "Reuse Water Quality Lab at OSSF Center",
+   "lng": -96.472817,
+   "lat": 30.63225
+  },
+  {
+   "code": "8000",
+   "name": "TEEX ITSI Garage & Offices",
+   "lng": -96.469639,
+   "lat": 30.634953
+  },
+  {
+   "code": "BHSO",
+   "name": "Blinn College Health Sciences Office",
+   "lng": -96.469724,
+   "lat": 30.641812
+  },
+  {
+   "code": "8031",
+   "name": "RELLIS High Bay Facility 8031",
+   "lng": -96.474955,
+   "lat": 30.634683
+  },
+  {
+   "code": "8079",
+   "name": "RELLIS High Bay Facility 8079"
+  },
+  {
+   "code": "8080",
+   "name": "RELLIS High Bay Facility 8080"
+  },
+  {
+   "code": "8081",
+   "name": "RELLIS Administration",
+   "lng": -96.474365,
+   "lat": 30.639418
+  },
+  {
+   "code": "8082",
+   "name": "SSC RELLIS Headquarters Building"
+  },
+  {
+   "code": "8084",
+   "name": "RELLIS High Bay Facility 8084",
+   "lng": -96.4753,
+   "lat": 30.6396
+  },
+  {
+   "code": "8106",
+   "name": "RELLIS High Bay Facility 8106",
+   "lng": -96.4846,
+   "lat": 30.6427
+  },
+  {
+   "code": "8107",
+   "name": "RELLIS High Bay Facility 8107",
+   "lng": -96.4844,
+   "lat": 30.6427
+  },
+  {
+   "code": "8236",
+   "name": "RELLIS Multiuse Facility (MOTHBALLED 2021)",
+   "lng": -96.47218,
+   "lat": 30.635955
+  },
+  {
+   "code": "8237",
+   "name": "RELLIS Telecommunications Optical Remote Building #2"
+  },
+  {
+   "code": "8500",
+   "name": "STEM Education Center at RELLIS"
+  },
+  {
+   "code": "JLF",
+   "name": "Joint Library Facility with UT",
+   "lng": -96.46824,
+   "lat": 30.64748
+  },
+  {
+   "code": "8525",
+   "name": "SecureAmerica Institute",
+   "lng": -96.468313,
+   "lat": 30.636037
+  },
+  {
+   "code": "CIR",
+   "name": "Center for Infrastructure Renewal - RELLIS",
+   "lng": -96.4751,
+   "lat": 30.648
+  },
+  {
+   "code": "8537",
+   "name": "TTI Headquarters - RELLIS",
+   "lng": -96.4733,
+   "lat": 30.6481
+  },
+  {
+   "code": "8577",
+   "name": "Flammable Materials Storage at CUP",
+   "lng": -96.341836,
+   "lat": 30.617605
+  },
+  {
+   "code": "8578",
+   "name": "Water Lab at CUP",
+   "lng": -96.342234,
+   "lat": 30.618122
+  },
+  {
+   "code": "8600",
+   "name": "TEEX - LAW UXO Demo Range Pavilion",
+   "lng": -96.481575,
+   "lat": 30.635206
+  },
+  {
+   "code": "8601",
+   "name": "TEEX - LAW UXO Search Grid Pavilion",
+   "lng": -96.475596,
+   "lat": 30.627106
+  },
+  {
+   "code": "8610",
+   "name": "RELLIS Multiuse Facility 8610",
+   "lng": -96.490608,
+   "lat": 30.629961
+  },
+  {
+   "code": "8625",
+   "name": "IPG Mobility Challenge Course Tower"
+  },
+  {
+   "code": "8626",
+   "name": "IPG Mobility Challenge Course Storage Building"
+  },
+  {
+   "code": "8627",
+   "name": "IPG Off-Road Test Area Tower"
+  },
+  {
+   "code": "8628",
+   "name": "IPG Off-Road Test Area Storage Building"
+  },
+  {
+   "code": "8633",
+   "name": "BAM Building A1 at RELLIS"
+  },
+  {
+   "code": "8634",
+   "name": "BAM Building A2 at RELLIS"
+  },
+  {
+   "code": "8635",
+   "name": "BAM Head Building A3 at RELLIS"
+  },
+  {
+   "code": "8637",
+   "name": "BAM Building B2 at RELLIS"
+  },
+  {
+   "code": "8639",
+   "name": "BAM Building C at RELLIS"
+  },
+  {
+   "code": "8641",
+   "name": "BAM Building D2 at RELLIS"
+  },
+  {
+   "code": "8642",
+   "name": "BAM Building D3 at RELLIS"
+  },
+  {
+   "code": "8653",
+   "name": "TEES DRTF Concrete Ignition Block-RELLIS",
+   "lng": -96.482852,
+   "lat": 30.632484
+  },
+  {
+   "code": "8654",
+   "name": "TEES DRTF Instrument Enclosure-RELLIS",
+   "lng": -96.482878,
+   "lat": 30.631809
+  },
+  {
+   "code": "DRTF",
+   "name": "TEES DRTF Control Building-RELLIS"
+  },
+  {
+   "code": "8656",
+   "name": "TEES National Hypersonic Wind Tunnel-RELLIS"
+  },
+  {
+   "code": "8684",
+   "name": "TEEX - LAW Rifle Range Classroom",
+   "lng": -96.4758,
+   "lat": 30.6304
+  },
+  {
+   "code": "8685",
+   "name": "TEEX - LAW Firing Range Classroom",
+   "lng": -96.474377,
+   "lat": 30.632451
+  },
+  {
+   "code": "8687",
+   "name": "TEEX - LAW Shoot House",
+   "lng": -96.467496,
+   "lat": 30.636648
+  },
+  {
+   "code": "8689",
+   "name": "TEEX UXO Complex",
+   "lng": -96.482761,
+   "lat": 30.614975
+  },
+  {
+   "code": "8690",
+   "name": "RELLIS RTA4 Planning Facility",
+   "lng": -96.479414,
+   "lat": 30.612868
+  },
+  {
+   "code": "8693",
+   "name": "TEEX RELLIS PSTC-ITSI/Cell Tower Classroom Bldg"
+  },
+  {
+   "code": "8694",
+   "name": "TEEX RELLIS PSTC-LAW Classroom Bldg"
+  },
+  {
+   "code": "8695",
+   "name": "TEEX RELLIS PSTC-Two Story Prop Bldg"
+  },
+  {
+   "code": "8696",
+   "name": "TEEX RELLIS PSTC-Truck Canopy"
+  },
+  {
+   "code": "RIC",
+   "name": "Research Integration Center"
+  },
+  {
+   "code": "4HHQ",
+   "name": "Texas 4-H Youth Development Program Headquarters at RELLIS"
+  },
+  {
+   "code": "8702",
+   "name": "4-H HQ Storage Building at RELLIS"
+  },
+  {
+   "code": "8711",
+   "name": "Texas A&M Semiconductor Institute"
+  },
+  {
+   "code": "8800",
+   "name": "Bonfire Memorial Restroom",
+   "lng": -96.33555,
+   "lat": 30.620987
+  },
+  {
+   "code": "GSCPB",
+   "name": "GSC Portable Building",
+   "lng": -96.356152,
+   "lat": 30.620771
+  },
+  {
+   "code": "8902",
+   "name": "BUILD Pavilion",
+   "lng": -96.32585,
+   "lat": 30.622373
+  },
+  {
+   "code": "8906",
+   "name": "Transportation Services Barricade Storage",
+   "lng": -96.3502,
+   "lat": 30.616
+  },
+  {
+   "code": "9101",
+   "name": "Agronomy Road 138kV Substation Control House",
+   "lng": -96.3505,
+   "lat": 30.6165
+  },
+  {
+   "code": "9210",
+   "name": "LIFT STATION-Golf Course 1 (SW corner of golf course)",
+   "lng": -96.331907,
+   "lat": 30.61366
+  },
+  {
+   "code": "9341",
+   "name": "Transportation Svcs Barricade Storage",
+   "lng": -96.36552,
+   "lat": 30.62643
+  },
+  {
+   "code": "9351",
+   "name": "Water Tower (Insulation Shop)",
+   "lng": -96.3431,
+   "lat": 30.6179
+  },
+  {
+   "code": "9750",
+   "name": "by USDA-Exotic Animal Holding Pens",
+   "lng": -96.3602,
+   "lat": 30.6196
+  },
+  {
+   "code": "9787",
+   "name": "ESTI PROCESS UNIT FIRES (NEW)",
+   "lng": -96.3554,
+   "lat": 30.5826
+  },
+  {
+   "code": "9791",
+   "name": "Billy Pickard Pedestrian Passageway",
+   "lng": -96.3434,
+   "lat": 30.6098
+  },
+  {
+   "code": "9795",
+   "name": "Wellborn Road Grade Separation Pumps",
+   "lng": -96.3465,
+   "lat": 30.6126
+  },
+  {
+   "code": "9797",
+   "name": "Bonfire Memorial"
+  },
+  {
+   "code": "BL1",
+   "name": "Walter C. Schwartz Building",
+   "lng": -96.4684,
+   "lat": 30.6421
+  },
+  {
+   "code": "BL2",
+   "name": "Blinn RELLIS Phase 2"
+  },
+  {
+   "code": "N020",
+   "name": "Teaching Gardens-Outdoor Classroom"
+  },
+  {
+   "code": "N021",
+   "name": "Teaching Gardens Entry-Left"
+  },
+  {
+   "code": "N022",
+   "name": "Teaching Gardens Entry-Right"
+  },
+  {
+   "code": "N023",
+   "name": "Teaching Gardens-Grand Arbor"
+  },
+  {
+   "code": "N024",
+   "name": "Teaching Gardens-Farmer's Market"
+  },
+  {
+   "code": "N025",
+   "name": "Teaching Gardens-The Overlook"
+  },
+  {
+   "code": "N026",
+   "name": "Teaching Gardens-East Pergola"
+  },
+  {
+   "code": "N027",
+   "name": "Teaching Gardens-West Pergola"
+  }
+ ]
+}

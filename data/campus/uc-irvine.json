@@ -1,0 +1,938 @@
+{
+ "collegeId": "uc-irvine",
+ "generatedAt": "2026-11-09T18:16:43.742Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "UC Irvine Classroom Technologies (Office of Information Technology), classroom building pages: building name and code as used in the Schedule of Classes (WebSOC Meeting Place)",
+   "url": "https://classrooms.uci.edu/classroom-table/",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/uc-irvine.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -117.85419,
+  33.64205,
+  -117.82759,
+  33.65298
+ ],
+ "halls": [
+  {
+   "dormId": "mesa-court",
+   "name": "Mesa Court",
+   "lng": -117.84528,
+   "lat": 33.652981,
+   "pin": "name",
+   "osm": "way/952535900",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "santora-elite-training-center",
+     "minutes": 10.9
+    },
+    "library": {
+     "placeId": "langson-library",
+     "minutes": 13
+    },
+    "dining": {
+     "placeId": "phoenix-food-court",
+     "minutes": 17
+    }
+   }
+  },
+  {
+   "dormId": "middle-earth",
+   "name": "Middle Earth",
+   "lng": -117.839127,
+   "lat": 33.645528,
+   "pin": "name",
+   "osm": "way/781126068",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "santora-elite-training-center",
+     "minutes": 13.8
+    },
+    "library": {
+     "placeId": "langson-library",
+     "minutes": 5.9
+    },
+    "dining": {
+     "placeId": "phoenix-food-court",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "arroyo-vista",
+   "name": "Arroyo Vista",
+   "lng": -117.827591,
+   "lat": 33.647083,
+   "pin": "manual",
+   "osm": "way/1014678925",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "anteater-recreation-center",
+     "minutes": 6.2
+    },
+    "library": {
+     "placeId": "langson-library",
+     "minutes": 20.4
+    },
+    "dining": {
+     "placeId": "phoenix-food-court",
+     "minutes": 19.1
+    }
+   }
+  },
+  {
+   "dormId": "campus-village",
+   "name": "Campus Village",
+   "lng": -117.846998,
+   "lat": 33.644805,
+   "pin": "name",
+   "osm": "way/572247715",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "santora-elite-training-center",
+     "minutes": 7.5
+    },
+    "library": {
+     "placeId": "science-library",
+     "minutes": 2.5
+    },
+    "dining": {
+     "placeId": "phoenix-food-court",
+     "minutes": 12.5
+    }
+   }
+  },
+  {
+   "dormId": "palo-verde",
+   "name": "Palo Verde",
+   "lng": -117.83301,
+   "lat": 33.642064,
+   "pin": "name",
+   "osm": "way/700769282",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "anteater-recreation-center",
+     "minutes": 12.9
+    },
+    "library": {
+     "placeId": "langson-library",
+     "minutes": 17
+    },
+    "dining": {
+     "placeId": "phoenix-food-court",
+     "minutes": 13
+    }
+   }
+  },
+  {
+   "dormId": "verano-place",
+   "name": "Verano Place",
+   "lng": -117.832851,
+   "lat": 33.645579,
+   "pin": "manual",
+   "osm": "way/640643577",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "anteater-recreation-center",
+     "minutes": 7.8
+    },
+    "library": {
+     "placeId": "langson-library",
+     "minutes": 13.2
+    },
+    "dining": {
+     "placeId": "phoenix-food-court",
+     "minutes": 11.9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "anteater-recreation-center",
+   "name": "Anteater Recreation Center",
+   "short": "Anteater Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "ARC"
+   ],
+   "lng": -117.827999,
+   "lat": 33.643372,
+   "osm": "way/184960300"
+  },
+  {
+   "id": "science-library",
+   "name": "Science Library",
+   "short": "Science Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "SLIB"
+   ],
+   "lng": -117.846649,
+   "lat": 33.645866,
+   "osm": "relation/2275965"
+  },
+  {
+   "id": "engineering-gateway",
+   "name": "Engineering Gateway",
+   "short": "Engineering Gateway",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "EG"
+   ],
+   "lng": -117.840151,
+   "lat": 33.643209,
+   "osm": "way/158053309"
+  },
+  {
+   "id": "biological-sciences-iii",
+   "name": "Biological Sciences III",
+   "short": "Biological Sciences III",
+   "kind": "academic",
+   "codes": [
+    "BS3"
+   ],
+   "aliases": [
+    "BS3"
+   ],
+   "lng": -117.846097,
+   "lat": 33.645358,
+   "osm": "way/158053273"
+  },
+  {
+   "id": "rowland-hall",
+   "name": "Rowland Hall",
+   "short": "Rowland Hall",
+   "kind": "academic",
+   "codes": [
+    "RH"
+   ],
+   "aliases": [
+    "RH"
+   ],
+   "lng": -117.844144,
+   "lat": 33.644505,
+   "osm": "way/157979880"
+  },
+  {
+   "id": "beckman-center",
+   "name": "Beckman Center",
+   "short": "Beckman Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Arnold and Mabel Beckman Center of the National Academies of Sciences and Engineering"
+   ],
+   "lng": -117.854193,
+   "lat": 33.64941,
+   "osm": "relation/2465617"
+  },
+  {
+   "id": "mcgaugh-hall",
+   "name": "McGaugh Hall",
+   "short": "McGaugh Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MH"
+   ],
+   "lng": -117.844803,
+   "lat": 33.64525,
+   "osm": "way/157979868"
+  },
+  {
+   "id": "reines-hall",
+   "name": "Reines Hall",
+   "short": "Reines Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "FRH"
+   ],
+   "lng": -117.843297,
+   "lat": 33.644162,
+   "osm": "way/157979878"
+  },
+  {
+   "id": "aldrich-hall",
+   "name": "Aldrich Hall",
+   "short": "Aldrich Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ALH"
+   ],
+   "lng": -117.841231,
+   "lat": 33.648411,
+   "osm": "way/62646030"
+  },
+  {
+   "id": "langson-library",
+   "name": "Langson Library",
+   "short": "Langson Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "LLIB"
+   ],
+   "lng": -117.841091,
+   "lat": 33.647132,
+   "osm": "way/171169252"
+  },
+  {
+   "id": "langson-library-1374185239",
+   "name": "Langson Library",
+   "short": "Langson Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.841092,
+   "lat": 33.647132,
+   "osm": "way/1374185239"
+  },
+  {
+   "id": "anteater-learning-pavilion",
+   "name": "Anteater Learning Pavilion",
+   "short": "Anteater Learning Pavilion",
+   "kind": "academic",
+   "codes": [
+    "ALP"
+   ],
+   "aliases": [],
+   "lng": -117.844506,
+   "lat": 33.64708,
+   "osm": "way/631379319"
+  },
+  {
+   "id": "natural-sciences-ii",
+   "name": "Natural Sciences II",
+   "short": "Natural Sciences II",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "NS2"
+   ],
+   "lng": -117.84527,
+   "lat": 33.644006,
+   "osm": "way/158053272"
+  },
+  {
+   "id": "multipurpose-science-and-technology-building",
+   "name": "Multipurpose Science and Technology Building",
+   "short": "Multipurpose Science and Technology Building",
+   "kind": "academic",
+   "codes": [
+    "MSTB"
+   ],
+   "aliases": [
+    "MSTB"
+   ],
+   "lng": -117.844439,
+   "lat": 33.642046,
+   "osm": "way/171550883"
+  },
+  {
+   "id": "music-and-media-building",
+   "name": "Music and Media Building",
+   "short": "Music and Media Building",
+   "kind": "academic",
+   "codes": [
+    "MM"
+   ],
+   "aliases": [
+    "Music & Media"
+   ],
+   "lng": -117.844255,
+   "lat": 33.649528,
+   "osm": "way/157979871"
+  },
+  {
+   "id": "california-institute-for-telecommunications-and-information-technology",
+   "name": "California Institute for Telecommunications & Information Technology",
+   "short": "California Institute for Telecommunications & Information Technology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CALIT2"
+   ],
+   "lng": -117.841234,
+   "lat": 33.642879,
+   "osm": "way/171550878"
+  },
+  {
+   "id": "donald-bren-hall",
+   "name": "Donald Bren Hall",
+   "short": "Donald Bren Hall",
+   "kind": "academic",
+   "codes": [
+    "DBH"
+   ],
+   "aliases": [
+    "DBH"
+   ],
+   "lng": -117.841931,
+   "lat": 33.64326,
+   "osm": "way/158053311"
+  },
+  {
+   "id": "natural-sciences-i",
+   "name": "Natural Sciences I",
+   "short": "Natural Sciences I",
+   "kind": "academic",
+   "codes": [
+    "NS1"
+   ],
+   "aliases": [
+    "NS1"
+   ],
+   "lng": -117.845727,
+   "lat": 33.644448,
+   "osm": "way/158053296"
+  },
+  {
+   "id": "steinhaus-hall",
+   "name": "Steinhaus Hall",
+   "short": "Steinhaus Hall",
+   "kind": "academic",
+   "codes": [
+    "SH"
+   ],
+   "aliases": [
+    "SH"
+   ],
+   "lng": -117.844868,
+   "lat": 33.646242,
+   "osm": "way/157979892"
+  },
+  {
+   "id": "humanities-gateway",
+   "name": "Humanities Gateway",
+   "short": "Humanities Gateway",
+   "kind": "academic",
+   "codes": [
+    "HG"
+   ],
+   "aliases": [],
+   "lng": -117.844576,
+   "lat": 33.648176,
+   "osm": "way/157979859"
+  },
+  {
+   "id": "engineering-hall",
+   "name": "Engineering Hall",
+   "short": "Engineering Hall",
+   "kind": "academic",
+   "codes": [
+    "EH"
+   ],
+   "aliases": [
+    "EH"
+   ],
+   "lng": -117.841193,
+   "lat": 33.643672,
+   "osm": "way/158053274"
+  },
+  {
+   "id": "social-ecology-i",
+   "name": "Social Ecology I",
+   "short": "Social Ecology I",
+   "kind": "academic",
+   "codes": [
+    "SE1"
+   ],
+   "aliases": [
+    "SE"
+   ],
+   "lng": -117.8388,
+   "lat": 33.646165,
+   "osm": "way/184993828"
+  },
+  {
+   "id": "engineering-laboratory-facility",
+   "name": "Engineering Laboratory Facility",
+   "short": "Engineering Laboratory Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ELF"
+   ],
+   "lng": -117.839657,
+   "lat": 33.643783,
+   "osm": "way/158053301"
+  },
+  {
+   "id": "humanities-instructional-building",
+   "name": "Humanities Instructional Building",
+   "short": "Humanities Instructional Building",
+   "kind": "academic",
+   "codes": [
+    "HIB"
+   ],
+   "aliases": [
+    "HIB"
+   ],
+   "lng": -117.84376,
+   "lat": 33.648405,
+   "osm": "way/157979862"
+  },
+  {
+   "id": "information-and-computer-science",
+   "name": "Information and Computer Science",
+   "short": "Information and Computer Science",
+   "kind": "academic",
+   "codes": [
+    "ICS"
+   ],
+   "aliases": [
+    "ICS"
+   ],
+   "lng": -117.841777,
+   "lat": 33.644284,
+   "osm": "relation/2114499"
+  },
+  {
+   "id": "humanities-hall",
+   "name": "Humanities Hall",
+   "short": "Humanities Hall",
+   "kind": "academic",
+   "codes": [
+    "HH"
+   ],
+   "aliases": [
+    "HH"
+   ],
+   "lng": -117.844002,
+   "lat": 33.647326,
+   "osm": "way/157979860"
+  },
+  {
+   "id": "merage-school-of-business",
+   "name": "Merage School of Business",
+   "short": "Merage School of Business",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SB1"
+   ],
+   "lng": -117.838056,
+   "lat": 33.646991,
+   "osm": "way/633498602"
+  },
+  {
+   "id": "croul-hall",
+   "name": "Croul Hall",
+   "short": "Croul Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CRH"
+   ],
+   "lng": -117.844666,
+   "lat": 33.643702,
+   "osm": "way/158053310"
+  },
+  {
+   "id": "social-ecology-ii",
+   "name": "Social Ecology II",
+   "short": "Social Ecology II",
+   "kind": "academic",
+   "codes": [
+    "SE2"
+   ],
+   "aliases": [
+    "SE2"
+   ],
+   "lng": -117.83897,
+   "lat": 33.646578,
+   "osm": "way/184993834"
+  },
+  {
+   "id": "anteater-instruction-and-research-building-airb",
+   "name": "Anteater Instruction and Research Building (AIRB)",
+   "short": "Anteater Instruction and Research Building (AIRB)",
+   "kind": "academic",
+   "codes": [
+    "AIRB"
+   ],
+   "aliases": [
+    "Anteater Instruction & Research Building"
+   ],
+   "lng": -117.838006,
+   "lat": 33.642864,
+   "osm": "way/184993826"
+  },
+  {
+   "id": "engineering-tower",
+   "name": "Engineering Tower",
+   "short": "Engineering Tower",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ET"
+   ],
+   "lng": -117.84113,
+   "lat": 33.644745,
+   "osm": "way/157979856"
+  },
+  {
+   "id": "social-science-tower",
+   "name": "Social Science Tower",
+   "short": "Social Science Tower",
+   "kind": "academic",
+   "codes": [
+    "SST"
+   ],
+   "aliases": [
+    "SST"
+   ],
+   "lng": -117.84028,
+   "lat": 33.646468,
+   "osm": "way/157979887"
+  },
+  {
+   "id": "university-club",
+   "name": "University Club",
+   "short": "University Club",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Dorothy Grannis Sullivan Memorial University Club"
+   ],
+   "lng": -117.842531,
+   "lat": 33.642941,
+   "osm": "way/219172690"
+  },
+  {
+   "id": "social-science-plaza-b",
+   "name": "Social Science Plaza B",
+   "short": "Social Science Plaza B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SSPB"
+   ],
+   "lng": -117.839069,
+   "lat": 33.646962,
+   "osm": "way/184993835"
+  },
+  {
+   "id": "schneiderman-lecture-hall",
+   "name": "Schneiderman Lecture Hall",
+   "short": "Schneiderman Lecture Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "HSLH"
+   ],
+   "lng": -117.844666,
+   "lat": 33.645568,
+   "osm": "way/157979881"
+  },
+  {
+   "id": "social-science-lab",
+   "name": "Social Science Lab",
+   "short": "Social Science Lab",
+   "kind": "academic",
+   "codes": [
+    "SSL"
+   ],
+   "aliases": [
+    "SSL"
+   ],
+   "lng": -117.84002,
+   "lat": 33.645914,
+   "osm": "way/157979886"
+  },
+  {
+   "id": "social-science-plaza-a",
+   "name": "Social Science Plaza A",
+   "short": "Social Science Plaza A",
+   "kind": "academic",
+   "codes": [
+    "SSPA"
+   ],
+   "aliases": [
+    "SSPA"
+   ],
+   "lng": -117.839555,
+   "lat": 33.646935,
+   "osm": "way/184993837"
+  },
+  {
+   "id": "santora-elite-training-center",
+   "name": "Santora Elite Training Center",
+   "short": "SET Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "SET Center"
+   ],
+   "lng": -117.848308,
+   "lat": 33.647686,
+   "osm": "way/171170903"
+  },
+  {
+   "id": "engineering-and-computing-trailer",
+   "name": "Engineering and Computing Trailer",
+   "short": "Engineering and Computing Trailer",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ECT"
+   ],
+   "lng": -117.840158,
+   "lat": 33.644024,
+   "osm": "way/158053268"
+  },
+  {
+   "id": "information-and-computer-science-2",
+   "name": "Information and Computer Science 2",
+   "short": "Information and Computer Science 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ICS2"
+   ],
+   "lng": -117.841718,
+   "lat": 33.643984,
+   "osm": "way/157979866"
+  },
+  {
+   "id": "merage-school-of-business-ii",
+   "name": "Merage School of Business II",
+   "short": "Merage School of Business II",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SB2"
+   ],
+   "lng": -117.838087,
+   "lat": 33.646661,
+   "osm": "way/184993856"
+  },
+  {
+   "id": "engineering-lecture-hall",
+   "name": "Engineering Lecture Hall",
+   "short": "Engineering Lecture Hall",
+   "kind": "academic",
+   "codes": [
+    "ELH"
+   ],
+   "aliases": [
+    "ELH"
+   ],
+   "lng": -117.840726,
+   "lat": 33.644451,
+   "osm": "way/157979855"
+  },
+  {
+   "id": "physical-sciences-lecture-hall",
+   "name": "Physical Sciences Lecture Hall",
+   "short": "Physical Sciences Lecture Hall",
+   "kind": "academic",
+   "codes": [
+    "PSLH"
+   ],
+   "aliases": [
+    "PSLH"
+   ],
+   "lng": -117.843966,
+   "lat": 33.643398,
+   "osm": "way/158053267"
+  },
+  {
+   "id": "krieger-hall",
+   "name": "Krieger Hall",
+   "short": "Krieger Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "KH"
+   ],
+   "lng": -117.843515,
+   "lat": 33.64764,
+   "osm": "way/157979867"
+  },
+  {
+   "id": "social-science-lecture-hall",
+   "name": "Social Science Lecture Hall",
+   "short": "Social Science Lecture Hall",
+   "kind": "academic",
+   "codes": [
+    "SSLH"
+   ],
+   "aliases": [
+    "SSLH"
+   ],
+   "lng": -117.839736,
+   "lat": 33.647229,
+   "osm": "way/184993897"
+  },
+  {
+   "id": "intercollegiate-athletics-building",
+   "name": "Intercollegiate Athletics Building",
+   "short": "Intercollegiate Athletics Building",
+   "kind": "academic",
+   "codes": [
+    "IAB"
+   ],
+   "aliases": [],
+   "lng": -117.845501,
+   "lat": 33.648198,
+   "osm": "way/157979864"
+  },
+  {
+   "id": "phoenix-food-court",
+   "name": "Phoenix Food Court",
+   "short": "Phoenix Food Court",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.840609,
+   "lat": 33.645565,
+   "osm": "way/157979873"
+  },
+  {
+   "id": "parkview-classroom-building",
+   "name": "Parkview Classroom Building",
+   "short": "Parkview Classroom Building",
+   "kind": "academic",
+   "codes": [
+    "PCB"
+   ],
+   "aliases": [
+    "PCB",
+    "Parkview Classroom Bldg"
+   ],
+   "lng": -117.842809,
+   "lat": 33.644501,
+   "osm": "way/157979872"
+  },
+  {
+   "id": "physical-sciences-classroom-building",
+   "name": "Physical Sciences Classroom Building",
+   "short": "Physical Sciences Classroom Building",
+   "kind": "academic",
+   "codes": [
+    "PSCB"
+   ],
+   "aliases": [
+    "PSCB"
+   ],
+   "lng": -117.843484,
+   "lat": 33.643407,
+   "osm": "way/158053292"
+  },
+  {
+   "id": "rockwell-engineering-center",
+   "name": "Rockwell Engineering Center",
+   "short": "Rockwell Engineering Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "REC"
+   ],
+   "lng": -117.840519,
+   "lat": 33.6439,
+   "osm": "way/158053291"
+  },
+  {
+   "id": "social-science-hall",
+   "name": "Social Science Hall",
+   "short": "Social Science Hall",
+   "kind": "academic",
+   "codes": [
+    "SSH"
+   ],
+   "aliases": [
+    "SSH"
+   ],
+   "lng": -117.840077,
+   "lat": 33.646238,
+   "osm": "way/157979885"
+  },
+  {
+   "id": "mcdonnell-douglas-engineering-auditorium",
+   "name": "McDonnell-Douglas Engineering Auditorium",
+   "short": "McDonnell-Douglas Engineering Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MDE"
+   ],
+   "lng": -117.840751,
+   "lat": 33.643958,
+   "osm": "way/158053286"
+  },
+  {
+   "id": "social-science-trailer",
+   "name": "Social Science Trailer",
+   "short": "Social Science Trailer",
+   "kind": "academic",
+   "codes": [
+    "SSTR"
+   ],
+   "aliases": [
+    "SSTR"
+   ],
+   "lng": -117.840253,
+   "lat": 33.647036,
+   "osm": "way/157979889"
+  },
+  {
+   "id": "social-science-trailer-157979890",
+   "name": "Social Science Trailer",
+   "short": "Social Science Trailer",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SSTR"
+   ],
+   "lng": -117.840199,
+   "lat": 33.646962,
+   "osm": "way/157979890"
+  },
+  {
+   "id": "starbucks",
+   "name": "Starbucks",
+   "short": "Starbucks",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Starbucks Coffee"
+   ],
+   "lng": -117.845569,
+   "lat": 33.644966,
+   "osm": "way/1051403930"
+  }
+ ]
+}

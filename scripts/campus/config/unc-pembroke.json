@@ -1,0 +1,16 @@
+{
+  "collegeId": "unc-pembroke",
+  "area": {
+    "osm": "way/510825904",
+    "bbox": [
+      34.68419,
+      -79.20769,
+      34.70042,
+      -79.19741
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class building-code list could be read: the Registrar's 'Building & Symbol Information' page (https://uncp.edu/resources/registrar/building-symbol-information) answered Page Not Found on 2026-11-08, the Registrar's Office page (https://www.uncp.edu/resources/registrar) no longer links one, and the Wayback Machine has no copy."
+}

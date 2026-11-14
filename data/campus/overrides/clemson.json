@@ -1,0 +1,379 @@
+{
+  "halls": {
+    "cribb-deschamps-hall": {
+      "pin": [
+        -82.839502,
+        34.679916
+      ]
+    },
+    "the-quad": {
+      "pin": [
+        -82.838832,
+        34.680771
+      ]
+    },
+    "douthit-hills-east": {
+      "pin": [
+        -82.828862,
+        34.680614
+      ]
+    },
+    "douthit-hills": {
+      "pin": [
+        -82.832597,
+        34.680249
+      ]
+    }
+  },
+  "notes": {
+    "cribb-deschamps-hall": "Cribb Hall (511-D Fort Hill St.) and DesChamps Hall (511-C) in Clemson's ClemsonBuildings_2025 layer (https://services1.arcgis.com/x5wCko8UnSi4h0CB/arcgis/rest/services/ClemsonBuildings_2025/FeatureServer/0); the pin is between the pair.",
+    "the-quad": "The Quad is seven fraternity and sorority halls (school data, from housing.clemson.edu/building/the-quad/): OSM Wannamaker, Simpson North and South, Norris, Bowen, Bradley and Donaldson Hall (ways 26996849, 26996872, 26996870, 27511405, 26996858, 26996854, 26967872); the pin is their middle.",
+    "douthit-hills-east": "Douthit Hills East is buildings E, F and G (housing.clemson.edu/building/douthit-hills-east/); pinned at the middle one, OSM 'Douthit Hills F' (127 Cherry Rd. in the Clemson buildings layer).",
+    "douthit-hills": "Douthit Hills West is the apartment community's other buildings, A to D on Daniel Dr. in Clemson's ClemsonBuildings_2025 layer (https://services1.arcgis.com/x5wCko8UnSi4h0CB/arcgis/rest/services/ClemsonBuildings_2025/FeatureServer/0) (East is E-G); the pin is the middle of the four.",
+    "n15": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s01": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s03": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n02": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s08": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s02": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n13": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s06": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s04": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n07": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n11": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n11-178880714": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n06": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n04": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s01-177983745": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s05": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n03": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s03-177983755": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n05": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n06-178880716": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s12": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n15-178880712": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n02-178880686": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s11": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s07": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s07-177983757": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s02-178880707": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n07-178880700": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s10": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n08": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n09": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n08-178880709": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n05-178880687": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n13-178880691": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n01": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s09": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n04-178880693": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s05-177983751": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s04-178880715": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s12-27198424": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s09-177983747": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n03-178880711": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n01-27757566": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s11-177983753": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s06-178880722": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "n09-178880704": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s08-178880702": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "s10-178880718": "Calhoun Courts apartment building (OSM name is its N/S building number), not a class or meal place.",
+    "douthit-hills-e": "Douthit Hills East residence building, not a class or meal place.",
+    "douthit-hills-f": "Douthit Hills East residence building, not a class or meal place.",
+    "douthit-hills-g": "Douthit Hills East residence building, not a class or meal place.",
+    "lightsey-bridge-building-19": "Lightsey Bridge apartment building, not a class or meal place.",
+    "bowen-hall": "Bowen Hall is one of The Quad's residence halls (OSM building=yes), not a class place.",
+    "sou-x3164": "Unlabelled service building, not a class or meal place.",
+    "presidents-house": "President's residence, not a class or meal place.",
+    "trustee-house": "Guest house, not a class or meal place.",
+    "littlejohn-house": "Residence, not a class or meal place.",
+    "fort-hill": "Historic house museum, not a class or meal place.",
+    "john-c-calhouns-office": "Historic outbuilding, not a class or meal place.",
+    "chilled-water-plant": "Chilled water plant, not a class or meal place.",
+    "chick-fil-a": "Fast-food restaurant, not a dining hall.",
+    "halal-shack": "Restaurant, not a dining hall.",
+    "allen-n-reeves-football-complex": "Varsity football building, not a class or meal place.",
+    "clemson-indoor-track-and-field-complex": "Varsity track building, not a class or meal place.",
+    "jervey-athletic-center": "Athletics department offices, not a class or meal place.",
+    "soccer-operations-center": "Varsity soccer building, not a class or meal place.",
+    "womens-rowing-training-facility": "Varsity rowing building, not a class or meal place.",
+    "womens-rowing-boathouse": "Boathouse, not a class or meal place.",
+    "clemson-crew-boathouse": "Boathouse, not a class or meal place.",
+    "larry-b-penley-jr-golf-clubhouse": "Golf clubhouse, not a class or meal place.",
+    "iptay-ticket-office": "Ticket office, not a class or meal place.",
+    "clemson-university-fire-department": "Fire station, not a class or meal place.",
+    "james-f-martin-inn": "Hotel, not a class or meal place.",
+    "madren-conference-center": "Conference center, not a class or meal place.",
+    "nieri-family-alumni-and-visitors-center": "Alumni and visitors center, not a class or meal place.",
+    "alumni-center": "Alumni center, not a class or meal place.",
+    "redfern-health-center": "Student health center, not a class or meal place."
+  },
+  "places": {
+    "n15": {
+      "hide": true
+    },
+    "s01": {
+      "hide": true
+    },
+    "s03": {
+      "hide": true
+    },
+    "n02": {
+      "hide": true
+    },
+    "s08": {
+      "hide": true
+    },
+    "s02": {
+      "hide": true
+    },
+    "n13": {
+      "hide": true
+    },
+    "s06": {
+      "hide": true
+    },
+    "s04": {
+      "hide": true
+    },
+    "n07": {
+      "hide": true
+    },
+    "n11": {
+      "hide": true
+    },
+    "n11-178880714": {
+      "hide": true
+    },
+    "n06": {
+      "hide": true
+    },
+    "n04": {
+      "hide": true
+    },
+    "s01-177983745": {
+      "hide": true
+    },
+    "s05": {
+      "hide": true
+    },
+    "n03": {
+      "hide": true
+    },
+    "s03-177983755": {
+      "hide": true
+    },
+    "n05": {
+      "hide": true
+    },
+    "n06-178880716": {
+      "hide": true
+    },
+    "s12": {
+      "hide": true
+    },
+    "n15-178880712": {
+      "hide": true
+    },
+    "n02-178880686": {
+      "hide": true
+    },
+    "s11": {
+      "hide": true
+    },
+    "s07": {
+      "hide": true
+    },
+    "s07-177983757": {
+      "hide": true
+    },
+    "s02-178880707": {
+      "hide": true
+    },
+    "n07-178880700": {
+      "hide": true
+    },
+    "s10": {
+      "hide": true
+    },
+    "n08": {
+      "hide": true
+    },
+    "n09": {
+      "hide": true
+    },
+    "n08-178880709": {
+      "hide": true
+    },
+    "n05-178880687": {
+      "hide": true
+    },
+    "n13-178880691": {
+      "hide": true
+    },
+    "n01": {
+      "hide": true
+    },
+    "s09": {
+      "hide": true
+    },
+    "n04-178880693": {
+      "hide": true
+    },
+    "s05-177983751": {
+      "hide": true
+    },
+    "s04-178880715": {
+      "hide": true
+    },
+    "s12-27198424": {
+      "hide": true
+    },
+    "s09-177983747": {
+      "hide": true
+    },
+    "n03-178880711": {
+      "hide": true
+    },
+    "n01-27757566": {
+      "hide": true
+    },
+    "s11-177983753": {
+      "hide": true
+    },
+    "s06-178880722": {
+      "hide": true
+    },
+    "n09-178880704": {
+      "hide": true
+    },
+    "s08-178880702": {
+      "hide": true
+    },
+    "s10-178880718": {
+      "hide": true
+    },
+    "douthit-hills-e": {
+      "hide": true
+    },
+    "douthit-hills-f": {
+      "hide": true
+    },
+    "douthit-hills-g": {
+      "hide": true
+    },
+    "lightsey-bridge-building-19": {
+      "hide": true
+    },
+    "bowen-hall": {
+      "hide": true
+    },
+    "sou-x3164": {
+      "hide": true
+    },
+    "presidents-house": {
+      "hide": true
+    },
+    "trustee-house": {
+      "hide": true
+    },
+    "littlejohn-house": {
+      "hide": true
+    },
+    "fort-hill": {
+      "hide": true
+    },
+    "john-c-calhouns-office": {
+      "hide": true
+    },
+    "chilled-water-plant": {
+      "hide": true
+    },
+    "chick-fil-a": {
+      "hide": true
+    },
+    "halal-shack": {
+      "hide": true
+    },
+    "allen-n-reeves-football-complex": {
+      "hide": true
+    },
+    "clemson-indoor-track-and-field-complex": {
+      "hide": true
+    },
+    "jervey-athletic-center": {
+      "hide": true
+    },
+    "soccer-operations-center": {
+      "hide": true
+    },
+    "womens-rowing-training-facility": {
+      "hide": true
+    },
+    "womens-rowing-boathouse": {
+      "hide": true
+    },
+    "clemson-crew-boathouse": {
+      "hide": true
+    },
+    "larry-b-penley-jr-golf-clubhouse": {
+      "hide": true
+    },
+    "iptay-ticket-office": {
+      "hide": true
+    },
+    "clemson-university-fire-department": {
+      "hide": true
+    },
+    "james-f-martin-inn": {
+      "hide": true
+    },
+    "madren-conference-center": {
+      "hide": true
+    },
+    "nieri-family-alumni-and-visitors-center": {
+      "hide": true
+    },
+    "alumni-center": {
+      "hide": true
+    },
+    "redfern-health-center": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "benet -> earle-hall",
+        "geer -> advanced-materials-innovation-complex",
+        "sanders -> advanced-materials-innovation-complex",
+        "sanders -> howard-l-hunter-chemistry-laboratory",
+        "sanders -> sirrine-hall",
+        "young -> dillard-building",
+        "young -> earle-hall"
+      ],
+      "maxRatio": 4.5,
+      "why": "The west-campus halls (Cope, Young, Benet, Geer, Sanders) sit inside a ring of mapped paths that opens only at its corners; walks to the buildings just south (Earle, Advanced Materials, Sirrine, Hunter) and north (Dillard) go out by a corner and round."
+    },
+    {
+      "pairs": [
+        "cribb-deschamps-hall -> godfrey-hall",
+        "cribb-deschamps-hall -> sloan-tennis-center",
+        "cribb-deschamps-hall -> tillman-hall",
+        "mccabe-hall -> mcalister-hall-core-b",
+        "the-quad -> sloan-tennis-center",
+        "the-quad -> tillman-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "The Core Campus and Quad courtyards meet the rest of the mapped path network at only a few points, so walks to Tillman, Godfrey, McAlister and Sloan leave by those links and go round the block."
+    },
+    {
+      "pairs": [
+        "lever-hall -> hendrix-student-center",
+        "manning-hall -> hendrix-student-center"
+      ],
+      "maxRatio": 3.0,
+      "why": "Schilletter dining hall stands between these halls and Hendrix with no mapped path through, so walks go round it by the road on the east."
+    }
+  ]
+}

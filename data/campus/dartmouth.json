@@ -1,0 +1,2102 @@
+{
+ "collegeId": "dartmouth",
+ "generatedAt": "2026-11-08T02:23:37.052Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/dartmouth.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -72.29707,
+  43.69972,
+  -72.27823,
+  43.71264
+ ],
+ "halls": [
+  {
+   "dormId": "topliff",
+   "name": "Topliff",
+   "lng": -72.285989,
+   "lat": 43.702597,
+   "pin": "name",
+   "osm": "way/48465835",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 2.7
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 5.8
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 6.3
+    }
+   }
+  },
+  {
+   "dormId": "new-hampshire",
+   "name": "New Hampshire",
+   "lng": -72.286649,
+   "lat": 43.702424,
+   "pin": "manual",
+   "osm": "way/262924496",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 5.3
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 6.2
+    }
+   }
+  },
+  {
+   "dormId": "the-lodge",
+   "name": "The Lodge",
+   "lng": -72.286629,
+   "lat": 43.700713,
+   "pin": "name",
+   "osm": "way/262924501",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 7.4
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 8.1
+    }
+   }
+  },
+  {
+   "dormId": "fayerweather",
+   "name": "Fayerweather",
+   "lng": -72.28637,
+   "lat": 43.703778,
+   "pin": "manual",
+   "osm": "way/49791103",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 3.7
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 4.5
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 6.4
+    }
+   }
+  },
+  {
+   "dormId": "andres",
+   "name": "Andres",
+   "lng": -72.28432,
+   "lat": 43.704192,
+   "pin": "name",
+   "osm": "way/48466719",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 9
+    }
+   }
+  },
+  {
+   "dormId": "zimmerman",
+   "name": "Zimmerman",
+   "lng": -72.283836,
+   "lat": 43.704442,
+   "pin": "name",
+   "osm": "way/48466718",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 5.3
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 8.6
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 9.3
+    }
+   }
+  },
+  {
+   "dormId": "mcculloch",
+   "name": "McCulloch",
+   "lng": -72.283353,
+   "lat": 43.704518,
+   "pin": "name",
+   "osm": "way/48466720",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 7.6
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 9.1
+    }
+   }
+  },
+  {
+   "dormId": "morton",
+   "name": "Morton",
+   "lng": -72.283543,
+   "lat": 43.704056,
+   "pin": "name",
+   "osm": "way/48466717",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 4.6
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 8.1
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 8.8
+    }
+   }
+  },
+  {
+   "dormId": "fahey",
+   "name": "Fahey",
+   "lng": -72.291496,
+   "lat": 43.705389,
+   "pin": "name",
+   "osm": "way/262918557",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 10
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 4.1
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 4
+    }
+   }
+  },
+  {
+   "dormId": "mclane",
+   "name": "McLane",
+   "lng": -72.291963,
+   "lat": 43.705536,
+   "pin": "name",
+   "osm": "way/262918559",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 10.7
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 4.7
+    },
+    "dining": {
+     "placeId": "byrne-dining-hall",
+     "minutes": 3.9
+    }
+   }
+  },
+  {
+   "dormId": "butterfield",
+   "name": "Butterfield",
+   "lng": -72.291079,
+   "lat": 43.705633,
+   "pin": "name",
+   "osm": "way/262918555",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 10
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 4.1
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 4.5
+    }
+   }
+  },
+  {
+   "dormId": "russell-sage",
+   "name": "Russell Sage",
+   "lng": -72.290708,
+   "lat": 43.705446,
+   "pin": "name",
+   "osm": "way/262915146",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 9.3
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 3.3
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "french",
+   "name": "French",
+   "lng": -72.297073,
+   "lat": 43.704071,
+   "pin": "name",
+   "osm": "way/549364457",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 15.6
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 10.5
+    },
+    "dining": {
+     "placeId": "byrne-dining-hall",
+     "minutes": 5.4
+    }
+   }
+  },
+  {
+   "dormId": "judge",
+   "name": "Judge",
+   "lng": -72.296587,
+   "lat": 43.704389,
+   "pin": "name",
+   "osm": "way/549364458",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 15.2
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 10.1
+    },
+    "dining": {
+     "placeId": "byrne-dining-hall",
+     "minutes": 5
+    }
+   }
+  },
+  {
+   "dormId": "north-massachusetts",
+   "name": "North Massachusetts",
+   "lng": -72.290574,
+   "lat": 43.704142,
+   "pin": "name",
+   "osm": "way/262913680",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 8.1
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 3.3
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 2.3
+    }
+   }
+  },
+  {
+   "dormId": "mid-massachusetts",
+   "name": "Mid Massachusetts",
+   "lng": -72.290548,
+   "lat": 43.703805,
+   "pin": "manual",
+   "osm": "way/262913307",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 7.9
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 3.5
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 1.7
+    }
+   }
+  },
+  {
+   "dormId": "south-massachusetts",
+   "name": "South Massachusetts",
+   "lng": -72.290529,
+   "lat": 43.703434,
+   "pin": "name",
+   "osm": "way/262913209",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 8.1
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 0.8
+    }
+   }
+  },
+  {
+   "dormId": "hitchcock",
+   "name": "Hitchcock",
+   "lng": -72.290622,
+   "lat": 43.704716,
+   "pin": "name",
+   "osm": "way/262913686",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 8.9
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 3.6
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 3.2
+    }
+   }
+  },
+  {
+   "dormId": "brown",
+   "name": "Brown",
+   "lng": -72.290372,
+   "lat": 43.707312,
+   "pin": "name",
+   "osm": "way/262922781",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 11.8
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 3.9
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 6.8
+    }
+   }
+  },
+  {
+   "dormId": "little",
+   "name": "Little",
+   "lng": -72.290788,
+   "lat": 43.707098,
+   "pin": "name",
+   "osm": "way/262922779",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 11.6
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 3.7
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 6.7
+    }
+   }
+  },
+  {
+   "dormId": "gile",
+   "name": "Gile",
+   "lng": -72.291199,
+   "lat": 43.704697,
+   "pin": "name",
+   "osm": "way/262913688",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 9.4
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 4.2
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 3.4
+    }
+   }
+  },
+  {
+   "dormId": "streeter",
+   "name": "Streeter",
+   "lng": -72.291645,
+   "lat": 43.704662,
+   "pin": "name",
+   "osm": "way/262915140",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 9.8
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "lord",
+   "name": "Lord",
+   "lng": -72.292046,
+   "lat": 43.704656,
+   "pin": "name",
+   "osm": "way/262915141",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 10.2
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 5
+    },
+    "dining": {
+     "placeId": "byrne-dining-hall",
+     "minutes": 3.6
+    }
+   }
+  },
+  {
+   "dormId": "bissell",
+   "name": "Bissell",
+   "lng": -72.291433,
+   "lat": 43.707274,
+   "pin": "name",
+   "osm": "way/262922778",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 12.2
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 7.2
+    }
+   }
+  },
+  {
+   "dormId": "cohen",
+   "name": "Cohen",
+   "lng": -72.29156,
+   "lat": 43.707635,
+   "pin": "name",
+   "osm": "way/262922776",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 12.8
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 7.8
+    }
+   }
+  },
+  {
+   "dormId": "berry",
+   "name": "Berry",
+   "lng": -72.286238,
+   "lat": 43.707044,
+   "pin": "name",
+   "osm": "way/262950847",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 9.6
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 8.4
+    }
+   }
+  },
+  {
+   "dormId": "bildner",
+   "name": "Bildner",
+   "lng": -72.285966,
+   "lat": 43.707224,
+   "pin": "name",
+   "osm": "way/298417217",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 9.8
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 8.6
+    }
+   }
+  },
+  {
+   "dormId": "rauner",
+   "name": "Rauner",
+   "lng": -72.285811,
+   "lat": 43.70744,
+   "pin": "name",
+   "osm": "way/298417218",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 10.6
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 9.4
+    }
+   }
+  },
+  {
+   "dormId": "byrne-ii",
+   "name": "Byrne II",
+   "lng": -72.286722,
+   "lat": 43.707364,
+   "pin": "name",
+   "osm": "way/262950850",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 10.5
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 4
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 9.3
+    }
+   }
+  },
+  {
+   "dormId": "goldstein",
+   "name": "Goldstein",
+   "lng": -72.286576,
+   "lat": 43.7076,
+   "pin": "name",
+   "osm": "way/262950849",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 11.1
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 9.9
+    }
+   }
+  },
+  {
+   "dormId": "thomas",
+   "name": "Thomas",
+   "lng": -72.286343,
+   "lat": 43.707792,
+   "pin": "name",
+   "osm": "way/262950848",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 11.5
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 5
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 10.3
+    }
+   }
+  },
+  {
+   "dormId": "ripley",
+   "name": "Ripley",
+   "lng": -72.285756,
+   "lat": 43.704114,
+   "pin": "name",
+   "osm": "way/262926523",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 4
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 6.6
+    }
+   }
+  },
+  {
+   "dormId": "woodward",
+   "name": "Woodward",
+   "lng": -72.285487,
+   "lat": 43.70427,
+   "pin": "name",
+   "osm": "way/262926524",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 4.1
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 6.8
+    }
+   }
+  },
+  {
+   "dormId": "smith",
+   "name": "Smith",
+   "lng": -72.285183,
+   "lat": 43.704256,
+   "pin": "name",
+   "osm": "way/262926525",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 4.3
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 6.9
+    }
+   }
+  },
+  {
+   "dormId": "2-north-park",
+   "name": "2 North Park",
+   "lng": -72.282774,
+   "lat": 43.704527,
+   "pin": "manual",
+   "osm": "way/584967836",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 3.6
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 8.6
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 10.1
+    }
+   }
+  },
+  {
+   "dormId": "richardson",
+   "name": "Richardson",
+   "lng": -72.286636,
+   "lat": 43.704722,
+   "pin": "name",
+   "osm": "way/49791107",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 5.2
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 4.1
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 6
+    }
+   }
+  },
+  {
+   "dormId": "wheeler",
+   "name": "Wheeler",
+   "lng": -72.287273,
+   "lat": 43.705078,
+   "pin": "name",
+   "osm": "way/49796725",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 5.9
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 2.3
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 5.5
+    }
+   }
+  },
+  {
+   "dormId": "channing-cox",
+   "name": "Channing Cox",
+   "lng": -72.296127,
+   "lat": 43.703624,
+   "pin": "name",
+   "osm": "way/549364455",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 15.1
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 9.8
+    },
+    "dining": {
+     "placeId": "byrne-dining-hall",
+     "minutes": 4.7
+    }
+   }
+  },
+  {
+   "dormId": "maxwell",
+   "name": "Maxwell",
+   "lng": -72.295521,
+   "lat": 43.703735,
+   "pin": "name",
+   "osm": "way/549364456",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 14.4
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 9
+    },
+    "dining": {
+     "placeId": "byrne-dining-hall",
+     "minutes": 3.9
+    }
+   }
+  },
+  {
+   "dormId": "russo",
+   "name": "Russo",
+   "lng": -72.293829,
+   "lat": 43.702891,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "alumni-gymnasium",
+     "minutes": 11.3
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 7.9
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 5
+    }
+   }
+  },
+  {
+   "dormId": "ledyard",
+   "name": "Ledyard",
+   "lng": -72.282793,
+   "lat": 43.70411,
+   "pin": "manual",
+   "osm": "way/48466721",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 3.1
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 8.4
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 9.1
+    }
+   }
+  },
+  {
+   "dormId": "7-ivy-lane",
+   "name": "7 Ivy Lane",
+   "lng": -72.283404,
+   "lat": 43.70479,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 4.6
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 7.2
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 8.7
+    }
+   }
+  },
+  {
+   "dormId": "9-ivy-lane",
+   "name": "9 Ivy Lane",
+   "lng": -72.283417,
+   "lat": 43.705082,
+   "pin": "manual",
+   "osm": "way/49797507",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 5.7
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 7.5
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 9
+    }
+   }
+  },
+  {
+   "dormId": "8-north-park",
+   "name": "8 North Park",
+   "lng": -72.283489,
+   "lat": 43.705561,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 6.5
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 9.8
+    }
+   }
+  },
+  {
+   "dormId": "10-north-park",
+   "name": "10 North Park",
+   "lng": -72.283153,
+   "lat": 43.705555,
+   "pin": "manual",
+   "osm": "way/49797519",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 5.1
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 9.4
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 10.9
+    }
+   }
+  },
+  {
+   "dormId": "12-north-park",
+   "name": "12 North Park",
+   "lng": -72.282985,
+   "lat": 43.705575,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 4.9
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 9.3
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 10.8
+    }
+   }
+  },
+  {
+   "dormId": "14-north-park",
+   "name": "14 North Park",
+   "lng": -72.283261,
+   "lat": 43.705606,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 6.4
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 8.2
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 9.7
+    }
+   }
+  },
+  {
+   "dormId": "16-north-park",
+   "name": "16 North Park",
+   "lng": -72.283477,
+   "lat": 43.706049,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 7.2
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 9
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 10.5
+    }
+   }
+  },
+  {
+   "dormId": "18-north-park",
+   "name": "18 North Park",
+   "lng": -72.283106,
+   "lat": 43.70597,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 5.5
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 9.8
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 11.4
+    }
+   }
+  },
+  {
+   "dormId": "20-north-park",
+   "name": "20 North Park",
+   "lng": -72.283204,
+   "lat": 43.706348,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 6.2
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 9.3
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 12.1
+    }
+   }
+  },
+  {
+   "dormId": "22-north-park",
+   "name": "22 North Park",
+   "lng": -72.283442,
+   "lat": 43.706694,
+   "pin": "manual",
+   "osm": "way/49797530",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 8.3
+    },
+    "library": {
+     "placeId": "berry-library",
+     "minutes": 9.1
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 11.6
+    }
+   }
+  },
+  {
+   "dormId": "24-north-park",
+   "name": "24 North Park",
+   "lng": -72.283939,
+   "lat": 43.707132,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "berry-sports-center",
+     "minutes": 8.5
+    },
+    "library": {
+     "placeId": "baker-library",
+     "minutes": 8.9
+    },
+    "dining": {
+     "placeId": "class-of-1953-commons",
+     "minutes": 10.8
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "leverone-field-house",
+   "name": "Leverone Field House",
+   "short": "Leverone Field House",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.282712,
+   "lat": 43.700912,
+   "osm": "way/48465833"
+  },
+  {
+   "id": "alumni-gymnasium",
+   "name": "Alumni Gymnasium",
+   "short": "Alumni Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.283925,
+   "lat": 43.702767,
+   "osm": "way/48467159"
+  },
+  {
+   "id": "graham-indoor-practice-facility",
+   "name": "Graham Indoor Practice Facility",
+   "short": "Graham Indoor Practice Facility",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.278225,
+   "lat": 43.701025,
+   "osm": "way/783709299"
+  },
+  {
+   "id": "hopkins-center-for-the-arts",
+   "name": "Hopkins Center for the Arts",
+   "short": "Hopkins Center for the Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The Hop"
+   ],
+   "lng": -72.288089,
+   "lat": 43.70165,
+   "osm": "way/262924499"
+  },
+  {
+   "id": "thompson-arena",
+   "name": "Thompson Arena",
+   "short": "Thompson Arena",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.280157,
+   "lat": 43.701037,
+   "osm": "way/48465832"
+  },
+  {
+   "id": "class-of-1978-life-sciences-center",
+   "name": "Class of 1978 Life Sciences Center",
+   "short": "Class of 1978 Life Sciences Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.283931,
+   "lat": 43.709017,
+   "osm": "way/262950856"
+  },
+  {
+   "id": "alexis-boss-tennis-center",
+   "name": "Alexis Boss Tennis Center",
+   "short": "Alexis Boss Tennis Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.279053,
+   "lat": 43.70109,
+   "osm": "way/48465831"
+  },
+  {
+   "id": "berry-sports-center",
+   "name": "Berry Sports Center",
+   "short": "Berry Sports Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.282832,
+   "lat": 43.702993,
+   "osm": "way/48465836"
+  },
+  {
+   "id": "baker-library",
+   "name": "Baker Library",
+   "short": "Baker Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.288672,
+   "lat": 43.705229,
+   "osm": "way/295888783"
+  },
+  {
+   "id": "class-of-1982-engineering-and-computer-science-center",
+   "name": "Class of 1982 Engineering and Computer Science Center",
+   "short": "Class of 1982 Engineering and Computer Science Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.294594,
+   "lat": 43.703594,
+   "osm": "way/693100230"
+  },
+  {
+   "id": "black-family-visual-arts-center",
+   "name": "Black Family Visual Arts Center",
+   "short": "Black Family Visual Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.286861,
+   "lat": 43.701344,
+   "osm": "way/262924500"
+  },
+  {
+   "id": "cummings-hall",
+   "name": "Cummings Hall",
+   "short": "Cummings Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.294846,
+   "lat": 43.704569,
+   "osm": "way/262950526"
+  },
+  {
+   "id": "hood-museum-of-art",
+   "name": "Hood Museum of Art",
+   "short": "Hood Museum of Art",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.287322,
+   "lat": 43.701819,
+   "osm": "way/837183231"
+  },
+  {
+   "id": "class-of-1953-commons",
+   "name": "Class of 1953 Commons",
+   "short": "Class of 1953 Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "FoCo"
+   ],
+   "lng": -72.290914,
+   "lat": 43.703086,
+   "osm": "way/262912597"
+  },
+  {
+   "id": "wilder-hall",
+   "name": "Wilder Hall",
+   "short": "Wilder Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.28624,
+   "lat": 43.705296,
+   "osm": "way/49796550"
+  },
+  {
+   "id": "remsen-medical-sciences-building",
+   "name": "Remsen Medical Sciences Building",
+   "short": "Remsen Medical Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.28521,
+   "lat": 43.708483,
+   "osm": "way/262950854"
+  },
+  {
+   "id": "berry-library",
+   "name": "Berry Library",
+   "short": "Berry Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.288638,
+   "lat": 43.705701,
+   "osm": "way/295888784"
+  },
+  {
+   "id": "burke-laboratory",
+   "name": "Burke Laboratory",
+   "short": "Burke Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.286005,
+   "lat": 43.706287,
+   "osm": "way/49796547"
+  },
+  {
+   "id": "maclean-engineering-sciences-center",
+   "name": "MacLean Engineering Sciences Center",
+   "short": "MacLean Engineering Sciences Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.294847,
+   "lat": 43.704222,
+   "osm": "way/262950527"
+  },
+  {
+   "id": "sudikoff-hall",
+   "name": "Sudikoff Hall",
+   "short": "Sudikoff Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.287089,
+   "lat": 43.706699,
+   "osm": "way/49796201"
+  },
+  {
+   "id": "fairchild-physical-sciences-center",
+   "name": "Fairchild Physical Sciences Center",
+   "short": "Fairchild Physical Sciences Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.286317,
+   "lat": 43.705838,
+   "osm": "way/49795632"
+  },
+  {
+   "id": "collis-student-center",
+   "name": "Collis Student Center",
+   "short": "Collis Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.289965,
+   "lat": 43.702773,
+   "osm": "way/261796580"
+  },
+  {
+   "id": "kemeny-hall",
+   "name": "Kemeny Hall",
+   "short": "Kemeny Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.288839,
+   "lat": 43.70647,
+   "osm": "way/49797072"
+  },
+  {
+   "id": "moore-psychology-building",
+   "name": "Moore Psychology Building",
+   "short": "Moore Psychology Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.287959,
+   "lat": 43.707289,
+   "osm": "way/48465839"
+  },
+  {
+   "id": "irving-institute",
+   "name": "Irving Institute",
+   "short": "Irving Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.294765,
+   "lat": 43.705015,
+   "osm": "way/910299376"
+  },
+  {
+   "id": "murdough-center",
+   "name": "Murdough Center",
+   "short": "Murdough Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.295061,
+   "lat": 43.705087,
+   "osm": "way/262950532"
+  },
+  {
+   "id": "vail-medical-sciences-building",
+   "name": "Vail Medical Sciences Building",
+   "short": "Vail Medical Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.284832,
+   "lat": 43.708954,
+   "osm": "way/262950855"
+  },
+  {
+   "id": "floren-varsity-house",
+   "name": "Floren Varsity House",
+   "short": "Floren Varsity House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.283439,
+   "lat": 43.701543,
+   "osm": "way/295951349"
+  },
+  {
+   "id": "reilly-pavilion",
+   "name": "Reilly Pavilion",
+   "short": "Reilly Pavilion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.278596,
+   "lat": 43.699719,
+   "osm": "way/783709294"
+  },
+  {
+   "id": "steele-hall",
+   "name": "Steele Hall",
+   "short": "Steele Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.286753,
+   "lat": 43.705717,
+   "osm": "way/49796549"
+  },
+  {
+   "id": "buchanan-hall",
+   "name": "Buchanan Hall",
+   "short": "Buchanan Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.293291,
+   "lat": 43.705428,
+   "osm": "way/262950538"
+  },
+  {
+   "id": "carpenter-hall",
+   "name": "Carpenter Hall",
+   "short": "Carpenter Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.289204,
+   "lat": 43.705492,
+   "osm": "way/295888785"
+  },
+  {
+   "id": "byrne-dining-hall",
+   "name": "Byrne Dining Hall",
+   "short": "Byrne Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.295172,
+   "lat": 43.70543,
+   "osm": "way/262950533"
+  },
+  {
+   "id": "silsby-hall",
+   "name": "Silsby Hall",
+   "short": "Silsby Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.290041,
+   "lat": 43.705497,
+   "osm": "way/262915142"
+  },
+  {
+   "id": "rockefeller-center",
+   "name": "Rockefeller Center",
+   "short": "Rockefeller Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.290135,
+   "lat": 43.705785,
+   "osm": "way/262915144"
+  },
+  {
+   "id": "haldeman-center",
+   "name": "Haldeman Center",
+   "short": "Haldeman Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.289149,
+   "lat": 43.706179,
+   "osm": "way/49797073"
+  },
+  {
+   "id": "dartmouth-hall",
+   "name": "Dartmouth Hall",
+   "short": "Dartmouth Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.287056,
+   "lat": 43.703759,
+   "osm": "way/48784540"
+  },
+  {
+   "id": "webster-hall",
+   "name": "Webster Hall",
+   "short": "Webster Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Rauner Library"
+   ],
+   "lng": -72.288166,
+   "lat": 43.70445,
+   "osm": "way/48784527"
+  },
+  {
+   "id": "mcnutt-hall",
+   "name": "McNutt Hall",
+   "short": "McNutt Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.289893,
+   "lat": 43.70356,
+   "osm": "way/261793901"
+  },
+  {
+   "id": "blunt-alumni-center",
+   "name": "Blunt Alumni Center",
+   "short": "Blunt Alumni Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.289998,
+   "lat": 43.704689,
+   "osm": "way/261795980"
+  },
+  {
+   "id": "anonymous-hall",
+   "name": "Anonymous Hall",
+   "short": "Anonymous Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.284953,
+   "lat": 43.70811,
+   "osm": "way/262950853"
+  },
+  {
+   "id": "tuck-hall",
+   "name": "Tuck Hall",
+   "short": "Tuck Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.294212,
+   "lat": 43.705594,
+   "osm": "way/262950536"
+  },
+  {
+   "id": "wilson-hall",
+   "name": "Wilson Hall",
+   "short": "Wilson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.287347,
+   "lat": 43.702307,
+   "osm": "way/262924497"
+  },
+  {
+   "id": "robinson-hall",
+   "name": "Robinson Hall",
+   "short": "Robinson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Robo"
+   ],
+   "lng": -72.289876,
+   "lat": 43.70312,
+   "osm": "way/262912562"
+  },
+  {
+   "id": "parkhurst-hall",
+   "name": "Parkhurst Hall",
+   "short": "Parkhurst Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.289928,
+   "lat": 43.704047,
+   "osm": "way/261795166"
+  },
+  {
+   "id": "reed-hall",
+   "name": "Reed Hall",
+   "short": "Reed Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.28742,
+   "lat": 43.70309,
+   "osm": "way/48784525"
+  },
+  {
+   "id": "triangle-house",
+   "name": "Triangle House",
+   "short": "Triangle House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.283009,
+   "lat": 43.705038,
+   "osm": "way/262948886"
+  },
+  {
+   "id": "sanborn-house",
+   "name": "Sanborn House",
+   "short": "Sanborn House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.289183,
+   "lat": 43.704759,
+   "osm": "way/262950521"
+  },
+  {
+   "id": "davis-varsity-house",
+   "name": "Davis Varsity House",
+   "short": "Davis Varsity House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.284553,
+   "lat": 43.702312,
+   "osm": "way/48467160"
+  },
+  {
+   "id": "sarner-underground",
+   "name": "Sarner Underground",
+   "short": "Sarner Underground",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.290974,
+   "lat": 43.702889,
+   "osm": "way/464030136"
+  },
+  {
+   "id": "carson-hall",
+   "name": "Carson Hall",
+   "short": "Carson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.289095,
+   "lat": 43.705828,
+   "osm": "way/295888786"
+  },
+  {
+   "id": "kellogg-hall",
+   "name": "Kellogg Hall",
+   "short": "Kellogg Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.285995,
+   "lat": 43.708381,
+   "osm": "way/262950851"
+  },
+  {
+   "id": "house-center-a",
+   "name": "House Center A",
+   "short": "House Center A",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.285112,
+   "lat": 43.702415,
+   "osm": "way/543822430"
+  },
+  {
+   "id": "dartmouth-outing-club-house",
+   "name": "Dartmouth Outing Club House",
+   "short": "Dartmouth Outing Club House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "DOC House"
+   ],
+   "lng": -72.285876,
+   "lat": 43.712639,
+   "osm": "way/203196159"
+  },
+  {
+   "id": "winfred-raven-house",
+   "name": "Winfred-Raven House",
+   "short": "Winfred-Raven House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.287501,
+   "lat": 43.707082,
+   "osm": "way/49795634"
+  },
+  {
+   "id": "house-center-b",
+   "name": "House Center B",
+   "short": "House Center B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.29097,
+   "lat": 43.70452,
+   "osm": "way/584967697"
+  },
+  {
+   "id": "woodbury-hall",
+   "name": "Woodbury Hall",
+   "short": "Woodbury Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.293793,
+   "lat": 43.705495,
+   "osm": "way/262950537"
+  },
+  {
+   "id": "bissell-cohen-lounge",
+   "name": "Bissell/Cohen Lounge",
+   "short": "Bissell/Cohen Lounge",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.291182,
+   "lat": 43.707503,
+   "osm": "way/262922777"
+  },
+  {
+   "id": "thornton-hall",
+   "name": "Thornton Hall",
+   "short": "Thornton Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.287067,
+   "lat": 43.703397,
+   "osm": "way/48784524"
+  },
+  {
+   "id": "wentworth-hall",
+   "name": "Wentworth Hall",
+   "short": "Wentworth Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.287061,
+   "lat": 43.704116,
+   "osm": "way/48784528"
+  },
+  {
+   "id": "chase-hall",
+   "name": "Chase Hall",
+   "short": "Chase Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.294576,
+   "lat": 43.70548,
+   "osm": "way/262950535"
+  },
+  {
+   "id": "bartlett-hall",
+   "name": "Bartlett Hall",
+   "short": "Bartlett Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.286836,
+   "lat": 43.703049,
+   "osm": "way/48784526"
+  },
+  {
+   "id": "stell-hall",
+   "name": "Stell Hall",
+   "short": "Stell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.294804,
+   "lat": 43.705573,
+   "osm": "way/262950534"
+  },
+  {
+   "id": "native-american-house",
+   "name": "Native American House",
+   "short": "Native American House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.288633,
+   "lat": 43.707289,
+   "osm": "way/721286482"
+  },
+  {
+   "id": "sherman-house",
+   "name": "Sherman House",
+   "short": "Sherman House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.288328,
+   "lat": 43.707588,
+   "osm": "way/48465840"
+  },
+  {
+   "id": "choate-house",
+   "name": "Choate House",
+   "short": "Choate House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.289484,
+   "lat": 43.707099,
+   "osm": "way/262922785"
+  },
+  {
+   "id": "guarini-institute-for-international-education",
+   "name": "Guarini Institute for International Education",
+   "short": "Guarini Institute for International Education",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.286763,
+   "lat": 43.706455,
+   "osm": "way/49796200"
+  },
+  {
+   "id": "hallgarten-hall",
+   "name": "Hallgarten Hall",
+   "short": "Hallgarten Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.286166,
+   "lat": 43.702327,
+   "osm": "way/295768758"
+  },
+  {
+   "id": "parker-house",
+   "name": "Parker House",
+   "short": "Parker House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.287562,
+   "lat": 43.70673,
+   "osm": "way/49796198"
+  },
+  {
+   "id": "north-hall",
+   "name": "North Hall",
+   "short": "North Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Sustainable Living Center"
+   ],
+   "lng": -72.289813,
+   "lat": 43.707196,
+   "osm": "way/49797504"
+  },
+  {
+   "id": "hyphen-lounge",
+   "name": "Hyphen Lounge",
+   "short": "Hyphen Lounge",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.29084,
+   "lat": 43.705532,
+   "osm": "way/838851884"
+  },
+  {
+   "id": "shattuck-observatory",
+   "name": "Shattuck Observatory",
+   "short": "Shattuck Observatory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.285607,
+   "lat": 43.705071,
+   "osm": "way/49796726"
+  },
+  {
+   "id": "chilcott-auditorium",
+   "name": "Chilcott Auditorium",
+   "short": "Chilcott Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.284679,
+   "lat": 43.708732,
+   "osm": "way/296375896"
+  },
+  {
+   "id": "webster-cottage",
+   "name": "Webster Cottage",
+   "short": "Webster Cottage",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.28984,
+   "lat": 43.706775,
+   "osm": "way/262922783"
+  }
+ ]
+}

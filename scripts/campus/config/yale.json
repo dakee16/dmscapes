@@ -1,0 +1,17 @@
+{
+  "collegeId": "yale",
+  "area": {
+    "osm": "relation/3861723",
+    "bbox": [
+      41.299,
+      -72.94,
+      41.333,
+      -72.912
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/yale.codes.json"
+  }
+}

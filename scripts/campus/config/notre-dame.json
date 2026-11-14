@@ -1,0 +1,16 @@
+{
+  "collegeId": "notre-dame",
+  "area": {
+    "osm": "relation/16066037",
+    "bbox": [
+      41.69106,
+      -86.25058,
+      41.71611,
+      -86.21683
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Notre Dame's registrar Building Codes page (registrar.nd.edu/courses-classrooms/buildings-and-classrooms/classroom-information/) needs a Notre Dame login, the A-Z directory's only public code PDF (campuscodes.pdf) lists study-abroad campus codes, and the public map.nd.edu placemark list has names only (checked 2026-11-07)."
+}

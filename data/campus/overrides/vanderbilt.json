@@ -1,0 +1,232 @@
+{
+  "places": {
+    "18th-ave-childcare": {
+      "hide": true
+    },
+    "stallworth-child-care": {
+      "hide": true
+    },
+    "medical-child-care": {
+      "hide": true
+    },
+    "childcare": {
+      "hide": true
+    },
+    "wesley-place-retail": {
+      "hide": true
+    },
+    "vanderbilt-village-commercial": {
+      "hide": true
+    },
+    "marriott": {
+      "hide": true
+    },
+    "village-at-vanderbilt-north-tower": {
+      "hide": true
+    },
+    "university-club-of-nashville": {
+      "hide": true
+    },
+    "university-club-of-nashville-7782343": {
+      "hide": true
+    },
+    "1101-condominium": {
+      "hide": true
+    },
+    "mapco": {
+      "hide": true
+    },
+    "suntrust": {
+      "hide": true
+    },
+    "sportsmans-grille": {
+      "hide": true
+    },
+    "2525-west-end": {
+      "hide": true
+    },
+    "office-of-undergraduate-admissions-and-financial-aid": {
+      "hide": true
+    },
+    "office-of-the-university-chaplain-and-religious-life": {
+      "hide": true
+    },
+    "2400e-vanderbilt-place": {
+      "hide": true
+    },
+    "community-partnership-house": {
+      "hide": true
+    },
+    "vu-real-estate": {
+      "hide": true
+    },
+    "2304i-vanderbilt-place": {
+      "hide": true
+    },
+    "cumberland-house": {
+      "hide": true
+    },
+    "2304g-vanderbilt-place": {
+      "hide": true
+    },
+    "rca-label-group": {
+      "hide": true
+    },
+    "american-economic-association": {
+      "hide": true
+    },
+    "ben-schulman-center-for-jewish-life": {
+      "hide": true
+    },
+    "baptist-collegiate-ministries": {
+      "hide": true
+    },
+    "bishop-joseph-johnson-center": {
+      "hide": true
+    },
+    "margaret-cuninggim-womens-center": {
+      "hide": true
+    },
+    "kc-potter-center": {
+      "hide": true
+    },
+    "mcgugin-center": {
+      "hide": true
+    },
+    "brownlee-o-currey-junior-tennis-center": {
+      "hide": true
+    },
+    "va-medical-center": {
+      "hide": true
+    },
+    "medical-center-north": {
+      "hide": true
+    },
+    "the-vanderbilt-clinic": {
+      "hide": true
+    },
+    "vanderbilt-hospital": {
+      "hide": true
+    },
+    "childrens-hospital-at-vanderbilt": {
+      "hide": true
+    },
+    "vanderbilt-stallworth-rehabilitation-hospital": {
+      "hide": true
+    },
+    "vanderbilt-psychiatric-hospital": {
+      "hide": true
+    },
+    "medical-center-east-south-tower": {
+      "hide": true
+    },
+    "medical-center-east-north-tower": {
+      "hide": true
+    },
+    "childrens-hospital-outpatient-clinics": {
+      "hide": true
+    },
+    "vanderbilt-eye-institute": {
+      "hide": true
+    },
+    "zerfoss-health-center": {
+      "hide": true
+    },
+    "veterans-administration": {
+      "hide": true
+    },
+    "vanderbilt-university-psychological-and-counseling-center": {
+      "hide": true
+    },
+    "university-school-of-nashville": {
+      "hide": true
+    },
+    "vanderbilt-university-chancellor-emeritus": {
+      "hide": true
+    },
+    "deans-residence": {
+      "hide": true
+    },
+    "vaughn-home": {
+      "hide": true
+    },
+    "zeta-tau-alpha-house": {
+      "hide": true
+    },
+    "branscomb-quad-market": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "18th-ave-childcare": "Childcare centre, not somewhere classes happen.",
+    "stallworth-child-care": "Childcare centre, not somewhere classes happen.",
+    "medical-child-care": "Childcare centre, not somewhere classes happen.",
+    "childcare": "Childcare centre, not somewhere classes happen.",
+    "wesley-place-retail": "Apartments, shops, a bank, a hotel, a restaurant or a club, not somewhere classes happen.",
+    "vanderbilt-village-commercial": "Apartments, shops, a bank, a hotel, a restaurant or a club, not somewhere classes happen.",
+    "marriott": "Apartments, shops, a bank, a hotel, a restaurant or a club, not somewhere classes happen.",
+    "village-at-vanderbilt-north-tower": "Apartments, shops, a bank, a hotel, a restaurant or a club, not somewhere classes happen.",
+    "university-club-of-nashville": "Apartments, shops, a bank, a hotel, a restaurant or a club, not somewhere classes happen.",
+    "university-club-of-nashville-7782343": "Apartments, shops, a bank, a hotel, a restaurant or a club, not somewhere classes happen.",
+    "1101-condominium": "Apartments, shops, a bank, a hotel, a restaurant or a club, not somewhere classes happen.",
+    "mapco": "Apartments, shops, a bank, a hotel, a restaurant or a club, not somewhere classes happen.",
+    "suntrust": "Apartments, shops, a bank, a hotel, a restaurant or a club, not somewhere classes happen.",
+    "sportsmans-grille": "Apartments, shops, a bank, a hotel, a restaurant or a club, not somewhere classes happen.",
+    "2525-west-end": "Administrative offices, not somewhere classes happen.",
+    "office-of-undergraduate-admissions-and-financial-aid": "Administrative offices, not somewhere classes happen.",
+    "office-of-the-university-chaplain-and-religious-life": "Administrative offices, not somewhere classes happen.",
+    "2400e-vanderbilt-place": "Administrative offices, not somewhere classes happen.",
+    "community-partnership-house": "Administrative offices, not somewhere classes happen.",
+    "vu-real-estate": "Administrative offices, not somewhere classes happen.",
+    "2304i-vanderbilt-place": "Administrative offices, not somewhere classes happen.",
+    "cumberland-house": "Administrative offices, not somewhere classes happen.",
+    "2304g-vanderbilt-place": "Administrative offices, not somewhere classes happen.",
+    "rca-label-group": "An outside organisation's office on campus land, not somewhere classes happen.",
+    "american-economic-association": "An outside organisation's office on campus land, not somewhere classes happen.",
+    "ben-schulman-center-for-jewish-life": "A student centre or ministry, not somewhere classes happen.",
+    "baptist-collegiate-ministries": "A student centre or ministry, not somewhere classes happen.",
+    "bishop-joseph-johnson-center": "A student centre or ministry, not somewhere classes happen.",
+    "margaret-cuninggim-womens-center": "A student centre or ministry, not somewhere classes happen.",
+    "kc-potter-center": "A student centre or ministry, not somewhere classes happen.",
+    "mcgugin-center": "Varsity athletics facility, not a class building or student gym.",
+    "brownlee-o-currey-junior-tennis-center": "Varsity athletics facility, not a class building or student gym.",
+    "va-medical-center": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "medical-center-north": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "the-vanderbilt-clinic": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "vanderbilt-hospital": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "childrens-hospital-at-vanderbilt": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "vanderbilt-stallworth-rehabilitation-hospital": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "vanderbilt-psychiatric-hospital": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "medical-center-east-south-tower": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "medical-center-east-north-tower": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "childrens-hospital-outpatient-clinics": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "vanderbilt-eye-institute": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "zerfoss-health-center": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "veterans-administration": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "vanderbilt-university-psychological-and-counseling-center": "Hospital, clinic or health-centre building, not somewhere undergraduate classes happen.",
+    "university-school-of-nashville": "A separate K-12 school, not part of Vanderbilt.",
+    "vanderbilt-university-chancellor-emeritus": "A residence, not somewhere classes happen.",
+    "deans-residence": "A residence, not somewhere classes happen.",
+    "vaughn-home": "A residence, not somewhere classes happen.",
+    "zeta-tau-alpha-house": "Greek chapter house, not somewhere classes happen.",
+    "branscomb-quad-market": "A convenience market, not a dining hall or class building.",
+    "mctyeire-international-house": "McTyeire International House is in McTyeire Hall: OSM's 'McTyeire Hall' (way/261715430)."
+  },
+  "halls": {
+    "mctyeire-international-house": {
+      "pin": [
+        -86.803248,
+        36.143764
+      ]
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "mctyeire-international-house -> featheringill-jacobs-hall"
+      ],
+      "maxRatio": 5,
+      "why": "McTyeire Hall's mapped doors face south and the walk reaches Featheringill / Jacobs Hall at its north side; the engineering block between them has no mapped path through, so walks go round its east side."
+    }
+  ]
+}

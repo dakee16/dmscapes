@@ -1,0 +1,16 @@
+{
+  "collegeId": "unc",
+  "area": {
+    "osm": "relation/2882828",
+    "bbox": [
+      35.89335,
+      -79.09232,
+      35.91646,
+      -79.02692
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class building-code list could be read: the Registrar's classroom building-locations page (https://registrar.unc.edu/classrooms-building-locations/) answered 'Page not found' on 2026-11-07, and the facilities BuildingFeatures layer (https://gismaps.unc.edu/arcgis/rest/services/BuildingFeatures/FeatureServer/0) carries facility numbers (e.g. 086 for Caudill Labs), not the codes class schedules use."
+}

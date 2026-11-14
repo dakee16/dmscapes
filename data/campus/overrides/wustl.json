@@ -1,0 +1,31 @@
+{
+  "halls": {
+    "thomas-eliot-b-house": {
+      "pin": [
+        -90.313067,
+        38.644464
+      ]
+    }
+  },
+  "codes": {
+    "153": "way/44078280",
+    "193": "way/111861293",
+    "247": "way/111861297",
+    "206": "way/697027368",
+    "202": "way/44076320"
+  },
+  "places": {
+    "jack-c-taylor-library": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "thomas-eliot-b-house": "OSM way/543845047 'Eliot B House', beside Thomas H. Eliot House (A) on the South 40.",
+    "153": "Umrath Hall (academic, OSM way/44078280); the name rule had set it aside because the South 40's Umrath House shares its core name.",
+    "193": "Mallinckrodt Center-Danforth is OSM's 'Mallinckrodt Student Center', way/111861293.",
+    "247": "McDonnell Hall - Danforth is OSM's 'McDonnell Hall', way/111861297.",
+    "206": "Stephen F And Camilla T Brauer Hall is OSM's 'Brauer Hall', way/697027368.",
+    "202": "Whitaker Hall For Biomedical Engineering is OSM's 'Whitaker Hall', way/44076320.",
+    "jack-c-taylor-library": "Jack C. Taylor Library (6800 Wydown Blvd) is the former Fontbonne University library, south of Wydown; it is not on WashU's Danforth building list."
+  }
+}

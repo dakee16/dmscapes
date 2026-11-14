@@ -1,0 +1,664 @@
+{
+ "collegeId": "georgetown",
+ "generatedAt": "2026-11-08T17:16:50.255Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/georgetown.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -77.0784,
+  38.90605,
+  -77.06944,
+  38.91192
+ ],
+ "halls": [
+  {
+   "dormId": "copley-hall",
+   "name": "Copley Hall",
+   "lng": -77.072765,
+   "lat": 38.90825,
+   "pin": "name",
+   "osm": "way/67521464",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "yates-field-house",
+     "minutes": 5.9
+    },
+    "library": {
+     "placeId": "lauinger-library",
+     "minutes": 3.1
+    },
+    "dining": {
+     "placeId": "leo-odonovan-dining-hall",
+     "minutes": 6.4
+    }
+   }
+  },
+  {
+   "dormId": "darnall-hall",
+   "name": "Darnall Hall",
+   "lng": -77.073651,
+   "lat": 38.911302,
+   "pin": "name",
+   "osm": "way/105823168",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "yates-field-house",
+     "minutes": 7.4
+    },
+    "library": {
+     "placeId": "dahlgren-medical-library",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "leo-odonovan-dining-hall",
+     "minutes": 9.8
+    }
+   }
+  },
+  {
+   "dormId": "harbin-hall",
+   "name": "Harbin Hall",
+   "lng": -77.074307,
+   "lat": 38.908029,
+   "pin": "name",
+   "osm": "way/67521502",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mcdonough-arena",
+     "minutes": 4.8
+    },
+    "library": {
+     "placeId": "lauinger-library",
+     "minutes": 4.2
+    },
+    "dining": {
+     "placeId": "leo-odonovan-dining-hall",
+     "minutes": 4.7
+    }
+   }
+  },
+  {
+   "dormId": "new-south",
+   "name": "New South",
+   "lng": -77.074256,
+   "lat": 38.906431,
+   "pin": "name",
+   "osm": "relation/1067783",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "john-r-thompson-jr-intercollegiate-athletic-center",
+     "minutes": 4.3
+    },
+    "library": {
+     "placeId": "lauinger-library",
+     "minutes": 2.6
+    },
+    "dining": {
+     "placeId": "leo-odonovan-dining-hall",
+     "minutes": 2.6
+    }
+   }
+  },
+  {
+   "dormId": "reynolds-hall",
+   "name": "Reynolds Hall",
+   "lng": -77.075921,
+   "lat": 38.906975,
+   "pin": "name",
+   "osm": "way/67521444",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mcdonough-arena",
+     "minutes": 3
+    },
+    "library": {
+     "placeId": "lauinger-library",
+     "minutes": 4.7
+    },
+    "dining": {
+     "placeId": "leo-odonovan-dining-hall",
+     "minutes": 2.4
+    }
+   }
+  },
+  {
+   "dormId": "village-a",
+   "name": "Village A",
+   "lng": -77.07301,
+   "lat": 38.906388,
+   "pin": "name",
+   "osm": "relation/4095985",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "john-r-thompson-jr-intercollegiate-athletic-center",
+     "minutes": 5.8
+    },
+    "library": {
+     "placeId": "lauinger-library",
+     "minutes": 1.5
+    },
+    "dining": {
+     "placeId": "leo-odonovan-dining-hall",
+     "minutes": 3.5
+    }
+   }
+  },
+  {
+   "dormId": "alumni-square",
+   "name": "Alumni Square",
+   "lng": -77.071043,
+   "lat": 38.90685,
+   "pin": "name",
+   "osm": "relation/4096247",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "john-r-thompson-jr-intercollegiate-athletic-center",
+     "minutes": 8.1
+    },
+    "library": {
+     "placeId": "lauinger-library",
+     "minutes": 2
+    },
+    "dining": {
+     "placeId": "leo-odonovan-dining-hall",
+     "minutes": 6.4
+    }
+   }
+  },
+  {
+   "dormId": "village-c-west",
+   "name": "Village C West",
+   "lng": -77.074504,
+   "lat": 38.90692,
+   "pin": "name",
+   "osm": "relation/4095984",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "john-r-thompson-jr-intercollegiate-athletic-center",
+     "minutes": 4.6
+    },
+    "library": {
+     "placeId": "lauinger-library",
+     "minutes": 3
+    },
+    "dining": {
+     "placeId": "leo-odonovan-dining-hall",
+     "minutes": 2.9
+    }
+   }
+  },
+  {
+   "dormId": "village-c-east",
+   "name": "Village C East",
+   "lng": -77.074074,
+   "lat": 38.90702,
+   "pin": "name",
+   "osm": "relation/4095983",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "john-r-thompson-jr-intercollegiate-athletic-center",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "lauinger-library",
+     "minutes": 2.6
+    },
+    "dining": {
+     "placeId": "leo-odonovan-dining-hall",
+     "minutes": 3.4
+    }
+   }
+  },
+  {
+   "dormId": "lxr",
+   "name": "LXR",
+   "lng": -77.069445,
+   "lat": 38.906051,
+   "pin": "name",
+   "osm": "relation/14766301",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "john-r-thompson-jr-intercollegiate-athletic-center",
+     "minutes": 10.6
+    },
+    "library": {
+     "placeId": "lauinger-library",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "leo-odonovan-dining-hall",
+     "minutes": 7.6
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "yates-field-house",
+   "name": "Yates Field House",
+   "short": "Yates Field House",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.076839,
+   "lat": 38.909279,
+   "osm": "way/67521362"
+  },
+  {
+   "id": "leavey-center",
+   "name": "Leavey Center",
+   "short": "Leavey Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.074911,
+   "lat": 38.909954,
+   "osm": "way/67521384"
+  },
+  {
+   "id": "pre-clinical-science-building",
+   "name": "Pre-Clinical Science Building",
+   "short": "Pre-Clinical Science Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.077054,
+   "lat": 38.911329,
+   "osm": "relation/1067784"
+  },
+  {
+   "id": "bunn-intercultural-center",
+   "name": "Bunn Intercultural Center",
+   "short": "Bunn Intercultural Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.073521,
+   "lat": 38.908888,
+   "osm": "way/67521495"
+  },
+  {
+   "id": "mcdonough-arena",
+   "name": "McDonough Arena",
+   "short": "McDonough Arena",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.07743,
+   "lat": 38.907639,
+   "osm": "way/67521460"
+  },
+  {
+   "id": "john-r-thompson-jr-intercollegiate-athletic-center",
+   "name": "John R. Thompson Jr. Intercollegiate Athletic Center",
+   "short": "John R. Thompson Jr. Intercollegiate Athletic Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.07665,
+   "lat": 38.907209,
+   "osm": "way/438873573"
+  },
+  {
+   "id": "rafik-b-hariri-building",
+   "name": "Rafik B. Hariri Building",
+   "short": "Rafik B. Hariri Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.075535,
+   "lat": 38.909133,
+   "osm": "way/67521359"
+  },
+  {
+   "id": "lauinger-library",
+   "name": "Lauinger Library",
+   "short": "Lauinger Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.072137,
+   "lat": 38.906426,
+   "osm": "way/67521482"
+  },
+  {
+   "id": "medical-and-dental-building",
+   "name": "Medical and Dental Building",
+   "short": "Medical and Dental Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.076942,
+   "lat": 38.911869,
+   "osm": "way/67521416"
+  },
+  {
+   "id": "building-d",
+   "name": "Building D",
+   "short": "Building D",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.078401,
+   "lat": 38.911922,
+   "osm": "way/67521386"
+  },
+  {
+   "id": "new-research-building",
+   "name": "New Research Building",
+   "short": "New Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.078088,
+   "lat": 38.911052,
+   "osm": "way/67521463"
+  },
+  {
+   "id": "hayden-hall",
+   "name": "Hayden Hall",
+   "short": "Hayden Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.073249,
+   "lat": 38.910382,
+   "osm": "way/1446994135"
+  },
+  {
+   "id": "healey-family-student-center",
+   "name": "Healey Family Student Center",
+   "short": "Healey Family Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.074021,
+   "lat": 38.906324,
+   "osm": "relation/13470010"
+  },
+  {
+   "id": "reiss-science-building",
+   "name": "Reiss Science Building",
+   "short": "Reiss Science Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.073479,
+   "lat": 38.909528,
+   "osm": "way/67521443"
+  },
+  {
+   "id": "leo-odonovan-dining-hall",
+   "name": "Leo O'Donovan Dining Hall",
+   "short": "Leo O'Donovan Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.075163,
+   "lat": 38.906414,
+   "osm": "way/67521438"
+  },
+  {
+   "id": "regents-hall",
+   "name": "Regents Hall",
+   "short": "Regents Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.074264,
+   "lat": 38.90919,
+   "osm": "way/203390217"
+  },
+  {
+   "id": "healy-hall",
+   "name": "Healy Hall",
+   "short": "Healy Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.072734,
+   "lat": 38.907308,
+   "osm": "way/444583709"
+  },
+  {
+   "id": "davis-performing-arts-center",
+   "name": "Davis Performing Arts Center",
+   "short": "Davis Performing Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.073404,
+   "lat": 38.907952,
+   "osm": "way/67521476"
+  },
+  {
+   "id": "st-marys-hall",
+   "name": "St. Mary's Hall",
+   "short": "St. Mary's Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.073579,
+   "lat": 38.91184,
+   "osm": "way/67521529"
+  },
+  {
+   "id": "basic-science-building",
+   "name": "Basic Science Building",
+   "short": "Basic Science Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.077806,
+   "lat": 38.911463,
+   "osm": "way/67521458"
+  },
+  {
+   "id": "white-gravenor-hall",
+   "name": "White-Gravenor Hall",
+   "short": "White-Gravenor Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.072314,
+   "lat": 38.908954,
+   "osm": "way/67521509"
+  },
+  {
+   "id": "poulton-hall",
+   "name": "Poulton Hall",
+   "short": "Poulton Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.071221,
+   "lat": 38.908414,
+   "osm": "way/66346570"
+  },
+  {
+   "id": "new-north",
+   "name": "New North",
+   "short": "New North",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.073876,
+   "lat": 38.907549,
+   "osm": "way/444583711"
+  },
+  {
+   "id": "research-resource-facility",
+   "name": "Research Resource Facility",
+   "short": "Research Resource Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.078324,
+   "lat": 38.911541,
+   "osm": "way/67521480"
+  },
+  {
+   "id": "walsh-building",
+   "name": "Walsh Building",
+   "short": "Walsh Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.070031,
+   "lat": 38.906189,
+   "osm": "way/66347165"
+  },
+  {
+   "id": "byrne-hall",
+   "name": "Byrne Hall",
+   "short": "Byrne Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.073657,
+   "lat": 38.910638,
+   "osm": "way/1446991003"
+  },
+  {
+   "id": "dahlgren-medical-library",
+   "name": "Dahlgren Medical Library",
+   "short": "Dahlgren Medical Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.076966,
+   "lat": 38.911241,
+   "osm": "way/67521421"
+  },
+  {
+   "id": "old-north",
+   "name": "Old North",
+   "short": "Old North",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.07321,
+   "lat": 38.907538,
+   "osm": "way/444583712"
+  },
+  {
+   "id": "ryan-hall",
+   "name": "Ryan Hall",
+   "short": "Ryan Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.073193,
+   "lat": 38.906924,
+   "osm": "way/444583713"
+  },
+  {
+   "id": "gervase-building",
+   "name": "Gervase Building",
+   "short": "Gervase Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.073595,
+   "lat": 38.906809,
+   "osm": "way/442492553"
+  },
+  {
+   "id": "mortara-building",
+   "name": "Mortara Building",
+   "short": "Mortara Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.070507,
+   "lat": 38.906535,
+   "osm": "way/66347616"
+  },
+  {
+   "id": "maguire-hall",
+   "name": "Maguire Hall",
+   "short": "Maguire Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.072949,
+   "lat": 38.907008,
+   "osm": "way/444583710"
+  },
+  {
+   "id": "medical-and-dental-annex",
+   "name": "Medical and Dental Annex",
+   "short": "Medical and Dental Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.077261,
+   "lat": 38.911867,
+   "osm": "way/67521440"
+  },
+  {
+   "id": "georgetown-university-astronomical-observatory",
+   "name": "Georgetown University Astronomical Observatory",
+   "short": "Georgetown University Astronomical Observatory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.077229,
+   "lat": 38.908334,
+   "osm": "way/67521365"
+  },
+  {
+   "id": "simms-lihault-house",
+   "name": "Simms-Lihault House",
+   "short": "Simms-Lihault House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.070775,
+   "lat": 38.907536,
+   "osm": "way/66347953"
+  },
+  {
+   "id": "john-hurley-house",
+   "name": "John Hurley House",
+   "short": "John Hurley House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.071126,
+   "lat": 38.907835,
+   "osm": "way/66348080"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{
+  "collegeId": "fsu",
+  "area": {
+    "osm": "relation/18587875",
+    "bbox": [
+      30.43562,
+      -84.30644,
+      30.449,
+      -84.28846
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "FSU's registrar pages give no building key, and Facilities' 'Building / Site Lists' workbook and site list (facilities.fsu.edu/space/informationLists.php, depts/planningMan/Documents/Lists) now return 404; the PDC Building Portal (forms.pdc.fsu.edu/portal/building/?bldg=NNNN) shows one building per page, with no list."
+}

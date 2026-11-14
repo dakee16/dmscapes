@@ -1,0 +1,118 @@
+{
+  "places": {
+    "center-for-community-c4c": {
+      "kind": "dining"
+    },
+    "carlson-gymnasium": {
+      "kind": "academic"
+    },
+    "chautauqua-dining-hall": {
+      "hide": true
+    },
+    "folsom-field": {
+      "hide": true
+    },
+    "balch-fieldhouse": {
+      "hide": true
+    },
+    "champions-center": {
+      "hide": true
+    },
+    "dal-ward-athletic-center": {
+      "hide": true
+    },
+    "basketball-and-volleyball-practice-facility": {
+      "hide": true
+    },
+    "stadium-ticket-building": {
+      "hide": true
+    },
+    "limelight-boulder": {
+      "hide": true
+    },
+    "east-district-energy-plant": {
+      "hide": true
+    },
+    "university-of-colorado": {
+      "hide": true
+    },
+    "grounds-and-recycling-operations-center": {
+      "hide": true
+    },
+    "environmental-health-and-safety-center": {
+      "hide": true
+    },
+    "regent-administrative-building": {
+      "hide": true
+    },
+    "university-admin-center": {
+      "hide": true
+    },
+    "university-admin-center-annex": {
+      "hide": true
+    },
+    "wardenburg-health-center": {
+      "hide": true
+    },
+    "university-club": {
+      "hide": true
+    },
+    "cu-art-museum": {
+      "hide": true
+    },
+    "family-housing-childrens-center": {
+      "hide": true
+    },
+    "laundry": {
+      "hide": true
+    },
+    "marine-court-mail": {
+      "hide": true
+    },
+    "folsom-bike-station": {
+      "hide": true
+    },
+    "koenig-alumni-center": {
+      "hide": true
+    },
+    "page-foundation-center": {
+      "hide": true
+    },
+    "native-american-rights-fund": {
+      "hide": true
+    },
+    "national-indian-law-library": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "center-for-community-c4c": "The Center for Community holds the C4C Dining Center, CU Boulder's main dining hall (colorado.edu/living/dining); its name doesn't say dining.",
+    "carlson-gymnasium": "Carlson Gym holds Integrative Physiology classrooms and labs (Facilities code CARL); the Student Recreation Center is the student gym, so Carlson ranks as a class building.",
+    "chautauqua-dining-hall": "The Chautauqua Dining Hall is a restaurant at Chautauqua Park west of campus, not a CU dining hall (Facilities code DHLL names the leased building).",
+    "folsom-field": "The football stadium, a varsity venue, not a class building (Facilities codes STAD/STSB/FHPB).",
+    "balch-fieldhouse": "Varsity athletics fieldhouse beside Folsom Field, not a class building or student gym.",
+    "champions-center": "Varsity athletics offices and training centre, not a class building.",
+    "dal-ward-athletic-center": "Academic-support centre for varsity athletes, not a class building or student gym.",
+    "basketball-and-volleyball-practice-facility": "Varsity practice gym (Facilities code EVNT), not a student gym.",
+    "stadium-ticket-building": "The athletics ticket office, not somewhere classes happen.",
+    "limelight-boulder": "The Limelight hotel and conference centre (Facilities code CCH), not a class building.",
+    "east-district-energy-plant": "A utility plant, not somewhere classes happen.",
+    "university-of-colorado": "OSM names this building only 'University of Colorado'; Facilities code WDEP is the West District Energy Plant, a utility building.",
+    "grounds-and-recycling-operations-center": "Facilities grounds and recycling operations, a service building.",
+    "environmental-health-and-safety-center": "Environmental Health and Safety offices, a service building.",
+    "regent-administrative-building": "Administrative offices (registrar, bursar), not classrooms.",
+    "university-admin-center": "University administration offices, not classrooms.",
+    "university-admin-center-annex": "University administration annex (temporary building 19), not classrooms.",
+    "wardenburg-health-center": "The student health clinic, not somewhere classes happen.",
+    "university-club": "The faculty and staff club, not a class building.",
+    "cu-art-museum": "The CU Art Museum (OSM tourism=museum, no Facilities code of its own), part of the Visual Arts Complex which stays.",
+    "family-housing-childrens-center": "Childcare for family housing, not somewhere classes happen.",
+    "laundry": "The Newton Court family-housing laundry, a service building.",
+    "marine-court-mail": "The Marine Court family-housing mail room; the Facilities footprints for Marine Court A-M (apartments) word-matched to it.",
+    "folsom-bike-station": "A bike repair station, not a building classes happen in.",
+    "koenig-alumni-center": "Alumni centre, not somewhere classes happen.",
+    "page-foundation-center": "CU Foundation offices, not somewhere classes happen.",
+    "native-american-rights-fund": "The Native American Rights Fund's own offices on Broadway, not a university building.",
+    "national-indian-law-library": "The Native American Rights Fund's law library on Broadway, not a university library; Norlin is the campus library."
+  }
+}

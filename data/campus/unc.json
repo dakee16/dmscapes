@@ -1,0 +1,2325 @@
+{
+ "collegeId": "unc",
+ "generatedAt": "2026-11-08T08:18:00.090Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/unc.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -79.05598,
+  35.89934,
+  -79.03259,
+  35.91557
+ ],
+ "halls": [
+  {
+   "dormId": "alderman",
+   "name": "Alderman",
+   "lng": -79.048217,
+   "lat": 35.91476,
+   "pin": "name",
+   "osm": "way/44341396",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 6.7
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 7.7
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 13.5
+    }
+   }
+  },
+  {
+   "dormId": "cobb",
+   "name": "Cobb",
+   "lng": -79.044711,
+   "lat": 35.912361,
+   "pin": "name",
+   "osm": "way/44342528",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 5.9
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 4.5
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 11.2
+    }
+   }
+  },
+  {
+   "dormId": "winston",
+   "name": "Winston",
+   "lng": -79.046114,
+   "lat": 35.910347,
+   "pin": "name",
+   "osm": "way/44343394",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 3.6
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 1.3
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 7.2
+    }
+   }
+  },
+  {
+   "dormId": "connor",
+   "name": "Connor",
+   "lng": -79.046065,
+   "lat": 35.910873,
+   "pin": "name",
+   "osm": "relation/6029058",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 3.4
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 2
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 7.9
+    }
+   }
+  },
+  {
+   "dormId": "alexander",
+   "name": "Alexander",
+   "lng": -79.046327,
+   "lat": 35.911345,
+   "pin": "name",
+   "osm": "way/44342790",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 3.2
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 2.6
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 8.4
+    }
+   }
+  },
+  {
+   "dormId": "everett",
+   "name": "Everett",
+   "lng": -79.046364,
+   "lat": 35.912604,
+   "pin": "name",
+   "osm": "way/44342517",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 4.5
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 10.7
+    }
+   }
+  },
+  {
+   "dormId": "graham",
+   "name": "Graham",
+   "lng": -79.046666,
+   "lat": 35.913014,
+   "pin": "name",
+   "osm": "way/44410598",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 4.6
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 11
+    }
+   }
+  },
+  {
+   "dormId": "grimes",
+   "name": "Grimes",
+   "lng": -79.048461,
+   "lat": 35.912437,
+   "pin": "name",
+   "osm": "way/44342573",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 2.9
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 5.3
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 10.3
+    }
+   }
+  },
+  {
+   "dormId": "joyner",
+   "name": "Joyner",
+   "lng": -79.046732,
+   "lat": 35.911741,
+   "pin": "name",
+   "osm": "way/44410590",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 3.5
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 3
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 8.9
+    }
+   }
+  },
+  {
+   "dormId": "kenan",
+   "name": "Kenan",
+   "lng": -79.047497,
+   "lat": 35.914587,
+   "pin": "name",
+   "osm": "way/44341408",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 7
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 13.8
+    }
+   }
+  },
+  {
+   "dormId": "lewis",
+   "name": "Lewis",
+   "lng": -79.046936,
+   "lat": 35.912383,
+   "pin": "name",
+   "osm": "way/44342607",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 3.8
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 4.2
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 10
+    }
+   }
+  },
+  {
+   "dormId": "mangum",
+   "name": "Mangum",
+   "lng": -79.04754,
+   "lat": 35.91202,
+   "pin": "name",
+   "osm": "way/44342740",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 2.8
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 4
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 9.7
+    }
+   }
+  },
+  {
+   "dormId": "manly",
+   "name": "Manly",
+   "lng": -79.047911,
+   "lat": 35.912657,
+   "pin": "name",
+   "osm": "way/44342455",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 3.6
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 10.7
+    }
+   }
+  },
+  {
+   "dormId": "mcclinton",
+   "name": "McClinton",
+   "lng": -79.047153,
+   "lat": 35.912825,
+   "pin": "name",
+   "osm": "way/44342282",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 4
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 4.8
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 10.6
+    }
+   }
+  },
+  {
+   "dormId": "mciver",
+   "name": "McIver",
+   "lng": -79.04781,
+   "lat": 35.914042,
+   "pin": "name",
+   "osm": "way/44341680",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 5.7
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 6.7
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 12.5
+    }
+   }
+  },
+  {
+   "dormId": "old-east",
+   "name": "Old East",
+   "lng": -79.050814,
+   "lat": 35.912358,
+   "pin": "name",
+   "osm": "way/44342593",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 3.8
+    },
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 7.1
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 10.9
+    }
+   }
+  },
+  {
+   "dormId": "old-west",
+   "name": "Old West",
+   "lng": -79.051783,
+   "lat": 35.911988,
+   "pin": "name",
+   "osm": "way/44342744",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 4.1
+    },
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 7.6
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 11.4
+    }
+   }
+  },
+  {
+   "dormId": "ruffin-jr",
+   "name": "Ruffin Jr.",
+   "lng": -79.048094,
+   "lat": 35.911814,
+   "pin": "manual",
+   "osm": "way/44342830",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 2.1
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 9.5
+    }
+   }
+  },
+  {
+   "dormId": "spencer",
+   "name": "Spencer",
+   "lng": -79.049338,
+   "lat": 35.914939,
+   "pin": "name",
+   "osm": "way/44341299",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 7.4
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 8.7
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 14.5
+    }
+   }
+  },
+  {
+   "dormId": "stacy",
+   "name": "Stacy",
+   "lng": -79.046068,
+   "lat": 35.912983,
+   "pin": "name",
+   "osm": "way/44342278",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "walter-royal-davis-library",
+     "minutes": 5.2
+    },
+    "gym": {
+     "placeId": "woollen-gymnasium",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 11.3
+    }
+   }
+  },
+  {
+   "dormId": "craige",
+   "name": "Craige",
+   "lng": -79.045087,
+   "lat": 35.902713,
+   "pin": "name",
+   "osm": "way/44344621",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 12.1
+    },
+    "gym": {
+     "placeId": "rams-head-recreation-center",
+     "minutes": 6.3
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 6.3
+    }
+   }
+  },
+  {
+   "dormId": "ehringhaus",
+   "name": "Ehringhaus",
+   "lng": -79.04287,
+   "lat": 35.904372,
+   "pin": "name",
+   "osm": "way/44343880",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 11.5
+    },
+    "gym": {
+     "placeId": "rams-head-recreation-center",
+     "minutes": 6.1
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 5.4
+    }
+   }
+  },
+  {
+   "dormId": "hinton-james",
+   "name": "Hinton James",
+   "lng": -79.043235,
+   "lat": 35.902361,
+   "pin": "name",
+   "osm": "way/44344714",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 13.8
+    },
+    "gym": {
+     "placeId": "koury-natatorium",
+     "minutes": 7.2
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 7.4
+    }
+   }
+  },
+  {
+   "dormId": "parker",
+   "name": "Parker",
+   "lng": -79.04437,
+   "lat": 35.906957,
+   "pin": "name",
+   "osm": "way/44342540",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 7.1
+    },
+    "gym": {
+     "placeId": "rams-head-recreation-center",
+     "minutes": 4
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 3.3
+    }
+   }
+  },
+  {
+   "dormId": "teague",
+   "name": "Teague",
+   "lng": -79.045011,
+   "lat": 35.907674,
+   "pin": "name",
+   "osm": "way/44342277",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 5.9
+    },
+    "gym": {
+     "placeId": "fetzer-gymnasium",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 4.2
+    }
+   }
+  },
+  {
+   "dormId": "avery",
+   "name": "Avery",
+   "lng": -79.044232,
+   "lat": 35.906207,
+   "pin": "name",
+   "osm": "way/44342803",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 8.9
+    },
+    "gym": {
+     "placeId": "rams-head-recreation-center",
+     "minutes": 3.6
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 2.9
+    }
+   }
+  },
+  {
+   "dormId": "craige-north",
+   "name": "Craige North",
+   "lng": -79.045803,
+   "lat": 35.903476,
+   "pin": "name",
+   "osm": "way/44344457",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 10.4
+    },
+    "gym": {
+     "placeId": "rams-head-recreation-center",
+     "minutes": 4.8
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 4.8
+    }
+   }
+  },
+  {
+   "dormId": "hardin",
+   "name": "Hardin",
+   "lng": -79.046011,
+   "lat": 35.904016,
+   "pin": "name",
+   "osm": "way/44344232",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 9.6
+    },
+    "gym": {
+     "placeId": "rams-head-recreation-center",
+     "minutes": 4
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 4
+    }
+   }
+  },
+  {
+   "dormId": "horton",
+   "name": "Horton",
+   "lng": -79.043779,
+   "lat": 35.903109,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 13.1
+    },
+    "gym": {
+     "placeId": "rams-head-recreation-center",
+     "minutes": 6.7
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 6.7
+    }
+   }
+  },
+  {
+   "dormId": "koury",
+   "name": "Koury",
+   "lng": -79.043478,
+   "lat": 35.903672,
+   "pin": "manual",
+   "osm": "way/44344375",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 11.9
+    },
+    "gym": {
+     "placeId": "rams-head-recreation-center",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 5.8
+    }
+   }
+  },
+  {
+   "dormId": "morrison",
+   "name": "Morrison",
+   "lng": -79.046202,
+   "lat": 35.904515,
+   "pin": "name",
+   "osm": "way/44343798",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 9
+    },
+    "gym": {
+     "placeId": "rams-head-recreation-center",
+     "minutes": 2.6
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 2.6
+    }
+   }
+  },
+  {
+   "dormId": "carmichael",
+   "name": "Carmichael",
+   "lng": -79.045858,
+   "lat": 35.908227,
+   "pin": "name",
+   "osm": "way/44341973",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 5
+    },
+    "gym": {
+     "placeId": "fetzer-gymnasium",
+     "minutes": 3.4
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "ram-village-1",
+   "name": "Ram Village 1",
+   "lng": -79.045953,
+   "lat": 35.901913,
+   "pin": "name",
+   "osm": "way/96059134",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 12.4
+    },
+    "gym": {
+     "placeId": "rams-head-recreation-center",
+     "minutes": 6.7
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 6.7
+    }
+   }
+  },
+  {
+   "dormId": "ram-village-2",
+   "name": "Ram Village 2",
+   "lng": -79.046788,
+   "lat": 35.901944,
+   "pin": "name",
+   "osm": "way/96059140",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 13.2
+    },
+    "gym": {
+     "placeId": "rams-head-recreation-center",
+     "minutes": 7.5
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 7.5
+    }
+   }
+  },
+  {
+   "dormId": "ram-village-3",
+   "name": "Ram Village 3",
+   "lng": -79.046346,
+   "lat": 35.90243,
+   "pin": "name",
+   "osm": "way/96059144",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 12.1
+    },
+    "gym": {
+     "placeId": "rams-head-recreation-center",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 6.4
+    }
+   }
+  },
+  {
+   "dormId": "ram-village-5",
+   "name": "Ram Village 5",
+   "lng": -79.042383,
+   "lat": 35.901583,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 15.9
+    },
+    "gym": {
+     "placeId": "koury-natatorium",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 9.4
+    }
+   }
+  },
+  {
+   "dormId": "taylor-hall",
+   "name": "Taylor",
+   "lng": -79.043495,
+   "lat": 35.90164,
+   "pin": "name",
+   "osm": "way/96059135",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "louis-round-wilson-library",
+     "minutes": 14.9
+    },
+    "gym": {
+     "placeId": "koury-natatorium",
+     "minutes": 5.3
+    },
+    "dining": {
+     "placeId": "chase-dining-hall",
+     "minutes": 8.5
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "steven-d-bell-hall",
+   "name": "Steven. D Bell Hall",
+   "short": "Steven. D Bell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.04721,
+   "lat": 35.900741,
+   "osm": "way/1445819159"
+  },
+  {
+   "id": "walter-royal-davis-library",
+   "name": "Walter Royal Davis Library",
+   "short": "Walter Royal Davis Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.047918,
+   "lat": 35.910979,
+   "osm": "way/44343213"
+  },
+  {
+   "id": "fetzer-gymnasium",
+   "name": "Fetzer Gymnasium",
+   "short": "Fetzer Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.047042,
+   "lat": 35.909148,
+   "osm": "way/44341541"
+  },
+  {
+   "id": "van-hecke-wettach-hall",
+   "name": "Van Hecke-Wettach Hall",
+   "short": "Van Hecke-Wettach Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The Rotunda",
+    "UNC School of Law"
+   ],
+   "lng": -79.042356,
+   "lat": 35.908442,
+   "osm": "relation/318179"
+  },
+  {
+   "id": "issac-m-taylor-medical-biomolecular-research-building",
+   "name": "Issac M. Taylor Medical Biomolecular Research Building",
+   "short": "Issac M. Taylor Medical Biomolecular Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.05511,
+   "lat": 35.902946,
+   "osm": "way/44344463"
+  },
+  {
+   "id": "carmichael-auditorium",
+   "name": "Carmichael Auditorium",
+   "short": "Carmichael Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.045238,
+   "lat": 35.909619,
+   "osm": "way/29299251"
+  },
+  {
+   "id": "frank-porter-graham-student-union",
+   "name": "Frank Porter Graham Student Union",
+   "short": "Student Union",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Student Union"
+   ],
+   "lng": -79.047505,
+   "lat": 35.910397,
+   "osm": "relation/324644"
+  },
+  {
+   "id": "graham-student-union",
+   "name": "Graham Student Union",
+   "short": "Graham Student Union",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.047531,
+   "lat": 35.910315,
+   "osm": "way/1420775578"
+  },
+  {
+   "id": "mccoll-building",
+   "name": "McColl Building",
+   "short": "McColl Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.045997,
+   "lat": 35.899677,
+   "osm": "way/44664431"
+  },
+  {
+   "id": "woollen-gymnasium",
+   "name": "Woollen Gymnasium",
+   "short": "Woollen Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.045847,
+   "lat": 35.90949,
+   "osm": "way/36570363"
+  },
+  {
+   "id": "knapp-sanders-building",
+   "name": "Knapp-Sanders Building",
+   "short": "Knapp-Sanders Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.042047,
+   "lat": 35.91017,
+   "osm": "relation/324645"
+  },
+  {
+   "id": "lineberger-cancer-center",
+   "name": "Lineberger Cancer Center",
+   "short": "Lineberger Cancer Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053561,
+   "lat": 35.903023,
+   "osm": "way/44344526"
+  },
+  {
+   "id": "genetic-medicine-research-building",
+   "name": "Genetic Medicine Research Building",
+   "short": "Genetic Medicine Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.054357,
+   "lat": 35.901333,
+   "osm": "way/95494611"
+  },
+  {
+   "id": "paul-green-theatre",
+   "name": "Paul Green Theatre",
+   "short": "Paul Green Theatre",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Center for Dramatic Art"
+   ],
+   "lng": -79.04384,
+   "lat": 35.91191,
+   "osm": "way/44342713"
+  },
+  {
+   "id": "rosenau-hall",
+   "name": "Rosenau Hall",
+   "short": "Rosenau Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053891,
+   "lat": 35.905999,
+   "osm": "relation/324642"
+  },
+  {
+   "id": "koury-natatorium",
+   "name": "Koury Natatorium",
+   "short": "Koury Natatorium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.042814,
+   "lat": 35.899544,
+   "osm": "way/44345668"
+  },
+  {
+   "id": "genome-sciences-building",
+   "name": "Genome Sciences Building",
+   "short": "Genome Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.05093,
+   "lat": 35.907574,
+   "osm": "way/130764237"
+  },
+  {
+   "id": "louis-round-wilson-library",
+   "name": "Louis Round Wilson Library",
+   "short": "Louis Round Wilson Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.049718,
+   "lat": 35.909446,
+   "osm": "way/30677827"
+  },
+  {
+   "id": "old-clinic",
+   "name": "Old Clinic",
+   "short": "Old Clinic",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051873,
+   "lat": 35.905506,
+   "osm": "relation/19034367"
+  },
+  {
+   "id": "phillips-hall",
+   "name": "Phillips Hall",
+   "short": "Phillips Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.052656,
+   "lat": 35.910639,
+   "osm": "way/44343443"
+  },
+  {
+   "id": "marsico-hall",
+   "name": "Marsico Hall",
+   "short": "Marsico Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053923,
+   "lat": 35.902531,
+   "osm": "way/163322568"
+  },
+  {
+   "id": "epa-building",
+   "name": "EPA Building",
+   "short": "EPA Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.055352,
+   "lat": 35.901674,
+   "osm": "way/44344976"
+  },
+  {
+   "id": "thurston-bowles-building",
+   "name": "Thurston Bowles Building",
+   "short": "Thurston Bowles Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.054442,
+   "lat": 35.903796,
+   "osm": "way/526344951"
+  },
+  {
+   "id": "w-lowry-and-susan-s-caudill-labs",
+   "name": "W. Lowry and Susan S. Caudill Labs",
+   "short": "W. Lowry and Susan S. Caudill Labs",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Caudill Labs"
+   ],
+   "lng": -79.050626,
+   "lat": 35.909209,
+   "osm": "way/37707138"
+  },
+  {
+   "id": "chase-dining-hall",
+   "name": "Chase Dining Hall",
+   "short": "Chase Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.045603,
+   "lat": 35.905982,
+   "osm": "way/157963563"
+  },
+  {
+   "id": "michael-hooker-research-center",
+   "name": "Michael Hooker Research Center",
+   "short": "Michael Hooker Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.054311,
+   "lat": 35.905377,
+   "osm": "way/182050211"
+  },
+  {
+   "id": "mcgavran-greenberg-hall",
+   "name": "McGavran-Greenberg Hall",
+   "short": "McGavran-Greenberg Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.05445,
+   "lat": 35.906176,
+   "osm": "way/182050212"
+  },
+  {
+   "id": "beard-hall",
+   "name": "Beard Hall",
+   "short": "Beard Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053428,
+   "lat": 35.907094,
+   "osm": "way/44963127"
+  },
+  {
+   "id": "medical-school-wings",
+   "name": "Medical School Wings",
+   "short": "Medical School Wings",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.049686,
+   "lat": 35.905605,
+   "osm": "way/44342901"
+  },
+  {
+   "id": "hill-hall",
+   "name": "Hill Hall",
+   "short": "Hill Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053198,
+   "lat": 35.91259,
+   "osm": "way/44342379"
+  },
+  {
+   "id": "carroll-hall",
+   "name": "Carroll Hall",
+   "short": "Carroll Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051897,
+   "lat": 35.910236,
+   "osm": "way/44343762"
+  },
+  {
+   "id": "rams-head-recreation-center",
+   "name": "Ram's Head Recreation Center",
+   "short": "Ram's Head Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.046345,
+   "lat": 35.905779,
+   "osm": "way/157963564"
+  },
+  {
+   "id": "koury-oral-health-sciences-building",
+   "name": "Koury Oral Health Sciences Building",
+   "short": "Koury Oral Health Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053699,
+   "lat": 35.904664,
+   "osm": "relation/19003078"
+  },
+  {
+   "id": "hanes-art-center",
+   "name": "Hanes Art Center",
+   "short": "Hanes Art Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.054392,
+   "lat": 35.912392,
+   "osm": "way/44342546"
+  },
+  {
+   "id": "taylor-student-health-center",
+   "name": "Taylor Student Health Center",
+   "short": "Taylor Student Health Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.049494,
+   "lat": 35.905911,
+   "osm": "way/44411451"
+  },
+  {
+   "id": "morehead-planetarium",
+   "name": "Morehead Planetarium",
+   "short": "Morehead Planetarium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.050513,
+   "lat": 35.913908,
+   "osm": "way/44341651"
+  },
+  {
+   "id": "bondurant-hall",
+   "name": "Bondurant Hall",
+   "short": "Bondurant Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.052348,
+   "lat": 35.906118,
+   "osm": "way/44051358"
+  },
+  {
+   "id": "house-undergraduate-library",
+   "name": "House Undergraduate Library",
+   "short": "House Undergraduate Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.04905,
+   "lat": 35.909777,
+   "osm": "way/30677763"
+  },
+  {
+   "id": "lenoir-hall",
+   "name": "Lenoir Hall",
+   "short": "Lenoir Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.048786,
+   "lat": 35.910589,
+   "osm": "way/44343534"
+  },
+  {
+   "id": "bioinformatics-building",
+   "name": "Bioinformatics Building",
+   "short": "Bioinformatics Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.05332,
+   "lat": 35.901638,
+   "osm": "way/44345021"
+  },
+  {
+   "id": "peabody-hall",
+   "name": "Peabody Hall",
+   "short": "Peabody Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053577,
+   "lat": 35.91055,
+   "osm": "way/44343553"
+  },
+  {
+   "id": "global-center",
+   "name": "Global Center",
+   "short": "Global Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.054085,
+   "lat": 35.907838,
+   "osm": "way/30718557"
+  },
+  {
+   "id": "memorial-hall",
+   "name": "Memorial Hall",
+   "short": "Memorial Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.052001,
+   "lat": 35.911124,
+   "osm": "way/36573629"
+  },
+  {
+   "id": "allen-education-center",
+   "name": "Allen Education Center",
+   "short": "Allen Education Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.032591,
+   "lat": 35.899341,
+   "osm": "way/44143230"
+  },
+  {
+   "id": "chapman-hall",
+   "name": "Chapman Hall",
+   "short": "Chapman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.052559,
+   "lat": 35.910043,
+   "osm": "way/157963562"
+  },
+  {
+   "id": "roper-hall",
+   "name": "Roper Hall",
+   "short": "Roper Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051458,
+   "lat": 35.906292,
+   "osm": "way/1379890284"
+  },
+  {
+   "id": "mary-ellen-jones-building",
+   "name": "Mary Ellen Jones Building",
+   "short": "Mary Ellen Jones Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Faculty Laboratory Office Building"
+   ],
+   "lng": -79.053435,
+   "lat": 35.90363,
+   "osm": "way/44344377"
+  },
+  {
+   "id": "burnett-womack-building",
+   "name": "Burnett Womack Building",
+   "short": "Burnett Womack Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.05222,
+   "lat": 35.904905,
+   "osm": "way/677550715"
+  },
+  {
+   "id": "its-manning",
+   "name": "ITS Manning",
+   "short": "ITS Manning",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.048322,
+   "lat": 35.903374,
+   "osm": "way/84244323"
+  },
+  {
+   "id": "davie-hall",
+   "name": "Davie Hall",
+   "short": "Davie Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.049494,
+   "lat": 35.912779,
+   "osm": "way/30756092"
+  },
+  {
+   "id": "sitterson-hall",
+   "name": "Sitterson Hall",
+   "short": "Sitterson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Joseph Carlyle Sitterson Hall"
+   ],
+   "lng": -79.05327,
+   "lat": 35.90997,
+   "osm": "way/128331926"
+  },
+  {
+   "id": "stone-center",
+   "name": "Stone Center",
+   "short": "Stone Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.050129,
+   "lat": 35.907876,
+   "osm": "way/30677844"
+  },
+  {
+   "id": "carrington-hall",
+   "name": "Carrington Hall",
+   "short": "Carrington Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051734,
+   "lat": 35.906712,
+   "osm": "way/44051214"
+  },
+  {
+   "id": "unc-student-stores",
+   "name": "UNC Student Stores",
+   "short": "UNC Student Stores",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Josephus Daniels Student Stores"
+   ],
+   "lng": -79.048369,
+   "lat": 35.909818,
+   "osm": "way/30684026"
+  },
+  {
+   "id": "wilson-hall",
+   "name": "Wilson Hall",
+   "short": "Wilson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051888,
+   "lat": 35.907992,
+   "osm": "way/44410585"
+  },
+  {
+   "id": "swain-hall",
+   "name": "Swain Hall",
+   "short": "Swain Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053694,
+   "lat": 35.91147,
+   "osm": "way/44342984"
+  },
+  {
+   "id": "macnider-hall",
+   "name": "MacNider Hall",
+   "short": "MacNider Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.052601,
+   "lat": 35.905464,
+   "osm": "way/44051370"
+  },
+  {
+   "id": "student-recreation-center",
+   "name": "Student Recreation Center",
+   "short": "Student Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.047443,
+   "lat": 35.90927,
+   "osm": "way/36570706"
+  },
+  {
+   "id": "student-academic-services-building-north",
+   "name": "Student Academic Services Building North",
+   "short": "Student Academic Services Building North",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.044737,
+   "lat": 35.904422,
+   "osm": "way/44687811"
+  },
+  {
+   "id": "murray-hall",
+   "name": "Murray Hall",
+   "short": "Murray Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051729,
+   "lat": 35.909602,
+   "osm": "way/128331924"
+  },
+  {
+   "id": "dey-hall",
+   "name": "Dey Hall",
+   "short": "Dey Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.050753,
+   "lat": 35.909839,
+   "osm": "way/44344055"
+  },
+  {
+   "id": "manning-hall",
+   "name": "Manning Hall",
+   "short": "Manning Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.049187,
+   "lat": 35.911282,
+   "osm": "way/33850350"
+  },
+  {
+   "id": "brinkhous-bullitt-building",
+   "name": "Brinkhous-Bullitt Building",
+   "short": "Brinkhous-Bullitt Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051703,
+   "lat": 35.905918,
+   "osm": "way/44343008"
+  },
+  {
+   "id": "kerr-banks-dayton-hall",
+   "name": "Kerr Banks Dayton Hall",
+   "short": "Kerr Banks Dayton Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053798,
+   "lat": 35.906967,
+   "osm": "way/44959632"
+  },
+  {
+   "id": "coker-hall",
+   "name": "Coker Hall",
+   "short": "Coker Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051138,
+   "lat": 35.908184,
+   "osm": "way/44342030"
+  },
+  {
+   "id": "ackland-art-museum",
+   "name": "Ackland Art Museum",
+   "short": "Ackland Art Museum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.054874,
+   "lat": 35.912587,
+   "osm": "way/44342484"
+  },
+  {
+   "id": "tarrson-hall",
+   "name": "Tarrson Hall",
+   "short": "Tarrson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.052985,
+   "lat": 35.904191,
+   "osm": "relation/19003082"
+  },
+  {
+   "id": "hamilton-hall",
+   "name": "Hamilton Hall",
+   "short": "Hamilton Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.048774,
+   "lat": 35.911636,
+   "osm": "way/44342840"
+  },
+  {
+   "id": "tait-turner-kuralt-building",
+   "name": "Tait-Turner-Kuralt Building",
+   "short": "Tait-Turner-Kuralt Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.054239,
+   "lat": 35.907109,
+   "osm": "way/44342522"
+  },
+  {
+   "id": "venable-hall",
+   "name": "Venable Hall",
+   "short": "Venable Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051395,
+   "lat": 35.909702,
+   "osm": "way/128331934"
+  },
+  {
+   "id": "william-rand-kenan-junior-laboratory",
+   "name": "William Rand Kenan Junior Laboratory",
+   "short": "William Rand Kenan Junior Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Kenan Labs"
+   ],
+   "lng": -79.051173,
+   "lat": 35.909009,
+   "osm": "way/44341699"
+  },
+  {
+   "id": "health-science-library",
+   "name": "Health Science Library",
+   "short": "Health Science Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "UNC Health Sciences Library"
+   ],
+   "lng": -79.052902,
+   "lat": 35.905687,
+   "osm": "way/44343192"
+  },
+  {
+   "id": "glaxo-building",
+   "name": "Glaxo Building",
+   "short": "Glaxo Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.05598,
+   "lat": 35.902444,
+   "osm": "way/44344728"
+  },
+  {
+   "id": "morehead-laboratory",
+   "name": "Morehead Laboratory",
+   "short": "Morehead Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Morehead Labs"
+   ],
+   "lng": -79.051777,
+   "lat": 35.908939,
+   "osm": "way/44341749"
+  },
+  {
+   "id": "kenan-music-center",
+   "name": "Kenan Music Center",
+   "short": "Kenan Music Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.05445,
+   "lat": 35.911901,
+   "osm": "way/130524462"
+  },
+  {
+   "id": "mitchell-hall",
+   "name": "Mitchell Hall",
+   "short": "Mitchell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.052266,
+   "lat": 35.907607,
+   "osm": "way/44342057"
+  },
+  {
+   "id": "greenlaw-hall",
+   "name": "Greenlaw Hall",
+   "short": "Greenlaw Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.049264,
+   "lat": 35.910382,
+   "osm": "way/30684020"
+  },
+  {
+   "id": "howell-hall",
+   "name": "Howell Hall",
+   "short": "Howell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.050045,
+   "lat": 35.913349,
+   "osm": "way/44342004"
+  },
+  {
+   "id": "fordham-hall",
+   "name": "Fordham Hall",
+   "short": "Fordham Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051606,
+   "lat": 35.907308,
+   "osm": "way/44342488"
+  },
+  {
+   "id": "brooks-hall",
+   "name": "Brooks Hall",
+   "short": "Brooks Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.045495,
+   "lat": 35.915566,
+   "osm": "way/44341148"
+  },
+  {
+   "id": "stalling-evans-sports-medicine-centre",
+   "name": "Stalling Evans Sports Medicine Centre",
+   "short": "Stalling Evans Sports Medicine Centre",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.046151,
+   "lat": 35.908952,
+   "osm": "way/38876149"
+  },
+  {
+   "id": "gardner-hall",
+   "name": "Gardner Hall",
+   "short": "Gardner Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051002,
+   "lat": 35.910263,
+   "osm": "way/30684055"
+  },
+  {
+   "id": "frank-porter-graham-student-union-772275983",
+   "name": "Frank Porter Graham Student Union",
+   "short": "Frank Porter Graham Student Union",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.047634,
+   "lat": 35.909997,
+   "osm": "way/772275983"
+  },
+  {
+   "id": "murphey-hall",
+   "name": "Murphey Hall",
+   "short": "Murphey Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.049669,
+   "lat": 35.910767,
+   "osm": "way/30684079"
+  },
+  {
+   "id": "caldwell-hall",
+   "name": "Caldwell Hall",
+   "short": "Caldwell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.04906,
+   "lat": 35.912183,
+   "osm": "way/44342661"
+  },
+  {
+   "id": "first-dental-building",
+   "name": "First Dental Building",
+   "short": "First Dental Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Old Dental Building"
+   ],
+   "lng": -79.052734,
+   "lat": 35.905033,
+   "osm": "relation/19003081"
+  },
+  {
+   "id": "carolina-hall",
+   "name": "Carolina Hall",
+   "short": "Carolina Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Hurston Hall",
+    "Saunders Hall"
+   ],
+   "lng": -79.049978,
+   "lat": 35.911299,
+   "osm": "way/44343232"
+  },
+  {
+   "id": "brauer-hall",
+   "name": "Brauer Hall",
+   "short": "Brauer Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "John C. Brauer Hall"
+   ],
+   "lng": -79.053347,
+   "lat": 35.904608,
+   "osm": "relation/19003080"
+  },
+  {
+   "id": "abernathy-hall",
+   "name": "Abernathy Hall",
+   "short": "Abernathy Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.054281,
+   "lat": 35.911456,
+   "osm": "way/44343065"
+  },
+  {
+   "id": "atrium",
+   "name": "Atrium",
+   "short": "Atrium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053263,
+   "lat": 35.904719,
+   "osm": "relation/19003079"
+  },
+  {
+   "id": "bingam-hall",
+   "name": "Bingam Hall",
+   "short": "Bingam Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.049581,
+   "lat": 35.910295,
+   "osm": "way/30684064"
+  },
+  {
+   "id": "hanes-hall",
+   "name": "Hanes Hall",
+   "short": "Hanes Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051306,
+   "lat": 35.910785,
+   "osm": "way/44343511"
+  },
+  {
+   "id": "alumni-hall",
+   "name": "Alumni Hall",
+   "short": "Alumni Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051003,
+   "lat": 35.913201,
+   "osm": "way/44342131"
+  },
+  {
+   "id": "rotc",
+   "name": "ROTC",
+   "short": "ROTC",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.052811,
+   "lat": 35.9091,
+   "osm": "way/44341669"
+  },
+  {
+   "id": "graham-memorial-hall",
+   "name": "Graham Memorial Hall",
+   "short": "Graham Memorial Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051616,
+   "lat": 35.914105,
+   "osm": "way/44341614"
+  },
+  {
+   "id": "bynum-hall",
+   "name": "Bynum Hall",
+   "short": "Bynum Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.049767,
+   "lat": 35.911715,
+   "osm": "way/44342900"
+  },
+  {
+   "id": "hyde-institute-for-humanities",
+   "name": "Hyde Institute for Humanities",
+   "short": "Hyde Institute for Humanities",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Hyde Hall"
+   ],
+   "lng": -79.052862,
+   "lat": 35.913366,
+   "osm": "way/44342001"
+  },
+  {
+   "id": "jackson-hall",
+   "name": "Jackson Hall",
+   "short": "Jackson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.04542,
+   "lat": 35.912689,
+   "osm": "way/44342437"
+  },
+  {
+   "id": "whitehead-hall",
+   "name": "Whitehead Hall",
+   "short": "Whitehead Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053728,
+   "lat": 35.908922,
+   "osm": "way/44341750"
+  },
+  {
+   "id": "south-building",
+   "name": "South Building",
+   "short": "South Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051056,
+   "lat": 35.91176,
+   "osm": "way/44342886"
+  },
+  {
+   "id": "student-academic-services-building-south",
+   "name": "Student Academic Services Building South",
+   "short": "Student Academic Services Building South",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.045001,
+   "lat": 35.904106,
+   "osm": "way/44687810"
+  },
+  {
+   "id": "totten-center",
+   "name": "Totten Center",
+   "short": "Totten Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.03385,
+   "lat": 35.899347,
+   "osm": "way/44345945"
+  },
+  {
+   "id": "pearson-hall",
+   "name": "Pearson Hall",
+   "short": "Pearson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.052444,
+   "lat": 35.912532,
+   "osm": "way/44342542"
+  },
+  {
+   "id": "new-east",
+   "name": "New East",
+   "short": "New East",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.050261,
+   "lat": 35.91271,
+   "osm": "way/30756090"
+  },
+  {
+   "id": "nc-area-health-education-cener",
+   "name": "NC Area Health Education Cener",
+   "short": "NC Area Health Education Cener",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051327,
+   "lat": 35.906966,
+   "osm": "way/44342596"
+  },
+  {
+   "id": "henry-owl-building",
+   "name": "Henry Owl Building",
+   "short": "Henry Owl Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.049665,
+   "lat": 35.912232,
+   "osm": "way/33850373"
+  },
+  {
+   "id": "med-b",
+   "name": "Med. B",
+   "short": "Med. B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.052714,
+   "lat": 35.900632,
+   "osm": "way/44345375"
+  },
+  {
+   "id": "new-west-building",
+   "name": "New West Building",
+   "short": "New West Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.052453,
+   "lat": 35.911881,
+   "osm": "way/44342829"
+  },
+  {
+   "id": "steele-building",
+   "name": "Steele Building",
+   "short": "Steele Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.050362,
+   "lat": 35.911571,
+   "osm": "way/30698512"
+  },
+  {
+   "id": "mary-anne-smith-building",
+   "name": "Mary Anne Smith Building",
+   "short": "Mary Anne Smith Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053235,
+   "lat": 35.911904,
+   "osm": "way/44342812"
+  },
+  {
+   "id": "historic-playmakers-theater",
+   "name": "Historic Playmakers Theater",
+   "short": "Historic Playmakers Theater",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Smith Hall"
+   ],
+   "lng": -79.050442,
+   "lat": 35.911972,
+   "osm": "way/44342800"
+  },
+  {
+   "id": "campus-y",
+   "name": "Campus Y",
+   "short": "Campus Y",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051204,
+   "lat": 35.91138,
+   "osm": "way/44343180"
+  },
+  {
+   "id": "baity-environmental-research-laboratory",
+   "name": "Baity Environmental Research Laboratory",
+   "short": "Baity Environmental Research Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.054685,
+   "lat": 35.90529,
+   "osm": "way/44343529"
+  },
+  {
+   "id": "mccaskill-soccer-center",
+   "name": "McCaskill Soccer Center",
+   "short": "McCaskill Soccer Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.045361,
+   "lat": 35.908948,
+   "osm": "way/867180949"
+  },
+  {
+   "id": "curtis-media-center",
+   "name": "Curtis Media Center",
+   "short": "Curtis Media Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.05216,
+   "lat": 35.910737,
+   "osm": "way/44343570"
+  },
+  {
+   "id": "gerrard-hall",
+   "name": "Gerrard Hall",
+   "short": "Gerrard Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.051574,
+   "lat": 35.911542,
+   "osm": "way/44343093"
+  },
+  {
+   "id": "davie-hall-annex",
+   "name": "Davie Hall Annex",
+   "short": "Davie Hall Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.049556,
+   "lat": 35.913038,
+   "osm": "way/30756093"
+  },
+  {
+   "id": "carolina-veterans-resource-center",
+   "name": "Carolina Veterans Resource Center",
+   "short": "Carolina Veterans Resource Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.048529,
+   "lat": 35.900559,
+   "osm": "way/44345385"
+  },
+  {
+   "id": "medical-school-building-52",
+   "name": "Medical School Building 52",
+   "short": "Medical School Building 52",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.055415,
+   "lat": 35.902432,
+   "osm": "way/44344784"
+  },
+  {
+   "id": "courtyard-cafe",
+   "name": "Courtyard Cafe",
+   "short": "Courtyard Cafe",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ACC Express"
+   ],
+   "lng": -79.05538,
+   "lat": 35.90007,
+   "osm": "way/44345621"
+  },
+  {
+   "id": "pettigrew-hall",
+   "name": "Pettigrew Hall",
+   "short": "Pettigrew Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.052855,
+   "lat": 35.913629,
+   "osm": "way/43379485"
+  },
+  {
+   "id": "vance-hall",
+   "name": "Vance Hall",
+   "short": "Vance Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.052947,
+   "lat": 35.91379,
+   "osm": "way/43379484"
+  },
+  {
+   "id": "battle-hall",
+   "name": "Battle Hall",
+   "short": "Battle Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053077,
+   "lat": 35.913922,
+   "osm": "way/44341765"
+  },
+  {
+   "id": "porthole-building",
+   "name": "Porthole Building",
+   "short": "Porthole Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.054375,
+   "lat": 35.913026,
+   "osm": "way/44342299"
+  },
+  {
+   "id": "evergreen-hall",
+   "name": "Evergreen Hall",
+   "short": "Evergreen Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.053864,
+   "lat": 35.912184,
+   "osm": "way/44342711"
+  }
+ ]
+}

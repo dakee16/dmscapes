@@ -1,0 +1,387 @@
+{
+ "name": "Yale College Programs of Study 2026–2027, Building Abbreviations",
+ "url": "https://catalog.yale.edu/ycps/building-abbreviations/",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "AKW",
+   "name": "Arthur K. Watson Hall"
+  },
+  {
+   "code": "BASS",
+   "name": "Bass Center for Molecular and Structural Biology"
+  },
+  {
+   "code": "BASSLB",
+   "name": "Bass Library"
+  },
+  {
+   "code": "BATTELL",
+   "name": "Battell Chapel"
+  },
+  {
+   "code": "BCMM",
+   "name": "Boyer Center for Molecular Medicine"
+  },
+  {
+   "code": "BCT",
+   "name": "Becton Engineering and Applied Science Center"
+  },
+  {
+   "code": "BF",
+   "name": "Benjamin Franklin College"
+  },
+  {
+   "code": "BK",
+   "name": "Berkeley College"
+  },
+  {
+   "code": "BM",
+   "name": "Charles W. Bingham Hall"
+  },
+  {
+   "code": "BML",
+   "name": "Brady Memorial Laboratory"
+  },
+  {
+   "code": "BR",
+   "name": "Branford College"
+  },
+  {
+   "code": "BRBL",
+   "name": "Beinecke Rare Book and Manuscript Library"
+  },
+  {
+   "code": "BRW35",
+   "name": "35 Broadway"
+  },
+  {
+   "code": "C",
+   "name": "Connecticut Hall"
+  },
+  {
+   "code": "CCAM",
+   "name": "Center for Collaborative Arts and Media"
+  },
+  {
+   "code": "COLL451",
+   "name": "451 College Street"
+  },
+  {
+   "code": "COLL493",
+   "name": "493 College Street"
+  },
+  {
+   "code": "CRB",
+   "name": "Class of 1954 Chemistry Research Building"
+  },
+  {
+   "code": "GEOR350",
+   "name": "250 George Street (Child Study Center)"
+  },
+  {
+   "code": "D",
+   "name": "Durfee Hall"
+  },
+  {
+   "code": "DAVIES",
+   "name": "Davies Auditorium, Becton Center"
+  },
+  {
+   "code": "DC",
+   "name": "Davenport College"
+  },
+  {
+   "code": "DL",
+   "name": "Dunham Laboratory"
+  },
+  {
+   "code": "DOW",
+   "name": "Dow Hall"
+  },
+  {
+   "code": "EM",
+   "name": "Edwin McClellan Hall"
+  },
+  {
+   "code": "ES",
+   "name": "Ezra Stiles College"
+  },
+  {
+   "code": "ESC",
+   "name": "Class of 1954 Environmental Science Center"
+  },
+  {
+   "code": "EVANS",
+   "name": "Edward P. Evans Hall"
+  },
+  {
+   "code": "F",
+   "name": "Farnam Hall"
+  },
+  {
+   "code": "GH",
+   "name": "Grace Hopper College"
+  },
+  {
+   "code": "GML",
+   "name": "Greeley Memorial Laboratory"
+  },
+  {
+   "code": "GRN",
+   "name": "Holcombe T. Green, Jr., Hall"
+  },
+  {
+   "code": "HENDRIE",
+   "name": "Hendrie Hall"
+  },
+  {
+   "code": "HLH17",
+   "name": "17 Hillhouse Avenue"
+  },
+  {
+   "code": "HLH28",
+   "name": "28 Hillhouse Avenue"
+  },
+  {
+   "code": "HQ",
+   "name": "Humanities Quadrangle"
+  },
+  {
+   "code": "JE",
+   "name": "Jonathan Edwards College"
+  },
+  {
+   "code": "K",
+   "name": "Kirtland Hall"
+  },
+  {
+   "code": "KGL",
+   "name": "Kline Geology Laboratory"
+  },
+  {
+   "code": "KRN",
+   "name": "Kroon Hall"
+  },
+  {
+   "code": "KT",
+   "name": "Kline Tower"
+  },
+  {
+   "code": "L",
+   "name": "Lawrance Hall"
+  },
+  {
+   "code": "LC",
+   "name": "Linsly-Chittenden Hall"
+  },
+  {
+   "code": "LEPH",
+   "name": "Laboratory of Epidemiology and Public Health"
+  },
+  {
+   "code": "LFOP",
+   "name": "Leitner Family Observatory and Planetarium"
+  },
+  {
+   "code": "LGH",
+   "name": "Abby and Mitch Leigh Hall"
+  },
+  {
+   "code": "LOM",
+   "name": "Leet Oliver Memorial Hall"
+  },
+  {
+   "code": "LORIA",
+   "name": "Jeffrey H. Loria Center"
+  },
+  {
+   "code": "LUCE",
+   "name": "Henry R. Luce Hall"
+  },
+  {
+   "code": "LWR",
+   "name": "Lanman-Wright Memorial Hall"
+  },
+  {
+   "code": "MC",
+   "name": "Morse College"
+  },
+  {
+   "code": "MEC",
+   "name": "Malone Engineering Center"
+  },
+  {
+   "code": "ML",
+   "name": "Mason Laboratory"
+  },
+  {
+   "code": "MY",
+   "name": "Pauli Murray College"
+  },
+  {
+   "code": "OML",
+   "name": "Osborn Memorial Laboratories"
+  },
+  {
+   "code": "PC",
+   "name": "Pierson College"
+  },
+  {
+   "code": "PH",
+   "name": "Phelps Hall"
+  },
+  {
+   "code": "PROS77",
+   "name": "77 Prospect Street"
+  },
+  {
+   "code": "PWG",
+   "name": "Payne Whitney Gymnasium"
+  },
+  {
+   "code": "RDH",
+   "name": "Rudolph Hall"
+  },
+  {
+   "code": "RKZ",
+   "name": "Rosenkranz Hall"
+  },
+  {
+   "code": "RSN",
+   "name": "Rosenfeld Hall"
+  },
+  {
+   "code": "S",
+   "name": "Sage Hall"
+  },
+  {
+   "code": "SACH10",
+   "name": "10 Sachem Street"
+  },
+  {
+   "code": "SCL",
+   "name": "Sterling Chemistry Laboratory"
+  },
+  {
+   "code": "SDQ",
+   "name": "Sterling Divinity Quadrangle"
+  },
+  {
+   "code": "SHM",
+   "name": "Sterling Hall of Medicine"
+  },
+  {
+   "code": "SLB",
+   "name": "Sterling Law Building"
+  },
+  {
+   "code": "SM",
+   "name": "Silliman College"
+  },
+  {
+   "code": "SMH",
+   "name": "Sprague Memorial Hall"
+  },
+  {
+   "code": "SML",
+   "name": "Sterling Memorial Library"
+  },
+  {
+   "code": "SPL",
+   "name": "Sloane Physics Laboratory"
+  },
+  {
+   "code": "SSS",
+   "name": "Sheffield-Sterling-Strathcona Hall"
+  },
+  {
+   "code": "STOECK",
+   "name": "Stoeckel Hall"
+  },
+  {
+   "code": "SY",
+   "name": "Saybrook College"
+  },
+  {
+   "code": "TAC",
+   "name": "The Anlyan Center"
+  },
+  {
+   "code": "TC",
+   "name": "Trumbull College"
+  },
+  {
+   "code": "TD",
+   "name": "Timothy Dwight College"
+  },
+  {
+   "code": "TM432",
+   "name": "432 Temple Street"
+  },
+  {
+   "code": "UT",
+   "name": "University Theatre"
+  },
+  {
+   "code": "V",
+   "name": "Vanderbilt Hall"
+  },
+  {
+   "code": "W",
+   "name": "Welch Hall"
+  },
+  {
+   "code": "WALL53",
+   "name": "53 Wall Street"
+  },
+  {
+   "code": "WALL81",
+   "name": "81 Wall Street"
+  },
+  {
+   "code": "WALL82",
+   "name": "82-90 Wall Street"
+  },
+  {
+   "code": "WGS",
+   "name": "Whitney Grove Square"
+  },
+  {
+   "code": "WHIT55",
+   "name": "55 Whitney Avenue"
+  },
+  {
+   "code": "WL",
+   "name": "Wright Laboratory"
+  },
+  {
+   "code": "WLH",
+   "name": "William L. Harkness Hall"
+  },
+  {
+   "code": "WTS",
+   "name": "Watson Center"
+  },
+  {
+   "code": "YCBA",
+   "name": "Yale Center for British Art"
+  },
+  {
+   "code": "YORK212",
+   "name": "212 York Street"
+  },
+  {
+   "code": "YORK220",
+   "name": "220 York Street"
+  },
+  {
+   "code": "YSB",
+   "name": "Yale Science Building"
+  },
+  {
+   "code": "YUAG",
+   "name": "Yale University Art Gallery"
+  }
+ ]
+}

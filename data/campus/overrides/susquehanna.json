@@ -1,0 +1,159 @@
+{
+  "places": {
+    "charles-b-degenstein-campus-center": {
+      "kind": "dining"
+    },
+    "commons-house": {
+      "hide": true
+    },
+    "west-hall": {
+      "hide": true
+    },
+    "north-hall": {
+      "hide": true
+    },
+    "willow-hall": {
+      "hide": true
+    },
+    "hawthorn-hall": {
+      "hide": true
+    },
+    "laurel-hall": {
+      "hide": true
+    },
+    "elm-hall": {
+      "hide": true
+    },
+    "linden-hall": {
+      "hide": true
+    },
+    "tamarack-hall": {
+      "hide": true
+    },
+    "aspen-hall": {
+      "hide": true
+    },
+    "scholars-hall": {
+      "hide": true
+    },
+    "presser-international-house": {
+      "hide": true
+    },
+    "sustainability-house": {
+      "hide": true
+    },
+    "faculty-staff-residence": {
+      "hide": true
+    },
+    "sigma-kappa-sorority": {
+      "hide": true
+    },
+    "kappa-delta-sorority": {
+      "hide": true
+    },
+    "sigma-alpha-iota-sorority": {
+      "hide": true
+    },
+    "zeta-tau-alpha-sorority": {
+      "hide": true
+    },
+    "sigma-gamma-rho-sorority": {
+      "hide": true
+    },
+    "alpha-delta-pi-sorority": {
+      "hide": true
+    },
+    "pi-kappa-phi-fraternity": {
+      "hide": true
+    },
+    "phi-sigma-beta-fraternity": {
+      "hide": true
+    },
+    "theta-chi-fraternity": {
+      "hide": true
+    },
+    "tau-kappa-epsilon-fraternity": {
+      "hide": true
+    },
+    "goldstein-weis-hillel-house": {
+      "hide": true
+    },
+    "admission-house": {
+      "hide": true
+    },
+    "alumni-house": {
+      "hide": true
+    },
+    "pine-lawn": {
+      "hide": true
+    },
+    "go-house": {
+      "hide": true
+    },
+    "selinsgrove-hall": {
+      "hide": true
+    },
+    "student-health-center": {
+      "hide": true
+    },
+    "counseling-and-psychological-services": {
+      "hide": true
+    },
+    "susquehanna-childrens-center": {
+      "hide": true
+    },
+    "print-shop": {
+      "hide": true
+    },
+    "trax": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "charles-b-degenstein-campus-center": "The Degenstein Campus Center holds Evert Dining Room, Susquehanna's dining hall (susqu.edu/campus-life/dining); its name doesn't say dining.",
+    "commons-house": "The common building of the 18th Street Commons townhouses (next to the Granada/Kathmandu rows), a housing amenity that the word 'commons' mistook for a dining hall.",
+    "west-hall": "A residence hall (susqu.edu/campus-life/housing), not a class building.",
+    "north-hall": "A residence hall (susqu.edu/campus-life/housing), not a class building.",
+    "willow-hall": "A West Village residence hall on West College Circle (susqu.edu/campus-life/housing), not a class building.",
+    "hawthorn-hall": "A West Village residence hall on West College Circle (susqu.edu/campus-life/housing), not a class building.",
+    "laurel-hall": "A West Village residence hall on West College Circle (susqu.edu/campus-life/housing), not a class building.",
+    "elm-hall": "A West Village residence hall on West College Circle (susqu.edu/campus-life/housing), not a class building.",
+    "linden-hall": "A West Village residence hall on West College Circle (susqu.edu/campus-life/housing), not a class building.",
+    "tamarack-hall": "A West Village residence hall on West College Circle (susqu.edu/campus-life/housing), not a class building.",
+    "aspen-hall": "A West Village residence hall on West College Circle (susqu.edu/campus-life/housing), not a class building.",
+    "scholars-hall": "Scholars House, a student residence (susqu.edu/campus-life/housing), not a class building.",
+    "presser-international-house": "A student residence (susqu.edu/campus-life/housing), not a class building.",
+    "sustainability-house": "A student residence (susqu.edu/campus-life/housing), not a class building.",
+    "faculty-staff-residence": "Faculty and staff housing, not a class building.",
+    "sigma-kappa-sorority": "A Greek house on University Avenue, student housing rather than a class building.",
+    "kappa-delta-sorority": "A Greek house on University Avenue, student housing rather than a class building.",
+    "sigma-alpha-iota-sorority": "A Greek house on University Avenue, student housing rather than a class building.",
+    "zeta-tau-alpha-sorority": "A Greek house on University Avenue, student housing rather than a class building.",
+    "sigma-gamma-rho-sorority": "A Greek house on University Avenue, student housing rather than a class building.",
+    "alpha-delta-pi-sorority": "A Greek house on University Avenue, student housing rather than a class building.",
+    "pi-kappa-phi-fraternity": "A Greek house on University Avenue, student housing rather than a class building.",
+    "phi-sigma-beta-fraternity": "A Greek house on University Avenue, student housing rather than a class building.",
+    "theta-chi-fraternity": "A Greek house, student housing rather than a class building.",
+    "tau-kappa-epsilon-fraternity": "A Greek house on University Avenue, student housing rather than a class building.",
+    "goldstein-weis-hillel-house": "The Hillel student house, a religious and student-organisation house rather than a class building.",
+    "admission-house": "The admissions office, not somewhere classes happen.",
+    "alumni-house": "The alumni office house on West Pine Street, not somewhere classes happen.",
+    "pine-lawn": "Pine Lawn is the university president's residence, not a class building.",
+    "go-house": "The GO (Global Opportunities, study-abroad) office house on Zeigler Lane, not somewhere classes happen.",
+    "selinsgrove-hall": "Selinsgrove Hall holds administrative offices (president, registrar), not classrooms (susqu.edu campus map).",
+    "student-health-center": "The student health clinic (OSM healthcare=yes), not somewhere classes happen.",
+    "counseling-and-psychological-services": "The counselling clinic, not somewhere classes happen.",
+    "susquehanna-childrens-center": "Childcare, not somewhere classes happen.",
+    "print-shop": "A service building, not somewhere classes happen.",
+    "trax": "Trax is the student nightclub venue (OSM amenity=nightclub), not a class building."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "smith-hall -> orlando-w-houts-gymnasium"
+      ],
+      "maxRatio": 3,
+      "why": "OSM maps no door on Smith Hall and its nearest path node is west of it, so the walk to Houts Gymnasium leaves west and comes back round the hall's north side."
+    }
+  ]
+}

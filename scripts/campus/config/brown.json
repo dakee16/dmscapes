@@ -1,0 +1,16 @@
+{
+  "collegeId": "brown",
+  "area": {
+    "osm": "relation/13816239",
+    "bbox": [
+      41.81542,
+      -71.41223,
+      41.84371,
+      -71.38834
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Brown's registrar (Courses@Brown names rooms by building name) publishes no code list, and Facilities' 'FM - Active Building List' PDF (facilities.brown.edu, 2023-03-17) now returns 404."
+}

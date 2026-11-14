@@ -1,0 +1,70 @@
+{
+  "halls": {
+    "collins": {
+      "pin": [
+        -86.523991,
+        39.17074
+      ]
+    },
+    "forest": {
+      "pin": [
+        -86.512447,
+        39.164949
+      ]
+    },
+    "foster": {
+      "pin": [
+        -86.518021,
+        39.175089
+      ]
+    },
+    "university-east": {
+      "pin": [
+        -86.514143,
+        39.164857
+      ]
+    },
+    "willkie": {
+      "pin": [
+        -86.510393,
+        39.166177
+      ]
+    }
+  },
+  "codes": {
+    "AH": null,
+    "FR": null,
+    "MS": null
+  },
+  "places": {
+    "iu-health-bloomington": {
+      "hide": true
+    },
+    "intercollegiate-athletics-gymnasium": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "collins": "Collins is at 541 N. Woodlawn Ave (IU Housing's residence-center page, housing.indiana.edu/residence-centers/collins.html); pin at OSM's Ulysses H. Smith Hall (way/271047498), the residential building at that address (Edmondson and Cravens share it).",
+    "forest": "Forest Quad is at 1725 E 3rd St (IU Housing's residence-center page); centre of OSM's Forest Quadrangle (relation/8767202, same address).",
+    "foster": "Foster is at 1000 N Fee Ln (IU Housing's residence-center page); pin at OSM's Harper Hall (way/154884428, 1000 North Fee Lane), one of the Foster Quad houses.",
+    "university-east": "University East Apartments are at 1603 E 3rd St (IU Housing's residence-center page); centre of OSM's University Apartments East (way/175832775, same address).",
+    "willkie": "Willkie is at 150 N Rose Ave (IU Housing's residence-center page); pin at OSM's Willkie (C) (relation/14097389), the low building between towers A and B, all at that address.",
+    "AH": "The registrar's AH \"The Health Services Building\" word-matched IU Health Bloomington, the hospital; no OSM building is surely it, so AH isn't placed.",
+    "FR": "FR \"Forest Quad\" word-matched the Forest Quad Chiller; Forest Quad is the Forest residence hall, so FR isn't placed.",
+    "MS": "MS \"Memorial Stadium\" word-matched Memorial Hall; the stadium isn't a place, so MS isn't placed.",
+    "iu-health-bloomington": "IU Health Bloomington Hospital, not somewhere classes or meals happen.",
+    "intercollegiate-athletics-gymnasium": "Varsity athletics gymnasium, not a student gym."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "tulip-tree -> cyberinfrastructure-building",
+        "tulip-tree -> innovation-center",
+        "tulip-tree -> henry-l-smith-research-center"
+      ],
+      "maxRatio": 4,
+      "why": "Tulip Tree's mapped path leads north into the parking-lot drives, and the buildings east of it are reached by the cycleway along the south side of the lots, so walks loop back through the lots."
+    }
+  ]
+}

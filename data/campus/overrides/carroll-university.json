@@ -1,0 +1,33 @@
+{
+  "halls": {
+    "a-paul-jones-honors-hall": {
+      "pin": [
+        -88.225616,
+        43.00431
+      ]
+    },
+    "hartwell-avenue-apartments": {
+      "pin": [
+        -88.222838,
+        43.006722
+      ]
+    }
+  },
+  "places": {},
+  "notes": {
+    "a-paul-jones-honors-hall": "OSM's 'A. Paul Jones Scholars Hall' (way/618409324, 120 Wright Street, a two-storey house); Carroll housing describes A. Paul Jones Honors Hall as the former Sigma Phi Epsilon house turned back into student housing in 2019 (carrollu.edu/campus-student-life/housing/traditional-halls).",
+    "hartwell-avenue-apartments": "Carroll housing: Hartwell Avenue Apartments are buildings Hartwell A\u2013D (carrollu.edu/campus-student-life/housing/apartments/); OSM has Hartwell A\u2013D at 324 North Hartwell Avenue. Pinned on Hartwell B (way/618548099)."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "kilgour-hall -> wright-house",
+        "kilgour-hall -> walter-young-center",
+        "shirley-hilger-hall -> betty-lou-tikalsky-house",
+        "shirley-hilger-hall -> enterprise-house"
+      ],
+      "maxRatio": 3.5,
+      "why": "The Wright Street houses' mapped doors face Wright Street, and the block between College Avenue and Wright Street has no mapped path through, so walks go round by the streets."
+    }
+  ]
+}

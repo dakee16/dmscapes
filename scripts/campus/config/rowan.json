@@ -1,0 +1,16 @@
+{
+  "collegeId": "rowan",
+  "area": {
+    "osm": "relation/20115520",
+    "bbox": [
+      39.70491,
+      -75.14779,
+      39.71692,
+      -75.11103
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public building-code list: Rowan's Section Tally class schedule data dictionary (sectiontally.rowan.edu) says each meeting gives a building and room but publishes no abbreviation key, and University Scheduling's academic scheduling policies (sites.rowan.edu/university-scheduling) have none (checked 2026-11-08)."
+}

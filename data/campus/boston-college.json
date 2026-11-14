@@ -1,0 +1,1380 @@
+{
+ "collegeId": "boston-college",
+ "generatedAt": "2026-11-14T06:53:24.908Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/boston-college.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -71.19554,
+  42.33124,
+  -71.15698,
+  42.34413
+ ],
+ "halls": [
+  {
+   "dormId": "roncalli",
+   "name": "Roncalli",
+   "lng": -71.173095,
+   "lat": 42.333627,
+   "pin": "name",
+   "osm": "way/29885510",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 13.1
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 2
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 5.6
+    }
+   }
+  },
+  {
+   "dormId": "welch",
+   "name": "Welch",
+   "lng": -71.173305,
+   "lat": 42.333982,
+   "pin": "name",
+   "osm": "way/29779932",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 14.7
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 3.4
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 7.1
+    }
+   }
+  },
+  {
+   "dormId": "williams",
+   "name": "Williams",
+   "lng": -71.173777,
+   "lat": 42.334234,
+   "pin": "name",
+   "osm": "way/29912219",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 14.9
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 3.7
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 7.3
+    }
+   }
+  },
+  {
+   "dormId": "claver",
+   "name": "Claver",
+   "lng": -71.176148,
+   "lat": 42.333102,
+   "pin": "manual",
+   "osm": "way/29812480",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "fish-field-house",
+     "minutes": 19
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 7.3
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 10.2
+    }
+   }
+  },
+  {
+   "dormId": "loyola",
+   "name": "Loyola",
+   "lng": -71.175994,
+   "lat": 42.333407,
+   "pin": "manual",
+   "osm": "way/29812480",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "fish-field-house",
+     "minutes": 19
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 7.3
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 10.2
+    }
+   }
+  },
+  {
+   "dormId": "xavier",
+   "name": "Xavier",
+   "lng": -71.156984,
+   "lat": 42.344134,
+   "pin": "name",
+   "osm": "way/212133487",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 17.2
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 18.3
+    },
+    "library": {
+     "placeId": "boston-college-theology-and-ministry-library",
+     "minutes": 9.2
+    }
+   }
+  },
+  {
+   "dormId": "fenwick",
+   "name": "Fenwick",
+   "lng": -71.175869,
+   "lat": 42.333764,
+   "pin": "name",
+   "osm": "way/29812480",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "fish-field-house",
+     "minutes": 19
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 7.3
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 10.2
+    }
+   }
+  },
+  {
+   "dormId": "cheverus",
+   "name": "Cheverus",
+   "lng": -71.175098,
+   "lat": 42.33433,
+   "pin": "name",
+   "osm": "way/29890280",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 16.6
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 5.4
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 9.1
+    }
+   }
+  },
+  {
+   "dormId": "kostka",
+   "name": "Kostka",
+   "lng": -71.174454,
+   "lat": 42.33322,
+   "pin": "name",
+   "osm": "way/29578725",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 15
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 3.7
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 7.4
+    }
+   }
+  },
+  {
+   "dormId": "medeiros",
+   "name": "Medeiros",
+   "lng": -71.175651,
+   "lat": 42.33312,
+   "pin": "name",
+   "osm": "way/29779950",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 16.5
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 5.3
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 9
+    }
+   }
+  },
+  {
+   "dormId": "fitzpatrick",
+   "name": "Fitzpatrick",
+   "lng": -71.174227,
+   "lat": 42.333938,
+   "pin": "name",
+   "osm": "way/29673897",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 14.7
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 3.4
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 7.1
+    }
+   }
+  },
+  {
+   "dormId": "gonzaga",
+   "name": "Gonzaga",
+   "lng": -71.174085,
+   "lat": 42.333684,
+   "pin": "manual",
+   "osm": "way/29673897",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 14.5
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 6.9
+    }
+   }
+  },
+  {
+   "dormId": "shaw-house",
+   "name": "Shaw House",
+   "lng": -71.175158,
+   "lat": 42.332987,
+   "pin": "name",
+   "osm": "way/29931449",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 16.3
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 5.1
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 8.8
+    }
+   }
+  },
+  {
+   "dormId": "keyes-hall",
+   "name": "Keyes Hall",
+   "lng": -71.195537,
+   "lat": 42.342271,
+   "pin": "name",
+   "osm": "way/29779641",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 39.9
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 33.3
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 30.5
+    }
+   }
+  },
+  {
+   "dormId": "hardey-house",
+   "name": "Hardey House",
+   "lng": -71.192364,
+   "lat": 42.342697,
+   "pin": "name",
+   "osm": "way/29779631",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 36.2
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 29.6
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 26.8
+    }
+   }
+  },
+  {
+   "dormId": "cushing-hall",
+   "name": "Cushing Hall",
+   "lng": -71.191768,
+   "lat": 42.342771,
+   "pin": "name",
+   "osm": "way/29812218",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 37.4
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 30.8
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 28.1
+    }
+   }
+  },
+  {
+   "dormId": "duchesne",
+   "name": "Duchesne",
+   "lng": -71.191608,
+   "lat": 42.343468,
+   "pin": "name",
+   "osm": "way/29632858",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 38.9
+    },
+    "dining": {
+     "placeId": "mcelroy-commons",
+     "minutes": 32.3
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 29.5
+    }
+   }
+  },
+  {
+   "dormId": "66-commonwealth-avenue",
+   "name": "66 Commonwealth Avenue",
+   "lng": -71.168502,
+   "lat": 42.339027,
+   "pin": "manual",
+   "osm": "way/29673678",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 7.9
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 4.2
+    },
+    "library": {
+     "placeId": "oneill-library",
+     "minutes": 6.8
+    }
+   }
+  },
+  {
+   "dormId": "greycliff",
+   "name": "Greycliff",
+   "lng": -71.161201,
+   "lat": 42.340344,
+   "pin": "manual",
+   "osm": "way/29812302",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 8.6
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 9.9
+    },
+    "library": {
+     "placeId": "boston-college-theology-and-ministry-library",
+     "minutes": 7.6
+    }
+   }
+  },
+  {
+   "dormId": "walsh",
+   "name": "Walsh",
+   "lng": -71.165264,
+   "lat": 42.338258,
+   "pin": "name",
+   "osm": "way/29636002",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 3
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 5.3
+    },
+    "library": {
+     "placeId": "oneill-library",
+     "minutes": 8.3
+    }
+   }
+  },
+  {
+   "dormId": "vanderslice",
+   "name": "Vanderslice",
+   "lng": -71.167008,
+   "lat": 42.338422,
+   "pin": "name",
+   "osm": "way/29911988",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 2.4
+    },
+    "library": {
+     "placeId": "oneill-library",
+     "minutes": 5.9
+    }
+   }
+  },
+  {
+   "dormId": "90-saint-thomas-more",
+   "name": "90 Saint Thomas More",
+   "lng": -71.168056,
+   "lat": 42.338699,
+   "pin": "manual",
+   "osm": "way/29911964",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 1.4
+    },
+    "library": {
+     "placeId": "oneill-library",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "stayer",
+   "name": "Stayer",
+   "lng": -71.166172,
+   "lat": 42.338717,
+   "pin": "name",
+   "osm": "way/157190311",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 4.5
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "oneill-library",
+     "minutes": 6.7
+    }
+   }
+  },
+  {
+   "dormId": "modulars",
+   "name": "Modulars",
+   "lng": -71.166512,
+   "lat": 42.337762,
+   "pin": "manual",
+   "osm": "way/1481241000",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 4.9
+    },
+    "library": {
+     "placeId": "oneill-library",
+     "minutes": 4.3
+    }
+   }
+  },
+  {
+   "dormId": "rubenstein",
+   "name": "Rubenstein",
+   "lng": -71.169363,
+   "lat": 42.338436,
+   "pin": "name",
+   "osm": "way/29779781",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 8.4
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 3
+    },
+    "library": {
+     "placeId": "oneill-library",
+     "minutes": 4.3
+    }
+   }
+  },
+  {
+   "dormId": "ignacio",
+   "name": "Ignacio",
+   "lng": -71.169744,
+   "lat": 42.33765,
+   "pin": "name",
+   "osm": "way/29902052",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 8.4
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 2.5
+    },
+    "library": {
+     "placeId": "oneill-library",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "voute",
+   "name": "Voute",
+   "lng": -71.170483,
+   "lat": 42.338087,
+   "pin": "name",
+   "osm": "way/29779794",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 9.2
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 3.4
+    },
+    "library": {
+     "placeId": "oneill-library",
+     "minutes": 3.9
+    }
+   }
+  },
+  {
+   "dormId": "gabelli",
+   "name": "Gabelli",
+   "lng": -71.169553,
+   "lat": 42.338765,
+   "pin": "name",
+   "osm": "way/29886883",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 8.4
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 3.3
+    },
+    "library": {
+     "placeId": "oneill-library",
+     "minutes": 5.8
+    }
+   }
+  },
+  {
+   "dormId": "thomas-more-apartments",
+   "name": "Thomas More Apartments",
+   "lng": -71.165107,
+   "lat": 42.339442,
+   "pin": "name",
+   "osm": "way/29922565",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 5.3
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 5.2
+    },
+    "library": {
+     "placeId": "oneill-library",
+     "minutes": 8.7
+    }
+   }
+  },
+  {
+   "dormId": "reservoir",
+   "name": "Reservoir",
+   "lng": -71.173615,
+   "lat": 42.339757,
+   "pin": "name",
+   "osm": "way/29673649",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "connell-recreation-center",
+     "minutes": 18.6
+    },
+    "dining": {
+     "placeId": "corcoran-commons",
+     "minutes": 14.3
+    },
+    "library": {
+     "placeId": "burns-bapst-library",
+     "minutes": 9.7
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "fish-field-house",
+   "name": "Fish Field House",
+   "short": "Fish Field House",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.164616,
+   "lat": 42.33462,
+   "osm": "way/671832497"
+  },
+  {
+   "id": "conte-forum",
+   "name": "Conte Forum",
+   "short": "Conte Forum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Silvio O. Conte Forum",
+    "Kelley Rink"
+   ],
+   "lng": -71.167682,
+   "lat": 42.335187,
+   "osm": "way/187088150"
+  },
+  {
+   "id": "connell-recreation-center",
+   "name": "Connell Recreation Center",
+   "short": "Connell Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.164768,
+   "lat": 42.337162,
+   "osm": "way/771178963"
+  },
+  {
+   "id": "corcoran-commons",
+   "name": "Corcoran Commons",
+   "short": "Corcoran Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.167955,
+   "lat": 42.337913,
+   "osm": "way/29673727"
+  },
+  {
+   "id": "oneill-library",
+   "name": "O'Neill Library",
+   "short": "O'Neill Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.169255,
+   "lat": 42.336123,
+   "osm": "way/29673820"
+  },
+  {
+   "id": "saint-johns-hall",
+   "name": "Saint Johns Hall",
+   "short": "Saint Johns Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.162711,
+   "lat": 42.34394,
+   "osm": "way/29889545"
+  },
+  {
+   "id": "higgins-hall",
+   "name": "Higgins Hall",
+   "short": "Higgins Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.168841,
+   "lat": 42.33506,
+   "osm": "way/29912180"
+  },
+  {
+   "id": "mcelroy-commons",
+   "name": "McElroy Commons",
+   "short": "McElroy Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171972,
+   "lat": 42.333331,
+   "osm": "way/29779948"
+  },
+  {
+   "id": "maloney-hall",
+   "name": "Maloney Hall",
+   "short": "Maloney Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.168571,
+   "lat": 42.336327,
+   "osm": "way/29889090"
+  },
+  {
+   "id": "campion-hall",
+   "name": "Campion Hall",
+   "short": "Campion Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.168496,
+   "lat": 42.333782,
+   "osm": "way/29812492"
+  },
+  {
+   "id": "stokes-hall-south",
+   "name": "Stokes Hall South",
+   "short": "Stokes Hall South",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171327,
+   "lat": 42.334067,
+   "osm": "way/215065132"
+  },
+  {
+   "id": "fulton-hall",
+   "name": "Fulton Hall",
+   "short": "Fulton Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.170031,
+   "lat": 42.334488,
+   "osm": "way/29591513"
+  },
+  {
+   "id": "boston-college-theology-and-ministry-library",
+   "name": "Boston College Theology and Ministry Library",
+   "short": "Boston College Theology and Ministry Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.163637,
+   "lat": 42.342893,
+   "osm": "way/29779620"
+  },
+  {
+   "id": "saint-marys-hall",
+   "name": "Saint Mary's Hall",
+   "short": "Saint Mary's Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.170388,
+   "lat": 42.336855,
+   "osm": "way/29812424"
+  },
+  {
+   "id": "lyons-hall",
+   "name": "Lyons Hall",
+   "short": "Lyons Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.170989,
+   "lat": 42.334978,
+   "osm": "way/29912176"
+  },
+  {
+   "id": "merkert-chemistry-center",
+   "name": "Merkert Chemistry Center",
+   "short": "Merkert Chemistry Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.167254,
+   "lat": 42.333818,
+   "osm": "way/29885686"
+  },
+  {
+   "id": "245-beacon-street",
+   "name": "245 Beacon Street",
+   "short": "245 Beacon Street",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.169113,
+   "lat": 42.334372,
+   "osm": "way/1119117505"
+  },
+  {
+   "id": "mcguinn-hall",
+   "name": "McGuinn Hall",
+   "short": "McGuinn Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.169742,
+   "lat": 42.333778,
+   "osm": "way/29903875"
+  },
+  {
+   "id": "carney-hall",
+   "name": "Carney Hall",
+   "short": "Carney Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.170549,
+   "lat": 42.333523,
+   "osm": "way/29812505"
+  },
+  {
+   "id": "gasson-hall",
+   "name": "Gasson Hall",
+   "short": "Gasson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.170492,
+   "lat": 42.335643,
+   "osm": "way/29630478"
+  },
+  {
+   "id": "burns-bapst-library",
+   "name": "Burns-Bapst Library",
+   "short": "Burns-Bapst Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171401,
+   "lat": 42.336714,
+   "osm": "way/29812427"
+  },
+  {
+   "id": "devlin-hall",
+   "name": "Devlin Hall",
+   "short": "Devlin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.169669,
+   "lat": 42.335236,
+   "osm": "way/29890053"
+  },
+  {
+   "id": "9-lake-st",
+   "name": "9 Lake St.",
+   "short": "9 Lake St.",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.164562,
+   "lat": 42.341608,
+   "osm": "way/29586927"
+  },
+  {
+   "id": "service-building",
+   "name": "Service Building",
+   "short": "Service Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.168312,
+   "lat": 42.334348,
+   "osm": "way/29929250"
+  },
+  {
+   "id": "stokes-hall-north",
+   "name": "Stokes Hall North",
+   "short": "Stokes Hall North",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171211,
+   "lat": 42.334611,
+   "osm": "way/213295411"
+  },
+  {
+   "id": "pete-frates-center",
+   "name": "Pete Frates Center",
+   "short": "Pete Frates Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.161095,
+   "lat": 42.343988,
+   "osm": "way/41920132"
+  },
+  {
+   "id": "2115-comm-ave-dance-studio",
+   "name": "2115 Comm. Ave Dance Studio",
+   "short": "2115 Comm. Ave Dance Studio",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "2115 Comm. Ave. Gymnasium"
+   ],
+   "lng": -71.162975,
+   "lat": 42.341879,
+   "osm": "way/29911791"
+  },
+  {
+   "id": "mcmullen-museum-of-art",
+   "name": "McMullen Museum of Art",
+   "short": "McMullen Museum of Art",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.16262,
+   "lat": 42.340745,
+   "osm": "way/29631441"
+  },
+  {
+   "id": "2125-comm-ave",
+   "name": "2125 Comm. Ave.",
+   "short": "2125 Comm. Ave.",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.164295,
+   "lat": 42.340626,
+   "osm": "way/29812285"
+  },
+  {
+   "id": "henry-i-harriman-house",
+   "name": "Henry I. Harriman House",
+   "short": "Henry I. Harriman House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.192057,
+   "lat": 42.344048,
+   "osm": "way/29889787"
+  },
+  {
+   "id": "connolly-house",
+   "name": "Connolly House",
+   "short": "Connolly House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.170244,
+   "lat": 42.331544,
+   "osm": "way/29751666"
+  },
+  {
+   "id": "3-lake-st",
+   "name": "3 Lake St.",
+   "short": "3 Lake St.",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.165496,
+   "lat": 42.341186,
+   "osm": "way/29673496"
+  },
+  {
+   "id": "waul",
+   "name": "Waul",
+   "short": "Waul",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171136,
+   "lat": 42.331979,
+   "osm": "way/29590640"
+  },
+  {
+   "id": "hammond-house",
+   "name": "Hammond House",
+   "short": "Hammond House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.172839,
+   "lat": 42.332424,
+   "osm": "way/29588353"
+  },
+  {
+   "id": "hovey",
+   "name": "Hovey",
+   "short": "Hovey",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171641,
+   "lat": 42.332327,
+   "osm": "way/29912294"
+  },
+  {
+   "id": "haley-carriage-house",
+   "name": "Haley Carriage House",
+   "short": "Haley Carriage House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.169309,
+   "lat": 42.331915,
+   "osm": "way/29888032"
+  },
+  {
+   "id": "connolly-carriage-house",
+   "name": "Connolly Carriage House",
+   "short": "Connolly Carriage House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.170123,
+   "lat": 42.33203,
+   "osm": "way/29929289"
+  },
+  {
+   "id": "southwell-hall-career-center",
+   "name": "Southwell Hall Career Center",
+   "short": "Southwell Hall Career Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.168078,
+   "lat": 42.339291,
+   "osm": "way/29779750"
+  },
+  {
+   "id": "haley",
+   "name": "Haley",
+   "short": "Haley",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.169729,
+   "lat": 42.331244,
+   "osm": "way/29855430"
+  },
+  {
+   "id": "botolph-house",
+   "name": "Botolph House",
+   "short": "Botolph House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.172363,
+   "lat": 42.336397,
+   "osm": "way/29927349"
+  },
+  {
+   "id": "murray",
+   "name": "Murray",
+   "short": "Murray",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.170815,
+   "lat": 42.331731,
+   "osm": "way/29751658"
+  },
+  {
+   "id": "murray-carriage-house",
+   "name": "Murray Carriage House",
+   "short": "Murray Carriage House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.170489,
+   "lat": 42.332345,
+   "osm": "way/29633940"
+  },
+  {
+   "id": "flanagan",
+   "name": "Flanagan",
+   "short": "Flanagan",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.172354,
+   "lat": 42.334171,
+   "osm": "way/29779922"
+  },
+  {
+   "id": "hopkins-house",
+   "name": "Hopkins House",
+   "short": "Hopkins House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171925,
+   "lat": 42.336355,
+   "osm": "way/29576424"
+  },
+  {
+   "id": "canisius-house",
+   "name": "Canisius House",
+   "short": "Canisius House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.169395,
+   "lat": 42.332567,
+   "osm": "way/29931251"
+  },
+  {
+   "id": "daly",
+   "name": "Daly",
+   "short": "Daly",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.169825,
+   "lat": 42.332935,
+   "osm": "way/29922194"
+  },
+  {
+   "id": "roberts",
+   "name": "Roberts",
+   "short": "Roberts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.169097,
+   "lat": 42.332995,
+   "osm": "way/29779956"
+  },
+  {
+   "id": "heffernan-house",
+   "name": "Heffernan House",
+   "short": "Heffernan House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171857,
+   "lat": 42.336132,
+   "osm": "way/29912110"
+  },
+  {
+   "id": "joyce-house",
+   "name": "Joyce House",
+   "short": "Joyce House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.170067,
+   "lat": 42.332286,
+   "osm": "way/29637961"
+  },
+  {
+   "id": "bourneuf-house",
+   "name": "Bourneuf House",
+   "short": "Bourneuf House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171821,
+   "lat": 42.335348,
+   "osm": "way/29779888"
+  },
+  {
+   "id": "donaldson-house",
+   "name": "Donaldson House",
+   "short": "Donaldson House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171783,
+   "lat": 42.335537,
+   "osm": "way/29912170"
+  },
+  {
+   "id": "faber",
+   "name": "Faber",
+   "short": "Faber",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171817,
+   "lat": 42.335954,
+   "osm": "way/29585724"
+  },
+  {
+   "id": "brock-house",
+   "name": "Brock House",
+   "short": "Brock House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171835,
+   "lat": 42.335181,
+   "osm": "way/29579336"
+  },
+  {
+   "id": "lawrence-house",
+   "name": "Lawrence House",
+   "short": "Lawrence House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.172012,
+   "lat": 42.336533,
+   "osm": "way/29923717"
+  },
+  {
+   "id": "rahner-house",
+   "name": "Rahner House",
+   "short": "Rahner House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171768,
+   "lat": 42.335746,
+   "osm": "way/29890571"
+  },
+  {
+   "id": "manresa",
+   "name": "Manresa",
+   "short": "Manresa",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171938,
+   "lat": 42.334607,
+   "osm": "way/29922197"
+  },
+  {
+   "id": "bowman-ahana-center",
+   "name": "Bowman AHANA Center",
+   "short": "Bowman AHANA Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.171865,
+   "lat": 42.335005,
+   "osm": "way/29636293"
+  }
+ ]
+}

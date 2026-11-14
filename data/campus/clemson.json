@@ -1,0 +1,1279 @@
+{
+ "collegeId": "clemson",
+ "generatedAt": "2026-11-08T16:56:08.748Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/clemson.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -82.84823,
+  34.66944,
+  -82.81938,
+  34.68223
+ ],
+ "halls": [
+  {
+   "dormId": "cope",
+   "name": "Cope",
+   "lng": -82.839968,
+   "lat": 34.678353,
+   "pin": "name",
+   "osm": "way/14054784",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 4.2
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 5.8
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 10.9
+    }
+   }
+  },
+  {
+   "dormId": "young",
+   "name": "Young",
+   "lng": -82.840031,
+   "lat": 34.677925,
+   "pin": "name",
+   "osm": "way/14054785",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 6.3
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 5.5
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 10.7
+    }
+   }
+  },
+  {
+   "dormId": "geer",
+   "name": "Geer",
+   "lng": -82.840522,
+   "lat": 34.678192,
+   "pin": "name",
+   "osm": "way/14054792",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 3.9
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 6.8
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 11.7
+    }
+   }
+  },
+  {
+   "dormId": "benet",
+   "name": "Benet",
+   "lng": -82.840097,
+   "lat": 34.677493,
+   "pin": "name",
+   "osm": "way/14054787",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 6.2
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 5.5
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 10.7
+    }
+   }
+  },
+  {
+   "dormId": "sanders",
+   "name": "Sanders",
+   "lng": -82.840582,
+   "lat": 34.677763,
+   "pin": "name",
+   "osm": "way/14054793",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 4.5
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 7.4
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 12.3
+    }
+   }
+  },
+  {
+   "dormId": "byrnes-hall",
+   "name": "Byrnes Hall",
+   "lng": -82.831247,
+   "lat": 34.67746,
+   "pin": "name",
+   "osm": "way/26927214",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 14.6
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 6.2
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 2.3
+    }
+   }
+  },
+  {
+   "dormId": "lever-hall",
+   "name": "Lever Hall",
+   "lng": -82.831576,
+   "lat": 34.676919,
+   "pin": "name",
+   "osm": "way/5655523",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 14.4
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 1.6
+    }
+   }
+  },
+  {
+   "dormId": "manning-hall",
+   "name": "Manning Hall",
+   "lng": -82.832211,
+   "lat": 34.677186,
+   "pin": "name",
+   "osm": "way/5655522",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 13.7
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 1.7
+    }
+   }
+  },
+  {
+   "dormId": "mauldin-hall",
+   "name": "Mauldin Hall",
+   "lng": -82.833091,
+   "lat": 34.677941,
+   "pin": "name",
+   "osm": "way/5655516",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 12.2
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "barnett-hall",
+   "name": "Barnett Hall",
+   "lng": -82.832486,
+   "lat": 34.678057,
+   "pin": "name",
+   "osm": "way/5655518",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 13
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 5.8
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 3.7
+    }
+   }
+  },
+  {
+   "dormId": "smith-hall",
+   "name": "Smith Hall",
+   "lng": -82.831892,
+   "lat": 34.678167,
+   "pin": "name",
+   "osm": "way/5655520",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 14
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 6.6
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 3.9
+    }
+   }
+  },
+  {
+   "dormId": "gressette-hall",
+   "name": "Gressette Hall",
+   "lng": -82.839715,
+   "lat": 34.678861,
+   "pin": "name",
+   "osm": "way/443466463",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 4.1
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 10
+    }
+   }
+  },
+  {
+   "dormId": "holmes-hall",
+   "name": "Holmes Hall",
+   "lng": -82.838948,
+   "lat": 34.678803,
+   "pin": "name",
+   "osm": "way/26938835",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 5.3
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 4.7
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 9.6
+    }
+   }
+  },
+  {
+   "dormId": "mccabe-hall",
+   "name": "McCabe Hall",
+   "lng": -82.838269,
+   "lat": 34.678849,
+   "pin": "name",
+   "osm": "way/26938886",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 7.2
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 9.2
+    }
+   }
+  },
+  {
+   "dormId": "mickel-hall",
+   "name": "Mickel Hall",
+   "lng": -82.841136,
+   "lat": 34.678289,
+   "pin": "name",
+   "osm": "way/26800323",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 3.7
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 11.8
+    }
+   }
+  },
+  {
+   "dormId": "cribb-deschamps-hall",
+   "name": "Cribb & DesChamps Hall",
+   "lng": -82.839502,
+   "lat": 34.679916,
+   "pin": "manual",
+   "osm": "way/443466466",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "fike-recreation-center",
+     "minutes": 4.9
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 7.7
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 12.6
+    }
+   }
+  },
+  {
+   "dormId": "the-quad",
+   "name": "The Quad",
+   "lng": -82.838832,
+   "lat": 34.680771,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "fike-recreation-center",
+     "minutes": 4.7
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 8.6
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 11.5
+    }
+   }
+  },
+  {
+   "dormId": "douthit-hills-east",
+   "name": "Douthit Hills East",
+   "lng": -82.828862,
+   "lat": 34.680614,
+   "pin": "manual",
+   "osm": "way/570806422",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sloan-tennis-center",
+     "minutes": 17.2
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 13.4
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 9.8
+    }
+   }
+  },
+  {
+   "dormId": "douthit-hills",
+   "name": "Douthit Hills West",
+   "lng": -82.832597,
+   "lat": 34.680249,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sloan-tennis-center",
+     "minutes": 12.6
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 9.8
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 8.4
+    }
+   }
+  },
+  {
+   "dormId": "lightsey-bridge-i",
+   "name": "Lightsey Bridge I",
+   "lng": -82.827764,
+   "lat": 34.673958,
+   "pin": "name",
+   "osm": "way/443620901",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 22.8
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 14.1
+    },
+    "dining": {
+     "placeId": "lightsey-bridge-commons-building",
+     "minutes": 2.4
+    }
+   }
+  },
+  {
+   "dormId": "calhoun-courts",
+   "name": "Calhoun Courts",
+   "lng": -82.829335,
+   "lat": 34.677863,
+   "pin": "name",
+   "osm": "way/27583501",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 20.1
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 11.7
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 7.6
+    }
+   }
+  },
+  {
+   "dormId": "thornhill-village",
+   "name": "Thornhill Village",
+   "lng": -82.827239,
+   "lat": 34.677676,
+   "pin": "name",
+   "osm": "way/26965632",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "mchugh-natatorium",
+     "minutes": 20.6
+    },
+    "library": {
+     "placeId": "robert-muldrow-cooper-library",
+     "minutes": 12.8
+    },
+    "dining": {
+     "placeId": "schilletter-dining-hall",
+     "minutes": 9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "littlejohn-coliseum",
+   "name": "Littlejohn Coliseum",
+   "short": "Littlejohn Coliseum",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.846443,
+   "lat": 34.680281,
+   "osm": "relation/13779618"
+  },
+  {
+   "id": "fike-recreation-center",
+   "name": "Fike Recreation Center",
+   "short": "Fike Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.841862,
+   "lat": 34.680711,
+   "osm": "way/26962760"
+  },
+  {
+   "id": "poole-agricultural-center",
+   "name": "Poole Agricultural Center",
+   "short": "Poole Agricultural Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.834133,
+   "lat": 34.673829,
+   "osm": "way/27049436"
+  },
+  {
+   "id": "rudolph-e-lee-hall-and-gallery",
+   "name": "Rudolph E Lee Hall & Gallery",
+   "short": "Rudolph E Lee Hall & Gallery",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.838521,
+   "lat": 34.674443,
+   "osm": "relation/35743"
+  },
+  {
+   "id": "mcadams-hall",
+   "name": "McAdams Hall",
+   "short": "McAdams Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.834491,
+   "lat": 34.675516,
+   "osm": "way/27049474"
+  },
+  {
+   "id": "hendrix-student-center",
+   "name": "Hendrix Student Center",
+   "short": "Hendrix Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.832104,
+   "lat": 34.676198,
+   "osm": "way/26965884"
+  },
+  {
+   "id": "newman-hall",
+   "name": "Newman Hall",
+   "short": "Newman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.833442,
+   "lat": 34.674615,
+   "osm": "way/27565986"
+  },
+  {
+   "id": "sloan-tennis-center",
+   "name": "Sloan Tennis Center",
+   "short": "Sloan Tennis Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.840067,
+   "lat": 34.682074,
+   "osm": "way/442636773"
+  },
+  {
+   "id": "brooks-center-for-the-performing-arts",
+   "name": "Brooks Center for the Performing Arts",
+   "short": "Brooks Center for the Performing Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.836034,
+   "lat": 34.673818,
+   "osm": "way/442309509"
+  },
+  {
+   "id": "robert-muldrow-cooper-library",
+   "name": "Robert Muldrow Cooper Library",
+   "short": "R. M. Cooper Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "R. M. Cooper Library"
+   ],
+   "lng": -82.836333,
+   "lat": 34.67666,
+   "osm": "way/5583159"
+  },
+  {
+   "id": "biosystems-research-complex",
+   "name": "Biosystems Research Complex",
+   "short": "Biosystems Research Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Clemson University Genomics Institute"
+   ],
+   "lng": -82.832333,
+   "lat": 34.674363,
+   "osm": "way/27049534"
+  },
+  {
+   "id": "lee-iii-hall",
+   "name": "Lee III Hall",
+   "short": "Lee III Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Lee Hall 3"
+   ],
+   "lng": -82.839056,
+   "lat": 34.673716,
+   "osm": "way/327502898"
+  },
+  {
+   "id": "lehotsky-hall",
+   "name": "Lehotsky Hall",
+   "short": "Lehotsky Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.835098,
+   "lat": 34.673923,
+   "osm": "way/27565978"
+  },
+  {
+   "id": "sirrine-hall",
+   "name": "Sirrine Hall",
+   "short": "Sirrine Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.839247,
+   "lat": 34.676978,
+   "osm": "way/5565416"
+  },
+  {
+   "id": "freeman-hall",
+   "name": "Freeman Hall",
+   "short": "Freeman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.837953,
+   "lat": 34.676095,
+   "osm": "way/26956143"
+  },
+  {
+   "id": "wilbur-o-and-ann-powers-college-of-business",
+   "name": "Wilbur O. and Ann Powers College of Business",
+   "short": "Wilbur O. and Ann Powers College of Business",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.834668,
+   "lat": 34.680374,
+   "osm": "way/1084094505"
+  },
+  {
+   "id": "fluor-daniel-engineering-innovation-building",
+   "name": "Fluor-Daniel Engineering Innovation Building",
+   "short": "Fluor-Daniel Engineering Innovation Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.839231,
+   "lat": 34.675412,
+   "osm": "way/26800004"
+  },
+  {
+   "id": "life-sciences-building",
+   "name": "Life Sciences Building",
+   "short": "Life Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.83408,
+   "lat": 34.673132,
+   "osm": "relation/14420622"
+  },
+  {
+   "id": "advanced-materials-innovation-complex",
+   "name": "Advanced Materials Innovation Complex",
+   "short": "Advanced Materials Innovation Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.84038,
+   "lat": 34.676797,
+   "osm": "way/1484845296"
+  },
+  {
+   "id": "brackett-hall",
+   "name": "Brackett Hall",
+   "short": "Brackett Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.836563,
+   "lat": 34.678977,
+   "osm": "way/5565418"
+  },
+  {
+   "id": "douthit-hills-hub",
+   "name": "Douthit Hills HUB",
+   "short": "Douthit Hills HUB",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.830699,
+   "lat": 34.680429,
+   "osm": "relation/17961342"
+  },
+  {
+   "id": "administrative-services",
+   "name": "Administrative Services",
+   "short": "Administrative Services",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.841513,
+   "lat": 34.67195,
+   "osm": "way/27270556"
+  },
+  {
+   "id": "tillman-hall",
+   "name": "Tillman Hall",
+   "short": "Tillman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.83752,
+   "lat": 34.680068,
+   "osm": "way/27757700"
+  },
+  {
+   "id": "mcalister-hall-core-b",
+   "name": "McAlister Hall (Core B)",
+   "short": "McAlister Hall (Core B)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.839569,
+   "lat": 34.679258,
+   "osm": "way/443466465"
+  },
+  {
+   "id": "jordan-hall",
+   "name": "Jordan Hall",
+   "short": "Jordan Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.834346,
+   "lat": 34.677362,
+   "osm": "way/26967700"
+  },
+  {
+   "id": "mcfadden-building",
+   "name": "McFadden Building",
+   "short": "McFadden Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.848234,
+   "lat": 34.679871,
+   "osm": "way/442639561"
+  },
+  {
+   "id": "strom-thurmond-institute",
+   "name": "Strom Thurmond Institute",
+   "short": "Strom Thurmond Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.836723,
+   "lat": 34.675315,
+   "osm": "way/27247549"
+  },
+  {
+   "id": "schilletter-dining-hall",
+   "name": "Schilletter Dining Hall",
+   "short": "Schilletter Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.832811,
+   "lat": 34.676932,
+   "osm": "way/26965850"
+  },
+  {
+   "id": "martin-hall",
+   "name": "Martin Hall",
+   "short": "Martin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.835525,
+   "lat": 34.678226,
+   "osm": "way/14054776"
+  },
+  {
+   "id": "howard-l-hunter-chemistry-laboratory",
+   "name": "Howard L Hunter Chemistry Laboratory",
+   "short": "Howard L Hunter Chemistry Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.839289,
+   "lat": 34.676434,
+   "osm": "way/26800198"
+  },
+  {
+   "id": "watt-family-innovation-center",
+   "name": "Watt Family Innovation Center",
+   "short": "Watt Family Innovation Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.836896,
+   "lat": 34.675985,
+   "osm": "way/383626282"
+  },
+  {
+   "id": "earle-hall",
+   "name": "Earle Hall",
+   "short": "Earle Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.84024,
+   "lat": 34.675772,
+   "osm": "way/12837437"
+  },
+  {
+   "id": "godley-snell-research-center",
+   "name": "Godley-Snell Research Center",
+   "short": "Godley-Snell Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.832454,
+   "lat": 34.672257,
+   "osm": "way/27565881"
+  },
+  {
+   "id": "long-hall",
+   "name": "Long Hall",
+   "short": "Long Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.834455,
+   "lat": 34.678072,
+   "osm": "way/5656879"
+  },
+  {
+   "id": "lowry-hall",
+   "name": "Lowry Hall",
+   "short": "Lowry Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.837964,
+   "lat": 34.675204,
+   "osm": "way/26799941"
+  },
+  {
+   "id": "kinard-laboratory-of-physics",
+   "name": "Kinard Laboratory of Physics",
+   "short": "Kinard Laboratory of Physics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.835189,
+   "lat": 34.677526,
+   "osm": "way/26956126"
+  },
+  {
+   "id": "mchugh-natatorium",
+   "name": "McHugh Natatorium",
+   "short": "McHugh Natatorium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.841954,
+   "lat": 34.680158,
+   "osm": "way/442659242"
+  },
+  {
+   "id": "riggs-hall",
+   "name": "Riggs Hall",
+   "short": "Riggs Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.837799,
+   "lat": 34.67699,
+   "osm": "way/5565414"
+  },
+  {
+   "id": "academic-success-center",
+   "name": "Academic Success Center",
+   "short": "Academic Success Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.83573,
+   "lat": 34.675754,
+   "osm": "way/237598978"
+  },
+  {
+   "id": "barre-hall",
+   "name": "Barre Hall",
+   "short": "Barre Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.835307,
+   "lat": 34.674819,
+   "osm": "way/27565979"
+  },
+  {
+   "id": "hardin-hall",
+   "name": "Hardin Hall",
+   "short": "Hardin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.836826,
+   "lat": 34.678272,
+   "osm": "way/14054774"
+  },
+  {
+   "id": "godfrey-hall",
+   "name": "Godfrey Hall",
+   "short": "Godfrey Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.837827,
+   "lat": 34.680891,
+   "osm": "way/26996875"
+  },
+  {
+   "id": "vickery-hall",
+   "name": "Vickery Hall",
+   "short": "Vickery Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.833787,
+   "lat": 34.677388,
+   "osm": "way/26967606"
+  },
+  {
+   "id": "jervey-gym",
+   "name": "Jervey Gym",
+   "short": "Jervey Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Jervey Gymnasium"
+   ],
+   "lng": -82.848029,
+   "lat": 34.678659,
+   "osm": "way/442656928"
+  },
+  {
+   "id": "edwards-hall",
+   "name": "Edwards Hall",
+   "short": "Edwards Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.833868,
+   "lat": 34.676787,
+   "osm": "way/26967535"
+  },
+  {
+   "id": "daniel-hall",
+   "name": "Daniel Hall",
+   "short": "Daniel Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.835141,
+   "lat": 34.677125,
+   "osm": "way/26956118"
+  },
+  {
+   "id": "sikes-hall",
+   "name": "Sikes Hall",
+   "short": "Sikes Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.835114,
+   "lat": 34.679323,
+   "osm": "way/954132780"
+  },
+  {
+   "id": "rhodes-engineering-center",
+   "name": "Rhodes Engineering Center",
+   "short": "Rhodes Engineering Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.8372,
+   "lat": 34.676825,
+   "osm": "relation/18436337"
+  },
+  {
+   "id": "chandler-l-burns-hall",
+   "name": "Chandler L. Burns Hall",
+   "short": "Chandler L. Burns Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.834475,
+   "lat": 34.679973,
+   "osm": "relation/13155466"
+  },
+  {
+   "id": "humanities-hall",
+   "name": "Humanities Hall",
+   "short": "Humanities Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.835273,
+   "lat": 34.676678,
+   "osm": "relation/18436335"
+  },
+  {
+   "id": "holtzendorff-hall",
+   "name": "Holtzendorff Hall",
+   "short": "Holtzendorff Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.83775,
+   "lat": 34.681541,
+   "osm": "way/26996909"
+  },
+  {
+   "id": "dillard-building",
+   "name": "Dillard Building",
+   "short": "Dillard Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.840323,
+   "lat": 34.678867,
+   "osm": "way/14054791"
+  },
+  {
+   "id": "olin-hall",
+   "name": "Olin Hall",
+   "short": "Olin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.836914,
+   "lat": 34.677639,
+   "osm": "way/14054771"
+  },
+  {
+   "id": "rhodes-annex",
+   "name": "Rhodes Annex",
+   "short": "Rhodes Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.83729,
+   "lat": 34.676311,
+   "osm": "way/179014923"
+  },
+  {
+   "id": "harris-a-smith-building",
+   "name": "Harris A. Smith Building",
+   "short": "Harris A. Smith Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.839219,
+   "lat": 34.674732,
+   "osm": "way/30393289"
+  },
+  {
+   "id": "lightsey-bridge-commons-building",
+   "name": "Lightsey Bridge Commons Building",
+   "short": "Lightsey Bridge Commons Building",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.827341,
+   "lat": 34.6744,
+   "osm": "way/443632588"
+  },
+  {
+   "id": "mell-hall",
+   "name": "Mell Hall",
+   "short": "Mell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.837584,
+   "lat": 34.681978,
+   "osm": "way/26996891"
+  },
+  {
+   "id": "barnes-center",
+   "name": "Barnes Center",
+   "short": "Barnes Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.830328,
+   "lat": 34.676771,
+   "osm": "way/26965804"
+  },
+  {
+   "id": "cook-engineering-laboratory",
+   "name": "Cook Engineering Laboratory",
+   "short": "Cook Engineering Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.837704,
+   "lat": 34.676526,
+   "osm": "way/26956145"
+  },
+  {
+   "id": "hunter-auditorium",
+   "name": "Hunter Auditorium",
+   "short": "Hunter Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.839225,
+   "lat": 34.676162,
+   "osm": "way/144679968"
+  },
+  {
+   "id": "strode-tower",
+   "name": "Strode Tower",
+   "short": "Strode Tower",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.834845,
+   "lat": 34.676824,
+   "osm": "way/14054781"
+  },
+  {
+   "id": "fran-hanson-discovery-center",
+   "name": "Fran Hanson Discovery Center",
+   "short": "Fran Hanson Discovery Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.8269,
+   "lat": 34.669439,
+   "osm": "way/328028391"
+  },
+  {
+   "id": "hayden-conference-center",
+   "name": "Hayden Conference Center",
+   "short": "Hayden Conference Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.819382,
+   "lat": 34.675235,
+   "osm": "way/328043456"
+  },
+  {
+   "id": "campbell-museum-of-natural-history",
+   "name": "Campbell Museum of Natural History",
+   "short": "Campbell Museum of Natural History",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.834695,
+   "lat": 34.677672,
+   "osm": "way/26967707"
+  },
+  {
+   "id": "national-dropout-prevention-center",
+   "name": "National Dropout Prevention Center",
+   "short": "National Dropout Prevention Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.83068,
+   "lat": 34.682225,
+   "osm": "way/327862229"
+  }
+ ]
+}

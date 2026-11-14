@@ -1,0 +1,395 @@
+{
+ "name": "WashU Facilities, Building List - Danforth (building numbers)",
+ "url": "https://wustl.box.com/s/309oqijb4df7myoxwxemzslpzch9vh11",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "199",
+   "name": "Academy Bldg"
+  },
+  {
+   "code": "101",
+   "name": "Alumni House"
+  },
+  {
+   "code": "250",
+   "name": "Anheuser-Busch Hall"
+  },
+  {
+   "code": "123",
+   "name": "Athletic Facilities Bldg"
+  },
+  {
+   "code": "133",
+   "name": "Bauer Hall"
+  },
+  {
+   "code": "139",
+   "name": "Bayer Lab Bldg"
+  },
+  {
+   "code": "103",
+   "name": "Beaumont Pavilion"
+  },
+  {
+   "code": "104",
+   "name": "Bixby Hall"
+  },
+  {
+   "code": "240",
+   "name": "Blewett Hall I (A)"
+  },
+  {
+   "code": "105",
+   "name": "Brookings Hall"
+  },
+  {
+   "code": "106",
+   "name": "Brown Hall"
+  },
+  {
+   "code": "195",
+   "name": "Bryan Hall"
+  },
+  {
+   "code": "107",
+   "name": "Busch Hall"
+  },
+  {
+   "code": "108",
+   "name": "Busch Lab"
+  },
+  {
+   "code": "227",
+   "name": "Central Underground Parking Garage"
+  },
+  {
+   "code": "253",
+   "name": "Charles Knight Executive Education Center"
+  },
+  {
+   "code": "109",
+   "name": "Compton Hall"
+  },
+  {
+   "code": "110",
+   "name": "Crow Hall"
+  },
+  {
+   "code": "111",
+   "name": "Cupples Hall I"
+  },
+  {
+   "code": "112",
+   "name": "Cupples Hall II"
+  },
+  {
+   "code": "113",
+   "name": "Cyclotron Bldg-Hilltop"
+  },
+  {
+   "code": "226",
+   "name": "Danforth University Center"
+  },
+  {
+   "code": "114",
+   "name": "Duncker Hall"
+  },
+  {
+   "code": "115",
+   "name": "Eads Hall"
+  },
+  {
+   "code": "212",
+   "name": "East Underground Garage"
+  },
+  {
+   "code": "225",
+   "name": "Environmental Health & Safety"
+  },
+  {
+   "code": "126",
+   "name": "Francis Field Concessions Bldg"
+  },
+  {
+   "code": "245",
+   "name": "Francis Field Press Box"
+  },
+  {
+   "code": "304",
+   "name": "Fraternity House 1"
+  },
+  {
+   "code": "305",
+   "name": "Fraternity House 2"
+  },
+  {
+   "code": "306",
+   "name": "Fraternity House 3"
+  },
+  {
+   "code": "307",
+   "name": "Fraternity House 4"
+  },
+  {
+   "code": "308",
+   "name": "Fraternity House 5"
+  },
+  {
+   "code": "312",
+   "name": "Fraternity House 6"
+  },
+  {
+   "code": "311",
+   "name": "Fraternity House 7"
+  },
+  {
+   "code": "130",
+   "name": "Gaylord Music Library"
+  },
+  {
+   "code": "131",
+   "name": "Givens Hall"
+  },
+  {
+   "code": "251",
+   "name": "Goldfarb Hall"
+  },
+  {
+   "code": "140",
+   "name": "Goldfarb Plant Growth Facility"
+  },
+  {
+   "code": "132",
+   "name": "Graham Chapel"
+  },
+  {
+   "code": "257",
+   "name": "Hillman Hall"
+  },
+  {
+   "code": "213",
+   "name": "James M. McKelvey, Sr. Hall"
+  },
+  {
+   "code": "134",
+   "name": "January Hall"
+  },
+  {
+   "code": "129",
+   "name": "Jolley Hall"
+  },
+  {
+   "code": "208",
+   "name": "Jubel Hall - (Phase 3)"
+  },
+  {
+   "code": "203",
+   "name": "Kemper Art Museum"
+  },
+  {
+   "code": "125",
+   "name": "Knight Hall"
+  },
+  {
+   "code": "243",
+   "name": "Life Science Bldg"
+  },
+  {
+   "code": "122",
+   "name": "Lopata Hall"
+  },
+  {
+   "code": "324",
+   "name": "Lopata House"
+  },
+  {
+   "code": "135",
+   "name": "Louderman Hall"
+  },
+  {
+   "code": "193",
+   "name": "Mallinckrodt Center-Danforth"
+  },
+  {
+   "code": "254",
+   "name": "Mark S. Wrighton Hall"
+  },
+  {
+   "code": "247",
+   "name": "McDonnell Hall - Danforth"
+  },
+  {
+   "code": "137",
+   "name": "McMillan Hall"
+  },
+  {
+   "code": "150",
+   "name": "McMillan Hall Addition"
+  },
+  {
+   "code": "196",
+   "name": "McMillen Lab-Chemistry"
+  },
+  {
+   "code": "218",
+   "name": "Millbrook Apts 1"
+  },
+  {
+   "code": "219",
+   "name": "Millbrook Apts 2"
+  },
+  {
+   "code": "220",
+   "name": "Millbrook Apts 3"
+  },
+  {
+   "code": "221",
+   "name": "Millbrook Apts 4"
+  },
+  {
+   "code": "138",
+   "name": "Millbrook Bldg"
+  },
+  {
+   "code": "127",
+   "name": "Millbrook Parking Garage"
+  },
+  {
+   "code": "222",
+   "name": "Millbrook Pool Dressing House"
+  },
+  {
+   "code": "223",
+   "name": "Millbrook Pool Pumphouse"
+  },
+  {
+   "code": "999",
+   "name": "Misc. Off-Site Location"
+  },
+  {
+   "code": "599",
+   "name": "Misc-Danforth"
+  },
+  {
+   "code": "252",
+   "name": "Music Classroom Bldg"
+  },
+  {
+   "code": "141",
+   "name": "Olin Library"
+  },
+  {
+   "code": "142",
+   "name": "Power Plant-Hilltop"
+  },
+  {
+   "code": "207",
+   "name": "Preston M. Green Hall"
+  },
+  {
+   "code": "144",
+   "name": "Radiochemistry Bldg"
+  },
+  {
+   "code": "145",
+   "name": "Rebstock Hall"
+  },
+  {
+   "code": "146",
+   "name": "Ridgley Hall"
+  },
+  {
+   "code": "211",
+   "name": "Schnuck Pavilion"
+  },
+  {
+   "code": "204",
+   "name": "Scott Rudolph Hall"
+  },
+  {
+   "code": "228",
+   "name": "Seigle Hall"
+  },
+  {
+   "code": "149",
+   "name": "Sever Hall"
+  },
+  {
+   "code": "124",
+   "name": "Simon Hall"
+  },
+  {
+   "code": "325",
+   "name": "Small Group Housing 2"
+  },
+  {
+   "code": "327",
+   "name": "Small Group Housing 4"
+  },
+  {
+   "code": "224",
+   "name": "Snow Way Parking Garage"
+  },
+  {
+   "code": "249",
+   "name": "Somers Family Hall"
+  },
+  {
+   "code": "151",
+   "name": "Steinberg Art Gallery"
+  },
+  {
+   "code": "206",
+   "name": "Stephen F And Camilla T Brauer Hall"
+  },
+  {
+   "code": "121",
+   "name": "Sumers Recreation Center"
+  },
+  {
+   "code": "210",
+   "name": "Sumers Welcome Center Pavilion"
+  },
+  {
+   "code": "242",
+   "name": "Tietjens Music Studio"
+  },
+  {
+   "code": "153",
+   "name": "Umrath Hall"
+  },
+  {
+   "code": "116",
+   "name": "Urbauer Hall"
+  },
+  {
+   "code": "217",
+   "name": "Village East"
+  },
+  {
+   "code": "326",
+   "name": "Village House"
+  },
+  {
+   "code": "205",
+   "name": "Walker Hall"
+  },
+  {
+   "code": "209",
+   "name": "Weil Hall"
+  },
+  {
+   "code": "202",
+   "name": "Whitaker Hall For Biomedical Engineering"
+  },
+  {
+   "code": "154",
+   "name": "Wilson Hall"
+  },
+  {
+   "code": "156",
+   "name": "Women's Building"
+  }
+ ]
+}

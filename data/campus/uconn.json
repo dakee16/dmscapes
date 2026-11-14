@@ -1,0 +1,1522 @@
+{
+ "collegeId": "uconn",
+ "generatedAt": "2026-11-08T16:45:26.396Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "UConn ITS Storrs Campus Classroom Buildings (map layer: building names and the codes class schedules use)",
+   "url": "https://clear-gis.uconn.edu/arcgis/rest/services/ITS_ATS/Storrs_Campus_Classroom_Buildings/MapServer/0",
+   "use": "building codes and aliases",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/uconn.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -72.26528,
+  41.80028,
+  -72.24213,
+  41.81968
+ ],
+ "halls": [
+  {
+   "dormId": "beecher",
+   "name": "Beecher Hall",
+   "lng": -72.260469,
+   "lat": 41.803126,
+   "pin": "name",
+   "osm": "way/246315726",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 12.7
+    },
+    "gym": {
+     "placeId": "burton-family-football-complex",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "northwest-dining-hall",
+     "minutes": 14.7
+    }
+   }
+  },
+  {
+   "dormId": "vinton",
+   "name": "Vinton Hall",
+   "lng": -72.254477,
+   "lat": 41.814363,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 15.7
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 12.6
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 2
+    }
+   }
+  },
+  {
+   "dormId": "kingston",
+   "name": "Kingston Hall",
+   "lng": -72.253975,
+   "lat": 41.814868,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 17
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 13
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 3.4
+    }
+   }
+  },
+  {
+   "dormId": "allen",
+   "name": "Allen Hall",
+   "lng": -72.254065,
+   "lat": 41.814692,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "thomas-j-dodd-research-center",
+     "minutes": 16.7
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 12.7
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 3.6
+    }
+   }
+  },
+  {
+   "dormId": "keller",
+   "name": "Keller Hall",
+   "lng": -72.253678,
+   "lat": 41.814518,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 16.4
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 12.5
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 2.8
+    }
+   }
+  },
+  {
+   "dormId": "fenwick",
+   "name": "Fenwick Hall",
+   "lng": -72.253686,
+   "lat": 41.814346,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "thomas-j-dodd-research-center",
+     "minutes": 16
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 11.9
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "wade",
+   "name": "Wade Hall",
+   "lng": -72.253555,
+   "lat": 41.814211,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "thomas-j-dodd-research-center",
+     "minutes": 16
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 11.9
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "hamilton",
+   "name": "Hamilton Hall",
+   "lng": -72.253333,
+   "lat": 41.814165,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 15.4
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 11.5
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 3.2
+    }
+   }
+  },
+  {
+   "dormId": "jefferson",
+   "name": "Jefferson Hall",
+   "lng": -72.253062,
+   "lat": 41.813729,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 15
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 11.6
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 3.1
+    }
+   }
+  },
+  {
+   "dormId": "colt",
+   "name": "Colt Hall",
+   "lng": -72.253033,
+   "lat": 41.813897,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 15.3
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 11.3
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 3.1
+    }
+   }
+  },
+  {
+   "dormId": "webster",
+   "name": "Webster Hall",
+   "lng": -72.253412,
+   "lat": 41.813507,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 14.4
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 11.3
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 2.6
+    }
+   }
+  },
+  {
+   "dormId": "sherman",
+   "name": "Sherman Hall",
+   "lng": -72.253639,
+   "lat": 41.813513,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 14.5
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 11.3
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 2.3
+    }
+   }
+  },
+  {
+   "dormId": "trumbull",
+   "name": "Trumbull Hall",
+   "lng": -72.253944,
+   "lat": 41.813777,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 14.7
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 11.5
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 2.5
+    }
+   }
+  },
+  {
+   "dormId": "sousa",
+   "name": "Sousa Hall",
+   "lng": -72.25397,
+   "lat": 41.813949,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 15.1
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 12
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 1.7
+    }
+   }
+  },
+  {
+   "dormId": "morgan",
+   "name": "Morgan Hall",
+   "lng": -72.254358,
+   "lat": 41.814087,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 15.6
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 12.5
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 1.9
+    }
+   }
+  },
+  {
+   "dormId": "lafayette",
+   "name": "Lafayette Hall",
+   "lng": -72.254125,
+   "lat": 41.814068,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 15.1
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 12
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 1.7
+    }
+   }
+  },
+  {
+   "dormId": "holcomb",
+   "name": "Holcomb Hall",
+   "lng": -72.247974,
+   "lat": 41.810233,
+   "pin": "name",
+   "osm": "way/234732157",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "thomas-j-dodd-research-center",
+     "minutes": 8.5
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 5.3
+    },
+    "dining": {
+     "placeId": "connecticut-dining-hall",
+     "minutes": 8.2
+    }
+   }
+  },
+  {
+   "dormId": "whitney",
+   "name": "Whitney Hall",
+   "lng": -72.247405,
+   "lat": 41.809909,
+   "pin": "manual",
+   "osm": "way/626973148",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "thomas-j-dodd-research-center",
+     "minutes": 8.4
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "connecticut-dining-hall",
+     "minutes": 8.1
+    }
+   }
+  },
+  {
+   "dormId": "sprague",
+   "name": "Sprague Hall",
+   "lng": -72.24726,
+   "lat": 41.809386,
+   "pin": "name",
+   "osm": "way/234732159",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "music-library-building",
+     "minutes": 8.4
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 6.1
+    },
+    "dining": {
+     "placeId": "connecticut-dining-hall",
+     "minutes": 9
+    }
+   }
+  },
+  {
+   "dormId": "grange",
+   "name": "Grange Hall",
+   "lng": -72.248547,
+   "lat": 41.811222,
+   "pin": "manual",
+   "osm": "way/230067924",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "thomas-j-dodd-research-center",
+     "minutes": 9.8
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 6.2
+    },
+    "dining": {
+     "placeId": "connecticut-dining-hall",
+     "minutes": 9.5
+    }
+   }
+  },
+  {
+   "dormId": "hicks",
+   "name": "Hicks Hall",
+   "lng": -72.248694,
+   "lat": 41.81148,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "thomas-j-dodd-research-center",
+     "minutes": 10.3
+    },
+    "gym": {
+     "placeId": "willis-nichols-hawley-armory",
+     "minutes": 6.7
+    },
+    "dining": {
+     "placeId": "roger-a-gelfenbien-towers-dining-hall",
+     "minutes": 9.5
+    }
+   }
+  },
+  {
+   "dormId": "ellsworth",
+   "name": "Ellsworth Hall",
+   "lng": -72.259278,
+   "lat": 41.806312,
+   "pin": "name",
+   "osm": "way/565594468",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 11
+    },
+    "gym": {
+     "placeId": "hugh-s-greer-fieldhouse",
+     "minutes": 4.8
+    },
+    "dining": {
+     "placeId": "northwest-dining-hall",
+     "minutes": 9.4
+    }
+   }
+  },
+  {
+   "dormId": "hale",
+   "name": "Hale Hall",
+   "lng": -72.259358,
+   "lat": 41.805762,
+   "pin": "name",
+   "osm": "way/565594469",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 11.4
+    },
+    "gym": {
+     "placeId": "hugh-s-greer-fieldhouse",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "northwest-dining-hall",
+     "minutes": 9.9
+    }
+   }
+  },
+  {
+   "dormId": "chandler-lancaster",
+   "name": "Chandler/Lancaster Hall",
+   "lng": -72.251522,
+   "lat": 41.804078,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "thomas-j-dodd-research-center",
+     "minutes": 3.4
+    },
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 1.6
+    },
+    "dining": {
+     "placeId": "connecticut-dining-hall",
+     "minutes": 6.7
+    }
+   }
+  },
+  {
+   "dormId": "hollister",
+   "name": "Hollister Hall",
+   "lng": -72.25199,
+   "lat": 41.804404,
+   "pin": "name",
+   "osm": "way/230067965",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "thomas-j-dodd-research-center",
+     "minutes": 3
+    },
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 1.2
+    },
+    "dining": {
+     "placeId": "connecticut-dining-hall",
+     "minutes": 6.7
+    }
+   }
+  },
+  {
+   "dormId": "alsop",
+   "name": "Alsop Hall",
+   "lng": -72.251363,
+   "lat": 41.804793,
+   "pin": "name",
+   "osm": "way/230067966",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "thomas-j-dodd-research-center",
+     "minutes": 2
+    },
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 1.5
+    },
+    "dining": {
+     "placeId": "connecticut-dining-hall",
+     "minutes": 5.9
+    }
+   }
+  },
+  {
+   "dormId": "shakespeare-troy",
+   "name": "Shakespeare/Troy Hall",
+   "lng": -72.251021,
+   "lat": 41.80439,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "thomas-j-dodd-research-center",
+     "minutes": 3.2
+    },
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 2.5
+    },
+    "dining": {
+     "placeId": "connecticut-dining-hall",
+     "minutes": 5.4
+    }
+   }
+  },
+  {
+   "dormId": "baldwin",
+   "name": "Baldwin Hall",
+   "lng": -72.258077,
+   "lat": 41.812176,
+   "pin": "manual",
+   "osm": "way/1511691925",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 12.3
+    },
+    "gym": {
+     "placeId": "hugh-s-greer-fieldhouse",
+     "minutes": 8.9
+    },
+    "dining": {
+     "placeId": "northwest-dining-hall",
+     "minutes": 2.2
+    }
+   }
+  },
+  {
+   "dormId": "mcconaughy",
+   "name": "McConaughy Hall",
+   "lng": -72.258418,
+   "lat": 41.812196,
+   "pin": "manual",
+   "osm": "way/1511691925",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 12.3
+    },
+    "gym": {
+     "placeId": "hugh-s-greer-fieldhouse",
+     "minutes": 8.9
+    },
+    "dining": {
+     "placeId": "northwest-dining-hall",
+     "minutes": 2.2
+    }
+   }
+  },
+  {
+   "dormId": "russell",
+   "name": "Russell Hall",
+   "lng": -72.259428,
+   "lat": 41.810518,
+   "pin": "name",
+   "osm": "way/231632036",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "homer-d-babbidge-library",
+     "minutes": 12.1
+    },
+    "gym": {
+     "placeId": "hugh-s-greer-fieldhouse",
+     "minutes": 8.7
+    },
+    "dining": {
+     "placeId": "northwest-dining-hall",
+     "minutes": 1.9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "edward-v-gant-science-complex",
+   "name": "Edward V. Gant Science Complex",
+   "short": "Edward V. Gant Science Complex",
+   "kind": "academic",
+   "codes": [
+    "GW",
+    "GP",
+    "GN",
+    "GS"
+   ],
+   "aliases": [
+    "Gant West Building (GW)",
+    "Gant Plaza (GP)",
+    "Gant North Building (GN)",
+    "Gant South Building (GS)"
+   ],
+   "lng": -72.257081,
+   "lat": 41.809604,
+   "osm": "way/1513121827"
+  },
+  {
+   "id": "homer-d-babbidge-library",
+   "name": "Homer D. Babbidge Library",
+   "short": "Homer D. Babbidge Library",
+   "kind": "library",
+   "codes": [
+    "HBL"
+   ],
+   "aliases": [
+    "Homer Babbidge Library (HBL)"
+   ],
+   "lng": -72.251782,
+   "lat": 41.806624,
+   "osm": "way/31432672"
+  },
+  {
+   "id": "student-recreation-center",
+   "name": "Student Recreation Center",
+   "short": "Student Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.252359,
+   "lat": 41.805172,
+   "osm": "way/566462784"
+  },
+  {
+   "id": "hugh-s-greer-fieldhouse",
+   "name": "Hugh S. Greer Fieldhouse",
+   "short": "Hugh S. Greer Fieldhouse",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.256287,
+   "lat": 41.806959,
+   "osm": "way/35972640"
+  },
+  {
+   "id": "science-1-research-building",
+   "name": "Science 1 Research Building",
+   "short": "Science 1 Research Building",
+   "kind": "academic",
+   "codes": [
+    "SCI1"
+   ],
+   "aliases": [
+    "Science 1 Research Center (SCI1)"
+   ],
+   "lng": -72.259725,
+   "lat": 41.807561,
+   "osm": "way/1134192026"
+  },
+  {
+   "id": "werth-family-basketball-champions-center",
+   "name": "Werth Family Basketball Champions Center",
+   "short": "Werth Family Basketball Champions Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.255417,
+   "lat": 41.804577,
+   "osm": "way/565123247"
+  },
+  {
+   "id": "student-recreational-facility",
+   "name": "Student Recreational Facility",
+   "short": "Student Recreational Facility",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.255521,
+   "lat": 41.806314,
+   "osm": "way/35972639"
+  },
+  {
+   "id": "uconn-volleyball-center",
+   "name": "UConn Volleyball Center",
+   "short": "UConn Volleyball Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.25473,
+   "lat": 41.800282,
+   "osm": "way/31576041"
+  },
+  {
+   "id": "chemistry-building",
+   "name": "Chemistry Building",
+   "short": "Chemistry Building",
+   "kind": "academic",
+   "codes": [
+    "CHM"
+   ],
+   "aliases": [
+    "Chemistry Building (CHM)"
+   ],
+   "lng": -72.253897,
+   "lat": 41.810787,
+   "osm": "way/776648406"
+  },
+  {
+   "id": "burton-family-football-complex",
+   "name": "Burton Family Football Complex",
+   "short": "Burton Family Football Complex",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.255131,
+   "lat": 41.803426,
+   "osm": "way/229950143"
+  },
+  {
+   "id": "thomas-j-dodd-research-center",
+   "name": "Thomas J. Dodd Research Center",
+   "short": "Thomas J. Dodd Research Center",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.251093,
+   "lat": 41.805833,
+   "osm": "way/779715820"
+  },
+  {
+   "id": "weston-a-bousfield-psychology-building",
+   "name": "Weston A. Bousfield Psychology Building",
+   "short": "Weston A. Bousfield Psychology Building",
+   "kind": "academic",
+   "codes": [
+    "BOUS"
+   ],
+   "aliases": [
+    "Bousfield Psychology Building (BOUS)"
+   ],
+   "lng": -72.250365,
+   "lat": 41.80659,
+   "osm": "way/31543206"
+  },
+  {
+   "id": "school-of-business",
+   "name": "School of Business",
+   "short": "School of Business",
+   "kind": "academic",
+   "codes": [
+    "BUSN"
+   ],
+   "aliases": [
+    "School Of Business (BUSN)"
+   ],
+   "lng": -72.253527,
+   "lat": 41.805913,
+   "osm": "way/627038780"
+  },
+  {
+   "id": "pharmacy-biology-building",
+   "name": "Pharmacy/Biology Building",
+   "short": "Pharmacy/Biology Building",
+   "kind": "academic",
+   "codes": [
+    "PBB"
+   ],
+   "aliases": [
+    "Pharmacy/Biology Building (PBB)"
+   ],
+   "lng": -72.255166,
+   "lat": 41.810074,
+   "osm": "way/776647295"
+  },
+  {
+   "id": "philip-e-austin-building",
+   "name": "Philip E. Austin Building",
+   "short": "Philip E. Austin Building",
+   "kind": "academic",
+   "codes": [
+    "AUST"
+   ],
+   "aliases": [
+    "CLAS Building",
+    "Austin Building (AUST)"
+   ],
+   "lng": -72.251156,
+   "lat": 41.810439,
+   "osm": "way/31548751"
+  },
+  {
+   "id": "george-safford-torrey-life-sciences-building",
+   "name": "George Safford Torrey Life Sciences Building",
+   "short": "George Safford Torrey Life Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "TLS"
+   ],
+   "aliases": [
+    "Torrey Life Sciences Building (TLS)"
+   ],
+   "lng": -72.256031,
+   "lat": 41.810437,
+   "osm": "way/229952263"
+  },
+  {
+   "id": "susan-v-herbst-hall",
+   "name": "Susan V. Herbst Hall",
+   "short": "Susan V. Herbst Hall",
+   "kind": "academic",
+   "codes": [
+    "SHH"
+   ],
+   "aliases": [
+    "Susan V. Herbst Hall (SHH)"
+   ],
+   "lng": -72.251321,
+   "lat": 41.807443,
+   "osm": "way/221255698"
+  },
+  {
+   "id": "art-building",
+   "name": "Art Building",
+   "short": "Art Building",
+   "kind": "academic",
+   "codes": [
+    "ARTB"
+   ],
+   "aliases": [
+    "School of Fine Arts - Art Building (ARTB)"
+   ],
+   "lng": -72.245634,
+   "lat": 41.803814,
+   "osm": "way/234847407"
+  },
+  {
+   "id": "francis-l-castleman-building",
+   "name": "Francis L. Castleman Building",
+   "short": "Francis L. Castleman Building",
+   "kind": "academic",
+   "codes": [
+    "CAST"
+   ],
+   "aliases": [
+    "Engineering II",
+    "Castleman Building (Eng. I) (CAST)"
+   ],
+   "lng": -72.254752,
+   "lat": 41.808149,
+   "osm": "way/31545258"
+  },
+  {
+   "id": "lawrence-d-mchugh-hall",
+   "name": "Lawrence D. McHugh Hall",
+   "short": "Lawrence D. McHugh Hall",
+   "kind": "academic",
+   "codes": [
+    "MCHU"
+   ],
+   "aliases": [
+    "Laurel Hall",
+    "Classroom Building",
+    "Lawrence D. McHugh Hall (MCHU)"
+   ],
+   "lng": -72.253421,
+   "lat": 41.807123,
+   "osm": "way/229908432"
+  },
+  {
+   "id": "biology-physics-building",
+   "name": "Biology/Physics Building",
+   "short": "Biology/Physics Building",
+   "kind": "academic",
+   "codes": [
+    "BPB"
+   ],
+   "aliases": [
+    "Biology/Physics (BPB)"
+   ],
+   "lng": -72.256604,
+   "lat": 41.80991,
+   "osm": "way/230067934"
+  },
+  {
+   "id": "wolff-zackin-natatorium",
+   "name": "Wolff-Zackin Natatorium",
+   "short": "Wolff-Zackin Natatorium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.255074,
+   "lat": 41.805669,
+   "osm": "way/229949084"
+  },
+  {
+   "id": "connecticut-dining-hall",
+   "name": "Connecticut Dining Hall",
+   "short": "Connecticut Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.24771,
+   "lat": 41.805529,
+   "osm": "way/1322966590"
+  },
+  {
+   "id": "engineering-ii",
+   "name": "Engineering II",
+   "short": "Engineering II",
+   "kind": "academic",
+   "codes": [
+    "E2"
+   ],
+   "aliases": [
+    "Engineering II (E2)"
+   ],
+   "lng": -72.255326,
+   "lat": 41.809121,
+   "osm": "way/229842369"
+  },
+  {
+   "id": "information-technology-engineering-building",
+   "name": "Information Technology Engineering Building",
+   "short": "Information Technology Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "ITE"
+   ],
+   "aliases": [
+    "ITEB",
+    "Information Technology Building (ITE)"
+   ],
+   "lng": -72.252849,
+   "lat": 41.806536,
+   "osm": "way/31543203"
+  },
+  {
+   "id": "charles-lewis-beach-hall",
+   "name": "Charles Lewis Beach Hall",
+   "short": "Charles Lewis Beach Hall",
+   "kind": "academic",
+   "codes": [
+    "BCH"
+   ],
+   "aliases": [
+    "Beach Hall (BCH)"
+   ],
+   "lng": -72.250027,
+   "lat": 41.809449,
+   "osm": "way/31548753"
+  },
+  {
+   "id": "roy-e-jones-building",
+   "name": "Roy E. Jones Building",
+   "short": "Roy E. Jones Building",
+   "kind": "academic",
+   "codes": [
+    "JONS"
+   ],
+   "aliases": [
+    "Jones Building (JONS)"
+   ],
+   "lng": -72.248617,
+   "lat": 41.813694,
+   "osm": "way/234848226"
+  },
+  {
+   "id": "carolyn-ladd-widmer-wing",
+   "name": "Carolyn Ladd Widmer Wing",
+   "short": "Carolyn Ladd Widmer Wing",
+   "kind": "academic",
+   "codes": [
+    "STRS"
+   ],
+   "aliases": [
+    "Storrs Hall (STRS)"
+   ],
+   "lng": -72.252294,
+   "lat": 41.809974,
+   "osm": "way/31550017"
+  },
+  {
+   "id": "graduate-by-hilton-storrs",
+   "name": "Graduate by Hilton Storrs",
+   "short": "Graduate by Hilton Storrs",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Graduate Hotels",
+    "Graduate Storrs"
+   ],
+   "lng": -72.248838,
+   "lat": 41.802964,
+   "osm": "way/31545246"
+  },
+  {
+   "id": "roger-a-gelfenbien-towers-dining-hall",
+   "name": "Roger A. Gelfenbien Towers Dining Hall",
+   "short": "Roger A. Gelfenbien Towers Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.254475,
+   "lat": 41.813376,
+   "osm": "relation/13257151"
+  },
+  {
+   "id": "john-w-rowe-center-for-undergraduate-education",
+   "name": "John W. Rowe Center for Undergraduate Education",
+   "short": "John W. Rowe Center for Undergraduate Education",
+   "kind": "academic",
+   "codes": [
+    "ROWE"
+   ],
+   "aliases": [
+    "Center for Undergraduate Education",
+    "Rowe Center For Undergraduate Education (ROWE)"
+   ],
+   "lng": -72.252881,
+   "lat": 41.807706,
+   "osm": "way/31549135"
+  },
+  {
+   "id": "northwest-dining-hall",
+   "name": "Northwest Dining Hall",
+   "short": "Northwest Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.259723,
+   "lat": 41.811456,
+   "osm": "way/628639666"
+  },
+  {
+   "id": "wilfred-b-young-building",
+   "name": "Wilfred B. Young Building",
+   "short": "Wilfred B. Young Building",
+   "kind": "academic",
+   "codes": [
+    "YNG"
+   ],
+   "aliases": [
+    "Young Building (YNG)"
+   ],
+   "lng": -72.248282,
+   "lat": 41.812111,
+   "osm": "way/230067914"
+  },
+  {
+   "id": "wilbur-o-atwater-laboratory",
+   "name": "Wilbur O. Atwater Laboratory",
+   "short": "Wilbur O. Atwater Laboratory",
+   "kind": "academic",
+   "codes": [
+    "ATWR"
+   ],
+   "aliases": [
+    "Atwater Lab (ATWR)"
+   ],
+   "lng": -72.254923,
+   "lat": 41.8109,
+   "osm": "way/776897410"
+  },
+  {
+   "id": "charles-b-gentry-building",
+   "name": "Charles B. Gentry Building",
+   "short": "Charles B. Gentry Building",
+   "kind": "academic",
+   "codes": [
+    "GENT"
+   ],
+   "aliases": [
+    "Gentry Building (NEAG)"
+   ],
+   "lng": -72.253853,
+   "lat": 41.808584,
+   "osm": "way/548057588"
+  },
+  {
+   "id": "henry-ruthven-montieth-building",
+   "name": "Henry Ruthven Montieth Building",
+   "short": "Henry Ruthven Montieth Building",
+   "kind": "academic",
+   "codes": [
+    "MONT"
+   ],
+   "aliases": [
+    "Monteith Building (MONT)"
+   ],
+   "lng": -72.249361,
+   "lat": 41.806984,
+   "osm": "way/31543205"
+  },
+  {
+   "id": "jaime-homero-arjona-building",
+   "name": "Jaime Homero Arjona Building",
+   "short": "Jaime Homero Arjona Building",
+   "kind": "academic",
+   "codes": [
+    "ARJ"
+   ],
+   "aliases": [
+    "Arjona Building (Humanities) (ARJ)"
+   ],
+   "lng": -72.248728,
+   "lat": 41.806259,
+   "osm": "way/31543204"
+  },
+  {
+   "id": "livestock-unit-i",
+   "name": "Livestock Unit I",
+   "short": "Livestock Unit I",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Livestock Unit 1"
+   ],
+   "lng": -72.24213,
+   "lat": 41.817092,
+   "osm": "way/1025859690"
+  },
+  {
+   "id": "ratcliffe-hicks-building-and-arena",
+   "name": "Ratcliffe Hicks Building and Arena",
+   "short": "Ratcliffe Hicks Building and Arena",
+   "kind": "academic",
+   "codes": [
+    "RHBA"
+   ],
+   "aliases": [
+    "Ratcliffe Hicks Building (RHBA)"
+   ],
+   "lng": -72.24945,
+   "lat": 41.812277,
+   "osm": "way/230067932"
+  },
+  {
+   "id": "willis-nichols-hawley-armory",
+   "name": "Willis Nichols Hawley Armory",
+   "short": "Willis Nichols Hawley Armory",
+   "kind": "gym",
+   "codes": [
+    "HAWL"
+   ],
+   "aliases": [
+    "Hawley Armory (HAWL)"
+   ],
+   "lng": -72.250708,
+   "lat": 41.807695,
+   "osm": "way/31724297"
+  },
+  {
+   "id": "george-c-white-building",
+   "name": "George C. White Building",
+   "short": "George C. White Building",
+   "kind": "academic",
+   "codes": [
+    "WITE"
+   ],
+   "aliases": [
+    "White Building (WITE)"
+   ],
+   "lng": -72.249404,
+   "lat": 41.81317,
+   "osm": "way/234848216"
+  },
+  {
+   "id": "arthur-b-bronwell-building",
+   "name": "Arthur B. Bronwell Building",
+   "short": "Arthur B. Bronwell Building",
+   "kind": "academic",
+   "codes": [
+    "BRON"
+   ],
+   "aliases": [
+    "Engineering III",
+    "Bronwell Building (BRON)"
+   ],
+   "lng": -72.254944,
+   "lat": 41.808767,
+   "osm": "way/229842368"
+  },
+  {
+   "id": "pratt-and-whitney-engineering-building",
+   "name": "Pratt & Whitney Engineering Building",
+   "short": "Pratt & Whitney Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "PWE"
+   ],
+   "aliases": [
+    "Pratt and Whitney Engineering Building (PWE)"
+   ],
+   "lng": -72.255513,
+   "lat": 41.809439,
+   "osm": "way/229842370"
+  },
+  {
+   "id": "merlin-d-bishop-center",
+   "name": "Merlin D. Bishop Center",
+   "short": "Merlin D. Bishop Center",
+   "kind": "academic",
+   "codes": [
+    "BISH"
+   ],
+   "aliases": [
+    "Bishop Center (BISH)"
+   ],
+   "lng": -72.24371,
+   "lat": 41.806863,
+   "osm": "way/234732438"
+  },
+  {
+   "id": "advanced-technology-building",
+   "name": "Advanced Technology Building",
+   "short": "Advanced Technology Building",
+   "kind": "academic",
+   "codes": [
+    "ABL"
+   ],
+   "aliases": [
+    "Ag Bio-Technology (ABL)"
+   ],
+   "lng": -72.250331,
+   "lat": 41.813291,
+   "osm": "way/234850436"
+  },
+  {
+   "id": "family-studies-building",
+   "name": "Family Studies Building",
+   "short": "Family Studies Building",
+   "kind": "academic",
+   "codes": [
+    "FSB"
+   ],
+   "aliases": [
+    "Family Studies Building (FSB)"
+   ],
+   "lng": -72.248981,
+   "lat": 41.808641,
+   "osm": "way/229842397"
+  },
+  {
+   "id": "main-accumulation-area",
+   "name": "Main Accumulation Area",
+   "short": "Main Accumulation Area",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MAA"
+   ],
+   "lng": -72.265281,
+   "lat": 41.813298,
+   "osm": "way/633025680"
+  },
+  {
+   "id": "benjamin-franklin-koons-hall",
+   "name": "Benjamin Franklin Koons Hall",
+   "short": "Benjamin Franklin Koons Hall",
+   "kind": "academic",
+   "codes": [
+    "KNS"
+   ],
+   "aliases": [
+    "Koons Hall (KNS)"
+   ],
+   "lng": -72.251063,
+   "lat": 41.808534,
+   "osm": "way/31549127"
+  },
+  {
+   "id": "music-library-building",
+   "name": "Music Library Building",
+   "short": "Music Library Building",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.244576,
+   "lat": 41.804844,
+   "osm": "relation/11230785"
+  },
+  {
+   "id": "william-h-hall-building",
+   "name": "William H. Hall Building",
+   "short": "William H. Hall Building",
+   "kind": "academic",
+   "codes": [
+    "HALL"
+   ],
+   "aliases": [
+    "Hall Building (HALL)"
+   ],
+   "lng": -72.251979,
+   "lat": 41.808154,
+   "osm": "way/610340183"
+  },
+  {
+   "id": "walter-childs-wood-hall",
+   "name": "Walter Childs Wood Hall",
+   "short": "Walter Childs Wood Hall",
+   "kind": "academic",
+   "codes": [
+    "WOOD"
+   ],
+   "aliases": [
+    "Wood Hall (WOOD)"
+   ],
+   "lng": -72.253131,
+   "lat": 41.809223,
+   "osm": "way/31550018"
+  },
+  {
+   "id": "andre-schenker-lecture-hall",
+   "name": "Andre Schenker Lecture Hall",
+   "short": "Andre Schenker Lecture Hall",
+   "kind": "academic",
+   "codes": [
+    "SCHN"
+   ],
+   "aliases": [
+    "Schenker Andre Lecture Hall (SCHN)"
+   ],
+   "lng": -72.249789,
+   "lat": 41.807254,
+   "osm": "way/31543207"
+  },
+  {
+   "id": "livestock-unit-ii",
+   "name": "Livestock Unit II",
+   "short": "Livestock Unit II",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Livestock Unit 2"
+   ],
+   "lng": -72.244191,
+   "lat": 41.819681,
+   "osm": "way/234039582"
+  },
+  {
+   "id": "art-ceramic-studio",
+   "name": "Art Ceramic Studio",
+   "short": "Art Ceramic Studio",
+   "kind": "academic",
+   "codes": [
+    "ACS"
+   ],
+   "aliases": [
+    "Art Ceramic Studio (ACS)"
+   ],
+   "lng": -72.253061,
+   "lat": 41.804139,
+   "osm": "way/31544092"
+  }
+ ]
+}

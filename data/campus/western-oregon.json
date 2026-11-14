@@ -1,0 +1,394 @@
+{
+ "collegeId": "western-oregon",
+ "generatedAt": "2026-11-13T04:32:39.921Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/western-oregon.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -123.24146,
+  44.85005,
+  -123.23483,
+  44.85552
+ ],
+ "halls": [
+  {
+   "dormId": "ackerman-hall",
+   "name": "Ackerman Hall",
+   "lng": -123.239969,
+   "lat": 44.853055,
+   "pin": "name",
+   "osm": "way/758825422",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "new-physical-education-building",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "wayne-and-lynn-hamersly-library",
+     "minutes": 4.4
+    },
+    "dining": {
+     "placeId": "valsetz-dining-hall",
+     "minutes": 3.3
+    }
+   }
+  },
+  {
+   "dormId": "barnum-hall",
+   "name": "Barnum Hall",
+   "lng": -123.240219,
+   "lat": 44.854406,
+   "pin": "name",
+   "osm": "way/759052370",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "new-physical-education-building",
+     "minutes": 4.4
+    },
+    "library": {
+     "placeId": "wayne-and-lynn-hamersly-library",
+     "minutes": 5.5
+    },
+    "dining": {
+     "placeId": "valsetz-dining-hall",
+     "minutes": 1.9
+    }
+   }
+  },
+  {
+   "dormId": "landers-hall",
+   "name": "Landers Hall",
+   "lng": -123.23941,
+   "lat": 44.854758,
+   "pin": "name",
+   "osm": "way/759052369",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "new-physical-education-building",
+     "minutes": 5.8
+    },
+    "library": {
+     "placeId": "wayne-and-lynn-hamersly-library",
+     "minutes": 4.8
+    },
+    "dining": {
+     "placeId": "valsetz-dining-hall",
+     "minutes": 1.2
+    }
+   }
+  },
+  {
+   "dormId": "heritage-hall",
+   "name": "Heritage Hall",
+   "lng": -123.238207,
+   "lat": 44.854698,
+   "pin": "name",
+   "osm": "way/758825421",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ruth-lautenback-hall",
+     "minutes": 7.4
+    },
+    "library": {
+     "placeId": "wayne-and-lynn-hamersly-library",
+     "minutes": 3.3
+    },
+    "dining": {
+     "placeId": "valsetz-dining-hall",
+     "minutes": 2.9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "peter-courtney-health-and-wellness-center",
+   "name": "Peter Courtney Health & Wellness Center",
+   "short": "Peter Courtney Health & Wellness Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.239041,
+   "lat": 44.850129,
+   "osm": "way/759072825"
+  },
+  {
+   "id": "new-physical-education-building",
+   "name": "New Physical Education Building",
+   "short": "New Physical Education Building",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.241458,
+   "lat": 44.852427,
+   "osm": "way/759053224"
+  },
+  {
+   "id": "werner-university-center",
+   "name": "Werner University Center",
+   "short": "Werner University Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.23833,
+   "lat": 44.852259,
+   "osm": "way/758825424"
+  },
+  {
+   "id": "wayne-and-lynn-hamersly-library",
+   "name": "Wayne & Lynn Hamersly Library",
+   "short": "Wayne & Lynn Hamersly Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.236877,
+   "lat": 44.852913,
+   "osm": "way/759043031"
+  },
+  {
+   "id": "richard-woodcock-education-center",
+   "name": "Richard Woodcock Education Center",
+   "short": "Richard Woodcock Education Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.23672,
+   "lat": 44.853669,
+   "osm": "way/759047030"
+  },
+  {
+   "id": "valsetz-dining-hall",
+   "name": "Valsetz Dining Hall",
+   "short": "Valsetz Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.239524,
+   "lat": 44.854169,
+   "osm": "way/758825423"
+  },
+  {
+   "id": "natural-sciences",
+   "name": "Natural Sciences",
+   "short": "Natural Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.237882,
+   "lat": 44.850046,
+   "osm": "way/759072823"
+  },
+  {
+   "id": "ruth-lautenback-hall",
+   "name": "Ruth Lautenback Hall",
+   "short": "Ruth Lautenback Hall",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Physical Education Building"
+   ],
+   "lng": -123.238431,
+   "lat": 44.85007,
+   "osm": "way/759072826"
+  },
+  {
+   "id": "academic-programs-and-support-center",
+   "name": "Academic Programs & Support Center",
+   "short": "Academic Programs & Support Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.23673,
+   "lat": 44.850088,
+   "osm": "way/759072819"
+  },
+  {
+   "id": "student-success-center",
+   "name": "Student Success Center",
+   "short": "Student Success Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Education Building"
+   ],
+   "lng": -123.236738,
+   "lat": 44.852225,
+   "osm": "way/759072814"
+  },
+  {
+   "id": "smith-music-hall",
+   "name": "Smith Music Hall",
+   "short": "Smith Music Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.236199,
+   "lat": 44.850531,
+   "osm": "way/534307925"
+  },
+  {
+   "id": "instructional-technology-center-annex",
+   "name": "Instructional Technology Center Annex",
+   "short": "Instructional Technology Center Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.236372,
+   "lat": 44.851766,
+   "osm": "way/759072816"
+  },
+  {
+   "id": "winters-mathematics-and-nursing-building",
+   "name": "Winters Mathematics & Nursing Building",
+   "short": "Winters Mathematics & Nursing Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.238041,
+   "lat": 44.852944,
+   "osm": "way/759040053"
+  },
+  {
+   "id": "todd-hall",
+   "name": "Todd Hall",
+   "short": "Todd Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.238102,
+   "lat": 44.851768,
+   "osm": "way/759072820"
+  },
+  {
+   "id": "bellamy-hall",
+   "name": "Bellamy Hall",
+   "short": "Bellamy Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Humanities and Social Science"
+   ],
+   "lng": -123.237951,
+   "lat": 44.850862,
+   "osm": "way/759072822"
+  },
+  {
+   "id": "devolder-family-science-center",
+   "name": "DeVolder Family Science Center",
+   "short": "DeVolder Family Science Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.239158,
+   "lat": 44.850869,
+   "osm": "way/1107587749"
+  },
+  {
+   "id": "leonard-w-rice-auditorium",
+   "name": "Leonard W. Rice Auditorium",
+   "short": "Leonard W. Rice Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.234833,
+   "lat": 44.851297,
+   "osm": "way/759223810"
+  },
+  {
+   "id": "student-advising-center",
+   "name": "Student Advising Center",
+   "short": "Student Advising Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.239204,
+   "lat": 44.851731,
+   "osm": "way/759226125"
+  },
+  {
+   "id": "instructional-technology-center",
+   "name": "Instructional Technology Center",
+   "short": "Instructional Technology Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.236864,
+   "lat": 44.851558,
+   "osm": "way/759072815"
+  },
+  {
+   "id": "campbell-hall",
+   "name": "Campbell Hall",
+   "short": "Campbell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.237867,
+   "lat": 44.851279,
+   "osm": "way/759072821"
+  },
+  {
+   "id": "maaske-hall",
+   "name": "Maaske Hall",
+   "short": "Maaske Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.237849,
+   "lat": 44.852553,
+   "osm": "way/759040052"
+  },
+  {
+   "id": "maple-hall",
+   "name": "Maple Hall",
+   "short": "Maple Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.238591,
+   "lat": 44.851181,
+   "osm": "way/1107587244"
+  },
+  {
+   "id": "terry-house",
+   "name": "Terry House",
+   "short": "Terry House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.2381,
+   "lat": 44.855523,
+   "osm": "way/759224234"
+  },
+  {
+   "id": "the-cottage",
+   "name": "The Cottage",
+   "short": "The Cottage",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -123.238245,
+   "lat": 44.851575,
+   "osm": "way/759226126"
+  }
+ ]
+}

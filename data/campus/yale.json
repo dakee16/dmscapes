@@ -1,0 +1,974 @@
+{
+ "collegeId": "yale",
+ "generatedAt": "2026-11-13T21:36:31.530Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Yale College Programs of Study 2026–2027, Building Abbreviations",
+   "url": "https://catalog.yale.edu/ycps/building-abbreviations/",
+   "use": "building codes",
+   "read": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/yale.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -72.93462,
+  41.30123,
+  -72.92016,
+  41.32343
+ ],
+ "halls": [
+  {
+   "dormId": "es-harkness-hall",
+   "name": "ES Harkness Hall (Medical Campus)",
+   "lng": -72.934131,
+   "lat": 41.30445,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "payne-whitney-gymnasium",
+     "minutes": 17.5
+    },
+    "library": {
+     "placeId": "sterling-library",
+     "minutes": 14.2
+    },
+    "dining": {
+     "placeId": "schwarzman-center",
+     "minutes": 16.8
+    }
+   }
+  },
+  {
+   "dormId": "276-prospect",
+   "name": "276 Prospect Street",
+   "lng": -72.923979,
+   "lat": 41.319209,
+   "pin": "manual",
+   "osm": "way/217182138",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "payne-whitney-gymnasium",
+     "minutes": 13.8
+    },
+    "library": {
+     "placeId": "beinecke-rare-book-and-manuscript-library",
+     "minutes": 13.5
+    },
+    "dining": {
+     "placeId": "schwarzman-center",
+     "minutes": 10.8
+    }
+   }
+  },
+  {
+   "dormId": "254-prospect",
+   "name": "254 Prospect Street",
+   "lng": -72.924029,
+   "lat": 41.318799,
+   "pin": "manual",
+   "osm": "way/217182136",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "payne-whitney-gymnasium",
+     "minutes": 13.6
+    },
+    "library": {
+     "placeId": "beinecke-rare-book-and-manuscript-library",
+     "minutes": 13.3
+    },
+    "dining": {
+     "placeId": "schwarzman-center",
+     "minutes": 10.6
+    }
+   }
+  },
+  {
+   "dormId": "bauer-hall",
+   "name": "Divinity School - Bauer Hall",
+   "lng": -72.921742,
+   "lat": 41.323427,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "payne-whitney-gymnasium",
+     "minutes": 21.7
+    },
+    "library": {
+     "placeId": "beinecke-rare-book-and-manuscript-library",
+     "minutes": 21.3
+    },
+    "dining": {
+     "placeId": "schwarzman-center",
+     "minutes": 18.6
+    }
+   }
+  },
+  {
+   "dormId": "old-campus",
+   "name": "Undergraduate Residential Colleges & Old Campus",
+   "lng": -72.92863,
+   "lat": 41.309782,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "payne-whitney-gymnasium",
+     "minutes": 9.1
+    },
+    "library": {
+     "placeId": "sterling-library",
+     "minutes": 3
+    },
+    "dining": {
+     "placeId": "schwarzman-center",
+     "minutes": 5.6
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "payne-whitney-gymnasium",
+   "name": "Payne Whitney Gymnasium",
+   "short": "Payne Whitney Gymnasium",
+   "kind": "gym",
+   "codes": [
+    "PWG"
+   ],
+   "aliases": [],
+   "lng": -72.930917,
+   "lat": 41.313795,
+   "osm": "way/49602467"
+  },
+  {
+   "id": "sterling-library",
+   "name": "Sterling Library",
+   "short": "Sterling Library",
+   "kind": "library",
+   "codes": [
+    "SML"
+   ],
+   "aliases": [
+    "Sterling Memorial Library"
+   ],
+   "lng": -72.928754,
+   "lat": 41.311273,
+   "osm": "relation/2840329"
+  },
+  {
+   "id": "yale-school-of-management-edward-p-evans-hall",
+   "name": "Yale School of Management, Edward P. Evans Hall",
+   "short": "Yale School of Management, Edward P. Evans Hall",
+   "kind": "academic",
+   "codes": [
+    "EVANS"
+   ],
+   "aliases": [
+    "Edward P. Evans Hall"
+   ],
+   "lng": -72.920157,
+   "lat": 41.315153,
+   "osm": "relation/3959340"
+  },
+  {
+   "id": "yale-law-school",
+   "name": "Yale Law School",
+   "short": "Yale Law School",
+   "kind": "academic",
+   "codes": [
+    "SLB"
+   ],
+   "aliases": [
+    "Sterling Law Building"
+   ],
+   "lng": -72.928137,
+   "lat": 41.312072,
+   "osm": "relation/2840491"
+  },
+  {
+   "id": "sterling-hall",
+   "name": "Sterling Hall",
+   "short": "Sterling Hall",
+   "kind": "academic",
+   "codes": [
+    "SCL"
+   ],
+   "aliases": [
+    "Sterling Chemistry Laborarory",
+    "Sterling Chemistry Laboratory"
+   ],
+   "lng": -72.922926,
+   "lat": 41.318219,
+   "osm": "way/363820905"
+  },
+  {
+   "id": "the-anlyan-center",
+   "name": "The Anlyan Center",
+   "short": "The Anlyan Center",
+   "kind": "academic",
+   "codes": [
+    "TAC"
+   ],
+   "aliases": [],
+   "lng": -72.934245,
+   "lat": 41.301233,
+   "osm": "way/232595709"
+  },
+  {
+   "id": "humanities-quadrangle",
+   "name": "Humanities Quadrangle",
+   "short": "Humanities Quadrangle",
+   "kind": "academic",
+   "codes": [
+    "HQ"
+   ],
+   "aliases": [],
+   "lng": -72.929401,
+   "lat": 41.31234,
+   "osm": "relation/2845114"
+  },
+  {
+   "id": "yale-science-building",
+   "name": "Yale Science Building",
+   "short": "Yale Science Building",
+   "kind": "academic",
+   "codes": [
+    "YSB"
+   ],
+   "aliases": [],
+   "lng": -72.921634,
+   "lat": 41.317445,
+   "osm": "way/719112933"
+  },
+  {
+   "id": "schwarzman-center",
+   "name": "Schwarzman Center",
+   "short": "Schwarzman Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.926375,
+   "lat": 41.311775,
+   "osm": "way/363426802"
+  },
+  {
+   "id": "peabody-museum-of-natural-history",
+   "name": "Peabody Museum of Natural History",
+   "short": "Peabody Museum of Natural History",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Yale Peabody Museum"
+   ],
+   "lng": -72.921239,
+   "lat": 41.316015,
+   "osm": "relation/14221283"
+  },
+  {
+   "id": "yale-university-art-gallery",
+   "name": "Yale University Art Gallery",
+   "short": "Yale University Art Gallery",
+   "kind": "academic",
+   "codes": [
+    "YUAG"
+   ],
+   "aliases": [],
+   "lng": -72.930755,
+   "lat": 41.308404,
+   "osm": "relation/6686912"
+  },
+  {
+   "id": "class-of-1954-environmental-science-center",
+   "name": "Class of 1954 Environmental Science Center",
+   "short": "Class of 1954 Environmental Science Center",
+   "kind": "academic",
+   "codes": [
+    "ESC"
+   ],
+   "aliases": [],
+   "lng": -72.921791,
+   "lat": 41.316122,
+   "osm": "way/217341967"
+  },
+  {
+   "id": "kline-geology-laboratory",
+   "name": "Kline Geology Laboratory",
+   "short": "Kline Geology Laboratory",
+   "kind": "academic",
+   "codes": [
+    "KGL"
+   ],
+   "aliases": [],
+   "lng": -72.9211,
+   "lat": 41.316582,
+   "osm": "way/217341968"
+  },
+  {
+   "id": "boyer-center",
+   "name": "Boyer Center",
+   "short": "Boyer Center",
+   "kind": "academic",
+   "codes": [
+    "BCMM"
+   ],
+   "aliases": [
+    "Boyer Center for Molecular Medicine"
+   ],
+   "lng": -72.93277,
+   "lat": 41.302452,
+   "osm": "way/174712784"
+  },
+  {
+   "id": "yale-center-for-british-art",
+   "name": "Yale Center for British Art",
+   "short": "Yale Center for British Art",
+   "kind": "academic",
+   "codes": [
+    "YCBA"
+   ],
+   "aliases": [
+    "YCBA"
+   ],
+   "lng": -72.930861,
+   "lat": 41.307897,
+   "osm": "way/139753883"
+  },
+  {
+   "id": "bass-center",
+   "name": "Bass Center",
+   "short": "Bass Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Nancy Lee & Perry R. Bass Center For Molecular & Structural Biology"
+   ],
+   "lng": -72.921859,
+   "lat": 41.318101,
+   "osm": "relation/14221284"
+  },
+  {
+   "id": "class-of-1954-chemistry-research-building",
+   "name": "Class of 1954 Chemistry Research Building",
+   "short": "Class of 1954 Chemistry Research Building",
+   "kind": "academic",
+   "codes": [
+    "CRB"
+   ],
+   "aliases": [],
+   "lng": -72.922585,
+   "lat": 41.319281,
+   "osm": "way/363820904"
+  },
+  {
+   "id": "osborn-memorial-laboratories",
+   "name": "Osborn Memorial Laboratories",
+   "short": "Osborn Memorial Laboratories",
+   "kind": "academic",
+   "codes": [
+    "OML"
+   ],
+   "aliases": [],
+   "lng": -72.923691,
+   "lat": 41.316363,
+   "osm": "way/217341973"
+  },
+  {
+   "id": "green-hall",
+   "name": "Green Hall",
+   "short": "Green Hall",
+   "kind": "academic",
+   "codes": [
+    "GRN"
+   ],
+   "aliases": [
+    "Holcombe T. Green, Jr., Hall"
+   ],
+   "lng": -72.932995,
+   "lat": 41.308319,
+   "osm": "way/224973110"
+  },
+  {
+   "id": "brady-memorial-laboratory",
+   "name": "Brady Memorial Laboratory",
+   "short": "Brady Memorial Laboratory",
+   "kind": "academic",
+   "codes": [
+    "BML"
+   ],
+   "aliases": [],
+   "lng": -72.934075,
+   "lat": 41.302279,
+   "osm": "way/232595703"
+  },
+  {
+   "id": "sloane-physics-laboratory",
+   "name": "Sloane Physics Laboratory",
+   "short": "Sloane Physics Laboratory",
+   "kind": "academic",
+   "codes": [
+    "SPL"
+   ],
+   "aliases": [],
+   "lng": -72.923142,
+   "lat": 41.317347,
+   "osm": "way/228473356"
+  },
+  {
+   "id": "greeley-memorial-laboratory",
+   "name": "Greeley Memorial Laboratory",
+   "short": "Greeley Memorial Laboratory",
+   "kind": "academic",
+   "codes": [
+    "GML"
+   ],
+   "aliases": [],
+   "lng": -72.924519,
+   "lat": 41.321947,
+   "osm": "way/217366825"
+  },
+  {
+   "id": "rosenkranz-hall",
+   "name": "Rosenkranz Hall",
+   "short": "Rosenkranz Hall",
+   "kind": "academic",
+   "codes": [
+    "RKZ"
+   ],
+   "aliases": [],
+   "lng": -72.924413,
+   "lat": 41.314751,
+   "osm": "way/363327921"
+  },
+  {
+   "id": "whitney-grove-square",
+   "name": "Whitney Grove Square",
+   "short": "Whitney Grove Square",
+   "kind": "academic",
+   "codes": [
+    "WGS"
+   ],
+   "aliases": [],
+   "lng": -72.922849,
+   "lat": 41.310861,
+   "osm": "way/114670808"
+  },
+  {
+   "id": "dunham-laboratory",
+   "name": "Dunham Laboratory",
+   "short": "Dunham Laboratory",
+   "kind": "academic",
+   "codes": [
+    "DL"
+   ],
+   "aliases": [],
+   "lng": -72.924536,
+   "lat": 41.312343,
+   "osm": "way/217270620"
+  },
+  {
+   "id": "mason-laboratory",
+   "name": "Mason Laboratory",
+   "short": "Mason Laboratory",
+   "kind": "academic",
+   "codes": [
+    "ML"
+   ],
+   "aliases": [],
+   "lng": -72.923598,
+   "lat": 41.312131,
+   "osm": "way/217270617"
+  },
+  {
+   "id": "sheffield-sterling-strathcona-hall",
+   "name": "Sheffield-Sterling-Strathcona Hall",
+   "short": "Sheffield-Sterling-Strathcona Hall",
+   "kind": "academic",
+   "codes": [
+    "SSS"
+   ],
+   "aliases": [],
+   "lng": -72.925158,
+   "lat": 41.311917,
+   "osm": "way/217270625"
+  },
+  {
+   "id": "hendrie-hall",
+   "name": "Hendrie Hall",
+   "short": "Hendrie Hall",
+   "kind": "academic",
+   "codes": [
+    "HENDRIE"
+   ],
+   "aliases": [],
+   "lng": -72.92609,
+   "lat": 41.309527,
+   "osm": "relation/6888590"
+  },
+  {
+   "id": "watson-center",
+   "name": "Watson Center",
+   "short": "Watson Center",
+   "kind": "academic",
+   "codes": [
+    "WTS"
+   ],
+   "aliases": [],
+   "lng": -72.923641,
+   "lat": 41.315679,
+   "osm": "way/238532528"
+  },
+  {
+   "id": "linsly-chittenden-hall",
+   "name": "Linsly-Chittenden Hall",
+   "short": "Linsly-Chittenden Hall",
+   "kind": "academic",
+   "codes": [
+    "LC"
+   ],
+   "aliases": [],
+   "lng": -72.929524,
+   "lat": 41.308567,
+   "osm": "way/139753884"
+  },
+  {
+   "id": "william-l-harkness-hall",
+   "name": "William L. Harkness Hall",
+   "short": "William L. Harkness Hall",
+   "kind": "academic",
+   "codes": [
+    "WLH"
+   ],
+   "aliases": [],
+   "lng": -72.926817,
+   "lat": 41.310645,
+   "osm": "way/139420880"
+  },
+  {
+   "id": "rudolph-hall",
+   "name": "Rudolph Hall",
+   "short": "Rudolph Hall",
+   "kind": "academic",
+   "codes": [
+    "RDH"
+   ],
+   "aliases": [
+    "Art & Architecture Building"
+   ],
+   "lng": -72.931864,
+   "lat": 41.308778,
+   "osm": "way/224889715"
+  },
+  {
+   "id": "kroon-hall",
+   "name": "Kroon Hall",
+   "short": "Kroon Hall",
+   "kind": "academic",
+   "codes": [
+    "KRN"
+   ],
+   "aliases": [],
+   "lng": -72.923351,
+   "lat": 41.316796,
+   "osm": "way/217341970"
+  },
+  {
+   "id": "beinecke-rare-book-and-manuscript-library",
+   "name": "Beinecke Rare Book and Manuscript Library",
+   "short": "Beinecke Rare Book and Manuscript Library",
+   "kind": "library",
+   "codes": [
+    "BRBL"
+   ],
+   "aliases": [
+    "Beinecke Library"
+   ],
+   "lng": -72.927324,
+   "lat": 41.311597,
+   "osm": "way/114134159"
+  },
+  {
+   "id": "lanman-wright-hall",
+   "name": "Lanman-Wright Hall",
+   "short": "Lanman-Wright Hall",
+   "kind": "academic",
+   "codes": [
+    "LWR"
+   ],
+   "aliases": [
+    "Lanman-Wright Memorial Hall"
+   ],
+   "lng": -72.928704,
+   "lat": 41.30979,
+   "osm": "way/139759946"
+  },
+  {
+   "id": "kline-tower",
+   "name": "Kline Tower",
+   "short": "Kline Tower",
+   "kind": "academic",
+   "codes": [
+    "KT"
+   ],
+   "aliases": [],
+   "lng": -72.922533,
+   "lat": 41.317278,
+   "osm": "way/228325196"
+  },
+  {
+   "id": "laboratory-of-epidemiology-and-public-health",
+   "name": "Laboratory of Epidemiology and Public Health",
+   "short": "Laboratory of Epidemiology and Public Health",
+   "kind": "academic",
+   "codes": [
+    "LEPH"
+   ],
+   "aliases": [],
+   "lng": -72.932157,
+   "lat": 41.303736,
+   "osm": "way/239527110"
+  },
+  {
+   "id": "bass-library-underground",
+   "name": "Bass Library Underground",
+   "short": "Bass Library Underground",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.927594,
+   "lat": 41.310667,
+   "osm": "way/364538450"
+  },
+  {
+   "id": "winchester-building",
+   "name": "Winchester Building",
+   "short": "Winchester Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "William Wirt Winchester Building"
+   ],
+   "lng": -72.934622,
+   "lat": 41.303347,
+   "osm": "way/232595697"
+  },
+  {
+   "id": "malone-center",
+   "name": "Malone Center",
+   "short": "Malone Center",
+   "kind": "academic",
+   "codes": [
+    "MEC"
+   ],
+   "aliases": [
+    "Malone Engineering Center"
+   ],
+   "lng": -72.924779,
+   "lat": 41.313369,
+   "osm": "way/217301902"
+  },
+  {
+   "id": "sprague-memorial-hall",
+   "name": "Sprague Memorial Hall",
+   "short": "Sprague Memorial Hall",
+   "kind": "academic",
+   "codes": [
+    "SMH"
+   ],
+   "aliases": [
+    "Sprague Building"
+   ],
+   "lng": -72.926607,
+   "lat": 41.310737,
+   "osm": "way/139420882"
+  },
+  {
+   "id": "street-hall",
+   "name": "Street Hall",
+   "short": "Street Hall",
+   "kind": "academic",
+   "codes": [
+    "COLL493"
+   ],
+   "aliases": [
+    "493 College Street"
+   ],
+   "lng": -72.929864,
+   "lat": 41.308146,
+   "osm": "way/139753868"
+  },
+  {
+   "id": "loria-center",
+   "name": "Loria Center",
+   "short": "Loria Center",
+   "kind": "academic",
+   "codes": [
+    "LORIA"
+   ],
+   "aliases": [
+    "Jeffrey H. Loria Center"
+   ],
+   "lng": -72.931706,
+   "lat": 41.309024,
+   "osm": "way/224889714"
+  },
+  {
+   "id": "arthur-k-watson-hall",
+   "name": "Arthur K. Watson Hall",
+   "short": "Arthur K. Watson Hall",
+   "kind": "academic",
+   "codes": [
+    "AKW"
+   ],
+   "aliases": [],
+   "lng": -72.924859,
+   "lat": 41.313097,
+   "osm": "way/217270615"
+  },
+  {
+   "id": "yale-repertory-theatre",
+   "name": "Yale Repertory Theatre",
+   "short": "Yale Repertory Theatre",
+   "kind": "academic",
+   "codes": [
+    "UT"
+   ],
+   "aliases": [
+    "University Theatre"
+   ],
+   "lng": -72.931584,
+   "lat": 41.308122,
+   "osm": "way/142280415"
+  },
+  {
+   "id": "luce-hall",
+   "name": "Luce Hall",
+   "short": "Luce Hall",
+   "kind": "academic",
+   "codes": [
+    "LUCE"
+   ],
+   "aliases": [
+    "Henry R. Luce Hall"
+   ],
+   "lng": -72.924326,
+   "lat": 41.314434,
+   "osm": "way/363329574"
+  },
+  {
+   "id": "hope-memorial-building-brady-memorial-lab-connecting-bridge-hope-memorial-building",
+   "name": "Hope Memorial Building-Brady Memorial Lab connecting bridge;Hope Memorial Building",
+   "short": "Hope Memorial Building-Brady Memorial Lab connecting bridge;Hope Memorial Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Hope Memorial Building"
+   ],
+   "lng": -72.933445,
+   "lat": 41.30216,
+   "osm": "relation/14221317"
+  },
+  {
+   "id": "rosenfeld-hall",
+   "name": "Rosenfeld Hall",
+   "short": "Rosenfeld Hall",
+   "kind": "academic",
+   "codes": [
+    "RSN"
+   ],
+   "aliases": [],
+   "lng": -72.923304,
+   "lat": 41.311127,
+   "osm": "way/114670911"
+  },
+  {
+   "id": "sage-hall",
+   "name": "Sage Hall",
+   "short": "Sage Hall",
+   "kind": "academic",
+   "codes": [
+    "S"
+   ],
+   "aliases": [],
+   "lng": -72.92371,
+   "lat": 41.317157,
+   "osm": "way/228473355"
+  },
+  {
+   "id": "leitner-family-observatory-and-planetarium",
+   "name": "Leitner Family Observatory and Planetarium",
+   "short": "Leitner Family Observatory and Planetarium",
+   "kind": "academic",
+   "codes": [
+    "LFOP"
+   ],
+   "aliases": [],
+   "lng": -72.921947,
+   "lat": 41.321128,
+   "osm": "way/217366824"
+  },
+  {
+   "id": "82-wall-street",
+   "name": "82 Wall Street",
+   "short": "82 Wall Street",
+   "kind": "academic",
+   "codes": [
+    "WALL82"
+   ],
+   "aliases": [
+    "82-90 Wall Street"
+   ],
+   "lng": -72.925612,
+   "lat": 41.31035,
+   "osm": "way/114626278"
+  },
+  {
+   "id": "lauder-hall",
+   "name": "Lauder Hall",
+   "short": "Lauder Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Lauder Building"
+   ],
+   "lng": -72.934196,
+   "lat": 41.301917,
+   "osm": "way/232595687"
+  },
+  {
+   "id": "kirtland-hall",
+   "name": "Kirtland Hall",
+   "short": "Kirtland Hall",
+   "kind": "academic",
+   "codes": [
+    "K"
+   ],
+   "aliases": [],
+   "lng": -72.924635,
+   "lat": 41.31189,
+   "osm": "way/225322472"
+  },
+  {
+   "id": "leet-oliver-memorial-hall",
+   "name": "Leet Oliver Memorial Hall",
+   "short": "Leet Oliver Memorial Hall",
+   "kind": "academic",
+   "codes": [
+    "LOM"
+   ],
+   "aliases": [],
+   "lng": -72.924318,
+   "lat": 41.312745,
+   "osm": "way/217270616"
+  },
+  {
+   "id": "stoeckel-hall",
+   "name": "Stoeckel Hall",
+   "short": "Stoeckel Hall",
+   "kind": "academic",
+   "codes": [
+    "STOECK"
+   ],
+   "aliases": [],
+   "lng": -72.925968,
+   "lat": 41.310494,
+   "osm": "way/216863215"
+  },
+  {
+   "id": "451-college-street",
+   "name": "451 College Street",
+   "short": "451 College Street",
+   "kind": "academic",
+   "codes": [
+    "COLL451"
+   ],
+   "aliases": [],
+   "lng": -72.926213,
+   "lat": 41.310169,
+   "osm": "way/216863213"
+  },
+  {
+   "id": "connecticut-hall",
+   "name": "Connecticut Hall",
+   "short": "Connecticut Hall",
+   "kind": "academic",
+   "codes": [
+    "C"
+   ],
+   "aliases": [],
+   "lng": -72.928852,
+   "lat": 41.308177,
+   "osm": "way/139759948"
+  },
+  {
+   "id": "phelps-hall",
+   "name": "Phelps Hall",
+   "short": "Phelps Hall",
+   "kind": "academic",
+   "codes": [
+    "PH"
+   ],
+   "aliases": [],
+   "lng": -72.928144,
+   "lat": 41.308447,
+   "osm": "way/139759941"
+  },
+  {
+   "id": "dow-hall",
+   "name": "Dow Hall",
+   "short": "Dow Hall",
+   "kind": "academic",
+   "codes": [
+    "DOW"
+   ],
+   "aliases": [],
+   "lng": -72.92387,
+   "lat": 41.311354,
+   "osm": "way/266453342"
+  },
+  {
+   "id": "bass-library-north",
+   "name": "Bass Library (North)",
+   "short": "Bass Library (North)",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.927322,
+   "lat": 41.310791,
+   "osm": "way/347416244"
+  },
+  {
+   "id": "bass-library-south",
+   "name": "Bass Library (South)",
+   "short": "Bass Library (South)",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -72.927606,
+   "lat": 41.310432,
+   "osm": "way/364538449"
+  }
+ ]
+}

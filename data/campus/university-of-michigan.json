@@ -1,0 +1,1553 @@
+{
+ "collegeId": "university-of-michigan",
+ "generatedAt": "2026-11-08T16:50:11.933Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/university-of-michigan.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -83.74581,
+  42.26995,
+  -83.72563,
+  42.28513
+ ],
+ "halls": [
+  {
+   "dormId": "alice-lloyd-hall",
+   "name": "Alice Lloyd Hall",
+   "lng": -83.731682,
+   "lat": 42.281259,
+   "pin": "name",
+   "osm": "way/154203572",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 5.5
+    },
+    "library": {
+     "placeId": "taubman-health-sciences-library",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 4.7
+    }
+   }
+  },
+  {
+   "dormId": "betsy-barbour",
+   "name": "Betsy Barbour",
+   "lng": -83.741558,
+   "lat": 42.277285,
+   "pin": "address",
+   "osm": "way/154203645",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 11.9
+    },
+    "library": {
+     "placeId": "tappan-hall",
+     "minutes": 4.5
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 10.6
+    }
+   }
+  },
+  {
+   "dormId": "couzens-hall",
+   "name": "Couzens Hall",
+   "lng": -83.732552,
+   "lat": 42.281925,
+   "pin": "name",
+   "osm": "way/154202631",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 6.7
+    },
+    "library": {
+     "placeId": "taubman-health-sciences-library",
+     "minutes": 3.8
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 1.6
+    }
+   }
+  },
+  {
+   "dormId": "east-quadrangle",
+   "name": "East Quadrangle",
+   "lng": -83.735152,
+   "lat": 42.273019,
+   "pin": "name",
+   "osm": "relation/2075393",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 10.4
+    },
+    "library": {
+     "placeId": "kresge-business-admin-library",
+     "minutes": 3.4
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 11.1
+    }
+   }
+  },
+  {
+   "dormId": "fletcher-hall",
+   "name": "Fletcher Hall",
+   "lng": -83.742756,
+   "lat": 42.270178,
+   "pin": "name",
+   "osm": "way/302431407",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 21.8
+    },
+    "library": {
+     "placeId": "cook-legal-research-library",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 20.7
+    }
+   }
+  },
+  {
+   "dormId": "helen-newberry",
+   "name": "Helen Newberry",
+   "lng": -83.741558,
+   "lat": 42.27694,
+   "pin": "address",
+   "osm": "way/154202651",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 12
+    },
+    "library": {
+     "placeId": "tappan-hall",
+     "minutes": 4
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 10.8
+    }
+   }
+  },
+  {
+   "dormId": "henderson-house",
+   "name": "Henderson House",
+   "lng": -83.731831,
+   "lat": 42.27185,
+   "pin": "name",
+   "osm": "way/501503472",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 12.2
+    },
+    "library": {
+     "placeId": "kresge-business-admin-library",
+     "minutes": 7
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 13.4
+    }
+   }
+  },
+  {
+   "dormId": "martha-cook-building",
+   "name": "Martha Cook Building",
+   "lng": -83.737964,
+   "lat": 42.27454,
+   "pin": "name",
+   "osm": "way/154203688",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 11.3
+    },
+    "library": {
+     "placeId": "william-l-clements-library",
+     "minutes": 2
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 10.8
+    }
+   }
+  },
+  {
+   "dormId": "mary-markley-hall",
+   "name": "Mary Markley Hall",
+   "lng": -83.728849,
+   "lat": 42.28089,
+   "pin": "manual",
+   "osm": "way/1021335897",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 8.1
+    },
+    "library": {
+     "placeId": "taubman-health-sciences-library",
+     "minutes": 8.6
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 6.9
+    }
+   }
+  },
+  {
+   "dormId": "mosher-jordan-hall",
+   "name": "Mosher-Jordan Hall",
+   "lng": -83.731514,
+   "lat": 42.280108,
+   "pin": "name",
+   "osm": "way/224646230",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 2.6
+    },
+    "library": {
+     "placeId": "taubman-health-sciences-library",
+     "minutes": 6.6
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 4.3
+    }
+   }
+  },
+  {
+   "dormId": "north-quadrangle",
+   "name": "North Quadrangle",
+   "lng": -83.739902,
+   "lat": 42.280925,
+   "pin": "name",
+   "osm": "relation/2982493",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 10.9
+    },
+    "library": {
+     "placeId": "tappan-hall",
+     "minutes": 7.8
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 6.8
+    }
+   }
+  },
+  {
+   "dormId": "oxford-houses",
+   "name": "Oxford Houses",
+   "lng": -83.725633,
+   "lat": 42.274403,
+   "pin": "address",
+   "osm": "way/492847379",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 11.1
+    },
+    "library": {
+     "placeId": "shapiro-undergraduate-library",
+     "minutes": 13.8
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 14.6
+    }
+   }
+  },
+  {
+   "dormId": "south-quadrangle",
+   "name": "South Quadrangle",
+   "lng": -83.742134,
+   "lat": 42.27369,
+   "pin": "name",
+   "osm": "way/154232151",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 15.3
+    },
+    "library": {
+     "placeId": "cook-legal-research-library",
+     "minutes": 2.9
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 14.1
+    }
+   }
+  },
+  {
+   "dormId": "stockwell-hall",
+   "name": "Stockwell Hall",
+   "lng": -83.731623,
+   "lat": 42.278791,
+   "pin": "name",
+   "osm": "way/154232154",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 1.8
+    },
+    "library": {
+     "placeId": "shapiro-undergraduate-library",
+     "minutes": 8.8
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 6.1
+    }
+   }
+  },
+  {
+   "dormId": "west-quadrangle-cambridge-house",
+   "name": "West Quadrangle & Cambridge House",
+   "lng": -83.742641,
+   "lat": 42.274863,
+   "pin": "name",
+   "osm": "relation/2075411",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 14.6
+    },
+    "library": {
+     "placeId": "cook-legal-research-library",
+     "minutes": 3.7
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 13.4
+    }
+   }
+  },
+  {
+   "dormId": "wolverine-village-building-1",
+   "name": "Wolverine Village Building 1",
+   "lng": -83.74581,
+   "lat": 42.271323,
+   "pin": "name",
+   "osm": "relation/20400363",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 23.7
+    },
+    "library": {
+     "placeId": "cook-legal-research-library",
+     "minutes": 10.6
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 22.5
+    }
+   }
+  },
+  {
+   "dormId": "wolverine-village-building-2",
+   "name": "Wolverine Village Building 2",
+   "lng": -83.744848,
+   "lat": 42.271433,
+   "pin": "name",
+   "osm": "way/1495290791",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 22
+    },
+    "library": {
+     "placeId": "cook-legal-research-library",
+     "minutes": 9
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 20.9
+    }
+   }
+  },
+  {
+   "dormId": "wolverine-village-building-3",
+   "name": "Wolverine Village Building 3",
+   "lng": -83.745666,
+   "lat": 42.270567,
+   "pin": "name",
+   "osm": "way/1429018504",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 23.5
+    },
+    "library": {
+     "placeId": "cook-legal-research-library",
+     "minutes": 10.4
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 22.3
+    }
+   }
+  },
+  {
+   "dormId": "wolverine-village-building-4",
+   "name": "Wolverine Village Building 4",
+   "lng": -83.744687,
+   "lat": 42.270692,
+   "pin": "name",
+   "osm": "way/1429018506",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 23.1
+    },
+    "library": {
+     "placeId": "cook-legal-research-library",
+     "minutes": 10.1
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 21.9
+    }
+   }
+  },
+  {
+   "dormId": "wolverine-village-dr-e-royster-harper-hall",
+   "name": "Wolverine Village Dr. E. Royster Harper Hall",
+   "lng": -83.745016,
+   "lat": 42.269945,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "hadley-family-recreation-and-well-being-center",
+     "minutes": 23.9
+    },
+    "library": {
+     "placeId": "cook-legal-research-library",
+     "minutes": 10.9
+    },
+    "dining": {
+     "placeId": "palmer-commons",
+     "minutes": 22.7
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "department-of-chemistry-building",
+   "name": "Department of Chemistry Building",
+   "short": "Department of Chemistry Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.737024,
+   "lat": 42.27805,
+   "osm": "relation/1429039"
+  },
+  {
+   "id": "taubman-health-care-center",
+   "name": "Taubman Health Care Center",
+   "short": "Taubman Health Care Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.728144,
+   "lat": 42.283599,
+   "osm": "way/302307924"
+  },
+  {
+   "id": "university-hospital-south",
+   "name": "University Hospital South",
+   "short": "University Hospital South",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "UH South"
+   ],
+   "lng": -83.729414,
+   "lat": 42.283058,
+   "osm": "way/302347136"
+  },
+  {
+   "id": "dental-building-and-kellogg-institute",
+   "name": "Dental Building and Kellogg Institute",
+   "short": "Dental Building and Kellogg Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.736114,
+   "lat": 42.279221,
+   "osm": "relation/8013180"
+  },
+  {
+   "id": "frankel-cardiovascular-center",
+   "name": "Frankel Cardiovascular Center",
+   "short": "Frankel Cardiovascular Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.731112,
+   "lat": 42.283324,
+   "osm": "way/154202629"
+  },
+  {
+   "id": "medical-science-unit-i",
+   "name": "Medical Science Unit I",
+   "short": "Medical Science Unit I",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MSC1"
+   ],
+   "lng": -83.73261,
+   "lat": 42.284182,
+   "osm": "way/302169785"
+  },
+  {
+   "id": "taubman-biomedical-science-research-building",
+   "name": "Taubman Biomedical Science Research Building",
+   "short": "Taubman Biomedical Science Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "BSRB"
+   ],
+   "lng": -83.734543,
+   "lat": 42.281884,
+   "osm": "way/300870603"
+  },
+  {
+   "id": "school-of-education-building",
+   "name": "School of Education Building",
+   "short": "School of Education Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SEB"
+   ],
+   "lng": -83.736423,
+   "lat": 42.27387,
+   "osm": "relation/4045357"
+  },
+  {
+   "id": "east-hall",
+   "name": "East Hall",
+   "short": "East Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "EH"
+   ],
+   "lng": -83.735203,
+   "lat": 42.275756,
+   "osm": "way/154203635"
+  },
+  {
+   "id": "hadley-family-recreation-and-well-being-center",
+   "name": "Hadley Family Recreation & Well-Being Center",
+   "short": "Hadley Family Recreation & Well-Being Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.732782,
+   "lat": 42.27818,
+   "osm": "way/1357847242"
+  },
+  {
+   "id": "1100-north-university-building",
+   "name": "1100 North University Building",
+   "short": "1100 North University Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.735316,
+   "lat": 42.277386,
+   "osm": "relation/2075394"
+  },
+  {
+   "id": "medical-science-unit-ii",
+   "name": "Medical Science Unit II",
+   "short": "Medical Science Unit II",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MSC2"
+   ],
+   "lng": -83.733825,
+   "lat": 42.284052,
+   "osm": "way/302169788"
+  },
+  {
+   "id": "dan-and-betty-kahn-health-care-pavilion",
+   "name": "Dan and Betty Kahn Health Care Pavilion",
+   "short": "Dan and Betty Kahn Health Care Pavilion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.732706,
+   "lat": 42.282856,
+   "osm": "way/1356547025"
+  },
+  {
+   "id": "ross-school-of-business-building",
+   "name": "Ross School of Business Building",
+   "short": "R-BUS",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "R-BUS"
+   ],
+   "lng": -83.737598,
+   "lat": 42.272675,
+   "osm": "way/154232149"
+  },
+  {
+   "id": "medical-sciences-research-building",
+   "name": "Medical Sciences Research Building",
+   "short": "Medical Sciences Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MSRB"
+   ],
+   "lng": -83.734171,
+   "lat": 42.284609,
+   "osm": "way/302169786"
+  },
+  {
+   "id": "michigan-union",
+   "name": "Michigan Union",
+   "short": "The Union",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The Union"
+   ],
+   "lng": -83.741564,
+   "lat": 42.275165,
+   "osm": "way/154203582"
+  },
+  {
+   "id": "angell-hall",
+   "name": "Angell Hall",
+   "short": "Angell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "AH"
+   ],
+   "lng": -83.739859,
+   "lat": 42.2767,
+   "osm": "way/300676078"
+  },
+  {
+   "id": "school-of-kinesiology-building",
+   "name": "School of Kinesiology Building",
+   "short": "School of Kinesiology Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Kraus Natural Science Building"
+   ],
+   "lng": -83.73892,
+   "lat": 42.278078,
+   "osm": "way/99883679"
+  },
+  {
+   "id": "hatcher-graduate-library",
+   "name": "Hatcher Graduate Library",
+   "short": "Hatcher Graduate Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.738195,
+   "lat": 42.276204,
+   "osm": "way/99883675"
+  },
+  {
+   "id": "biological-sciences-building",
+   "name": "Biological Sciences Building",
+   "short": "Biological Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "BSB"
+   ],
+   "lng": -83.734458,
+   "lat": 42.278973,
+   "osm": "way/420814614"
+  },
+  {
+   "id": "west-hall",
+   "name": "West Hall",
+   "short": "West Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "WH"
+   ],
+   "lng": -83.736353,
+   "lat": 42.275901,
+   "osm": "way/99883661"
+  },
+  {
+   "id": "thompson-structure-um-lot-w3",
+   "name": "Thompson Structure / UM Lot W3",
+   "short": "Thompson Structure / UM Lot W3",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.743647,
+   "lat": 42.275551,
+   "osm": "way/382245084"
+  },
+  {
+   "id": "rackham-school-of-graduate-studies",
+   "name": "Rackham School of Graduate Studies",
+   "short": "Rackham School of Graduate Studies",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Horace H. Rackham School of Graduate Studies"
+   ],
+   "lng": -83.738286,
+   "lat": 42.280842,
+   "osm": "relation/2075410"
+  },
+  {
+   "id": "lawyers-club",
+   "name": "Lawyer's Club",
+   "short": "Lawyer's Club",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.739446,
+   "lat": 42.274525,
+   "osm": "way/154203671"
+  },
+  {
+   "id": "school-of-nursing-building",
+   "name": "School of Nursing Building",
+   "short": "School of Nursing Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SNB"
+   ],
+   "lng": -83.737731,
+   "lat": 42.28396,
+   "osm": "way/302435570"
+  },
+  {
+   "id": "institute-for-social-research",
+   "name": "Institute for Social Research",
+   "short": "Institute for Social Research",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ISR-Thompson",
+    "ISR"
+   ],
+   "lng": -83.743695,
+   "lat": 42.276766,
+   "osm": "way/154232156"
+  },
+  {
+   "id": "mary-sue-coleman-hall",
+   "name": "Mary Sue Coleman Hall",
+   "short": "Mary Sue Coleman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "LSI"
+   ],
+   "lng": -83.734194,
+   "lat": 42.279646,
+   "osm": "way/154232137"
+  },
+  {
+   "id": "mason-hall",
+   "name": "Mason Hall",
+   "short": "Mason Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MH"
+   ],
+   "lng": -83.739499,
+   "lat": 42.277058,
+   "osm": "way/300676079"
+  },
+  {
+   "id": "college-of-literature-science-and-the-arts",
+   "name": "College of Literature, Science, and the Arts",
+   "short": "College of Literature, Science, and the Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "LSA"
+   ],
+   "lng": -83.741358,
+   "lat": 42.2762,
+   "osm": "way/154203686"
+  },
+  {
+   "id": "power-center-for-the-performing-arts",
+   "name": "Power Center for the Performing Arts",
+   "short": "Power Center for the Performing Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.735797,
+   "lat": 42.280801,
+   "osm": "way/154203577"
+  },
+  {
+   "id": "towsley-center-for-continuing-medical-education",
+   "name": "Towsley Center For Continuing Medical Education",
+   "short": "Towsley Center For Continuing Medical Education",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.728921,
+   "lat": 42.283672,
+   "osm": "way/154202671"
+  },
+  {
+   "id": "u-m-m101-zina-pitcher-structure",
+   "name": "U-M M101 Zina Pitcher Structure",
+   "short": "U-M M101 Zina Pitcher Structure",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.734017,
+   "lat": 42.282727,
+   "osm": "way/1484146655"
+  },
+  {
+   "id": "shapiro-undergraduate-library",
+   "name": "Shapiro Undergraduate Library",
+   "short": "The UGLI",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "The UGLI"
+   ],
+   "lng": -83.737183,
+   "lat": 42.275621,
+   "osm": "way/99883665"
+  },
+  {
+   "id": "undergraduate-science-building",
+   "name": "Undergraduate Science Building",
+   "short": "Undergraduate Science Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "USB"
+   ],
+   "lng": -83.735057,
+   "lat": 42.279909,
+   "osm": "way/154232159"
+  },
+  {
+   "id": "ruthven-building",
+   "name": "Ruthven Building",
+   "short": "Ruthven Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Alexander G. Ruthven Building"
+   ],
+   "lng": -83.734577,
+   "lat": 42.278292,
+   "osm": "way/154202605"
+  },
+  {
+   "id": "student-activities-building",
+   "name": "Student Activities Building",
+   "short": "Student Activities Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.742577,
+   "lat": 42.276583,
+   "osm": "relation/7175620"
+  },
+  {
+   "id": "michigan-league",
+   "name": "Michigan League",
+   "short": "The League",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The League",
+    "Women's League"
+   ],
+   "lng": -83.737575,
+   "lat": 42.279314,
+   "osm": "way/154203580"
+  },
+  {
+   "id": "modern-languages-building",
+   "name": "Modern Languages Building",
+   "short": "Modern Languages Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MLB"
+   ],
+   "lng": -83.739079,
+   "lat": 42.27988,
+   "osm": "way/154203632"
+  },
+  {
+   "id": "school-of-social-work",
+   "name": "School of Social Work",
+   "short": "School of Social Work",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SSWB"
+   ],
+   "lng": -83.736463,
+   "lat": 42.274598,
+   "osm": "way/154203581"
+  },
+  {
+   "id": "university-of-michigan-museum-of-art",
+   "name": "University of Michigan Museum of Art",
+   "short": "University of Michigan Museum of Art",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.739827,
+   "lat": 42.275594,
+   "osm": "way/154202613"
+  },
+  {
+   "id": "taubman-health-sciences-library",
+   "name": "Taubman Health Sciences Library",
+   "short": "Taubman Health Sciences Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "TAUBL"
+   ],
+   "lng": -83.734536,
+   "lat": 42.283583,
+   "osm": "way/302169787"
+  },
+  {
+   "id": "henry-vaughan-public-health-building",
+   "name": "Henry Vaughan Public Health Building",
+   "short": "Henry Vaughan Public Health Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.730488,
+   "lat": 42.280936,
+   "osm": "relation/7360877"
+  },
+  {
+   "id": "hill-auditorium",
+   "name": "Hill Auditorium",
+   "short": "Hill Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.739067,
+   "lat": 42.279146,
+   "osm": "way/154203557"
+  },
+  {
+   "id": "north-ingalls-building",
+   "name": "North Ingalls Building",
+   "short": "North Ingalls Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "NIB",
+    "St. Joseph Mercy Hospital"
+   ],
+   "lng": -83.737813,
+   "lat": 42.283478,
+   "osm": "way/299919497"
+  },
+  {
+   "id": "college-of-pharmacy-building",
+   "name": "College of Pharmacy Building",
+   "short": "College of Pharmacy Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.736307,
+   "lat": 42.281579,
+   "osm": "way/1357844893"
+  },
+  {
+   "id": "samuel-trask-dana-natural-resources-building",
+   "name": "Samuel Trask Dana Natural Resources Building",
+   "short": "Samuel Trask Dana Natural Resources Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.736609,
+   "lat": 42.277322,
+   "osm": "way/154203634"
+  },
+  {
+   "id": "jeffries-hall",
+   "name": "Jeffries Hall",
+   "short": "Jeffries Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "LSSH"
+   ],
+   "lng": -83.740035,
+   "lat": 42.273003,
+   "osm": "way/249659161"
+  },
+  {
+   "id": "cook-legal-research-library",
+   "name": "Cook Legal Research Library",
+   "short": "Cook Legal Research Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Law Library",
+    "LLIB"
+   ],
+   "lng": -83.73937,
+   "lat": 42.273826,
+   "osm": "way/154202681"
+  },
+  {
+   "id": "central-campus-classroom-building",
+   "name": "Central Campus Classroom Building",
+   "short": "Central Campus Classroom Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CCCB"
+   ],
+   "lng": -83.73397,
+   "lat": 42.277943,
+   "osm": "way/1020956721"
+  },
+  {
+   "id": "thomas-francis-jr-public-health-building",
+   "name": "Thomas Francis Jr. Public Health Building",
+   "short": "Thomas Francis Jr. Public Health Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.7299,
+   "lat": 42.280191,
+   "osm": "relation/7360878"
+  },
+  {
+   "id": "hutchins-hall",
+   "name": "Hutchins Hall",
+   "short": "Hutchins Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "HUTCH"
+   ],
+   "lng": -83.740229,
+   "lat": 42.273648,
+   "osm": "way/154203693"
+  },
+  {
+   "id": "blau-hall",
+   "name": "Blau Hall",
+   "short": "Blau Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.736414,
+   "lat": 42.273096,
+   "osm": "way/154202662"
+  },
+  {
+   "id": "school-of-nursing-building-2",
+   "name": "School Of Nursing Building 2",
+   "short": "School Of Nursing Building 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.738494,
+   "lat": 42.285131,
+   "osm": "way/1020107475"
+  },
+  {
+   "id": "homer-a-neal-lab",
+   "name": "Homer A. Neal Lab",
+   "short": "Homer A. Neal Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.736805,
+   "lat": 42.276547,
+   "osm": "way/154202689"
+  },
+  {
+   "id": "med-inn-building",
+   "name": "Med Inn Building",
+   "short": "Med Inn Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.730134,
+   "lat": 42.283682,
+   "osm": "way/302347137"
+  },
+  {
+   "id": "kresge-business-admin-library",
+   "name": "Kresge Business Admin Library",
+   "short": "Kresge Business Admin Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "BUS"
+   ],
+   "lng": -83.736883,
+   "lat": 42.272846,
+   "osm": "way/154202674"
+  },
+  {
+   "id": "lorch-hall",
+   "name": "Lorch Hall",
+   "short": "Lorch Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.737454,
+   "lat": 42.273744,
+   "osm": "way/154203584"
+  },
+  {
+   "id": "gerald-r-ford-school-of-public-policy-weill-hall",
+   "name": "Gerald R. Ford School of Public Policy - Weill Hall",
+   "short": "Gerald R. Ford School of Public Policy - Weill Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.740313,
+   "lat": 42.272399,
+   "osm": "way/154202653"
+  },
+  {
+   "id": "haven-hall",
+   "name": "Haven Hall",
+   "short": "Haven Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "HH"
+   ],
+   "lng": -83.739226,
+   "lat": 42.276458,
+   "osm": "way/300676080"
+  },
+  {
+   "id": "randall-lab",
+   "name": "Randall Lab",
+   "short": "Randall Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "RAND"
+   ],
+   "lng": -83.736353,
+   "lat": 42.27678,
+   "osm": "way/1575935623"
+  },
+  {
+   "id": "university-health-services-clinic",
+   "name": "University Health Services Clinic",
+   "short": "University Health Services Clinic",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "UHS",
+    "UHC Clinic"
+   ],
+   "lng": -83.736689,
+   "lat": 42.279763,
+   "osm": "way/154232131"
+  },
+  {
+   "id": "palmer-commons",
+   "name": "Palmer Commons",
+   "short": "Palmer Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.733873,
+   "lat": 42.280689,
+   "osm": "way/154232145"
+  },
+  {
+   "id": "wyly-hall",
+   "name": "Wyly Hall",
+   "short": "W-BUS",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "W-BUS"
+   ],
+   "lng": -83.73613,
+   "lat": 42.27238,
+   "osm": "way/154202673"
+  },
+  {
+   "id": "tappan-hall",
+   "name": "Tappan Hall",
+   "short": "Tappan Hall",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.739283,
+   "lat": 42.275492,
+   "osm": "way/154202660"
+  },
+  {
+   "id": "kelsey-museum-of-archaeology",
+   "name": "Kelsey Museum of Archaeology",
+   "short": "Kelsey Museum of Archaeology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.741374,
+   "lat": 42.276742,
+   "osm": "way/154202607"
+  },
+  {
+   "id": "weiser-hall",
+   "name": "Weiser Hall",
+   "short": "Weiser Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Dennison Building"
+   ],
+   "lng": -83.735009,
+   "lat": 42.276494,
+   "osm": "way/249659008"
+  },
+  {
+   "id": "tisch-hall",
+   "name": "Tisch Hall",
+   "short": "Tisch Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.739585,
+   "lat": 42.27628,
+   "osm": "way/300676081"
+  },
+  {
+   "id": "ronald-mcdonald-house-charities-of-ann-arbor",
+   "name": "Ronald McDonald House Charities of Ann Arbor",
+   "short": "Ronald McDonald House Charities of Ann Arbor",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.72723,
+   "lat": 42.280315,
+   "osm": "way/334625284"
+  },
+  {
+   "id": "202-south-thayer-building",
+   "name": "202 South Thayer Building",
+   "short": "202 South Thayer Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.739974,
+   "lat": 42.2801,
+   "osm": "way/384167242"
+  },
+  {
+   "id": "weiser-tower",
+   "name": "Weiser Tower",
+   "short": "Weiser Tower",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Dennison Tower"
+   ],
+   "lng": -83.735355,
+   "lat": 42.276813,
+   "osm": "way/372110885"
+  },
+  {
+   "id": "victor-vaughan-house",
+   "name": "Victor Vaughan House",
+   "short": "Victor Vaughan House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.735054,
+   "lat": 42.283693,
+   "osm": "way/154203570"
+  },
+  {
+   "id": "alumni-center",
+   "name": "Alumni Center",
+   "short": "Alumni Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.737655,
+   "lat": 42.280122,
+   "osm": "way/154232114"
+  },
+  {
+   "id": "plant-services-building",
+   "name": "Plant Services Building",
+   "short": "Plant Services Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.735175,
+   "lat": 42.280532,
+   "osm": "way/154232147"
+  },
+  {
+   "id": "william-l-clements-library",
+   "name": "William L. Clements Library",
+   "short": "William L. Clements Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.738002,
+   "lat": 42.275459,
+   "osm": "way/99883671"
+  },
+  {
+   "id": "trotter-multicultural-center",
+   "name": "Trotter Multicultural Center",
+   "short": "Trotter Multicultural Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.741102,
+   "lat": 42.277086,
+   "osm": "way/590012064"
+  },
+  {
+   "id": "medical-professional-building",
+   "name": "Medical Professional Building",
+   "short": "Medical Professional Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.729776,
+   "lat": 42.282097,
+   "osm": "way/300848284"
+  },
+  {
+   "id": "the-connector",
+   "name": "The Connector",
+   "short": "The Connector",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.741933,
+   "lat": 42.274584,
+   "osm": "way/154202677"
+  },
+  {
+   "id": "observatory-hall",
+   "name": "Observatory Hall",
+   "short": "Observatory Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.730702,
+   "lat": 42.280197,
+   "osm": "way/300869095"
+  },
+  {
+   "id": "stanford-lipsey-student-publications-building",
+   "name": "Stanford Lipsey Student Publications Building",
+   "short": "Student Publications",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Student Publications"
+   ],
+   "lng": -83.742283,
+   "lat": 42.277068,
+   "osm": "way/154232157"
+  },
+  {
+   "id": "buhl-research-center-for-human-genetics",
+   "name": "Buhl Research Center for Human Genetics",
+   "short": "Buhl Research Center for Human Genetics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.733715,
+   "lat": 42.283447,
+   "osm": "way/302169789"
+  },
+  {
+   "id": "presidents-residence",
+   "name": "President's Residence",
+   "short": "President's Residence",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "President's House"
+   ],
+   "lng": -83.738644,
+   "lat": 42.275361,
+   "osm": "way/154202652"
+  },
+  {
+   "id": "ginsberg-center",
+   "name": "Ginsberg Center",
+   "short": "Ginsberg Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.736061,
+   "lat": 42.271754,
+   "osm": "way/1362424667"
+  },
+  {
+   "id": "523-south-division-building",
+   "name": "523 South Division Building",
+   "short": "523 South Division Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.744049,
+   "lat": 42.2755,
+   "osm": "way/382245085"
+  },
+  {
+   "id": "simpson-memorial-institute",
+   "name": "Simpson Memorial Institute",
+   "short": "Simpson Memorial Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.73074,
+   "lat": 42.281862,
+   "osm": "way/384164268"
+  },
+  {
+   "id": "michigan-news-building",
+   "name": "Michigan News Building",
+   "short": "Michigan News Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.742283,
+   "lat": 42.277464,
+   "osm": "way/154232140"
+  },
+  {
+   "id": "detroit-observatory",
+   "name": "Detroit Observatory",
+   "short": "Detroit Observatory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.73168,
+   "lat": 42.281976,
+   "osm": "way/384164266"
+  },
+  {
+   "id": "burton-memorial-tower",
+   "name": "Burton Memorial Tower",
+   "short": "Burton Memorial Tower",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Burton Bell Tower",
+    "BMT"
+   ],
+   "lng": -83.738715,
+   "lat": 42.279446,
+   "osm": "way/193357102"
+  }
+ ]
+}

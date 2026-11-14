@@ -1,0 +1,383 @@
+{
+ "collegeId": "gcu",
+ "generatedAt": "2026-11-12T18:42:11.796Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/gcu.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -112.1323,
+  33.50984,
+  -112.12251,
+  33.51625
+ ],
+ "halls": [
+  {
+   "dormId": "juniper-hall",
+   "name": "Juniper Hall",
+   "lng": -112.130532,
+   "lat": 33.515672,
+   "pin": "name",
+   "osm": "way/907908511",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "canyon-activities-center",
+     "minutes": 12.1
+    },
+    "library": {
+     "placeId": "student-union",
+     "minutes": 8.6
+    },
+    "dining": {
+     "placeId": "thunder-alley",
+     "minutes": 6
+    }
+   }
+  },
+  {
+   "dormId": "willow-hall",
+   "name": "Willow Hall",
+   "lng": -112.132249,
+   "lat": 33.515668,
+   "pin": "name",
+   "osm": "way/907908508",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "canyon-activities-center",
+     "minutes": 13.7
+    },
+    "library": {
+     "placeId": "student-union",
+     "minutes": 8.4
+    },
+    "dining": {
+     "placeId": "thunder-alley",
+     "minutes": 5.8
+    }
+   }
+  },
+  {
+   "dormId": "ironwood-hall",
+   "name": "Ironwood Hall",
+   "lng": -112.130538,
+   "lat": 33.516255,
+   "pin": "name",
+   "osm": "way/907908510",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "canyon-activities-center",
+     "minutes": 11.3
+    },
+    "library": {
+     "placeId": "student-union",
+     "minutes": 9.4
+    },
+    "dining": {
+     "placeId": "thunder-alley",
+     "minutes": 6.8
+    }
+   }
+  },
+  {
+   "dormId": "acacia-hall",
+   "name": "Acacia Hall",
+   "lng": -112.13226,
+   "lat": 33.516248,
+   "pin": "name",
+   "osm": "way/907908509",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "canyon-activities-center",
+     "minutes": 13.3
+    },
+    "library": {
+     "placeId": "student-union",
+     "minutes": 9.3
+    },
+    "dining": {
+     "placeId": "thunder-alley",
+     "minutes": 6.8
+    }
+   }
+  },
+  {
+   "dormId": "saguaro-hall",
+   "name": "Saguaro Hall",
+   "lng": -112.12642,
+   "lat": 33.515477,
+   "pin": "name",
+   "osm": "way/907908517",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "canyon-activities-center",
+     "minutes": 8.4
+    },
+    "library": {
+     "placeId": "student-union",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "thunder-alley",
+     "minutes": 7.9
+    }
+   }
+  },
+  {
+   "dormId": "sedona-hall",
+   "name": "Sedona Hall",
+   "lng": -112.126412,
+   "lat": 33.514074,
+   "pin": "name",
+   "osm": "way/907908514",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "canyon-activities-center",
+     "minutes": 9
+    },
+    "library": {
+     "placeId": "student-union",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "thunder-alley",
+     "minutes": 7.2
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "canyon-activities-center",
+   "name": "Canyon Activities Center",
+   "short": "Canyon Activities Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.123355,
+   "lat": 33.516215,
+   "osm": "way/663674903"
+  },
+  {
+   "id": "engineering",
+   "name": "Engineering",
+   "short": "Engineering",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.130921,
+   "lat": 33.510844,
+   "osm": "way/907908501"
+  },
+  {
+   "id": "student-union",
+   "name": "Student Union",
+   "short": "Student Union",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.129961,
+   "lat": 33.513301,
+   "osm": "way/907908506"
+  },
+  {
+   "id": "22-antelope-gymnasium-and-west-lecture-halls",
+   "name": "22 - Antelope Gymnasium and West Lecture Halls",
+   "short": "22 - Antelope Gymnasium and West Lecture Halls",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.132305,
+   "lat": 33.512469,
+   "osm": "way/392508194"
+  },
+  {
+   "id": "natural-sciences",
+   "name": "Natural Sciences",
+   "short": "Natural Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.130517,
+   "lat": 33.511249,
+   "osm": "way/907908502"
+  },
+  {
+   "id": "college-of-arts-and-media",
+   "name": "College of Arts & Media",
+   "short": "College of Arts & Media",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.127293,
+   "lat": 33.511569,
+   "osm": "way/544437059"
+  },
+  {
+   "id": "technology",
+   "name": "Technology",
+   "short": "Technology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.127251,
+   "lat": 33.510186,
+   "osm": "way/544438393"
+  },
+  {
+   "id": "colangelo-college-of-business",
+   "name": "Colangelo College of Business",
+   "short": "Colangelo College of Business",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.125268,
+   "lat": 33.514055,
+   "osm": "way/663674899"
+  },
+  {
+   "id": "college-of-theology",
+   "name": "College of Theology",
+   "short": "College of Theology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.128039,
+   "lat": 33.511044,
+   "osm": "way/544437058"
+  },
+  {
+   "id": "thunder-alley",
+   "name": "Thunder Alley",
+   "short": "Thunder Alley",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.130656,
+   "lat": 33.513471,
+   "osm": "way/544435880"
+  },
+  {
+   "id": "college-of-education",
+   "name": "College of Education",
+   "short": "College of Education",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.129397,
+   "lat": 33.511036,
+   "osm": "way/544439020"
+  },
+  {
+   "id": "catalina",
+   "name": "Catalina",
+   "short": "Catalina",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.12604,
+   "lat": 33.510364,
+   "osm": "way/555908293"
+  },
+  {
+   "id": "humanities-and-social-sciences",
+   "name": "Humanities and Social Sciences",
+   "short": "Humanities and Social Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.130352,
+   "lat": 33.511602,
+   "osm": "way/907908503"
+  },
+  {
+   "id": "cathedral-rock",
+   "name": "Cathedral Rock",
+   "short": "Cathedral Rock",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.126757,
+   "lat": 33.510363,
+   "osm": "way/555908294"
+  },
+  {
+   "id": "sunset",
+   "name": "Sunset",
+   "short": "Sunset",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.126171,
+   "lat": 33.509839,
+   "osm": "way/555908295"
+  },
+  {
+   "id": "ethington-memorial-theatre",
+   "name": "Ethington Memorial Theatre",
+   "short": "Ethington Memorial Theatre",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.128144,
+   "lat": 33.510365,
+   "osm": "way/544843923"
+  },
+  {
+   "id": "colter-offices",
+   "name": "Colter Offices",
+   "short": "Building 43",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Building 43"
+   ],
+   "lng": -112.125031,
+   "lat": 33.513396,
+   "osm": "way/548782305"
+  },
+  {
+   "id": "joshua-north",
+   "name": "Joshua North",
+   "short": "Joshua North",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.122511,
+   "lat": 33.514661,
+   "osm": "way/982151488"
+  },
+  {
+   "id": "joshua-south",
+   "name": "Joshua South",
+   "short": "Joshua South",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -112.122524,
+   "lat": 33.513461,
+   "osm": "way/1363109730"
+  }
+ ]
+}

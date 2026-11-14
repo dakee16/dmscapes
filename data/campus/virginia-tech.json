@@ -1,0 +1,2008 @@
+{
+ "collegeId": "virginia-tech",
+ "generatedAt": "2026-11-14T06:53:00.227Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Virginia Tech Timetable of Classes, View Building Abbreviations",
+   "url": "https://selfservice.banner.vt.edu/ssb/hzskvtsc.P_DispBldgList",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/virginia-tech.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -80.44414,
+  37.213,
+  -80.41049,
+  37.23386
+ ],
+ "halls": [
+  {
+   "dormId": "pritchard",
+   "name": "Pritchard Hall",
+   "lng": -80.419655,
+   "lat": 37.224254,
+   "pin": "name",
+   "osm": "relation/308029",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 1.4
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "hoge",
+   "name": "Hoge Hall",
+   "lng": -80.418466,
+   "lat": 37.224493,
+   "pin": "name",
+   "osm": "way/32709325",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 6.1
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 3.4
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 3.2
+    }
+   }
+  },
+  {
+   "dormId": "aj-e",
+   "name": "Ambler Johnston (East)",
+   "lng": -80.420772,
+   "lat": 37.223176,
+   "pin": "manual",
+   "osm": "way/1459997826",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 9
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 2.4
+    },
+    "gym": {
+     "placeId": "merryman-athletic-center",
+     "minutes": 2.4
+    }
+   }
+  },
+  {
+   "dormId": "aj-w",
+   "name": "Ambler Johnston (West)",
+   "lng": -80.421145,
+   "lat": 37.223054,
+   "pin": "manual",
+   "osm": "way/60193822",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 8.6
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 2
+    },
+    "gym": {
+     "placeId": "merryman-athletic-center",
+     "minutes": 4.2
+    }
+   }
+  },
+  {
+   "dormId": "miles",
+   "name": "Miles Hall",
+   "lng": -80.416957,
+   "lat": 37.22551,
+   "pin": "name",
+   "osm": "way/60193835",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 5.7
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 4.6
+    }
+   }
+  },
+  {
+   "dormId": "slushertower",
+   "name": "Slusher Hall",
+   "lng": -80.422323,
+   "lat": 37.225438,
+   "pin": "name",
+   "osm": "relation/1360468",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 6.7
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 4.1
+    },
+    "gym": {
+     "placeId": "merryman-athletic-center",
+     "minutes": 7.2
+    }
+   }
+  },
+  {
+   "dormId": "campbell-main",
+   "name": "Campbell (Main)",
+   "lng": -80.421798,
+   "lat": 37.226074,
+   "pin": "name",
+   "osm": "way/32954439",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 3.7
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 7.2
+    }
+   }
+  },
+  {
+   "dormId": "campbell-east",
+   "name": "Campbell (East)",
+   "lng": -80.421798,
+   "lat": 37.226074,
+   "pin": "name",
+   "osm": "way/32954439",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 3.7
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 7.2
+    }
+   }
+  },
+  {
+   "dormId": "eggleston-main",
+   "name": "Eggleston (Main)",
+   "lng": -80.42012,
+   "lat": 37.227624,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 2.1
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 6.9
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 9.8
+    }
+   }
+  },
+  {
+   "dormId": "eggleston-west",
+   "name": "Eggleston (West)",
+   "lng": -80.420012,
+   "lat": 37.226772,
+   "pin": "manual",
+   "osm": "relation/1360466",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 2.9
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 4.9
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 7.5
+    }
+   }
+  },
+  {
+   "dormId": "johnson",
+   "name": "Johnson Hall",
+   "lng": -80.417727,
+   "lat": 37.225541,
+   "pin": "name",
+   "osm": "way/60193854",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 5.6
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 5.1
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 4.6
+    }
+   }
+  },
+  {
+   "dormId": "newman",
+   "name": "Newman Hall",
+   "lng": -80.417854,
+   "lat": 37.226195,
+   "pin": "name",
+   "osm": "way/33533412",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 3.6
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 4.9
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 5.9
+    }
+   }
+  },
+  {
+   "dormId": "vawter",
+   "name": "Vawter Hall",
+   "lng": -80.417665,
+   "lat": 37.227001,
+   "pin": "name",
+   "osm": "way/60193821",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 2.7
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 6.1
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 6.4
+    }
+   }
+  },
+  {
+   "dormId": "whitehurst",
+   "name": "Whitehurst Hall",
+   "lng": -80.416793,
+   "lat": 37.226201,
+   "pin": "name",
+   "osm": "way/60193862",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 4.2
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 6.2
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 6.1
+    }
+   }
+  },
+  {
+   "dormId": "oshag",
+   "name": "O'Shaughnessy Hall",
+   "lng": -80.418309,
+   "lat": 37.225377,
+   "pin": "name",
+   "osm": "way/60193840",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 4.2
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 4.4
+    }
+   }
+  },
+  {
+   "dormId": "harper",
+   "name": "Harper Hall",
+   "lng": -80.423099,
+   "lat": 37.222698,
+   "pin": "name",
+   "osm": "way/32954437",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 9.9
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 3.9
+    },
+    "gym": {
+     "placeId": "merryman-athletic-center",
+     "minutes": 5
+    }
+   }
+  },
+  {
+   "dormId": "hillcrest",
+   "name": "Hillcrest Hall",
+   "lng": -80.424959,
+   "lat": 37.223851,
+   "pin": "name",
+   "osm": "way/26210157",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 10.3
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 6
+    },
+    "gym": {
+     "placeId": "merryman-athletic-center",
+     "minutes": 8.3
+    }
+   }
+  },
+  {
+   "dormId": "newhallwest",
+   "name": "New Hall West",
+   "lng": -80.422584,
+   "lat": 37.222228,
+   "pin": "name",
+   "osm": "way/43933397",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 10.3
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 4.3
+    },
+    "gym": {
+     "placeId": "merryman-athletic-center",
+     "minutes": 4.8
+    }
+   }
+  },
+  {
+   "dormId": "cid",
+   "name": "Creativity and Innovation District Residence Hall",
+   "lng": -80.416749,
+   "lat": 37.227472,
+   "pin": "name",
+   "osm": "way/1091675333",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 3.1
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 7.6
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 7.8
+    }
+   }
+  },
+  {
+   "dormId": "payne",
+   "name": "Payne Hall",
+   "lng": -80.419783,
+   "lat": 37.225978,
+   "pin": "name",
+   "osm": "relation/19285998",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 4.2
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 3.1
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 6.7
+    }
+   }
+  },
+  {
+   "dormId": "peddrew-yates",
+   "name": "Peddrew-Yates Hall",
+   "lng": -80.419903,
+   "lat": 37.225139,
+   "pin": "name",
+   "osm": "way/60193952",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 5.6
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 2.5
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 5.8
+    }
+   }
+  },
+  {
+   "dormId": "newresidencehalleast",
+   "name": "New Residence Hall East",
+   "lng": -80.419194,
+   "lat": 37.225663,
+   "pin": "name",
+   "osm": "way/60193951",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 4.4
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 3.9
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 6.6
+    }
+   }
+  },
+  {
+   "dormId": "pearson-e",
+   "name": "Pearson Hall (East)",
+   "lng": -80.418992,
+   "lat": 37.23097,
+   "pin": "name",
+   "osm": "way/181182287",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 3.4
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 12
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 13.9
+    }
+   }
+  },
+  {
+   "dormId": "pearson-w",
+   "name": "Pearson Hall (West)",
+   "lng": -80.420003,
+   "lat": 37.230299,
+   "pin": "name",
+   "osm": "way/181182264",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "newman-library",
+     "minutes": 2.6
+    },
+    "dining": {
+     "placeId": "dietrick-hall",
+     "minutes": 11.2
+    },
+    "gym": {
+     "placeId": "hahn-hurst-basketball-practice-center",
+     "minutes": 13.1
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "squires-student-center",
+   "name": "Squires Student Center",
+   "short": "Squires Student Center",
+   "kind": "academic",
+   "codes": [
+    "SQUIR"
+   ],
+   "aliases": [
+    "SQUIR"
+   ],
+   "lng": -80.417949,
+   "lat": 37.229609,
+   "osm": "way/32937985"
+  },
+  {
+   "id": "war-memorial-hall",
+   "name": "War Memorial Hall",
+   "short": "War Memorial Hall",
+   "kind": "academic",
+   "codes": [
+    "GYM"
+   ],
+   "aliases": [
+    "War Memorial Gymnasium"
+   ],
+   "lng": -80.420662,
+   "lat": 37.226336,
+   "osm": "way/32954440"
+  },
+  {
+   "id": "center-for-the-arts-at-virginia-tech",
+   "name": "Center for the Arts at Virginia Tech",
+   "short": "Center for the Arts at Virginia Tech",
+   "kind": "academic",
+   "codes": [
+    "CFA"
+   ],
+   "aliases": [
+    "MAC",
+    "Moss Arts Center",
+    "Center for the Arts"
+   ],
+   "lng": -80.41813,
+   "lat": 37.231877,
+   "osm": "way/357516085"
+  },
+  {
+   "id": "rector-field-house",
+   "name": "Rector Field House",
+   "short": "Rector Field House",
+   "kind": "academic",
+   "codes": [
+    "RFH"
+   ],
+   "aliases": [],
+   "lng": -80.421686,
+   "lat": 37.218988,
+   "osm": "way/60193845"
+  },
+  {
+   "id": "mccomas-hall",
+   "name": "McComas Hall",
+   "short": "McComas Hall",
+   "kind": "academic",
+   "codes": [
+    "MCCOM"
+   ],
+   "aliases": [],
+   "lng": -80.422625,
+   "lat": 37.220019,
+   "osm": "relation/1165680"
+  },
+  {
+   "id": "burruss-hall",
+   "name": "Burruss Hall",
+   "short": "Burruss Hall",
+   "kind": "academic",
+   "codes": [
+    "BUR"
+   ],
+   "aliases": [
+    "BUR",
+    "Teaching and Administration Building"
+   ],
+   "lng": -80.42374,
+   "lat": 37.229142,
+   "osm": "relation/1074686"
+  },
+  {
+   "id": "southgate-center",
+   "name": "Southgate Center",
+   "short": "Southgate Center",
+   "kind": "academic",
+   "codes": [
+    "SGCTR"
+   ],
+   "aliases": [],
+   "lng": -80.416065,
+   "lat": 37.218762,
+   "osm": "way/60193825"
+  },
+  {
+   "id": "derring-hall",
+   "name": "Derring Hall",
+   "short": "Derring Hall",
+   "kind": "academic",
+   "codes": [
+    "DER"
+   ],
+   "aliases": [],
+   "lng": -80.4256,
+   "lat": 37.229073,
+   "osm": "way/43082478"
+  },
+  {
+   "id": "alphin-stuart-livestock-arena",
+   "name": "Alphin-Stuart Livestock Arena",
+   "short": "Alphin-Stuart Livestock Arena",
+   "kind": "academic",
+   "codes": [
+    "LARNA"
+   ],
+   "aliases": [
+    "LARNA",
+    "Alphin-Stuart Arena"
+   ],
+   "lng": -80.439898,
+   "lat": 37.219276,
+   "osm": "way/63060121"
+  },
+  {
+   "id": "owens-hall",
+   "name": "Owens Hall",
+   "short": "Owens Hall",
+   "kind": "academic",
+   "codes": [
+    "OWENS"
+   ],
+   "aliases": [],
+   "lng": -80.418891,
+   "lat": 37.226706,
+   "osm": "way/60193832"
+  },
+  {
+   "id": "newman-library",
+   "name": "Newman Library",
+   "short": "Newman Library",
+   "kind": "library",
+   "codes": [
+    "LIBR"
+   ],
+   "aliases": [
+    "Carol M. Newman Library",
+    "LIBR"
+   ],
+   "lng": -80.419161,
+   "lat": 37.228788,
+   "osm": "relation/548450"
+  },
+  {
+   "id": "litton-reaves-hall",
+   "name": "Litton-Reaves Hall",
+   "short": "Litton-Reaves Hall",
+   "kind": "academic",
+   "codes": [
+    "LITRV"
+   ],
+   "aliases": [],
+   "lng": -80.423938,
+   "lat": 37.221511,
+   "osm": "way/26210118"
+  },
+  {
+   "id": "torgersen-hall",
+   "name": "Torgersen Hall",
+   "short": "Torgersen Hall",
+   "kind": "academic",
+   "codes": [
+    "TORG"
+   ],
+   "aliases": [
+    "TORG"
+   ],
+   "lng": -80.420287,
+   "lat": 37.229827,
+   "osm": "relation/1074689"
+  },
+  {
+   "id": "dietrick-hall",
+   "name": "Dietrick Hall",
+   "short": "Dietrick Hall",
+   "kind": "dining",
+   "codes": [
+    "DTRIK"
+   ],
+   "aliases": [
+    "DTRIK"
+   ],
+   "lng": -80.421119,
+   "lat": 37.224532,
+   "osm": "way/26210236"
+  },
+  {
+   "id": "surge-space-building",
+   "name": "Surge Space Building",
+   "short": "Surge Space Building",
+   "kind": "academic",
+   "codes": [
+    "SURGE"
+   ],
+   "aliases": [
+    "SURGE"
+   ],
+   "lng": -80.423106,
+   "lat": 37.233055,
+   "osm": "way/43315949"
+  },
+  {
+   "id": "steger-hall",
+   "name": "Steger Hall",
+   "short": "Steger Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "STEG"
+   ],
+   "lng": -80.426327,
+   "lat": 37.221037,
+   "osm": "way/157809564"
+  },
+  {
+   "id": "burrows-burleson-tennis-facility",
+   "name": "Burrows-Burleson Tennis Facility",
+   "short": "Burrows-Burleson Tennis Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Rector Tennis Pavillion"
+   ],
+   "lng": -80.419313,
+   "lat": 37.214844,
+   "osm": "way/60193847"
+  },
+  {
+   "id": "goodwin-hall",
+   "name": "Goodwin Hall",
+   "short": "Goodwin Hall",
+   "kind": "academic",
+   "codes": [
+    "GOODW"
+   ],
+   "aliases": [],
+   "lng": -80.425824,
+   "lat": 37.232319,
+   "osm": "way/357515790"
+  },
+  {
+   "id": "graduate-life-center",
+   "name": "Graduate Life Center",
+   "short": "Graduate Life Center",
+   "kind": "academic",
+   "codes": [
+    "DB",
+    "GLCDB"
+   ],
+   "aliases": [
+    "Graduate Life Center at Donaldson Brown",
+    "GLCDB",
+    "Donaldson-Brown Hall",
+    "Graduate Life Ctr Dnldsn Brown"
+   ],
+   "lng": -80.417576,
+   "lat": 37.228286,
+   "osm": "way/32709465"
+  },
+  {
+   "id": "north-end-center",
+   "name": "North End Center",
+   "short": "North End Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "NECTR",
+    "Turner Street Project"
+   ],
+   "lng": -80.420982,
+   "lat": 37.233258,
+   "osm": "way/217379348"
+  },
+  {
+   "id": "hahn-hurst-basketball-practice-center",
+   "name": "Hahn-Hurst Basketball Practice Center",
+   "short": "Hahn-Hurst Basketball Practice Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.418083,
+   "lat": 37.223323,
+   "osm": "way/43933398"
+  },
+  {
+   "id": "mcbryde-hall",
+   "name": "McBryde Hall",
+   "short": "McBryde Hall",
+   "kind": "academic",
+   "codes": [
+    "MCB"
+   ],
+   "aliases": [
+    "MCB"
+   ],
+   "lng": -80.421779,
+   "lat": 37.23059,
+   "osm": "way/43082481"
+  },
+  {
+   "id": "data-and-decision-sciences-building",
+   "name": "Data and Decision Sciences Building",
+   "short": "Data and Decision Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "DDS"
+   ],
+   "aliases": [
+    "DDS",
+    "Data and Decision Sciences"
+   ],
+   "lng": -80.427461,
+   "lat": 37.231554,
+   "osm": "way/1174211880"
+  },
+  {
+   "id": "pamplin-hall",
+   "name": "Pamplin Hall",
+   "short": "Pamplin Hall",
+   "kind": "academic",
+   "codes": [
+    "PAM"
+   ],
+   "aliases": [
+    "PAM"
+   ],
+   "lng": -80.424656,
+   "lat": 37.228678,
+   "osm": "relation/1074688"
+  },
+  {
+   "id": "food-science-and-technology-lab",
+   "name": "Food Science and Technology Lab",
+   "short": "Food Science and Technology Lab",
+   "kind": "academic",
+   "codes": [
+    "FST"
+   ],
+   "aliases": [
+    "Food Science and Technology",
+    "Meat Processing Laboratory"
+   ],
+   "lng": -80.425342,
+   "lat": 37.219876,
+   "osm": "way/60193817"
+  },
+  {
+   "id": "hitt-hall",
+   "name": "Hitt Hall",
+   "short": "Hitt Hall",
+   "kind": "academic",
+   "codes": [
+    "HITT"
+   ],
+   "aliases": [],
+   "lng": -80.426084,
+   "lat": 37.22943,
+   "osm": "way/1299635706"
+  },
+  {
+   "id": "wallace-hall",
+   "name": "Wallace Hall",
+   "short": "Wallace Hall",
+   "kind": "academic",
+   "codes": [
+    "WAL"
+   ],
+   "aliases": [],
+   "lng": -80.424254,
+   "lat": 37.222952,
+   "osm": "way/60193837"
+  },
+  {
+   "id": "virginia-tech-electric-service",
+   "name": "Virginia Tech Electric Service",
+   "short": "Virginia Tech Electric Service",
+   "kind": "academic",
+   "codes": [
+    "ELECS"
+   ],
+   "aliases": [
+    "Electric Service Bldg"
+   ],
+   "lng": -80.410488,
+   "lat": 37.213003,
+   "osm": "way/245911764"
+  },
+  {
+   "id": "seitz-hall",
+   "name": "Seitz Hall",
+   "short": "Seitz Hall",
+   "kind": "academic",
+   "codes": [
+    "SEITZ"
+   ],
+   "aliases": [
+    "SEITZ"
+   ],
+   "lng": -80.423629,
+   "lat": 37.224761,
+   "osm": "way/43310773"
+  },
+  {
+   "id": "hahn-hall-north",
+   "name": "Hahn Hall North",
+   "short": "Hahn Hall North",
+   "kind": "academic",
+   "codes": [
+    "HAHN N"
+   ],
+   "aliases": [
+    "Hahn Hall North Wing"
+   ],
+   "lng": -80.4263,
+   "lat": 37.228335,
+   "osm": "way/43313684"
+  },
+  {
+   "id": "durham-hall",
+   "name": "Durham Hall",
+   "short": "Durham Hall",
+   "kind": "academic",
+   "codes": [
+    "DURHM"
+   ],
+   "aliases": [
+    "DURHM"
+   ],
+   "lng": -80.423664,
+   "lat": 37.231668,
+   "osm": "way/54784088"
+  },
+  {
+   "id": "holden-hall",
+   "name": "Holden Hall",
+   "short": "Holden Hall",
+   "kind": "academic",
+   "codes": [
+    "HOLD"
+   ],
+   "aliases": [],
+   "lng": -80.42238,
+   "lat": 37.23019,
+   "osm": "way/742733438"
+  },
+  {
+   "id": "whittemore-hall",
+   "name": "Whittemore Hall",
+   "short": "Whittemore Hall",
+   "kind": "academic",
+   "codes": [
+    "WHIT"
+   ],
+   "aliases": [],
+   "lng": -80.424427,
+   "lat": 37.231004,
+   "osm": "way/55861902"
+  },
+  {
+   "id": "virginia-tech-power-plant",
+   "name": "Virginia Tech Power Plant",
+   "short": "Virginia Tech Power Plant",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Central Steam Plant"
+   ],
+   "lng": -80.420896,
+   "lat": 37.232137,
+   "osm": "way/150870770"
+  },
+  {
+   "id": "kelly-hall",
+   "name": "Kelly Hall",
+   "short": "Kelly Hall",
+   "kind": "academic",
+   "codes": [
+    "KELLY"
+   ],
+   "aliases": [
+    "KELLY",
+    "Institute for Critical Technologies and Applied Science Building"
+   ],
+   "lng": -80.422431,
+   "lat": 37.231432,
+   "osm": "relation/2417941"
+  },
+  {
+   "id": "the-inn-at-virginia-tech",
+   "name": "The Inn at Virginia Tech",
+   "short": "The Inn at Virginia Tech",
+   "kind": "academic",
+   "codes": [
+    "VTINN"
+   ],
+   "aliases": [],
+   "lng": -80.430583,
+   "lat": 37.229745,
+   "osm": "relation/2418551"
+  },
+  {
+   "id": "undergraduate-science-laboratory-building",
+   "name": "Undergraduate Science Laboratory Building",
+   "short": "Undergraduate Science Laboratory Building",
+   "kind": "academic",
+   "codes": [
+    "USLB"
+   ],
+   "aliases": [
+    "Undergraduate Science Lab Bldg"
+   ],
+   "lng": -80.427407,
+   "lat": 37.229986,
+   "osm": "way/1296211919"
+  },
+  {
+   "id": "davidson-hall",
+   "name": "Davidson Hall",
+   "short": "Davidson Hall",
+   "kind": "academic",
+   "codes": [
+    "DAV"
+   ],
+   "aliases": [],
+   "lng": -80.425189,
+   "lat": 37.227067,
+   "osm": "way/26210244"
+  },
+  {
+   "id": "new-classroom-building",
+   "name": "New Classroom Building",
+   "short": "New Classroom Building",
+   "kind": "academic",
+   "codes": [
+    "NCB"
+   ],
+   "aliases": [
+    "NCB",
+    "Classroom Building"
+   ],
+   "lng": -80.426952,
+   "lat": 37.22938,
+   "osm": "way/457355690"
+  },
+  {
+   "id": "merryman-athletic-center",
+   "name": "Merryman Athletic Center",
+   "short": "Merryman Athletic Center",
+   "kind": "gym",
+   "codes": [
+    "MRYMN"
+   ],
+   "aliases": [
+    "Merryman Athletic Facility"
+   ],
+   "lng": -80.419074,
+   "lat": 37.221545,
+   "osm": "way/25705821"
+  },
+  {
+   "id": "cheatham-hall",
+   "name": "Cheatham Hall",
+   "short": "Cheatham Hall",
+   "kind": "academic",
+   "codes": [
+    "JCH"
+   ],
+   "aliases": [
+    "Julian Cheatham Hall",
+    "JCH"
+   ],
+   "lng": -80.42255,
+   "lat": 37.223868,
+   "osm": "way/26210227"
+  },
+  {
+   "id": "norris-hall",
+   "name": "Norris Hall",
+   "short": "Norris Hall",
+   "kind": "academic",
+   "codes": [
+    "NOR"
+   ],
+   "aliases": [],
+   "lng": -80.42315,
+   "lat": 37.229741,
+   "osm": "way/60193992"
+  },
+  {
+   "id": "cowgill-hall",
+   "name": "Cowgill Hall",
+   "short": "Cowgill Hall",
+   "kind": "academic",
+   "codes": [
+    "CO"
+   ],
+   "aliases": [
+    "CO"
+   ],
+   "lng": -80.424748,
+   "lat": 37.229925,
+   "osm": "way/60194005"
+  },
+  {
+   "id": "lavery-hall",
+   "name": "Lavery Hall",
+   "short": "Lavery Hall",
+   "kind": "academic",
+   "codes": [
+    "WLH"
+   ],
+   "aliases": [
+    "WLH"
+   ],
+   "lng": -80.422812,
+   "lat": 37.23116,
+   "osm": "relation/2060142"
+  },
+  {
+   "id": "hahn-hall-south",
+   "name": "Hahn Hall South",
+   "short": "Hahn Hall South",
+   "kind": "academic",
+   "codes": [
+    "HAHN S"
+   ],
+   "aliases": [
+    "Hahn Hall South Wing"
+   ],
+   "lng": -80.425752,
+   "lat": 37.227892,
+   "osm": "way/60193988"
+  },
+  {
+   "id": "corps-leadership-and-military-science-building",
+   "name": "Corps Leadership and Military Science Building",
+   "short": "Corps Leadership and Military Science Building",
+   "kind": "academic",
+   "codes": [
+    "CLMS"
+   ],
+   "aliases": [
+    "CLMS",
+    "Corps Ldrship & Military Sci"
+   ],
+   "lng": -80.420668,
+   "lat": 37.231742,
+   "osm": "way/60193842"
+  },
+  {
+   "id": "latham-hall",
+   "name": "Latham Hall",
+   "short": "Latham Hall",
+   "kind": "academic",
+   "codes": [
+    "LATH"
+   ],
+   "aliases": [],
+   "lng": -80.422498,
+   "lat": 37.224436,
+   "osm": "relation/1074687"
+  },
+  {
+   "id": "virginia-tech-university-bookstore",
+   "name": "Virginia Tech University Bookstore",
+   "short": "Virginia Tech University Bookstore",
+   "kind": "academic",
+   "codes": [
+    "BOOK"
+   ],
+   "aliases": [
+    "BOOK",
+    "University Bookstore"
+   ],
+   "lng": -80.418614,
+   "lat": 37.228122,
+   "osm": "way/32709473"
+  },
+  {
+   "id": "shanks-hall",
+   "name": "Shanks Hall",
+   "short": "Shanks Hall",
+   "kind": "academic",
+   "codes": [
+    "SHANK"
+   ],
+   "aliases": [
+    "SHANK"
+   ],
+   "lng": -80.41983,
+   "lat": 37.231681,
+   "osm": "way/60193829"
+  },
+  {
+   "id": "german-club-manor",
+   "name": "German Club Manor",
+   "short": "German Club Manor",
+   "kind": "academic",
+   "codes": [
+    "UCLUB"
+   ],
+   "aliases": [
+    "University Club"
+   ],
+   "lng": -80.413217,
+   "lat": 37.215853,
+   "osm": "way/60193920"
+  },
+  {
+   "id": "life-sciences-i",
+   "name": "Life Sciences I",
+   "short": "Life Sciences I",
+   "kind": "academic",
+   "codes": [
+    "ILSB",
+    "LFSCI"
+   ],
+   "aliases": [
+    "Integrated Life Sciences Bldg"
+   ],
+   "lng": -80.424629,
+   "lat": 37.220934,
+   "osm": "way/43531160"
+  },
+  {
+   "id": "ictas-ii",
+   "name": "ICTAS II",
+   "short": "ICTAS II",
+   "kind": "academic",
+   "codes": [
+    "CRCIA",
+    "ICTS2"
+   ],
+   "aliases": [
+    "ICTAS A"
+   ],
+   "lng": -80.425635,
+   "lat": 37.222113,
+   "osm": "way/125941774"
+  },
+  {
+   "id": "robeson-hall",
+   "name": "Robeson Hall",
+   "short": "Robeson Hall",
+   "kind": "academic",
+   "codes": [
+    "ROB"
+   ],
+   "aliases": [],
+   "lng": -80.425268,
+   "lat": 37.228026,
+   "osm": "way/60194002"
+  },
+  {
+   "id": "major-williams-hall",
+   "name": "Major Williams Hall",
+   "short": "Major Williams Hall",
+   "kind": "academic",
+   "codes": [
+    "MAJWM"
+   ],
+   "aliases": [
+    "MAJWM"
+   ],
+   "lng": -80.42076,
+   "lat": 37.231035,
+   "osm": "way/60193831"
+  },
+  {
+   "id": "engel-hall",
+   "name": "Engel Hall",
+   "short": "Engel Hall",
+   "kind": "academic",
+   "codes": [
+    "ENGEL"
+   ],
+   "aliases": [
+    "ENGEL",
+    "Biochemistry and Nutrition Building"
+   ],
+   "lng": -80.423561,
+   "lat": 37.223641,
+   "osm": "relation/20377303"
+  },
+  {
+   "id": "henderson-hall",
+   "name": "Henderson Hall",
+   "short": "Henderson Hall",
+   "kind": "academic",
+   "codes": [
+    "HEND",
+    "HOSP"
+   ],
+   "aliases": [
+    "HOSP",
+    "Henderson Hall Hospital"
+   ],
+   "lng": -80.416789,
+   "lat": 37.230356,
+   "osm": "way/54789305"
+  },
+  {
+   "id": "student-services-building",
+   "name": "Student Services Building",
+   "short": "Student Services Building",
+   "kind": "academic",
+   "codes": [
+    "SSB"
+   ],
+   "aliases": [],
+   "lng": -80.421829,
+   "lat": 37.222079,
+   "osm": "way/43520197"
+  },
+  {
+   "id": "williams-hall",
+   "name": "Williams Hall",
+   "short": "Williams Hall",
+   "kind": "academic",
+   "codes": [
+    "WMS"
+   ],
+   "aliases": [],
+   "lng": -80.424341,
+   "lat": 37.22787,
+   "osm": "way/60193985"
+  },
+  {
+   "id": "smyth-hall",
+   "name": "Smyth Hall",
+   "short": "Smyth Hall",
+   "kind": "academic",
+   "codes": [
+    "SMYTH"
+   ],
+   "aliases": [],
+   "lng": -80.423138,
+   "lat": 37.22508,
+   "osm": "way/55760105"
+  },
+  {
+   "id": "lane-hall",
+   "name": "Lane Hall",
+   "short": "Lane Hall",
+   "kind": "academic",
+   "codes": [
+    "LANE",
+    "STAD"
+   ],
+   "aliases": [
+    "LANE",
+    "Lane Stadium"
+   ],
+   "lng": -80.419776,
+   "lat": 37.2309,
+   "osm": "way/60193838"
+  },
+  {
+   "id": "military-building",
+   "name": "Military Building",
+   "short": "Military Building",
+   "kind": "academic",
+   "codes": [
+    "MIL"
+   ],
+   "aliases": [
+    "MIL",
+    "Military Building/Laundry"
+   ],
+   "lng": -80.42154,
+   "lat": 37.231801,
+   "osm": "way/43527635"
+  },
+  {
+   "id": "holtzman-alumni-center",
+   "name": "Holtzman Alumni Center",
+   "short": "Holtzman Alumni Center",
+   "kind": "academic",
+   "codes": [
+    "HOLTZ"
+   ],
+   "aliases": [],
+   "lng": -80.42956,
+   "lat": 37.22904,
+   "osm": "relation/2418549"
+  },
+  {
+   "id": "hutcheson-hall",
+   "name": "Hutcheson Hall",
+   "short": "Hutcheson Hall",
+   "kind": "academic",
+   "codes": [
+    "HUTCH"
+   ],
+   "aliases": [],
+   "lng": -80.42297,
+   "lat": 37.225669,
+   "osm": "way/55760103"
+  },
+  {
+   "id": "patton-hall",
+   "name": "Patton Hall",
+   "short": "Patton Hall",
+   "kind": "academic",
+   "codes": [
+    "PAT"
+   ],
+   "aliases": [],
+   "lng": -80.422202,
+   "lat": 37.22923,
+   "osm": "way/60193996"
+  },
+  {
+   "id": "smith-career-center",
+   "name": "Smith Career Center",
+   "short": "Smith Career Center",
+   "kind": "academic",
+   "codes": [
+    "SM CC"
+   ],
+   "aliases": [],
+   "lng": -80.422542,
+   "lat": 37.221593,
+   "osm": "way/43520198"
+  },
+  {
+   "id": "price-hall",
+   "name": "Price Hall",
+   "short": "Price Hall",
+   "kind": "academic",
+   "codes": [
+    "P HSE",
+    "PRICE"
+   ],
+   "aliases": [
+    "Price House"
+   ],
+   "lng": -80.424084,
+   "lat": 37.225737,
+   "osm": "way/32953605"
+  },
+  {
+   "id": "fralin-life-science-institute",
+   "name": "Fralin Life Science Institute",
+   "short": "Fralin Life Science Institute",
+   "kind": "academic",
+   "codes": [
+    "FRALN"
+   ],
+   "aliases": [
+    "FRALN",
+    "Fralin Biotechnology Center"
+   ],
+   "lng": -80.423505,
+   "lat": 37.224119,
+   "osm": "relation/20377301"
+  },
+  {
+   "id": "johnston-student-center",
+   "name": "Johnston Student Center",
+   "short": "Johnston Student Center",
+   "kind": "academic",
+   "codes": [
+    "GBJ"
+   ],
+   "aliases": [
+    "GBJ",
+    "G. Burke Johnston Student Ctr"
+   ],
+   "lng": -80.424613,
+   "lat": 37.229252,
+   "osm": "relation/20369224"
+  },
+  {
+   "id": "armory",
+   "name": "Armory",
+   "short": "Armory",
+   "kind": "academic",
+   "codes": [
+    "ARMRY"
+   ],
+   "aliases": [
+    "ARMRY",
+    "Armory (Art)"
+   ],
+   "lng": -80.41588,
+   "lat": 37.229302,
+   "osm": "way/32935304"
+  },
+  {
+   "id": "the-pylons",
+   "name": "The Pylons",
+   "short": "The Pylons",
+   "kind": "academic",
+   "codes": [
+    "CHAP"
+   ],
+   "aliases": [
+    "War Memorial Court",
+    "CHAP",
+    "War Memorial Chapel"
+   ],
+   "lng": -80.420424,
+   "lat": 37.228875,
+   "osm": "way/49151374"
+  },
+  {
+   "id": "mining-and-minerals-engineering-research-facility",
+   "name": "Mining and Minerals Engineering Research Facility",
+   "short": "Mining and Minerals Engineering Research Facility",
+   "kind": "academic",
+   "codes": [
+    "MMLAB"
+   ],
+   "aliases": [
+    "Mining and Minerals Engineering Plantation Road Research Facility",
+    "Mining and Minerals Laboratory"
+   ],
+   "lng": -80.441849,
+   "lat": 37.22282,
+   "osm": "way/54783318"
+  },
+  {
+   "id": "pack-building",
+   "name": "Pack Building",
+   "short": "Pack Building",
+   "kind": "academic",
+   "codes": [
+    "PACKA",
+    "PACK"
+   ],
+   "aliases": [
+    "Pack Associates"
+   ],
+   "lng": -80.4249,
+   "lat": 37.233858,
+   "osm": "way/54784567"
+  },
+  {
+   "id": "saunders-hall",
+   "name": "Saunders Hall",
+   "short": "Saunders Hall",
+   "kind": "academic",
+   "codes": [
+    "SAUND"
+   ],
+   "aliases": [],
+   "lng": -80.424353,
+   "lat": 37.224924,
+   "osm": "way/32955264"
+  },
+  {
+   "id": "bishop-favrao-hall",
+   "name": "Bishop-Favrao Hall",
+   "short": "Bishop-Favrao Hall",
+   "kind": "academic",
+   "codes": [
+    "BFH"
+   ],
+   "aliases": [],
+   "lng": -80.425521,
+   "lat": 37.230044,
+   "osm": "way/43531945"
+  },
+  {
+   "id": "architecture-annex",
+   "name": "Architecture Annex",
+   "short": "Architecture Annex",
+   "kind": "academic",
+   "codes": [
+    "AA"
+   ],
+   "aliases": [
+    "AA"
+   ],
+   "lng": -80.416288,
+   "lat": 37.228596,
+   "osm": "way/32935321"
+  },
+  {
+   "id": "the-lyric",
+   "name": "The Lyric",
+   "short": "The Lyric",
+   "kind": "academic",
+   "codes": [
+    "LYRIC"
+   ],
+   "aliases": [
+    "Lyric Theater"
+   ],
+   "lng": -80.4157,
+   "lat": 37.230154,
+   "osm": "way/32935297"
+  },
+  {
+   "id": "east-eggleston-hall",
+   "name": "East Eggleston Hall",
+   "short": "East Eggleston Hall",
+   "kind": "academic",
+   "codes": [
+    "EGG E"
+   ],
+   "aliases": [
+    "Eggleston East"
+   ],
+   "lng": -80.419371,
+   "lat": 37.227653,
+   "osm": "relation/1360465"
+  },
+  {
+   "id": "the-grove",
+   "name": "The Grove",
+   "short": "The Grove",
+   "kind": "academic",
+   "codes": [
+    "GROVE"
+   ],
+   "aliases": [
+    "The Grove (President's House)"
+   ],
+   "lng": -80.427326,
+   "lat": 37.224301,
+   "osm": "way/54784056"
+  },
+  {
+   "id": "jamerson-athletic-center",
+   "name": "Jamerson Athletic Center",
+   "short": "Jamerson Athletic Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -80.418657,
+   "lat": 37.222045,
+   "osm": "relation/2422985"
+  },
+  {
+   "id": "media-building",
+   "name": "Media Building",
+   "short": "Media Building",
+   "kind": "academic",
+   "codes": [
+    "MEDIA"
+   ],
+   "aliases": [
+    "MEDIA"
+   ],
+   "lng": -80.415335,
+   "lat": 37.228801,
+   "osm": "way/32935323"
+  },
+  {
+   "id": "judging-pavilion",
+   "name": "Judging Pavilion",
+   "short": "Judging Pavilion",
+   "kind": "academic",
+   "codes": [
+    "AJPAV"
+   ],
+   "aliases": [
+    "Animal Judging Pavilion"
+   ],
+   "lng": -80.44052,
+   "lat": 37.217975,
+   "osm": "way/54782956"
+  },
+  {
+   "id": "theatre-101",
+   "name": "Theatre 101",
+   "short": "Theatre 101",
+   "kind": "academic",
+   "codes": [
+    "T101"
+   ],
+   "aliases": [
+    "Theater 101"
+   ],
+   "lng": -80.416381,
+   "lat": 37.230249,
+   "osm": "way/43531163"
+  },
+  {
+   "id": "burchard-hall",
+   "name": "Burchard Hall",
+   "short": "Burchard Hall",
+   "kind": "academic",
+   "codes": [
+    "BURCH"
+   ],
+   "aliases": [
+    "BURCH"
+   ],
+   "lng": -80.424229,
+   "lat": 37.229608,
+   "osm": "relation/1155649"
+  },
+  {
+   "id": "college-of-liberal-arts-and-human-sciences-building",
+   "name": "College of Liberal Arts and Human Sciences Building",
+   "short": "College of Liberal Arts and Human Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "LARTS",
+    "PAB"
+   ],
+   "aliases": [
+    "Liberal Arts Building",
+    "PAB",
+    "Performing Arts Building"
+   ],
+   "lng": -80.420902,
+   "lat": 37.230635,
+   "osm": "way/60193819"
+  },
+  {
+   "id": "old-security-building",
+   "name": "Old Security Building",
+   "short": "Old Security Building",
+   "kind": "academic",
+   "codes": [
+    "SEC"
+   ],
+   "aliases": [
+    "SEC"
+   ],
+   "lng": -80.421607,
+   "lat": 37.231482,
+   "osm": "way/43525170"
+  },
+  {
+   "id": "wright-house",
+   "name": "Wright House",
+   "short": "Wright House",
+   "kind": "academic",
+   "codes": [
+    "WRGHT"
+   ],
+   "aliases": [],
+   "lng": -80.426189,
+   "lat": 37.226805,
+   "osm": "way/54784069"
+  },
+  {
+   "id": "hahn-garden-pavilion",
+   "name": "Hahn Garden Pavilion",
+   "short": "Hahn Garden Pavilion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Peggy Lee Hahn Garden Pavilion"
+   ],
+   "lng": -80.424179,
+   "lat": 37.219169,
+   "osm": "way/425164295"
+  },
+  {
+   "id": "sandy-hall",
+   "name": "Sandy Hall",
+   "short": "Sandy Hall",
+   "kind": "academic",
+   "codes": [
+    "SANDY"
+   ],
+   "aliases": [],
+   "lng": -80.423496,
+   "lat": 37.225815,
+   "osm": "way/32953606"
+  },
+  {
+   "id": "etgen-learning-center-classroom",
+   "name": "Etgen Learning Center Classroom",
+   "short": "Etgen Learning Center Classroom",
+   "kind": "academic",
+   "codes": [
+    "ETGENC"
+   ],
+   "aliases": [
+    "Etgen Learning Center"
+   ],
+   "lng": -80.440552,
+   "lat": 37.21829,
+   "osm": "way/1416781105"
+  },
+  {
+   "id": "vt-engage",
+   "name": "VT Engage",
+   "short": "VT Engage",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "VT Engage: The Center for Leadership & Service Learning"
+   ],
+   "lng": -80.415705,
+   "lat": 37.223452,
+   "osm": "way/54789039"
+  },
+  {
+   "id": "holiday-inn-express-and-suites-blacksburg-university-area-1",
+   "name": "Holiday Inn Express & Suites Blacksburg - University Area 1",
+   "short": "Holiday Inn Express & Suites Blacksburg - University Area 1",
+   "kind": "gym",
+   "codes": [
+    "HLDYN"
+   ],
+   "aliases": [
+    "Holiday Inn Express"
+   ],
+   "lng": -80.44414,
+   "lat": 37.227402,
+   "osm": "way/54783448"
+  },
+  {
+   "id": "agnew-hall",
+   "name": "Agnew Hall",
+   "short": "Agnew Hall",
+   "kind": "academic",
+   "codes": [
+    "AGNEW"
+   ],
+   "aliases": [],
+   "lng": -80.424133,
+   "lat": 37.224776,
+   "osm": "way/43526624"
+  },
+  {
+   "id": "media-annex",
+   "name": "Media Annex",
+   "short": "Media Annex",
+   "kind": "academic",
+   "codes": [
+    "TVFLM"
+   ],
+   "aliases": [
+    "TVFLM"
+   ],
+   "lng": -80.415937,
+   "lat": 37.228805,
+   "osm": "way/32935318"
+  },
+  {
+   "id": "urban-pest-control-facility",
+   "name": "Urban Pest Control Facility",
+   "short": "Urban Pest Control Facility",
+   "kind": "academic",
+   "codes": [
+    "UPEST"
+   ],
+   "aliases": [],
+   "lng": -80.43525,
+   "lat": 37.233041,
+   "osm": "way/54784200"
+  },
+  {
+   "id": "drone-park-lab",
+   "name": "Drone Park Lab",
+   "short": "Drone Park Lab",
+   "kind": "academic",
+   "codes": [
+    "DPARK"
+   ],
+   "aliases": [
+    "Drone Park"
+   ],
+   "lng": -80.431799,
+   "lat": 37.223136,
+   "osm": "way/1153089838"
+  },
+  {
+   "id": "virginia-tech-math-emporium",
+   "name": "Virginia Tech Math Emporium",
+   "short": "Virginia Tech Math Emporium",
+   "kind": "academic",
+   "codes": [
+    "EMPOR"
+   ],
+   "aliases": [
+    "Math Emporium"
+   ],
+   "lng": -80.434204,
+   "lat": 37.232639,
+   "osm": "relation/1723734"
+  }
+ ]
+}

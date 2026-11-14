@@ -1,0 +1,55 @@
+{
+  "halls": {
+    "will-rice-college": {
+      "pin": [
+        -95.399234,
+        29.716462
+      ]
+    },
+    "hanszen-college": {
+      "pin": [
+        -95.400469,
+        29.715962
+      ]
+    }
+  },
+  "notes": {
+    "will-rice-college": "OSM 'Will Rice College Old Dorm' (way/51817591), inside the 'Will Rice College' outline (relation/21261245); the name rules couldn't choose between the college's buildings.",
+    "hanszen-college": "OSM 'Hanszen Old Wing' (way/1550459300), inside the 'Hanszen College' outline (relation/12253976).",
+    "south-plant": "Central utility plant, not a class or meal place.",
+    "rice-childrens-campus": "Child care center, not a class or meal place.",
+    "rice-university-public-safety": "Police and public safety, not a class or meal place."
+  },
+  "places": {
+    "south-plant": {
+      "hide": true
+    },
+    "rice-childrens-campus": {
+      "hide": true
+    },
+    "rice-university-public-safety": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "baker-college -> allen-business-center"
+      ],
+      "maxRatio": 3.0,
+      "why": "Baker College's mapped doors face south-west and Allen Business Center's only mapped door faces south-east, away from each other, so the walk goes round both buildings."
+    },
+    {
+      "pairs": [
+        "brown-college -> huff-house",
+        "hanszen-college -> herring-hall",
+        "jones-college -> huff-house",
+        "lovett-college -> old-lovett-college-commons",
+        "mcmurtry-college -> huff-house",
+        "sid-richardson-college -> cambridge-office-building"
+      ],
+      "maxRatio": 3.5,
+      "why": "No doors are mapped on these college buildings or the places they walk to (Jones, McMurtry, Lovett, Sid Richardson, Hanszen Old Wing, Huff House, Herring Hall, Cambridge Office Building, Old Lovett Commons), so walks run between the mapped paths nearest the buildings' middles, which sit inside the colleges' closed courtyards; the walk goes out round the college to reach them."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "places": {
+    "iowa-city-public-library": {
+      "hide": true
+    },
+    "newton-road-ramp-lot-10": {
+      "hide": true
+    },
+    "court-street-ramp-lot-12": {
+      "hide": true
+    },
+    "robert-a-lee-community-recreation-center": {
+      "hide": true
+    },
+    "iowa-city-city-hall": {
+      "hide": true
+    },
+    "westlawn-student-health-services": {
+      "hide": true
+    },
+    "graduate-by-hilton-iowa-city": {
+      "hide": true
+    },
+    "iowa-city-johnson-county-senior-center": {
+      "hide": true
+    },
+    "la-james-international-college": {
+      "hide": true
+    },
+    "firestone": {
+      "hide": true
+    },
+    "northside-commons": {
+      "hide": true
+    },
+    "wesley-student-center": {
+      "hide": true
+    },
+    "hothouse-yoga": {
+      "hide": true
+    },
+    "midwestone": {
+      "hide": true
+    },
+    "brueggers-bagels-and-jamba-juice": {
+      "hide": true
+    },
+    "koza-building": {
+      "hide": true
+    },
+    "bowman-house": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "iowa-city-public-library": "The city's public library, not the university's.",
+    "newton-road-ramp-lot-10": "A parking ramp.",
+    "court-street-ramp-lot-12": "A parking ramp.",
+    "robert-a-lee-community-recreation-center": "The City of Iowa City's recreation centre, not a university gym.",
+    "iowa-city-city-hall": "Iowa City's city hall.",
+    "westlawn-student-health-services": "Student Health clinic, no classes.",
+    "graduate-by-hilton-iowa-city": "A hotel.",
+    "iowa-city-johnson-county-senior-center": "The county senior centre.",
+    "la-james-international-college": "A private beauty college, not the university.",
+    "firestone": "A tyre shop.",
+    "northside-commons": "A building=yes with no other tags in OSM; not one of the university's dining halls.",
+    "wesley-student-center": "A church student ministry.",
+    "hothouse-yoga": "A private yoga studio.",
+    "midwestone": "A bank.",
+    "brueggers-bagels-and-jamba-juice": "A cafe.",
+    "koza-building": "A commercial building (Franklin Printing House).",
+    "bowman-house": "Women's Resource & Action Center offices; no classes.",
+    "area": "No campus outline exists (see config area.note), so every named building in the box was a candidate; the non-university ones are hidden here."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "catlett -> dance-building"
+      ],
+      "maxRatio": 4.5,
+      "why": "The Iowa River lies between Catlett (west campus) and the Dance Building; the walk crosses it on a footbridge."
+    },
+    {
+      "pairs": [
+        "daum -> pappajohn-business-building"
+      ],
+      "maxRatio": 3.5,
+      "why": "Buildings fill the block between Daum and the Pappajohn Business Building, whose mapped way in is from its west courtyard, so the walk goes round."
+    }
+  ]
+}

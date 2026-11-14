@@ -1,0 +1,35 @@
+{
+  "places": {
+    "fire-department-station-no-2": {
+      "hide": true
+    },
+    "skandalaris-football-center": {
+      "hide": true
+    },
+    "physical-plant": {
+      "hide": true
+    },
+    "msu-laundry-linen-services": {
+      "hide": true
+    },
+    "msu-visitor-information": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "fire-department-station-no-2": "A fire station, not somewhere classes or meals happen.",
+    "skandalaris-football-center": "Varsity football building (Duffy Daugherty), not a class building or student gym.",
+    "physical-plant": "Infrastructure Planning and Facilities (physical plant), not somewhere classes happen.",
+    "msu-laundry-linen-services": "Laundry and linen services, not somewhere classes happen.",
+    "msu-visitor-information": "Visitor welcome center, not somewhere classes happen."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "holden-hall -> angell"
+      ],
+      "maxRatio": 3,
+      "why": "Holden Hall's mapped path leaves north by its service drive, and Angell (way/26271331) has no mapped entrance and is reached from Service Road to its west; no mapped path runs directly between them, so the walk goes round by Service Road."
+    }
+  ]
+}

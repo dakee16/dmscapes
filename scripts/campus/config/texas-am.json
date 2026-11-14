@@ -1,0 +1,17 @@
+{
+  "collegeId": "texas-am",
+  "area": {
+    "osm": "relation/8556620",
+    "bbox": [
+      30.55866,
+      -96.3833,
+      30.63328,
+      -96.32377
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/texas-am.codes.json"
+  }
+}

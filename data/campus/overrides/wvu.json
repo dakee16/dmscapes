@@ -1,0 +1,119 @@
+{
+  "halls": {
+    "boreman-hall": {
+      "pin": [
+        -79.952487,
+        39.633716
+      ]
+    }
+  },
+  "places": {
+    "lamda": {
+      "hide": true
+    },
+    "tke": {
+      "hide": true
+    },
+    "pike": {
+      "hide": true
+    },
+    "phi-phi": {
+      "hide": true
+    },
+    "pks": {
+      "hide": true
+    },
+    "sig-chi": {
+      "hide": true
+    },
+    "agr": {
+      "hide": true
+    },
+    "sk": {
+      "hide": true
+    },
+    "alpha-xi-delta-sorority-house": {
+      "hide": true
+    },
+    "kappa-kappa-gamma-sorority-house": {
+      "hide": true
+    },
+    "pi-lambda-phi-fraternity-house": {
+      "hide": true
+    },
+    "von-son-asian-market": {
+      "hide": true
+    },
+    "the-daily-athenaeum": {
+      "hide": true
+    },
+    "st-johns-university-parish": {
+      "hide": true
+    },
+    "emmaus-hall-st-johns": {
+      "hide": true
+    },
+    "newman-hall-st-johns": {
+      "hide": true
+    },
+    "luther-house": {
+      "hide": true
+    },
+    "beechurst": {
+      "hide": true
+    },
+    "beechurst-1098343896": {
+      "hide": true
+    },
+    "walnut": {
+      "hide": true
+    },
+    "arnold-hall-and-apartments-wvu": {
+      "hide": true
+    },
+    "boreman-south-resident-hall": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "lamda": "A fraternity or sorority house, not a class building.",
+    "tke": "A fraternity or sorority house, not a class building.",
+    "pike": "A fraternity or sorority house, not a class building.",
+    "phi-phi": "A fraternity or sorority house, not a class building.",
+    "pks": "A fraternity or sorority house, not a class building.",
+    "sig-chi": "A fraternity or sorority house, not a class building.",
+    "agr": "A fraternity or sorority house, not a class building.",
+    "sk": "A fraternity or sorority house, not a class building.",
+    "alpha-xi-delta-sorority-house": "A fraternity or sorority house, not a class building.",
+    "kappa-kappa-gamma-sorority-house": "A fraternity or sorority house, not a class building.",
+    "pi-lambda-phi-fraternity-house": "A fraternity or sorority house, not a class building.",
+    "von-son-asian-market": "A grocery shop.",
+    "the-daily-athenaeum": "The student newspaper's offices.",
+    "st-johns-university-parish": "A church (St. John's University Parish).",
+    "emmaus-hall-st-johns": "Part of St. John's parish, not WVU.",
+    "newman-hall-st-johns": "Part of St. John's parish, not WVU.",
+    "luther-house": "A campus ministry house.",
+    "beechurst": "A PRT station (building=transportation).",
+    "beechurst-1098343896": "A PRT station (building=transportation).",
+    "walnut": "A PRT station (building=transportation).",
+    "arnold-hall-and-apartments-wvu": "Arnold Hall and Apartments is housing, not a class building.",
+    "boreman-south-resident-hall": "Boreman South, the other half of Boreman Hall (housing).",
+    "boreman-hall": "OSM maps Boreman Hall as 'Boreman North Resident Hall' (way/106856477) and 'Boreman South Resident Hall' (way/154926944), both 600 N High St; pinned to Boreman North."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "dadisman-hall -> mountainlair",
+        "dadisman-hall -> reynolds-hall",
+        "dadisman-hall -> field-hall",
+        "dadisman-hall -> woodburn-hall-wvu",
+        "dadisman-hall -> oglebay-hall-wvu",
+        "dadisman-hall -> chitwood-hall-wvu",
+        "dadisman-hall -> martin-hall-wvu",
+        "stalnaker-hall -> reynolds-hall"
+      ],
+      "maxRatio": 4.5,
+      "why": "Dadisman and Stalnaker sit on the steep slope above the Mountainlair and Hodges Hall; OSM maps no path down that slope from their west side, so walks leave by the south end and come round by the roads."
+    }
+  ]
+}

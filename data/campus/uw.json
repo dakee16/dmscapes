@@ -1,0 +1,1987 @@
+{
+ "collegeId": "uw",
+ "generatedAt": "2026-11-08T22:07:03.466Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "University of Washington Office of the Registrar, Time Schedule building codes (Seattle)",
+   "url": "https://www.washington.edu/students/reg/buildings.html",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/uw.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -122.3214,
+  47.64779,
+  -122.28875,
+  47.66079
+ ],
+ "halls": [
+  {
+   "dormId": "alder-hall",
+   "name": "Alder Hall",
+   "lng": -122.313859,
+   "lat": 47.655669,
+   "pin": "name",
+   "osm": "relation/6447992",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ima-building",
+     "minutes": 15.3
+    },
+    "library": {
+     "placeId": "odegaard-undergraduate-library",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "roosevelt-commons-west",
+     "minutes": 10.3
+    }
+   }
+  },
+  {
+   "dormId": "elm-hall",
+   "name": "Elm Hall",
+   "lng": -122.315111,
+   "lat": 47.656599,
+   "pin": "name",
+   "osm": "way/203079238",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ima-building",
+     "minutes": 17.4
+    },
+    "library": {
+     "placeId": "odegaard-undergraduate-library",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "roosevelt-commons-west",
+     "minutes": 8.2
+    }
+   }
+  },
+  {
+   "dormId": "lander-hall",
+   "name": "Lander Hall",
+   "lng": -122.315013,
+   "lat": 47.655677,
+   "pin": "name",
+   "osm": "way/328682607",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ima-building",
+     "minutes": 16.3
+    },
+    "library": {
+     "placeId": "odegaard-undergraduate-library",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "roosevelt-commons-west",
+     "minutes": 10.2
+    }
+   }
+  },
+  {
+   "dormId": "maple-hall",
+   "name": "Maple Hall",
+   "lng": -122.31618,
+   "lat": 47.655675,
+   "pin": "name",
+   "osm": "relation/6948551",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ima-building",
+     "minutes": 17.3
+    },
+    "library": {
+     "placeId": "odegaard-undergraduate-library",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "roosevelt-commons-west",
+     "minutes": 9.6
+    }
+   }
+  },
+  {
+   "dormId": "poplar-hall",
+   "name": "Poplar Hall",
+   "lng": -122.31406,
+   "lat": 47.65655,
+   "pin": "name",
+   "osm": "way/144951175",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ima-building",
+     "minutes": 17.3
+    },
+    "library": {
+     "placeId": "odegaard-undergraduate-library",
+     "minutes": 4.8
+    },
+    "dining": {
+     "placeId": "roosevelt-commons-west",
+     "minutes": 8.9
+    }
+   }
+  },
+  {
+   "dormId": "terry-hall",
+   "name": "Terry Hall",
+   "lng": -122.317035,
+   "lat": 47.65569,
+   "pin": "name",
+   "osm": "way/418142296",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ima-building",
+     "minutes": 18.1
+    },
+    "library": {
+     "placeId": "odegaard-undergraduate-library",
+     "minutes": 7.2
+    },
+    "dining": {
+     "placeId": "roosevelt-commons-west",
+     "minutes": 8.4
+    }
+   }
+  },
+  {
+   "dormId": "oak-hall",
+   "name": "Oak Hall",
+   "lng": -122.305674,
+   "lat": 47.659325,
+   "pin": "name",
+   "osm": "way/30861347",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ima-building",
+     "minutes": 12.6
+    },
+    "library": {
+     "placeId": "foster-business-library",
+     "minutes": 3.8
+    },
+    "dining": {
+     "placeId": "roosevelt-commons-west",
+     "minutes": 13.2
+    }
+   }
+  },
+  {
+   "dormId": "oliver-hall",
+   "name": "Oliver Hall",
+   "lng": -122.304284,
+   "lat": 47.659871,
+   "pin": "name",
+   "osm": "way/1103349410",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ima-building",
+     "minutes": 13.4
+    },
+    "library": {
+     "placeId": "foster-business-library",
+     "minutes": 5.8
+    },
+    "dining": {
+     "placeId": "roosevelt-commons-west",
+     "minutes": 15.1
+    }
+   }
+  },
+  {
+   "dormId": "spratlen-hall",
+   "name": "Spratlen Hall",
+   "lng": -122.305253,
+   "lat": 47.660137,
+   "pin": "name",
+   "osm": "way/524538799",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ima-building",
+     "minutes": 13
+    },
+    "library": {
+     "placeId": "foster-business-library",
+     "minutes": 4.7
+    },
+    "dining": {
+     "placeId": "roosevelt-commons-west",
+     "minutes": 14
+    }
+   }
+  },
+  {
+   "dormId": "mccarty-hall",
+   "name": "McCarty Hall",
+   "lng": -122.304869,
+   "lat": 47.66063,
+   "pin": "name",
+   "osm": "way/524538798",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ima-building",
+     "minutes": 14.2
+    },
+    "library": {
+     "placeId": "foster-business-library",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "roosevelt-commons-west",
+     "minutes": 14.5
+    }
+   }
+  },
+  {
+   "dormId": "hansee-hall",
+   "name": "Hansee Hall",
+   "lng": -122.30653,
+   "lat": 47.660793,
+   "pin": "name",
+   "osm": "way/30922346",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ima-building",
+     "minutes": 14.6
+    },
+    "library": {
+     "placeId": "foster-business-library",
+     "minutes": 2.6
+    },
+    "dining": {
+     "placeId": "roosevelt-commons-west",
+     "minutes": 11.3
+    }
+   }
+  },
+  {
+   "dormId": "mcmahon-hall",
+   "name": "McMahon Hall",
+   "lng": -122.303692,
+   "lat": 47.65822,
+   "pin": "name",
+   "osm": "way/30922162",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ima-building",
+     "minutes": 10.6
+    },
+    "library": {
+     "placeId": "allen-library",
+     "minutes": 5.7
+    },
+    "dining": {
+     "placeId": "roosevelt-commons-west",
+     "minutes": 15.3
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "university-of-washington-medical-center-montlake",
+   "name": "University of Washington Medical Center - Montlake",
+   "short": "University of Washington Medical Center - Montlake",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "UW Medical Center - Montlake"
+   ],
+   "lng": -122.307506,
+   "lat": 47.649309,
+   "osm": "way/242182549"
+  },
+  {
+   "id": "magnuson-health-sciences-center",
+   "name": "Magnuson Health Sciences Center",
+   "short": "Magnuson Health Sciences Center",
+   "kind": "academic",
+   "codes": [
+    "HSB"
+   ],
+   "aliases": [
+    "Health Sciences Building wings AA and BB"
+   ],
+   "lng": -122.310041,
+   "lat": 47.65083,
+   "osm": "relation/12579655"
+  },
+  {
+   "id": "ima-building",
+   "name": "IMA Building",
+   "short": "IMA Building",
+   "kind": "gym",
+   "codes": [
+    "IMA"
+   ],
+   "aliases": [
+    "Intramural Activities Building",
+    "The IMA"
+   ],
+   "lng": -122.301298,
+   "lat": 47.653698,
+   "osm": "way/160546421"
+  },
+  {
+   "id": "clarence-s-hec-edmundson-pavilion",
+   "name": "Clarence S. \"Hec\" Edmundson Pavilion",
+   "short": "Hec Ed Pavilion",
+   "kind": "academic",
+   "codes": [
+    "EDP"
+   ],
+   "aliases": [
+    "Alaska Airlines Arena",
+    "Hec Ed Pavilion",
+    "Edmundson Pavilion"
+   ],
+   "lng": -122.302163,
+   "lat": 47.652121,
+   "osm": "way/160544279"
+  },
+  {
+   "id": "dempsey-indoor",
+   "name": "Dempsey Indoor",
+   "short": "Dempsey Indoor",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Dempsey Indoor Center",
+    "Indoor Practice Facility"
+   ],
+   "lng": -122.299346,
+   "lat": 47.651498,
+   "osm": "way/155180953"
+  },
+  {
+   "id": "husky-union-building",
+   "name": "Husky Union Building",
+   "short": "Husky Union Building",
+   "kind": "academic",
+   "codes": [
+    "HUB"
+   ],
+   "aliases": [
+    "The HUB",
+    "Student Union Building"
+   ],
+   "lng": -122.305158,
+   "lat": 47.655314,
+   "osm": "way/222822705"
+  },
+  {
+   "id": "william-h-gates-hall",
+   "name": "William H. Gates Hall",
+   "short": "William H. Gates Hall",
+   "kind": "academic",
+   "codes": [
+    "LAW"
+   ],
+   "aliases": [],
+   "lng": -122.310912,
+   "lat": 47.659225,
+   "osm": "way/222719074"
+  },
+  {
+   "id": "suzzallo-library",
+   "name": "Suzzallo Library",
+   "short": "Suzzallo Library",
+   "kind": "library",
+   "codes": [
+    "SUZ"
+   ],
+   "aliases": [],
+   "lng": -122.308168,
+   "lat": 47.655773,
+   "osm": "relation/2955450"
+  },
+  {
+   "id": "meany-hall",
+   "name": "Meany Hall",
+   "short": "Meany Hall",
+   "kind": "academic",
+   "codes": [
+    "MNY"
+   ],
+   "aliases": [],
+   "lng": -122.310573,
+   "lat": 47.655559,
+   "osm": "way/26447608"
+  },
+  {
+   "id": "mary-gates-hall",
+   "name": "Mary Gates Hall",
+   "short": "Mary Gates Hall",
+   "kind": "academic",
+   "codes": [
+    "MGH"
+   ],
+   "aliases": [],
+   "lng": -122.307768,
+   "lat": 47.654831,
+   "osm": "way/1491155057"
+  },
+  {
+   "id": "haring-center",
+   "name": "Haring Center",
+   "short": "Haring Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Center on Human Development and Disability School"
+   ],
+   "lng": -122.307548,
+   "lat": 47.648178,
+   "osm": "way/53904691"
+  },
+  {
+   "id": "nordstrom-tennis-center",
+   "name": "Nordstrom Tennis Center",
+   "short": "Nordstrom Tennis Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.300077,
+   "lat": 47.651838,
+   "osm": "way/155180954"
+  },
+  {
+   "id": "brotman-baty-surgery-pavilion",
+   "name": "Brotman Baty Surgery Pavilion",
+   "short": "Brotman Baty Surgery Pavilion",
+   "kind": "academic",
+   "codes": [
+    "UMSP"
+   ],
+   "aliases": [
+    "University Medical Center, Surgery and Treatment Pavilion"
+   ],
+   "lng": -122.305244,
+   "lat": 47.648507,
+   "osm": "way/222712286"
+  },
+  {
+   "id": "aquatic-and-fishery-sciences",
+   "name": "Aquatic & Fishery Sciences",
+   "short": "Aquatic & Fishery Sciences",
+   "kind": "academic",
+   "codes": [
+    "FSH"
+   ],
+   "aliases": [
+    "Fisheries Building"
+   ],
+   "lng": -122.316275,
+   "lat": 47.653158,
+   "osm": "way/53533404"
+  },
+  {
+   "id": "bagley-hall",
+   "name": "Bagley Hall",
+   "short": "Bagley Hall",
+   "kind": "academic",
+   "codes": [
+    "BAG"
+   ],
+   "aliases": [],
+   "lng": -122.30885,
+   "lat": 47.653478,
+   "osm": "way/222825537"
+  },
+  {
+   "id": "kane-hall",
+   "name": "Kane Hall",
+   "short": "Kane Hall",
+   "kind": "academic",
+   "codes": [
+    "KNE"
+   ],
+   "aliases": [],
+   "lng": -122.309199,
+   "lat": 47.656593,
+   "osm": "way/26447597"
+  },
+  {
+   "id": "odegaard-undergraduate-library",
+   "name": "Odegaard Undergraduate Library",
+   "short": "Odegaard Undergraduate Library",
+   "kind": "library",
+   "codes": [
+    "OUG"
+   ],
+   "aliases": [
+    "Charles E. Odegaard Undergraduate Library",
+    "Odegaard Undergrad Library"
+   ],
+   "lng": -122.310403,
+   "lat": 47.656469,
+   "osm": "way/26447602"
+  },
+  {
+   "id": "allen-library",
+   "name": "Allen Library",
+   "short": "Allen Library",
+   "kind": "library",
+   "codes": [
+    "ALB"
+   ],
+   "aliases": [
+    "Kenneth S. Allen Library"
+   ],
+   "lng": -122.307038,
+   "lat": 47.655534,
+   "osm": "way/222831554"
+  },
+  {
+   "id": "paccar-hall",
+   "name": "Paccar Hall",
+   "short": "Paccar Hall",
+   "kind": "academic",
+   "codes": [
+    "PCAR"
+   ],
+   "aliases": [],
+   "lng": -122.308664,
+   "lat": 47.659127,
+   "osm": "way/135677815"
+  },
+  {
+   "id": "hans-rosling-center",
+   "name": "Hans Rosling Center",
+   "short": "Hans Rosling Center",
+   "kind": "academic",
+   "codes": [
+    "HRC"
+   ],
+   "aliases": [
+    "Hans Rosling Center for Population Health",
+    "Population Health Building",
+    "Population Health Facility",
+    "Fred Hutchinson Cancer Research Center (Off campus)"
+   ],
+   "lng": -122.311714,
+   "lat": 47.654493,
+   "osm": "way/702590756"
+  },
+  {
+   "id": "south-campus-center",
+   "name": "South Campus Center",
+   "short": "South Campus Center",
+   "kind": "academic",
+   "codes": [
+    "SOCC"
+   ],
+   "aliases": [],
+   "lng": -122.310829,
+   "lat": 47.649511,
+   "osm": "way/53904699"
+  },
+  {
+   "id": "art-building",
+   "name": "Art Building",
+   "short": "Art Building",
+   "kind": "academic",
+   "codes": [
+    "ART"
+   ],
+   "aliases": [],
+   "lng": -122.306427,
+   "lat": 47.658394,
+   "osm": "way/26447635"
+  },
+  {
+   "id": "bill-and-melinda-gates-center",
+   "name": "Bill & Melinda Gates Center",
+   "short": "Bill & Melinda Gates Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Bill & Melinda Gates Center for Computer Science & Engineering",
+    "CSE2"
+   ],
+   "lng": -122.304479,
+   "lat": 47.652885,
+   "osm": "way/1491155067"
+  },
+  {
+   "id": "roosevelt-commons-west",
+   "name": "Roosevelt Commons West",
+   "short": "Roosevelt Commons West",
+   "kind": "dining",
+   "codes": [
+    "RVC"
+   ],
+   "aliases": [
+    "Roosevelt Commons"
+   ],
+   "lng": -122.317411,
+   "lat": 47.66045,
+   "osm": "way/222834382"
+  },
+  {
+   "id": "electrical-and-computer-engineering-building",
+   "name": "Electrical and Computer Engineering Building",
+   "short": "Electrical and Computer Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "EE1",
+    "EEB"
+   ],
+   "aliases": [
+    "Electrical Engineering Building",
+    "Electrical Engineering / Computer Science Building"
+   ],
+   "lng": -122.306321,
+   "lat": 47.65357,
+   "osm": "way/30859396"
+  },
+  {
+   "id": "burke-museum-of-natural-history-and-culture",
+   "name": "Burke Museum of Natural History and Culture",
+   "short": "Burke Museum",
+   "kind": "academic",
+   "codes": [
+    "BMM"
+   ],
+   "aliases": [
+    "Burke Memorial-Washington State Museum",
+    "Burke Museum",
+    "The Burke",
+    "Burke Memorial Museum"
+   ],
+   "lng": -122.311559,
+   "lat": 47.660418,
+   "osm": "way/160545994"
+  },
+  {
+   "id": "fluke-hall",
+   "name": "Fluke Hall",
+   "short": "Fluke Hall",
+   "kind": "academic",
+   "codes": [
+    "FLK"
+   ],
+   "aliases": [],
+   "lng": -122.303211,
+   "lat": 47.655821,
+   "osm": "way/54216360"
+  },
+  {
+   "id": "schmitz-hall",
+   "name": "Schmitz Hall",
+   "short": "Schmitz Hall",
+   "kind": "academic",
+   "codes": [
+    "SMZ"
+   ],
+   "aliases": [],
+   "lng": -122.31271,
+   "lat": 47.656567,
+   "osm": "way/54356424"
+  },
+  {
+   "id": "johnson-hall",
+   "name": "Johnson Hall",
+   "short": "Johnson Hall",
+   "kind": "academic",
+   "codes": [
+    "JHA",
+    "JHN"
+   ],
+   "aliases": [
+    "Johnson Annex"
+   ],
+   "lng": -122.308872,
+   "lat": 47.65444,
+   "osm": "way/1491155066"
+  },
+  {
+   "id": "gould-hall",
+   "name": "Gould Hall",
+   "short": "Gould Hall",
+   "kind": "academic",
+   "codes": [
+    "GLD"
+   ],
+   "aliases": [],
+   "lng": -122.312735,
+   "lat": 47.654916,
+   "osm": "way/50191495"
+  },
+  {
+   "id": "hutchinson-hall",
+   "name": "Hutchinson Hall",
+   "short": "Hutchinson Hall",
+   "kind": "academic",
+   "codes": [
+    "HUT"
+   ],
+   "aliases": [
+    "Mary Gross Hutchinson Hall"
+   ],
+   "lng": -122.306635,
+   "lat": 47.659603,
+   "osm": "way/222822504"
+  },
+  {
+   "id": "savery-hall",
+   "name": "Savery Hall",
+   "short": "Savery Hall",
+   "kind": "academic",
+   "codes": [
+    "SAV"
+   ],
+   "aliases": [],
+   "lng": -122.308367,
+   "lat": 47.657131,
+   "osm": "way/26447622"
+  },
+  {
+   "id": "mechanical-engineering-building",
+   "name": "Mechanical Engineering Building",
+   "short": "Mechanical Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "MEB"
+   ],
+   "aliases": [],
+   "lng": -122.304711,
+   "lat": 47.653643,
+   "osm": "way/30924632"
+  },
+  {
+   "id": "ocean-sciences-building",
+   "name": "Ocean Sciences Building",
+   "short": "Ocean Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "OCN"
+   ],
+   "aliases": [],
+   "lng": -122.312677,
+   "lat": 47.651256,
+   "osm": "way/53533394"
+  },
+  {
+   "id": "paul-g-allen-center",
+   "name": "Paul G. Allen Center",
+   "short": "Paul G. Allen Center",
+   "kind": "academic",
+   "codes": [
+    "CSE"
+   ],
+   "aliases": [
+    "Paul G. Allen Center for Computer Science & Engineering"
+   ],
+   "lng": -122.305852,
+   "lat": 47.653258,
+   "osm": "way/222825541"
+  },
+  {
+   "id": "more-hall",
+   "name": "More Hall",
+   "short": "More Hall",
+   "kind": "academic",
+   "codes": [
+    "MOR"
+   ],
+   "aliases": [],
+   "lng": -122.304855,
+   "lat": 47.652494,
+   "osm": "way/30922760"
+  },
+  {
+   "id": "social-work-speech-and-hearing-sciences-building",
+   "name": "Social Work Speech and Hearing Sciences Building",
+   "short": "Social Work Speech and Hearing Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "SWS"
+   ],
+   "aliases": [],
+   "lng": -122.312436,
+   "lat": 47.657435,
+   "osm": "way/223361831"
+  },
+  {
+   "id": "condon-hall",
+   "name": "Condon Hall",
+   "short": "Condon Hall",
+   "kind": "academic",
+   "codes": [
+    "CDH"
+   ],
+   "aliases": [
+    "John T. Condon Hall"
+   ],
+   "lng": -122.316119,
+   "lat": 47.656624,
+   "osm": "way/222832626"
+  },
+  {
+   "id": "bloedel-hall",
+   "name": "Bloedel Hall",
+   "short": "Bloedel Hall",
+   "kind": "academic",
+   "codes": [
+    "BLD"
+   ],
+   "aliases": [],
+   "lng": -122.307654,
+   "lat": 47.651278,
+   "osm": "way/52325618"
+  },
+  {
+   "id": "graves-annex",
+   "name": "Graves Annex",
+   "short": "Graves Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Graves Annex Building"
+   ],
+   "lng": -122.301082,
+   "lat": 47.652292,
+   "osm": "way/155059377"
+  },
+  {
+   "id": "chemistry-building",
+   "name": "Chemistry Building",
+   "short": "Chemistry Building",
+   "kind": "academic",
+   "codes": [
+    "CHB"
+   ],
+   "aliases": [],
+   "lng": -122.308369,
+   "lat": 47.65293,
+   "osm": "way/30924790"
+  },
+  {
+   "id": "denny-hall",
+   "name": "Denny Hall",
+   "short": "Denny Hall",
+   "kind": "academic",
+   "codes": [
+    "DEN"
+   ],
+   "aliases": [],
+   "lng": -122.308907,
+   "lat": 47.658419,
+   "osm": "way/30861157"
+  },
+  {
+   "id": "benjamin-hall-building",
+   "name": "Benjamin Hall Building",
+   "short": "Ben Hall",
+   "kind": "academic",
+   "codes": [
+    "RTB"
+   ],
+   "aliases": [
+    "Benjamin Hall Interdisciplinary Research Building",
+    "Ben Hall",
+    "Benjamin Hall, Interdiciplinary Research & Technology Building"
+   ],
+   "lng": -122.321403,
+   "lat": 47.655281,
+   "osm": "way/216872895"
+  },
+  {
+   "id": "padelford-hall",
+   "name": "Padelford Hall",
+   "short": "Padelford Hall",
+   "kind": "academic",
+   "codes": [
+    "PDL"
+   ],
+   "aliases": [],
+   "lng": -122.304254,
+   "lat": 47.657,
+   "osm": "way/30896622"
+  },
+  {
+   "id": "university-of-washington-ceramic-and-metal-arts-building",
+   "name": "University of Washington Ceramic and Metal Arts Building",
+   "short": "University of Washington Ceramic and Metal Arts Building",
+   "kind": "academic",
+   "codes": [
+    "CMA"
+   ],
+   "aliases": [
+    "Ceramic and Metal Arts Building"
+   ],
+   "lng": -122.292321,
+   "lat": 47.659834,
+   "osm": "way/222718531"
+  },
+  {
+   "id": "physics-astronomy-building",
+   "name": "Physics / Astronomy Building",
+   "short": "Physics / Astronomy Building",
+   "kind": "academic",
+   "codes": [
+    "PAB"
+   ],
+   "aliases": [
+    "Physics Astronomy Bar"
+   ],
+   "lng": -122.311316,
+   "lat": 47.653608,
+   "osm": "way/50191487"
+  },
+  {
+   "id": "conibear-shellhouse",
+   "name": "Conibear Shellhouse",
+   "short": "Conibear Shellhouse",
+   "kind": "academic",
+   "codes": [
+    "CSH"
+   ],
+   "aliases": [],
+   "lng": -122.299774,
+   "lat": 47.65291,
+   "osm": "way/54457682"
+  },
+  {
+   "id": "physics-astronomy-auditorium",
+   "name": "Physics/Astronomy Auditorium",
+   "short": "Physics/Astronomy Auditorium",
+   "kind": "academic",
+   "codes": [
+    "PAA"
+   ],
+   "aliases": [
+    "Physics Astronomy Auditorium(13-K)"
+   ],
+   "lng": -122.31099,
+   "lat": 47.652962,
+   "osm": "way/50191488"
+  },
+  {
+   "id": "communications-building",
+   "name": "Communications Building",
+   "short": "Communications Building",
+   "kind": "academic",
+   "codes": [
+    "CMU"
+   ],
+   "aliases": [],
+   "lng": -122.305384,
+   "lat": 47.656998,
+   "osm": "way/30896763"
+  },
+  {
+   "id": "loew-hall",
+   "name": "Loew Hall",
+   "short": "Loew Hall",
+   "kind": "academic",
+   "codes": [
+    "LOW"
+   ],
+   "aliases": [
+    "Edgar A. Loew Hall"
+   ],
+   "lng": -122.304537,
+   "lat": 47.654297,
+   "osm": "way/30896504"
+  },
+  {
+   "id": "guggenheim-hall",
+   "name": "Guggenheim Hall",
+   "short": "Guggenheim Hall",
+   "kind": "academic",
+   "codes": [
+    "GUG"
+   ],
+   "aliases": [],
+   "lng": -122.306332,
+   "lat": 47.654266,
+   "osm": "way/30924849"
+  },
+  {
+   "id": "henderson-hall",
+   "name": "Henderson Hall",
+   "short": "Henderson Hall",
+   "kind": "academic",
+   "codes": [
+    "HND"
+   ],
+   "aliases": [
+    "Applied Physics Laboratory"
+   ],
+   "lng": -122.316939,
+   "lat": 47.655171,
+   "osm": "relation/2955463"
+  },
+  {
+   "id": "husky-health-center",
+   "name": "Husky Health Center",
+   "short": "Husky Health Center",
+   "kind": "academic",
+   "codes": [
+    "HLL"
+   ],
+   "aliases": [
+    "David C. Hall Building",
+    "Hall Health Center"
+   ],
+   "lng": -122.304093,
+   "lat": 47.656156,
+   "osm": "way/54216365"
+  },
+  {
+   "id": "hitchcock-hall",
+   "name": "Hitchcock Hall",
+   "short": "Hitchcock Hall",
+   "kind": "academic",
+   "codes": [
+    "HCK"
+   ],
+   "aliases": [],
+   "lng": -122.311526,
+   "lat": 47.651907,
+   "osm": "way/37119927"
+  },
+  {
+   "id": "center-on-human-development-and-disability-clinic",
+   "name": "Center on Human Development and Disability Clinic",
+   "short": "Center on Human Development and Disability Clinic",
+   "kind": "academic",
+   "codes": [
+    "CHCL"
+   ],
+   "aliases": [
+    "Center on Human Development and Disability"
+   ],
+   "lng": -122.308251,
+   "lat": 47.648489,
+   "osm": "way/53904704"
+  },
+  {
+   "id": "smith-hall",
+   "name": "Smith Hall",
+   "short": "Smith Hall",
+   "kind": "academic",
+   "codes": [
+    "SMI"
+   ],
+   "aliases": [
+    "J. Allen Smith Hall"
+   ],
+   "lng": -122.307152,
+   "lat": 47.656654,
+   "osm": "way/118781383"
+  },
+  {
+   "id": "dempsey-hall",
+   "name": "Dempsey Hall",
+   "short": "Dempsey Hall",
+   "kind": "academic",
+   "codes": [
+    "DEM"
+   ],
+   "aliases": [],
+   "lng": -122.307731,
+   "lat": 47.659163,
+   "osm": "way/222831274"
+  },
+  {
+   "id": "architecture-hall",
+   "name": "Architecture Hall",
+   "short": "Architecture Hall",
+   "kind": "academic",
+   "codes": [
+    "ARC"
+   ],
+   "aliases": [],
+   "lng": -122.31091,
+   "lat": 47.654588,
+   "osm": "way/49888203"
+  },
+  {
+   "id": "chemistry-library-building",
+   "name": "Chemistry Library Building",
+   "short": "Chemistry Library Building",
+   "kind": "library",
+   "codes": [
+    "CHL"
+   ],
+   "aliases": [],
+   "lng": -122.309953,
+   "lat": 47.653697,
+   "osm": "way/54024501"
+  },
+  {
+   "id": "marine-studies-building",
+   "name": "Marine Studies Building",
+   "short": "Marine Studies Building",
+   "kind": "academic",
+   "codes": [
+    "MAR"
+   ],
+   "aliases": [],
+   "lng": -122.314931,
+   "lat": 47.652465,
+   "osm": "way/53533396"
+  },
+  {
+   "id": "guthrie-hall",
+   "name": "Guthrie Hall",
+   "short": "Guthrie Hall",
+   "kind": "academic",
+   "codes": [
+    "GA1",
+    "GA2",
+    "GA3",
+    "GTH"
+   ],
+   "aliases": [
+    "Guthrie Annex 1",
+    "Guthrie Annex 2",
+    "Guthrie Annex 3"
+   ],
+   "lng": -122.310899,
+   "lat": 47.653966,
+   "osm": "way/49888205"
+  },
+  {
+   "id": "raitt-hall",
+   "name": "Raitt Hall",
+   "short": "Raitt Hall",
+   "kind": "academic",
+   "codes": [
+    "RAI"
+   ],
+   "aliases": [],
+   "lng": -122.307262,
+   "lat": 47.657913,
+   "osm": "way/26447626"
+  },
+  {
+   "id": "gerberding-hall",
+   "name": "Gerberding Hall",
+   "short": "Gerberding Hall",
+   "kind": "academic",
+   "codes": [
+    "GRB"
+   ],
+   "aliases": [
+    "Gerberding Hall (Administration)"
+   ],
+   "lng": -122.309438,
+   "lat": 47.655336,
+   "osm": "way/1491155050"
+  },
+  {
+   "id": "graves-hall",
+   "name": "Graves Hall",
+   "short": "Graves Hall",
+   "kind": "academic",
+   "codes": [
+    "TGB"
+   ],
+   "aliases": [
+    "Graves Building"
+   ],
+   "lng": -122.30229,
+   "lat": 47.653057,
+   "osm": "way/155059376"
+  },
+  {
+   "id": "miller-hall",
+   "name": "Miller Hall",
+   "short": "Miller Hall",
+   "kind": "academic",
+   "codes": [
+    "MLR"
+   ],
+   "aliases": [],
+   "lng": -122.306334,
+   "lat": 47.657201,
+   "osm": "way/160546650"
+  },
+  {
+   "id": "engineering-annex",
+   "name": "Engineering Annex",
+   "short": "Engineering Annex",
+   "kind": "academic",
+   "codes": [
+    "EGA"
+   ],
+   "aliases": [],
+   "lng": -122.304317,
+   "lat": 47.653742,
+   "osm": "way/222823466"
+  },
+  {
+   "id": "music-building",
+   "name": "Music Building",
+   "short": "Music Building",
+   "kind": "academic",
+   "codes": [
+    "MUS"
+   ],
+   "aliases": [],
+   "lng": -122.305799,
+   "lat": 47.657669,
+   "osm": "way/26447631"
+  },
+  {
+   "id": "winkenwerder-hall",
+   "name": "Winkenwerder Hall",
+   "short": "Winkenwerder",
+   "kind": "academic",
+   "codes": [
+    "WFS"
+   ],
+   "aliases": [
+    "Winkenwerder Forest Sciences Laboratory",
+    "Winkenwerder",
+    "Winkenwerder Forest Science Lab"
+   ],
+   "lng": -122.30691,
+   "lat": 47.651457,
+   "osm": "way/52325620"
+  },
+  {
+   "id": "parrington-hall",
+   "name": "Parrington Hall",
+   "short": "Parrington Hall",
+   "kind": "academic",
+   "codes": [
+    "PAR"
+   ],
+   "aliases": [
+    "Vernon Louis Parrington Hall"
+   ],
+   "lng": -122.310328,
+   "lat": 47.657442,
+   "osm": "way/30922695"
+  },
+  {
+   "id": "benson-hall",
+   "name": "Benson Hall",
+   "short": "Benson Hall",
+   "kind": "academic",
+   "codes": [
+    "BNS"
+   ],
+   "aliases": [],
+   "lng": -122.309555,
+   "lat": 47.653043,
+   "osm": "way/50191493"
+  },
+  {
+   "id": "wilcox-hall",
+   "name": "Wilcox Hall",
+   "short": "Wilcox Hall",
+   "kind": "academic",
+   "codes": [
+    "WIL"
+   ],
+   "aliases": [],
+   "lng": -122.304546,
+   "lat": 47.651851,
+   "osm": "way/116846680"
+  },
+  {
+   "id": "john-m-wallace-hall",
+   "name": "John M. Wallace Hall",
+   "short": "John M. Wallace Hall",
+   "kind": "academic",
+   "codes": [
+    "ACC"
+   ],
+   "aliases": [
+    "Academic Computer Center",
+    "John M. Wallace Hall (formerly Academic Computing Center)"
+   ],
+   "lng": -122.31487,
+   "lat": 47.653039,
+   "osm": "way/50191491"
+  },
+  {
+   "id": "foster-business-library",
+   "name": "Foster Business Library",
+   "short": "Foster Business Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Albert O. & Evelyn W. Foster Business School Library"
+   ],
+   "lng": -122.308072,
+   "lat": 47.659282,
+   "osm": "way/610060508"
+  },
+  {
+   "id": "sieg-building",
+   "name": "Sieg Building",
+   "short": "Sieg Building",
+   "kind": "academic",
+   "codes": [
+    "SIG"
+   ],
+   "aliases": [
+    "Lee Paul Sieg Building",
+    "Sieg Hall"
+   ],
+   "lng": -122.306521,
+   "lat": 47.654883,
+   "osm": "way/30859594"
+  },
+  {
+   "id": "pavilion-pool",
+   "name": "Pavilion Pool",
+   "short": "Pavilion Pool",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -122.301214,
+   "lat": 47.651886,
+   "osm": "way/155061063"
+  },
+  {
+   "id": "kincaid-hall",
+   "name": "Kincaid Hall",
+   "short": "Kincaid Hall",
+   "kind": "academic",
+   "codes": [
+    "KIN"
+   ],
+   "aliases": [],
+   "lng": -122.310612,
+   "lat": 47.652664,
+   "osm": "way/222825540"
+  },
+  {
+   "id": "gowen-hall",
+   "name": "Gowen Hall",
+   "short": "Gowen Hall",
+   "kind": "academic",
+   "codes": [
+    "GWN"
+   ],
+   "aliases": [],
+   "lng": -122.307749,
+   "lat": 47.656359,
+   "osm": "way/118781382"
+  },
+  {
+   "id": "fisheries-research-and-teaching",
+   "name": "Fisheries Research and Teaching",
+   "short": "Fisheries Research and Teaching",
+   "kind": "academic",
+   "codes": [
+    "FIS",
+    "FTR"
+   ],
+   "aliases": [
+    "Fisheries Center",
+    "Fisheries Teaching Research Building"
+   ],
+   "lng": -122.315543,
+   "lat": 47.652534,
+   "osm": "way/53533374"
+  },
+  {
+   "id": "nanoes-building",
+   "name": "NanoES Building",
+   "short": "Nanoengineering Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Nano Engineering and Science Building",
+    "Nanoengineering Bldg"
+   ],
+   "lng": -122.309817,
+   "lat": 47.654642,
+   "osm": "way/436972746"
+  },
+  {
+   "id": "ethnic-cultural-center",
+   "name": "Ethnic Cultural Center",
+   "short": "Ethnic Cultural Center",
+   "kind": "academic",
+   "codes": [
+    "ECC"
+   ],
+   "aliases": [
+    "Samuel E. Kelly Ethnic Cultural Center"
+   ],
+   "lng": -122.314819,
+   "lat": 47.655082,
+   "osm": "way/222832152"
+  },
+  {
+   "id": "marine-sciences-building",
+   "name": "Marine Sciences Building",
+   "short": "Marine Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "MSB"
+   ],
+   "aliases": [],
+   "lng": -122.312915,
+   "lat": 47.649894,
+   "osm": "way/53904711"
+  },
+  {
+   "id": "canoe-house",
+   "name": "Canoe House",
+   "short": "Canoe House",
+   "kind": "academic",
+   "codes": [
+    "CNH"
+   ],
+   "aliases": [],
+   "lng": -122.300069,
+   "lat": 47.647789,
+   "osm": "way/54457692"
+  },
+  {
+   "id": "oceanography-teaching-building",
+   "name": "Oceanography Teaching Building",
+   "short": "Oceanography Teaching Building",
+   "kind": "academic",
+   "codes": [
+    "OTB"
+   ],
+   "aliases": [],
+   "lng": -122.3123,
+   "lat": 47.650258,
+   "osm": "way/53888818"
+  },
+  {
+   "id": "thomson-hall",
+   "name": "Thomson Hall",
+   "short": "Thomson Hall",
+   "kind": "academic",
+   "codes": [
+    "THO"
+   ],
+   "aliases": [
+    "David Thomson Hall"
+   ],
+   "lng": -122.305841,
+   "lat": 47.65656,
+   "osm": "way/30896795"
+  },
+  {
+   "id": "aerospace-engineering-and-research-building-aerb",
+   "name": "Aerospace Engineering and Research Building (AERB)",
+   "short": "Aerospace Engineering and Research Building (AERB)",
+   "kind": "academic",
+   "codes": [
+    "AER"
+   ],
+   "aliases": [
+    "Aerospace & Engineering Research Building"
+   ],
+   "lng": -122.305819,
+   "lat": 47.653961,
+   "osm": "way/30924926"
+  },
+  {
+   "id": "anderson-hall",
+   "name": "Anderson Hall",
+   "short": "Anderson Hall",
+   "kind": "academic",
+   "codes": [
+    "AND"
+   ],
+   "aliases": [],
+   "lng": -122.3076,
+   "lat": 47.651749,
+   "osm": "way/52325619"
+  },
+  {
+   "id": "mueller-hall",
+   "name": "Mueller Hall",
+   "short": "Mueller Hall",
+   "kind": "academic",
+   "codes": [
+    "MUE"
+   ],
+   "aliases": [],
+   "lng": -122.305449,
+   "lat": 47.652113,
+   "osm": "way/436171057"
+  },
+  {
+   "id": "harris-hydraulics-laboratory",
+   "name": "Harris Hydraulics Laboratory",
+   "short": "Harris Hydraulics Laboratory",
+   "kind": "academic",
+   "codes": [
+    "HHL"
+   ],
+   "aliases": [
+    "Harris Hydraulics Lab"
+   ],
+   "lng": -122.311447,
+   "lat": 47.649993,
+   "osm": "way/53904719"
+  },
+  {
+   "id": "roberts-hall",
+   "name": "Roberts Hall",
+   "short": "Roberts Hall",
+   "kind": "academic",
+   "codes": [
+    "ROB"
+   ],
+   "aliases": [],
+   "lng": -122.305051,
+   "lat": 47.652042,
+   "osm": "way/116847799"
+  },
+  {
+   "id": "atmospheric-sciences-geophysics-building",
+   "name": "Atmospheric Sciences-Geophysics Building",
+   "short": "Atmospheric Sciences-Geophysics Building",
+   "kind": "academic",
+   "codes": [
+    "ATG"
+   ],
+   "aliases": [
+    "Atmos Sci/Geophysics",
+    "Quaternary Research Center (Officially part of the Atmos Sci/Geophysics Building)"
+   ],
+   "lng": -122.309374,
+   "lat": 47.653986,
+   "osm": "way/30922739"
+  },
+  {
+   "id": "engineering-library",
+   "name": "Engineering Library",
+   "short": "Engineering Library",
+   "kind": "library",
+   "codes": [
+    "ELB"
+   ],
+   "aliases": [],
+   "lng": -122.304502,
+   "lat": 47.654633,
+   "osm": "way/30896555"
+  },
+  {
+   "id": "floyd-and-delores-jones-playhouse",
+   "name": "Floyd and Delores Jones Playhouse",
+   "short": "Playhouse Theatre",
+   "kind": "academic",
+   "codes": [
+    "PHT"
+   ],
+   "aliases": [
+    "Playhouse Theatre",
+    "University of Washington Playhouse Theatre",
+    "Playhouse Theater"
+   ],
+   "lng": -122.313595,
+   "lat": 47.656648,
+   "osm": "way/436174112"
+  },
+  {
+   "id": "clark-hall",
+   "name": "Clark Hall",
+   "short": "Clark Hall",
+   "kind": "academic",
+   "codes": [
+    "CLK"
+   ],
+   "aliases": [
+    "William Clark Hall"
+   ],
+   "lng": -122.304889,
+   "lat": 47.657636,
+   "osm": "way/56008702"
+  },
+  {
+   "id": "douglas-research-conservatory",
+   "name": "Douglas Research Conservatory",
+   "short": "Douglas Research Conservatory",
+   "kind": "academic",
+   "codes": [
+    "DRC"
+   ],
+   "aliases": [],
+   "lng": -122.288893,
+   "lat": 47.657794,
+   "osm": "way/54224406"
+  },
+  {
+   "id": "oceanography-building",
+   "name": "Oceanography Building",
+   "short": "Oceanography Building",
+   "kind": "academic",
+   "codes": [
+    "OCE"
+   ],
+   "aliases": [],
+   "lng": -122.310615,
+   "lat": 47.649114,
+   "osm": "way/53904679"
+  },
+  {
+   "id": "hughes-penthouse-theater",
+   "name": "Hughes Penthouse Theater",
+   "short": "Hughes Penthouse",
+   "kind": "academic",
+   "codes": [
+    "HPT"
+   ],
+   "aliases": [
+    "Glenn Hughes Penthouse Theatre",
+    "Hughes Penthouse"
+   ],
+   "lng": -122.308112,
+   "lat": 47.660715,
+   "osm": "way/30925209"
+  },
+  {
+   "id": "central-utility-plant",
+   "name": "Central Utility Plant",
+   "short": "UWMC Montlake Util",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "UWMC Montlake Util"
+   ],
+   "lng": -122.308681,
+   "lat": 47.648843,
+   "osm": "way/369403010"
+  },
+  {
+   "id": "eagleson-hall",
+   "name": "Eagleson Hall",
+   "short": "Eagleson Hall",
+   "kind": "academic",
+   "codes": [
+    "EGL"
+   ],
+   "aliases": [],
+   "lng": -122.312405,
+   "lat": 47.658106,
+   "osm": "way/223361829"
+  },
+  {
+   "id": "golf-driving-range-building",
+   "name": "Golf Driving Range Building",
+   "short": "Golf Driving Range Building",
+   "kind": "academic",
+   "codes": [
+    "GDR"
+   ],
+   "aliases": [
+    "Golf Driving Range"
+   ],
+   "lng": -122.297237,
+   "lat": 47.658781,
+   "osm": "way/1019446878"
+  },
+  {
+   "id": "physics-astronomy-tower",
+   "name": "Physics / Astronomy Tower",
+   "short": "Physics / Astronomy Tower",
+   "kind": "academic",
+   "codes": [
+    "PAT"
+   ],
+   "aliases": [
+    "Physics Astronomy Tower(12-J)"
+   ],
+   "lng": -122.311804,
+   "lat": 47.653343,
+   "osm": "way/1097782263"
+  },
+  {
+   "id": "lewis-hall",
+   "name": "Lewis Hall",
+   "short": "Lewis Hall",
+   "kind": "academic",
+   "codes": [
+    "LEW"
+   ],
+   "aliases": [
+    "Meriwether Lewis Hall"
+   ],
+   "lng": -122.305364,
+   "lat": 47.658863,
+   "osm": "way/56008700"
+  },
+  {
+   "id": "university-of-washington-drama-scene-shop",
+   "name": "University of Washington Drama Scene Shop",
+   "short": "University of Washington Drama Scene Shop",
+   "kind": "academic",
+   "codes": [
+    "DSC"
+   ],
+   "aliases": [
+    "3941 University Way N.E."
+   ],
+   "lng": -122.313636,
+   "lat": 47.655035,
+   "osm": "way/1099920520"
+  },
+  {
+   "id": "bank-of-america-executive-education-center",
+   "name": "Bank of America Executive Education Center",
+   "short": "Bank of America Executive Education Center",
+   "kind": "academic",
+   "codes": [
+    "EXED"
+   ],
+   "aliases": [
+    "Bank of America Executive Education Center and Foster Library"
+   ],
+   "lng": -122.307751,
+   "lat": 47.659535,
+   "osm": "way/222831277"
+  },
+  {
+   "id": "plant-operations-annex-4",
+   "name": "Plant Operations Annex 4",
+   "short": "Plant Operations Annex 4",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Plant Services Building"
+   ],
+   "lng": -122.303562,
+   "lat": 47.654716,
+   "osm": "way/54216362"
+  },
+  {
+   "id": "ethnic-cultural-theater",
+   "name": "Ethnic Cultural Theater",
+   "short": "Ethnic Cultural Theater",
+   "kind": "academic",
+   "codes": [
+    "ICT"
+   ],
+   "aliases": [
+    "Instructional Center Theater",
+    "Samuel E. Kelly Ethnic Cultural Center"
+   ],
+   "lng": -122.31419,
+   "lat": 47.655178,
+   "osm": "way/222832156"
+  },
+  {
+   "id": "university-of-washington-center-for-anxiety-and-trauma-stress",
+   "name": "University of Washington Center for Anxiety and Trauma Stress",
+   "short": "University of Washington Center for Anxiety and Trauma Stress",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "UWCATS"
+   ],
+   "lng": -122.313617,
+   "lat": 47.654782,
+   "osm": "way/222832154"
+  },
+  {
+   "id": "community-design-center",
+   "name": "Community Design Center",
+   "short": "Community Design Center",
+   "kind": "academic",
+   "codes": [
+    "SGS"
+   ],
+   "aliases": [
+    "Community Design Building-3947 Univ Way"
+   ],
+   "lng": -122.313583,
+   "lat": 47.655202,
+   "osm": "way/99926742"
+  },
+  {
+   "id": "wilson-ceramic-laboratory",
+   "name": "Wilson Ceramic Laboratory",
+   "short": "Wilson Ceramic Laboratory",
+   "kind": "academic",
+   "codes": [
+    "WCL"
+   ],
+   "aliases": [],
+   "lng": -122.304846,
+   "lat": 47.651678,
+   "osm": "way/52325622"
+  },
+  {
+   "id": "environmental-safety-office-building",
+   "name": "Environmental Safety Office Building",
+   "short": "Env Safety Off Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Env Safety Off Bldg"
+   ],
+   "lng": -122.293903,
+   "lat": 47.658847,
+   "osm": "way/54453449"
+  },
+  {
+   "id": "cunningham-hall",
+   "name": "Cunningham Hall",
+   "short": "Cunningham Hall",
+   "kind": "academic",
+   "codes": [
+    "ICH"
+   ],
+   "aliases": [],
+   "lng": -122.311077,
+   "lat": 47.657224,
+   "osm": "way/54675151"
+  },
+  {
+   "id": "urban-horticulture-field-house",
+   "name": "Urban Horticulture Field House",
+   "short": "Urb Hort Field Hse",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Urb Hort Field Hse"
+   ],
+   "lng": -122.288754,
+   "lat": 47.656714,
+   "osm": "way/1148405008"
+  },
+  {
+   "id": "roberts-annex",
+   "name": "Roberts Annex",
+   "short": "Roberts Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Lean Learning Center"
+   ],
+   "lng": -122.304295,
+   "lat": 47.65214,
+   "osm": "way/471297934"
+  },
+  {
+   "id": "theodore-jacobson-observatory",
+   "name": "Theodore Jacobson Observatory",
+   "short": "Jacobsen Observatory",
+   "kind": "academic",
+   "codes": [
+    "OBS"
+   ],
+   "aliases": [
+    "Jacobsen Observatory",
+    "Observatory"
+   ],
+   "lng": -122.309281,
+   "lat": 47.660345,
+   "osm": "way/54029691"
+  },
+  {
+   "id": "gatehouse-2",
+   "name": "Gatehouse 2",
+   "short": "Gatehouse 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Gatehouse 2 - Memorial Way"
+   ],
+   "lng": -122.309692,
+   "lat": 47.660246,
+   "osm": "way/361455659"
+  },
+  {
+   "id": "gatehouse-2-361455658",
+   "name": "Gatehouse 2",
+   "short": "Gatehouse 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Gatehouse 2 - Memorial Way"
+   ],
+   "lng": -122.309616,
+   "lat": 47.660248,
+   "osm": "way/361455658"
+  },
+  {
+   "id": "gatehouse-5",
+   "name": "Gatehouse 5",
+   "short": "Gatehouse 5",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Gatehouse 5 - NE 40th/West Stevens"
+   ],
+   "lng": -122.311602,
+   "lat": 47.655306,
+   "osm": "way/361455664"
+  },
+  {
+   "id": "gatehouse-6",
+   "name": "Gatehouse 6",
+   "short": "Gatehouse 6",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Gatehouse 6 - 15th NE"
+   ],
+   "lng": -122.311584,
+   "lat": 47.650669,
+   "osm": "way/1085947591"
+  },
+  {
+   "id": "gatehouse-6-353075156",
+   "name": "Gatehouse 6",
+   "short": "Gatehouse 6",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Gatehouse 6 - 15th NE"
+   ],
+   "lng": -122.311637,
+   "lat": 47.650726,
+   "osm": "way/353075156"
+  }
+ ]
+}

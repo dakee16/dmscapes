@@ -21,6 +21,11 @@ const pilots = JSON.parse(fs.readFileSync("data/campus/index.json", "utf8"));
 const built = fs.readdirSync("data/campus").filter((f) => f.endsWith(".minutes.json")).map((f) => f.slice(0, -".minutes.json".length));
 const listed = [...pilots].sort().join() === [...built].sort().join();
 console.log(`${listed ? "✓" : "✗"} data/campus/index.json lists every built campus (${pilots.join(", ")})`);
+// built.json dates each campus for the sitemap and the guide; it must match the campus files.
+const builtDates = fs.existsSync("data/campus/built.json") ? JSON.parse(fs.readFileSync("data/campus/built.json", "utf8")) : {};
+const datedRight = [...pilots].sort().join() === Object.keys(builtDates).sort().join() &&
+  pilots.every((p) => builtDates[p] === JSON.parse(fs.readFileSync(`data/campus/${p}.json`, "utf8")).generatedAt);
+console.log(`${datedRight ? "✓" : "✗"} data/campus/built.json dates every campus as its file does`);
 const ids = process.argv.slice(2).length ? process.argv.slice(2) : pilots;
 
 const R = 6371008.8;
@@ -50,7 +55,7 @@ function decode(str) {
 }
 const length = (pts) => pts.slice(1).reduce((s, p, i) => s + haversine(pts[i], p), 0);
 
-let failed = !listed;
+let failed = !listed || !datedRight;
 for (const id of ids) {
   const config = JSON.parse(fs.readFileSync(`scripts/campus/config/${id}.json`, "utf8"));
   const speed = config.walkingSpeed;
@@ -66,9 +71,16 @@ for (const id of ids) {
   const hallById = new Map(campus.halls.map((h) => [h.dormId, h]));
   const placeById = new Map(campus.places.map((p) => [p.id, p]));
   const pinned = (h) => Number.isFinite(h?.lng) && Number.isFinite(h?.lat);
+  const coded = campus.sources.some((s) => /^building codes/.test(s.use ?? ""));
+  // No official list is a research finding, so the config says where we looked.
+  const noCodesWhy = coded || (typeof config.noCodes === "string" && config.noCodes.trim().length > 20 && !/^TODO/i.test(config.noCodes.trim()));
   const issues = {
     "every hall has a pin": dorms.filter((d) => !pinned(hallById.get(d.dorm_id))).map((d) => d.dorm_id),
-    "every academic place has a code or alias": campus.places.filter((p) => p.kind === "academic" && !p.codes.length && !p.aliases.length).map((p) => p.id),
+    // A school with no public building-code list is matched by building name (config "codes": null).
+    [coded ? "every academic place has a code or alias" : "every academic place has a name (no official code list)"]: campus.places
+      .filter((p) => p.kind === "academic" && (coded ? !p.codes.length && !p.aliases.length : !p.name?.trim()))
+      .map((p) => p.id),
+    "a school with no official code list says why (config.noCodes)": noCodesWhy ? [] : [id],
     "minutes are finite and 0.5–45 (0 if attached)": [],
     "walking ÷ straight-line is 1.0–2.5": [],
     "every hall has a path to every place": [],
@@ -121,8 +133,10 @@ for (const id of ids) {
       const len = length(pts);
       if (len > walked + 10 || len < walked / 1.5 - 10) issues["every hall has a path to every place"].push(`${pair}: path ${Math.round(len)} m vs ${Math.round(walked)} m walked`);
       // Under 100 m apart, one corner turned doubles the ratio, so those pairs aren't judged.
+      // The low end allows the same 8 m of minute rounding as the path check: a dead-straight
+      // 109 m walk stored as 1.3 minutes reads 105 m, which is rounding, not a shortcut.
       const ratio = walked / straight;
-      if (straight >= 100 && !(ratio >= 1 && ratio <= 2.5)) {
+      if (straight >= 100 && (walked + 8 < straight || ratio > 2.5)) {
         const detour = ratio > 2.5 ? detours.get(pair) : undefined;
         if (detour) usedDetours.add(pair);
         if (!detour || ratio > detour.maxRatio) issues["walking ÷ straight-line is 1.0–2.5"].push(`${pair} ${ratio.toFixed(2)} (${Math.round(walked)} m / ${Math.round(straight)} m)${detour ? ` over its allowed ${detour.maxRatio}` : ""}`);

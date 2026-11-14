@@ -1,0 +1,27 @@
+{
+  "collegeId": "cu-boulder",
+  "area": {
+    "osm": "way/46226108",
+    "bbox": [
+      40.00028,
+      -105.2766,
+      40.01363,
+      -105.25882
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "title": "CU Boulder Facilities Management campus map, UCB Building Footprints (building names and codes)",
+    "url": "https://services.arcgis.com/b3fMqPOmotX6SV4k/arcgis/rest/services/University_of_Colorado_Boulder_Campus_Map/FeatureServer/8",
+    "arcgis": "https://services.arcgis.com/b3fMqPOmotX6SV4k/arcgis/rest/services/University_of_Colorado_Boulder_Campus_Map/FeatureServer/8",
+    "fields": {
+      "name": "BLDG_NAME",
+      "code": "BLDG_CODE",
+      "aliases": []
+    }
+  },
+  "excludeHalls": {
+    "williams-village-east": "Williams Village, CU Boulder's satellite residential campus on Baseline Road about 1.5 km south-east of Main Campus and linked by the Buff Bus (colorado.edu/living/williams-village); it lies outside this build's fetched map area, and walks from it to the north-west teaching core (Old Main, Hale, Guggenheim, Macky) run to about 45 minutes, so it isn't ranked on this walking map."
+  }
+}

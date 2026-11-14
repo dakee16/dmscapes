@@ -1,0 +1,823 @@
+{
+ "name": "UT Austin Building Information (UT Direct): building abbreviations and names",
+ "url": "https://utdirect.utexas.edu/apps/campus/buildings/information/nlogon/maps/",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "ACS",
+   "name": "AUTRY C. STEPHENS ENGR DISC BLDG"
+  },
+  {
+   "code": "ADH",
+   "name": "ALMETRIS DUREN RESIDENCE HALL"
+  },
+  {
+   "code": "AF1",
+   "name": "ATHLETIC FIELDS PAVILION (REHAB)"
+  },
+  {
+   "code": "AF2",
+   "name": "ATHLETIC FIELDS PAVILION (EASTSIDE)"
+  },
+  {
+   "code": "AFP",
+   "name": "ATHLETIC FIELDS PAVILION"
+  },
+  {
+   "code": "AHG",
+   "name": "ANNA HISS GYMNASIUM"
+  },
+  {
+   "code": "ANB",
+   "name": "ARNO NOWOTNY BUILDING"
+  },
+  {
+   "code": "AND",
+   "name": "ANDREWS RESIDENCE HALL"
+  },
+  {
+   "code": "ART",
+   "name": "ART BUILDING AND MUSEUM"
+  },
+  {
+   "code": "ASE",
+   "name": "AEROSPACE ENGINEERING BUILDING"
+  },
+  {
+   "code": "ATT",
+   "name": "AT&T EXECUTIVE EDUC & CONF CENTER"
+  },
+  {
+   "code": "BAT",
+   "name": "BATTS HALL"
+  },
+  {
+   "code": "BBR",
+   "name": "BASKETBALL & ROWING TRAINING FAC"
+  },
+  {
+   "code": "BEL",
+   "name": "L. THEO BELLMONT HALL"
+  },
+  {
+   "code": "BEN",
+   "name": "BENEDICT HALL"
+  },
+  {
+   "code": "BHD",
+   "name": "BRACKENRIDGE RESIDENCE HALL"
+  },
+  {
+   "code": "BIO",
+   "name": "BIOLOGICAL LABORATORIES"
+  },
+  {
+   "code": "BLD",
+   "name": "BLANTON RESIDENCE HALL"
+  },
+  {
+   "code": "BMA",
+   "name": "JACK S. BLANTON MUSEUM OF ART"
+  },
+  {
+   "code": "BME",
+   "name": "BIOMEDICAL ENGINEERING BUILDING"
+  },
+  {
+   "code": "BMK",
+   "name": "BLANTON MUSEUM ELLSWORTH KELLY"
+  },
+  {
+   "code": "BMS",
+   "name": "BLANTON MUSEUM SMITH BUILDING"
+  },
+  {
+   "code": "BOT",
+   "name": "BIOLOGICAL GREENHOUSE"
+  },
+  {
+   "code": "BRB",
+   "name": "BERNARD AND AUDRE RAPOPORT BUILDING"
+  },
+  {
+   "code": "BRG",
+   "name": "BRAZOS GARAGE"
+  },
+  {
+   "code": "BSB",
+   "name": "BASKETBALL SUPPORT BLDG (REC SPORT)"
+  },
+  {
+   "code": "BTL",
+   "name": "BATTLE HALL"
+  },
+  {
+   "code": "BUR",
+   "name": "BURDINE HALL"
+  },
+  {
+   "code": "BWY",
+   "name": "2616 WICHITA (BRIDGEWAY)"
+  },
+  {
+   "code": "CAL",
+   "name": "CALHOUN HALL"
+  },
+  {
+   "code": "CBA",
+   "name": "COLLEGE OF BUSINESS ADMINISTRATION"
+  },
+  {
+   "code": "CCG",
+   "name": "CONFERENCE CENTER GARAGE"
+  },
+  {
+   "code": "CCJ",
+   "name": "CONNALLY CENTER FOR JUSTICE"
+  },
+  {
+   "code": "CDA",
+   "name": "COMAL CHILD DEVELOPMENT CTR ANNEX"
+  },
+  {
+   "code": "CDL",
+   "name": "COLLECTIONS DEPOSIT LIBRARY"
+  },
+  {
+   "code": "CLK",
+   "name": "CAVEN CLARK FIELD SUPPORT BUILDING"
+  },
+  {
+   "code": "CMA",
+   "name": "JESSE H. JONES COMM. CTR. (BLDG. A)"
+  },
+  {
+   "code": "CMB",
+   "name": "JESSE H. JONES COMM. CTR. (BLDG. B)"
+  },
+  {
+   "code": "CML",
+   "name": "COMAL ST. CHILD DEVELOPMENT CENTER"
+  },
+  {
+   "code": "CPC",
+   "name": "CPC FIELD STAFF OFFICE"
+  },
+  {
+   "code": "CPE",
+   "name": "CHEMICAL AND PETROLEUM ENGINEERING"
+  },
+  {
+   "code": "CRD",
+   "name": "CAROTHERS RESIDENCE HALL"
+  },
+  {
+   "code": "CRH",
+   "name": "CREEKSIDE RESIDENCE HALL"
+  },
+  {
+   "code": "D21",
+   "name": "DOBIE TWENTY21"
+  },
+  {
+   "code": "DEV",
+   "name": "DEVELOPMENT OFFICE BUILDING"
+  },
+  {
+   "code": "DFA",
+   "name": "E. WILLIAM DOTY FINE ARTS BUILDING"
+  },
+  {
+   "code": "DFF",
+   "name": "UFCU DISCH-FALK FIELD"
+  },
+  {
+   "code": "DMC",
+   "name": "G. B. DEALEY CENTER FOR NEW MEDIA"
+  },
+  {
+   "code": "DPI",
+   "name": "DELL PEDIATRIC RESEARCH INSTITUTE"
+  },
+  {
+   "code": "E11",
+   "name": "EQUIPMENT STOREHOUSE # 11"
+  },
+  {
+   "code": "E13",
+   "name": "EQUIPMENT STOREHOUSE # 13"
+  },
+  {
+   "code": "E15",
+   "name": "EQUIPMENT STOREHOUSE # 15"
+  },
+  {
+   "code": "E23",
+   "name": "EQUIPMENT STOREHOUSE # 23"
+  },
+  {
+   "code": "E24",
+   "name": "EQUIPMENT STOREHOUSE # 24"
+  },
+  {
+   "code": "E25",
+   "name": "EQUIPMENT STOREHOUSE # 25"
+  },
+  {
+   "code": "E26",
+   "name": "EQUIPMENT STOREHOUSE #26"
+  },
+  {
+   "code": "E27",
+   "name": "EQUIPMENT STOREHOUSE #27"
+  },
+  {
+   "code": "ECG",
+   "name": "EAST CAMPUS GARAGE"
+  },
+  {
+   "code": "ECJ",
+   "name": "ERNEST COCKRELL JR. HALL"
+  },
+  {
+   "code": "EER",
+   "name": "ENGR EDUCATION AND RESEARCH CENTER"
+  },
+  {
+   "code": "EPS",
+   "name": "E.P. SCHOCH BUILDING"
+  },
+  {
+   "code": "ETC",
+   "name": "ENGINEERING TEACHING CENTER II"
+  },
+  {
+   "code": "FAC",
+   "name": "PETER T. FLAWN ACADEMIC CENTER"
+  },
+  {
+   "code": "FC1",
+   "name": "FACILITIES COMPLEX BLDG. 1"
+  },
+  {
+   "code": "FC2",
+   "name": "FACILITIES COMPLEX BLDG. 2"
+  },
+  {
+   "code": "FC3",
+   "name": "FACILITIES COMPLEX BLDG. 3"
+  },
+  {
+   "code": "FC4",
+   "name": "FACILITIES COMPLEX BLDG. 4"
+  },
+  {
+   "code": "FC5",
+   "name": "FACILITIES COMPLEX BLDG. 5"
+  },
+  {
+   "code": "FC6",
+   "name": "FACILITIES COMPLEX BLDG. 6"
+  },
+  {
+   "code": "FC7",
+   "name": "FACILITIES COMPLEX BLDG. 7"
+  },
+  {
+   "code": "FC8",
+   "name": "FACILITIES COMPLEX BLDG. 8"
+  },
+  {
+   "code": "FC9",
+   "name": "CUSTODIAL SERVICES TRAINING FAC"
+  },
+  {
+   "code": "FDG",
+   "name": "J. FRANK DOBIE GARAGE"
+  },
+  {
+   "code": "FDH",
+   "name": "J. FRANK DOBIE HOUSE"
+  },
+  {
+   "code": "FNT",
+   "name": "LARRY R. FAULKNER NANO SCI AND TECH"
+  },
+  {
+   "code": "FTC",
+   "name": "FOOTBALL TRAINING COMPLEX"
+  },
+  {
+   "code": "FTG",
+   "name": "FOOTBALL TRAINING COMPLEX GARAGE"
+  },
+  {
+   "code": "G17",
+   "name": "TRAFFIC KIOSK - 214 1/2 W 24TH ST"
+  },
+  {
+   "code": "GAR",
+   "name": "GARRISON HALL"
+  },
+  {
+   "code": "GDC",
+   "name": "GATES DELL COMPLEX"
+  },
+  {
+   "code": "GEA",
+   "name": "MARY E. GEARING HALL"
+  },
+  {
+   "code": "GEB",
+   "name": "DOROTHY L. GEBAUER BUILDING"
+  },
+  {
+   "code": "GHA",
+   "name": "GRADUATE HOUSING, UNIT A"
+  },
+  {
+   "code": "GHB",
+   "name": "GRADUATE HOUSING, UNIT B"
+  },
+  {
+   "code": "GHC",
+   "name": "GRADUATE HOUSING, UNIT C"
+  },
+  {
+   "code": "GHD",
+   "name": "GRADUATE HOUSING, UNIT D"
+  },
+  {
+   "code": "GHE",
+   "name": "GRADUATE HOUSING, UNIT E"
+  },
+  {
+   "code": "GHF",
+   "name": "GRADUATE HOUSING, UNIT F"
+  },
+  {
+   "code": "GLT",
+   "name": "GARY L THOMAS ENERGY ENGR BLDG"
+  },
+  {
+   "code": "GOL",
+   "name": "GOLDSMITH HALL"
+  },
+  {
+   "code": "GRC",
+   "name": "GREGORY AQUATIC POOL CONTROL BLDG."
+  },
+  {
+   "code": "GRE",
+   "name": "GREGORY GYMNASIUM"
+  },
+  {
+   "code": "GRF",
+   "name": "GREGORY AQUATIC FOOD SERVICE BLDG."
+  },
+  {
+   "code": "GRP",
+   "name": "GREGORY AQUATIC POOL EQUIP. BLDG."
+  },
+  {
+   "code": "GRS",
+   "name": "GREGORY AQUATIC POOL STORAGE BLDG."
+  },
+  {
+   "code": "GSB",
+   "name": "GRADUATE SCHOOL OF BUSINESS BLDG."
+  },
+  {
+   "code": "GSM",
+   "name": "GRADUATE HOUSING, MAINTENANCE BLDG"
+  },
+  {
+   "code": "GUG",
+   "name": "GUADALUPE GARAGE"
+  },
+  {
+   "code": "GWB",
+   "name": "GORDON-WHITE BUILDING"
+  },
+  {
+   "code": "HCG",
+   "name": "HEALTH CENTER GARAGE"
+  },
+  {
+   "code": "HDB",
+   "name": "HEALTH DISCOVERY BUILDING"
+  },
+  {
+   "code": "HLB",
+   "name": "HEALTH LEARNING BUILDING"
+  },
+  {
+   "code": "HMA",
+   "name": "HOGG MEMORIAL AUDITORIUM"
+  },
+  {
+   "code": "HRC",
+   "name": "HARRY RANSOM CENTER"
+  },
+  {
+   "code": "HRH",
+   "name": "RAINEY HALL"
+  },
+  {
+   "code": "HS4",
+   "name": "HSS SUPPORT BLDG NO. 4"
+  },
+  {
+   "code": "HSM",
+   "name": "WILLIAM RANDOLPH HEARST BLDG"
+  },
+  {
+   "code": "HTB",
+   "name": "HEALTH TRANSFORMATION BUILDING"
+  },
+  {
+   "code": "IC2",
+   "name": "2815 SAN GABRIEL (IC2 INSTITUTE)"
+  },
+  {
+   "code": "ICB",
+   "name": "INTRAMURAL CONTROL BLDG."
+  },
+  {
+   "code": "IMA",
+   "name": "INTRAMURAL MAINT BLDG A"
+  },
+  {
+   "code": "IMB",
+   "name": "INTRAMURAL MAINT BLDG B"
+  },
+  {
+   "code": "IPF",
+   "name": "INDOOR PRACTICE FACILITY"
+  },
+  {
+   "code": "JCD",
+   "name": "JESTER RESIDENCE HALL"
+  },
+  {
+   "code": "JES",
+   "name": "BEAUFORD H. JESTER CENTER"
+  },
+  {
+   "code": "JGB",
+   "name": "JACKSON GEOLOGICAL SCIENCES BLDG."
+  },
+  {
+   "code": "JHH",
+   "name": "JOHN W. HARGIS HALL"
+  },
+  {
+   "code": "JON",
+   "name": "JESSE H. JONES HALL"
+  },
+  {
+   "code": "KEY",
+   "name": "UNIVERSITY KEY BUILDING"
+  },
+  {
+   "code": "KIN",
+   "name": "KINSOLVING RESIDENCE HALL"
+  },
+  {
+   "code": "LAC",
+   "name": "LAKE AUSTIN CENTRE"
+  },
+  {
+   "code": "LBJ",
+   "name": "LYNDON B JOHNSON LIBRARY"
+  },
+  {
+   "code": "LCH",
+   "name": "LITTLEFIELD CARRIAGE HOUSE"
+  },
+  {
+   "code": "LDH",
+   "name": "LONGHORN DINING FACILITY"
+  },
+  {
+   "code": "LFH",
+   "name": "LITTLEFIELD HOME"
+  },
+  {
+   "code": "LNA",
+   "name": "LEONA ST. CHILD DEVELOPMENT CENTER"
+  },
+  {
+   "code": "LS1",
+   "name": "LANDSCAPE SERVICES STORAGE BLDG."
+  },
+  {
+   "code": "LTD",
+   "name": "LITTLEFIELD RESIDENCE HALL"
+  },
+  {
+   "code": "LTH",
+   "name": "LABORATORY THEATER BLDG."
+  },
+  {
+   "code": "MAG",
+   "name": "MANOR GARAGE"
+  },
+  {
+   "code": "MAI",
+   "name": "MAIN BUILDING"
+  },
+  {
+   "code": "MBB",
+   "name": "MOFFETT MOLECULAR BIOLOGY BLDG."
+  },
+  {
+   "code": "MCA",
+   "name": "MOODY CENTER"
+  },
+  {
+   "code": "MEZ",
+   "name": "MEZES HALL"
+  },
+  {
+   "code": "MFH",
+   "name": "RICHARD MITHOFF TRK/SCR FIELDHOUSE"
+  },
+  {
+   "code": "MHD",
+   "name": "MOORE-HILL RESIDENCE HALL"
+  },
+  {
+   "code": "MMS",
+   "name": "MIKE A.MYERS TRACK & SOCCER STADIUM"
+  },
+  {
+   "code": "MNC",
+   "name": "MONCRIEF-NEUHAUS ATHLETIC CENTER"
+  },
+  {
+   "code": "MRH",
+   "name": "MUSIC BUILDING & RECITAL HALL"
+  },
+  {
+   "code": "MSB",
+   "name": "2207 COMAL (MAIL SERVICE BUILDING)"
+  },
+  {
+   "code": "N24",
+   "name": "2400 NUECES"
+  },
+  {
+   "code": "NEZ",
+   "name": "NORTH END ZONE BUILDING"
+  },
+  {
+   "code": "NHB",
+   "name": "NORMAN HACKERMAN BUILDING"
+  },
+  {
+   "code": "NMS",
+   "name": "NEURAL AND MOLECULAR SCIENCE BLDG."
+  },
+  {
+   "code": "NUG",
+   "name": "NUECES GARAGE"
+  },
+  {
+   "code": "NUR",
+   "name": "NURSING SCHOOL"
+  },
+  {
+   "code": "PAC",
+   "name": "PERFORMING ARTS CENTER"
+  },
+  {
+   "code": "PAI",
+   "name": "T.S. PAINTER HALL"
+  },
+  {
+   "code": "PAR",
+   "name": "PARLIN HALL"
+  },
+  {
+   "code": "PAT",
+   "name": "J.T. PATTERSON LABS.BLDG."
+  },
+  {
+   "code": "PCL",
+   "name": "PERRY-CASTANEDA LIBRARY"
+  },
+  {
+   "code": "PHD",
+   "name": "PRATHER RESIDENCE HALL"
+  },
+  {
+   "code": "PHR",
+   "name": "PHARMACY BUILDING"
+  },
+  {
+   "code": "PMA",
+   "name": "PHYSICS, MATH, & ASTRONOMY BUILDING"
+  },
+  {
+   "code": "POB",
+   "name": "PETER O'DONNELL JR. BUILDING"
+  },
+  {
+   "code": "PRH",
+   "name": "DOBIE PAISANO RANCH HOUSE"
+  },
+  {
+   "code": "RHD",
+   "name": "ROBERTS RESIDENCE HALL"
+  },
+  {
+   "code": "RHG",
+   "name": "ROWLING HALL GARAGE"
+  },
+  {
+   "code": "RLP",
+   "name": "PATTON HALL"
+  },
+  {
+   "code": "RRH",
+   "name": "ROBERT B. ROWLING HALL"
+  },
+  {
+   "code": "RSC",
+   "name": "RECREATIONAL SPORTS CENTER"
+  },
+  {
+   "code": "SAG",
+   "name": "SAN ANTONIO GARAGE"
+  },
+  {
+   "code": "SBS",
+   "name": "RED AND CHARLINE MCCOMBS FIELD"
+  },
+  {
+   "code": "SEA",
+   "name": "SARAH M. & CHARLES E. SEAY BUILDING"
+  },
+  {
+   "code": "SEZ",
+   "name": "SOUTH END ZONE"
+  },
+  {
+   "code": "SJG",
+   "name": "SAN JACINTO GARAGE"
+  },
+  {
+   "code": "SJH",
+   "name": "SAN JACINTO RESIDENCE HALL"
+  },
+  {
+   "code": "SMC",
+   "name": "DELL SETON MEDICAL CENTER AT UT"
+  },
+  {
+   "code": "SRH",
+   "name": "SID RICHARDSON HALL"
+  },
+  {
+   "code": "SSB",
+   "name": "STUDENT SERVICES BUILDING"
+  },
+  {
+   "code": "SSC",
+   "name": "SILVER SPURS CENTER"
+  },
+  {
+   "code": "STD",
+   "name": "DARRELL K ROYAL TX MEMORIAL STADIUM"
+  },
+  {
+   "code": "SUT",
+   "name": "SUTTON HALL"
+  },
+  {
+   "code": "SW7",
+   "name": "2617 SPEEDWAY (OFC.BLDG.)"
+  },
+  {
+   "code": "SWG",
+   "name": "SPEEDWAY GARAGE"
+  },
+  {
+   "code": "SZB",
+   "name": "GEORGE I. SANCHEZ BUILDING"
+  },
+  {
+   "code": "TCC",
+   "name": "JOE C THOMPSON CONFERENCE CENTER"
+  },
+  {
+   "code": "TCP",
+   "name": "TEXAS COWBOYS PAVILION"
+  },
+  {
+   "code": "TLB",
+   "name": "TEXAS LONGHORNS BOATHOUSE"
+  },
+  {
+   "code": "TMM",
+   "name": "TX SCIENCE & NATURAL HISTORY MUSEUM"
+  },
+  {
+   "code": "TNH",
+   "name": "TOWNES HALL"
+  },
+  {
+   "code": "TRG",
+   "name": "TRINITY GARAGE"
+  },
+  {
+   "code": "TSB",
+   "name": "TENNIS SUPPORT BUILDING"
+  },
+  {
+   "code": "TSC",
+   "name": "LEE & JOE JAMAIL TEXAS SWIMMING CTR"
+  },
+  {
+   "code": "TSG",
+   "name": "27TH STREET GARAGE"
+  },
+  {
+   "code": "TSP",
+   "name": "TEXAS SWIMMING CENTER PUMP HOUSE"
+  },
+  {
+   "code": "TTC",
+   "name": "TEXAS TENNIS CENTER"
+  },
+  {
+   "code": "UA9",
+   "name": "2609 UNIVERSITY AVENUE"
+  },
+  {
+   "code": "UIL",
+   "name": "UNIV. INTERSCHOLASTIC LEAGUE BLDG."
+  },
+  {
+   "code": "UNB",
+   "name": "UNION BUILDING"
+  },
+  {
+   "code": "UTA",
+   "name": "UT ADMINISTRATION BUILDING"
+  },
+  {
+   "code": "UTC",
+   "name": "UNIVERSITY TEACHING CENTER"
+  },
+  {
+   "code": "UTX",
+   "name": "ETTER-HARBIN ALUMNI CENTER"
+  },
+  {
+   "code": "WAG",
+   "name": "WAGGENER HALL"
+  },
+  {
+   "code": "WAT",
+   "name": "ARTHUR P. WATSON HOUSE"
+  },
+  {
+   "code": "WCH",
+   "name": "WILL C. HOGG BLDG."
+  },
+  {
+   "code": "WCP",
+   "name": "WILLIAM C. POWERS, JR. SAC"
+  },
+  {
+   "code": "WEL",
+   "name": "ROBERT A. WELCH HALL"
+  },
+  {
+   "code": "WGB",
+   "name": "WHITAKER GATEWAY BUILDING"
+  },
+  {
+   "code": "WIN",
+   "name": "F.L. WINSHIP DRAMA BLDG."
+  },
+  {
+   "code": "WMB",
+   "name": "WEST MALL OFFICE BLDG."
+  },
+  {
+   "code": "WWH",
+   "name": "WALTER WEBB HALL"
+  },
+  {
+   "code": "Z02",
+   "name": "2007 GUADALUPE"
+  },
+  {
+   "code": "Z18",
+   "name": "1504 E MLK JR BLVD"
+  }
+ ]
+}

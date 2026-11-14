@@ -1,0 +1,100 @@
+{
+  "halls": {
+    "moton-hall": {
+      "pin": [
+        -76.3385,
+        37.0186
+      ]
+    },
+    "james-hall-suites": {
+      "pin": [
+        -76.337,
+        37.0192
+      ]
+    }
+  },
+  "places": {
+    "hampton-university-museum": {
+      "hide": true
+    },
+    "administration-building": {
+      "hide": true
+    },
+    "conference-center": {
+      "hide": true
+    },
+    "holly-tree-inn": {
+      "hide": true
+    },
+    "stone-manor-building": {
+      "hide": true
+    },
+    "multipurpose-building": {
+      "hide": true
+    },
+    "wigwam-building": {
+      "hide": true
+    },
+    "health-services-and-campus-safety": {
+      "hide": true
+    },
+    "memorial-church": {
+      "hide": true
+    },
+    "mansion-house": {
+      "hide": true
+    },
+    "starbucks": {
+      "hide": true
+    },
+    "ps-3": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "moton-hall": "Moton Hall (771 Shore Road; OSM way/388605200, building 33 on HU_Campus_Map.pdf) is in the south residence quad, whose OSM footways stop 6 m short of the campus network; the pin sits on the path at the hall's north side, the nearest spot the mapped network reaches, so its minutes run about half a minute short.",
+    "james-hall-suites": "James Hall and Suites (7 James Court; OSM way/388346838 'James Hall', building 27 on HU_Campus_Map.pdf) is at the east end of the south residence quad, 250 m from any joined footway in OSM; the pin is at the nearest spot the campus network reaches, by the footways north of Pierce Hall, so its minutes run about two minutes short until the quad's paths are joined in OSM.",
+    "hampton-university-museum": "A museum (14 Frissell Avenue), not somewhere classes happen.",
+    "administration-building": "The Administration Building (building 41 on HU_Campus_Map.pdf) holds offices, not classes.",
+    "conference-center": "The Hattie McGrew Towers & Conference Center (multi-use building 1 on HU_Campus_Map.pdf) is a residence tower and event space, not a class building.",
+    "holly-tree-inn": "Holly Tree Inn (8 Frissell Avenue) is an upperclassmen women's residence hall on Hampton's housing list (home.hamptonu.edu/student-affairs/residence-life-housing/), not a class building.",
+    "stone-manor-building": "Stone Manor (653 Huntington Avenue) is an upperclassmen women's residence hall on Hampton's housing list (home.hamptonu.edu/student-affairs/residence-life-housing/), not a class building.",
+    "multipurpose-building": "The Multi Use Facility (2 Frissell Avenue) is an upperclassmen women's residence on Hampton's housing list (home.hamptonu.edu/student-affairs/residence-life-housing/), not a class building.",
+    "wigwam-building": "The Wigwam Building (building 74 on HU_Campus_Map.pdf) holds admissions and other offices, not classes.",
+    "health-services-and-campus-safety": "The student health clinic and campus police (building 56 on HU_Campus_Map.pdf), not somewhere classes happen.",
+    "memorial-church": "Memorial Church is a place of worship, not a class building.",
+    "mansion-house": "Mansion House is the president's residence, not a class building.",
+    "starbucks": "A cafe, not a dining hall or class building.",
+    "ps-3": "OSM's 'Ps 3' at 104 College Place is an unidentified outbuilding on no campus list, not a class building."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "moton-hall -> turner-hall",
+        "moton-hall -> computer-center",
+        "moton-hall -> clark-hall"
+      ],
+      "maxRatio": 4.5,
+      "why": "OSM does not join the footways of the south residence quad and the central quad (south of Armstrong and Turner Halls) to the campus roads: Hampton is a gated campus and Shore Road, Marshall Avenue, Huntington Avenue and James Court are missing from the walking network, so walks from the south quad leave by the paths north of Pierce Hall to Frissell Avenue and go round by East Queen Street."
+    },
+    {
+      "pairs": [
+        "james-hall-suites -> jerome-holland-hall",
+        "james-hall-suites -> student-center",
+        "james-hall-suites -> william-r-and-norma-b-harvey-library",
+        "james-hall-suites -> george-p-phenix-hall",
+        "james-hall-suites -> matin-l-king-and-ethel-buckman-hall",
+        "james-hall-suites -> olin-engineering-building"
+      ],
+      "maxRatio": 3.5,
+      "why": "OSM does not join the footways of the south residence quad and the central quad (south of Armstrong and Turner Halls) to the campus roads: Hampton is a gated campus and Shore Road, Marshall Avenue, Huntington Avenue and James Court are missing from the walking network, so walks from the south quad leave by the paths north of Pierce Hall to Frissell Avenue and go round by East Queen Street."
+    },
+    {
+      "pairs": [
+        "white-hall -> new-dining-facility"
+      ],
+      "maxRatio": 3,
+      "why": "No mapped path joins White Hall's Ferry Road side to the dining facility's door on East Queen Street, so the walk goes round by the Ferry Road and East Queen Street sidewalks."
+    }
+  ]
+}

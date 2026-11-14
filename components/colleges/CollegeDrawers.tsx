@@ -32,20 +32,33 @@ const DRAWERS: { label: string; from: string; to: string }[] = [
 
 const TAB_TONES = ["blue", "yellow", "white"] as const;
 
+/** The /hall-finder hub's mode: each card opens that school's finder and says how many halls it ranks. */
+export type FinderMode = { ranked: Record<string, number> };
+const hrefOf = (c: Campus, finder?: FinderMode) => (finder ? `/colleges/${c.id}/hall-finder` : `/colleges/${c.id}`);
+
 function place(c: Campus) {
   return [c.city, c.state].filter(Boolean).join(", ");
 }
 
-function IndexCard({ c, i, hf }: { c: Campus; i: number; hf: boolean }) {
+function IndexCard({ c, i, hf, finder }: { c: Campus; i: number; hf: boolean; finder?: FinderMode }) {
   return (
     <li className={css.cardItem}>
-      <Link href={`/colleges/${c.id}`} className={css.indexCard}>
+      <Link href={hrefOf(c, finder)} className={css.indexCard}>
         <span className={css.cardTab} data-tone={TAB_TONES[i % 3]} aria-hidden="true">
           {c.sort[0].toUpperCase()}
         </span>
         <span className={css.cardName}>{c.name}</span>
         <span className={css.cardPlace}>{place(c)}</span>
         <span className={css.cardMeta}>
+          {finder ? (
+            <>
+              <span>{finder.ranked[c.id] ?? c.buildings} halls ranked</span>
+              <span className={css.cardGo} aria-hidden="true">
+                Rank halls →
+              </span>
+            </>
+          ) : (
+          <>
           <span>
             {c.buildings} building{c.buildings === 1 ? "" : "s"} · {c.rooms} room type{c.rooms === 1 ? "" : "s"}
           </span>
@@ -56,20 +69,22 @@ function IndexCard({ c, i, hf }: { c: Campus; i: number; hf: boolean }) {
               Open →
             </span>
           )}
+          </>
+          )}
         </span>
       </Link>
     </li>
   );
 }
 
-function ListRow({ c }: { c: Campus }) {
+function ListRow({ c, finder }: { c: Campus; finder?: FinderMode }) {
   return (
     <li>
-      <Link href={`/colleges/${c.id}`} className={css.listRow}>
+      <Link href={hrefOf(c, finder)} className={css.listRow}>
         <span className={css.listName}>{c.name}</span>
         <span className={css.listPlace}>{place(c)}</span>
         <span className={css.listMeta}>
-          {c.buildings} bldg · {c.rooms} rooms
+          {finder ? `${finder.ranked[c.id] ?? c.buildings} halls ranked` : `${c.buildings} bldg · ${c.rooms} rooms`}
         </span>
         <ArrowRight size={16} />
       </Link>
@@ -81,8 +96,9 @@ function ListRow({ c }: { c: Campus }) {
  * The directory as a card catalog: nine drawers A to Z, each holding index
  * cards. Every school is in the HTML (inactive drawers are `hidden`), so all
  * 103 links stay crawlable. Typing in the filter searches across drawers.
+ * With `finder`, the same catalog lists the /hall-finder hub's schools.
  */
-export default function CollegeDrawers({ schools }: { schools: Campus[] }) {
+export default function CollegeDrawers({ schools, finder }: { schools: Campus[]; finder?: FinderMode }) {
   const [drawer, setDrawer] = useState(0);
   const [view, setView] = useState<"cards" | "list">("cards");
   const [query, setQuery] = useState("");
@@ -102,7 +118,9 @@ export default function CollegeDrawers({ schools }: { schools: Campus[] }) {
   );
 
   // Hall Finder (when live or previewed): a tag on pilot cards and a "Has Hall Finder" filter.
-  const hf = useHallFinderOn();
+  const hfOn = useHallFinderOn();
+  // On the hub every school has Hall Finder, so the tag and the filter chip would say nothing.
+  const hf = hfOn && !finder;
   const [onlyHf, setOnlyHf] = useState(false);
   const terms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
   const results = terms.length || (hf && onlyHf)
@@ -125,13 +143,13 @@ export default function CollegeDrawers({ schools }: { schools: Campus[] }) {
     view === "cards" ? (
       <ul className={css.cards}>
         {list.map((c, i) => (
-          <IndexCard key={c.id} c={c} i={i} hf={hf} />
+          <IndexCard key={c.id} c={c} i={i} hf={hf} finder={finder} />
         ))}
       </ul>
     ) : (
       <ul className={css.list}>
         {list.map((c) => (
-          <ListRow key={c.id} c={c} />
+          <ListRow key={c.id} c={c} finder={finder} />
         ))}
       </ul>
     );

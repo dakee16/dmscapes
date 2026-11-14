@@ -1,0 +1,17 @@
+{
+  "collegeId": "uw",
+  "area": {
+    "osm": "relation/5268488",
+    "bbox": [
+      47.64778,
+      -122.32181,
+      47.66607,
+      -122.28759
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/uw.codes.json"
+  }
+}

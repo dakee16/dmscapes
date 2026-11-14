@@ -1,0 +1,16 @@
+{
+  "collegeId": "ole-miss",
+  "area": {
+    "osm": "way/32945199",
+    "bbox": [
+      34.3573,
+      -89.56291,
+      34.37196,
+      -89.52808
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class building-code list: the Office of the Registrar's site (https://olemiss.edu/departments/provost/registrar/index.php) and its registration pages (https://olemiss.edu/departments/provost/registrar/registration/index.php) publish none, and no university building layer with codes turned up on ArcGIS Online; checked 2026-11-08."
+}

@@ -1,0 +1,541 @@
+{
+ "collegeId": "temple",
+ "generatedAt": "2026-11-14T06:56:18.401Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/temple.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -75.15992,
+  39.97771,
+  -75.15258,
+  39.9856
+ ],
+ "halls": [
+  {
+   "dormId": "1300",
+   "name": "1300 Residence Hall",
+   "lng": -75.156414,
+   "lat": 39.977705,
+   "pin": "name",
+   "osm": "way/192989617",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "howard-gittis-student-center",
+     "minutes": 4.2
+    },
+    "library": {
+     "placeId": "charles-library",
+     "minutes": 6.7
+    },
+    "gym": {
+     "placeId": "independence-blue-cross-student-recreation-center-ibc",
+     "minutes": 4.2
+    }
+   }
+  },
+  {
+   "dormId": "morgan-hall",
+   "name": "Morgan Hall (Mitchell & Hilarie Morgan)",
+   "lng": -75.15712,
+   "lat": 39.97838,
+   "pin": "manual",
+   "osm": "way/335244610",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "howard-gittis-student-center",
+     "minutes": 4.7
+    },
+    "library": {
+     "placeId": "charles-library",
+     "minutes": 6.8
+    },
+    "gym": {
+     "placeId": "independence-blue-cross-student-recreation-center-ibc",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "johnson-hardwick",
+   "name": "Johnson & Hardwick Halls",
+   "lng": -75.155874,
+   "lat": 39.984053,
+   "pin": "name",
+   "osm": "way/134972254",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "howard-gittis-student-center",
+     "minutes": 10.2
+    },
+    "library": {
+     "placeId": "charles-library",
+     "minutes": 4.9
+    },
+    "gym": {
+     "placeId": "independence-blue-cross-student-recreation-center-ibc",
+     "minutes": 9.5
+    }
+   }
+  },
+  {
+   "dormId": "temple-towers",
+   "name": "Temple Towers",
+   "lng": -75.154986,
+   "lat": 39.977979,
+   "pin": "name",
+   "osm": "way/192989616",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "howard-gittis-student-center",
+     "minutes": 2.5
+    },
+    "library": {
+     "placeId": "charles-library",
+     "minutes": 7.2
+    },
+    "gym": {
+     "placeId": "independence-blue-cross-student-recreation-center-ibc",
+     "minutes": 5.5
+    }
+   }
+  },
+  {
+   "dormId": "white-hall",
+   "name": "White Hall",
+   "lng": -75.156915,
+   "lat": 39.985599,
+   "pin": "name",
+   "osm": "way/134972252",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "howard-gittis-student-center",
+     "minutes": 13.3
+    },
+    "library": {
+     "placeId": "charles-library",
+     "minutes": 8
+    },
+    "gym": {
+     "placeId": "independence-blue-cross-student-recreation-center-ibc",
+     "minutes": 11.7
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "pearson-mcgonigle-hall",
+   "name": "Pearson McGonigle Hall",
+   "short": "Pearson McGonigle Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.15834,
+   "lat": 39.980824,
+   "osm": "way/183996822"
+  },
+  {
+   "id": "tyler-school-of-art",
+   "name": "Tyler School of Art",
+   "short": "Tyler School of Art",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.153506,
+   "lat": 39.983555,
+   "osm": "way/183996820"
+  },
+  {
+   "id": "howard-gittis-student-center",
+   "name": "Howard Gittis Student Center",
+   "short": "Howard Gittis Student Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.155,
+   "lat": 39.97938,
+   "osm": "way/134472712"
+  },
+  {
+   "id": "charles-library",
+   "name": "Charles Library",
+   "short": "Charles Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.155353,
+   "lat": 39.98217,
+   "osm": "way/708547491"
+  },
+  {
+   "id": "paley-hall",
+   "name": "Paley Hall",
+   "short": "Paley Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.154373,
+   "lat": 39.980928,
+   "osm": "way/134472802"
+  },
+  {
+   "id": "tech-center",
+   "name": "TECH Center",
+   "short": "TECH Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.153146,
+   "lat": 39.980117,
+   "osm": "way/134472710"
+  },
+  {
+   "id": "anderson-hall",
+   "name": "Anderson Hall",
+   "short": "Anderson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Mazur Hall"
+   ],
+   "lng": -75.152692,
+   "lat": 39.980836,
+   "osm": "relation/10945267"
+  },
+  {
+   "id": "beury-hall",
+   "name": "Beury Hall",
+   "short": "Beury Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.154379,
+   "lat": 39.982227,
+   "osm": "way/181920697"
+  },
+  {
+   "id": "biology-life-sciences-building",
+   "name": "Biology-Life Sciences Building",
+   "short": "Biology-Life Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.153676,
+   "lat": 39.981941,
+   "osm": "way/181920439"
+  },
+  {
+   "id": "gladfelter-hall",
+   "name": "Gladfelter Hall",
+   "short": "Gladfelter Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.152585,
+   "lat": 39.981336,
+   "osm": "relation/10945266"
+  },
+  {
+   "id": "tuttleman-learning-center",
+   "name": "Tuttleman Learning Center",
+   "short": "Tuttleman Learning Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.15472,
+   "lat": 39.980407,
+   "osm": "way/135073211"
+  },
+  {
+   "id": "klein-law-building",
+   "name": "Klein Law Building",
+   "short": "Klein Law Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.156936,
+   "lat": 39.979867,
+   "osm": "way/181926830"
+  },
+  {
+   "id": "mitten-hall",
+   "name": "Mitten Hall",
+   "short": "Mitten Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.156638,
+   "lat": 39.98205,
+   "osm": "way/181926834"
+  },
+  {
+   "id": "science-education-and-research-center",
+   "name": "Science, Education and Research Center",
+   "short": "SERC Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SERC Building"
+   ],
+   "lng": -75.153043,
+   "lat": 39.981779,
+   "osm": "way/188942018"
+  },
+  {
+   "id": "ritter-hall",
+   "name": "Ritter Hall",
+   "short": "Ritter Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.155976,
+   "lat": 39.97941,
+   "osm": "way/181924452"
+  },
+  {
+   "id": "fox-school-of-business",
+   "name": "Fox School of Business",
+   "short": "Fox School of Business",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.15581,
+   "lat": 39.98029,
+   "osm": "way/135073212"
+  },
+  {
+   "id": "speakman-hall",
+   "name": "Speakman Hall",
+   "short": "Speakman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.15571,
+   "lat": 39.980743,
+   "osm": "way/181926841"
+  },
+  {
+   "id": "engineering-building",
+   "name": "Engineering Building",
+   "short": "Engineering Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.152777,
+   "lat": 39.982378,
+   "osm": "way/181926840"
+  },
+  {
+   "id": "tomlinson-theater-randall-theater",
+   "name": "Tomlinson Theater/Randall Theater",
+   "short": "Tomlinson Theater/Randall Theater",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Randall and Tomlinson Theaters"
+   ],
+   "lng": -75.155082,
+   "lat": 39.983495,
+   "osm": "way/181927186"
+  },
+  {
+   "id": "ritter-hall-annex",
+   "name": "Ritter Hall Annex",
+   "short": "Ritter Hall Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.156308,
+   "lat": 39.978849,
+   "osm": "way/181924457"
+  },
+  {
+   "id": "annenberg-hall",
+   "name": "Annenberg Hall",
+   "short": "Annenberg Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.154969,
+   "lat": 39.983953,
+   "osm": "way/786026991"
+  },
+  {
+   "id": "presser-hall",
+   "name": "Presser Hall",
+   "short": "Presser Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.154283,
+   "lat": 39.983222,
+   "osm": "way/183996818"
+  },
+  {
+   "id": "independence-blue-cross-student-recreation-center-ibc",
+   "name": "Independence Blue Cross Student Recreation Center (IBC)",
+   "short": "Independence Blue Cross Student Recreation Center (IBC)",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.159014,
+   "lat": 39.979141,
+   "osm": "way/706495412"
+  },
+  {
+   "id": "1810-liacouras-walk",
+   "name": "1810 Liacouras Walk",
+   "short": "1810 Liacouras Walk",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.156485,
+   "lat": 39.980447,
+   "osm": "way/189162121"
+  },
+  {
+   "id": "temple-performing-arts-center",
+   "name": "Temple Performing Arts Center",
+   "short": "Temple Performing Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Grace Baptist Church"
+   ],
+   "lng": -75.156814,
+   "lat": 39.981442,
+   "osm": "way/181926832"
+  },
+  {
+   "id": "entertainment-and-community-education-center",
+   "name": "Entertainment and Community Education Center",
+   "short": "Entertainment and Community Education Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.159924,
+   "lat": 39.979151,
+   "osm": "way/706495413"
+  },
+  {
+   "id": "weiss-hall",
+   "name": "Weiss Hall",
+   "short": "Weiss Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.155264,
+   "lat": 39.978617,
+   "osm": "way/183996824"
+  },
+  {
+   "id": "architecture-building",
+   "name": "Architecture Building",
+   "short": "Architecture Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.154195,
+   "lat": 39.983603,
+   "osm": "way/337289218"
+  },
+  {
+   "id": "sullivan-hall",
+   "name": "Sullivan Hall",
+   "short": "Sullivan Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.156311,
+   "lat": 39.981315,
+   "osm": "way/181926829"
+  },
+  {
+   "id": "wachman-hall",
+   "name": "Wachman Hall",
+   "short": "Wachman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.156962,
+   "lat": 39.980856,
+   "osm": "way/181924456"
+  },
+  {
+   "id": "rock-hall",
+   "name": "Rock Hall",
+   "short": "Rock Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.157238,
+   "lat": 39.97924,
+   "osm": "way/181926831"
+  },
+  {
+   "id": "barrack-hall",
+   "name": "Barrack Hall",
+   "short": "Barrack Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.156853,
+   "lat": 39.981148,
+   "osm": "way/181926833"
+  },
+  {
+   "id": "conwell-hall",
+   "name": "Conwell Hall",
+   "short": "Conwell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.157007,
+   "lat": 39.980333,
+   "osm": "way/181924453"
+  },
+  {
+   "id": "carnell-hall",
+   "name": "Carnell Hall",
+   "short": "Carnell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.156917,
+   "lat": 39.980521,
+   "osm": "way/181924454"
+  },
+  {
+   "id": "shusterman-hall",
+   "name": "Shusterman Hall",
+   "short": "Shusterman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.156373,
+   "lat": 39.981056,
+   "osm": "way/181926836"
+  }
+ ]
+}

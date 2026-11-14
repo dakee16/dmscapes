@@ -1,0 +1,16 @@
+{
+  "collegeId": "uva",
+  "area": {
+    "osm": "relation/4218705",
+    "bbox": [
+      38.026,
+      -78.527,
+      38.044,
+      -78.495
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "UVA's registrar Building Abbreviations page (registrar.virginia.edu/buildings.html) serves a bot challenge, and its last archived copy (web.archive.org, 2021-04-20) predates buildings such as the School of Data Science, so schedules here match by building name (checked 2026-11-08)."
+}

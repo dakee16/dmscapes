@@ -1,0 +1,548 @@
+{
+ "collegeId": "chapman",
+ "generatedAt": "2026-11-09T18:17:39.406Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/chapman.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -117.85927,
+  33.78989,
+  -117.84896,
+  33.7972
+ ],
+ "halls": [
+  {
+   "dormId": "pralle-sodaro-hall",
+   "name": "Pralle-Sodaro Hall",
+   "lng": -117.850303,
+   "lat": 33.795464,
+   "pin": "name",
+   "osm": "way/946699845",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "leatherby-libraries",
+     "minutes": 5.8
+    },
+    "gym": {
+     "placeId": "hutton-sports-center",
+     "minutes": 5.3
+    }
+   }
+  },
+  {
+   "dormId": "henley-hall",
+   "name": "Henley Hall",
+   "lng": -117.850305,
+   "lat": 33.795875,
+   "pin": "name",
+   "osm": "way/946699844",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "leatherby-libraries",
+     "minutes": 7
+    },
+    "gym": {
+     "placeId": "hutton-sports-center",
+     "minutes": 6.4
+    }
+   }
+  },
+  {
+   "dormId": "sandhu-residence-center",
+   "name": "Sandhu Residence Center",
+   "lng": -117.850374,
+   "lat": 33.796455,
+   "pin": "name",
+   "osm": "relation/12752424",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "leatherby-libraries",
+     "minutes": 7.3
+    },
+    "gym": {
+     "placeId": "hutton-sports-center",
+     "minutes": 6.7
+    }
+   }
+  },
+  {
+   "dormId": "north-morlan-hall",
+   "name": "North Morlan Hall",
+   "lng": -117.849305,
+   "lat": 33.797195,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "leatherby-libraries",
+     "minutes": 9.2
+    },
+    "gym": {
+     "placeId": "hutton-sports-center",
+     "minutes": 9.7
+    }
+   }
+  },
+  {
+   "dormId": "south-morlan-hall",
+   "name": "South Morlan Hall",
+   "lng": -117.849305,
+   "lat": 33.797195,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "leatherby-libraries",
+     "minutes": 9.2
+    },
+    "gym": {
+     "placeId": "hutton-sports-center",
+     "minutes": 9.7
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "west-palm",
+   "name": "West Palm",
+   "short": "West Palm",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.859271,
+   "lat": 33.792515,
+   "osm": "way/206878203"
+  },
+  {
+   "id": "marion-knott-studios",
+   "name": "Marion Knott Studios",
+   "short": "Marion Knott Studios",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.85592,
+   "lat": 33.790823,
+   "osm": "way/206873445"
+  },
+  {
+   "id": "musco-center-for-the-arts",
+   "name": "Musco Center for the Arts",
+   "short": "Musco Center for the Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.852562,
+   "lat": 33.794508,
+   "osm": "way/946699857"
+  },
+  {
+   "id": "barrera-structure",
+   "name": "Barrera Structure",
+   "short": "Barrera Structure",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.854778,
+   "lat": 33.792816,
+   "osm": "way/489949289"
+  },
+  {
+   "id": "kennedy-hall",
+   "name": "Kennedy Hall",
+   "short": "Kennedy Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.853629,
+   "lat": 33.792846,
+   "osm": "way/206875819"
+  },
+  {
+   "id": "argyros-forum",
+   "name": "Argyros Forum",
+   "short": "Argyros Forum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.850446,
+   "lat": 33.793004,
+   "osm": "way/206875550"
+  },
+  {
+   "id": "beckman-hall",
+   "name": "Beckman Hall",
+   "short": "Beckman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.852503,
+   "lat": 33.793006,
+   "osm": "way/206875567"
+  },
+  {
+   "id": "glass-hall",
+   "name": ".Glass Hall",
+   "short": ".Glass Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.849168,
+   "lat": 33.796467,
+   "osm": "way/946699832"
+  },
+  {
+   "id": "west-campus-structure",
+   "name": "West Campus Structure",
+   "short": "West Campus Structure",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.85712,
+   "lat": 33.790147,
+   "osm": "way/206873444"
+  },
+  {
+   "id": "moulton-center",
+   "name": "Moulton Center",
+   "short": "Moulton Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.850291,
+   "lat": 33.791869,
+   "osm": "way/947070819"
+  },
+  {
+   "id": "leatherby-libraries",
+   "name": "Leatherby Libraries",
+   "short": "Leatherby Libraries",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Leatherby Library"
+   ],
+   "lng": -117.851192,
+   "lat": 33.7929,
+   "osm": "way/206875562"
+  },
+  {
+   "id": "hutton-sports-center",
+   "name": "Hutton Sports Center",
+   "short": "Hutton Sports Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.851606,
+   "lat": 33.793595,
+   "osm": "way/182998022"
+  },
+  {
+   "id": "demille-hall",
+   "name": "DeMille Hall",
+   "short": "DeMille Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.852602,
+   "lat": 33.792582,
+   "osm": "way/206875568"
+  },
+  {
+   "id": "digital-media-arts-center",
+   "name": "Digital Media Arts Center",
+   "short": "Digital Media Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.856724,
+   "lat": 33.789978,
+   "osm": "way/489949285"
+  },
+  {
+   "id": "memorial-hall",
+   "name": "Memorial Hall",
+   "short": "Memorial Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.851869,
+   "lat": 33.791962,
+   "osm": "way/206875551"
+  },
+  {
+   "id": "bhathal-student-services-center",
+   "name": "Bhathal Student Services Center",
+   "short": "Bhathal Student Services Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.854242,
+   "lat": 33.792764,
+   "osm": "way/206875820"
+  },
+  {
+   "id": "oliphant-hall",
+   "name": "Oliphant Hall",
+   "short": "Oliphant Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.851267,
+   "lat": 33.792107,
+   "osm": "way/206875566"
+  },
+  {
+   "id": "hashinger-science-center",
+   "name": "Hashinger Science Center",
+   "short": "Hashinger Science Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.850376,
+   "lat": 33.792448,
+   "osm": "way/947070821"
+  },
+  {
+   "id": "becket-building",
+   "name": "Becket Building",
+   "short": "Becket Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.855614,
+   "lat": 33.791761,
+   "osm": "way/489949290"
+  },
+  {
+   "id": "wilkinson-hall",
+   "name": "Wilkinson Hall",
+   "short": "Wilkinson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.851682,
+   "lat": 33.792541,
+   "osm": "way/206875564"
+  },
+  {
+   "id": "bertea-hall",
+   "name": "Bertea Hall",
+   "short": "Bertea Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.851202,
+   "lat": 33.791817,
+   "osm": "way/947070822"
+  },
+  {
+   "id": "waltmar-theater",
+   "name": "Waltmar Theater",
+   "short": "Waltmar Theater",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.850631,
+   "lat": 33.791807,
+   "osm": "way/947070820"
+  },
+  {
+   "id": "irvine-lecture-hall",
+   "name": "Irvine Lecture Hall",
+   "short": "Irvine Lecture Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.850645,
+   "lat": 33.792227,
+   "osm": "way/206875557"
+  },
+  {
+   "id": "davis-community-center",
+   "name": ".Davis Community Center",
+   "short": ".Davis Community Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.849952,
+   "lat": 33.797081,
+   "osm": "way/946699835"
+  },
+  {
+   "id": "student-health-center",
+   "name": "Student Health Center",
+   "short": "Student Health Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.853424,
+   "lat": 33.793458,
+   "osm": "way/967776522"
+  },
+  {
+   "id": "institure-for-the-study-of-religion-economics-and-society",
+   "name": "Institure for the Study of Religion, Economics & Society",
+   "short": "Institure for the Study of Religion, Economics & Society",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.853388,
+   "lat": 33.792216,
+   "osm": "way/489949293"
+  },
+  {
+   "id": "center-for-american-war-letters",
+   "name": "Center for American War Letters",
+   "short": "Center for American War Letters",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.855066,
+   "lat": 33.791293,
+   "osm": "way/489949287"
+  },
+  {
+   "id": "cortese-elder-law-center",
+   "name": "Cortese Elder Law Center",
+   "short": "Cortese Elder Law Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.85341,
+   "lat": 33.794411,
+   "osm": "way/967793651"
+  },
+  {
+   "id": "center-for-creative-and-cultural-industries",
+   "name": "Center for Creative and Cultural Industries",
+   "short": "Center for Creative and Cultural Industries",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.853396,
+   "lat": 33.793879,
+   "osm": "way/967776523"
+  },
+  {
+   "id": "event-scheduling-services",
+   "name": "Event Scheduling Services",
+   "short": "Event Scheduling Services",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.855019,
+   "lat": 33.792201,
+   "osm": "way/967770338"
+  },
+  {
+   "id": "president-emeritus-office",
+   "name": "President Emeritus Office",
+   "short": "President Emeritus Office",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.853358,
+   "lat": 33.792072,
+   "osm": "way/489949294"
+  },
+  {
+   "id": "center-for-undergraduate-excellence",
+   "name": "Center for Undergraduate Excellence",
+   "short": "Center for Undergraduate Excellence",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.849425,
+   "lat": 33.795293,
+   "osm": "way/967793652"
+  },
+  {
+   "id": "career-and-professional-development",
+   "name": "Career and Professional Development",
+   "short": "Career and Professional Development",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.85336,
+   "lat": 33.792341,
+   "osm": "way/489949292"
+  },
+  {
+   "id": "military-and-veterans-law-institute",
+   "name": "Military and Veterans Law Institute",
+   "short": "Military and Veterans Law Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.856127,
+   "lat": 33.792342,
+   "osm": "way/967770336"
+  },
+  {
+   "id": "elliot-alumni-house",
+   "name": "Elliot Alumni House",
+   "short": "Elliot Alumni House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.854468,
+   "lat": 33.78989,
+   "osm": "way/489949288"
+  },
+  {
+   "id": "legal-affairs",
+   "name": "Legal Affairs",
+   "short": "Legal Affairs",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.853431,
+   "lat": 33.793977,
+   "osm": "way/967776524"
+  },
+  {
+   "id": "center-of-excellence-in-earth-systems-modeling-and-observations",
+   "name": "Center of Excellence in Earth Systems Modeling and Observations",
+   "short": "Center of Excellence in Earth Systems Modeling and Observations",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.85342,
+   "lat": 33.794284,
+   "osm": "way/967793650"
+  },
+  {
+   "id": "veterans-resource-cente",
+   "name": "Veterans Resource Cente",
+   "short": "Veterans Resource Cente",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -117.848963,
+   "lat": 33.795672,
+   "osm": "way/946699830"
+  }
+ ]
+}

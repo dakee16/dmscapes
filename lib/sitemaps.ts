@@ -6,6 +6,7 @@ import SCHOOL_DATES from "@/lib/school-dates.json";
 import { BED_RULES_CHECKED } from "@/lib/bed-rules";
 import { COMPETITORS } from "@/lib/compare";
 import { PILOT_SCHOOLS, hallFinderLive } from "@/lib/hall-finder";
+import { HALL_FINDER_BUILT, hallFinderUpdated } from "@/lib/hall-finder-seo";
 
 /**
  * The sitemap groups. Each is served at /sitemaps/sitemap/<group>.xml (app/sitemaps/sitemap.ts)
@@ -57,9 +58,13 @@ export function sitemapEntries(group: string): MetadataRoute.Sitemap {
         { url: `${BASE}/terms`, changeFrequency: "yearly", priority: 0.3 },
         { url: `${BASE}/privacy`, changeFrequency: "yearly", priority: 0.3 },
         { url: `${BASE}/cookies`, changeFrequency: "yearly", priority: 0.3 },
-        // Hall Finder pages only once it's live (until then they're noindex and unlinked).
+        // Hall Finder pages only once it's live (until then they're noindex and unlinked), dated
+        // by when each school's walking data was built (the hub by the newest).
         ...(hallFinderLive()
-          ? [`${BASE}/hall-finder`, ...PILOT_SCHOOLS.map((id) => `${BASE}/colleges/${id}/hall-finder`)].map((url) => ({ url, changeFrequency: "monthly" as const, priority: 0.7 }))
+          ? [
+              { url: `${BASE}/hall-finder`, built: hallFinderUpdated() },
+              ...PILOT_SCHOOLS.map((id) => ({ url: `${BASE}/colleges/${id}/hall-finder`, built: HALL_FINDER_BUILT[id] ?? null })),
+            ].map(({ url, built }) => ({ url, ...(built ? { lastModified: built } : {}), changeFrequency: "monthly" as const, priority: 0.7 }))
           : []),
       ];
     case "colleges":

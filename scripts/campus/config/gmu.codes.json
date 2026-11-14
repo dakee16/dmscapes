@@ -1,0 +1,183 @@
+{
+ "name": "George Mason University Office of the University Registrar, Building Codes (Fairfax campus rows)",
+ "url": "https://registrar.gmu.edu/topics/building-codes/",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "AB",
+   "name": "Art and Design Building"
+  },
+  {
+   "code": "ACGC",
+   "name": "Angel Cabrera Global Center"
+  },
+  {
+   "code": "AFC",
+   "name": "Aquatic and Fitness Center"
+  },
+  {
+   "code": "AQ",
+   "name": "Aquia Building"
+  },
+  {
+   "code": "BL",
+   "name": "Blue Ridge Hall"
+  },
+  {
+   "code": "BUCHAN",
+   "name": "Buchanan Hall"
+  },
+  {
+   "code": "CAROW",
+   "name": "Carow Hall"
+  },
+  {
+   "code": "CFA",
+   "name": "Center for the Arts"
+  },
+  {
+   "code": "CH",
+   "name": "College Hall"
+  },
+  {
+   "code": "DK",
+   "name": "David J. King Hall"
+  },
+  {
+   "code": "E",
+   "name": "East Building"
+  },
+  {
+   "code": "ENGR",
+   "name": "Nguyen Engineering Building"
+  },
+  {
+   "code": "ENT",
+   "name": "Enterprise Hall"
+  },
+  {
+   "code": "ESNHWR",
+   "name": "Eisenhower"
+  },
+  {
+   "code": "ESTSHR",
+   "name": "Eastern Shore"
+  },
+  {
+   "code": "EXPL",
+   "name": "Exploratory Hall (formerly Science and Tech II)"
+  },
+  {
+   "code": "FENWCK",
+   "name": "Fenwick Library"
+  },
+  {
+   "code": "FH",
+   "name": "Field House"
+  },
+  {
+   "code": "FIELD",
+   "name": "Athletic Fields located on the West Campus next to the Field House"
+  },
+  {
+   "code": "FINLEY",
+   "name": "Finley Building"
+  },
+  {
+   "code": "HNOVR",
+   "name": "Hanover Hall"
+  },
+  {
+   "code": "HORIZN",
+   "name": "Horizon Hall"
+  },
+  {
+   "code": "HR",
+   "name": "Hampton Roads"
+  },
+  {
+   "code": "HT",
+   "name": "Harris Theater"
+  },
+  {
+   "code": "HUB",
+   "name": "The Hub"
+  },
+  {
+   "code": "IN",
+   "name": "Innovation Hall"
+  },
+  {
+   "code": "JC",
+   "name": "Johnson Center"
+  },
+  {
+   "code": "KB",
+   "name": "Krasnow Building"
+  },
+  {
+   "code": "KH",
+   "name": "Krug Hall"
+  },
+  {
+   "code": "LH",
+   "name": "Lecture Hall"
+  },
+  {
+   "code": "MAINST",
+   "name": "Main Street (9900 Main Street)"
+  },
+  {
+   "code": "MERTEN",
+   "name": "Merten Hall"
+  },
+  {
+   "code": "MTB",
+   "name": "Music Theater Building"
+  },
+  {
+   "code": "PAB",
+   "name": "de Laski Performing Arts Building"
+  },
+  {
+   "code": "PETRSN",
+   "name": "Peterson Hall"
+  },
+  {
+   "code": "PIEDMT",
+   "name": "Piedmont Hall"
+  },
+  {
+   "code": "PLANET",
+   "name": "Planetary Hall"
+  },
+  {
+   "code": "RAC",
+   "name": "Recreation Athletic Complex"
+  },
+  {
+   "code": "ROGER",
+   "name": "Roger Hall"
+  },
+  {
+   "code": "RSCH",
+   "name": "Research Hall"
+  },
+  {
+   "code": "SNDBGE",
+   "name": "Sandbridge Hall"
+  },
+  {
+   "code": "SUBI",
+   "name": "Student Union I"
+  },
+  {
+   "code": "T",
+   "name": "Thompson Hall"
+  },
+  {
+   "code": "W",
+   "name": "West Building"
+  }
+ ]
+}

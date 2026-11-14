@@ -1,0 +1,743 @@
+{
+ "collegeId": "iowa",
+ "generatedAt": "2026-11-08T22:07:06.051Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "University of Iowa Office of the Registrar, registrar-scheduled classrooms (classrooms.uiowa.edu room listings: building code and building name)",
+   "url": "https://classrooms.uiowa.edu/units/office-registrar",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/iowa.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -91.55486,
+  41.65654,
+  -91.53054,
+  41.67671
+ ],
+ "halls": [
+  {
+   "dormId": "burge",
+   "name": "Burge Hall",
+   "lng": -91.53529,
+   "lat": 41.665276,
+   "pin": "name",
+   "osm": "way/120257788",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-and-wellness-center",
+     "minutes": 16.3
+    },
+    "library": {
+     "placeId": "sciences-library",
+     "minutes": 7.5
+    }
+   }
+  },
+  {
+   "dormId": "catlett",
+   "name": "Catlett Hall",
+   "lng": -91.537223,
+   "lat": 41.665249,
+   "pin": "name",
+   "osm": "way/627943471",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-and-wellness-center",
+     "minutes": 14.2
+    },
+    "library": {
+     "placeId": "main-library",
+     "minutes": 9
+    }
+   }
+  },
+  {
+   "dormId": "currier",
+   "name": "Currier Hall",
+   "lng": -91.535139,
+   "lat": 41.666359,
+   "pin": "name",
+   "osm": "way/119275844",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-and-wellness-center",
+     "minutes": 17
+    },
+    "library": {
+     "placeId": "sciences-library",
+     "minutes": 7.3
+    }
+   }
+  },
+  {
+   "dormId": "daum",
+   "name": "Daum Hall",
+   "lng": -91.535121,
+   "lat": 41.664474,
+   "pin": "name",
+   "osm": "way/155058615",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-and-wellness-center",
+     "minutes": 15.2
+    },
+    "library": {
+     "placeId": "sciences-library",
+     "minutes": 6.3
+    }
+   }
+  },
+  {
+   "dormId": "hillcrest",
+   "name": "Hillcrest Hall",
+   "lng": -91.542771,
+   "lat": 41.659275,
+   "pin": "name",
+   "osm": "way/119109778",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "field-house",
+     "minutes": 6.3
+    },
+    "library": {
+     "placeId": "main-library",
+     "minutes": 7.9
+    }
+   }
+  },
+  {
+   "dormId": "petersen",
+   "name": "Petersen Hall",
+   "lng": -91.544146,
+   "lat": 41.658783,
+   "pin": "name",
+   "osm": "way/428073896",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "field-house",
+     "minutes": 3.8
+    },
+    "library": {
+     "placeId": "main-library",
+     "minutes": 8.5
+    }
+   }
+  },
+  {
+   "dormId": "rienow",
+   "name": "Rienow Hall",
+   "lng": -91.545092,
+   "lat": 41.658883,
+   "pin": "name",
+   "osm": "way/117021879",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "field-house",
+     "minutes": 2.6
+    },
+    "library": {
+     "placeId": "hardin-library-for-the-health-sciences",
+     "minutes": 8.2
+    }
+   }
+  },
+  {
+   "dormId": "slater",
+   "name": "Slater Hall",
+   "lng": -91.545046,
+   "lat": 41.658175,
+   "pin": "name",
+   "osm": "way/116893715",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "field-house",
+     "minutes": 2.2
+    },
+    "library": {
+     "placeId": "main-library",
+     "minutes": 8.8
+    }
+   }
+  },
+  {
+   "dormId": "stanley",
+   "name": "Stanley Hall",
+   "lng": -91.535859,
+   "lat": 41.666261,
+   "pin": "name",
+   "osm": "way/116418643",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-and-wellness-center",
+     "minutes": 15.9
+    },
+    "library": {
+     "placeId": "sciences-library",
+     "minutes": 8.2
+    }
+   }
+  },
+  {
+   "dormId": "mayflower",
+   "name": "Mayflower Hall",
+   "lng": -91.531704,
+   "lat": 41.676715,
+   "pin": "name",
+   "osm": "way/103583271",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-and-wellness-center",
+     "minutes": 33.6
+    },
+    "library": {
+     "placeId": "sciences-library",
+     "minutes": 22.4
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "university-capitol-center",
+   "name": "University Capitol Center",
+   "short": "University Capitol Center",
+   "kind": "academic",
+   "codes": [
+    "UCC"
+   ],
+   "aliases": [
+    "University Capitol Centre",
+    "UCC"
+   ],
+   "lng": -91.535458,
+   "lat": 41.659265,
+   "osm": "way/102650568"
+  },
+  {
+   "id": "hansen-football-performance-center",
+   "name": "Hansen Football Performance Center",
+   "short": "Hansen Football Performance Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -91.554856,
+   "lat": 41.659624,
+   "osm": "way/314166279"
+  },
+  {
+   "id": "field-house",
+   "name": "Field House",
+   "short": "Field House",
+   "kind": "gym",
+   "codes": [
+    "FH"
+   ],
+   "aliases": [],
+   "lng": -91.546619,
+   "lat": 41.658371,
+   "osm": "way/119213558"
+  },
+  {
+   "id": "campus-recreation-and-wellness-center",
+   "name": "Campus Recreation and Wellness Center",
+   "short": "Campus Recreation and Wellness Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "CRWC"
+   ],
+   "lng": -91.538488,
+   "lat": 41.657226,
+   "osm": "way/142039139"
+  },
+  {
+   "id": "main-library",
+   "name": "Main Library",
+   "short": "Main Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -91.53845,
+   "lat": 41.659534,
+   "osm": "way/102239324"
+  },
+  {
+   "id": "seamans-center",
+   "name": "Seamans Center",
+   "short": "Seamans Center",
+   "kind": "academic",
+   "codes": [
+    "SC"
+   ],
+   "aliases": [],
+   "lng": -91.53673,
+   "lat": 41.659447,
+   "osm": "way/125702885"
+  },
+  {
+   "id": "hawkeye-indoor-track-facility",
+   "name": "Hawkeye Indoor Track Facility",
+   "short": "Hawkeye Indoor Track Facility",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -91.553616,
+   "lat": 41.65977,
+   "osm": "way/117021876"
+  },
+  {
+   "id": "dance-building",
+   "name": "Dance Building",
+   "short": "Dance Building",
+   "kind": "academic",
+   "codes": [
+    "DB"
+   ],
+   "aliases": [
+    "DB"
+   ],
+   "lng": -91.540148,
+   "lat": 41.665444,
+   "osm": "way/99655034"
+  },
+  {
+   "id": "chemistry-building",
+   "name": "Chemistry Building",
+   "short": "Chemistry Building",
+   "kind": "academic",
+   "codes": [
+    "CB"
+   ],
+   "aliases": [],
+   "lng": -91.536718,
+   "lat": 41.664159,
+   "osm": "way/120069935"
+  },
+  {
+   "id": "iowa-advanced-technology-laboratories",
+   "name": "Iowa Advanced Technology Laboratories",
+   "short": "Iowa Advanced Technology Laboratories",
+   "kind": "academic",
+   "codes": [
+    "IATL"
+   ],
+   "aliases": [],
+   "lng": -91.538203,
+   "lat": 41.664155,
+   "osm": "way/119103721"
+  },
+  {
+   "id": "pappajohn-business-building",
+   "name": "Pappajohn Business Building",
+   "short": "Pappajohn Business Building",
+   "kind": "academic",
+   "codes": [
+    "PBB"
+   ],
+   "aliases": [],
+   "lng": -91.535238,
+   "lat": 41.663156,
+   "osm": "way/155058634"
+  },
+  {
+   "id": "health-science-academic-building",
+   "name": "Health Science Academic Building",
+   "short": "Health Science Academic Building",
+   "kind": "academic",
+   "codes": [
+    "HSAB"
+   ],
+   "aliases": [
+    "HSAB",
+    "Health Sciences Academic Building"
+   ],
+   "lng": -91.545433,
+   "lat": 41.657395,
+   "osm": "way/1315948393"
+  },
+  {
+   "id": "lindquist-center",
+   "name": "Lindquist Center",
+   "short": "Lindquist Center",
+   "kind": "academic",
+   "codes": [
+    "LC"
+   ],
+   "aliases": [
+    "University of Iowa College of Education"
+   ],
+   "lng": -91.537163,
+   "lat": 41.658464,
+   "osm": "way/118360990"
+  },
+  {
+   "id": "voxman-music-building",
+   "name": "Voxman Music Building",
+   "short": "Voxman Music Building",
+   "kind": "academic",
+   "codes": [
+    "VOX"
+   ],
+   "aliases": [],
+   "lng": -91.535158,
+   "lat": 41.657428,
+   "osm": "relation/10032651"
+  },
+  {
+   "id": "van-allen-hall",
+   "name": "Van Allen Hall",
+   "short": "Van Allen Hall",
+   "kind": "academic",
+   "codes": [
+    "VAN"
+   ],
+   "aliases": [],
+   "lng": -91.532243,
+   "lat": 41.66206,
+   "osm": "way/116181505"
+  },
+  {
+   "id": "hardin-library-for-the-health-sciences",
+   "name": "Hardin Library for the Health Sciences",
+   "short": "Hardin Library for the Health Sciences",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -91.54763,
+   "lat": 41.662424,
+   "osm": "way/119109780"
+  },
+  {
+   "id": "college-of-pharmacy-building",
+   "name": "College of Pharmacy Building",
+   "short": "College of Pharmacy Building",
+   "kind": "academic",
+   "codes": [
+    "CPB"
+   ],
+   "aliases": [],
+   "lng": -91.545022,
+   "lat": 41.659479,
+   "osm": "way/724469412"
+  },
+  {
+   "id": "college-of-public-health-buidling",
+   "name": "College of Public Health Buidling",
+   "short": "College of Public Health Buidling",
+   "kind": "academic",
+   "codes": [
+    "CPHB"
+   ],
+   "aliases": [
+    "College of Public Health Bldg"
+   ],
+   "lng": -91.542528,
+   "lat": 41.664257,
+   "osm": "way/141905612"
+  },
+  {
+   "id": "jacobson-athletic-building",
+   "name": "Jacobson Athletic Building",
+   "short": "Jacobson Athletic Building",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -91.553838,
+   "lat": 41.660531,
+   "osm": "way/727347012"
+  },
+  {
+   "id": "iowa-bioscience-innovation-facility",
+   "name": "Iowa Bioscience Innovation Facility",
+   "short": "Iowa Bioscience Innovation Facility",
+   "kind": "academic",
+   "codes": [
+    "IBIF"
+   ],
+   "aliases": [],
+   "lng": -91.546307,
+   "lat": 41.65981,
+   "osm": "way/183038478"
+  },
+  {
+   "id": "visual-arts-building",
+   "name": "Visual Arts Building",
+   "short": "Visual Arts Building",
+   "kind": "academic",
+   "codes": [
+    "VAB"
+   ],
+   "aliases": [],
+   "lng": -91.541649,
+   "lat": 41.66617,
+   "osm": "way/439822443"
+  },
+  {
+   "id": "art-building-west",
+   "name": "Art Building West",
+   "short": "Art Building West",
+   "kind": "academic",
+   "codes": [
+    "ABW"
+   ],
+   "aliases": [],
+   "lng": -91.541555,
+   "lat": 41.66516,
+   "osm": "way/99618935"
+  },
+  {
+   "id": "college-of-nursing-building",
+   "name": "College of Nursing Building",
+   "short": "College of Nursing Building",
+   "kind": "academic",
+   "codes": [
+    "CNB"
+   ],
+   "aliases": [],
+   "lng": -91.543039,
+   "lat": 41.661861,
+   "osm": "way/92980511"
+  },
+  {
+   "id": "biology-building",
+   "name": "Biology Building",
+   "short": "Biology Building",
+   "kind": "academic",
+   "codes": [
+    "BB"
+   ],
+   "aliases": [],
+   "lng": -91.533455,
+   "lat": 41.661964,
+   "osm": "way/120257785"
+  },
+  {
+   "id": "graduate-college-building",
+   "name": "Graduate College Building",
+   "short": "Graduate College Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "GCB"
+   ],
+   "lng": -91.540658,
+   "lat": 41.664215,
+   "osm": "way/99618933"
+  },
+  {
+   "id": "macbride-hall",
+   "name": "Macbride Hall",
+   "short": "Macbride Hall",
+   "kind": "academic",
+   "codes": [
+    "MH"
+   ],
+   "aliases": [],
+   "lng": -91.535682,
+   "lat": 41.661902,
+   "osm": "way/102239322"
+  },
+  {
+   "id": "schaeffer-hall",
+   "name": "Schaeffer Hall",
+   "short": "Schaeffer Hall",
+   "kind": "academic",
+   "codes": [
+    "SH"
+   ],
+   "aliases": [],
+   "lng": -91.535697,
+   "lat": 41.660721,
+   "osm": "way/180648307"
+  },
+  {
+   "id": "north-hall",
+   "name": "North Hall",
+   "short": "North Hall",
+   "kind": "academic",
+   "codes": [
+    "NH"
+   ],
+   "aliases": [],
+   "lng": -91.536632,
+   "lat": 41.666041,
+   "osm": "way/117439061"
+  },
+  {
+   "id": "biology-building-east",
+   "name": "Biology Building East",
+   "short": "Biology Building East",
+   "kind": "academic",
+   "codes": [
+    "BBE"
+   ],
+   "aliases": [],
+   "lng": -91.532675,
+   "lat": 41.661649,
+   "osm": "way/120257786"
+  },
+  {
+   "id": "phillips-hall",
+   "name": "Phillips Hall",
+   "short": "Phillips Hall",
+   "kind": "academic",
+   "codes": [
+    "PH"
+   ],
+   "aliases": [],
+   "lng": -91.53417,
+   "lat": 41.6618,
+   "osm": "way/117239882"
+  },
+  {
+   "id": "english-philosophy-building",
+   "name": "English-Philosophy Building",
+   "short": "English-Philosophy Building",
+   "kind": "academic",
+   "codes": [
+    "EPB"
+   ],
+   "aliases": [],
+   "lng": -91.539956,
+   "lat": 41.660816,
+   "osm": "way/99572948"
+  },
+  {
+   "id": "maclean-hall",
+   "name": "MacLean Hall",
+   "short": "MacLean Hall",
+   "kind": "academic",
+   "codes": [
+    "MLH"
+   ],
+   "aliases": [],
+   "lng": -91.536556,
+   "lat": 41.660727,
+   "osm": "way/102239314"
+  },
+  {
+   "id": "pomerantz-center",
+   "name": "Pomerantz Center",
+   "short": "Pomerantz Center",
+   "kind": "academic",
+   "codes": [
+    "PC"
+   ],
+   "aliases": [],
+   "lng": -91.53573,
+   "lat": 41.66392,
+   "osm": "way/117239883"
+  },
+  {
+   "id": "jessup-hall",
+   "name": "Jessup Hall",
+   "short": "Jessup Hall",
+   "kind": "academic",
+   "codes": [
+    "JH"
+   ],
+   "aliases": [],
+   "lng": -91.536512,
+   "lat": 41.661893,
+   "osm": "way/102239316"
+  },
+  {
+   "id": "trowbridge-hall",
+   "name": "Trowbridge Hall",
+   "short": "Trowbridge Hall",
+   "kind": "academic",
+   "codes": [
+    "TH"
+   ],
+   "aliases": [],
+   "lng": -91.536656,
+   "lat": 41.663404,
+   "osm": "way/116272060"
+  },
+  {
+   "id": "blank-honors-center",
+   "name": "Blank Honors Center",
+   "short": "Blank Honors Center",
+   "kind": "academic",
+   "codes": [
+    "BHC"
+   ],
+   "aliases": [],
+   "lng": -91.53571,
+   "lat": 41.664388,
+   "osm": "way/155058622"
+  },
+  {
+   "id": "stuit-hall",
+   "name": "Stuit Hall",
+   "short": "Stuit Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Isolation Ward"
+   ],
+   "lng": -91.530537,
+   "lat": 41.662219,
+   "osm": "way/116418645"
+  },
+  {
+   "id": "sciences-library",
+   "name": "Sciences Library",
+   "short": "Sciences Library",
+   "kind": "library",
+   "codes": [
+    "SL"
+   ],
+   "aliases": [],
+   "lng": -91.533836,
+   "lat": 41.662042,
+   "osm": "way/116893717"
+  },
+  {
+   "id": "sprout-house",
+   "name": "Sprout House",
+   "short": "Sprout House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "A.W. Pratt House"
+   ],
+   "lng": -91.545204,
+   "lat": 41.65654,
+   "osm": "way/779348757"
+  }
+ ]
+}

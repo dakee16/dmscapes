@@ -1,0 +1,45 @@
+{
+  "codes": {
+    "ED": "way/251381846",
+    "SW": "way/251381847",
+    "GH": "way/251381776"
+  },
+  "places": {
+    "college-avenue-community-church": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "ED": "The DCS list spells it \"Graduation School of Education\"; the 2012 campus map has ED = Graduate School of Education, OSM's Graduate School of Education Building (way/251381846, 10 Seminary Place).",
+    "SW": "School of Social Work is OSM's Graduate School Of Social Work Building (way/251381847, 536 George Street).",
+    "GH": "The 2012 campus map places GH (Germanic, Russian, and East European Languages and Literatures) at 172 College Avenue, OSM's German House (way/251381776, addr 172 College Avenue).",
+    "college-avenue-community-church": "A church (Second Reformed Church), not somewhere classes or meals happen."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "demarest-hall -> college-avenue-student-center",
+        "leupp-hall -> college-avenue-student-center",
+        "mettler-hall -> college-avenue-student-center",
+        "stonier-hall -> college-avenue-student-center",
+        "tinsley-hall -> college-avenue-student-center"
+      ],
+      "maxRatio": 4.5,
+      "why": "The Student Center (way/251382259) has no mapped entrance; its centre snaps to the footway that enters it from Morrell Street on the south, so walks from the halls across College Avenue go down to Morrell Street and back up."
+    },
+    {
+      "pairs": [
+        "campbell-hall -> archibald-s-alexander-library"
+      ],
+      "maxRatio": 3.5,
+      "why": "George Street lies between Campbell Hall and the library; the walk follows it north to the mapped crossing, and the library (way/251381216) has no mapped entrance, so it ends at its centre from the footways and steps on its north side."
+    },
+    {
+      "pairs": [
+        "demarest-hall -> brower-commons"
+      ],
+      "maxRatio": 3,
+      "why": "Brower Commons (relation/19181000) has no mapped entrance; its centre snaps to the sidewalk on its west side, so the walk from Demarest crosses College Avenue and goes round the building."
+    }
+  ]
+}

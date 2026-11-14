@@ -1,0 +1,880 @@
+{
+ "collegeId": "rutgers",
+ "generatedAt": "2026-11-08T02:07:05.700Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Rutgers Digital Classroom Services, Building Identification Codes (College Avenue), with the older College Avenue codes from Rutgers University Planning and Development's New Brunswick campus map (2012–13, \"Building identification codes\", p. 15)",
+   "url": "https://dcs.rutgers.edu/learning-spaces/building-identification-codes/",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/rutgers.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -74.45391,
+  40.49425,
+  -74.44581,
+  40.50545
+ ],
+ "halls": [
+  {
+   "dormId": "brett-hall",
+   "name": "Brett Hall",
+   "lng": -74.449522,
+   "lat": 40.50266,
+   "pin": "name",
+   "osm": "way/251381323",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "gardner-a-sage-library",
+     "minutes": 3.1
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 4.3
+    }
+   }
+  },
+  {
+   "dormId": "campbell-hall",
+   "name": "Campbell Hall",
+   "lng": -74.451116,
+   "lat": 40.505453,
+   "pin": "name",
+   "osm": "way/251381376",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "archibald-s-alexander-library",
+     "minutes": 4.3
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 4.6
+    }
+   }
+  },
+  {
+   "dormId": "clothier-hall",
+   "name": "Clothier Hall",
+   "lng": -74.448544,
+   "lat": 40.503231,
+   "pin": "name",
+   "osm": "way/251381433",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "gardner-a-sage-library",
+     "minutes": 3.9
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 6.7
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 5.5
+    }
+   }
+  },
+  {
+   "dormId": "demarest-hall",
+   "name": "Demarest Hall",
+   "lng": -74.450303,
+   "lat": 40.503467,
+   "pin": "name",
+   "osm": "way/251381571",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "gardner-a-sage-library",
+     "minutes": 4.2
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 5
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 3.9
+    }
+   }
+  },
+  {
+   "dormId": "frelinghuysen-hall",
+   "name": "Frelinghuysen Hall",
+   "lng": -74.448439,
+   "lat": 40.503959,
+   "pin": "name",
+   "osm": "way/251381712",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "gardner-a-sage-library",
+     "minutes": 4.6
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 7
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 5.8
+    }
+   }
+  },
+  {
+   "dormId": "hardenbergh-hall",
+   "name": "Hardenbergh Hall",
+   "lng": -74.449813,
+   "lat": 40.504689,
+   "pin": "name",
+   "osm": "way/251381852",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "archibald-s-alexander-library",
+     "minutes": 5.4
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 6.8
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 5.4
+    }
+   }
+  },
+  {
+   "dormId": "hegeman-hall",
+   "name": "Hegeman Hall",
+   "lng": -74.449049,
+   "lat": 40.503409,
+   "pin": "name",
+   "osm": "way/251381856",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "gardner-a-sage-library",
+     "minutes": 3.6
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 5.3
+    }
+   }
+  },
+  {
+   "dormId": "honors-college",
+   "name": "Honors College",
+   "lng": -74.447174,
+   "lat": 40.502402,
+   "pin": "name",
+   "osm": "way/372377096",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "gardner-a-sage-library",
+     "minutes": 4.1
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 9.1
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 7.9
+    }
+   }
+  },
+  {
+   "dormId": "leupp-hall",
+   "name": "Leupp Hall",
+   "lng": -74.449642,
+   "lat": 40.503828,
+   "pin": "name",
+   "osm": "way/251381951",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "archibald-s-alexander-library",
+     "minutes": 5.8
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 5.4
+    }
+   }
+  },
+  {
+   "dormId": "mettler-hall",
+   "name": "Mettler Hall",
+   "lng": -74.45066,
+   "lat": 40.502932,
+   "pin": "name",
+   "osm": "way/251382123",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "archibald-s-alexander-library",
+     "minutes": 4.8
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 3.9
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 2.7
+    }
+   }
+  },
+  {
+   "dormId": "pell-hall",
+   "name": "Pell Hall",
+   "lng": -74.449375,
+   "lat": 40.503879,
+   "pin": "name",
+   "osm": "way/251382212",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "gardner-a-sage-library",
+     "minutes": 5
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 5.2
+    }
+   }
+  },
+  {
+   "dormId": "sojourner-truth-apartments",
+   "name": "Sojourner Truth Apartments",
+   "lng": -74.44864,
+   "lat": 40.4992,
+   "pin": "name",
+   "osm": "way/436905035",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "gardner-a-sage-library",
+     "minutes": 6.2
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 10.7
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 9.9
+    }
+   }
+  },
+  {
+   "dormId": "stonier-hall",
+   "name": "Stonier Hall",
+   "lng": -74.451226,
+   "lat": 40.503189,
+   "pin": "name",
+   "osm": "relation/19181001",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "archibald-s-alexander-library",
+     "minutes": 4
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 3.1
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 1.9
+    }
+   }
+  },
+  {
+   "dormId": "tinsley-hall",
+   "name": "Tinsley Hall",
+   "lng": -74.45015,
+   "lat": 40.502431,
+   "pin": "name",
+   "osm": "way/251382357",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "gardner-a-sage-library",
+     "minutes": 3.1
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 5.8
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 4.7
+    }
+   }
+  },
+  {
+   "dormId": "university-center-easton-avenue",
+   "name": "University Center at Easton Avenue",
+   "lng": -74.447606,
+   "lat": 40.496937,
+   "pin": "name",
+   "osm": "way/251382368",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "gardner-a-sage-library",
+     "minutes": 8.5
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 13.1
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 12.3
+    }
+   }
+  },
+  {
+   "dormId": "wessels-hall",
+   "name": "Wessels Hall",
+   "lng": -74.44976,
+   "lat": 40.503626,
+   "pin": "name",
+   "osm": "way/251382390",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "gardner-a-sage-library",
+     "minutes": 3.7
+    },
+    "gym": {
+     "placeId": "college-avenue-gym",
+     "minutes": 5.3
+    },
+    "dining": {
+     "placeId": "brower-commons",
+     "minutes": 4.2
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "archibald-s-alexander-library",
+   "name": "Archibald S. Alexander Library",
+   "short": "Archibald S. Alexander Library",
+   "kind": "library",
+   "codes": [
+    "AL"
+   ],
+   "aliases": [
+    "Alexander Library",
+    "Alexander Library, Archibald S."
+   ],
+   "lng": -74.452429,
+   "lat": 40.504982,
+   "osm": "way/251381216"
+  },
+  {
+   "id": "college-avenue-gym",
+   "name": "College Avenue Gym",
+   "short": "College Avenue Gym",
+   "kind": "gym",
+   "codes": [
+    "CAG"
+   ],
+   "aliases": [],
+   "lng": -74.452787,
+   "lat": 40.503218,
+   "osm": "way/251381434"
+  },
+  {
+   "id": "brower-commons",
+   "name": "Brower Commons",
+   "short": "Brower Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "University Commons, College Avenue"
+   ],
+   "lng": -74.451723,
+   "lat": 40.503752,
+   "osm": "relation/19181000"
+  },
+  {
+   "id": "college-avenue-student-center",
+   "name": "College Avenue Student Center",
+   "short": "College Avenue Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Rutgers Student Center"
+   ],
+   "lng": -74.452185,
+   "lat": 40.50264,
+   "osm": "way/251382259"
+  },
+  {
+   "id": "zimmerli-art-museum",
+   "name": "Zimmerli Art Museum",
+   "short": "Zimmerli Art Museum",
+   "kind": "academic",
+   "codes": [
+    "ZAM"
+   ],
+   "aliases": [],
+   "lng": -74.44581,
+   "lat": 40.500078,
+   "osm": "way/251382381"
+  },
+  {
+   "id": "scott-hall",
+   "name": "Scott Hall",
+   "short": "Scott Hall",
+   "kind": "academic",
+   "codes": [
+    "SC"
+   ],
+   "aliases": [],
+   "lng": -74.447607,
+   "lat": 40.499834,
+   "osm": "way/251382286"
+  },
+  {
+   "id": "voorhees-hall",
+   "name": "Voorhees Hall",
+   "short": "Voorhees Hall",
+   "kind": "academic",
+   "codes": [
+    "VH"
+   ],
+   "aliases": [],
+   "lng": -74.446305,
+   "lat": 40.50002,
+   "osm": "way/251382382"
+  },
+  {
+   "id": "rutgers-academic-building-east-wing",
+   "name": "Rutgers Academic Building - East Wing",
+   "short": "Rutgers Academic Building - East Wing",
+   "kind": "academic",
+   "codes": [
+    "ABE"
+   ],
+   "aliases": [],
+   "lng": -74.447855,
+   "lat": 40.502105,
+   "osm": "way/441863927"
+  },
+  {
+   "id": "rutgers-academic-building-west-wing",
+   "name": "Rutgers Academic Building - West Wing",
+   "short": "Rutgers Academic Building - West Wing",
+   "kind": "academic",
+   "codes": [
+    "ABW"
+   ],
+   "aliases": [],
+   "lng": -74.448346,
+   "lat": 40.501842,
+   "osm": "way/441863926"
+  },
+  {
+   "id": "murray-hall",
+   "name": "Murray Hall",
+   "short": "Murray Hall",
+   "kind": "academic",
+   "codes": [
+    "MU"
+   ],
+   "aliases": [],
+   "lng": -74.446571,
+   "lat": 40.500654,
+   "osm": "way/251382144"
+  },
+  {
+   "id": "graduate-school-of-education-building",
+   "name": "Graduate School of Education Building",
+   "short": "Graduate School of Education Building",
+   "kind": "academic",
+   "codes": [
+    "ED"
+   ],
+   "aliases": [
+    "Graduation School of Education"
+   ],
+   "lng": -74.447066,
+   "lat": 40.501491,
+   "osm": "way/251381846"
+  },
+  {
+   "id": "school-of-communication-and-information",
+   "name": "School of Communication and Information",
+   "short": "School of Communication and Information",
+   "kind": "academic",
+   "codes": [
+    "CI"
+   ],
+   "aliases": [],
+   "lng": -74.453174,
+   "lat": 40.505268,
+   "osm": "way/251382276"
+  },
+  {
+   "id": "van-dyck-hall",
+   "name": "Van Dyck Hall",
+   "short": "Van Dyck Hall",
+   "kind": "academic",
+   "codes": [
+    "VD"
+   ],
+   "aliases": [],
+   "lng": -74.447938,
+   "lat": 40.50072,
+   "osm": "way/251382375"
+  },
+  {
+   "id": "gardner-a-sage-library",
+   "name": "Gardner A Sage Library",
+   "short": "Gardner A Sage Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Sage Library"
+   ],
+   "lng": -74.448917,
+   "lat": 40.501706,
+   "osm": "way/88914214"
+  },
+  {
+   "id": "miller-hall",
+   "name": "Miller Hall",
+   "short": "Miller Hall",
+   "kind": "academic",
+   "codes": [
+    "MH"
+   ],
+   "aliases": [],
+   "lng": -74.447882,
+   "lat": 40.49794,
+   "osm": "way/251382140"
+  },
+  {
+   "id": "college-of-nursing",
+   "name": "College Of Nursing",
+   "short": "College Of Nursing",
+   "kind": "academic",
+   "codes": [
+    "NUR"
+   ],
+   "aliases": [
+    "College of Nursing Building (110 Paterson Street)"
+   ],
+   "lng": -74.448412,
+   "lat": 40.494249,
+   "osm": "way/251381438"
+  },
+  {
+   "id": "kirkpatrick-chapel",
+   "name": "Kirkpatrick Chapel",
+   "short": "Kirkpatrick Chapel",
+   "kind": "academic",
+   "codes": [
+    "KC"
+   ],
+   "aliases": [
+    "Sophia Astley Kirkpatrick Memorial Chapel"
+   ],
+   "lng": -74.445844,
+   "lat": 40.498922,
+   "osm": "way/251381943"
+  },
+  {
+   "id": "old-queens",
+   "name": "Old Queens",
+   "short": "Old Queens",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Queens Building"
+   ],
+   "lng": -74.446268,
+   "lat": 40.498759,
+   "osm": "way/251382204"
+  },
+  {
+   "id": "milledoler-hall",
+   "name": "Milledoler Hall",
+   "short": "Milledoler Hall",
+   "kind": "academic",
+   "codes": [
+    "MI"
+   ],
+   "aliases": [],
+   "lng": -74.446972,
+   "lat": 40.501041,
+   "osm": "way/251382139"
+  },
+  {
+   "id": "new-jersey-hall",
+   "name": "New Jersey Hall",
+   "short": "New Jersey Hall",
+   "kind": "academic",
+   "codes": [
+    "NJ"
+   ],
+   "aliases": [],
+   "lng": -74.446968,
+   "lat": 40.499565,
+   "osm": "way/251382162"
+  },
+  {
+   "id": "james-bishop-house",
+   "name": "James Bishop House",
+   "short": "James Bishop House",
+   "kind": "academic",
+   "codes": [
+    "BH"
+   ],
+   "aliases": [
+    "Bishop House"
+   ],
+   "lng": -74.449762,
+   "lat": 40.503088,
+   "osm": "way/251381304"
+  },
+  {
+   "id": "graduate-school-of-social-work-building",
+   "name": "Graduate School Of Social Work Building",
+   "short": "Graduate School Of Social Work Building",
+   "kind": "academic",
+   "codes": [
+    "SW"
+   ],
+   "aliases": [
+    "School of Social Work"
+   ],
+   "lng": -74.446278,
+   "lat": 40.501336,
+   "osm": "way/251381847"
+  },
+  {
+   "id": "geology-hall",
+   "name": "Geology Hall",
+   "short": "Geology Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Geological Hall"
+   ],
+   "lng": -74.446699,
+   "lat": 40.49865,
+   "osm": "way/251381757"
+  },
+  {
+   "id": "mckinney-hall",
+   "name": "McKinney Hall",
+   "short": "McKinney Hall",
+   "kind": "academic",
+   "codes": [
+    "MK"
+   ],
+   "aliases": [],
+   "lng": -74.449836,
+   "lat": 40.498633,
+   "osm": "way/251382098"
+  },
+  {
+   "id": "sas-deans-office-building",
+   "name": "SAS Dean's Office Building",
+   "short": "SAS Dean's Office Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Faculty of Arts and Sciences Dean's Office"
+   ],
+   "lng": -74.447131,
+   "lat": 40.499431,
+   "osm": "way/251382265"
+  },
+  {
+   "id": "school-of-social-work-annex-b",
+   "name": "School of Social Work Annex B",
+   "short": "School of Social Work Annex B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Riverstede",
+    "Demarest House"
+   ],
+   "lng": -74.446591,
+   "lat": 40.501829,
+   "osm": "way/251382314"
+  },
+  {
+   "id": "army-rotc",
+   "name": "Army ROTC",
+   "short": "Army ROTC",
+   "kind": "academic",
+   "codes": [
+    "ARM"
+   ],
+   "aliases": [],
+   "lng": -74.452239,
+   "lat": 40.504081,
+   "osm": "way/251381232"
+  },
+  {
+   "id": "bildner-center-for-the-study-of-jewish-life",
+   "name": "Bildner Center For The Study Of Jewish Life",
+   "short": "Bildner Center For The Study Of Jewish Life",
+   "kind": "academic",
+   "codes": [
+    "CJS"
+   ],
+   "aliases": [
+    "Bildner Center for the Study of Jewish Life, Allen and Joan"
+   ],
+   "lng": -74.447565,
+   "lat": 40.498131,
+   "osm": "way/251381274"
+  },
+  {
+   "id": "global-programs-office-building",
+   "name": "Global Programs Office Building",
+   "short": "Global Programs Office Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Center for Global Education"
+   ],
+   "lng": -74.450565,
+   "lat": 40.501441,
+   "osm": "way/251381840"
+  },
+  {
+   "id": "26-mine-street-office-building",
+   "name": "26 Mine Street Office Building",
+   "short": "26 Mine Street Office Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Parking and Transportation Services Building"
+   ],
+   "lng": -74.45063,
+   "lat": 40.500163,
+   "osm": "way/251382428"
+  },
+  {
+   "id": "sas-office-of-undergraduate-education",
+   "name": "SAS Office of Undergraduate Education",
+   "short": "SAS Office of Undergraduate Education",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "University College Dean's Office"
+   ],
+   "lng": -74.447454,
+   "lat": 40.49928,
+   "osm": "way/251382271"
+  },
+  {
+   "id": "german-house",
+   "name": "German House",
+   "short": "German House",
+   "kind": "academic",
+   "codes": [
+    "GH"
+   ],
+   "aliases": [
+    "Germanic, Russian, and East European Languages and Literatures – 172 College Avenue"
+   ],
+   "lng": -74.453506,
+   "lat": 40.504186,
+   "osm": "way/251381776"
+  },
+  {
+   "id": "huntington-house",
+   "name": "Huntington House",
+   "short": "Huntington House",
+   "kind": "academic",
+   "codes": [
+    "HU"
+   ],
+   "aliases": [],
+   "lng": -74.453908,
+   "lat": 40.504707,
+   "osm": "way/251382273"
+  },
+  {
+   "id": "center-for-historical-analysis-building",
+   "name": "Center For Historical Analysis Building",
+   "short": "Center For Historical Analysis Building",
+   "kind": "academic",
+   "codes": [
+    "CHA"
+   ],
+   "aliases": [
+    "Center for Historical Analysis"
+   ],
+   "lng": -74.449991,
+   "lat": 40.500879,
+   "osm": "way/251381393"
+  }
+ ]
+}

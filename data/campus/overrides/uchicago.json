@@ -1,0 +1,226 @@
+{
+  "halls": {
+    "max-palevsky": {
+      "pin": [
+        -87.59984,
+        41.792976
+      ]
+    }
+  },
+  "places": {
+    "center-for-care-and-discovery": {
+      "hide": true
+    },
+    "duchossois-center-for-advanced-medicine": {
+      "hide": true
+    },
+    "bernard-a-mitchell-hospital": {
+      "hide": true
+    },
+    "comer-childrens-hospital": {
+      "hide": true
+    },
+    "comer-childrens-hospital-202690810": {
+      "hide": true
+    },
+    "chicago-lying-in-hospital": {
+      "hide": true
+    },
+    "wyler-childrens-hospital": {
+      "hide": true
+    },
+    "rubloff-intensive-care": {
+      "hide": true
+    },
+    "surgery-brain": {
+      "hide": true
+    },
+    "goldblatt-pavilion": {
+      "hide": true
+    },
+    "goldblatt": {
+      "hide": true
+    },
+    "peck-pavilion": {
+      "hide": true
+    },
+    "mri": {
+      "hide": true
+    },
+    "bobs-roberts": {
+      "hide": true
+    },
+    "gilman-smith": {
+      "hide": true
+    },
+    "hicks-mcelwee": {
+      "hide": true
+    },
+    "uchicago-student-wellness-center": {
+      "hide": true
+    },
+    "laboratory-middle-school": {
+      "hide": true
+    },
+    "sunny-gymnasium": {
+      "hide": true
+    },
+    "university-high-school": {
+      "hide": true
+    },
+    "blaine-hall": {
+      "hide": true
+    },
+    "belfield-hall": {
+      "hide": true
+    },
+    "kovler-gymnasium": {
+      "hide": true
+    },
+    "gordon-parks-arts-hall": {
+      "hide": true
+    },
+    "u-of-c-nursery-school": {
+      "hide": true
+    },
+    "u-of-c-nursery-school-144061596": {
+      "hide": true
+    },
+    "uchicago-child-development-center-drexel": {
+      "hide": true
+    },
+    "chicago-theological-seminary": {
+      "hide": true
+    },
+    "american-school": {
+      "hide": true
+    },
+    "the-study-at-the-university-of-chicago": {
+      "hide": true
+    },
+    "quadrangle-club": {
+      "hide": true
+    },
+    "university-bookstore": {
+      "hide": true
+    },
+    "university-press-building": {
+      "hide": true
+    },
+    "rohr-chabad-jewish-center": {
+      "hide": true
+    },
+    "newberger-hillel-center": {
+      "hide": true
+    },
+    "calvert-house": {
+      "hide": true
+    },
+    "nsit-office": {
+      "hide": true
+    },
+    "concert-office": {
+      "hide": true
+    },
+    "office-of-multicultural-student-affairs": {
+      "hide": true
+    },
+    "mrs-facility": {
+      "hide": true
+    },
+    "university-of-chicago-auto-service-facility": {
+      "hide": true
+    },
+    "woodlawn-social-services-center": {
+      "hide": true
+    },
+    "edelstone-center": {
+      "hide": true
+    },
+    "molecular-engineering-modular-offices": {
+      "hide": true
+    },
+    "6045-kenwood-building": {
+      "hide": true
+    },
+    "stagg-field": {
+      "hide": true
+    },
+    "cobb-gate": {
+      "hide": true
+    },
+    "mitchell-tower": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "max-palevsky": "OSM maps Max Palevsky Residential Commons as East, Central and West; pinned on Max Palevsky Commons Central (OSM way/153266965, 1101 East 56th Street).",
+    "center-for-care-and-discovery": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "duchossois-center-for-advanced-medicine": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "bernard-a-mitchell-hospital": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "comer-childrens-hospital": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "comer-childrens-hospital-202690810": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "chicago-lying-in-hospital": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "wyler-childrens-hospital": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "rubloff-intensive-care": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "surgery-brain": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "goldblatt-pavilion": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "goldblatt": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "peck-pavilion": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "mri": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "bobs-roberts": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "gilman-smith": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "hicks-mcelwee": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "uchicago-student-wellness-center": "UChicago Medicine hospital or clinic building (or the student wellness centre), not somewhere undergraduate classes happen.",
+    "laboratory-middle-school": "A Laboratory Schools (K-12) building, not a university class building.",
+    "sunny-gymnasium": "A Laboratory Schools (K-12) building, not a university class building.",
+    "university-high-school": "A Laboratory Schools (K-12) building, not a university class building.",
+    "blaine-hall": "A Laboratory Schools (K-12) building, not a university class building.",
+    "belfield-hall": "A Laboratory Schools (K-12) building, not a university class building.",
+    "kovler-gymnasium": "A Laboratory Schools (K-12) building, not a university class building.",
+    "gordon-parks-arts-hall": "A Laboratory Schools (K-12) building, not a university class building.",
+    "u-of-c-nursery-school": "Childcare, not somewhere classes happen.",
+    "u-of-c-nursery-school-144061596": "Childcare, not somewhere classes happen.",
+    "uchicago-child-development-center-drexel": "Childcare, not somewhere classes happen.",
+    "chicago-theological-seminary": "A separate institution's building (Chicago Theological Seminary; the American School), not a university class building.",
+    "american-school": "A separate institution's building (Chicago Theological Seminary; the American School), not a university class building.",
+    "the-study-at-the-university-of-chicago": "A hotel, the faculty club, the bookstore or the press, not somewhere classes happen.",
+    "quadrangle-club": "A hotel, the faculty club, the bookstore or the press, not somewhere classes happen.",
+    "university-bookstore": "A hotel, the faculty club, the bookstore or the press, not somewhere classes happen.",
+    "university-press-building": "A hotel, the faculty club, the bookstore or the press, not somewhere classes happen.",
+    "rohr-chabad-jewish-center": "A religious-life building, not somewhere classes happen.",
+    "newberger-hillel-center": "A religious-life building, not somewhere classes happen.",
+    "calvert-house": "A religious-life building, not somewhere classes happen.",
+    "nsit-office": "Administrative, student-affairs or service building, not somewhere classes happen.",
+    "concert-office": "Administrative, student-affairs or service building, not somewhere classes happen.",
+    "office-of-multicultural-student-affairs": "Administrative, student-affairs or service building, not somewhere classes happen.",
+    "mrs-facility": "Administrative, student-affairs or service building, not somewhere classes happen.",
+    "university-of-chicago-auto-service-facility": "Administrative, student-affairs or service building, not somewhere classes happen.",
+    "woodlawn-social-services-center": "Administrative, student-affairs or service building, not somewhere classes happen.",
+    "edelstone-center": "Administrative, student-affairs or service building, not somewhere classes happen.",
+    "molecular-engineering-modular-offices": "Administrative, student-affairs or service building, not somewhere classes happen.",
+    "6045-kenwood-building": "Administrative, student-affairs or service building, not somewhere classes happen.",
+    "stagg-field": "An athletics field, a gate or a tower, not a building with classes.",
+    "cobb-gate": "An athletics field, a gate or a tower, not a building with classes.",
+    "mitchell-tower": "An athletics field, a gate or a tower, not a building with classes."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "snell-hitchcock -> william-eckhardt-research-center",
+        "snell-hitchcock -> henry-hinds-laboratory-for-geophysical-sciences",
+        "snell-hitchcock -> biopsychology-science-building"
+      ],
+      "maxRatio": 3.5,
+      "why": "Snell-Hitchcock's mapped door opens onto the Main Quadrangle to its south, and the science buildings just north of it across 57th Street are reached by leaving the quad through its Ellis Avenue gate and going round."
+    },
+    {
+      "pairs": [
+        "max-palevsky -> william-eckhardt-research-center",
+        "max-palevsky -> accelerator-building"
+      ],
+      "maxRatio": 3.5,
+      "why": "Max Palevsky Central's mapped entrance is on 56th Street, and the Eckhardt Research Center and Accelerator Building have their mapped doors on their far western sides off Ellis Avenue, so walks go along 56th Street and round those buildings."
+    }
+  ]
+}

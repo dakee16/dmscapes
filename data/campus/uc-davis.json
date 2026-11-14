@@ -1,0 +1,1380 @@
+{
+ "collegeId": "uc-davis",
+ "generatedAt": "2026-11-13T15:52:39.648Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/uc-davis.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -121.7667,
+  38.53095,
+  -121.73465,
+  38.5469
+ ],
+ "halls": [
+  {
+   "dormId": "standard-10x20-halls",
+   "name": "Standard 10 x 20 Halls (Miller, Alder, Kearney, Laben, Thompson)",
+   "lng": -121.75777,
+   "lat": 38.54597,
+   "pin": "manual",
+   "osm": "way/25475921",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "activities-and-recreation-center",
+     "minutes": 4.8
+    },
+    "library": {
+     "placeId": "shields-library",
+     "minutes": 16.3
+    },
+    "dining": {
+     "placeId": "segundo-dining-commons",
+     "minutes": 3.1
+    }
+   }
+  },
+  {
+   "dormId": "classic-halls",
+   "name": "Classic 10.5 x 13.5 Halls (Gilmore, Bixby, Malcolm, Ryerson)",
+   "lng": -121.75744,
+   "lat": 38.54442,
+   "pin": "manual",
+   "osm": "way/25292039",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "activities-and-recreation-center",
+     "minutes": 3.8
+    },
+    "library": {
+     "placeId": "shields-library",
+     "minutes": 13.8
+    },
+    "dining": {
+     "placeId": "segundo-dining-commons",
+     "minutes": 0.9
+    }
+   }
+  },
+  {
+   "dormId": "mid-size-halls",
+   "name": "Mid-Size 11 x 15 Halls (Currant, Live Oak, Wall, Potter, Campbell, Sequoia, Madrone)",
+   "lng": -121.75846,
+   "lat": 38.53508,
+   "pin": "manual",
+   "osm": "way/72644550",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "recreation-pool-bath-house",
+     "minutes": 11
+    },
+    "library": {
+     "placeId": "shields-library",
+     "minutes": 14
+    },
+    "dining": {
+     "placeId": "tercero-commons",
+     "minutes": 1.9
+    }
+   }
+  },
+  {
+   "dormId": "suite-style-halls",
+   "name": "Suite-Style Halls (Yosemite, Tahoe, Shasta, Emerson)",
+   "lng": -121.76336,
+   "lat": 38.5469,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "activities-and-recreation-center",
+     "minutes": 9.2
+    },
+    "library": {
+     "placeId": "shields-library",
+     "minutes": 23.6
+    },
+    "dining": {
+     "placeId": "segundo-dining-commons",
+     "minutes": 9.8
+    }
+   }
+  },
+  {
+   "dormId": "regan-hall",
+   "name": "Regan Hall",
+   "lng": -121.75673,
+   "lat": 38.54417,
+   "pin": "manual",
+   "osm": "way/43092112",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "activities-and-recreation-center",
+     "minutes": 4.5
+    },
+    "library": {
+     "placeId": "shields-library",
+     "minutes": 12.4
+    },
+    "dining": {
+     "placeId": "segundo-dining-commons",
+     "minutes": 2.5
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "bainer-hall",
+   "name": "Bainer Hall",
+   "short": "Bainer Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.753269,
+   "lat": 38.537203,
+   "osm": "way/25020794"
+  },
+  {
+   "id": "activities-and-recreation-center",
+   "name": "Activities and Recreation Center",
+   "short": "Activities and Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.759645,
+   "lat": 38.542907,
+   "osm": "way/25292186"
+  },
+  {
+   "id": "shields-library",
+   "name": "Shields Library",
+   "short": "Shields Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.749127,
+   "lat": 38.539741,
+   "osm": "relation/18189"
+  },
+  {
+   "id": "haring-hall",
+   "name": "Haring Hall",
+   "short": "Haring Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.753521,
+   "lat": 38.539819,
+   "osm": "way/25229225"
+  },
+  {
+   "id": "memorial-union",
+   "name": "Memorial Union",
+   "short": "Memorial Union",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.749547,
+   "lat": 38.542328,
+   "osm": "way/26337255"
+  },
+  {
+   "id": "social-sciences-and-humanities-building",
+   "name": "Social Sciences & Humanities Building",
+   "short": "Social Sciences & Humanities Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Death Star"
+   ],
+   "lng": -121.74753,
+   "lat": 38.543148,
+   "osm": "relation/5141512"
+  },
+  {
+   "id": "academic-surge-building",
+   "name": "Academic Surge Building",
+   "short": "Academic Surge Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.752929,
+   "lat": 38.535304,
+   "osm": "way/25303850"
+  },
+  {
+   "id": "tupper-hall",
+   "name": "Tupper Hall",
+   "short": "Tupper Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.764799,
+   "lat": 38.53398,
+   "osm": "way/25268206"
+  },
+  {
+   "id": "kemper-hall",
+   "name": "Kemper Hall",
+   "short": "Kemper Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Engineering college 工程学院"
+   ],
+   "lng": -121.754923,
+   "lat": 38.536997,
+   "osm": "way/24411965"
+  },
+  {
+   "id": "king-hall",
+   "name": "King Hall",
+   "short": "King Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.749742,
+   "lat": 38.535963,
+   "osm": "relation/1460389"
+  },
+  {
+   "id": "hickey-gym",
+   "name": "Hickey Gym",
+   "short": "Hickey Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.748703,
+   "lat": 38.543805,
+   "osm": "way/43007428"
+  },
+  {
+   "id": "mondavi-center",
+   "name": "Mondavi Center",
+   "short": "Mondavi Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.749185,
+   "lat": 38.534397,
+   "osm": "way/25303844"
+  },
+  {
+   "id": "meyer-hall",
+   "name": "Meyer Hall",
+   "short": "Meyer Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.754539,
+   "lat": 38.534762,
+   "osm": "way/39998797"
+  },
+  {
+   "id": "veterinary-medicine-3a",
+   "name": "Veterinary Medicine 3A",
+   "short": "Veterinary Medicine 3A",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.765394,
+   "lat": 38.53265,
+   "osm": "way/27516696"
+  },
+  {
+   "id": "jan-shrem-and-maria-manetti-shrem-museum-of-art",
+   "name": "Jan Shrem and Maria Manetti Shrem Museum of Art",
+   "short": "Jan Shrem and Maria Manetti Shrem Museum of Art",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.747859,
+   "lat": 38.533484,
+   "osm": "relation/8278845"
+  },
+  {
+   "id": "briggs-hall",
+   "name": "Briggs Hall",
+   "short": "Briggs Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.756149,
+   "lat": 38.540166,
+   "osm": "relation/5145330"
+  },
+  {
+   "id": "young-hall",
+   "name": "Young Hall",
+   "short": "Young Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.747748,
+   "lat": 38.542398,
+   "osm": "relation/5644421"
+  },
+  {
+   "id": "neurosciences-building",
+   "name": "Neurosciences Building",
+   "short": "Neurosciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.734647,
+   "lat": 38.539053,
+   "osm": "way/36271339"
+  },
+  {
+   "id": "segundo-dining-commons",
+   "name": "Segundo Dining Commons",
+   "short": "Segundo Dining Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.758103,
+   "lat": 38.543947,
+   "osm": "way/25292078"
+  },
+  {
+   "id": "chemistry-building",
+   "name": "Chemistry Building",
+   "short": "Chemistry Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.751204,
+   "lat": 38.538232,
+   "osm": "relation/6829749"
+  },
+  {
+   "id": "katherine-esau-science-hall",
+   "name": "Katherine Esau Science Hall",
+   "short": "Katherine Esau Science Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.754812,
+   "lat": 38.539814,
+   "osm": "way/25304349"
+  },
+  {
+   "id": "thurman-laboratory",
+   "name": "Thurman Laboratory",
+   "short": "Thurman Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.766449,
+   "lat": 38.53279,
+   "osm": "way/25268072"
+  },
+  {
+   "id": "plant-and-environmental-sciences-building",
+   "name": "Plant and Environmental Sciences Building",
+   "short": "Plant and Environmental Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.752033,
+   "lat": 38.543424,
+   "osm": "way/25354999"
+  },
+  {
+   "id": "cruess-hall",
+   "name": "Cruess Hall",
+   "short": "Cruess Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.75416,
+   "lat": 38.543295,
+   "osm": "way/25304363"
+  },
+  {
+   "id": "robbins-hall",
+   "name": "Robbins Hall",
+   "short": "Robbins Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.751855,
+   "lat": 38.540561,
+   "osm": "way/25355681"
+  },
+  {
+   "id": "wickson-hall",
+   "name": "Wickson Hall",
+   "short": "Wickson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.751607,
+   "lat": 38.542049,
+   "osm": "way/25291850"
+  },
+  {
+   "id": "teaching-and-learning-complex",
+   "name": "Teaching and Learning Complex",
+   "short": "Teaching and Learning Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.753919,
+   "lat": 38.538696,
+   "osm": "way/993553435"
+  },
+  {
+   "id": "veterinary-medicine-3b",
+   "name": "Veterinary Medicine 3B",
+   "short": "Veterinary Medicine 3B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.762133,
+   "lat": 38.532731,
+   "osm": "way/180327036"
+  },
+  {
+   "id": "hunt-hall",
+   "name": "Hunt Hall",
+   "short": "Hunt Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.750725,
+   "lat": 38.543489,
+   "osm": "way/25229455"
+  },
+  {
+   "id": "green-hall",
+   "name": "Green Hall",
+   "short": "green",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "green"
+   ],
+   "lng": -121.75676,
+   "lat": 38.539612,
+   "osm": "way/25304342"
+  },
+  {
+   "id": "stanley-b-freeborn-hall",
+   "name": "Stanley B. Freeborn Hall",
+   "short": "Stanley B. Freeborn Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.750244,
+   "lat": 38.54259,
+   "osm": "way/25229419"
+  },
+  {
+   "id": "medical-sciences-1b",
+   "name": "Medical Sciences 1B",
+   "short": "Medical Sciences 1B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.763514,
+   "lat": 38.533507,
+   "osm": "way/25268097"
+  },
+  {
+   "id": "veterinary-medicine-2",
+   "name": "Veterinary Medicine 2",
+   "short": "Veterinary Medicine 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.763727,
+   "lat": 38.531326,
+   "osm": "way/27516738"
+  },
+  {
+   "id": "genome-and-biomedical-sciences-facility",
+   "name": "Genome and Biomedical Sciences Facility",
+   "short": "Genome and Biomedical Sciences Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.765185,
+   "lat": 38.535119,
+   "osm": "way/25268174"
+  },
+  {
+   "id": "tercero-commons",
+   "name": "Tercero Commons",
+   "short": "Tercero Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.75753,
+   "lat": 38.536205,
+   "osm": "way/26482811"
+  },
+  {
+   "id": "earth-and-physical-sciences",
+   "name": "Earth and Physical Sciences",
+   "short": "Earth and Physical Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.751623,
+   "lat": 38.535161,
+   "osm": "way/209297089"
+  },
+  {
+   "id": "valley-hall",
+   "name": "Valley Hall",
+   "short": "Valley Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.763733,
+   "lat": 38.532827,
+   "osm": "way/25268126"
+  },
+  {
+   "id": "voorhies-hall",
+   "name": "Voorhies Hall",
+   "short": "Voorhies Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.746971,
+   "lat": 38.54122,
+   "osm": "relation/2236852"
+  },
+  {
+   "id": "everson-hall",
+   "name": "Everson Hall",
+   "short": "Everson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.750255,
+   "lat": 38.538496,
+   "osm": "way/25303784"
+  },
+  {
+   "id": "hoagland-hall",
+   "name": "Hoagland Hall",
+   "short": "Hoagland Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.754539,
+   "lat": 38.542044,
+   "osm": "way/25229191"
+  },
+  {
+   "id": "hutchison-hall",
+   "name": "Hutchison Hall",
+   "short": "Hutchison Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.753694,
+   "lat": 38.540965,
+   "osm": "way/25304355"
+  },
+  {
+   "id": "maddy-lab",
+   "name": "Maddy Lab",
+   "short": "Maddy Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.766699,
+   "lat": 38.533357,
+   "osm": "way/25267893"
+  },
+  {
+   "id": "asmundson-hall",
+   "name": "Asmundson Hall",
+   "short": "Asmundson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.753343,
+   "lat": 38.541841,
+   "osm": "way/25880193"
+  },
+  {
+   "id": "george-hart-hall",
+   "name": "George Hart Hall",
+   "short": "Hart Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Hart Hall",
+    "Animal Science Building"
+   ],
+   "lng": -121.750859,
+   "lat": 38.540639,
+   "osm": "way/25291767"
+  },
+  {
+   "id": "physics",
+   "name": "Physics",
+   "short": "Physics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.751314,
+   "lat": 38.5366,
+   "osm": "way/25303821"
+  },
+  {
+   "id": "walker-hall",
+   "name": "Walker Hall",
+   "short": "Walker Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.750761,
+   "lat": 38.539703,
+   "osm": "way/25055476"
+  },
+  {
+   "id": "ghausi-hall",
+   "name": "Ghausi Hall",
+   "short": "Ghausi Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.753541,
+   "lat": 38.536133,
+   "osm": "way/25303873"
+  },
+  {
+   "id": "wright-hall",
+   "name": "Wright Hall",
+   "short": "Wright Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.747897,
+   "lat": 38.538748,
+   "osm": "way/25354602"
+  },
+  {
+   "id": "student-community-center",
+   "name": "Student Community Center",
+   "short": "Student Community Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.751658,
+   "lat": 38.539529,
+   "osm": "way/76700822"
+  },
+  {
+   "id": "jungerman-hall",
+   "name": "Jungerman Hall",
+   "short": "Jungerman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.752632,
+   "lat": 38.53643,
+   "osm": "way/25303879"
+  },
+  {
+   "id": "north-building",
+   "name": "North Building",
+   "short": "North Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.750948,
+   "lat": 38.533056,
+   "osm": "way/50666990"
+  },
+  {
+   "id": "olson-hall",
+   "name": "Olson Hall",
+   "short": "Olson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.74764,
+   "lat": 38.540013,
+   "osm": "way/25278660"
+  },
+  {
+   "id": "robert-mondavi-institute-for-wine-and-food-science",
+   "name": "Robert Mondavi Institute for Wine and Food Science",
+   "short": "Robert Mondavi Institute for Wine and Food Science",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.750608,
+   "lat": 38.532665,
+   "osm": "way/50666986"
+  },
+  {
+   "id": "medical-sciences-1c",
+   "name": "Medical Sciences 1C",
+   "short": "Medical Sciences 1C",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.763753,
+   "lat": 38.534321,
+   "osm": "way/25268114"
+  },
+  {
+   "id": "dutton-hall",
+   "name": "Dutton Hall",
+   "short": "Dutton Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.74773,
+   "lat": 38.541574,
+   "osm": "way/26338229"
+  },
+  {
+   "id": "wellman-hall",
+   "name": "Wellman Hall",
+   "short": "Wellman Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.751412,
+   "lat": 38.54134,
+   "osm": "way/25291802"
+  },
+  {
+   "id": "california-hall",
+   "name": "California Hall",
+   "short": "California Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.753082,
+   "lat": 38.541269,
+   "osm": "way/662229492"
+  },
+  {
+   "id": "resnick-center-for-agricultural-innovation",
+   "name": "Resnick Center for Agricultural Innovation",
+   "short": "Resnick Center for Agricultural Innovation",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.762792,
+   "lat": 38.538841,
+   "osm": "way/1391713297"
+  },
+  {
+   "id": "robert-mondavi-institute-brewery-winery-and-food-pilot-facility",
+   "name": "Robert Mondavi Institute Brewery, Winery, and Food Pilot Facility",
+   "short": "Robert Mondavi Institute Brewery, Winery, and Food Pilot Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.750793,
+   "lat": 38.531986,
+   "osm": "way/445115548"
+  },
+  {
+   "id": "chemistry-annex",
+   "name": "Chemistry Annex",
+   "short": "Chemistry Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.750494,
+   "lat": 38.537772,
+   "osm": "way/26338850"
+  },
+  {
+   "id": "mathematical-sciences-building",
+   "name": "Mathematical Sciences Building",
+   "short": "Mathematical Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.752751,
+   "lat": 38.535878,
+   "osm": "way/25354568"
+  },
+  {
+   "id": "ann-e-pitzer-center",
+   "name": "Ann E. Pitzer Center",
+   "short": "Ann E. Pitzer Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.746899,
+   "lat": 38.539476,
+   "osm": "way/391440159"
+  },
+  {
+   "id": "environmental-horticulture",
+   "name": "Environmental Horticulture",
+   "short": "Environmental Horticulture",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.747269,
+   "lat": 38.536406,
+   "osm": "way/368708306"
+  },
+  {
+   "id": "nelson-hall",
+   "name": "Nelson Hall",
+   "short": "Nelson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.746798,
+   "lat": 38.537552,
+   "osm": "way/43007381"
+  },
+  {
+   "id": "veihmeyer-hall",
+   "name": "Veihmeyer Hall",
+   "short": "Veihmeyer Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.752301,
+   "lat": 38.542939,
+   "osm": "way/25291920"
+  },
+  {
+   "id": "school-of-education",
+   "name": "School Of Education",
+   "short": "School Of Education",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.746954,
+   "lat": 38.540519,
+   "osm": "way/25354640"
+  },
+  {
+   "id": "storer-hall",
+   "name": "Storer Hall",
+   "short": "Storer Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.754613,
+   "lat": 38.54083,
+   "osm": "way/25304350"
+  },
+  {
+   "id": "mann-lab",
+   "name": "Mann Lab",
+   "short": "Mann Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.755707,
+   "lat": 38.54153,
+   "osm": "way/26321327"
+  },
+  {
+   "id": "surge-ii",
+   "name": "Surge II",
+   "short": "Surge II",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.754751,
+   "lat": 38.538689,
+   "osm": "way/25880164"
+  },
+  {
+   "id": "veterinary-medicine-3a-27516683",
+   "name": "Veterinary Medicine 3A",
+   "short": "Veterinary Medicine 3A",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.764689,
+   "lat": 38.532964,
+   "osm": "way/27516683"
+  },
+  {
+   "id": "maria-manetti-shrem-art-hall",
+   "name": "Maria Manetti Shrem Art Hall",
+   "short": "art",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "art"
+   ],
+   "lng": -121.748551,
+   "lat": 38.538968,
+   "osm": "way/25354570"
+  },
+  {
+   "id": "teaching-and-research-winery",
+   "name": "Teaching and Research Winery",
+   "short": "Teaching and Research Winery",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.751297,
+   "lat": 38.532095,
+   "osm": "way/586317606"
+  },
+  {
+   "id": "giedt-hall",
+   "name": "Giedt Hall",
+   "short": "Giedt Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.755481,
+   "lat": 38.537721,
+   "osm": "way/32028445"
+  },
+  {
+   "id": "sensory-building",
+   "name": "Sensory Building",
+   "short": "Sensory Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.751649,
+   "lat": 38.532771,
+   "osm": "way/50666993"
+  },
+  {
+   "id": "roessler-hall",
+   "name": "Roessler Hall",
+   "short": "Roessler Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.751818,
+   "lat": 38.53704,
+   "osm": "way/25055412"
+  },
+  {
+   "id": "music",
+   "name": "Music",
+   "short": "Music",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.747446,
+   "lat": 38.539168,
+   "osm": "way/345135920"
+  },
+  {
+   "id": "uc-davis-school-of-veterinary-medicine",
+   "name": "UC Davis School of Veterinary Medicine",
+   "short": "UC Davis School of Veterinary Medicine",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.761531,
+   "lat": 38.532098,
+   "osm": "way/673683882"
+  },
+  {
+   "id": "dairy",
+   "name": "Dairy",
+   "short": "Dairy",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.759291,
+   "lat": 38.537366,
+   "osm": "way/39996664"
+  },
+  {
+   "id": "jackson-sustainable-winery",
+   "name": "Jackson Sustainable Winery",
+   "short": "Jackson Sustainable Winery",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.750975,
+   "lat": 38.531421,
+   "osm": "way/368708310"
+  },
+  {
+   "id": "clark-kerr-hall",
+   "name": "Clark Kerr Hall",
+   "short": "Clark Kerr Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.752015,
+   "lat": 38.54159,
+   "osm": "way/25055497"
+  },
+  {
+   "id": "sprocket-building",
+   "name": "Sprocket Building",
+   "short": "Sprocket Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.754929,
+   "lat": 38.542873,
+   "osm": "way/25291954"
+  },
+  {
+   "id": "medical-sciences-1d",
+   "name": "Medical Sciences 1D",
+   "short": "Medical Sciences 1D",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.765721,
+   "lat": 38.533594,
+   "osm": "way/25354554"
+  },
+  {
+   "id": "ravinder-and-kamaljeet-khaira-lecture-hall",
+   "name": "Ravinder and Kamaljeet Khaira Lecture Hall",
+   "short": "Ravinder and Kamaljeet Khaira Lecture Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.755898,
+   "lat": 38.539464,
+   "osm": "way/25595576"
+  },
+  {
+   "id": "art-annex",
+   "name": "Art Annex",
+   "short": "Art Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.74867,
+   "lat": 38.538395,
+   "osm": "way/30471045"
+  },
+  {
+   "id": "enology-laboratory-building",
+   "name": "Enology Laboratory Building",
+   "short": "Enology Laboratory Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.752349,
+   "lat": 38.542187,
+   "osm": "way/44814342"
+  },
+  {
+   "id": "south-hall",
+   "name": "South Hall",
+   "short": "South Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.748114,
+   "lat": 38.541203,
+   "osm": "way/26338214"
+  },
+  {
+   "id": "schalm-hall",
+   "name": "Schalm Hall",
+   "short": "Schalm Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.763913,
+   "lat": 38.533507,
+   "osm": "way/25229303"
+  },
+  {
+   "id": "north-hall",
+   "name": "North Hall",
+   "short": "North Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.748294,
+   "lat": 38.541791,
+   "osm": "way/26338202"
+  },
+  {
+   "id": "physical-and-data-sciences-building",
+   "name": "Physical and Data Sciences Building",
+   "short": "Physical and Data Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.750854,
+   "lat": 38.537315,
+   "osm": "way/25303795"
+  },
+  {
+   "id": "animal-sciences-teaching-facility-1",
+   "name": "Animal Sciences Teaching Facility 1",
+   "short": "Animal Sciences Teaching Facility 1",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.760518,
+   "lat": 38.537535,
+   "osm": "way/39996665"
+  },
+  {
+   "id": "peter-a-rock-hall-chemistry",
+   "name": "Peter A. Rock Hall (Chemistry)",
+   "short": "Peter A. Rock Hall (Chemistry)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.751504,
+   "lat": 38.53874,
+   "osm": "way/183692018"
+  },
+  {
+   "id": "sproul-hall",
+   "name": "Sproul Hall",
+   "short": "Sproul Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.747036,
+   "lat": 38.540005,
+   "osm": "way/25304381"
+  },
+  {
+   "id": "toomey-weight-room",
+   "name": "Toomey Weight Room",
+   "short": "Toomey Weight Room",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.748446,
+   "lat": 38.544327,
+   "osm": "way/253117071"
+  },
+  {
+   "id": "bowley-plant-science-teaching-facility",
+   "name": "Bowley Plant Science Teaching Facility",
+   "short": "Bowley Plant Science Teaching Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.763944,
+   "lat": 38.538479,
+   "osm": "way/43196725"
+  },
+  {
+   "id": "art-studio",
+   "name": "Art Studio",
+   "short": "Art Studio",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.748996,
+   "lat": 38.53813,
+   "osm": "way/378582118"
+  },
+  {
+   "id": "wyatt-theater",
+   "name": "Wyatt Theater",
+   "short": "Wyatt Theater",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.746721,
+   "lat": 38.53812,
+   "osm": "way/218964924"
+  },
+  {
+   "id": "engineering-unit-2-wind-tunnel",
+   "name": "Engineering Unit 2 Wind Tunnel",
+   "short": "Engineering Unit 2 Wind Tunnel",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.753742,
+   "lat": 38.537113,
+   "osm": "way/43990499"
+  },
+  {
+   "id": "olive-hall",
+   "name": "Olive Hall",
+   "short": "Olive Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.757131,
+   "lat": 38.535681,
+   "osm": "way/525662598"
+  },
+  {
+   "id": "max-b-kleiber-hall",
+   "name": "Max B. Kleiber Hall",
+   "short": "Max B. Kleiber Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.755252,
+   "lat": 38.540809,
+   "osm": "way/25420865"
+  },
+  {
+   "id": "robbins-hall-annex",
+   "name": "Robbins Hall Annex",
+   "short": "Robbins Hall Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.752286,
+   "lat": 38.541029,
+   "osm": "way/32518774"
+  },
+  {
+   "id": "recreation-pool-bath-house",
+   "name": "Recreation Pool Bath House",
+   "short": "Recreation Pool Bath House",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.761608,
+   "lat": 38.540177,
+   "osm": "way/42477762"
+  },
+  {
+   "id": "animal-sciences-teaching-facility-2",
+   "name": "Animal Sciences Teaching Facility 2",
+   "short": "Animal Sciences Teaching Facility 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.760134,
+   "lat": 38.53759,
+   "osm": "way/39996666"
+  },
+  {
+   "id": "hoagland-annex",
+   "name": "Hoagland Annex",
+   "short": "Hoagland Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.755167,
+   "lat": 38.541695,
+   "osm": "way/25229177"
+  },
+  {
+   "id": "human-and-community-development-computer-lab",
+   "name": "Human and Community Development Computer Lab",
+   "short": "Human and Community Development Computer Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.744564,
+   "lat": 38.541071,
+   "osm": "way/344883218"
+  },
+  {
+   "id": "tc2-and-3",
+   "name": "TC2 and 3",
+   "short": "TC2 and 3",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.753997,
+   "lat": 38.535427,
+   "osm": "way/41646675"
+  },
+  {
+   "id": "veterinary-medicine-2-378582123",
+   "name": "Veterinary Medicine 2",
+   "short": "Veterinary Medicine 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.76389,
+   "lat": 38.53095,
+   "osm": "way/378582123"
+  },
+  {
+   "id": "tc1",
+   "name": "TC1",
+   "short": "TC1",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.754238,
+   "lat": 38.535392,
+   "osm": "way/41646674"
+  },
+  {
+   "id": "cruess-annex",
+   "name": "Cruess Annex",
+   "short": "Cruess Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.754764,
+   "lat": 38.543046,
+   "osm": "way/378831388"
+  },
+  {
+   "id": "enology-laboratory-building-378842336",
+   "name": "Enology Laboratory Building",
+   "short": "Enology Laboratory Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.752288,
+   "lat": 38.541861,
+   "osm": "way/378842336"
+  },
+  {
+   "id": "medical-sciences-1e",
+   "name": "Medical Sciences 1E",
+   "short": "Medical Sciences 1E",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.765427,
+   "lat": 38.534102,
+   "osm": "way/347315429"
+  },
+  {
+   "id": "sprocket-annex",
+   "name": "Sprocket Annex",
+   "short": "Sprocket Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -121.754577,
+   "lat": 38.542791,
+   "osm": "way/603637005"
+  }
+ ]
+}

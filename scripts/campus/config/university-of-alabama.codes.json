@@ -1,0 +1,291 @@
+{
+ "name": "The University of Alabama Office of the Registrar, Building Abbreviations",
+ "url": "https://registrar.ua.edu/academics-policies/building-abbreviations/",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "AB",
+   "name": "Alston Hall"
+  },
+  {
+   "code": "AD",
+   "name": "Adams Hall"
+  },
+  {
+   "code": "AIME",
+   "name": "Alabama Institute Manufacturing Excellence"
+  },
+  {
+   "code": "ALH",
+   "name": "Autherine Lucy Hall"
+  },
+  {
+   "code": "BC",
+   "name": "B. B. Comer Hall"
+  },
+  {
+   "code": "BCDC",
+   "name": "Judy Bonner Child Development Center"
+  },
+  {
+   "code": "BD",
+   "name": "Bidgood Hall"
+  },
+  {
+   "code": "BE",
+   "name": "Bevill"
+  },
+  {
+   "code": "BL",
+   "name": "Bruno Library/Bashinsky Computer Center"
+  },
+  {
+   "code": "BOM",
+   "name": "Bureau of Mines"
+  },
+  {
+   "code": "BR",
+   "name": "Oliver \u2013 Barnard Hall"
+  },
+  {
+   "code": "BRYH",
+   "name": "Bryant Hall"
+  },
+  {
+   "code": "BW",
+   "name": "Barnwell Hall"
+  },
+  {
+   "code": "CA",
+   "name": "Carmichael Hall"
+  },
+  {
+   "code": "CCN",
+   "name": "Capstone College of Nursing Building"
+  },
+  {
+   "code": "CL",
+   "name": "Clark Hall"
+  },
+  {
+   "code": "CM",
+   "name": "Speech and Hearing Building"
+  },
+  {
+   "code": "CPH",
+   "name": "Capital Hall"
+  },
+  {
+   "code": "DI",
+   "name": "Dauphin Island"
+  },
+  {
+   "code": "DO",
+   "name": "Doster Hall"
+  },
+  {
+   "code": "EA",
+   "name": "East Annex"
+  },
+  {
+   "code": "EB",
+   "name": "English Building"
+  },
+  {
+   "code": "FA",
+   "name": "Farrah Hall"
+  },
+  {
+   "code": "FO",
+   "name": "Foster Auditorium"
+  },
+  {
+   "code": "GA",
+   "name": "Garland Hall"
+  },
+  {
+   "code": "GL",
+   "name": "Gallalee Hall"
+  },
+  {
+   "code": "GP",
+   "name": "Gordon Palmer Hall"
+  },
+  {
+   "code": "HC",
+   "name": "H. M. Comer (Mineral Industries Building)"
+  },
+  {
+   "code": "HN",
+   "name": "Honors Hall"
+  },
+  {
+   "code": "HO",
+   "name": "Houser Hall"
+  },
+  {
+   "code": "HR",
+   "name": "Hardaway Hall"
+  },
+  {
+   "code": "HW",
+   "name": "Hewson Hall"
+  },
+  {
+   "code": "JENG",
+   "name": "John England Jr. Hall"
+  },
+  {
+   "code": "LB",
+   "name": "Gorgas Library"
+  },
+  {
+   "code": "LI",
+   "name": "Little Hall"
+  },
+  {
+   "code": "LW",
+   "name": "Law Center"
+  },
+  {
+   "code": "LY",
+   "name": "Lloyd Hall"
+  },
+  {
+   "code": "MC",
+   "name": "Coleman Coliseum"
+  },
+  {
+   "code": "ML",
+   "name": "McClure Library"
+  },
+  {
+   "code": "MM",
+   "name": "Moody Music Building"
+  },
+  {
+   "code": "MP",
+   "name": "Martha Parham Hall (Continuing Education)"
+  },
+  {
+   "code": "MSB",
+   "name": "Math & Science Education Building"
+  },
+  {
+   "code": "NA",
+   "name": "Natatorium"
+  },
+  {
+   "code": "NERC",
+   "name": "North Engineering Research Center"
+  },
+  {
+   "code": "NL",
+   "name": "North Lawn Hall"
+  },
+  {
+   "code": "OS",
+   "name": "Osband"
+  },
+  {
+   "code": "PATY",
+   "name": "Paty Hall"
+  },
+  {
+   "code": "PH",
+   "name": "Reese Phifer Hall"
+  },
+  {
+   "code": "PRH",
+   "name": "Presidents Hall"
+  },
+  {
+   "code": "RH",
+   "name": "Russell Hall"
+  },
+  {
+   "code": "RJ",
+   "name": "Rowand-Johnson Building"
+  },
+  {
+   "code": "RL",
+   "name": "Rodgers\u2019 Library for Science and Engineering"
+  },
+  {
+   "code": "RS",
+   "name": "Rose Administration Building"
+  },
+  {
+   "code": "SC",
+   "name": "The Stallings Center"
+  },
+  {
+   "code": "SEC",
+   "name": "Science and Engineering Complex"
+  },
+  {
+   "code": "SERC",
+   "name": "South Engineering Research Center"
+  },
+  {
+   "code": "SCF",
+   "name": "Scientific Collections Facility"
+  },
+  {
+   "code": "SCIB",
+   "name": "Smart Communities & Innovation Building"
+  },
+  {
+   "code": "SHLB",
+   "name": "Shelby Hall"
+  },
+  {
+   "code": "SM",
+   "name": "Smith Hall"
+  },
+  {
+   "code": "SR",
+   "name": "Student Recreation Center"
+  },
+  {
+   "code": "SS",
+   "name": "Student Services Center"
+  },
+  {
+   "code": "TB",
+   "name": "To Be Announced"
+  },
+  {
+   "code": "TH",
+   "name": "Ten Hoor Hall"
+  },
+  {
+   "code": "TT",
+   "name": "Temple Tutwiler (Old Alumni)"
+  },
+  {
+   "code": "TN",
+   "name": "Tennis Courts"
+  },
+  {
+   "code": "TU",
+   "name": "Tuomey Hall"
+  },
+  {
+   "code": "TW",
+   "name": "Julia Tutwiler Hall"
+  },
+  {
+   "code": "WD",
+   "name": "Wade Hall"
+  },
+  {
+   "code": "WI",
+   "name": "Wilson Hall"
+  },
+  {
+   "code": "WO",
+   "name": "Woods Hall"
+  }
+ ]
+}

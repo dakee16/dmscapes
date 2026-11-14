@@ -1,0 +1,318 @@
+{
+ "collegeId": "uno",
+ "generatedAt": "2026-11-14T06:54:07.198Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "University of New Orleans, The Bulletin: Registration - Building Abbreviations",
+   "url": "https://www.uno.edu/registrar/bulletin/uno-bulletin",
+   "use": "building codes",
+   "read": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/uno.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -90.07186,
+  30.02502,
+  -90.06338,
+  30.03025
+ ],
+ "halls": [
+  {
+   "dormId": "pontchartrain-halls",
+   "name": "Pontchartrain Halls",
+   "lng": -90.064416,
+   "lat": 30.025817,
+   "pin": "manual",
+   "osm": "way/325943630",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "earl-k-long-library",
+     "minutes": 7.6
+    },
+    "gym": {
+     "placeId": "recreation-and-fitness-center",
+     "minutes": 7.9
+    },
+    "dining": {
+     "placeId": "university-center",
+     "minutes": 6.8
+    }
+   }
+  },
+  {
+   "dormId": "privateer-place",
+   "name": "Privateer Place",
+   "lng": -90.071862,
+   "lat": 30.030071,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "earl-k-long-library",
+     "minutes": 8.2
+    },
+    "gym": {
+     "placeId": "recreation-and-fitness-center",
+     "minutes": 11.6
+    },
+    "dining": {
+     "placeId": "university-center",
+     "minutes": 13
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "earl-k-long-library",
+   "name": "Earl K. Long Library",
+   "short": "Earl K. Long Library",
+   "kind": "library",
+   "codes": [
+    "LIB"
+   ],
+   "aliases": [],
+   "lng": -90.067115,
+   "lat": 30.027582,
+   "osm": "way/325943195"
+  },
+  {
+   "id": "science-building",
+   "name": "Science Building",
+   "short": "Science Building",
+   "kind": "academic",
+   "codes": [
+    "SC"
+   ],
+   "aliases": [],
+   "lng": -90.068224,
+   "lat": 30.026364,
+   "osm": "relation/4549822"
+  },
+  {
+   "id": "recreation-and-fitness-center",
+   "name": "Recreation and Fitness Center",
+   "short": "Recreation and Fitness Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -90.064594,
+   "lat": 30.03006,
+   "osm": "relation/4549821"
+  },
+  {
+   "id": "university-center",
+   "name": "University Center",
+   "short": "University Center",
+   "kind": "dining",
+   "codes": [
+    "UC"
+   ],
+   "aliases": [],
+   "lng": -90.064728,
+   "lat": 30.029276,
+   "osm": "way/325943388"
+  },
+  {
+   "id": "engineering-building",
+   "name": "Engineering Building",
+   "short": "Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "EN"
+   ],
+   "aliases": [],
+   "lng": -90.068385,
+   "lat": 30.025017,
+   "osm": "relation/4549817"
+  },
+  {
+   "id": "liberal-arts-building",
+   "name": "Liberal Arts Building",
+   "short": "Liberal Arts Building",
+   "kind": "academic",
+   "codes": [
+    "LA"
+   ],
+   "aliases": [],
+   "lng": -90.069059,
+   "lat": 30.029011,
+   "osm": "relation/4549820"
+  },
+  {
+   "id": "geology-and-psychology-building",
+   "name": "Geology and Psychology Building",
+   "short": "Geology and Psychology Building",
+   "kind": "academic",
+   "codes": [
+    "GP"
+   ],
+   "aliases": [],
+   "lng": -90.068934,
+   "lat": 30.026118,
+   "osm": "way/767739418"
+  },
+  {
+   "id": "human-performance-center",
+   "name": "Human Performance Center",
+   "short": "Human Performance Center",
+   "kind": "academic",
+   "codes": [
+    "HPC"
+   ],
+   "aliases": [],
+   "lng": -90.063378,
+   "lat": 30.025936,
+   "osm": "way/325943365"
+  },
+  {
+   "id": "performing-arts-center",
+   "name": "Performing Arts Center",
+   "short": "Performing Arts Center",
+   "kind": "academic",
+   "codes": [
+    "PAC"
+   ],
+   "aliases": [],
+   "lng": -90.065478,
+   "lat": 30.02713,
+   "osm": "way/325943380"
+  },
+  {
+   "id": "kirschman-hall",
+   "name": "Kirschman Hall",
+   "short": "Kirschman Hall",
+   "kind": "academic",
+   "codes": [
+    "KH"
+   ],
+   "aliases": [],
+   "lng": -90.066626,
+   "lat": 30.030229,
+   "osm": "way/325943371"
+  },
+  {
+   "id": "fine-arts-building",
+   "name": "Fine Arts Building",
+   "short": "Fine Arts Building",
+   "kind": "academic",
+   "codes": [
+    "FA"
+   ],
+   "aliases": [],
+   "lng": -90.069215,
+   "lat": 30.030252,
+   "osm": "relation/4549818"
+  },
+  {
+   "id": "milneburg-hall",
+   "name": "Milneburg Hall",
+   "short": "Milneburg Hall",
+   "kind": "academic",
+   "codes": [
+    "MH"
+   ],
+   "aliases": [
+    "Milneburg Hall (formerly Business Administration Building)"
+   ],
+   "lng": -90.066459,
+   "lat": 30.029678,
+   "osm": "way/325943378"
+  },
+  {
+   "id": "bicentennial-education-center",
+   "name": "Bicentennial Education Center",
+   "short": "Bicentennial Education Center",
+   "kind": "academic",
+   "codes": [
+    "ED"
+   ],
+   "aliases": [],
+   "lng": -90.069641,
+   "lat": 30.027848,
+   "osm": "way/325943189"
+  },
+  {
+   "id": "chemistry-sciences-annex",
+   "name": "Chemistry-Sciences Annex",
+   "short": "Chemistry-Sciences Annex",
+   "kind": "academic",
+   "codes": [
+    "CSB"
+   ],
+   "aliases": [
+    "Chemical Sciences Building"
+   ],
+   "lng": -90.067737,
+   "lat": 30.026715,
+   "osm": "way/1494034598"
+  },
+  {
+   "id": "computer-center",
+   "name": "Computer Center",
+   "short": "Computer Center",
+   "kind": "academic",
+   "codes": [
+    "CC"
+   ],
+   "aliases": [],
+   "lng": -90.068396,
+   "lat": 30.028073,
+   "osm": "way/325943194"
+  },
+  {
+   "id": "biology-building",
+   "name": "Biology Building",
+   "short": "Biology Building",
+   "kind": "academic",
+   "codes": [
+    "BIO"
+   ],
+   "aliases": [],
+   "lng": -90.069012,
+   "lat": 30.027919,
+   "osm": "way/325943190"
+  },
+  {
+   "id": "mathematics-building",
+   "name": "Mathematics Building",
+   "short": "Mathematics Building",
+   "kind": "academic",
+   "codes": [
+    "MATH"
+   ],
+   "aliases": [],
+   "lng": -90.068502,
+   "lat": 30.028539,
+   "osm": "way/325943375"
+  },
+  {
+   "id": "administration-building",
+   "name": "Administration Building",
+   "short": "Administration Building",
+   "kind": "academic",
+   "codes": [
+    "AD"
+   ],
+   "aliases": [],
+   "lng": -90.065869,
+   "lat": 30.028565,
+   "osm": "way/325943188"
+  }
+ ]
+}

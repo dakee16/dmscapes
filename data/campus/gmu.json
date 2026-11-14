@@ -1,0 +1,668 @@
+{
+ "collegeId": "gmu",
+ "generatedAt": "2026-11-08T22:34:16.990Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "George Mason University Office of the University Registrar, Building Codes (Fairfax campus rows)",
+   "url": "https://registrar.gmu.edu/topics/building-codes/",
+   "use": "building codes",
+   "read": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/gmu.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -77.31486,
+  38.82636,
+  -77.30028,
+  38.83502
+ ],
+ "halls": [
+  {
+   "dormId": "piedmont-hall",
+   "name": "Piedmont Hall",
+   "lng": -77.306007,
+   "lat": 38.832296,
+   "pin": "name",
+   "osm": "way/107602044",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "skyline-fitness",
+     "minutes": 2.5
+    },
+    "library": {
+     "placeId": "fenwick-library",
+     "minutes": 3.2
+    }
+   }
+  },
+  {
+   "dormId": "whitetop-hall",
+   "name": "Whitetop Hall",
+   "lng": -77.31163,
+   "lat": 38.834073,
+   "pin": "name",
+   "osm": "way/213904029",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "recreation-and-athletic-complex",
+     "minutes": 8.5
+    },
+    "library": {
+     "placeId": "fenwick-library",
+     "minutes": 8.4
+    }
+   }
+  },
+  {
+   "dormId": "commonwealth-hall",
+   "name": "Commonwealth Hall",
+   "lng": -77.306346,
+   "lat": 38.833324,
+   "pin": "name",
+   "osm": "way/112588359",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "skyline-fitness",
+     "minutes": 3.7
+    },
+    "library": {
+     "placeId": "fenwick-library",
+     "minutes": 4.5
+    }
+   }
+  },
+  {
+   "dormId": "presidents-park",
+   "name": "Presidents Park (Adams, Harrison, Jackson, Kennedy, Lincoln, Madison, Monroe, Truman, Wilson)",
+   "lng": -77.301487,
+   "lat": 38.829528,
+   "pin": "manual",
+   "osm": "way/114956779",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "aquatic-and-fitness-center",
+     "minutes": 6.8
+    },
+    "library": {
+     "placeId": "fenwick-library",
+     "minutes": 9.7
+    }
+   }
+  },
+  {
+   "dormId": "liberty-square",
+   "name": "Liberty Square",
+   "lng": -77.302811,
+   "lat": 38.82781,
+   "pin": "name",
+   "osm": "way/108148455",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "aquatic-and-fitness-center",
+     "minutes": 2.9
+    },
+    "library": {
+     "placeId": "fenwick-library",
+     "minutes": 9.4
+    }
+   }
+  },
+  {
+   "dormId": "eastern-shore",
+   "name": "Eastern Shore",
+   "lng": -77.30423,
+   "lat": 38.833424,
+   "pin": "name",
+   "osm": "way/108148461",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "skyline-fitness",
+     "minutes": 4.1
+    },
+    "library": {
+     "placeId": "fenwick-library",
+     "minutes": 5.9
+    }
+   }
+  },
+  {
+   "dormId": "northern-neck",
+   "name": "Northern Neck",
+   "lng": -77.306817,
+   "lat": 38.833694,
+   "pin": "name",
+   "osm": "way/107728807",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "skyline-fitness",
+     "minutes": 3.9
+    },
+    "library": {
+     "placeId": "fenwick-library",
+     "minutes": 4.5
+    }
+   }
+  },
+  {
+   "dormId": "southside",
+   "name": "Southside",
+   "lng": -77.305477,
+   "lat": 38.83132,
+   "pin": "name",
+   "osm": "way/107624868",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "skyline-fitness",
+     "minutes": 0.5
+    },
+    "library": {
+     "placeId": "fenwick-library",
+     "minutes": 2.2
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "field-house",
+   "name": "Field House",
+   "short": "Field House",
+   "kind": "academic",
+   "codes": [
+    "FH"
+   ],
+   "aliases": [],
+   "lng": -77.31486,
+   "lat": 38.833707,
+   "osm": "way/108152533"
+  },
+  {
+   "id": "recreation-and-athletic-complex",
+   "name": "Recreation and Athletic Complex",
+   "short": "Recreation and Athletic Complex",
+   "kind": "gym",
+   "codes": [
+    "RAC"
+   ],
+   "aliases": [
+    "Recreation Athletic Complex"
+   ],
+   "lng": -77.312407,
+   "lat": 38.830643,
+   "osm": "way/112472416"
+  },
+  {
+   "id": "johnson-center",
+   "name": "Johnson Center",
+   "short": "Johnson Center",
+   "kind": "academic",
+   "codes": [
+    "JC"
+   ],
+   "aliases": [],
+   "lng": -77.307425,
+   "lat": 38.829975,
+   "osm": "way/45334823"
+  },
+  {
+   "id": "aquatic-and-fitness-center",
+   "name": "Aquatic and Fitness Center",
+   "short": "Aquatic and Fitness Center",
+   "kind": "gym",
+   "codes": [
+    "AFC"
+   ],
+   "aliases": [],
+   "lng": -77.304237,
+   "lat": 38.826361,
+   "osm": "way/108148457"
+  },
+  {
+   "id": "fenwick-library",
+   "name": "Fenwick Library",
+   "short": "Fenwick Library",
+   "kind": "library",
+   "codes": [
+    "FENWCK"
+   ],
+   "aliases": [],
+   "lng": -77.306959,
+   "lat": 38.831887,
+   "osm": "way/597970789"
+  },
+  {
+   "id": "angel-cabrera-global-center",
+   "name": "Ángel Cabrera Global Center",
+   "short": "Ángel Cabrera Global Center",
+   "kind": "academic",
+   "codes": [
+    "ACGC"
+   ],
+   "aliases": [],
+   "lng": -77.314761,
+   "lat": 38.829539,
+   "osm": "way/108152545"
+  },
+  {
+   "id": "the-hub",
+   "name": "The HUB",
+   "short": "The HUB",
+   "kind": "academic",
+   "codes": [
+    "HUB"
+   ],
+   "aliases": [],
+   "lng": -77.304793,
+   "lat": 38.830634,
+   "osm": "way/114853958"
+  },
+  {
+   "id": "performing-arts-building",
+   "name": "Performing Arts Building",
+   "short": "Performing Arts Building",
+   "kind": "academic",
+   "codes": [
+    "PAB"
+   ],
+   "aliases": [
+    "de Laski Performing Arts Building"
+   ],
+   "lng": -77.308569,
+   "lat": 38.829819,
+   "osm": "way/112472415"
+  },
+  {
+   "id": "student-union-1",
+   "name": "Student Union 1",
+   "short": "Student Union 1",
+   "kind": "academic",
+   "codes": [
+    "SUBI"
+   ],
+   "aliases": [
+    "Student Union I"
+   ],
+   "lng": -77.30888,
+   "lat": 38.831601,
+   "osm": "way/114847304"
+  },
+  {
+   "id": "engineering-building",
+   "name": "Engineering Building",
+   "short": "Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "ENGR"
+   ],
+   "aliases": [
+    "Academic 6",
+    "Nguyen Engineering Building"
+   ],
+   "lng": -77.305186,
+   "lat": 38.827444,
+   "osm": "way/107624889"
+  },
+  {
+   "id": "horizon-hall",
+   "name": "Horizon Hall",
+   "short": "Horizon Hall",
+   "kind": "academic",
+   "codes": [
+    "HORIZN"
+   ],
+   "aliases": [],
+   "lng": -77.307801,
+   "lat": 38.831472,
+   "osm": "way/1020103399"
+  },
+  {
+   "id": "exploratory-hall",
+   "name": "Exploratory Hall",
+   "short": "Exploratory Hall",
+   "kind": "academic",
+   "codes": [
+    "EXPL"
+   ],
+   "aliases": [
+    "Exploratory Hall (formerly Science and Tech II)"
+   ],
+   "lng": -77.305557,
+   "lat": 38.829843,
+   "osm": "way/107728814"
+  },
+  {
+   "id": "art-and-design-building",
+   "name": "Art and Design Building",
+   "short": "Art and Design Building",
+   "kind": "academic",
+   "codes": [
+    "AB"
+   ],
+   "aliases": [],
+   "lng": -77.306351,
+   "lat": 38.827928,
+   "osm": "way/1343584122"
+  },
+  {
+   "id": "merten-hall",
+   "name": "Merten Hall",
+   "short": "Merten Hall",
+   "kind": "academic",
+   "codes": [
+    "MERTEN"
+   ],
+   "aliases": [],
+   "lng": -77.307808,
+   "lat": 38.835023,
+   "osm": "way/145889836"
+  },
+  {
+   "id": "eisenhower-hall",
+   "name": "Eisenhower Hall",
+   "short": "Eisenhower Hall",
+   "kind": "academic",
+   "codes": [
+    "ESNHWR"
+   ],
+   "aliases": [
+    "Eisenhower"
+   ],
+   "lng": -77.302246,
+   "lat": 38.828865,
+   "osm": "way/1343578886"
+  },
+  {
+   "id": "hampton-roads",
+   "name": "Hampton Roads",
+   "short": "Hampton Roads",
+   "kind": "academic",
+   "codes": [
+    "HR"
+   ],
+   "aliases": [],
+   "lng": -77.305225,
+   "lat": 38.833819,
+   "osm": "way/108148459"
+  },
+  {
+   "id": "thompson-hall",
+   "name": "Thompson Hall",
+   "short": "Thompson Hall",
+   "kind": "academic",
+   "codes": [
+    "T"
+   ],
+   "aliases": [],
+   "lng": -77.309839,
+   "lat": 38.832845,
+   "osm": "way/108148460"
+  },
+  {
+   "id": "enterprise-hall",
+   "name": "Enterprise Hall",
+   "short": "Enterprise Hall",
+   "kind": "academic",
+   "codes": [
+    "ENT"
+   ],
+   "aliases": [],
+   "lng": -77.305922,
+   "lat": 38.829058,
+   "osm": "way/86928463"
+  },
+  {
+   "id": "david-king-hall",
+   "name": "David King Hall",
+   "short": "David King Hall",
+   "kind": "academic",
+   "codes": [
+    "DK"
+   ],
+   "aliases": [
+    "David J. King Hall"
+   ],
+   "lng": -77.30662,
+   "lat": 38.830607,
+   "osm": "way/112588357"
+  },
+  {
+   "id": "innovation-hall",
+   "name": "Innovation Hall",
+   "short": "Innovation Hall",
+   "kind": "academic",
+   "codes": [
+    "IN"
+   ],
+   "aliases": [],
+   "lng": -77.307393,
+   "lat": 38.828443,
+   "osm": "way/107624863"
+  },
+  {
+   "id": "lecture-hall",
+   "name": "Lecture Hall",
+   "short": "Lecture Hall",
+   "kind": "academic",
+   "codes": [
+    "LH"
+   ],
+   "aliases": [],
+   "lng": -77.308247,
+   "lat": 38.833803,
+   "osm": "way/1444007739"
+  },
+  {
+   "id": "research-hall",
+   "name": "Research Hall",
+   "short": "Research Hall",
+   "kind": "academic",
+   "codes": [
+    "RSCH"
+   ],
+   "aliases": [],
+   "lng": -77.305233,
+   "lat": 38.828331,
+   "osm": "way/119503843"
+  },
+  {
+   "id": "planetary-hall",
+   "name": "Planetary Hall",
+   "short": "Planetary Hall",
+   "kind": "academic",
+   "codes": [
+    "PLANET"
+   ],
+   "aliases": [],
+   "lng": -77.306108,
+   "lat": 38.829884,
+   "osm": "way/107728825"
+  },
+  {
+   "id": "aquia-building",
+   "name": "Aquia Building",
+   "short": "Aquia Building",
+   "kind": "academic",
+   "codes": [
+    "AQ"
+   ],
+   "aliases": [],
+   "lng": -77.30935,
+   "lat": 38.832075,
+   "osm": "way/112588360"
+  },
+  {
+   "id": "krasnow-institute",
+   "name": "Krasnow Institute",
+   "short": "Krasnow Institute",
+   "kind": "academic",
+   "codes": [
+    "KB"
+   ],
+   "aliases": [
+    "Krasnow Building"
+   ],
+   "lng": -77.300278,
+   "lat": 38.831154,
+   "osm": "way/107728817"
+  },
+  {
+   "id": "james-buchanan-hall",
+   "name": "James Buchanan Hall",
+   "short": "James Buchanan Hall",
+   "kind": "academic",
+   "codes": [
+    "BUCHAN"
+   ],
+   "aliases": [
+    "Buchanan Hall"
+   ],
+   "lng": -77.308476,
+   "lat": 38.828787,
+   "osm": "way/107728813"
+  },
+  {
+   "id": "skyline-fitness",
+   "name": "Skyline Fitness",
+   "short": "Skyline Fitness",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -77.305706,
+   "lat": 38.831615,
+   "osm": "way/107624888"
+  },
+  {
+   "id": "krug-hall",
+   "name": "Krug Hall",
+   "short": "Krug Hall",
+   "kind": "academic",
+   "codes": [
+    "KH"
+   ],
+   "aliases": [],
+   "lng": -77.30855,
+   "lat": 38.832459,
+   "osm": "way/108148454"
+  },
+  {
+   "id": "sandbridge",
+   "name": "Sandbridge",
+   "short": "Sandbridge",
+   "kind": "academic",
+   "codes": [
+    "SNDBGE"
+   ],
+   "aliases": [
+    "Sandbridge Hall"
+   ],
+   "lng": -77.306217,
+   "lat": 38.832626,
+   "osm": "way/107602040"
+  },
+  {
+   "id": "finley-building",
+   "name": "Finley Building",
+   "short": "Finley Building",
+   "kind": "academic",
+   "codes": [
+    "FINLEY"
+   ],
+   "aliases": [],
+   "lng": -77.308923,
+   "lat": 38.833012,
+   "osm": "way/108148458"
+  },
+  {
+   "id": "east-building",
+   "name": "East Building",
+   "short": "East Building",
+   "kind": "academic",
+   "codes": [
+    "E"
+   ],
+   "aliases": [],
+   "lng": -77.30828,
+   "lat": 38.832986,
+   "osm": "way/108148463"
+  },
+  {
+   "id": "carow-hall",
+   "name": "Carow Hall",
+   "short": "Carow Hall",
+   "kind": "academic",
+   "codes": [
+    "CAROW"
+   ],
+   "aliases": [],
+   "lng": -77.301256,
+   "lat": 38.831468,
+   "osm": "way/107728834"
+  },
+  {
+   "id": "west-building",
+   "name": "West Building",
+   "short": "West Building",
+   "kind": "academic",
+   "codes": [
+    "W"
+   ],
+   "aliases": [],
+   "lng": -77.309184,
+   "lat": 38.832488,
+   "osm": "way/112588354"
+  },
+  {
+   "id": "college-hall",
+   "name": "College Hall",
+   "short": "College Hall",
+   "kind": "academic",
+   "codes": [
+    "CH"
+   ],
+   "aliases": [],
+   "lng": -77.307917,
+   "lat": 38.82891,
+   "osm": "way/107728820"
+  },
+  {
+   "id": "hanover-hall",
+   "name": "Hanover Hall",
+   "short": "Hanover Hall",
+   "kind": "academic",
+   "codes": [
+    "HNOVR"
+   ],
+   "aliases": [],
+   "lng": -77.304758,
+   "lat": 38.832147,
+   "osm": "way/114974358"
+  }
+ ]
+}

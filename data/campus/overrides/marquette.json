@@ -1,0 +1,42 @@
+{
+  "places": {
+    "alumni-memorial-union": { "kind": "dining" },
+    "marquette-gymnasium": { "kind": "academic" },
+    "al-mcguire-center": { "hide": true },
+    "marquette-university-wells-street-structure": { "hide": true },
+    "the-313-building": { "hide": true },
+    "zilber-hall": { "hide": true },
+    "versiti-blood-center-of-wisconsin": { "hide": true },
+    "humphrey-hall": { "hide": true },
+    "service-building": { "hide": true },
+    "krueger-child-care-center": { "hide": true },
+    "obrien-dr-e-j-jesuit-residence": { "hide": true },
+    "haggerty-museum-of-art": { "hide": true },
+    "gilman-building": { "hide": true },
+    "frenn-building": { "hide": true },
+    "525-building": { "hide": true },
+    "marquette-neighborhood-health-center": { "hide": true },
+    "klein-family-kbs-soccer-pavilion": { "hide": true },
+    "valley-fields-stair-tower": { "hide": true }
+  },
+  "notes": {
+    "alumni-memorial-union": "The Alumni Memorial Union holds Marquette Place, the food court that is Marquette's dining spot outside the residence halls (marquette.edu/alumni-memorial-union/dining.php); the three dining halls are inside Cobeen Hall, Straz Tower and The Commons, which are housing.",
+    "marquette-gymnasium": "The old Marquette Gymnasium now houses Navy and Army ROTC ('Gymnasium (Navy ROTC/Army ROTC)', marquette.edu/tools/building-names.php), not a student gym; Wellness + Helfaer is the rec centre.",
+    "al-mcguire-center": "Varsity basketball and volleyball arena (gomarquette.com/facilities). Not somewhere undergraduates have class.",
+    "marquette-university-wells-street-structure": "Parking structure.",
+    "the-313-building": "313 Building holds HR, Finance and IT offices (marquette.edu/tools/building-names.php). Not somewhere undergraduates have class.",
+    "zilber-hall": "Administration building (president's office, admissions, financial aid). Not somewhere undergraduates have class.",
+    "versiti-blood-center-of-wisconsin": "A blood centre, not a Marquette building.",
+    "humphrey-hall": "Glenn Humphrey Hall is a Marquette residence hall (marquette.edu/residence-life/residence-halls/), not a class building.",
+    "service-building": "Facilities Planning and Management (marquette.edu/tools/building-names.php).",
+    "krueger-child-care-center": "Childcare centre.",
+    "obrien-dr-e-j-jesuit-residence": "Jesuit residence (housing).",
+    "haggerty-museum-of-art": "Art museum. Not somewhere undergraduates have class.",
+    "gilman-building": "University apartments (Gilman Building, 1621 W. Wells St., under residence halls on marquette.edu/tools/building-names.php).",
+    "frenn-building": "University apartments (Frenn Building, 1615 W. Wells St., under residence halls on marquette.edu/tools/building-names.php).",
+    "525-building": "Commercial building on N. 6th St. downtown, not on Marquette's building names list.",
+    "marquette-neighborhood-health-center": "Health clinic.",
+    "klein-family-kbs-soccer-pavilion": "Varsity soccer pavilion at Valley Fields.",
+    "valley-fields-stair-tower": "Stair tower at the Valley Fields athletic complex."
+  }
+}

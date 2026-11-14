@@ -1,0 +1,339 @@
+{
+ "collegeId": "calvin",
+ "generatedAt": "2026-11-12T18:37:25.150Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/calvin.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -85.58995,
+  42.92982,
+  -85.57573,
+  42.93736
+ ],
+ "halls": [
+  {
+   "dormId": "beets-veenstra-hall",
+   "name": "Beets-Veenstra Hall",
+   "lng": -85.585844,
+   "lat": 42.932573,
+   "pin": "name",
+   "osm": "way/225173808",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hekman-library",
+     "minutes": 4.7
+    },
+    "gym": {
+     "placeId": "hoogenboom-health-and-recreation-center",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "knollcrest-dining-hall",
+     "minutes": 1.7
+    }
+   }
+  },
+  {
+   "dormId": "bolt-heyns-timmer-hall",
+   "name": "Bolt-Heyns-Timmer Hall",
+   "lng": -85.588109,
+   "lat": 42.932022,
+   "pin": "name",
+   "osm": "way/225173802",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hekman-library",
+     "minutes": 3.2
+    },
+    "gym": {
+     "placeId": "hoogenboom-health-and-recreation-center",
+     "minutes": 3.8
+    },
+    "dining": {
+     "placeId": "commons-dining-hall",
+     "minutes": 1.4
+    }
+   }
+  },
+  {
+   "dormId": "kalsbeek-huizenga-vanreken-hall",
+   "name": "Kalsbeek-Huizenga-van Reken Hall",
+   "lng": -85.587241,
+   "lat": 42.934849,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hekman-library",
+     "minutes": 9.1
+    },
+    "gym": {
+     "placeId": "hoogenboom-health-and-recreation-center",
+     "minutes": 8.9
+    },
+    "dining": {
+     "placeId": "knollcrest-dining-hall",
+     "minutes": 4.7
+    }
+   }
+  },
+  {
+   "dormId": "noordewier-vanderwerp-hall",
+   "name": "Noordewier-VanderWerp Hall",
+   "lng": -85.587263,
+   "lat": 42.933425,
+   "pin": "name",
+   "osm": "way/225173804",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hekman-library",
+     "minutes": 4.9
+    },
+    "gym": {
+     "placeId": "hoogenboom-health-and-recreation-center",
+     "minutes": 4.7
+    },
+    "dining": {
+     "placeId": "knollcrest-dining-hall",
+     "minutes": 1
+    }
+   }
+  },
+  {
+   "dormId": "rooks-vandellen-hall",
+   "name": "Rooks-Van Dellen Hall",
+   "lng": -85.587874,
+   "lat": 42.932651,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hekman-library",
+     "minutes": 4.1
+    },
+    "gym": {
+     "placeId": "hoogenboom-health-and-recreation-center",
+     "minutes": 3.4
+    },
+    "dining": {
+     "placeId": "commons-dining-hall",
+     "minutes": 2.2
+    }
+   }
+  },
+  {
+   "dormId": "schultze-eldersveld-hall",
+   "name": "Schultze-Eldersveld Hall",
+   "lng": -85.586518,
+   "lat": 42.931805,
+   "pin": "name",
+   "osm": "way/171260635",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "hekman-library",
+     "minutes": 3.4
+    },
+    "gym": {
+     "placeId": "hoogenboom-health-and-recreation-center",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "commons-dining-hall",
+     "minutes": 1.2
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "covenant-fine-arts-center",
+   "name": "Covenant Fine Arts Center",
+   "short": "Covenant Fine Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.585917,
+   "lat": 42.93056,
+   "osm": "way/225176395"
+  },
+  {
+   "id": "hekman-library",
+   "name": "Hekman Library",
+   "short": "Hekman Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.587477,
+   "lat": 42.929828,
+   "osm": "way/225518689"
+  },
+  {
+   "id": "spoelhof-university-center",
+   "name": "Spoelhof University Center",
+   "short": "Spoelhof University Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.589228,
+   "lat": 42.929825,
+   "osm": "way/225518687"
+  },
+  {
+   "id": "hoogenboom-health-and-recreation-center",
+   "name": "Hoogenboom Health and Recreation Center",
+   "short": "Hoogenboom Health and Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.58971,
+   "lat": 42.933153,
+   "osm": "way/225517561"
+  },
+  {
+   "id": "spoelhof-fieldhouse-complex",
+   "name": "Spoelhof Fieldhouse Complex",
+   "short": "Spoelhof Fieldhouse Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.589077,
+   "lat": 42.933133,
+   "osm": "way/1449866485"
+  },
+  {
+   "id": "commons-dining-hall",
+   "name": "Commons Dining Hall",
+   "short": "Commons Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.587161,
+   "lat": 42.93117,
+   "osm": "way/225517692"
+  },
+  {
+   "id": "hiemenga-hall",
+   "name": "Hiemenga Hall",
+   "short": "Hiemenga Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.588206,
+   "lat": 42.929817,
+   "osm": "way/225518688"
+  },
+  {
+   "id": "knollcrest-dining-hall",
+   "name": "Knollcrest Dining Hall",
+   "short": "Knollcrest Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.586145,
+   "lat": 42.933193,
+   "osm": "way/225517541"
+  },
+  {
+   "id": "science-building",
+   "name": "Science Building",
+   "short": "Science Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.588962,
+   "lat": 42.931016,
+   "osm": "way/225512644"
+  },
+  {
+   "id": "north-hall",
+   "name": "North Hall",
+   "short": "North Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.588849,
+   "lat": 42.931588,
+   "osm": "way/225512641"
+  },
+  {
+   "id": "engineering-building",
+   "name": "Engineering Building",
+   "short": "Engineering Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.589948,
+   "lat": 42.931698,
+   "osm": "way/225512648"
+  },
+  {
+   "id": "devries-hall",
+   "name": "DeVries Hall",
+   "short": "DeVries Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.589579,
+   "lat": 42.930927,
+   "osm": "way/225512646"
+  },
+  {
+   "id": "commons-annex",
+   "name": "Commons Annex",
+   "short": "Commons Annex",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.58722,
+   "lat": 42.930647,
+   "osm": "way/225517693"
+  },
+  {
+   "id": "bunker-interpretive-center",
+   "name": "Bunker Interpretive Center",
+   "short": "Bunker Interpretive Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -85.582162,
+   "lat": 42.931882,
+   "osm": "way/225174987"
+  },
+  {
+   "id": "preserve-house",
+   "name": "Preserve House",
+   "short": "Preserve House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Ecosystem Preserve Study Center"
+   ],
+   "lng": -85.575732,
+   "lat": 42.937358,
+   "osm": "way/1529901924"
+  }
+ ]
+}

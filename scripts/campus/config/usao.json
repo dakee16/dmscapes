@@ -1,0 +1,16 @@
+{
+  "collegeId": "usao",
+  "area": {
+    "osm": "way/1057042289",
+    "bbox": [
+      35.02966,
+      -97.95867,
+      35.03368,
+      -97.95256
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "USAO publishes no building-code list: its Campus Map page (usao.edu/about/campus-map.html) is an interactive map of named buildings, and a search of usao.edu found no building-code or abbreviation list (checked 2026-11-08)."
+}

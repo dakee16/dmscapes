@@ -1,0 +1,260 @@
+{
+ "collegeId": "susquehanna",
+ "generatedAt": "2026-11-13T04:32:04.001Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/susquehanna.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -76.87557,
+  40.79646,
+  -76.87008,
+  40.80007
+ ],
+ "halls": [
+  {
+   "dormId": "smith-hall",
+   "name": "Smith Hall",
+   "lng": -76.872555,
+   "lat": 40.796895,
+   "pin": "name",
+   "osm": "way/617274095",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "charles-b-degenstein-campus-center",
+     "minutes": 3.5
+    },
+    "library": {
+     "placeId": "blough-weis-library",
+     "minutes": 6.3
+    },
+    "gym": {
+     "placeId": "orlando-w-houts-gymnasium",
+     "minutes": 4.2
+    }
+   }
+  },
+  {
+   "dormId": "reed-hall",
+   "name": "Reed Hall",
+   "lng": -76.873815,
+   "lat": 40.796899,
+   "pin": "name",
+   "osm": "way/617274096",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "charles-b-degenstein-campus-center",
+     "minutes": 2.5
+    },
+    "library": {
+     "placeId": "blough-weis-library",
+     "minutes": 6
+    },
+    "gym": {
+     "placeId": "orlando-w-houts-gymnasium",
+     "minutes": 4.1
+    }
+   }
+  },
+  {
+   "dormId": "hassinger-hall",
+   "name": "Hassinger Hall",
+   "lng": -76.870739,
+   "lat": 40.798247,
+   "pin": "name",
+   "osm": "way/617127582",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "charles-b-degenstein-campus-center",
+     "minutes": 6.4
+    },
+    "library": {
+     "placeId": "blough-weis-library",
+     "minutes": 1.3
+    },
+    "gym": {
+     "placeId": "orlando-w-houts-gymnasium",
+     "minutes": 1.7
+    }
+   }
+  },
+  {
+   "dormId": "seibert-hall",
+   "name": "Seibert Hall",
+   "lng": -76.872619,
+   "lat": 40.798978,
+   "pin": "name",
+   "osm": "way/617274108",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "charles-b-degenstein-campus-center",
+     "minutes": 3.8
+    },
+    "library": {
+     "placeId": "blough-weis-library",
+     "minutes": 2.9
+    },
+    "gym": {
+     "placeId": "orlando-w-houts-gymnasium",
+     "minutes": 2.5
+    }
+   }
+  },
+  {
+   "dormId": "aikens-hall",
+   "name": "Aikens Hall",
+   "lng": -76.875507,
+   "lat": 40.79646,
+   "pin": "name",
+   "osm": "way/617127701",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "charles-b-degenstein-campus-center",
+     "minutes": 1.6
+    },
+    "library": {
+     "placeId": "blough-weis-library",
+     "minutes": 8.1
+    },
+    "gym": {
+     "placeId": "orlando-w-houts-gymnasium",
+     "minutes": 6.3
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "charles-b-degenstein-campus-center",
+   "name": "Charles B. Degenstein Campus Center",
+   "short": "Charles B. Degenstein Campus Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Deg"
+   ],
+   "lng": -76.875574,
+   "lat": 40.797354,
+   "osm": "way/32876399"
+  },
+  {
+   "id": "estill-field-house",
+   "name": "Estill Field House",
+   "short": "Estill Field House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.870077,
+   "lat": 40.797505,
+   "osm": "way/617127578"
+  },
+  {
+   "id": "weber-chapel-auditorium",
+   "name": "Weber Chapel Auditorium",
+   "short": "Weber Chapel Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.875186,
+   "lat": 40.798416,
+   "osm": "way/617127617"
+  },
+  {
+   "id": "natural-sciences-center",
+   "name": "Natural Sciences Center",
+   "short": "Natural Sciences Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.873068,
+   "lat": 40.799703,
+   "osm": "way/617127597"
+  },
+  {
+   "id": "fisher-science-hall",
+   "name": "Fisher Science Hall",
+   "short": "Fisher Science Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.873312,
+   "lat": 40.79847,
+   "osm": "way/617127585"
+  },
+  {
+   "id": "blough-weis-library",
+   "name": "Blough-Weis Library",
+   "short": "Blough-Weis Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.870166,
+   "lat": 40.798933,
+   "osm": "way/336141376"
+  },
+  {
+   "id": "orlando-w-houts-gymnasium",
+   "name": "Orlando W. Houts Gymnasium",
+   "short": "Orlando W. Houts Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.871242,
+   "lat": 40.797677,
+   "osm": "way/1558236974"
+  },
+  {
+   "id": "art-studio",
+   "name": "Art Studio",
+   "short": "Art Studio",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.87182,
+   "lat": 40.800066,
+   "osm": "way/617274111"
+  },
+  {
+   "id": "writers-institute",
+   "name": "Writers Institute",
+   "short": "Writers Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.875198,
+   "lat": 40.799191,
+   "osm": "way/617127615"
+  },
+  {
+   "id": "charles-b-degenstein-observatory",
+   "name": "Charles B. Degenstein Observatory",
+   "short": "Charles B. Degenstein Observatory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -76.873259,
+   "lat": 40.798644,
+   "osm": "way/1562995969"
+  }
+ ]
+}

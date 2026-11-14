@@ -1,0 +1,2164 @@
+{
+ "collegeId": "purdue",
+ "generatedAt": "2026-11-14T06:52:59.426Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Purdue University campus map, West Lafayette Campus: Building Names and Abbreviations (modification date August 2026)",
+   "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+   "use": "building codes",
+   "read": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/purdue.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -86.93813,
+  40.41347,
+  -86.90982,
+  40.43666
+ ],
+ "halls": [
+  {
+   "dormId": "cary-quad",
+   "name": "Cary Quadrangle",
+   "lng": -86.917955,
+   "lat": 40.43191,
+   "pin": "address",
+   "osm": "way/75498144",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "lambert-ward-l-fieldhouse-and-gymnasium",
+     "minutes": 1.9
+    },
+    "dining": {
+     "placeId": "ford-dining-court",
+     "minutes": 1.1
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 12.3
+    }
+   }
+  },
+  {
+   "dormId": "earhart",
+   "name": "Earhart",
+   "lng": -86.924964,
+   "lat": 40.42583,
+   "pin": "name",
+   "osm": "way/128488694",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 4.4
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 5.8
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 13.2
+    }
+   }
+  },
+  {
+   "dormId": "first-street",
+   "name": "First Street Towers",
+   "lng": -86.924562,
+   "lat": 40.424938,
+   "pin": "address",
+   "osm": "way/283274998",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 5.5
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 6.8
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 12.8
+    }
+   }
+  },
+  {
+   "dormId": "parker-north",
+   "name": "Frieda Parker Hall",
+   "lng": -86.919538,
+   "lat": 40.428323,
+   "pin": "name",
+   "osm": "way/886353320",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 2.8
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 1.5
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 10.3
+    }
+   }
+  },
+  {
+   "dormId": "harrison",
+   "name": "Harrison",
+   "lng": -86.926763,
+   "lat": 40.425054,
+   "pin": "name",
+   "osm": "relation/12652929",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 7.4
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 8.8
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 15
+    }
+   }
+  },
+  {
+   "dormId": "hawkins",
+   "name": "Hawkins",
+   "lng": -86.911627,
+   "lat": 40.422836,
+   "pin": "address",
+   "osm": "way/117396585",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "lambert-ward-l-fieldhouse-and-gymnasium",
+     "minutes": 15.7
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 15.2
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 2.9
+    }
+   }
+  },
+  {
+   "dormId": "hillenbrand",
+   "name": "Hillenbrand Hall",
+   "lng": -86.926744,
+   "lat": 40.42666,
+   "pin": "name",
+   "osm": "way/128487952",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "morgan-j-burke-boilermaker-aquatic-center",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 7
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 15.8
+    }
+   }
+  },
+  {
+   "dormId": "hilltop",
+   "name": "Hilltop Apartments",
+   "lng": -86.921936,
+   "lat": 40.434225,
+   "pin": "manual",
+   "osm": "way/301841841",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 10.6
+    },
+    "dining": {
+     "placeId": "crosswalk-commons",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 22.6
+    }
+   }
+  },
+  {
+   "dormId": "honors-college",
+   "name": "Honors College and Residences",
+   "lng": -86.919686,
+   "lat": 40.426799,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 4
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 3.8
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 10.7
+    }
+   }
+  },
+  {
+   "dormId": "mccutcheon",
+   "name": "McCutcheon",
+   "lng": -86.928077,
+   "lat": 40.425046,
+   "pin": "name",
+   "osm": "relation/12652930",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 9.2
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 10.6
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 16.6
+    }
+   }
+  },
+  {
+   "dormId": "meredith",
+   "name": "Meredith",
+   "lng": -86.923316,
+   "lat": 40.426308,
+   "pin": "address",
+   "osm": "way/128488696",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 2.1
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 3.5
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 11.6
+    }
+   }
+  },
+  {
+   "dormId": "meredith-south",
+   "name": "Meredith South",
+   "lng": -86.9232,
+   "lat": 40.42559,
+   "pin": "name",
+   "osm": "way/859157050",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 5.9
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 11.7
+    }
+   }
+  },
+  {
+   "dormId": "owen",
+   "name": "Owen",
+   "lng": -86.920701,
+   "lat": 40.432254,
+   "pin": "name",
+   "osm": "relation/12647862",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 5
+    },
+    "dining": {
+     "placeId": "ford-dining-court",
+     "minutes": 0.8
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 15.6
+    }
+   }
+  },
+  {
+   "dormId": "shreve",
+   "name": "Shreve",
+   "lng": -86.924964,
+   "lat": 40.4268,
+   "pin": "address",
+   "osm": "way/128488704",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "morgan-j-burke-boilermaker-aquatic-center",
+     "minutes": 3.5
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 14
+    }
+   }
+  },
+  {
+   "dormId": "south-hall",
+   "name": "South Hall",
+   "lng": -86.92688,
+   "lat": 40.425945,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "morgan-j-burke-boilermaker-aquatic-center",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 10.1
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 17.8
+    }
+   }
+  },
+  {
+   "dormId": "tarkington",
+   "name": "Tarkington",
+   "lng": -86.920676,
+   "lat": 40.430588,
+   "pin": "manual",
+   "osm": "relation/12647702",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 2.5
+    },
+    "dining": {
+     "placeId": "ford-dining-court",
+     "minutes": 1.5
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 14.2
+    }
+   }
+  },
+  {
+   "dormId": "wiley",
+   "name": "Wiley",
+   "lng": -86.920733,
+   "lat": 40.429468,
+   "pin": "address",
+   "osm": "relation/12647701",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 1.3
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 0.7
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 12.8
+    }
+   }
+  },
+  {
+   "dormId": "windsor",
+   "name": "Windsor",
+   "lng": -86.921013,
+   "lat": 40.426642,
+   "pin": "name",
+   "osm": "way/128488698",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 2.4
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 2.1
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 9.8
+    }
+   }
+  },
+  {
+   "dormId": "parker-south",
+   "name": "Winifred Parker Hall",
+   "lng": -86.920245,
+   "lat": 40.427796,
+   "pin": "name",
+   "osm": "way/327303065",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "france-a-cordova-recreational-sports-center",
+     "minutes": 2.4
+    },
+    "dining": {
+     "placeId": "wiley-dining-court-wdct",
+     "minutes": 1.4
+    },
+    "library": {
+     "placeId": "hicks-undergraduate-library-hiks",
+     "minutes": 10.5
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "purdue-football-performance-complex",
+   "name": "Purdue Football Performance Complex",
+   "short": "Purdue Football Performance Complex",
+   "kind": "gym",
+   "codes": [
+    "KFPC"
+   ],
+   "aliases": [
+    "Kozuch Football Performance Complex"
+   ],
+   "lng": -86.91673,
+   "lat": 40.435813,
+   "osm": "way/128488700"
+  },
+  {
+   "id": "france-a-cordova-recreational-sports-center",
+   "name": "France A. Córdova Recreational Sports Center",
+   "short": "France A. Córdova Recreational Sports Center",
+   "kind": "gym",
+   "codes": [
+    "CREC"
+   ],
+   "aliases": [
+    "Córdova (France A.) Recreational Sports Center"
+   ],
+   "lng": -86.922428,
+   "lat": 40.42847,
+   "osm": "way/128488703"
+  },
+  {
+   "id": "charles-j-lynn-hall-of-veterinary-medicine",
+   "name": "Charles J. Lynn Hall of Veterinary Medicine",
+   "short": "Charles J. Lynn Hall of Veterinary Medicine",
+   "kind": "academic",
+   "codes": [
+    "LYNN"
+   ],
+   "aliases": [
+    "Lynn (Charles J.) Hall of Veterinary Medicine"
+   ],
+   "lng": -86.914734,
+   "lat": 40.419507,
+   "osm": "relation/12710221"
+  },
+  {
+   "id": "stewart-center-stew",
+   "name": "Stewart Center (STEW)",
+   "short": "Stewart Center (STEW)",
+   "kind": "academic",
+   "codes": [
+    "STEW"
+   ],
+   "aliases": [
+    "Stewart Center (includes Welcome Center)"
+   ],
+   "lng": -86.912757,
+   "lat": 40.425048,
+   "osm": "way/117146484"
+  },
+  {
+   "id": "birck-nanotechnology-center",
+   "name": "Birck Nanotechnology Center",
+   "short": "Birck Nanotechnology Center",
+   "kind": "academic",
+   "codes": [
+    "BRK"
+   ],
+   "aliases": [],
+   "lng": -86.924628,
+   "lat": 40.422678,
+   "osm": "way/159752221"
+  },
+  {
+   "id": "physical-facilities-service-building",
+   "name": "Physical Facilities Service Building",
+   "short": "Physical Facilities Service Building",
+   "kind": "academic",
+   "codes": [
+    "PFSB"
+   ],
+   "aliases": [],
+   "lng": -86.916635,
+   "lat": 40.414138,
+   "osm": "way/945408779"
+  },
+  {
+   "id": "lambert-ward-l-fieldhouse-and-gymnasium",
+   "name": "Lambert (Ward L.) Fieldhouse and Gymnasium",
+   "short": "Lambert (Ward L.) Fieldhouse and Gymnasium",
+   "kind": "gym",
+   "codes": [
+    "LAMB"
+   ],
+   "aliases": [],
+   "lng": -86.915937,
+   "lat": 40.432245,
+   "osm": "way/128488701"
+  },
+  {
+   "id": "mackey-arena",
+   "name": "Mackey Arena",
+   "short": "Mackey Arena",
+   "kind": "academic",
+   "codes": [
+    "MACK"
+   ],
+   "aliases": [
+    "Mackey (Guy J.) Arena"
+   ],
+   "lng": -86.91617,
+   "lat": 40.433324,
+   "osm": "way/74144839"
+  },
+  {
+   "id": "lilly-hall",
+   "name": "Lilly Hall",
+   "short": "Lilly Hall",
+   "kind": "academic",
+   "codes": [
+    "LILY"
+   ],
+   "aliases": [
+    "Lilly Hall of Life Sciences"
+   ],
+   "lng": -86.918154,
+   "lat": 40.423391,
+   "osm": "way/117396614"
+  },
+  {
+   "id": "walter-w-wade-utility-plant",
+   "name": "Walter W. Wade Utility Plant",
+   "short": "Walter W. Wade Utility Plant",
+   "kind": "academic",
+   "codes": [
+    "WADE"
+   ],
+   "aliases": [
+    "Wade (Walter W.) Utility Plant"
+   ],
+   "lng": -86.912424,
+   "lat": 40.417266,
+   "osm": "way/301832477"
+  },
+  {
+   "id": "neil-armstrong-hall-of-engineering-arms",
+   "name": "Neil Armstrong Hall of Engineering (ARMS)",
+   "short": "Neil Armstrong Hall of Engineering (ARMS)",
+   "kind": "academic",
+   "codes": [
+    "ARMS"
+   ],
+   "aliases": [
+    "School of Aeronautics and Astronautics",
+    "Armstrong (Neil) Hall of Engineering"
+   ],
+   "lng": -86.915035,
+   "lat": 40.430979,
+   "osm": "way/117146481"
+  },
+  {
+   "id": "mechanical-engineering-me",
+   "name": "Mechanical Engineering (ME)",
+   "short": "Mechanical Engineering (ME)",
+   "kind": "academic",
+   "codes": [
+    "ME"
+   ],
+   "aliases": [
+    "Mechanical Engineering Building"
+   ],
+   "lng": -86.912889,
+   "lat": 40.42823,
+   "osm": "way/158307862"
+  },
+  {
+   "id": "hampton-hall-of-civil-engineering-hamp",
+   "name": "Hampton Hall of Civil Engineering (HAMP)",
+   "short": "Hampton Hall of Civil Engineering (HAMP)",
+   "kind": "academic",
+   "codes": [
+    "HAMP"
+   ],
+   "aliases": [
+    "Hampton (Delon and Elizabeth) Hall of Civil Engineering"
+   ],
+   "lng": -86.914814,
+   "lat": 40.430254,
+   "osm": "way/117146495"
+  },
+  {
+   "id": "creighton-hall-of-animal-sciences-crtn",
+   "name": "Creighton Hall of Animal Sciences (CRTN)",
+   "short": "Creighton Hall of Animal Sciences (CRTN)",
+   "kind": "academic",
+   "codes": [
+    "CRTN"
+   ],
+   "aliases": [
+    "Creighton (Hobart and Russell) Hall of Animal Sciences"
+   ],
+   "lng": -86.918765,
+   "lat": 40.421151,
+   "osm": "way/886346925"
+  },
+  {
+   "id": "physics-building-phys",
+   "name": "Physics Building (PHYS)",
+   "short": "Physics Building (PHYS)",
+   "kind": "academic",
+   "codes": [
+    "PHYS"
+   ],
+   "aliases": [
+    "Physics Building"
+   ],
+   "lng": -86.913466,
+   "lat": 40.430103,
+   "osm": "way/74340895"
+  },
+  {
+   "id": "morgan-j-burke-boilermaker-aquatic-center",
+   "name": "Morgan J. Burke Boilermaker Aquatic Center",
+   "short": "Morgan J. Burke Boilermaker Aquatic Center",
+   "kind": "gym",
+   "codes": [
+    "AQUA"
+   ],
+   "aliases": [
+    "Burke (Morgan J.) Boilermaker Aquatic Center"
+   ],
+   "lng": -86.923275,
+   "lat": 40.428111,
+   "osm": "way/128488697"
+  },
+  {
+   "id": "max-w-and-maileen-brown-family-hall-of-electrical-engineering-bhee",
+   "name": "Max W & Maileen Brown Family Hall of Electrical Engineering (BHEE)",
+   "short": "Max W & Maileen Brown Family Hall of Electrical Engineering (BHEE)",
+   "kind": "academic",
+   "codes": [
+    "BHEE"
+   ],
+   "aliases": [
+    "Brown (Max W & Maileen) Family Hall"
+   ],
+   "lng": -86.911953,
+   "lat": 40.428639,
+   "osm": "way/158307860"
+  },
+  {
+   "id": "yue-kong-pao-hall",
+   "name": "Yue-Kong Pao Hall",
+   "short": "Yue-Kong Pao Hall",
+   "kind": "academic",
+   "codes": [
+    "PAO"
+   ],
+   "aliases": [
+    "Pao (Yue-Kong) Hall of Visual and Performing Arts"
+   ],
+   "lng": -86.91298,
+   "lat": 40.422554,
+   "osm": "way/117396586"
+  },
+  {
+   "id": "elliott-hall-of-music-ellt",
+   "name": "Elliott Hall of Music (ELLT)",
+   "short": "Elliott Hall of Music (ELLT)",
+   "kind": "academic",
+   "codes": [
+    "ELLT"
+   ],
+   "aliases": [
+    "Elliott (Edward C.) Hall of Music"
+   ],
+   "lng": -86.915022,
+   "lat": 40.427871,
+   "osm": "way/74151922"
+  },
+  {
+   "id": "wilmeth-active-learning-center-walc",
+   "name": "Wilmeth Active Learning Center (WALC)",
+   "short": "Wilmeth Active Learning Center (WALC)",
+   "kind": "academic",
+   "codes": [
+    "WALC"
+   ],
+   "aliases": [
+    "Wilmeth (Thomas S. and Harvey D.) Active Learning Center"
+   ],
+   "lng": -86.91323,
+   "lat": 40.427405,
+   "osm": "way/508846031"
+  },
+  {
+   "id": "r-b-wetherill-laboratory-of-chemistry-wthr",
+   "name": "R. B. Wetherill Laboratory of Chemistry (WTHR)",
+   "short": "R. B. Wetherill Laboratory of Chemistry (WTHR)",
+   "kind": "academic",
+   "codes": [
+    "WTHR"
+   ],
+   "aliases": [
+    "Wetherill (Richard Benbridge) Laboratory of Chemistry"
+   ],
+   "lng": -86.9131,
+   "lat": 40.426471,
+   "osm": "way/117146489"
+  },
+  {
+   "id": "armory-ar",
+   "name": "Armory (AR)",
+   "short": "Armory (AR)",
+   "kind": "academic",
+   "codes": [
+    "AR"
+   ],
+   "aliases": [
+    "Armory"
+   ],
+   "lng": -86.916277,
+   "lat": 40.428016,
+   "osm": "way/117147171"
+  },
+  {
+   "id": "materials-management-and-distribution-center",
+   "name": "Materials Management and Distribution Center",
+   "short": "Materials Management and Distribution Center",
+   "kind": "academic",
+   "codes": [
+    "MMDC"
+   ],
+   "aliases": [],
+   "lng": -86.917906,
+   "lat": 40.415191,
+   "osm": "way/945429103"
+  },
+  {
+   "id": "whistler-hall",
+   "name": "Whistler Hall",
+   "short": "Whistler Hall",
+   "kind": "academic",
+   "codes": [
+    "WSLR"
+   ],
+   "aliases": [
+    "Whistler (Roy L.) Hall of Agricultural Research"
+   ],
+   "lng": -86.915475,
+   "lat": 40.423221,
+   "osm": "way/117396619"
+  },
+  {
+   "id": "schwartz-tennis-center",
+   "name": "Schwartz Tennis Center",
+   "short": "Schwartz Tennis Center",
+   "kind": "academic",
+   "codes": [
+    "SCHW"
+   ],
+   "aliases": [
+    "Schwartz (Dennis J. and Mary Lou) Tennis Center"
+   ],
+   "lng": -86.938135,
+   "lat": 40.436663,
+   "osm": "way/283069991"
+  },
+  {
+   "id": "drew-and-brittany-brees-student-athletic-academic-center-bres",
+   "name": "Drew and Brittany Brees Student-Athletic Academic Center (BRES)",
+   "short": "Drew and Brittany Brees Student-Athletic Academic Center (BRES)",
+   "kind": "academic",
+   "codes": [
+    "BRES"
+   ],
+   "aliases": [
+    "Brees (Drew and Brittany) Student-Athlete Academic Center"
+   ],
+   "lng": -86.91657,
+   "lat": 40.434124,
+   "osm": "way/128488702"
+  },
+  {
+   "id": "lyles-porter-hall-lyle",
+   "name": "Lyles-Porter Hall (LYLE)",
+   "short": "Lyles-Porter Hall (LYLE)",
+   "kind": "academic",
+   "codes": [
+    "LYLE"
+   ],
+   "aliases": [
+    "Lyles-Porter Hall"
+   ],
+   "lng": -86.916692,
+   "lat": 40.420983,
+   "osm": "way/886348186"
+  },
+  {
+   "id": "forney-hall-of-chemical-engineering-frny",
+   "name": "Forney Hall of Chemical Engineering (FRNY)",
+   "short": "Forney Hall of Chemical Engineering (FRNY)",
+   "kind": "academic",
+   "codes": [
+    "FRNY"
+   ],
+   "aliases": [
+    "Forney Hall of Chemical Engineering"
+   ],
+   "lng": -86.914003,
+   "lat": 40.429518,
+   "osm": "way/117146497"
+  },
+  {
+   "id": "beering-hall-brng",
+   "name": "Beering Hall (BRNG)",
+   "short": "Beering Hall (BRNG)",
+   "kind": "academic",
+   "codes": [
+    "BRNG"
+   ],
+   "aliases": [
+    "Beering (Steven C.) Hall of Liberal Arts and Education"
+   ],
+   "lng": -86.916188,
+   "lat": 40.425571,
+   "osm": "way/117147176"
+  },
+  {
+   "id": "niswonger-aviation-technology-building",
+   "name": "Niswonger Aviation Technology Building",
+   "short": "Niswonger Aviation Technology Building",
+   "kind": "academic",
+   "codes": [
+    "NISW"
+   ],
+   "aliases": [],
+   "lng": -86.929401,
+   "lat": 40.416408,
+   "osm": "way/256667242"
+  },
+  {
+   "id": "philip-e-nelson-hall-of-food-science-nlsn",
+   "name": "Philip E. Nelson Hall of Food Science (NLSN)",
+   "short": "Philip E. Nelson Hall of Food Science (NLSN)",
+   "kind": "academic",
+   "codes": [
+    "NLSN"
+   ],
+   "aliases": [
+    "Nelson (Philip E.) Hall of Food Science"
+   ],
+   "lng": -86.915501,
+   "lat": 40.421566,
+   "osm": "way/117396587"
+  },
+  {
+   "id": "smith-hall",
+   "name": "Smith Hall",
+   "short": "Smith Hall",
+   "kind": "academic",
+   "codes": [
+    "SMTH"
+   ],
+   "aliases": [],
+   "lng": -86.916949,
+   "lat": 40.423487,
+   "osm": "way/117396598"
+  },
+  {
+   "id": "brown-laboratory-of-chemistry-brwn",
+   "name": "Brown Laboratory of Chemistry (BRWN)",
+   "short": "Brown Laboratory of Chemistry (BRWN)",
+   "kind": "academic",
+   "codes": [
+    "BRWN"
+   ],
+   "aliases": [
+    "Brown (Herbert C.) Laboratory of Chemistry"
+   ],
+   "lng": -86.91194,
+   "lat": 40.426584,
+   "osm": "way/117146480"
+  },
+  {
+   "id": "agricultural-and-biological-engineering-abe",
+   "name": "Agricultural and Biological Engineering (ABE)",
+   "short": "Agricultural and Biological Engineering (ABE)",
+   "kind": "academic",
+   "codes": [
+    "ABE"
+   ],
+   "aliases": [
+    "Agricultural and Biological Engineering"
+   ],
+   "lng": -86.916609,
+   "lat": 40.421701,
+   "osm": "way/117396629"
+  },
+  {
+   "id": "wang-hall-wang",
+   "name": "Wang Hall (WANG)",
+   "short": "Wang Hall (WANG)",
+   "kind": "academic",
+   "codes": [
+    "WANG"
+   ],
+   "aliases": [
+    "Wang (Seng-Liang) Hall"
+   ],
+   "lng": -86.912553,
+   "lat": 40.430455,
+   "osm": "way/301932787"
+  },
+  {
+   "id": "ford-dining-court",
+   "name": "Ford Dining Court",
+   "short": "Ford Dining Court",
+   "kind": "dining",
+   "codes": [
+    "FORD"
+   ],
+   "aliases": [
+    "Ford (Fred and Mary) Dining Court"
+   ],
+   "lng": -86.919619,
+   "lat": 40.432138,
+   "osm": "way/283275005"
+  },
+  {
+   "id": "turf-recreation-exercise-center",
+   "name": "Turf Recreation Exercise Center",
+   "short": "Turf Recreation Exercise Center",
+   "kind": "gym",
+   "codes": [
+    "TREC"
+   ],
+   "aliases": [],
+   "lng": -86.924275,
+   "lat": 40.428508,
+   "osm": "way/283275002"
+  },
+  {
+   "id": "main-terminal-building-term",
+   "name": "Main Terminal Building (TERM)",
+   "short": "Main Terminal Building (TERM)",
+   "kind": "academic",
+   "codes": [
+    "TERM"
+   ],
+   "aliases": [
+    "Terminal Building"
+   ],
+   "lng": -86.930974,
+   "lat": 40.416245,
+   "osm": "way/301915050"
+  },
+  {
+   "id": "martin-c-jischke-hall-of-biomedical-engineering",
+   "name": "Martin C. Jischke Hall of Biomedical Engineering",
+   "short": "Martin C. Jischke Hall of Biomedical Engineering",
+   "kind": "academic",
+   "codes": [
+    "MJIS"
+   ],
+   "aliases": [
+    "Jischke (Martin C.) Hall of Biomedical Engineering"
+   ],
+   "lng": -86.920982,
+   "lat": 40.422134,
+   "osm": "way/117396622"
+  },
+  {
+   "id": "stanley-coulter-hall-sc",
+   "name": "Stanley Coulter Hall (SC)",
+   "short": "Stanley Coulter Hall (SC)",
+   "kind": "academic",
+   "codes": [
+    "SC"
+   ],
+   "aliases": [
+    "Stanley Coulter Hall"
+   ],
+   "lng": -86.914382,
+   "lat": 40.426531,
+   "osm": "relation/3759822"
+  },
+  {
+   "id": "convergence-center-for-innovation-and-collaboration-conv",
+   "name": "Convergence Center for Innovation and Collaboration (CONV)",
+   "short": "Convergence Center for Innovation and Collaboration (CONV)",
+   "kind": "academic",
+   "codes": [
+    "CONV"
+   ],
+   "aliases": [
+    "Convergence"
+   ],
+   "lng": -86.927039,
+   "lat": 40.423757,
+   "osm": "way/803755067"
+  },
+  {
+   "id": "wiley-dining-court-wdct",
+   "name": "Wiley Dining Court (WDCT)",
+   "short": "Wiley Dining Court (WDCT)",
+   "kind": "dining",
+   "codes": [
+    "WDCT"
+   ],
+   "aliases": [
+    "Wiley Dining Court"
+   ],
+   "lng": -86.92077,
+   "lat": 40.428532,
+   "osm": "way/184280688"
+  },
+  {
+   "id": "david-and-bonnie-brunner-farm-animal-hospital",
+   "name": "David and Bonnie Brunner Farm Animal Hospital",
+   "short": "David and Bonnie Brunner Farm Animal Hospital",
+   "kind": "academic",
+   "codes": [
+    "BRFM"
+   ],
+   "aliases": [
+    "Brunner (David and Bonnie) Farm Animal Hospital"
+   ],
+   "lng": -86.911085,
+   "lat": 40.418087,
+   "osm": "way/1106726514"
+  },
+  {
+   "id": "bindley-bioscience-center",
+   "name": "Bindley Bioscience Center",
+   "short": "Bindley Bioscience Center",
+   "kind": "academic",
+   "codes": [
+    "BIND"
+   ],
+   "aliases": [],
+   "lng": -86.923441,
+   "lat": 40.422785,
+   "osm": "way/159752220"
+  },
+  {
+   "id": "potter-engineering-center-potr",
+   "name": "Potter Engineering Center (POTR)",
+   "short": "Potter Engineering Center (POTR)",
+   "kind": "academic",
+   "codes": [
+    "POTR"
+   ],
+   "aliases": [
+    "Potter (A.A.) Engineering Center"
+   ],
+   "lng": -86.912394,
+   "lat": 40.427532,
+   "osm": "way/117147170"
+  },
+  {
+   "id": "materials-science-and-electrical-engineering-msee",
+   "name": "Materials Science and Electrical Engineering (MSEE)",
+   "short": "Materials Science and Electrical Engineering (MSEE)",
+   "kind": "academic",
+   "codes": [
+    "MSEE"
+   ],
+   "aliases": [
+    "Materials and Electrical Engineering Building"
+   ],
+   "lng": -86.91267,
+   "lat": 40.429341,
+   "osm": "way/158307858"
+  },
+  {
+   "id": "chaney-hale-hall-of-science-chas",
+   "name": "Chaney-Hale Hall of Science (CHAS)",
+   "short": "Chaney-Hale Hall of Science (CHAS)",
+   "kind": "academic",
+   "codes": [
+    "CHAS"
+   ],
+   "aliases": [
+    "Chaney-Hale Hall of Science"
+   ],
+   "lng": -86.915535,
+   "lat": 40.428561,
+   "osm": "way/866802210"
+  },
+  {
+   "id": "heine-pharmacy-rhph",
+   "name": "Heine Pharmacy (RHPH)",
+   "short": "Heine Pharmacy (RHPH)",
+   "kind": "academic",
+   "codes": [
+    "RHPH"
+   ],
+   "aliases": [
+    "Heine (Robert E.) Pharmacy Building"
+   ],
+   "lng": -86.916018,
+   "lat": 40.429738,
+   "osm": "way/117146482"
+  },
+  {
+   "id": "knoy-hall-knoy",
+   "name": "Knoy Hall (KNOY)",
+   "short": "Knoy Hall (KNOY)",
+   "kind": "academic",
+   "codes": [
+    "KNOY"
+   ],
+   "aliases": [
+    "Knoy (Maurice G.) Hall of Technology"
+   ],
+   "lng": -86.911125,
+   "lat": 40.427766,
+   "osm": "way/117146487"
+  },
+  {
+   "id": "adm-agricultural-innovation-center",
+   "name": "ADM Agricultural Innovation Center",
+   "short": "ADM Agricultural Innovation Center",
+   "kind": "academic",
+   "codes": [
+    "ADM"
+   ],
+   "aliases": [],
+   "lng": -86.919706,
+   "lat": 40.416332,
+   "osm": "way/945408781"
+  },
+  {
+   "id": "flex-lab-flex",
+   "name": "Flex Lab (FLEX)",
+   "short": "Flex Lab (FLEX)",
+   "kind": "academic",
+   "codes": [
+    "FLEX"
+   ],
+   "aliases": [
+    "Flex Laboratories"
+   ],
+   "lng": -86.923658,
+   "lat": 40.421537,
+   "osm": "way/693624339"
+  },
+  {
+   "id": "national-soil-erosion-laboratory-soil",
+   "name": "National Soil Erosion Laboratory (SOIL)",
+   "short": "National Soil Erosion Laboratory (SOIL)",
+   "kind": "academic",
+   "codes": [
+    "SOIL"
+   ],
+   "aliases": [
+    "Soil Erosion Laboratory, National"
+   ],
+   "lng": -86.920221,
+   "lat": 40.421307,
+   "osm": "way/117396594"
+  },
+  {
+   "id": "lawson-hall-lwsn",
+   "name": "Lawson Hall (LWSN)",
+   "short": "Lawson Hall (LWSN)",
+   "kind": "academic",
+   "codes": [
+    "LWSN"
+   ],
+   "aliases": [
+    "Lawson (Richard and Patricia) Computer Science Building"
+   ],
+   "lng": -86.916994,
+   "lat": 40.427786,
+   "osm": "way/159752222"
+  },
+  {
+   "id": "purdue-village-administration-building",
+   "name": "Purdue Village Administration Building",
+   "short": "Purdue Village Administration Building",
+   "kind": "academic",
+   "codes": [
+    "PVAB"
+   ],
+   "aliases": [],
+   "lng": -86.923974,
+   "lat": 40.420245,
+   "osm": "way/283274993"
+  },
+  {
+   "id": "rawls-hall",
+   "name": "Rawls Hall",
+   "short": "Rawls Hall",
+   "kind": "academic",
+   "codes": [
+    "RAWL"
+   ],
+   "aliases": [
+    "Rawls (Jerry S.) Hall"
+   ],
+   "lng": -86.90982,
+   "lat": 40.423732,
+   "osm": "way/117396593"
+  },
+  {
+   "id": "animal-disease-diagnostic-laboratory",
+   "name": "Animal Disease Diagnostic Laboratory",
+   "short": "Animal Disease Diagnostic Laboratory",
+   "kind": "academic",
+   "codes": [
+    "ADDL"
+   ],
+   "aliases": [
+    "Willie M. Reed Animal Disease Diagnostic Laboratory"
+   ],
+   "lng": -86.916016,
+   "lat": 40.418137,
+   "osm": "way/301832273"
+  },
+  {
+   "id": "animal-holding-facility",
+   "name": "Animal Holding Facility",
+   "short": "Animal Holding Facility",
+   "kind": "academic",
+   "codes": [
+    "AHF"
+   ],
+   "aliases": [],
+   "lng": -86.914186,
+   "lat": 40.418481,
+   "osm": "way/301832276"
+  },
+  {
+   "id": "stone-hall-ston",
+   "name": "Stone Hall (STON)",
+   "short": "Stone Hall (STON)",
+   "kind": "academic",
+   "codes": [
+    "STON"
+   ],
+   "aliases": [
+    "Stone (Winthrop E.) Hall"
+   ],
+   "lng": -86.915309,
+   "lat": 40.424626,
+   "osm": "way/117147178"
+  },
+  {
+   "id": "marriot-hall",
+   "name": "Marriot Hall",
+   "short": "Marriot Hall",
+   "kind": "academic",
+   "codes": [
+    "MRRT"
+   ],
+   "aliases": [
+    "Marriott Hall"
+   ],
+   "lng": -86.917002,
+   "lat": 40.424573,
+   "osm": "way/159752224"
+  },
+  {
+   "id": "hall-of-data-science-and-ai-dsai",
+   "name": "Hall of Data Science and AI (DSAI)",
+   "short": "Hall of Data Science and AI (DSAI)",
+   "kind": "academic",
+   "codes": [
+    "DSAI"
+   ],
+   "aliases": [
+    "Hall of Data Science and AI"
+   ],
+   "lng": -86.914858,
+   "lat": 40.428962,
+   "osm": "way/117146492"
+  },
+  {
+   "id": "psychological-sciences-building-psyc",
+   "name": "Psychological Sciences Building (PSYC)",
+   "short": "Psychological Sciences Building (PSYC)",
+   "kind": "academic",
+   "codes": [
+    "PSYC"
+   ],
+   "aliases": [
+    "Psychological Sciences Building"
+   ],
+   "lng": -86.914968,
+   "lat": 40.427026,
+   "osm": "way/117147173"
+  },
+  {
+   "id": "hansen-hall",
+   "name": "Hansen Hall",
+   "short": "Hansen Hall",
+   "kind": "academic",
+   "codes": [
+    "HANS"
+   ],
+   "aliases": [
+    "Hansen (Arthur G.) Life Sciences Research Building"
+   ],
+   "lng": -86.917007,
+   "lat": 40.422278,
+   "osm": "relation/12701379"
+  },
+  {
+   "id": "krannert-school-of-management",
+   "name": "Krannert School of Management",
+   "short": "Krannert School of Management",
+   "kind": "academic",
+   "codes": [
+    "KRAN"
+   ],
+   "aliases": [
+    "Krannert Building"
+   ],
+   "lng": -86.910961,
+   "lat": 40.42369,
+   "osm": "way/117396623"
+  },
+  {
+   "id": "biochemistry-building",
+   "name": "Biochemistry Building",
+   "short": "Biochemistry Building",
+   "kind": "academic",
+   "codes": [
+    "BCHM"
+   ],
+   "aliases": [],
+   "lng": -86.916454,
+   "lat": 40.422812,
+   "osm": "way/117396603"
+  },
+  {
+   "id": "grissom-hall",
+   "name": "Grissom Hall",
+   "short": "Grissom Hall",
+   "kind": "academic",
+   "codes": [
+    "GRIS"
+   ],
+   "aliases": [],
+   "lng": -86.910868,
+   "lat": 40.426392,
+   "osm": "way/117146493"
+  },
+  {
+   "id": "hockmeyer-hall-of-structural-biology-hock",
+   "name": "Hockmeyer Hall of Structural Biology (HOCK)",
+   "short": "Hockmeyer Hall of Structural Biology (HOCK)",
+   "kind": "academic",
+   "codes": [
+    "HOCK"
+   ],
+   "aliases": [
+    "Hockmeyer (Wayne T. and Mary T.) Hall of Structural Biology"
+   ],
+   "lng": -86.921144,
+   "lat": 40.421182,
+   "osm": "way/283274991"
+  },
+  {
+   "id": "hall-for-discovery-and-learning-research-dlr",
+   "name": "Hall for Discovery and Learning Research (DLR)",
+   "short": "Hall for Discovery and Learning Research (DLR)",
+   "kind": "academic",
+   "codes": [
+    "DLR"
+   ],
+   "aliases": [
+    "Hall for Discovery and Learning Research"
+   ],
+   "lng": -86.922447,
+   "lat": 40.421234,
+   "osm": "way/283274992"
+  },
+  {
+   "id": "young-hall-yong",
+   "name": "Young Hall (YONG)",
+   "short": "Young Hall (YONG)",
+   "kind": "academic",
+   "codes": [
+    "YONG"
+   ],
+   "aliases": [
+    "Young (Ernest C.) Hall"
+   ],
+   "lng": -86.910699,
+   "lat": 40.42283,
+   "osm": "way/117396581"
+  },
+  {
+   "id": "purdue-police-department",
+   "name": "Purdue Police Department",
+   "short": "Purdue Police Department",
+   "kind": "academic",
+   "codes": [
+    "TERY"
+   ],
+   "aliases": [
+    "Terry (Oliver P.) House"
+   ],
+   "lng": -86.922256,
+   "lat": 40.422301,
+   "osm": "way/159752235"
+  },
+  {
+   "id": "fowler-memorial-house",
+   "name": "Fowler Memorial House",
+   "short": "Fowler Memorial House",
+   "kind": "academic",
+   "codes": [
+    "FWLR"
+   ],
+   "aliases": [
+    "Fowler (Harriet O. and James M., Jr.) Memorial House"
+   ],
+   "lng": -86.922267,
+   "lat": 40.424855,
+   "osm": "way/283275001"
+  },
+  {
+   "id": "dauch-alumni-center",
+   "name": "Dauch Alumni Center",
+   "short": "Dauch Alumni Center",
+   "kind": "academic",
+   "codes": [
+    "DAUC"
+   ],
+   "aliases": [
+    "Dauch (Dick and Sandy) Alumni Center"
+   ],
+   "lng": -86.910866,
+   "lat": 40.421823,
+   "osm": "way/117396626"
+  },
+  {
+   "id": "matthews-hall-mthw",
+   "name": "Matthews Hall (MTHW)",
+   "short": "Matthews Hall (MTHW)",
+   "kind": "academic",
+   "codes": [
+    "MTHW"
+   ],
+   "aliases": [
+    "Matthews Hall"
+   ],
+   "lng": -86.91638,
+   "lat": 40.424721,
+   "osm": "way/117147172"
+  },
+  {
+   "id": "haas-felix-hall-haas",
+   "name": "Haas (Felix) Hall (HAAS)",
+   "short": "Haas (Felix) Hall (HAAS)",
+   "kind": "academic",
+   "codes": [
+    "HAAS"
+   ],
+   "aliases": [
+    "Haas (Felix) Hall"
+   ],
+   "lng": -86.91634,
+   "lat": 40.426823,
+   "osm": "way/117147168"
+  },
+  {
+   "id": "mann-hall",
+   "name": "Mann Hall",
+   "short": "Mann Hall",
+   "kind": "academic",
+   "codes": [
+    "MANN"
+   ],
+   "aliases": [
+    "Mann (Gerald D. and Edna E.) Hall"
+   ],
+   "lng": -86.922679,
+   "lat": 40.423014,
+   "osm": "way/159752223"
+  },
+  {
+   "id": "purdue-drug-discovery-facility",
+   "name": "Purdue Drug Discovery Facility",
+   "short": "Purdue Drug Discovery Facility",
+   "kind": "academic",
+   "codes": [
+    "DRUG"
+   ],
+   "aliases": [
+    "Drug Discovery"
+   ],
+   "lng": -86.917567,
+   "lat": 40.42177,
+   "osm": "way/520127811"
+  },
+  {
+   "id": "agricultural-administration-building",
+   "name": "Agricultural Administration Building",
+   "short": "Agricultural Administration Building",
+   "kind": "academic",
+   "codes": [
+    "AGAD"
+   ],
+   "aliases": [],
+   "lng": -86.91438,
+   "lat": 40.423401,
+   "osm": "way/117396610"
+  },
+  {
+   "id": "horticulture",
+   "name": "Horticulture",
+   "short": "Horticulture",
+   "kind": "academic",
+   "codes": [
+    "HORT"
+   ],
+   "aliases": [
+    "Horticulture Building"
+   ],
+   "lng": -86.914463,
+   "lat": 40.421753,
+   "osm": "way/117396620"
+  },
+  {
+   "id": "purdue-university-early-care-and-education-center",
+   "name": "Purdue University Early Care and Education Center",
+   "short": "Purdue University Early Care and Education Center",
+   "kind": "academic",
+   "codes": [
+    "ECEC",
+    "PJEC"
+   ],
+   "aliases": [
+    "Jischke (Patty) Early Care and Education Center Purdue"
+   ],
+   "lng": -86.933126,
+   "lat": 40.424855,
+   "osm": "way/874208040"
+  },
+  {
+   "id": "herrick-laboratories",
+   "name": "Herrick Laboratories",
+   "short": "Herrick Laboratories",
+   "kind": "academic",
+   "codes": [
+    "HERL",
+    "HLAB"
+   ],
+   "aliases": [
+    "Herrick Acoustics"
+   ],
+   "lng": -86.92096,
+   "lat": 40.422826,
+   "osm": "way/117396601"
+  },
+  {
+   "id": "krach-leadership-center-krch",
+   "name": "Krach Leadership Center (KRCH)",
+   "short": "Krach Leadership Center (KRCH)",
+   "kind": "academic",
+   "codes": [
+    "KRCH"
+   ],
+   "aliases": [
+    "Krach Leadership Center"
+   ],
+   "lng": -86.921277,
+   "lat": 40.427575,
+   "osm": "way/327303064"
+  },
+  {
+   "id": "hovde-hall-of-administration-hovd",
+   "name": "Hovde Hall of Administration (HOVD)",
+   "short": "Hovde Hall of Administration (HOVD)",
+   "kind": "academic",
+   "codes": [
+    "HOVD"
+   ],
+   "aliases": [
+    "Hovde (Frederick L.) Hall of Administration"
+   ],
+   "lng": -86.914438,
+   "lat": 40.428241,
+   "osm": "way/75498146"
+  },
+  {
+   "id": "class-of-1950-lecture-hall-cl50",
+   "name": "Class of 1950 Lecture Hall (CL50)",
+   "short": "Class of 1950 Lecture Hall (CL50)",
+   "kind": "academic",
+   "codes": [
+    "CL50"
+   ],
+   "aliases": [
+    "Class of 1950 Lecture Hall"
+   ],
+   "lng": -86.915059,
+   "lat": 40.426352,
+   "osm": "way/309492283"
+  },
+  {
+   "id": "mathematical-sciences-building-math",
+   "name": "Mathematical Sciences Building (MATH)",
+   "short": "Mathematical Sciences Building (MATH)",
+   "kind": "academic",
+   "codes": [
+    "MATH"
+   ],
+   "aliases": [
+    "Mathematical Sciences Building"
+   ],
+   "lng": -86.915777,
+   "lat": 40.426222,
+   "osm": "way/117147177"
+  },
+  {
+   "id": "hanley-hall",
+   "name": "Hanley Hall",
+   "short": "Hanley Hall",
+   "kind": "academic",
+   "codes": [
+    "HNLY"
+   ],
+   "aliases": [
+    "Hanley (Bill and Sally) Hall"
+   ],
+   "lng": -86.92286,
+   "lat": 40.424708,
+   "osm": "way/283275000"
+  },
+  {
+   "id": "university-church",
+   "name": "University Church",
+   "short": "University Church",
+   "kind": "academic",
+   "codes": [
+    "UC"
+   ],
+   "aliases": [
+    "UC"
+   ],
+   "lng": -86.909947,
+   "lat": 40.426143,
+   "osm": "way/300547969"
+  },
+  {
+   "id": "student-health-center-push",
+   "name": "Student Health Center (PUSH)",
+   "short": "Student Health Center (PUSH)",
+   "kind": "academic",
+   "codes": [
+    "PUSH"
+   ],
+   "aliases": [
+    "Purdue University Student Health Center"
+   ],
+   "lng": -86.916063,
+   "lat": 40.430355,
+   "osm": "way/117146486"
+  },
+  {
+   "id": "slayter-center-for-performing-arts",
+   "name": "Slayter Center for Performing Arts",
+   "short": "Slayter Center for Performing Arts",
+   "kind": "academic",
+   "codes": [
+    "SCPA"
+   ],
+   "aliases": [
+    "Slayter Center of Performing Arts"
+   ],
+   "lng": -86.922556,
+   "lat": 40.43186,
+   "osm": "way/283275010"
+  },
+  {
+   "id": "schleman-hall-schm",
+   "name": "Schleman Hall (SCHM)",
+   "short": "Schleman Hall (SCHM)",
+   "kind": "academic",
+   "codes": [
+    "SCHM"
+   ],
+   "aliases": [
+    "Helen B. Schleman Hall"
+   ],
+   "lng": -86.915209,
+   "lat": 40.425808,
+   "osm": "way/117147167"
+  },
+  {
+   "id": "morgan-center-for-entrepreneurship-mrgn",
+   "name": "Morgan Center for Entrepreneurship (MRGN)",
+   "short": "Morgan Center for Entrepreneurship (MRGN)",
+   "kind": "academic",
+   "codes": [
+    "MRGN"
+   ],
+   "aliases": [
+    "Morgan (Burton D.) Center for Entrepreneurship"
+   ],
+   "lng": -86.922856,
+   "lat": 40.423747,
+   "osm": "way/159752229"
+  },
+  {
+   "id": "bechtel-innovation-design-center-bidc",
+   "name": "Bechtel Innovation Design Center (BIDC)",
+   "short": "Bechtel Innovation Design Center (BIDC)",
+   "kind": "academic",
+   "codes": [
+    "BIDC"
+   ],
+   "aliases": [
+    "Bechtel Innovation Design Center"
+   ],
+   "lng": -86.918794,
+   "lat": 40.427522,
+   "osm": "way/693623661"
+  },
+  {
+   "id": "veterinary-pathology-building",
+   "name": "Veterinary Pathology Building",
+   "short": "Veterinary Pathology Building",
+   "kind": "academic",
+   "codes": [
+    "VPTH"
+   ],
+   "aliases": [],
+   "lng": -86.91562,
+   "lat": 40.420044,
+   "osm": "way/301832118"
+  },
+  {
+   "id": "crosswalk-commons",
+   "name": "Crosswalk Commons",
+   "short": "Crosswalk Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.923508,
+   "lat": 40.434621,
+   "osm": "way/231217849"
+  },
+  {
+   "id": "johnson-hall-of-nursing-jnsn",
+   "name": "Johnson Hall of Nursing (JNSN)",
+   "short": "Johnson Hall of Nursing (JNSN)",
+   "kind": "academic",
+   "codes": [
+    "JNSN"
+   ],
+   "aliases": [
+    "Johnson (Helen R.) Hall of Nursing"
+   ],
+   "lng": -86.915524,
+   "lat": 40.429405,
+   "osm": "way/117146488"
+  },
+  {
+   "id": "life-science-plant-and-soils-laboratory",
+   "name": "Life Science Plant and Soils Laboratory",
+   "short": "Life Science Plant and Soils Laboratory",
+   "kind": "academic",
+   "codes": [
+    "LSPS"
+   ],
+   "aliases": [],
+   "lng": -86.918734,
+   "lat": 40.423157,
+   "osm": "way/117396596"
+  },
+  {
+   "id": "equine-health-sciences-annex",
+   "name": "Equine Health Sciences Annex",
+   "short": "Equine Health Sciences Annex",
+   "kind": "academic",
+   "codes": [
+    "EHSA",
+    "EHSB"
+   ],
+   "aliases": [
+    "Equine Health Sciences Building"
+   ],
+   "lng": -86.914211,
+   "lat": 40.417555,
+   "osm": "way/301832275"
+  },
+  {
+   "id": "ralph-and-bettye-bailey-hall",
+   "name": "Ralph & Bettye Bailey Hall",
+   "short": "Ralph & Bettye Bailey Hall",
+   "kind": "academic",
+   "codes": [
+    "BALY"
+   ],
+   "aliases": [
+    "Bailey (Ralph and Bettye) Hall"
+   ],
+   "lng": -86.910067,
+   "lat": 40.427185,
+   "osm": "way/332361174"
+  },
+  {
+   "id": "marc-and-sharon-hagle-hall-hagl",
+   "name": "Marc and Sharon Hagle Hall (HAGL)",
+   "short": "Marc and Sharon Hagle Hall (HAGL)",
+   "kind": "academic",
+   "codes": [
+    "HAGL"
+   ],
+   "aliases": [
+    "Hagle (Marc and Sharon) Hall"
+   ],
+   "lng": -86.918822,
+   "lat": 40.427057,
+   "osm": "way/960201468"
+  },
+  {
+   "id": "pierce-hall-prce",
+   "name": "Pierce Hall (PRCE)",
+   "short": "Pierce Hall (PRCE)",
+   "kind": "academic",
+   "codes": [
+    "PRCE"
+   ],
+   "aliases": [
+    "Peirce Hall"
+   ],
+   "lng": -86.915069,
+   "lat": 40.426638,
+   "osm": "way/309492284"
+  },
+  {
+   "id": "black-cultural-center-bcc",
+   "name": "Black Cultural Center (BCC)",
+   "short": "Black Cultural Center (BCC)",
+   "kind": "academic",
+   "codes": [
+    "BCC"
+   ],
+   "aliases": [
+    "Black Cultural Center"
+   ],
+   "lng": -86.919521,
+   "lat": 40.427527,
+   "osm": "way/158620074"
+  },
+  {
+   "id": "holleman-niswonger-simulator-center-siml",
+   "name": "Holleman-Niswonger Simulator Center (SIML)",
+   "short": "Holleman-Niswonger Simulator Center (SIML)",
+   "kind": "academic",
+   "codes": [
+    "SIML"
+   ],
+   "aliases": [
+    "Holleman-Niswonger Simulator Center"
+   ],
+   "lng": -86.934979,
+   "lat": 40.416704,
+   "osm": "way/301915243"
+  },
+  {
+   "id": "university-hall-univ",
+   "name": "University Hall (UNIV)",
+   "short": "University Hall (UNIV)",
+   "kind": "academic",
+   "codes": [
+    "UNIV"
+   ],
+   "aliases": [
+    "University Hall"
+   ],
+   "lng": -86.915193,
+   "lat": 40.42527,
+   "osm": "way/158307901"
+  },
+  {
+   "id": "veterinary-medicine-isolation-facility",
+   "name": "Veterinary Medicine Isolation Facility",
+   "short": "Veterinary Medicine Isolation Facility",
+   "kind": "academic",
+   "codes": [
+    "VMIF"
+   ],
+   "aliases": [],
+   "lng": -86.915114,
+   "lat": 40.418013,
+   "osm": "way/301832274"
+  },
+  {
+   "id": "telecommunications-building-tel",
+   "name": "Telecommunications Building (TEL)",
+   "short": "Telecommunications Building (TEL)",
+   "kind": "academic",
+   "codes": [
+    "TEL"
+   ],
+   "aliases": [
+    "Telecommunications Building"
+   ],
+   "lng": -86.917022,
+   "lat": 40.426016,
+   "osm": "way/159752232"
+  },
+  {
+   "id": "university-lutheran-church",
+   "name": "University Lutheran Church",
+   "short": "ULu",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ULu"
+   ],
+   "lng": -86.911058,
+   "lat": 40.428943,
+   "osm": "way/301932784"
+  },
+  {
+   "id": "veterinary-animal-isolation-building-2",
+   "name": "Veterinary Animal Isolation Building 2",
+   "short": "Veterinary Animal Isolation Building 2",
+   "kind": "academic",
+   "codes": [
+    "VA1",
+    "VA2",
+    "VLAB"
+   ],
+   "aliases": [
+    "Veterinary Animal Isolation Building 1",
+    "Veterinary Laboratory Animal Building"
+   ],
+   "lng": -86.916068,
+   "lat": 40.418854,
+   "osm": "way/301832119"
+  },
+  {
+   "id": "hicks-undergraduate-library-hiks",
+   "name": "Hicks Undergraduate Library (HIKS)",
+   "short": "Hicks Undergraduate Library (HIKS)",
+   "kind": "library",
+   "codes": [
+    "HIKS"
+   ],
+   "aliases": [
+    "Hicks (John W.) Undergraduate Library"
+   ],
+   "lng": -86.912657,
+   "lat": 40.424529,
+   "osm": "way/158307900"
+  },
+  {
+   "id": "utility-plant-office-facility",
+   "name": "Utility Plant Office Facility",
+   "short": "Utility Plant Office Facility",
+   "kind": "academic",
+   "codes": [
+    "UPOB",
+    "UPOF"
+   ],
+   "aliases": [
+    "Utility Plant Office Building"
+   ],
+   "lng": -86.912461,
+   "lat": 40.417923,
+   "osm": "way/301832277"
+  },
+  {
+   "id": "hull-all-american-marching-band-complex",
+   "name": "Hull \"All-American\" Marching Band Complex",
+   "short": "Hull \"All-American\" Marching Band Complex",
+   "kind": "academic",
+   "codes": [
+    "HULL"
+   ],
+   "aliases": [
+    "Hull All-American Marching Band"
+   ],
+   "lng": -86.924232,
+   "lat": 40.428075,
+   "osm": "way/1167600633"
+  },
+  {
+   "id": "latino-cultural-center",
+   "name": "Latino Cultural Center",
+   "short": "Latino Cultural Center",
+   "kind": "academic",
+   "codes": [
+    "LCCP"
+   ],
+   "aliases": [
+    "Latino Cultural Center at Purdue"
+   ],
+   "lng": -86.918875,
+   "lat": 40.430499,
+   "osm": "way/184282132"
+  },
+  {
+   "id": "purdue-graduate-student-center",
+   "name": "Purdue Graduate Student Center",
+   "short": "Purdue Graduate Student Center",
+   "kind": "academic",
+   "codes": [
+    "PGSC"
+   ],
+   "aliases": [],
+   "lng": -86.911978,
+   "lat": 40.429691,
+   "osm": "way/1103303762"
+  },
+  {
+   "id": "transportation-service-wash-facility",
+   "name": "Transportation Service Wash Facility",
+   "short": "Transportation Service Wash Facility",
+   "kind": "academic",
+   "codes": [
+    "TSWF"
+   ],
+   "aliases": [],
+   "lng": -86.914604,
+   "lat": 40.413468,
+   "osm": "way/945408780"
+  },
+  {
+   "id": "american-railway-building-rail",
+   "name": "American Railway Building (RAIL)",
+   "short": "American Railway Building (RAIL)",
+   "kind": "academic",
+   "codes": [
+    "RAIL"
+   ],
+   "aliases": [
+    "American Railway Building"
+   ],
+   "lng": -86.912727,
+   "lat": 40.427932,
+   "osm": "way/932253994"
+  },
+  {
+   "id": "native-american-educational-and-cultural-center-nacc",
+   "name": "Native American Educational and Cultural Center (NACC)",
+   "short": "Native American Educational and Cultural Center (NACC)",
+   "kind": "academic",
+   "codes": [
+    "NACC"
+   ],
+   "aliases": [
+    "Native American Educational and Cultural Center"
+   ],
+   "lng": -86.916985,
+   "lat": 40.429108,
+   "osm": "way/301934125"
+  },
+  {
+   "id": "asian-american-and-asian-resource-and-cultural-center-aacc",
+   "name": "Asian American and Asian Resource and Cultural Center (AACC)",
+   "short": "Asian American and Asian Resource and Cultural Center (AACC)",
+   "kind": "academic",
+   "codes": [
+    "AACC"
+   ],
+   "aliases": [
+    "Asian American and Asian Resource and Cultural Center"
+   ],
+   "lng": -86.91765,
+   "lat": 40.429133,
+   "osm": "way/301934124"
+  }
+ ]
+}

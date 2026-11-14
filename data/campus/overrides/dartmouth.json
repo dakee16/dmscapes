@@ -1,0 +1,426 @@
+{
+  "halls": {
+    "new-hampshire": {
+      "pin": [
+        -72.286649,
+        43.702424
+      ]
+    },
+    "fayerweather": {
+      "pin": [
+        -72.28637,
+        43.703778
+      ]
+    },
+    "mid-massachusetts": {
+      "pin": [
+        -72.290548,
+        43.703805
+      ]
+    },
+    "russo": {
+      "pin": [
+        -72.293829,
+        43.702891
+      ]
+    },
+    "7-ivy-lane": {
+      "pin": [
+        -72.283404,
+        43.70479
+      ]
+    },
+    "9-ivy-lane": {
+      "pin": [
+        -72.283417,
+        43.705082
+      ]
+    },
+    "2-north-park": {
+      "pin": [
+        -72.282774,
+        43.704527
+      ]
+    },
+    "8-north-park": {
+      "pin": [
+        -72.283489,
+        43.705561
+      ]
+    },
+    "10-north-park": {
+      "pin": [
+        -72.283153,
+        43.705555
+      ]
+    },
+    "12-north-park": {
+      "pin": [
+        -72.282985,
+        43.705575
+      ]
+    },
+    "14-north-park": {
+      "pin": [
+        -72.283261,
+        43.705606
+      ]
+    },
+    "16-north-park": {
+      "pin": [
+        -72.283477,
+        43.706049
+      ]
+    },
+    "18-north-park": {
+      "pin": [
+        -72.283106,
+        43.70597
+      ]
+    },
+    "20-north-park": {
+      "pin": [
+        -72.283204,
+        43.706348
+      ]
+    },
+    "22-north-park": {
+      "pin": [
+        -72.283442,
+        43.706694
+      ]
+    },
+    "24-north-park": {
+      "pin": [
+        -72.283939,
+        43.707132
+      ]
+    },
+    "ledyard": {
+      "pin": [
+        -72.282793,
+        43.70411
+      ]
+    }
+  },
+  "notes": {
+    "new-hampshire": "OSM 'New Hampshire Hall' (way/262924496, 10 East Wheelock Street); the name rule had picked 'Sheridan New Hampshire', an industrial building on Lyme Road.",
+    "fayerweather": "Fayerweather is North, Middle and South Fayerweather Hall (OSM way/262924494, way/49791103, way/298417216, side by side on Fayerweather Hill Road); pinned at Middle Fayerweather Hall, the Dartmouth campus map's 'South House - Fayerweather Hall' at 7 Fayerweather Hill Road.",
+    "mid-massachusetts": "OSM 'Middle Massachusetts Hall' (way/262913307, 12 Massachusetts Row).",
+    "russo": "OSM node/14170160237 'Russo Hall' (building=dormitory, opened 2026-09); the Dartmouth campus map's Dartmouth Buildings layer puts Russo Hall at 25 W. Wheelock Street, the same spot.",
+    "7-ivy-lane": "OSM building with address 7 Ivy Lane (way/49797510); the Dartmouth campus map lists 7 Ivy Lane about 10 m away.",
+    "9-ivy-lane": "OSM building with address 9 Ivy Lane (way/49797507); the Dartmouth campus map lists 9 Ivy Lane about 5 m away.",
+    "2-north-park": "The Dartmouth campus map's 'All House - 2 North Park Street' (Dartmouth Buildings layer centroid), inside the OSM building at 2 North Park Street (way/584967836, still named 'Alpha Phi'); the word rule had picked North Park Faculty House at 3.5 North Park.",
+    "8-north-park": "OSM dormitory with address 8 North Park Street (way/49797520); the Dartmouth campus map lists 8 North Park Street within about 45 m.",
+    "10-north-park": "OSM dormitory with address 10 North Park Street (way/49797519); the Dartmouth campus map lists 10 North Park Street within about 45 m.",
+    "12-north-park": "OSM dormitory with address 12 North Park Street (way/49797518); the Dartmouth campus map lists 12 North Park Street within about 45 m.",
+    "14-north-park": "OSM dormitory with address 14 North Park Street (way/49797517); the Dartmouth campus map lists 14 North Park Street within about 45 m.",
+    "16-north-park": "OSM dormitory with address 16 North Park Street (way/49797515); the Dartmouth campus map lists 16 North Park Street within about 45 m.",
+    "18-north-park": "OSM dormitory with address 18 North Park Street (way/298244785); the Dartmouth campus map lists 18 North Park Street within about 45 m.",
+    "20-north-park": "OSM dormitory with address 20 North Park Street (way/49797531); the Dartmouth campus map lists 20 North Park Street within about 45 m.",
+    "22-north-park": "OSM dormitory with address 22 North Park Street (way/49797530); the Dartmouth campus map lists 22 North Park Street within about 45 m.",
+    "24-north-park": "OSM dormitory with address 24 North Park Street (way/298244786); the Dartmouth campus map lists 24 North Park Street within about 45 m.",
+    "sigma-phi-epsilon": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "kappa-delta": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "chi-heorot": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "alpha-xi-delta": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "alpha-chi-alpha": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "alpha-phi": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "panarchy": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "alpha-theta": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "alpha-delta": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "zeta-psi": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "phi-delta-alpha": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "kappa-delta-epsilon": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "chi-gamma-epsilon": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "beta-alpha-omega": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "kappa-pi-kappa": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "phi-tau": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "bones-gate": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "the-tabard": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "chi-delta": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "sigma-nu-delta-beta": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "gamma-delta-chi": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "epsilon-kappa-theta": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "theta-delta-chi": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "sigma-delta": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "psi-upsilon": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "amarna": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "sigma-alpha-epsilon": "Fraternity, sorority or coed house (OSM name), not a class or meal place.",
+    "dragon-secret-society": "Senior society hall, not a class or meal place.",
+    "sphinx-secret-society": "Senior society hall, not a class or meal place.",
+    "heating-and-electric-plant": "Power plant, not a class or meal place.",
+    "mckenzie-shops": "Facilities shops, not a class or meal place.",
+    "mckenzie-hall": "Facilities Operations and Management offices, not a class or meal place.",
+    "mckenzie-fuel-oil-facility": "Fuel-oil tank building, not a class or meal place.",
+    "friends-of-dartmouth-rowing-boathouse": "Rowing boathouse on the Connecticut River, not a class or meal place.",
+    "fuller-boathouse": "Boathouse on the Connecticut River, not a class or meal place.",
+    "ledyard-canoe-club": "Canoe club boathouse on the river, not a gym.",
+    "tom-dent-cabin": "Outing club cabin by the river, not a class or meal place.",
+    "corey-ford-rugby-clubhouse": "Rugby clubhouse, not a class or meal place.",
+    "dartmouth-campus-safety": "Campus safety office, not a class or meal place.",
+    "dicks-house": "Student health service, not a class or meal place.",
+    "hanover-inn-dartmouth": "Hotel, not a class or meal place for students.",
+    "bartlett-tower": "Memorial tower on Observatory Hill, not a class or meal place.",
+    "south-faculty-house": "House for a house-community faculty family, not a class place.",
+    "living-learning-faculty-house": "House for a faculty family, not a class place.",
+    "ledyard": "Ledyard Apartments, 19 E. Wheelock Street, in Dartmouth's Planon property layer (https://services1.arcgis.com/ajkPMiuiqxF9xEgP/arcgis/rest/services/Planon_Identification_Map_WFL1/FeatureServer/0, code EW19); the pin is that polygon's centre, inside OSM's 19 East Wheelock Street building (way/48466721)."
+  },
+  "places": {
+    "sigma-phi-epsilon": {
+      "hide": true
+    },
+    "kappa-delta": {
+      "hide": true
+    },
+    "chi-heorot": {
+      "hide": true
+    },
+    "alpha-xi-delta": {
+      "hide": true
+    },
+    "alpha-chi-alpha": {
+      "hide": true
+    },
+    "alpha-phi": {
+      "hide": true
+    },
+    "panarchy": {
+      "hide": true
+    },
+    "alpha-theta": {
+      "hide": true
+    },
+    "alpha-delta": {
+      "hide": true
+    },
+    "zeta-psi": {
+      "hide": true
+    },
+    "phi-delta-alpha": {
+      "hide": true
+    },
+    "kappa-delta-epsilon": {
+      "hide": true
+    },
+    "chi-gamma-epsilon": {
+      "hide": true
+    },
+    "beta-alpha-omega": {
+      "hide": true
+    },
+    "kappa-pi-kappa": {
+      "hide": true
+    },
+    "phi-tau": {
+      "hide": true
+    },
+    "bones-gate": {
+      "hide": true
+    },
+    "the-tabard": {
+      "hide": true
+    },
+    "chi-delta": {
+      "hide": true
+    },
+    "sigma-nu-delta-beta": {
+      "hide": true
+    },
+    "gamma-delta-chi": {
+      "hide": true
+    },
+    "epsilon-kappa-theta": {
+      "hide": true
+    },
+    "theta-delta-chi": {
+      "hide": true
+    },
+    "sigma-delta": {
+      "hide": true
+    },
+    "psi-upsilon": {
+      "hide": true
+    },
+    "amarna": {
+      "hide": true
+    },
+    "sigma-alpha-epsilon": {
+      "hide": true
+    },
+    "dragon-secret-society": {
+      "hide": true
+    },
+    "sphinx-secret-society": {
+      "hide": true
+    },
+    "heating-and-electric-plant": {
+      "hide": true
+    },
+    "mckenzie-shops": {
+      "hide": true
+    },
+    "mckenzie-hall": {
+      "hide": true
+    },
+    "mckenzie-fuel-oil-facility": {
+      "hide": true
+    },
+    "friends-of-dartmouth-rowing-boathouse": {
+      "hide": true
+    },
+    "fuller-boathouse": {
+      "hide": true
+    },
+    "ledyard-canoe-club": {
+      "hide": true
+    },
+    "tom-dent-cabin": {
+      "hide": true
+    },
+    "corey-ford-rugby-clubhouse": {
+      "hide": true
+    },
+    "dartmouth-campus-safety": {
+      "hide": true
+    },
+    "dicks-house": {
+      "hide": true
+    },
+    "hanover-inn-dartmouth": {
+      "hide": true
+    },
+    "bartlett-tower": {
+      "hide": true
+    },
+    "south-faculty-house": {
+      "hide": true
+    },
+    "living-learning-faculty-house": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "richardson -> steele-hall"
+      ],
+      "maxRatio": 3.0,
+      "why": "No doors are mapped on Steele Hall, so walks end at the path nearest its middle, on the Fairchild side of the science block; from Richardson that is round Wilder Hall, not straight up the slope."
+    },
+    {
+      "pairs": [
+        "10-north-park -> fairchild-physical-sciences-center",
+        "10-north-park -> shattuck-observatory",
+        "10-north-park -> wilder-hall",
+        "12-north-park -> fairchild-physical-sciences-center",
+        "12-north-park -> shattuck-observatory",
+        "14-north-park -> burke-laboratory",
+        "14-north-park -> shattuck-observatory",
+        "16-north-park -> burke-laboratory",
+        "16-north-park -> fairchild-physical-sciences-center",
+        "16-north-park -> shattuck-observatory",
+        "16-north-park -> steele-hall",
+        "16-north-park -> wilder-hall",
+        "18-north-park -> fairchild-physical-sciences-center",
+        "18-north-park -> shattuck-observatory",
+        "18-north-park -> wilder-hall",
+        "20-north-park -> fairchild-physical-sciences-center",
+        "20-north-park -> shattuck-observatory",
+        "20-north-park -> wilder-hall",
+        "22-north-park -> fairchild-physical-sciences-center",
+        "24-north-park -> fairchild-physical-sciences-center",
+        "7-ivy-lane -> burke-laboratory",
+        "8-north-park -> burke-laboratory",
+        "8-north-park -> fairchild-physical-sciences-center",
+        "8-north-park -> shattuck-observatory",
+        "8-north-park -> steele-hall",
+        "8-north-park -> wilder-hall",
+        "9-ivy-lane -> burke-laboratory",
+        "9-ivy-lane -> shattuck-observatory",
+        "andres -> burke-laboratory",
+        "andres -> fairchild-physical-sciences-center",
+        "andres -> shattuck-observatory",
+        "andres -> steele-hall",
+        "andres -> wilder-hall",
+        "berry -> shattuck-observatory",
+        "bildner -> shattuck-observatory",
+        "zimmerman -> burke-laboratory",
+        "zimmerman -> shattuck-observatory",
+        "zimmerman -> steele-hall",
+        "zimmerman -> wilder-hall"
+      ],
+      "maxRatio": 4.0,
+      "why": "Observatory Hill, wooded with no mapped path from its east or north side, lies between the Ivy Lane, North Park Street and Maynard Street halls and the science buildings on its west slope; walks go round it by East Wheelock Street or College Street."
+    },
+    {
+      "pairs": [
+        "10-north-park -> kellogg-hall",
+        "12-north-park -> kellogg-hall",
+        "14-north-park -> kellogg-hall",
+        "16-north-park -> kellogg-hall",
+        "18-north-park -> kellogg-hall",
+        "20-north-park -> kellogg-hall",
+        "22-north-park -> kellogg-hall",
+        "24-north-park -> anonymous-hall",
+        "24-north-park -> kellogg-hall",
+        "7-ivy-lane -> kellogg-hall",
+        "8-north-park -> kellogg-hall",
+        "9-ivy-lane -> kellogg-hall",
+        "andres -> kellogg-hall",
+        "berry -> kellogg-hall",
+        "berry -> vail-medical-sciences-building",
+        "bildner -> kellogg-hall",
+        "bildner -> vail-medical-sciences-building",
+        "byrne-ii -> kellogg-hall",
+        "byrne-ii -> vail-medical-sciences-building",
+        "goldstein -> vail-medical-sciences-building",
+        "mcculloch -> kellogg-hall",
+        "rauner -> kellogg-hall",
+        "rauner -> vail-medical-sciences-building",
+        "thomas -> vail-medical-sciences-building",
+        "zimmerman -> kellogg-hall"
+      ],
+      "maxRatio": 6.0,
+      "why": "The Geisel buildings (Vail, Remsen, Kellogg, Anonymous Hall) form one block with no doors mapped, and the mapped paths nearest their middles are on the north side by the Life Sciences Center; from Maynard Street and the east, walks go round the block."
+    },
+    {
+      "pairs": [
+        "new-hampshire -> black-family-visual-arts-center",
+        "new-hampshire -> hopkins-center-for-the-arts",
+        "new-hampshire -> house-center-a",
+        "new-hampshire -> leverone-field-house",
+        "new-hampshire -> thornton-hall"
+      ],
+      "maxRatio": 3.0,
+      "why": "No doors are mapped on New Hampshire Hall; the mapped way nearest its middle is the service path on its south side by Hallgarten, so walks north to the Green and to the arts buildings start round the back."
+    },
+    {
+      "pairs": [
+        "the-lodge -> hallgarten-hall",
+        "the-lodge -> leverone-field-house"
+      ],
+      "maxRatio": 3.0,
+      "why": "No doors are mapped on The Lodge; the mapped way nearest it is behind it on the south, so walks north to Hallgarten and Leverone go round by Lebanon Street."
+    },
+    {
+      "pairs": [
+        "andres -> alumni-gymnasium",
+        "morton -> alumni-gymnasium",
+        "morton -> berry-sports-center"
+      ],
+      "maxRatio": 3.0,
+      "why": "No doors are mapped on Alumni Gymnasium or Berry Sports Center; Morton and Andres reach East Wheelock Street only by the Ivy Lane drive, so walks go out to the street and along it to the paths beside the gyms."
+    },
+    {
+      "pairs": [
+        "channing-cox -> class-of-1982-engineering-and-computer-science-center",
+        "french -> class-of-1982-engineering-and-computer-science-center",
+        "judge -> class-of-1982-engineering-and-computer-science-center",
+        "judge -> murdough-center"
+      ],
+      "maxRatio": 5.0,
+      "why": "The Thayer engineering buildings (Cummings, MacLean, ECSC, Murdough) are one connected block with no doors mapped, and the mapped paths nearest their middles are on the inner side; from the River halls walks go round the block by Thayer Drive."
+    }
+  ]
+}

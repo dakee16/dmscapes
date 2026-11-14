@@ -1,0 +1,17 @@
+{
+  "collegeId": "umn",
+  "area": {
+    "osm": "relation/2217609",
+    "bbox": [
+      44.965,
+      -93.249,
+      44.989,
+      -93.212
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class building-code list: the Twin Cities class schedule and Room Search (https://roomsearch.umn.edu) name buildings in full (e.g. 'Keller Hall 3-111'), and no abbreviation key turned up on OneStop or the Office of Classroom Management; checked 2026-11-08.",
+  "areaNote": "OSM 'University of Minnesota, Twin Cities Campus' (relation/2217609, found on Nominatim; area.mjs's name search missed it); bbox trimmed to the Minneapolis East and West Bank, where all listed halls are."
+}

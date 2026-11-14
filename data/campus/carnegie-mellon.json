@@ -1,0 +1,706 @@
+{
+ "collegeId": "carnegie-mellon",
+ "generatedAt": "2026-11-08T17:14:00.388Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Carnegie Mellon University Registrar, Schedule of Classes Legend (building abbreviations)",
+   "url": "https://www.cmu.edu/hub/legend.html",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/carnegie-mellon.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -79.95105,
+  40.44091,
+  -79.93893,
+  40.44825
+ ],
+ "halls": [
+  {
+   "dormId": "boss",
+   "name": "Boss House",
+   "lng": -79.939318,
+   "lat": 40.441605,
+   "pin": "name",
+   "osm": "way/27591450",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 4
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 6.2
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 2.7
+    }
+   }
+  },
+  {
+   "dormId": "donner",
+   "name": "Donner House",
+   "lng": -79.940208,
+   "lat": 40.441928,
+   "pin": "name",
+   "osm": "way/27591346",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 2.5
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 2.4
+    }
+   }
+  },
+  {
+   "dormId": "etower",
+   "name": "E-Tower",
+   "lng": -79.943386,
+   "lat": 40.445057,
+   "pin": "name",
+   "osm": "way/1002531075",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 7.8
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 6.1
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 6
+    }
+   }
+  },
+  {
+   "dormId": "fifth-clyde",
+   "name": "Fifth & Clyde House",
+   "lng": -79.946097,
+   "lat": 40.448245,
+   "pin": "name",
+   "osm": "way/545283472",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 15.8
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 14.1
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 14
+    }
+   }
+  },
+  {
+   "dormId": "hamerschlag",
+   "name": "Hamerschlag House",
+   "lng": -79.938929,
+   "lat": 40.441315,
+   "pin": "name",
+   "osm": "way/27591466",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 4.5
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 6.7
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 3.3
+    }
+   }
+  },
+  {
+   "dormId": "henderson",
+   "name": "Henderson House",
+   "lng": -79.939257,
+   "lat": 40.441003,
+   "pin": "name",
+   "osm": "way/27591488",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 4.3
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 3.9
+    }
+   }
+  },
+  {
+   "dormId": "mcgill",
+   "name": "McGill House",
+   "lng": -79.939028,
+   "lat": 40.441725,
+   "pin": "name",
+   "osm": "way/27591456",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 4
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 6.2
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 2.7
+    }
+   }
+  },
+  {
+   "dormId": "morewood-gardens",
+   "name": "Morewood Gardens",
+   "lng": -79.943137,
+   "lat": 40.445544,
+   "pin": "name",
+   "osm": "way/544174675",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 8.2
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 6.2
+    }
+   }
+  },
+  {
+   "dormId": "mudge",
+   "name": "Mudge House",
+   "lng": -79.94291,
+   "lat": 40.446917,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 10.7
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 9
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 8.6
+    }
+   }
+  },
+  {
+   "dormId": "resnik",
+   "name": "Resnik House",
+   "lng": -79.939971,
+   "lat": 40.442513,
+   "pin": "name",
+   "osm": "way/27591352",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 3.5
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 5.6
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 0.6
+    }
+   }
+  },
+  {
+   "dormId": "scobell",
+   "name": "Scobell House",
+   "lng": -79.939628,
+   "lat": 40.441347,
+   "pin": "name",
+   "osm": "way/27591482",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 3.6
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 5.8
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 3.9
+    }
+   }
+  },
+  {
+   "dormId": "stever",
+   "name": "Stever House",
+   "lng": -79.942678,
+   "lat": 40.446291,
+   "pin": "name",
+   "osm": "way/27591700",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 9.7
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 7.6
+    }
+   }
+  },
+  {
+   "dormId": "welch",
+   "name": "Welch House",
+   "lng": -79.93949,
+   "lat": 40.441154,
+   "pin": "name",
+   "osm": "way/27591484",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 3.6
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 5.8
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 3.9
+    }
+   }
+  },
+  {
+   "dormId": "west-wing",
+   "name": "West Wing",
+   "lng": -79.94086,
+   "lat": 40.442703,
+   "pin": "name",
+   "osm": "way/27591351",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "highmark-center",
+     "minutes": 3.5
+    },
+    "library": {
+     "placeId": "hunt-library",
+     "minutes": 4.8
+    },
+    "dining": {
+     "placeId": "tartans-pavilion",
+     "minutes": 0.6
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "cohon-university-center",
+   "name": "Cohon University Center",
+   "short": "Cohon University Center",
+   "kind": "academic",
+   "codes": [
+    "CUC"
+   ],
+   "aliases": [],
+   "lng": -79.941979,
+   "lat": 40.443484,
+   "osm": "way/27574394"
+  },
+  {
+   "id": "mellon-institute",
+   "name": "Mellon Institute",
+   "short": "Mellon Institute",
+   "kind": "academic",
+   "codes": [
+    "MI"
+   ],
+   "aliases": [],
+   "lng": -79.951053,
+   "lat": 40.446116,
+   "osm": "way/25795368"
+  },
+  {
+   "id": "highmark-center",
+   "name": "Highmark Center",
+   "short": "Highmark Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.941375,
+   "lat": 40.440966,
+   "osm": "way/1039908831"
+  },
+  {
+   "id": "doherty-hall",
+   "name": "Doherty Hall",
+   "short": "Doherty Hall",
+   "kind": "academic",
+   "codes": [
+    "DH"
+   ],
+   "aliases": [],
+   "lng": -79.944538,
+   "lat": 40.442506,
+   "osm": "way/27574545"
+  },
+  {
+   "id": "baker-hall",
+   "name": "Baker Hall",
+   "short": "Baker Hall",
+   "kind": "academic",
+   "codes": [
+    "BH"
+   ],
+   "aliases": [],
+   "lng": -79.944979,
+   "lat": 40.441494,
+   "osm": "way/27590907"
+  },
+  {
+   "id": "software-engineering-institute",
+   "name": "Software Engineering Institute",
+   "short": "Software Engineering Institute",
+   "kind": "academic",
+   "codes": [
+    "SEI"
+   ],
+   "aliases": [],
+   "lng": -79.950123,
+   "lat": 40.446302,
+   "osm": "way/44150733"
+  },
+  {
+   "id": "purnell-center-for-the-arts",
+   "name": "Purnell Center for the Arts",
+   "short": "Purnell Center for the Arts",
+   "kind": "academic",
+   "codes": [
+    "PCA"
+   ],
+   "aliases": [],
+   "lng": -79.94354,
+   "lat": 40.443518,
+   "osm": "way/27574406"
+  },
+  {
+   "id": "wean-hall",
+   "name": "Wean Hall",
+   "short": "Wean Hall",
+   "kind": "academic",
+   "codes": [
+    "WEH"
+   ],
+   "aliases": [],
+   "lng": -79.945723,
+   "lat": 40.442686,
+   "osm": "relation/21724639"
+  },
+  {
+   "id": "hamburg-hall",
+   "name": "Hamburg Hall",
+   "short": "Hamburg Hall",
+   "kind": "academic",
+   "codes": [
+    "HBH"
+   ],
+   "aliases": [],
+   "lng": -79.945549,
+   "lat": 40.444223,
+   "osm": "way/27591096"
+  },
+  {
+   "id": "porter-hall",
+   "name": "Porter Hall",
+   "short": "Porter Hall",
+   "kind": "academic",
+   "codes": [
+    "PH"
+   ],
+   "aliases": [],
+   "lng": -79.946262,
+   "lat": 40.441711,
+   "osm": "way/27549961"
+  },
+  {
+   "id": "newell-simon-hall",
+   "name": "Newell-Simon Hall",
+   "short": "Newell-Simon Hall",
+   "kind": "academic",
+   "codes": [
+    "NSH"
+   ],
+   "aliases": [],
+   "lng": -79.945616,
+   "lat": 40.443376,
+   "osm": "way/27551590"
+  },
+  {
+   "id": "college-of-fine-arts",
+   "name": "College of Fine Arts",
+   "short": "College of Fine Arts",
+   "kind": "academic",
+   "codes": [
+    "CFA"
+   ],
+   "aliases": [],
+   "lng": -79.942909,
+   "lat": 40.441566,
+   "osm": "way/27591225"
+  },
+  {
+   "id": "collaborative-innovation-center",
+   "name": "Collaborative Innovation Center",
+   "short": "Collaborative Innovation Center",
+   "kind": "academic",
+   "codes": [
+    "CIC"
+   ],
+   "aliases": [],
+   "lng": -79.946539,
+   "lat": 40.443979,
+   "osm": "way/27591069"
+  },
+  {
+   "id": "margaret-morrison-carnegie-hall",
+   "name": "Margaret Morrison Carnegie Hall",
+   "short": "Margaret Morrison Carnegie Hall",
+   "kind": "academic",
+   "codes": [
+    "MM"
+   ],
+   "aliases": [],
+   "lng": -79.941474,
+   "lat": 40.442182,
+   "osm": "way/27591314"
+  },
+  {
+   "id": "hall-of-the-arts",
+   "name": "Hall of the Arts",
+   "short": "Hall of the Arts",
+   "kind": "academic",
+   "codes": [
+    "HOA"
+   ],
+   "aliases": [],
+   "lng": -79.942567,
+   "lat": 40.440906,
+   "osm": "way/1002857138"
+  },
+  {
+   "id": "posner-hall",
+   "name": "Posner Hall",
+   "short": "Posner Hall",
+   "kind": "academic",
+   "codes": [
+    "POS"
+   ],
+   "aliases": [],
+   "lng": -79.942152,
+   "lat": 40.441273,
+   "osm": "way/27591241"
+  },
+  {
+   "id": "hunt-library",
+   "name": "Hunt Library",
+   "short": "Hunt Library",
+   "kind": "library",
+   "codes": [
+    "HL"
+   ],
+   "aliases": [],
+   "lng": -79.94374,
+   "lat": 40.441111,
+   "osm": "way/27574204"
+  },
+  {
+   "id": "cyert-hall",
+   "name": "Cyert Hall",
+   "short": "Cyert Hall",
+   "kind": "academic",
+   "codes": [
+    "CYH"
+   ],
+   "aliases": [],
+   "lng": -79.943941,
+   "lat": 40.44428,
+   "osm": "way/27574718"
+  },
+  {
+   "id": "scott-hall",
+   "name": "Scott Hall",
+   "short": "Scott Hall",
+   "kind": "academic",
+   "codes": [
+    "SC"
+   ],
+   "aliases": [],
+   "lng": -79.946752,
+   "lat": 40.442988,
+   "osm": "relation/13441031"
+  },
+  {
+   "id": "roberts-engineering-hall",
+   "name": "Roberts Engineering Hall",
+   "short": "Roberts Engineering Hall",
+   "kind": "academic",
+   "codes": [
+    "REH"
+   ],
+   "aliases": [],
+   "lng": -79.947215,
+   "lat": 40.442467,
+   "osm": "way/27590641"
+  },
+  {
+   "id": "gates-and-hillman-centers",
+   "name": "Gates and Hillman Centers",
+   "short": "Gates and Hillman Centers",
+   "kind": "academic",
+   "codes": [
+    "GHC"
+   ],
+   "aliases": [],
+   "lng": -79.944392,
+   "lat": 40.443905,
+   "osm": "relation/21724638"
+  },
+  {
+   "id": "scaife-hall",
+   "name": "Scaife Hall",
+   "short": "Scaife Hall",
+   "kind": "academic",
+   "codes": [
+    "SH"
+   ],
+   "aliases": [],
+   "lng": -79.947392,
+   "lat": 40.441687,
+   "osm": "way/27550292"
+  },
+  {
+   "id": "ansys-hall",
+   "name": "ANSYS Hall",
+   "short": "ANSYS Hall",
+   "kind": "academic",
+   "codes": [
+    "ANS"
+   ],
+   "aliases": [
+    "Ansys"
+   ],
+   "lng": -79.946609,
+   "lat": 40.441959,
+   "osm": "way/1001941217"
+  },
+  {
+   "id": "university-technology-development-center",
+   "name": "University Technology Development Center",
+   "short": "University Technology Development Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "UTDC"
+   ],
+   "lng": -79.949572,
+   "lat": 40.446043,
+   "osm": "way/29094259"
+  },
+  {
+   "id": "warner-hall",
+   "name": "Warner Hall",
+   "short": "Warner Hall",
+   "kind": "academic",
+   "codes": [
+    "WH"
+   ],
+   "aliases": [],
+   "lng": -79.943391,
+   "lat": 40.444177,
+   "osm": "way/27574704"
+  },
+  {
+   "id": "tartans-pavilion",
+   "name": "Tartans Pavilion",
+   "short": "Tartans Pavilion",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.940068,
+   "lat": 40.442644,
+   "osm": "way/1000419332"
+  }
+ ]
+}

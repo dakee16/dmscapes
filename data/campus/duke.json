@@ -1,0 +1,1244 @@
+{
+ "collegeId": "duke",
+ "generatedAt": "2026-11-08T08:24:21.136Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/duke.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -78.9471,
+  35.99262,
+  -78.9128,
+  36.00946
+ ],
+ "halls": [
+  {
+   "dormId": "craven",
+   "name": "Craven Quad",
+   "lng": -78.93885,
+   "lat": 35.9996,
+   "pin": "manual",
+   "osm": "way/337108845",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "card-gymnasium",
+     "minutes": 7.7
+    },
+    "library": {
+     "placeId": "bostock-library",
+     "minutes": 7.7
+    },
+    "dining": {
+     "placeId": "richard-h-brodhead-center-west-union",
+     "minutes": 5.4
+    }
+   }
+  },
+  {
+   "dormId": "crowell",
+   "name": "Crowell Quad",
+   "lng": -78.94019,
+   "lat": 35.999053,
+   "pin": "manual",
+   "osm": "way/337115836",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "card-gymnasium",
+     "minutes": 4.8
+    },
+    "library": {
+     "placeId": "perkins-library",
+     "minutes": 6.6
+    },
+    "dining": {
+     "placeId": "richard-h-brodhead-center-west-union",
+     "minutes": 2.8
+    }
+   }
+  },
+  {
+   "dormId": "keohane",
+   "name": "Keohane Quad",
+   "lng": -78.938042,
+   "lat": 35.998978,
+   "pin": "manual",
+   "osm": "way/697183785",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "card-gymnasium",
+     "minutes": 7.4
+    },
+    "library": {
+     "placeId": "perkins-library",
+     "minutes": 7
+    },
+    "dining": {
+     "placeId": "richard-h-brodhead-center-west-union",
+     "minutes": 4.6
+    }
+   }
+  },
+  {
+   "dormId": "kilgo",
+   "name": "Kilgo Quad",
+   "lng": -78.94006,
+   "lat": 35.999699,
+   "pin": "manual",
+   "osm": "way/337113437",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "card-gymnasium",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "perkins-library",
+     "minutes": 6.1
+    },
+    "dining": {
+     "placeId": "richard-h-brodhead-center-west-union",
+     "minutes": 2.2
+    }
+   }
+  },
+  {
+   "dormId": "edens",
+   "name": "Edens Quad",
+   "lng": -78.936247,
+   "lat": 35.998886,
+   "pin": "manual",
+   "osm": "way/337119073",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "card-gymnasium",
+     "minutes": 9.5
+    },
+    "library": {
+     "placeId": "perkins-library",
+     "minutes": 7.3
+    },
+    "dining": {
+     "placeId": "richard-h-brodhead-center-west-union",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "wannamaker",
+   "name": "Wannamaker Quad",
+   "lng": -78.939199,
+   "lat": 35.99857,
+   "pin": "manual",
+   "osm": "way/697182707",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "card-gymnasium",
+     "minutes": 7.5
+    },
+    "library": {
+     "placeId": "bostock-library",
+     "minutes": 9.2
+    },
+    "dining": {
+     "placeId": "richard-h-brodhead-center-west-union",
+     "minutes": 5.8
+    }
+   }
+  },
+  {
+   "dormId": "few",
+   "name": "Few Quad",
+   "lng": -78.937857,
+   "lat": 36.000191,
+   "pin": "manual",
+   "osm": "way/337107590",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "card-gymnasium",
+     "minutes": 9.4
+    },
+    "library": {
+     "placeId": "bostock-library",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "richard-h-brodhead-center-west-union",
+     "minutes": 2.8
+    }
+   }
+  },
+  {
+   "dormId": "hollows",
+   "name": "Hollows Quad",
+   "lng": -78.9376,
+   "lat": 35.997751,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "card-gymnasium",
+     "minutes": 8.8
+    },
+    "library": {
+     "placeId": "bostock-library",
+     "minutes": 8.9
+    },
+    "dining": {
+     "placeId": "richard-h-brodhead-center-west-union",
+     "minutes": 6.6
+    }
+   }
+  },
+  {
+   "dormId": "300-swift",
+   "name": "300 Swift",
+   "lng": -78.922187,
+   "lat": 36.002883,
+   "pin": "manual",
+   "osm": "way/311900265",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "brodie-recreation-center",
+     "minutes": 10.4
+    },
+    "library": {
+     "placeId": "lilly-library",
+     "minutes": 13.2
+    },
+    "dining": {
+     "placeId": "richard-h-brodhead-center-west-union",
+     "minutes": 23.8
+    }
+   }
+  },
+  {
+   "dormId": "301-swift",
+   "name": "301 Swift",
+   "lng": -78.920323,
+   "lat": 36.00236,
+   "pin": "name",
+   "osm": "way/312110793",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "brodie-recreation-center",
+     "minutes": 10.7
+    },
+    "library": {
+     "placeId": "lilly-library",
+     "minutes": 13.5
+    },
+    "dining": {
+     "placeId": "richard-h-brodhead-center-west-union",
+     "minutes": 25.8
+    }
+   }
+  },
+  {
+   "dormId": "the-blue-light",
+   "name": "The Blue Light",
+   "lng": -78.922288,
+   "lat": 36.005525,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "brodie-recreation-center",
+     "minutes": 8.6
+    },
+    "library": {
+     "placeId": "lilly-library",
+     "minutes": 11.4
+    },
+    "dining": {
+     "placeId": "richard-h-brodhead-center-west-union",
+     "minutes": 24.4
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "fuqua-school-of-business",
+   "name": "Fuqua School of Business",
+   "short": "Fuqua School of Business",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.947096,
+   "lat": 35.998852,
+   "osm": "way/32685403"
+  },
+  {
+   "id": "levine-science-research-center",
+   "name": "Levine Science Research Center",
+   "short": "Levine Science Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.941728,
+   "lat": 36.00454,
+   "osm": "way/39800173"
+  },
+  {
+   "id": "fitzpatrick-center-for-interdisciplinary-engineering-medicine-and-applied-sciences-fciemas",
+   "name": "Fitzpatrick Center for Interdisciplinary Engineering, Medicine and Applied Sciences (FCIEMAS)",
+   "short": "Fitzpatrick Center for Interdisciplinary Engineering, Medicine and Applied Sciences (FCIEMAS)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.939814,
+   "lat": 36.00335,
+   "osm": "way/40017631"
+  },
+  {
+   "id": "bryan-center",
+   "name": "Bryan Center",
+   "short": "Bryan Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.941149,
+   "lat": 36.001056,
+   "osm": "way/626679803"
+  },
+  {
+   "id": "duke-university-school-of-law",
+   "name": "Duke University School of Law",
+   "short": "Duke University School of Law",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Duke Law School"
+   ],
+   "lng": -78.945345,
+   "lat": 35.999869,
+   "osm": "way/44506333"
+  },
+  {
+   "id": "wilson-recreation-center",
+   "name": "Wilson Recreation Center",
+   "short": "Wilson Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.940895,
+   "lat": 35.996853,
+   "osm": "way/36884459"
+  },
+  {
+   "id": "french-family-science-center",
+   "name": "French Family Science Center",
+   "short": "French Family Science Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.943536,
+   "lat": 36.002777,
+   "osm": "way/32921856"
+  },
+  {
+   "id": "hudson-hall",
+   "name": "Hudson Hall",
+   "short": "Hudson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.940446,
+   "lat": 36.004143,
+   "osm": "way/45345521"
+  },
+  {
+   "id": "paul-m-gross-hall",
+   "name": "Paul M. Gross Hall",
+   "short": "Paul M. Gross Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.944777,
+   "lat": 36.001296,
+   "osm": "way/32685410"
+  },
+  {
+   "id": "nasher-museum-of-art",
+   "name": "Nasher Museum of Art",
+   "short": "Nasher Museum of Art",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.929047,
+   "lat": 35.999066,
+   "osm": "way/30424777"
+  },
+  {
+   "id": "brodie-recreation-center",
+   "name": "Brodie Recreation Center",
+   "short": "Brodie Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Brenda and Keith Brodie Recreation Center"
+   ],
+   "lng": -78.917047,
+   "lat": 36.007643,
+   "osm": "way/27466267"
+  },
+  {
+   "id": "perkins-library",
+   "name": "Perkins Library",
+   "short": "Perkins Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.938588,
+   "lat": 36.002321,
+   "osm": "way/391474817"
+  },
+  {
+   "id": "biological-sciences-greenhouses",
+   "name": "Biological Sciences Greenhouses",
+   "short": "Biological Sciences Greenhouses",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.944135,
+   "lat": 36.002895,
+   "osm": "way/32685583"
+  },
+  {
+   "id": "physics-building",
+   "name": "Physics Building",
+   "short": "Physics Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.942538,
+   "lat": 36.003283,
+   "osm": "relation/1161437"
+  },
+  {
+   "id": "nanaline-duke",
+   "name": "Nanaline Duke",
+   "short": "Nanaline Duke",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.939712,
+   "lat": 36.005678,
+   "osm": "way/29029564"
+  },
+  {
+   "id": "mary-duke-biddle-music-building",
+   "name": "Mary Duke Biddle Music Building",
+   "short": "Mary Duke Biddle Music Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.915884,
+   "lat": 36.009154,
+   "osm": "way/27407384"
+  },
+  {
+   "id": "richard-h-brodhead-center-west-union",
+   "name": "Richard H. Brodhead Center, West Union",
+   "short": "Richard H. Brodhead Center, West Union",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.939393,
+   "lat": 36.000766,
+   "osm": "way/626679795"
+  },
+  {
+   "id": "medical-sciences-research-building",
+   "name": "Medical Sciences Research Building",
+   "short": "Medical Sciences Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.940713,
+   "lat": 36.007207,
+   "osm": "way/29030524"
+  },
+  {
+   "id": "biological-sciences-building",
+   "name": "Biological Sciences Building",
+   "short": "Biological Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.943148,
+   "lat": 36.002233,
+   "osm": "way/75755397"
+  },
+  {
+   "id": "school-of-nursing",
+   "name": "School of Nursing",
+   "short": "School of Nursing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.935288,
+   "lat": 36.006364,
+   "osm": "way/27331652"
+  },
+  {
+   "id": "bryan-research",
+   "name": "Bryan Research",
+   "short": "Bryan Research",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.939152,
+   "lat": 36.005115,
+   "osm": "way/29025979"
+  },
+  {
+   "id": "medical-science-research-building-ii",
+   "name": "Medical Science Research Building II",
+   "short": "Medical Science Research Building II",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MSRB2"
+   ],
+   "lng": -78.943208,
+   "lat": 36.007729,
+   "osm": "way/47108085"
+  },
+  {
+   "id": "rubenstein-library",
+   "name": "Rubenstein Library",
+   "short": "Rubenstein Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.938658,
+   "lat": 36.001804,
+   "osm": "way/44055991"
+  },
+  {
+   "id": "rubenstein-arts-center",
+   "name": "Rubenstein Arts Center",
+   "short": "Rubenstein Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.929487,
+   "lat": 36.00031,
+   "osm": "way/553578352"
+  },
+  {
+   "id": "clinical-and-research-laboratory",
+   "name": "Clinical and Research Laboratory",
+   "short": "Clinical and Research Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.939604,
+   "lat": 36.006692,
+   "osm": "way/29031530"
+  },
+  {
+   "id": "wilkinson-building",
+   "name": "Wilkinson Building",
+   "short": "Wilkinson Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.938057,
+   "lat": 36.003438,
+   "osm": "way/1157040430"
+  },
+  {
+   "id": "duke-student-health-center",
+   "name": "Duke Student Health Center",
+   "short": "Duke Student Health Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.94163,
+   "lat": 35.999654,
+   "osm": "way/626679812"
+  },
+  {
+   "id": "trent-hall",
+   "name": "Trent Hall",
+   "short": "Trent Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.93366,
+   "lat": 36.007176,
+   "osm": "way/293599843"
+  },
+  {
+   "id": "alexander-h-sands-jr-building",
+   "name": "Alexander H Sands Jr Building",
+   "short": "Alexander H Sands Jr Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.940095,
+   "lat": 36.006262,
+   "osm": "way/29030520"
+  },
+  {
+   "id": "snyderman-genome-science-research-building",
+   "name": "Snyderman Genome Science Research Building",
+   "short": "Snyderman Genome Science Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.944636,
+   "lat": 36.007175,
+   "osm": "way/47425248"
+  },
+  {
+   "id": "global-health-research-building",
+   "name": "Global Health Research Building",
+   "short": "Global Health Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.943379,
+   "lat": 36.008033,
+   "osm": "way/948033145"
+  },
+  {
+   "id": "edwin-l-jones-cancer-research-building",
+   "name": "Edwin L. Jones Cancer Research Building",
+   "short": "Edwin L. Jones Cancer Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.940357,
+   "lat": 36.006723,
+   "osm": "way/29030521"
+  },
+  {
+   "id": "seeley-g-mudd-building",
+   "name": "Seeley G. Mudd Building",
+   "short": "Seeley G. Mudd Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.93804,
+   "lat": 36.005814,
+   "osm": "way/29024684"
+  },
+  {
+   "id": "westbrook-building",
+   "name": "Westbrook Building",
+   "short": "Westbrook Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.939783,
+   "lat": 36.002273,
+   "osm": "way/44073313"
+  },
+  {
+   "id": "clipp-research-building",
+   "name": "Clipp Research Building",
+   "short": "Clipp Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.934933,
+   "lat": 36.006896,
+   "osm": "way/765582431"
+  },
+  {
+   "id": "rueben-cooke",
+   "name": "Rueben-Cooke",
+   "short": "Rueben-Cooke",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.936872,
+   "lat": 36.002424,
+   "osm": "way/44164280"
+  },
+  {
+   "id": "rubenstein-hall",
+   "name": "Rubenstein Hall",
+   "short": "Rubenstein Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.943027,
+   "lat": 35.999117,
+   "osm": "way/36884310"
+  },
+  {
+   "id": "east-campus-union-building",
+   "name": "East Campus Union Building",
+   "short": "East Campus Union Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.913942,
+   "lat": 36.007566,
+   "osm": "way/27435275"
+  },
+  {
+   "id": "bostock-library",
+   "name": "Bostock Library",
+   "short": "Bostock Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.938293,
+   "lat": 36.002964,
+   "osm": "way/44055992"
+  },
+  {
+   "id": "old-chemistry-building",
+   "name": "Old Chemistry Building",
+   "short": "Old Chemistry Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.937757,
+   "lat": 36.00277,
+   "osm": "way/44164281"
+  },
+  {
+   "id": "allen-building",
+   "name": "Allen Building",
+   "short": "Allen Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.937488,
+   "lat": 36.001163,
+   "osm": "way/44108884"
+  },
+  {
+   "id": "sanford-school-of-public-policy",
+   "name": "Sanford School of Public Policy",
+   "short": "Sanford School of Public Policy",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.943914,
+   "lat": 35.999383,
+   "osm": "way/36884302"
+  },
+  {
+   "id": "mary-duke-biddle-trent-semans-center-for-health-education",
+   "name": "Mary Duke Biddle Trent Semans Center for Health Education",
+   "short": "Mary Duke Biddle Trent Semans Center for Health Education",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.938021,
+   "lat": 36.005458,
+   "osm": "way/264244643"
+  },
+  {
+   "id": "scott-family-pavilion",
+   "name": "Scott Family Pavilion",
+   "short": "Scott Family Pavilion",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.942836,
+   "lat": 35.996581,
+   "osm": "way/625303127"
+  },
+  {
+   "id": "flowers-building",
+   "name": "Flowers Building",
+   "short": "Flowers Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.939902,
+   "lat": 36.001202,
+   "osm": "way/31004008"
+  },
+  {
+   "id": "intramural-building",
+   "name": "Intramural Building",
+   "short": "Intramural Building",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.939904,
+   "lat": 35.996552,
+   "osm": "way/36884389"
+  },
+  {
+   "id": "friedl-science-building",
+   "name": "Friedl Science Building",
+   "short": "Friedl Science Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.914154,
+   "lat": 36.006415,
+   "osm": "way/27466222"
+  },
+  {
+   "id": "social-sciences-building",
+   "name": "Social Sciences Building",
+   "short": "Social Sciences Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.937389,
+   "lat": 36.001751,
+   "osm": "way/44109486"
+  },
+  {
+   "id": "card-gymnasium",
+   "name": "Card Gymnasium",
+   "short": "Card Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.94144,
+   "lat": 35.997389,
+   "osm": "way/36884323"
+  },
+  {
+   "id": "north-building",
+   "name": "North Building",
+   "short": "North Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.940944,
+   "lat": 36.005461,
+   "osm": "way/75903598"
+  },
+  {
+   "id": "east-duke-building",
+   "name": "East Duke Building",
+   "short": "East Duke Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.914115,
+   "lat": 36.004963,
+   "osm": "way/27466238"
+  },
+  {
+   "id": "classroom-building",
+   "name": "Classroom Building",
+   "short": "Classroom Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.915204,
+   "lat": 36.006433,
+   "osm": "way/27466203"
+  },
+  {
+   "id": "west-duke-building",
+   "name": "West Duke Building",
+   "short": "West Duke Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.915383,
+   "lat": 36.004979,
+   "osm": "way/625121112"
+  },
+  {
+   "id": "lilly-library",
+   "name": "Lilly Library",
+   "short": "Lilly Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.915346,
+   "lat": 36.007604,
+   "osm": "way/27435263"
+  },
+  {
+   "id": "environment-hall",
+   "name": "Environment Hall",
+   "short": "Environment Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.942691,
+   "lat": 36.004655,
+   "osm": "way/547286873"
+  },
+  {
+   "id": "medical-science-research-building-iii",
+   "name": "Medical Science Research Building III",
+   "short": "Medical Science Research Building III",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.94308,
+   "lat": 36.007206,
+   "osm": "way/754351276"
+  },
+  {
+   "id": "baldwin-auditorium",
+   "name": "Baldwin Auditorium",
+   "short": "Baldwin Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.914633,
+   "lat": 36.00906,
+   "osm": "way/625121109"
+  },
+  {
+   "id": "research-park-iv",
+   "name": "Research Park IV",
+   "short": "Research Park IV",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.942036,
+   "lat": 36.005816,
+   "osm": "way/47425279"
+  },
+  {
+   "id": "freeman-center-for-jewish-life",
+   "name": "Freeman Center for Jewish Life",
+   "short": "Freeman Center for Jewish Life",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.922222,
+   "lat": 36.000338,
+   "osm": "way/312110790"
+  },
+  {
+   "id": "surgical-oncology-research-facility",
+   "name": "Surgical Oncology Research Facility",
+   "short": "Surgical Oncology Research Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.943511,
+   "lat": 36.00618,
+   "osm": "way/47425219"
+  },
+  {
+   "id": "research-park-i",
+   "name": "Research Park I",
+   "short": "Research Park I",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.941781,
+   "lat": 36.006198,
+   "osm": "way/47425278"
+  },
+  {
+   "id": "research-park-ii",
+   "name": "Research Park II",
+   "short": "Research Park II",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.942608,
+   "lat": 36.005782,
+   "osm": "way/47425280"
+  },
+  {
+   "id": "penn-pavilion",
+   "name": "Penn Pavilion",
+   "short": "Penn Pavilion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.940885,
+   "lat": 36.000146,
+   "osm": "way/626679808"
+  },
+  {
+   "id": "thomas-a-langford-building",
+   "name": "Thomas A. Langford Building",
+   "short": "Thomas A. Langford Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.939406,
+   "lat": 36.002324,
+   "osm": "way/44073311"
+  },
+  {
+   "id": "teer-engineering-building",
+   "name": "Teer Engineering Building",
+   "short": "Teer Engineering Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.94104,
+   "lat": 36.003847,
+   "osm": "way/45345522"
+  },
+  {
+   "id": "research-park-iii",
+   "name": "Research Park III",
+   "short": "Research Park III",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.943173,
+   "lat": 36.00581,
+   "osm": "way/47425281"
+  },
+  {
+   "id": "william-d-murray-building",
+   "name": "William D Murray Building",
+   "short": "William D Murray Building",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.942928,
+   "lat": 35.996313,
+   "osm": "way/625303125"
+  },
+  {
+   "id": "gray-building",
+   "name": "Gray Building",
+   "short": "Gray Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.939333,
+   "lat": 36.001901,
+   "osm": "way/44073310"
+  },
+  {
+   "id": "bevan-building",
+   "name": "Bevan Building",
+   "short": "Bevan Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.912803,
+   "lat": 36.001821,
+   "osm": "way/31350158"
+  },
+  {
+   "id": "crowell-building",
+   "name": "Crowell Building",
+   "short": "Crowell Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.913445,
+   "lat": 36.006682,
+   "osm": "way/27466289"
+  },
+  {
+   "id": "free-electron-laser-lab",
+   "name": "Free Electron Laser Lab",
+   "short": "Free Electron Laser Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.943172,
+   "lat": 36.004759,
+   "osm": "way/547286868"
+  },
+  {
+   "id": "richard-white-lecture-hall",
+   "name": "Richard White Lecture Hall",
+   "short": "Richard White Lecture Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.913909,
+   "lat": 36.005268,
+   "osm": "way/27466229"
+  },
+  {
+   "id": "languages-building",
+   "name": "Languages Building",
+   "short": "Languages Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.938129,
+   "lat": 36.002141,
+   "osm": "way/44073315"
+  },
+  {
+   "id": "bivins-building",
+   "name": "Bivins Building",
+   "short": "Bivins Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.917455,
+   "lat": 36.008866,
+   "osm": "way/27407396"
+  },
+  {
+   "id": "pre-major-advising-center",
+   "name": "Pre-Major Advising Center",
+   "short": "Pre-Major Advising Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.913396,
+   "lat": 36.008189,
+   "osm": "way/27466317"
+  },
+  {
+   "id": "the-graduate-school-duke-university",
+   "name": "The Graduate School - Duke University",
+   "short": "The Graduate School - Duke University",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.932236,
+   "lat": 35.998916,
+   "osm": "way/235192494"
+  },
+  {
+   "id": "art-building",
+   "name": "Art Building",
+   "short": "Art Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.91711,
+   "lat": 36.009343,
+   "osm": "way/27407374"
+  },
+  {
+   "id": "branson-hall",
+   "name": "Branson Hall",
+   "short": "Branson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.916469,
+   "lat": 36.009455,
+   "osm": "way/27407380"
+  },
+  {
+   "id": "hart-house",
+   "name": "Hart House",
+   "short": "Hart House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.940649,
+   "lat": 35.992615,
+   "osm": "way/235060184"
+  },
+  {
+   "id": "the-ark",
+   "name": "The Ark",
+   "short": "The Ark",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.91353,
+   "lat": 36.007153,
+   "osm": "way/27466294"
+  },
+  {
+   "id": "triangle-universities-nuclear-laboratory-building",
+   "name": "Triangle Universities Nuclear Laboratory Building",
+   "short": "Triangle Universities Nuclear Laboratory Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.942942,
+   "lat": 36.004099,
+   "osm": "way/547286851"
+  },
+  {
+   "id": "episcopal-center-at-duke",
+   "name": "Episcopal Center at Duke",
+   "short": "Episcopal Center at Duke",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.926679,
+   "lat": 36.001596,
+   "osm": "way/312109148"
+  },
+  {
+   "id": "von-der-heyden-pavilion",
+   "name": "Von Der Heyden Pavilion",
+   "short": "Von Der Heyden Pavilion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.93826,
+   "lat": 36.002227,
+   "osm": "way/44073314"
+  },
+  {
+   "id": "duke-performances",
+   "name": "Duke Performances",
+   "short": "Duke Performances",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.928596,
+   "lat": 36.000269,
+   "osm": "way/312109172"
+  },
+  {
+   "id": "village-gym",
+   "name": "Village Gym",
+   "short": "Village Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.929583,
+   "lat": 36.004828,
+   "osm": "way/312109209"
+  },
+  {
+   "id": "stagg-pavilion",
+   "name": "Stagg Pavilion",
+   "short": "Stagg Pavilion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -78.913674,
+   "lat": 36.004061,
+   "osm": "way/304110607"
+  }
+ ]
+}

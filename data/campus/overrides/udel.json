@@ -1,0 +1,113 @@
+{
+  "halls": {
+    "caesar-rodney": {
+      "pin": [
+        -75.750753,
+        39.677369
+      ]
+    },
+    "harrington": {
+      "pin": [
+        -75.748335,
+        39.675487
+      ]
+    },
+    "lanethomp": {
+      "pin": [
+        -75.748999,
+        39.677608
+      ]
+    },
+    "russell": {
+      "pin": [
+        -75.747544,
+        39.677963
+      ]
+    },
+    "n-central": {
+      "pin": [
+        -75.752544,
+        39.682418
+      ]
+    },
+    "s-central": {
+      "pin": [
+        -75.75148,
+        39.676287
+      ]
+    },
+    "tmk-js": {
+      "pin": [
+        -75.756361,
+        39.689517
+      ]
+    },
+    "ray": {
+      "pin": [
+        -75.755407,
+        39.686787
+      ]
+    },
+    "university-courtyard": {
+      "pin": [
+        -75.7435,
+        39.6807
+      ]
+    }
+  },
+  "notes": {
+    "caesar-rodney": "Caesar Rodney B, 352 Academy St (https://www.udel.edu/students/reslife/our-residence-halls/caesar-rodney/ mailing addresses), OSM way/369722074; the name rule had picked the Caesar Rodney Dining Hall next door.",
+    "harrington": "Harrington Halls A-E in OSM (ways 71219043, 71219567, 71219383, 71219309, 71219432); pinned at Harrington C, the middle of the five.",
+    "lanethomp": "OSM 'Lane Hall' (way/71219083) and 'Thompson Hall' (way/1096380456), side by side on Academy Street; the pin is between them.",
+    "russell": "Russell Halls A-E in OSM (ways 71219391, 71219240, 71218971, 71219244, 71219194); pinned at Russell C, the middle.",
+    "n-central": "Brown, Harter, Sharp and Sypherd Halls in OSM (ways 71219020, 71219046, 71219003, 71219012), north end of The Green; the pin is their middle.",
+    "s-central": "Cannon, Kent, New Castle, Squire and Sussex Halls in OSM (ways 71219257, 71219305, 71219035, 71219056, 71219800); the pin is their middle.",
+    "tmk-js": "OSM 'James Smith Hall' (way/71218967) and 'Thomas McKean Hall' (way/71219515); the pin is between them.",
+    "ray": "OSM 'Ray Street A', 'B' and 'C' (ways 71219665, 71219774, 71219032); the pin is their middle.",
+    "university-courtyard": "UD's graduate housing page gives the apartments' address as Scholar Drive (clubhouse at 1 Scholar Drive); OSM has Scholar Drive (ways 350911581, 350911552) but no named apartment building, so the pin is the middle of that drive's loop.",
+    "lot-14c": "Parking lot, not a class or meal place.",
+    "hillel": "Hillel student center, not a class or meal place.",
+    "alpha-phi": "Sorority house, not a class or meal place.",
+    "kappa-alpha": "Fraternity house, not a class or meal place.",
+    "gamma-phi-beta": "Sorority house, not a class or meal place.",
+    "baptist-student-ministry": "Campus ministry, not a class or meal place.",
+    "university-visitors-center": "Visitors center, not a class or meal place.",
+    "university-visitors-center-annex": "Visitors center annex, not a class or meal place."
+  },
+  "places": {
+    "lot-14c": {
+      "hide": true
+    },
+    "hillel": {
+      "hide": true
+    },
+    "alpha-phi": {
+      "hide": true
+    },
+    "kappa-alpha": {
+      "hide": true
+    },
+    "gamma-phi-beta": {
+      "hide": true
+    },
+    "baptist-student-ministry": {
+      "hide": true
+    },
+    "university-visitors-center": {
+      "hide": true
+    },
+    "university-visitors-center-annex": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "redding -> delaware-geological-survey-annex",
+        "redding -> harrington-commons"
+      ],
+      "maxRatio": 3.5,
+      "why": "No doors are mapped on Redding Hall; the mapped path nearest its middle is the courtyard loop on its east side, shared with Gilbert, so walks west to Harrington and the Geological Survey go round that loop first."
+    }
+  ]
+}

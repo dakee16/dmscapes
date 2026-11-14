@@ -1,0 +1,881 @@
+{
+ "collegeId": "ucf",
+ "generatedAt": "2026-11-13T15:50:38.354Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "UCF Campus Map building list (map.ucf.edu/locations.json): names, abbreviations and map points",
+   "url": "https://map.ucf.edu/locations.json",
+   "use": "building codes",
+   "read": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/ucf.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -81.20461,
+  28.58504,
+  -81.18833,
+  28.60689
+ ],
+ "halls": [
+  {
+   "dormId": "nike",
+   "name": "Nike Community",
+   "lng": -81.19771,
+   "lat": 28.59457,
+   "pin": "manual",
+   "osm": "way/159918670",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 3.9
+    },
+    "dining": {
+     "placeId": "ferrell-commons",
+     "minutes": 6.2
+    },
+    "library": {
+     "placeId": "john-c-hitt-library",
+     "minutes": 10.2
+    }
+   }
+  },
+  {
+   "dormId": "hercules",
+   "name": "Hercules Community",
+   "lng": -81.19914,
+   "lat": 28.59415,
+   "pin": "manual",
+   "osm": "way/159918673",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 4.2
+    },
+    "dining": {
+     "placeId": "ferrell-commons",
+     "minutes": 6.5
+    },
+    "library": {
+     "placeId": "john-c-hitt-library",
+     "minutes": 10.5
+    }
+   }
+  },
+  {
+   "dormId": "libra",
+   "name": "Libra Community",
+   "lng": -81.19851,
+   "lat": 28.59851,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 5
+    },
+    "dining": {
+     "placeId": "ferrell-commons",
+     "minutes": 2.4
+    },
+    "library": {
+     "placeId": "john-c-hitt-library",
+     "minutes": 5.3
+    }
+   }
+  },
+  {
+   "dormId": "neptune",
+   "name": "Neptune Community",
+   "lng": -81.19818,
+   "lat": 28.59387,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "ferrell-commons",
+     "minutes": 7
+    },
+    "library": {
+     "placeId": "john-c-hitt-library",
+     "minutes": 10.9
+    }
+   }
+  },
+  {
+   "dormId": "apollo",
+   "name": "Apollo Community",
+   "lng": -81.20071,
+   "lat": 28.59843,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 4.5
+    },
+    "dining": {
+     "placeId": "ferrell-commons",
+     "minutes": 1.8
+    },
+    "library": {
+     "placeId": "john-c-hitt-library",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "towers",
+   "name": "Towers at Knights Plaza",
+   "lng": -81.19659,
+   "lat": 28.6067,
+   "pin": "manual",
+   "osm": "way/157935013",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "recreation-and-wellness-center",
+     "minutes": 16.5
+    },
+    "dining": {
+     "placeId": "ferrell-commons",
+     "minutes": 13.9
+    },
+    "library": {
+     "placeId": "john-c-hitt-library",
+     "minutes": 11.2
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "recreation-and-wellness-center",
+   "name": "Recreation and Wellness Center",
+   "short": "Recreation and Wellness Center",
+   "kind": "gym",
+   "codes": [
+    "RWC"
+   ],
+   "aliases": [],
+   "lng": -81.199459,
+   "lat": 28.595589,
+   "osm": "way/154739908"
+  },
+  {
+   "id": "ferrell-commons",
+   "name": "Ferrell Commons",
+   "short": "Ferrell Commons",
+   "kind": "dining",
+   "codes": [
+    "A-H",
+    "FC-B",
+    "FC-E",
+    "FC-F",
+    "FCC",
+    "FCD",
+    "FCG"
+   ],
+   "aliases": [
+    "Ferrell Commons - A-H",
+    "SDES Information Technology",
+    "SRC Auditorium",
+    "Student Accessibility Services",
+    "Office of Student Rights and Responsibilities",
+    "'63 South Dining Hall",
+    "Knight's Pantry"
+   ],
+   "lng": -81.199743,
+   "lat": 28.597992,
+   "osm": "relation/4118741"
+  },
+  {
+   "id": "student-union",
+   "name": "Student Union",
+   "short": "Student Union",
+   "kind": "academic",
+   "codes": [
+    "STUN"
+   ],
+   "aliases": [],
+   "lng": -81.200609,
+   "lat": 28.602015,
+   "osm": "way/154245264"
+  },
+  {
+   "id": "john-c-hitt-library",
+   "name": "John C. Hitt Library",
+   "short": "John C. Hitt Library",
+   "kind": "library",
+   "codes": [
+    "LIB"
+   ],
+   "aliases": [],
+   "lng": -81.201281,
+   "lat": 28.600573,
+   "osm": "way/154245274"
+  },
+  {
+   "id": "education-complex",
+   "name": "Education Complex",
+   "short": "Education Complex",
+   "kind": "academic",
+   "codes": [
+    "ED"
+   ],
+   "aliases": [
+    "Education Complex and Gym"
+   ],
+   "lng": -81.204082,
+   "lat": 28.600138,
+   "osm": "way/154739941"
+  },
+  {
+   "id": "nicholson-school-of-communication",
+   "name": "Nicholson School of Communication",
+   "short": "Nicholson School of Communication",
+   "kind": "academic",
+   "codes": [
+    "NSC"
+   ],
+   "aliases": [
+    "Nicholson School of Communication and Media"
+   ],
+   "lng": -81.202903,
+   "lat": 28.603914,
+   "osm": "way/154245215"
+  },
+  {
+   "id": "visual-arts-building",
+   "name": "Visual Arts Building",
+   "short": "Visual Arts Building",
+   "kind": "academic",
+   "codes": [
+    "VAB"
+   ],
+   "aliases": [
+    "VAB",
+    "Art Gallery"
+   ],
+   "lng": -81.203174,
+   "lat": 28.602853,
+   "osm": "way/154245320"
+  },
+  {
+   "id": "john-t-washington-center",
+   "name": "John T. Washington Center",
+   "short": "John T. Washington Center",
+   "kind": "academic",
+   "codes": [
+    "JTWC"
+   ],
+   "aliases": [],
+   "lng": -81.201672,
+   "lat": 28.601142,
+   "osm": "way/154245217"
+  },
+  {
+   "id": "business-administration-i",
+   "name": "Business Administration I",
+   "short": "Business Administration I",
+   "kind": "academic",
+   "codes": [
+    "BA1"
+   ],
+   "aliases": [
+    "BA1"
+   ],
+   "lng": -81.199121,
+   "lat": 28.601044,
+   "osm": "way/154245211"
+  },
+  {
+   "id": "creol",
+   "name": "CREOL",
+   "short": "CREOL",
+   "kind": "academic",
+   "codes": [
+    "CROL"
+   ],
+   "aliases": [],
+   "lng": -81.197153,
+   "lat": 28.601267,
+   "osm": "way/154245213"
+  },
+  {
+   "id": "trevor-colbourn-hall",
+   "name": "Trevor Colbourn Hall",
+   "short": "Trevor Colbourn Hall",
+   "kind": "academic",
+   "codes": [
+    "TCH"
+   ],
+   "aliases": [
+    "TCH",
+    "University Writing Center"
+   ],
+   "lng": -81.203271,
+   "lat": 28.601812,
+   "osm": "way/686836852"
+  },
+  {
+   "id": "health-sciences-i",
+   "name": "Health Sciences I",
+   "short": "Health Sciences I",
+   "kind": "academic",
+   "codes": [
+    "HS1"
+   ],
+   "aliases": [
+    "HS1",
+    "Health and Public Affairs I"
+   ],
+   "lng": -81.198673,
+   "lat": 28.603032,
+   "osm": "way/154245252"
+  },
+  {
+   "id": "research-i",
+   "name": "Research I",
+   "short": "Research I",
+   "kind": "academic",
+   "codes": [
+    "R1"
+   ],
+   "aliases": [
+    "Research 1"
+   ],
+   "lng": -81.197331,
+   "lat": 28.602238,
+   "osm": "way/827224010"
+  },
+  {
+   "id": "classroom-building-i",
+   "name": "Classroom Building I",
+   "short": "Classroom Building I",
+   "kind": "academic",
+   "codes": [
+    "CB1"
+   ],
+   "aliases": [
+    "CB1"
+   ],
+   "lng": -81.200493,
+   "lat": 28.603715,
+   "osm": "way/154245258"
+  },
+  {
+   "id": "engineering-ii",
+   "name": "Engineering II",
+   "short": "Engineering II",
+   "kind": "academic",
+   "codes": [
+    "ENG2"
+   ],
+   "aliases": [
+    "ENG2"
+   ],
+   "lng": -81.198378,
+   "lat": 28.601909,
+   "osm": "way/307646411"
+  },
+  {
+   "id": "classroom-building-ii",
+   "name": "Classroom Building II",
+   "short": "Classroom Building II",
+   "kind": "academic",
+   "codes": [
+    "CB2"
+   ],
+   "aliases": [
+    "CB2"
+   ],
+   "lng": -81.200126,
+   "lat": 28.604255,
+   "osm": "way/304915003"
+  },
+  {
+   "id": "l3harris-engineering-center",
+   "name": "L3Harris Engineering Center",
+   "short": "L3Harris Engineering Center",
+   "kind": "academic",
+   "codes": [
+    "HEC"
+   ],
+   "aliases": [
+    "HEC",
+    "Engineering III"
+   ],
+   "lng": -81.19766,
+   "lat": 28.600538,
+   "osm": "way/154245241"
+  },
+  {
+   "id": "psychology-building",
+   "name": "Psychology Building",
+   "short": "Psychology Building",
+   "kind": "academic",
+   "codes": [
+    "PSY"
+   ],
+   "aliases": [],
+   "lng": -81.199606,
+   "lat": 28.604841,
+   "osm": "way/154245219"
+  },
+  {
+   "id": "mathematical-sciences-building",
+   "name": "Mathematical Sciences Building",
+   "short": "Mathematical Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "MSB"
+   ],
+   "aliases": [
+    "MSB"
+   ],
+   "lng": -81.200465,
+   "lat": 28.59961,
+   "osm": "way/154740011"
+  },
+  {
+   "id": "engineering-i",
+   "name": "Engineering I",
+   "short": "Engineering I",
+   "kind": "academic",
+   "codes": [
+    "ENG1"
+   ],
+   "aliases": [
+    "ENG1"
+   ],
+   "lng": -81.198369,
+   "lat": 28.601503,
+   "osm": "way/307647104"
+  },
+  {
+   "id": "millican-hall",
+   "name": "Millican Hall",
+   "short": "Millican Hall",
+   "kind": "academic",
+   "codes": [
+    "MH"
+   ],
+   "aliases": [],
+   "lng": -81.20228,
+   "lat": 28.599105,
+   "osm": "way/154740107"
+  },
+  {
+   "id": "knights-plaza-i",
+   "name": "Knights Plaza I",
+   "short": "Knights Plaza I",
+   "kind": "academic",
+   "codes": [
+    "KP1"
+   ],
+   "aliases": [],
+   "lng": -81.198581,
+   "lat": 28.606891,
+   "osm": "way/157938229"
+  },
+  {
+   "id": "physical-sciences-building",
+   "name": "Physical Sciences Building",
+   "short": "Physical Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "PSB"
+   ],
+   "aliases": [],
+   "lng": -81.198045,
+   "lat": 28.599855,
+   "osm": "way/154740047"
+  },
+  {
+   "id": "biological-sciences-building",
+   "name": "Biological Sciences Building",
+   "short": "Biological Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "BIO"
+   ],
+   "aliases": [],
+   "lng": -81.198623,
+   "lat": 28.600109,
+   "osm": "way/154245278"
+  },
+  {
+   "id": "partnership-ii",
+   "name": "Partnership II",
+   "short": "Partnership II",
+   "kind": "academic",
+   "codes": [
+    "P2"
+   ],
+   "aliases": [
+    "Partnership 2"
+   ],
+   "lng": -81.199197,
+   "lat": 28.585853,
+   "osm": "way/245811957"
+  },
+  {
+   "id": "center-for-multilingual-multicultural-studies",
+   "name": "Center for Multilingual Multicultural Studies",
+   "short": "Center for Multilingual Multicultural Studies",
+   "kind": "academic",
+   "codes": [
+    "CMMS"
+   ],
+   "aliases": [
+    "Barbara Ying Center - CMMS"
+   ],
+   "lng": -81.202634,
+   "lat": 28.594919,
+   "osm": "way/154739804"
+  },
+  {
+   "id": "teaching-academy",
+   "name": "Teaching Academy",
+   "short": "Teaching Academy",
+   "kind": "academic",
+   "codes": [
+    "TA"
+   ],
+   "aliases": [],
+   "lng": -81.203942,
+   "lat": 28.59933,
+   "osm": "way/154739995"
+  },
+  {
+   "id": "business-administration-ii",
+   "name": "Business Administration II",
+   "short": "Business Administration II",
+   "kind": "academic",
+   "codes": [
+    "BA2"
+   ],
+   "aliases": [
+    "BA2"
+   ],
+   "lng": -81.198685,
+   "lat": 28.600826,
+   "osm": "way/154245223"
+  },
+  {
+   "id": "partnership-iii",
+   "name": "Partnership III",
+   "short": "Partnership III",
+   "kind": "academic",
+   "codes": [
+    "P3"
+   ],
+   "aliases": [
+    "Partnership 3"
+   ],
+   "lng": -81.199285,
+   "lat": 28.585039,
+   "osm": "way/245811959"
+  },
+  {
+   "id": "performing-arts-center-music",
+   "name": "Performing Arts Center Music",
+   "short": "Performing Arts Center Music",
+   "kind": "academic",
+   "codes": [
+    "PAC"
+   ],
+   "aliases": [
+    "PAC",
+    "Performing Arts Center"
+   ],
+   "lng": -81.204508,
+   "lat": 28.602065,
+   "osm": "way/159918693"
+  },
+  {
+   "id": "theatre",
+   "name": "Theatre",
+   "short": "Theatre",
+   "kind": "academic",
+   "codes": [
+    "TH"
+   ],
+   "aliases": [],
+   "lng": -81.199693,
+   "lat": 28.600533,
+   "osm": "way/154245236"
+  },
+  {
+   "id": "health-sciences-ii",
+   "name": "Health Sciences II",
+   "short": "Health Sciences II",
+   "kind": "academic",
+   "codes": [
+    "HS2"
+   ],
+   "aliases": [
+    "HS2"
+   ],
+   "lng": -81.198196,
+   "lat": 28.603198,
+   "osm": "way/294432613"
+  },
+  {
+   "id": "chemistry-building",
+   "name": "Chemistry Building",
+   "short": "Chemistry Building",
+   "kind": "academic",
+   "codes": [
+    "CHEM"
+   ],
+   "aliases": [
+    "Chemistry"
+   ],
+   "lng": -81.199664,
+   "lat": 28.599944,
+   "osm": "relation/11356655"
+  },
+  {
+   "id": "partnership-i",
+   "name": "Partnership I",
+   "short": "Partnership I",
+   "kind": "academic",
+   "codes": [
+    "CPS"
+   ],
+   "aliases": [
+    "Partnership 1"
+   ],
+   "lng": -81.197472,
+   "lat": 28.586189,
+   "osm": "way/571062606"
+  },
+  {
+   "id": "college-of-sciences",
+   "name": "College of Sciences",
+   "short": "College of Sciences",
+   "kind": "academic",
+   "codes": [
+    "CSB"
+   ],
+   "aliases": [
+    "CSB",
+    "Computer Science",
+    "College of Sciences Building"
+   ],
+   "lng": -81.200099,
+   "lat": 28.600993,
+   "osm": "way/154245214"
+  },
+  {
+   "id": "ucf-sprk",
+   "name": "UCF SPRK",
+   "short": "UCF SPRK",
+   "kind": "academic",
+   "codes": [
+    "SPRK"
+   ],
+   "aliases": [
+    "SPRK"
+   ],
+   "lng": -81.197903,
+   "lat": 28.604681,
+   "osm": "way/394254372"
+  },
+  {
+   "id": "howard-phillips-hall",
+   "name": "Howard Phillips Hall",
+   "short": "Howard Phillips Hall",
+   "kind": "academic",
+   "codes": [
+    "HPH"
+   ],
+   "aliases": [
+    "HPH"
+   ],
+   "lng": -81.202724,
+   "lat": 28.600281,
+   "osm": "way/154245302"
+  },
+  {
+   "id": "performing-arts-center-theatre",
+   "name": "Performing Arts Center Theatre",
+   "short": "Performing Arts Center Theatre",
+   "kind": "academic",
+   "codes": [
+    "PAC"
+   ],
+   "aliases": [],
+   "lng": -81.204508,
+   "lat": 28.602637,
+   "osm": "way/159918691"
+  },
+  {
+   "id": "biomolecular-research-annex",
+   "name": "Biomolecular Research Annex",
+   "short": "Biomolecular Research Annex",
+   "kind": "academic",
+   "codes": [
+    "BKA"
+   ],
+   "aliases": [],
+   "lng": -81.191944,
+   "lat": 28.588708,
+   "osm": "way/245811950"
+  },
+  {
+   "id": "burnett-honors-college",
+   "name": "Burnett Honors College",
+   "short": "Burnett Honors College",
+   "kind": "academic",
+   "codes": [
+    "BHC"
+   ],
+   "aliases": [],
+   "lng": -81.202167,
+   "lat": 28.602276,
+   "osm": "way/154245224"
+  },
+  {
+   "id": "technology-commons-ii",
+   "name": "Technology Commons II",
+   "short": "Technology Commons II",
+   "kind": "academic",
+   "codes": [
+    "TC2"
+   ],
+   "aliases": [
+    "TC2"
+   ],
+   "lng": -81.200355,
+   "lat": 28.600585,
+   "osm": "way/154245216"
+  },
+  {
+   "id": "morgridge-international-reading-center",
+   "name": "Morgridge International Reading Center",
+   "short": "Morgridge International Reading Center",
+   "kind": "academic",
+   "codes": [
+    "MIRC"
+   ],
+   "aliases": [],
+   "lng": -81.204606,
+   "lat": 28.59851,
+   "osm": "way/159918666"
+  },
+  {
+   "id": "rehearsal-hall",
+   "name": "Rehearsal Hall",
+   "short": "Rehearsal Hall",
+   "kind": "academic",
+   "codes": [
+    "RH"
+   ],
+   "aliases": [],
+   "lng": -81.202104,
+   "lat": 28.601485,
+   "osm": "way/154245220"
+  },
+  {
+   "id": "college-of-arts-and-humanities",
+   "name": "College of Arts & Humanities",
+   "short": "College of Arts & Humanities",
+   "kind": "academic",
+   "codes": [
+    "CAH"
+   ],
+   "aliases": [],
+   "lng": -81.202547,
+   "lat": 28.604436,
+   "osm": "way/154245209"
+  },
+  {
+   "id": "engineering-field-laboratory",
+   "name": "Engineering Field Laboratory",
+   "short": "Engineering Field Laboratory",
+   "kind": "academic",
+   "codes": [
+    "ERL",
+    "SEC"
+   ],
+   "aliases": [
+    "Engine Research Lab",
+    "Siemens Energy Center"
+   ],
+   "lng": -81.188571,
+   "lat": 28.591615,
+   "osm": "way/171061237"
+  },
+  {
+   "id": "technology-commons-i",
+   "name": "Technology Commons I",
+   "short": "Technology Commons I",
+   "kind": "academic",
+   "codes": [
+    "TC1"
+   ],
+   "aliases": [
+    "TC1"
+   ],
+   "lng": -81.200381,
+   "lat": 28.600338,
+   "osm": "way/308425037"
+  },
+  {
+   "id": "observatory-and-astronomy-laboratory",
+   "name": "Observatory and Astronomy Laboratory",
+   "short": "Observatory and Astronomy Laboratory",
+   "kind": "academic",
+   "codes": [
+    "OBSV"
+   ],
+   "aliases": [
+    "Robinson Observatory"
+   ],
+   "lng": -81.190615,
+   "lat": 28.591757,
+   "osm": "way/171061240"
+  },
+  {
+   "id": "mmae-laboratory",
+   "name": "MMAE Laboratory",
+   "short": "MMAE Laboratory",
+   "kind": "academic",
+   "codes": [
+    "MMAE"
+   ],
+   "aliases": [],
+   "lng": -81.188333,
+   "lat": 28.592013,
+   "osm": "way/556759739"
+  }
+ ]
+}

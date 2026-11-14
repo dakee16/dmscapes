@@ -1,0 +1,20 @@
+{
+  "halls": {
+    "arroyo-vista": {
+      "pin": [
+        -117.827591,
+        33.647083
+      ]
+    },
+    "verano-place": {
+      "pin": [
+        -117.832851,
+        33.645579
+      ]
+    }
+  },
+  "notes": {
+    "arroyo-vista": "Arroyo Vista is the row of houses on Arroyo Drive (UCI Housing's Arroyo Vista office is 1000 Arroyo Dr, housing.uci.edu/about/contact; OSM maps the houses as 1006-1036 Arroyo Dr). Pinned to 1016 Arroyo Dr (way/1014678925), mid-row.",
+    "verano-place": "Verano Place is the graduate and family housing on Verano Road South and Adobe Circle (UCI Housing's office there is 6529 Adobe Circle Rd South, housing.uci.edu/about/contact). Pinned to OSM way/640643577, '2500 South Verano Road' (building=dormitory), in the middle of it."
+  }
+}

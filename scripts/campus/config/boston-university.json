@@ -1,0 +1,17 @@
+{
+  "collegeId": "boston-university",
+  "area": {
+    "osm": "relation/6587738",
+    "bbox": [
+      42.34124,
+      -71.12485,
+      42.35504,
+      -71.09325
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/boston-university.codes.json"
+  }
+}

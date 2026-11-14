@@ -264,7 +264,7 @@ export default async function DormPage(props: {
         <a href="#rooms" className="ds-btn ds-btn--ghost">
           {n === 1 ? "See the room" : n === 2 ? "See both rooms" : `See all ${n} rooms`}
         </a>
-        {finder && <HallHeroLink collegeId={school.id} dormId={dorm.id} />}
+        {finder?.ranked && <HallHeroLink collegeId={school.id} dormId={dorm.id} />}
       </PageHero>
 
       <SectionRail
@@ -608,7 +608,7 @@ export default async function DormPage(props: {
 
 const NEAR_LABEL = { dining: "Dining", library: "Library", gym: "Gym" } as const;
 
-async function hallFinderBits(collegeId: string, dormId: string, short: string): Promise<{ near: NearPlace[]; area: string | null; halls: number }> {
+async function hallFinderBits(collegeId: string, dormId: string, short: string): Promise<{ near: NearPlace[]; area: string | null; halls: number; ranked: boolean }> {
   const campus = JSON.parse(await fs.readFile(path.join(process.cwd(), "data", "campus", `${collegeId}.json`), "utf8")) as Campus;
   const hall = campus.halls.find((h) => h.dormId === dormId);
   const placeOf = new Map(campus.places.map((p) => [p.id, p]));
@@ -619,6 +619,8 @@ async function hallFinderBits(collegeId: string, dormId: string, short: string):
   });
   return {
     near,
+    // Only a hall with a spot on the map is ranked, so only it gets "Check in Hall Finder".
+    ranked: Boolean(hall && hall.lng !== null && hall.lat !== null),
     area: hallFacts(await readSchoolDorms(collegeId))[dormId]?.area ?? null,
     halls: exampleFor(collegeId, short)?.halls ?? campus.halls.length,
   };

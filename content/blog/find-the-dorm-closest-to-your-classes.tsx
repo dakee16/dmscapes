@@ -1,14 +1,19 @@
 import type { BlogPost } from "./types";
 import { Lead, H2, P, Ul, Ol, Li, Callout, EndCTA, TextLink } from "@/components/blog/Prose";
 import { PILOT_SCHOOLS } from "@/lib/hall-finder";
-import { getSchool } from "@/lib/schools";
+import { NAME_LIMIT, hallFinderUpdated, schoolsPhrase } from "@/lib/hall-finder-seo";
+import { SCHOOLS as ALL_SCHOOLS, getSchool } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PRO_PRICE_USD } from "@/lib/plan";
 
 // Hall Finder's schools and prices come from the data and lib/plan, never from this text.
-const PILOTS = PILOT_SCHOOLS.map((id) => getSchool(id)).filter((s) => s !== undefined).map((s) => ({ id: s.id, short: shortName(s) }));
-const SCHOOLS = PILOTS.map((s) => s.short);
-const schoolList = SCHOOLS.length > 1 ? `${SCHOOLS.slice(0, -1).join(", ")} and ${SCHOOLS.at(-1)}` : (SCHOOLS[0] ?? "");
+const PILOTS = PILOT_SCHOOLS.map((id) => getSchool(id)).filter((s) => s !== undefined).map((s) => ({ id: s.id, short: shortName(s), state: s.state ?? null }));
+// Every name while the list is short; "N schools in M states" once naming them all would read as filler.
+const schoolList = schoolsPhrase(PILOTS);
+const NAMED = PILOTS.length <= NAME_LIMIT;
+const MORE_COMING = PILOTS.length < ALL_SCHOOLS.length;
+// The guide changes whenever a school's walking data is built, so its "updated" follows the data.
+const UPDATED = hallFinderUpdated()?.slice(0, 10);
 const usd = (n: number) => `$${n.toFixed(2)}`;
 
 function Body() {
@@ -31,17 +36,25 @@ function Body() {
         and puts the halls in order, shortest week first. Then you can plan the
         room in the hall you pick, straight from the results.
       </P>
-      <P>
-        It works today at{" "}
-        {PILOTS.map((s, i) => (
-          <span key={s.id}>
-            {i > 0 && (i === PILOTS.length - 1 ? " and " : ", ")}
-            <TextLink href={`/colleges/${s.id}/hall-finder`}>{s.short}</TextLink>
-          </span>
-        ))}
-        . Open <TextLink href="/hall-finder">Hall Finder</TextLink> and choose
-        your school.
-      </P>
+      {NAMED ? (
+        <P>
+          It works today at{" "}
+          {PILOTS.map((s, i) => (
+            <span key={s.id}>
+              {i > 0 && (i === PILOTS.length - 1 ? " and " : ", ")}
+              <TextLink href={`/colleges/${s.id}/hall-finder`}>{s.short}</TextLink>
+            </span>
+          ))}
+          . Open <TextLink href="/hall-finder">Hall Finder</TextLink> and choose
+          your school.
+        </P>
+      ) : (
+        <P>
+          It works today at {schoolList}. Open{" "}
+          <TextLink href="/hall-finder">Hall Finder</TextLink> and choose your
+          school; the list there shows how many halls each one ranks.
+        </P>
+      )}
 
       <H2>Add your classes</H2>
       <Ul>
@@ -193,6 +206,7 @@ const post: BlogPost = {
   excerpt:
     "Upload your schedule or add your classes, and Hall Finder ranks every hall by your weekly walk, with real routes on the map.",
   date: "2026-10-24",
+  ...(UPDATED && UPDATED > "2026-10-24" ? { updated: UPDATED } : {}),
   readingTimeMin: 5,
   faqTopic: "Hall Finder",
   faqs: [
@@ -202,7 +216,7 @@ const post: BlogPost = {
     },
     {
       q: "Which schools does Hall Finder work at?",
-      a: `Hall Finder works at ${schoolList}. More schools are being added; every school still has its room sizes and planner on dormscape.`,
+      a: `Hall Finder works at ${schoolList}.${MORE_COMING ? " More schools are being added; every school still has its room sizes and planner on dormscape." : " That is every school on dormscape, and each one also has its room sizes and planner."}`,
     },
     {
       q: "Can I upload my class schedule?",
