@@ -3083,6 +3083,90 @@
       }
     ]
   },
+  "uiuc": {
+    "halls": 15,
+    "places": [
+      {
+        "placeId": "davenport-hall",
+        "days": 21
+      },
+      {
+        "placeId": "noyes-laboratory",
+        "days": 10
+      },
+      {
+        "placeId": "english-building",
+        "days": 21
+      },
+      {
+        "placeId": "smith-memorial-hall",
+        "days": 10
+      },
+      {
+        "placeId": "morrill-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "busey-evans",
+        "name": "Busey-Evans Halls",
+        "weekly": 153.6
+      },
+      {
+        "dormId": "allen",
+        "name": "Allen Hall",
+        "weekly": 232.6
+      },
+      {
+        "dormId": "isr",
+        "name": "Illinois Street Residence Halls (ISR)",
+        "weekly": 239.4
+      }
+    ]
+  },
+  "umass": {
+    "halls": 48,
+    "places": [
+      {
+        "placeId": "old-chapel",
+        "days": 21
+      },
+      {
+        "placeId": "machmer-hall",
+        "days": 10
+      },
+      {
+        "placeId": "south-college",
+        "days": 21
+      },
+      {
+        "placeId": "bartlett-hall",
+        "days": 10
+      },
+      {
+        "placeId": "herter-annex",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "elm-hall",
+        "name": "Elm Hall",
+        "weekly": 74.8
+      },
+      {
+        "dormId": "sycamore-hall",
+        "name": "Sycamore Hall",
+        "weekly": 78.8
+      },
+      {
+        "dormId": "maple-hall",
+        "name": "Maple Hall",
+        "weekly": 105
+      }
+    ]
+  },
   "umbc": {
     "halls": 6,
     "places": [
