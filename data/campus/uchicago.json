@@ -1,0 +1,1106 @@
+{
+ "collegeId": "uchicago",
+ "generatedAt": "2026-11-13T21:36:31.721Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/uchicago.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -87.6053,
+  41.78458,
+  -87.5908,
+  41.79445
+ ],
+ "halls": [
+  {
+   "dormId": "campus-north",
+   "name": "Campus North Residential Commons",
+   "lng": -87.598902,
+   "lat": 41.794453,
+   "pin": "name",
+   "osm": "relation/10657061",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "henry-crown-field-house",
+     "minutes": 1.4
+    },
+    "library": {
+     "placeId": "joe-and-rika-mansueto-library",
+     "minutes": 5.8
+    },
+    "dining": {
+     "placeId": "bartlett-dining-commons",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "woodlawn-commons",
+   "name": "Woodlawn Residential Commons",
+   "lng": -87.597007,
+   "lat": 41.784721,
+   "pin": "name",
+   "osm": "relation/11687839",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "henry-crown-field-house",
+     "minutes": 14.8
+    },
+    "library": {
+     "placeId": "center-for-research-libraries",
+     "minutes": 5.3
+    },
+    "dining": {
+     "placeId": "hutchinson-commons",
+     "minutes": 10.4
+    }
+   }
+  },
+  {
+   "dormId": "granville-grossman",
+   "name": "Renee Granville-Grossman Residential Commons",
+   "lng": -87.600315,
+   "lat": 41.784581,
+   "pin": "name",
+   "osm": "relation/2087203",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ratner-athletic-center",
+     "minutes": 14.1
+    },
+    "library": {
+     "placeId": "harper-memorial-library",
+     "minutes": 5.9
+    },
+    "dining": {
+     "placeId": "hutchinson-commons",
+     "minutes": 11.2
+    }
+   }
+  },
+  {
+   "dormId": "max-palevsky",
+   "name": "Max Palevsky Residential Commons",
+   "lng": -87.59984,
+   "lat": 41.792976,
+   "pin": "manual",
+   "osm": "way/153266965",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "henry-crown-field-house",
+     "minutes": 2.3
+    },
+    "library": {
+     "placeId": "joe-and-rika-mansueto-library",
+     "minutes": 4
+    },
+    "dining": {
+     "placeId": "bartlett-dining-commons",
+     "minutes": 3.3
+    }
+   }
+  },
+  {
+   "dormId": "snell-hitchcock",
+   "name": "Snell-Hitchcock Hall",
+   "lng": -87.600808,
+   "lat": 41.791149,
+   "pin": "name",
+   "osm": "way/154421807",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ratner-athletic-center",
+     "minutes": 6.7
+    },
+    "library": {
+     "placeId": "joseph-regenstein-library",
+     "minutes": 3.4
+    },
+    "dining": {
+     "placeId": "hutchinson-commons",
+     "minutes": 2.8
+    }
+   }
+  },
+  {
+   "dormId": "international-house",
+   "name": "International House",
+   "lng": -87.590801,
+   "lat": 41.788238,
+   "pin": "name",
+   "osm": "relation/1953426",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "henry-crown-field-house",
+     "minutes": 17.6
+    },
+    "library": {
+     "placeId": "center-for-research-libraries",
+     "minutes": 8.7
+    },
+    "dining": {
+     "placeId": "hutchinson-commons",
+     "minutes": 13.4
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "ratner-athletic-center",
+   "name": "Ratner Athletic Center",
+   "short": "Ratner Athletic Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.602042,
+   "lat": 41.794152,
+   "osm": "way/152586235"
+  },
+  {
+   "id": "joseph-regenstein-library",
+   "name": "Joseph Regenstein Library",
+   "short": "Joseph Regenstein Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.599936,
+   "lat": 41.7922,
+   "osm": "way/194224828"
+  },
+  {
+   "id": "charles-m-harper-center",
+   "name": "Charles M. Harper Center",
+   "short": "Charles M. Harper Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.595479,
+   "lat": 41.789039,
+   "osm": "way/150456352"
+  },
+  {
+   "id": "gordon-center-for-integrative-science",
+   "name": "Gordon Center for Integrative Science",
+   "short": "Gordon Center for Integrative Science",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.602834,
+   "lat": 41.791007,
+   "osm": "way/142870150"
+  },
+  {
+   "id": "henry-crown-field-house",
+   "name": "Henry Crown Field House",
+   "short": "Henry Crown Field House",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.598932,
+   "lat": 41.793563,
+   "osm": "way/151173253"
+  },
+  {
+   "id": "laird-bell-law-quadrangle",
+   "name": "Laird Bell Law Quadrangle",
+   "short": "Laird Bell Law Quadrangle",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.598763,
+   "lat": 41.785241,
+   "osm": "way/152422458"
+  },
+  {
+   "id": "logan-center-for-the-arts",
+   "name": "Logan Center for the Arts",
+   "short": "Logan Center for the Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.603764,
+   "lat": 41.785313,
+   "osm": "way/152422729"
+  },
+  {
+   "id": "1155-east-60th-street",
+   "name": "1155 East 60th Street",
+   "short": "1155 East 60th Street",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.597201,
+   "lat": 41.785489,
+   "osm": "relation/1957138"
+  },
+  {
+   "id": "6054-south-drexel-avenue",
+   "name": "6054 South Drexel Avenue",
+   "short": "6054 South Drexel Avenue",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.604865,
+   "lat": 41.784636,
+   "osm": "way/477223630"
+  },
+  {
+   "id": "john-crerar-library",
+   "name": "John Crerar Library",
+   "short": "John Crerar Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.602816,
+   "lat": 41.790543,
+   "osm": "way/152284260"
+  },
+  {
+   "id": "harris-school-of-public-policy-keller-center",
+   "name": "Harris School of Public Policy Keller Center",
+   "short": "Harris School of Public Policy Keller Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "New Graduate Residence Hall"
+   ],
+   "lng": -87.593891,
+   "lat": 41.785678,
+   "osm": "way/143926554"
+  },
+  {
+   "id": "knapp-center-for-biomedical-discovery",
+   "name": "Knapp Center for Biomedical Discovery",
+   "short": "Knapp Center for Biomedical Discovery",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.603357,
+   "lat": 41.791942,
+   "osm": "way/143527369"
+  },
+  {
+   "id": "institute-for-the-study-of-ancient-cultures-museum",
+   "name": "Institute for the Study of Ancient Cultures Museum",
+   "short": "Institute for the Study of Ancient Cultures Museum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Oriental Institute"
+   ],
+   "lng": -87.597511,
+   "lat": 41.78924,
+   "osm": "relation/2054806"
+  },
+  {
+   "id": "william-eckhardt-research-center",
+   "name": "William Eckhardt Research Center",
+   "short": "William Eckhardt Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.601708,
+   "lat": 41.791927,
+   "osm": "way/387213841"
+  },
+  {
+   "id": "center-for-research-libraries",
+   "name": "Center for Research Libraries",
+   "short": "Center for Research Libraries",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.593554,
+   "lat": 41.784658,
+   "osm": "way/143926550"
+  },
+  {
+   "id": "ida-noyes-hall",
+   "name": "Ida Noyes Hall",
+   "short": "Ida Noyes Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.595601,
+   "lat": 41.788181,
+   "osm": "way/150457341"
+  },
+  {
+   "id": "accelerator-building",
+   "name": "Accelerator Building",
+   "short": "Accelerator Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.601745,
+   "lat": 41.792727,
+   "osm": "way/148014495"
+  },
+  {
+   "id": "rubenstein-forum",
+   "name": "Rubenstein Forum",
+   "short": "Rubenstein Forum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.595823,
+   "lat": 41.785707,
+   "osm": "way/441025431"
+  },
+  {
+   "id": "crown-family-school-of-social-work-policy-and-practice",
+   "name": "Crown Family School of Social Work, Policy, and Practice",
+   "short": "Crown Family School of Social Work, Policy, and Practice",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "School of Social Service Administration"
+   ],
+   "lng": -87.601737,
+   "lat": 41.785585,
+   "osm": "way/143926548"
+  },
+  {
+   "id": "joe-and-rika-mansueto-library",
+   "name": "Joe and Rika Mansueto Library",
+   "short": "Joe and Rika Mansueto Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600876,
+   "lat": 41.791965,
+   "osm": "way/159093828"
+  },
+  {
+   "id": "saieh-hall-for-economics",
+   "name": "Saieh Hall for Economics",
+   "short": "Saieh Hall for Economics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.597277,
+   "lat": 41.789865,
+   "osm": "way/143457513"
+  },
+  {
+   "id": "bartlett-dining-commons",
+   "name": "Bartlett Dining Commons",
+   "short": "Bartlett Dining Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.598469,
+   "lat": 41.791946,
+   "osm": "way/153539618"
+  },
+  {
+   "id": "henry-hinds-laboratory-for-geophysical-sciences",
+   "name": "Henry Hinds Laboratory for Geophysical Sciences",
+   "short": "Henry Hinds Laboratory for Geophysical Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.601657,
+   "lat": 41.790267,
+   "osm": "way/88865426"
+  },
+  {
+   "id": "cummings-life-sciences-center",
+   "name": "Cummings Life Sciences Center",
+   "short": "Cummings Life Sciences Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.6028,
+   "lat": 41.789906,
+   "osm": "way/89537392"
+  },
+  {
+   "id": "harper-memorial-library",
+   "name": "Harper Memorial Library",
+   "short": "Harper Memorial Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.599587,
+   "lat": 41.787978,
+   "osm": "way/156128082"
+  },
+  {
+   "id": "knapp-research-center",
+   "name": "Knapp Research Center",
+   "short": "Knapp Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.602814,
+   "lat": 41.792193,
+   "osm": "way/1054042714"
+  },
+  {
+   "id": "high-bay-research-building",
+   "name": "High Bay Research Building",
+   "short": "High Bay Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.6053,
+   "lat": 41.792831,
+   "osm": "way/1004041470"
+  },
+  {
+   "id": "david-and-alfred-smart-museum-of-art",
+   "name": "David and Alfred Smart Museum of Art",
+   "short": "David and Alfred Smart Museum of Art",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600186,
+   "lat": 41.793512,
+   "osm": "way/152586233"
+  },
+  {
+   "id": "searle-chemical-laboratory",
+   "name": "Searle Chemical Laboratory",
+   "short": "Searle Chemical Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.60096,
+   "lat": 41.790553,
+   "osm": "way/154656512"
+  },
+  {
+   "id": "donnelley-biological-sciences-learning-center",
+   "name": "Donnelley Biological Sciences Learning Center",
+   "short": "Donnelley Biological Sciences Learning Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.602801,
+   "lat": 41.79169,
+   "osm": "way/142420007"
+  },
+  {
+   "id": "ryerson-laboratory",
+   "name": "Ryerson Laboratory",
+   "short": "Ryerson Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.599188,
+   "lat": 41.790247,
+   "osm": "way/157655074"
+  },
+  {
+   "id": "kovler",
+   "name": "Kovler",
+   "short": "Kovler",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.60335,
+   "lat": 41.789899,
+   "osm": "way/142871281"
+  },
+  {
+   "id": "carlson",
+   "name": "Carlson",
+   "short": "Carlson",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.602503,
+   "lat": 41.789121,
+   "osm": "way/202690809"
+  },
+  {
+   "id": "kent-chemical-laboratory",
+   "name": "Kent Chemical Laboratory",
+   "short": "Kent Chemical Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600151,
+   "lat": 41.790238,
+   "osm": "way/154859382"
+  },
+  {
+   "id": "kersten-physics-teaching-center",
+   "name": "Kersten Physics Teaching Center",
+   "short": "Kersten Physics Teaching Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.601626,
+   "lat": 41.791056,
+   "osm": "way/142870317"
+  },
+  {
+   "id": "michelson-center-for-physics",
+   "name": "Michelson Center for Physics",
+   "short": "Michelson Center for Physics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.602551,
+   "lat": 41.792843,
+   "osm": "way/143527367"
+  },
+  {
+   "id": "eckhart-hall",
+   "name": "Eckhart Hall",
+   "short": "Eckhart Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.598524,
+   "lat": 41.790249,
+   "osm": "way/157655066"
+  },
+  {
+   "id": "cobb-hall",
+   "name": "Cobb Hall",
+   "short": "Cobb Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600932,
+   "lat": 41.788978,
+   "osm": "way/156343655"
+  },
+  {
+   "id": "chapin-hall",
+   "name": "Chapin Hall",
+   "short": "Chapin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.592697,
+   "lat": 41.785779,
+   "osm": "way/144636081"
+  },
+  {
+   "id": "abbott-hall",
+   "name": "Abbott Hall",
+   "short": "Abbott Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.602473,
+   "lat": 41.789379,
+   "osm": "way/145401959"
+  },
+  {
+   "id": "judd-hall",
+   "name": "Judd Hall",
+   "short": "Judd Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.594455,
+   "lat": 41.788635,
+   "osm": "way/191827365"
+  },
+  {
+   "id": "jones-laboratory",
+   "name": "Jones Laboratory",
+   "short": "Jones Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600873,
+   "lat": 41.790117,
+   "osm": "way/154859380"
+  },
+  {
+   "id": "reynolds-club",
+   "name": "Reynolds Club",
+   "short": "Reynolds Club",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.598364,
+   "lat": 41.7911,
+   "osm": "way/157655073"
+  },
+  {
+   "id": "hutchinson-commons",
+   "name": "Hutchinson Commons",
+   "short": "Hutchinson Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Edgar Johnson Goodspeed House"
+   ],
+   "lng": -87.598797,
+   "lat": 41.791179,
+   "osm": "way/157655069"
+  },
+  {
+   "id": "midway-studios",
+   "name": "Midway Studios",
+   "short": "Midway Studios",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.603187,
+   "lat": 41.785452,
+   "osm": "way/152422722"
+  },
+  {
+   "id": "rosenwald-hall",
+   "name": "Rosenwald Hall",
+   "short": "Rosenwald Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.599143,
+   "lat": 41.788911,
+   "osm": "way/155201131"
+  },
+  {
+   "id": "biopsychology-science-building",
+   "name": "Biopsychology Science Building",
+   "short": "Biopsychology Science Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.602153,
+   "lat": 41.79161,
+   "osm": "way/148014497"
+  },
+  {
+   "id": "stuart-hall",
+   "name": "Stuart Hall",
+   "short": "Stuart Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.5991,
+   "lat": 41.788383,
+   "osm": "way/156128083"
+  },
+  {
+   "id": "edward-h-levi-hall",
+   "name": "Edward H. Levi Hall",
+   "short": "Edward H. Levi Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Administration Building"
+   ],
+   "lng": -87.600915,
+   "lat": 41.789572,
+   "osm": "way/152284265"
+  },
+  {
+   "id": "mcgiffert-house",
+   "name": "McGiffert House",
+   "short": "McGiffert House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.596022,
+   "lat": 41.790156,
+   "osm": "way/144062148"
+  },
+  {
+   "id": "swift-hall",
+   "name": "Swift Hall",
+   "short": "Swift Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600129,
+   "lat": 41.788916,
+   "osm": "way/151173251"
+  },
+  {
+   "id": "social-science-research-building",
+   "name": "Social Science Research Building",
+   "short": "Social Science Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.598831,
+   "lat": 41.788013,
+   "osm": "way/156128079"
+  },
+  {
+   "id": "mandel-hall",
+   "name": "Mandel Hall",
+   "short": "Mandel Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.598414,
+   "lat": 41.790648,
+   "osm": "way/157655071"
+  },
+  {
+   "id": "court-theatre",
+   "name": "Court Theatre",
+   "short": "Court Theatre",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600858,
+   "lat": 41.793993,
+   "osm": "way/152586234"
+  },
+  {
+   "id": "saieh-hall-annex",
+   "name": "Saieh Hall Annex",
+   "short": "Saieh Hall Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.597052,
+   "lat": 41.790174,
+   "osm": "way/545084806"
+  },
+  {
+   "id": "erna-heller-hall",
+   "name": "Erna Heller Hall",
+   "short": "Erna Heller Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.591718,
+   "lat": 41.785717,
+   "osm": "way/144636089"
+  },
+  {
+   "id": "wieboldt-hall",
+   "name": "Wieboldt Hall",
+   "short": "Wieboldt Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600322,
+   "lat": 41.787996,
+   "osm": "way/156343662"
+  },
+  {
+   "id": "classics-building",
+   "name": "Classics Building",
+   "short": "Classics Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600789,
+   "lat": 41.787961,
+   "osm": "way/156343656"
+  },
+  {
+   "id": "gates-blake-hall",
+   "name": "Gates-Blake Hall",
+   "short": "Gates-Blake Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600965,
+   "lat": 41.788482,
+   "osm": "way/156343657"
+  },
+  {
+   "id": "cochrane-woods-art-center",
+   "name": "Cochrane-Woods Art Center",
+   "short": "Cochrane-Woods Art Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600191,
+   "lat": 41.794008,
+   "osm": "way/143525608"
+  },
+  {
+   "id": "armour",
+   "name": "Armour",
+   "short": "Armour",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.601687,
+   "lat": 41.788777,
+   "osm": "way/202690807"
+  },
+  {
+   "id": "franklin-mclean-research-institute",
+   "name": "Franklin McLean Research Institute",
+   "short": "Franklin McLean Research Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.601487,
+   "lat": 41.788495,
+   "osm": "way/202690811"
+  },
+  {
+   "id": "pick-hall",
+   "name": "Pick Hall",
+   "short": "Pick Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.598265,
+   "lat": 41.788959,
+   "osm": "way/156044644"
+  },
+  {
+   "id": "haskell-hall",
+   "name": "Haskell Hall",
+   "short": "Haskell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600072,
+   "lat": 41.788378,
+   "osm": "way/155873096"
+  },
+  {
+   "id": "anatomy",
+   "name": "Anatomy",
+   "short": "Anatomy",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600069,
+   "lat": 41.791221,
+   "osm": "way/154421809"
+  },
+  {
+   "id": "culver",
+   "name": "Culver",
+   "short": "Culver",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600136,
+   "lat": 41.790808,
+   "osm": "way/152422457"
+  },
+  {
+   "id": "walker-museum",
+   "name": "Walker Museum",
+   "short": "Walker Museum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.598666,
+   "lat": 41.788991,
+   "osm": "way/155201128"
+  },
+  {
+   "id": "zoology",
+   "name": "Zoology",
+   "short": "Zoology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.599316,
+   "lat": 41.791234,
+   "osm": "way/157655090"
+  },
+  {
+   "id": "green-hall",
+   "name": "Green Hall",
+   "short": "Green Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.598255,
+   "lat": 41.788434,
+   "osm": "way/156044639"
+  },
+  {
+   "id": "erman-biology-center",
+   "name": "Erman Biology Center",
+   "short": "Erman Biology Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.599174,
+   "lat": 41.79083,
+   "osm": "way/157655067"
+  },
+  {
+   "id": "young-memorial-building",
+   "name": "Young Memorial Building",
+   "short": "Young Memorial Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600939,
+   "lat": 41.793425,
+   "osm": "way/142420006"
+  },
+  {
+   "id": "foster-hall",
+   "name": "Foster Hall",
+   "short": "Foster Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.598303,
+   "lat": 41.787949,
+   "osm": "way/156044642"
+  },
+  {
+   "id": "frederick-c-robie-house",
+   "name": "Frederick C. Robie House",
+   "short": "Frederick C. Robie House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.595947,
+   "lat": 41.789811,
+   "osm": "way/125667497"
+  },
+  {
+   "id": "neubauer-collegium-for-culture-and-society-formerly-meadville-lombard-theological-school",
+   "name": "Neubauer Collegium for Culture and Society (formerly Meadville Lombard Theological School)",
+   "short": "Neubauer Collegium for Culture and Society (formerly Meadville Lombard Theological School)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.596033,
+   "lat": 41.791295,
+   "osm": "way/144063826"
+  },
+  {
+   "id": "goodspeed-hall",
+   "name": "Goodspeed Hall",
+   "short": "Goodspeed Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.600958,
+   "lat": 41.788116,
+   "osm": "way/156343665"
+  },
+  {
+   "id": "kelly-hall",
+   "name": "Kelly Hall",
+   "short": "Kelly Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.598251,
+   "lat": 41.788143,
+   "osm": "way/156044638"
+  },
+  {
+   "id": "hunnewell-house",
+   "name": "Hunnewell House",
+   "short": "Hunnewell House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.596114,
+   "lat": 41.791159,
+   "osm": "way/144063829"
+  },
+  {
+   "id": "stevanovich-center-for-financial-mathematics",
+   "name": "Stevanovich Center for Financial Mathematics",
+   "short": "Stevanovich Center for Financial Mathematics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.59766,
+   "lat": 41.7906,
+   "osm": "way/143812442"
+  },
+  {
+   "id": "comparative-human-development-building",
+   "name": "Comparative Human Development Building",
+   "short": "Comparative Human Development Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.596847,
+   "lat": 41.790484,
+   "osm": "way/144061595"
+  },
+  {
+   "id": "beecher-hall",
+   "name": "Beecher Hall",
+   "short": "Beecher Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.598266,
+   "lat": 41.788699,
+   "osm": "way/156044643"
+  },
+  {
+   "id": "gender-race-studies-building",
+   "name": "Gender/Race Studies Building",
+   "short": "Gender/Race Studies Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.597653,
+   "lat": 41.790448,
+   "osm": "way/143812431"
+  },
+  {
+   "id": "scrs-building",
+   "name": "SCRS Building",
+   "short": "SCRS Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.597671,
+   "lat": 41.790242,
+   "osm": "way/143812437"
+  },
+  {
+   "id": "ryder-house",
+   "name": "Ryder House",
+   "short": "Ryder House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.59611,
+   "lat": 41.791029,
+   "osm": "way/144063819"
+  },
+  {
+   "id": "taft-house",
+   "name": "Taft House",
+   "short": "Taft House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.603072,
+   "lat": 41.785646,
+   "osm": "way/152422723"
+  }
+ ]
+}
