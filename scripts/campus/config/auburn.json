@@ -1,0 +1,25 @@
+{
+  "collegeId": "auburn",
+  "area": {
+    "osm": "relation/8457841",
+    "bbox": [
+      32.588,
+      -85.5,
+      32.612,
+      -85.472
+    ],
+    "note": "OSM's only Auburn outline, relation/8457841, takes in the university's farms, airport and research land (103 km\u00b2 box); the box limits it to the main campus around Haley Center (Thach Concourse), from South Donahue and the Village south to the north end of College St."
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "title": "Auburn University Facilities Management, 'Access Control Mode' building layer (ArcGIS Online, 2018-08-28_Building_with_Code): building names and building numbers",
+    "url": "https://www.arcgis.com/home/item.html?id=90974b597d1d4a06b71b9bd414d64b8b",
+    "arcgis": "https://services7.arcgis.com/fHhTAPFKh5BpOeRI/arcgis/rest/services/Building_by_Mode/FeatureServer/0",
+    "fields": {
+      "name": "Name",
+      "code": "Build_Num",
+      "aliases": []
+    }
+  }
+}
