@@ -23,6 +23,6 @@ export default async function sitemap({ id }: { id: Promise<string> }): Promise<
   if (group !== "pages") return entries;
   const [newest] = await recentGallery(1);
   return newest
-    ? [...entries, { url: `${SITE_URL}/gallery`, lastModified: newest.sharedAt, changeFrequency: "daily", priority: 0.6 }]
+    ? [...entries, { url: `${SITE_URL}/gallery`, lastModified: newest.sharedAt }]
     : entries;
 }
