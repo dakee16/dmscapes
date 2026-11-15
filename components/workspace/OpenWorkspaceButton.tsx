@@ -21,5 +21,5 @@ export default function OpenWorkspaceButton({ className }: { className?: string 
     } catch (e) { setError((e as Error).message); setBusy(false); }
   }
   return <div className={className}><button type="button" onClick={() => void open()} disabled={busy}
-    title="Save this layout and its shopping list in your own workspace. Invite your roommates with Pro.">{busy ? "Opening…" : <><span data-label="long">Open workspace</span><span data-label="short">Workspace</span><ArrowRight size={15} /></>}</button>{error && <p role="alert">{error}</p>}</div>;
+    title="Save this layout and its shopping list to a room you share. Invite your roommates with Pro.">{busy ? "Opening…" : <><span data-label="long">Plan with roommates</span><span data-label="short">Roommates</span><ArrowRight size={15} /></>}</button>{error && <p role="alert">{error}</p>}</div>;
 }
