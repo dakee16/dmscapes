@@ -102,7 +102,7 @@ export default function Footer() {
         <div className={s.top}>
           <div className={s.brand}>
             <p className={s.motto}>
-              Measure. Imagine.
+              Measure. Imagine.{" "}
               <br />
               Make room.
             </p>

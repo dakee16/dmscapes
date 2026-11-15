@@ -29,7 +29,7 @@ export function RuleArt({ kind }: { kind: "feet" | "type" | "bed" | "closet" }) 
         <span className={css.bedXl} data-grow="" />
         <span className={css.bedTwin} data-grow="" style={{ "--i": 1 } as React.CSSProperties} />
         <span className={css.bedLabel}>
-          TWIN XL
+          TWIN XL{" "}
           <br />
           <span>TWIN</span>
         </span>

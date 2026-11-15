@@ -68,7 +68,7 @@ export default function SetupDialog({ userId, options, initial, onClose }: { use
     <div className={s.setup} onClick={e => e.stopPropagation()}>
       <nav className={s.setupNav} aria-label="Steps">
         <div className={s.setupTags}><span>My Room</span><span>Pro</span></div>
-        <p className={s.setupTitle}>Open as<br /><em>My Room</em></p>
+        <p className={s.setupTitle}>Open as{" "}<br /><em>My Room</em></p>
         <ol>{stepNames.map((label, i) => { const n = i + 1; return <li key={label}><button type="button" aria-current={step === n ? "step" : undefined} disabled={!!busy || (n > 1 && !design)} onClick={() => setStep(n)}><span data-done={n < step}>{n < step ? <Check size={13} /> : `0${n}`}</span>{label}</button></li>; })}</ol>
         <div className={s.setupTape} aria-hidden="true" />
         <p className={s.setupFine}>Pro hosts one active shared room at a time. The design you pick stays saved as it is.</p>

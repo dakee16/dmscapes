@@ -27,7 +27,7 @@ export default async function ReportPage({ searchParams }: { searchParams: Promi
             <div className={css.indexCard}>
               <p className={css.noteLabel}>Before you start</p>
               <p className={css.noteText}>
-                No account needed. Your report is private.
+                No account needed. Your report is private.{" "}
                 <br />
                 Prefer email? <a href="mailto:info@dormscape.us">info@dormscape.us</a>
               </p>

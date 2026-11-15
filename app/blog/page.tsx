@@ -88,7 +88,7 @@ export default function BlogIndexPage() {
               making a small room work.
             </p>
             <p className={css.motto}>
-              Measure. Imagine. Make room.
+              Measure. Imagine. Make room.{" "}
               <br />
               A little room. Infinite possibility.
             </p>

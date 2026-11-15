@@ -74,9 +74,9 @@ export default function PostcardForm() {
         </div>
       </div>
       <div className={css.postmark} aria-hidden="true">
-        MEASURE
+        MEASURE{" "}
         <br />
-        IMAGINE
+        IMAGINE{" "}
         <br />
         MAKE ROOM
       </div>

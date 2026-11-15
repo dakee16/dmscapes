@@ -121,7 +121,7 @@ export default function MyRoomHome() {
         <div>
           <h2 id="start-title" className={s.h2}>Pick the design you&apos;ll <em>share.</em></h2>
           <p>Pro hosts one active shared room at a time. Your saved designs stay as they are.</p>
-          <p className={s.mono}>Invitations use no credits.<br />Guests never spend yours.</p>
+          <p className={s.mono}>Invitations use no credits.{" "}<br />Guests never spend yours.</p>
         </div>
         <div className={s.startCards}>
           {!user ? <Link href={`/login?next=${encodeURIComponent("/my-room")}`} className={s.startCard} data-empty="true"><strong>Sign in to see your designs</strong><span>Log in <ArrowRight size={12} /></span></Link>
@@ -152,7 +152,7 @@ export default function MyRoomHome() {
           <p className={s.gateMore}>Pro also unlocks the 3D Room Builder, the live 3D Room Studio, {PRO_INITIAL_CREDITS} plan credits and Create your own vibe.</p>
           <div className={s.gateBuy}>
             <button type="button" className={s.gateCta} onClick={() => { setGate(false); openUpgrade("workspace"); }}>Go Pro · ${PRO_PRICE_USD.toFixed(2)} once</button>
-            <span>One payment.<br />No subscription.</span>
+            <span>One payment.{" "}<br />No subscription.</span>
           </div>
           <p className={s.gateInvite}>{joined ? <>You&apos;re already in a shared room. <Link href={`/rooms/${joined.id}`}>Open {joined.name}</Link></> : <>Got an invite from a roommate? Open the link in that email to <strong>join their room free.</strong></>}</p>
         </div>
