@@ -157,7 +157,7 @@ const PASTED_SIZE: Record<string, [number, number, number]> = {
   ...DEFAULT_SIZE,
   fridge:[1.6,1.6,2.8], microwave:[1.5,1.1,.9], chair:[2,2,3.1], lounge:[3,3,2.3], ottoman:[1.3,1.3,1.4],
   shelf:[2.5,1,4.5], dresser:[2.6,1.5,2.6], speaker:[.45,.45,.75], monitor:[2,.7,1.5],
-  rug:[5,3,.035], mirror:[1.3,.15,4.8], pillow:[1.5,1,.4], bed:[3.25,6.6,2],
+  rug:[5,3,.035], mirror:[1.3,.15,4.8], pillow:[1.5,1,.4], bed:[3.25,6.6,2], plant:[1.4,1.4,2.6],
 };
 
 /** A product's footprint and height (ft) when its listing gives none: its model's usual size, else 2 × 2 × 1.5. */
