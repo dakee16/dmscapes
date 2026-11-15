@@ -4,11 +4,8 @@ import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { analyticsAllowed, CONSENT_EVENT } from "@/lib/consent";
-
-const GA_ID = "G-DSRNH55V8B";
-// The pages lib/analytics keeps out of PostHog: workspace, invite and login
-// URLs can carry room ids and invite tokens.
-const PRIVATE_PATH = /^\/(rooms|login|account|report)(\/|$)/;
+// GA_ID and the private pages are shared with PostHog; key events wait here for gtag.
+import { flushKeyEvents, GA_ID, PRIVATE_PATH } from "@/lib/analytics";
 
 /**
  * Google Analytics (gtag.js) on every page, on the same consent rules as
@@ -49,7 +46,7 @@ export default function GoogleAnalytics() {
   if (!load) return null;
   return (
     <>
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" onLoad={flushKeyEvents} />
       <Script id="google-analytics" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}

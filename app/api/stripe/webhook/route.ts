@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
 import { getServiceClient } from "@/lib/supabase-server";
@@ -11,6 +11,7 @@ import {
 } from "@/lib/plan";
 import { addPlanCredits, grantPurchasedPlan } from "@/lib/credit-ledger";
 import { deliverPurchaseInvoice } from "@/lib/purchase-email";
+import { capturePurchase } from "@/lib/purchase-analytics";
 
 // Signature verification needs the raw body and the Node runtime.
 export const runtime = "nodejs";
@@ -143,5 +144,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Update failed." }, { status: 500 });
   }
 
+  // Analytics runs after the response is sent: it can't delay or fail the webhook.
+  after(() => capturePurchase(session, purchase));
   return NextResponse.json({ received: true });
 }

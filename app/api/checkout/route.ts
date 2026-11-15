@@ -69,10 +69,14 @@ export async function POST(request: Request) {
   let type: PurchaseType = "plus";
   // Flex à-la-carte credit quantity (only used when type === "flex_credits").
   let quantity = 0;
+  // Analytics ids for the webhook's purchase_completed (lib/purchase-analytics),
+  // sent by lib/checkout only when the buyer allows analytics.
+  const tracking: Record<string, string> = {};
   try {
     const body = (await request.json().catch(() => ({}))) as {
       type?: string;
       quantity?: number;
+      analytics?: Record<string, unknown> | null;
     };
     if (body.type && PURCHASE_TYPES.includes(body.type as PurchaseType)) {
       type = body.type as PurchaseType;
@@ -81,6 +85,10 @@ export async function POST(request: Request) {
     }
     if (typeof body.quantity === "number" && Number.isFinite(body.quantity)) {
       quantity = Math.floor(body.quantity);
+    }
+    for (const [from, to] of [["ph", "ph_distinct_id"], ["ga", "ga_client_id"], ["gs", "ga_session_id"]] as const) {
+      const id = body.analytics?.[from];
+      if (typeof id === "string" && /^[\w.-]{1,100}$/.test(id)) tracking[to] = id;
     }
   } catch {
     // Empty body is fine; defaults to "plus".
@@ -200,7 +208,8 @@ export async function POST(request: Request) {
       success_url: successUrl,
       cancel_url: `${origin}/pricing?checkout=cancelled`,
       client_reference_id: userId,
-      metadata,
+      // The analytics ids stay on the session: the invoice and payment never carry them.
+      metadata: { ...metadata, ...tracking },
       // Generate a real paid invoice for the branded thank-you email.
       invoice_creation: { enabled: true, invoice_data: { metadata: { ...metadata, dormscape_email: "v1" }, footer: "Thank you for making room with dormscape. dormscape.us/contact" } },
       ...(!customerId ? { customer_creation: "always" as const } : {}),

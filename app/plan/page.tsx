@@ -119,9 +119,11 @@ export default function PlanSelectPage() {
     const s = getSchool(schoolId);
     if (!s) return;
     setCollege({ id: s.id, name: s.name });
+    track("college_selected", { school: s.id, college_id: s.id, source: "deep_link" });
     const dormId = params.get("dorm");
     const d = dormId ? s.dorms.find((x) => x.id === dormId) : undefined;
     if (d) setDorm({ id: d.id, name: d.name });
+    if (d) track("hall_selected", { school: s.id, hall: d.id, source: "deep_link" });
   }, [setCollege, setDorm, router]);
 
   const school = useMemo(() => (college?.id ? getSchool(college.id) : undefined), [college?.id]);
@@ -141,7 +143,7 @@ export default function PlanSelectPage() {
     if (ready) root.current?.removeAttribute("data-restoring");
   }, [ready]);
 
-  function handleCollege(next: SchoolSummary) {
+  function handleCollege(next: SchoolSummary, source: "search" | "featured" | "az") {
     setPendingDimsRoom(null);
     setShowSchools(false);
     // Picking the same school again keeps the building and room already chosen.
@@ -149,11 +151,13 @@ export default function PlanSelectPage() {
       setSelectedRoomKey(null);
       setCollege({ id: next.id, name: next.name });
     }
-    track("college_selected", { college_id: next.id });
+    // college_id: the name this event had before `school` and `source`, kept so older insights still match.
+    track("college_selected", { school: next.id, college_id: next.id, source });
   }
 
   function handleRoom(next: RoomSummary, key: string) {
     setSelectedRoomKey(key);
+    track("room_type_selected", { school: college?.id, hall: dorm?.id, room_type: next.type });
     if (next.length_ft && next.width_ft) {
       setPendingDimsRoom(null);
       setRoom({
@@ -226,6 +230,7 @@ export default function PlanSelectPage() {
             onBack={() => setShowSchools(true)}
             onDorm={(d) => {
               if (d.id !== dorm?.id) {
+                track("hall_selected", { school: college?.id, hall: d.id, source: "picker" });
                 setDorm(d);
                 setPendingDimsRoom(null);
                 setSelectedRoomKey(null);
