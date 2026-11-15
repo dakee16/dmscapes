@@ -117,12 +117,44 @@ export function schoolSummary(school: SchoolSummary, short: string, published: n
   return null;
 }
 
+// A standard double: not an oblong, L-shaped, super, suite or alcove room, at least 9 ft
+// across, and no more than twice as long as it is wide.
+const NOT_STANDARD = /oblong|l[\s-]?shape|super\s?double|suite|alcove/i;
+function standardDouble(r: RoomSummary): boolean {
+  const l = Math.max(r.length_ft!, r.width_ft!);
+  const w = Math.min(r.length_ft!, r.width_ft!);
+  return !NOT_STANDARD.test(`${r.type} ${r.label ?? ""}`) && w >= 9 && l / w <= 2;
+}
+
+/**
+ * The typical double: the most common standard double (rooms with identical length × width
+ * counted together), ties broken by the size closest to the standard doubles' median sq ft.
+ * Null when no published double is standard; the answer then gives square feet only.
+ */
+export function typicalDouble(doubles: RoomSummary[]): { l: number; w: number; sqft: number } | null {
+  const groups = new Map<string, { l: number; w: number; sqft: number; count: number }>();
+  for (const r of doubles.filter(standardDouble)) {
+    const l = Math.max(r.length_ft!, r.width_ft!);
+    const w = Math.min(r.length_ft!, r.width_ft!);
+    const key = `${l.toFixed(1)}x${w.toFixed(1)}`;
+    const g = groups.get(key) ?? { l, w, sqft: sqFtOf(r)!, count: 0 };
+    g.count++;
+    groups.set(key, g);
+  }
+  if (!groups.size) return null;
+  const sizes = [...groups.values()].flatMap((g) => Array<number>(g.count).fill(g.sqft)).sort((a, b) => a - b);
+  const median = sizes.length % 2 ? sizes[sizes.length >> 1] : (sizes[sizes.length / 2 - 1] + sizes[sizes.length / 2]) / 2;
+  return [...groups.values()].sort((a, b) => b.count - a.count || Math.abs(a.sqft - median) - Math.abs(b.sqft - median))[0];
+}
+
 /**
  * The answer a school page opens with: its typical published double (else single, else
  * triple) and their range, from the same rooms as spread() and /dorm-room-size (published,
- * and a room rather than a whole apartment). "Typical" is the real room at the middle of
- * their sizes, so its length × width and square feet agree. A school with none of those
- * gets the estimate wording. `family` says which kind the answer is about (null for none).
+ * and a room rather than a whole apartment). For doubles "typical" is typicalDouble(); a
+ * school whose doubles are all non-standard gets the doubles' median square feet only. For
+ * singles and triples it's the real room at the middle of their sizes, so its length ×
+ * width and square feet agree. A school with none of those gets the estimate wording.
+ * `family` says which kind the answer is about (null for none).
  */
 export function schoolAnswer(school: SchoolSummary, short: string, published: number): { family: string | null; lead: string; rest: string } {
   for (const fam of ["Double", "Single", "Triple"]) {
@@ -134,9 +166,14 @@ export function schoolAnswer(school: SchoolSummary, short: string, published: nu
     const mid = rooms[(rooms.length - 1) >> 1];
     const min = sqFtOf(rooms[0])!;
     const max = sqFtOf(rooms[rooms.length - 1])!;
+    let lead = `Typical ${short} ${f}: ${ft(Math.max(mid.length_ft!, mid.width_ft!))} × ${ft(Math.min(mid.length_ft!, mid.width_ft!))} ft, ${sqFtOf(mid)} sq ft.`;
+    if (fam === "Double") {
+      const t = typicalDouble(rooms);
+      lead = t ? `Typical ${short} double: ${ft(t.l)} × ${ft(t.w)} ft, ${t.sqft} sq ft.` : `Typical ${short} double: ${sqFtOf(mid)} sq ft.`;
+    }
     return {
       family: f,
-      lead: `Typical ${short} ${f}: ${ft(Math.max(mid.length_ft!, mid.width_ft!))} × ${ft(Math.min(mid.length_ft!, mid.width_ft!))} ft, ${sqFtOf(mid)} sq ft.`,
+      lead,
       rest:
         rooms.length === 1
           ? `It's the only ${f} with a published size.`
