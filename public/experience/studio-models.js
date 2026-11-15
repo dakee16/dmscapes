@@ -162,12 +162,14 @@ export function footprint(root) {
 /**
  * Realistic models (public/experience/models, made with text-to-3D and cleaned in Blender: about 20k triangles, AO baked
  * into the colour, meshopt + WebP). A kind listed here uses its model once it has loaded, for pieces the student brings or
- * buys (a dorm's own furniture keeps the clay look); until then, or if it fails, the clay model stands in. `tint` models
- * are light and neutral, so a product's colour multiplies into them.
+ * buys (a dorm's own furniture keeps the clay look); until then, or if it fails, the clay model stands in. Models with a
+ * `tint` are neutral, so a product's colour multiplies into them.
  */
 export const LIBRARY = {
-  fridge: { tint: true }, microwave: { tint: true }, chair: {}, monitor: {}, speaker: {},
-  lounge: { tint: true }, ottoman: { tint: true }, shelf: {}, plant: {},
+  // tint: the gain that brings the model's typical texel (median linear luminance, measured on its base colour) up to
+  // white, so a tinted piece reads as the product's colour rather than a darker shade of it.
+  fridge: { tint: 3.1 }, microwave: { tint: 2.8 }, chair: {}, monitor: {}, speaker: {},
+  lounge: { tint: 5 }, ottoman: { tint: 4.2 }, shelf: {}, plant: {},
 };
 const MODEL_DIR = new URL("./models/", import.meta.url).href;
 
@@ -190,12 +192,14 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
     const spec=!f.built_in&&LIBRARY[f.kind];if(!spec)return null;
     const entry=library.get(f.kind);if(!entry){loadModel(f.kind);return null;}
     if(typeof entry!=="object")return null;
-    const model=entry.scene.clone(true),{size}=entry;
-    model.scale.set(w/size.x,h/size.y,d/size.z);
+    // Fitted inside the piece's box, so it never pokes past its plan footprint: scaled evenly to fit, then stretched toward
+    // each side by at most a quarter, so books on a shelf or a chair's back don't turn wide and squat.
+    const model=entry.scene.clone(true),{size}=entry,fit=[w/size.x,h/size.y,d/size.z],even=Math.min(...fit);
+    model.scale.set(...fit.map(s=>Math.min(s,even*1.25)));
     if(spec.tint&&f.material_color){
       const key="lib-tint:"+f.kind+":"+f.material_color;
       model.traverse(o=>{if(!o.isMesh)return;
-        if(!materials.has(key+o.material.uuid)){const m=o.material.clone();m.color.set(f.material_color);materials.set(key+o.material.uuid,m);}
+        if(!materials.has(key+o.material.uuid)){const m=o.material.clone();m.color.set(f.material_color).multiplyScalar(spec.tint);materials.set(key+o.material.uuid,m);}
         o.material=materials.get(key+o.material.uuid);});
     }
     g.add(model);g.traverse(o=>{o.userData.itemId=f.id;});g.userData.itemId=f.id;return g;
