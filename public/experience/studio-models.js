@@ -564,7 +564,24 @@ export function createModelKit({onTexture=()=>{}}={}) {
       case "fan":
         box(g,w*.65,.12,d*.7,finish,0,.06,0);box(g,.06,h*.55,.06,finish,0,h*.3,0);oval(g,0,h*.7,0,w*.48,h*.3,.05,ink);
         for(let i=0;i<3;i++){const a=i*Math.PI*2/3;oval(g,Math.cos(a)*w*.18,h*.7+Math.sin(a)*h*.13,.05,w*.19,h*.07,.025,finish);}break;
-      case "decor":oval(g,0,h/2,0,w*.4,h/2,d*.4,f.material_color?finish:accent);break;
+      case "decor":{
+        // A piece we can't name yet: a plain soft-edged block at its real size (never a blob), in its own colour when known.
+        const m=f.material_color?mat(f.material_color,.85):mat("#e7e1d6",.9);
+        box(g,w*.96,h,d*.96,m,0,h/2,0,Math.min(.08,w*.12,d*.12,h*.2),3);break;
+      }
+      case "speaker":{
+        // A speaker: a soft cabinet with a darker grille and a woofer on its front.
+        const body=f.material_color?mat(f.material_color,.7):ink,grille=mat("#3a3c47",.95,true),r=Math.min(w,h)*.3;
+        box(g,w,h,d,body,0,h/2,0,Math.min(.06,w*.15),3);
+        box(g,w*.86,h*.86,.015,grille,0,h/2,d/2+.006,.02);
+        cyl(g,r,r,.02,mat("#26272f",.6),0,h*.4,d/2+.016,24).rotation.x=Math.PI/2;break;
+      }
+      case "monitor":{
+        // A screen on a stand: a slim dark panel above a neck and a flat foot.
+        const panelH=Math.max(.5,h*.72),panelT=Math.min(.12,d*.25);
+        box(g,w*.55,.04,d*.7,ink,0,.02,0,.02);box(g,.12,h-panelH*.6,.08,ink,0,(h-panelH*.6)/2,-d*.12,.02);
+        box(g,w,panelH,panelT,ink,0,h-panelH/2,0,.03);box(g,w*.95,panelH*.92,.01,mat("#1b1d26",.2),0,h-panelH/2,panelT/2+.004,.005);break;
+      }
       case "pillow":{
         // A pair of plump cushions in two colours, like the plan draws them.
         const s=Math.max(.85,Math.min(1.35,Math.max(w,d)*.62)),t=Math.max(.28,Math.min(.45,h||.4)),geo=pillowGeometry(s,t,s),one=f.material_color?cloth:accent,two=one===cloth?accent:cloth;

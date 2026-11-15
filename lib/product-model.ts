@@ -29,6 +29,32 @@ export function productColor(product: Product): string | undefined {
   return words.map(word => COLORS[word]).find(Boolean);
 }
 
+/**
+ * A pasted or uncategorised product's model, read from its title: the pieces a dorm commonly gets that have no planner
+ * category of their own (a mini fridge, a desk chair, a speaker). Ordered most specific first ("bookshelf" before "book",
+ * "bean bag chair" before "chair"); null when nothing fits, so the caller keeps its own rules.
+ */
+const TEXT_KINDS: [string, RegExp][] = [
+  ["fridge", /\b(mini ?fridge|refrigerator|fridge|beverage cooler|compact cooler)\b/],
+  ["microwave", /\bmicrowave\b/],
+  ["lounge", /\b(bean ?bag|floor chair|lounger|papasan|gaming floor)\b/],
+  ["ottoman", /\b(ottoman|pouf|footstool|foot rest|footrest)\b/],
+  // A chair mat, cushion or cover is not a chair.
+  ["chair", /\bchairs?\b(?!\s*(mat|cushion|pad|cover|slipcover))/],
+  ["shelf", /\b(bookshelf|bookshelves|bookcase|book case|shelving unit|ladder shelf|etagere|cube shelf)\b/],
+  ["dresser", /\b(dresser|chest of drawers|nightstand|night stand|bedside table|drawer unit|rolling cart)\b/],
+  ["monitor", /\b(monitor|computer screen|display screen|television|tv)\b(?!\s*(stand|riser|arm|mount|light))/],
+  ["speaker", /\b(speaker|soundbar|sound bar|subwoofer|bluetooth speaker|smart speaker|echo dot)\b/],
+  ["fan", /\b(fan|air circulator)\b/],
+  ["trash", /\b(trash can|waste ?basket|garbage can|recycling bin)\b/],
+  ["hamper", /\b(hamper|laundry basket|laundry bag)\b/],
+  ["basket", /\b(basket|storage bin|storage cube|bin)\b/],
+];
+export function furnitureKindFromText(text: string): string | null {
+  const lower = text.toLowerCase();
+  return TEXT_KINDS.find(([, re]) => re.test(lower))?.[0] ?? null;
+}
+
 /** ponytail: catalog text gives approximate silhouettes; manufacturer meshes are needed for exact replicas. */
 export function productVisual(product: Product) {
   const text = `${product.name} ${product.description}`.toLowerCase();
@@ -53,7 +79,7 @@ export function productVisual(product: Product) {
     case "towel_caddy": kind = /towel set/.test(text) ? "towels" : "caddy"; break;
     case "plant": kind = "plant"; break;
     case "clip_fan": kind = "fan"; break;
-    default: kind = pumpkin ? "pumpkin" : ghost ? "lantern" : /plant|tree|monstera|pothos|eucalyptus/.test(text) ? "plant" : /candle|tea ?light/.test(text) ? "candle" : /disco|mirror ball/.test(text) ? "disco" : /pillow/.test(text) ? "pillow" : /book/.test(text) ? "books" : /projector|lamp|diffuser/.test(text) ? "lamp" : "decor";
+    default: kind = pumpkin ? "pumpkin" : ghost ? "lantern" : furnitureKindFromText(text) ?? (/plant|tree|monstera|pothos|eucalyptus/.test(text) ? "plant" : /candle|tea ?light/.test(text) ? "candle" : /disco|mirror ball/.test(text) ? "disco" : /pillow/.test(text) ? "pillow" : /book/.test(text) ? "books" : /projector|lamp|diffuser/.test(text) ? "lamp" : "decor");
   }
   const variant = kind === "lamp"
     ? /mushroom/.test(text) ? "mushroom" : /banker/.test(text) ? "banker" : /lava/.test(text) ? "lava" : /salt/.test(text) ? "salt" : /projector/.test(text) ? "projector" : /light bar|under monitor/.test(text) ? "bar" : /swing|architect|gooseneck|clip|slim metal/.test(text) ? "task" : "shade"
@@ -122,6 +148,24 @@ const DEFAULT_SIZE: Record<string, [number, number, number]> = {
   lamp:[.7,.7,1.4], basket:[1,1,1], storage:[1,1,1],
   "wall-shelf":[3,.6,2.5], macrame:[2,.12,3], art:[3,.08,2.5], lights:[6,.15,.15],
 };
+
+/**
+ * Usual sizes for a pasted item with no listing dimensions. Kept apart from DEFAULT_SIZE, which catalog swaps use: there a
+ * missing size keeps the template slot's own, so pieces like rugs and dressers must stay out of it.
+ */
+const PASTED_SIZE: Record<string, [number, number, number]> = {
+  ...DEFAULT_SIZE,
+  fridge:[1.6,1.6,2.8], microwave:[1.5,1.1,.9], chair:[2,2,3.1], lounge:[3,3,2.3], ottoman:[1.3,1.3,1.4],
+  shelf:[2.5,1,4.5], dresser:[2.6,1.5,2.6], speaker:[.45,.45,.75], monitor:[2,.7,1.5],
+  rug:[5,3,.035], mirror:[1.3,.15,4.8], pillow:[1.5,1,.4], bed:[3.25,6.6,2],
+};
+
+/** A product's footprint and height (ft) when its listing gives none: its model's usual size, else 2 × 2 × 1.5. */
+export function defaultSizeFor(product: Product): [number, number, number] {
+  const size = PASTED_SIZE[productVisual(product).kind] ?? [2, 2, 1.5];
+  const pick = (value: number | null, fallback: number) => value && Number.isFinite(value) && value > 0 && value <= 40 ? value : fallback;
+  return [pick(product.width_ft, size[0]), pick(product.length_ft, size[1]), pick(product.height_ft, size[2])];
+}
 
 function clearPosition(item: FurnitureItem, items: FurnitureItem[], room: SelectedRoom) {
   if (item.parent_id || layerOf(item) !== "solid") return;
