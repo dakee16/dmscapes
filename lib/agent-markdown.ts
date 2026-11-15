@@ -1,6 +1,6 @@
 import { SCHOOLS, getSchool, publishedDimsCount } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
-import { hallSource, roomRows, schoolSource, schoolSummary, type Source } from "@/lib/school-facts";
+import { hallSource, roomRows, schoolAnswer, schoolSource, schoolSummary, spread, type Source } from "@/lib/school-facts";
 import { shortDate } from "@/components/blog/topics";
 import type { DormSummary, SchoolSummary } from "@/lib/types";
 import { PILOT_SCHOOLS, hallFinderLive } from "@/lib/hall-finder";
@@ -167,16 +167,21 @@ export function schoolMarkdown(school: SchoolSummary): string {
   const short = shortName(school);
   const published = publishedDimsCount(school);
   const place = [school.city, school.state].filter(Boolean).join(", ");
-  const summary = schoolSummary(school, short, published);
+  // Same opening as the page: the answer, then the published count and source; the summary only when it adds a kind of room.
+  const answer = schoolAnswer(school, short, published);
+  const bars = spread(school);
+  const summary = bars && bars.family !== answer.family ? schoolSummary(school, short, published) : null;
   const room = (r: ReturnType<typeof roomRows>[number]) =>
     `${r.name}${r.dims ? ` ${r.dims}` : ""}${r.sqft ? ` (${r.sqft} sq ft)` : ""}${r.status === "Estimated" ? ", estimated" : r.status === "Not published" ? ", size not published" : ""}`;
   return [
     `# ${short} dorm room sizes`,
     "",
+    `**${answer.lead}** ${answer.rest}`,
+    sourceLine(schoolSource(school.id), published > 0 ? `${published} published room size${published === 1 ? "" : "s"}` : "Room types"),
+    "",
     `> ${school.name}${place ? `, ${place}` : ""}: ${school.dorms.length} residence halls${published > 0 ? `, ${published} room types with dimensions the school publishes` : ""}.`,
     "",
     ...(summary ? [summary, ""] : []),
-    sourceLine(schoolSource(school.id), published > 0 ? "Published room sizes" : "Room types"),
     "Sizes marked estimated are dormscape's estimates from similar rooms, not the school's.",
     "",
     "## Residence halls",
