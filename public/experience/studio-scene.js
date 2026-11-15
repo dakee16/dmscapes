@@ -66,7 +66,9 @@ export function createStudioScene(container, options) {
   renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.NeutralToneMapping;renderer.toneMappingExposure=LIGHT.day.exposure;
   const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute("aria-label","3D room. Drag empty space to orbit. Drag a piece to move it; hold Shift to lift it. Select an item in Arrange for keyboard editing.");
   canvas.style.cssText="display:block;width:100%;height:100%;touch-action:none;outline-offset:-4px";container.appendChild(canvas);
-  const scene=new T.Scene(),camera=new T.PerspectiveCamera(30,1,.2,400),kit=createModelKit({onTexture:()=>request()});
+  const scene=new T.Scene(),camera=new T.PerspectiveCamera(30,1,.2,400),kit=createModelKit({onTexture:()=>request(),lite:LOW,
+    // A library model just arrived: rebuild the pieces of that kind that were standing in as clay.
+    onModel:kind=>{if(disposed||!data)return;let stale=false;for(const m of meshes.values())if(m.item.kind===kind){m.key="";stale=true;}if(stale)sync(data);}});
   // A sky/ground fill, the sun, and a fill at the window (moonlight at night).
   const hemi=new T.HemisphereLight(LIGHT.day.hemiSky,LIGHT.day.hemiGround,LIGHT.day.hemiI);scene.add(hemi);
   const sun=new T.DirectionalLight(LIGHT.day.sun,LIGHT.day.sunI);scene.add(sun,sun.target);

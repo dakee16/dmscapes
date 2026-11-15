@@ -159,8 +159,47 @@ export function footprint(root) {
 // look reference). Every piece is built inside its real footprint: width_ft
 // along x, length_ft along z, centred on the group, standing on y = 0. Only
 // what is in the plan is drawn; the vibe changes colours and materials only.
-export function createModelKit({onTexture=()=>{}}={}) {
+/**
+ * Realistic models (public/experience/models, made with text-to-3D and cleaned in Blender: about 20k triangles, AO baked
+ * into the colour, meshopt + WebP). A kind listed here uses its model once it has loaded, for pieces the student brings or
+ * buys (a dorm's own furniture keeps the clay look); until then, or if it fails, the clay model stands in. `tint` models
+ * are light and neutral, so a product's colour multiplies into them.
+ */
+export const LIBRARY = {
+  fridge: { tint: true }, microwave: { tint: true }, chair: {}, monitor: {}, speaker: {},
+  lounge: { tint: true }, ottoman: { tint: true }, shelf: {}, plant: {},
+};
+const MODEL_DIR = new URL("./models/", import.meta.url).href;
+
+export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) {
   const geometries=new Map(),materials=new Map(),textures=new Map(),glows=new Set(),shiny=new Set();let disposed=false,night=false,env=null,envI=1;
+  /** Library models by kind: {scene, size} once loaded, "loading", or "failed". The loader itself loads with the first model. */
+  const library=new Map();let loader=null;
+  function loadModel(kind){
+    if(library.has(kind)||typeof window==="undefined")return;
+    library.set(kind,"loading");
+    loader??=import("./vendor/gltf-loader.min.js").then(({GLTFLoader,MeshoptDecoder})=>{const l=new GLTFLoader();l.setMeshoptDecoder(MeshoptDecoder);return l;});
+    loader.then(l=>l.loadAsync(`${MODEL_DIR}${kind}${lite?"-lite":""}.glb`)).then(gltf=>{
+      if(disposed)return;
+      const scene=gltf.scene;scene.traverse(o=>{if(o.isMesh){o.material.envMap=null;o.material.metalness=0;o.userData.library=true;}});
+      library.set(kind,{scene,size:new T.Box3().setFromObject(scene).getSize(new T.Vector3())});onModel(kind);
+    }).catch(()=>library.set(kind,"failed"));
+  }
+  /** A library model fitted to the piece's footprint and height, its front toward +z like the clay models; null until loaded. */
+  function fromLibrary(g,f,w,h,d){
+    const spec=!f.built_in&&LIBRARY[f.kind];if(!spec)return null;
+    const entry=library.get(f.kind);if(!entry){loadModel(f.kind);return null;}
+    if(typeof entry!=="object")return null;
+    const model=entry.scene.clone(true),{size}=entry;
+    model.scale.set(w/size.x,h/size.y,d/size.z);
+    if(spec.tint&&f.material_color){
+      const key="lib-tint:"+f.kind+":"+f.material_color;
+      model.traverse(o=>{if(!o.isMesh)return;
+        if(!materials.has(key+o.material.uuid)){const m=o.material.clone();m.color.set(f.material_color);materials.set(key+o.material.uuid,m);}
+        o.material=materials.get(key+o.material.uuid);});
+    }
+    g.add(model);g.traverse(o=>{o.userData.itemId=f.id;});g.userData.itemId=f.id;return g;
+  }
   const c=document.createElement("canvas");c.width=c.height=128;const cx=c.getContext("2d");
   cx.fillStyle="#dddddd";cx.fillRect(0,0,128,128);
   for(let i=0;i<128;i+=3){cx.fillStyle=i%2?"#c9c9c9":"#efefef";cx.fillRect(i,0,1,128);cx.fillRect(0,i,128,1);}
@@ -324,6 +363,7 @@ export function createModelKit({onTexture=()=>{}}={}) {
   }
   function build(f,palette,{theme,dress=true}={}){
     const g=new T.Group(),w=Math.max(.1,f.width_ft),d=Math.max(.1,f.length_ft),h=f.height,variant=f.product?.variant;
+    const real=fromLibrary(g,f,w,h,d);if(real)return real;
     // Soft goods take the vibe's colours when the room is dressed; a piece's own colour always wins.
     const vibe=dress&&theme;
     const color=f.material_color||(vibe?theme.textileAlt:palette[1])||"#b4c2dd";
@@ -668,6 +708,6 @@ export function createModelKit({onTexture=()=>{}}={}) {
   function setNight(on){if(night===on)return;night=on;for(const m of glows)m.emissiveIntensity=on?2.6:.55;}
   /** The room's reflection map and how strongly glass, mirrors and metal show it. */
   function setEnv(texture,intensity){env=texture;envI=intensity;for(const m of shiny){m.envMap=texture;m.envMapIntensity=intensity;}}
-  function dispose(){disposed=true;geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());fabric.dispose();}
+  function dispose(){disposed=true;for(const e of library.values())if(typeof e==="object")e.scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();for(const v of Object.values(o.material))if(v?.isTexture)v.dispose();o.material.dispose();}});geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());fabric.dispose();}
   return {build,box,mat,bake,setNight,setEnv,dispose};
 }
