@@ -29,17 +29,28 @@ export default function FeedbackLink() {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={handleOpen}
+      <a
+        href="/contact"
+        onClick={(e) => { if (opensFeedback(e)) handleOpen(); }}
         className={css.trigger}
       >
         Feedback
-      </button>
+      </a>
 
       {open && <FeedbackDialog onClose={close} />}
     </>
   );
+}
+
+/**
+ * Feedback entries are real links to /contact (so they work without JavaScript and read as
+ * links to crawlers); a plain click opens the feedback dialog instead. Modified clicks
+ * (new tab, new window) keep the link.
+ */
+export function opensFeedback(e: React.MouseEvent): boolean {
+  if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return false;
+  e.preventDefault();
+  return true;
 }
 
 export function FeedbackDialog({ onClose }: { onClose: () => void }) {

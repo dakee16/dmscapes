@@ -7,7 +7,7 @@ import { MotionToggle } from "@/components/experience/MotionProvider";
 import ProfileMenu from "@/components/auth/ProfileMenu";
 import Wordmark from "@/components/site/Wordmark";
 import SearchPalette from "@/components/site/SearchPalette";
-import { FeedbackDialog } from "@/components/site/FeedbackLink";
+import { FeedbackDialog, opensFeedback } from "@/components/site/FeedbackLink";
 import { ArrowRight, ArrowUpRight, ChevronDown, CloseIcon, MenuIcon, SearchIcon } from "@/components/ds/Icons";
 import { PlusIcon } from "@/components/studio-ui/icons";
 import { useAuth } from "@/lib/auth-context";
@@ -276,7 +276,7 @@ export default function Nav({
   // legal links, Feedback and Report a problem along the foot).
   const moreLink = (link: GroupLink) =>
     link.href === "feedback" ? (
-      <button type="button" onClick={() => { close(); setFeedback(true); }}>{link.label}</button>
+      <a href="/contact" onClick={(e) => { if (!opensFeedback(e)) return; close(); setFeedback(true); }}>{link.label}</a>
     ) : (
       <Link href={link.href === "/report" ? `/report?from=${encodeURIComponent(pathname)}` : link.href}
         aria-current={pathname === link.href ? "page" : undefined}
@@ -327,9 +327,9 @@ export default function Nav({
         {group.links.map((link) => (
           <li key={link.href}>
             {link.href === "feedback"
-              ? <button type="button" className={s.row} onClick={() => { close(); setFeedback(true); }}>
+              ? <a href="/contact" className={s.row} onClick={(e) => { if (!opensFeedback(e)) return; close(); setFeedback(true); }}>
                   {linkBody(link)}
-                </button>
+                </a>
               : <Link className={`${s.row} ${link.hot ? s.rowHot : ""}`}
                   href={link.href === "/report" ? `/report?from=${encodeURIComponent(pathname)}` : link.href}
                   aria-current={pathname === link.href ? "page" : undefined}
