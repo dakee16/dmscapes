@@ -291,7 +291,8 @@ export function FooterLink() {
   return (
     <li>
       <EntryLink where="footer" href="/hall-finder" className={css.footer}>
-        Hall Finder <New />
+        {/* "Hall Finder, New" in page text: the comma sits inline after the label, then the visible space and tag. */}
+        Hall Finder<span className="ds-sr-inline">,</span> <span className={css.new}>New</span>
       </EntryLink>
     </li>
   );

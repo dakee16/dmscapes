@@ -471,6 +471,11 @@
   white-space: nowrap;
 }
 
+/* Visually hidden text that stays inline with the words around it, like the ", " between
+   "Hall Finder" and its NEW tag. .ds-sr is absolutely positioned, so page text (innerText,
+   reader views, crawlers that render) puts it on a line of its own: "Hall Finder , New". */
+.ds-sr-inline { font-size: 0; }
+
 /* ---------- Wordmark ---------- */
 .ds-wordmark {
   display: inline-flex;
