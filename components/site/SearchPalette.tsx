@@ -12,81 +12,126 @@ import { POPULAR_SCHOOLS } from "@/lib/popular-schools";
 
 /** One school from /search-index.json: [id, name, "City, ST", aliases, [[hallId, hallName], …]]. */
 type Row = [id: string, name: string, place: string, aliases: string, halls: [string, string][]];
+/** One page or feature (lib/search-catalog): [title, detail, href, words, Hall Finder only]. */
+type PageRow = [title: string, detail: string, href: string, words: string, hallFinder: 0 | 1];
+type Index = { schools: Row[]; pages: PageRow[] };
 type Hit = { kind: "school" | "hall" | "page"; title: string; detail: string; href: string };
 
-const PAGES: { title: string; detail: string; href: string; words: string; hallFinder?: boolean }[] = [
-  { title: "Plan my room", detail: "A layout and shopping list, together", href: "/plan", words: "plan planner start layout design" },
-  { title: "Hall Finder", detail: "Rank halls by your class schedule", href: "/hall-finder", words: "hall finder walk walking class classes schedule closest", hallFinder: true },
-  { title: "Colleges A to Z", detail: "Every supported school", href: "/colleges", words: "colleges schools universities list all" },
-  { title: "How big is a dorm room?", detail: "Typical sizes, drawn to scale", href: "/dorm-room-size", words: "size sizes dimensions square feet sq ft how big average typical" },
-  { title: "Pricing", detail: "Free to plan, pay once to go further", href: "/pricing", words: "pricing price cost plus pro credits buy upgrade" },
-  { title: "Frequently asked", detail: "Short answers about planning a room", href: "/faq", words: "faq questions help answers" },
-  { title: "Room guides", detail: "The dormscape blog", href: "/blog", words: "blog guides articles tips" },
-  { title: "My Room", detail: "The room you share with your roommates", href: "/my-room", words: "my room roommates shared workspace together" },
-  { title: "Build in 3D", detail: "Walls, doors and windows with Pro", href: "/plan/draw/3d", words: "3d builder build draw" },
-  { title: "Add your school", detail: "Tell us where you're headed", href: "/add-school", words: "add school missing request not listed" },
-];
-/** Shown before you type: the planner's featured campuses (components/plan-steps/SchoolStep). */
+/** Shown before you type: the main features, then the planner's featured campuses (components/plan-steps/SchoolStep). */
+const START = ["/plan", "/hall-finder", "/my-room", "/dorm-room-size", "/pricing"];
 const POPULAR = POPULAR_SCHOOLS.map((s) => s.id);
 
 const norm = (t: string) => t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+const words = (t: string) => norm(t).split(" ").filter(Boolean);
 const short = (name: string) => name.replace(/^The\s+/, "").replace(/\s*\(.*\)$/, "");
 
-let index: Promise<Row[]> | null = null;
-function load(): Promise<Row[]> {
+let index: Promise<Index> | null = null;
+function load(): Promise<Index> {
   index ??= fetch("/search-index.json")
     .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
-    .then((d: { schools: Row[] }) => d.schools)
-    .catch(() => { index = null; return []; });
+    .then((d: Partial<Index>) => ({ schools: d.schools ?? [], pages: d.pages ?? [] }))
+    .catch(() => { index = null; return { schools: [], pages: [] }; });
   return index;
 }
 
-/** How well `text` holds every token: lower is better (a token starting the text or a word scores best); null if one is missing. */
-function score(text: string, tokens: string[]): number | null {
+// Words a question is made of rather than about ("how do I plan with my roommates").
+const FILLER = new Set("a an the to for of in on at my me i is it its how do does can what where which with and or your you page go open find show want need get".split(" "));
+// Words that ask for Hall Finder: "penn state closest dorm" also offers Penn State's Hall Finder.
+const FINDER = new Set(["finder", "rank", "ranked", "ranking", "closest", "nearest", "walk", "walking", "schedule", "commute", "class", "classes"]);
+const GENERIC = new Set(["dorm", "dorms", "room", "rooms", "hall", "halls", "residence", "housing", "building", "buildings"]);
+// "planning" ~ "plan", "roommates" ~ "roommate": word endings don't matter.
+const stem = (w: string) => (w.length > 4 ? w.replace(/(ings?|ers?|ed|es|s)$/, "") : w);
+/** One typo apart: a letter added, missing, changed or two swapped ("roomate"). */
+function near(a: string, b: string): boolean {
+  if (a === b) return true;
+  if (Math.abs(a.length - b.length) > 1) return false;
+  let i = 0;
+  while (i < a.length && i < b.length && a[i] === b[i]) i++;
+  if (a.length === b.length) return a.slice(i + 1) === b.slice(i + 1) || (a[i] === b[i + 1] && a[i + 1] === b[i] && a.slice(i + 2) === b.slice(i + 2));
+  return a.length > b.length ? a.slice(i + 1) === b.slice(i) : a.slice(i) === b.slice(i + 1);
+}
+/** How well one query word fits one word of the text: 0 (it starts the text) to 4 (a typo); null if not at all. */
+function fit(token: string, word: string, first: boolean): number | null {
+  if (word.startsWith(token)) return first ? 0 : 1;
+  const t = stem(token), w = stem(word);
+  if (w.startsWith(t) || (w.length >= 3 && t.startsWith(w))) return 2;
+  if (token.length >= 3 && word.includes(token)) return 3;
+  if (token.length >= 5 && (near(token, word) || near(token, word.slice(0, token.length)))) return 4;
+  return null;
+}
+/** How well a text holds every query word: lower is better; null if one is missing. */
+function score(text: string[], tokens: string[]): number | null {
   let total = 0;
   for (const t of tokens) {
-    const at = text.indexOf(t);
-    if (at < 0) return null;
-    total += at === 0 ? 0 : text[at - 1] === " " ? 1 : 3;
+    let best: number | null = null;
+    for (let i = 0; i < text.length && best !== 0; i++) {
+      const s = fit(t, text[i], i === 0);
+      if (s !== null && (best === null || s < best)) best = s;
+    }
+    if (best === null) return null;
+    total += best;
   }
   return total;
 }
 
-function search(rows: Row[], query: string, hallFinder: boolean): { label: string; hits: Hit[] }[] {
-  const tokens = norm(query).split(" ").filter(Boolean);
-  const pages = PAGES.filter((p) => hallFinder || !p.hallFinder);
+/**
+ * Site-wide search: pages and features (by title, then by the words people use for them), schools,
+ * residence halls, and a school's Hall Finder when the query asks for it. Each group keeps its best
+ * matches; the groups are ordered by their best match, so "roommate planning" leads with pages and
+ * "penn state" with schools.
+ */
+function search({ schools: rows, pages: all }: Index, query: string, hallFinder: boolean): { label: string; hits: Hit[] }[] {
+  const typed = words(query);
+  const meaningful = typed.filter((t) => !FILLER.has(t));
+  const tokens = meaningful.length ? meaningful : typed;
+  const pages = all.filter((p) => hallFinder || !p[4]);
   const school = ([id, name, place, , halls]: Row): Hit => ({ kind: "school", title: short(name), detail: `${place} · ${halls.length} ${halls.length === 1 ? "hall" : "halls"}`, href: `/colleges/${id}` });
-  const page = (p: (typeof PAGES)[number]): Hit => ({ kind: "page", title: p.title, detail: p.detail, href: p.href });
+  const page = ([title, detail, href]: PageRow): Hit => ({ kind: "page", title, detail, href });
   if (!tokens.length) {
     const popular = POPULAR.map((id) => rows.find((r) => r[0] === id)).filter((r): r is Row => !!r);
-    return [{ label: "Popular schools", hits: popular.map(school) }, { label: "Pages", hits: pages.slice(0, 5).map(page) }];
+    const start = START.map((href) => pages.find((p) => p[2] === href)).filter((p): p is PageRow => !!p);
+    return [{ label: "Go to", hits: start.map(page) }, { label: "Popular schools", hits: popular.map(school) }];
   }
-  const ranked = <T,>(items: { item: T; score: number; size: number }[], limit: number) =>
-    items.sort((a, b) => a.score - b.score || a.size - b.size).slice(0, limit).map((x) => x.item);
-  const schools: { item: Hit; score: number; size: number }[] = [];
-  const halls: { item: Hit; score: number; size: number }[] = [];
+  type Scored = { item: Hit; score: number; size: number };
+  const ranked = (items: Scored[], limit: number) => items.sort((a, b) => a.score - b.score || a.size - b.size).slice(0, limit);
+  const schoolHits: Scored[] = [];
+  const hallHits: Scored[] = [];
+  const pageHits: Scored[] = [];
+  for (const p of pages) {
+    const byTitle = score(words(p[0]), tokens);
+    const byWords = score(words(`${p[0]} ${p[1]} ${p[3]}`), tokens);
+    const sc = byTitle ?? (byWords === null ? null : byWords + 1);
+    if (sc !== null) pageHits.push({ item: page(p), score: sc, size: p[0].length });
+  }
+  // The rest of a Hall Finder query names the school ("closest dorm at ucla": ucla), so generic words drop out.
+  const finder = hallFinder && tokens.some((t) => FINDER.has(t)) ? tokens.filter((t) => !FINDER.has(t) && !GENERIC.has(t)) : null;
   for (const row of rows) {
     const [id, name, place, aliases, list] = row;
-    const where = norm(`${short(name)} ${aliases} ${name} ${place}`);
+    const where = words(`${short(name)} ${aliases} ${name} ${place}`);
     const sc = score(where, tokens);
-    if (sc !== null) schools.push({ item: school(row), score: sc, size: name.length });
+    if (sc !== null) schoolHits.push({ item: school(row), score: sc, size: name.length });
+    // "penn state hall finder", "closest dorm at ucla": that school's Hall Finder.
+    const fsc = finder?.length ? score(where, finder) : null;
+    if (fsc !== null) pageHits.push({ item: { kind: "page", title: `${short(name)} Hall Finder`, detail: "Rank its halls by your walk to class", href: `/colleges/${id}/hall-finder` }, score: fsc, size: name.length });
     for (const [hallId, hall] of list) {
       // A hall matches on its own name, or on its name plus its school ("penn state geary").
-      const own = score(norm(hall), tokens), both = own ?? score(`${norm(hall)} ${where}`, tokens);
-      if (both !== null) halls.push({ item: { kind: "hall", title: hall, detail: short(name), href: `/colleges/${id}/${hallId}` }, score: own ?? both + 4, size: hall.length });
+      const own = score(words(hall), tokens), both = own ?? score([...words(hall), ...where], tokens);
+      if (both !== null) hallHits.push({ item: { kind: "hall", title: hall, detail: short(name), href: `/colleges/${id}/${hallId}` }, score: own ?? both + 4, size: hall.length });
     }
   }
-  const pageHits = pages.flatMap((p) => { const sc = score(norm(`${p.title} ${p.words}`), tokens); return sc === null ? [] : [{ item: page(p), score: sc, size: p.title.length }]; });
   return [
-    { label: "Schools", hits: ranked(schools, 5) },
-    { label: "Residence halls", hits: ranked(halls, 8) },
-    { label: "Pages", hits: ranked(pageHits, 3) },
-  ].filter((g) => g.hits.length);
+    { label: "Pages and features", hits: ranked(pageHits, 6) },
+    { label: "Schools", hits: ranked(schoolHits, 5) },
+    { label: "Residence halls", hits: ranked(hallHits, 6) },
+  ]
+    .filter((g) => g.hits.length)
+    .sort((a, b) => a.hits[0].score - b.hits[0].score)
+    .map((g) => ({ label: g.label, hits: g.hits.map((x) => x.item) }));
 }
 
 /**
  * Search from any page (Kokonut Command Palette): a header button, ⌘K / Ctrl+K, or "/" opens a panel that
- * finds any of the schools, any residence hall and the main pages. A combobox: arrows move, Enter opens,
+ * finds any page or feature, any school and any residence hall. A combobox: arrows move, Enter opens,
  * Escape closes and focus returns to the button. Full screen on phones.
  */
 export default function SearchPalette({ hallFinder }: { hallFinder: boolean }) {
@@ -95,7 +140,7 @@ export default function SearchPalette({ hallFinder }: { hallFinder: boolean }) {
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const [rows, setRows] = useState<Row[] | null>(null);
+  const [rows, setRows] = useState<Index | null>(null);
   const [active, setActive] = useState(0);
   const trigger = useRef<HTMLButtonElement>(null);
   const listId = useId();
@@ -139,7 +184,7 @@ export default function SearchPalette({ hallFinder }: { hallFinder: boolean }) {
       e.preventDefault();
       show("slash");
     }
-    // The phone menu's "Search schools and halls" row (Nav) opens it too.
+    // The phone menu's "Search dormscape" row (Nav) opens it too.
     const fromMenu = () => show("menu");
     window.addEventListener("keydown", onKey);
     window.addEventListener("dormscape:search", fromMenu);
@@ -192,8 +237,8 @@ export default function SearchPalette({ hallFinder }: { hallFinder: boolean }) {
             <div className={s.field}>
               <SearchIcon size={20} className={s.fieldIcon} />
               <input autoFocus role="combobox" aria-expanded={hits.length > 0} aria-controls={listId} aria-autocomplete="list"
-                aria-activedescendant={hits[active] ? `${listId}-${active}` : undefined} aria-label="Search schools, halls and pages"
-                placeholder="Search schools, halls and pages" value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={keys}
+                aria-activedescendant={hits[active] ? `${listId}-${active}` : undefined} aria-label="Search pages, features, schools and halls"
+                placeholder="Search pages, features, schools and halls" value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={keys}
                 spellCheck={false} autoComplete="off" autoCapitalize="off" enterKeyHint="go" />
               <button type="button" className={s.close} onClick={hide} aria-label="Close search">
                 <span className={s.esc} aria-hidden="true">Esc</span>
@@ -202,10 +247,10 @@ export default function SearchPalette({ hallFinder }: { hallFinder: boolean }) {
             </div>
             <div className={s.results}>
               {rows === null ? (
-                <p className={s.status} role="status">Loading schools…</p>
+                <p className={s.status} role="status">Loading…</p>
               ) : !hits.length ? (
                 <p className={s.status} role="status">
-                  Nothing matches “{query.trim()}”. Not listed? <Link href="/add-school" className="ds-link" onClick={() => setOpen(false)}>Add your school</Link>
+                  Nothing matches “{query.trim()}”. Try a feature like “roommates”, a school or a hall. School not listed? <Link href="/add-school" className="ds-link" onClick={() => setOpen(false)}>Add your school</Link>
                 </p>
               ) : (
                 <div id={listId} role="listbox" aria-label="Results">
@@ -241,8 +286,8 @@ export default function SearchPalette({ hallFinder }: { hallFinder: boolean }) {
   return (
     <>
       <button ref={trigger} type="button" className={s.trigger} onClick={() => show("button")} onPointerEnter={() => void load()}
-        onFocus={() => void load()} aria-haspopup="dialog" aria-label="Search schools and halls" aria-keyshortcuts="Meta+K Control+K /"
-        title="Search schools and halls (⌘K)">
+        onFocus={() => void load()} aria-haspopup="dialog" aria-label="Search dormscape" aria-keyshortcuts="Meta+K Control+K /"
+        title="Search dormscape (⌘K)">
         <SearchIcon size={18} />
       </button>
       {mounted && createPortal(panel, document.body)}

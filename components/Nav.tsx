@@ -407,7 +407,7 @@ export default function Nav({
       <div id="site-navigation" className={s.sheet} data-open={mobileOpen} hidden={!mobileOpen}>
         <div className={s.sheetInner}>
           <button type="button" className={s.sheetSearch} onClick={() => { close(); window.dispatchEvent(new Event("dormscape:search")); }}>
-            <SearchIcon size={18} />Search schools and halls
+            <SearchIcon size={18} />Search dormscape
           </button>
           <div className={s.sheetPrimary}>
             {sheetPrimary.map((link, i) => (
