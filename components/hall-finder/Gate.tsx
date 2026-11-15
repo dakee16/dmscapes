@@ -38,7 +38,7 @@ export default function Gate({ places, halls, upload = false, onEmail, onBack }:
           {places} {places === 1 ? "place" : "places"} saved
         </p>}
         <h2 id="hf-gate-title" className={styles.gateTitle}>
-          <span className={`${styles.gateBig} ds-riso`}>{upload ? "Read your schedule." : "Your halls are ranked."}</span>
+          <span className={`${styles.gateBig} ds-riso`}>{upload ? "Read your schedule." : "Your halls are ranked."}</span>{" "}
           <span className="ds-serif ds-serif--blue">{upload ? "Sign in first. It's free." : "Sign in to see them."}</span>
         </h2>
         <p className={styles.gateText}>

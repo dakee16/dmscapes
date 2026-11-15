@@ -15,7 +15,7 @@ export default function FinderHead({ collegeId, schoolName }: { collegeId: strin
       </div>
       <h1 className={styles.title}>
         <span className="ds-sr">{schoolName}: </span>
-        <span className={`${styles.titleBig} ds-riso`}>Find your hall</span>
+        <span className={`${styles.titleBig} ds-riso`}>Find your hall</span>{" "}
         <span className={`${styles.titleSerif} ds-serif ds-serif--blue`}>by your classes.</span>
       </h1>
       <p className={styles.honest}>Most schools assign rooms. Use this to rank your housing preferences.</p>

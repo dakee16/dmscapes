@@ -148,7 +148,7 @@ export default function ResetPasswordPage() {
           {phase === "ready" && (
             <>
               <h1 className={css.title}>
-                <b>Set a new</b>
+                <b>Set a new</b>{" "}
                 <i>password.</i>
               </h1>
               <p className={css.lede}>
@@ -204,7 +204,7 @@ export default function ResetPasswordPage() {
           {phase === "done" && (
             <>
               <h1 className={css.title}>
-                <b>Password</b>
+                <b>Password</b>{" "}
                 <i>updated.</i>
               </h1>
               <p className={css.lede}>You&apos;re all set and signed in.</p>
@@ -222,7 +222,7 @@ export default function ResetPasswordPage() {
           {phase === "expired" && (
             <>
               <h1 className={css.title}>
-                <b>This link</b>
+                <b>This link</b>{" "}
                 <i>expired.</i>
               </h1>
               <p className={css.lede}>

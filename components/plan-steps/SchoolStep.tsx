@@ -170,7 +170,7 @@ export default function SchoolStep({
       <div className={css.left}>
         <p className={`ds-eyebrow ${css.eyebrow}`}>Step 01 · Room</p>
         <h1 className={css.title}>
-          <span className={css.titleSans}>Find your</span>
+          <span className={css.titleSans}>Find your</span>{" "}
           <span className={css.titleSerif}>campus.</span>
         </h1>
         <p className={css.lede}>

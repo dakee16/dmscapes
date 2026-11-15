@@ -106,7 +106,7 @@ const PeoplePanel = forwardRef<PeopleHandle, Props>(function PeoplePanel({ detai
     <section className={p.main} aria-labelledby="people-title">
       <div className={p.copy}>
         <p className={p.eyebrow}>My Room · Included with Pro</p>
-        <h2 id="people-title" className={p.h}><span className={p.hs}>People</span><span className={p.hf}>in the room.</span></h2>
+        <h2 id="people-title" className={p.h}><span className={p.hs}>People</span>{" "}<span className={p.hf}>in the room.</span></h2>
         <p className={p.lede}>Editors arrange the room and update who brings what. Commenters weigh in without moving the bed. Nobody needs Pro to join a Pro room.</p>
         {isOwner && openSeats > 0 && <p className={p.hint}><i aria-hidden="true"><Plus /></i>Tap an empty name card on the door to invite someone</p>}
         {isOwner && !full && openSeats === 0 && <p className={p.held}><strong>Every seat is held</strong><small>Invitations hold a seat for seven days. Cancel one to invite someone else, or resend it if it got lost.</small></p>}

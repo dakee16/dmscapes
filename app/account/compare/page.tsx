@@ -304,7 +304,7 @@ export default function ComparePage() {
         <ChevronLeft /> My designs
       </Link>
       <h1 className={css.h1}>
-        <b>Side by</b>
+        <b>Side by</b>{" "}
         <i>side.</i>
       </h1>
       <p className={css.lede}>

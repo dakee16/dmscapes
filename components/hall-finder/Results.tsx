@@ -120,7 +120,7 @@ function FreeResults({ collegeId, schoolName, result, halls, facts, places, rout
         <button type="button" className={`${styles.linkBtn} ${styles.wideOnly}`} onClick={onEdit}>Edit places</button>
       </div>
       <h1 className={styles.title}>
-        <span className={`${styles.titleBig} ${styles.titleHall} ds-riso`}>{hall.name}</span>
+        <span className={`${styles.titleBig} ${styles.titleHall} ds-riso`}>{hall.name}</span>{" "}
         <span className={`${styles.titleSerif} ds-serif ds-serif--blue`}>is closest to your week.</span>
       </h1>
       <p className={styles.factsLine}>
@@ -227,9 +227,9 @@ function PaidResults({ collegeId, schoolName, result, halls, facts, places, filt
         </div>
         <h1 className={styles.title}>
           <span className={styles.wideOnly}>
-            <span className={`${styles.titleBig} ds-riso`}>Your halls,</span>
+            <span className={`${styles.titleBig} ds-riso`}>Your halls,</span>{" "}
             <span className={`${styles.titleSerif} ds-serif ds-serif--blue`}>ranked by walking.</span>
-          </span>
+          </span>{" "}
           <span className={styles.phoneOnly}>
             {result.count} halls, <span className="ds-serif ds-serif--blue">ranked.</span>
           </span>
