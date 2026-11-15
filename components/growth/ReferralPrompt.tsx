@@ -20,7 +20,6 @@ import InviteLink from "./InviteLink";
 // interrupt (sign-in, the planner steps, a live room, checkout returns, legal text).
 const SHOWN_KEY = "dormscape-invite-prompt";
 const SHOWN_META = "referral_prompt_shown";
-const AFTER_AUTH_KEY = "dormscape-invite-after-auth";
 const AFTER_MS = 20_000;
 const QUIET = /^\/(login|reset-password|thank-you|privacy|terms|cookies|report|dev|rooms\/[^/]+)(\/|$)|^\/plan(\/(?!result)|$)/;
 
@@ -50,14 +49,10 @@ export default function ReferralPrompt() {
 
   useEffect(() => {
     if (loading) return;
-    // Signed up from this prompt's "Get my invite link": show the link right away.
-    // The flag is cleared only when the link shows, so a re-run of this effect can't lose it.
-    let afterAuth = false;
     try {
-      afterAuth = signedIn && window.sessionStorage.getItem(AFTER_AUTH_KEY) === "1";
       // Only after a finished design, and once per person. No storage means no memory
       // of having shown it: stay quiet rather than risk showing it again.
-      if (!afterAuth && (!designed || shownOnAccount || window.localStorage.getItem(SHOWN_KEY) !== null)) return;
+      if (!designed || shownOnAccount || window.localStorage.getItem(SHOWN_KEY) !== null) return;
     } catch {
       return;
     }
@@ -74,7 +69,6 @@ export default function ReferralPrompt() {
       }
       try {
         window.localStorage.setItem(SHOWN_KEY, String(Date.now()));
-        window.sessionStorage.removeItem(AFTER_AUTH_KEY);
       } catch {
         // Shown anyway; the check above already passed.
       }
@@ -83,7 +77,7 @@ export default function ReferralPrompt() {
       setVariant(v);
       track("referral_prompt_shown", { variant: v });
     };
-    timer = window.setTimeout(attempt, afterAuth ? 1500 : AFTER_MS);
+    timer = window.setTimeout(attempt, AFTER_MS);
     return () => window.clearTimeout(timer);
   }, [loading, signedIn, designed, shownOnAccount]);
 
@@ -100,14 +94,8 @@ export default function ReferralPrompt() {
   }
 
   function signUp() {
+    // After signing up the invite link is in Billing; the prompt itself never comes back.
     track("referral_prompt_cta", { variant });
-    if (variant === "join") {
-      try {
-        window.sessionStorage.setItem(AFTER_AUTH_KEY, "1");
-      } catch {
-        // They can still find the link in Billing.
-      }
-    }
     setVariant(null);
     openAuthModal("profile");
   }
