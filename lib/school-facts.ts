@@ -47,6 +47,30 @@ const familyLabel: Record<string, string> = { Single: "single", Double: "double"
 export const names = (halls: string[]) =>
   halls.length <= 2 ? halls.join(" or ") : `${halls.slice(0, 2).join(", ")} and ${halls.length - 2} more`;
 
+export type Placed = { key: string; hall: string; type: string; l: number; w: number; href: string; sqft: number };
+
+/** Up to a dozen distinct sizes (published, unless `keep` says otherwise), from the biggest down, for the one-scale wall. */
+export function scaleWall(school: SchoolSummary, keep: (r: RoomSummary) => boolean = isPublished): Placed[] {
+  const seen = new Set<string>();
+  const all: Placed[] = [];
+  for (const d of school.dorms)
+    for (const r of d.rooms) {
+      if (!keep(r)) continue;
+      const l = Math.max(r.length_ft!, r.width_ft!);
+      const w = Math.min(r.length_ft!, r.width_ft!);
+      const key = `${l.toFixed(1)}x${w.toFixed(1)}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      all.push({ key, hall: hallShort(d.name), type: formatRoomType(r.type), l, w, href: `/colleges/${school.id}/${d.id}`, sqft: sqFtOf(r) ?? Math.round(l * w) });
+    }
+  all.sort((a, b) => b.l * b.w - a.l * a.w);
+  if (all.length <= 11) return all;
+  // keep the extremes and an even spread between them
+  const pick: Placed[] = [];
+  for (let i = 0; i < 11; i++) pick.push(all[Math.round((i * (all.length - 1)) / 10)]);
+  return [...new Map(pick.map((p) => [p.key, p])).values()];
+}
+
 /** The room type with the widest spread of published sizes, grouped by size. */
 export function spread(school: SchoolSummary) {
   const byFam = new Map<string, Map<string, { l: number; w: number; sqft: number; halls: string[]; type: string }>>();

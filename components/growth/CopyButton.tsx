@@ -15,12 +15,15 @@ export default function CopyButton({
   className = "ds-btn ds-btn--ink-yellow",
   disabled,
   onCopied,
+  onFailed,
 }: {
   text: string;
   label?: string;
   className?: string;
   disabled?: boolean;
   onCopied?: () => void;
+  /** the clipboard refused: show the text to copy by hand */
+  onFailed?: () => void;
 }) {
   const [copied, setCopied] = useState(false);
   async function copy() {
@@ -31,6 +34,7 @@ export default function CopyButton({
       window.setTimeout(() => setCopied(false), 1800);
     } catch {
       // Clipboard blocked: the link is on screen to copy by hand.
+      onFailed?.();
     }
   }
   return (

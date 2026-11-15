@@ -18,13 +18,13 @@ import { exampleFor } from "@/lib/hall-finder-example";
 import { readSchoolDorms } from "@/lib/hall-finder-server";
 import { SCHOOLS, formatDims, getSchool, publishedDimsCount } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
-import { isPublished, roomFamily, roomName, sqFtOf, ft } from "@/lib/room-preview";
-import { formatRoomType } from "@/lib/format";
+import { roomFamily, roomName, ft } from "@/lib/room-preview";
 import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, postalAddressJsonLd, itemListJsonLd, dataPageJsonLd } from "@/lib/seo";
 import { dormSizeStats } from "@/lib/dorm-sizes";
-import { hallShort, names, schoolAnswer, schoolSource, schoolSummary, spread } from "@/lib/school-facts";
+import { names, scaleWall, schoolAnswer, schoolSource, schoolSummary, spread } from "@/lib/school-facts";
 import SourceLine from "@/components/college/SourceLine";
-import type { SchoolSummary } from "@/lib/types";
+import EmbedChart from "@/components/site/EmbedChart";
+import { chartHeight, collegeChart, embedSnippet } from "@/lib/embed";
 import css from "@/components/college/College.module.css";
 
 // SEO pages targeting "[College Name] dorm room planner / dimensions" queries,
@@ -61,30 +61,6 @@ export async function generateMetadata(props: {
     ),
     path: `/colleges/${school.id}`,
   });
-}
-
-type Placed = { key: string; hall: string; type: string; l: number; w: number; href: string; sqft: number };
-
-/** Up to a dozen distinct published sizes, from the biggest down, for the one-scale wall. */
-function scaleWall(school: SchoolSummary): Placed[] {
-  const seen = new Set<string>();
-  const all: Placed[] = [];
-  for (const d of school.dorms)
-    for (const r of d.rooms) {
-      if (!isPublished(r)) continue;
-      const l = Math.max(r.length_ft!, r.width_ft!);
-      const w = Math.min(r.length_ft!, r.width_ft!);
-      const key = `${l.toFixed(1)}x${w.toFixed(1)}`;
-      if (seen.has(key)) continue;
-      seen.add(key);
-      all.push({ key, hall: hallShort(d.name), type: formatRoomType(r.type), l, w, href: `/colleges/${school.id}/${d.id}`, sqft: sqFtOf(r) ?? Math.round(l * w) });
-    }
-  all.sort((a, b) => b.l * b.w - a.l * a.w);
-  if (all.length <= 11) return all;
-  // keep the extremes and an even spread between them
-  const pick: Placed[] = [];
-  for (let i = 0; i < 11; i++) pick.push(all[Math.round((i * (all.length - 1)) / 10)]);
-  return [...new Map(pick.map((p) => [p.key, p])).values()];
 }
 
 // The typical single, double and triple across every school, for comparison.
@@ -141,6 +117,9 @@ export default async function CollegePage(props: {
   const source = schoolSource(school.id);
   const maxSq = bars ? bars.groups[0].sqft : 1;
   const typical = bars ? TYPICAL.byType.find((t) => t.occupants === OCCUPANTS[bars.family]) : undefined;
+  // The bars chart when the page has one; otherwise the same sizes as a chart to embed, previewed on copy.
+  const chart = collegeChart(school);
+  const embed = chart && embedSnippet(chart);
 
   const halls: HallCard[] = [...school.dorms]
     .sort((a, b) => a.name.localeCompare(b.name))
@@ -323,6 +302,13 @@ export default async function CollegePage(props: {
             )}
           </p>
           <HallDirectory halls={halls} families={families} />
+          {!bars && chart && embed && (
+            <EmbedChart
+              snippet={embed}
+              label="Embed a chart of these sizes"
+              preview={{ src: chart.image, alt: chart.alt, width: 1200, height: chartHeight(chart.rows.length) }}
+            />
+          )}
         </div>
       </section>
 
@@ -389,6 +375,7 @@ export default async function CollegePage(props: {
                 ))}
               </tbody>
             </table>
+            {embed && <EmbedChart snippet={embed} />}
           </div>
         </section>
       )}
