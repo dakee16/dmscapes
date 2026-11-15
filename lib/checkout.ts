@@ -1,5 +1,5 @@
 import { getBrowserClient } from "@/lib/supabase-browser";
-import { track } from "@/lib/analytics";
+import { checkoutAnalyticsIds, track } from "@/lib/analytics";
 import type { PurchaseType } from "@/lib/plan";
 
 export type CheckoutResult =
@@ -37,7 +37,7 @@ export async function startCheckout(
     res = await fetch("/api/checkout", {
       method: "POST",
       headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-      body: JSON.stringify(quantity != null ? { type, quantity } : { type }),
+      body: JSON.stringify({ type, ...(quantity != null ? { quantity } : {}), analytics: checkoutAnalyticsIds() }),
     });
   } catch {
     return { ok: false, error: "Network hiccup. Try again in a moment." };

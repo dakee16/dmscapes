@@ -21,7 +21,7 @@ import { shortName } from "@/lib/school-names";
 import { roomFamily, roomName, ft } from "@/lib/room-preview";
 import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, postalAddressJsonLd, itemListJsonLd, dataPageJsonLd } from "@/lib/seo";
 import { dormSizeStats } from "@/lib/dorm-sizes";
-import { names, scaleWall, schoolSource, schoolSummary, spread } from "@/lib/school-facts";
+import { names, scaleWall, schoolAnswer, schoolSource, schoolSummary, spread } from "@/lib/school-facts";
 import SourceLine from "@/components/college/SourceLine";
 import EmbedChart from "@/components/site/EmbedChart";
 import { chartHeight, collegeChart, embedSnippet } from "@/lib/embed";
@@ -110,7 +110,10 @@ export default async function CollegePage(props: {
       : `Published sizes at ${short}, drawn side by side at one scale.`;
 
   const bars = spread(school);
-  const summary = schoolSummary(school, short, withDims);
+  // The answer leads (typical size and range, then how many published sizes and where from);
+  // the summary follows only when it is about a different kind of room than the answer.
+  const answer = schoolAnswer(school, short, withDims);
+  const summary = bars && bars.family !== answer.family ? schoolSummary(school, short, withDims) : null;
   const source = schoolSource(school.id);
   const maxSq = bars ? bars.groups[0].sqft : 1;
   const typical = bars ? TYPICAL.byType.find((t) => t.occupants === OCCUPANTS[bars.family]) : undefined;
@@ -187,11 +190,15 @@ export default async function CollegePage(props: {
         lede={
           <>
             <p>
-              {school.dorms.length} residence halls
-              {withDims > 0 && <> · {withDims} room types with real measured dimensions</>}.{summary && ` ${summary}`} Pick
-              your building, get a layout that fits to the inch, and a shoppable list that fits your budget.
+              <strong>{answer.lead}</strong> {answer.rest}
             </p>
-            {source && <SourceLine source={source} what={withDims > 0 ? "Published room sizes" : "Room types"} />}
+            {source && (
+              <SourceLine source={source} what={withDims > 0 ? `${withDims} published room size${withDims === 1 ? "" : "s"}` : "Room types"} />
+            )}
+            <p>
+              {school.dorms.length} residence halls.{summary && ` ${summary}`} Pick your building, get a layout that
+              fits to the inch, and a shoppable list that fits your budget.
+            </p>
           </>
         }
         visual={

@@ -70,7 +70,7 @@ export function sitemapEntries(group: string): MetadataRoute.Sitemap {
     case "colleges":
       return SCHOOLS.map((s) => ({ url: `${BASE}/colleges/${s.id}`, lastModified: schoolDate(s.id), changeFrequency: "monthly", priority: 0.8 }));
     case "halls":
-      // One entry per residence hall with measured rooms (the rest are noindex).
+      // One entry per residence hall with a published room size (the rest are noindex: see hallIsIndexable).
       return SCHOOLS.flatMap((s) =>
         s.dorms.filter(hallIsIndexable).map((d) => ({ url: `${BASE}/colleges/${s.id}/${d.id}`, lastModified: schoolDate(s.id), changeFrequency: "monthly" as const, priority: 0.7 }))
       );

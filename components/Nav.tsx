@@ -83,6 +83,13 @@ function activeKey(pathname: string): string | null {
   return null;
 }
 
+/** On a school or hall page the planner opens on that school (and hall); /plan checks both against the data. */
+function planHref(pathname: string): string {
+  const m = /^\/colleges\/([\w-]+)(?:\/([\w-]+))?\/?$/.exec(pathname);
+  if (!m) return "/plan";
+  return `/plan?school=${m[1]}${m[2] && m[2] !== "hall-finder" ? `&dorm=${m[2]}` : ""}`;
+}
+
 /** A little room drawn on plan paper under a measuring tape: the Plan card's
  *  signature detail. Decorative only. */
 function PlanSketch() {
@@ -382,7 +389,7 @@ export default function Nav({
         <div className={s.actions}>
           <SearchPalette hallFinder={hallFinder} />
           <div className={s.profile}><ProfileMenu capsule /></div>
-          <Link href="/plan" className={`ds-btn ds-btn--sm ${dark ? "ds-btn--yellow" : "ds-btn--ink"} ${s.cta} ${signedIn ? s.ctaNew : ""}`}
+          <Link href={planHref(pathname)} className={`ds-btn ds-btn--sm ${dark ? "ds-btn--yellow" : "ds-btn--ink"} ${s.cta} ${signedIn ? s.ctaNew : ""}`}
             aria-label={signedIn ? "New design" : undefined}>
             {signedIn ? (
               <><PlusIcon size={16} /><span className={s.ctaLong}>New design</span><span className={s.ctaShort}>New</span></>

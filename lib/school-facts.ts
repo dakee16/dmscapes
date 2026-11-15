@@ -117,6 +117,39 @@ export function schoolSummary(school: SchoolSummary, short: string, published: n
   return null;
 }
 
+/**
+ * The answer a school page opens with: its typical published double (else single, else
+ * triple) and their range, from the same rooms as spread() and /dorm-room-size (published,
+ * and a room rather than a whole apartment). "Typical" is the real room at the middle of
+ * their sizes, so its length × width and square feet agree. A school with none of those
+ * gets the estimate wording. `family` says which kind the answer is about (null for none).
+ */
+export function schoolAnswer(school: SchoolSummary, short: string, published: number): { family: string | null; lead: string; rest: string } {
+  for (const fam of ["Double", "Single", "Triple"]) {
+    const rooms = school.dorms
+      .flatMap((d) => d.rooms.filter((r) => isDormRoom(r, d.name) && roomFamily(r.type) === fam))
+      .sort((a, b) => sqFtOf(a)! - sqFtOf(b)!);
+    if (!rooms.length) continue;
+    const f = familyLabel[fam];
+    const mid = rooms[(rooms.length - 1) >> 1];
+    const min = sqFtOf(rooms[0])!;
+    const max = sqFtOf(rooms[rooms.length - 1])!;
+    return {
+      family: f,
+      lead: `Typical ${short} ${f}: ${ft(Math.max(mid.length_ft!, mid.width_ft!))} × ${ft(Math.min(mid.length_ft!, mid.width_ft!))} ft, ${sqFtOf(mid)} sq ft.`,
+      rest:
+        rooms.length === 1
+          ? `It's the only ${f} with a published size.`
+          : min === max
+            ? `All ${rooms.length} published ${f}s are ${min} sq ft.`
+            : `Published ${f}s range from ${min} to ${max} sq ft.`,
+    };
+  }
+  return published > 0
+    ? { family: null, lead: `${short} publishes sizes for ${published} room type${published === 1 ? "" : "s"}.`, rest: "Other sizes here are estimates from similar rooms, clearly marked." }
+    : { family: null, lead: `${short} doesn't publish room sizes.`, rest: "Every size here is an estimate from similar rooms, clearly marked." };
+}
+
 export type RoomRow = {
   name: string;
   occupants: number | null;

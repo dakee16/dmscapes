@@ -20,7 +20,7 @@ function load(file, mocks = {}, cache = new Map()) {
   const resolve = id => Object.hasOwn(mocks, id) ? mocks[id]
     : id.startsWith("@/") ? load(id.slice(2), mocks, cache)
     : id.startsWith(".") ? load(path.resolve(path.dirname(file), id), mocks, cache) : require(id);
-  new Function("require", "module", "exports", "console", code)(resolve, module, module.exports, { ...console, error() {} });
+  new Function("require", "module", "exports", "console", code)(resolve, module, module.exports, { ...console, error() {}, warn() {} });
   return module.exports;
 }
 
@@ -143,7 +143,9 @@ test("Paid upgrades add the allowance to existing credits and never downgrade Pr
   assert.equal(db.row.plan_credits_remaining, 15);
 });
 
-const responseMock = { NextResponse: { json: (body, options) => Response.json(body, options) } };
+// after(): queued here so a test can run it once the response is back, as Next does.
+const afterTasks = [];
+const responseMock = { NextResponse: { json: (body, options) => Response.json(body, options) }, after: fn => afterTasks.push(fn) };
 function routes(db, { user = "member", stripe = null, season } = {}) {
   const mocks = {
     "next/server": responseMock,
@@ -214,6 +216,22 @@ test("Checkout cannot sell upgrades using a missing or unknown profile", async (
   assert.equal((await routes(database("free"), { stripe }).checkout(request({ type: "recharge" }))).status, 409);
 });
 
+test("Checkout keeps checked analytics ids on the session only", async () => {
+  let created;
+  const stripe = { checkout: { sessions: { create: async args => { created = args; return { url: "https://checkout.stripe.com/test" }; } } } };
+  await routes(database("free"), { stripe }).checkout(request({ type: "plus", analytics: { ph: "0193a1b2-c3d4-7e5f-8a9b-0c1d2e3f4a5b", ga: "1234567890.1700000000", gs: "1700000000" } }));
+  assert.equal(created.metadata.ph_distinct_id, "0193a1b2-c3d4-7e5f-8a9b-0c1d2e3f4a5b");
+  assert.equal(created.metadata.ga_client_id, "1234567890.1700000000");
+  assert.equal(created.metadata.ga_session_id, "1700000000");
+  assert.equal(created.invoice_creation.invoice_data.metadata.ph_distinct_id, undefined);
+  assert.equal(created.payment_intent_data.metadata.ph_distinct_id, undefined);
+  for (const analytics of [{ ph: "<script>" }, { ph: "x".repeat(101) }, { ph: 42 }, null, "ph"]) {
+    await routes(database("free"), { stripe }).checkout(request({ type: "plus", analytics }));
+    assert.equal(created.metadata.ph_distinct_id, undefined, JSON.stringify(analytics));
+    assert.equal(created.metadata.user_id, "member");
+  }
+});
+
 function webhookFixture(db, session) {
   const stripe = { webhooks: { constructEvent: () => ({ type: "checkout.session.completed", data: { object: session } }) } };
   return () => routes(db, { stripe }).webhook(new Request("https://dormscape.test/api/stripe/webhook", {
@@ -250,6 +268,56 @@ test("Webhook preserves an in-flight purchase and retries a failed grant", async
   assert.equal((await call()).status, 200);
   assert.equal(db.row.plan_credits_remaining, 6, "Honor the credits sold before the new offer");
   assert.equal((await (await call()).json()).duplicate, true);
+});
+
+test("Webhook sends purchase_completed after its response, once, and never fails on it", async t => {
+  const keys = ["STRIPE_WEBHOOK_SECRET", "NEXT_PUBLIC_POSTHOG_KEY", "NEXT_PUBLIC_POSTHOG_HOST", "GA4_API_SECRET"];
+  const env = Object.fromEntries(keys.map(k => [k, process.env[k]]));
+  const originalFetch = global.fetch;
+  t.after(() => {
+    for (const k of keys) if (env[k] === undefined) delete process.env[k]; else process.env[k] = env[k];
+    global.fetch = originalFetch;
+  });
+  process.env.STRIPE_WEBHOOK_SECRET = "test-only";
+  process.env.NEXT_PUBLIC_POSTHOG_KEY = "phc_test";
+  delete process.env.NEXT_PUBLIC_POSTHOG_HOST;
+  delete process.env.GA4_API_SECRET;
+  const sent = [];
+  global.fetch = async (url, init) => { sent.push([url, JSON.parse(init.body)]); return new Response(null, { status: 200 }); };
+  afterTasks.length = 0; // earlier webhook tests' captures (no distinct id) aren't this test's
+  const run = async () => { for (const fn of afterTasks.splice(0)) await fn(); };
+  const metadata = { user_id: "member", purchase: "plus", credit_amount: "3", ph_distinct_id: "ph-buyer" };
+  const db = database("free");
+  const call = webhookFixture(db, { id: "cs_ph", payment_status: "paid", amount_total: 499, currency: "usd", metadata });
+  assert.equal((await call()).status, 200);
+  assert.equal(sent.length, 0, "Nothing is sent before the response");
+  await run();
+  assert.deepEqual(sent, [["https://us.i.posthog.com/i/v0/e/", { api_key: "phc_test", event: "purchase_completed", distinct_id: "ph-buyer", properties: { plan: "plus", amount: 4.99, currency: "USD" } }]]);
+  assert.equal((await (await call()).json()).duplicate, true);
+  await run();
+  assert.equal(sent.length, 1, "A duplicate delivery sends nothing");
+  // No distinct id (analytics declined) or no key: nothing is sent.
+  await webhookFixture(database("free"), { id: "cs_none", payment_status: "paid", amount_total: 499, currency: "usd", metadata: { ...metadata, ph_distinct_id: undefined } })();
+  await run();
+  delete process.env.NEXT_PUBLIC_POSTHOG_KEY;
+  await webhookFixture(database("free"), { id: "cs_nokey", payment_status: "paid", amount_total: 499, currency: "usd", metadata })();
+  await run();
+  assert.equal(sent.length, 1);
+  // PostHog or GA down: the purchase is still granted and the capture resolves quietly.
+  // GA4 too, once its secret is set, under the buyer's GA client and session.
+  process.env.NEXT_PUBLIC_POSTHOG_KEY = "phc_test";
+  process.env.GA4_API_SECRET = "mp secret";
+  await webhookFixture(database("plus", 1), { id: "cs_ga", payment_status: "paid", amount_total: 299, currency: "usd", metadata: { ...metadata, purchase: "recharge", ga_client_id: "123.456", ga_session_id: "789" } })();
+  await run();
+  assert.equal(sent.length, 3);
+  assert.equal(sent[1][1].properties.plan, "recharge");
+  assert.equal(sent[2][0], "https://www.google-analytics.com/mp/collect?measurement_id=G-DSRNH55V8B&api_secret=mp%20secret");
+  assert.deepEqual(sent[2][1], { client_id: "123.456", events: [{ name: "purchase_completed", params: { plan: "recharge", value: 2.99, currency: "USD", transaction_id: "cs_ga", session_id: "789", engagement_time_msec: 1 } }] });
+  global.fetch = async () => { throw new Error("offline"); };
+  const down = database("free");
+  assert.equal((await webhookFixture(down, { id: "cs_down", payment_status: "paid", amount_total: 1499, currency: "usd", metadata: { ...metadata, purchase: "pro", credit_amount: "10" } })()).status, 200);
+  assert.equal(down.row.plan, "pro");
+  await run();
 });
 
 test("Client consumption fails closed for missing auth, network errors, and bad responses", async t => {

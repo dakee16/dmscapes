@@ -16,12 +16,13 @@ import BrandLoader from "@/components/site/BrandLoader";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
-import { track } from "@/lib/analytics";
+import { track, trackKeyEvent } from "@/lib/analytics";
 import { roomTypeLabel } from "@/lib/format";
 import { formatDims } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { hasHallFinder } from "@/lib/hall-finder";
 import ResultTip from "@/components/hall-finder/ResultTip";
+import { designCompleted } from "@/components/growth/ReferralPrompt";
 import { fitTemplateToRoom } from "@/lib/layout-fit";
 import { placeInPolygon } from "@/lib/place-in-polygon";
 import { syncProductFurniture } from "@/lib/product-model";
@@ -199,7 +200,9 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
   useEffect(() => {
     if (hydrated && room && style && !trackedRef.current) {
       trackedRef.current = true;
+      trackKeyEvent("plan_completed"); // design_completed, as a GA4 key event
       track("design_completed");
+      designCompleted();
     }
   }, [hydrated, room, style]);
 

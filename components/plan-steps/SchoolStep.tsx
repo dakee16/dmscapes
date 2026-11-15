@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { SCHOOLS, getSchool, searchSchools } from "@/lib/schools";
 import { shortName, sortKey } from "@/lib/school-names";
@@ -27,6 +28,9 @@ const TYPICAL = [1, 2, 3].flatMap((n) => {
   const room = typicalRoom(n);
   return room ? [room] : [];
 });
+/** The one-tap start: the typical double, straight to the vibes. The single and triple stay as chips. */
+const QUICK = TYPICAL.find((r) => r.occupants === 2);
+const OTHER_TYPICAL = TYPICAL.filter((r) => r !== QUICK);
 const HALLS = SCHOOLS.reduce((n, s) => n + s.dorms.length, 0);
 const letterOf = (s: SchoolSummary) => sortKey(s.name).charAt(0).toUpperCase();
 
@@ -57,11 +61,12 @@ export default function SchoolStep({
   onTypical,
   resume,
 }: {
-  onSelect: (school: SchoolSummary) => void;
+  /** source: typed search, a featured chip or the A to Z list (lib/analytics college_selected). */
+  onSelect: (school: SchoolSummary, source: "search" | "featured" | "az") => void;
   onRequest: () => void;
   onManual: (values: ManualEntryValues) => void;
   /** "No room yet?": start from the typical single (1), double (2) or triple (3). */
-  onTypical: (occupants: number) => void;
+  onTypical: (occupants: number, via: "chip" | "quick_start") => void;
   /** The room already chosen, if any (a return visit, typed or drawn room). */
   resume?: React.ReactNode;
 }) {
@@ -137,7 +142,7 @@ export default function SchoolStep({
       setActive((i) => Math.max(i - 1, 0));
     } else if (e.key === "Enter") {
       e.preventDefault();
-      if (results[active]) onSelect(results[active]);
+      if (results[active]) onSelect(results[active], q ? "search" : "az");
       else if (q) onRequest();
     } else if (e.key === "Escape" && query) {
       e.preventDefault();
@@ -227,6 +232,34 @@ export default function SchoolStep({
 
         {resume && <div className={css.resume}>{resume}</div>}
 
+        {QUICK && (
+          <div className={css.quick}>
+            <button type="button" className={css.quickBtn} onClick={() => onTypical(QUICK.occupants, "quick_start")}>
+              <span className={css.quickText}>
+                <span className={css.smallLabel}>No room yet?</span>{" "}
+                <span className={css.quickMain}>
+                  Start with a typical {QUICK.type} ({dimsOf(QUICK.lengthFt, QUICK.widthFt)})
+                </span>
+              </span>
+              <ArrowRight size={20} className={css.quickArrow} />
+            </button>
+            <div className={css.quickMore}>
+              {OTHER_TYPICAL.map((room) => (
+                <button
+                  key={room.occupants}
+                  type="button"
+                  className={css.chip}
+                  aria-label={`Start with a typical ${room.type}, ${dimsOf(room.lengthFt, room.widthFt)}`}
+                  onClick={() => onTypical(room.occupants, "chip")}
+                >
+                  Typical {room.type}{" "}
+                  <span className={css.chipDims}>{dimsOf(room.lengthFt, room.widthFt)}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
         {featured.length > 0 && (
           <div className={css.featured}>
             <span className={css.smallLabel}>Featured</span>
@@ -237,7 +270,7 @@ export default function SchoolStep({
                 className={css.chip}
                 onClick={() => {
                   const s = getSchool(f.id);
-                  if (s) onSelect(s);
+                  if (s) onSelect(s, "featured");
                 }}
               >
                 {f.label}
@@ -246,22 +279,23 @@ export default function SchoolStep({
           </div>
         )}
 
-        {TYPICAL.length > 0 && (
-          <div className={css.featured}>
-            <span className={css.smallLabel}>No room yet?</span>
-            {TYPICAL.map((room) => (
-              <button
-                key={room.occupants}
-                type="button"
-                className={css.chip}
-                aria-label={`Start with a typical ${room.type}, ${dimsOf(room.lengthFt, room.widthFt)}`}
-                onClick={() => onTypical(room.occupants)}
-              >
-                Typical {room.type}{" "}
-                <span className={css.chipDims}>{dimsOf(room.lengthFt, room.widthFt)}</span>
-              </button>
-            ))}
-          </div>
+        {/* What a finished plan looks like. Hidden while searching so phone matches stay close. */}
+        {!q && (
+          <figure className={css.preview}>
+            <Image
+              src="/redesign/hero-room-v5.webp"
+              alt="A finished plan in 3D: a dorm double with two beds, two desks, dressers and string lights"
+              width={2000}
+              height={1167}
+              sizes="(max-width: 1023px) 128px, 176px"
+              quality={75}
+              className={css.previewImg}
+            />
+            <figcaption className={css.previewText}>
+              <span className={css.smallLabel}>What you get</span>
+              <span className={css.previewLine}>A layout and shopping list, together.</span>
+            </figcaption>
+          </figure>
         )}
 
         {/* Phones: the matches sit right under the search. */}
@@ -352,7 +386,7 @@ export default function SchoolStep({
                   className={css.row}
                   onMouseDown={(e) => e.preventDefault()}
                   onMouseEnter={() => setActive(i)}
-                  onClick={() => onSelect(s)}
+                  onClick={() => onSelect(s, q ? "search" : "az")}
                 >
                   <span className={css.rowNum}>{String(i + 1).padStart(2, "0")}</span>
                   <span className={css.rowName}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import Modal from "@/components/site/Modal";
 import { ArrowRight } from "@/components/ds/Icons";
 import { CloseButton } from "@/components/account-ui/parts";
@@ -9,17 +9,32 @@ import { useAuth } from "@/lib/auth-context";
 import { track } from "@/lib/analytics";
 import { hasInvite } from "@/lib/invites";
 import { REFERRAL_BONUS_DESIGNS, REFERRAL_MONTHLY_CAP } from "@/lib/plan";
+import { getBrowserClient } from "@/lib/supabase-browser";
 import InviteLink from "./InviteLink";
 
-// "Give a friend a free design, get one too": shown once a visitor has been on the
-// site for 20 seconds, then at most once every 30 days per browser. It waits while
+// "Give a friend a free design, get one too": shown 20 seconds after the person
+// finishes a design (design_completed, see designCompleted below), and never again
+// once it has appeared: remembered in this browser and, when signed in, on the
+// account (user metadata) so another device stays quiet too. It waits while
 // another dialog is open, the tab is hidden, or the page is one where it would
 // interrupt (sign-in, the planner steps, a live room, checkout returns, legal text).
 const SHOWN_KEY = "dormscape-invite-prompt";
+const SHOWN_META = "referral_prompt_shown";
 const AFTER_AUTH_KEY = "dormscape-invite-after-auth";
 const AFTER_MS = 20_000;
-const REPEAT_MS = 30 * 24 * 60 * 60 * 1000;
 const QUIET = /^\/(login|reset-password|thank-you|privacy|terms|cookies|report|dev|rooms\/[^/]+)(\/|$)|^\/plan(\/(?!result)|$)/;
+
+// Called by the plan result where it tracks design_completed; until then the prompt stays away.
+const DESIGN_EVENT = "dormscape:design-completed";
+let designDone = false;
+export function designCompleted() {
+  designDone = true;
+  window.dispatchEvent(new Event(DESIGN_EVENT));
+}
+function onDesign(cb: () => void) {
+  window.addEventListener(DESIGN_EVENT, cb);
+  return () => window.removeEventListener(DESIGN_EVENT, cb);
+}
 
 type Variant = "invite" | "join" | "invited";
 const each = `${REFERRAL_BONUS_DESIGNS} free design${REFERRAL_BONUS_DESIGNS === 1 ? "" : "s"} each`;
@@ -27,19 +42,22 @@ const each = `${REFERRAL_BONUS_DESIGNS} free design${REFERRAL_BONUS_DESIGNS === 
 export default function ReferralPrompt() {
   const { user, loading, openAuthModal } = useAuth();
   const [variant, setVariant] = useState<Variant | null>(null);
+  const designed = useSyncExternalStore(onDesign, () => designDone, () => false);
   const signedIn = Boolean(user);
   const signedInRef = useRef(signedIn);
   signedInRef.current = signedIn;
+  const shownOnAccount = Boolean(user?.user_metadata?.[SHOWN_META]);
 
   useEffect(() => {
     if (loading) return;
     // Signed up from this prompt's "Get my invite link": show the link right away.
+    // The flag is cleared only when the link shows, so a re-run of this effect can't lose it.
     let afterAuth = false;
     try {
       afterAuth = signedIn && window.sessionStorage.getItem(AFTER_AUTH_KEY) === "1";
-      if (afterAuth) window.sessionStorage.removeItem(AFTER_AUTH_KEY);
-      // No storage means no memory of having shown it: stay quiet rather than show it on every visit.
-      if (!afterAuth && Date.now() - Number(window.localStorage.getItem(SHOWN_KEY) ?? 0) < REPEAT_MS) return;
+      // Only after a finished design, and once per person. No storage means no memory
+      // of having shown it: stay quiet rather than risk showing it again.
+      if (!afterAuth && (!designed || shownOnAccount || window.localStorage.getItem(SHOWN_KEY) !== null)) return;
     } catch {
       return;
     }
@@ -56,16 +74,18 @@ export default function ReferralPrompt() {
       }
       try {
         window.localStorage.setItem(SHOWN_KEY, String(Date.now()));
+        window.sessionStorage.removeItem(AFTER_AUTH_KEY);
       } catch {
         // Shown anyway; the check above already passed.
       }
+      if (signedInRef.current) void getBrowserClient()?.auth.updateUser({ data: { [SHOWN_META]: true } });
       const v: Variant = signedInRef.current ? "invite" : hasInvite() ? "invited" : "join";
       setVariant(v);
       track("referral_prompt_shown", { variant: v });
     };
     timer = window.setTimeout(attempt, afterAuth ? 1500 : AFTER_MS);
     return () => window.clearTimeout(timer);
-  }, [loading, signedIn]);
+  }, [loading, signedIn, designed, shownOnAccount]);
 
   useEffect(() => {
     if (!variant) return;

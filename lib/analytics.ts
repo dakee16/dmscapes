@@ -11,6 +11,8 @@ export type AnalyticsEvent =
   | "site_search_result"
   | "flow_started"
   | "college_selected"
+  | "hall_selected"
+  | "room_type_selected"
   | "typical_room_selected"
   | "photo_render_opened"
   | "photo_render_started"
@@ -22,12 +24,14 @@ export type AnalyticsEvent =
   | "budget_set"
   | "design_completed"
   | "product_clicked"
+  | "affiliate_click"
   | "product_swapped"
   | "layout_edited"
   | "share_clicked"
   | "school_submitted"
   | "auth_modal_opened"
   | "auth_completed"
+  | "signup_completed"
   | "username_set"
   | "save_prompt_shown"
   | "design_saved"
@@ -108,6 +112,12 @@ export type AnalyticsEvent =
   | "creator_applied"
   | "profile_photo_set";
 
+/** The GA4 property components/site/GoogleAnalytics loads. */
+export const GA_ID = "G-DSRNH55V8B";
+
+/** Pages kept out of analytics: workspace, invite and login URLs can carry room ids and invite tokens. */
+export const PRIVATE_PATH = /^\/(rooms|login|account|report)(\/|$)/;
+
 let initialized = false;
 
 function ensureInit(): boolean {
@@ -125,7 +135,7 @@ function ensureInit(): boolean {
       before_send: (event) => {
         if (!event) return null;
         const privatePath = (value: unknown) => {
-          try { return /^\/(rooms|login|account|report)(\/|$)/.test(new URL(String(value), location.origin).pathname); } catch { return false; }
+          try { return PRIVATE_PATH.test(new URL(String(value), location.origin).pathname); } catch { return false; }
         };
         return privatePath(location.href) || privatePath(event.properties?.$current_url) || privatePath(event.properties?.$referrer) ? null : event;
       },
@@ -163,7 +173,79 @@ if (typeof window !== "undefined") {
       posthog.opt_out_capturing();
       clearAnalyticsStorage();
     }
+    flushKeyEvents();
   });
+}
+
+type GaWindow = Window & { gtag?: (...args: unknown[]) => void } & Record<string, unknown>;
+const keyEvents: [string, Record<string, unknown>][] = [];
+
+/**
+ * GA4 key events (marked as key events in GA4 Admin), on the same consent as
+ * track(): sent with gtag once analytics is allowed and gtag has loaded
+ * (GoogleAnalytics flushes on load), dropped on Reject. GA sends nothing on a
+ * private page, or after one until the next full load, so a key event raised
+ * then waits and goes with the page. purchase_completed, whose return page is
+ * private, goes from the Stripe webhook instead (lib/purchase-analytics).
+ */
+export function trackKeyEvent(name: "plan_completed" | "signup_completed", params: Record<string, unknown> = {}): void {
+  if (typeof window === "undefined") return;
+  if (keyEvents.length < 10) keyEvents.push([name, params]);
+  flushKeyEvents();
+}
+
+export function flushKeyEvents(): void {
+  const allowed = analyticsAllowed();
+  if (allowed === false) keyEvents.length = 0;
+  const w = window as unknown as GaWindow;
+  if (!allowed || typeof w.gtag !== "function" || w[`ga-disable-${GA_ID}`]) return;
+  for (const [name, params] of keyEvents.splice(0)) w.gtag("event", name, params);
+}
+
+/**
+ * signup_completed, once per account, with method "email" or "google". An account's first
+ * session is the one signed in at the moment it was confirmed (the email link, or Google's
+ * first sign-in); every later sign-in moves last_sign_in_at on. Counted within a day of that
+ * sign-in, on a page analytics may see (a sign-up that lands on /login or /account counts on
+ * the next page), and flagged per account so reloads and other tabs don't count it again.
+ */
+export function trackSignup(user: {
+  id: string;
+  created_at?: string;
+  email_confirmed_at?: string;
+  last_sign_in_at?: string;
+  app_metadata?: { provider?: string };
+}): void {
+  const key = `dormscape-signup-tracked-${user.id}`;
+  try {
+    if (window.localStorage.getItem(key)) return;
+    const signedIn = Date.parse(user.last_sign_in_at ?? "");
+    const confirmed = Date.parse(user.email_confirmed_at ?? user.created_at ?? "");
+    if (!(Math.abs(signedIn - confirmed) < 60_000 && Date.now() - signedIn < 86_400_000)) return;
+    if (PRIVATE_PATH.test(window.location.pathname)) return;
+    window.localStorage.setItem(key, "1");
+  } catch {
+    return; // storage blocked: no flag, so don't risk counting it twice
+  }
+  const method = user.app_metadata?.provider === "google" ? "google" : "email";
+  track("signup_completed", { method });
+  trackKeyEvent("signup_completed", { method });
+}
+
+/**
+ * Ids the Stripe webhook sends purchase_completed under (lib/purchase-analytics),
+ * only while analytics is allowed for this visitor: PostHog's distinct id, and
+ * GA's client and session ids from its cookies (_ga is GA1.1.<client id>;
+ * _ga_<id> is GS1.1.<session id>.… or GS2.1.s<session id>$…).
+ */
+export function checkoutAnalyticsIds(): { ph?: string; ga?: string; gs?: string } {
+  if (analyticsAllowed() !== true) return {};
+  const cookie = (name: string) => document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`))?.[1] ?? "";
+  return {
+    ph: ensureInit() ? posthog.get_distinct_id() : undefined,
+    ga: /^GA\d\.\d\.(\d+\.\d+)$/.exec(cookie("_ga"))?.[1],
+    gs: /^GS\d\.\d\.s?(\d+)/.exec(cookie(`_ga_${GA_ID.slice(2)}`))?.[1],
+  };
 }
 
 let pageSession: string | null = null;
