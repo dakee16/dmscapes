@@ -161,45 +161,61 @@ export function footprint(root) {
 // what is in the plan is drawn; the vibe changes colours and materials only.
 /**
  * Realistic models (public/experience/models, made with text-to-3D and cleaned in Blender: about 20k triangles, AO baked
- * into the colour, meshopt + WebP). A kind listed here uses its model once it has loaded, for pieces the student brings or
- * buys (a dorm's own furniture keeps the clay look); until then, or if it fails, the clay model stands in. Models with a
- * `tint` are neutral, so a product's colour multiplies into them.
+ * into the colour, meshopt + WebP), by file name. Until a model loads, or if it fails, the clay model stands in.
+ * - tint: the model is neutral, so a product's colour multiplies into it; the number is the gain that brings its typical
+ *   texel (median linear luminance of the base colour) up to white, so a sage bean bag reads as sage, not a darker shade.
+ * - host: things stand on it (a desk, a dresser, a fridge), so it fills the piece's box exactly instead of keeping its
+ *   proportions, and its top is the piece's height.
+ * - dorm: also used for the dorm's own furniture of that kind (otherwise only for pieces the student brings or buys).
+ * - glow: a lamp; at night its whole surface glows softly, in its own colours.
  */
 export const LIBRARY = {
-  // tint: the gain that brings the model's typical texel (median linear luminance, measured on its base colour) up to
-  // white, so a tinted piece reads as the product's colour rather than a darker shade of it.
-  fridge: { tint: 3.1 }, microwave: { tint: 2.8 }, chair: {}, monitor: {}, speaker: {},
-  lounge: { tint: 5 }, ottoman: { tint: 4.2 }, shelf: {}, plant: {},
+  fridge: { tint: 3.1, host: true, dorm: true }, microwave: { tint: 2.8, dorm: true }, chair: {}, "chair-dorm": {},
+  monitor: {}, speaker: {}, lounge: { tint: 5 }, ottoman: { tint: 4.2 }, shelf: { host: true }, plant: {},
+  desk: { host: true, dorm: true }, dresser: { host: true, dorm: true }, wardrobe: { host: true, dorm: true },
+  sofa: { tint: 3, dorm: true }, riser: { host: true }, fan: {}, organizer: {}, basket: {}, books: {},
+  storage: { tint: 2.5 }, towels: { tint: 1.6 }, caddy: { tint: 1.6 }, trash: { tint: 1.6 }, hamper: { tint: 3 }, candle: { tint: 1.6, glow: true },
+  "lamp-shade": { glow: true }, "lamp-task": { glow: true }, "lamp-mushroom": { glow: true }, "lamp-lava": { glow: true },
+  "lamp-salt": { glow: true }, "lamp-banker": { glow: true },
 };
-const MODEL_DIR = new URL("./models/", import.meta.url).href;
+/** Which library model a piece uses, or null for clay. Lamps go by style; projector and light-bar lamps stay clay. */
+export function libraryKey(f) {
+  if (f.built_in) return f.kind === "chair" ? "chair-dorm" : LIBRARY[f.kind]?.dorm ? f.kind : null;
+  if (f.kind === "lamp") { const key = "lamp-" + (f.product?.variant || "shade"); return LIBRARY[key] ? key : null; }
+  return LIBRARY[f.kind] ? f.kind : null;
+}
+const MODEL_DIR = new URL("./models/", import.meta.url).href, TEXTURE_DIR = new URL("./textures/", import.meta.url).href;
 
 export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) {
   const geometries=new Map(),materials=new Map(),textures=new Map(),glows=new Set(),shiny=new Set();let disposed=false,night=false,env=null,envI=1;
   /** Library models by kind: {scene, size} once loaded, "loading", or "failed". The loader itself loads with the first model. */
   const library=new Map();let loader=null;
+  const libGlows=new Set();
   function loadModel(kind){
     if(library.has(kind)||typeof window==="undefined")return;
     library.set(kind,"loading");
     loader??=import("./vendor/gltf-loader.min.js").then(({GLTFLoader,MeshoptDecoder})=>{const l=new GLTFLoader();l.setMeshoptDecoder(MeshoptDecoder);return l;});
     loader.then(l=>l.loadAsync(`${MODEL_DIR}${kind}${lite?"-lite":""}.glb`)).then(gltf=>{
       if(disposed)return;
-      const scene=gltf.scene;scene.traverse(o=>{if(o.isMesh){o.material.envMap=null;o.material.metalness=0;o.userData.library=true;}});
+      const scene=gltf.scene,spec=LIBRARY[kind];scene.traverse(o=>{if(!o.isMesh)return;o.material.envMap=null;o.material.metalness=0;o.userData.library=true;
+        // A lamp glows in its own colours at night (its map doubles as the emissive map), and not at all by day.
+        if(spec.glow){o.material.emissive.set("#ffe2bd");o.material.emissiveMap=o.material.map;o.material.emissiveIntensity=night?.85:0;libGlows.add(o.material);}});
       library.set(kind,{scene,size:new T.Box3().setFromObject(scene).getSize(new T.Vector3())});onModel(kind);
     }).catch(()=>library.set(kind,"failed"));
   }
   /** A library model fitted to the piece's footprint and height, its front toward +z like the clay models; null until loaded. */
   function fromLibrary(g,f,w,h,d){
-    const spec=!f.built_in&&LIBRARY[f.kind];if(!spec)return null;
-    const entry=library.get(f.kind);if(!entry){loadModel(f.kind);return null;}
+    const name=libraryKey(f),spec=name&&LIBRARY[name];if(!spec)return null;
+    const entry=library.get(name);if(!entry){loadModel(name);return null;}
     if(typeof entry!=="object")return null;
     // Fitted inside the piece's box, so it never pokes past its plan footprint: scaled evenly to fit, then stretched toward
-    // each side by at most a quarter, so books on a shelf or a chair's back don't turn wide and squat.
+    // each side by at most a quarter, so books on a shelf or a chair's back don't turn wide and squat. Hosts fill it exactly.
     const model=entry.scene.clone(true),{size}=entry,fit=[w/size.x,h/size.y,d/size.z],even=Math.min(...fit);
-    model.scale.set(...fit.map(s=>Math.min(s,even*1.25)));
+    model.scale.set(...(spec.host?fit:fit.map(s=>Math.min(s,even*1.25))));
     if(spec.tint&&f.material_color){
-      const key="lib-tint:"+f.kind+":"+f.material_color;
+      const key="lib-tint:"+name+":"+f.material_color;
       model.traverse(o=>{if(!o.isMesh)return;
-        if(!materials.has(key+o.material.uuid)){const m=o.material.clone();m.color.set(f.material_color).multiplyScalar(spec.tint);materials.set(key+o.material.uuid,m);}
+        if(!materials.has(key+o.material.uuid)){const m=o.material.clone();m.color.set(f.material_color).multiplyScalar(spec.tint);if(libGlows.has(o.material))libGlows.add(m);materials.set(key+o.material.uuid,m);}
         o.material=materials.get(key+o.material.uuid);});
     }
     g.add(model);g.traverse(o=>{o.userData.itemId=f.id;});g.userData.itemId=f.id;return g;
@@ -208,6 +224,18 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
   cx.fillStyle="#dddddd";cx.fillRect(0,0,128,128);
   for(let i=0;i<128;i+=3){cx.fillStyle=i%2?"#c9c9c9":"#efefef";cx.fillRect(i,0,1,128);cx.fillRect(0,i,128,1);}
   const fabric=new T.CanvasTexture(c);fabric.wrapS=fabric.wrapT=T.RepeatWrapping;fabric.repeat.set(3,3);
+  // Real surfaces (public/experience/textures): neutral detail maps multiplied by each material's own colour, so vibe
+  // textiles and wood tones keep their colour and gain a weave or a grain. Phones skip the normal maps. Not in Node checks.
+  const surface=(name,repeat,srgb=true)=>{
+    if(typeof window==="undefined")return null;
+    const t=new T.TextureLoader().load(`${TEXTURE_DIR}${name}.webp`,()=>{if(!disposed)onTexture();});
+    t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(repeat,repeat);t.anisotropy=4;if(srgb)t.colorSpace=T.SRGBColorSpace;textures.set("surface:"+name,t);return t;
+  };
+  const weaveMap=surface("fabric-detail",3),weaveNormal=lite?null:surface("fabric-detail-n",3,false);
+  const grainMap=surface("wood-detail",1),grainNormal=lite?null:surface("wood-detail-n",1,false);
+  /** A fabric's weave: the real one when loaded (detail + normal map), else the drawn bump. */
+  const weave=(scale=.5)=>weaveMap?{map:weaveMap,...(weaveNormal?{normalMap:weaveNormal,normalScale:new T.Vector2(scale,scale)}:{})}:{bumpMap:fabric,bumpScale:.015};
+  const weaveOnly=(scale=.5)=>weaveNormal?{normalMap:weaveNormal,normalScale:new T.Vector2(scale,scale)}:{bumpMap:fabric,bumpScale:.012};
   /** Glass, mirrors and metal reflect the room's small reflection map (setEnv); nothing else does. */
   const shine=m=>{m.envMap=env;m.envMapIntensity=envI;shiny.add(m);return m;};
   // Matte by default: glossy surfaces (glass, mirrors) stay smooth, metal goes satin, everything else is soft.
@@ -216,12 +244,14 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
     if(!materials.has(key)){
       const glossy=roughness<.3&&metal===null;
       const m=new T.MeshStandardMaterial({color,roughness:glossy?roughness:metal!==null?Math.max(roughness,.5):Math.max(roughness,.82),
-        metalness:glossy?.3:metal!==null?Math.min(metal,.35):0,...(cloth?{bumpMap:fabric,bumpScale:.015}:{})});
+        metalness:glossy?.3:metal!==null?Math.min(metal,.35):0,...(cloth?weave():{})});
       if(glossy||metal!==null)shine(m);
       materials.set(key,glossy?m:clay(m));
     }
     return materials.get(key);
   };
+  /** Gives a wood material its grain (detail map, and a faint normal map on desktop). */
+  function grain(m){if(grainMap){m.map=grainMap;if(grainNormal){m.normalMap=grainNormal;m.normalScale.set(.25,.25);}}return m;}
   /** A clay material's twin that also takes a baked piece's corner shading (shadeCompile); null for any other material. */
   function shaded(m){
     if(!m.userData.clay)return null;
@@ -236,7 +266,7 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
     materials.set(key,m);glows.add(m);return m;
   }
   const mix=(a,b,t)=>"#"+new T.Color(a).lerp(new T.Color(b),t).getHexString();
-  const white=mat("#fbf8f1",.9),wood=mat("#ddbf8f",.62),woodDark=mat("#c9a573",.6),ink=mat("#2b2c3a",.5),metal=mat("#c9c4bd",.35,false,.6),
+  const white=mat("#fbf8f1",.9),wood=grain(mat("#ddbf8f",.62)),woodDark=grain(mat("#c9a573",.6)),ink=mat("#2b2c3a",.5),metal=mat("#c9c4bd",.35,false,.6),
     leafA=mat("#5f8a4c",.75),leafB=mat("#7aa560",.75),soil=mat("#5b4636",.95),terracotta=mat("#c4826a",.9);
   function textile(product,color){
     if(!product || product.pattern==="solid")return mat(color,.95,true);
@@ -258,7 +288,7 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
       else{ctx.fillStyle="#1c1622";ctx.beginPath();ctx.moveTo(cx0,cy0+6);ctx.lineTo(cx0-16,cy0-4);ctx.lineTo(cx0-6,cy0-2);ctx.lineTo(cx0-3,cy0-8);ctx.lineTo(cx0,cy0-4);ctx.lineTo(cx0+3,cy0-8);ctx.lineTo(cx0+6,cy0-2);ctx.lineTo(cx0+16,cy0-4);ctx.closePath();ctx.fill();}
     }
     const tex=new T.CanvasTexture(canvas);tex.colorSpace=T.SRGBColorSpace;textures.set(key,tex);
-    const material=clay(new T.MeshStandardMaterial({map:tex,roughness:.98,bumpMap:fabric,bumpScale:.012}));materials.set(key,material);return material;
+    const material=clay(new T.MeshStandardMaterial({map:tex,roughness:.98,...weaveOnly()}));materials.set(key,material);return material;
   }
   function productPrint(product,fallback){
     if(!product?.image || !/^https:\/\/m\.media-amazon\.com\//.test(product.image))return fallback;
@@ -279,7 +309,7 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
     if(product.pattern==="check"){ctx.globalAlpha=.55;for(let i=0;i<256;i+=64){ctx.fillRect(i,0,32,256);ctx.fillRect(0,i,256,32);}ctx.globalAlpha=1;for(let i=0;i<256;i+=64)for(let j=0;j<256;j+=64)ctx.fillRect(i,j,32,32);}
     else for(let i=0;i<256;i+=64)ctx.fillRect(0,i,256,32);
     const tex=new T.CanvasTexture(canvas);tex.colorSpace=T.SRGBColorSpace;tex.wrapS=tex.wrapT=T.RepeatWrapping;tex.repeat.set(w/2,d/2);textures.set(key,tex);
-    const material=clay(new T.MeshStandardMaterial({map:tex,roughness:1,bumpMap:fabric,bumpScale:.012}));materials.set(key,material);return material;
+    const material=clay(new T.MeshStandardMaterial({map:tex,roughness:1,...weaveOnly(.7)}));materials.set(key,material);return material;
   }
   /** A bat seen flat on the wall (the brand mark's outline), one unit wide. */
   function batGeometry(){
@@ -709,7 +739,7 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
     return done?null:()=>{if(!done){done=true;for(const job of later)job();}};
   }
   /** Night makes every lit surface glow; day keeps them a soft warm white. */
-  function setNight(on){if(night===on)return;night=on;for(const m of glows)m.emissiveIntensity=on?2.6:.55;}
+  function setNight(on){if(night===on)return;night=on;for(const m of glows)m.emissiveIntensity=on?2.6:.55;for(const m of libGlows)m.emissiveIntensity=on?.85:0;}
   /** The room's reflection map and how strongly glass, mirrors and metal show it. */
   function setEnv(texture,intensity){env=texture;envI=intensity;for(const m of shiny){m.envMap=texture;m.envMapIntensity=intensity;}}
   function dispose(){disposed=true;for(const e of library.values())if(typeof e==="object")e.scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();for(const v of Object.values(o.material))if(v?.isTexture)v.dispose();o.material.dispose();}});geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());fabric.dispose();}
