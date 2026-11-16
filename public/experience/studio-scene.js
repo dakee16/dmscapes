@@ -147,7 +147,16 @@ export function createStudioScene(container, options) {
     // A door or window shows with its wall (no frames floating over a cut-away wall), or always while openings are being edited.
     for(const opening of openingGroups)opening.visible=walls!=="hidden"&&(opening.userData.wall.visible||Boolean(data?.editOpenings));
     for(const v of views)v.mesh.visible=v.wall.visible;
+    // Pieces hung on a wall (art, mirrors, curtains, string lights) go with it in the cutaway, like its door and windows.
+    for(const m of meshes.values())if(m.wall)m.group.visible=m.wall.visible;
     groundRoot.visible=mode!=="inside";
+  }
+  /** The wall a hung piece is on: the nearest wall whose length spans the piece's centre (null if none is close). */
+  function wallOf(f){
+    const cx=f.x_ft+f.footW/2,cz=f.y_ft+f.footD/2;let best=null,gap=1.2;
+    for(const wall of wallGroups){const {a,len,dx,dz,normal}=wall.userData,t=(cx-a.x)*dx+(cz-a.y)*dz;if(t<-.5||t>len+.5)continue;
+      const g=Math.abs((cx-a.x)*normal.x+(cz-a.y)*normal.y);if(g<gap){gap=g;best=wall;}}
+    return best;
   }
   /** A dashed rounded rectangle a little outside a w × d footprint, as flat quads on the floor. */
   function ringGeometry(w,d){
@@ -333,7 +342,7 @@ export function createStudioScene(container, options) {
     mirrorDirty=false;if(!data)return;let any=false;itemRoot.traverse(o=>{if(o.material===kit.mirrorMat)any=true;});if(!any)return;
     const p=data.outline?.points?.length?data.outline.points:[{x:0,y:0},{x:data.room.lengthFt,y:data.room.widthFt}],h=data.settings.ceilingFt;
     const min=new T.Vector3(Math.min(...p.map(q=>q.x)),0,Math.min(...p.map(q=>q.y))),max=new T.Vector3(Math.max(...p.map(q=>q.x)),h,Math.max(...p.map(q=>q.y)));
-    const hidden=[...wallGroups,...openingGroups,...views.map(v=>v.mesh)].filter(o=>!o.visible),extras=[ring,marker,guides,openingGhost].filter(o=>o.visible);
+    const hidden=[...wallGroups,...openingGroups,...views.map(v=>v.mesh),...[...meshes.values()].filter(m=>m.wall).map(m=>m.group)].filter(o=>!o.visible),extras=[ring,marker,guides,openingGhost].filter(o=>o.visible);
     for(const o of hidden)o.visible=true;for(const o of extras)o.visible=false;
     const clear=renderer.getClearColor(new T.Color()),alpha=renderer.getClearAlpha();renderer.setClearColor(ceiling,1);
     kit.showMirrors(false);mirrorCam.position.set((min.x+max.x)/2,Math.min(4.6,h*.55),(min.z+max.z)/2);mirrorCam.update(renderer,scene);kit.showMirrors(true);
@@ -406,7 +415,7 @@ export function createStudioScene(container, options) {
     pts.forEach((a,i)=>{
       const b=pts[(i+1)%N],len=Math.hypot(b.x-a.x,b.y-a.y);if(len<.01)return;const dx=(b.x-a.x)/len,dz=(b.y-a.y)/len;
       const group=new T.Group();group.position.set(a.x,0,a.y);group.rotation.y=-Math.atan2(dz,dx);roomRoot.add(group);
-      group.userData.normal=normals[i];group.userData.mid={x:(a.x+b.x)/2,y:(a.y+b.y)/2};wallGroups.push(group);
+      group.userData.normal=normals[i];group.userData.mid={x:(a.x+b.x)/2,y:(a.y+b.y)/2};Object.assign(group.userData,{a,len,dx,dz});wallGroups.push(group);
       // Walls sit outside the floor, so pieces against them never clip. The end runs on past a convex corner (or stops short of a reflex one) so caps meet cleanly.
       const next=normals[(i+1)%N],turn=normals[i].x*next.y-normals[i].y*next.x,convex=(area>0?-turn:turn)<0,end=len+(convex?WALL_T:-WALL_T);
       const openings=outline.openings.filter(o=>o.edge===i).sort((a,b)=>a.offset_ft-b.offset_ft);
@@ -583,7 +592,7 @@ export function createStudioScene(container, options) {
       const bed=f.host&&next.items.find(i=>i.id===f.host);
       ids.add(f.id);const key=JSON.stringify([f.kind,f.width_ft,f.length_ft,f.height,f.material_color,f.product,f.bare,f.bed_mode,f.built_in,f.back,NO_BLOB.has(f.kind)||onWall(f),next.palette,dress,dress?next.theme:null,bed&&[bed.width_ft,bed.length_ft]]);let m=meshes.get(f.id);
       if(!m||m.key!==key){if(m)removePiece(m);m={...buildPiece(f,next,built.get(key)),key,item:f};built.set(key,m);meshes.set(f.id,m);}
-      m.item=f;
+      m.item=f;m.wall=onWall(f)?wallOf(f):null;
       if(drag?.id!==f.id){m.group.position.set(f.x_ft+f.footW/2,f.elevation,f.y_ft+f.footD/2);m.group.rotation.y=-f.rotation_deg*Math.PI/180;}
     }
     for(const [id,m]of meshes)if(!ids.has(id)){removePiece(m);meshes.delete(id);}
