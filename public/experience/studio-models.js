@@ -163,7 +163,8 @@ export function footprint(root) {
  * Realistic models (public/experience/models, made with text-to-3D and cleaned in Blender: about 20k triangles, AO baked
  * into the colour, meshopt + WebP), by file name. Until a model loads, or if it fails, the clay model stands in.
  * - tint: the model is neutral, so a product's colour multiplies into it; the number is the gain that brings its typical
- *   texel (median linear luminance of the base colour) up to white, so a sage bean bag reads as sage, not a darker shade.
+ *   texel up to white (1 / the median, or for textures with dark gaps the 75th percentile, of the base colour's linear
+ *   luminance), so a sage bean bag reads as sage, not a darker shade.
  * - host: things stand on it (a desk, a dresser, a fridge), so it fills the piece's box exactly instead of keeping its
  *   proportions, and its top is the piece's height.
  * - dorm: also used for the dorm's own furniture of that kind (otherwise only for pieces the student brings or buys).
@@ -173,8 +174,8 @@ export const LIBRARY = {
   fridge: { tint: 3.1, host: true, dorm: true }, microwave: { tint: 2.8, dorm: true }, chair: {}, "chair-dorm": {},
   monitor: {}, speaker: {}, lounge: { tint: 5 }, ottoman: { tint: 4.2 }, shelf: { host: true }, plant: {},
   desk: { host: true, dorm: true }, dresser: { host: true, dorm: true }, wardrobe: { host: true, dorm: true },
-  sofa: { tint: 3, dorm: true }, riser: { host: true }, fan: {}, organizer: {}, basket: {}, books: {},
-  storage: { tint: 2.5 }, towels: { tint: 1.6 }, caddy: { tint: 1.6 }, trash: { tint: 1.6 }, hamper: { tint: 3 }, candle: { tint: 1.6, glow: true },
+  sofa: { tint: 3.3, dorm: true }, riser: { host: true }, fan: {}, organizer: {}, basket: {}, books: {},
+  storage: { tint: 3 }, towels: { tint: 2.2 }, caddy: { tint: 3.1 }, trash: { tint: 2.8 }, hamper: { tint: 4.8 },
   "lamp-shade": { glow: true }, "lamp-task": { glow: true }, "lamp-mushroom": { glow: true }, "lamp-lava": { glow: true },
   "lamp-salt": { glow: true }, "lamp-banker": { glow: true },
 };
