@@ -179,7 +179,7 @@ export const LIBRARY = {
   "lamp-shade": { glow: true }, "lamp-task": { glow: true }, "lamp-mushroom": { glow: true }, "lamp-lava": { glow: true },
   "lamp-salt": { glow: true }, "lamp-banker": { glow: true },
   // Bed frames: decks are each platform's height as a fraction of the model's (measured, scripts/models/decks.py).
-  "bed-frame": { dorm: true, decks: [0.37] }, "bed-bunk": { dorm: true, decks: [0.25, 0.77] }, "bed-loft": { dorm: true, decks: [0.7] },
+  "bed-frame": { dorm: true, decks: [0.37] }, "bed-bunk": { dorm: true, decks: [0.25, 0.77] }, "bed-loft": { dorm: true, decks: [0.79] },
 };
 /** Which library model a piece uses, or null for clay. Lamps go by style; projector and light-bar lamps stay clay. */
 export function libraryKey(f) {

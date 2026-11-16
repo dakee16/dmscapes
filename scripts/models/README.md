@@ -13,7 +13,9 @@ Realistic models for the 3D studio live in `public/experience/models/`. Each kin
 - **Lamps** go by style (`lamp-shade`, `-task`, `-mushroom`, `-lava`, `-salt`, `-banker`). Projector and light-bar lamps stay clay.
 - **Fit:** models are fitted inside the piece's box: scaled evenly, then stretched at most 25% toward each side. `host` models (things stand on them) fill the box exactly.
 - **Glow:** `glow` models light up at night.
-- **Built in code on purpose:** beds and bunks (their frame heights change with loft and bunk settings) and the candle (generation kept failing, and a cylinder is what the clay draws anyway). Also everything that takes vibe colours, patterns or a product photo: bedding, rugs, curtains, throws, pillows, wall art and string lights. Those get the fabric and wood detail textures instead.
+- **Bed frames:** `bed-frame`, `bed-bunk` and `bed-loft` (made with image-to-3D from a generated photo, since text prompts kept producing bunks). Each is fitted to the bed's footprint, and its height is remapped piecewise so each platform listed in `decks` lands under its mattress. `python3 -I scripts/models/decks.py raw.glb` measures `decks`; run it on the raw model, because Blender can't read meshopt files.
+- **Built in code on purpose:** the candle (generation kept failing, and a cylinder is what the clay draws anyway), and everything that takes vibe colours, patterns or a product photo: bedding, rugs, curtains, throws, pillows, wall art and string lights. Those get the fabric and wood detail textures, and a sheen on fabric on desktop.
+- **Windows:** built in code because every window is a different size. They are double-hung sashes, casing, sill and reflective glass. The view behind them is `textures/view-day|evening|night.webp`.
 
 ## Surfaces
 
