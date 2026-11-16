@@ -11,6 +11,7 @@ import { DEFAULT_PLANNING, OWNER_COLORS, type PlanningDetails } from "./planning
 import { FURNITURE_LIBRARY, findFreePosition, newPiece } from "./furniture-library";
 import { furnitureCategory } from "./highlight";
 import { plannerStorage } from "./planner-storage";
+import { defaultSizeFor } from "./product-model";
 
 export interface PlannerState {
   planning: PlanningDetails;
@@ -316,12 +317,13 @@ export const usePlannerStore = create<PlannerState>()(
             ? s.customItems
             : [...s.customItems, product];
           if (place) {
-            const w = product.width_ft || 2, l = product.length_ft || 2;
+            // Sized from the listing, else from what the piece is (a mini fridge, a desk chair).
+            const [w, l, h] = defaultSizeFor(product);
             const x = s.room ? Math.min(1, Math.max(0, s.room.lengthFt - l)) : 1;
             const y = s.room ? Math.min(1, Math.max(0, s.room.widthFt - w)) : 1;
             const item: FurnitureItem = {
               id: product.id, type: "custom", label: product.name.slice(0, 20),
-              owner: "student", x_ft: x, y_ft: y, width_ft: w, length_ft: l,
+              owner: "student", x_ft: x, y_ft: y, width_ft: w, length_ft: l, height_ft: h,
               rotation_deg: 0, movable: true, built_in: false,
               color_category: "accent", product_category: product.category,
               product_id:product.id,dimensions_source:product.width_ft&&product.length_ft?"product":"generic",
@@ -344,12 +346,12 @@ export const usePlannerStore = create<PlannerState>()(
         set((s) => {
           const p = s.customItems.find((x) => x.id === id);
           if (!p) return {} as Partial<PlannerState>;
-          const w = p.width_ft || 2, l = p.length_ft || 2;
+          const [w, l, h] = defaultSizeFor(p);
           const x = s.room ? Math.max(0, (s.room.lengthFt - l) / 2) : 1;
           const y = s.room ? Math.max(0, (s.room.widthFt - w) / 2) : 1;
           const item: FurnitureItem = {
             id, type: "custom", label: p.name.slice(0, 20), owner: "student",
-            x_ft: x, y_ft: y, width_ft: w, length_ft: l, rotation_deg: 0,
+            x_ft: x, y_ft: y, width_ft: w, length_ft: l, height_ft: h, rotation_deg: 0,
             movable: true, built_in: false, color_category: "accent",
             product_category: p.category,
             product_id:p.id,dimensions_source:p.width_ft&&p.length_ft?"product":"generic",

@@ -113,6 +113,9 @@ function buildCsp(isDev: boolean): string {
     [
       "script-src 'self' 'unsafe-inline'",
       isDev ? "'unsafe-eval'" : null,
+      // The 3D studio's model loader decodes meshopt-compressed meshes with WebAssembly. This allows compiling
+      // WebAssembly only (not eval).
+      "'wasm-unsafe-eval'",
       posthogOrigins.assets,
       "https://*.googletagmanager.com", // Google Analytics (components/site/GoogleAnalytics)
     ],
@@ -126,6 +129,7 @@ function buildCsp(isDev: boolean): string {
     "font-src 'self'",
     [
       "connect-src 'self'",
+      "blob:", // the 3D studio's model loader fetches each model's embedded textures from blob: URLs
       isDev ? "ws:" : null, // HMR websocket
       "https://tiles.openfreemap.org", // Hall Finder map: OpenFreeMap style, tiles, sprites and glyphs
       supabaseOrigin,

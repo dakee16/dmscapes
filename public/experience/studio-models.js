@@ -159,12 +159,88 @@ export function footprint(root) {
 // look reference). Every piece is built inside its real footprint: width_ft
 // along x, length_ft along z, centred on the group, standing on y = 0. Only
 // what is in the plan is drawn; the vibe changes colours and materials only.
-export function createModelKit({onTexture=()=>{}}={}) {
+/**
+ * Realistic models (public/experience/models, made with text-to-3D and cleaned in Blender: about 20k triangles, AO baked
+ * into the colour, meshopt + WebP), by file name. Until a model loads, or if it fails, the clay model stands in.
+ * - tint: the model is neutral, so a product's colour multiplies into it; the number is the gain that brings its typical
+ *   texel up to white (1 / the median, or for textures with dark gaps the 75th percentile, of the base colour's linear
+ *   luminance), so a sage bean bag reads as sage, not a darker shade.
+ * - host: things stand on it (a desk, a dresser, a fridge), so it fills the piece's box exactly instead of keeping its
+ *   proportions, and its top is the piece's height.
+ * - dorm: also used for the dorm's own furniture of that kind (otherwise only for pieces the student brings or buys).
+ * - glow: a lamp; at night its whole surface glows softly, in its own colours.
+ */
+export const LIBRARY = {
+  fridge: { tint: 3.1, host: true, dorm: true }, microwave: { tint: 2.8, dorm: true }, chair: {}, "chair-dorm": {},
+  monitor: {}, speaker: {}, lounge: { tint: 5 }, ottoman: { tint: 4.2 }, shelf: { host: true }, plant: {},
+  sofa: { tint: 3.3, dorm: true }, riser: { host: true }, fan: {}, organizer: {}, basket: {}, books: {},
+  storage: { tint: 3 }, towels: { tint: 2.2 }, caddy: { tint: 3.1 }, trash: { tint: 2.8 }, hamper: { tint: 4.8 },
+  "lamp-shade": { glow: true }, "lamp-task": { glow: true }, "lamp-mushroom": { glow: true }, "lamp-lava": { glow: true },
+  "lamp-salt": { glow: true }, "lamp-banker": { glow: true },
+};
+/** Which library model a piece uses, or null for clay. Lamps go by style; projector and light-bar lamps stay clay. */
+export function libraryKey(f) {
+  if (f.kind === "bed" || f.kind === "bunk") return null; // beds are built in code (build), so the bedding fits the frame
+  if (f.built_in) return f.kind === "chair" ? "chair-dorm" : LIBRARY[f.kind]?.dorm ? f.kind : null;
+  if (f.kind === "lamp") { const key = "lamp-" + (f.product?.variant || "shade"); return LIBRARY[key] ? key : null; }
+  return LIBRARY[f.kind] ? f.kind : null;
+}
+const MODEL_DIR = new URL("./models/", import.meta.url).href, TEXTURE_DIR = new URL("./textures/", import.meta.url).href;
+
+export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) {
   const geometries=new Map(),materials=new Map(),textures=new Map(),glows=new Set(),shiny=new Set();let disposed=false,night=false,env=null,envI=1;
+  /** Library models by kind: {scene, size} once loaded, "loading", or "failed". The loader itself loads with the first model. */
+  const library=new Map();let loader=null;
+  const libGlows=new Set();
+  function loadModel(kind){
+    if(library.has(kind)||typeof window==="undefined")return;
+    library.set(kind,"loading");
+    loader??=import("./vendor/gltf-loader.min.js").then(({GLTFLoader,MeshoptDecoder})=>{const l=new GLTFLoader();l.setMeshoptDecoder(MeshoptDecoder);return l;});
+    loader.then(l=>l.loadAsync(`${MODEL_DIR}${kind}${lite?"-lite":""}.glb`)).then(gltf=>{
+      if(disposed)return;
+      const scene=gltf.scene,spec=LIBRARY[kind];scene.traverse(o=>{if(!o.isMesh)return;o.material.envMap=null;o.material.metalness=0;o.userData.library=true;
+        // A lamp glows in its own colours at night (its map doubles as the emissive map), and not at all by day.
+        if(spec.glow){o.material.emissive.set("#ffe2bd");o.material.emissiveMap=o.material.map;o.material.emissiveIntensity=night?.85:0;libGlows.add(o.material);}});
+      // The first mesh and its transform into the model's frame (meshopt files quantize positions under a node scale).
+      scene.updateMatrixWorld(true);let mesh=null;scene.traverse(o=>{if(o.isMesh&&!mesh)mesh=o;});const box=new T.Box3().setFromObject(scene);
+      library.set(kind,{scene,mesh,toModel:mesh.matrixWorld.clone(),minY:box.min.y,size:box.getSize(new T.Vector3())});onModel(kind);
+    }).catch(()=>library.set(kind,"failed"));
+  }
+  /** A library model fitted to the piece's footprint and height, its front toward +z like the clay models; null until loaded. */
+  function fromLibrary(g,f,w,h,d){
+    const name=libraryKey(f),spec=name&&LIBRARY[name];if(!spec)return null;
+    const entry=library.get(name);if(!entry){loadModel(name);return null;}
+    if(typeof entry!=="object")return null;
+    // Fitted inside the piece's box, so it never pokes past its plan footprint: scaled evenly to fit, then stretched toward
+    // each side by at most a quarter, so books on a shelf or a chair's back don't turn wide and squat. Hosts fill it exactly.
+    const model=entry.scene.clone(true),{size}=entry,fit=[w/size.x,h/size.y,d/size.z],even=Math.min(...fit);
+    model.scale.set(...(spec.host?fit:fit.map(s=>Math.min(s,even*1.25))));
+    if(spec.tint&&f.material_color){
+      const key="lib-tint:"+name+":"+f.material_color;
+      model.traverse(o=>{if(!o.isMesh)return;
+        if(!materials.has(key+o.material.uuid)){const m=o.material.clone();m.color.set(f.material_color).multiplyScalar(spec.tint);if(libGlows.has(o.material))libGlows.add(m);materials.set(key+o.material.uuid,m);}
+        o.material=materials.get(key+o.material.uuid);});
+    }
+    g.add(model);g.traverse(o=>{o.userData.itemId=f.id;});g.userData.itemId=f.id;return g;
+  }
   const c=document.createElement("canvas");c.width=c.height=128;const cx=c.getContext("2d");
   cx.fillStyle="#dddddd";cx.fillRect(0,0,128,128);
   for(let i=0;i<128;i+=3){cx.fillStyle=i%2?"#c9c9c9":"#efefef";cx.fillRect(i,0,1,128);cx.fillRect(0,i,128,1);}
   const fabric=new T.CanvasTexture(c);fabric.wrapS=fabric.wrapT=T.RepeatWrapping;fabric.repeat.set(3,3);
+  // Real surfaces (public/experience/textures): neutral detail maps multiplied by each material's own colour, so vibe
+  // textiles and wood tones keep their colour and gain a weave or a grain. Phones skip the normal maps. Not in Node checks.
+  const surface=(name,repeat,srgb=true)=>{
+    if(typeof window==="undefined")return null;
+    const t=new T.TextureLoader().load(`${TEXTURE_DIR}${name}.webp`,()=>{if(!disposed)onTexture();});
+    t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(repeat,repeat);t.anisotropy=4;if(srgb)t.colorSpace=T.SRGBColorSpace;textures.set("surface:"+name,t);return t;
+  };
+  const weaveMap=surface("fabric-detail",3),weaveNormal=lite?null:surface("fabric-detail-n",3,false);
+  const grainMap=surface("wood-detail",1),grainNormal=lite?null:surface("wood-detail-n",1,false);
+  /** Sheen settings for a fabric of this colour (none on phones). */
+  const sheen=color=>lite?{}:{sheen:.6,sheenRoughness:.7,sheenColor:new T.Color(color).lerp(new T.Color("#ffffff"),.55)};
+  /** A fabric's weave: the real one when loaded (detail + normal map), else the drawn bump. */
+  const weave=(scale=.5)=>weaveMap?{map:weaveMap,...(weaveNormal?{normalMap:weaveNormal,normalScale:new T.Vector2(scale,scale)}:{})}:{bumpMap:fabric,bumpScale:.015};
+  const weaveOnly=(scale=.5)=>weaveNormal?{normalMap:weaveNormal,normalScale:new T.Vector2(scale,scale)}:{bumpMap:fabric,bumpScale:.012};
   /** Glass, mirrors and metal reflect the room's small reflection map (setEnv); nothing else does. */
   const shine=m=>{m.envMap=env;m.envMapIntensity=envI;shiny.add(m);return m;};
   // Matte by default: glossy surfaces (glass, mirrors) stay smooth, metal goes satin, everything else is soft.
@@ -172,13 +248,16 @@ export function createModelKit({onTexture=()=>{}}={}) {
     const key=[color,roughness,cloth,metal].join("|");
     if(!materials.has(key)){
       const glossy=roughness<.3&&metal===null;
-      const m=new T.MeshStandardMaterial({color,roughness:glossy?roughness:metal!==null?Math.max(roughness,.5):Math.max(roughness,.82),
-        metalness:glossy?.3:metal!==null?Math.min(metal,.35):0,...(cloth?{bumpMap:fabric,bumpScale:.015}:{})});
+      // Fabric has a soft sheen at grazing angles (desktop; phones keep the plain material).
+      const m=new (cloth&&!lite?T.MeshPhysicalMaterial:T.MeshStandardMaterial)({color,roughness:glossy?roughness:metal!==null?Math.max(roughness,.5):Math.max(roughness,.82),
+        metalness:glossy?.3:metal!==null?Math.min(metal,.35):0,...(cloth?{...weave(),...sheen(color)}:{})});
       if(glossy||metal!==null)shine(m);
       materials.set(key,glossy?m:clay(m));
     }
     return materials.get(key);
   };
+  /** Gives a wood material its grain (detail map, and a faint normal map on desktop). */
+  function grain(m){if(grainMap){m.map=grainMap;if(grainNormal){m.normalMap=grainNormal;m.normalScale.set(.25,.25);}}return m;}
   /** A clay material's twin that also takes a baked piece's corner shading (shadeCompile); null for any other material. */
   function shaded(m){
     if(!m.userData.clay)return null;
@@ -193,7 +272,26 @@ export function createModelKit({onTexture=()=>{}}={}) {
     materials.set(key,m);glows.add(m);return m;
   }
   const mix=(a,b,t)=>"#"+new T.Color(a).lerp(new T.Color(b),t).getHexString();
-  const white=mat("#fbf8f1",.9),wood=mat("#ddbf8f",.62),woodDark=mat("#c9a573",.6),ink=mat("#2b2c3a",.5),metal=mat("#c9c4bd",.35,false,.6),
+  // Mirror glass shows the room: one cube view of it from its middle (the scene renders it, setMirrorView), box-projected onto
+  // the room's bounds so each mirror sees the room from where it hangs. Until that view exists, a soft grey-blue sky stands in.
+  const mirrorUniforms={uCube:{value:null},uCubePos:{value:new T.Vector3()},uBoxMin:{value:new T.Vector3()},uBoxMax:{value:new T.Vector3(1,1,1)},uMirrorOn:{value:0}};
+  const mirrorMat=new T.MeshBasicMaterial({color:"#f3f6f6"});
+  mirrorMat.onBeforeCompile=sh=>{Object.assign(sh.uniforms,mirrorUniforms);
+    sh.vertexShader=sh.vertexShader.replace("#include <common>","#include <common>\nvarying vec3 vMirrorPos;varying vec3 vMirrorN;")
+      .replace("#include <project_vertex>","#include <project_vertex>\nvMirrorPos=(modelMatrix*vec4(transformed,1.)).xyz;vMirrorN=normalize(mat3(modelMatrix)*normal);");
+    sh.fragmentShader=sh.fragmentShader.replace("#include <common>","#include <common>\nuniform samplerCube uCube;uniform vec3 uCubePos;uniform vec3 uBoxMin;uniform vec3 uBoxMax;uniform float uMirrorOn;varying vec3 vMirrorPos;varying vec3 vMirrorN;")
+      .replace("#include <envmap_fragment>",`vec3 mR=reflect(normalize(vMirrorPos-cameraPosition),normalize(vMirrorN));
+        vec3 mT=max((uBoxMax-vMirrorPos)/mR,(uBoxMin-vMirrorPos)/mR);
+        vec3 mDir=vMirrorPos+mR*min(min(mT.x,mT.y),mT.z)-uCubePos;
+        vec3 mCol=uMirrorOn>.5?textureCube(uCube,mDir).rgb:mix(vec3(.5,.53,.55),vec3(.85,.88,.9),.5+.5*mR.y);
+        outgoingLight=mCol*diffuseColor.rgb;`);};
+  mirrorMat.customProgramCacheKey=()=>"dm-mirror";
+  /** A mirror's glass: a flat face (its normal is +z) that never casts a shadow. */
+  const mirrorGlass=(g,geo,x,y,z)=>{const m=add(g,new T.Mesh(geo,mirrorMat),x,y,z);m.castShadow=false;return m;};
+  /** An arch outline: straight sides from y0 up to yc, a half circle of radius r on top. */
+  function archShape(r,y0,yc){const s=new T.Shape();s.moveTo(-r,y0);s.lineTo(r,y0);s.lineTo(r,yc);s.absarc(0,yc,r,0,Math.PI,false);s.lineTo(-r,y0);return s;}
+  const shared=(key,make)=>{if(!geometries.has(key))geometries.set(key,make());return geometries.get(key);};
+  const white=mat("#fbf8f1",.9),wood=grain(mat("#ddbf8f",.62)),woodDark=grain(mat("#c9a573",.6)),ink=mat("#2b2c3a",.5),metal=mat("#c9c4bd",.35,false,.6),pullMetal=mat("#85817b",.4,false,.6),
     leafA=mat("#5f8a4c",.75),leafB=mat("#7aa560",.75),soil=mat("#5b4636",.95),terracotta=mat("#c4826a",.9);
   function textile(product,color){
     if(!product || product.pattern==="solid")return mat(color,.95,true);
@@ -215,7 +313,7 @@ export function createModelKit({onTexture=()=>{}}={}) {
       else{ctx.fillStyle="#1c1622";ctx.beginPath();ctx.moveTo(cx0,cy0+6);ctx.lineTo(cx0-16,cy0-4);ctx.lineTo(cx0-6,cy0-2);ctx.lineTo(cx0-3,cy0-8);ctx.lineTo(cx0,cy0-4);ctx.lineTo(cx0+3,cy0-8);ctx.lineTo(cx0+6,cy0-2);ctx.lineTo(cx0+16,cy0-4);ctx.closePath();ctx.fill();}
     }
     const tex=new T.CanvasTexture(canvas);tex.colorSpace=T.SRGBColorSpace;textures.set(key,tex);
-    const material=clay(new T.MeshStandardMaterial({map:tex,roughness:.98,bumpMap:fabric,bumpScale:.012}));materials.set(key,material);return material;
+    const material=clay(new (lite?T.MeshStandardMaterial:T.MeshPhysicalMaterial)({map:tex,roughness:.98,...weaveOnly(),...sheen("#ffffff")}));materials.set(key,material);return material;
   }
   function productPrint(product,fallback){
     if(!product?.image || !/^https:\/\/m\.media-amazon\.com\//.test(product.image))return fallback;
@@ -236,7 +334,7 @@ export function createModelKit({onTexture=()=>{}}={}) {
     if(product.pattern==="check"){ctx.globalAlpha=.55;for(let i=0;i<256;i+=64){ctx.fillRect(i,0,32,256);ctx.fillRect(0,i,256,32);}ctx.globalAlpha=1;for(let i=0;i<256;i+=64)for(let j=0;j<256;j+=64)ctx.fillRect(i,j,32,32);}
     else for(let i=0;i<256;i+=64)ctx.fillRect(0,i,256,32);
     const tex=new T.CanvasTexture(canvas);tex.colorSpace=T.SRGBColorSpace;tex.wrapS=tex.wrapT=T.RepeatWrapping;tex.repeat.set(w/2,d/2);textures.set(key,tex);
-    const material=clay(new T.MeshStandardMaterial({map:tex,roughness:1,bumpMap:fabric,bumpScale:.012}));materials.set(key,material);return material;
+    const material=clay(new T.MeshStandardMaterial({map:tex,roughness:1,...weaveOnly(.7)}));materials.set(key,material);return material;
   }
   /** A bat seen flat on the wall (the brand mark's outline), one unit wide. */
   function batGeometry(){
@@ -268,41 +366,65 @@ export function createModelKit({onTexture=()=>{}}={}) {
       if(v.y>.33)v.y=.33+(v.y-.33)*.35-Math.max(0,.37-Math.hypot(v.x,v.z))*.3;p.setXYZ(i,v.x,v.y,v.z);}
     g.computeVertexNormals();g.computeBoundingBox();geometries.set("bean",g);return g;
   }
-  /** One curtain panel with real folds: a plane rippled across its width. */
-  function foldGeometry(w,h){
-    const key=["fold",w,h].join("|");if(geometries.has(key))return geometries.get(key);
-    const g=new T.PlaneGeometry(w,h,Math.max(12,Math.round(w*14)),1),p=g.attributes.position;
-    for(let i=0;i<p.count;i++)p.setZ(i,Math.sin(p.getX(i)/w*Math.PI*2*Math.max(2,w*3))*Math.min(.09,w*.08));
-    g.computeVertexNormals();geometries.set(key,g);return g;
-  }
-  /** A plump pillow or cushion, w × h × d: a rounded box that swells toward the middle and thins at its edges. */
-  function pillowGeometry(w,h,d){
-    const key=["pillow",w,h,d].join("|");if(geometries.has(key))return geometries.get(key);
-    const g=new RoundedBoxGeometry(w,h,d,5,Math.min(h*.45,w/2-1e-3,d/2-1e-3)),p=g.attributes.position,n=g.attributes.normal,ax=4/(w*w),az=4/(d*d);
+  /**
+   * One curtain panel, w × h, hanging from its top edge: even pleats gathered at the top that deepen and flare a little
+   * toward the hem, with a slight irregular sway so the folds don't look stamped.
+   */
+  function curtainGeometry(w,h){
+    const key=["curtain",w,h].join("|");if(geometries.has(key))return geometries.get(key);
+    const n=Math.max(3,Math.round(w*3.4)),g=new T.PlaneGeometry(w,h,Math.max(32,Math.round(w*n*8)),12),p=g.attributes.position;
     for(let i=0;i<p.count;i++){
-      // Height scales by s(x, z); the normals follow the same squash (inverse transpose of its Jacobian), so the edges stay seamless.
-      const x=p.getX(i),y=p.getY(i),z=p.getZ(i),k=1-.85*(x*x*ax+z*z*az),s=.6+.4*Math.max(0,k),sx=k>0?-.68*x*ax:0,sz=k>0?-.68*z*az:0;
-      const nx=n.getX(i)-y*sx/s*n.getY(i),ny=n.getY(i)/s,nz=n.getZ(i)-y*sz/s*n.getY(i),l=Math.hypot(nx,ny,nz);
-      p.setY(i,y*s);n.setXYZ(i,nx/l,ny/l,nz/l);
+      const x=p.getX(i),y=p.getY(i),t=.5-y/h,u=x/w+.5,depth=Math.min(.11,w*.075)*(.75+.5*t);
+      p.setXYZ(i,x*(.93+.07*t),y,depth*(Math.sin(u*Math.PI*2*n)+.18*Math.sin(u*Math.PI*2*n*2.3+t*2.1))+depth);
     }
-    g.userData.soft=true;geometries.set(key,g);return g;
+    g.computeVertexNormals();g.userData.soft=true;geometries.set(key,g);return g;
+  }
+  /**
+   * A plump pillow or cushion, w × h × d: two stuffed covers sewn together at a pinched seam all round, fullest in the
+   * middle, its sides drawn in a little between the corners (the "ears"), with soft creases running out to the seam.
+   */
+  function pillowGeometry(w,h,d){
+    const key=["pillow2",w,h,d].join("|");if(geometries.has(key))return geometries.get(key);
+    const N=28,pos=[],idx=[],seam=Math.min(.012,h*.04);
+    for(const side of [1,-1]){
+      const base=pos.length/3;
+      for(let j=0;j<=N;j++)for(let i=0;i<=N;i++){
+        const u=i/N*2-1,v=j/N*2-1,fill=Math.pow(Math.max(0,(1-Math.pow(Math.abs(u),2.6))*(1-Math.pow(Math.abs(v),2.6))),.55);
+        // Creases: shallow ripples that pull toward the corners, strongest near the seam, gone at the crown.
+        const edge=1-fill,crease=side>0?h*.035*edge*(Math.sin(u*9.3+v*2.1)*.6+Math.sin(v*8.1-u*3.7)*.4):0;
+        const x=u*w/2*(1-.07*(1-v*v)),z=v*d/2*(1-.07*(1-u*u));
+        pos.push(x,side*(seam+h/2*fill+crease*fill*4),z);
+      }
+      for(let j=0;j<N;j++)for(let i=0;i<N;i++){const a=base+j*(N+1)+i,b=a+1,c=a+N+1,e=c+1;
+        if(side>0)idx.push(a,c,b,b,c,e);else idx.push(a,b,c,b,e,c);}
+    }
+    // The seam: a thin band joining the two covers round the outline.
+    const ring=[];for(let i=0;i<N;i++)ring.push([i,0]);for(let j=0;j<N;j++)ring.push([N,j]);for(let i=N;i>0;i--)ring.push([i,N]);for(let j=N;j>0;j--)ring.push([0,j]);
+    const bot=(N+1)*(N+1);
+    for(let k=0;k<ring.length;k++){const [i0,j0]=ring[k],[i1,j1]=ring[(k+1)%ring.length],a=j0*(N+1)+i0,b=j1*(N+1)+i1;idx.push(a,b,bot+a,b,bot+b,bot+a);}
+    const g=new T.BufferGeometry();g.setAttribute("position",new T.Float32BufferAttribute(pos,3));g.setIndex(idx);
+    g.computeVertexNormals();g.computeBoundingBox();g.userData.soft=true;geometries.set(key,g);return g;
   }
   /**
    * A soft sheet (duvet, folded throw), t thick, whose top tw × tl lies flat (centred on the origin, gently
    * creased by `wrinkle`) and whose extra cloth rolls over a rounded edge and hangs: `side` on both long
    * sides, `foot` at the +z end.
    */
-  function drapeGeometry(tw,tl,t,side,foot,wrinkle){
-    const key=["drape",tw,tl,t,side,foot,wrinkle].join("|");if(geometries.has(key))return geometries.get(key);
+  function drapeGeometry(tw,tl,t,side,foot,wrinkle,maxDrop=Infinity){
+    const key=["drape",tw,tl,t,side,foot,wrinkle,maxDrop].join("|");if(geometries.has(key))return geometries.get(key);
     const W=tw+side*2,L=tl+foot,a=tw/2,zf=tl/2,r=.07,arc=r*Math.PI/2;
-    const g=new T.BoxGeometry(W,t,L,Math.max(8,Math.round(W*10)),1,Math.max(8,Math.round(L*7))),p=g.attributes.position;
+    const g=new T.BoxGeometry(W,t,L,Math.max(10,Math.round(W*16)),1,Math.max(10,Math.round(L*11))),p=g.attributes.position;
     // Overhang o past an edge: [outward, down, bend angle] for the cloth's mid-surface.
     const bend=o=>o<=0?[0,0,0]:o<arc?[r*Math.sin(o/r),r*(1-Math.cos(o/r)),o/r]:[r,r+o-arc,Math.PI/2];
     for(let i=0;i<p.count;i++){
       const x=p.getX(i),y=p.getY(i),z=p.getZ(i)+L/2-tl/2,ox=Math.abs(x)-a,oz=z-zf,[bx,dx,fx]=bend(ox),[bz,dz,fz]=bend(oz),sx=Math.sign(x);
-      const crease=wrinkle*(Math.sin(z*2.1+x*.8)*.65+Math.sin(z*5.3-x*1.7)*.35)*Math.max(0,1-(Math.max(0,ox)+Math.max(0,oz))/.12);
+      // Soft creases on top (a few crossing ripples at falling scales), fading out over the edge.
+      const crease=wrinkle*(Math.sin(z*2.1+x*.8)*.5+Math.sin(z*5.3-x*1.7)*.3+Math.sin(x*7.3+z*1.4)*.14+Math.sin(z*11.9+x*3.2)*.07)*Math.max(0,1-(Math.max(0,ox)+Math.max(0,oz))/.12);
+      // Where the cloth hangs, it gathers into loose vertical folds that grow with the drop.
+      const hangX=Math.max(0,ox-arc),hangZ=Math.max(0,oz-arc),fold=k=>.03*Math.min(1,k/.3);
+      const foldX=hangX?fold(hangX)*(.55+.45*Math.sin(z*6.2+sx*1.3))*2:0,foldZ=hangZ?fold(hangZ)*(.55+.45*Math.sin(x*6.8))*2:0;
       // The layer's offset from the mid-surface turns with the bend, so the cloth keeps its thickness as it hangs.
-      p.setXYZ(i,ox>0?sx*(a+bx+Math.sin(fx)*y):x,-dx-dz+crease+Math.cos(fx)*Math.cos(fz)*y,oz>0?zf+bz+Math.sin(fz)*y:z);
+      p.setXYZ(i,ox>0?sx*(a+bx+Math.sin(fx)*y+foldX):x,-Math.min(dx+dz,maxDrop)+crease+Math.cos(fx)*Math.cos(fz)*y,oz>0?zf+bz+Math.sin(fz)*y+foldZ:z);
     }
     g.computeVertexNormals();g.userData.soft=true;geometries.set(key,g);return g;
   }
@@ -324,6 +446,7 @@ export function createModelKit({onTexture=()=>{}}={}) {
   }
   function build(f,palette,{theme,dress=true}={}){
     const g=new T.Group(),w=Math.max(.1,f.width_ft),d=Math.max(.1,f.length_ft),h=f.height,variant=f.product?.variant;
+    const real=fromLibrary(g,f,w,h,d);if(real)return real;
     // Soft goods take the vibe's colours when the room is dressed; a piece's own colour always wins.
     const vibe=dress&&theme;
     const color=f.material_color||(vibe?theme.textileAlt:palette[1])||"#b4c2dd";
@@ -332,32 +455,58 @@ export function createModelKit({onTexture=()=>{}}={}) {
     const legs=(height,thick=.12,m=wood)=>{for(const x of [-1,1])for(const z of [-1,1])box(g,thick,height,thick,m,x*(w/2-thick/2-.03),height/2,z*(d/2-thick/2-.03),.02);};
     switch(f.kind){
       case "bed":case "bunk":{
-        const loft=f.bed_mode==="lofted";
+        // A clean solid-wood dorm frame: square corner posts, side and end rails that sit below each mattress, a
+        // framed headboard panel under a capped top rail, and on bunks and lofts guard bars above the top mattress and
+        // a ladder at the foot. Everything is laid out so no part of the frame passes through the bedding.
+        const loft=f.bed_mode==="lofted",decked=f.kind==="bunk"||loft;
         const levels=f.kind==="bunk"?[h*.3,h*.78]:loft?[h*.78]:[h-.28];
         const duvetColor=f.material_color||(vibe?theme.textile:color),duvet=textile(f.product,duvetColor);
-        const fold=mat(mix(duvetColor,"#ffffff",.3),.95,true),pillow=mat(vibe?mix(theme.textileAlt,"#ffffff",.25):"#fbfaf7",1,true),mattress=mat("#fbfaf6",1,true);
+        const fold=mat(mix(duvetColor,"#ffffff",.55),.95,true),pillow=mat(vibe?mix(theme.textileAlt,"#ffffff",.25):"#fbfaf7",1,true),mattress=mat("#fbfaf6",1,true);
+        const ps=.17,rail=.1,inner=w-ps*2,mw=w-.3,top=levels[levels.length-1];
+        const headTop=decked?h:top+1.45,footTop=decked?h:top-.22;
+        for(const x of [-1,1]){
+          box(g,ps,headTop,ps,wood,x*(w/2-ps/2),headTop/2,-d/2+ps/2,.035);
+          box(g,ps,footTop,ps,wood,x*(w/2-ps/2),footTop/2,d/2-ps/2,.035);
+        }
+        // Head: a recessed panel between a bottom rail and a top rail, under a cap that runs over both posts.
+        const panelBottom=decked?top+.3:top-.22,panelTop=headTop-.14;
+        box(g,inner,.14,.12,wood,0,headTop-.07,-d/2+ps/2,.03);
+        box(g,inner,panelTop-panelBottom,.05,woodDark,0,(panelTop+panelBottom)/2,-d/2+ps/2,.015);
+        box(g,w+.05,.05,ps+.06,wood,0,headTop+.025,-d/2+ps/2,.022);
+        if(decked)box(g,w+.05,.05,ps+.06,wood,0,footTop+.025,d/2-ps/2,.022);
         for(const [index,level] of levels.entries()){
-          box(g,w,.18,d,wood,0,level-.36,0,.04);
-          box(g,w*.96,.38,d*.96,mattress,0,level-.08,0,.14,3).name=`mattress-${index}`;
+          // Rails round the deck, their tops just above the mattress's underside, and the deck board it rests on.
+          const ry=level-.43,mattressFoot=decked?d/2-.36:d/2-.2,mattressHead=-d/2+ps;
+          for(const x of [-1,1])box(g,rail,.42,d-ps*2,wood,x*(w/2-.07),ry,0,.025);
+          box(g,inner,.42,.08,wood,0,ry,-d/2+ps/2,.025);
+          box(g,inner,.42,.06,wood,0,ry,d/2-.09,.02);
+          box(g,w-.26,.05,d-ps*2-.02,woodDark,0,level-.295,0,.01);
+          if(decked&&index<levels.length-1)box(g,inner,.7,.05,woodDark,0,level+.65,-d/2+ps/2,.015);
+          const ml=mattressFoot-mattressHead;
+          box(g,mw,.38,ml,mattress,0,level-.08,(mattressFoot+mattressHead)/2,.14,3).name=`mattress-${index}`;
           if(!f.bare){
-            // The duvet covers the lower part, softly creased, and drapes over both long sides and the foot.
-            const len=d*.72,zc=d*.12;
-            add(g,new T.Mesh(drapeGeometry(w*.98,len,.12,.5,.45,.022),duvet),0,level+.165,zc);
-            box(g,w*.98,.06,d*.07,fold,0,level+.22,zc-len/2+d*.035,.03);
-            const n=w>=3.8?2:1,pw=n>1?w*.42:w*.62,pd=Math.min(d*.16,1.5);
-            for(let i=0;i<n;i++){const p=add(g,new T.Mesh(pillowGeometry(pw,.3,pd),pillow),(i-(n-1)/2)*w*.47,level+.3,-d/2+pd/2+.22);p.rotation.x=.24;p.rotation.z=(i-(n-1)/2)*.08;}
+            // A puffy duvet over the lower part, creased on top and rolling over the mattress's sides (and the foot of
+            // a single bed) to hang just clear of the rails; the top sheet turned down over its head edge; two plump
+            // pillows (one on a narrow bed) leaning back at the head.
+            const zh=-d*.22,len=mattressFoot-zh,zc=(mattressFoot+zh)/2;
+            add(g,new T.Mesh(drapeGeometry(mw,len,.17,.42,decked?.16:.3,.042,.38),duvet),0,level+.19,zc);
+            box(g,mw-.04,.05,d*.075,fold,0,level+.31,zh+d*.0375,.02,2);
+            const n=w>=3.8?2:1,pw=n>1?w*.42:w*.62,pd=Math.min(d*.19,1.6);
+            for(let i=0;i<n;i++){const p=add(g,new T.Mesh(pillowGeometry(pw,.42,pd),pillow),(i-(n-1)/2)*w*.47,level+.31,mattressHead+pd/2+.06);p.rotation.x=.3;p.rotation.z=(i-(n-1)/2)*.06+.02;}
+          }
+          if(decked&&index===levels.length-1){
+            // Guard bars on all four sides above the top mattress.
+            for(const y of [level+.42,level+.74]){
+              for(const x of [-1,1])box(g,rail*.9,.1,d-ps*2,wood,x*(w/2-.07),y,0,.025).name=y===level+.42&&x<0?"bunk-guardrail":"";
+              box(g,inner,.1,.06,wood,0,y,d/2-.09,.02);
+            }
           }
         }
-        for(const x of [-1,1])for(const z of [-1,1])box(g,.16,h,.16,wood,x*(w/2-.08),h/2,z*(d/2-.08),.03);
-        box(g,w,.65,.12,wood,0,h-.32,-d/2+.07,.04);
-        if(f.kind==="bunk"||loft){
-          for(const side of [-1,1]){
-            box(g,.1,.12,d-.2,wood,side*(w/2-.08),h-.18,0,.03).name="bunk-guardrail";
-            box(g,.1,.09,d-.2,wood,side*(w/2-.08),h-.53,0,.03);
-          }
+        if(decked){
           const ladder=new T.Group();ladder.name=loft?"loft-ladder":"bunk-ladder";g.add(ladder);
-          for(const x of [w*.04,w*.39])box(ladder,.1,h*.86,.1,woodDark,x,h*.43,d/2-.06,.02);
-          for(let y=.6;y<h*.85;y+=.9)box(ladder,w*.38,.09,.13,wood,w*.215,y,d/2-.06,.02);
+          const lx0=-w/2+ps+.05,lw=Math.min(1.35,w*.42),lh=Math.min(top+.75,h);
+          for(const x of [lx0+.035,lx0+lw-.035])box(ladder,.07,lh,.07,woodDark,x,lh/2,d/2-.025,.02);
+          for(let y=.75;y<lh-.2;y+=.95)box(ladder,lw-.07,.08,.06,wood,lx0+lw/2,y,d/2-.025,.02);
         }
         break;
       }
@@ -383,15 +532,21 @@ export function createModelKit({onTexture=()=>{}}={}) {
       case "microwave":
         box(g,w,h,d,white,0,h/2,0,.06);box(g,w*.72,h*.7,.02,ink,-w*.08,h*.53,d/2-.005);box(g,.04,h*.48,.05,metal,w*.33,h*.53,d/2-.02);break;
       case "desk":{
-        // A top on legs, with a drawer cabinet on the right when there's room. Legs and cabinet stop just under the top so their faces never meet it.
-        box(g,w,.14,d,wood,0,h-.07,0,.03).name="desk-top";
-        const cab=w>2.2,cw=cab?Math.min(1.6,w*.38):0;
-        for(const z of [-1,1])box(g,.12,h-.16,.12,wood,-w/2+.09,(h-.16)/2,z*(d/2-.09),.02).name="desk-leg";
-        if(cab){box(g,cw,h-.16,d*.92,wood,w/2-cw/2-.02,(h-.16)/2,0,.03).name="desk-leg";
-          for(const y of [.34,.66])box(g,cw*.9,.025,.02,woodDark,w/2-cw/2-.02,(h-.16)*y,d*.46+.005);
-          for(const y of [.17,.5,.83])cyl(g,.045,.045,.08,metal,w/2-cw/2-.02,(h-.16)*y,d*.46+.03,12).rotation.x=Math.PI/2;}
-        else for(const z of [-1,1])box(g,.12,h-.16,.12,wood,w/2-.09,(h-.16)/2,z*(d/2-.09),.02).name="desk-leg";
-        box(g,w-(cab?cw:0)-.2,.6,.06,wood,-(cab?cw/2:0),h-.45,-d/2+.06,.02);
+        // Solid-wood university casework: a top with a slight overhang, two square legs at one end, a drawer pedestal at the
+        // other (a pencil drawer over two deep ones, bar pulls), and a modesty panel at the back. Legs and pedestal stop
+        // just under the top so their faces never meet it.
+        box(g,w,.1,d,wood,0,h-.05,0,.02).name="desk-top";
+        const under=h-.12,cab=w>2.2,cw=cab?Math.min(1.45,w*.38):0,cx=w/2-cw/2-.04;
+        for(const z of [-1,1])box(g,.14,under,.14,wood,-w/2+.1,under/2,z*(d/2-.1),.02).name="desk-leg";
+        if(cab){
+          box(g,cw,under,d-.12,woodDark,cx,under/2,-.02,.02).name="desk-leg";
+          const pull=Math.min(.45,cw*.4),cuts=[.08,under*.4,under*.72,under-.03];
+          for(let i=0;i<3;i++){const y0=cuts[i]+.02,y1=cuts[i+1]-.02;if(y1-y0<.08)continue;
+            box(g,cw-.08,y1-y0,.05,wood,cx,(y0+y1)/2,d/2-.045,.015);box(g,pull,.04,.04,pullMetal,cx,y1-Math.min(.14,(y1-y0)/2),d/2+.0,.015);}
+        }else for(const z of [-1,1])box(g,.14,under,.14,wood,w/2-.1,under/2,z*(d/2-.1),.02).name="desk-leg";
+        const span=w-(cab?cw+.04:0)-.24,sx=-w/2+.17+span/2;
+        if(span>.3){box(g,span,Math.min(.6,under*.4),.05,woodDark,sx,under-Math.min(.3,under*.2),-d/2+.12,.015);
+          box(g,span,.13,.05,wood,sx,under-.065,d/2-.1,.015);}
         break;
       }
       case "chair":{
@@ -403,14 +558,28 @@ export function createModelKit({onTexture=()=>{}}={}) {
         const slats=3;for(let i=0;i<slats;i++)box(g,w*.78,.12,.07,m,0,seat+(h-seat)*(.35+i*.22),-d/2+.08,.02);
         break;
       }
-      case "wardrobe":case "dresser":case "fridge":{
-        const body=f.kind==="fridge"?white:wood;box(g,w,h,d,body,0,h/2,0,.05);
-        if(f.kind==="wardrobe"){box(g,.02,h*.94,.02,woodDark,0,h/2,d/2+.003);for(const x of [-.07,.07])box(g,.04,.5,.06,metal,x,h*.55,d/2+.02,.015);}
-        else{const n=f.kind==="dresser"?Math.max(2,Math.min(4,Math.round(h/.85))):2;
-          for(let i=1;i<n;i++)box(g,w*.94,.025,.02,f.kind==="fridge"?mat("#d8dadd"):woodDark,0,h*i/n,d/2+.003);
-          for(let i=0;i<n;i++){const y=h*(i+.5)/n;
-            if(f.kind==="fridge")box(g,.05,h/n*.55,.06,metal,w*.38,y,d/2+.02,.02);
-            else for(const x of w>2.2?[-w*.25,w*.25]:[0])cyl(g,.05,.05,.1,metal,x,y,d/2+.04,12).rotation.x=Math.PI/2;}}
+      case "wardrobe":case "dresser":{
+        // The same casework: a recessed plinth, a darker carcass, a top with a slight overhang, and inset drawer fronts (or
+        // doors on a wardrobe) with small reveals and bar pulls.
+        const base=Math.min(.22,h*.1),topT=.08,y0=base,y1=h-topT,gap=.04,fz=d/2-.035;
+        box(g,w-.12,base,d-.14,woodDark,0,base/2,-.04,.01);
+        box(g,w-.02,y1-y0,d-.06,woodDark,0,(y0+y1)/2,-.03,.02);
+        box(g,w,topT,d,wood,0,h-topT/2,0,.02);
+        if(f.kind==="wardrobe"){
+          const n=w>2.4?2:1,dw=(w-.06-gap*(n+1))/n;
+          for(let i=0;i<n;i++){const x=-w/2+.03+gap+dw/2+i*(dw+gap);box(g,dw,y1-y0-2*gap,.05,wood,x,(y0+y1)/2,fz,.015);
+            box(g,.045,Math.min(1.1,h*.2),.045,pullMetal,x+(n>1?(i?-1:1)*(dw/2-.15):dw/2-.15),y0+(y1-y0)*.55,d/2+.0,.015);}
+        }else{
+          const n=Math.max(2,Math.min(4,Math.round(h/.85))),fh=(y1-y0-gap*(n+1))/n,pulls=w>2.2?[-w*.25,w*.25]:[0],pw=Math.min(.5,w*.22);
+          for(let i=0;i<n;i++){const y=y0+gap+fh/2+i*(fh+gap);box(g,w-.14,fh,.05,wood,0,y,fz,.015);
+            for(const x of pulls)box(g,pw,.04,.04,pullMetal,x,y,d/2+.0,.015);}
+        }
+        break;
+      }
+      case "fridge":{
+        // Clay stand-in until the fridge model loads: a white box, a door seam and a handle on each door.
+        box(g,w,h,d,white,0,h/2,0,.05);box(g,w*.94,.025,.02,mat("#d8dadd"),0,h/2,d/2+.003);
+        for(let i=0;i<2;i++)box(g,.05,h/2*.55,.06,metal,w*.38,h*(i+.5)/2,d/2+.02,.02);
         break;
       }
       case "shelf":{
@@ -459,12 +628,25 @@ export function createModelKit({onTexture=()=>{}}={}) {
         else{cyl(g,r*.55,r*.42,potH,terracotta,0,potH/2,0);cyl(g,r*.5,r*.5,.04,soil,0,potH-.01,0);}
         leaves(g,r*.92,potH,h,Math.max(18,Math.min(60,Math.round(r*r*60))));break;
       }
-      case "mirror":
-        if(variant==="round"){oval(g,0,h/2,0,w/2,h/2,d/2,finish);oval(g,0,h/2,d/2,w*.46,h*.46,.02,mat("#bdcdd2",.1));}
-        else if(variant==="arch"){
-          box(g,w,h-w/2,d,finish,0,(h-w/2)/2,0);oval(g,0,h-w/2,0,w/2,w/2,d/2,finish);
-          box(g,w*.91,h-w/2-.08,.025,mat("#bdcdd2",.1),0,(h-w/2)/2,d/2+.016);oval(g,0,h-w/2,d/2+.018,w*.455,w*.455,.018,mat("#bdcdd2",.1));
-        }else{box(g,w,h,Math.max(.06,d),finish,0,h/2,0);box(g,w*.9,h*.92,.025,mat("#bdcdd2",.1),0,h/2,d/2+.015);}break;
+      case "mirror":{
+        // A thin frame round real mirror glass; its back against the wall (or standing on the floor), facing +z.
+        const fd=Math.min(Math.max(.05,d),.12),back=-d/2,face=back+fd+.004,b=Math.min(.1,Math.min(w,h)*.07);
+        if(variant==="round"){
+          const disc=add(g,new T.Mesh(shared("mirror-disc",()=>new T.CylinderGeometry(1,1,1,56)),finish),0,h/2,back+fd/2);disc.rotation.x=Math.PI/2;disc.scale.set(w/2,fd,h/2);
+          const glass=mirrorGlass(g,shared("mirror-circle",()=>new T.CircleGeometry(1,56)),0,h/2,face);glass.scale.set(w/2-b,h/2-b,1);
+        }else if(variant==="arch"){
+          const r=w/2,yc=Math.max(.1,h-r);
+          add(g,new T.Mesh(shared(["mirror-arch",r,yc,fd].join("|"),()=>new T.ExtrudeGeometry(archShape(r,0,yc),{depth:fd,bevelEnabled:false,curveSegments:28})),finish),0,0,back);
+          mirrorGlass(g,shared(["mirror-arch-glass",r,yc,b].join("|"),()=>new T.ShapeGeometry(archShape(r-b,b,yc),28)),0,0,face);
+        }else{
+          box(g,w,h,fd,finish,0,h/2,back+fd/2,.02);
+          // The frame stands a little proud of the glass.
+          for(const y of [b/2,h-b/2])box(g,w,b,.03,finish,0,y,face+.012,.01);
+          for(const x of [-w/2+b/2,w/2-b/2])box(g,b,h-2*b,.03,finish,x,h/2,face+.012,.01);
+          mirrorGlass(g,shared("mirror-plane",()=>new T.PlaneGeometry(1,1)),0,h/2,face).scale.set(w-2*b+.02,h-2*b+.02,1);
+        }
+        break;
+      }
       case "art":
         if(variant==="bats"){
           // A cluster of flat bats stuck straight onto the wall, across the layout area; lit sets get small spotlights.
@@ -482,10 +664,16 @@ export function createModelKit({onTexture=()=>{}}={}) {
       case "macrame":
         box(g,w,.055,.06,wood,0,h,0);for(let i=0;i<20;i++){const x=(i/19-.5)*w,length=h*(.6+.35*(1-Math.abs(x)/(w/2)));cyl(g,.018,.018,length,cloth,x,h-length/2,0,8);}break;
       case "curtains":{
-        // Two gathered panels with real folds, on a rod.
-        cyl(g,.03,.03,w,metal,0,h-.03,0,10).rotation.z=Math.PI/2;
-        const pw=w*.34,curtain=mat(f.material_color||(vibe?theme.textile:color),.95,true);curtain.side=T.DoubleSide;
-        for(const side of [-1,1])add(g,new T.Mesh(foldGeometry(pw,h-.08),curtain),side*(w/2-pw/2),(h-.08)/2,0);
+        // Two pleated panels hung by rings from a slim rod on short brackets, standing far enough off the wall to clear a
+        // window's casing and sill.
+        const off=-d/2+.4,pw=w*.3,ph=h-.12,curtain=mat(f.material_color||(vibe?theme.textile:color),.95,true);curtain.side=T.DoubleSide;
+        cyl(g,.018,.018,w-.04,metal,0,h-.04,off,10).rotation.z=Math.PI/2;
+        for(const side of [-1,1]){oval(g,side*(w/2-.02),h-.04,off,.035,.035,.035,ink);box(g,.03,.03,.4,ink,side*(w/2-.12),h-.04,off-.2,.01);}
+        const n=Math.max(3,Math.round(pw*3.4)),ringGeo=shared("curtain-ring",()=>new T.TorusGeometry(.04,.009,6,14));
+        for(const side of [-1,1]){
+          const x0=side*(w/2-pw/2-.06);add(g,new T.Mesh(curtainGeometry(pw,ph),curtain),x0,ph/2+.02,off-Math.min(.11,pw*.075));
+          for(let i=0;i<=n;i++){const r=add(g,new T.Mesh(ringGeo,metal),x0+(i/n-.5)*pw*.93,h-.04,off);r.rotation.y=Math.PI/2;r.castShadow=false;}
+        }
         break;
       }
       case "lights":{
@@ -564,7 +752,24 @@ export function createModelKit({onTexture=()=>{}}={}) {
       case "fan":
         box(g,w*.65,.12,d*.7,finish,0,.06,0);box(g,.06,h*.55,.06,finish,0,h*.3,0);oval(g,0,h*.7,0,w*.48,h*.3,.05,ink);
         for(let i=0;i<3;i++){const a=i*Math.PI*2/3;oval(g,Math.cos(a)*w*.18,h*.7+Math.sin(a)*h*.13,.05,w*.19,h*.07,.025,finish);}break;
-      case "decor":oval(g,0,h/2,0,w*.4,h/2,d*.4,f.material_color?finish:accent);break;
+      case "decor":{
+        // A piece we can't name yet: a plain soft-edged block at its real size (never a blob), in its own colour when known.
+        const m=f.material_color?mat(f.material_color,.85):mat("#e7e1d6",.9);
+        box(g,w*.96,h,d*.96,m,0,h/2,0,Math.min(.08,w*.12,d*.12,h*.2),3);break;
+      }
+      case "speaker":{
+        // A speaker: a soft cabinet with a darker grille and a woofer on its front.
+        const body=f.material_color?mat(f.material_color,.7):ink,grille=mat("#3a3c47",.95,true),r=Math.min(w,h)*.3;
+        box(g,w,h,d,body,0,h/2,0,Math.min(.06,w*.15),3);
+        box(g,w*.86,h*.86,.015,grille,0,h/2,d/2+.006,.02);
+        cyl(g,r,r,.02,mat("#26272f",.6),0,h*.4,d/2+.016,24).rotation.x=Math.PI/2;break;
+      }
+      case "monitor":{
+        // A screen on a stand: a slim dark panel above a neck and a flat foot.
+        const panelH=Math.max(.5,h*.72),panelT=Math.min(.12,d*.25);
+        box(g,w*.55,.04,d*.7,ink,0,.02,0,.02);box(g,.12,h-panelH*.6,.08,ink,0,(h-panelH*.6)/2,-d*.12,.02);
+        box(g,w,panelH,panelT,ink,0,h-panelH/2,0,.03);box(g,w*.95,panelH*.92,.01,mat("#1b1d26",.2),0,h-panelH/2,panelT/2+.004,.005);break;
+      }
       case "pillow":{
         // A pair of plump cushions in two colours, like the plan draws them.
         const s=Math.max(.85,Math.min(1.35,Math.max(w,d)*.62)),t=Math.max(.28,Math.min(.45,h||.4)),geo=pillowGeometry(s,t,s),one=f.material_color?cloth:accent,two=one===cloth?accent:cloth;
@@ -648,9 +853,13 @@ export function createModelKit({onTexture=()=>{}}={}) {
     return done?null:()=>{if(!done){done=true;for(const job of later)job();}};
   }
   /** Night makes every lit surface glow; day keeps them a soft warm white. */
-  function setNight(on){if(night===on)return;night=on;for(const m of glows)m.emissiveIntensity=on?2.6:.55;}
+  function setNight(on){if(night===on)return;night=on;for(const m of glows)m.emissiveIntensity=on?2.6:.55;for(const m of libGlows)m.emissiveIntensity=on?.85:0;}
   /** The room's reflection map and how strongly glass, mirrors and metal show it. */
   function setEnv(texture,intensity){env=texture;envI=intensity;for(const m of shiny){m.envMap=texture;m.envMapIntensity=intensity;}}
-  function dispose(){disposed=true;geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());fabric.dispose();}
-  return {build,box,mat,bake,setNight,setEnv,dispose};
+  function dispose(){disposed=true;for(const e of library.values())if(typeof e==="object")e.scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();for(const v of Object.values(o.material))if(v?.isTexture)v.dispose();o.material.dispose();}});geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());fabric.dispose();}
+  /** The room view mirrors show (the scene renders it), from `at`, and the room's bounds to project it onto. */
+  function setMirrorView(texture,at,min,max){mirrorUniforms.uCube.value=texture;mirrorUniforms.uCubePos.value.copy(at);mirrorUniforms.uBoxMin.value.copy(min);mirrorUniforms.uBoxMax.value.copy(max);mirrorUniforms.uMirrorOn.value=1;}
+  /** Wood veneer of this colour (a door's leaf), with its grain. */
+  const veneer=color=>{const key="veneer|"+color;if(!materials.has(key)){const m=grain(new T.MeshStandardMaterial({color,roughness:.55,metalness:0}));materials.set(key,m);}return materials.get(key);};
+  return {build,box,cyl,mat,veneer,bake,setNight,setEnv,setMirrorView,mirrorMat,showMirrors:on=>{mirrorMat.visible=on;},dispose};
 }

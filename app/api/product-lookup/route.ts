@@ -58,7 +58,8 @@ function buildProduct(
   imageUrl: string,
   rating: number,
   reviewCount: number,
-  category: ProductCategory
+  category: ProductCategory,
+  size: { widthFt?: number | null; lengthFt?: number | null; heightFt?: number | null; color?: string } = {}
 ): Product {
   return {
     id: `own-${asin}`,
@@ -70,10 +71,10 @@ function buildProduct(
     amazon_asin: asin,
     affiliate_url: withAffiliateTag(asin),
     image_url: imageUrl,
-    width_ft: null,
-    length_ft: null,
-    height_ft: null,
-    color: "",
+    width_ft: size.widthFt ?? null,
+    length_ft: size.lengthFt ?? null,
+    height_ft: size.heightFt ?? null,
+    color: size.color ?? "",
     rating,
     review_count: reviewCount,
     alternative_ids: [],
@@ -136,7 +137,8 @@ export async function POST(request: Request) {
         it.imageUrl,
         it.rating ?? 0,
         it.reviewCount ?? 0,
-        category ?? "accent"
+        category ?? "accent",
+        it
       );
       return NextResponse.json({ ok: true, product, category, demo: false });
     }

@@ -29,6 +29,35 @@ export function productColor(product: Product): string | undefined {
   return words.map(word => COLORS[word]).find(Boolean);
 }
 
+/**
+ * A pasted or uncategorised product's model, read from its title: the pieces a dorm commonly gets that have no planner
+ * category of their own (a mini fridge, a desk chair, a speaker). Ordered most specific first ("bookshelf" before "book",
+ * "bean bag chair" before "chair"); null when nothing fits, so the caller keeps its own rules.
+ */
+const TEXT_KINDS: [string, RegExp][] = [
+  ["fridge", /\b(mini ?fridge|refrigerator|fridge|beverage cooler|compact cooler)\b/],
+  ["microwave", /\bmicrowave\b/],
+  ["lounge", /\b(bean ?bag|floor chair|lounger|papasan|gaming floor)\b/],
+  ["ottoman", /\b(ottoman|pouf|footstool|foot rest|footrest)\b/],
+  ["sofa", /\b(sofa|loveseat|love seat|futon|couch|settee)\b/],
+  // A chair mat, cushion or cover is not a chair.
+  ["chair", /\bchairs?\b(?!\s*(mat|cushion|pad|cover|slipcover))/],
+  ["shelf", /\b(bookshelf|bookshelves|bookcase|book case|shelving unit|ladder shelf|etagere|cube shelf)\b/],
+  ["dresser", /\b(dresser|chest of drawers|nightstand|night stand|bedside table|drawer unit|rolling cart)\b/],
+  ["riser", /\b(monitor riser|riser stand|monitor stand|laptop stand|desk riser)\b/],
+  ["monitor", /\b(monitor|computer screen|display screen|television|tv)\b(?!\s*(stand|riser|arm|mount|light))/],
+  ["speaker", /\b(speaker|soundbar|sound bar|subwoofer|bluetooth speaker|smart speaker|echo dot)\b/],
+  ["fan", /\b(fan|air circulator)\b/],
+  ["trash", /\b(trash can|waste ?basket|garbage can|recycling bin)\b/],
+  ["hamper", /\b(hamper|laundry basket|laundry bag)\b/],
+  ["storage", /\b(storage box|box with lid|lidded box|storage bins? with lids?|storage drawers?|stackable drawers?)\b/],
+  ["basket", /\b(basket|storage bin|storage cube|bin)\b/],
+];
+export function furnitureKindFromText(text: string): string | null {
+  const lower = text.toLowerCase();
+  return TEXT_KINDS.find(([, re]) => re.test(lower))?.[0] ?? null;
+}
+
 /** ponytail: catalog text gives approximate silhouettes; manufacturer meshes are needed for exact replicas. */
 export function productVisual(product: Product) {
   const text = `${product.name} ${product.description}`.toLowerCase();
@@ -53,7 +82,7 @@ export function productVisual(product: Product) {
     case "towel_caddy": kind = /towel set/.test(text) ? "towels" : "caddy"; break;
     case "plant": kind = "plant"; break;
     case "clip_fan": kind = "fan"; break;
-    default: kind = pumpkin ? "pumpkin" : ghost ? "lantern" : /plant|tree|monstera|pothos|eucalyptus/.test(text) ? "plant" : /candle|tea ?light/.test(text) ? "candle" : /disco|mirror ball/.test(text) ? "disco" : /pillow/.test(text) ? "pillow" : /book/.test(text) ? "books" : /projector|lamp|diffuser/.test(text) ? "lamp" : "decor";
+    default: kind = pumpkin ? "pumpkin" : ghost ? "lantern" : furnitureKindFromText(text) ?? (/plant|tree|monstera|pothos|eucalyptus/.test(text) ? "plant" : /candle|tea ?light/.test(text) ? "candle" : /disco|mirror ball/.test(text) ? "disco" : /pillow/.test(text) ? "pillow" : /book/.test(text) ? "books" : /projector|lamp|diffuser/.test(text) ? "lamp" : "decor");
   }
   const variant = kind === "lamp"
     ? /mushroom/.test(text) ? "mushroom" : /banker/.test(text) ? "banker" : /lava/.test(text) ? "lava" : /salt/.test(text) ? "salt" : /projector/.test(text) ? "projector" : /light bar|under monitor/.test(text) ? "bar" : /swing|architect|gooseneck|clip|slim metal/.test(text) ? "task" : "shade"
@@ -74,6 +103,20 @@ export function productVisual(product: Product) {
 }
 
 /** A throw slot holds either a throw blanket or throw pillows: true when it's a blanket (by its product, else by its type). */
+/**
+ * Pieces that belong on a desk, dresser or other top, never on the floor: lamps, screens, desk gear, small decor.
+ * (A plant or a fan stands on the floor only when it's floor-sized.)
+ */
+const SURFACE_KINDS = new Set(["lamp", "monitor", "riser", "organizer", "desk-mat", "speaker", "books", "candle", "decor",
+  "lantern", "pumpkin", "towels", "microwave"]);
+export function surfaceOnly(kind: string, category?: string, heightFt?: number | null): boolean {
+  if (SURFACE_KINDS.has(kind)) return true;
+  if (kind === "plant" || kind === "fan") return category === "clip_fan" || (heightFt ?? 1) < 1.6;
+  return false;
+}
+/** Pieces that belong on a desk in particular (they're desk gear), rather than any top. */
+export const DESK_KINDS = new Set(["monitor", "riser", "organizer", "desk-mat", "speaker"]);
+
 export function throwIsBlanket(item: FurnitureItem, product?: Product): boolean {
   if (item.type !== "throw" && item.type !== "throw_pillows") return false;
   return product ? productVisual(product).kind === "blanket" : item.type === "throw";
@@ -123,6 +166,24 @@ const DEFAULT_SIZE: Record<string, [number, number, number]> = {
   "wall-shelf":[3,.6,2.5], macrame:[2,.12,3], art:[3,.08,2.5], lights:[6,.15,.15],
 };
 
+/**
+ * Usual sizes for a pasted item with no listing dimensions. Kept apart from DEFAULT_SIZE, which catalog swaps use: there a
+ * missing size keeps the template slot's own, so pieces like rugs and dressers must stay out of it.
+ */
+const PASTED_SIZE: Record<string, [number, number, number]> = {
+  ...DEFAULT_SIZE,
+  fridge:[1.6,1.6,2.8], microwave:[1.5,1.1,.9], chair:[2,2,3.1], lounge:[3,3,2.3], ottoman:[1.3,1.3,1.4],
+  shelf:[2.5,1,4.5], dresser:[2.6,1.5,2.6], speaker:[.45,.45,.75], monitor:[2,.7,1.5], sofa:[4.5,2.6,2.7],
+  rug:[5,3,.035], mirror:[1.3,.15,4.8], pillow:[1.5,1,.4], bed:[3.25,6.6,2], plant:[1.4,1.4,2.6],
+};
+
+/** A product's footprint and height (ft) when its listing gives none: its model's usual size, else 2 × 2 × 1.5. */
+export function defaultSizeFor(product: Product): [number, number, number] {
+  const size = PASTED_SIZE[productVisual(product).kind] ?? [2, 2, 1.5];
+  const pick = (value: number | null, fallback: number) => value && Number.isFinite(value) && value > 0 && value <= 40 ? value : fallback;
+  return [pick(product.width_ft, size[0]), pick(product.length_ft, size[1]), pick(product.height_ft, size[2])];
+}
+
 function clearPosition(item: FurnitureItem, items: FurnitureItem[], room: SelectedRoom) {
   if (item.parent_id || layerOf(item) !== "solid") return;
   const others = items.filter(f=>f.id!==item.id);
@@ -136,17 +197,60 @@ function clearPosition(item: FurnitureItem, items: FurnitureItem[], room: Select
   if(best){item.x_ft=best.x;item.y_ft=best.y;}
 }
 
-function placeOnSurface(item: FurnitureItem, items: FurnitureItem[], preferDesk: boolean): boolean {
-  const hosts=items.filter(f=>f.type==="desk"||f.type==="dresser").sort((a,b)=>Number(b.type===(preferDesk?"desk":"dresser"))-Number(a.type===(preferDesk?"desk":"dresser")));
-  for(const host of hosts){
-    const b=footprint(host),size=footprint(item);
-    for(let y=b.y+.08;y+size.h<=b.y+b.h-.08;y+=.2) for(let x=b.x+.08;x+size.w<=b.x+b.w-.08;x+=.2){
-      if(!furnitureInsidePolygon({...item,x_ft:x,y_ft:y},furnitureCorners(host)))continue;
-      const blocked=items.some(f=>f.parent_id===host.id && (f.height_ft??1)>.05 && (item.height_ft??1)>.05 && (()=>{const a=footprint(f);return x<a.x+a.w+.08&&x+size.w+.08>a.x&&y<a.y+a.h+.08&&y+size.h+.08>a.y;})());
-      if(!blocked){item.x_ft=x;item.y_ft=y;item.parent_id=host.id;item.elevation_ft=itemHeight(host);return true;}
+/** Tops a piece can stand on, and which it prefers: desk gear goes on desks, lamps and decor on dressers and side tables. */
+const SURFACE_HOSTS = ["desk", "dresser", "table", "shelf", "fridge"];
+function hostOrder(kind: string, category: string | undefined, preferDesk: boolean): string[] {
+  if (preferDesk || DESK_KINDS.has(kind) || category === "desk_lamp") return ["desk", "table", "dresser", "shelf"];
+  if (kind === "microwave") return ["fridge", "dresser", "table", "desk"];
+  return ["dresser", "table", "shelf", "desk"];
+}
+
+/**
+ * Stands a small piece on a desk, dresser or other top: the preferred kind of top first and, among those, one that doesn't
+ * already hold the same kind of piece (no two lamps on one desk). Tries both ways round, keeps a little gap from what's
+ * already there, and centres a desk mat or a riser while lamps and decor take a corner. With `crowd`, it may sit closer
+ * to its neighbours rather than end up on the floor. Returns false when no top in the room takes it.
+ */
+function placeOnSurface(item: FurnitureItem, items: FurnitureItem[], preferDesk: boolean, kind = "", category?: string, crowd = false): boolean {
+  const order = hostOrder(kind, category, preferDesk), centred = kind === "desk-mat" || kind === "riser" || kind === "monitor";
+  const isLamp = (f: FurnitureItem) => f.type === "desk_lamp" || f.type === "ambient_lighting" || /lamp/i.test(f.label ?? "");
+  const same = (host: FurnitureItem) => items.some(f => f.parent_id === host.id && f.id !== item.id &&
+    (kind === "lamp" ? isLamp(f) : f.product_category === category || f.type === item.type));
+  const hosts = items.filter(f => SURFACE_HOSTS.includes(f.type) && f.id !== item.id && !f.parent_id)
+    .sort((a, b) => Number(same(a)) - Number(same(b)) || order.indexOf(a.type) - order.indexOf(b.type));
+  const gap = crowd ? .02 : .08;
+  for (const host of hosts) {
+    if (!order.includes(host.type)) continue;
+    const b = footprint(host), hc = {x: b.x + b.w / 2, y: b.y + b.h / 2};
+    let best: {x: number; y: number; rotation: number; score: number} | undefined;
+    for (const rotation of [host.rotation_deg, (host.rotation_deg + 90) % 360]) {
+      const trial = {...item, rotation_deg: rotation}, size = footprint(trial);
+      if (size.w > b.w - .1 || size.h > b.h - .1) continue;
+      for (let y = b.y + .05; y + size.h <= b.y + b.h - .05; y += .1) for (let x = b.x + .05; x + size.w <= b.x + b.w - .05; x += .1) {
+        if (!furnitureInsidePolygon({...trial, x_ft: x, y_ft: y}, furnitureCorners(host))) continue;
+        const blocked = items.some(f => f.parent_id === host.id && f.id !== item.id && (f.height_ft ?? 1) > .05 && (item.height_ft ?? 1) > .05 &&
+          (() => { const a = footprint(f); return x < a.x + a.w + gap && x + size.w + gap > a.x && y < a.y + a.h + gap && y + size.h + gap > a.y; })());
+        if (blocked) continue;
+        const cx = x + size.w / 2, cy = y + size.h / 2, fromCentre = Math.hypot(cx - hc.x, cy - hc.y);
+        // Centred pieces want the middle; corner pieces the farthest point from it. Same-way-round as the top breaks ties.
+        const score = (centred ? fromCentre : -fromCentre) + (rotation === host.rotation_deg ? 0 : .01);
+        if (!best || score < best.score) best = {x, y, rotation, score};
+      }
     }
+    if (best) { item.x_ft = best.x; item.y_ft = best.y; item.rotation_deg = best.rotation; item.parent_id = host.id; item.elevation_ft = itemHeight(host); return true; }
   }
   return false;
+}
+
+/** A piece that belongs on a top but isn't on one (and wasn't put there by hand): stand it on the best top there is. */
+function settleOnSurface(item: FurnitureItem, items: FurnitureItem[], products: Product[]): void {
+  if (item.built_in || item.inventory || item.parent_id || (item.elevation_ft ?? 0) > 0) return;
+  const p = productForFurniture(item, products);
+  if (!p) return;
+  const v = productVisual(p);
+  if (!surfaceOnly(v.kind, p.category, item.height_ft)) return;
+  const prefer = DESK_KINDS.has(v.kind) || p.category === "desk_lamp";
+  if (!placeOnSurface(item, items, prefer, v.kind, p.category)) placeOnSurface(item, items, prefer, v.kind, p.category, true);
 }
 
 /** Reconcile cart choices into the shared layout, so 2D, 3D, saving and editing agree. */
@@ -197,21 +301,22 @@ export function syncProductFurniture(items: FurnitureItem[], products: Product[]
     if (visual.seasonal && ["art", "wall-shelf", "macrame"].includes(visual.kind)) clearOfOpenings(next, room);
     return next;
   });
-  for (let i=0;i<result.length;i++) if(result[i]!==items[i]) clearPosition(result[i],result,room);
+  for (let i=0;i<result.length;i++) if(result[i]!==items[i]) { settleOnSurface(result[i],result,products); clearPosition(result[i],result,room); }
   for (const p of products) {
     if(result.length>=60)break;
     // Custom items have their own explicit placed/unplaced workflow.
     if (p.id.startsWith("custom-") || result.some(f => f.id === p.id || (!f.inventory && !f.built_in && furnitureCategory(f) === p.category)) || p.category === "bedding") continue;
     const visual = productVisual(p), size = DEFAULT_SIZE[visual.kind] ?? [.8,.8,1];
     const wall = ["curtains", "art", "lights", "wall-shelf", "macrame"].includes(visual.kind);
-    const surface = ["organizer", "desk-mat", "riser", "fan", "candle", "books", "towels", "caddy", "decor", "plant", "pumpkin", "lantern"].includes(visual.kind);
+    const surface = surfaceOnly(visual.kind, p.category, p.height_ft ?? size[2]) || ["fan", "caddy", "plant"].includes(visual.kind);
     const [w, l] = clusterSize(visual, p.width_ft ?? size[0], p.length_ft ?? size[1]);
     const f: FurnitureItem = {id:`cart-${p.category}`, product_id:p.id, type:wall ? "wall_decor" : p.category,
       label:p.name, owner:"shared", x_ft:0, y_ft:0, width_ft:w, length_ft:l, height_ft:p.height_ft ?? size[2],
       rotation_deg:0, movable:true, built_in:false, color_category:"decor", product_category:p.category};
     // A light string runs along the wall it hangs on, however long the strand.
     if (visual.kind === "lights") f.width_ft = Math.min(f.width_ft, Math.max(1, room.lengthFt - .5));
-    if (surface && placeOnSurface(f,result,["organizer","desk-mat","riser","fan","pumpkin","lantern"].includes(visual.kind))) {
+    const deskFirst = DESK_KINDS.has(visual.kind) || p.category === "desk_lamp" || ["fan","pumpkin","lantern"].includes(visual.kind);
+    if (surface && (placeOnSurface(f,result,deskFirst,visual.kind,p.category) || (surfaceOnly(visual.kind, p.category, f.height_ft) && placeOnSurface(f,result,deskFirst,visual.kind,p.category,true)))) {
       // Surface placement records its parent, so movement and rotation stay linked.
     } else if (wall) {
       f.x_ft=Math.max(0,(room.lengthFt-f.width_ft)/2); f.y_ft=.12; f.elevation_ft=Math.max(0,6.7-f.height_ft!);

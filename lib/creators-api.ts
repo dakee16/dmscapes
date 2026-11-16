@@ -109,6 +109,12 @@ export interface CreatorItem {
   rating: number | null;
   /** Number of customer reviews, or null if the API doesn't return it. */
   reviewCount: number | null;
+  /** The listing's item dimensions in feet (getItems only), each null when missing or implausible. */
+  widthFt?: number | null;
+  lengthFt?: number | null;
+  heightFt?: number | null;
+  /** The listing's colour name ("Black", "Sage Green"), or "" (getItems only). */
+  color?: string;
 }
 
 export interface CreatorsSearchOptions {
@@ -223,7 +229,13 @@ interface RawItem {
   detailPageUrl?: string;
   detailPageURL?: string;
   images?: { primary?: { large?: { url?: string }; medium?: { url?: string } } };
-  itemInfo?: { title?: { displayValue?: string } };
+  itemInfo?: {
+    title?: { displayValue?: string };
+    productInfo?: {
+      color?: { displayValue?: string };
+      itemDimensions?: Partial<Record<"height" | "length" | "width", { displayValue?: number | string; unit?: string }>>;
+    };
+  };
   customerReviews?: { count?: number; starRating?: { value?: number | string } };
   offersV2?: { listings?: RawListing[] };
   offers?: { listings?: RawListing[] };
@@ -236,6 +248,29 @@ interface RawListing {
     displayAmount?: string;
   };
   deliveryInfo?: { isPrimeEligible?: boolean };
+}
+
+
+/** A dimension in feet from the listing's value and unit (inches unless it says otherwise); null outside 1 in to 15 ft. */
+function toFeet(d?: { displayValue?: number | string; unit?: string }): number | null {
+  const value = Number(d?.displayValue);
+  if (!Number.isFinite(value) || value <= 0) return null;
+  const unit = (d?.unit ?? "inches").toLowerCase();
+  const ft = unit.startsWith("cent") ? value / 30.48 : unit.startsWith("milli") ? value / 304.8 : unit.startsWith("meter") ? value * 3.281 : unit.startsWith("feet") || unit.startsWith("foot") ? value : value / 12;
+  return ft >= 1 / 12 && ft <= 15 ? Math.round(ft * 100) / 100 : null;
+}
+
+/** Size and colour from itemInfo.productInfo. The footprint's long side is the width, matching the planner's catalog. */
+function listingSize(it: RawItem): Pick<CreatorItem, "widthFt" | "lengthFt" | "heightFt" | "color"> {
+  const dims = it.itemInfo?.productInfo?.itemDimensions;
+  const a = toFeet(dims?.length), b = toFeet(dims?.width);
+  const both = a != null && b != null;
+  return {
+    widthFt: both ? Math.max(a, b) : null,
+    lengthFt: both ? Math.min(a, b) : null,
+    heightFt: toFeet(dims?.height),
+    color: it.itemInfo?.productInfo?.color?.displayValue?.trim() ?? "",
+  };
 }
 
 // ---- GetItems (look up specific ASINs) -------------------------------------
@@ -260,6 +295,7 @@ export async function getItems(asins: string[]): Promise<CreatorItem[]> {
     resources: [
       "images.primary.large",
       "itemInfo.title",
+      "itemInfo.productInfo",
       "offersV2.listings.price",
       "customerReviews.count",
       "customerReviews.starRating",
@@ -307,5 +343,6 @@ export async function getItems(asins: string[]): Promise<CreatorItem[]> {
         ? Number(it.customerReviews.starRating.value)
         : null,
     reviewCount: it.customerReviews?.count != null ? Number(it.customerReviews.count) : null,
+    ...listingSize(it),
   }));
 }
