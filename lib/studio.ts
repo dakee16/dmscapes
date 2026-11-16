@@ -99,6 +99,8 @@ export function itemElevation(f: FurnitureItem, items: FurnitureItem[]): number 
   if (typeof f.elevation_ft === "number") return f.elevation_ft;
   const k = modelKind(f);
   if (k === "art" || k === "lights") return k === "lights" ? 6.5 : 3.4;
+  // Curtains hang from a rod just above the window (whose top is at 6.5 ft), however long the panels are.
+  if (k === "curtains") return Math.max(0, 6.85 - itemHeight(f));
   if (!["lamp","plant","pillow"].includes(k)) return 0;
   const host = restingHost(f, items);
   return host ? ["bed","bunk"].includes(modelKind(host)) ? bedSurfaceHeight(host) : itemHeight(host) : 0;

@@ -173,7 +173,6 @@ export function footprint(root) {
 export const LIBRARY = {
   fridge: { tint: 3.1, host: true, dorm: true }, microwave: { tint: 2.8, dorm: true }, chair: {}, "chair-dorm": {},
   monitor: {}, speaker: {}, lounge: { tint: 5 }, ottoman: { tint: 4.2 }, shelf: { host: true }, plant: {},
-  desk: { host: true, dorm: true }, dresser: { host: true, dorm: true }, wardrobe: { host: true, dorm: true },
   sofa: { tint: 3.3, dorm: true }, riser: { host: true }, fan: {}, organizer: {}, basket: {}, books: {},
   storage: { tint: 3 }, towels: { tint: 2.2 }, caddy: { tint: 3.1 }, trash: { tint: 2.8 }, hamper: { tint: 4.8 },
   "lamp-shade": { glow: true }, "lamp-task": { glow: true }, "lamp-mushroom": { glow: true }, "lamp-lava": { glow: true },
@@ -273,7 +272,26 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
     materials.set(key,m);glows.add(m);return m;
   }
   const mix=(a,b,t)=>"#"+new T.Color(a).lerp(new T.Color(b),t).getHexString();
-  const white=mat("#fbf8f1",.9),wood=grain(mat("#ddbf8f",.62)),woodDark=grain(mat("#c9a573",.6)),ink=mat("#2b2c3a",.5),metal=mat("#c9c4bd",.35,false,.6),
+  // Mirror glass shows the room: one cube view of it from its middle (the scene renders it, setMirrorView), box-projected onto
+  // the room's bounds so each mirror sees the room from where it hangs. Until that view exists, a soft grey-blue sky stands in.
+  const mirrorUniforms={uCube:{value:null},uCubePos:{value:new T.Vector3()},uBoxMin:{value:new T.Vector3()},uBoxMax:{value:new T.Vector3(1,1,1)},uMirrorOn:{value:0}};
+  const mirrorMat=new T.MeshBasicMaterial({color:"#f3f6f6"});
+  mirrorMat.onBeforeCompile=sh=>{Object.assign(sh.uniforms,mirrorUniforms);
+    sh.vertexShader=sh.vertexShader.replace("#include <common>","#include <common>\nvarying vec3 vMirrorPos;varying vec3 vMirrorN;")
+      .replace("#include <project_vertex>","#include <project_vertex>\nvMirrorPos=(modelMatrix*vec4(transformed,1.)).xyz;vMirrorN=normalize(mat3(modelMatrix)*normal);");
+    sh.fragmentShader=sh.fragmentShader.replace("#include <common>","#include <common>\nuniform samplerCube uCube;uniform vec3 uCubePos;uniform vec3 uBoxMin;uniform vec3 uBoxMax;uniform float uMirrorOn;varying vec3 vMirrorPos;varying vec3 vMirrorN;")
+      .replace("#include <envmap_fragment>",`vec3 mR=reflect(normalize(vMirrorPos-cameraPosition),normalize(vMirrorN));
+        vec3 mT=max((uBoxMax-vMirrorPos)/mR,(uBoxMin-vMirrorPos)/mR);
+        vec3 mDir=vMirrorPos+mR*min(min(mT.x,mT.y),mT.z)-uCubePos;
+        vec3 mCol=uMirrorOn>.5?textureCube(uCube,mDir).rgb:mix(vec3(.5,.53,.55),vec3(.85,.88,.9),.5+.5*mR.y);
+        outgoingLight=mCol*diffuseColor.rgb;`);};
+  mirrorMat.customProgramCacheKey=()=>"dm-mirror";
+  /** A mirror's glass: a flat face (its normal is +z) that never casts a shadow. */
+  const mirrorGlass=(g,geo,x,y,z)=>{const m=add(g,new T.Mesh(geo,mirrorMat),x,y,z);m.castShadow=false;return m;};
+  /** An arch outline: straight sides from y0 up to yc, a half circle of radius r on top. */
+  function archShape(r,y0,yc){const s=new T.Shape();s.moveTo(-r,y0);s.lineTo(r,y0);s.lineTo(r,yc);s.absarc(0,yc,r,0,Math.PI,false);s.lineTo(-r,y0);return s;}
+  const shared=(key,make)=>{if(!geometries.has(key))geometries.set(key,make());return geometries.get(key);};
+  const white=mat("#fbf8f1",.9),wood=grain(mat("#ddbf8f",.62)),woodDark=grain(mat("#c9a573",.6)),ink=mat("#2b2c3a",.5),metal=mat("#c9c4bd",.35,false,.6),pullMetal=mat("#85817b",.4,false,.6),
     leafA=mat("#5f8a4c",.75),leafB=mat("#7aa560",.75),soil=mat("#5b4636",.95),terracotta=mat("#c4826a",.9);
   function textile(product,color){
     if(!product || product.pattern==="solid")return mat(color,.95,true);
@@ -348,12 +366,18 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
       if(v.y>.33)v.y=.33+(v.y-.33)*.35-Math.max(0,.37-Math.hypot(v.x,v.z))*.3;p.setXYZ(i,v.x,v.y,v.z);}
     g.computeVertexNormals();g.computeBoundingBox();geometries.set("bean",g);return g;
   }
-  /** One curtain panel with real folds: a plane rippled across its width. */
-  function foldGeometry(w,h){
-    const key=["fold",w,h].join("|");if(geometries.has(key))return geometries.get(key);
-    const g=new T.PlaneGeometry(w,h,Math.max(12,Math.round(w*14)),1),p=g.attributes.position;
-    for(let i=0;i<p.count;i++)p.setZ(i,Math.sin(p.getX(i)/w*Math.PI*2*Math.max(2,w*3))*Math.min(.09,w*.08));
-    g.computeVertexNormals();geometries.set(key,g);return g;
+  /**
+   * One curtain panel, w × h, hanging from its top edge: even pleats gathered at the top that deepen and flare a little
+   * toward the hem, with a slight irregular sway so the folds don't look stamped.
+   */
+  function curtainGeometry(w,h){
+    const key=["curtain",w,h].join("|");if(geometries.has(key))return geometries.get(key);
+    const n=Math.max(3,Math.round(w*3.4)),g=new T.PlaneGeometry(w,h,Math.max(32,Math.round(w*n*8)),12),p=g.attributes.position;
+    for(let i=0;i<p.count;i++){
+      const x=p.getX(i),y=p.getY(i),t=.5-y/h,u=x/w+.5,depth=Math.min(.11,w*.075)*(.75+.5*t);
+      p.setXYZ(i,x*(.93+.07*t),y,depth*(Math.sin(u*Math.PI*2*n)+.18*Math.sin(u*Math.PI*2*n*2.3+t*2.1))+depth);
+    }
+    g.computeVertexNormals();g.userData.soft=true;geometries.set(key,g);return g;
   }
   /**
    * A plump pillow or cushion, w × h × d: two stuffed covers sewn together at a pinched seam all round, fullest in the
@@ -508,15 +532,21 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
       case "microwave":
         box(g,w,h,d,white,0,h/2,0,.06);box(g,w*.72,h*.7,.02,ink,-w*.08,h*.53,d/2-.005);box(g,.04,h*.48,.05,metal,w*.33,h*.53,d/2-.02);break;
       case "desk":{
-        // A top on legs, with a drawer cabinet on the right when there's room. Legs and cabinet stop just under the top so their faces never meet it.
-        box(g,w,.14,d,wood,0,h-.07,0,.03).name="desk-top";
-        const cab=w>2.2,cw=cab?Math.min(1.6,w*.38):0;
-        for(const z of [-1,1])box(g,.12,h-.16,.12,wood,-w/2+.09,(h-.16)/2,z*(d/2-.09),.02).name="desk-leg";
-        if(cab){box(g,cw,h-.16,d*.92,wood,w/2-cw/2-.02,(h-.16)/2,0,.03).name="desk-leg";
-          for(const y of [.34,.66])box(g,cw*.9,.025,.02,woodDark,w/2-cw/2-.02,(h-.16)*y,d*.46+.005);
-          for(const y of [.17,.5,.83])cyl(g,.045,.045,.08,metal,w/2-cw/2-.02,(h-.16)*y,d*.46+.03,12).rotation.x=Math.PI/2;}
-        else for(const z of [-1,1])box(g,.12,h-.16,.12,wood,w/2-.09,(h-.16)/2,z*(d/2-.09),.02).name="desk-leg";
-        box(g,w-(cab?cw:0)-.2,.6,.06,wood,-(cab?cw/2:0),h-.45,-d/2+.06,.02);
+        // Solid-wood university casework: a top with a slight overhang, two square legs at one end, a drawer pedestal at the
+        // other (a pencil drawer over two deep ones, bar pulls), and a modesty panel at the back. Legs and pedestal stop
+        // just under the top so their faces never meet it.
+        box(g,w,.1,d,wood,0,h-.05,0,.02).name="desk-top";
+        const under=h-.12,cab=w>2.2,cw=cab?Math.min(1.45,w*.38):0,cx=w/2-cw/2-.04;
+        for(const z of [-1,1])box(g,.14,under,.14,wood,-w/2+.1,under/2,z*(d/2-.1),.02).name="desk-leg";
+        if(cab){
+          box(g,cw,under,d-.12,woodDark,cx,under/2,-.02,.02).name="desk-leg";
+          const pull=Math.min(.45,cw*.4),cuts=[.08,under*.4,under*.72,under-.03];
+          for(let i=0;i<3;i++){const y0=cuts[i]+.02,y1=cuts[i+1]-.02;if(y1-y0<.08)continue;
+            box(g,cw-.08,y1-y0,.05,wood,cx,(y0+y1)/2,d/2-.045,.015);box(g,pull,.04,.04,pullMetal,cx,y1-Math.min(.14,(y1-y0)/2),d/2+.0,.015);}
+        }else for(const z of [-1,1])box(g,.14,under,.14,wood,w/2-.1,under/2,z*(d/2-.1),.02).name="desk-leg";
+        const span=w-(cab?cw+.04:0)-.24,sx=-w/2+.17+span/2;
+        if(span>.3){box(g,span,Math.min(.6,under*.4),.05,woodDark,sx,under-Math.min(.3,under*.2),-d/2+.12,.015);
+          box(g,span,.13,.05,wood,sx,under-.065,d/2-.1,.015);}
         break;
       }
       case "chair":{
@@ -528,14 +558,28 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
         const slats=3;for(let i=0;i<slats;i++)box(g,w*.78,.12,.07,m,0,seat+(h-seat)*(.35+i*.22),-d/2+.08,.02);
         break;
       }
-      case "wardrobe":case "dresser":case "fridge":{
-        const body=f.kind==="fridge"?white:wood;box(g,w,h,d,body,0,h/2,0,.05);
-        if(f.kind==="wardrobe"){box(g,.02,h*.94,.02,woodDark,0,h/2,d/2+.003);for(const x of [-.07,.07])box(g,.04,.5,.06,metal,x,h*.55,d/2+.02,.015);}
-        else{const n=f.kind==="dresser"?Math.max(2,Math.min(4,Math.round(h/.85))):2;
-          for(let i=1;i<n;i++)box(g,w*.94,.025,.02,f.kind==="fridge"?mat("#d8dadd"):woodDark,0,h*i/n,d/2+.003);
-          for(let i=0;i<n;i++){const y=h*(i+.5)/n;
-            if(f.kind==="fridge")box(g,.05,h/n*.55,.06,metal,w*.38,y,d/2+.02,.02);
-            else for(const x of w>2.2?[-w*.25,w*.25]:[0])cyl(g,.05,.05,.1,metal,x,y,d/2+.04,12).rotation.x=Math.PI/2;}}
+      case "wardrobe":case "dresser":{
+        // The same casework: a recessed plinth, a darker carcass, a top with a slight overhang, and inset drawer fronts (or
+        // doors on a wardrobe) with small reveals and bar pulls.
+        const base=Math.min(.22,h*.1),topT=.08,y0=base,y1=h-topT,gap=.04,fz=d/2-.035;
+        box(g,w-.12,base,d-.14,woodDark,0,base/2,-.04,.01);
+        box(g,w-.02,y1-y0,d-.06,woodDark,0,(y0+y1)/2,-.03,.02);
+        box(g,w,topT,d,wood,0,h-topT/2,0,.02);
+        if(f.kind==="wardrobe"){
+          const n=w>2.4?2:1,dw=(w-.06-gap*(n+1))/n;
+          for(let i=0;i<n;i++){const x=-w/2+.03+gap+dw/2+i*(dw+gap);box(g,dw,y1-y0-2*gap,.05,wood,x,(y0+y1)/2,fz,.015);
+            box(g,.045,Math.min(1.1,h*.2),.045,pullMetal,x+(n>1?(i?-1:1)*(dw/2-.15):dw/2-.15),y0+(y1-y0)*.55,d/2+.0,.015);}
+        }else{
+          const n=Math.max(2,Math.min(4,Math.round(h/.85))),fh=(y1-y0-gap*(n+1))/n,pulls=w>2.2?[-w*.25,w*.25]:[0],pw=Math.min(.5,w*.22);
+          for(let i=0;i<n;i++){const y=y0+gap+fh/2+i*(fh+gap);box(g,w-.14,fh,.05,wood,0,y,fz,.015);
+            for(const x of pulls)box(g,pw,.04,.04,pullMetal,x,y,d/2+.0,.015);}
+        }
+        break;
+      }
+      case "fridge":{
+        // Clay stand-in until the fridge model loads: a white box, a door seam and a handle on each door.
+        box(g,w,h,d,white,0,h/2,0,.05);box(g,w*.94,.025,.02,mat("#d8dadd"),0,h/2,d/2+.003);
+        for(let i=0;i<2;i++)box(g,.05,h/2*.55,.06,metal,w*.38,h*(i+.5)/2,d/2+.02,.02);
         break;
       }
       case "shelf":{
@@ -584,12 +628,25 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
         else{cyl(g,r*.55,r*.42,potH,terracotta,0,potH/2,0);cyl(g,r*.5,r*.5,.04,soil,0,potH-.01,0);}
         leaves(g,r*.92,potH,h,Math.max(18,Math.min(60,Math.round(r*r*60))));break;
       }
-      case "mirror":
-        if(variant==="round"){oval(g,0,h/2,0,w/2,h/2,d/2,finish);oval(g,0,h/2,d/2,w*.46,h*.46,.02,mat("#bdcdd2",.1));}
-        else if(variant==="arch"){
-          box(g,w,h-w/2,d,finish,0,(h-w/2)/2,0);oval(g,0,h-w/2,0,w/2,w/2,d/2,finish);
-          box(g,w*.91,h-w/2-.08,.025,mat("#bdcdd2",.1),0,(h-w/2)/2,d/2+.016);oval(g,0,h-w/2,d/2+.018,w*.455,w*.455,.018,mat("#bdcdd2",.1));
-        }else{box(g,w,h,Math.max(.06,d),finish,0,h/2,0);box(g,w*.9,h*.92,.025,mat("#bdcdd2",.1),0,h/2,d/2+.015);}break;
+      case "mirror":{
+        // A thin frame round real mirror glass; its back against the wall (or standing on the floor), facing +z.
+        const fd=Math.min(Math.max(.05,d),.12),back=-d/2,face=back+fd+.004,b=Math.min(.1,Math.min(w,h)*.07);
+        if(variant==="round"){
+          const disc=add(g,new T.Mesh(shared("mirror-disc",()=>new T.CylinderGeometry(1,1,1,56)),finish),0,h/2,back+fd/2);disc.rotation.x=Math.PI/2;disc.scale.set(w/2,fd,h/2);
+          const glass=mirrorGlass(g,shared("mirror-circle",()=>new T.CircleGeometry(1,56)),0,h/2,face);glass.scale.set(w/2-b,h/2-b,1);
+        }else if(variant==="arch"){
+          const r=w/2,yc=Math.max(.1,h-r);
+          add(g,new T.Mesh(shared(["mirror-arch",r,yc,fd].join("|"),()=>new T.ExtrudeGeometry(archShape(r,0,yc),{depth:fd,bevelEnabled:false,curveSegments:28})),finish),0,0,back);
+          mirrorGlass(g,shared(["mirror-arch-glass",r,yc,b].join("|"),()=>new T.ShapeGeometry(archShape(r-b,b,yc),28)),0,0,face);
+        }else{
+          box(g,w,h,fd,finish,0,h/2,back+fd/2,.02);
+          // The frame stands a little proud of the glass.
+          for(const y of [b/2,h-b/2])box(g,w,b,.03,finish,0,y,face+.012,.01);
+          for(const x of [-w/2+b/2,w/2-b/2])box(g,b,h-2*b,.03,finish,x,h/2,face+.012,.01);
+          mirrorGlass(g,shared("mirror-plane",()=>new T.PlaneGeometry(1,1)),0,h/2,face).scale.set(w-2*b+.02,h-2*b+.02,1);
+        }
+        break;
+      }
       case "art":
         if(variant==="bats"){
           // A cluster of flat bats stuck straight onto the wall, across the layout area; lit sets get small spotlights.
@@ -607,10 +664,16 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
       case "macrame":
         box(g,w,.055,.06,wood,0,h,0);for(let i=0;i<20;i++){const x=(i/19-.5)*w,length=h*(.6+.35*(1-Math.abs(x)/(w/2)));cyl(g,.018,.018,length,cloth,x,h-length/2,0,8);}break;
       case "curtains":{
-        // Two gathered panels with real folds, on a rod.
-        cyl(g,.03,.03,w,metal,0,h-.03,0,10).rotation.z=Math.PI/2;
-        const pw=w*.34,curtain=mat(f.material_color||(vibe?theme.textile:color),.95,true);curtain.side=T.DoubleSide;
-        for(const side of [-1,1])add(g,new T.Mesh(foldGeometry(pw,h-.08),curtain),side*(w/2-pw/2),(h-.08)/2,0);
+        // Two pleated panels hung by rings from a slim rod on short brackets, standing far enough off the wall to clear a
+        // window's casing and sill.
+        const off=-d/2+.4,pw=w*.3,ph=h-.12,curtain=mat(f.material_color||(vibe?theme.textile:color),.95,true);curtain.side=T.DoubleSide;
+        cyl(g,.018,.018,w-.04,metal,0,h-.04,off,10).rotation.z=Math.PI/2;
+        for(const side of [-1,1]){oval(g,side*(w/2-.02),h-.04,off,.035,.035,.035,ink);box(g,.03,.03,.4,ink,side*(w/2-.12),h-.04,off-.2,.01);}
+        const n=Math.max(3,Math.round(pw*3.4)),ringGeo=shared("curtain-ring",()=>new T.TorusGeometry(.04,.009,6,14));
+        for(const side of [-1,1]){
+          const x0=side*(w/2-pw/2-.06);add(g,new T.Mesh(curtainGeometry(pw,ph),curtain),x0,ph/2+.02,off-Math.min(.11,pw*.075));
+          for(let i=0;i<=n;i++){const r=add(g,new T.Mesh(ringGeo,metal),x0+(i/n-.5)*pw*.93,h-.04,off);r.rotation.y=Math.PI/2;r.castShadow=false;}
+        }
         break;
       }
       case "lights":{
@@ -794,5 +857,9 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
   /** The room's reflection map and how strongly glass, mirrors and metal show it. */
   function setEnv(texture,intensity){env=texture;envI=intensity;for(const m of shiny){m.envMap=texture;m.envMapIntensity=intensity;}}
   function dispose(){disposed=true;for(const e of library.values())if(typeof e==="object")e.scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();for(const v of Object.values(o.material))if(v?.isTexture)v.dispose();o.material.dispose();}});geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());fabric.dispose();}
-  return {build,box,mat,bake,setNight,setEnv,dispose};
+  /** The room view mirrors show (the scene renders it), from `at`, and the room's bounds to project it onto. */
+  function setMirrorView(texture,at,min,max){mirrorUniforms.uCube.value=texture;mirrorUniforms.uCubePos.value.copy(at);mirrorUniforms.uBoxMin.value.copy(min);mirrorUniforms.uBoxMax.value.copy(max);mirrorUniforms.uMirrorOn.value=1;}
+  /** Wood veneer of this colour (a door's leaf), with its grain. */
+  const veneer=color=>{const key="veneer|"+color;if(!materials.has(key)){const m=grain(new T.MeshStandardMaterial({color,roughness:.55,metalness:0}));materials.set(key,m);}return materials.get(key);};
+  return {build,box,cyl,mat,veneer,bake,setNight,setEnv,setMirrorView,mirrorMat,showMirrors:on=>{mirrorMat.visible=on;},dispose};
 }

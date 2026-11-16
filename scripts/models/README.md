@@ -8,14 +8,18 @@ Realistic models for the 3D studio live in `public/experience/models/`. Each kin
 | `<kind>-lite.glb` | about 8–13k | 512 px, no normal map | phones and low-power devices (the scene's `LOW` check) |
 
 `LIBRARY` in `public/experience/studio-models.js` lists the models by file name, and `libraryKey()` picks one for a piece.
-- **Who uses them:** pieces the student brings or buys always do. A dorm's own furniture uses them where the entry says `dorm` (desk, dresser, wardrobe, fridge, microwave, sofa, and the wooden `chair-dorm`).
+- **Who uses them:** pieces the student brings or buys always do. A dorm's own furniture uses them where the entry says `dorm` (fridge, microwave, sofa, and the wooden `chair-dorm`).
 - **Fallback:** until a model loads, or if it fails, the clay model stands in.
 - **Lamps** go by style (`lamp-shade`, `-task`, `-mushroom`, `-lava`, `-salt`, `-banker`). Projector and light-bar lamps stay clay.
 - **Fit:** models are fitted inside the piece's box: scaled evenly, then stretched at most 25% toward each side. `host` models (things stand on them) fill the box exactly.
 - **Glow:** `glow` models light up at night.
 - **Bed frames** are built in code (`build` in `studio-models.js`), not from models: a clean solid-wood frame whose rails sit below each mattress, so the duvet, sheets and pillows never pass through it. The generated bed frames were dropped (their headboards looked worn, and stretching them to each bed made them clip the bedding).
+- **Casework is built in code too:** desks, dressers and wardrobes are solid-wood boxes with inset drawer fronts and bar pulls. The generated ones baked dark diagonal streaks into their drawer fronts (their fronts weren't flat), and boxy furniture looks crisper drawn exactly.
+- **Mirrors** show the room: once the room is still, the scene renders one cube view of it from its middle (`renderMirrors` in `studio-scene.js`), and mirror glass box-projects it onto the room's bounds, so each mirror shows the room from where it hangs. It re-renders after any change.
+- **Curtains** are pleated panels on rings from a slim rod on short brackets, far enough off the wall to clear a window's casing and sill, hanging from just above the window (`itemElevation` in `lib/studio.ts`).
+- **Doors** are solid-core veneer leaves with three hinges, lever handles, kick plates and a peephole.
 - **Built in code on purpose:** the candle (generation kept failing, and a cylinder is what the clay draws anyway), and everything that takes vibe colours, patterns or a product photo: bedding, rugs, curtains, throws, pillows, wall art and string lights. Those get the fabric and wood detail textures, and a sheen on fabric on desktop.
-- **Windows:** built in code because every window is a different size. They are double-hung sashes, casing, sill and reflective glass. The view behind them is `textures/view-day|evening|night.webp`.
+- **Windows:** built in code because every window is a different size. They are double-hung sashes, casing, sill and reflective glass. The view behind them is `textures/view-day|evening|night.webp`, drawn only where the panes are (the panes mark the stencil), so it never shows past the wall. A door or window hides with its wall in the cutaway, unless openings are being edited.
 
 ## Surfaces
 

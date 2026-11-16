@@ -58,7 +58,7 @@ function shadowMesh(root,uniforms){
 
 export function createStudioScene(container, options) {
   const brandMark=new Image();brandMark.src="/brand/dormscape-mark.png?v=room-mark";
-  const renderer=new T.WebGLRenderer({antialias:true,powerPreference:"high-performance"});
+  const renderer=new T.WebGLRenderer({antialias:true,stencil:true,powerPreference:"high-performance"});
   // The pixel ratio starts at the screen's (capped). While the camera or a piece moves slowly it steps down, so weak GPUs stay
   // smooth; when everything stops, the still frame goes back to the full ratio.
   const full=Math.min(devicePixelRatio||1,LOW?1.5:1.75);let ratio=full,sharpen=0;
@@ -67,7 +67,7 @@ export function createStudioScene(container, options) {
   renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.NeutralToneMapping;renderer.toneMappingExposure=LIGHT.day.exposure;
   const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute("aria-label","3D room. Drag empty space to orbit. Drag a piece to move it; hold Shift to lift it. Select an item in Arrange for keyboard editing.");
   canvas.style.cssText="display:block;width:100%;height:100%;touch-action:none;outline-offset:-4px";container.appendChild(canvas);
-  const scene=new T.Scene(),camera=new T.PerspectiveCamera(30,1,.2,400),kit=createModelKit({onTexture:()=>request(),lite:LOW,
+  const scene=new T.Scene(),camera=new T.PerspectiveCamera(30,1,.2,400),kit=createModelKit({onTexture:()=>{mirrorDirty=true;request();},lite:LOW,
     // A library model just arrived: rebuild the pieces of that kind that were standing in as clay.
     onModel:name=>{if(disposed||!data)return;let stale=false;for(const m of meshes.values())if(libraryKey(m.item)===name){m.key="";stale=true;}if(stale){invalidateBake();sync(data);}}});
   // A sky/ground fill, the sun, and a fill at the window (moonlight at night).
@@ -81,6 +81,7 @@ export function createStudioScene(container, options) {
   const bandMat=patchMaterial("#2a1d12",.26),groundMat=patchMaterial("#2a1d12",.16),poolMat=patchMaterial(LIGHT.day.pool,LIGHT.day.poolA,true);
   const roomRoot=new T.Group(),itemRoot=new T.Group(),groundRoot=new T.Group();scene.add(roomRoot,itemRoot);roomRoot.add(groundRoot);
   const meshes=new Map(),wallGroups=[],openingGroups=[],openingNodes=new Map(),floorTextures=new Map();
+  let mirrorDirty=true,mirrorAt=-1e9;
   let roomKey="",lightKey="",nightKey="",data=null,disposed=false,raf=0,assemblyStart=0,ready=false,light=LIGHT.day,firstWindow=null,glassMat=null,pool=null,envMap=null;
   const tint=new T.Color();
   // Walk in: keys held on the canvas, the on-screen pad, the mini-map's marker, and the "ceiling" colour behind the open top.
@@ -143,7 +144,8 @@ export function createStudioScene(container, options) {
       const outward=(camera.position.x-mid.x)*normal.x+(camera.position.z-mid.y)*normal.y;
       wall.visible=walls!=="hidden"&&(walls==="all"||mode==="inside"||(mode!=="top"&&outward<.1));
     }
-    for(const opening of openingGroups)opening.visible=walls!=="hidden";
+    // A door or window shows with its wall (no frames floating over a cut-away wall), or always while openings are being edited.
+    for(const opening of openingGroups)opening.visible=walls!=="hidden"&&(opening.userData.wall.visible||Boolean(data?.editOpenings));
     for(const v of views)v.mesh.visible=v.wall.visible;
     groundRoot.visible=mode!=="inside";
   }
@@ -210,7 +212,9 @@ export function createStudioScene(container, options) {
     else if(renderer.getPixelRatio()<full)sharpen=setTimeout(()=>{if(!disposed&&!pointers.size){useRatio(full);request();}},180);
     // A piece being dragged: its old shadow is baked in, so the footprint shadows stand in until it's dropped.
     if(drag?.id&&drag.moved&&!bake.dirty)invalidateBake();
-    if(!bake.ready&&!assemblyStart&&!tween&&!drag?.moved&&!pointers.size){seatRiders();if(bakeStep())more=true;}
+    if(!bake.ready&&!assemblyStart&&!tween&&!drag?.moved&&!pointers.size){seatRiders();if(bakeStep()||mirrorDirty)more=true;}
+    // The mirrors' view of the room, at most twice a second while textures and models are still arriving.
+    else if(mirrorDirty&&bake.ready&&!assemblyStart&&!drag?.moved&&!pointers.size){if(time-mirrorAt>500){mirrorAt=time;seatRiders();cameraUpdate();renderMirrors();}else more=true;}
     renderer.setClearColor(mode==="inside"?ceiling:paper);
     seatRiders();cameraUpdate();camera.updateMatrixWorld();showSelection();
     if(walker&&mode==="inside")walker.setAttribute("transform","translate("+eye.x.toFixed(2)+" "+eye.z.toFixed(2)+") rotate("+(angle*180/Math.PI).toFixed(1)+")");
@@ -270,7 +274,9 @@ export function createStudioScene(container, options) {
   // Each floor's photo spans this many feet. Until it loads the drawn floor stands in, so the room never waits on it.
   const FLOOR_PHOTO={oak:["floor-oak",6.5],walnut:["floor-walnut",6],concrete:["floor-tile",4],carpet:["floor-carpet",3]};
   // The outdoor view behind each window, one photo per light preset.
-  const views=[],viewMat=new T.MeshBasicMaterial({color:"#ffffff"});
+  // It's drawn only where a window pane is (the panes mark the stencil), so it never shows past the wall round its window.
+  const views=[],viewMat=new T.MeshBasicMaterial({color:"#ffffff",transparent:true,stencilWrite:true,stencilRef:1,stencilFunc:T.EqualStencilFunc,
+    stencilFail:T.KeepStencilOp,stencilZFail:T.KeepStencilOp,stencilZPass:T.KeepStencilOp});
   const surfaces=new Map(),flatNormal=new T.DataTexture(new Uint8Array([128,128,255,255]),1,1);flatNormal.needsUpdate=true;
   function surface(name,feet,srgb,onLoad){
     const key=name+"|"+feet;if(surfaces.has(key)){const t=surfaces.get(key);if(t.image)onLoad?.(t);else t.userData.waiting.push(onLoad);return t;}
@@ -320,8 +326,22 @@ export function createStudioScene(container, options) {
       const h=Math.atan2(win.n.y,win.n.x)+spread;dirs.push(new T.Vector3(Math.cos(el)*Math.cos(h),Math.sin(el),Math.cos(el)*Math.sin(h)));}
     return dirs;
   }
+  // ---------- mirrors: what they show is one view of the room from its middle, box-projected onto the room's walls ----------
+  const mirrorTarget=new T.WebGLCubeRenderTarget(LOW?128:256,{type:T.HalfFloatType}),mirrorCam=new T.CubeCamera(.3,200,mirrorTarget);
+  /** Renders the room for the mirrors: every wall and opening shown (whatever the cutaway hides), the mirrors themselves hidden. */
+  function renderMirrors(){
+    mirrorDirty=false;if(!data)return;let any=false;itemRoot.traverse(o=>{if(o.material===kit.mirrorMat)any=true;});if(!any)return;
+    const p=data.outline?.points?.length?data.outline.points:[{x:0,y:0},{x:data.room.lengthFt,y:data.room.widthFt}],h=data.settings.ceilingFt;
+    const min=new T.Vector3(Math.min(...p.map(q=>q.x)),0,Math.min(...p.map(q=>q.y))),max=new T.Vector3(Math.max(...p.map(q=>q.x)),h,Math.max(...p.map(q=>q.y)));
+    const hidden=[...wallGroups,...openingGroups,...views.map(v=>v.mesh)].filter(o=>!o.visible),extras=[ring,marker,guides,openingGhost].filter(o=>o.visible);
+    for(const o of hidden)o.visible=true;for(const o of extras)o.visible=false;
+    const clear=renderer.getClearColor(new T.Color()),alpha=renderer.getClearAlpha();renderer.setClearColor(ceiling,1);
+    kit.showMirrors(false);mirrorCam.position.set((min.x+max.x)/2,Math.min(4.6,h*.55),(min.z+max.z)/2);mirrorCam.update(renderer,scene);kit.showMirrors(true);
+    renderer.setClearColor(clear,alpha);for(const o of hidden)o.visible=false;for(const o of extras)o.visible=true;
+    kit.setMirrorView(mirrorTarget.texture,mirrorCam.position,min,max);
+  }
   /** Something changed: the bake fades out (the pieces' own contact shadows stay) until a fresh one finishes. */
-  function invalidateBake(){bake.dirty=true;bake.ready=false;bakeUniforms.uBakeOn.value=0;}
+  function invalidateBake(){bake.dirty=true;bake.ready=false;bakeUniforms.uBakeOn.value=0;mirrorDirty=true;}
   /** A few more bake samples; returns true while there's more to do. */
   function bakeStep(){
     if(!data||disposed)return false;
@@ -379,9 +399,10 @@ export function createStudioScene(container, options) {
     slab.name="room-floor";slab.rotation.x=-Math.PI/2;slab.position.y=-PLINTH;slab.userData={ownGeometry:true};roomRoot.add(slab);
     const owned=new T.Group();owned.userData.ownMaterial=true;owned.material=[wallMat,capMat,trim,baseMat,floorMat];roomRoot.add(owned);
     // Door knobs are the kit's satin metal, so they reflect the room like every other metal.
-    const doorMat=new T.MeshStandardMaterial({color:mixHex(wallColor,"#d9a982",.35),roughness:.82}),knobMat=kit.mat("#c9c4bd",.35,false,.6);
-    glassMat=new T.MeshStandardMaterial({color:"#ffffff",transparent:true,opacity:.12,roughness:.04,metalness:0,side:T.DoubleSide,depthWrite:false,envMapIntensity:1.4});
-    owned.material.push(doorMat,glassMat);envMap=envTexture(wallColor,FLOOR_TONE[settings.floor]||FLOOR_TONE.carpet);
+    const doorMat=kit.veneer(mixHex("#b98b5e",wallColor,.12)),knobMat=kit.mat("#c9c4bd",.35,false,.6),plateMat=kit.mat("#9d9b97",.4,false,.55);
+    glassMat=new T.MeshStandardMaterial({color:"#ffffff",transparent:true,opacity:.12,roughness:.04,metalness:0,side:T.DoubleSide,depthWrite:false,envMapIntensity:1.4,
+      stencilWrite:true,stencilRef:1,stencilFunc:T.AlwaysStencilFunc,stencilZPass:T.ReplaceStencilOp});
+    owned.material.push(glassMat);envMap=envTexture(wallColor,FLOOR_TONE[settings.floor]||FLOOR_TONE.carpet);
     pts.forEach((a,i)=>{
       const b=pts[(i+1)%N],len=Math.hypot(b.x-a.x,b.y-a.y);if(len<.01)return;const dx=(b.x-a.x)/len,dz=(b.y-a.y)/len;
       const group=new T.Group();group.position.set(a.x,0,a.y);group.rotation.y=-Math.atan2(dz,dx);roomRoot.add(group);
@@ -397,7 +418,7 @@ export function createStudioScene(container, options) {
       for(const o of openings){
         // Separate groups let a door/window follow the pointer without rebuilding the room.
         const index=outline.openings.indexOf(o),fixtures=new T.Group();fixtures.name="opening-"+index;
-        fixtures.position.copy(group.position);fixtures.rotation.copy(group.rotation);
+        fixtures.position.copy(group.position);fixtures.rotation.copy(group.rotation);fixtures.userData.wall=group;
         roomRoot.add(fixtures);openingGroups.push(fixtures);openingNodes.set(index,fixtures);
         const left=Math.max(cursor,Math.min(len,o.offset_ft)),right=Math.max(left,Math.min(len,o.offset_ft+o.width_ft));segment(cursor,left,0,h);
         const center=(left+right)/2,span=right-left,depth=WALL_T+.06;
@@ -414,16 +435,16 @@ export function createStudioScene(container, options) {
             const sw=span-2*fr,sh=y1-y0;if(sw<.2||sh<.2)continue;
             for(const y of [y0+st/2,y1-st/2])kit.box(fixtures,sw,st,sd,trim,center,y,z,.02);
             for(const x of [center-sw/2+st/2,center+sw/2-st/2])kit.box(fixtures,st,sh,sd,trim,x,(y0+y1)/2,z,.02);
-            const glass=new T.Mesh(new T.PlaneGeometry(Math.max(.05,sw-2*st),Math.max(.05,sh-2*st)),glassMat);glass.position.set(center,(y0+y1)/2,z);glass.name="window-pane";glass.userData.ownGeometry=true;fixtures.add(glass);
+            const glass=new T.Mesh(new T.PlaneGeometry(Math.max(.05,sw-2*st),Math.max(.05,sh-2*st)),glassMat);glass.position.set(center,(y0+y1)/2,z);glass.name="window-pane";glass.renderOrder=1;glass.userData.ownGeometry=true;fixtures.add(glass);
           }
           const cw=.28;
           kit.box(fixtures,span+2*cw,cw,.06,trim,center,high+cw/2,inner,.02);
           for(const x of [left-cw/2,right+cw/2])kit.box(fixtures,cw,oh+cw,.06,trim,x,(low+high+cw)/2,inner,.02);
-          kit.box(fixtures,span+.5,.1,.45,trim,center,low-.03,-out*.14,.03);
+          kit.box(fixtures,span+.5,.1,.34,trim,center,low-.03,-out*.1,.03);
           kit.box(fixtures,span+2*cw-.1,cw*.8,.05,trim,center,low-.08-cw*.4,inner,.02);
           // The view: a photo some way outside, wide enough that it shifts a little as you move (shown only with its wall).
           const vw=Math.max(span+5,(oh+2.5)*16/9),vh=vw*9/16,view=new T.Mesh(new T.PlaneGeometry(vw,vh),viewMat);
-          view.position.set(center,(low+high)/2+.4,out*(WALL_T+2.5));view.rotation.y=out>0?Math.PI:0;view.raycast=()=>{};view.userData.ownGeometry=true;
+          view.position.set(center,(low+high)/2+.4,out*(WALL_T+2.5));view.rotation.y=out>0?Math.PI:0;view.raycast=()=>{};view.renderOrder=2;view.userData.ownGeometry=true;
           fixtures.add(view);views.push({mesh:view,wall:group});
         }else{
           const doorHeight=Math.min(6.7,h-.1);
@@ -435,8 +456,18 @@ export function createStudioScene(container, options) {
           const side=(swing&2)?-inward:inward,hinge=new T.Group(),leafWidth=Math.max(.1,span-.12);
           hinge.position.x=endHinge?right-.06:left+.06;hinge.rotation.y=(endHinge?1:-1)*side*Math.PI/2;
           fixtures.add(hinge);const direction=endHinge?-1:1;
-          const leaf=kit.box(hinge,leafWidth,doorHeight-.05,.14,doorMat,direction*leafWidth/2,(doorHeight-.05)/2,0,.03);leaf.name="door-leaf";
-          for(const face of [-1,1])kit.box(hinge,.14,.14,.14,knobMat,direction*(leafWidth-.3),3.3,face*.12,.06);
+          // A solid-core veneer leaf, the usual dorm door: three butt hinges, a lever handle on a round rose each side, a metal
+          // kick plate low on both faces and a peephole.
+          const leafH=doorHeight-.05,latch=direction*(leafWidth-.28);
+          const leaf=kit.box(hinge,leafWidth,leafH,.14,doorMat,direction*leafWidth/2,leafH/2,0,.02);leaf.name="door-leaf";
+          for(const y of [.75,leafH/2+.3,leafH-.75])kit.cyl(hinge,.035,.035,.32,knobMat,0,y,0,10);
+          for(const face of [-1,1]){
+            kit.box(hinge,leafWidth-.16,.75,.012,plateMat,direction*leafWidth/2,.47,face*.076,.004);
+            kit.cyl(hinge,.09,.09,.04,knobMat,latch,3.3,face*.09,18).rotation.x=Math.PI/2;
+            kit.cyl(hinge,.03,.03,.14,knobMat,latch,3.3,face*.17,10).rotation.x=Math.PI/2;
+            kit.box(hinge,.4,.06,.07,knobMat,latch-direction*.17,3.3,face*.23,.03);
+            kit.cyl(hinge,.028,.028,.02,knobMat,direction*leafWidth/2,4.9,face*.075,12).rotation.x=Math.PI/2;
+          }
         }
         const height=o.kind==="door"?Math.min(6.7,h-.1):Math.min(h-.5,6.5)-Math.min(3,h*.4),bottom=o.kind==="door"?0:Math.min(3,h*.4);
         const hitbox=kit.box(fixtures,right-left,height,.4,kit.mat("#2b4eff"),(left+right)/2,bottom+height/2,0);
@@ -465,7 +496,7 @@ export function createStudioScene(container, options) {
     // from around. Only the hue moves; each preset keeps its brightness.
     const bounce=(color,tone,k)=>{tint.set(tone);const lum=c=>.2126*c.r+.7152*c.g+.0722*c.b;return color.lerp(tint.multiplyScalar(lum(color)/Math.max(1e-4,lum(tint))),k);};
     bounce(hemi.color.set(L.hemiSky),settings.wallColor,.12);bounce(hemi.groundColor.set(L.hemiGround),FLOOR_TONE[settings.floor]||FLOOR_TONE.carpet,.5);hemi.intensity=L.hemiI;
-    kit.setEnv(envMap,L.env);
+    kit.setEnv(envMap,L.env);mirrorDirty=true;
     const el=T.MathUtils.degToRad(L.elev),center=new T.Vector3(l/2,0,w/2);let dir;
     if(win){const a=Math.atan2(win.n.y,win.n.x)-T.MathUtils.degToRad(L.az-180);dir=new T.Vector3(Math.cos(el)*Math.cos(a),Math.sin(el),Math.cos(el)*Math.sin(a));}
     else{const az=T.MathUtils.degToRad(L.az);dir=new T.Vector3(Math.cos(el)*Math.cos(az),Math.sin(el),-Math.cos(el)*Math.sin(az));}
