@@ -178,12 +178,10 @@ export const LIBRARY = {
   storage: { tint: 3 }, towels: { tint: 2.2 }, caddy: { tint: 3.1 }, trash: { tint: 2.8 }, hamper: { tint: 4.8 },
   "lamp-shade": { glow: true }, "lamp-task": { glow: true }, "lamp-mushroom": { glow: true }, "lamp-lava": { glow: true },
   "lamp-salt": { glow: true }, "lamp-banker": { glow: true },
-  // Bed frames: decks are each platform's height as a fraction of the model's (measured, scripts/models/decks.py).
-  "bed-frame": { dorm: true, decks: [0.37] }, "bed-bunk": { dorm: true, decks: [0.25, 0.77] }, "bed-loft": { dorm: true, decks: [0.79] },
 };
 /** Which library model a piece uses, or null for clay. Lamps go by style; projector and light-bar lamps stay clay. */
 export function libraryKey(f) {
-  if (f.kind === "bed" || f.kind === "bunk") return f.kind === "bunk" ? "bed-bunk" : f.bed_mode === "lofted" ? "bed-loft" : "bed-frame";
+  if (f.kind === "bed" || f.kind === "bunk") return null; // beds are built in code (build), so the bedding fits the frame
   if (f.built_in) return f.kind === "chair" ? "chair-dorm" : LIBRARY[f.kind]?.dorm ? f.kind : null;
   if (f.kind === "lamp") { const key = "lamp-" + (f.product?.variant || "shade"); return LIBRARY[key] ? key : null; }
   return LIBRARY[f.kind] ? f.kind : null;
@@ -210,27 +208,8 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
     }).catch(()=>library.set(kind,"failed"));
   }
   /** A library model fitted to the piece's footprint and height, its front toward +z like the clay models; null until loaded. */
-  /**
-   * A bed's frame model fitted to the bed: footprint exact, and its height remapped piecewise so each platform the model
-   * has (LIBRARY decks, as fractions of its height) lands on the given height. False until it has loaded (clay instead).
-   */
-  function bedFrame(g,f,w,d,decks){
-    const name=libraryKey(f),spec=name&&LIBRARY[name];if(!spec?.decks||spec.decks.length!==decks.length)return false;
-    const entry=library.get(name);if(!entry){loadModel(name);return false;}
-    if(typeof entry!=="object")return false;
-    const key="bedframe|"+name+"|"+decks.map(v=>v.toFixed(3)).join(",");
-    if(!geometries.has(key)){
-      const src=entry.mesh,P=src.geometry.attributes.position,out=new Float32Array(P.count*3),v=new T.Vector3(),H=entry.size.y;
-      // Anchors (model height -> feet): the floor, each platform, then on above the top one at its own scale.
-      const pts=[[0,0],...spec.decks.map((r,i)=>[r*H,decks[i]])],[ly,lt]=pts[pts.length-1],top=lt/Math.max(1e-3,ly);pts.push([H*2,lt+(H*2-ly)*top]);
-      const remap=y=>{for(let i=1;i<pts.length;i++)if(y<=pts[i][0]){const [a0,b0]=pts[i-1],[a1,b1]=pts[i];return b0+(y-a0)*(b1-b0)/Math.max(1e-6,a1-a0);}return pts[pts.length-1][1];};
-      for(let i=0;i<P.count;i++){v.fromBufferAttribute(P,i).applyMatrix4(entry.toModel);out[i*3]=v.x;out[i*3+1]=remap(v.y-entry.minY);out[i*3+2]=v.z;}
-      const geo=src.geometry.clone();geo.setAttribute("position",new T.BufferAttribute(out,3));geo.computeBoundingSphere();geometries.set(key,geo);
-    }
-    const mesh=new T.Mesh(geometries.get(key),entry.mesh.material);mesh.scale.set(w/entry.size.x,1,d/entry.size.z);mesh.userData.library=true;g.add(mesh);return true;
-  }
   function fromLibrary(g,f,w,h,d){
-    const name=libraryKey(f),spec=name&&LIBRARY[name];if(!spec||spec.decks)return null;
+    const name=libraryKey(f),spec=name&&LIBRARY[name];if(!spec)return null;
     const entry=library.get(name);if(!entry){loadModel(name);return null;}
     if(typeof entry!=="object")return null;
     // Fitted inside the piece's box, so it never pokes past its plan footprint: scaled evenly to fit, then stretched toward
@@ -376,25 +355,39 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
     for(let i=0;i<p.count;i++)p.setZ(i,Math.sin(p.getX(i)/w*Math.PI*2*Math.max(2,w*3))*Math.min(.09,w*.08));
     g.computeVertexNormals();geometries.set(key,g);return g;
   }
-  /** A plump pillow or cushion, w × h × d: a rounded box that swells toward the middle and thins at its edges. */
+  /**
+   * A plump pillow or cushion, w × h × d: two stuffed covers sewn together at a pinched seam all round, fullest in the
+   * middle, its sides drawn in a little between the corners (the "ears"), with soft creases running out to the seam.
+   */
   function pillowGeometry(w,h,d){
-    const key=["pillow",w,h,d].join("|");if(geometries.has(key))return geometries.get(key);
-    const g=new RoundedBoxGeometry(w,h,d,5,Math.min(h*.45,w/2-1e-3,d/2-1e-3)),p=g.attributes.position,n=g.attributes.normal,ax=4/(w*w),az=4/(d*d);
-    for(let i=0;i<p.count;i++){
-      // Height scales by s(x, z); the normals follow the same squash (inverse transpose of its Jacobian), so the edges stay seamless.
-      const x=p.getX(i),y=p.getY(i),z=p.getZ(i),k=1-.85*(x*x*ax+z*z*az),s=.6+.4*Math.max(0,k),sx=k>0?-.68*x*ax:0,sz=k>0?-.68*z*az:0;
-      const nx=n.getX(i)-y*sx/s*n.getY(i),ny=n.getY(i)/s,nz=n.getZ(i)-y*sz/s*n.getY(i),l=Math.hypot(nx,ny,nz);
-      p.setY(i,y*s);n.setXYZ(i,nx/l,ny/l,nz/l);
+    const key=["pillow2",w,h,d].join("|");if(geometries.has(key))return geometries.get(key);
+    const N=28,pos=[],idx=[],seam=Math.min(.012,h*.04);
+    for(const side of [1,-1]){
+      const base=pos.length/3;
+      for(let j=0;j<=N;j++)for(let i=0;i<=N;i++){
+        const u=i/N*2-1,v=j/N*2-1,fill=Math.pow(Math.max(0,(1-Math.pow(Math.abs(u),2.6))*(1-Math.pow(Math.abs(v),2.6))),.55);
+        // Creases: shallow ripples that pull toward the corners, strongest near the seam, gone at the crown.
+        const edge=1-fill,crease=side>0?h*.035*edge*(Math.sin(u*9.3+v*2.1)*.6+Math.sin(v*8.1-u*3.7)*.4):0;
+        const x=u*w/2*(1-.07*(1-v*v)),z=v*d/2*(1-.07*(1-u*u));
+        pos.push(x,side*(seam+h/2*fill+crease*fill*4),z);
+      }
+      for(let j=0;j<N;j++)for(let i=0;i<N;i++){const a=base+j*(N+1)+i,b=a+1,c=a+N+1,e=c+1;
+        if(side>0)idx.push(a,c,b,b,c,e);else idx.push(a,b,c,b,e,c);}
     }
-    g.userData.soft=true;geometries.set(key,g);return g;
+    // The seam: a thin band joining the two covers round the outline.
+    const ring=[];for(let i=0;i<N;i++)ring.push([i,0]);for(let j=0;j<N;j++)ring.push([N,j]);for(let i=N;i>0;i--)ring.push([i,N]);for(let j=N;j>0;j--)ring.push([0,j]);
+    const bot=(N+1)*(N+1);
+    for(let k=0;k<ring.length;k++){const [i0,j0]=ring[k],[i1,j1]=ring[(k+1)%ring.length],a=j0*(N+1)+i0,b=j1*(N+1)+i1;idx.push(a,b,bot+a,b,bot+b,bot+a);}
+    const g=new T.BufferGeometry();g.setAttribute("position",new T.Float32BufferAttribute(pos,3));g.setIndex(idx);
+    g.computeVertexNormals();g.computeBoundingBox();g.userData.soft=true;geometries.set(key,g);return g;
   }
   /**
    * A soft sheet (duvet, folded throw), t thick, whose top tw × tl lies flat (centred on the origin, gently
    * creased by `wrinkle`) and whose extra cloth rolls over a rounded edge and hangs: `side` on both long
    * sides, `foot` at the +z end.
    */
-  function drapeGeometry(tw,tl,t,side,foot,wrinkle){
-    const key=["drape",tw,tl,t,side,foot,wrinkle].join("|");if(geometries.has(key))return geometries.get(key);
+  function drapeGeometry(tw,tl,t,side,foot,wrinkle,maxDrop=Infinity){
+    const key=["drape",tw,tl,t,side,foot,wrinkle,maxDrop].join("|");if(geometries.has(key))return geometries.get(key);
     const W=tw+side*2,L=tl+foot,a=tw/2,zf=tl/2,r=.07,arc=r*Math.PI/2;
     const g=new T.BoxGeometry(W,t,L,Math.max(10,Math.round(W*16)),1,Math.max(10,Math.round(L*11))),p=g.attributes.position;
     // Overhang o past an edge: [outward, down, bend angle] for the cloth's mid-surface.
@@ -407,7 +400,7 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
       const hangX=Math.max(0,ox-arc),hangZ=Math.max(0,oz-arc),fold=k=>.03*Math.min(1,k/.3);
       const foldX=hangX?fold(hangX)*(.55+.45*Math.sin(z*6.2+sx*1.3))*2:0,foldZ=hangZ?fold(hangZ)*(.55+.45*Math.sin(x*6.8))*2:0;
       // The layer's offset from the mid-surface turns with the bend, so the cloth keeps its thickness as it hangs.
-      p.setXYZ(i,ox>0?sx*(a+bx+Math.sin(fx)*y+foldX):x,-dx-dz+crease+Math.cos(fx)*Math.cos(fz)*y,oz>0?zf+bz+Math.sin(fz)*y+foldZ:z);
+      p.setXYZ(i,ox>0?sx*(a+bx+Math.sin(fx)*y+foldX):x,-Math.min(dx+dz,maxDrop)+crease+Math.cos(fx)*Math.cos(fz)*y,oz>0?zf+bz+Math.sin(fz)*y+foldZ:z);
     }
     g.computeVertexNormals();g.userData.soft=true;geometries.set(key,g);return g;
   }
@@ -438,37 +431,58 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
     const legs=(height,thick=.12,m=wood)=>{for(const x of [-1,1])for(const z of [-1,1])box(g,thick,height,thick,m,x*(w/2-thick/2-.03),height/2,z*(d/2-thick/2-.03),.02);};
     switch(f.kind){
       case "bed":case "bunk":{
-        const loft=f.bed_mode==="lofted";
+        // A clean solid-wood dorm frame: square corner posts, side and end rails that sit below each mattress, a
+        // framed headboard panel under a capped top rail, and on bunks and lofts guard bars above the top mattress and
+        // a ladder at the foot. Everything is laid out so no part of the frame passes through the bedding.
+        const loft=f.bed_mode==="lofted",decked=f.kind==="bunk"||loft;
         const levels=f.kind==="bunk"?[h*.3,h*.78]:loft?[h*.78]:[h-.28];
         const duvetColor=f.material_color||(vibe?theme.textile:color),duvet=textile(f.product,duvetColor);
         const fold=mat(mix(duvetColor,"#ffffff",.55),.95,true),pillow=mat(vibe?mix(theme.textileAlt,"#ffffff",.25):"#fbfaf7",1,true),mattress=mat("#fbfaf6",1,true);
-        // A realistic frame when its model has loaded: its platforms are stretched onto these levels (each mattress's
-        // underside), so throws and pillows that rest on a bed land where they always have.
-        const real=bedFrame(g,f,w,d,levels.map(l=>l-.27));
+        const ps=.17,rail=.1,inner=w-ps*2,mw=w-.3,top=levels[levels.length-1];
+        const headTop=decked?h:top+1.45,footTop=decked?h:top-.22;
+        for(const x of [-1,1]){
+          box(g,ps,headTop,ps,wood,x*(w/2-ps/2),headTop/2,-d/2+ps/2,.035);
+          box(g,ps,footTop,ps,wood,x*(w/2-ps/2),footTop/2,d/2-ps/2,.035);
+        }
+        // Head: a recessed panel between a bottom rail and a top rail, under a cap that runs over both posts.
+        const panelBottom=decked?top+.3:top-.22,panelTop=headTop-.14;
+        box(g,inner,.14,.12,wood,0,headTop-.07,-d/2+ps/2,.03);
+        box(g,inner,panelTop-panelBottom,.05,woodDark,0,(panelTop+panelBottom)/2,-d/2+ps/2,.015);
+        box(g,w+.05,.05,ps+.06,wood,0,headTop+.025,-d/2+ps/2,.022);
+        if(decked)box(g,w+.05,.05,ps+.06,wood,0,footTop+.025,d/2-ps/2,.022);
         for(const [index,level] of levels.entries()){
-          if(!real)box(g,w,.18,d,wood,0,level-.36,0,.04);
-          box(g,w*.96,.38,d*.96,mattress,0,level-.08,0,.14,3).name=`mattress-${index}`;
+          // Rails round the deck, their tops just above the mattress's underside, and the deck board it rests on.
+          const ry=level-.43,mattressFoot=decked?d/2-.36:d/2-.2,mattressHead=-d/2+ps;
+          for(const x of [-1,1])box(g,rail,.42,d-ps*2,wood,x*(w/2-.07),ry,0,.025);
+          box(g,inner,.42,.08,wood,0,ry,-d/2+ps/2,.025);
+          box(g,inner,.42,.06,wood,0,ry,d/2-.09,.02);
+          box(g,w-.26,.05,d-ps*2-.02,woodDark,0,level-.295,0,.01);
+          if(decked&&index<levels.length-1)box(g,inner,.7,.05,woodDark,0,level+.65,-d/2+ps/2,.015);
+          const ml=mattressFoot-mattressHead;
+          box(g,mw,.38,ml,mattress,0,level-.08,(mattressFoot+mattressHead)/2,.14,3).name=`mattress-${index}`;
           if(!f.bare){
-            // A puffy duvet over the lower part, creased on top and gathering into folds where it hangs over both long sides
-            // and the foot; the top sheet turned down over its head edge; plump pillows leaning on the headboard.
-            const len=d*.7,zc=d*.13;
-            add(g,new T.Mesh(drapeGeometry(w*.98,len,.17,.5,.45,.042),duvet),0,level+.19,zc);
-            add(g,new T.Mesh(drapeGeometry(w*.98,d*.075,.06,.5,0,.006),fold),0,level+.3,zc-len/2+d*.0375);
-            const n=w>=3.8?2:1,pw=n>1?w*.42:w*.66,pd=Math.min(d*.19,1.6);
-            for(let i=0;i<n;i++){const p=add(g,new T.Mesh(pillowGeometry(pw,.38,pd),pillow),(i-(n-1)/2)*w*.47,level+.33,-d/2+pd/2+.2);p.rotation.x=.32;p.rotation.z=(i-(n-1)/2)*.08+.03;}
+            // A puffy duvet over the lower part, creased on top and rolling over the mattress's sides (and the foot of
+            // a single bed) to hang just clear of the rails; the top sheet turned down over its head edge; two plump
+            // pillows (one on a narrow bed) leaning back at the head.
+            const zh=-d*.22,len=mattressFoot-zh,zc=(mattressFoot+zh)/2;
+            add(g,new T.Mesh(drapeGeometry(mw,len,.17,.42,decked?.16:.3,.042,.38),duvet),0,level+.19,zc);
+            box(g,mw-.04,.05,d*.075,fold,0,level+.31,zh+d*.0375,.02,2);
+            const n=w>=3.8?2:1,pw=n>1?w*.42:w*.62,pd=Math.min(d*.19,1.6);
+            for(let i=0;i<n;i++){const p=add(g,new T.Mesh(pillowGeometry(pw,.42,pd),pillow),(i-(n-1)/2)*w*.47,level+.31,mattressHead+pd/2+.06);p.rotation.x=.3;p.rotation.z=(i-(n-1)/2)*.06+.02;}
+          }
+          if(decked&&index===levels.length-1){
+            // Guard bars on all four sides above the top mattress.
+            for(const y of [level+.42,level+.74]){
+              for(const x of [-1,1])box(g,rail*.9,.1,d-ps*2,wood,x*(w/2-.07),y,0,.025).name=y===level+.42&&x<0?"bunk-guardrail":"";
+              box(g,inner,.1,.06,wood,0,y,d/2-.09,.02);
+            }
           }
         }
-        if(real)break;
-        for(const x of [-1,1])for(const z of [-1,1])box(g,.16,h,.16,wood,x*(w/2-.08),h/2,z*(d/2-.08),.03);
-        box(g,w,.65,.12,wood,0,h-.32,-d/2+.07,.04);
-        if(f.kind==="bunk"||loft){
-          for(const side of [-1,1]){
-            box(g,.1,.12,d-.2,wood,side*(w/2-.08),h-.18,0,.03).name="bunk-guardrail";
-            box(g,.1,.09,d-.2,wood,side*(w/2-.08),h-.53,0,.03);
-          }
+        if(decked){
           const ladder=new T.Group();ladder.name=loft?"loft-ladder":"bunk-ladder";g.add(ladder);
-          for(const x of [w*.04,w*.39])box(ladder,.1,h*.86,.1,woodDark,x,h*.43,d/2-.06,.02);
-          for(let y=.6;y<h*.85;y+=.9)box(ladder,w*.38,.09,.13,wood,w*.215,y,d/2-.06,.02);
+          const lx0=-w/2+ps+.05,lw=Math.min(1.35,w*.42),lh=Math.min(top+.75,h);
+          for(const x of [lx0+.035,lx0+lw-.035])box(ladder,.07,lh,.07,woodDark,x,lh/2,d/2-.025,.02);
+          for(let y=.75;y<lh-.2;y+=.95)box(ladder,lw-.07,.08,.06,wood,lx0+lw/2,y,d/2-.025,.02);
         }
         break;
       }
