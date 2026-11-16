@@ -144,6 +144,7 @@ export function createStudioScene(container, options) {
       wall.visible=walls!=="hidden"&&(walls==="all"||mode==="inside"||(mode!=="top"&&outward<.1));
     }
     for(const opening of openingGroups)opening.visible=walls!=="hidden";
+    for(const v of views)v.mesh.visible=v.wall.visible;
     groundRoot.visible=mode!=="inside";
   }
   /** A dashed rounded rectangle a little outside a w × d footprint, as flat quads on the floor. */
@@ -224,7 +225,7 @@ export function createStudioScene(container, options) {
   }
   function clearRoom(){
     for(const g of roomRoot.children)g.traverse(o=>{if(o.userData.ownGeometry)o.geometry?.dispose();if(o.userData.ownMaterial){for(const material of Array.isArray(o.material)?o.material:[o.material])material?.dispose();}});
-    roomRoot.clear();groundRoot.clear();roomRoot.add(groundRoot);wallGroups.length=0;openingGroups.length=0;openingNodes.clear();pool=null;glassMat=null;firstWindow=null;
+    roomRoot.clear();groundRoot.clear();roomRoot.add(groundRoot);wallGroups.length=0;views.length=0;openingGroups.length=0;openingNodes.clear();pool=null;glassMat=null;firstWindow=null;
     envMap?.dispose();envMap=null;
   }
   /**
@@ -268,6 +269,8 @@ export function createStudioScene(container, options) {
   // ---------- real surfaces: photographed floors and plaster (public/experience/textures) ----------
   // Each floor's photo spans this many feet. Until it loads the drawn floor stands in, so the room never waits on it.
   const FLOOR_PHOTO={oak:["floor-oak",6.5],walnut:["floor-walnut",6],concrete:["floor-tile",4],carpet:["floor-carpet",3]};
+  // The outdoor view behind each window, one photo per light preset.
+  const views=[],viewMat=new T.MeshBasicMaterial({color:"#ffffff"});
   const surfaces=new Map(),flatNormal=new T.DataTexture(new Uint8Array([128,128,255,255]),1,1);flatNormal.needsUpdate=true;
   function surface(name,feet,srgb,onLoad){
     const key=name+"|"+feet;if(surfaces.has(key)){const t=surfaces.get(key);if(t.image)onLoad?.(t);else t.userData.waiting.push(onLoad);return t;}
@@ -377,7 +380,7 @@ export function createStudioScene(container, options) {
     const owned=new T.Group();owned.userData.ownMaterial=true;owned.material=[wallMat,capMat,trim,baseMat,floorMat];roomRoot.add(owned);
     // Door knobs are the kit's satin metal, so they reflect the room like every other metal.
     const doorMat=new T.MeshStandardMaterial({color:mixHex(wallColor,"#d9a982",.35),roughness:.82}),knobMat=kit.mat("#c9c4bd",.35,false,.6);
-    glassMat=new T.MeshBasicMaterial({color:light.sky,transparent:true,opacity:light.glass,side:T.DoubleSide,depthWrite:false});
+    glassMat=new T.MeshStandardMaterial({color:"#ffffff",transparent:true,opacity:.12,roughness:.04,metalness:0,side:T.DoubleSide,depthWrite:false,envMapIntensity:1.4});
     owned.material.push(doorMat,glassMat);envMap=envTexture(wallColor,FLOOR_TONE[settings.floor]||FLOOR_TONE.carpet);
     pts.forEach((a,i)=>{
       const b=pts[(i+1)%N],len=Math.hypot(b.x-a.x,b.y-a.y);if(len<.01)return;const dx=(b.x-a.x)/len,dz=(b.y-a.y)/len;
@@ -401,14 +404,27 @@ export function createStudioScene(container, options) {
         if(o.kind==="window"){
           const low=Math.min(3,h*.4),high=Math.min(h-.5,6.5),oh=high-low;segment(left,right,0,low);segment(left,right,high,h);
           if(!firstWindow)firstWindow={x:a.x+dx*center,y:a.y+dz*center,n:normals[i],width:span,dx,dz,low,high};
-          // Frame, a cross of mullions, a sill into the room, and tinted glass.
-          const fr=.16;
-          for(const y of [low+fr/2,high-fr/2])kit.box(fixtures,span,fr,depth,trim,center,y,zc,.01);
-          for(const x of [left+fr/2,right-fr/2])kit.box(fixtures,fr,oh,depth,trim,x,(low+high)/2,zc,.01);
-          kit.box(fixtures,.1,oh,WALL_T*.7,trim,center,(low+high)/2,zc,.01);
-          kit.box(fixtures,span,.1,WALL_T*.7,trim,center,(low+high)/2+Math.min(.55,oh*.12),zc,.01);
-          kit.box(fixtures,span+.3,.12,.42,trim,center,low-.02,-out*.12,.02);
-          const glass=new T.Mesh(new T.PlaneGeometry(Math.max(.05,span-fr),Math.max(.05,oh-fr)),glassMat);glass.position.set(center,(low+high)/2,zc);glass.name="window-pane";glass.userData.ownGeometry=true;fixtures.add(glass);
+          // A double-hung window: a lined opening, two sashes (the lower one nearer the room) meeting at a rail, clear glass
+          // that reflects the room, painted casing round the inside, a sill and its apron, and the view outside.
+          const fr=.12,mid=(low+high)/2+Math.min(.4,oh*.08),inner=-out*.03,deep=out*WALL_T*.35;
+          for(const y of [low+fr/2,high-fr/2])kit.box(fixtures,span,fr,depth,trim,center,y,zc,.015);
+          for(const x of [left+fr/2,right-fr/2])kit.box(fixtures,fr,oh,depth,trim,x,(low+high)/2,zc,.015);
+          const sashes=[[mid,high-fr,deep],[low+fr,mid,deep-out*.12]],st=.11,sd=.1;
+          for(const [y0,y1,z] of sashes){
+            const sw=span-2*fr,sh=y1-y0;if(sw<.2||sh<.2)continue;
+            for(const y of [y0+st/2,y1-st/2])kit.box(fixtures,sw,st,sd,trim,center,y,z,.02);
+            for(const x of [center-sw/2+st/2,center+sw/2-st/2])kit.box(fixtures,st,sh,sd,trim,x,(y0+y1)/2,z,.02);
+            const glass=new T.Mesh(new T.PlaneGeometry(Math.max(.05,sw-2*st),Math.max(.05,sh-2*st)),glassMat);glass.position.set(center,(y0+y1)/2,z);glass.name="window-pane";glass.userData.ownGeometry=true;fixtures.add(glass);
+          }
+          const cw=.28;
+          kit.box(fixtures,span+2*cw,cw,.06,trim,center,high+cw/2,inner,.02);
+          for(const x of [left-cw/2,right+cw/2])kit.box(fixtures,cw,oh+cw,.06,trim,x,(low+high+cw)/2,inner,.02);
+          kit.box(fixtures,span+.5,.1,.45,trim,center,low-.03,-out*.14,.03);
+          kit.box(fixtures,span+2*cw-.1,cw*.8,.05,trim,center,low-.08-cw*.4,inner,.02);
+          // The view: a photo some way outside, wide enough that it shifts a little as you move (shown only with its wall).
+          const vw=Math.max(span+5,(oh+2.5)*16/9),vh=vw*9/16,view=new T.Mesh(new T.PlaneGeometry(vw,vh),viewMat);
+          view.position.set(center,(low+high)/2+.4,out*(WALL_T+2.5));view.rotation.y=out>0?Math.PI:0;view.raycast=()=>{};view.userData.ownGeometry=true;
+          fixtures.add(view);views.push({mesh:view,wall:group});
         }else{
           const doorHeight=Math.min(6.7,h-.1);
           segment(left,right,doorHeight,h);
@@ -456,7 +472,9 @@ export function createStudioScene(container, options) {
     sun.color.set(L.sun);sun.intensity=L.sunI;sun.position.copy(center).addScaledVector(dir,40);sun.target.position.copy(center);
     fill.color.set(L.fill);fill.intensity=L.fillI;lampRoot.visible=night;
     if(win)fill.position.set(win.x-win.n.x*1.2,Math.min(h-.6,5.6),win.y-win.n.y*1.2);else fill.position.set(l/2,Math.min(h-.6,5.6),w/2);
-    if(glassMat){glassMat.color.set(L.sky);glassMat.opacity=L.glass;}
+    if(glassMat){glassMat.envMap=envMap;glassMat.opacity=night?.2:.12;glassMat.needsUpdate=true;}
+    const preset=night?"night":settings.lighting==="evening"?"evening":"day";
+    viewMat.map=surface("view-"+preset,1,true);viewMat.map.repeat.set(1,1);viewMat.color.set(night?"#c8ccd8":"#ffffff");viewMat.needsUpdate=true;
     shadowUniforms.uOpacity.value=L.blob;bandMat.uniforms.uOpacity.value=night?.2:.26;
     poolMat.uniforms.uColor.value.set(L.pool);poolMat.uniforms.uOpacity.value=L.poolA;if(pool)pool.visible=L.poolA>0;
     kit.setNight(night);nightKey="";if(bake.ready)bakeUniforms.uBakeOn.value=night?.7:1;
@@ -760,6 +778,6 @@ export function createStudioScene(container, options) {
       for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);canvas.removeEventListener("webglcontextlost",onContextLost);
       clearGuides();openingGhost.geometry.dispose();openingGhost.material.dispose();lineMat.dispose();marker.geometry.dispose();ring.geometry.dispose();ring.material.dispose();marker.material.dispose();
       for(const m of meshes.values())removePiece(m);clearRoom();floorTextures.forEach(t=>t.dispose());
-      for(const material of [bandMat,groundMat,poolMat,depthMat,accumMat])material.dispose();bakeTarget.dispose();depthTarget.dispose();bakeQuad.geometry.dispose();for(const t of surfaces.values())t.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
+      for(const material of [bandMat,groundMat,poolMat,depthMat,accumMat,viewMat])material.dispose();bakeTarget.dispose();depthTarget.dispose();bakeQuad.geometry.dispose();for(const t of surfaces.values())t.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
   };
 }

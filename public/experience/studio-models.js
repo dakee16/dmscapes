@@ -178,9 +178,12 @@ export const LIBRARY = {
   storage: { tint: 3 }, towels: { tint: 2.2 }, caddy: { tint: 3.1 }, trash: { tint: 2.8 }, hamper: { tint: 4.8 },
   "lamp-shade": { glow: true }, "lamp-task": { glow: true }, "lamp-mushroom": { glow: true }, "lamp-lava": { glow: true },
   "lamp-salt": { glow: true }, "lamp-banker": { glow: true },
+  // Bed frames: decks are each platform's height as a fraction of the model's (measured, scripts/models/decks.py).
+  "bed-frame": { dorm: true, decks: [0.37] }, "bed-bunk": { dorm: true, decks: [0.25, 0.77] }, "bed-loft": { dorm: true, decks: [0.7] },
 };
 /** Which library model a piece uses, or null for clay. Lamps go by style; projector and light-bar lamps stay clay. */
 export function libraryKey(f) {
+  if (f.kind === "bed" || f.kind === "bunk") return f.kind === "bunk" ? "bed-bunk" : f.bed_mode === "lofted" ? "bed-loft" : "bed-frame";
   if (f.built_in) return f.kind === "chair" ? "chair-dorm" : LIBRARY[f.kind]?.dorm ? f.kind : null;
   if (f.kind === "lamp") { const key = "lamp-" + (f.product?.variant || "shade"); return LIBRARY[key] ? key : null; }
   return LIBRARY[f.kind] ? f.kind : null;
@@ -201,12 +204,33 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
       const scene=gltf.scene,spec=LIBRARY[kind];scene.traverse(o=>{if(!o.isMesh)return;o.material.envMap=null;o.material.metalness=0;o.userData.library=true;
         // A lamp glows in its own colours at night (its map doubles as the emissive map), and not at all by day.
         if(spec.glow){o.material.emissive.set("#ffe2bd");o.material.emissiveMap=o.material.map;o.material.emissiveIntensity=night?.85:0;libGlows.add(o.material);}});
-      library.set(kind,{scene,size:new T.Box3().setFromObject(scene).getSize(new T.Vector3())});onModel(kind);
+      // The first mesh and its transform into the model's frame (meshopt files quantize positions under a node scale).
+      scene.updateMatrixWorld(true);let mesh=null;scene.traverse(o=>{if(o.isMesh&&!mesh)mesh=o;});const box=new T.Box3().setFromObject(scene);
+      library.set(kind,{scene,mesh,toModel:mesh.matrixWorld.clone(),minY:box.min.y,size:box.getSize(new T.Vector3())});onModel(kind);
     }).catch(()=>library.set(kind,"failed"));
   }
   /** A library model fitted to the piece's footprint and height, its front toward +z like the clay models; null until loaded. */
+  /**
+   * A bed's frame model fitted to the bed: footprint exact, and its height remapped piecewise so each platform the model
+   * has (LIBRARY decks, as fractions of its height) lands on the given height. False until it has loaded (clay instead).
+   */
+  function bedFrame(g,f,w,d,decks){
+    const name=libraryKey(f),spec=name&&LIBRARY[name];if(!spec?.decks||spec.decks.length!==decks.length)return false;
+    const entry=library.get(name);if(!entry){loadModel(name);return false;}
+    if(typeof entry!=="object")return false;
+    const key="bedframe|"+name+"|"+decks.map(v=>v.toFixed(3)).join(",");
+    if(!geometries.has(key)){
+      const src=entry.mesh,P=src.geometry.attributes.position,out=new Float32Array(P.count*3),v=new T.Vector3(),H=entry.size.y;
+      // Anchors (model height -> feet): the floor, each platform, then on above the top one at its own scale.
+      const pts=[[0,0],...spec.decks.map((r,i)=>[r*H,decks[i]])],[ly,lt]=pts[pts.length-1],top=lt/Math.max(1e-3,ly);pts.push([H*2,lt+(H*2-ly)*top]);
+      const remap=y=>{for(let i=1;i<pts.length;i++)if(y<=pts[i][0]){const [a0,b0]=pts[i-1],[a1,b1]=pts[i];return b0+(y-a0)*(b1-b0)/Math.max(1e-6,a1-a0);}return pts[pts.length-1][1];};
+      for(let i=0;i<P.count;i++){v.fromBufferAttribute(P,i).applyMatrix4(entry.toModel);out[i*3]=v.x;out[i*3+1]=remap(v.y-entry.minY);out[i*3+2]=v.z;}
+      const geo=src.geometry.clone();geo.setAttribute("position",new T.BufferAttribute(out,3));geo.computeBoundingSphere();geometries.set(key,geo);
+    }
+    const mesh=new T.Mesh(geometries.get(key),entry.mesh.material);mesh.scale.set(w/entry.size.x,1,d/entry.size.z);mesh.userData.library=true;g.add(mesh);return true;
+  }
   function fromLibrary(g,f,w,h,d){
-    const name=libraryKey(f),spec=name&&LIBRARY[name];if(!spec)return null;
+    const name=libraryKey(f),spec=name&&LIBRARY[name];if(!spec||spec.decks)return null;
     const entry=library.get(name);if(!entry){loadModel(name);return null;}
     if(typeof entry!=="object")return null;
     // Fitted inside the piece's box, so it never pokes past its plan footprint: scaled evenly to fit, then stretched toward
@@ -234,6 +258,8 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
   };
   const weaveMap=surface("fabric-detail",3),weaveNormal=lite?null:surface("fabric-detail-n",3,false);
   const grainMap=surface("wood-detail",1),grainNormal=lite?null:surface("wood-detail-n",1,false);
+  /** Sheen settings for a fabric of this colour (none on phones). */
+  const sheen=color=>lite?{}:{sheen:.6,sheenRoughness:.7,sheenColor:new T.Color(color).lerp(new T.Color("#ffffff"),.55)};
   /** A fabric's weave: the real one when loaded (detail + normal map), else the drawn bump. */
   const weave=(scale=.5)=>weaveMap?{map:weaveMap,...(weaveNormal?{normalMap:weaveNormal,normalScale:new T.Vector2(scale,scale)}:{})}:{bumpMap:fabric,bumpScale:.015};
   const weaveOnly=(scale=.5)=>weaveNormal?{normalMap:weaveNormal,normalScale:new T.Vector2(scale,scale)}:{bumpMap:fabric,bumpScale:.012};
@@ -244,8 +270,9 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
     const key=[color,roughness,cloth,metal].join("|");
     if(!materials.has(key)){
       const glossy=roughness<.3&&metal===null;
-      const m=new T.MeshStandardMaterial({color,roughness:glossy?roughness:metal!==null?Math.max(roughness,.5):Math.max(roughness,.82),
-        metalness:glossy?.3:metal!==null?Math.min(metal,.35):0,...(cloth?weave():{})});
+      // Fabric has a soft sheen at grazing angles (desktop; phones keep the plain material).
+      const m=new (cloth&&!lite?T.MeshPhysicalMaterial:T.MeshStandardMaterial)({color,roughness:glossy?roughness:metal!==null?Math.max(roughness,.5):Math.max(roughness,.82),
+        metalness:glossy?.3:metal!==null?Math.min(metal,.35):0,...(cloth?{...weave(),...sheen(color)}:{})});
       if(glossy||metal!==null)shine(m);
       materials.set(key,glossy?m:clay(m));
     }
@@ -289,7 +316,7 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
       else{ctx.fillStyle="#1c1622";ctx.beginPath();ctx.moveTo(cx0,cy0+6);ctx.lineTo(cx0-16,cy0-4);ctx.lineTo(cx0-6,cy0-2);ctx.lineTo(cx0-3,cy0-8);ctx.lineTo(cx0,cy0-4);ctx.lineTo(cx0+3,cy0-8);ctx.lineTo(cx0+6,cy0-2);ctx.lineTo(cx0+16,cy0-4);ctx.closePath();ctx.fill();}
     }
     const tex=new T.CanvasTexture(canvas);tex.colorSpace=T.SRGBColorSpace;textures.set(key,tex);
-    const material=clay(new T.MeshStandardMaterial({map:tex,roughness:.98,...weaveOnly()}));materials.set(key,material);return material;
+    const material=clay(new (lite?T.MeshStandardMaterial:T.MeshPhysicalMaterial)({map:tex,roughness:.98,...weaveOnly(),...sheen("#ffffff")}));materials.set(key,material);return material;
   }
   function productPrint(product,fallback){
     if(!product?.image || !/^https:\/\/m\.media-amazon\.com\//.test(product.image))return fallback;
@@ -369,14 +396,18 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
   function drapeGeometry(tw,tl,t,side,foot,wrinkle){
     const key=["drape",tw,tl,t,side,foot,wrinkle].join("|");if(geometries.has(key))return geometries.get(key);
     const W=tw+side*2,L=tl+foot,a=tw/2,zf=tl/2,r=.07,arc=r*Math.PI/2;
-    const g=new T.BoxGeometry(W,t,L,Math.max(8,Math.round(W*10)),1,Math.max(8,Math.round(L*7))),p=g.attributes.position;
+    const g=new T.BoxGeometry(W,t,L,Math.max(10,Math.round(W*16)),1,Math.max(10,Math.round(L*11))),p=g.attributes.position;
     // Overhang o past an edge: [outward, down, bend angle] for the cloth's mid-surface.
     const bend=o=>o<=0?[0,0,0]:o<arc?[r*Math.sin(o/r),r*(1-Math.cos(o/r)),o/r]:[r,r+o-arc,Math.PI/2];
     for(let i=0;i<p.count;i++){
       const x=p.getX(i),y=p.getY(i),z=p.getZ(i)+L/2-tl/2,ox=Math.abs(x)-a,oz=z-zf,[bx,dx,fx]=bend(ox),[bz,dz,fz]=bend(oz),sx=Math.sign(x);
-      const crease=wrinkle*(Math.sin(z*2.1+x*.8)*.65+Math.sin(z*5.3-x*1.7)*.35)*Math.max(0,1-(Math.max(0,ox)+Math.max(0,oz))/.12);
+      // Soft creases on top (a few crossing ripples at falling scales), fading out over the edge.
+      const crease=wrinkle*(Math.sin(z*2.1+x*.8)*.5+Math.sin(z*5.3-x*1.7)*.3+Math.sin(x*7.3+z*1.4)*.14+Math.sin(z*11.9+x*3.2)*.07)*Math.max(0,1-(Math.max(0,ox)+Math.max(0,oz))/.12);
+      // Where the cloth hangs, it gathers into loose vertical folds that grow with the drop.
+      const hangX=Math.max(0,ox-arc),hangZ=Math.max(0,oz-arc),fold=k=>.03*Math.min(1,k/.3);
+      const foldX=hangX?fold(hangX)*(.55+.45*Math.sin(z*6.2+sx*1.3))*2:0,foldZ=hangZ?fold(hangZ)*(.55+.45*Math.sin(x*6.8))*2:0;
       // The layer's offset from the mid-surface turns with the bend, so the cloth keeps its thickness as it hangs.
-      p.setXYZ(i,ox>0?sx*(a+bx+Math.sin(fx)*y):x,-dx-dz+crease+Math.cos(fx)*Math.cos(fz)*y,oz>0?zf+bz+Math.sin(fz)*y:z);
+      p.setXYZ(i,ox>0?sx*(a+bx+Math.sin(fx)*y+foldX):x,-dx-dz+crease+Math.cos(fx)*Math.cos(fz)*y,oz>0?zf+bz+Math.sin(fz)*y+foldZ:z);
     }
     g.computeVertexNormals();g.userData.soft=true;geometries.set(key,g);return g;
   }
@@ -410,19 +441,24 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
         const loft=f.bed_mode==="lofted";
         const levels=f.kind==="bunk"?[h*.3,h*.78]:loft?[h*.78]:[h-.28];
         const duvetColor=f.material_color||(vibe?theme.textile:color),duvet=textile(f.product,duvetColor);
-        const fold=mat(mix(duvetColor,"#ffffff",.3),.95,true),pillow=mat(vibe?mix(theme.textileAlt,"#ffffff",.25):"#fbfaf7",1,true),mattress=mat("#fbfaf6",1,true);
+        const fold=mat(mix(duvetColor,"#ffffff",.55),.95,true),pillow=mat(vibe?mix(theme.textileAlt,"#ffffff",.25):"#fbfaf7",1,true),mattress=mat("#fbfaf6",1,true);
+        // A realistic frame when its model has loaded: its platforms are stretched onto these levels (each mattress's
+        // underside), so throws and pillows that rest on a bed land where they always have.
+        const real=bedFrame(g,f,w,d,levels.map(l=>l-.27));
         for(const [index,level] of levels.entries()){
-          box(g,w,.18,d,wood,0,level-.36,0,.04);
+          if(!real)box(g,w,.18,d,wood,0,level-.36,0,.04);
           box(g,w*.96,.38,d*.96,mattress,0,level-.08,0,.14,3).name=`mattress-${index}`;
           if(!f.bare){
-            // The duvet covers the lower part, softly creased, and drapes over both long sides and the foot.
-            const len=d*.72,zc=d*.12;
-            add(g,new T.Mesh(drapeGeometry(w*.98,len,.12,.5,.45,.022),duvet),0,level+.165,zc);
-            box(g,w*.98,.06,d*.07,fold,0,level+.22,zc-len/2+d*.035,.03);
-            const n=w>=3.8?2:1,pw=n>1?w*.42:w*.62,pd=Math.min(d*.16,1.5);
-            for(let i=0;i<n;i++){const p=add(g,new T.Mesh(pillowGeometry(pw,.3,pd),pillow),(i-(n-1)/2)*w*.47,level+.3,-d/2+pd/2+.22);p.rotation.x=.24;p.rotation.z=(i-(n-1)/2)*.08;}
+            // A puffy duvet over the lower part, creased on top and gathering into folds where it hangs over both long sides
+            // and the foot; the top sheet turned down over its head edge; plump pillows leaning on the headboard.
+            const len=d*.7,zc=d*.13;
+            add(g,new T.Mesh(drapeGeometry(w*.98,len,.17,.5,.45,.042),duvet),0,level+.19,zc);
+            add(g,new T.Mesh(drapeGeometry(w*.98,d*.075,.06,.5,0,.006),fold),0,level+.3,zc-len/2+d*.0375);
+            const n=w>=3.8?2:1,pw=n>1?w*.42:w*.66,pd=Math.min(d*.19,1.6);
+            for(let i=0;i<n;i++){const p=add(g,new T.Mesh(pillowGeometry(pw,.38,pd),pillow),(i-(n-1)/2)*w*.47,level+.33,-d/2+pd/2+.2);p.rotation.x=.32;p.rotation.z=(i-(n-1)/2)*.08+.03;}
           }
         }
+        if(real)break;
         for(const x of [-1,1])for(const z of [-1,1])box(g,.16,h,.16,wood,x*(w/2-.08),h/2,z*(d/2-.08),.03);
         box(g,w,.65,.12,wood,0,h-.32,-d/2+.07,.04);
         if(f.kind==="bunk"||loft){
