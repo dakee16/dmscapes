@@ -2,15 +2,16 @@ import * as T from "./vendor/three.module.min.js";
 import { createModelKit, footprint, libraryKey } from "./studio-models.js";
 
 // Light presets (design-handoff/3d-studio/scene.js, retuned for the clay look). "evening" is golden hour.
+// share: the part of the sky/ground fill the room's own light (its environment, renderRoomView) takes over once the room is still.
 // Built to stay smooth on weak GPUs and phones: no shadow maps and no ambient-occlusion pass. A sky/ground
 // fill tinted by the room, one sun and one window light do the work; each piece's corner shading and
 // footprint shadow are baked once (the creases just after it appears); only glass, mirrors and metal see a
 // tiny reflection map; night adds the plan's lamps. Changing the preset never rebuilds the room, and the night shaders are
 // compiled ahead of time, so the switch is instant.
 const LIGHT={
-  day:    {sun:"#fff0dc",sunI:2.2,elev:36,az:200,hemiSky:"#f2f5ff",hemiGround:"#c2ad94",hemiI:1.5,exposure:.95,sky:"#cfe3f3",glass:.45,fill:"#e6efff",fillI:6,pool:"#fff4e2",poolA:.14,blob:.44,env:1},
-  evening:{sun:"#ffab5e",sunI:2.7,elev:13,az:214,hemiSky:"#ffd9b3",hemiGround:"#9a7a5c",hemiI:1.1,exposure:1.0,sky:"#f6c68f",glass:.45,fill:"#ffcf9e",fillI:5,pool:"#ffb066",poolA:.2,blob:.46,env:.8},
-  night:  {sun:"#9bb3ff",sunI:.3,elev:30,az:200,hemiSky:"#3a4468",hemiGround:"#211b16",hemiI:.5,exposure:1.08,sky:"#1b2440",glass:.95,fill:"#7d9cff",fillI:1.5,pool:"#9bb3ff",poolA:0,blob:.3,env:.3},
+  day:    {share:.6,sun:"#fff0dc",sunI:2.2,elev:36,az:200,hemiSky:"#f2f5ff",hemiGround:"#c2ad94",hemiI:1.5,exposure:.95,sky:"#cfe3f3",glass:.45,fill:"#e6efff",fillI:6,pool:"#fff4e2",poolA:.14,blob:.44,env:1},
+  evening:{share:.55,sun:"#ffab5e",sunI:2.7,elev:13,az:214,hemiSky:"#ffd9b3",hemiGround:"#9a7a5c",hemiI:1.1,exposure:1.0,sky:"#f6c68f",glass:.45,fill:"#ffcf9e",fillI:5,pool:"#ffb066",poolA:.2,blob:.46,env:.8},
+  night:  {share:.5,sun:"#9bb3ff",sunI:.3,elev:30,az:200,hemiSky:"#3a4468",hemiGround:"#211b16",hemiI:.5,exposure:1.08,sky:"#1b2440",glass:.95,fill:"#7d9cff",fillI:1.5,pool:"#9bb3ff",poolA:0,blob:.3,env:.3},
 };
 const TEX_DIR=new URL("./textures/",import.meta.url).href;
 /** Each floor finish's base colour (its texture, and the light it bounces up). "concrete" is Tile in the UI. */
@@ -222,8 +223,8 @@ export function createStudioScene(container, options) {
     // A piece being dragged: its old shadow is baked in, so the footprint shadows stand in until it's dropped.
     if(drag?.id&&drag.moved&&!bake.dirty)invalidateBake();
     if(!bake.ready&&!assemblyStart&&!tween&&!drag?.moved&&!pointers.size){seatRiders();if(bakeStep()||mirrorDirty)more=true;}
-    // The mirrors' view of the room, at most twice a second while textures and models are still arriving.
-    else if(mirrorDirty&&bake.ready&&!assemblyStart&&!drag?.moved&&!pointers.size){if(time-mirrorAt>500){mirrorAt=time;seatRiders();cameraUpdate();renderMirrors();}else more=true;}
+    // The room view (mirrors, the room's light), at most twice a second while textures and models are still arriving.
+    else if(mirrorDirty&&bake.ready&&!assemblyStart&&!drag?.moved&&!pointers.size){if(time-mirrorAt>500){mirrorAt=time;seatRiders();cameraUpdate();renderRoomView();}else more=true;}
     renderer.setClearColor(mode==="inside"?ceiling:paper);
     seatRiders();cameraUpdate();camera.updateMatrixWorld();showSelection();
     if(walker&&mode==="inside")walker.setAttribute("transform","translate("+eye.x.toFixed(2)+" "+eye.z.toFixed(2)+") rotate("+(angle*180/Math.PI).toFixed(1)+")");
@@ -335,11 +336,54 @@ export function createStudioScene(container, options) {
       const h=Math.atan2(win.n.y,win.n.x)+spread;dirs.push(new T.Vector3(Math.cos(el)*Math.cos(h),Math.sin(el),Math.cos(el)*Math.sin(h)));}
     return dirs;
   }
-  // ---------- mirrors: what they show is one view of the room from its middle, box-projected onto the room's walls ----------
-  const mirrorTarget=new T.WebGLCubeRenderTarget(LOW?128:256,{type:T.HalfFloatType}),mirrorCam=new T.CubeCamera(.3,200,mirrorTarget);
-  /** Renders the room for the mirrors: every wall and opening shown (whatever the cutaway hides), the mirrors themselves hidden. */
-  function renderMirrors(){
-    mirrorDirty=false;if(!data)return;let any=false;itemRoot.traverse(o=>{if(o.material===kit.mirrorMat)any=true;});if(!any)return;
+  // ---------- the room's own light: one view of the room from its middle ----------
+  // Once the room is still, it's rendered into a cube from its middle (every wall up, whatever the cutaway hides). Mirrors show
+  // that view, box-projected onto the room's bounds. Pre-filtered (PMREM), it is also every surface's environment: it takes over
+  // part of the flat sky/ground fill (the preset's `share`), so the light bouncing round the room keeps its colour and direction
+  // (warm under a bed from an oak floor, brighter on the side facing the window), and metal, glass and gloss reflect the room
+  // itself. Its strength is measured on the GPU (measureCube) and matched to the fill it replaces, so the room's overall
+  // brightness never jumps; until the first view, the old drawn gradient stands in at the same size (no shader recompiles).
+  const ENV_SIZE=LOW?128:256;
+  const mirrorTarget=new T.WebGLCubeRenderTarget(ENV_SIZE,{type:T.HalfFloatType}),mirrorCam=new T.CubeCamera(.3,200,mirrorTarget);
+  const pmrem=new T.PMREMGenerator(renderer);let roomEnv=null,seedMean=.3,roomMean=.3; // means until measured
+  // A cube's mean luminance, packed into one RGBA8 pixel (half-float readback isn't reliable everywhere).
+  const measureTarget=new T.WebGLRenderTarget(1,1),measureMat=new T.ShaderMaterial({depthTest:false,depthWrite:false,uniforms:{uCube:{value:null}},
+    vertexShader:"void main(){gl_Position=vec4(position.xy,0.,1.);}",
+    fragmentShader:`uniform samplerCube uCube;
+      void main(){vec3 s=vec3(0.);for(int i=0;i<192;i++){float y=1.-2.*(float(i)+.5)/192.,r=sqrt(1.-y*y),a=float(i)*2.39996323;s+=textureCube(uCube,vec3(cos(a)*r,y,sin(a)*r)).rgb;}
+        float l=clamp(dot(s/192.,vec3(.2126,.7152,.0722))/16.,0.,.9999);vec4 e=fract(l*vec4(1.,255.,65025.,16581375.));e-=e.yzww*vec4(1./255.,1./255.,1./255.,0.);gl_FragColor=e;}`});
+  const measureScene=new T.Scene();{const q=new T.Mesh(new T.PlaneGeometry(2,2),measureMat);q.frustumCulled=false;measureScene.add(q);}
+  const measurePixel=new Uint8Array(4);
+  // Read back asynchronously (no GPU stall); the strengths follow a frame or two later.
+  async function measureCube(texture){
+    measureMat.uniforms.uCube.value=texture;const was=renderer.getRenderTarget();renderer.setRenderTarget(measureTarget);renderer.render(measureScene,bakeCam);renderer.setRenderTarget(was);
+    try{await renderer.readRenderTargetPixelsAsync(measureTarget,0,0,1,1,measurePixel);}catch{renderer.readRenderTargetPixels(measureTarget,0,0,1,1,measurePixel);}
+    return 16*(measurePixel[0]/255+measurePixel[1]/65025+measurePixel[2]/16581375+measurePixel[3]/4228250625);
+  }
+  /** Pre-filters a cube into the room's environment and sets every strength from its measured brightness. */
+  let measuring=0;
+  function useEnvCube(texture,seed){
+    roomEnv=pmrem.fromCubemap(texture,roomEnv);scene.environment=roomEnv.texture;if(glassMat)glassMat.envMap=roomEnv.texture;
+    const job=++measuring;
+    measureCube(texture).then(m=>{if(disposed||job!==measuring)return;const mean=Math.max(1e-4,m);if(seed)seedMean=mean;roomMean=mean;applyEnvStrength();request();});
+    applyEnvStrength();
+  }
+  function applyEnvStrength(){kit.setEnv(roomEnv.texture,light.env*reflectScale());if(glassMat)glassMat.envMapIntensity=1.4*reflectScale();balanceFill();}
+  // Reflections keep the strength the drawn gradient had; the diffuse part matches the share of the fill it replaces.
+  const reflectScale=()=>T.MathUtils.clamp(seedMean/Math.max(1e-4,roomMean),.5,4);
+  function balanceFill(){
+    const L=light,share=L.share??0,lum=c=>.2126*c.r+.7152*c.g+.0722*c.b;
+    hemi.intensity=L.hemiI*(1-share);
+    // The fill's light on an average surface is its mean colour × intensity / π; the environment's is its mean radiance × intensity.
+    scene.environmentIntensity=share*L.hemiI*(lum(hemi.color)+lum(hemi.groundColor))/2/Math.PI/Math.max(1e-4,roomMean);
+  }
+  /** Seeds the environment from the drawn gradient, rendered into a cube the size of the room view's. */
+  function seedEnv(gradient){
+    const seed=new T.WebGLCubeRenderTarget(ENV_SIZE);seed.fromEquirectangularTexture(renderer,gradient);useEnvCube(seed.texture,true);seed.dispose();
+  }
+  /** Renders the room view (mirrors, environment): every wall and opening shown, the mirrors and the editing marks hidden. */
+  function renderRoomView(){
+    mirrorDirty=false;if(!data)return;
     const p=data.outline?.points?.length?data.outline.points:[{x:0,y:0},{x:data.room.lengthFt,y:data.room.widthFt}],h=data.settings.ceilingFt;
     const min=new T.Vector3(Math.min(...p.map(q=>q.x)),0,Math.min(...p.map(q=>q.y))),max=new T.Vector3(Math.max(...p.map(q=>q.x)),h,Math.max(...p.map(q=>q.y)));
     const hidden=[...wallGroups,...openingGroups,...views.map(v=>v.mesh),...[...meshes.values()].filter(m=>m.wall).map(m=>m.group)].filter(o=>!o.visible),extras=[ring,marker,guides,openingGhost].filter(o=>o.visible);
@@ -348,6 +392,7 @@ export function createStudioScene(container, options) {
     kit.showMirrors(false);mirrorCam.position.set((min.x+max.x)/2,Math.min(4.6,h*.55),(min.z+max.z)/2);mirrorCam.update(renderer,scene);kit.showMirrors(true);
     renderer.setClearColor(clear,alpha);for(const o of hidden)o.visible=false;for(const o of extras)o.visible=true;
     kit.setMirrorView(mirrorTarget.texture,mirrorCam.position,min,max);
+    useEnvCube(mirrorTarget.texture,false);
   }
   /** Something changed: the bake fades out (the pieces' own contact shadows stay) until a fresh one finishes. */
   function invalidateBake(){bake.dirty=true;bake.ready=false;bakeUniforms.uBakeOn.value=0;mirrorDirty=true;}
@@ -411,7 +456,7 @@ export function createStudioScene(container, options) {
     const doorMat=kit.veneer(mixHex("#b98b5e",wallColor,.12)),knobMat=kit.mat("#c9c4bd",.35,false,.6),plateMat=kit.mat("#9d9b97",.4,false,.55);
     glassMat=new T.MeshStandardMaterial({color:"#ffffff",transparent:true,opacity:.12,roughness:.04,metalness:0,side:T.DoubleSide,depthWrite:false,envMapIntensity:1.4,
       stencilWrite:true,stencilRef:1,stencilFunc:T.AlwaysStencilFunc,stencilZPass:T.ReplaceStencilOp});
-    owned.material.push(glassMat);envMap=envTexture(wallColor,FLOOR_TONE[settings.floor]||FLOOR_TONE.carpet);
+    owned.material.push(glassMat);envMap=envTexture(wallColor,FLOOR_TONE[settings.floor]||FLOOR_TONE.carpet);seedEnv(envMap);
     pts.forEach((a,i)=>{
       const b=pts[(i+1)%N],len=Math.hypot(b.x-a.x,b.y-a.y);if(len<.01)return;const dx=(b.x-a.x)/len,dz=(b.y-a.y)/len;
       const group=new T.Group();group.position.set(a.x,0,a.y);group.rotation.y=-Math.atan2(dz,dx);roomRoot.add(group);
@@ -505,14 +550,15 @@ export function createStudioScene(container, options) {
     // from around. Only the hue moves; each preset keeps its brightness.
     const bounce=(color,tone,k)=>{tint.set(tone);const lum=c=>.2126*c.r+.7152*c.g+.0722*c.b;return color.lerp(tint.multiplyScalar(lum(color)/Math.max(1e-4,lum(tint))),k);};
     bounce(hemi.color.set(L.hemiSky),settings.wallColor,.12);bounce(hemi.groundColor.set(L.hemiGround),FLOOR_TONE[settings.floor]||FLOOR_TONE.carpet,.5);hemi.intensity=L.hemiI;
-    kit.setEnv(envMap,L.env);mirrorDirty=true;
+    mirrorDirty=true;
     const el=T.MathUtils.degToRad(L.elev),center=new T.Vector3(l/2,0,w/2);let dir;
     if(win){const a=Math.atan2(win.n.y,win.n.x)-T.MathUtils.degToRad(L.az-180);dir=new T.Vector3(Math.cos(el)*Math.cos(a),Math.sin(el),Math.cos(el)*Math.sin(a));}
     else{const az=T.MathUtils.degToRad(L.az);dir=new T.Vector3(Math.cos(el)*Math.cos(az),Math.sin(el),-Math.cos(el)*Math.sin(az));}
     sun.color.set(L.sun);sun.intensity=L.sunI;sun.position.copy(center).addScaledVector(dir,40);sun.target.position.copy(center);
     fill.color.set(L.fill);fill.intensity=L.fillI;lampRoot.visible=night;
     if(win)fill.position.set(win.x-win.n.x*1.2,Math.min(h-.6,5.6),win.y-win.n.y*1.2);else fill.position.set(l/2,Math.min(h-.6,5.6),w/2);
-    if(glassMat){glassMat.envMap=envMap;glassMat.opacity=night?.2:.12;glassMat.needsUpdate=true;}
+    if(glassMat){glassMat.opacity=night?.2:.12;glassMat.needsUpdate=true;}
+    if(roomEnv)applyEnvStrength();
     const preset=night?"night":settings.lighting==="evening"?"evening":"day";
     viewMat.map=surface("view-"+preset,1,true);viewMat.map.repeat.set(1,1);viewMat.color.set(night?"#c8ccd8":"#ffffff");viewMat.needsUpdate=true;
     shadowUniforms.uOpacity.value=L.blob;bandMat.uniforms.uOpacity.value=night?.2:.26;
@@ -818,6 +864,6 @@ export function createStudioScene(container, options) {
       for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);canvas.removeEventListener("webglcontextlost",onContextLost);
       clearGuides();openingGhost.geometry.dispose();openingGhost.material.dispose();lineMat.dispose();marker.geometry.dispose();ring.geometry.dispose();ring.material.dispose();marker.material.dispose();
       for(const m of meshes.values())removePiece(m);clearRoom();floorTextures.forEach(t=>t.dispose());
-      for(const material of [bandMat,groundMat,poolMat,depthMat,accumMat,viewMat])material.dispose();bakeTarget.dispose();depthTarget.dispose();bakeQuad.geometry.dispose();for(const t of surfaces.values())t.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
+      for(const material of [bandMat,groundMat,poolMat,depthMat,accumMat,viewMat])material.dispose();bakeTarget.dispose();depthTarget.dispose();pmrem.dispose();roomEnv?.dispose();mirrorTarget.dispose();measureTarget.dispose();measureMat.dispose();bakeQuad.geometry.dispose();for(const t of surfaces.values())t.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
   };
 }
