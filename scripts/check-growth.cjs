@@ -125,7 +125,7 @@ const free=(id,extra={})=>({id,plan:'free',free_plans_used:0,plan_credits_remain
   // Real dimensions from the header, so a tiny file can't claim to be a 20,000 px bomb.
   const file=(f)=>fs.readFileSync(path.join(root,f));
   assert.deepEqual(imageSize(file('public/redesign/site-hall-clay-room.jpg'),'jpeg'),{w:1440,h:1280},'progressive JPEG');
-  assert.deepEqual(imageSize(file('public/redesign/hero-room-v6.webp'),'webp'),{w:2000,h:1166},'lossy WebP');
+  assert.deepEqual(imageSize(file('public/redesign/hero-room-v6.webp'),'webp'),{w:2400,h:1400},'lossy WebP');
   assert.deepEqual(imageSize(file('public/og.png'),'png'),{w:1200,h:630},'PNG');
   const bomb=Buffer.concat([Buffer.from([0x89,0x50,0x4e,0x47,0x0d,0x0a,0x1a,0x0a,0,0,0,13]),Buffer.from('IHDR'),Buffer.from([0,0,0x4e,0x20,0,0,0x4e,0x20])]);
   assert.ok(imageSize(bomb,'png').w>AVATAR_MAX_SIDE,'a 20,000 px PNG header is caught');

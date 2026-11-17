@@ -161,7 +161,7 @@ function Stage({ dims }: { dims: React.ReactNode }) {
         sizes={lcp ? "(max-width: 900px) 100vw, 900px" : "(max-width: 900px) 34vw, 300px"}
         loading="eager"
         fetchPriority={lcp ? "high" : undefined}
-        quality={80}
+        quality={90}
       />
     </span>
   );
@@ -207,34 +207,34 @@ function Stage({ dims }: { dims: React.ReactNode }) {
         <span className={css.share}>Share room</span>
       </div>
       <div className={css.view}>
-        {layer(css.lyRoom, "/redesign/hero-room-v6.webp", "A dorm double in 3D: two beds, two desks, dressers, a full-length mirror and string lights", true)}
+        {layer(css.lyRoom, "/redesign/hero-room-v6.webp", "A dorm double in 3D: two beds, two desks, dressers, a full-length mirror, a mini fridge and string lights", true)}
         {layer(css.lyRug, "/redesign/hero-rug-v3.webp", "An orange rug with a light border")}
         {layer(css.lyOcc, "/redesign/hero-occluder-v6.webp", "The near bed and desk chair, drawn over the rug")}
         {layer(css.lyBean, "/redesign/hero-bean-v3.webp", "A magenta bean bag chair")}
         <svg className={css.dims} viewBox="0 0 1000 583.333" preserveAspectRatio="xMidYMid meet">
-          <line className={`${css.dl} ${css.dlF}`} pathLength={1} x1="434.29" y1="303.84" x2="581.94" y2="332.23" />
-          <line className={`${css.dl} ${css.dlR}`} pathLength={1} x1="417.82" y1="308.87" x2="372.11" y2="376.19" />
-          <line className={`${css.tk} ${css.tkF}`} x1="436.62" y1="300.26" x2="431.92" y2="307.47" />
-          <line className={`${css.tk} ${css.tkF}`} x1="583.22" y1="328.21" x2="580.64" y2="336.32" />
-          <line className={`${css.tk} ${css.tkR}`} x1="412.01" y1="307.74" x2="423.65" y2="310.02" />
-          <line className={`${css.tk} ${css.tkR}`} x1="365.61" y1="374.71" x2="378.66" y2="377.68" />
+          <line className={`${css.dl} ${css.dlF}`} pathLength={1} x1="418.25" y1="291.13" x2="580.24" y2="311.9" />
+          <line className={`${css.dl} ${css.dlR}`} pathLength={1} x1="401.62" y1="298.8" x2="370.91" y2="381.55" />
+          <line className={`${css.tk} ${css.tkF}`} x1="419.89" y1="286.51" x2="416.59" y2="295.8" />
+          <line className={`${css.tk} ${css.tkF}`} x1="581.04" y1="307.06" x2="579.43" y2="316.8" />
+          <line className={`${css.tk} ${css.tkR}`} x1="394.99" y1="297.94" x2="408.26" y2="299.66" />
+          <line className={`${css.tk} ${css.tkR}`} x1="363.7" y1="380.52" x2="378.15" y2="382.58" />
         </svg>
-        <span className={css.at} style={{ left: "51.2%", top: "51.2%" }}>
+        <span className={css.at} style={{ left: "50.4%", top: "47.8%" }}>
           <span className={`${css.dlbl} ${css.popDf}`}>6′0″</span>
         </span>
-        <span className={css.at} style={{ left: "36.6%", top: "57.4%" }}>
+        <span className={css.at} style={{ left: "34.7%", top: "57%" }}>
           <span className={`${css.dlbl} ${css.popDr}`}>4′0″</span>
         </span>
-        <span className={css.at} style={{ left: "40.5%", top: "37.5%" }}>
+        <span className={css.at} style={{ left: "40.5%", top: "39%" }}>
           <Tag who="j" className={css.popBedA} />
         </span>
-        <span className={css.at} style={{ left: "40%", top: "68%" }}>
+        <span className={css.at} style={{ left: "41.5%", top: "70%" }}>
           <Tag who="c" className={css.popBedB} />
         </span>
-        <span className={css.at} style={{ left: "48%", top: "57%" }}>
+        <span className={css.at} style={{ left: "52.5%", top: "55.5%" }}>
           <Tag who="s" className={css.popRug} />
         </span>
-        <span className={css.at} style={{ left: "55.5%", top: "37.5%" }}>
+        <span className={css.at} style={{ left: "55.3%", top: "33%" }}>
           <Tag who="c" className={css.popBean} />
         </span>
         <div className={css.toastAt}>
