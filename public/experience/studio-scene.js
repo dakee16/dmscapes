@@ -13,7 +13,6 @@ const LIGHT={
   evening:{win:[.95,.38],share:.45,sun:"#ffab5e",sunI:2.7,elev:13,az:214,hemiSky:"#ffd9b3",hemiGround:"#9a7a5c",hemiI:1.1,exposure:1.0,sky:"#f6c68f",glass:.45,fill:"#ffcf9e",fillI:5,pool:"#ffb066",poolA:.2,blob:.46,env:.8},
   night:  {win:[1,0],share:.4,sun:"#9bb3ff",sunI:.3,elev:30,az:200,hemiSky:"#3a4468",hemiGround:"#211b16",hemiI:.5,exposure:1.08,sky:"#1b2440",glass:.95,fill:"#7d9cff",fillI:1.5,pool:"#9bb3ff",poolA:0,blob:.3,env:.3},
 };
-const TEX_DIR=new URL("./textures/",import.meta.url).href;
 /** Each floor finish's base colour (its texture, and the light it bounces up). "concrete" is Tile in the UI. */
 const FLOOR_TONE={oak:"#c99f6c",walnut:"#7a553a",concrete:"#d4cfcb",carpet:"#c4bcae"};
 const PAPER="#f4f3ee",WALL_T=.42,PLINTH=.45,EYE=5.3,WALK_R=.7;
@@ -68,7 +67,7 @@ export function createStudioScene(container, options) {
   renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.NeutralToneMapping;renderer.toneMappingExposure=LIGHT.day.exposure;
   const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute("aria-label","3D room. Drag empty space to orbit. Drag a piece to move it; hold Shift to lift it. Select an item in Arrange for keyboard editing.");
   canvas.style.cssText="display:block;width:100%;height:100%;touch-action:none;outline-offset:-4px";container.appendChild(canvas);
-  const scene=new T.Scene(),camera=new T.PerspectiveCamera(30,1,.2,400),kit=createModelKit({onTexture:()=>{mirrorDirty=true;request();},lite:LOW,
+  const scene=new T.Scene(),camera=new T.PerspectiveCamera(30,1,.2,400),kit=createModelKit({renderer,onTexture:()=>{mirrorDirty=true;request();},lite:LOW,
     // A library model just arrived: rebuild the pieces of that kind that were standing in as clay.
     onModel:name=>{if(disposed||!data)return;let stale=false;for(const m of meshes.values())if(libraryKey(m.item)===name){m.key="";stale=true;}if(stale){invalidateBake();sync(data);}}});
   // A sky/ground fill, the sun, and a fill at the window (moonlight at night).
@@ -231,6 +230,8 @@ export function createStudioScene(container, options) {
     const still=post&&!more&&!pointers.size&&!drag?.moved&&!tween&&!assemblyStart&&bake.ready&&!mirrorDirty&&renderer.getPixelRatio()===full;
     if(still){aoFade=options.reduced?1:Math.min(1,aoFade+.25);post.gtao.blendIntensity=aoFade*AO_STRENGTH;post.composer.render();if(aoFade<1)more=true;}
     else{aoFade=0;renderer.render(scene,camera);}
+    // Settled: baked, room view current and (on desktop) the AO faded in. Marked on the canvas for tests and screenshots.
+    const settled=bake.ready&&!mirrorDirty&&!more&&!pointers.size&&!kit.loading()&&(LOW||(still&&aoFade>=1));if(canvas.dataset.settled!==(settled?"1":""))canvas.dataset.settled=settled?"1":"";
     if(!ready&&data&&width>1&&height>1){ready=true;options.onReady?.();setTimeout(prewarm,0);setTimeout(loadPost,1500);}
     if(more)request();
   }
@@ -292,8 +293,9 @@ export function createStudioScene(container, options) {
   const surfaces=new Map(),flatNormal=new T.DataTexture(new Uint8Array([128,128,255,255]),1,1);flatNormal.needsUpdate=true;
   function surface(name,feet,srgb,onLoad){
     const key=name+"|"+feet;if(surfaces.has(key)){const t=surfaces.get(key);if(t.image)onLoad?.(t);else t.userData.waiting.push(onLoad);return t;}
-    const t=new T.TextureLoader().load(TEX_DIR+name+".webp",tex=>{for(const f of tex.userData.waiting)f?.(tex);tex.userData.waiting=[];request();});
-    t.userData.waiting=[onLoad];t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(1/feet,1/feet);if(srgb)t.colorSpace=T.SRGBColorSpace;
+    // KTX2 on desktop, WebP on phones (the kit's loadTexture).
+    const t=kit.loadTexture(name,srgb,tex=>{for(const f of tex.userData.waiting)f?.(tex);tex.userData.waiting=[];mirrorDirty=true;request();});
+    t.userData.waiting=[onLoad];t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(1/feet,1/feet);
     t.anisotropy=Math.min(LOW?4:8,renderer.capabilities.getMaxAnisotropy());surfaces.set(key,t);return t;
   }
   // ---------- baked floor shadows ----------

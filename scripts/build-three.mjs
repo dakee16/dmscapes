@@ -3,7 +3,7 @@
 // every name they touch, keeps the ones three exports, and bundles only those from three's source.
 // Run after changing public/experience/*.js:  node scripts/build-three.mjs
 import { build } from "esbuild";
-import { readFileSync, statSync } from "node:fs";
+import { copyFileSync, mkdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import * as THREE from "three";
 
@@ -33,7 +33,7 @@ function keepImports(file) {
     for (const name of list.split(",")) if (name.trim()) names.add(name.trim().split(/\s+as\s+/)[0]);
   for (const [, rel] of text.matchAll(/from\s*['"](\.{1,2}\/[^'"]+)['"]/g)) keepImports(join(dirname(file), rel));
 }
-for (const file of ["loaders/GLTFLoader.js", "utils/BufferGeometryUtils.js", "utils/SkeletonUtils.js",
+for (const file of ["loaders/GLTFLoader.js", "loaders/KTX2Loader.js", "utils/BufferGeometryUtils.js", "utils/SkeletonUtils.js",
   "postprocessing/EffectComposer.js", "postprocessing/RenderPass.js", "postprocessing/GTAOPass.js", "postprocessing/OutputPass.js"]) keepImports(file);
 const used = [...names].filter((name) => name in THREE).sort();
 
@@ -88,3 +88,23 @@ await build({
   outfile: postOut,
 });
 console.log(`post ${(statSync(postOut).size / 1024).toFixed(0)} KB`);
+
+// KTX2Loader on its own (desktop only: phones keep WebP textures and never load it or the transcoder).
+const ktxOut = join(root, "public/experience/vendor/ktx2-loader.min.js");
+await build({
+  stdin: { contents: `export { KTX2Loader } from "three/examples/jsm/loaders/KTX2Loader.js";`, resolveDir: root, loader: "js" },
+  bundle: true,
+  format: "esm",
+  minify: true,
+  target: "es2020",
+  legalComments: "none",
+  plugins: [{ name: "three-external", setup(b) { b.onResolve({ filter: /^three$/ }, () => ({ path: "./three.module.min.js", external: true })); } }],
+  banner: { js: `/** three.js r${THREE.REVISION} KTX2Loader (MIT, see LICENSE-three.txt), built by scripts/build-three.mjs. */` },
+  outfile: ktxOut,
+});
+console.log(`ktx2 loader ${(statSync(ktxOut).size / 1024).toFixed(0)} KB`);
+// The Basis transcoder KTX2Loader runs in its workers (desktop only; phones keep WebP textures and never fetch it).
+const basis = join(root, "public/experience/vendor/basis");
+mkdirSync(basis, { recursive: true });
+for (const f of ["basis_transcoder.js", "basis_transcoder.wasm"]) copyFileSync(join(root, "node_modules/three/examples/jsm/libs/basis", f), join(basis, f));
+console.log("basis transcoder copied");
