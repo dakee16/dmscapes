@@ -9,8 +9,8 @@ import { createModelKit, footprint, libraryKey } from "./studio-models.js";
 // tiny reflection map; night adds the plan's lamps. Changing the preset never rebuilds the room, and the night shaders are
 // compiled ahead of time, so the switch is instant.
 const LIGHT={
-  day:    {win:[.84,.62],share:.5,sun:"#fff0dc",sunI:2.2,elev:36,az:200,hemiSky:"#f2f5ff",hemiGround:"#c2ad94",hemiI:1.5,exposure:.95,sky:"#cfe3f3",glass:.45,fill:"#e6efff",fillI:6,pool:"#fff4e2",poolA:.14,blob:.44,env:1},
-  evening:{win:[.9,.4],share:.45,sun:"#ffab5e",sunI:2.7,elev:13,az:214,hemiSky:"#ffd9b3",hemiGround:"#9a7a5c",hemiI:1.1,exposure:1.0,sky:"#f6c68f",glass:.45,fill:"#ffcf9e",fillI:5,pool:"#ffb066",poolA:.2,blob:.46,env:.8},
+  day:    {win:[.93,.55],share:.5,sun:"#fff0dc",sunI:2.2,elev:36,az:200,hemiSky:"#f2f5ff",hemiGround:"#c2ad94",hemiI:1.5,exposure:.95,sky:"#cfe3f3",glass:.45,fill:"#e6efff",fillI:6,pool:"#fff4e2",poolA:.14,blob:.44,env:1},
+  evening:{win:[.95,.38],share:.45,sun:"#ffab5e",sunI:2.7,elev:13,az:214,hemiSky:"#ffd9b3",hemiGround:"#9a7a5c",hemiI:1.1,exposure:1.0,sky:"#f6c68f",glass:.45,fill:"#ffcf9e",fillI:5,pool:"#ffb066",poolA:.2,blob:.46,env:.8},
   night:  {win:[1,0],share:.4,sun:"#9bb3ff",sunI:.3,elev:30,az:200,hemiSky:"#3a4468",hemiGround:"#211b16",hemiI:.5,exposure:1.08,sky:"#1b2440",glass:.95,fill:"#7d9cff",fillI:1.5,pool:"#9bb3ff",poolA:0,blob:.3,env:.3},
 };
 const TEX_DIR=new URL("./textures/",import.meta.url).href;
@@ -63,7 +63,7 @@ export function createStudioScene(container, options) {
   // The pixel ratio starts at the screen's (capped). While the camera or a piece moves slowly it steps down, so weak GPUs stay
   // smooth; when everything stops, the still frame goes back to the full ratio.
   const full=Math.min(devicePixelRatio||1,LOW?1.5:1.75);let ratio=full,sharpen=0;
-  const useRatio=v=>{if(renderer.getPixelRatio()!==v){renderer.setPixelRatio(v);renderer.setSize(width,height,false);}};
+  const useRatio=v=>{if(renderer.getPixelRatio()!==v){renderer.setPixelRatio(v);renderer.setSize(width,height,false);sizePost();}};
   renderer.setPixelRatio(ratio);renderer.setClearColor(PAPER);
   renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.NeutralToneMapping;renderer.toneMappingExposure=LIGHT.day.exposure;
   const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute("aria-label","3D room. Drag empty space to orbit. Drag a piece to move it; hold Shift to lift it. Select an item in Arrange for keyboard editing.");
@@ -228,8 +228,10 @@ export function createStudioScene(container, options) {
     renderer.setClearColor(mode==="inside"?ceiling:paper);
     seatRiders();cameraUpdate();camera.updateMatrixWorld();showSelection();
     if(walker&&mode==="inside")walker.setAttribute("transform","translate("+eye.x.toFixed(2)+" "+eye.z.toFixed(2)+") rotate("+(angle*180/Math.PI).toFixed(1)+")");
-    renderer.render(scene,camera);
-    if(!ready&&data&&width>1&&height>1){ready=true;options.onReady?.();setTimeout(prewarm,0);}
+    const still=post&&!more&&!pointers.size&&!drag?.moved&&!tween&&!assemblyStart&&bake.ready&&!mirrorDirty&&renderer.getPixelRatio()===full;
+    if(still){aoFade=options.reduced?1:Math.min(1,aoFade+.25);post.gtao.blendIntensity=aoFade*AO_STRENGTH;post.composer.render();if(aoFade<1)more=true;}
+    else{aoFade=0;renderer.render(scene,camera);}
+    if(!ready&&data&&width>1&&height>1){ready=true;options.onReady?.();setTimeout(prewarm,0);setTimeout(loadPost,1500);}
     if(more)request();
   }
   /** Compile the other light set's shaders in the background, so switching Day / Night never stalls on a compile. */
@@ -454,6 +456,35 @@ export function createStudioScene(container, options) {
     kit.setMirrorView(mirrorTarget.texture,mirrorCam.position,min,max);
     useEnvCube(mirrorTarget.texture,false);
   }
+  // ---------- ambient occlusion, only while the room is still (desktop) ----------
+  // Screen-space AO (three's GTAO) darkens the creases every piece has with its neighbours: where a duvet meets a pillow, under
+  // a desk's top, between a chair's slats. It costs a few milliseconds a frame, so it's drawn only on still frames (after the
+  // bake and the room view are done) and fades in over four; any movement drops back to the plain render at once. Phones and
+  // low-power devices never load it. The window views, glass, the floor's soft patches and the selection ring are left out of
+  // its depth/normal pass (they'd ring the room with false shading); the colour pass keeps them, stencil included.
+  const AO_STRENGTH=.85;let post=null,postLoading=false,aoFade=0;
+  function loadPost(){
+    if(LOW||postLoading||disposed)return;postLoading=true;
+    import("./vendor/post.min.js").then(m=>{
+      if(disposed)return;
+      const size=renderer.getDrawingBufferSize(new T.Vector2());
+      const target=new T.WebGLRenderTarget(size.x,size.y,{type:T.HalfFloatType,samples:4,stencilBuffer:true});
+      const composer=new m.EffectComposer(renderer,target);composer.addPass(new m.RenderPass(scene,camera));
+      const gtao=new m.GTAOPass(scene,camera,width,height,undefined,
+        {radius:1.1,distanceExponent:1.5,thickness:1.4,scale:1.15,samples:16,distanceFallOff:1,screenSpaceRadius:false},
+        {lumaPhi:10,depthPhi:2,normalPhi:3,radius:6,radiusExponent:1,rings:2,samples:16});
+      gtao.blendIntensity=0;
+      const render=gtao.render.bind(gtao);gtao.render=(...args)=>{const hidden=aoHide();try{render(...args);}finally{for(const o of hidden)o.visible=true;}};
+      composer.addPass(gtao);composer.addPass(new m.OutputPass());
+      post={composer,gtao,target};sizePost();request();
+    }).catch(()=>{postLoading=false;});
+  }
+  function sizePost(){if(post){post.composer.setPixelRatio(renderer.getPixelRatio());post.composer.setSize(width,height);}}
+  function aoHide(){
+    const hidden=[];
+    scene.traverse(o=>{if(!o.visible||!o.isMesh)return;if(o===ring||[o.material].flat().some(x=>x.transparent||x===viewMat)){o.visible=false;hidden.push(o);}});
+    return hidden;
+  }
   /** Something changed: the bake fades out (the pieces' own contact shadows stay) until a fresh one finishes. */
   function invalidateBake(){bake.dirty=true;bake.ready=false;bakeUniforms.uBakeOn.value=0;mirrorDirty=true;showPool();}
   /** The drawn pool of window light stands in only while there's no bake (the bake has the real one). */
@@ -470,6 +501,8 @@ export function createStudioScene(container, options) {
       wallAccumMat.uniforms.uMode.value=1;renderer.autoClear=false;renderer.render(wallBakeScene,bakeCam);wallAccumMat.uniforms.uMode.value=0;renderer.autoClear=auto0;renderer.setRenderTarget(was);}
     const center=new T.Vector3(r.lengthFt/2,0,r.widthFt/2),extent=Math.hypot(lx,lz)/2+data.settings.ceilingFt;
     const clear=renderer.getClearColor(new T.Color()),alpha=renderer.getClearAlpha(),was=renderer.getRenderTarget(),override=scene.overrideMaterial,auto=renderer.autoClear;
+    // Every wall stands while baking, whatever the cutaway hides from this camera (the bake can't depend on where you look from).
+    const cut=wallGroups.filter(g=>!g.visible);for(const g of cut)g.visible=true;
     for(let k=0;k<BAKE_STEP&&bake.done<bake.dirs.length;k++,bake.done++){
       const d=bake.dirs[bake.done];
       lightCam.left=lightCam.bottom=-extent;lightCam.right=lightCam.top=extent;lightCam.near=.1;lightCam.far=extent*4;lightCam.updateProjectionMatrix();
@@ -487,7 +520,7 @@ export function createStudioScene(container, options) {
         renderer.setRenderTarget(wallBakeTarget);renderer.render(wallBakeScene,bakeCam);
       }
     }
-    lightCam.layers.disable(WALL_LAYER);
+    lightCam.layers.disable(WALL_LAYER);for(const g of cut)g.visible=false;
     scene.overrideMaterial=override;renderer.autoClear=auto;renderer.setRenderTarget(was);renderer.setClearColor(clear,alpha);
     if(bake.done>=bake.dirs.length){bake.ready=true;bakeUniforms.uBakeOn.value=data.settings.lighting==="night"?.7:1;showPool();return false;}
     return true;
@@ -530,6 +563,10 @@ export function createStudioScene(container, options) {
     // The dollhouse plinth: one slab whose top is the floor, its sides in the wall cap colour.
     const slab=new T.Mesh(new T.ExtrudeGeometry(shape,{depth:PLINTH,bevelEnabled:false}),[floorMat,capMat]);
     slab.name="room-floor";slab.rotation.x=-Math.PI/2;slab.position.y=-PLINTH;slab.userData={ownGeometry:true};roomRoot.add(slab);
+    // A ceiling only the window-light bake sees (WALL_LAYER alone): without it, light from outside came in over the top of the
+    // window's wall and lit the far wall. No camera that draws the room renders it.
+    const lid=new T.Mesh(new T.ShapeGeometry(shape),new T.MeshBasicMaterial({side:T.DoubleSide}));lid.rotation.x=-Math.PI/2;lid.position.y=h;
+    lid.layers.set(WALL_LAYER);lid.name="bake-ceiling";lid.userData={ownGeometry:true,ownMaterial:true};roomRoot.add(lid);
     const owned=new T.Group();owned.userData.ownMaterial=true;owned.material=[wallMat,capMat,trim,baseMat,floorMat];roomRoot.add(owned);
     // Door knobs are the kit's satin metal, so they reflect the room like every other metal.
     const doorMat=kit.veneer(mixHex("#b98b5e",wallColor,.12)),knobMat=kit.mat("#c9c4bd",.35,false,.6),plateMat=kit.mat("#9d9b97",.4,false,.55);
@@ -905,7 +942,7 @@ export function createStudioScene(container, options) {
   }
   // Resizing keeps the camera where it is; only an untouched default view refits to the new shape.
   const resize=new ResizeObserver(()=>{const r=container.getBoundingClientRect();width=Math.max(1,r.width);height=Math.max(1,r.height);
-    renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();
+    renderer.setSize(width,height,false);sizePost();camera.aspect=width/height;camera.updateProjectionMatrix();
     if(data&&mode!=="inside"&&!custom&&!tween)preset(mode,true,true);request();});resize.observe(container);
   function droppedOpening(e){
     if(!data?.editOpenings)return null;
@@ -949,6 +986,6 @@ export function createStudioScene(container, options) {
       for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);canvas.removeEventListener("webglcontextlost",onContextLost);
       clearGuides();openingGhost.geometry.dispose();openingGhost.material.dispose();lineMat.dispose();marker.geometry.dispose();ring.geometry.dispose();ring.material.dispose();marker.material.dispose();
       for(const m of meshes.values())removePiece(m);clearRoom();floorTextures.forEach(t=>t.dispose());
-      for(const material of [bandMat,groundMat,poolMat,depthMat,accumMat,viewMat])material.dispose();bakeTarget.dispose();depthTarget.dispose();wallBakeTarget.dispose();wallAccumMat.dispose();wallAtlas.geometry.dispose();pmrem.dispose();roomEnv?.dispose();mirrorTarget.dispose();measureTarget.dispose();measureMat.dispose();bakeQuad.geometry.dispose();for(const t of surfaces.values())t.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
+      for(const material of [bandMat,groundMat,poolMat,depthMat,accumMat,viewMat])material.dispose();bakeTarget.dispose();depthTarget.dispose();wallBakeTarget.dispose();wallAccumMat.dispose();wallAtlas.geometry.dispose();if(post){post.gtao.dispose();post.composer.dispose();post.target.dispose();}pmrem.dispose();roomEnv?.dispose();mirrorTarget.dispose();measureTarget.dispose();measureMat.dispose();bakeQuad.geometry.dispose();for(const t of surfaces.values())t.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
   };
 }

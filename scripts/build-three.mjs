@@ -4,7 +4,7 @@
 // Run after changing public/experience/*.js:  node scripts/build-three.mjs
 import { build } from "esbuild";
 import { readFileSync, statSync } from "node:fs";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
 import * as THREE from "three";
 
 const root = join(import.meta.dirname, "..");
@@ -21,11 +21,20 @@ const rounded = readFileSync(join(root, "public/experience/vendor/RoundedBoxGeom
 for (const name of /import\s*\{([^}]*)\}\s*from\s*['"]\.\/three\.module\.min\.js['"]/.exec(rounded)[1].split(",")) names.add(name.trim());
 // The model loader (vendor/gltf-loader.min.js, loaded only when a room shows a library model) imports three from the
 // trimmed build too, so every name it and its helpers use has to be kept.
+// The idle ambient-occlusion passes (vendor/post.min.js, loaded on desktop once the room is still) do too; their relative
+// imports (shaders, Pass) are followed so nothing they reach is missed.
 const jsm = join(root, "node_modules/three/examples/jsm");
-for (const file of ["loaders/GLTFLoader.js", "utils/BufferGeometryUtils.js", "utils/SkeletonUtils.js"]) {
-  const head = /^import\s*\{([^}]*)\}\s*from\s*['"]three['"]/m.exec(readFileSync(join(jsm, file), "utf8"));
-  if (head) for (const name of head[1].split(",")) if (name.trim()) names.add(name.trim().split(/\s+as\s+/)[0]);
+const seen = new Set();
+function keepImports(file) {
+  if (seen.has(file)) return;
+  seen.add(file);
+  const text = readFileSync(join(jsm, file), "utf8");
+  for (const [, list] of text.matchAll(/import\s*\{([^}]*)\}\s*from\s*['"]three['"]/g))
+    for (const name of list.split(",")) if (name.trim()) names.add(name.trim().split(/\s+as\s+/)[0]);
+  for (const [, rel] of text.matchAll(/from\s*['"](\.{1,2}\/[^'"]+)['"]/g)) keepImports(join(dirname(file), rel));
 }
+for (const file of ["loaders/GLTFLoader.js", "utils/BufferGeometryUtils.js", "utils/SkeletonUtils.js",
+  "postprocessing/EffectComposer.js", "postprocessing/RenderPass.js", "postprocessing/GTAOPass.js", "postprocessing/OutputPass.js"]) keepImports(file);
 const used = [...names].filter((name) => name in THREE).sort();
 
 const out = join(root, "public/experience/vendor/three.module.min.js");
@@ -60,3 +69,22 @@ await build({
 });
 console.log(`loader ${(statSync(loaderOut).size / 1024).toFixed(0)} KB`);
 
+
+// The idle ambient-occlusion passes, importing three from the trimmed build.
+const postOut = join(root, "public/experience/vendor/post.min.js");
+await build({
+  stdin: {
+    contents: ["EffectComposer", "RenderPass", "GTAOPass", "OutputPass"].map((n) => `export { ${n} } from "three/examples/jsm/postprocessing/${n}.js";`).join("\n"),
+    resolveDir: root,
+    loader: "js",
+  },
+  bundle: true,
+  format: "esm",
+  minify: true,
+  target: "es2020",
+  legalComments: "none",
+  plugins: [{ name: "three-external", setup(b) { b.onResolve({ filter: /^three$/ }, () => ({ path: "./three.module.min.js", external: true })); } }],
+  banner: { js: `/** three.js r${THREE.REVISION} EffectComposer, RenderPass, GTAOPass, OutputPass (MIT, see LICENSE-three.txt), built by scripts/build-three.mjs. */` },
+  outfile: postOut,
+});
+console.log(`post ${(statSync(postOut).size / 1024).toFixed(0)} KB`);
