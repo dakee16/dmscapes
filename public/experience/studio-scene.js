@@ -9,9 +9,9 @@ import { createModelKit, footprint, libraryKey } from "./studio-models.js";
 // tiny reflection map; night adds the plan's lamps. Changing the preset never rebuilds the room, and the night shaders are
 // compiled ahead of time, so the switch is instant.
 const LIGHT={
-  day:    {share:.6,sun:"#fff0dc",sunI:2.2,elev:36,az:200,hemiSky:"#f2f5ff",hemiGround:"#c2ad94",hemiI:1.5,exposure:.95,sky:"#cfe3f3",glass:.45,fill:"#e6efff",fillI:6,pool:"#fff4e2",poolA:.14,blob:.44,env:1},
-  evening:{share:.55,sun:"#ffab5e",sunI:2.7,elev:13,az:214,hemiSky:"#ffd9b3",hemiGround:"#9a7a5c",hemiI:1.1,exposure:1.0,sky:"#f6c68f",glass:.45,fill:"#ffcf9e",fillI:5,pool:"#ffb066",poolA:.2,blob:.46,env:.8},
-  night:  {share:.5,sun:"#9bb3ff",sunI:.3,elev:30,az:200,hemiSky:"#3a4468",hemiGround:"#211b16",hemiI:.5,exposure:1.08,sky:"#1b2440",glass:.95,fill:"#7d9cff",fillI:1.5,pool:"#9bb3ff",poolA:0,blob:.3,env:.3},
+  day:    {win:[.84,.62],share:.5,sun:"#fff0dc",sunI:2.2,elev:36,az:200,hemiSky:"#f2f5ff",hemiGround:"#c2ad94",hemiI:1.5,exposure:.95,sky:"#cfe3f3",glass:.45,fill:"#e6efff",fillI:6,pool:"#fff4e2",poolA:.14,blob:.44,env:1},
+  evening:{win:[.9,.4],share:.45,sun:"#ffab5e",sunI:2.7,elev:13,az:214,hemiSky:"#ffd9b3",hemiGround:"#9a7a5c",hemiI:1.1,exposure:1.0,sky:"#f6c68f",glass:.45,fill:"#ffcf9e",fillI:5,pool:"#ffb066",poolA:.2,blob:.46,env:.8},
+  night:  {win:[1,0],share:.4,sun:"#9bb3ff",sunI:.3,elev:30,az:200,hemiSky:"#3a4468",hemiGround:"#211b16",hemiI:.5,exposure:1.08,sky:"#1b2440",glass:.95,fill:"#7d9cff",fillI:1.5,pool:"#9bb3ff",poolA:0,blob:.3,env:.3},
 };
 const TEX_DIR=new URL("./textures/",import.meta.url).href;
 /** Each floor finish's base colour (its texture, and the light it bounces up). "concrete" is Tile in the UI. */
@@ -299,21 +299,48 @@ export function createStudioScene(container, options) {
   // (half spread over the sky, half from the first window), a few per frame, and the floor multiplies by the result.
   // It costs nothing while you look around; while anything changes (a drag, an edit) it fades out until the next bake
   // finishes, and each piece's own footprint shadow keeps it grounded throughout. No shadow maps run in the normal frame.
-  const BAKE_LAYER=3,BAKE_N=LOW?24:64,BAKE_STEP=LOW?6:8,BAKE_RES=LOW?512:1024;
+  // The walls are baked too (into an atlas, one strip per wall): the pieces' shadows on them, the soft dark where they meet the
+  // floor and each other, and the light that comes in through the window. For that window light the walls themselves cast
+  // shadows (WALL_LAYER), so it falls only where the opening lets it: a pool on the floor, a patch on the far wall.
+  const BAKE_LAYER=3,WALL_LAYER=4,BAKE_N=LOW?24:64,BAKE_STEP=LOW?6:8,BAKE_RES=LOW?512:1024,WALL_W=LOW?512:1024,WALL_H=LOW?128:256;
+  const wallBakeTarget=new T.WebGLRenderTarget(WALL_W,WALL_H,{type:T.HalfFloatType,depthBuffer:false});
   const bakeTarget=new T.WebGLRenderTarget(BAKE_RES,BAKE_RES,{type:T.HalfFloatType,depthBuffer:false});
   const depthTarget=new T.WebGLRenderTarget(BAKE_RES,BAKE_RES);
   const depthMat=new T.MeshDepthMaterial({depthPacking:T.RGBADepthPacking,side:T.DoubleSide});
   const lightCam=new T.OrthographicCamera(-1,1,1,-1,.1,200);lightCam.layers.set(BAKE_LAYER);lightCam.up.set(0,0,1); // never parallel to a light direction (all point up)
-  const bakeUniforms={uBake:{value:bakeTarget.texture},uBakeBounds:{value:new T.Vector4(0,0,1,1)},uBakeOn:{value:0}};
-  const accumMat=new T.ShaderMaterial({blending:T.AdditiveBlending,depthTest:false,depthWrite:false,
-    uniforms:{uDepth:{value:depthTarget.texture},uLightVP:{value:new T.Matrix4()},uBounds:{value:new T.Vector4()},uWeight:{value:0},uTexel:{value:1/BAKE_RES}},
+  // uWin: how strongly the window light shows (none at night); its base is the brightness where it doesn't reach.
+  const bakeUniforms={uBake:{value:bakeTarget.texture},uBakeBounds:{value:new T.Vector4(0,0,1,1)},uBakeOn:{value:0},uWallBake:{value:wallBakeTarget.texture},uWin:{value:new T.Vector2(1,0)}};
+  // Plain sums (one + one): every channel, alpha included, is a running total.
+  const accumMat=new T.ShaderMaterial({blending:T.CustomBlending,blendSrc:T.OneFactor,blendDst:T.OneFactor,blendSrcAlpha:T.OneFactor,blendDstAlpha:T.OneFactor,depthTest:false,depthWrite:false,
+    uniforms:{uDepth:{value:depthTarget.texture},uLightVP:{value:new T.Matrix4()},uBounds:{value:new T.Vector4()},uWeight:{value:0},uTexel:{value:1/BAKE_RES},uMask:{value:new T.Vector4(1,0,0,0)}},
     vertexShader:"varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position.xy,0.,1.);}",
     fragmentShader:`#include <packing>
-      uniform sampler2D uDepth;uniform mat4 uLightVP;uniform vec4 uBounds;uniform float uWeight,uTexel;varying vec2 vUv;
+      uniform sampler2D uDepth;uniform mat4 uLightVP;uniform vec4 uBounds,uMask;uniform float uWeight,uTexel;varying vec2 vUv;
       void main(){
         vec4 c=uLightVP*vec4(uBounds.x+vUv.x/uBounds.z,.02,uBounds.y+vUv.y/uBounds.w,1.);vec3 p=c.xyz/c.w*.5+.5;float lit=0.;
         for(int i=0;i<9;i++){vec2 o=vec2(float(i-i/3*3)-1.,float(i/3)-1.)*1.5*uTexel;lit+=p.z-.0015>unpackRGBAToDepth(texture2D(uDepth,p.xy+o))?0.:1./9.;}
-        gl_FragColor=vec4(vec3(lit*uWeight),1.);}`});
+        gl_FragColor=lit*uWeight*uMask;}`});
+  // The walls' atlas: each wall's inner face drawn flat into its strip (wallAtlasGeometry), carrying where it is in the room.
+  // A light pass adds lit × weight to r (g for window light) and the weight to a, so r/a is the share of the light reaching it;
+  // the first pass writes the corner shading to b.
+  const wallAccumMat=new T.ShaderMaterial({blending:T.CustomBlending,blendSrc:T.OneFactor,blendDst:T.OneFactor,blendSrcAlpha:T.OneFactor,blendDstAlpha:T.OneFactor,depthTest:false,depthWrite:false,
+    uniforms:{uDepth:{value:depthTarget.texture},uLightVP:{value:new T.Matrix4()},uDir:{value:new T.Vector3()},uWeight:{value:0},uTexel:{value:1/BAKE_RES},uMode:{value:0},uWindow:{value:0}},
+    vertexShader:`attribute vec3 aWorld,aNormal;attribute vec4 aShell;varying vec3 vWorld,vNormal;varying vec4 vShell;
+      void main(){vWorld=aWorld;vNormal=aNormal;vShell=aShell;gl_Position=vec4(position.xy,0.,1.);}`,
+    fragmentShader:`#include <packing>
+      uniform sampler2D uDepth;uniform mat4 uLightVP;uniform vec3 uDir;uniform float uWeight,uTexel,uMode,uWindow;varying vec3 vWorld,vNormal;varying vec4 vShell;
+      void main(){
+        if(uMode>.5){
+          // Soft dark low on the wall (where it meets the floor) and into the inside corners.
+          float ao=(1.-.3*exp(-vWorld.y/.8))*(1.-.26*vShell.z*exp(-vShell.x/.9))*(1.-.26*vShell.w*exp(-vShell.y/.9));
+          gl_FragColor=vec4(0.,0.,ao,0.);return;}
+        float w=max(dot(uDir,vNormal),0.);if(w<=0.){gl_FragColor=vec4(0.);return;}
+        // A little way into the room, so a wall never shades itself when the walls cast shadows.
+        vec4 c=uLightVP*vec4(vWorld+vNormal*.12,1.);vec3 p=c.xyz/c.w*.5+.5;float lit=0.;
+        for(int i=0;i<9;i++){vec2 o=vec2(float(i-i/3*3)-1.,float(i/3)-1.)*1.5*uTexel;lit+=p.z-.0025>unpackRGBAToDepth(texture2D(uDepth,p.xy+o))?0.:1./9.;}
+        gl_FragColor=uWindow>.5?vec4(0.,lit*w*uWeight,0.,0.):vec4(lit*w*uWeight,0.,0.,w*uWeight);}`});
+  const wallAtlas=new T.Mesh(new T.BufferGeometry(),wallAccumMat);wallAtlas.frustumCulled=false;
+  const wallBakeScene=new T.Scene();wallBakeScene.add(wallAtlas);
   const bakeQuad=new T.Mesh(new T.PlaneGeometry(2,2),accumMat);bakeQuad.frustumCulled=false;
   const bakeScene=new T.Scene();bakeScene.add(bakeQuad);const bakeCam=new T.Camera();
   // done: samples taken; ready: the map is current and shown.
@@ -324,15 +351,46 @@ export function createStudioScene(container, options) {
       sh.vertexShader=sh.vertexShader.replace("#include <common>","#include <common>\nuniform vec4 uBakeBounds;varying vec2 vBake;")
         .replace("#include <project_vertex>","#include <project_vertex>\nvec4 bakeWorld=modelMatrix*vec4(transformed,1.);vBake=(bakeWorld.xz-uBakeBounds.xy)*uBakeBounds.zw;");
       sh.fragmentShader=sh.fragmentShader.replace("#include <common>","#include <common>\nuniform sampler2D uBake;uniform float uBakeOn;varying vec2 vBake;")
-        .replace("#include <opaque_fragment>","outgoingLight*=mix(1.,pow(texture2D(uBake,vBake).r,2.4),uBakeOn);\n#include <opaque_fragment>");};
+        .replace("#include <common>","#include <common>\nuniform vec2 uWin;")
+        .replace("#include <opaque_fragment>",`vec4 baked=texture2D(uBake,vBake);
+          outgoingLight*=mix(1.,pow(baked.r,2.4)*(uWin.x+uWin.y*baked.g),uBakeOn);
+          #include <opaque_fragment>`);};
     m.customProgramCacheKey=()=>"dm-baked-floor";
+  }
+  /** The walls' material reads its strip of the atlas (the bakeUv attribute; negative on faces that aren't a wall's inside). */
+  function bakeWall(m){
+    m.onBeforeCompile=sh=>{Object.assign(sh.uniforms,bakeUniforms);
+      sh.vertexShader=sh.vertexShader.replace("#include <common>","#include <common>\nattribute vec2 bakeUv;varying vec2 vWallBake;")
+        .replace("#include <project_vertex>","#include <project_vertex>\nvWallBake=bakeUv;");
+      sh.fragmentShader=sh.fragmentShader.replace("#include <common>","#include <common>\nuniform sampler2D uWallBake;uniform float uBakeOn;uniform vec2 uWin;varying vec2 vWallBake;")
+        .replace("#include <opaque_fragment>",`if(vWallBake.x>=0.){vec4 b=texture2D(uWallBake,vWallBake);float wsum=max(b.a,1e-4),lit=b.r/wsum,win=clamp(2.*b.g/wsum,0.,1.);
+            outgoingLight*=mix(1.,pow(lit,1.6)*b.b*(uWin.x+uWin.y*win),uBakeOn);}
+          #include <opaque_fragment>`);};
+    m.customProgramCacheKey=()=>"dm-baked-wall";
+  }
+  /**
+   * The walls flattened into the atlas: per wall a quad over its strip (clip space), with the world position of its inner face,
+   * the normal into the room, and for the corner shading the distance from each end and whether that end is an inside corner.
+   */
+  let wallStrips=[];
+  function wallAtlasGeometry(){
+    const pos=[],world=[],normal=[],shell=[],idx=[],h=data.settings.ceilingFt;
+    for(const s of wallStrips){
+      const {a,len,dx,dz,n,u0,u1,cs,ce}=s,base=pos.length/3,x0=u0*2-1,x1=u1*2-1;
+      for(const [x,t,y] of [[x0,0,0],[x1,len,0],[x1,len,h],[x0,0,h]]){
+        pos.push(x,y/h*2-1,0);world.push(a.x+dx*t,y,a.y+dz*t);normal.push(-n.x,0,-n.y);shell.push(t,len-t,cs,ce);}
+      idx.push(base,base+1,base+2,base,base+2,base+3);
+    }
+    const g=new T.BufferGeometry();g.setAttribute("position",new T.Float32BufferAttribute(pos,3));g.setAttribute("aWorld",new T.Float32BufferAttribute(world,3));
+    g.setAttribute("aNormal",new T.Float32BufferAttribute(normal,3));g.setAttribute("aShell",new T.Float32BufferAttribute(shell,4));g.setIndex(idx);return g;
   }
   /** The light directions: a stratified cosine spread over the sky, and a cone around the light from the first window. */
   function bakeDirections(){
     const dirs=[],win=firstWindow,half=win?BAKE_N/2:0,golden=Math.PI*(3-Math.sqrt(5));
-    // Sky light no lower than 45° and window light from 38° to 58°: short, soft shadows that pool under things (not long streaks).
+    // Sky light no lower than 45° and window light from 41° to 55° within ±13°: short, soft shadows that pool under things (not long
+    // streaks), and a window pool with a soft but readable edge.
     for(let i=0;i<BAKE_N-half;i++){const u=(i+.5)/(BAKE_N-half),r=Math.sqrt(u*.5),a=i*golden;dirs.push(new T.Vector3(r*Math.cos(a),Math.sqrt(1-r*r),r*Math.sin(a)));}
-    for(let i=0;i<half;i++){const u=(i+.5)/half,a=i*golden,el=T.MathUtils.degToRad(48+10*Math.sqrt(u)*Math.cos(a)),spread=T.MathUtils.degToRad(22)*Math.sqrt(u)*Math.sin(a);
+    for(let i=0;i<half;i++){const u=(i+.5)/half,a=i*golden,el=T.MathUtils.degToRad(48+7*Math.sqrt(u)*Math.cos(a)),spread=T.MathUtils.degToRad(13)*Math.sqrt(u)*Math.sin(a);
       const h=Math.atan2(win.n.y,win.n.x)+spread;dirs.push(new T.Vector3(Math.cos(el)*Math.cos(h),Math.sin(el),Math.cos(el)*Math.sin(h)));}
     return dirs;
   }
@@ -375,7 +433,8 @@ export function createStudioScene(container, options) {
     const L=light,share=L.share??0,lum=c=>.2126*c.r+.7152*c.g+.0722*c.b;
     hemi.intensity=L.hemiI*(1-share);
     // The fill's light on an average surface is its mean colour × intensity / π; the environment's is its mean radiance × intensity.
-    scene.environmentIntensity=share*L.hemiI*(lum(hemi.color)+lum(hemi.groundColor))/2/Math.PI/Math.max(1e-4,roomMean);
+    // (× .78: walls see the bright floor and the walls opposite more than the flat fill's average, measured on the test rooms.)
+    scene.environmentIntensity=.78*share*L.hemiI*(lum(hemi.color)+lum(hemi.groundColor))/2/Math.PI/Math.max(1e-4,roomMean);
   }
   /** Seeds the environment from the drawn gradient, rendered into a cube the size of the room view's. */
   function seedEnv(gradient){
@@ -388,33 +447,49 @@ export function createStudioScene(container, options) {
     const min=new T.Vector3(Math.min(...p.map(q=>q.x)),0,Math.min(...p.map(q=>q.y))),max=new T.Vector3(Math.max(...p.map(q=>q.x)),h,Math.max(...p.map(q=>q.y)));
     const hidden=[...wallGroups,...openingGroups,...views.map(v=>v.mesh),...[...meshes.values()].filter(m=>m.wall).map(m=>m.group)].filter(o=>!o.visible),extras=[ring,marker,guides,openingGhost].filter(o=>o.visible);
     for(const o of hidden)o.visible=true;for(const o of extras)o.visible=false;
-    const clear=renderer.getClearColor(new T.Color()),alpha=renderer.getClearAlpha();renderer.setClearColor(ceiling,1);
+    // The open top stands in for a ceiling, lit only by what bounces up to it (about half what the walls get).
+    const clear=renderer.getClearColor(new T.Color()),alpha=renderer.getClearAlpha();renderer.setClearColor(ceiling.clone().multiplyScalar(.45),1);
     kit.showMirrors(false);mirrorCam.position.set((min.x+max.x)/2,Math.min(4.6,h*.55),(min.z+max.z)/2);mirrorCam.update(renderer,scene);kit.showMirrors(true);
     renderer.setClearColor(clear,alpha);for(const o of hidden)o.visible=false;for(const o of extras)o.visible=true;
     kit.setMirrorView(mirrorTarget.texture,mirrorCam.position,min,max);
     useEnvCube(mirrorTarget.texture,false);
   }
   /** Something changed: the bake fades out (the pieces' own contact shadows stay) until a fresh one finishes. */
-  function invalidateBake(){bake.dirty=true;bake.ready=false;bakeUniforms.uBakeOn.value=0;mirrorDirty=true;}
+  function invalidateBake(){bake.dirty=true;bake.ready=false;bakeUniforms.uBakeOn.value=0;mirrorDirty=true;showPool();}
+  /** The drawn pool of window light stands in only while there's no bake (the bake has the real one). */
+  function showPool(){if(pool)pool.visible=light.poolA>0&&!(bake.ready&&firstWindow);}
   /** A few more bake samples; returns true while there's more to do. */
   function bakeStep(){
     if(!data||disposed)return false;
     const r=data.room,pad=1,x0=-pad,z0=-pad,lx=r.lengthFt+2*pad,lz=r.widthFt+2*pad;
-    if(bake.dirty){bake.dirty=false;bake.done=0;bake.dirs=bakeDirections();
+    if(bake.dirty){bake.dirty=false;bake.done=0;bake.dirs=bakeDirections();bake.sky=firstWindow?BAKE_N-BAKE_N/2:BAKE_N;bakeUniforms.uWin.value.set(...(firstWindow?light.win:[1,0]));
       bakeUniforms.uBakeBounds.value.set(x0,z0,1/lx,1/lz);accumMat.uniforms.uBounds.value.set(x0,z0,1/lx,1/lz);
-      const was=renderer.getRenderTarget();renderer.setRenderTarget(bakeTarget);renderer.setClearColor(0x000000,1);renderer.clear(true,false,false);renderer.setRenderTarget(was);}
+      const was=renderer.getRenderTarget(),auto0=renderer.autoClear;renderer.setRenderTarget(bakeTarget);renderer.setClearColor(0x000000,0);renderer.clear(true,false,false);
+      // The walls' atlas: cleared, then the corner shading written once.
+      wallAtlas.geometry.dispose();wallAtlas.geometry=wallAtlasGeometry();renderer.setRenderTarget(wallBakeTarget);renderer.clear(true,false,false);
+      wallAccumMat.uniforms.uMode.value=1;renderer.autoClear=false;renderer.render(wallBakeScene,bakeCam);wallAccumMat.uniforms.uMode.value=0;renderer.autoClear=auto0;renderer.setRenderTarget(was);}
     const center=new T.Vector3(r.lengthFt/2,0,r.widthFt/2),extent=Math.hypot(lx,lz)/2+data.settings.ceilingFt;
     const clear=renderer.getClearColor(new T.Color()),alpha=renderer.getClearAlpha(),was=renderer.getRenderTarget(),override=scene.overrideMaterial,auto=renderer.autoClear;
     for(let k=0;k<BAKE_STEP&&bake.done<bake.dirs.length;k++,bake.done++){
       const d=bake.dirs[bake.done];
       lightCam.left=lightCam.bottom=-extent;lightCam.right=lightCam.top=extent;lightCam.near=.1;lightCam.far=extent*4;lightCam.updateProjectionMatrix();
       lightCam.position.copy(center).addScaledVector(d,extent*2);lightCam.lookAt(center);lightCam.updateMatrixWorld();
-      scene.overrideMaterial=depthMat;renderer.setClearColor(0xffffff,1);renderer.setRenderTarget(depthTarget);renderer.autoClear=true;renderer.render(scene,lightCam);
-      accumMat.uniforms.uLightVP.value.multiplyMatrices(lightCam.projectionMatrix,lightCam.matrixWorldInverse);accumMat.uniforms.uWeight.value=1/bake.dirs.length;
-      renderer.setRenderTarget(bakeTarget);renderer.autoClear=false;renderer.render(bakeScene,bakeCam);
+      // Window light is cast twice: once by the pieces alone (their shadows), once with the walls too (where the opening lets it in).
+      const windowLight=bake.done>=bake.sky;
+      for(const withWalls of windowLight?[false,true]:[false]){
+        if(withWalls)lightCam.layers.enable(WALL_LAYER);else lightCam.layers.disable(WALL_LAYER);
+        scene.overrideMaterial=depthMat;renderer.setClearColor(0xffffff,1);renderer.setRenderTarget(depthTarget);renderer.autoClear=true;renderer.render(scene,lightCam);
+        const vp=new T.Matrix4().multiplyMatrices(lightCam.projectionMatrix,lightCam.matrixWorldInverse);
+        accumMat.uniforms.uLightVP.value.copy(vp);wallAccumMat.uniforms.uLightVP.value.copy(vp);wallAccumMat.uniforms.uDir.value.copy(d);
+        accumMat.uniforms.uWeight.value=withWalls?1/(bake.dirs.length-bake.sky):1/bake.dirs.length;accumMat.uniforms.uMask.value.set(withWalls?0:1,withWalls?1:0,0,0);
+        wallAccumMat.uniforms.uWeight.value=1/bake.dirs.length;wallAccumMat.uniforms.uWindow.value=withWalls?1:0;
+        renderer.autoClear=false;renderer.setRenderTarget(bakeTarget);renderer.render(bakeScene,bakeCam);
+        renderer.setRenderTarget(wallBakeTarget);renderer.render(wallBakeScene,bakeCam);
+      }
     }
+    lightCam.layers.disable(WALL_LAYER);
     scene.overrideMaterial=override;renderer.autoClear=auto;renderer.setRenderTarget(was);renderer.setClearColor(clear,alpha);
-    if(bake.done>=bake.dirs.length){bake.ready=true;bakeUniforms.uBakeOn.value=data.settings.lighting==="night"?.7:1;return false;}
+    if(bake.done>=bake.dirs.length){bake.ready=true;bakeUniforms.uBakeOn.value=data.settings.lighting==="night"?.7:1;showPool();return false;}
     return true;
   }
   /** Box UVs in feet (one unit per foot on every face), so a tiling texture keeps its scale on walls of any size. */
@@ -447,7 +522,11 @@ export function createStudioScene(container, options) {
     const [photo,feet]=FLOOR_PHOTO[settings.floor]||FLOOR_PHOTO.carpet;
     surface(photo,feet,true,t=>{floorMat.map=t;});
     if(!LOW)surface(photo+"-n",feet,false,t=>{floorMat.normalMap=t;floorMat.normalScale.set(.6,.6);});
-    bakeFloor(floorMat);
+    bakeFloor(floorMat);bakeWall(wallMat);
+    // Each wall's strip of the bake atlas (a few texels apart), and whether each end is an inside corner (shaded).
+    {const lens=pts.map((a,i)=>{const b=pts[(i+1)%N];return Math.hypot(b.x-a.x,b.y-a.y);}),total=lens.reduce((x,y)=>x+y,0)||1,gap=4/WALL_W,span=1-gap*N;
+      const inside=pts.map((_,i)=>{const n0=normals[i],n1=normals[(i+1)%N],turn=n0.x*n1.y-n0.y*n1.x;return (area>0?-turn:turn)<0?1:0;});
+      let u=gap/2;wallStrips=pts.map((a,i)=>{const b=pts[(i+1)%N],len=lens[i]||1,w=span*lens[i]/total,strip={a,len,dx:(b.x-a.x)/len,dz:(b.y-a.y)/len,n:normals[i],u0:u,u1:u+w,cs:inside[(i-1+N)%N],ce:inside[i]};u+=w+gap;return strip;});}
     // The dollhouse plinth: one slab whose top is the floor, its sides in the wall cap colour.
     const slab=new T.Mesh(new T.ExtrudeGeometry(shape,{depth:PLINTH,bevelEnabled:false}),[floorMat,capMat]);
     slab.name="room-floor";slab.rotation.x=-Math.PI/2;slab.position.y=-PLINTH;slab.userData={ownGeometry:true};roomRoot.add(slab);
@@ -465,7 +544,12 @@ export function createStudioScene(container, options) {
       const next=normals[(i+1)%N],turn=normals[i].x*next.y-normals[i].y*next.x,convex=(area>0?-turn:turn)<0,end=len+(convex?WALL_T:-WALL_T);
       const openings=outline.openings.filter(o=>o.edge===i).sort((a,b)=>a.offset_ft-b.offset_ft);
       let cursor=0;const zc=out*WALL_T/2;
-      const segment=(start,stop,low,high)=>{if(stop-start<=.005||high-low<=.005)return;capBox(group,stop-start,high-low,WALL_T,wallMat,capMat,(start+stop)/2,(low+high)/2,zc);};
+      const segment=(start,stop,low,high)=>{if(stop-start<=.005||high-low<=.005)return;
+        const m=capBox(group,stop-start,high-low,WALL_T,wallMat,capMat,(start+stop)/2,(low+high)/2,zc);m.layers.enable(WALL_LAYER);
+        // The inside face reads its place in the wall's atlas strip; every other face is marked off (-1).
+        const strip=wallStrips[i],g=m.geometry,pos=g.attributes.position,uv=new Float32Array(pos.count*2).fill(-1),face=out>0?5:4;
+        for(let k=face*4;k<face*4+4;k++){uv[k*2]=strip.u0+(strip.u1-strip.u0)*T.MathUtils.clamp((pos.getX(k)+(start+stop)/2)/len,0,1);uv[k*2+1]=(pos.getY(k)+(low+high)/2)/h;}
+        g.setAttribute("bakeUv",new T.BufferAttribute(uv,2));};
       // Soft shading where the wall meets the floor (it hides with its wall in the cutaway), and a soft shadow on the paper outside the plinth.
       const band=patch(len/2,0,.85,bandMat);band.position.set(len/2,.008,0);group.add(band);
       const outside=patch(len/2+WALL_T,0,1.4,groundMat);outside.position.set(a.x+dx*len/2+normals[i].x*WALL_T,-PLINTH-.01,a.y+dz*len/2+normals[i].y*WALL_T);outside.rotation.y=group.rotation.y;groundRoot.add(outside);
@@ -562,7 +646,7 @@ export function createStudioScene(container, options) {
     const preset=night?"night":settings.lighting==="evening"?"evening":"day";
     viewMat.map=surface("view-"+preset,1,true);viewMat.map.repeat.set(1,1);viewMat.color.set(night?"#c8ccd8":"#ffffff");viewMat.needsUpdate=true;
     shadowUniforms.uOpacity.value=L.blob;bandMat.uniforms.uOpacity.value=night?.2:.26;
-    poolMat.uniforms.uColor.value.set(L.pool);poolMat.uniforms.uOpacity.value=L.poolA;if(pool)pool.visible=L.poolA>0;
+    poolMat.uniforms.uColor.value.set(L.pool);poolMat.uniforms.uOpacity.value=L.poolA;showPool();bakeUniforms.uWin.value.set(...(firstWindow?L.win:[1,0]));
     kit.setNight(night);nightKey="";if(bake.ready)bakeUniforms.uBakeOn.value=night?.7:1;
     ceiling.set(settings.wallColor).multiplyScalar(night?.2:settings.lighting==="evening"?.8:.92);
     updateNightLights();
@@ -603,7 +687,8 @@ export function createStudioScene(container, options) {
       creases=kit.bake(inner,{floor:!f.host&&!onWall(f)});if(LOW)creases=null;if(shadow)inner.add(shadow);
     }
     const group=new T.Group();group.add(inner);group.userData.itemId=f.id;
-    inner.traverse(o=>{if(o.isMesh&&!o.userData.shadow&&![o.material].flat().some(x=>x.transparent))o.layers.enable(BAKE_LAYER);});
+    // Pieces hung on a wall cast no baked shadow (a frame's long grazing shadow down the wall reads as a smudge).
+      if(!onWall(f))inner.traverse(o=>{if(o.isMesh&&!o.userData.shadow&&![o.material].flat().some(x=>x.transparent))o.layers.enable(BAKE_LAYER);});
     itemRoot.add(group);return {group,restZ:inner.userData.restZ??0,creases};
   }
   /**
@@ -864,6 +949,6 @@ export function createStudioScene(container, options) {
       for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);canvas.removeEventListener("webglcontextlost",onContextLost);
       clearGuides();openingGhost.geometry.dispose();openingGhost.material.dispose();lineMat.dispose();marker.geometry.dispose();ring.geometry.dispose();ring.material.dispose();marker.material.dispose();
       for(const m of meshes.values())removePiece(m);clearRoom();floorTextures.forEach(t=>t.dispose());
-      for(const material of [bandMat,groundMat,poolMat,depthMat,accumMat,viewMat])material.dispose();bakeTarget.dispose();depthTarget.dispose();pmrem.dispose();roomEnv?.dispose();mirrorTarget.dispose();measureTarget.dispose();measureMat.dispose();bakeQuad.geometry.dispose();for(const t of surfaces.values())t.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
+      for(const material of [bandMat,groundMat,poolMat,depthMat,accumMat,viewMat])material.dispose();bakeTarget.dispose();depthTarget.dispose();wallBakeTarget.dispose();wallAccumMat.dispose();wallAtlas.geometry.dispose();pmrem.dispose();roomEnv?.dispose();mirrorTarget.dispose();measureTarget.dispose();measureMat.dispose();bakeQuad.geometry.dispose();for(const t of surfaces.values())t.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
   };
 }
