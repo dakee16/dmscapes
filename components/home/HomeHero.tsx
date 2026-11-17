@@ -207,35 +207,35 @@ function Stage({ dims }: { dims: React.ReactNode }) {
         <span className={css.share}>Share room</span>
       </div>
       <div className={css.view}>
-        {layer(css.lyRoom, "/redesign/hero-room-v5.webp", "A dorm double in 3D: two beds, two desks and a window", true)}
-        {layer(css.lyRug, "/redesign/hero-rug-v2.webp", "An orange rug with a cream border")}
-        {layer(css.lyOcc, "/redesign/hero-occluder-v5.webp", "The near bed and desk, drawn over the rug")}
-        {layer(css.lyBean, "/redesign/hero-bean-v2.webp", "A magenta bean bag chair")}
-        {layer(css.lyFront, "/redesign/hero-front-v4.webp", "The desk chairs in the foreground")}
+        {layer(css.lyRoom, "/redesign/hero-room-v6.webp", "A dorm double in 3D: two beds, two desks, a curtained window and string lights", true)}
+        {layer(css.lyRug, "/redesign/hero-rug-v3.webp", "An orange rug with a light border")}
+        {layer(css.lyOcc, "/redesign/hero-occluder-v6.webp", "The near bed, dresser and desk chair, drawn over the rug")}
+        {layer(css.lyBean, "/redesign/hero-bean-v3.webp", "A magenta bean bag chair")}
+        {layer(css.lyFront, "/redesign/hero-front-v5.webp", "The desk chairs in front of the bean bag")}
         <svg className={css.dims} viewBox="0 0 1000 583.333" preserveAspectRatio="xMidYMid meet">
-          <line className={`${css.dl} ${css.dlF}`} pathLength={1} x1="368.78" y1="286.46" x2="516.28" y2="378.13" />
-          <line className={`${css.dl} ${css.dlR}`} pathLength={1} x1="538.56" y1="376.14" x2="620.22" y2="302.39" />
-          <line className={`${css.tk} ${css.tkF}`} x1="375.46" y1="280.43" x2="363.58" y2="291.15" />
-          <line className={`${css.tk} ${css.tkF}`} x1="522.96" y1="372.1" x2="511.08" y2="382.82" />
-          <line className={`${css.tk} ${css.tkR}`} x1="530.92" y1="371.39" x2="544.51" y2="379.83" />
-          <line className={`${css.tk} ${css.tkR}`} x1="612.58" y1="297.64" x2="626.17" y2="306.08" />
+          <line className={`${css.dl} ${css.dlF}`} pathLength={1} x1="472.47" y1="292.34" x2="598.82" y2="356.25" />
+          <line className={`${css.dl} ${css.dlR}`} pathLength={1} x1="454.15" y1="293.26" x2="380.18" y2="343.13" />
+          <line className={`${css.tk} ${css.tkF}`} x1="476.73" y1="289.42" x2="468.18" y2="295.27" />
+          <line className={`${css.tk} ${css.tkF}`} x1="602.93" y1="352.85" x2="594.69" y2="359.68" />
+          <line className={`${css.tk} ${css.tkR}`} x1="449.34" y1="290.8" x2="458.98" y2="295.74" />
+          <line className={`${css.tk} ${css.tkR}`} x1="375.32" y1="340.35" x2="385.08" y2="345.93" />
         </svg>
-        <span className={css.at} style={{ left: "43.06%", top: "58.81%" }}>
+        <span className={css.at} style={{ left: "54.32%", top: "54.13%" }}>
           <span className={`${css.dlbl} ${css.popDf}`}>6′0″</span>
         </span>
-        <span className={css.at} style={{ left: "59.3%", top: "59.61%" }}>
+        <span className={css.at} style={{ left: "40.67%", top: "53.38%" }}>
           <span className={`${css.dlbl} ${css.popDr}`}>4′0″</span>
         </span>
-        <span className={css.at} style={{ left: "50.08%", top: "22.29%" }}>
+        <span className={css.at} style={{ left: "43.5%", top: "31.5%" }}>
           <Tag who="j" className={css.popBedA} />
         </span>
-        <span className={css.at} style={{ left: "33.45%", top: "43.89%" }}>
+        <span className={css.at} style={{ left: "40%", top: "66%" }}>
           <Tag who="c" className={css.popBedB} />
         </span>
-        <span className={css.at} style={{ left: "49.29%", top: "49.07%" }}>
+        <span className={css.at} style={{ left: "48.9%", top: "59%" }}>
           <Tag who="s" className={css.popRug} />
         </span>
-        <span className={css.at} style={{ left: "62.67%", top: "28.46%" }}>
+        <span className={css.at} style={{ left: "60.9%", top: "41.5%" }}>
           <Tag who="c" className={css.popBean} />
         </span>
         <div className={css.toastAt}>

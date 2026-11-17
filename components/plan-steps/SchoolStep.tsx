@@ -283,10 +283,10 @@ export default function SchoolStep({
         {!q && (
           <figure className={css.preview}>
             <Image
-              src="/redesign/hero-room-v5.webp"
-              alt="A finished plan in 3D: a dorm double with two beds, two desks, dressers and string lights"
-              width={2000}
-              height={1167}
+              src="/redesign/plan-preview-v1.webp"
+              alt="A finished plan in 3D: a dorm double with two beds, two desks, dressers, a rug, a bean bag and string lights"
+              width={800}
+              height={466}
               sizes="(max-width: 1023px) 128px, 176px"
               quality={75}
               className={css.previewImg}
