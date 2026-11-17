@@ -241,7 +241,7 @@
 .ly img { object-fit: fill; }
 .lyRoom { inset: 0; }
 .lyRug { left: 38.500%; top: 51.357%; width: 19.417%; height: 18.929%; animation: sprRug 12s linear infinite; }
-.lyOcc { left: 33.375%; top: 49.643%; width: 25.625%; height: 23.786%; }
+.lyOcc { left: 33.417%; top: 49.714%; width: 25.583%; height: 23.714%; }
 .lyBean { left: 48.208%; top: 36.214%; width: 12.625%; height: 16.143%; animation: sprBean 12s linear infinite; }
 .dims { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
 .dims line { stroke: var(--ds-blue); stroke-linecap: round; vector-effect: non-scaling-stroke; }
