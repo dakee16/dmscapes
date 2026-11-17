@@ -161,7 +161,7 @@ function Stage({ dims }: { dims: React.ReactNode }) {
         sizes={lcp ? "(max-width: 900px) 100vw, 900px" : "(max-width: 900px) 34vw, 300px"}
         loading="eager"
         fetchPriority={lcp ? "high" : undefined}
-        quality={80}
+        quality={90}
       />
     </span>
   );
@@ -207,35 +207,34 @@ function Stage({ dims }: { dims: React.ReactNode }) {
         <span className={css.share}>Share room</span>
       </div>
       <div className={css.view}>
-        {layer(css.lyRoom, "/redesign/hero-room-v5.webp", "A dorm double in 3D: two beds, two desks and a window", true)}
-        {layer(css.lyRug, "/redesign/hero-rug-v2.webp", "An orange rug with a cream border")}
-        {layer(css.lyOcc, "/redesign/hero-occluder-v5.webp", "The near bed and desk, drawn over the rug")}
-        {layer(css.lyBean, "/redesign/hero-bean-v2.webp", "A magenta bean bag chair")}
-        {layer(css.lyFront, "/redesign/hero-front-v4.webp", "The desk chairs in the foreground")}
+        {layer(css.lyRoom, "/redesign/hero-room-v6.webp", "A dorm double in 3D: two beds, two desks, dressers, a full-length mirror, a mini fridge and string lights", true)}
+        {layer(css.lyRug, "/redesign/hero-rug-v3.webp", "An orange rug with a light border")}
+        {layer(css.lyOcc, "/redesign/hero-occluder-v6.webp", "The near bed and desk chair, drawn over the rug")}
+        {layer(css.lyBean, "/redesign/hero-bean-v3.webp", "A magenta bean bag chair")}
         <svg className={css.dims} viewBox="0 0 1000 583.333" preserveAspectRatio="xMidYMid meet">
-          <line className={`${css.dl} ${css.dlF}`} pathLength={1} x1="368.78" y1="286.46" x2="516.28" y2="378.13" />
-          <line className={`${css.dl} ${css.dlR}`} pathLength={1} x1="538.56" y1="376.14" x2="620.22" y2="302.39" />
-          <line className={`${css.tk} ${css.tkF}`} x1="375.46" y1="280.43" x2="363.58" y2="291.15" />
-          <line className={`${css.tk} ${css.tkF}`} x1="522.96" y1="372.1" x2="511.08" y2="382.82" />
-          <line className={`${css.tk} ${css.tkR}`} x1="530.92" y1="371.39" x2="544.51" y2="379.83" />
-          <line className={`${css.tk} ${css.tkR}`} x1="612.58" y1="297.64" x2="626.17" y2="306.08" />
+          <line className={`${css.dl} ${css.dlF}`} pathLength={1} x1="418.25" y1="291.13" x2="580.24" y2="311.9" />
+          <line className={`${css.dl} ${css.dlR}`} pathLength={1} x1="401.62" y1="298.8" x2="370.91" y2="381.55" />
+          <line className={`${css.tk} ${css.tkF}`} x1="419.89" y1="286.51" x2="416.59" y2="295.8" />
+          <line className={`${css.tk} ${css.tkF}`} x1="581.04" y1="307.06" x2="579.43" y2="316.8" />
+          <line className={`${css.tk} ${css.tkR}`} x1="394.99" y1="297.94" x2="408.26" y2="299.66" />
+          <line className={`${css.tk} ${css.tkR}`} x1="363.7" y1="380.52" x2="378.15" y2="382.58" />
         </svg>
-        <span className={css.at} style={{ left: "43.06%", top: "58.81%" }}>
+        <span className={css.at} style={{ left: "50.4%", top: "47.8%" }}>
           <span className={`${css.dlbl} ${css.popDf}`}>6′0″</span>
         </span>
-        <span className={css.at} style={{ left: "59.3%", top: "59.61%" }}>
+        <span className={css.at} style={{ left: "34.7%", top: "57%" }}>
           <span className={`${css.dlbl} ${css.popDr}`}>4′0″</span>
         </span>
-        <span className={css.at} style={{ left: "50.08%", top: "22.29%" }}>
+        <span className={css.at} style={{ left: "40.5%", top: "39%" }}>
           <Tag who="j" className={css.popBedA} />
         </span>
-        <span className={css.at} style={{ left: "33.45%", top: "43.89%" }}>
+        <span className={css.at} style={{ left: "41.5%", top: "70%" }}>
           <Tag who="c" className={css.popBedB} />
         </span>
-        <span className={css.at} style={{ left: "49.29%", top: "49.07%" }}>
+        <span className={css.at} style={{ left: "52.5%", top: "55.5%" }}>
           <Tag who="s" className={css.popRug} />
         </span>
-        <span className={css.at} style={{ left: "62.67%", top: "28.46%" }}>
+        <span className={css.at} style={{ left: "55.3%", top: "33%" }}>
           <Tag who="c" className={css.popBean} />
         </span>
         <div className={css.toastAt}>
