@@ -211,7 +211,7 @@ function Stage({ dims }: { dims: React.ReactNode }) {
         {layer(css.lyRug, "/redesign/hero-rug-v3.webp", "An orange rug with a light border")}
         {layer(css.lyOcc, "/redesign/hero-occluder-v6.webp", "The near bed, dresser and desk chair, drawn over the rug")}
         {layer(css.lyBean, "/redesign/hero-bean-v3.webp", "A magenta bean bag chair")}
-        {layer(css.lyFront, "/redesign/hero-front-v5.webp", "The desk chairs in front of the bean bag")}
+        {layer(css.lyFront, "/redesign/hero-front-v5.webp", "A bed post and desk chair in front of the bean bag")}
         <svg className={css.dims} viewBox="0 0 1000 583.333" preserveAspectRatio="xMidYMid meet">
           <line className={`${css.dl} ${css.dlF}`} pathLength={1} x1="472.47" y1="292.34" x2="598.82" y2="356.25" />
           <line className={`${css.dl} ${css.dlR}`} pathLength={1} x1="454.15" y1="293.26" x2="380.18" y2="343.13" />
@@ -235,7 +235,7 @@ function Stage({ dims }: { dims: React.ReactNode }) {
         <span className={css.at} style={{ left: "48.9%", top: "59%" }}>
           <Tag who="s" className={css.popRug} />
         </span>
-        <span className={css.at} style={{ left: "60.9%", top: "41.5%" }}>
+        <span className={css.at} style={{ left: "59.9%", top: "40.5%" }}>
           <Tag who="c" className={css.popBean} />
         </span>
         <div className={css.toastAt}>
