@@ -117,6 +117,22 @@ export function createStudioScene(container, options) {
     const item=ray.intersectObjects(itemRoot.children,true).find(h=>h.object.userData.itemId);
     return opening&&(!item||opening.distance<=item.distance)?opening:null;
   }
+  /**
+   * What's under a pixel: the nearest piece, wall, door or window (as drawn now), else the floor. Returns the point as
+   * 0–1 across the room's length and width, its height in feet, and the piece's id if it's one; null off the room.
+   */
+  function hitAt(e){
+    if(!data)return null;
+    const floor=roomPoint(e),shown=o=>{for(;o;o=o.parent)if(!o.visible)return false;return true;};
+    const near=[...ray.intersectObjects(itemRoot.children,true).filter(h=>h.object.userData.itemId&&shown(h.object)),
+      ...ray.intersectObjects([...wallGroups,...openingGroups].filter(g=>g.visible),true)].sort((a,b)=>a.distance-b.distance)[0];
+    const p=near?.point??floor,L=data.room.lengthFt,W=data.room.widthFt;if(!p)return null;
+    // A wall's outer face sits just outside the floor, so a hit on one is clamped onto the room's edge.
+    const x=near?Math.max(0,Math.min(1,p.x/L)):p.x/L,y=near?Math.max(0,Math.min(1,p.z/W)):p.z/W;
+    if(x<0||x>1||y<0||y>1)return null;
+    const id=near?.object.userData.itemId;
+    return {x,y,h:Math.max(0,Math.min(20,Math.round(p.y*100)/100)),...(id?{id}:{})};
+  }
   function wallPoint(e,height=0){
     const floor=roomPoint(e,height);
     return ray.intersectObjects(wallGroups.filter(g=>g.visible),true)[0]?.point??floor;
@@ -234,6 +250,7 @@ export function createStudioScene(container, options) {
     const settled=bake.ready&&!mirrorDirty&&!more&&!pointers.size&&!kit.loading()&&(LOW||(still&&aoFade>=1));if(canvas.dataset.settled!==(settled?"1":""))canvas.dataset.settled=settled?"1":"";
     if(!ready&&data&&width>1&&height>1){ready=true;options.onReady?.();setTimeout(prewarm,0);setTimeout(loadPost,1500);}
     if(more)request();
+    options.onFrame?.();
   }
   /** Compile the other light set's shaders in the background, so switching Day / Night never stalls on a compile. */
   function prewarm(){
@@ -1150,14 +1167,11 @@ export function createStudioScene(container, options) {
     // Choosing the view you're already in recentres it; any other view comes back where you left it.
     preset:m=>preset(m,false,m===mode),fit:()=>preset("room",false,true),focus,
     zoom:f=>{if(mode==="inside")return;radius=Math.max(4,Math.min(180,radius*f));touched();request();},
-    readCursor(x,y){
+    readCursor(x,y){const bounds=canvas.getBoundingClientRect();return hitAt({clientX:bounds.left+x,clientY:bounds.top+y});},
+    /** A room point to canvas pixels: at height h (ft), else on top of piece `id`, else on the floor. Null when behind the camera. */
+    projectCursor(x,y,h,id){
       if(!data)return null;
-      const bounds=canvas.getBoundingClientRect(),p=roomPoint({clientX:bounds.left+x,clientY:bounds.top+y});
-      return p?{x:p.x/data.room.lengthFt,y:p.z/data.room.widthFt}:null;
-    },
-    projectCursor(x,y){
-      if(!data)return null;
-      const p=new T.Vector3(x*data.room.lengthFt,.01,y*data.room.widthFt).project(camera);
+      const m=h==null&&id?meshes.get(id):null,p=new T.Vector3(x*data.room.lengthFt,(h??(m?m.item.elevation+m.item.height:0))+.01,y*data.room.widthFt).project(camera);
       return p.z<-1||p.z>1?null:{x:(p.x+1)*width/2,y:(1-p.y)*height/2};
     },
     setWalls:v=>{walls=v;request();},setWalker:el=>{walker=el;request();},setWalkInput:v=>{pad.move=v.move??0;pad.turn=v.turn??0;request();},setMoveMode:v=>{dragMode=v;},

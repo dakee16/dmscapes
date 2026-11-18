@@ -17,11 +17,19 @@ export function collaboratorColor(id: string, members?: string[]) {
 const surfaces = /^(plan|scene|shopping|roommates)$/;
 export function readCursor(value: unknown): RoomCursor | null {
   if (!value || typeof value !== "object") return null;
-  const c = value as RoomCursor;
-  return typeof c.surface === "string" && surfaces.test(c.surface) &&
-    Number.isFinite(c.x) && Number.isFinite(c.y) && c.x >= 0 && c.y >= 0 && c.x <= 1 && c.y <= 1 &&
+  const c = value as RoomCursor, point = readPoint(c);
+  return point && typeof c.surface === "string" && surfaces.test(c.surface) &&
     typeof c.session === "string" && c.session.length <= 64 && Number.isFinite(c.at) ?
-    {surface:c.surface, x:c.x, y:c.y, session:c.session, at:c.at, ...(Number.isSafeInteger(c.seq) ? {seq:c.seq} : {})} : null;
+    {...point, surface:c.surface, session:c.session, at:c.at, ...(Number.isSafeInteger(c.seq) ? {seq:c.seq} : {})} : null;
+}
+/** A room point from a message: x, y in 0–1, an optional height of 0–20 ft and an optional piece id. */
+export function readPoint(value: unknown): CursorPoint | null {
+  if (!value || typeof value !== "object") return null;
+  const c = value as CursorPoint;
+  if (!Number.isFinite(c.x) || !Number.isFinite(c.y) || c.x < 0 || c.y < 0 || c.x > 1 || c.y > 1) return null;
+  if (c.h !== undefined && !(Number.isFinite(c.h) && c.h >= 0 && c.h <= 20)) return null;
+  if (c.id !== undefined && !(typeof c.id === "string" && /^[a-zA-Z0-9_.:-]{1,100}$/.test(c.id))) return null;
+  return {x:c.x, y:c.y, ...(c.h !== undefined ? {h:c.h} : {}), ...(c.id !== undefined ? {id:c.id} : {})};
 }
 export function readPresence(value: unknown): RoomPresence | null {
   if (!value || typeof value !== "object") return null;

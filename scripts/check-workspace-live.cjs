@@ -36,6 +36,7 @@ async function open(context, who, query = "") {
   page.on("pageerror", e => console.log(`  [${who.name} page error]`, e.message));
   await page.addInitScript(([id, name]) => {
     sessionStorage.setItem("dormscape-dev-auth", JSON.stringify({ id, email: `${name.toLowerCase()}@example.test`, username: name, plan: "pro" }));
+    localStorage.setItem("dormscape-cookie-consent", "rejected");
   }, [who.id, who.name]);
   await page.route(/\/api\/workspaces\//, async route => {
     const req = route.request(), url = new URL(req.url());
@@ -43,7 +44,8 @@ async function open(context, who, query = "") {
     if (req.method() === "GET") return route.fulfill({ json: detail(who) });
     const body = req.postDataJSON() ?? {};
     state.patches.push({ who: who.name, ...body });
-    if (body.action === "save") { state.revision++; return route.fulfill({ json: { ok: true, revision: state.revision } }); }
+    // Saves are accepted but not handed to the other pages (the real server would tell them to refresh).
+    if (body.action === "save") return route.fulfill({ json: { ok: true, revision: body.revision + 1 } });
     if (body.action === "comment") {
       const parent = body.parent_id && state.comments.find(c => c.id === body.parent_id);
       const c = { id: `c0000000-0000-4000-8000-${String(state.comments.length + 1).padStart(12, "0")}`, user_id: who.id, display_name: who.name, body: body.body, target: parent ? parent.target : body.target, resolved: false, created_at: new Date().toISOString(), parent_id: body.parent_id ?? null };
@@ -62,6 +64,16 @@ async function sees(page, who) {
   await page.locator("aside[aria-label='Room filters and people'] li", { hasText: who.name }).getByRole("button", { name: /Follow/ }).waitFor({ timeout: 30_000 });
 }
 const surface = page => page.getByRole("region", { name: "Interactive room floor plan" });
+const scene = page => page.locator("[data-testid=room-3d]");
+/** Switch an editor's room to 3D (or 2D) and wait for the scene. */
+async function view(page, which) {
+  await page.getByRole("group", { name: "Planner view" }).getByRole("button", { name: which === "3d" ? "3D" : "2D", exact: true }).click();
+  if (which === "3d") { await scene(page).locator("canvas").waitFor({ timeout: 60_000 }); await page.waitForFunction(() => document.querySelector("[data-testid=room-3d] canvas")?.dataset.settled === "1", null, { timeout: 60_000 }).catch(() => {}); }
+  else await surface(page).waitFor();
+}
+/** Record the cursor messages `page` receives (through the dev relay). */
+const listen = page => page.evaluate(() => { window.__heard = []; const bus = new BroadcastChannel("dormscape-fake-realtime"); bus.onmessage = e => { if (e.data.kind === "broadcast") window.__heard.push({ topic: e.data.topic, event: e.data.event, payload: e.data.payload, at: Date.now() }); }; });
+const heard = (page, event) => page.evaluate(event => window.__heard.filter(m => m.event === event), event);
 
 const percentile = (values, p) => { const v = [...values].sort((a, b) => a - b); return v.length ? v[Math.min(v.length - 1, Math.floor(v.length * p))] : NaN; };
 /** Move the sender's mouse across the plan at a steady speed and time where the receiver draws it.
@@ -143,6 +155,35 @@ async function measurePipeline(context, receiver, who, { rate = 25, jitter = 0, 
 }
 
 const tests = {
+  async scene3d({ owner, editor }) {
+    await view(owner, "3d"); await view(editor, "3d"); await listen(editor);
+    const box = await scene(owner).boundingBox(), theirs = await scene(editor).boundingBox();
+    // Find a spot on top of a piece (a hit with a height), then compare where each screen shows the pointer.
+    let found = null;
+    for (let j = 3; j < 9 && !found; j++) for (let i = 2; i < 12 && !found; i++) {
+      const at = { x: box.x + box.width * i / 14, y: box.y + box.height * j / 12 };
+      await owner.mouse.move(at.x, at.y); await sleep(90);
+      const last = (await heard(editor, "cursor")).at(-1)?.payload;
+      if (last?.id && last.h > 1.2) found = { at, last };
+    }
+    ok(found, `3D pointing reports the piece and its height (${found?.last.id}, ${found?.last.h} ft)`);
+    await sleep(400);
+    const drawn = await editor.locator(`[data-cursor="${OWNER.id}"]`).boundingBox();
+    const error = Math.hypot(drawn.x - theirs.x - (found.at.x - box.x), drawn.y - theirs.y - (found.at.y - box.y));
+    results.scene3dErrorPx = Math.round(error * 10) / 10;
+    ok(error < 4, `The 3D viewer draws it on the piece, where the owner points (${results.scene3dErrorPx} px off)`);
+    // A wall: aim high near the top of the far wall (no piece, height above the floor).
+    let wall = null;
+    for (let j = 1; j < 5 && !wall; j++) for (let i = 4; i < 10 && !wall; i++) {
+      await owner.mouse.move(box.x + box.width * i / 14, box.y + box.height * j / 12); await sleep(90);
+      const last = (await heard(editor, "cursor")).at(-1)?.payload;
+      if (last && !last.id && last.h > 2) wall = last;
+    }
+    ok(wall, `Pointing at a wall reports a point on it (${wall?.h} ft up)`);
+    await editor.screenshot({ path: path.join(OUT, `scene3d-${label}.png`) });
+    await owner.mouse.move(5, 5);
+    await view(owner, "2d"); await view(editor, "2d");
+  },
   async lag({ owner, editor, context }) {
     await sees(editor, OWNER); await sees(owner, EDITOR);
     const r = await measureLag(owner, editor, OWNER.id);

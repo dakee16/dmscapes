@@ -15,6 +15,8 @@ import s from "./Studio.module.css";
 import BrandLoader from "@/components/site/BrandLoader";
 import {usePlannerStore} from "@/lib/store";
 import CollaborationOverlay from "@/components/workspace/CollaborationOverlay";
+import { wake } from "@/components/workspace/CollaborationProvider";
+import type { CursorPoint } from "@/lib/workspace-collaboration";
 
 export type CameraView="room"|"top"|"inside";
 export type WalkInput={move?:number;turn?:number};
@@ -32,8 +34,8 @@ export interface RoomSceneHandle {exportPNG:(ratio?:number)=>string|null;
   fit:()=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;}
 type SceneItem=FurnitureItem&{kind:string;height:number;elevation:number;host?:string;footW:number;footD:number;locked:boolean;bare:boolean;back:number;product?:ReturnType<typeof productVisual>};
 type SceneData={room:SelectedRoom;settings:ReturnType<typeof studioSettings>;outline:ReturnType<typeof roomOutline>;items:SceneItem[];palette:string[];theme:RoomTheme;selectedId:string|null;selectedOpening:number|null;editOpenings:boolean;snap:boolean;interior:{x:number;y:number}};
-type View={readCursor:(x:number,y:number)=>{x:number;y:number}|null;projectCursor:(x:number,y:number)=>{x:number;y:number}|null;update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;fit:()=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;setWalker:(node:SVGGElement|null)=>void;setWalkInput:(input:WalkInput)=>void;exportPNG:(ratio?:number)=>string;renderPhoto:(options:{onProgress:(p:PhotoProgress)=>void})=>PhotoJob;destroy:()=>void};
-type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;openingDragType:string;previewOpening:(target:number|WallOpening["kind"],x:number,y:number)=>WallOpening|null;onSelectOpening:(index:number|null)=>void;onOpeningChange:(index:number|null,opening:WallOpening)=>void;onReady:()=>void;onError:(message:string)=>void;onMode:(mode:CameraView)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number,elevation?:number)=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
+type View={readCursor:(x:number,y:number)=>CursorPoint|null;projectCursor:(x:number,y:number,h?:number,id?:string)=>{x:number;y:number}|null;update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;fit:()=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;setWalker:(node:SVGGElement|null)=>void;setWalkInput:(input:WalkInput)=>void;exportPNG:(ratio?:number)=>string;renderPhoto:(options:{onProgress:(p:PhotoProgress)=>void})=>PhotoJob;destroy:()=>void};
+type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;openingDragType:string;previewOpening:(target:number|WallOpening["kind"],x:number,y:number)=>WallOpening|null;onSelectOpening:(index:number|null)=>void;onOpeningChange:(index:number|null,opening:WallOpening)=>void;onReady:()=>void;onError:(message:string)=>void;onMode:(mode:CameraView)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number,elevation?:number)=>void;onFrame:()=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
 export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;preview?:boolean;openingControls?:OpeningControls;
   /** The school whose colors Team Spirit takes; defaults to the planner's school. */
   college?:string|null;
@@ -87,6 +89,8 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
         onOpeningChange:(index,opening)=>{if(access.current&&!current.current.readOnly)current.current.openingControls?.commit(index,opening);},onReady:()=>{if(!disposed)setReady(true);},onMode:mode=>current.current.onCamera?.(mode),onError:message=>{if(!disposed)setError(message);},
         onSelect:id=>{if(access.current&&!current.current.readOnly)current.current.onSelect?.(id);},
         onMove:(id,x,y,elevation)=>{if(access.current&&!current.current.readOnly)current.current.onMove?.(id,x,y,elevation);},
+        // Cursors, pins and pings over the room redraw in the same frame as the room.
+        onFrame:()=>wake(true),
         constrain:(id,x,y)=>{const p=current.current,f=p.items.find(f=>f.id===id);return f?constrainedPosition(f,x,y,p.room,p.snap!==false):{x,y};}});
       view.current=v;v.update(latest.current);v.setWalls(current.current.walls??"auto");v.setMoveMode(current.current.moveMode??false);v.setWalker(current.current.walker??null);
     }catch{if(!disposed)setError("3D is unavailable on this browser. Your room can still be edited in 2D.");}})();
@@ -103,7 +107,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
   useEffect(()=>{view.current?.setWalker(props.walker??null);},[props.walker]);
   if(!enabled)return null;
   return <div className={s.scene} data-testid="room-3d"><div ref={node} className={s.sceneMount} inert={!allowed}/>
-    {workspace&&plannerView==="3d"&&workspace.section!=="roommates"&&ready&&!error&&<CollaborationOverlay surface="scene" dynamic projection={{read:(x,y)=>view.current?.readCursor(x,y)??null,draw:(x,y)=>view.current?.projectCursor(x,y)??null}} pins={data.items.map(f=>{const b=footprint(f);return {id:f.id,label:f.label,x:(b.x+b.w/2)/props.room.lengthFt,y:(b.y+b.h/2)/props.room.widthFt};})}/>}
+    {workspace&&plannerView==="3d"&&workspace.section!=="roommates"&&ready&&!error&&<CollaborationOverlay surface="scene" dynamic projection={{read:(x,y)=>view.current?.readCursor(x,y)??null,draw:(x,y,h,id)=>view.current?.projectCursor(x,y,h,id)??null}} pins={data.items.map(f=>{const b=footprint(f);return {id:f.id,label:f.label,x:(b.x+b.w/2)/props.room.lengthFt,y:(b.y+b.h/2)/props.room.widthFt};})}/>}
     {!ready&&!error&&<div className={s.sceneMessage}><BrandLoader size="panel" label="Opening your 3D studio…"/></div>}
     {error&&<div className={s.sceneMessage} role="status"><strong>Keep creating.</strong><p>{error}</p><div className={s.buttonRow}><button onClick={()=>setRetry(n=>n+1)}>Retry 3D</button>{props.onFallback&&<button onClick={props.onFallback}>Open 2D plan</button>}</div></div>}
   </div>;

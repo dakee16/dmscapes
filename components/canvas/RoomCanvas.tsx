@@ -987,6 +987,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               return (
                 <Group
                   key={f.id}
+                  id={f.id}
                   name="furniture"
                   x={PAD + fp.x * pxFt}
                   y={PAD + fp.y * pxFt}
@@ -1172,7 +1173,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       )}
 
       {pxFt > 0 && workspace && <CollaborationOverlay surface="plan" projection={{
-        read:(x,y)=>({x:((x-stagePos.x)/zoom-fitted.x)/(pxFt*roomL),y:((y-stagePos.y)/zoom-fitted.y)/(pxFt*roomW)}),
+        // The piece under the pointer travels too, so the 3D room can show the cursor on top of it.
+        read:(x,y)=>{const id=stageRef.current?.getIntersection({x,y})?.findAncestor(".furniture",true)?.id();
+          return {x:((x-stagePos.x)/zoom-fitted.x)/(pxFt*roomL),y:((y-stagePos.y)/zoom-fitted.y)/(pxFt*roomW),...(id?{id}:{})};},
         draw:(x,y)=>({x:stagePos.x+(fitted.x+x*pxFt*roomL)*zoom,y:stagePos.y+(fitted.y+y*pxFt*roomW)*zoom}),
       }} pins={activeFurniture.map(f=>{const b=footprint(f);return {id:f.id,label:f.label,x:(b.x+b.w/2)/roomL,y:(b.y+b.h/2)/roomW};})}/>}
       {pxFt > 0 && toolbarItem && canEditItem && onSetRotation && !narrow && !panMode && !dragging && !previewing && rotationCenter && rotationPosition &&
