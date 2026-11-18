@@ -791,7 +791,8 @@ export function createStudioScene(container, options) {
           // that reflects the room, painted casing round the inside, a sill and its apron, and the view outside.
           const fr=.12,mid=(low+high)/2+Math.min(.4,oh*.08),inner=-out*.03,deep=out*WALL_T*.35;
           for(const y of [low+fr/2,high-fr/2])kit.box(fixtures,span,fr,depth,trim,center,y,zc,.015);
-          for(const x of [left+fr/2,right-fr/2])kit.box(fixtures,fr,oh,depth,trim,x,(low+high)/2,zc,.015);
+          // The side rails sit just inside the head and sill rails where they meet, so no two faces share a plane (z-fighting).
+          for(const x of [left+fr/2,right-fr/2])kit.box(fixtures,fr,oh-.004,depth-.006,trim,x,(low+high)/2,zc,.015);
           const sashes=[[mid,high-fr,deep],[low+fr,mid,deep-out*.12]],st=.11,sd=.1;
           for(const [y0,y1,z] of sashes){
             const sw=span-2*fr,sh=y1-y0;if(sw<.2||sh<.2)continue;
@@ -801,7 +802,7 @@ export function createStudioScene(container, options) {
           }
           const cw=.28;
           kit.box(fixtures,span+2*cw,cw,.06,trim,center,high+cw/2,inner,.02);
-          for(const x of [left-cw/2,right+cw/2])kit.box(fixtures,cw,oh+cw,.06,trim,x,(low+high+cw)/2,inner,.02);
+          for(const x of [left-cw/2,right+cw/2])kit.box(fixtures,cw,oh+cw-.006,.054,trim,x,(low+high+cw-.006)/2,inner,.02);
           kit.box(fixtures,span+.5,.1,.34,trim,center,low-.03,-out*.1,.03);
           kit.box(fixtures,span+2*cw-.1,cw*.8,.05,trim,center,low-.08-cw*.4,inner,.02);
           // The view: a photo some way outside, wide enough that it shifts a little as you move (shown only with its wall).
@@ -814,8 +815,10 @@ export function createStudioScene(container, options) {
           const doorHeight=Math.min(6.7,h-.1);
           segment(left,right,doorHeight,h);
           // A painted frame (casing) and the leaf, swung the way the 2D plan shows, with its knob.
-          for(const x of [left-.07,right+.07])kit.box(fixtures,.14,doorHeight+.12,depth,trim,x,(doorHeight+.12)/2,zc,.01);
-          kit.box(fixtures,span+.28,.14,depth,trim,center,doorHeight+.05,zc,.01);
+          // The jambs stand a hair proud of the wall's cut ends, and the head a hair proud of the jambs' faces: faces sharing a
+          // plane z-fight, a shimmering stripe down the opening's edge whenever the camera moves.
+          for(const x of [left-.06,right+.06])kit.box(fixtures,.16,doorHeight+.11,depth,trim,x,(doorHeight+.11)/2,zc,.01);
+          kit.box(fixtures,span+.3,.14,depth+.012,trim,center,doorHeight+.05,zc,.01);
           const swing=o.swing??0,endHinge=Boolean(swing&1),inward=area>0?1:-1;
           const side=(swing&2)?-inward:inward,hinge=new T.Group(),leafWidth=Math.max(.1,span-.12);
           hinge.position.x=endHinge?right-.06:left+.06;hinge.rotation.y=(endHinge?1:-1)*side*Math.PI/2;
