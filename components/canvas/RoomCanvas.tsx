@@ -27,7 +27,8 @@ import { mixHex, roomThemeFor, styleFor, type RoomTheme } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
 import { bedLabel, isBunkBed } from "@/lib/bedding";
-import { useWorkspace, useWorkspacePeople } from "@/components/workspace/WorkspaceContext";
+import { useWorkspace, useWorkspacePeople, type CanvasGesture } from "@/components/workspace/WorkspaceContext";
+import type { CursorPoint } from "@/lib/workspace-collaboration";
 import CollaborationOverlay from "@/components/workspace/CollaborationOverlay";
 import { ownerName } from "@/lib/planning";
 import { clamp, footprint, invalidItems, layerOf, pointInPolygon, rotateFurniture } from "./geometry";
@@ -492,6 +493,56 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   // register as a click that toggles the selection.
   const justDragged = () => Date.now() - dragGuard.current < 250;
 
+  // Comments (and editors' "Look here") start from the plan: right-click, two-finger or Ctrl-click, double-click, a long
+  // press, or the Menu key on the selected piece. The target is the piece under the pointer, else that spot on the floor.
+  const pressAt = useRef(0);
+  function gesture(via: CanvasGesture["via"], clientX: number, clientY: number, point?: CursorPoint) {
+    // Android follows a long press (and Windows the Menu key) with its own contextmenu event: one gesture, one action.
+    if (!workspace?.canvasGesture || (via === "context_menu" && Date.now() - pressAt.current < 1000)) return false;
+    const bounds = containerRef.current?.getBoundingClientRect();
+    if (!bounds || pxFt <= 0) return false;
+    if (!point) {
+      const ft = openingPoint({ clientX, clientY })!, id = stageRef.current?.getIntersection({ x: clientX - bounds.left, y: clientY - bounds.top })?.findAncestor(".furniture", true)?.id();
+      if (!id && !pointInPolygon(ft.x, ft.y, outline?.points ?? [{ x: 0, y: 0 }, { x: roomL, y: 0 }, { x: roomL, y: roomW }, { x: 0, y: roomW }], .05)) return false;
+      point = { x: clamp(ft.x / roomL, 0, 1), y: clamp(ft.y / roomW, 0, 1), ...(id ? { id } : {}) };
+    }
+    if (via !== "context_menu" && via !== "double_click") pressAt.current = Date.now();
+    workspace.canvasGesture({ via, point, clientX, clientY, surface: "plan", canvas: containerRef.current });
+    return true;
+  }
+  const gestureRef = useRef(gesture); gestureRef.current = gesture;
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const mac = /Mac|iPhone|iPad/.test(navigator.userAgent);
+    let press: { id: number; x: number; y: number; timer: number } | null = null, fired = false;
+    const stop = () => { if (press) clearTimeout(press.timer); press = null; };
+    // A right-click, or Ctrl-click on a Mac, never selects, drags or pans (Konva would count it as a click); the
+    // contextmenu event that follows does the work.
+    const ctrl = (e: MouseEvent) => { if (e.button === 2 || (mac && e.ctrlKey && e.button === 0)) { e.stopPropagation(); return true; } return false; };
+    const down = (e: PointerEvent) => {
+      if (ctrl(e)) return;
+      stop(); fired = false;
+      if (e.pointerType !== "touch" || !e.isPrimary) return;
+      press = { id: e.pointerId, x: e.clientX, y: e.clientY, timer: window.setTimeout(() => {
+        const p = press; press = null;
+        if (!p || !gestureRef.current("long_press", p.x, p.y)) return;
+        fired = true;
+        stageRef.current?.stopDrag(); stageRef.current?.find(".furniture").forEach(node => { if (node.isDragging()) node.stopDrag(); });
+      }, 550) };
+    };
+    const move = (e: PointerEvent) => { if (press && (e.pointerId !== press.id || Math.hypot(e.clientX - press.x, e.clientY - press.y) > 8)) stop(); };
+    // The finger lifting after a long press isn't a tap: Konva never sees it, and no click follows.
+    const up = (e: Event) => { if (e instanceof MouseEvent && ctrl(e)) return; stop(); if (fired) { e.stopPropagation(); if (e.type === "touchend") e.preventDefault(); } };
+    const opts = { capture: true, passive: false };
+    el.addEventListener("pointerdown", down, true); el.addEventListener("mousedown", ctrl, true); el.addEventListener("pointermove", move, true);
+    for (const type of ["pointerup", "mouseup", "touchend", "pointercancel"]) el.addEventListener(type, up, opts);
+    return () => {
+      stop(); el.removeEventListener("pointerdown", down, true); el.removeEventListener("mousedown", ctrl, true); el.removeEventListener("pointermove", move, true);
+      for (const type of ["pointerup", "mouseup", "touchend", "pointercancel"]) el.removeEventListener(type, up, opts);
+    };
+  }, []);
+
   function handleItemClick(f: FurnitureItem) {
     if (readOnly && workspace?.commentOn && !panMode && !justDragged()) { workspace.commentOn(`furniture:${f.id}`); return; }
     if (readOnly || panMode || justDragged()) return;
@@ -676,6 +727,12 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   function keyboard(event: KeyboardEvent<HTMLDivElement>) {
     if (readOnly || (event.target as HTMLElement).closest("input,textarea,select,[contenteditable=true]")) return;
     const key = event.key.toLowerCase();
+    // The Menu key or Shift+F10 on the selected piece opens the same choices as a right-click.
+    if ((key === "contextmenu" || (event.shiftKey && key === "f10")) && toolbarItem && rotationCenter && containerRef.current) {
+      const b = containerRef.current.getBoundingClientRect(), fp = footprint(toolbarItem);
+      if (gesture("keyboard", b.left + rotationCenter.x, b.top + rotationCenter.y, { x: (fp.x + fp.w / 2) / roomL, y: (fp.y + fp.h / 2) / roomW, id: toolbarItem.id })) event.preventDefault();
+      return;
+    }
     if (event.ctrlKey || event.metaKey) {
       if (key === "z" || key === "y") { event.preventDefault(); key === "y" || event.shiftKey ? history?.redo() : history?.undo(); }
       return;
@@ -841,7 +898,14 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           backgroundSize: `${gridPx}px ${gridPx}px`, backgroundPosition: `${stagePos.x + fitted.x * zoom}px ${stagePos.y + fitted.y * zoom}px` }}
         onDragOver={e=>{const kind=dropKind(e.dataTransfer.types);if(readOnly||!dock||!kind)return;e.preventDefault();const point=openingPoint(e),opening=point&&dock.openings.preview(kind,point);e.dataTransfer.dropEffect=opening?"copy":"none";setOpeningPreview(opening?{index:null,opening}:null);}}
         onDragLeave={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node))setOpeningPreview(null);}}
-        onDrop={e=>{const kind=dropKind(e.dataTransfer.types);if(readOnly||!dock||!kind)return;e.preventDefault();const point=openingPoint(e),opening=point&&dock.openings.preview(kind,point);setOpeningPreview(null);if(opening)dock.openings.commit(null,opening);}} tabIndex={0} role="region" aria-label="Interactive room floor plan" onPointerDown={() => containerRef.current?.focus({ preventScroll: true })}>
+        onDrop={e=>{const kind=dropKind(e.dataTransfer.types);if(readOnly||!dock||!kind)return;e.preventDefault();const point=openingPoint(e),opening=point&&dock.openings.preview(kind,point);setOpeningPreview(null);if(opening)dock.openings.commit(null,opening);}}
+        onContextMenu={e=>{if(!(e.target as HTMLElement).closest("button,a,input,select,textarea")&&gesture("context_menu",e.clientX,e.clientY))e.preventDefault();}}
+        onDoubleClick={e=>{
+          if(!(e.target as HTMLElement).closest(".konvajs-content")||!gesture("double_click",e.clientX,e.clientY))return;
+          // The double-click's two clicks toggled the piece off and on again: leave it selected.
+          const b=containerRef.current!.getBoundingClientRect(),id=stageRef.current?.getIntersection({x:e.clientX-b.left,y:e.clientY-b.top})?.findAncestor(".furniture",true)?.id(),f=id&&visible.find(x=>x.id===id);
+          if(f&&!readOnly&&usePlannerStore.getState().selectedItemId!==f.id)toggleSelectedItem(f.id,furnitureCategory(f));
+        }} tabIndex={0} role="region" aria-label="Interactive room floor plan" onPointerDown={() => containerRef.current?.focus({ preventScroll: true })}>
       {pxFt > 0 && (
         <Stage
           ref={stageRef}

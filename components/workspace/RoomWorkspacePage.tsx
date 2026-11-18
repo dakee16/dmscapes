@@ -15,7 +15,8 @@ import Modal from "@/components/site/Modal";
 import PlanResult from "@/components/planner/PlanResult";
 import ReadOnlyRoom from "./ReadOnlyRoom";
 import RoomAppHeader from "./RoomAppHeader";
-import { WorkspaceContext, type WorkspaceAccess } from "./WorkspaceContext";
+import { WorkspaceContext, type CanvasGesture, type WorkspaceAccess } from "./WorkspaceContext";
+import CanvasMenu from "./CanvasMenu";
 import { useWorkspaceSession } from "./useWorkspaceSession";
 import CollaborationProvider, { useCollaboration } from "./CollaborationProvider";
 import CommentsPanel from "./CommentsPanel";
@@ -28,7 +29,7 @@ import { hasHallFinder } from "@/lib/hall-finder";
 import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
 import { VoicePanel, VoiceProvider, VoiceToast } from "./RoomVoice";
 import { initial, personStyle } from "./people";
-import { readPointTarget, spotLabel } from "@/lib/workspace-collaboration";
+import { pointTarget, readPointTarget, spotLabel } from "@/lib/workspace-collaboration";
 import { roomOutline } from "@/lib/studio";
 import { openingCenter } from "@/lib/room-editing";
 import { footprint, pointInPolygon } from "@/components/canvas/geometry";
@@ -52,8 +53,12 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
   const [confirm, setConfirm] = useState<string | null>(null);
   const [overlay, setOverlay] = useState({ pins: true, cursors: true });
   const [following, setFollowing] = useState<string | null>(null);
+  const [menu, setMenu] = useState<{ gesture: CanvasGesture; target: string; name: string } | null>(null);
+  const [composeKey, setComposeKey] = useState(0);
   const inviteField = useRef<PeopleHandle>(null);
   function commentOn(next: string) { setTarget(next); setSide("comments"); }
+  /** A comment started from the canvas: the panel opens on that piece or spot, ready to type. */
+  function startComment(next: string) { commentOn(next); setComposeKey(k => k + 1); }
   function locateComment(next: string) {
     if (next.startsWith("product:")) { setSection("shopping"); requestAnimationFrame(() => document.getElementById(`workspace-product-${next.slice(8)}`)?.scrollIntoView({ behavior: "smooth", block: "center" })); }
     else { setSection("room"); if (next.startsWith("furniture:")) usePlannerStore.setState({ selectedItemId: next.slice(10) }); }
@@ -96,7 +101,15 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
   const enabled = detail.workspace.shared && detail.ownerPro;
   const halls = hallFinderOn && hasHallFinder(detail.workspace.snapshot.college_id);
   const commentAllowed = isOwner || (detail.workspace.shared && detail.ownerPro);
-  const access: WorkspaceAccess = { id, members: detail.members, ownerPro: detail.ownerPro, canEdit: detail.canEdit, section, comments: detail.comments, commentOn, overlay };
+  // Right-click, double-click, long press or the Menu key on the plan or the 3D room. Commenters (and a double-click)
+  // go straight to the composer; editors get a small menu.
+  function canvasGesture(gesture: CanvasGesture) {
+    const piece = gesture.point.id ? furniture.find(f => f.id === gesture.point.id) : undefined;
+    const next = piece ? `furniture:${piece.id}` : pointTarget(gesture.point);
+    if (detail!.role === "commenter" || gesture.via === "double_click") { setMenu(null); startComment(next); return; }
+    setMenu({ gesture, target: next, name: piece ? `Comment on ${piece.label}` : "Comment here" });
+  }
+  const access: WorkspaceAccess = { id, members: detail.members, ownerPro: detail.ownerPro, canEdit: detail.canEdit, section, comments: detail.comments, commentOn, overlay, canvasGesture: commentAllowed ? canvasGesture : undefined };
   const statusLabels = { loading: ["Opening", "Opening room"], saved: ["Saved", "All changes saved"], unsaved: ["Unsaved", "Unsaved changes"], saving: ["Saving…", "Saving your room…"], conflict: ["New changes", "New changes to review"], offline: ["Not saved", "Not saved. Retry when connected."] } as const;
   const status = detail.canEdit ? { label: statusLabels[session.status][0], full: statusLabels[session.status][1], state: session.status } : { label: commentAllowed ? "Can comment" : "View only", full: commentAllowed ? "Comment access · Changes sync automatically" : "View access · Changes sync automatically", state: "view" };
   const school = state.college?.id ? getSchool(state.college.id) : undefined;
@@ -142,7 +155,7 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
             notice={<>{error && !confirm && <p role="alert" className={s.inlineError}>{error}</p>}{message && !confirm && <p role="status" className={s.okNote}>{message}</p>}</>} />}
           {section === "room" && <div className={s.phoneCta}><button type="button" className="ds-btn ds-btn--ink-yellow" onClick={() => setSection("shopping")}>Who brings what{unclaimed ? ` · ${unclaimed} open` : ""}</button></div>}
         </main>
-        {side === "comments" && <CommentsPanel open onClose={() => setSide(null)} comments={detail.comments} userId={userId} role={detail.role} allowed={commentAllowed} target={target} setTarget={setTarget} onLocate={locateComment} action={(action, payload) => session.action(action, payload)} ownerTag={ownerOf} targets={[
+        {side === "comments" && <CommentsPanel open composeKey={composeKey} onClose={() => setSide(null)} comments={detail.comments} userId={userId} role={detail.role} allowed={commentAllowed} target={target} setTarget={setTarget} onLocate={locateComment} action={(action, payload) => session.action(action, payload)} ownerTag={ownerOf} targets={[
           { id: "room", name: "The room" },
           ...furniture.map(f => ({ id: `furniture:${f.id}`, name: f.label })),
           ...products.map(p => ({ id: `product:${p.id}`, name: p.name })),
@@ -152,6 +165,8 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
         {side === "voice" && <VoicePanel members={detail.members} userId={userId} roomName={state.planning.name} onClose={() => setSide(null)} following={following} onFollow={setFollowing} />}
       </div>
       <VoiceToast hidden={side === "voice"} />
+      {menu && <CanvasMenu x={menu.gesture.clientX} y={menu.gesture.clientY} onClose={refocus => { setMenu(null); if (refocus) menu.gesture.canvas?.focus({ preventScroll: true }); }}
+        items={[{ label: menu.name, icon: "comment", run: () => { setMenu(null); startComment(menu.target); } }]} />}
       {confirm && <Modal className={s.confirmLayer} aria-labelledby="confirm-title" onKeyDown={e => { if (e.key === "Escape" && !busy) setConfirm(null); }} onClick={() => { if (!busy) setConfirm(null); }}><div className={s.confirm} role="alertdialog" aria-labelledby="confirm-title" aria-describedby="confirm-body" onClick={e => e.stopPropagation()}>
         <h2 id="confirm-title">{confirm === "reload" ? "Load the shared version?" : confirm.startsWith("restore:") ? "Restore this version?" : confirm.startsWith("remove:") ? "Remove this roommate?" : confirm === "personal" ? "Make this room personal?" : confirm === "delete" ? "Delete this workspace?" : "Leave this room?"}</h2>
         <p id="confirm-body">{confirm === "reload" ? "This replaces your unsaved edits. Keep a personal copy first if you want to preserve them." : confirm === "personal" ? "Roommates will lose access and all invitation links will stop working. Your room and shopping list stay saved." : confirm === "delete" ? "The workspace, comments, and versions will be deleted. This cannot be undone. Original saved designs remain available." : confirm.startsWith("restore:") ? "The room and shopping list will return to this version for everyone. The current version is kept in history." : confirm === "leave" ? "You will lose access to this room. Your existing comments remain with its members." : "Their access ends immediately. Existing comments remain with the room."}</p>

@@ -1,6 +1,6 @@
 "use client";
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
-import { useWorkspace } from "@/components/workspace/WorkspaceContext";
+import { useWorkspace, type CanvasGesture } from "@/components/workspace/WorkspaceContext";
 import {useAuth} from "@/lib/auth-context";
 import {canUse3D} from "@/lib/plan";
 import {useUpgrade} from "@/lib/upgrade-context";
@@ -35,7 +35,7 @@ export interface RoomSceneHandle {exportPNG:(ratio?:number)=>string|null;
 type SceneItem=FurnitureItem&{kind:string;height:number;elevation:number;host?:string;footW:number;footD:number;locked:boolean;bare:boolean;back:number;product?:ReturnType<typeof productVisual>};
 type SceneData={room:SelectedRoom;settings:ReturnType<typeof studioSettings>;outline:ReturnType<typeof roomOutline>;items:SceneItem[];palette:string[];theme:RoomTheme;selectedId:string|null;selectedOpening:number|null;editOpenings:boolean;snap:boolean;interior:{x:number;y:number}};
 type View={readCursor:(x:number,y:number)=>CursorPoint|null;projectCursor:(x:number,y:number,h?:number,id?:string)=>{x:number;y:number}|null;update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;fit:()=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;setWalker:(node:SVGGElement|null)=>void;setWalkInput:(input:WalkInput)=>void;exportPNG:(ratio?:number)=>string;renderPhoto:(options:{onProgress:(p:PhotoProgress)=>void})=>PhotoJob;destroy:()=>void};
-type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;openingDragType:string;previewOpening:(target:number|WallOpening["kind"],x:number,y:number)=>WallOpening|null;onSelectOpening:(index:number|null)=>void;onOpeningChange:(index:number|null,opening:WallOpening)=>void;onReady:()=>void;onError:(message:string)=>void;onMode:(mode:CameraView)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number,elevation?:number)=>void;onFrame:()=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
+type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;openingDragType:string;previewOpening:(target:number|WallOpening["kind"],x:number,y:number)=>WallOpening|null;onSelectOpening:(index:number|null)=>void;onOpeningChange:(index:number|null,opening:WallOpening)=>void;onReady:()=>void;onError:(message:string)=>void;onMode:(mode:CameraView)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number,elevation?:number)=>void;onFrame:()=>void;onContext:(gesture:Omit<CanvasGesture,"surface"|"canvas">)=>boolean;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
 export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;preview?:boolean;openingControls?:OpeningControls;
   /** The school whose colors Team Spirit takes; defaults to the planner's school. */
   college?:string|null;
@@ -48,7 +48,7 @@ export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:
 /** Soft goods the vibe dresses when "Dress the room in my vibe" is on (a piece's own preview color still wins). */
 const DRESSED=new Set(["bed","bunk","rug","blanket","pillow","decor","curtains","macrame"]);
 const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(props,ref){
-  const workspace=useWorkspace();
+  const workspace=useWorkspace(),room=useRef(workspace);room.current=workspace;
   const plannerView=usePlannerStore(st=>st.plannerView),plannerCollege=usePlannerStore(st=>st.college?.id);
   const college=props.college!==undefined?props.college:plannerCollege;
   const {profile,loading}=useAuth(),allowed=!loading&&(canUse3D(profile)||workspace?.ownerPro===true);
@@ -91,6 +91,8 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
         onMove:(id,x,y,elevation)=>{if(access.current&&!current.current.readOnly)current.current.onMove?.(id,x,y,elevation);},
         // Cursors, pins and pings over the room redraw in the same frame as the room.
         onFrame:()=>wake(true),
+        // In My Room, right-click, double-click, long press and the Menu key start a comment (or a "Look here").
+        onContext:gesture=>{const start=room.current?.canvasGesture;if(!start)return false;start({...gesture,surface:"scene",canvas:node.current?.querySelector("canvas")??null});return true;},
         constrain:(id,x,y)=>{const p=current.current,f=p.items.find(f=>f.id===id);return f?constrainedPosition(f,x,y,p.room,p.snap!==false):{x,y};}});
       view.current=v;v.update(latest.current);v.setWalls(current.current.walls??"auto");v.setMoveMode(current.current.moveMode??false);v.setWalker(current.current.walker??null);
     }catch{if(!disposed)setError("3D is unavailable on this browser. Your room can still be edited in 2D.");}})();

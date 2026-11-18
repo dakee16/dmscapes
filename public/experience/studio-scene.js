@@ -17,6 +17,7 @@ const LIGHT={
 const FLOOR_TONE={oak:"#c99f6c",walnut:"#7a553a",concrete:"#d4cfcb",carpet:"#c4bcae"};
 const PAPER="#f4f3ee",WALL_T=.42,PLINTH=.45,EYE=5.3,WALK_R=.7;
 // Phones and low-power devices (coarse pointer on a small screen, ≤4 cores or ≤4 GB): a lower pixel ratio and fewer lamp lights at night.
+const MAC=/Mac|iPhone|iPad/.test(navigator.userAgent);
 const LOW=(matchMedia("(pointer: coarse)").matches&&Math.min(screen.width,screen.height)<768)||(navigator.hardwareConcurrency||8)<=4||(navigator.deviceMemory||8)<=4;
 const LAMPS=LOW?2:3;
 /** Pieces that hang on a wall: dragging slides them along it and up or down. */
@@ -1070,10 +1071,22 @@ export function createStudioScene(container, options) {
     for(const points of [[new T.Vector3(0,.04,z),new T.Vector3(data.room.lengthFt,.04,z)],[new T.Vector3(x,.04,0),new T.Vector3(x,.04,data.room.widthFt)]]){
       const line=new T.Line(new T.BufferGeometry().setFromPoints(points),lineMat);line.computeLineDistances();guides.add(line);}
   }
+  // Comments from the room (options.onContext, which says whether it took the gesture): right-click, two-finger or
+  // Ctrl-click, double-click, a long press, or the Menu key on the selected piece.
+  let press=null,pressAt=0;
+  const stopPress=()=>{if(press)clearTimeout(press.timer);press=null;};
+  function gesture(via,e){const p=hitAt(e);return !!p&&!!options.onContext?.({via,point:p,clientX:e.clientX,clientY:e.clientY});}
+  // Android follows a long press with its own contextmenu event: one gesture, one action.
+  function context(e){if(Date.now()-pressAt<1000||gesture("context_menu",e))e.preventDefault();}
   function down(e){
     photo?.cancel();
-    if(e.button>1)return;assemblyStart=0;for(const m of meshes.values()){m.group.scale.setScalar(1);m.group.position.y=m.item.elevation;}
+    // A Mac's Ctrl-click is a right-click: it never selects, drags or orbits.
+    if(e.button>1||(MAC&&e.ctrlKey&&e.button===0))return;assemblyStart=0;for(const m of meshes.values()){m.group.scale.setScalar(1);m.group.position.y=m.item.elevation;}
     canvas.focus({preventScroll:true});canvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    stopPress();
+    // A long press comments on what's under the finger; the piece the touch picked goes back to what was selected.
+    if(e.pointerType==="touch"&&pointers.size===1){const before=data?.selectedId??null,at={clientX:e.clientX,clientY:e.clientY};
+      press={id:e.pointerId,x:e.clientX,y:e.clientY,timer:setTimeout(()=>{press=null;cancelDrag();options.onSelect?.(before);if(gesture("long_press",at))pressAt=Date.now();request();},550)};}
     if(pointers.size===2){cancelDrag();pinch=distance();return;}
     const opening=data?.editOpenings?openingHit(e):null;
     if(opening){const index=opening.object.userData.openingIndex;options.onSelectOpening?.(index);
@@ -1096,6 +1109,7 @@ export function createStudioScene(container, options) {
   function distance(){const a=[...pointers.values()];return a.length===2?Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y):0;}
   let hoverAt=0;
   function move(e){
+    if(press&&(e.pointerId!==press.id||Math.hypot(e.clientX-press.x,e.clientY-press.y)>8))stopPress();
     // A grab cursor over pieces you can move (mouse only, at most every 60 ms).
     if(!pointers.size&&e.pointerType==="mouse"&&data&&e.timeStamp-hoverAt>60){hoverAt=e.timeStamp;
       const m=mode==="inside"?null:meshes.get(hit(e));canvas.style.cursor=m&&m.item.movable&&!m.item.locked?(e.shiftKey?"ns-resize":"grab"):"";}
@@ -1131,6 +1145,7 @@ export function createStudioScene(container, options) {
     drag.lastX=e.clientX;drag.lastY=e.clientY;request();
   }
   function up(e){
+    stopPress();
     if(drag?.id)canvas.style.cursor="";
     pointers.delete(e.pointerId);pinch=0;
     if(drag?.pointerId===e.pointerId){const d=drag;drag=null;clearGuides();
@@ -1139,10 +1154,16 @@ export function createStudioScene(container, options) {
     if(canvas.hasPointerCapture(e.pointerId))canvas.releasePointerCapture(e.pointerId);request();
   }
   function cancelDrag(){if(drag?.openingIndex!==undefined){const node=openingNodes.get(drag.openingIndex);if(node)positionOpening(node,drag.opening,drag.opening.offset_ft);}openingGhost.visible=false;if(drag?.id){for(const m of meshes.values())m.group.position.set(m.item.x_ft+m.item.footW/2,m.item.elevation,m.item.y_ft+m.item.footD/2);}drag=null;clearGuides();}
-  function cancel(e){pointers.delete(e.pointerId);pinch=0;cancelDrag();request();}
+  function cancel(e){stopPress();pointers.delete(e.pointerId);pinch=0;cancelDrag();request();}
   function wheel(e){e.preventDefault();photo?.cancel();touched();radius=Math.max(4,Math.min(180,radius*Math.exp(e.deltaY*.001)));request();}
   const walkKey=e=>{const k=e.key.toLowerCase();return mode==="inside"&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&["arrowup","arrowdown","arrowleft","arrowright","w","a","s","d"].includes(k)?k:null;};
   function key(e){
+    if((e.key==="ContextMenu"||(e.shiftKey&&e.key==="F10"))&&data){
+      const m=meshes.get(data.selectedId);if(!m)return;
+      const top=Math.min(20,m.item.elevation+m.item.height),q=new T.Vector3(m.group.position.x,top,m.group.position.z).project(camera),r=canvas.getBoundingClientRect();
+      const point={x:Math.max(0,Math.min(1,m.group.position.x/data.room.lengthFt)),y:Math.max(0,Math.min(1,m.group.position.z/data.room.widthFt)),h:top,id:m.item.id};
+      if(options.onContext?.({via:"keyboard",point,clientX:r.left+(q.x+1)*width/2,clientY:r.top+(1-q.y)*height/2}))e.preventDefault();return;
+    }
     if(e.key==="Escape"){cancelDrag();options.onSelectOpening?.(null);options.onSelect?.(null);request();return;}
     const k=walkKey(e);if(k){e.preventDefault();if(!keys.has(k)){keys.add(k);request();}return;}
     if(["ArrowLeft","ArrowRight","ArrowUp","ArrowDown","+","=","-"].includes(e.key)){
@@ -1160,7 +1181,7 @@ export function createStudioScene(container, options) {
     if(!kind)return null;e.preventDefault();const p=wallPoint(e,0);
     return p?options.previewOpening?.(kind,p.x,p.z):null;
   }
-  const events={dragover:e=>{const opening=droppedOpening(e);e.dataTransfer.dropEffect=opening?"copy":"none";ghostOpening(opening);},dragleave:()=>ghostOpening(null),drop:e=>{const opening=droppedOpening(e);ghostOpening(null);if(opening)options.onOpeningChange?.(null,opening);},pointerdown:down,pointermove:move,pointerup:up,pointercancel:cancel,keydown:key,keyup:e=>{keys.delete(e.key.toLowerCase());},blur:()=>keys.clear()};
+  const events={dragover:e=>{const opening=droppedOpening(e);e.dataTransfer.dropEffect=opening?"copy":"none";ghostOpening(opening);},dragleave:()=>ghostOpening(null),drop:e=>{const opening=droppedOpening(e);ghostOpening(null);if(opening)options.onOpeningChange?.(null,opening);},pointerdown:down,pointermove:move,pointerup:up,pointercancel:cancel,contextmenu:context,dblclick:e=>gesture("double_click",e),keydown:key,keyup:e=>{keys.delete(e.key.toLowerCase());},blur:()=>keys.clear()};
   for(const [name,fn]of Object.entries(events))canvas.addEventListener(name,fn);canvas.addEventListener("wheel",wheel,{passive:false});
   const visible=()=>request();document.addEventListener("visibilitychange",visible);
   return {update:sync,
@@ -1187,7 +1208,7 @@ export function createStudioScene(container, options) {
       stamp(out);guides.visible=true;request();return out.toDataURL("image/png");
     },
     renderPhoto,
-    destroy(){photo?.cancel();disposed=true;cancelAnimationFrame(raf);clearTimeout(sharpen);clearTimeout(creaseTimer);resize.disconnect();document.removeEventListener("visibilitychange",visible);
+    destroy(){photo?.cancel();stopPress();disposed=true;cancelAnimationFrame(raf);clearTimeout(sharpen);clearTimeout(creaseTimer);resize.disconnect();document.removeEventListener("visibilitychange",visible);
       for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);canvas.removeEventListener("webglcontextlost",onContextLost);
       clearGuides();openingGhost.geometry.dispose();openingGhost.material.dispose();lineMat.dispose();marker.geometry.dispose();ring.geometry.dispose();ring.material.dispose();marker.material.dispose();
       for(const m of meshes.values())removePiece(m);clearRoom();floorTextures.forEach(t=>t.dispose());

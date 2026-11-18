@@ -8,18 +8,21 @@ import s from "./Room.module.css";
 
 /** Comments pinned to the plan: a side panel on desktop, a sheet on phones.
  * Not modal, so the plan stays usable while a thread is open. */
-export default function CommentsPanel({open,onClose,comments,userId,role,allowed,target,setTarget,targets,onLocate,action,ownerTag}:{
+export default function CommentsPanel({open,onClose,comments,userId,role,allowed,target,setTarget,targets,onLocate,action,ownerTag,composeKey=0}:{
   open:boolean;onClose:()=>void;comments:WorkspaceComment[];userId:string;role:WorkspaceRole;allowed:boolean;
   target:string;setTarget:(target:string)=>void;targets:{id:string;name:string}[];onLocate:(target:string)=>void;
   action:(action:string,payload:Record<string,unknown>)=>Promise<unknown>;
   /** Whose a commented piece is: a member id, "shared", or undefined when it has no owner. */
   ownerTag?:(target:string)=>string|undefined;
+  /** Bumped when a comment is started from the canvas: show that target's notes and put the cursor in the composer. */
+  composeKey?:number;
 }) {
   const workspace=useWorkspace(),members=workspace?.members??[];
   const [draft,setDraft]=useState(""),[reply,setReply]=useState<Record<string,string>>({}),[replyTo,setReplyTo]=useState<string|null>(null);
   const [filter,setFilter]=useState<"open"|"resolved">("open"),[scope,setScope]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState("");
   const previousOpen=useRef(open),compose=useRef<HTMLTextAreaElement>(null),heading=useRef<HTMLHeadingElement>(null);
   useEffect(()=>{if(open&&!previousOpen.current){setFilter("open");setScope(target!=="room");setError("");requestAnimationFrame(()=>heading.current?.focus({preventScroll:true}));}previousOpen.current=open;},[open,target]);
+  useEffect(()=>{if(!composeKey)return;setScope(target!=="room");requestAnimationFrame(()=>compose.current?.focus({preventScroll:true}));},[composeKey]); // eslint-disable-line react-hooks/exhaustive-deps
   const label=(id:string)=>targets.find(t=>t.id===id)?.name??(id.startsWith("furniture:")?"Removed furniture":id.startsWith("product:")?"Previous product":id.startsWith("layout:")?"Previous layout":"The room");
   const roots=comments.filter(c=>!c.parent_id),visible=roots.filter(c=>c.resolved===(filter==="resolved")&&(!scope||c.target===target)).slice().reverse();
   const count=roots.filter(c=>!c.resolved).length;

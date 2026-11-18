@@ -154,9 +154,94 @@ async function measurePipeline(context, receiver, who, { rate = 25, jitter = 0, 
     unevenness: Math.round((percentile(deltas, 0.95) - percentile(deltas, 0.05)) / percentile(deltas, 0.5) * 100) / 100 };
 }
 
+/** A point on `page`'s plan (or 3D room) over a piece (`want: "piece"`) or the bare floor, found by moving there and
+ * reading the cursor message `listener` receives. Returns client coordinates plus the message. */
+async function findSpot(page, listener, want, area) {
+  const box = await (area ?? surface(page)).boundingBox();
+  for (let j = 3; j < 11; j++) for (let i = 3; i < 12; i++) {
+    const x = box.x + box.width * i / 15, y = box.y + box.height * j / 14;
+    const fits = m => m && !m.clear && (want === "piece" ? m.id && (m.h === undefined || m.h > 1) : !m.id && !(m.h > .2));
+    await page.mouse.move(x, y); await sleep(70);
+    if (!fits((await heard(listener, "cursor")).at(-1)?.payload)) continue;
+    // Confirm with a fresh message from a pixel away (the last one might have left before the move).
+    await page.mouse.move(x + 1, y); await sleep(150);
+    const last = (await heard(listener, "cursor")).at(-1)?.payload;
+    if (fits(last)) return { x: x + 1, y, payload: last };
+  }
+  throw new Error(`No ${want} found`);
+}
+const selected = page => page.locator("[role=toolbar][aria-label$=' actions']").getAttribute("aria-label").catch(() => null);
+const panelTarget = page => page.locator("#room-side-panel select").inputValue();
+
 const tests = {
+  async gestures({ owner, editor, commenter }) {
+    for (const p of [owner, editor, commenter]) await listen(p);
+    await sees(commenter, EDITOR);
+    // Commenter, 2D: a right-click opens the composer on that piece, no menu.
+    const piece = await findSpot(commenter, owner, "piece");
+    await commenter.mouse.click(piece.x, piece.y, { button: "right" });
+    await commenter.locator("#room-side-panel").waitFor();
+    ok(await panelTarget(commenter) === `furniture:${piece.payload.id}`, `Commenter right-click comments on ${piece.payload.id}`);
+    ok(await commenter.locator("#room-comment-body").evaluate(el => el === document.activeElement), "The composer is ready to type in");
+    ok(await commenter.getByRole("menu").count() === 0, "Commenters get no menu (one action)");
+    // Commenter: a double-click on the floor comments on that spot.
+    await commenter.getByRole("button", { name: "Close comments" }).click();
+    const floor = await findSpot(commenter, owner, "floor");
+    await commenter.mouse.dblclick(floor.x, floor.y);
+    await commenter.locator("#room-side-panel").waitFor();
+    const spot = await panelTarget(commenter);
+    ok(/^point:0(\.\d+)?:0(\.\d+)?$/.test(spot), `Commenter double-click on the floor comments on a spot (${spot})`);
+    const name = await commenter.locator("#room-side-panel select option:checked").textContent();
+    ok(/^Spot (near |on the floor|by the window)/.test(name), `The spot is named for what's near it ("${name}")`);
+    await commenter.getByRole("button", { name: "Close comments" }).click();
+
+    // Editor, 2D: right-click a piece opens the menu; nothing is selected, dragged or panned.
+    const target = await findSpot(editor, owner, "piece");
+    await sleep(400);
+    const before = await selected(editor), stage = await editor.locator(".konvajs-content canvas").first().screenshot();
+    await editor.mouse.click(target.x, target.y, { button: "right" });
+    const menu = editor.getByRole("menu", { name: "Canvas actions" });
+    await menu.waitFor();
+    const item = (await menu.getByRole("menuitem").first().textContent()).trim();
+    ok(/^Comment on .+/.test(item), `Editor right-click opens the menu ("${item}")`);
+    ok(await selected(editor) === before, "The right-click changed no selection");
+    await editor.keyboard.press("Escape");
+    await menu.waitFor({ state: "detached" });
+    ok(await editor.evaluate(() => document.activeElement?.getAttribute("aria-label")) === "Interactive room floor plan", "Escape closes the menu and focus returns to the plan");
+    await editor.evaluate(() => document.activeElement?.blur()); // the focus ring isn't a change to the plan
+    const after = await editor.locator(".konvajs-content canvas").first().screenshot();
+    if (Buffer.compare(stage, after)) { fs.writeFileSync(path.join(OUT, "plan-before.png"), stage); fs.writeFileSync(path.join(OUT, "plan-after.png"), after); }
+    ok(Buffer.compare(stage, after) === 0, "The plan didn't pan, zoom or change");
+    await editor.mouse.click(target.x, target.y, { button: "right" });
+    await menu.getByRole("menuitem", { name: item }).click();
+    ok(await panelTarget(editor) === `furniture:${target.payload.id}`, "Comment on … opens the composer on that piece");
+    await editor.getByRole("button", { name: "Close comments" }).click();
+    // Mac Ctrl-click: the same menu, still no selection.
+    if ((await editor.evaluate(() => navigator.userAgent)).includes("Mac")) {
+      await editor.keyboard.down("Control"); await editor.mouse.click(target.x, target.y); await editor.keyboard.up("Control");
+      ok(await selected(editor) === before, "Ctrl-click (Mac) never selects");
+      if (await menu.count()) { ok(true, "Ctrl-click opens the menu"); await editor.keyboard.press("Escape"); }
+    }
+    // Double-click: comments straight away and leaves the piece selected.
+    await editor.mouse.dblclick(target.x, target.y);
+    await editor.locator("#room-side-panel").waitFor();
+    ok(await panelTarget(editor) === `furniture:${target.payload.id}`, "Editor double-click comments straight away");
+    ok((await selected(editor)) !== null, `The double-clicked piece stays selected (${await selected(editor)})`);
+    await editor.getByRole("button", { name: "Close comments" }).click();
+    // Long press (touch) on the floor: the same menu, no tap afterwards.
+    const cdp = await editor.context().newCDPSession(editor), spot2 = await findSpot(editor, owner, "floor"), held = await selected(editor);
+    await editor.mouse.move(5, 5);
+    await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ x: spot2.x, y: spot2.y }] });
+    await sleep(750);
+    await cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
+    await menu.waitFor({ timeout: 2000 });
+    ok((await menu.getByRole("menuitem").first().textContent()).trim() === "Comment here", "A long press on the floor opens the menu for that spot");
+    await editor.keyboard.press("Escape");
+    ok(await selected(editor) === held, "Lifting the finger after a long press isn't a tap (selection kept)");
+    await editor.screenshot({ path: path.join(OUT, `gestures-2d-${label}.png`) });
+  },
   async scene3d({ owner, editor }) {
-    await view(owner, "3d"); await view(editor, "3d"); await listen(editor);
+    await view(owner, "3d"); await view(editor, "3d"); await listen(editor); await listen(owner);
     const box = await scene(owner).boundingBox(), theirs = await scene(editor).boundingBox();
     // Find a spot on top of a piece (a hit with a height), then compare where each screen shows the pointer.
     let found = null;
@@ -173,13 +258,42 @@ const tests = {
     results.scene3dErrorPx = Math.round(error * 10) / 10;
     ok(error < 4, `The 3D viewer draws it on the piece, where the owner points (${results.scene3dErrorPx} px off)`);
     // A wall: aim high near the top of the far wall (no piece, height above the floor).
-    let wall = null;
+    let wall = null, wallAt = null;
     for (let j = 1; j < 5 && !wall; j++) for (let i = 4; i < 10 && !wall; i++) {
       await owner.mouse.move(box.x + box.width * i / 14, box.y + box.height * j / 12); await sleep(90);
       const last = (await heard(editor, "cursor")).at(-1)?.payload;
-      if (last && !last.id && last.h > 2) wall = last;
+      if (last && !last.id && last.h > 2) { wall = last; wallAt = { x: box.x + box.width * i / 14 - box.x + theirs.x, y: box.y + box.height * j / 12 - box.y + theirs.y }; }
     }
     ok(wall, `Pointing at a wall reports a point on it (${wall?.h} ft up)`);
+    // Gestures in 3D: right-click a piece opens the menu without selecting or orbiting; double-click comments.
+    const editing = () => editor.getByRole("button", { name: "Edit selected" }).count();
+    const mine = await findSpot(editor, owner, "piece", scene(editor)), wasEditing = await editing();
+    await editor.waitForFunction(() => document.querySelector("[data-testid=room-3d] canvas")?.dataset.settled === "1", null, { timeout: 30_000 }).catch(() => {});
+    const room = await scene(editor).locator("canvas").screenshot();
+    await editor.mouse.click(mine.x, mine.y, { button: "right" });
+    const menu = editor.getByRole("menu", { name: "Canvas actions" });
+    await menu.waitFor();
+    const item = (await menu.getByRole("menuitem").first().textContent()).trim();
+    ok(item.startsWith("Comment on "), `3D right-click on ${mine.payload.id} opens the menu ("${item}")`);
+    ok(await editing() === wasEditing, "The 3D right-click selected nothing");
+    await editor.keyboard.press("Escape");
+    ok(await editor.evaluate(() => document.activeElement?.tagName) === "CANVAS", "Escape returns focus to the 3D room");
+    await editor.evaluate(() => document.activeElement?.blur());
+    await sleep(300);
+    await editor.waitForFunction(() => document.querySelector("[data-testid=room-3d] canvas")?.dataset.settled === "1", null, { timeout: 30_000 }).catch(() => {});
+    const roomAfter = await scene(editor).locator("canvas").screenshot();
+    if (Buffer.compare(room, roomAfter)) { fs.writeFileSync(path.join(OUT, "room-before.png"), room); fs.writeFileSync(path.join(OUT, "room-after.png"), roomAfter); }
+    ok(Buffer.compare(room, roomAfter) === 0, "The room didn't orbit or change");
+    await editor.mouse.dblclick(mine.x, mine.y);
+    await editor.locator("#room-side-panel").waitFor();
+    ok(await panelTarget(editor) === `furniture:${mine.payload.id}`, "3D double-click comments on that piece");
+    await editor.getByRole("button", { name: "Close comments" }).click();
+    await editor.mouse.click(wallAt.x, wallAt.y, { button: "right" });
+    await menu.waitFor();
+    await menu.getByRole("menuitem", { name: "Comment here" }).click();
+    const spot = await panelTarget(editor);
+    ok(/^point:[\d.]+:[\d.]+:\d+(\.\d+)?$/.test(spot), `A spot on a 3D wall keeps its height (${spot})`);
+    await editor.getByRole("button", { name: "Close comments" }).click();
     await editor.screenshot({ path: path.join(OUT, `scene3d-${label}.png`) });
     await owner.mouse.move(5, 5);
     await view(owner, "2d"); await view(editor, "2d");
