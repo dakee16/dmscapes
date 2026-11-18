@@ -27,8 +27,9 @@ import { mixHex, roomThemeFor, styleFor, type RoomTheme } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
 import { bedLabel, isBunkBed } from "@/lib/bedding";
-import { useWorkspace, useWorkspacePeople } from "@/components/workspace/WorkspaceContext";
-import CollaborationOverlay from "@/components/workspace/CollaborationOverlay";
+import { useWorkspace, useWorkspacePeople, type CanvasGesture } from "@/components/workspace/WorkspaceContext";
+import type { CursorPoint } from "@/lib/workspace-collaboration";
+import CollaborationOverlay, { useCanvasMarks } from "@/components/workspace/CollaborationOverlay";
 import { ownerName } from "@/lib/planning";
 import { clamp, footprint, invalidItems, layerOf, pointInPolygon, rotateFurniture } from "./geometry";
 
@@ -492,6 +493,56 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   // register as a click that toggles the selection.
   const justDragged = () => Date.now() - dragGuard.current < 250;
 
+  // Comments (and editors' "Look here") start from the plan: right-click, two-finger or Ctrl-click, double-click, a long
+  // press, or the Menu key on the selected piece. The target is the piece under the pointer, else that spot on the floor.
+  const pressAt = useRef(0);
+  function gesture(via: CanvasGesture["via"], clientX: number, clientY: number, point?: CursorPoint) {
+    // Android follows a long press (and Windows the Menu key) with its own contextmenu event: one gesture, one action.
+    if (!workspace?.canvasGesture || (via === "context_menu" && Date.now() - pressAt.current < 1000)) return false;
+    const bounds = containerRef.current?.getBoundingClientRect();
+    if (!bounds || pxFt <= 0) return false;
+    if (!point) {
+      const ft = openingPoint({ clientX, clientY })!, id = stageRef.current?.getIntersection({ x: clientX - bounds.left, y: clientY - bounds.top })?.findAncestor(".furniture", true)?.id();
+      if (!id && !pointInPolygon(ft.x, ft.y, outline?.points ?? [{ x: 0, y: 0 }, { x: roomL, y: 0 }, { x: roomL, y: roomW }, { x: 0, y: roomW }], .05)) return false;
+      point = { x: clamp(ft.x / roomL, 0, 1), y: clamp(ft.y / roomW, 0, 1), ...(id ? { id } : {}) };
+    }
+    if (via !== "context_menu" && via !== "double_click") pressAt.current = Date.now();
+    workspace.canvasGesture({ via, point, clientX, clientY, surface: "plan", canvas: containerRef.current });
+    return true;
+  }
+  const gestureRef = useRef(gesture); gestureRef.current = gesture;
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const mac = /Mac|iPhone|iPad/.test(navigator.userAgent);
+    let press: { id: number; x: number; y: number; timer: number } | null = null, fired = false;
+    const stop = () => { if (press) clearTimeout(press.timer); press = null; };
+    // A right-click, or Ctrl-click on a Mac, never selects, drags or pans (Konva would count it as a click); the
+    // contextmenu event that follows does the work.
+    const ctrl = (e: MouseEvent) => { if (e.button === 2 || (mac && e.ctrlKey && e.button === 0)) { e.stopPropagation(); return true; } return false; };
+    const down = (e: PointerEvent) => {
+      if (ctrl(e)) return;
+      stop(); fired = false;
+      if (e.pointerType !== "touch" || !e.isPrimary) return;
+      press = { id: e.pointerId, x: e.clientX, y: e.clientY, timer: window.setTimeout(() => {
+        const p = press; press = null;
+        if (!p || !gestureRef.current("long_press", p.x, p.y)) return;
+        fired = true;
+        stageRef.current?.stopDrag(); stageRef.current?.find(".furniture").forEach(node => { if (node.isDragging()) node.stopDrag(); });
+      }, 550) };
+    };
+    const move = (e: PointerEvent) => { if (press && (e.pointerId !== press.id || Math.hypot(e.clientX - press.x, e.clientY - press.y) > 8)) stop(); };
+    // The finger lifting after a long press isn't a tap: Konva never sees it, and no click follows.
+    const up = (e: Event) => { if (e instanceof MouseEvent && ctrl(e)) return; stop(); if (fired) { e.stopPropagation(); if (e.type === "touchend") e.preventDefault(); } };
+    const opts = { capture: true, passive: false };
+    el.addEventListener("pointerdown", down, true); el.addEventListener("mousedown", ctrl, true); el.addEventListener("pointermove", move, true);
+    for (const type of ["pointerup", "mouseup", "touchend", "pointercancel"]) el.addEventListener(type, up, opts);
+    return () => {
+      stop(); el.removeEventListener("pointerdown", down, true); el.removeEventListener("mousedown", ctrl, true); el.removeEventListener("pointermove", move, true);
+      for (const type of ["pointerup", "mouseup", "touchend", "pointercancel"]) el.removeEventListener(type, up, opts);
+    };
+  }, []);
+
   function handleItemClick(f: FurnitureItem) {
     if (readOnly && workspace?.commentOn && !panMode && !justDragged()) { workspace.commentOn(`furniture:${f.id}`); return; }
     if (readOnly || panMode || justDragged()) return;
@@ -499,6 +550,15 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     // product-list cross-highlight keeps working exactly as before.
     toggleSelectedItem(f.id, furnitureCategory(f));
   }
+
+  // Locate on a spot comment centres the plan on it.
+  const focusAt = workspace?.focus;
+  useEffect(() => {
+    if (!focusAt || pxFt <= 0 || Date.now() - focusAt.key > 3000) return;
+    const z = 1.35; setZoom(z); setStagePos({ x: stageW / 2 - (fitted.x + focusAt.x * roomL * pxFt) * z, y: stageH / 2 - (fitted.y + focusAt.y * roomW * pxFt) * z });
+  }, [focusAt?.key]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Pieces the comments panel is on (or a thread there is hovered), outlined in that person's colour on a layer of their own.
+  const marked = useCanvasMarks().flatMap(m => { const f = m.target.startsWith("furniture:") && visible.find(x => x.id === m.target.slice(10)); return f ? [{ f, color: m.color }] : []; });
 
   useImperativeHandle(ref, () => ({
     focusItem: id=>{const f=furniture.find(f=>f.id===id);if(!f)return;const b=footprint(f),z=1.35;setZoom(z);setStagePos({x:stageW/2-(fitted.x+(b.x+b.w/2)*pxFt)*z,y:stageH/2-(fitted.y+(b.y+b.h/2)*pxFt)*z});},
@@ -676,6 +736,12 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   function keyboard(event: KeyboardEvent<HTMLDivElement>) {
     if (readOnly || (event.target as HTMLElement).closest("input,textarea,select,[contenteditable=true]")) return;
     const key = event.key.toLowerCase();
+    // The Menu key or Shift+F10 on the selected piece opens the same choices as a right-click.
+    if ((key === "contextmenu" || (event.shiftKey && key === "f10")) && toolbarItem && rotationCenter && containerRef.current) {
+      const b = containerRef.current.getBoundingClientRect(), fp = footprint(toolbarItem);
+      if (gesture("keyboard", b.left + rotationCenter.x, b.top + rotationCenter.y, { x: (fp.x + fp.w / 2) / roomL, y: (fp.y + fp.h / 2) / roomW, id: toolbarItem.id })) event.preventDefault();
+      return;
+    }
     if (event.ctrlKey || event.metaKey) {
       if (key === "z" || key === "y") { event.preventDefault(); key === "y" || event.shiftKey ? history?.redo() : history?.undo(); }
       return;
@@ -841,7 +907,14 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           backgroundSize: `${gridPx}px ${gridPx}px`, backgroundPosition: `${stagePos.x + fitted.x * zoom}px ${stagePos.y + fitted.y * zoom}px` }}
         onDragOver={e=>{const kind=dropKind(e.dataTransfer.types);if(readOnly||!dock||!kind)return;e.preventDefault();const point=openingPoint(e),opening=point&&dock.openings.preview(kind,point);e.dataTransfer.dropEffect=opening?"copy":"none";setOpeningPreview(opening?{index:null,opening}:null);}}
         onDragLeave={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node))setOpeningPreview(null);}}
-        onDrop={e=>{const kind=dropKind(e.dataTransfer.types);if(readOnly||!dock||!kind)return;e.preventDefault();const point=openingPoint(e),opening=point&&dock.openings.preview(kind,point);setOpeningPreview(null);if(opening)dock.openings.commit(null,opening);}} tabIndex={0} role="region" aria-label="Interactive room floor plan" onPointerDown={() => containerRef.current?.focus({ preventScroll: true })}>
+        onDrop={e=>{const kind=dropKind(e.dataTransfer.types);if(readOnly||!dock||!kind)return;e.preventDefault();const point=openingPoint(e),opening=point&&dock.openings.preview(kind,point);setOpeningPreview(null);if(opening)dock.openings.commit(null,opening);}}
+        onContextMenu={e=>{if(!(e.target as HTMLElement).closest("button,a,input,select,textarea")&&gesture("context_menu",e.clientX,e.clientY))e.preventDefault();}}
+        onDoubleClick={e=>{
+          if(!(e.target as HTMLElement).closest(".konvajs-content")||!gesture("double_click",e.clientX,e.clientY))return;
+          // The double-click's two clicks toggled the piece off and on again: leave it selected.
+          const b=containerRef.current!.getBoundingClientRect(),id=stageRef.current?.getIntersection({x:e.clientX-b.left,y:e.clientY-b.top})?.findAncestor(".furniture",true)?.id(),f=id&&visible.find(x=>x.id===id);
+          if(f&&!readOnly&&usePlannerStore.getState().selectedItemId!==f.id)toggleSelectedItem(f.id,furnitureCategory(f));
+        }} tabIndex={0} role="region" aria-label="Interactive room floor plan" onPointerDown={() => containerRef.current?.focus({ preventScroll: true })}>
       {pxFt > 0 && (
         <Stage
           ref={stageRef}
@@ -987,6 +1060,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               return (
                 <Group
                   key={f.id}
+                  id={f.id}
                   name="furniture"
                   x={PAD + fp.x * pxFt}
                   y={PAD + fp.y * pxFt}
@@ -1168,11 +1242,24 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 ))}
             </Group>
           </Layer>
+          {marked.length > 0 && <Layer name="editor-only" listening={false}>
+            <Group x={fitted.x - PAD} y={fitted.y - PAD}>
+              {marked.map(({ f, color }) => {
+                const fp = footprint(f), w = f.width_ft * pxFt, h = f.length_ft * pxFt, r = { x: -7 / z, y: -7 / z, width: w + 14 / z, height: h + 14 / z, cornerRadius: 7 / z };
+                return <Group key={f.id} x={PAD + fp.x * pxFt} y={PAD + fp.y * pxFt}><Group x={fp.w * pxFt / 2} y={fp.h * pxFt / 2} offsetX={w / 2} offsetY={h / 2} rotation={f.rotation_deg}>
+                  <Rect {...r} stroke="#FFFFFF" strokeWidth={6 / z} opacity={.9} />
+                  <Rect {...r} stroke={color} strokeWidth={3 / z} shadowColor={color} shadowBlur={14} shadowOpacity={.55} />
+                </Group></Group>;
+              })}
+            </Group>
+          </Layer>}
         </Stage>
       )}
 
       {pxFt > 0 && workspace && <CollaborationOverlay surface="plan" projection={{
-        read:(x,y)=>({x:((x-stagePos.x)/zoom-fitted.x)/(pxFt*roomL),y:((y-stagePos.y)/zoom-fitted.y)/(pxFt*roomW)}),
+        // The piece under the pointer travels too, so the 3D room can show the cursor on top of it.
+        read:(x,y)=>{const id=stageRef.current?.getIntersection({x,y})?.findAncestor(".furniture",true)?.id();
+          return {x:((x-stagePos.x)/zoom-fitted.x)/(pxFt*roomL),y:((y-stagePos.y)/zoom-fitted.y)/(pxFt*roomW),...(id?{id}:{})};},
         draw:(x,y)=>({x:stagePos.x+(fitted.x+x*pxFt*roomL)*zoom,y:stagePos.y+(fitted.y+y*pxFt*roomW)*zoom}),
       }} pins={activeFurniture.map(f=>{const b=footprint(f);return {id:f.id,label:f.label,x:(b.x+b.w/2)/roomL,y:(b.y+b.h/2)/roomW};})}/>}
       {pxFt > 0 && toolbarItem && canEditItem && onSetRotation && !narrow && !panMode && !dragging && !previewing && rotationCenter && rotationPosition &&

@@ -17,6 +17,7 @@ const LIGHT={
 const FLOOR_TONE={oak:"#c99f6c",walnut:"#7a553a",concrete:"#d4cfcb",carpet:"#c4bcae"};
 const PAPER="#f4f3ee",WALL_T=.42,PLINTH=.45,EYE=5.3,WALK_R=.7;
 // Phones and low-power devices (coarse pointer on a small screen, ≤4 cores or ≤4 GB): a lower pixel ratio and fewer lamp lights at night.
+const MAC=/Mac|iPhone|iPad/.test(navigator.userAgent);
 const LOW=(matchMedia("(pointer: coarse)").matches&&Math.min(screen.width,screen.height)<768)||(navigator.hardwareConcurrency||8)<=4||(navigator.deviceMemory||8)<=4;
 const LAMPS=LOW?2:3;
 /** Pieces that hang on a wall: dragging slides them along it and up or down. */
@@ -92,6 +93,21 @@ export function createStudioScene(container, options) {
   // The selected piece: a dashed cobalt ring on the floor around its footprint. Nothing else is drawn over the room.
   const ring=new T.Mesh(new T.BufferGeometry(),new T.MeshBasicMaterial({color:0x2b4eff,side:T.DoubleSide,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2}));
   ring.visible=false;ring.renderOrder=3;scene.add(ring);let ringKey="";
+  // Pieces a comment thread (or a "Look here") is about: a box outline in that person's colour, drawn over the room.
+  // Lines only: no post pass, no shadow maps. Left out of photos, exports and the room view, like the selection ring.
+  const markRoot=new T.Group(),markBox=new T.Box3(),partBox=new T.Box3();let marks=[];scene.add(markRoot);
+  function showMarks(){
+    marks.forEach((mark,i)=>{
+      const m=meshes.get(mark.id);let helper=markRoot.children[i];
+      if(!helper){helper=new T.Box3Helper(new T.Box3(),0xffffff);helper.material.depthTest=false;helper.material.transparent=true;helper.renderOrder=6;markRoot.add(helper);}
+      helper.visible=!!m&&m.group.visible;if(!m||!m.group.visible)return;
+      // The piece's own parts (not its soft floor shadow), a little outside them.
+      markBox.makeEmpty();m.group.updateMatrixWorld();
+      m.group.traverse(o=>{if(!o.isMesh||o.userData.shadow)return;if(!o.geometry.boundingBox)o.geometry.computeBoundingBox();markBox.union(partBox.copy(o.geometry.boundingBox).applyMatrix4(o.matrixWorld));});
+      helper.box.copy(markBox).expandByScalar(.12);helper.material.color.set(mark.color);
+    });
+    for(let i=marks.length;i<markRoot.children.length;i++)markRoot.children[i].visible=false;
+  }
   const openingGhost=new T.Mesh(new T.BoxGeometry(1,1,1),new T.MeshBasicMaterial({color:0x2b4eff,transparent:true,opacity:.45,depthTest:false}));
   openingGhost.visible=false;openingGhost.renderOrder=10;scene.add(openingGhost);
   const lineMat=new T.LineDashedMaterial({color:0x2b4eff,dashSize:.15,gapSize:.1,transparent:true,opacity:.65});
@@ -116,6 +132,22 @@ export function createStudioScene(container, options) {
     const opening=ray.intersectObjects(openingGroups.filter(g=>g.visible),true).find(h=>h.object.userData.openingIndex!==undefined);
     const item=ray.intersectObjects(itemRoot.children,true).find(h=>h.object.userData.itemId);
     return opening&&(!item||opening.distance<=item.distance)?opening:null;
+  }
+  /**
+   * What's under a pixel: the nearest piece, wall, door or window (as drawn now), else the floor. Returns the point as
+   * 0–1 across the room's length and width, its height in feet, and the piece's id if it's one; null off the room.
+   */
+  function hitAt(e){
+    if(!data)return null;
+    const floor=roomPoint(e),shown=o=>{for(;o;o=o.parent)if(!o.visible)return false;return true;};
+    const near=[...ray.intersectObjects(itemRoot.children,true).filter(h=>h.object.userData.itemId&&shown(h.object)),
+      ...ray.intersectObjects([...wallGroups,...openingGroups].filter(g=>g.visible),true)].sort((a,b)=>a.distance-b.distance)[0];
+    const p=near?.point??floor,L=data.room.lengthFt,W=data.room.widthFt;if(!p)return null;
+    // A wall's outer face sits just outside the floor, so a hit on one is clamped onto the room's edge.
+    const x=near?Math.max(0,Math.min(1,p.x/L)):p.x/L,y=near?Math.max(0,Math.min(1,p.z/W)):p.z/W;
+    if(x<0||x>1||y<0||y>1)return null;
+    const id=near?.object.userData.itemId;
+    return {x,y,h:Math.max(0,Math.min(20,Math.round(p.y*100)/100)),...(id?{id}:{})};
   }
   function wallPoint(e,height=0){
     const floor=roomPoint(e,height);
@@ -225,7 +257,7 @@ export function createStudioScene(container, options) {
     // The room view (mirrors, the room's light), at most twice a second while textures and models are still arriving.
     else if(mirrorDirty&&bake.ready&&!assemblyStart&&!drag?.moved&&!pointers.size){if(time-mirrorAt>500){mirrorAt=time;seatRiders();cameraUpdate();renderRoomView();}else more=true;}
     renderer.setClearColor(mode==="inside"?ceiling:paper);
-    seatRiders();cameraUpdate();camera.updateMatrixWorld();showSelection();
+    seatRiders();cameraUpdate();camera.updateMatrixWorld();showSelection();showMarks();
     if(walker&&mode==="inside")walker.setAttribute("transform","translate("+eye.x.toFixed(2)+" "+eye.z.toFixed(2)+") rotate("+(angle*180/Math.PI).toFixed(1)+")");
     const still=post&&!more&&!pointers.size&&!drag?.moved&&!tween&&!assemblyStart&&bake.ready&&!mirrorDirty&&renderer.getPixelRatio()===full;
     if(still){aoFade=options.reduced?1:Math.min(1,aoFade+.25);post.gtao.blendIntensity=aoFade*AO_STRENGTH;post.composer.render();if(aoFade<1)more=true;}
@@ -234,6 +266,7 @@ export function createStudioScene(container, options) {
     const settled=bake.ready&&!mirrorDirty&&!more&&!pointers.size&&!kit.loading()&&(LOW||(still&&aoFade>=1));if(canvas.dataset.settled!==(settled?"1":""))canvas.dataset.settled=settled?"1":"";
     if(!ready&&data&&width>1&&height>1){ready=true;options.onReady?.();setTimeout(prewarm,0);setTimeout(loadPost,1500);}
     if(more)request();
+    options.onFrame?.();
   }
   /** Compile the other light set's shaders in the background, so switching Day / Night never stalls on a compile. */
   function prewarm(){
@@ -449,7 +482,7 @@ export function createStudioScene(container, options) {
     mirrorDirty=false;if(!data)return;
     const p=data.outline?.points?.length?data.outline.points:[{x:0,y:0},{x:data.room.lengthFt,y:data.room.widthFt}],h=data.settings.ceilingFt;
     const min=new T.Vector3(Math.min(...p.map(q=>q.x)),0,Math.min(...p.map(q=>q.y))),max=new T.Vector3(Math.max(...p.map(q=>q.x)),h,Math.max(...p.map(q=>q.y)));
-    const hidden=[...wallGroups,...openingGroups,...views.map(v=>v.mesh),...[...meshes.values()].filter(m=>m.wall).map(m=>m.group)].filter(o=>!o.visible),extras=[ring,marker,guides,openingGhost].filter(o=>o.visible);
+    const hidden=[...wallGroups,...openingGroups,...views.map(v=>v.mesh),...[...meshes.values()].filter(m=>m.wall).map(m=>m.group)].filter(o=>!o.visible),extras=[ring,marker,guides,openingGhost,markRoot].filter(o=>o.visible);
     for(const o of hidden)o.visible=true;for(const o of extras)o.visible=false;
     // The open top stands in for a ceiling, lit only by what bounces up to it (about half what the walls get).
     const clear=renderer.getClearColor(new T.Color()),alpha=renderer.getClearAlpha();renderer.setClearColor(ceiling.clone().multiplyScalar(.45),1);
@@ -485,6 +518,7 @@ export function createStudioScene(container, options) {
   function aoHide(){
     const hidden=[];
     scene.traverse(o=>{if(!o.visible||!o.isMesh)return;if(o===ring||[o.material].flat().some(x=>x.transparent||x===viewMat)){o.visible=false;hidden.push(o);}});
+    if(markRoot.visible){markRoot.visible=false;hidden.push(markRoot);}
     return hidden;
   }
   // ---------- HD photo ----------
@@ -538,7 +572,7 @@ export function createStudioScene(container, options) {
   }
   async function shoot(session,progress,restore,{long,samples,trace}){
     const before=renderer.getPixelRatio(),exposure=renderer.toneMappingExposure,bg=(mode==="inside"?ceiling:paper).clone();
-    const extras=[marker,guides,ring,openingGhost].filter(o=>o.visible);for(const o of extras)o.visible=false;
+    const extras=[marker,guides,ring,openingGhost,markRoot].filter(o=>o.visible);for(const o of extras)o.visible=false;
     restore.push(()=>{for(const o of extras)o.visible=true;camera.clearViewOffset();renderer.setRenderTarget(null);renderer.toneMappingExposure=exposure;
       if(!disposed){renderer.setPixelRatio(before);renderer.setSize(width,height,false);sizePost();}});
     const max=Math.min(renderer.capabilities.maxTextureSize,8192);
@@ -1036,11 +1070,15 @@ export function createStudioScene(container, options) {
     if(immediate||options.reduced){angle=toA;polar=toP;radius=toR;target.copy(to);tween=null;}
     else tween={start:performance.now(),a:angle,p:polar,r:radius,from:target.clone(),to,toA,toP,toR};request();
   }
-  function focus(id){
-    const m=meshes.get(id);if(!m)return;leave("room");setMode("room");camera.fov=30;camera.updateProjectionMatrix();custom=true;
-    const to=m.group.position.clone();to.y+=m.item.height/2;
-    tween={start:performance.now(),a:angle,p:polar,r:radius,from:target.clone(),to,toA:angle,toP:.95,toR:Math.max(8,m.item.footW*3.5,m.item.footD*3.5)};
+  /** Turn the dollhouse camera to look at `to` from `toR` away. */
+  function aim(to,toR){
+    leave("room");setMode("room");camera.fov=30;camera.updateProjectionMatrix();custom=true;
+    tween={start:performance.now(),a:angle,p:polar,r:radius,from:target.clone(),to,toA:angle,toP:.95,toR};
     if(options.reduced){target.copy(to);radius=tween.toR;polar=.95;tween=null;}request();
+  }
+  function focus(id){
+    const m=meshes.get(id);if(!m)return;
+    const to=m.group.position.clone();to.y+=m.item.height/2;aim(to,Math.max(8,m.item.footW*3.5,m.item.footD*3.5));
   }
   /** The way a piece's front faces in the room (its back is against the wall it hangs on). */
   function facing(f){
@@ -1053,10 +1091,22 @@ export function createStudioScene(container, options) {
     for(const points of [[new T.Vector3(0,.04,z),new T.Vector3(data.room.lengthFt,.04,z)],[new T.Vector3(x,.04,0),new T.Vector3(x,.04,data.room.widthFt)]]){
       const line=new T.Line(new T.BufferGeometry().setFromPoints(points),lineMat);line.computeLineDistances();guides.add(line);}
   }
+  // Comments from the room (options.onContext, which says whether it took the gesture): right-click, two-finger or
+  // Ctrl-click, double-click, a long press, or the Menu key on the selected piece.
+  let press=null,pressAt=0;
+  const stopPress=()=>{if(press)clearTimeout(press.timer);press=null;};
+  function gesture(via,e){const p=hitAt(e);return !!p&&!!options.onContext?.({via,point:p,clientX:e.clientX,clientY:e.clientY});}
+  // Android follows a long press with its own contextmenu event: one gesture, one action.
+  function context(e){if(Date.now()-pressAt<1000||gesture("context_menu",e))e.preventDefault();}
   function down(e){
     photo?.cancel();
-    if(e.button>1)return;assemblyStart=0;for(const m of meshes.values()){m.group.scale.setScalar(1);m.group.position.y=m.item.elevation;}
+    // A Mac's Ctrl-click is a right-click: it never selects, drags or orbits.
+    if(e.button>1||(MAC&&e.ctrlKey&&e.button===0))return;assemblyStart=0;for(const m of meshes.values()){m.group.scale.setScalar(1);m.group.position.y=m.item.elevation;}
     canvas.focus({preventScroll:true});canvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    stopPress();
+    // A long press comments on what's under the finger; the piece the touch picked goes back to what was selected.
+    if(e.pointerType==="touch"&&pointers.size===1){const before=data?.selectedId??null,at={clientX:e.clientX,clientY:e.clientY};
+      press={id:e.pointerId,x:e.clientX,y:e.clientY,timer:setTimeout(()=>{press=null;if(!gesture("long_press",at))return;pressAt=Date.now();cancelDrag();options.onSelect?.(before);request();},550)};}
     if(pointers.size===2){cancelDrag();pinch=distance();return;}
     const opening=data?.editOpenings?openingHit(e):null;
     if(opening){const index=opening.object.userData.openingIndex;options.onSelectOpening?.(index);
@@ -1079,6 +1129,7 @@ export function createStudioScene(container, options) {
   function distance(){const a=[...pointers.values()];return a.length===2?Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y):0;}
   let hoverAt=0;
   function move(e){
+    if(press&&(e.pointerId!==press.id||Math.hypot(e.clientX-press.x,e.clientY-press.y)>8))stopPress();
     // A grab cursor over pieces you can move (mouse only, at most every 60 ms).
     if(!pointers.size&&e.pointerType==="mouse"&&data&&e.timeStamp-hoverAt>60){hoverAt=e.timeStamp;
       const m=mode==="inside"?null:meshes.get(hit(e));canvas.style.cursor=m&&m.item.movable&&!m.item.locked?(e.shiftKey?"ns-resize":"grab"):"";}
@@ -1114,6 +1165,7 @@ export function createStudioScene(container, options) {
     drag.lastX=e.clientX;drag.lastY=e.clientY;request();
   }
   function up(e){
+    stopPress();
     if(drag?.id)canvas.style.cursor="";
     pointers.delete(e.pointerId);pinch=0;
     if(drag?.pointerId===e.pointerId){const d=drag;drag=null;clearGuides();
@@ -1122,10 +1174,16 @@ export function createStudioScene(container, options) {
     if(canvas.hasPointerCapture(e.pointerId))canvas.releasePointerCapture(e.pointerId);request();
   }
   function cancelDrag(){if(drag?.openingIndex!==undefined){const node=openingNodes.get(drag.openingIndex);if(node)positionOpening(node,drag.opening,drag.opening.offset_ft);}openingGhost.visible=false;if(drag?.id){for(const m of meshes.values())m.group.position.set(m.item.x_ft+m.item.footW/2,m.item.elevation,m.item.y_ft+m.item.footD/2);}drag=null;clearGuides();}
-  function cancel(e){pointers.delete(e.pointerId);pinch=0;cancelDrag();request();}
+  function cancel(e){stopPress();pointers.delete(e.pointerId);pinch=0;cancelDrag();request();}
   function wheel(e){e.preventDefault();photo?.cancel();touched();radius=Math.max(4,Math.min(180,radius*Math.exp(e.deltaY*.001)));request();}
   const walkKey=e=>{const k=e.key.toLowerCase();return mode==="inside"&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&["arrowup","arrowdown","arrowleft","arrowright","w","a","s","d"].includes(k)?k:null;};
   function key(e){
+    if((e.key==="ContextMenu"||(e.shiftKey&&e.key==="F10"))&&data){
+      const m=meshes.get(data.selectedId);if(!m)return;
+      const top=Math.min(20,m.item.elevation+m.item.height),q=new T.Vector3(m.group.position.x,top,m.group.position.z).project(camera),r=canvas.getBoundingClientRect();
+      const point={x:Math.max(0,Math.min(1,m.group.position.x/data.room.lengthFt)),y:Math.max(0,Math.min(1,m.group.position.z/data.room.widthFt)),h:top,id:m.item.id};
+      if(options.onContext?.({via:"keyboard",point,clientX:r.left+(q.x+1)*width/2,clientY:r.top+(1-q.y)*height/2}))e.preventDefault();return;
+    }
     if(e.key==="Escape"){cancelDrag();options.onSelectOpening?.(null);options.onSelect?.(null);request();return;}
     const k=walkKey(e);if(k){e.preventDefault();if(!keys.has(k)){keys.add(k);request();}return;}
     if(["ArrowLeft","ArrowRight","ArrowUp","ArrowDown","+","=","-"].includes(e.key)){
@@ -1143,39 +1201,40 @@ export function createStudioScene(container, options) {
     if(!kind)return null;e.preventDefault();const p=wallPoint(e,0);
     return p?options.previewOpening?.(kind,p.x,p.z):null;
   }
-  const events={dragover:e=>{const opening=droppedOpening(e);e.dataTransfer.dropEffect=opening?"copy":"none";ghostOpening(opening);},dragleave:()=>ghostOpening(null),drop:e=>{const opening=droppedOpening(e);ghostOpening(null);if(opening)options.onOpeningChange?.(null,opening);},pointerdown:down,pointermove:move,pointerup:up,pointercancel:cancel,keydown:key,keyup:e=>{keys.delete(e.key.toLowerCase());},blur:()=>keys.clear()};
+  const events={dragover:e=>{const opening=droppedOpening(e);e.dataTransfer.dropEffect=opening?"copy":"none";ghostOpening(opening);},dragleave:()=>ghostOpening(null),drop:e=>{const opening=droppedOpening(e);ghostOpening(null);if(opening)options.onOpeningChange?.(null,opening);},pointerdown:down,pointermove:move,pointerup:up,pointercancel:cancel,contextmenu:context,dblclick:e=>gesture("double_click",e),keydown:key,keyup:e=>{keys.delete(e.key.toLowerCase());},blur:()=>keys.clear()};
   for(const [name,fn]of Object.entries(events))canvas.addEventListener(name,fn);canvas.addEventListener("wheel",wheel,{passive:false});
   const visible=()=>request();document.addEventListener("visibilitychange",visible);
   return {update:sync,
     // Choosing the view you're already in recentres it; any other view comes back where you left it.
     preset:m=>preset(m,false,m===mode),fit:()=>preset("room",false,true),focus,
+    /** Look at a room point (x, y 0–1, h in feet), for a spot comment or a "Look here". */
+    focusPoint:(x,y,h)=>{if(data)aim(new T.Vector3(x*data.room.lengthFt,h??0,y*data.room.widthFt),10);},
+    /** Outline these pieces ({id, color}); an empty list clears them. */
+    setMarks:list=>{marks=list;request();},
     zoom:f=>{if(mode==="inside")return;radius=Math.max(4,Math.min(180,radius*f));touched();request();},
-    readCursor(x,y){
+    readCursor(x,y){const bounds=canvas.getBoundingClientRect();return hitAt({clientX:bounds.left+x,clientY:bounds.top+y});},
+    /** A room point to canvas pixels: at height h (ft), else on top of piece `id`, else on the floor. Null when behind the camera. */
+    projectCursor(x,y,h,id){
       if(!data)return null;
-      const bounds=canvas.getBoundingClientRect(),p=roomPoint({clientX:bounds.left+x,clientY:bounds.top+y});
-      return p?{x:p.x/data.room.lengthFt,y:p.z/data.room.widthFt}:null;
-    },
-    projectCursor(x,y){
-      if(!data)return null;
-      const p=new T.Vector3(x*data.room.lengthFt,.01,y*data.room.widthFt).project(camera);
+      const m=h==null&&id?meshes.get(id):null,p=new T.Vector3(x*data.room.lengthFt,(h??(m?m.item.elevation+m.item.height:0))+.01,y*data.room.widthFt).project(camera);
       return p.z<-1||p.z>1?null:{x:(p.x+1)*width/2,y:(1-p.y)*height/2};
     },
     setWalls:v=>{walls=v;request();},setWalker:el=>{walker=el;request();},setWalkInput:v=>{pad.move=v.move??0;pad.turn=v.turn??0;request();},setMoveMode:v=>{dragMode=v;},
     setReduced:v=>{options.reduced=v;if(v){assemblyStart=0;tween=null;for(const m of meshes.values()){m.group.scale.setScalar(1);m.group.position.y=m.item.elevation;}request();}},
     exportPNG(r){
       // A frame without the selection ring, box or guides; optionally at a set pixel ratio (2 = a 2x image).
-      marker.visible=false;guides.visible=false;ring.visible=false;
+      marker.visible=false;guides.visible=false;ring.visible=false;markRoot.visible=false;
       const before=renderer.getPixelRatio(),resized=r&&r!==before,setRatio=v=>{renderer.setPixelRatio(v);renderer.setSize(width,height,false);};
       if(resized)setRatio(r);
       renderer.render(scene,camera);
       const out=document.createElement("canvas");out.width=canvas.width;out.height=canvas.height;out.getContext("2d").drawImage(canvas,0,0);
       if(resized)setRatio(before);
-      stamp(out);guides.visible=true;request();return out.toDataURL("image/png");
+      stamp(out);guides.visible=true;markRoot.visible=true;request();return out.toDataURL("image/png");
     },
     renderPhoto,
-    destroy(){photo?.cancel();disposed=true;cancelAnimationFrame(raf);clearTimeout(sharpen);clearTimeout(creaseTimer);resize.disconnect();document.removeEventListener("visibilitychange",visible);
+    destroy(){photo?.cancel();stopPress();disposed=true;cancelAnimationFrame(raf);clearTimeout(sharpen);clearTimeout(creaseTimer);resize.disconnect();document.removeEventListener("visibilitychange",visible);
       for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);canvas.removeEventListener("webglcontextlost",onContextLost);
-      clearGuides();openingGhost.geometry.dispose();openingGhost.material.dispose();lineMat.dispose();marker.geometry.dispose();ring.geometry.dispose();ring.material.dispose();marker.material.dispose();
+      clearGuides();for(const h of markRoot.children){h.geometry.dispose();h.material.dispose();}openingGhost.geometry.dispose();openingGhost.material.dispose();lineMat.dispose();marker.geometry.dispose();ring.geometry.dispose();ring.material.dispose();marker.material.dispose();
       for(const m of meshes.values())removePiece(m);clearRoom();floorTextures.forEach(t=>t.dispose());
       for(const material of [bandMat,groundMat,poolMat,depthMat,accumMat,viewMat])material.dispose();bakeTarget.dispose();depthTarget.dispose();wallBakeTarget.dispose();wallAccumMat.dispose();wallAtlas.geometry.dispose();if(post){post.gtao.dispose();post.composer.dispose();post.target.dispose();}pmrem.dispose();roomEnv?.dispose();mirrorTarget.dispose();measureTarget.dispose();measureMat.dispose();bakeQuad.geometry.dispose();for(const t of surfaces.values())t.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
   };

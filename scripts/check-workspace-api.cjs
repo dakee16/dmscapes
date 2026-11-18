@@ -26,6 +26,10 @@ const snapshot={name:'My room',college_id:null,dorm_id:null,room_dimensions:{len
  for(const bad of [{...snapshot,budget:0},{...snapshot,room_dimensions:{...snapshot.room_dimensions,length_ft:-1}},{...snapshot,style:'invented'}])assert.equal((await list.POST(request('POST',{snapshot:bad}))).status,400);
  assert.equal((await one.PATCH(request('PATCH',{action:'save',snapshot,revision:1,p_actor:'forged'}),ctx)).status,200);assert.equal(rpc.at(-1).payload.p_actor,actor);assert.equal(rpc.at(-1).payload.p_payload.p_actor,undefined);
  for(const body of [{action:'save',snapshot,revision:0},{action:'member',user_id:actor,role:'owner'},{action:'share',enabled:'yes'},{action:'comment',body:' ',target:'room'},{action:'restore',version_id:'bad',revision:1},{action:'unknown'}])assert.equal((await one.PATCH(request('PATCH',body),ctx)).status,400);
+ // Spot comments: point:x:y[:h], x and y 0-1 (4 decimals), h 0-20 ft (2 decimals).
+ for(const target of ['point:0.25:0.5','point:0:1','point:1:0.1234:20','point:0.5:0.5:3.25'])assert.equal((await one.PATCH(request('PATCH',{action:'comment',body:'Here?',target}),ctx)).status,200,target);
+ assert.equal(rpc.at(-1).payload.p_payload.target,'point:0.5:0.5:3.25');
+ for(const target of ['point:1.1:0.5','point:-0.1:0.5','point:0.5','point:0.12345:0.5','point:0.5:0.5:20.5','point:0.5:0.5:3.255','point:0.5:0.5:abc','point:.5:0.5','point:0.5:0.5:3:4'])assert.equal((await one.PATCH(request('PATCH',{action:'comment',body:'Here?',target}),ctx)).status,400,target);
  assert.equal((await one.PATCH(request('PATCH',{action:'invite',role:'editor',email:'not-an-email'}),ctx)).status,400);
  mailConfigured=false;assert.equal((await one.PATCH(request('PATCH',{action:'invite',role:'editor',email:'friend@example.test'}),ctx)).status,503);assert.equal(mail.length,0);mailConfigured=true;
  const invite=await one.PATCH(request('PATCH',{action:'invite',role:'editor',email:' Friend@Example.Test '}),ctx),invitation=await invite.json();

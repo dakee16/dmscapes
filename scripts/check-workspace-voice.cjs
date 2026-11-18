@@ -59,5 +59,21 @@ let checks=0;const eq=(a,b)=>{assert.equal(a,b);checks++;};
  eq(protocol.readPresence({section:'room',view:'2d',session:'x',active:true,at:1,selected:'x'.repeat(101)}).selected,null);
  eq(protocol.readPresence({section:'outside',view:'2d',session:'x',active:true,at:1}),null);
  eq(new Set(['a','b','c','d'].map(id=>protocol.collaboratorColor(id,['a','b','c','d']))).size,4);
+ // 3D cursors: an optional height (0-20 ft) and piece id.
+ assert.deepEqual(protocol.readCursor({...cursor,h:2.5,id:'desk-a'}),{...cursor,h:2.5,id:'desk-a'});checks++;
+ for(const extra of [{h:-1},{h:21},{h:NaN},{id:''},{id:'x'.repeat(101)},{id:'<script>'},{id:7}])eq(protocol.readCursor({...cursor,...extra}),null);
+ // Spot comment targets round-trip with bounded precision.
+ eq(protocol.pointTarget({x:.123456,y:1.2,h:3.256}),'point:0.1235:1:3.26');eq(protocol.pointTarget({x:0,y:.5}),'point:0:0.5');eq(protocol.pointTarget({x:.5,y:.5,h:0}),'point:0.5:0.5');
+ assert.deepEqual(protocol.readPointTarget('point:0.1235:1:3.26'),{x:.1235,y:1,h:3.26});checks++;
+ for(const bad of ['point:1.5:0','point:0.5:0.5:21','point:0.5:0.5:-1','point:0.1:0.2:3:4','furniture:desk','point:0.5'])eq(protocol.readPointTarget(bad),null);
+ // "Look here" pings: a room point plus session, time and sequence; anything else is dropped.
+ const ping={x:.4,y:.6,h:3,id:'desk-a',session:'s',at:Date.now(),seq:2};assert.deepEqual(protocol.readPing(ping),ping);checks++;
+ for(const bad of [null,{...ping,x:2},{...ping,seq:1.5},{...ping,seq:undefined},{...ping,session:'x'.repeat(65)},{...ping,at:'now'},{...ping,h:99},{...ping,id:'bad id'}])eq(protocol.readPing(bad),null);
+ const spotRoom={lengthFt:12,widthFt:10,inside:(x,y)=>x>=0&&x<=12&&y>=0&&y<=10},desk={label:'Desk',x:1,y:1,w:4,h:2};
+ eq(protocol.spotLabel({x:6/12,y:2/10},spotRoom,[desk],[]),'Spot near Desk');
+ eq(protocol.spotLabel({x:11.5/12,y:5/10},spotRoom,[desk],[{x:12,y:5}]),'Spot by the window');
+ eq(protocol.spotLabel({x:10/12,y:9/10},spotRoom,[desk],[]),'Spot on the floor');
+ eq(protocol.spotLabel({x:10/12,y:0,h:5},spotRoom,[desk],[]),'Spot on the wall');
+ eq(protocol.spotLabel({x:10/12,y:9/10},{...spotRoom,inside:()=>false},[desk],[]),'Spot (outside the room now)');
  console.log(`PASS: ${checks} voice boundary, token, revocation and cursor validation checks. No provider network requests were sent.`);
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -112,7 +112,10 @@ export type AnalyticsEvent =
   | "creator_code_redeemed"
   | "creator_code_failed"
   | "creator_applied"
-  | "profile_photo_set";
+  | "profile_photo_set"
+  // My Room live collaboration
+  | "workspace_ping_sent"
+  | "workspace_comment_started";
 
 /** The GA4 property components/site/GoogleAnalytics loads. */
 export const GA_ID = "G-DSRNH55V8B";

@@ -13,8 +13,10 @@ export class WorkspaceError extends Error {
 export async function workspaceRequest<T>(path: string, init: RequestInit = {}): Promise<T> {
   const client = getBrowserClient();
   const { data } = client ? await client.auth.getSession() : { data: { session: null } };
-  if (!data.session) throw new WorkspaceError("Sign in to open your rooms.", 401);
-  const response = await fetch(path, { ...init, cache: "no-store", headers: { "Content-Type": "application/json", ...init.headers, Authorization: `Bearer ${data.session.access_token}` } });
+  // Development only: the live-collaboration check signs in with the dev auth stub and mocks these routes.
+  const token = data.session?.access_token ?? (process.env.NODE_ENV !== "production" && process.env.NEXT_PUBLIC_FAKE_REALTIME === "1" ? "dev-fake-session" : null);
+  if (!token) throw new WorkspaceError("Sign in to open your rooms.", 401);
+  const response = await fetch(path, { ...init, cache: "no-store", headers: { "Content-Type": "application/json", ...init.headers, Authorization: `Bearer ${token}` } });
   const body = await response.json();
   if (!response.ok) throw new WorkspaceError(body.error ?? "Couldn't save this change. Please try again.", response.status);
   return body as T;

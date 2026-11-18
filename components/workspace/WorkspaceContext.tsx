@@ -1,8 +1,10 @@
 "use client";
 import { createContext, useContext } from "react";
 import type { WorkspaceComment } from "@/lib/workspace";
-import type { RoomSection } from "@/lib/workspace-collaboration";
+import type { CursorPoint, RoomSection } from "@/lib/workspace-collaboration";
 import { PERSON_COLORS } from "./people";
+/** A comment (or, for editors, a "Look here") started on the plan or the 3D room: what's under the pointer and where the menu goes. */
+export interface CanvasGesture { via: "context_menu" | "double_click" | "long_press" | "keyboard"; point: CursorPoint; clientX: number; clientY: number; surface: "plan" | "scene"; canvas: HTMLElement | null }
 export interface WorkspaceAccess {
   id: string;
   members: {user_id: string; display_name: string}[];
@@ -10,7 +12,16 @@ export interface WorkspaceAccess {
   canEdit: boolean;
   section: RoomSection;
   comments?: WorkspaceComment[];
-  commentOn?: (target:string) => void;
+  /** Open the comments panel on a target; `via` says what started it (for analytics). */
+  commentOn?: (target:string, via?: "pin" | "panel") => void;
+  /** Present when the canvases should answer right-click, double-click, long press and the Menu key. */
+  canvasGesture?: (gesture: CanvasGesture) => void;
+  /** Pieces and spots to outline on the plan and in 3D, in a person's colour: the thread the comments panel shows or hovers. */
+  marks?: { target: string; color: string }[];
+  /** Open spot comments, as pins (only those still inside the room). */
+  spots?: { target: string; x: number; y: number; h?: number; label: string }[];
+  /** Centre the plan or the 3D room on this point (Locate on a spot); `key` is when it was asked (ignored after 3 s). */
+  focus?: { x: number; y: number; h?: number; key: number } | null;
   /** Plan overlay switches from the room's left rail (comment pins, everyone's cursors). */
   overlay?: { pins: boolean; cursors: boolean };
 }
