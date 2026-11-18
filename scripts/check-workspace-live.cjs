@@ -20,10 +20,10 @@ const template = require("../templates/compact-square-double-12x11-v1.json");
 const snapshot = { name: "Live test room", college_id: null, dorm_id: null, room_dimensions: { length_ft: 12, width_ft: 11, room_type: "double", occupants: 2, bed_size: "twin_xl" },
   style: "minimalist", budget: 500, template_id: template.template_id, furniture_positions: template.furniture, selected_products: {} };
 const now = new Date().toISOString();
-const state = { revision: 1, members: [OWNER, EDITOR, COMMENTER], comments: [
+const state = { revision: 1, snapshot, members: [OWNER, EDITOR, COMMENTER], comments: [
   { id: "c0000000-0000-4000-8000-000000000001", user_id: EDITOR.id, display_name: EDITOR.name, body: "Desk by the window?", target: "furniture:desk-a", resolved: false, created_at: now, parent_id: null },
 ], patches: [] };
-const detail = who => ({ workspace: { id: ROOM, owner_id: OWNER.id, name: snapshot.name, snapshot, revision: state.revision, shared: true, source_room_id: null, created_at: now, updated_at: now, realtime_epoch: EPOCH },
+const detail = who => ({ workspace: { id: ROOM, owner_id: OWNER.id, name: snapshot.name, snapshot: state.snapshot, revision: state.revision, shared: true, source_room_id: null, created_at: now, updated_at: now, realtime_epoch: EPOCH },
   role: who.role, ownerPro: true, canEdit: who.role !== "commenter", members: state.members.map(m => ({ user_id: m.id, role: m.role, display_name: m.name })),
   comments: state.comments, versions: [], invitations: [] });
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -44,8 +44,8 @@ async function open(context, who, query = "") {
     if (req.method() === "GET") return route.fulfill({ json: detail(who) });
     const body = req.postDataJSON() ?? {};
     state.patches.push({ who: who.name, ...body });
-    // Saves are accepted but not handed to the other pages (the real server would tell them to refresh).
-    if (body.action === "save") return route.fulfill({ json: { ok: true, revision: body.revision + 1 } });
+    // A save becomes the room everyone loads next (the app tidies the fixture on its first save).
+    if (body.action === "save") { state.snapshot = body.snapshot; state.revision++; return route.fulfill({ json: { ok: true, revision: state.revision } }); }
     if (body.action === "comment") {
       const parent = body.parent_id && state.comments.find(c => c.id === body.parent_id);
       const c = { id: `c0000000-0000-4000-8000-${String(state.comments.length + 1).padStart(12, "0")}`, user_id: who.id, display_name: who.name, body: body.body, target: parent ? parent.target : body.target, resolved: false, created_at: new Date().toISOString(), parent_id: body.parent_id ?? null };
@@ -170,6 +170,21 @@ async function findSpot(page, listener, want, area) {
   }
   throw new Error(`No ${want} found`);
 }
+/** Tell every page the room changed (what the server's "updates" broadcast does after a comment). */
+const changed = page => page.evaluate(topic => new BroadcastChannel("dormscape-fake-realtime").postMessage({ topic, kind: "broadcast", event: "changed", payload: {} }), `workspace:${ROOM}:${EPOCH}:updates`);
+const pixelsDiffer = (a, b) => Buffer.compare(a, b) !== 0;
+/** Pixels that changed by more than a rounding step (the 3D room's ambient occlusion can shift a value by one). */
+async function changedPixels(a, b) {
+  const sharp = require("sharp"), [x, y] = await Promise.all([a, b].map(png => sharp(png).raw().toBuffer()));
+  let n = 0; for (let i = 0; i < x.length; i++) if (Math.abs(x[i] - y[i]) > 8) n++;
+  return x.length === y.length ? n : Infinity;
+}
+/** The 3D room alone (cursors, pins and rings hidden for the shot). */
+async function roomShot(page) {
+  await page.evaluate(() => document.querySelectorAll("[data-testid=room-3d] [class*=cursorLayer]").forEach(el => { el.style.visibility = "hidden"; }));
+  try { return await scene(page).locator("canvas").screenshot(); }
+  finally { await page.evaluate(() => document.querySelectorAll("[data-testid=room-3d] [class*=cursorLayer]").forEach(el => { el.style.visibility = ""; })); }
+}
 const selected = page => page.locator("[role=toolbar][aria-label$=' actions']").getAttribute("aria-label").catch(() => null);
 const panelTarget = page => page.locator("#room-side-panel select").inputValue();
 
@@ -240,8 +255,53 @@ const tests = {
     ok(await selected(editor) === held, "Lifting the finger after a long press isn't a tap (selection kept)");
     await editor.screenshot({ path: path.join(OUT, `gestures-2d-${label}.png`) });
   },
+  async highlight({ editor, commenter }) {
+    const plan = () => editor.locator(".konvajs-content").screenshot();
+    await editor.getByRole("button", { name: /comments/i }).first().click();
+    const thread = editor.locator("#room-side-panel article", { hasText: "Desk by the window?" });
+    await thread.waitFor();
+    await editor.mouse.move(5, 5); await sleep(400);
+    const before = await plan();
+    await thread.hover(); await sleep(200);
+    const hovered = await plan();
+    ok(pixelsDiffer(before, hovered), "Hovering a thread outlines its piece on the plan");
+    await editor.screenshot({ path: path.join(OUT, `highlight-2d-${label}.png`) });
+    await editor.mouse.move(5, 5); await sleep(200);
+    ok(!pixelsDiffer(before, await plan()), "The outline clears when the row isn't hovered");
+    await thread.getByRole("button", { name: "Reply" }).focus(); await sleep(200);
+    ok(pixelsDiffer(before, await plan()), "Focusing a thread outlines it too (keyboard)");
+    await editor.evaluate(() => document.activeElement?.blur()); await sleep(200);
+    ok(!pixelsDiffer(before, await plan()), "Moving focus away clears it");
+    await editor.getByRole("button", { name: "Close comments" }).click(); await sleep(200);
+    // A spot comment: its pin appears for others, Locate centres the plan on it, and it's ringed while the panel is on it.
+    await listen(editor);
+    const floor = await findSpot(commenter, editor, "floor");
+    await commenter.mouse.dblclick(floor.x, floor.y);
+    await commenter.locator("#room-comment-body").fill("Beanbag here?");
+    await commenter.getByRole("button", { name: "Post comment" }).click();
+    await commenter.locator("#room-side-panel article", { hasText: "Beanbag here?" }).waitFor();
+    const spot = state.comments.at(-1).target;
+    ok(/^point:/.test(spot), `The commenter's spot comment was saved as ${spot}`);
+    ok(await commenter.locator(`[data-ring="${spot}"]`).count() === 1, "The spot the panel is on has a ring on the plan");
+    await changed(commenter);
+    const pinned = editor.getByRole("button", { name: /open conversation on Spot /i });
+    await pinned.waitFor({ timeout: 5000 });
+    ok(true, `Others see a pin on the spot ("${await pinned.getAttribute("aria-label")}")`);
+    await pinned.click();
+    await editor.locator("#room-side-panel").waitFor();
+    const zoom = () => editor.locator("[class*=CanvasToolRail], [aria-label*=Zoom]").allTextContents();
+    const before2 = await plan();
+    await editor.locator("#room-side-panel article", { hasText: "Beanbag here?" }).getByTitle("Show it in the room").click(); await sleep(400);
+    ok(pixelsDiffer(before2, await plan()), "Locate centres and zooms the plan on the spot");
+    await editor.screenshot({ path: path.join(OUT, `spot-2d-${label}.png`) });
+    await editor.getByRole("button", { name: "Close comments" }).click();
+    await commenter.getByRole("button", { name: "Close comments" }).click();
+    void zoom;
+  },
   async scene3d({ owner, editor }) {
     await view(owner, "3d"); await view(editor, "3d"); await listen(editor); await listen(owner);
+    // Both cameras on the default framing (a Locate in an earlier test turned the editor's).
+    await editor.getByRole("button", { name: "Fit", exact: true }).click(); await sleep(800);
     const box = await scene(owner).boundingBox(), theirs = await scene(editor).boundingBox();
     // Find a spot on top of a piece (a hit with a height), then compare where each screen shows the pointer.
     let found = null;
@@ -256,6 +316,7 @@ const tests = {
     const drawn = await editor.locator(`[data-cursor="${OWNER.id}"]`).boundingBox();
     const error = Math.hypot(drawn.x - theirs.x - (found.at.x - box.x), drawn.y - theirs.y - (found.at.y - box.y));
     results.scene3dErrorPx = Math.round(error * 10) / 10;
+    if (error >= 4) { await owner.screenshot({ path: path.join(OUT, "scene3d-owner-fail.png") }); await editor.screenshot({ path: path.join(OUT, "scene3d-editor-fail.png") }); console.log("  drawn", JSON.stringify(drawn), "theirs", JSON.stringify(theirs), "mine", JSON.stringify(box), JSON.stringify(found.at)); }
     ok(error < 4, `The 3D viewer draws it on the piece, where the owner points (${results.scene3dErrorPx} px off)`);
     // A wall: aim high near the top of the far wall (no piece, height above the floor).
     let wall = null, wallAt = null;
@@ -269,7 +330,7 @@ const tests = {
     const editing = () => editor.getByRole("button", { name: "Edit selected" }).count();
     const mine = await findSpot(editor, owner, "piece", scene(editor)), wasEditing = await editing();
     await editor.waitForFunction(() => document.querySelector("[data-testid=room-3d] canvas")?.dataset.settled === "1", null, { timeout: 30_000 }).catch(() => {});
-    const room = await scene(editor).locator("canvas").screenshot();
+    const room = await roomShot(editor);
     await editor.mouse.click(mine.x, mine.y, { button: "right" });
     const menu = editor.getByRole("menu", { name: "Canvas actions" });
     await menu.waitFor();
@@ -281,9 +342,9 @@ const tests = {
     await editor.evaluate(() => document.activeElement?.blur());
     await sleep(300);
     await editor.waitForFunction(() => document.querySelector("[data-testid=room-3d] canvas")?.dataset.settled === "1", null, { timeout: 30_000 }).catch(() => {});
-    const roomAfter = await scene(editor).locator("canvas").screenshot();
+    const roomAfter = await roomShot(editor);
     if (Buffer.compare(room, roomAfter)) { fs.writeFileSync(path.join(OUT, "room-before.png"), room); fs.writeFileSync(path.join(OUT, "room-after.png"), roomAfter); }
-    ok(Buffer.compare(room, roomAfter) === 0, "The room didn't orbit or change");
+    ok(await changedPixels(room, roomAfter) === 0, "The room didn't orbit or change");
     await editor.mouse.dblclick(mine.x, mine.y);
     await editor.locator("#room-side-panel").waitFor();
     ok(await panelTarget(editor) === `furniture:${mine.payload.id}`, "3D double-click comments on that piece");
@@ -293,6 +354,20 @@ const tests = {
     await menu.getByRole("menuitem", { name: "Comment here" }).click();
     const spot = await panelTarget(editor);
     ok(/^point:[\d.]+:[\d.]+:\d+(\.\d+)?$/.test(spot), `A spot on a 3D wall keeps its height (${spot})`);
+    ok(await editor.locator(`[data-ring="${spot}"]`).isVisible(), "The new 3D spot is ringed while the panel is on it");
+    // Hovering a thread outlines its piece in the room (a box outline, no extra pass), and clears after.
+    const thread = editor.locator("#room-side-panel article", { hasText: "Desk by the window?" });
+    await editor.getByRole("checkbox", { name: /Only notes about/ }).uncheck();
+    await editor.mouse.move(5, 5); await sleep(300);
+    const settle = () => editor.waitForFunction(() => document.querySelector("[data-testid=room-3d] canvas")?.dataset.settled === "1", null, { timeout: 30_000 }).catch(() => {});
+    await settle(); const plain = await roomShot(editor);
+    await thread.hover(); await sleep(300); await settle();
+    ok(await changedPixels(plain, await roomShot(editor)) > 200, "Hovering a thread outlines its piece in 3D");
+    await editor.screenshot({ path: path.join(OUT, `highlight-3d-${label}.png`) });
+    await editor.mouse.move(5, 5); await sleep(300); await settle();
+    const cleared = await roomShot(editor);
+    if (pixelsDiffer(plain, cleared)) { fs.writeFileSync(path.join(OUT, "room3d-plain.png"), plain); fs.writeFileSync(path.join(OUT, "room3d-cleared.png"), cleared); }
+    ok(await changedPixels(plain, cleared) === 0, "…and the outline clears after");
     await editor.getByRole("button", { name: "Close comments" }).click();
     await editor.screenshot({ path: path.join(OUT, `scene3d-${label}.png`) });
     await owner.mouse.move(5, 5);
@@ -333,7 +408,10 @@ const tests = {
   const browser = await chromium.launch({ args: ["--use-angle=metal", "--enable-gpu", "--ignore-gpu-blocklist"] });
   const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   try {
-    const owner = await open(context, OWNER, "?debug=cursors"), editor = await open(context, EDITOR, "?debug=cursors"), commenter = await open(context, COMMENTER);
+    // The host's first autosave tidies the fixture into the app's own shape; the others then load that.
+    const owner = await open(context, OWNER, "?debug=cursors");
+    await owner.waitForRequest(r => r.method() === "PATCH", { timeout: 8000 }).catch(() => {}); await sleep(800);
+    const editor = await open(context, EDITOR, "?debug=cursors"), commenter = await open(context, COMMENTER);
     const pages = { owner, editor, commenter, context };
     for (const [name, test] of Object.entries(tests)) {
       if (only && !only.has(name)) continue;

@@ -8,7 +8,7 @@ import s from "./Room.module.css";
 
 /** Comments pinned to the plan: a side panel on desktop, a sheet on phones.
  * Not modal, so the plan stays usable while a thread is open. */
-export default function CommentsPanel({open,onClose,comments,userId,role,allowed,target,setTarget,targets,onLocate,action,ownerTag,composeKey=0}:{
+export default function CommentsPanel({open,onClose,comments,userId,role,allowed,target,setTarget,targets,onLocate,action,ownerTag,composeKey=0,onHover}:{
   open:boolean;onClose:()=>void;comments:WorkspaceComment[];userId:string;role:WorkspaceRole;allowed:boolean;
   target:string;setTarget:(target:string)=>void;targets:{id:string;name:string}[];onLocate:(target:string)=>void;
   action:(action:string,payload:Record<string,unknown>)=>Promise<unknown>;
@@ -16,6 +16,8 @@ export default function CommentsPanel({open,onClose,comments,userId,role,allowed
   ownerTag?:(target:string)=>string|undefined;
   /** Bumped when a comment is started from the canvas: show that target's notes and put the cursor in the composer. */
   composeKey?:number;
+  /** A thread row is hovered or focused (its target and author), or not any more (null): the canvas outlines it. */
+  onHover?:(target:string|null,author?:string)=>void;
 }) {
   const workspace=useWorkspace(),members=workspace?.members??[];
   const [draft,setDraft]=useState(""),[reply,setReply]=useState<Record<string,string>>({}),[replyTo,setReplyTo]=useState<string|null>(null);
@@ -52,7 +54,8 @@ export default function CommentsPanel({open,onClose,comments,userId,role,allowed
     {target!=="room"&&<label className={s.scope}><input type="checkbox" checked={scope} onChange={e=>setScope(e.target.checked)}/>Only notes about {label(target)}</label>}
     <div className={s.threads} aria-label={`${filter} conversations`}>
       {!visible.length&&<div className={s.noComments}><h3>{filter==="resolved"?"Decisions, kept.":"Start with a thought."}</h3><p>{filter==="resolved"?"Resolved conversations stay here for later.":"Ask about a product, suggest a move, or choose a piece in the plan to leave a note."}</p></div>}
-      {visible.map(c=>{const replies=comments.filter(r=>r.parent_id===c.id);return <article key={c.id} className={s.thread} data-resolved={c.resolved} aria-label={`Thread on ${label(c.target)}`}>
+      {visible.map(c=>{const replies=comments.filter(r=>r.parent_id===c.id);return <article key={c.id} className={s.thread} data-resolved={c.resolved} aria-label={`Thread on ${label(c.target)}`}
+        onMouseEnter={()=>onHover?.(c.target,c.user_id)} onMouseLeave={()=>onHover?.(null)} onFocus={()=>onHover?.(c.target,c.user_id)} onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node))onHover?.(null);}}>
         <header className={s.threadHead}>
           <button type="button" className={s.threadTarget} onClick={()=>{onLocate(c.target);if(window.matchMedia("(max-width: 780px)").matches)onClose();}} title="Show it in the room">{label(c.target)}</button>
           {tag(c.target)}

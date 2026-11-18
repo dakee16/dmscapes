@@ -301,6 +301,9 @@
 }
 .commentPin > span { display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #fff; color: var(--person, var(--ds-blue)); font-size: 11px; }
 .commentPin:hover, .commentPin:focus-visible { outline: 3px solid var(--ds-ink); outline-offset: 2px; }
+/* The spot the comments panel is on: a soft ring in that person's colour (pins sit on top of it). */
+.spotRing { position: absolute; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 3px solid var(--person, var(--ds-blue)); border-radius: 50%; background: color-mix(in srgb, var(--person, var(--ds-blue)) 16%, transparent); box-shadow: 0 0 0 2px #fff, 0 0 18px var(--person, var(--ds-blue)); pointer-events: none; animation: spotRing 1.6s var(--ds-ease) infinite; }
+@keyframes spotRing { 50% { box-shadow: 0 0 0 2px #fff, 0 0 30px var(--person, var(--ds-blue)); } }
 /* The right-click menu over the plan or 3D room (transient; writing happens in the side panel). */
 .canvasMenu { position: fixed; z-index: 80; display: grid; min-width: 200px; max-width: 260px; padding: 6px; border-radius: 14px; background: var(--ds-ink); box-shadow: 0 14px 34px rgba(22, 22, 29, 0.28); }
 .canvasMenu button { display: flex; align-items: center; gap: 10px; min-height: 40px; padding: 0 12px; border: 0; border-radius: 9px; background: none; color: #fff; font: 750 14px/1.2 var(--ds-sans); text-align: left; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -533,6 +536,6 @@
   .voiceFace { width: 60px; height: 60px; font-size: 24px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .bars i, .cursorBars b { animation: none; }
+  .bars i, .cursorBars b, .spotRing { animation: none; }
 }
-:global([data-motion-paused="true"]) .bars i, :global([data-motion-paused="true"]) .cursorBars b { animation: none; }
+:global([data-motion-paused="true"]) .bars i, :global([data-motion-paused="true"]) .cursorBars b, :global([data-motion-paused="true"]) .spotRing { animation: none; }

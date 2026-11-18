@@ -15,6 +15,12 @@ export interface WorkspaceAccess {
   commentOn?: (target:string) => void;
   /** Present when the canvases should answer right-click, double-click, long press and the Menu key. */
   canvasGesture?: (gesture: CanvasGesture) => void;
+  /** Pieces and spots to outline on the plan and in 3D, in a person's colour: the thread the comments panel shows or hovers. */
+  marks?: { target: string; color: string }[];
+  /** Open spot comments, as pins (only those still inside the room). */
+  spots?: { target: string; x: number; y: number; h?: number; label: string }[];
+  /** Centre the plan or the 3D room on this point (Locate on a spot); `key` is when it was asked (ignored after 3 s). */
+  focus?: { x: number; y: number; h?: number; key: number } | null;
   /** Plan overlay switches from the room's left rail (comment pins, everyone's cursors). */
   overlay?: { pins: boolean; cursors: boolean };
 }

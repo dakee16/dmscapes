@@ -28,7 +28,7 @@ import HallsPanel from "./HallsPanel";
 import { hasHallFinder } from "@/lib/hall-finder";
 import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
 import { VoicePanel, VoiceProvider, VoiceToast } from "./RoomVoice";
-import { initial, personStyle } from "./people";
+import { initial, personColor, personStyle } from "./people";
 import { pointTarget, readPointTarget, spotLabel } from "@/lib/workspace-collaboration";
 import { roomOutline } from "@/lib/studio";
 import { openingCenter } from "@/lib/room-editing";
@@ -55,11 +55,15 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
   const [following, setFollowing] = useState<string | null>(null);
   const [menu, setMenu] = useState<{ gesture: CanvasGesture; target: string; name: string } | null>(null);
   const [composeKey, setComposeKey] = useState(0);
+  const [hovered, setHovered] = useState<{ target: string; user: string } | null>(null);
+  const [focus, setFocus] = useState<WorkspaceAccess["focus"]>(null);
   const inviteField = useRef<PeopleHandle>(null);
   function commentOn(next: string) { setTarget(next); setSide("comments"); }
   /** A comment started from the canvas: the panel opens on that piece or spot, ready to type. */
   function startComment(next: string) { commentOn(next); setComposeKey(k => k + 1); }
   function locateComment(next: string) {
+    const spot = readPointTarget(next);
+    if (spot) { setSection("room"); setFocus({ ...spot, key: Date.now() }); return; }
     if (next.startsWith("product:")) { setSection("shopping"); requestAnimationFrame(() => document.getElementById(`workspace-product-${next.slice(8)}`)?.scrollIntoView({ behavior: "smooth", block: "center" })); }
     else { setSection("room"); if (next.startsWith("furniture:")) usePlannerStore.setState({ selectedItemId: next.slice(10) }); }
   }
@@ -109,7 +113,6 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
     if (detail!.role === "commenter" || gesture.via === "double_click") { setMenu(null); startComment(next); return; }
     setMenu({ gesture, target: next, name: piece ? `Comment on ${piece.label}` : "Comment here" });
   }
-  const access: WorkspaceAccess = { id, members: detail.members, ownerPro: detail.ownerPro, canEdit: detail.canEdit, section, comments: detail.comments, commentOn, overlay, canvasGesture: commentAllowed ? canvasGesture : undefined };
   const statusLabels = { loading: ["Opening", "Opening room"], saved: ["Saved", "All changes saved"], unsaved: ["Unsaved", "Unsaved changes"], saving: ["Saving…", "Saving your room…"], conflict: ["New changes", "New changes to review"], offline: ["Not saved", "Not saved. Retry when connected."] } as const;
   const status = detail.canEdit ? { label: statusLabels[session.status][0], full: statusLabels[session.status][1], state: session.status } : { label: commentAllowed ? "Can comment" : "View only", full: commentAllowed ? "Comment access · Changes sync automatically" : "View access · Changes sync automatically", state: "view" };
   const school = state.college?.id ? getSchool(state.college.id) : undefined;
@@ -128,7 +131,15 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
   const spotName = (t: string) => { const p = readPointTarget(t); return p && spotLabel(p, { lengthFt: room.lengthFt, widthFt: room.widthFt, inside: (x, y) => pointInPolygon(x, y, outline.points, .05) },
     furniture.map(f => { const b = footprint(f); return { label: f.label, x: b.x, y: b.y, w: b.w, h: b.h }; }), outline.openings.filter(o => o.kind === "window").map(o => openingCenter(outline.points, o))); };
   const spots = [...new Set([target, ...detail.comments.map(c => c.target)])].flatMap(t => { const name = spotName(t); return name ? [{ id: t, name }] : []; });
+  // On the canvas: the thread hovered in the panel (its author's colour), else the piece or spot the panel is on (yours).
+  const mark = hovered ?? (side === "comments" && target !== "room" ? { target, user: userId } : null);
+  const marks = mark ? [{ target: mark.target, color: personColor(mark.user, detail.members) }] : [];
+  const spotPins = [...new Set(detail.comments.filter(c => !c.parent_id && !c.resolved).map(c => c.target))].flatMap(t => {
+    const p = readPointTarget(t), name = p && spotName(t);
+    return p && name && !name.endsWith("(outside the room now)") ? [{ target: t, ...p, label: name }] : [];
+  });
 
+  const access: WorkspaceAccess = { id, members: detail.members, ownerPro: detail.ownerPro, canEdit: detail.canEdit, section, comments: detail.comments, commentOn, overlay, canvasGesture: commentAllowed ? canvasGesture : undefined, marks, spots: spotPins, focus };
   return <CollaborationProvider id={id} epoch={detail.workspace.realtime_epoch} enabled={enabled} userId={userId} memberIds={detail.members.map(m => m.user_id)} onChange={() => session.refresh()}><VoiceProvider id={detail.workspace.id} epoch={detail.workspace.realtime_epoch} enabled={enabled}><WorkspaceContext.Provider value={access}>
     <div className={`ds ${s.room}`} data-section={section} data-side={side ?? undefined}>
       <RoomBar detail={detail} userId={userId} name={state.planning.name} place={place} status={status} tab={section} setTab={t => { setSection(t); setFollowing(null); }} badges={{ shopping: unclaimed }} halls={halls}
@@ -155,7 +166,7 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
             notice={<>{error && !confirm && <p role="alert" className={s.inlineError}>{error}</p>}{message && !confirm && <p role="status" className={s.okNote}>{message}</p>}</>} />}
           {section === "room" && <div className={s.phoneCta}><button type="button" className="ds-btn ds-btn--ink-yellow" onClick={() => setSection("shopping")}>Who brings what{unclaimed ? ` · ${unclaimed} open` : ""}</button></div>}
         </main>
-        {side === "comments" && <CommentsPanel open composeKey={composeKey} onClose={() => setSide(null)} comments={detail.comments} userId={userId} role={detail.role} allowed={commentAllowed} target={target} setTarget={setTarget} onLocate={locateComment} action={(action, payload) => session.action(action, payload)} ownerTag={ownerOf} targets={[
+        {side === "comments" && <CommentsPanel open composeKey={composeKey} onHover={(t, user) => setHovered(t && user ? { target: t, user } : null)} onClose={() => { setSide(null); setHovered(null); }} comments={detail.comments} userId={userId} role={detail.role} allowed={commentAllowed} target={target} setTarget={setTarget} onLocate={locateComment} action={(action, payload) => session.action(action, payload)} ownerTag={ownerOf} targets={[
           { id: "room", name: "The room" },
           ...furniture.map(f => ({ id: `furniture:${f.id}`, name: f.label })),
           ...products.map(p => ({ id: `product:${p.id}`, name: p.name })),

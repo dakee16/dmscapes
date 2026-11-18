@@ -1,6 +1,6 @@
 "use client";
 import { useEffect,useLayoutEffect,useRef,type CSSProperties } from "react";
-import type { CursorPoint } from "@/lib/workspace-collaboration";
+import { readPointTarget, type CursorPoint } from "@/lib/workspace-collaboration";
 import { animate, useCollaboration, wake } from "./CollaborationProvider";
 import { useWorkspace } from "./WorkspaceContext";
 import { useVoice } from "./RoomVoice";
@@ -16,7 +16,6 @@ export default function CollaborationOverlay({surface,projection,pins=[],dynamic
   transform.current=projection;
   const move=live?.move,clear=live?.clear,sample=live?.sample;
   const showPins=workspace?.overlay?.pins!==false,showCursors=workspace?.overlay?.cursors!==false;
-  const hasVisiblePins=showPins&&pins.some(pin=>workspace?.comments?.some(c=>c.target===`furniture:${pin.id}`&&!c.parent_id&&!c.resolved));
   useEffect(()=>{
     const parent=layer.current?.parentElement;if(!parent||!move||!clear)return;
     let last={x:NaN,y:NaN};
@@ -56,20 +55,26 @@ export default function CollaborationOverlay({surface,projection,pins=[],dynamic
   // Redraw before paint whenever React changes the layer (a cursor appears, the 2D plan pans or zooms).
   useLayoutEffect(()=>{wake(true);});
   if(!workspace)return null;
-  const position=(x:number,y:number):CSSProperties=>{if(!projection)return {left:`${x*100}%`,top:`${y*100}%`};const p=projection.draw(x,y);return p?{left:p.x,top:p.y}:{visibility:"hidden"};};
+  const position=(x:number,y:number,h?:number):CSSProperties=>{if(!projection)return {left:`${x*100}%`,top:`${y*100}%`};const p=projection.draw(x,y,h);return p?{left:p.x,top:p.y}:{visibility:"hidden"};};
+  // On the plan and in 3D: spot comments get pins too, and the spot the comments panel is on gets a soft ring.
+  const room=surface==="plan"||surface==="scene",spots=room&&showPins?workspace.spots??[]:[];
+  const rings=room?(workspace.marks??[]).flatMap(m=>{const p=readPointTarget(m.target);return p?[{...p,color:m.color,target:m.target}]:[];}):[];
+  const pin=(key:string,target:string,label:string,x:number,y:number,h?:number)=>{
+    const comments=workspace.comments?.filter(c=>c.target===target&&!c.parent_id&&!c.resolved)??[];
+    if(!comments.length)return null;
+    const threads=new Set(comments.map(c=>c.id));
+    const latest=(workspace.comments??[]).filter(c=>threads.has(c.id)||(c.parent_id&&threads.has(c.parent_id))).sort((a,b)=>b.created_at.localeCompare(a.created_at))[0];
+    const author=workspace.members.find(m=>m.user_id===latest?.user_id);
+    return <button key={key} type="button" className={s.commentPin} data-world-x={x} data-world-y={y} data-world-h={h} style={{...position(x,y,h),...(latest?personStyle(latest.user_id,workspace.members):{})}} aria-label={`${comments.length} open conversation${comments.length===1?"":"s"} on ${label}${latest?`, latest from ${latest.display_name}`:""}`} title={`Comments on ${label}`} onClick={e=>{e.stopPropagation();workspace.commentOn?.(target);}}><span aria-hidden="true">{initial(author?.display_name??latest?.display_name??"?")}</span>{comments.length}</button>;
+  };
   return <div ref={layer} className={s.cursorLayer}>
     {showCursors&&live?.status==="live"&&Object.entries(live.cursors).filter(([,cursor])=>cursor.surface===surface || (["plan","scene"].includes(surface)&&["plan","scene"].includes(cursor.surface))).map(([id])=>{
       const member=workspace.members.find(m=>m.user_id===id);if(!member||!live.peers[id]?.active)return null;
       const talking=voice?.participants.some(p=>p.id===id&&p.speaking&&!p.muted);
       return <div key={id} className={s.remoteCursor} data-cursor={id} style={personStyle(id,workspace.members)} aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="currentColor" stroke="white" strokeWidth="1.6" strokeLinejoin="round"/></svg><span>{member.display_name}{talking&&<i className={s.cursorBars}><b/><b/><b/></i>}</span></div>;
     })}
-    {showPins&&pins.map(pin=>{
-      const comments=workspace.comments?.filter(c=>c.target===`furniture:${pin.id}`&&!c.parent_id&&!c.resolved)??[];
-      if(!comments.length)return null;
-      const threads=new Set(comments.map(c=>c.id));
-      const latest=(workspace.comments??[]).filter(c=>threads.has(c.id)||(c.parent_id&&threads.has(c.parent_id))).sort((a,b)=>b.created_at.localeCompare(a.created_at))[0];
-      const author=workspace.members.find(m=>m.user_id===latest?.user_id);
-      return <button key={pin.id} type="button" className={s.commentPin} data-world-x={pin.x} data-world-y={pin.y} style={{...position(pin.x,pin.y),...(latest?personStyle(latest.user_id,workspace.members):{})}} aria-label={`${comments.length} open conversation${comments.length===1?"":"s"} on ${pin.label}${latest?`, latest from ${latest.display_name}`:""}`} title={`Comments on ${pin.label}`} onClick={e=>{e.stopPropagation();workspace.commentOn?.(`furniture:${pin.id}`);}}><span aria-hidden="true">{initial(author?.display_name??latest?.display_name??"?")}</span>{comments.length}</button>;
-    })}
+    {rings.map(r=><span key={r.target} className={s.spotRing} data-ring={r.target} data-world-x={r.x} data-world-y={r.y} data-world-h={r.h} style={{...position(r.x,r.y,r.h),"--person":r.color} as CSSProperties} aria-hidden="true"/>)}
+    {showPins&&pins.map(p=>pin(p.id,`furniture:${p.id}`,p.label,p.x,p.y))}
+    {spots.map(p=>pin(p.target,p.target,p.label,p.x,p.y,p.h))}
   </div>;
 }

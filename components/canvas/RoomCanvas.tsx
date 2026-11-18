@@ -551,6 +551,15 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     toggleSelectedItem(f.id, furnitureCategory(f));
   }
 
+  // Locate on a spot comment centres the plan on it.
+  const focusAt = workspace?.focus;
+  useEffect(() => {
+    if (!focusAt || pxFt <= 0 || Date.now() - focusAt.key > 3000) return;
+    const z = 1.35; setZoom(z); setStagePos({ x: stageW / 2 - (fitted.x + focusAt.x * roomL * pxFt) * z, y: stageH / 2 - (fitted.y + focusAt.y * roomW * pxFt) * z });
+  }, [focusAt?.key]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Pieces the comments panel is on (or a thread there is hovered), outlined in that person's colour on a layer of their own.
+  const marked = (workspace?.marks ?? []).flatMap(m => { const f = m.target.startsWith("furniture:") && visible.find(x => x.id === m.target.slice(10)); return f ? [{ f, color: m.color }] : []; });
+
   useImperativeHandle(ref, () => ({
     focusItem: id=>{const f=furniture.find(f=>f.id===id);if(!f)return;const b=footprint(f),z=1.35;setZoom(z);setStagePos({x:stageW/2-(fitted.x+(b.x+b.w/2)*pxFt)*z,y:stageH/2-(fitted.y+(b.y+b.h/2)*pxFt)*z});},
     exportPNG: () => {
@@ -1233,6 +1242,17 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 ))}
             </Group>
           </Layer>
+          {marked.length > 0 && <Layer name="editor-only" listening={false}>
+            <Group x={fitted.x - PAD} y={fitted.y - PAD}>
+              {marked.map(({ f, color }) => {
+                const fp = footprint(f), w = f.width_ft * pxFt, h = f.length_ft * pxFt, r = { x: -7 / z, y: -7 / z, width: w + 14 / z, height: h + 14 / z, cornerRadius: 7 / z };
+                return <Group key={f.id} x={PAD + fp.x * pxFt} y={PAD + fp.y * pxFt}><Group x={fp.w * pxFt / 2} y={fp.h * pxFt / 2} offsetX={w / 2} offsetY={h / 2} rotation={f.rotation_deg}>
+                  <Rect {...r} stroke="#FFFFFF" strokeWidth={6 / z} opacity={.9} />
+                  <Rect {...r} stroke={color} strokeWidth={3 / z} shadowColor={color} shadowBlur={14} shadowOpacity={.55} />
+                </Group></Group>;
+              })}
+            </Group>
+          </Layer>}
         </Stage>
       )}
 
