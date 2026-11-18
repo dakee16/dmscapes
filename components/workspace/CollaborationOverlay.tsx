@@ -17,16 +17,19 @@ export default function CollaborationOverlay({surface,projection,pins=[],dynamic
   const hasVisiblePins=showPins&&pins.some(pin=>workspace?.comments?.some(c=>c.target===`furniture:${pin.id}`&&!c.parent_id&&!c.resolved));
   useEffect(()=>{
     const parent=layer.current?.parentElement;if(!parent||!move||!clear)return;
+    let last={x:NaN,y:NaN};
+    const leave=()=>{last={x:NaN,y:NaN};clear();};
     const pointer=(event:PointerEvent)=>{
-      if(event.pointerType==="touch" || (event.target as HTMLElement).closest("input,textarea,select,[contenteditable],button,a")){clear();return;}
+      if(event.pointerType==="touch" || (event.target as HTMLElement).closest("input,textarea,select,[contenteditable],button,a")){leave();return;}
       const b=parent.getBoundingClientRect();if(!b.width||!b.height)return;
       const local={x:event.clientX-b.left,y:event.clientY-b.top};
-      const p=transform.current?transform.current.read(local.x,local.y):{x:local.x/b.width,y:local.y/b.height};
-      if(!p||p.x<0||p.x>1||p.y<0||p.y>1){clear();return;}
-      move(surface,p.x,p.y);
+      // Moves under half a pixel aren't worth a message.
+      if(Math.hypot(local.x-last.x,local.y-last.y)<.5)return;
+      last=local;
+      move(surface,()=>{const p=transform.current?transform.current.read(local.x,local.y):{x:local.x/b.width,y:local.y/b.height};return p&&p.x>=0&&p.x<=1&&p.y>=0&&p.y<=1?p:null;});
     };
-    parent.addEventListener("pointermove",pointer,{passive:true});parent.addEventListener("pointerleave",clear);
-    return()=>{parent.removeEventListener("pointermove",pointer);parent.removeEventListener("pointerleave",clear);clear();};
+    parent.addEventListener("pointermove",pointer,{passive:true});parent.addEventListener("pointerleave",leave);
+    return()=>{parent.removeEventListener("pointermove",pointer);parent.removeEventListener("pointerleave",leave);clear();};
   },[surface,move,clear]);
   useEffect(()=>{
     if(!dynamic)return;

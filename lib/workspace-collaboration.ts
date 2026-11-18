@@ -1,6 +1,7 @@
 export type RoomSection = "room" | "shopping" | "halls" | "roommates";
 export type RoomActivity = { section: RoomSection; view: "2d" | "3d"; selected: string | null };
-export type RoomPresence = RoomActivity & { session: string; active: boolean; at: number };
+/** `hidden`: the tab is in the background, so nobody's looking at others' cursors there. */
+export type RoomPresence = RoomActivity & { session: string; active: boolean; at: number; hidden?: boolean };
 /** `at` is the sender's clock when sent; `seq` counts that session's cursor messages. */
 export type RoomCursor = { surface: string; x: number; y: number; session: string; at: number; seq?: number };
 export const COLLABORATOR_COLORS = ["#304bff", "#a54813", "#168061", "#853fc4"];
@@ -26,7 +27,7 @@ export function readPresence(value: unknown): RoomPresence | null {
   if (!["room","shopping","halls","roommates"].includes(p.section) || !["2d","3d"].includes(p.view) || typeof p.active !== "boolean" ||
     typeof p.session !== "string" || p.session.length > 64 || !Number.isFinite(p.at)) return null;
   return {section:p.section, view:p.view, active:p.active, session:p.session, at:p.at,
-    selected: typeof p.selected === "string" && p.selected.length <= 100 ? p.selected : null};
+    selected: typeof p.selected === "string" && p.selected.length <= 100 ? p.selected : null, hidden: p.hidden === true};
 }
 export function presenceLabel(p: RoomPresence | undefined, connected: boolean) {
   if (!connected) return "Presence unavailable";
