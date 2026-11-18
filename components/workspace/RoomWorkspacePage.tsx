@@ -27,6 +27,7 @@ import PeoplePanel, { type PeopleHandle } from "./PeoplePanel";
 import HallsPanel from "./HallsPanel";
 import { hasHallFinder } from "@/lib/hall-finder";
 import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
+import { track } from "@/lib/analytics";
 import { VoicePanel, VoiceProvider, VoiceToast } from "./RoomVoice";
 import { initial, personColor, personStyle } from "./people";
 import { pointTarget, readPointTarget, spotLabel } from "@/lib/workspace-collaboration";
@@ -58,9 +59,12 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
   const [hovered, setHovered] = useState<{ target: string; user: string } | null>(null);
   const [focus, setFocus] = useState<WorkspaceAccess["focus"]>(null);
   const inviteField = useRef<PeopleHandle>(null);
-  function commentOn(next: string) { setTarget(next); setSide("comments"); }
+  function commentOn(next: string, via: "pin" | "panel" | "context_menu" | "double_click" | "long_press" = "panel") {
+    setTarget(next); setSide("comments");
+    track("workspace_comment_started", { via, target_kind: next.startsWith("furniture:") ? "furniture" : next.startsWith("point:") ? "point" : next.startsWith("product:") ? "product" : "room" });
+  }
   /** A comment started from the canvas: the panel opens on that piece or spot, ready to type. */
-  function startComment(next: string) { commentOn(next); setComposeKey(k => k + 1); }
+  function startComment(next: string, via: CanvasGesture["via"]) { commentOn(next, via === "keyboard" ? "context_menu" : via); setComposeKey(k => k + 1); }
   function locateComment(next: string) {
     const spot = readPointTarget(next);
     if (spot) { setSection("room"); setFocus({ ...spot, key: Date.now() }); return; }
@@ -110,7 +114,7 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
   function canvasGesture(gesture: CanvasGesture) {
     const piece = gesture.point.id ? furniture.find(f => f.id === gesture.point.id) : undefined;
     const next = piece ? `furniture:${piece.id}` : pointTarget(gesture.point);
-    if (detail!.role === "commenter" || gesture.via === "double_click") { setMenu(null); startComment(next); return; }
+    if (detail!.role === "commenter" || gesture.via === "double_click") { setMenu(null); startComment(next, gesture.via); return; }
     setMenu({ gesture, target: next, name: piece ? `Comment on ${piece.label}` : "Comment here" });
   }
   const statusLabels = { loading: ["Opening", "Opening room"], saved: ["Saved", "All changes saved"], unsaved: ["Unsaved", "Unsaved changes"], saving: ["Saving…", "Saving your room…"], conflict: ["New changes", "New changes to review"], offline: ["Not saved", "Not saved. Retry when connected."] } as const;
@@ -178,8 +182,8 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
         {side === "voice" && <VoicePanel members={detail.members} userId={userId} roomName={state.planning.name} onClose={() => setSide(null)} following={following} onFollow={setFollowing} />}
       </div>
       <VoiceToast hidden={side === "voice"} />
-      {menu && <LiveMenu x={menu.gesture.clientX} y={menu.gesture.clientY} point={menu.gesture.point} onClose={refocus => { setMenu(null); if (refocus) menu.gesture.canvas?.focus({ preventScroll: true }); }}
-        comment={{ label: menu.name, icon: "comment", run: () => { setMenu(null); startComment(menu.target); } }} />}
+      {menu && <LiveMenu x={menu.gesture.clientX} y={menu.gesture.clientY} point={menu.gesture.point} surface={menu.gesture.surface} onClose={refocus => { setMenu(null); if (refocus) menu.gesture.canvas?.focus({ preventScroll: true }); }}
+        comment={{ label: menu.name, icon: "comment", run: () => { setMenu(null); startComment(menu.target, menu.gesture.via); } }} />}
       {confirm && <Modal className={s.confirmLayer} aria-labelledby="confirm-title" onKeyDown={e => { if (e.key === "Escape" && !busy) setConfirm(null); }} onClick={() => { if (!busy) setConfirm(null); }}><div className={s.confirm} role="alertdialog" aria-labelledby="confirm-title" aria-describedby="confirm-body" onClick={e => e.stopPropagation()}>
         <h2 id="confirm-title">{confirm === "reload" ? "Load the shared version?" : confirm.startsWith("restore:") ? "Restore this version?" : confirm.startsWith("remove:") ? "Remove this roommate?" : confirm === "personal" ? "Make this room personal?" : confirm === "delete" ? "Delete this workspace?" : "Leave this room?"}</h2>
         <p id="confirm-body">{confirm === "reload" ? "This replaces your unsaved edits. Keep a personal copy first if you want to preserve them." : confirm === "personal" ? "Roommates will lose access and all invitation links will stop working. Your room and shopping list stay saved." : confirm === "delete" ? "The workspace, comments, and versions will be deleted. This cannot be undone. Original saved designs remain available." : confirm.startsWith("restore:") ? "The room and shopping list will return to this version for everyone. The current version is kept in history." : confirm === "leave" ? "You will lose access to this room. Your existing comments remain with its members." : "Their access ends immediately. Existing comments remain with the room."}</p>
@@ -195,9 +199,9 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
 }
 
 /** The canvas menu: "Comment on …", and "Look here" for the owner and editors while the room is live. */
-function LiveMenu({ x, y, point, comment, onClose }: { x: number; y: number; point: Ping | { x: number; y: number }; comment: CanvasMenuItem; onClose: (refocus: boolean) => void }) {
+function LiveMenu({ x, y, point, surface, comment, onClose }: { x: number; y: number; point: Ping | { x: number; y: number }; surface: CanvasGesture["surface"]; comment: CanvasMenuItem; onClose: (refocus: boolean) => void }) {
   const live = useCollaboration();
-  const items = live?.canPing && live.status === "live" ? [comment, { label: "Look here", icon: "ping" as const, run: () => { live.ping(point); onClose(true); } }] : [comment];
+  const items = live?.canPing && live.status === "live" ? [comment, { label: "Look here", icon: "ping" as const, run: () => { live.ping(point); track("workspace_ping_sent", { surface }); onClose(true); } }] : [comment];
   return <CanvasMenu x={x} y={y} items={items} onClose={onClose} />;
 }
 

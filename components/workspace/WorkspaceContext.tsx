@@ -12,7 +12,8 @@ export interface WorkspaceAccess {
   canEdit: boolean;
   section: RoomSection;
   comments?: WorkspaceComment[];
-  commentOn?: (target:string) => void;
+  /** Open the comments panel on a target; `via` says what started it (for analytics). */
+  commentOn?: (target:string, via?: "pin" | "panel") => void;
   /** Present when the canvases should answer right-click, double-click, long press and the Menu key. */
   canvasGesture?: (gesture: CanvasGesture) => void;
   /** Pieces and spots to outline on the plan and in 3D, in a person's colour: the thread the comments panel shows or hovers. */

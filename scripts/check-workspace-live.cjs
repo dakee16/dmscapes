@@ -20,7 +20,7 @@ const template = require("../templates/compact-square-double-12x11-v1.json");
 const snapshot = { name: "Live test room", college_id: null, dorm_id: null, room_dimensions: { length_ft: 12, width_ft: 11, room_type: "double", occupants: 2, bed_size: "twin_xl" },
   style: "minimalist", budget: 500, template_id: template.template_id, furniture_positions: template.furniture, selected_products: {} };
 const now = new Date().toISOString();
-const state = { revision: 1, snapshot, members: [OWNER, EDITOR, COMMENTER], comments: [
+const state = { revision: 1, snapshot, members: [OWNER, EDITOR, COMMENTER, FOURTH], comments: [
   { id: "c0000000-0000-4000-8000-000000000001", user_id: EDITOR.id, display_name: EDITOR.name, body: "Desk by the window?", target: "furniture:desk-a", resolved: false, created_at: now, parent_id: null },
 ], patches: [] };
 const detail = who => ({ workspace: { id: ROOM, owner_id: OWNER.id, name: snapshot.name, snapshot: state.snapshot, revision: state.revision, shared: true, source_room_id: null, created_at: now, updated_at: now, realtime_epoch: EPOCH },
@@ -190,7 +190,83 @@ const watchPings = page => page.evaluate(() => { window.__pingSeen = null; new M
 const selected = page => page.locator("[role=toolbar][aria-label$=' actions']").getAttribute("aria-label").catch(() => null);
 const panelTarget = page => page.locator("#room-side-panel select").inputValue();
 
+/** Steady cursors for several people at once from a blank page (circles on the floor), for the frame-rate check. People
+ * without a page of their own (Jo) get a stand-in presence. Returns a function that stops them. */
+async function synthCursors(context, people, surfaceName) {
+  const synth = await context.newPage();
+  await synth.goto(`${BASE}/robots.txt`);
+  await synth.evaluate(async ({ people, room, epoch, surfaceName }) => {
+    const bus = new BroadcastChannel("dormscape-fake-realtime"), sessions = {};
+    for (const [i, who] of people.entries()) {
+      const topic = `workspace:${room}:${epoch}:${who.id}`;
+      sessions[who.id] = await new Promise(resolve => {
+        const done = setTimeout(() => { // nobody answered: stand in for this member
+          const meta = { section: "room", view: surfaceName === "scene" ? "3d" : "2d", selected: null, session: `synthetic-${i}`, active: true, hidden: false, at: Date.now() };
+          bus.postMessage({ topic, kind: "presence", key: meta.session, meta });
+          bus.addEventListener("message", e => { if (e.data.topic === topic && e.data.kind === "hello") bus.postMessage({ topic, kind: "presence", key: meta.session, meta }); });
+          resolve(meta.session);
+        }, 600);
+        bus.addEventListener("message", function hear(e) { if (e.data.topic === topic && e.data.kind === "presence" && e.data.meta) { clearTimeout(done); bus.removeEventListener("message", hear); resolve(e.data.meta.session); } });
+        bus.postMessage({ topic, kind: "hello" });
+      });
+    }
+    let seq = 0;
+    window.__timer = setInterval(() => {
+      const t = Date.now() / 1000;
+      people.forEach((who, i) => bus.postMessage({ topic: `workspace:${room}:${epoch}:${who.id}`, kind: "broadcast", event: "cursor",
+        payload: { surface: surfaceName, x: .5 + .3 * Math.cos(t * 1.7 + i * 2), y: .5 + .3 * Math.sin(t * 1.7 + i * 2), session: sessions[who.id], at: Date.now(), seq: ++seq } }));
+    }, 40);
+  }, { people, room: ROOM, epoch: EPOCH, surfaceName });
+  return async () => { await synth.evaluate(() => clearInterval(window.__timer)); await synth.close(); };
+}
+/** Frames on `page` over `ms` while its own mouse moves too: frames per second and the slowest frames. */
+async function frameRate(page, area, ms = 3000) {
+  const box = await area.boundingBox();
+  await page.evaluate(() => { window.__frames = []; const tick = t => { window.__frames.push(t); window.__fr = requestAnimationFrame(tick); }; window.__fr = requestAnimationFrame(tick); });
+  const t0 = Date.now();
+  while (Date.now() - t0 < ms) { const k = (Date.now() - t0) / ms; await page.mouse.move(box.x + box.width * (.3 + .4 * k), box.y + box.height * (.4 + .2 * Math.sin(k * 9))); await sleep(16); }
+  const frames = await page.evaluate(() => { cancelAnimationFrame(window.__fr); return window.__frames; });
+  const gaps = frames.slice(1).map((t, i) => t - frames[i]);
+  return { fps: Math.round(gaps.length / ((frames.at(-1) - frames[0]) / 1000)), p95FrameMs: Math.round(percentile(gaps, .95) * 10) / 10, longFrames: gaps.filter(g => g > 34).length };
+}
+
 const tests = {
+  async fps({ editor, context }) {
+    // Four people moving at once: three remote cursors (one a stand-in) plus the editor's own mouse.
+    for (const which of ["2d", "3d"]) {
+      if (which === "3d") { await view(editor, "3d"); await editor.getByRole("button", { name: "Fit", exact: true }).click(); await sleep(800); }
+      const stop = await synthCursors(context, [OWNER, COMMENTER, FOURTH], which === "3d" ? "scene" : "plan");
+      await editor.locator("[data-cursor]").nth(2).waitFor({ state: "attached", timeout: 5000 });
+      const r = await frameRate(editor, which === "3d" ? scene(editor) : surface(editor));
+      await stop();
+      (results.fps ??= {})[which] = r;
+      console.log(`  ${which} with four moving:`, JSON.stringify(r));
+      ok(r.fps >= 55 && r.p95FrameMs <= 20, `${which.toUpperCase()}: ${r.fps} fps, p95 frame ${r.p95FrameMs} ms with four people moving`);
+    }
+    await editor.mouse.move(5, 5);
+    await view(editor, "2d");
+  },
+  async reduced({ owner, editor }) {
+    await listen(owner); await owner.emulateMedia({ reducedMotion: "reduce" });
+    const target = await findSpot(editor, owner, "piece");
+    await editor.mouse.click(target.x, target.y, { button: "right" });
+    await editor.getByRole("menu", { name: "Canvas actions" }).getByRole("menuitem", { name: "Look here" }).click();
+    const ping = owner.locator("[data-ping]").first();
+    await ping.waitFor({ state: "attached" });
+    ok(await ping.evaluate(el => getComputedStyle(el, "::before").animationName === "none" && getComputedStyle(el, "::after").display === "none"), "With reduced motion the ping is a still ring");
+    await owner.emulateMedia({ reducedMotion: null });
+    await sleep(3200);
+  },
+  async follow({ owner, editor }) {
+    await editor.locator("aside[aria-label='Room filters and people'] li", { hasText: OWNER.name }).getByRole("button", { name: "Follow" }).click();
+    await editor.getByText(/You're following Alex/).waitFor();
+    await view(owner, "3d");
+    await scene(editor).locator("canvas").waitFor({ timeout: 30_000 });
+    ok(true, "Follow mode: the editor's view follows the host into 3D");
+    await view(owner, "2d"); await surface(editor).waitFor();
+    await editor.getByRole("button", { name: "Stop" }).click();
+    ok(await editor.getByText(/You're following/).count() === 0, "…and Stop ends it");
+  },
   async gestures({ owner, editor, commenter }) {
     for (const p of [owner, editor, commenter]) await listen(p);
     await sees(commenter, EDITOR);
@@ -329,6 +405,19 @@ const tests = {
     await sleep(3300);
     ok(await owner.locator("[data-ping]").count() === 0, "The ping is gone after about 3 s (nothing is saved)");
     ok(!state.patches.some(p => JSON.stringify(p).includes("ping")), "No ping was sent to the server");
+    // Keyboard: Shift+F10 on the selected piece opens the same menu; arrows move, Enter picks, focus returns to the plan.
+    await editor.mouse.click(target.x, target.y); await sleep(200);
+    if (!(await selected(editor))) { await editor.mouse.click(target.x, target.y); await sleep(200); }
+    await editor.keyboard.press("Shift+F10");
+    await menu.waitFor();
+    ok(await menu.getByRole("menuitem").first().evaluate(el => el === document.activeElement), "Shift+F10 on the selected piece opens the menu with focus on its first item");
+    await editor.keyboard.press("ArrowDown");
+    ok((await editor.evaluate(() => document.activeElement?.textContent)) === "Look here", "Arrow keys move through the menu");
+    await editor.keyboard.press("Enter");
+    await menu.waitFor({ state: "detached" });
+    ok(await editor.evaluate(() => document.activeElement?.getAttribute("aria-label")) === "Interactive room floor plan", "Choosing Look here returns focus to the plan");
+    await editor.mouse.click(target.x, target.y); // deselect
+    await sleep(3300);
     // Limits: a second ping within 1.5 s isn't shown to others.
     const heardBefore = (await heard(owner, "ping")).length;
     await editor.mouse.click(target.x, target.y, { button: "right" }); await menu.getByRole("menuitem", { name: "Look here" }).click();
