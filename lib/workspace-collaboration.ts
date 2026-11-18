@@ -2,8 +2,10 @@ export type RoomSection = "room" | "shopping" | "halls" | "roommates";
 export type RoomActivity = { section: RoomSection; view: "2d" | "3d"; selected: string | null };
 /** `hidden`: the tab is in the background, so nobody's looking at others' cursors there. */
 export type RoomPresence = RoomActivity & { session: string; active: boolean; at: number; hidden?: boolean };
+/** A point in the room: x and y run 0–1 across its length and width; in 3D, `h` is the height in feet and `id` the piece pointed at. */
+export type CursorPoint = { x: number; y: number; h?: number; id?: string };
 /** `at` is the sender's clock when sent; `seq` counts that session's cursor messages. */
-export type RoomCursor = { surface: string; x: number; y: number; session: string; at: number; seq?: number };
+export type RoomCursor = CursorPoint & { surface: string; session: string; at: number; seq?: number };
 export const COLLABORATOR_COLORS = ["#304bff", "#a54813", "#168061", "#853fc4"];
 export function collaboratorColor(id: string, members?: string[]) {
   const index=members?[...members].sort().indexOf(id):-1;

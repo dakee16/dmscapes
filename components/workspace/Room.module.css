@@ -287,7 +287,7 @@
 
 /* ---------- cursors and pins over the plan ---------- */
 .cursorLayer { position: absolute; inset: 0; z-index: 25; overflow: hidden; pointer-events: none; border-radius: inherit; }
-.remoteCursor { position: absolute; color: var(--person); pointer-events: none; transition: left 75ms linear, top 75ms linear; filter: drop-shadow(0 2px 3px rgba(22, 22, 29, 0.2)); }
+.remoteCursor { position: absolute; left: 0; top: 0; color: var(--person); pointer-events: none; will-change: transform; filter: drop-shadow(0 2px 3px rgba(22, 22, 29, 0.2)); }
 .remoteCursor > svg { display: block; }
 .remoteCursor > span { position: absolute; left: 16px; top: 18px; display: flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px; border-radius: 6px; background: var(--person); color: var(--person-ink); font: 800 12px/1 var(--ds-sans); white-space: nowrap; max-width: 140px; }
 .cursorBars { display: inline-flex; align-items: flex-end; gap: 2px; height: 11px; }
@@ -528,7 +528,5 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .bars i, .cursorBars b { animation: none; }
-  .remoteCursor { transition: none; }
 }
 :global([data-motion-paused="true"]) .bars i, :global([data-motion-paused="true"]) .cursorBars b { animation: none; }
-:global([data-motion-paused="true"]) .remoteCursor { transition: none; }

@@ -69,12 +69,14 @@ const percentile = (values, p) => { const v = [...values].sort((a, b) => a - b);
  * through the two resting positions (the projection is linear at the default zoom). */
 async function measureLag(sender, receiver, senderId, { ms = 2500 } = {}) {
   // Across the middle of the fixture room (inside its walls, clear of the comment pin).
-  const box = await surface(sender).boundingBox(), y = box.y + box.height * 0.6, x0 = box.x + box.width * 0.27, x1 = box.x + box.width * 0.75;
+  const box = await surface(sender).boundingBox(), y = box.y + box.height * 0.6, x0 = box.x + box.width * 0.3, x1 = box.x + box.width * 0.68;
   await sender.evaluate(() => { window.__moves = []; addEventListener("pointermove", e => { const r = document.querySelector("[aria-label='Interactive room floor plan']").getBoundingClientRect(); window.__moves.push([Date.now(), e.clientX - r.left]); }, { capture: true }); });
   await receiver.evaluate(id => {
     window.__drawn = [];
-    const tick = () => { const el = document.querySelector(`[data-cursor="${id}"]`), r = document.querySelector("[aria-label='Interactive room floor plan']").getBoundingClientRect();
-      if (el) window.__drawn.push([Date.now(), el.getBoundingClientRect().left - r.left]); window.__raf = requestAnimationFrame(tick); };
+    // Read after the frame's animation callbacks have all run, so their order can't skew a frame.
+    const read = () => { const el = document.querySelector(`[data-cursor="${id}"]`), r = document.querySelector("[aria-label='Interactive room floor plan']").getBoundingClientRect();
+      if (el) window.__drawn.push([Date.now(), el.getBoundingClientRect().left - r.left]); };
+    const tick = () => { setTimeout(read); window.__raf = requestAnimationFrame(tick); };
     tick();
   }, senderId);
   await sender.mouse.move(x0, y); await sleep(900);
@@ -102,14 +104,72 @@ async function measureLag(sender, receiver, senderId, { ms = 2500 } = {}) {
     scale: Math.round((R1 - R0) / (S1 - S0) * 1000) / 1000 };
 }
 
+/** Receive-to-drawn delay of the receiver alone: a script on a blank page plays a perfectly steady sender
+ * (`rate` messages a second, each held back 0–`jitter` ms like a network would) on `who`'s topic. */
+async function measurePipeline(context, receiver, who, { rate = 25, jitter = 0, ms = 2500 } = {}) {
+  const synth = await context.newPage();
+  await synth.goto(`${BASE}/robots.txt`);
+  const topic = `workspace:${ROOM}:${EPOCH}:${who.id}`, x0 = 0.25, x1 = 0.75;
+  await receiver.evaluate(id => {
+    window.__drawn = [];
+    const read = () => { const el = document.querySelector(`[data-cursor="${id}"]`), r = document.querySelector("[aria-label='Interactive room floor plan']").getBoundingClientRect();
+      if (el && el.style.visibility !== "hidden") window.__drawn.push([Date.now(), el.getBoundingClientRect().left - r.left]); };
+    const tick = () => { setTimeout(read); window.__raf = requestAnimationFrame(tick); };
+    tick();
+  }, who.id);
+  const t0 = await synth.evaluate(async ({ topic, rate, jitter, ms, x0, x1 }) => {
+    const bus = new BroadcastChannel("dormscape-fake-realtime");
+    const session = await new Promise(resolve => { bus.onmessage = e => { if (e.data.topic === topic && e.data.kind === "presence" && e.data.meta) resolve(e.data.meta.session); }; bus.postMessage({ topic, kind: "hello" }); });
+    const start = Date.now() + 700, end = start + ms; let seq = 0;
+    const x = t => x0 + (x1 - x0) * Math.min(1, Math.max(0, (t - start) / ms));
+    const timer = setInterval(() => { const at = Date.now(), payload = { surface: "plan", x: x(at), y: 0.6, session, at, seq: ++seq };
+      setTimeout(() => bus.postMessage({ topic, kind: "broadcast", event: "cursor", payload }), Math.random() * jitter); }, 1000 / rate);
+    setTimeout(() => clearInterval(timer), end - Date.now() + 900);
+    return start;
+  }, { topic, rate, jitter, ms, x0, x1 });
+  await sleep(700 + ms + 1300);
+  const drawn = await receiver.evaluate(() => { cancelAnimationFrame(window.__raf); return window.__drawn; });
+  await synth.close();
+  assert.ok(drawn.length > 30, "The receiver drew the steady cursor");
+  const R0 = drawn.filter(d => d[0] < t0).at(-1)[1], R1 = drawn.at(-1)[1], lags = [], deltas = [];
+  for (let i = 0; i < drawn.length; i++) {
+    const [t, raw] = drawn[i], f = (raw - R0) / (R1 - R0);
+    if (t > t0 + 150 && t < t0 + ms && i && t - drawn[i - 1][0] < 40) deltas.push(raw - drawn[i - 1][1]);
+    if (f > 0.02 && f < 0.98) lags.push(t - (t0 + f * ms));
+  }
+  return { rate, jitter, p50: Math.round(percentile(lags, 0.5)), p95: Math.round(percentile(lags, 0.95)), samples: lags.length,
+    framesWhileMoving: deltas.length, stalledFrames: deltas.filter(d => Math.abs(d) < 0.01).length,
+    unevenness: Math.round((percentile(deltas, 0.95) - percentile(deltas, 0.05)) / percentile(deltas, 0.5) * 100) / 100 };
+}
+
 const tests = {
-  async lag({ owner, editor }) {
+  async lag({ owner, editor, context }) {
     await sees(editor, OWNER); await sees(owner, EDITOR);
     const r = await measureLag(owner, editor, OWNER.id);
     console.log("  2D cursor lag (owner -> editor):", JSON.stringify(r));
     results.lag2d = r;
+    await owner.mouse.move(5, 5); await sleep(300); // off the canvas, so only the steady sender moves Alex's cursor
+    for (const [rate, jitter] of [[args.rate ? Number(args.rate) : 25, 0], [args.rate ? Number(args.rate) : 25, 30]]) {
+      const p = await measurePipeline(context, editor, OWNER, { rate, jitter });
+      console.log("  receiver pipeline (steady sender):", JSON.stringify(p));
+      (results.pipeline ??= []).push(p);
+    }
     const stats = await editor.locator("[data-testid=cursor-debug]").textContent().catch(() => null);
     if (stats) { results.debugReadout = stats; console.log("  readout:", stats); }
+    if (label === "baseline") return;
+    ok(r.p50 <= 120 && r.p95 <= 250, `2D cursor lag p50 ${r.p50} ms ≤ 120 and p95 ${r.p95} ms ≤ 250`);
+    ok(results.pipeline.every(p => p.p50 <= 120 && p.p95 <= 250 && p.stalledFrames <= 2), "Steady sender: drawn within budget, without stalls, even with 30 ms network jitter");
+  },
+  async still({ owner, editor }) {
+    const box = await surface(owner).boundingBox(), cursor = editor.locator(`[data-cursor="${OWNER.id}"]`);
+    await owner.mouse.move(box.x + box.width * 0.45, box.y + box.height * 0.6);
+    await owner.mouse.move(box.x + box.width * 0.46, box.y + box.height * 0.6);
+    await cursor.waitFor();
+    await sleep(12_000);
+    ok(await cursor.isVisible(), "A cursor that stops moving is still shown 12 s later (keepalive)");
+    await owner.mouse.move(box.x - 150, box.y + 40);
+    await cursor.waitFor({ state: "detached", timeout: 1000 });
+    ok(true, "Leaving the canvas clears the cursor at once");
   },
 };
 

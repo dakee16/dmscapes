@@ -1,18 +1,20 @@
 "use client";
-import { useEffect,useRef,type CSSProperties } from "react";
-import { useCollaboration } from "./CollaborationProvider";
+import { useEffect,useLayoutEffect,useRef,type CSSProperties } from "react";
+import type { CursorPoint } from "@/lib/workspace-collaboration";
+import { animate, useCollaboration, wake } from "./CollaborationProvider";
 import { useWorkspace } from "./WorkspaceContext";
 import { useVoice } from "./RoomVoice";
 import { initial, personStyle } from "./people";
 import s from "./Room.module.css";
 
-export type CursorProjection={read:(x:number,y:number)=>{x:number;y:number}|null;draw:(x:number,y:number)=>{x:number;y:number}|null};
+/** `read`: a pixel in the overlay to a room point. `draw`: a room point (at height `h`, or on piece `id`) to a pixel, null when off screen. */
+export type CursorProjection={read:(x:number,y:number)=>CursorPoint|null;draw:(x:number,y:number,h?:number,id?:string)=>{x:number;y:number}|null};
 /** Live cursors and comment pins over the plan, the 3D scene or a list. Pins take
  * the colour of whoever spoke last in the thread; both layers follow the rail's switches. */
 export default function CollaborationOverlay({surface,projection,pins=[],dynamic=false}: {surface:"plan"|"scene"|"shopping"|"roommates";projection?:CursorProjection;pins?:{id:string;label:string;x:number;y:number}[];dynamic?:boolean}) {
   const live=useCollaboration(),workspace=useWorkspace(),voice=useVoice(),layer=useRef<HTMLDivElement>(null),transform=useRef(projection);
   transform.current=projection;
-  const move=live?.move,clear=live?.clear;
+  const move=live?.move,clear=live?.clear,sample=live?.sample;
   const showPins=workspace?.overlay?.pins!==false,showCursors=workspace?.overlay?.cursors!==false;
   const hasVisiblePins=showPins&&pins.some(pin=>workspace?.comments?.some(c=>c.target===`furniture:${pin.id}`&&!c.parent_id&&!c.resolved));
   useEffect(()=>{
@@ -31,27 +33,35 @@ export default function CollaborationOverlay({surface,projection,pins=[],dynamic
     parent.addEventListener("pointermove",pointer,{passive:true});parent.addEventListener("pointerleave",leave);
     return()=>{parent.removeEventListener("pointermove",pointer);parent.removeEventListener("pointerleave",leave);clear();};
   },[surface,move,clear]);
+  // Cursors glide on the shared animation loop (no React render per message). In 3D, pins follow the camera too.
   useEffect(()=>{
-    if(!dynamic)return;
-    let frame=0;
-    const update=()=>{
-      layer.current?.querySelectorAll<HTMLElement>("[data-world-x]").forEach(el=>{
-        const p=transform.current?.draw(Number(el.dataset.worldX),Number(el.dataset.worldY));
-        el.style.visibility=p?"visible":"hidden";
-        if(p){el.style.left=`${p.x}px`;el.style.top=`${p.y}px`;}
+    if(!sample)return;
+    return animate(()=>{
+      const el=layer.current;if(!el)return false;
+      let more=false;const now=Date.now();
+      el.querySelectorAll<HTMLElement>("[data-cursor]").forEach(cursor=>{
+        const p=sample(cursor.dataset.cursor!,now),q=p&&(transform.current?transform.current.draw(p.x,p.y,p.h,p.id):{x:p.x*el.clientWidth,y:p.y*el.clientHeight});
+        cursor.style.visibility=q?"":"hidden";
+        if(q)cursor.style.transform=`translate3d(${q.x}px,${q.y}px,0)`;
+        if(p&&!p.settled)more=true;
       });
-      frame=requestAnimationFrame(update);
-    };
-    if((showCursors&&Object.keys(live?.cursors??{}).length)||hasVisiblePins)frame=requestAnimationFrame(update);
-    return()=>cancelAnimationFrame(frame);
-  },[dynamic,live?.cursors,hasVisiblePins,showCursors]);
+      if(dynamic)el.querySelectorAll<HTMLElement>("[data-world-x]").forEach(pin=>{
+        const q=transform.current?.draw(Number(pin.dataset.worldX),Number(pin.dataset.worldY),pin.dataset.worldH?Number(pin.dataset.worldH):undefined,pin.dataset.worldId);
+        pin.style.visibility=q?"visible":"hidden";
+        if(q){pin.style.left=`${q.x}px`;pin.style.top=`${q.y}px`;}
+      });
+      return more;
+    });
+  },[sample,dynamic]);
+  // Redraw before paint whenever React changes the layer (a cursor appears, the 2D plan pans or zooms).
+  useLayoutEffect(()=>{wake(true);});
   if(!workspace)return null;
   const position=(x:number,y:number):CSSProperties=>{if(!projection)return {left:`${x*100}%`,top:`${y*100}%`};const p=projection.draw(x,y);return p?{left:p.x,top:p.y}:{visibility:"hidden"};};
   return <div ref={layer} className={s.cursorLayer}>
-    {showCursors&&live?.status==="live"&&Object.entries(live.cursors).filter(([,cursor])=>cursor.surface===surface || (["plan","scene"].includes(surface)&&["plan","scene"].includes(cursor.surface))).map(([id,cursor])=>{
+    {showCursors&&live?.status==="live"&&Object.entries(live.cursors).filter(([,cursor])=>cursor.surface===surface || (["plan","scene"].includes(surface)&&["plan","scene"].includes(cursor.surface))).map(([id])=>{
       const member=workspace.members.find(m=>m.user_id===id);if(!member||!live.peers[id]?.active)return null;
       const talking=voice?.participants.some(p=>p.id===id&&p.speaking&&!p.muted);
-      return <div key={id} className={s.remoteCursor} data-cursor={id} data-world-x={cursor.x} data-world-y={cursor.y} style={{...position(cursor.x,cursor.y),...personStyle(id,workspace.members)}} aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="currentColor" stroke="white" strokeWidth="1.6" strokeLinejoin="round"/></svg><span>{member.display_name}{talking&&<i className={s.cursorBars}><b/><b/><b/></i>}</span></div>;
+      return <div key={id} className={s.remoteCursor} data-cursor={id} style={personStyle(id,workspace.members)} aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="currentColor" stroke="white" strokeWidth="1.6" strokeLinejoin="round"/></svg><span>{member.display_name}{talking&&<i className={s.cursorBars}><b/><b/><b/></i>}</span></div>;
     })}
     {showPins&&pins.map(pin=>{
       const comments=workspace.comments?.filter(c=>c.target===`furniture:${pin.id}`&&!c.parent_id&&!c.resolved)??[];

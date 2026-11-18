@@ -28,7 +28,7 @@ function CursorDebug() {
   const [text, setText] = useState("");
   useEffect(() => {
     if (new URLSearchParams(location.search).get("debug") !== "cursors") return;
-    const timer = setInterval(() => { const v = stats.current?.(); setText(v ? `Cursors ${v.rate.toFixed(1)}/s · lag p50 ${v.p50} ms · p95 ${v.p95} ms` : "Cursors: waiting for someone to move"); }, 500);
+    const timer = setInterval(() => { const v = stats.current?.(); setText(v ? `Cursors ${v.rate.toFixed(1)}/s · lag p50 ${v.p50} ms · p95 ${v.p95} ms · drawn ${v.delay} ms behind` : "Cursors: waiting for someone to move"); }, 500);
     return () => clearInterval(timer);
   }, []);
   return text ? <p className={s.railNote} data-testid="cursor-debug">{text}</p> : null;
