@@ -144,7 +144,7 @@ export default function ManualEntry({
                 id="me-type"
                 value={roomType}
                 onChange={(e) => setRoomType(e.target.value)}
-                className={`${inputCls} ${css.select}`}
+                className={inputCls}
               >
                 {ROOM_TYPES.map((t) => (
                   <option key={t} value={t}>
@@ -161,7 +161,7 @@ export default function ManualEntry({
                 id="me-occ"
                 value={occupants}
                 onChange={(e) => setOccupants(Number(e.target.value))}
-                className={`${inputCls} ${css.select}`}
+                className={inputCls}
               >
                 {[1, 2, 3, 4].map((n) => (
                   <option key={n} value={n}>

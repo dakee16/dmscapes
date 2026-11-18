@@ -54,14 +54,7 @@
   padding: 14px 18px;
   resize: vertical;
 }
-.field select {
-  appearance: none;
-  padding-right: 48px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='%2316161D' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-  cursor: pointer;
-}
+.field select { cursor: pointer; }
 .field input::placeholder,
 .field textarea::placeholder { color: #8a8a94; }
 .field input:focus,

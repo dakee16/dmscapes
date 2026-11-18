@@ -656,6 +656,18 @@ a.ds-card:hover { transform: translateY(-3px); box-shadow: 0 0 0 2px var(--ds-bl
 }
 .ds-input:focus { outline: none; border-color: var(--ds-blue); box-shadow: 0 0 0 3px rgba(36, 73, 255, 0.18); }
 textarea.ds-input { min-height: 140px; padding: 14px 18px; line-height: 1.5; resize: vertical; }
+
+/* Every dropdown: one chevron, 14px in from the right edge (the browser's own arrow sits almost on the border, and
+   Safari's ignores padding). Specific enough to beat the components' select rules, which set background and padding
+   as shorthands. Dark panels swap the arrow with --ds-select-chevron. */
+:root select:not([multiple]):not([size]) {
+  appearance: none;
+  padding-right: 38px;
+  background-image: var(--ds-select-chevron, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='%2316161D' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E"));
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+}
 .ds-label { display: block; margin-bottom: 8px; font-family: var(--ds-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
 
 /* Long-form prose (legal, blog posts) */
