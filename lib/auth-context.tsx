@@ -96,7 +96,7 @@ interface AuthContextValue {
 const AuthContext = createContext<AuthContextValue | null>(null);
 
 // Dev-only escape hatch so local screenshots can exercise signed-in UI without
-// live Supabase: sessionStorage["dormscape-dev-auth"] = {"email","username"}.
+// live Supabase: sessionStorage["dormscape-dev-auth"] = {"email","username", optional "id"}.
 // The NODE_ENV guard makes this dead code in production builds.
 const DEV_AUTH_KEY = "dormscape-dev-auth";
 
@@ -137,7 +137,8 @@ function devMockProfile(): Profile | null {
     if (!raw) return null;
     const p = JSON.parse(raw) as Partial<Profile>;
     return {
-      id: "dev-mock",
+      // An optional id lets several stub members share a room (scripts/check-workspace-live.cjs).
+      id: p.id ?? "dev-mock",
       email: p.email ?? "dev@dormscape.us",
       username: p.username ?? null,
       auth_provider: p.auth_provider ?? "email",

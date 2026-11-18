@@ -1,7 +1,8 @@
 export type RoomSection = "room" | "shopping" | "halls" | "roommates";
 export type RoomActivity = { section: RoomSection; view: "2d" | "3d"; selected: string | null };
 export type RoomPresence = RoomActivity & { session: string; active: boolean; at: number };
-export type RoomCursor = { surface: string; x: number; y: number; session: string; at: number };
+/** `at` is the sender's clock when sent; `seq` counts that session's cursor messages. */
+export type RoomCursor = { surface: string; x: number; y: number; session: string; at: number; seq?: number };
 export const COLLABORATOR_COLORS = ["#304bff", "#a54813", "#168061", "#853fc4"];
 export function collaboratorColor(id: string, members?: string[]) {
   const index=members?[...members].sort().indexOf(id):-1;
@@ -17,7 +18,7 @@ export function readCursor(value: unknown): RoomCursor | null {
   return typeof c.surface === "string" && surfaces.test(c.surface) &&
     Number.isFinite(c.x) && Number.isFinite(c.y) && c.x >= 0 && c.y >= 0 && c.x <= 1 && c.y <= 1 &&
     typeof c.session === "string" && c.session.length <= 64 && Number.isFinite(c.at) ?
-    {surface:c.surface, x:c.x, y:c.y, session:c.session, at:c.at} : null;
+    {surface:c.surface, x:c.x, y:c.y, session:c.session, at:c.at, ...(Number.isSafeInteger(c.seq) ? {seq:c.seq} : {})} : null;
 }
 export function readPresence(value: unknown): RoomPresence | null {
   if (!value || typeof value !== "object") return null;

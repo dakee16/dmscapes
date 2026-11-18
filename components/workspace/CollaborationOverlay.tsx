@@ -48,7 +48,7 @@ export default function CollaborationOverlay({surface,projection,pins=[],dynamic
     {showCursors&&live?.status==="live"&&Object.entries(live.cursors).filter(([,cursor])=>cursor.surface===surface || (["plan","scene"].includes(surface)&&["plan","scene"].includes(cursor.surface))).map(([id,cursor])=>{
       const member=workspace.members.find(m=>m.user_id===id);if(!member||!live.peers[id]?.active)return null;
       const talking=voice?.participants.some(p=>p.id===id&&p.speaking&&!p.muted);
-      return <div key={id} className={s.remoteCursor} data-world-x={cursor.x} data-world-y={cursor.y} style={{...position(cursor.x,cursor.y),...personStyle(id,workspace.members)}} aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="currentColor" stroke="white" strokeWidth="1.6" strokeLinejoin="round"/></svg><span>{member.display_name}{talking&&<i className={s.cursorBars}><b/><b/><b/></i>}</span></div>;
+      return <div key={id} className={s.remoteCursor} data-cursor={id} data-world-x={cursor.x} data-world-y={cursor.y} style={{...position(cursor.x,cursor.y),...personStyle(id,workspace.members)}} aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="currentColor" stroke="white" strokeWidth="1.6" strokeLinejoin="round"/></svg><span>{member.display_name}{talking&&<i className={s.cursorBars}><b/><b/><b/></i>}</span></div>;
     })}
     {showPins&&pins.map(pin=>{
       const comments=workspace.comments?.filter(c=>c.target===`furniture:${pin.id}`&&!c.parent_id&&!c.resolved)??[];

@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import type { WorkspaceDetail } from "@/lib/workspace";
 import { WORKSPACE_MEMBER_LIMIT } from "@/lib/workspace";
 import type { RoomPresence } from "@/lib/workspace-collaboration";
@@ -19,6 +20,18 @@ function Switch({ label, on, onChange, disabled, hint }: { label: string; on: bo
   return <button type="button" role="switch" aria-checked={on} disabled={disabled} className={s.railSwitch} onClick={() => onChange(!on)} title={hint}>
     {label}<span className={s.switch} data-on={on} aria-hidden="true" />
   </button>;
+}
+
+/** With ?debug=cursors: how fast and how late other people's cursors arrive (receive time minus send time). */
+function CursorDebug() {
+  const live = useCollaboration(), stats = useRef(live?.stats); stats.current = live?.stats;
+  const [text, setText] = useState("");
+  useEffect(() => {
+    if (new URLSearchParams(location.search).get("debug") !== "cursors") return;
+    const timer = setInterval(() => { const v = stats.current?.(); setText(v ? `Cursors ${v.rate.toFixed(1)}/s · lag p50 ${v.p50} ms · p95 ${v.p95} ms` : "Cursors: waiting for someone to move"); }, 500);
+    return () => clearInterval(timer);
+  }, []);
+  return text ? <p className={s.railNote} data-testid="cursor-debug">{text}</p> : null;
 }
 
 /** The left rail beside the plan: what shows on it, and who's in the room. */
@@ -60,5 +73,6 @@ export default function RoomRail({ detail, userId, overlay, setOverlay, followin
     </ul>
     {enabled && live?.status === "offline" && <button type="button" className={s.railRetry} onClick={live.reconnect}>Reconnect live presence</button>}
     <p className={s.railNote}>Invitations use no credits. Guests never spend yours.</p>
+    <CursorDebug />
   </aside>;
 }

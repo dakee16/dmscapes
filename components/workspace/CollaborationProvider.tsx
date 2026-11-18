@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
-import type { RealtimeChannel } from "@supabase/supabase-js";
+import type { RealtimeChannel, SupabaseClient } from "@supabase/supabase-js";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { readCursor, readPresence, type RoomActivity, type RoomCursor, type RoomPresence } from "@/lib/workspace-collaboration";
 
@@ -12,8 +12,14 @@ type LiveState = {
   move: (surface: RoomCursor["surface"], x: number, y: number) => void;
   clear: () => void;
   reconnect: () => void;
+  /** Cursor arrivals over the last few seconds, for the ?debug=cursors readout. */
+  stats: () => { rate: number; p50: number; p95: number } | null;
 };
 const CollaborationContext = createContext<LiveState | null>(null);
+// Development-only test relay (lib/fake-realtime.ts). The condition is false in production builds, so it's never bundled there.
+const fakeRealtime: ((userId: string) => SupabaseClient) | null = process.env.NODE_ENV !== "production" && process.env.NEXT_PUBLIC_FAKE_REALTIME === "1"
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  ? require("@/lib/fake-realtime").fakeRealtimeClient : null;
 export const useCollaboration = () => useContext(CollaborationContext);
 
 export default function CollaborationProvider({id, epoch, enabled, userId, memberIds, onChange, children}: {
@@ -26,15 +32,16 @@ export default function CollaborationProvider({id, epoch, enabled, userId, membe
   const activity = useRef<RoomActivity>({section:"room",view:"2d",selected:null});
   const actions = useRef<{track:()=>void; send:(cursor:Omit<RoomCursor,"session"|"at">|null)=>void}>({track:()=>{},send:()=>{}});
   const changed = useRef(onChange); changed.current = onChange;
+  const arrivals = useRef<{at:number;lag:number}[]>([]);
   const membership = [...memberIds].sort().join(",");
   useEffect(() => {
     setPeers({}); setCursors({});
     if (!enabled) { setStatus("disabled"); return; }
-    const client = getBrowserClient();
+    const client = fakeRealtime ? fakeRealtime(userId) : getBrowserClient();
     if (!client || !epoch) { setStatus("offline"); return; }
     setStatus("connecting");
     const session = crypto.randomUUID(), channels:RealtimeChannel[] = [], live = new Set<string>();
-    let stopped=false, own:RealtimeChannel|undefined, lastActivity=Date.now(), lastTrack=0, lastSend=0;
+    let stopped=false, own:RealtimeChannel|undefined, lastActivity=Date.now(), lastTrack=0, lastSend=0, seq=0;
     let flush:ReturnType<typeof setTimeout>|undefined, refreshTimer:ReturnType<typeof setTimeout>|undefined;
     let pending:Omit<RoomCursor,"session"|"at">|null=null;
     const send = (cursor:typeof pending) => {
@@ -43,7 +50,7 @@ export default function CollaborationProvider({id, epoch, enabled, userId, membe
       const publish = () => {
         if (stopped || !own || !live.has(userId) || document.hidden) return;
         lastSend=Date.now();
-        void own.send({type:"broadcast",event:"cursor",payload:pending ? {...pending,session,at:lastSend} : {session,clear:true}}).catch(()=>{});
+        void own.send({type:"broadcast",event:"cursor",payload:pending ? {...pending,session,at:lastSend,seq:++seq} : {session,clear:true}}).catch(()=>{});
       };
       if (cursor === null || Date.now()-lastSend >= 65) publish();
       else flush=setTimeout(publish,65-(Date.now()-lastSend));
@@ -93,6 +100,7 @@ export default function CollaborationProvider({id, epoch, enabled, userId, membe
               if(stopped)return;
               const cursor=readCursor(payload);
               if(!cursor && payload?.clear!==true)return;
+              if(cursor){const now=Date.now();arrivals.current.push({at:now,lag:now-cursor.at});if(arrivals.current.length>300)arrivals.current.shift();}
               setCursors(previous=>{
                 const next={...previous};
                 if(cursor)next[uid]={...cursor,at:Date.now()};
@@ -133,5 +141,9 @@ export default function CollaborationProvider({id, epoch, enabled, userId, membe
   const move=useCallback((surface:string,x:number,y:number)=>actions.current.send({surface,x,y}),[]);
   const clear=useCallback(()=>actions.current.send(null),[]);
   const reconnect=useCallback(()=>setAttempt(n=>n+1),[]);
-  return <CollaborationContext.Provider value={{status,peers,cursors,updateActivity,move,clear,reconnect}}>{children}</CollaborationContext.Provider>;
+  const stats=useCallback(()=>{
+    const recent=arrivals.current.filter(a=>Date.now()-a.at<5000),lags=recent.map(a=>a.lag).sort((a,b)=>a-b);
+    return lags.length?{rate:recent.length/5,p50:lags[Math.floor(lags.length*.5)],p95:lags[Math.min(lags.length-1,Math.floor(lags.length*.95))]}:null;
+  },[]);
+  return <CollaborationContext.Provider value={{status,peers,cursors,updateActivity,move,clear,reconnect,stats}}>{children}</CollaborationContext.Provider>;
 }
