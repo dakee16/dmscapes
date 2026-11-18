@@ -221,6 +221,14 @@ export default function nextConfig(phase: string): NextConfig {
           source: "/rooms/:path*",
           headers: [{ key:"Permissions-Policy", value:"camera=(), microphone=(self), geolocation=(), browsing-topics=()" }],
         },
+        {
+          // The 3D studio's KTX2 transcoder worker (public/experience/vendor/basis/ktx2-worker.js). A worker loaded from its
+          // own URL runs under the policy sent with it, not the page's. The transcoder's Emscripten bindings build functions
+          // from strings, so this one script gets 'unsafe-eval'. It can load nothing (default-src 'none'); the page passes it
+          // the WebAssembly binary and the textures. Listed last, so this CSP replaces the site-wide one for these files.
+          source: "/experience/vendor/basis/:path*",
+          headers: [{ key: "Content-Security-Policy", value: "default-src 'none'; script-src 'self' 'unsafe-eval' 'wasm-unsafe-eval'" }],
+        },
       ];
     },
   };

@@ -3,7 +3,7 @@
 // every name they touch, keeps the ones three exports, and bundles only those from three's source.
 // Run after changing public/experience/*.js:  node scripts/build-three.mjs
 import { build } from "esbuild";
-import { copyFileSync, mkdirSync, readFileSync, statSync } from "node:fs";
+import { copyFileSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import * as THREE from "three";
 
@@ -129,3 +129,23 @@ const basis = join(root, "public/experience/vendor/basis");
 mkdirSync(basis, { recursive: true });
 for (const f of ["basis_transcoder.js", "basis_transcoder.wasm"]) copyFileSync(join(root, "node_modules/three/examples/jsm/libs/basis", f), join(basis, f));
 console.log("basis transcoder copied");
+// The transcoder's worker as a real file. KTX2Loader would make it from a blob: URL, which inherits the page's CSP, and the
+// transcoder's Emscripten bindings build functions from strings ('unsafe-eval'). Served from its own URL, the worker gets
+// its own policy (next.config.ts), so the page keeps its strict one. Assembled exactly as KTX2Loader.init() does.
+{
+  const { KTX2Loader } = await import("three/examples/jsm/loaders/KTX2Loader.js");
+  const fn = KTX2Loader.BasisWorker.toString();
+  const body = [
+    "/* constants */",
+    "let _EngineFormat = " + JSON.stringify(KTX2Loader.EngineFormat),
+    "let _EngineType = " + JSON.stringify(KTX2Loader.EngineType),
+    "let _TranscoderFormat = " + JSON.stringify(KTX2Loader.TranscoderFormat),
+    "let _BasisFormat = " + JSON.stringify(KTX2Loader.BasisFormat),
+    "/* basis_transcoder.js */",
+    readFileSync(join(basis, "basis_transcoder.js"), "utf8"),
+    "/* worker */",
+    fn.substring(fn.indexOf("{") + 1, fn.lastIndexOf("}")),
+  ].join("\n");
+  writeFileSync(join(basis, "ktx2-worker.js"), `/** three.js r${THREE.REVISION} KTX2Loader worker + Basis transcoder (MIT / Apache-2.0), built by scripts/build-three.mjs. */\n${body}`);
+  console.log(`ktx2 worker ${(statSync(join(basis, "ktx2-worker.js")).size / 1024).toFixed(0)} KB`);
+}

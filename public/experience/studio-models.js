@@ -169,10 +169,11 @@ export function footprint(root) {
  *   proportions, and its top is the piece's height.
  * - dorm: also used for the dorm's own furniture of that kind (otherwise only for pieces the student brings or buys).
  * - glow: a lamp; at night its whole surface glows softly, in its own colours.
+ * - even: scaled evenly, never stretched (a plant's leaves would pull apart).
  */
 export const LIBRARY = {
   fridge: { tint: 3.1, host: true, dorm: true }, microwave: { tint: 2.8, dorm: true }, chair: {}, "chair-dorm": {},
-  monitor: {}, speaker: {}, lounge: { tint: 5 }, ottoman: { tint: 4.2 }, shelf: { host: true }, plant: {},
+  monitor: {}, speaker: {}, lounge: { tint: 5 }, ottoman: { tint: 4.2 }, shelf: { host: true }, plant: { even: true },
   sofa: { tint: 3.3, dorm: true }, riser: { host: true }, fan: {}, organizer: {}, basket: {}, books: {},
   storage: { tint: 3 }, towels: { tint: 2.2 }, caddy: { tint: 3.1 }, trash: { tint: 2.8 }, hamper: { tint: 4.8 },
   "lamp-shade": { glow: true }, "lamp-task": { glow: true }, "lamp-mushroom": { glow: true }, "lamp-lava": { glow: true },
@@ -195,22 +196,42 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false,rende
   let ktx2=null;
   function ktx2Loader(){
     if(lite||!renderer||typeof window==="undefined")return Promise.resolve(null);
-    return ktx2??=import("./vendor/ktx2-loader.min.js").then(({KTX2Loader})=>new KTX2Loader().setTranscoderPath(BASIS_DIR).detectSupport(renderer)).catch(()=>null);
+    return ktx2??=import("./vendor/ktx2-loader.min.js").then(async({KTX2Loader})=>{
+      const k=new KTX2Loader().setTranscoderPath(BASIS_DIR).detectSupport(renderer);
+      // The transcoder's workers run from a real file (vendor/basis/ktx2-worker.js, built by scripts/build-three.mjs), not the
+      // blob: URL three makes. Its Emscripten bindings build functions from strings, which the site's CSP forbids; a worker
+      // served from its own URL gets its own, looser policy (next.config.ts), and the page's stays as strict as it was.
+      let fail;const broken=new Promise(r=>{fail=()=>r(false);});
+      k.transcoderPending=fetch(BASIS_DIR+"basis_transcoder.wasm").then(r=>{if(!r.ok)throw new Error("transcoder "+r.status);return r.arrayBuffer();}).then(binary=>{
+        k.workerSourceURL=BASIS_DIR+"ktx2-worker.js";k.transcoderBinary=binary;
+        k.workerPool.setWorkerCreator(()=>{const worker=new Worker(k.workerSourceURL),copy=k.transcoderBinary.slice(0);
+          worker.addEventListener("error",fail);worker.postMessage({type:"init",config:k.workerConfig,transcoderBinary:copy},[copy]);return worker;});
+      },fail);
+      // One small texture has to transcode before anything uses KTX2. If a worker fails (a blocked script, no WebAssembly) or
+      // nothing arrives in 30 s, KTX2 is off for this visit: WebP textures and the -lite models instead, never untextured ones.
+      const probe=await Promise.race([k.loadAsync(TEXTURE_DIR+"fabric-detail-n.ktx2").then(t=>{t.dispose();return true;},()=>false),broken,new Promise(r=>setTimeout(()=>r(false),30000))]);
+      if(!probe){k.dispose();return null;}
+      return k;
+    }).catch(()=>null);
   }
+  // Until its file arrives, a texture is a neutral 1 px stand-in (white for colour, flat for normals), so a surface shows its own
+  // colour instead of black.
+  const pixel=color=>{const c=document.createElement("canvas");c.width=c.height=1;const x=c.getContext("2d");x.fillStyle=color;x.fillRect(0,0,1,1);return c;};
+  let blank=null;
   /**
    * A texture by name from textures/: one object from the start (materials can hold it before it loads), filled in place,
-   * either with the .ktx2's compressed mip levels or, failing that, the .webp image. It's never uploaded before it's filled,
-   * so becoming a compressed texture at that point is safe.
+   * either with the .ktx2's compressed mip levels or, failing that, the .webp image. Filling disposes the stand-in's GPU copy and
+   * gives the texture a new source, so it uploads fresh in its new format.
    */
   function loadTexture(name,srgb,onLoad){
-    const t=new T.Texture();if(srgb)t.colorSpace=T.SRGBColorSpace;
-    const done=()=>{t.needsUpdate=true;onLoad?.(t);};
-    const webp=()=>new T.ImageLoader().load(`${TEXTURE_DIR}${name}.webp`,image=>{if(disposed)return;t.isCompressedTexture=false;t.image=image;done();});
+    if(typeof document==="undefined"){const t=new T.Texture();return t;}
+    blank??={color:pixel("#ffffff"),normal:pixel("#8080ff")};
+    const normal=!srgb&&/-n$/.test(name),t=new T.Texture(normal?blank.normal:blank.color);if(srgb)t.colorSpace=T.SRGBColorSpace;t.needsUpdate=true;
+    const fill=(image,props)=>{if(disposed)return;t.dispose();Object.assign(t,props);t.source=new T.TextureSource(image);t.needsUpdate=true;onLoad?.(t);};
+    const webp=()=>new T.ImageLoader().load(`${TEXTURE_DIR}${name}.webp`,image=>fill(image,{isCompressedTexture:false,mipmaps:[],generateMipmaps:true,flipY:true,minFilter:T.LinearMipmapLinearFilter,magFilter:T.LinearFilter,format:T.RGBAFormat,type:T.UnsignedByteType}));
     ktx2Loader().then(k=>{
       if(!k){webp();return;}
-      k.load(`${TEXTURE_DIR}${name}.ktx2`,c=>{if(disposed)return;
-        Object.assign(t,{isCompressedTexture:true,mipmaps:c.mipmaps,format:c.format,type:c.type,colorSpace:srgb?T.SRGBColorSpace:T.NoColorSpace,generateMipmaps:false,flipY:false,minFilter:c.minFilter,magFilter:c.magFilter});
-        t.image=c.image;done();},undefined,webp);
+      k.load(`${TEXTURE_DIR}${name}.ktx2`,c=>fill(c.image,{isCompressedTexture:true,mipmaps:c.mipmaps,format:c.format,type:c.type,generateMipmaps:false,flipY:false,minFilter:c.minFilter,magFilter:c.magFilter}),undefined,webp);
     });
     return t;
   }
@@ -222,9 +243,10 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false,rende
     if(library.has(kind)||typeof window==="undefined")return;
     library.set(kind,"loading");
     // Desktop models keep their textures as KTX2 (compressed in video memory); phones load the WebP -lite files.
+    // Without KTX2 (phones, or where it can't run) the -lite files, whose textures are WebP.
     loader??=Promise.all([import("./vendor/gltf-loader.min.js"),ktx2Loader()]).then(([{GLTFLoader,MeshoptDecoder},ktx2])=>{
-      const l=new GLTFLoader();l.setMeshoptDecoder(MeshoptDecoder);if(ktx2)l.setKTX2Loader(ktx2);return l;});
-    loader.then(l=>l.loadAsync(`${MODEL_DIR}${kind}${lite?"-lite":""}.glb`)).then(gltf=>{
+      const l=new GLTFLoader();l.setMeshoptDecoder(MeshoptDecoder);if(ktx2)l.setKTX2Loader(ktx2);return {l,suffix:ktx2?"":"-lite"};});
+    loader.then(({l,suffix})=>l.loadAsync(`${MODEL_DIR}${kind}${suffix}.glb`)).then(gltf=>{
       if(disposed)return;
       const scene=gltf.scene,spec=LIBRARY[kind];scene.traverse(o=>{if(!o.isMesh)return;o.material.envMap=null;o.material.metalness=0;o.userData.library=true;
         // A lamp glows in its own colours at night (its map doubles as the emissive map), and not at all by day.
@@ -241,8 +263,11 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false,rende
     if(typeof entry!=="object")return null;
     // Fitted inside the piece's box, so it never pokes past its plan footprint: scaled evenly to fit, then stretched toward
     // each side by at most a quarter, so books on a shelf or a chair's back don't turn wide and squat. Hosts fill it exactly.
+    // Plants keep their own proportions (stretched, the leaves pull apart up the stem): one scale, up to the piece's height,
+    // the leaves reaching a little past the pot's footprint.
     const model=entry.scene.clone(true),{size}=entry,fit=[w/size.x,h/size.y,d/size.z],even=Math.min(...fit);
-    model.scale.set(...(spec.host?fit:fit.map(s=>Math.min(s,even*1.25))));
+    if(spec.even)model.scale.setScalar(Math.min(fit[1],1.35*Math.min(fit[0],fit[2])));
+    else model.scale.set(...(spec.host?fit:fit.map(s=>Math.min(s,even*1.25))));
     if(spec.tint&&f.material_color){
       const key="lib-tint:"+name+":"+f.material_color;
       model.traverse(o=>{if(!o.isMesh)return;
@@ -654,7 +679,8 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false,rende
         const r=Math.min(w,d)/2,potH=Math.min(h*.36,1.05);
         if(variant==="disco")oval(g,0,h*.2,0,w*.35,h*.2,d*.35,metal);
         else{cyl(g,r*.55,r*.42,potH,terracotta,0,potH/2,0);cyl(g,r*.5,r*.5,.04,soil,0,potH-.01,0);}
-        leaves(g,r*.92,potH,h,Math.max(18,Math.min(60,Math.round(r*r*60))));break;
+        // More leaves for a taller plant, so a floor plant's canopy stays full instead of thinning out up the stem.
+        leaves(g,r*.92,potH,h,Math.max(18,Math.min(110,Math.round(r*r*60*Math.max(1,(h-potH)/1.6)))));break;
       }
       case "mirror":{
         // A thin frame round real mirror glass; its back against the wall (or standing on the floor), facing +z.
@@ -884,7 +910,7 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false,rende
   function setNight(on){if(night===on)return;night=on;for(const m of glows)m.emissiveIntensity=on?2.6:.55;for(const m of libGlows)m.emissiveIntensity=on?.85:0;}
   /** The room's reflection map and how strongly glass, mirrors and metal show it. */
   function setEnv(texture,intensity){env=texture;envI=intensity;for(const m of shiny){m.envMap=texture;m.envMapIntensity=intensity;}}
-  function dispose(){disposed=true;for(const e of library.values())if(typeof e==="object")e.scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();for(const v of Object.values(o.material))if(v?.isTexture)v.dispose();o.material.dispose();}});geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());fabric.dispose();}
+  function dispose(){disposed=true;for(const e of library.values())if(typeof e==="object")e.scene.traverse(o=>{if(o.isMesh){o.geometry.dispose();for(const v of Object.values(o.material))if(v?.isTexture)v.dispose();o.material.dispose();}});geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());textures.forEach(t=>t.dispose());fabric.dispose();ktx2?.then(k=>k?.dispose());}
   /** The room view mirrors show (the scene renders it), from `at`, and the room's bounds to project it onto. */
   function setMirrorView(texture,at,min,max){mirrorUniforms.uCube.value=texture;mirrorUniforms.uCubePos.value.copy(at);mirrorUniforms.uBoxMin.value.copy(min);mirrorUniforms.uBoxMax.value.copy(max);mirrorUniforms.uMirrorOn.value=1;}
   /** Wood veneer of this colour (a door's leaf), with its grain. */
