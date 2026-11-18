@@ -1,7 +1,5 @@
 import type { MetadataRoute } from "next";
 import { SITEMAP_GROUPS, sitemapEntries } from "@/lib/sitemaps";
-import { recentGallery } from "@/lib/gallery";
-import { SITE_URL } from "@/lib/seo";
 
 /**
  * One sitemap per group, at /sitemaps/sitemap/pages.xml, …/colleges.xml,
@@ -13,16 +11,10 @@ export async function generateSitemaps() {
   return SITEMAP_GROUPS.map((id) => ({ id }));
 }
 
-// /gallery joins "pages" once a layout is shared (until then the page is noindex), dated
-// by the newest one; re-checked hourly, like the hall pages' galleries.
-export const revalidate = 3600;
+// /gallery stays out: the page sets its own noindex from its cached render, and the sitemap's
+// separate check drifted from it (the live sitemap listed /gallery while the page was noindex).
+// Add it back only from the same source as the page's robots tag.
 
 export default async function sitemap({ id }: { id: Promise<string> }): Promise<MetadataRoute.Sitemap> {
-  const group = await id;
-  const entries = sitemapEntries(group);
-  if (group !== "pages") return entries;
-  const [newest] = await recentGallery(1);
-  return newest
-    ? [...entries, { url: `${SITE_URL}/gallery`, lastModified: newest.sharedAt }]
-    : entries;
+  return sitemapEntries(await id);
 }

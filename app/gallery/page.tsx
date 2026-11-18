@@ -123,7 +123,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const rooms = await latest();
   return {
     ...pageMetadata({ title: "Dorm room gallery: real layouts by hall", description: DESCRIPTION, path: PATH }),
-    // Nothing to show yet: keep the empty page out of search (the sitemap leaves it out too).
+    // Nothing to show yet: keep the empty page out of search (the sitemap always leaves it out: app/sitemaps/sitemap.ts).
     ...(rooms.length ? {} : { robots: { index: false, follow: true } }),
   };
 }
