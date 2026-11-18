@@ -23,8 +23,8 @@ import Wordmark from "@/components/site/Wordmark";
 import Modal from "@/components/site/Modal";
 import BrandLoader from "@/components/site/BrandLoader";
 import { useStudioUI } from "@/components/studio-ui/StudioUI";
-import { CameraIcon, ChevronLeft, CloseIcon, ExpandIcon, LowerIcon, MinusIcon, MoveIcon, PencilIcon, PlusIcon, RaiseIcon, RedoIcon, RotateIcon, SwapIcon, TrashIcon, UndoIcon } from "@/components/studio-ui/icons";
-import RoomScene, {type RoomSceneHandle,type CameraView} from "./RoomScene";
+import { CameraIcon, ChevronLeft, CloseIcon, DownloadIcon, ExpandIcon, LowerIcon, MinusIcon, MoveIcon, PencilIcon, PhotoIcon, PlusIcon, RaiseIcon, RedoIcon, RotateIcon, SwapIcon, TrashIcon, UndoIcon } from "@/components/studio-ui/icons";
+import RoomScene, {type RoomSceneHandle,type CameraView,type PhotoJob,type PhotoProgress,type PhotoResult} from "./RoomScene";
 import WalkIn from "./WalkIn";
 import { BeddingSize, FINISH_NOTE, FloorSwatches, ItemInspector, LightSwitch, RoomFinishes } from "./StudioPanels";
 import ActivePill from "@/components/ds/ActivePill";
@@ -55,6 +55,9 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   const [panel,setPanel]=useState<Panel>(()=>usePlannerStore.getState().plannerView==="3d"?"style":"shop"),[snap,setSnap]=useState(true),[walls,setWalls]=useState("auto"),[moveMode,setMoveMode]=useState(false);
   const [camera,setCamera]=useState<CameraView>("room"),[expanded,setExpanded]=useState(false),[mobileOpen,setMobileOpen]=useState(false),[resetConfirm,setResetConfirm]=useState(false);
   const [renaming,setRenaming]=useState(false),[walker,setWalker]=useState<SVGGElement|null>(null);
+  // An HD photo: its progress while it renders (shown in the bar under the room), then the finished image in a dialog.
+  const [photo,setPhoto]=useState<PhotoProgress|null>(null),[photoResult,setPhotoResult]=useState<PhotoResult|null>(null);
+  const photoJob=useRef<PhotoJob|null>(null);
   const scene=useRef<RoomSceneHandle>(null),root=useRef<HTMLDivElement>(null),closeRef=useRef<HTMLButtonElement>(null);
   const sheetDrag=useRef<{y:number;h:number;moved:boolean;v:number;lastY:number;lastT:number}|null>(null),sheetCustom=useRef<{sheet:string;px:number}|null>(null);
   const {profile,loading}=useAuth(),{openUpgrade}=useUpgrade();
@@ -139,9 +142,31 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   /** Downloads a 2x PNG of the room, without the selection or any controls. */
   function snapshot(){
     const url=scene.current?.exportPNG(2);if(!url)return;
-    const a=document.createElement("a");a.href=url;a.download=`${(named??dorm?.name??"dormscape-room").replace(/[^\w]+/g,"-").replace(/^-|-$/g,"").toLowerCase()||"dormscape-room"}-3d.png`;a.click();
+    const a=document.createElement("a");a.href=url;a.download=`${fileBase()}-3d.png`;a.click();
     track("studio_snapshot",{lighting:studioSettings(room.studio).lighting,camera});
   }
+  const fileBase=()=>(named??dorm?.name??"dormscape-room").replace(/[^\w]+/g,"-").replace(/^-|-$/g,"").toLowerCase()||"dormscape-room";
+  /** Renders an HD photo of the current view (path traced on desktop), then offers it in a dialog. */
+  function hdPhoto(){
+    if(photoJob.current)return;
+    const job=scene.current?.renderPhoto(setPhoto);if(!job)return;
+    const started=performance.now(),props={lighting:studioSettings(room.studio).lighting,camera};
+    photoJob.current=job;setPhoto({stage:"waiting",progress:0});setMoveMode(false);
+    void job.done.then(result=>{
+      if(photoJob.current===job)photoJob.current=null;setPhoto(null);
+      track("studio_hd_photo",{...props,outcome:result?"done":"cancelled",traced:result?.traced??false,width:result?.width,seconds:Math.round((performance.now()-started)/1000)});
+      if(result)setPhotoResult(old=>{if(old)URL.revokeObjectURL(old.url);return result;});
+    });
+  }
+  function closePhoto(){setPhotoResult(old=>{if(old)URL.revokeObjectURL(old.url);return null;});}
+  function downloadPhoto(){
+    if(!photoResult)return;const a=document.createElement("a");a.href=photoResult.url;a.download=`${fileBase()}-hd.jpg`;a.click();
+    track("studio_hd_photo_download",{traced:photoResult.traced,width:photoResult.width});
+  }
+  // A photo in progress stops if the room changes, the 3D view closes or the studio unmounts.
+  const furniture=usePlannerStore(st=>st.furniture);
+  useEffect(()=>()=>{photoJob.current?.cancel();},[furniture,room,view]);
+  useEffect(()=>()=>{setPhotoResult(old=>{if(old)URL.revokeObjectURL(old.url);return null;});},[]);
   function toggleMove(){if(!allowed3D){openUpgrade("room-3d");return;}setView("3d");if(camera==="inside")preset("room");setMoveMode(v=>!v);setMobileOpen(false);}
 
   // Title: the plan's own name once renamed, else the hall and room type.
@@ -192,7 +217,13 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   </span>;
   // A selected door or window, a reset prompt or an error: shown in the bar under the room (or the plan), never over it.
   const opening=selectedOpening!==null&&!preview?outline.openings[selectedOpening]:undefined;
-  const notice=resetConfirm?<div className={s.barNotice} role="group" aria-label="Confirm layout reset"><p>Restore the original furniture arrangement? You can undo this.</p><button type="button" className={s.inkBtn} onClick={()=>{onReset();setResetConfirm(false);}}>Restore layout</button><button type="button" onClick={()=>setResetConfirm(false)}>Keep my changes</button></div>
+  const photoLabel=!photo?"":photo.stage==="tracing"?`Tracing light · ${photo.samples??0} of ${photo.total??0} passes`
+    :photo.stage==="preparing"?"Setting up the light":photo.stage==="finishing"?"Finishing the photo":photo.stage==="raster"?"Rendering in HD":"Getting the room ready";
+  const notice=photo?<div className={s.barNotice} role="group" aria-label="HD photo">
+      <p className={s.photoStatus} role="status"><span>{photoLabel}</span><progress max={1} value={photo.stage==="waiting"||photo.stage==="preparing"?undefined:photo.progress} aria-label="Progress"/></p>
+      {photo.stage==="tracing"&&<button type="button" className={s.inkBtn} onClick={()=>photoJob.current?.finish()}>Finish now</button>}
+      <button type="button" onClick={()=>photoJob.current?.cancel()}>Cancel</button></div>
+    :resetConfirm?<div className={s.barNotice} role="group" aria-label="Confirm layout reset"><p>Restore the original furniture arrangement? You can undo this.</p><button type="button" className={s.inkBtn} onClick={()=>{onReset();setResetConfirm(false);}}>Restore layout</button><button type="button" onClick={()=>setResetConfirm(false)}>Keep my changes</button></div>
     :opening||openingError?<>
       {openingError&&<p className={s.openingError} role="status">{openingError}</p>}
       {opening&&<div className={s.openingActions} role="group" aria-label="Selected opening">
@@ -281,8 +312,9 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         {view==="3d"&&!compact&&<div className={s.sceneBar} data-edge="top">
           <div className={s.vibeChip} title="Your vibe"><span aria-hidden="true">{styleFor(style,college?.id).palette.slice(0,4).map((c,i)=><i key={i} style={{background:c}}/>)}</span>{designDisplayName(style,customVibe)}</div>
           <span className={s.barSpacer} aria-hidden="true"/>
-          <div inert={preview}><LightSwitch room={room} className={s.lightSwitch}/></div>
-          <button type="button" className={s.roundBtn} aria-label="Snapshot" title="Download a snapshot (PNG)" disabled={preview} onClick={snapshot}><CameraIcon size={17}/></button>
+          <div inert={preview||!!photo}><LightSwitch room={room} className={s.lightSwitch}/></div>
+          <button type="button" className={s.pill} title="Render a high-resolution photo with realistic light" disabled={preview||!!photo} onClick={hdPhoto}><PhotoIcon size={17}/>HD photo</button>
+          <button type="button" className={s.roundBtn} aria-label="Snapshot" title="Download a snapshot (PNG)" disabled={preview||!!photo} onClick={snapshot}><CameraIcon size={17}/></button>
           <button type="button" className={s.roundBtn} aria-label={expanded?"Exit full screen":"Full screen"} title={expanded?"Exit full screen":"Full screen"} onClick={fullScreen}>{expanded?<CloseIcon size={16}/>:<ExpandIcon size={16}/>}</button>
         </div>}
         <div className={s.renderArea}>
@@ -294,7 +326,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         </div>
         {view==="3d"&&!compact&&<div className={s.sceneBar} data-edge="bottom">
           {walking?<WalkIn room={room} items={visibleFurniture(items,hidden,excluded)} onBack={()=>preset("room")} onWalker={setWalker} onWalk={input=>scene.current?.walk(input)}/>:<>
-            <div className={s.cameraBar} role="group" aria-label="Camera controls" inert={preview}>
+            <div className={s.cameraBar} role="group" aria-label="Camera controls" inert={preview||!!photo}>
               {CAMERAS.map(([key,label])=><button key={key} type="button" aria-pressed={camera===key} title={camera===key?`Recenter ${label}`:label} onClick={()=>preset(key)}>{label}</button>)}
               <span className={s.separator} aria-hidden="true"/>
               <button type="button" aria-label="Zoom out" onClick={()=>scene.current?.zoom(1.15)}><MinusIcon size={16}/></button>
@@ -315,10 +347,11 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
       {view==="3d"&&compact&&<section className={s.phoneSheet} aria-label="Room controls" inert={preview}>
         {walking?<WalkIn room={room} items={visibleFurniture(items,hidden,excluded)} onBack={()=>preset("room")} onWalker={setWalker} onWalk={input=>scene.current?.walk(input)}/>:<>
           <div className={s.sheetCamera}>
-            <div className={s.cameraBar} role="group" aria-label="Camera controls">
+            <div className={s.cameraBar} role="group" aria-label="Camera controls" inert={!!photo}>
               {CAMERAS.map(([key,label])=><button key={key} type="button" aria-pressed={camera===key} title={camera===key?`Recenter ${label}`:label} onClick={()=>preset(key)}>{label}</button>)}
             </div>
-            <button type="button" className={s.roundBtn} aria-label="Snapshot" title="Download a snapshot (PNG)" onClick={snapshot}><CameraIcon size={17}/></button>
+            <button type="button" className={s.roundBtn} aria-label="HD photo" title="Render a high-resolution photo" disabled={!!photo} onClick={hdPhoto}><PhotoIcon size={17}/></button>
+            <button type="button" className={s.roundBtn} aria-label="Snapshot" title="Download a snapshot (PNG)" disabled={!!photo} onClick={snapshot}><CameraIcon size={17}/></button>
             <button type="button" className={s.roundBtn} aria-label={expanded?"Exit full screen":"Full screen"} onClick={fullScreen}>{expanded?<CloseIcon size={16}/>:<ExpandIcon size={16}/>}</button>
           </div>
           {notice?<div className={s.barNoticeWrap}>{notice}</div>
@@ -373,6 +406,15 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         </div>}
       </aside>
     </Body>
+    {photoResult&&<Modal role="dialog" aria-modal="true" aria-labelledby="hd-photo-title" className={s.photoModal} onKeyDown={e=>{if(e.key==="Escape"){e.stopPropagation();closePhoto();}}}><div>
+      {/* A blob URL made in the browser, so a plain img (next/image can't optimise it). */}
+      <img src={photoResult.url} alt={`HD photo of ${title}`} width={photoResult.width} height={photoResult.height}/>
+      <div className={s.photoFoot}>
+        <p><strong id="hd-photo-title">Your HD photo</strong><span>{photoResult.width} × {photoResult.height}{photoResult.traced?" · Path-traced light":""}</span></p>
+        <button type="button" onClick={closePhoto}>Close</button>
+        <button type="button" className={s.inkBtn} onClick={downloadPhoto} autoFocus><DownloadIcon size={16}/>Download</button>
+      </div>
+    </div></Modal>}
     {editingRoom&&isPaid(profile)&&<Modal role="dialog" aria-modal="true" aria-label="Edit room shape" className={s.geometryModal} onKeyDown={e=>{if(e.key==="Escape"){e.stopPropagation();setEditingRoom(false);}}}><div><RoomDrawCanvas initialRoom={room} furniture={items} onCancel={()=>setEditingRoom(false)} onComplete={result=>{usePlannerStore.getState().updateRoomGeometry(result.outline,result.origin);setEditingRoom(false);}}/></div></Modal>}
   </div>;
 

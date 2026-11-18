@@ -35,6 +35,27 @@ function keepImports(file) {
 }
 for (const file of ["loaders/GLTFLoader.js", "loaders/KTX2Loader.js", "utils/BufferGeometryUtils.js", "utils/SkeletonUtils.js",
   "postprocessing/EffectComposer.js", "postprocessing/RenderPass.js", "postprocessing/GTAOPass.js", "postprocessing/OutputPass.js"]) keepImports(file);
+// The HD photo's path tracer (vendor/pathtracer.min.js, loaded on desktop only when someone asks for an HD photo) is built
+// first with three left external, and every name its output imports from three is kept.
+const ptOut = join(root, "public/experience/vendor/pathtracer.min.js");
+await build({
+  stdin: {
+    contents: `export { WebGLPathTracer, GradientEquirectTexture, DenoiseMaterial } from "three-gpu-pathtracer";\nexport { FullScreenQuad } from "three/examples/jsm/postprocessing/Pass.js";`,
+    resolveDir: root,
+    loader: "js",
+  },
+  bundle: true,
+  format: "esm",
+  minify: true,
+  target: "es2020",
+  legalComments: "none",
+  plugins: [{ name: "three-external", setup(b) { b.onResolve({ filter: /^three$/ }, () => ({ path: "./three.module.min.js", external: true })); } }],
+  banner: { js: `/** three-gpu-pathtracer + three-mesh-bvh (MIT, Garrett Johnson), FullScreenQuad from three.js r${THREE.REVISION} (MIT), built by scripts/build-three.mjs. */` },
+  outfile: ptOut,
+});
+for (const [, list] of readFileSync(ptOut, "utf8").matchAll(/import\s*\{([^}]*)\}\s*from\s*["']\.\/three\.module\.min\.js["']/g))
+  for (const name of list.split(",")) if (name.trim()) names.add(name.trim().split(/\s+as\s+/)[0]);
+console.log(`pathtracer ${(statSync(ptOut).size / 1024).toFixed(0)} KB`);
 const used = [...names].filter((name) => name in THREE).sort();
 
 const out = join(root, "public/experience/vendor/three.module.min.js");

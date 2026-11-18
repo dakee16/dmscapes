@@ -84,6 +84,8 @@ export type AnalyticsEvent =
   | "drawn_room_reused"
   // Pro 3D studio
   | "studio_snapshot"
+  | "studio_hd_photo"
+  | "studio_hd_photo_download"
   // Hall Finder (design-handoff/hall-finder/plan.md Analytics)
   | "hall_finder_started"
   | "finder_place_added"

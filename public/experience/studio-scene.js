@@ -187,7 +187,7 @@ export function createStudioScene(container, options) {
     ring.position.set(m.group.position.x,.09,m.group.position.z);ring.visible=true;
   }
   function frame(time){
-    raf=0;if(disposed||document.hidden)return;let more=false;
+    raf=0;if(disposed||document.hidden||photo?.frozen)return;let more=false;
     if(tween){const q=Math.min(1,(time-tween.start)/400),t=1-Math.pow(1-q,3);
       angle=tween.a+(tween.toA-tween.a)*t;polar=tween.p+(tween.toP-tween.p)*t;radius=tween.r+(tween.toR-tween.r)*t;
       target.copy(tween.from).lerp(tween.to,t);if(q===1)tween=null;else more=true;}
@@ -487,6 +487,185 @@ export function createStudioScene(container, options) {
     scene.traverse(o=>{if(!o.visible||!o.isMesh)return;if(o===ring||[o.material].flat().some(x=>x.transparent||x===viewMat)){o.visible=false;hidden.push(o);}});
     return hidden;
   }
+  // ---------- HD photo ----------
+  // A still well beyond the screen's resolution: 2560 px on its long side (1920 on phones). First a supersampled raster: the
+  // room as you see it, drawn several times with the camera nudged by a fraction of a pixel and averaged (AO included on
+  // desktop), so every edge is clean. Then, on desktop, a path tracer (three-gpu-pathtracer, loaded only now) renders the same
+  // view with real light: sun through the window, light bouncing between walls, floor and furniture, soft contact shadows,
+  // true mirror and glass reflections. It refines in the canvas a tile at a time so the page stays responsive, and its
+  // exposure is matched to the raster's, so the photo reads as the room you planned. The frame loop pauses while it runs;
+  // touching the canvas, resizing it or closing the studio stops it.
+  const PHOTO_LONG=LOW?1920:2560,PHOTO_SAMPLES=192;let photo=null;
+  const nextFrame=()=>new Promise(r=>requestAnimationFrame(()=>r()));
+  const halton=(i,b)=>{let f=1,r=0;while(i>0){f/=b;r+=f*(i%b);i=Math.floor(i/b);}return r;};
+  /** The corner mark every exported image carries. */
+  function stamp(out){
+    const ctx=out.getContext("2d"),fs=Math.max(14,out.width*.016);ctx.font="600 "+fs+"px system-ui";const text="dormscape.us · Room concept",tw=ctx.measureText(text).width;
+    ctx.fillStyle="#fafaf8";ctx.fillRect(out.width-tw-fs*4.3,out.height-fs*3,tw+fs*3.8,fs*2.2);
+    if(brandMark.complete&&brandMark.naturalWidth)ctx.drawImage(brandMark,out.width-tw-fs*3.9,out.height-fs*2.8,fs*1.8,fs*1.8);
+    ctx.fillStyle="#2b4eff";ctx.fillText(text,out.width-tw-fs*1.3,out.height-fs*1.5);
+  }
+  /** A small copy of an image's pixels, for comparing exposure. */
+  function thumb(src){const s=document.createElement("canvas");s.width=96;s.height=Math.max(1,Math.round(96*src.height/src.width));
+    const c=s.getContext("2d",{willReadFrequently:true});c.drawImage(src,0,0,s.width,s.height);return c.getImageData(0,0,s.width,s.height).data;}
+  const linear=v=>Math.pow(v/255,2.2),luma=(d,i)=>.2126*linear(d[i])+.7152*linear(d[i+1])+.0722*linear(d[i+2]);
+  /**
+   * Starts an HD photo. Returns {done, finish, cancel}: `done` resolves to {url, width, height, traced} (a JPEG blob URL the
+   * caller revokes) or null if it was cancelled; `finish()` ends the path tracing early and keeps what it has.
+   * onProgress gets {stage: "waiting" | "raster" | "preparing" | "tracing" | "finishing", progress (0–1), samples, total}.
+   */
+  function renderPhoto({onProgress,long=PHOTO_LONG,samples=PHOTO_SAMPLES,trace=!LOW}={}){
+    photo?.cancel();
+    const session={frozen:false,stopped:false,finishing:false,cancel(){session.stopped=true;},finish(){session.finishing=true;}};photo=session;
+    const progress=p=>{try{onProgress?.(p);}catch{}};
+    const restore=[];
+    const done=(async()=>{
+      // The bake, the room view and (on desktop) the AO passes finish first, so the photo starts from the settled room.
+      progress({stage:"waiting",progress:0});
+      if(!LOW&&!post)loadPost();
+      for(let i=0;i<160&&!session.stopped&&!(data&&bake.ready&&!mirrorDirty&&!kit.loading()&&(LOW||post));i++){request();await new Promise(r=>setTimeout(r,60));}
+      if(session.stopped||disposed||!data)return null;
+      session.frozen=true;cancelAnimationFrame(raf);raf=0;
+      try{return await shoot(session,progress,restore,{long,samples,trace});}
+      catch(e){console.warn("HD photo failed",e);return null;}
+      finally{for(const f of restore.reverse())try{f();}catch{}if(photo===session)photo=null;if(!disposed)request();}
+    })();
+    return {done,finish:()=>session.finish(),cancel:()=>session.cancel()};
+  }
+  async function shoot(session,progress,restore,{long,samples,trace}){
+    const before=renderer.getPixelRatio(),exposure=renderer.toneMappingExposure,bg=(mode==="inside"?ceiling:paper).clone();
+    const extras=[marker,guides,ring,openingGhost].filter(o=>o.visible);for(const o of extras)o.visible=false;
+    restore.push(()=>{for(const o of extras)o.visible=true;camera.clearViewOffset();renderer.setRenderTarget(null);renderer.toneMappingExposure=exposure;
+      if(!disposed){renderer.setPixelRatio(before);renderer.setSize(width,height,false);sizePost();}});
+    const max=Math.min(renderer.capabilities.maxTextureSize,8192);
+    renderer.setPixelRatio(Math.min(long,max)/Math.max(width,height));renderer.setSize(width,height,false);sizePost();
+    seatRiders();cameraUpdate();camera.updateMatrixWorld();renderer.setClearColor(bg,1);
+    // 1. The supersampled raster.
+    const W=canvas.width,H=canvas.height,raster=document.createElement("canvas");raster.width=W;raster.height=H;const rc=raster.getContext("2d");
+    const passes=LOW?4:8;
+    for(let i=0;i<passes;i++){
+      if(session.stopped)return null;
+      camera.setViewOffset(W,H,halton(i+1,2)-.5,halton(i+1,3)-.5,W,H);
+      if(post){post.gtao.blendIntensity=AO_STRENGTH;post.composer.render();}else renderer.render(scene,camera);
+      rc.globalAlpha=1/(i+1);rc.drawImage(canvas,0,0);
+      progress({stage:"raster",progress:(i+1)/passes});await nextFrame();
+    }
+    camera.clearViewOffset();rc.globalAlpha=1;
+    // The raster stays on the canvas while the path tracer gets ready.
+    if(!trace||session.finishing)return finishPhoto(raster,false,session);
+    // 2. The path tracer.
+    progress({stage:"preparing",progress:0});await nextFrame();
+    const m=await import("./vendor/pathtracer.min.js");
+    if(session.stopped)return null;
+    const textures=prepareTrace(m,restore);
+    const pt=new m.WebGLPathTracer(renderer);restore.push(()=>pt.dispose());
+    // Six bounces carry the light round the room. Keep the default transmissive bounces: with too few dimensions in all
+    // (bounces + transmissive + 5 under 16 or so) the tracer's stratified samples repeat and the image never converges.
+    Object.assign(pt,{renderDelay:0,minSamples:1,fadeDuration:0,rasterizeScene:false,bounces:6,transmissiveBounces:10,filterGlossyFactor:.5});
+    // Every texture becomes a layer of one array at a single size: about 128 MB in all, between 512 and 1024 px a side.
+    const side=Math.max(512,Math.min(1024,Math.floor(Math.sqrt(32e6/Math.max(1,textures))/128)*128));
+    pt.tiles.set(3,3);pt.textureSize.set(side,side);
+    // Show the samples over the background, tone mapped like the raster. The tracer's samples carry straight alpha (the
+    // denoised image premultiplied). Texels are fetched, not filtered: float textures can't be filtered on every GPU, and
+    // the image is drawn 1:1 anyway.
+    const shown=new m.FullScreenQuad(new T.ShaderMaterial({uniforms:{map:{value:null}},transparent:true,depthTest:false,depthWrite:false,blending:T.CustomBlending,
+      blendSrc:T.SrcAlphaFactor,blendDst:T.OneMinusSrcAlphaFactor,blendSrcAlpha:T.OneFactor,blendDstAlpha:T.OneMinusSrcAlphaFactor,
+      vertexShader:"varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}",
+      fragmentShader:"uniform sampler2D map;varying vec2 vUv;void main(){gl_FragColor=texelFetch(map,ivec2(vUv*vec2(textureSize(map,0))),0);\n#include <tonemapping_fragment>\n#include <colorspace_fragment>\n}"}));
+    restore.push(()=>{shown.material.dispose();shown.dispose();});
+    const show=(tex,premultiplied=false)=>{shown.material.blendSrc=premultiplied?T.OneFactor:T.SrcAlphaFactor;shown.material.uniforms.map.value=tex;renderer.setRenderTarget(null);renderer.setClearColor(bg,1);renderer.clear();shown.render(renderer);};
+    pt.renderToCanvasCallback=target=>show(target.texture);
+    await nextFrame();if(session.stopped)return null;
+    pt.setScene(scene,camera);
+    // Match the traced exposure to the raster's (twice: the tone curve isn't linear), over the room only, not the paper round it.
+    const ref=thumb(raster),room=[],bgByte=bg.clone().convertLinearToSRGB();
+    for(let i=0;i<ref.length;i+=4)if(Math.abs(ref[i]-bgByte.r*255)+Math.abs(ref[i+1]-bgByte.g*255)+Math.abs(ref[i+2]-bgByte.b*255)>14)room.push(i);
+    const match=()=>{const d=thumb(canvas);let a=0,b=0;for(const i of room){a+=luma(ref,i);b+=luma(d,i);}
+      if(b>1e-3)renderer.toneMappingExposure*=Math.min(2.5,Math.max(.4,a/b));};
+    let perFrame=1,last=performance.now(),matched=0;
+    while(!session.stopped&&!session.finishing&&pt.samples<samples){
+      for(let k=0;k<perFrame;k++)pt.renderSample();
+      if(room.length&&(matched===0&&pt.samples>=4||matched===1&&pt.samples>=16)){matched++;match();show(pt.target.texture);}
+      progress({stage:"tracing",progress:Math.min(1,pt.samples/samples),samples:Math.floor(pt.samples),total:samples});
+      await nextFrame();
+      const now=performance.now(),dt=now-last;last=now;
+      perFrame=dt<24?Math.min(9,perFrame+1):dt>48?Math.max(1,perFrame-1):perFrame;
+    }
+    if(session.stopped)return null;
+    if(pt.samples<1)return finishPhoto(raster,false,session);
+    if(!matched&&room.length){show(pt.target.texture);match();}
+    // A light edge-aware denoise takes off the last grain (it leaves edges and texture alone), then the same composite.
+    progress({stage:"finishing",progress:1});
+    if(!renderer.extensions.has("OES_texture_float_linear")){show(pt.target.texture);return finishPhoto(canvas,true,session);}
+    const size=renderer.getDrawingBufferSize(new T.Vector2()),clean=new T.WebGLRenderTarget(size.x,size.y,{type:T.HalfFloatType,depthBuffer:false});
+    const denoise=new m.FullScreenQuad(new m.DenoiseMaterial({map:pt.target.texture,sigma:3,kSigma:1,threshold:.08}));
+    restore.push(()=>{clean.dispose();denoise.material.dispose();denoise.dispose();});
+    renderer.setRenderTarget(clean);denoise.render(renderer);show(clean.texture,true);
+    const out=document.createElement("canvas");out.width=canvas.width;out.height=canvas.height;out.getContext("2d").drawImage(canvas,0,0);
+    return finishPhoto(out,true,session);
+  }
+  function finishPhoto(src,traced,session){
+    if(session.stopped)return null;
+    const out=document.createElement("canvas");out.width=src.width;out.height=src.height;out.getContext("2d").drawImage(src,0,0);stamp(out);
+    return new Promise(r=>out.toBlob(b=>r(b?{url:URL.createObjectURL(b),width:out.width,height:out.height,traced}:null),"image/jpeg",.93));
+  }
+  /** What the path tracer sees: the room as drawn, with its raster stand-ins swapped for the real thing (all undone after). */
+  function prepareTrace(m,restore){
+    const meshesNow=[];scene.traverseVisible(o=>{if(o.isMesh)meshesNow.push(o);});
+    const mirror=new T.MeshStandardMaterial({color:"#eef2f2",metalness:1,roughness:.03});
+    // The window view: the part of its photo that fills the opening, glowing just outside it and letting the sun through.
+    const pane=new T.MeshStandardMaterial({color:"#000000",roughness:1,emissive:viewMat.color,emissiveMap:viewMat.map,emissiveIntensity:1});pane.castShadow=false;
+    const added=[],hidden=[],swapped=[],inst=new T.Matrix4(),floats=new Map();
+    // The library models' geometry is quantized (16-bit positions, 8-bit normals); the tracer bakes every mesh into one
+    // world-space buffer of the same type, so each one is given a plain float copy for the trace.
+    const unpack=g=>{if(floats.has(g))return floats.get(g);
+      const quantized=Object.values(g.attributes).some(a=>a.normalized||a.isInterleavedBufferAttribute||!(a.array instanceof Float32Array));
+      let c=g;if(quantized){c=new T.BufferGeometry();c.setIndex(g.index);c.groups=g.groups;c.drawRange=g.drawRange;
+        const get=[(a,i)=>a.getX(i),(a,i)=>a.getY(i),(a,i)=>a.getZ(i),(a,i)=>a.getW(i)];
+        for(const [k,a]of Object.entries(g.attributes)){const n=a.count,w=a.itemSize,f=new Float32Array(n*w);for(let i=0;i<n;i++)for(let j=0;j<w;j++)f[i*w+j]=get[j](a,i);c.setAttribute(k,new T.BufferAttribute(f,w));}}
+      floats.set(g,c);return c;};
+    // What each material becomes in the trace: mirrors turn to polished metal; anything not a standard material (drawn
+    // shadows, light pools, the selection ring, editing marks) is left out.
+    const traced=x=>x.customProgramCacheKey?.()==="dm-mirror"?mirror:x.isMeshStandardMaterial?x:null;
+    const parts=[],place=(o,g,mat,matrix)=>{const c=new T.Mesh(g,mat);c.matrixAutoUpdate=false;c.matrix.copy(matrix);o.parent.add(c);added.push(c);};
+    for(const o of meshesNow){
+      if(views.some(v=>v.mesh===o)){
+        hidden.push(o);const p=o.userData.pane;if(!p||!viewMat.map?.image)continue;
+        const g=new T.PlaneGeometry(p.w,p.h),uv=g.attributes.uv;
+        for(let i=0;i<uv.count;i++)uv.setXY(i,.5+(uv.getX(i)-.5)*p.w/p.vw,.5+((uv.getY(i)-.5)*p.h+p.y-p.vy)/p.vh);
+        const q=new T.Mesh(g,pane);q.position.set(p.x,p.y,p.z);q.rotation.copy(o.rotation);o.parent.add(q);added.push(q);parts.push(g);continue;
+      }
+      // Bake-only geometry (the lid over the room) isn't part of the picture.
+      if(!o.layers.test(camera.layers)){hidden.push(o);continue;}
+      // Instanced leaves: the tracer takes plain meshes, so each instance stands in as one.
+      if(o.isInstancedMesh){hidden.push(o);const mat=traced(o.material);if(mat)for(let k=0;k<o.count;k++){o.getMatrixAt(k,inst);place(o,unpack(o.geometry),mat,inst.premultiply(o.matrix));}continue;}
+      // A mesh with several materials (a box with its own caps) becomes one mesh per material: the tracer gives each mesh one.
+      if(Array.isArray(o.material)){
+        hidden.push(o);const g=unpack(o.geometry),n=g.index?g.index.count:g.attributes.position.count;
+        for(const grp of g.groups.length?g.groups:[{start:0,count:n,materialIndex:0}]){
+          const mat=o.material[grp.materialIndex]&&traced(o.material[grp.materialIndex]);if(!mat)continue;
+          const from=grp.start,to=Math.min(n,grp.start+grp.count),index=new Uint32Array(Math.max(0,to-from));
+          for(let i=from;i<to;i++)index[i-from]=g.index?g.index.getX(i):i;
+          const part=new T.BufferGeometry();for(const [k,a]of Object.entries(g.attributes))part.setAttribute(k,a);part.setIndex(new T.BufferAttribute(index,1));
+          parts.push(part);place(o,part,mat,o.matrix);
+        }
+        continue;
+      }
+      const mat=traced(o.material);if(!mat){hidden.push(o);continue;}
+      const g=unpack(o.geometry);if(mat!==o.material||g!==o.geometry){swapped.push([o,o.material,o.geometry]);o.material=mat;o.geometry=g;}
+    }
+    for(const o of hidden)o.visible=false;
+    // Unused lamps would only waste light samples.
+    const dark=[];scene.traverse(o=>{if(o.isLight&&o.visible&&(o.intensity<=0||o.isHemisphereLight||(lampRoot.children.includes(o)&&!lampRoot.visible))){o.visible=false;dark.push(o);}});
+    // The sky: the hemisphere fill's own colours, at the radiance that gives the same light on a surface.
+    const sky=new m.GradientEquirectTexture(64);sky.topColor.copy(hemi.color);sky.bottomColor.copy(hemi.groundColor);sky.exponent=1;sky.update();
+    const env=[scene.environment,scene.environmentIntensity];scene.environment=sky;scene.environmentIntensity=light.hemiI/Math.PI;
+    restore.push(()=>{for(const o of hidden)o.visible=true;for(const o of dark)o.visible=true;for(const [o,mat,g]of swapped){o.material=mat;o.geometry=g;}for(const [g,c]of floats)if(c!==g)c.dispose();
+      for(const o of added)o.removeFromParent();for(const g of parts)g.dispose();
+      [scene.environment,scene.environmentIntensity]=env;sky.dispose();mirror.dispose();pane.dispose();});
+    const maps=new Set();scene.traverseVisible(o=>{if(o.isMesh)for(const x of [o.material].flat())for(const k of ["map","normalMap","roughnessMap","metalnessMap","emissiveMap","alphaMap"])if(x[k])maps.add(x[k]);});
+    return maps.size;
+  }
   /** Something changed: the bake fades out (the pieces' own contact shadows stay) until a fresh one finishes. */
   function invalidateBake(){bake.dirty=true;bake.ready=false;bakeUniforms.uBakeOn.value=0;mirrorDirty=true;showPool();}
   /** The drawn pool of window light stands in only while there's no bake (the bake has the real one). */
@@ -622,6 +801,8 @@ export function createStudioScene(container, options) {
           // The view: a photo some way outside, wide enough that it shifts a little as you move (shown only with its wall).
           const vw=Math.max(span+5,(oh+2.5)*16/9),vh=vw*9/16,view=new T.Mesh(new T.PlaneGeometry(vw,vh),viewMat);
           view.position.set(center,(low+high)/2+.4,out*(WALL_T+2.5));view.rotation.y=out>0?Math.PI:0;view.raycast=()=>{};view.renderOrder=2;view.userData.ownGeometry=true;
+          // The HD photo's path tracer can't use the stencil: it shows the part of this photo that fills the opening, just outside it.
+          view.userData.pane={x:center,y:(low+high)/2,w:span,h:oh,z:out*(WALL_T+.08),vy:(low+high)/2+.4,vw,vh};
           fixtures.add(view);views.push({mesh:view,wall:group});
         }else{
           const doorHeight=Math.min(6.7,h-.1);
@@ -864,6 +1045,7 @@ export function createStudioScene(container, options) {
       const line=new T.Line(new T.BufferGeometry().setFromPoints(points),lineMat);line.computeLineDistances();guides.add(line);}
   }
   function down(e){
+    photo?.cancel();
     if(e.button>1)return;assemblyStart=0;for(const m of meshes.values()){m.group.scale.setScalar(1);m.group.position.y=m.item.elevation;}
     canvas.focus({preventScroll:true});canvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
     if(pointers.size===2){cancelDrag();pinch=distance();return;}
@@ -932,7 +1114,7 @@ export function createStudioScene(container, options) {
   }
   function cancelDrag(){if(drag?.openingIndex!==undefined){const node=openingNodes.get(drag.openingIndex);if(node)positionOpening(node,drag.opening,drag.opening.offset_ft);}openingGhost.visible=false;if(drag?.id){for(const m of meshes.values())m.group.position.set(m.item.x_ft+m.item.footW/2,m.item.elevation,m.item.y_ft+m.item.footD/2);}drag=null;clearGuides();}
   function cancel(e){pointers.delete(e.pointerId);pinch=0;cancelDrag();request();}
-  function wheel(e){e.preventDefault();touched();radius=Math.max(4,Math.min(180,radius*Math.exp(e.deltaY*.001)));request();}
+  function wheel(e){e.preventDefault();photo?.cancel();touched();radius=Math.max(4,Math.min(180,radius*Math.exp(e.deltaY*.001)));request();}
   const walkKey=e=>{const k=e.key.toLowerCase();return mode==="inside"&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&["arrowup","arrowdown","arrowleft","arrowright","w","a","s","d"].includes(k)?k:null;};
   function key(e){
     if(e.key==="Escape"){cancelDrag();options.onSelectOpening?.(null);options.onSelect?.(null);request();return;}
@@ -943,7 +1125,7 @@ export function createStudioScene(container, options) {
       if(e.key==="+"||e.key==="=")radius=Math.max(4,radius*.9);if(e.key==="-")radius=Math.min(180,radius*1.1);request();}
   }
   // Resizing keeps the camera where it is; only an untouched default view refits to the new shape.
-  const resize=new ResizeObserver(()=>{const r=container.getBoundingClientRect();width=Math.max(1,r.width);height=Math.max(1,r.height);
+  const resize=new ResizeObserver(()=>{photo?.cancel();const r=container.getBoundingClientRect();width=Math.max(1,r.width);height=Math.max(1,r.height);
     renderer.setSize(width,height,false);sizePost();camera.aspect=width/height;camera.updateProjectionMatrix();
     if(data&&mode!=="inside"&&!custom&&!tween)preset(mode,true,true);request();});resize.observe(container);
   function droppedOpening(e){
@@ -977,14 +1159,12 @@ export function createStudioScene(container, options) {
       const before=renderer.getPixelRatio(),resized=r&&r!==before,setRatio=v=>{renderer.setPixelRatio(v);renderer.setSize(width,height,false);};
       if(resized)setRatio(r);
       renderer.render(scene,camera);
-      const out=document.createElement("canvas");out.width=canvas.width;out.height=canvas.height;const ctx=out.getContext("2d");ctx.drawImage(canvas,0,0);
+      const out=document.createElement("canvas");out.width=canvas.width;out.height=canvas.height;out.getContext("2d").drawImage(canvas,0,0);
       if(resized)setRatio(before);
-      const fs=Math.max(14,out.width*.016);ctx.font="600 "+fs+"px system-ui";const text="dormscape.us · Room concept",tw=ctx.measureText(text).width;
-      ctx.fillStyle="#fafaf8";ctx.fillRect(out.width-tw-fs*4.3,out.height-fs*3,tw+fs*3.8,fs*2.2);
-      if(brandMark.complete&&brandMark.naturalWidth)ctx.drawImage(brandMark,out.width-tw-fs*3.9,out.height-fs*2.8,fs*1.8,fs*1.8);
-      ctx.fillStyle="#2b4eff";ctx.fillText(text,out.width-tw-fs*1.3,out.height-fs*1.5);guides.visible=true;request();return out.toDataURL("image/png");
+      stamp(out);guides.visible=true;request();return out.toDataURL("image/png");
     },
-    destroy(){disposed=true;cancelAnimationFrame(raf);clearTimeout(sharpen);clearTimeout(creaseTimer);resize.disconnect();document.removeEventListener("visibilitychange",visible);
+    renderPhoto,
+    destroy(){photo?.cancel();disposed=true;cancelAnimationFrame(raf);clearTimeout(sharpen);clearTimeout(creaseTimer);resize.disconnect();document.removeEventListener("visibilitychange",visible);
       for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);canvas.removeEventListener("webglcontextlost",onContextLost);
       clearGuides();openingGhost.geometry.dispose();openingGhost.material.dispose();lineMat.dispose();marker.geometry.dispose();ring.geometry.dispose();ring.material.dispose();marker.material.dispose();
       for(const m of meshes.values())removePiece(m);clearRoom();floorTextures.forEach(t=>t.dispose());
