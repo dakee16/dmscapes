@@ -73,3 +73,19 @@ Added Nov 15, 2026 (same pipeline):
 - towel stack, shower caddy, step trash can, laundry hamper, book stack
 
 That makes 30 models in all. Each is about 90–550 KB on desktop and roughly half that in its lite version.
+
+## KTX2 textures (desktop)
+
+Desktop models and room textures are KTX2 (Basis Universal), so they stay compressed in video memory: about a quarter of
+what decoded WebP takes, and no decode on the main thread. Phones keep the 512 px WebP `-lite` models and the `.webp`
+room textures, and never fetch the transcoder (`vendor/basis/`, 527 KB of WebAssembly).
+
+- Encode: `npm i --no-save ktx2-encoder@0.6 sharp @gltf-transform/core@4 @gltf-transform/extensions@4 meshoptimizer`,
+  then `node scripts/models/ktx2.mjs` (all) or `node scripts/models/ktx2.mjs chair.glb` (some). Run it after
+  `pipeline.py` makes a new desktop model; already-KTX2 files are skipped.
+- Settings: ETC1S everywhere (colour at quality 150, normals in Basis's normal-map mode, metal/roughness at 512 px), mips
+  in the file. These textures are smooth, so WebP compresses them very hard and KTX2 can't match it on the wire: desktop
+  models went from 8.9 MB to 11.5 MB (+29%) for roughly 4x less video memory.
+- Room textures: each `.webp` gets a `.ktx2` beside it, flipped to match how TextureLoader flips the `.webp`.
+- Loading: `loadTexture` in `studio-models.js` fills one texture object in place, with the KTX2's mip levels or, if
+  KTX2 can't load, the WebP. A desktop model whose KTX2 can't load stays clay.

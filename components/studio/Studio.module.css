@@ -386,6 +386,25 @@
 }
 .barNotice button.inkBtn { border-color: var(--ds-ink); background: var(--ds-ink); color: #fff; }
 
+/* The HD photo: its progress in the bar under the room, then the photo in a dialog. */
+.photoStatus { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.photoStatus span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.photoStatus progress { flex: none; width: 120px; height: 6px; border: 0; border-radius: 999px; overflow: hidden; background: rgba(22, 22, 29, 0.12); appearance: none; }
+.photoStatus progress::-webkit-progress-bar { background: rgba(22, 22, 29, 0.12); }
+.photoStatus progress::-webkit-progress-value { background: var(--ds-blue, #2b4eff); border-radius: 999px; transition: width 0.3s; }
+.photoStatus progress::-moz-progress-bar { background: var(--ds-blue, #2b4eff); border-radius: 999px; }
+.photoModal { position: fixed; inset: 0; z-index: 95; display: grid; place-items: center; padding: 16px; background: rgba(22, 22, 29, 0.55); }
+.photoModal.photoModal > div { width: min(1200px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); display: flex; flex-direction: column; overflow: hidden; padding: 0; border-radius: 22px; background: var(--ds-paper); }
+.photoModal img { display: block; width: 100%; height: auto; min-height: 0; flex: 0 1 auto; object-fit: contain; background: #f4f3ee; }
+.photoFoot { display: flex; align-items: center; gap: 8px; padding: 14px 16px 14px 22px; }
+.photoFoot p { flex: 1; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 3px; }
+.photoFoot strong { font: 700 16px/1.2 var(--ds-sans); color: var(--ds-ink); }
+.photoFoot span { font-family: var(--ds-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-caption); }
+.photoFoot button {
+  flex: none; display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border: 1.5px solid rgba(22, 22, 29, 0.2); border-radius: 999px;
+  background: #fff; color: var(--ds-ink); font: 700 14px/1 var(--ds-sans); cursor: pointer;
+}
+.photoFoot button.inkBtn { border-color: var(--ds-ink); background: var(--ds-ink); color: #fff; }
 .geometryModal { position: fixed; inset: 0; z-index: 95; display: grid; place-items: center; padding: 16px; background: rgba(22, 22, 29, 0.55); }
 .geometryModal.geometryModal > div { width: min(1120px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; padding: 0; border-radius: 22px; background: var(--ds-paper); }
 
@@ -497,6 +516,10 @@
   .openingActions span { display: none; }
   .openingActions button { min-height: 40px; }
   .geometryModal { padding: 8px; }
+  .photoModal { padding: 8px; }
+  .photoFoot { flex-wrap: wrap; padding: 12px 14px; }
+  .photoFoot p { flex-basis: 100%; }
+  .photoStatus progress { width: 72px; }
   .geometryModal > div { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); }
 }
 

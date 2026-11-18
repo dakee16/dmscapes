@@ -35,6 +35,8 @@
     "esbuild": "0.28.2",
     "tailwindcss": "^4",
     "three": "0.186.1",
+    "three-gpu-pathtracer": "0.0.27",
+    "three-mesh-bvh": "0.9.18",
     "typescript": "^5"
   }
 }

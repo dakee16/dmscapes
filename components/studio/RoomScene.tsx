@@ -18,14 +18,20 @@ import CollaborationOverlay from "@/components/workspace/CollaborationOverlay";
 
 export type CameraView="room"|"top"|"inside";
 export type WalkInput={move?:number;turn?:number};
-export interface RoomSceneHandle {exportPNG:(ratio?:number)=>string|null;walk:(input:WalkInput)=>void;
+/** An HD photo in progress (see renderPhoto in public/experience/studio-scene.js). */
+export interface PhotoProgress {stage:"waiting"|"raster"|"preparing"|"tracing"|"finishing";progress:number;samples?:number;total?:number}
+export interface PhotoResult {url:string;width:number;height:number;traced:boolean}
+export interface PhotoJob {done:Promise<PhotoResult|null>;finish:()=>void;cancel:()=>void}
+export interface RoomSceneHandle {exportPNG:(ratio?:number)=>string|null;
+  /** Start an HD photo of the current view; null when the 3D view isn't available. */
+  renderPhoto:(onProgress:(p:PhotoProgress)=>void)=>PhotoJob|null;walk:(input:WalkInput)=>void;
   /** Switch views: each comes back where it was left; the view you are already in recentres. */
   preset:(mode:CameraView)=>void;
   /** Back to the default dollhouse framing. */
   fit:()=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;}
 type SceneItem=FurnitureItem&{kind:string;height:number;elevation:number;host?:string;footW:number;footD:number;locked:boolean;bare:boolean;back:number;product?:ReturnType<typeof productVisual>};
 type SceneData={room:SelectedRoom;settings:ReturnType<typeof studioSettings>;outline:ReturnType<typeof roomOutline>;items:SceneItem[];palette:string[];theme:RoomTheme;selectedId:string|null;selectedOpening:number|null;editOpenings:boolean;snap:boolean;interior:{x:number;y:number}};
-type View={readCursor:(x:number,y:number)=>{x:number;y:number}|null;projectCursor:(x:number,y:number)=>{x:number;y:number}|null;update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;fit:()=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;setWalker:(node:SVGGElement|null)=>void;setWalkInput:(input:WalkInput)=>void;exportPNG:(ratio?:number)=>string;destroy:()=>void};
+type View={readCursor:(x:number,y:number)=>{x:number;y:number}|null;projectCursor:(x:number,y:number)=>{x:number;y:number}|null;update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;fit:()=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;setWalker:(node:SVGGElement|null)=>void;setWalkInput:(input:WalkInput)=>void;exportPNG:(ratio?:number)=>string;renderPhoto:(options:{onProgress:(p:PhotoProgress)=>void})=>PhotoJob;destroy:()=>void};
 type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;openingDragType:string;previewOpening:(target:number|WallOpening["kind"],x:number,y:number)=>WallOpening|null;onSelectOpening:(index:number|null)=>void;onOpeningChange:(index:number|null,opening:WallOpening)=>void;onReady:()=>void;onError:(message:string)=>void;onMode:(mode:CameraView)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number,elevation?:number)=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
 export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;preview?:boolean;openingControls?:OpeningControls;
   /** The school whose colors Team Spirit takes; defaults to the planner's school. */
@@ -66,7 +72,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
       return {...f,product,bare:f.type==="bed"&&!choice,material_color:f.material_color||(settings.dressVibe&&DRESSED.has(kind)?undefined:product?.color),kind,back:backs.get(f.id)??0,height:itemHeight(f),elevation:bed&&kind==="blanket"?bedSurfaceHeight(bed):itemElevation(f,props.items),host:bed?.id,footW:b.w,footD:b.h,locked:!allowed||Boolean(props.readOnly)||props.locked.includes(f.id)};
     })};
   const latest=useRef(data);latest.current=data;
-  useImperativeHandle(ref,()=>({exportPNG:ratio=>access.current?view.current?.exportPNG(ratio)??null:null,walk:input=>view.current?.setWalkInput(input),preset:m=>view.current?.preset(m),fit:()=>view.current?.fit(),zoom:f=>view.current?.zoom(f),focus:id=>view.current?.focus(id)}),[]);
+  useImperativeHandle(ref,()=>({exportPNG:ratio=>access.current?view.current?.exportPNG(ratio)??null:null,renderPhoto:onProgress=>access.current&&view.current?view.current.renderPhoto({onProgress}):null,walk:input=>view.current?.setWalkInput(input),preset:m=>view.current?.preset(m),fit:()=>view.current?.fit(),zoom:f=>view.current?.zoom(f),focus:id=>view.current?.focus(id)}),[]);
   useEffect(()=>{
     if(!enabled)return;
     let disposed=false;setError("");setReady(false);

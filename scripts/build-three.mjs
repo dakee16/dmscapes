@@ -3,8 +3,8 @@
 // every name they touch, keeps the ones three exports, and bundles only those from three's source.
 // Run after changing public/experience/*.js:  node scripts/build-three.mjs
 import { build } from "esbuild";
-import { readFileSync, statSync } from "node:fs";
-import { join } from "node:path";
+import { copyFileSync, mkdirSync, readFileSync, statSync } from "node:fs";
+import { dirname, join } from "node:path";
 import * as THREE from "three";
 
 const root = join(import.meta.dirname, "..");
@@ -21,11 +21,41 @@ const rounded = readFileSync(join(root, "public/experience/vendor/RoundedBoxGeom
 for (const name of /import\s*\{([^}]*)\}\s*from\s*['"]\.\/three\.module\.min\.js['"]/.exec(rounded)[1].split(",")) names.add(name.trim());
 // The model loader (vendor/gltf-loader.min.js, loaded only when a room shows a library model) imports three from the
 // trimmed build too, so every name it and its helpers use has to be kept.
+// The idle ambient-occlusion passes (vendor/post.min.js, loaded on desktop once the room is still) do too; their relative
+// imports (shaders, Pass) are followed so nothing they reach is missed.
 const jsm = join(root, "node_modules/three/examples/jsm");
-for (const file of ["loaders/GLTFLoader.js", "utils/BufferGeometryUtils.js", "utils/SkeletonUtils.js"]) {
-  const head = /^import\s*\{([^}]*)\}\s*from\s*['"]three['"]/m.exec(readFileSync(join(jsm, file), "utf8"));
-  if (head) for (const name of head[1].split(",")) if (name.trim()) names.add(name.trim().split(/\s+as\s+/)[0]);
+const seen = new Set();
+function keepImports(file) {
+  if (seen.has(file)) return;
+  seen.add(file);
+  const text = readFileSync(join(jsm, file), "utf8");
+  for (const [, list] of text.matchAll(/import\s*\{([^}]*)\}\s*from\s*['"]three['"]/g))
+    for (const name of list.split(",")) if (name.trim()) names.add(name.trim().split(/\s+as\s+/)[0]);
+  for (const [, rel] of text.matchAll(/from\s*['"](\.{1,2}\/[^'"]+)['"]/g)) keepImports(join(dirname(file), rel));
 }
+for (const file of ["loaders/GLTFLoader.js", "loaders/KTX2Loader.js", "utils/BufferGeometryUtils.js", "utils/SkeletonUtils.js",
+  "postprocessing/EffectComposer.js", "postprocessing/RenderPass.js", "postprocessing/GTAOPass.js", "postprocessing/OutputPass.js"]) keepImports(file);
+// The HD photo's path tracer (vendor/pathtracer.min.js, loaded on desktop only when someone asks for an HD photo) is built
+// first with three left external, and every name its output imports from three is kept.
+const ptOut = join(root, "public/experience/vendor/pathtracer.min.js");
+await build({
+  stdin: {
+    contents: `export { WebGLPathTracer, GradientEquirectTexture, DenoiseMaterial } from "three-gpu-pathtracer";\nexport { FullScreenQuad } from "three/examples/jsm/postprocessing/Pass.js";`,
+    resolveDir: root,
+    loader: "js",
+  },
+  bundle: true,
+  format: "esm",
+  minify: true,
+  target: "es2020",
+  legalComments: "none",
+  plugins: [{ name: "three-external", setup(b) { b.onResolve({ filter: /^three$/ }, () => ({ path: "./three.module.min.js", external: true })); } }],
+  banner: { js: `/** three-gpu-pathtracer + three-mesh-bvh (MIT, Garrett Johnson), FullScreenQuad from three.js r${THREE.REVISION} (MIT), built by scripts/build-three.mjs. */` },
+  outfile: ptOut,
+});
+for (const [, list] of readFileSync(ptOut, "utf8").matchAll(/import\s*\{([^}]*)\}\s*from\s*["']\.\/three\.module\.min\.js["']/g))
+  for (const name of list.split(",")) if (name.trim()) names.add(name.trim().split(/\s+as\s+/)[0]);
+console.log(`pathtracer ${(statSync(ptOut).size / 1024).toFixed(0)} KB`);
 const used = [...names].filter((name) => name in THREE).sort();
 
 const out = join(root, "public/experience/vendor/three.module.min.js");
@@ -60,3 +90,42 @@ await build({
 });
 console.log(`loader ${(statSync(loaderOut).size / 1024).toFixed(0)} KB`);
 
+
+// The idle ambient-occlusion passes, importing three from the trimmed build.
+const postOut = join(root, "public/experience/vendor/post.min.js");
+await build({
+  stdin: {
+    contents: ["EffectComposer", "RenderPass", "GTAOPass", "OutputPass"].map((n) => `export { ${n} } from "three/examples/jsm/postprocessing/${n}.js";`).join("\n"),
+    resolveDir: root,
+    loader: "js",
+  },
+  bundle: true,
+  format: "esm",
+  minify: true,
+  target: "es2020",
+  legalComments: "none",
+  plugins: [{ name: "three-external", setup(b) { b.onResolve({ filter: /^three$/ }, () => ({ path: "./three.module.min.js", external: true })); } }],
+  banner: { js: `/** three.js r${THREE.REVISION} EffectComposer, RenderPass, GTAOPass, OutputPass (MIT, see LICENSE-three.txt), built by scripts/build-three.mjs. */` },
+  outfile: postOut,
+});
+console.log(`post ${(statSync(postOut).size / 1024).toFixed(0)} KB`);
+
+// KTX2Loader on its own (desktop only: phones keep WebP textures and never load it or the transcoder).
+const ktxOut = join(root, "public/experience/vendor/ktx2-loader.min.js");
+await build({
+  stdin: { contents: `export { KTX2Loader } from "three/examples/jsm/loaders/KTX2Loader.js";`, resolveDir: root, loader: "js" },
+  bundle: true,
+  format: "esm",
+  minify: true,
+  target: "es2020",
+  legalComments: "none",
+  plugins: [{ name: "three-external", setup(b) { b.onResolve({ filter: /^three$/ }, () => ({ path: "./three.module.min.js", external: true })); } }],
+  banner: { js: `/** three.js r${THREE.REVISION} KTX2Loader (MIT, see LICENSE-three.txt), built by scripts/build-three.mjs. */` },
+  outfile: ktxOut,
+});
+console.log(`ktx2 loader ${(statSync(ktxOut).size / 1024).toFixed(0)} KB`);
+// The Basis transcoder KTX2Loader runs in its workers (desktop only; phones keep WebP textures and never fetch it).
+const basis = join(root, "public/experience/vendor/basis");
+mkdirSync(basis, { recursive: true });
+for (const f of ["basis_transcoder.js", "basis_transcoder.wasm"]) copyFileSync(join(root, "node_modules/three/examples/jsm/libs/basis", f), join(basis, f));
+console.log("basis transcoder copied");

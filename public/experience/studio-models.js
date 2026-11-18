@@ -185,9 +185,35 @@ export function libraryKey(f) {
   if (f.kind === "lamp") { const key = "lamp-" + (f.product?.variant || "shade"); return LIBRARY[key] ? key : null; }
   return LIBRARY[f.kind] ? f.kind : null;
 }
-const MODEL_DIR = new URL("./models/", import.meta.url).href, TEXTURE_DIR = new URL("./textures/", import.meta.url).href;
+const MODEL_DIR = new URL("./models/", import.meta.url).href, TEXTURE_DIR = new URL("./textures/", import.meta.url).href, BASIS_DIR = new URL("./vendor/basis/", import.meta.url).href;
 
-export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) {
+export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false,renderer=null}={}) {
+  // ---------- textures: KTX2 on desktop, WebP on phones (and wherever KTX2 can't load) ----------
+  // Desktop keeps every texture compressed on the GPU (Basis, transcoded in workers to whatever the GPU reads natively), about a
+  // quarter of the video memory of decoded WebP and no decode on the main thread. Phones skip it: their 512 px WebP files are
+  // small and cheap already, and they never fetch the 527 KB transcoder.
+  let ktx2=null;
+  function ktx2Loader(){
+    if(lite||!renderer||typeof window==="undefined")return Promise.resolve(null);
+    return ktx2??=import("./vendor/ktx2-loader.min.js").then(({KTX2Loader})=>new KTX2Loader().setTranscoderPath(BASIS_DIR).detectSupport(renderer)).catch(()=>null);
+  }
+  /**
+   * A texture by name from textures/: one object from the start (materials can hold it before it loads), filled in place,
+   * either with the .ktx2's compressed mip levels or, failing that, the .webp image. It's never uploaded before it's filled,
+   * so becoming a compressed texture at that point is safe.
+   */
+  function loadTexture(name,srgb,onLoad){
+    const t=new T.Texture();if(srgb)t.colorSpace=T.SRGBColorSpace;
+    const done=()=>{t.needsUpdate=true;onLoad?.(t);};
+    const webp=()=>new T.ImageLoader().load(`${TEXTURE_DIR}${name}.webp`,image=>{if(disposed)return;t.isCompressedTexture=false;t.image=image;done();});
+    ktx2Loader().then(k=>{
+      if(!k){webp();return;}
+      k.load(`${TEXTURE_DIR}${name}.ktx2`,c=>{if(disposed)return;
+        Object.assign(t,{isCompressedTexture:true,mipmaps:c.mipmaps,format:c.format,type:c.type,colorSpace:srgb?T.SRGBColorSpace:T.NoColorSpace,generateMipmaps:false,flipY:false,minFilter:c.minFilter,magFilter:c.magFilter});
+        t.image=c.image;done();},undefined,webp);
+    });
+    return t;
+  }
   const geometries=new Map(),materials=new Map(),textures=new Map(),glows=new Set(),shiny=new Set();let disposed=false,night=false,env=null,envI=1;
   /** Library models by kind: {scene, size} once loaded, "loading", or "failed". The loader itself loads with the first model. */
   const library=new Map();let loader=null;
@@ -195,7 +221,9 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
   function loadModel(kind){
     if(library.has(kind)||typeof window==="undefined")return;
     library.set(kind,"loading");
-    loader??=import("./vendor/gltf-loader.min.js").then(({GLTFLoader,MeshoptDecoder})=>{const l=new GLTFLoader();l.setMeshoptDecoder(MeshoptDecoder);return l;});
+    // Desktop models keep their textures as KTX2 (compressed in video memory); phones load the WebP -lite files.
+    loader??=Promise.all([import("./vendor/gltf-loader.min.js"),ktx2Loader()]).then(([{GLTFLoader,MeshoptDecoder},ktx2])=>{
+      const l=new GLTFLoader();l.setMeshoptDecoder(MeshoptDecoder);if(ktx2)l.setKTX2Loader(ktx2);return l;});
     loader.then(l=>l.loadAsync(`${MODEL_DIR}${kind}${lite?"-lite":""}.glb`)).then(gltf=>{
       if(disposed)return;
       const scene=gltf.scene,spec=LIBRARY[kind];scene.traverse(o=>{if(!o.isMesh)return;o.material.envMap=null;o.material.metalness=0;o.userData.library=true;
@@ -231,8 +259,8 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
   // textiles and wood tones keep their colour and gain a weave or a grain. Phones skip the normal maps. Not in Node checks.
   const surface=(name,repeat,srgb=true)=>{
     if(typeof window==="undefined")return null;
-    const t=new T.TextureLoader().load(`${TEXTURE_DIR}${name}.webp`,()=>{if(!disposed)onTexture();});
-    t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(repeat,repeat);t.anisotropy=4;if(srgb)t.colorSpace=T.SRGBColorSpace;textures.set("surface:"+name,t);return t;
+    const t=loadTexture(name,srgb,()=>{if(!disposed)onTexture();});
+    t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(repeat,repeat);t.anisotropy=4;textures.set("surface:"+name,t);return t;
   };
   const weaveMap=surface("fabric-detail",3),weaveNormal=lite?null:surface("fabric-detail-n",3,false);
   const grainMap=surface("wood-detail",1),grainNormal=lite?null:surface("wood-detail-n",1,false);
@@ -861,5 +889,5 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false}={}) 
   function setMirrorView(texture,at,min,max){mirrorUniforms.uCube.value=texture;mirrorUniforms.uCubePos.value.copy(at);mirrorUniforms.uBoxMin.value.copy(min);mirrorUniforms.uBoxMax.value.copy(max);mirrorUniforms.uMirrorOn.value=1;}
   /** Wood veneer of this colour (a door's leaf), with its grain. */
   const veneer=color=>{const key="veneer|"+color;if(!materials.has(key)){const m=grain(new T.MeshStandardMaterial({color,roughness:.55,metalness:0}));materials.set(key,m);}return materials.get(key);};
-  return {build,box,cyl,mat,veneer,bake,setNight,setEnv,setMirrorView,mirrorMat,showMirrors:on=>{mirrorMat.visible=on;},dispose};
+  return {build,box,cyl,mat,veneer,bake,setNight,setEnv,setMirrorView,mirrorMat,showMirrors:on=>{mirrorMat.visible=on;},loadTexture,loading:()=>[...library.values()].includes("loading"),dispose};
 }
