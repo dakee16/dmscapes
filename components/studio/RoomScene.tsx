@@ -19,6 +19,7 @@ import CollaborationOverlay from "@/components/workspace/CollaborationOverlay";
 export type CameraView="room"|"top"|"inside";
 export type WalkInput={move?:number;turn?:number};
 /** An HD photo in progress (see renderPhoto in public/experience/studio-scene.js). */
+/** `progress` is the whole photo's, 0–1, and only ever rises. */
 export interface PhotoProgress {stage:"waiting"|"raster"|"preparing"|"tracing"|"finishing";progress:number;samples?:number;total?:number}
 export interface PhotoResult {url:string;width:number;height:number;traced:boolean}
 export interface PhotoJob {done:Promise<PhotoResult|null>;finish:()=>void;cancel:()=>void}

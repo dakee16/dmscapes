@@ -217,10 +217,11 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   </span>;
   // A selected door or window, a reset prompt or an error: shown in the bar under the room (or the plan), never over it.
   const opening=selectedOpening!==null&&!preview?outline.openings[selectedOpening]:undefined;
-  const photoLabel=!photo?"":photo.stage==="tracing"?`Tracing light · ${photo.samples??0} of ${photo.total??0} passes`
-    :photo.stage==="preparing"?"Setting up the light":photo.stage==="finishing"?"Finishing the photo":photo.stage==="raster"?"Rendering in HD":"Getting the room ready";
+  const photoLabel=!photo?"":photo.stage==="tracing"?"Tracing light":photo.stage==="preparing"?"Setting up the light"
+    :photo.stage==="finishing"?"Finishing the photo":photo.stage==="raster"?"Rendering in HD":"Getting the room ready";
+  const photoPercent=photo?Math.round(photo.progress*100):0;
   const notice=photo?<div className={s.barNotice} role="group" aria-label="HD photo">
-      <p className={s.photoStatus} role="status"><span>{photoLabel}</span><progress max={1} value={photo.stage==="waiting"||photo.stage==="preparing"?undefined:photo.progress} aria-label="Progress"/></p>
+      <p className={s.photoStatus} role="status"><span>{photoLabel}</span><progress max={100} value={photoPercent} aria-label="HD photo progress"/><b>{photoPercent}%</b></p>
       {photo.stage==="tracing"&&<button type="button" className={s.inkBtn} onClick={()=>photoJob.current?.finish()}>Finish now</button>}
       <button type="button" onClick={()=>photoJob.current?.cancel()}>Cancel</button></div>
     :resetConfirm?<div className={s.barNotice} role="group" aria-label="Confirm layout reset"><p>Restore the original furniture arrangement? You can undo this.</p><button type="button" className={s.inkBtn} onClick={()=>{onReset();setResetConfirm(false);}}>Restore layout</button><button type="button" onClick={()=>setResetConfirm(false)}>Keep my changes</button></div>

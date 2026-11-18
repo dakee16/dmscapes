@@ -389,6 +389,7 @@
 /* The HD photo: its progress in the bar under the room, then the photo in a dialog. */
 .photoStatus { display: flex; align-items: center; gap: 12px; font-weight: 600; }
 .photoStatus span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.photoStatus b { flex: none; min-width: 3ch; font-variant-numeric: tabular-nums; font-weight: 700; }
 .photoStatus progress { flex: none; width: 120px; height: 6px; border: 0; border-radius: 999px; overflow: hidden; background: rgba(22, 22, 29, 0.12); appearance: none; }
 .photoStatus progress::-webkit-progress-bar { background: rgba(22, 22, 29, 0.12); }
 .photoStatus progress::-webkit-progress-value { background: var(--ds-blue, #2b4eff); border-radius: 999px; transition: width 0.3s; }

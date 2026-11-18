@@ -512,18 +512,22 @@ export function createStudioScene(container, options) {
   /**
    * Starts an HD photo. Returns {done, finish, cancel}: `done` resolves to {url, width, height, traced} (a JPEG blob URL the
    * caller revokes) or null if it was cancelled; `finish()` ends the path tracing early and keeps what it has.
-   * onProgress gets {stage: "waiting" | "raster" | "preparing" | "tracing" | "finishing", progress (0–1), samples, total}.
+   * onProgress gets {stage: "waiting" | "raster" | "preparing" | "tracing" | "finishing", progress, samples, total}. `progress`
+   * (0–1) is the whole photo's and only ever rises: on desktop the wait and the raster take the first fifth, setting up the
+   * tracer the next twentieth, the traced samples the rest; on phones the raster takes it all.
    */
   function renderPhoto({onProgress,long=PHOTO_LONG,samples=PHOTO_SAMPLES,trace=!LOW}={}){
     photo?.cancel();
     const session={frozen:false,stopped:false,finishing:false,cancel(){session.stopped=true;},finish(){session.finishing=true;}};photo=session;
-    const progress=p=>{try{onProgress?.(p);}catch{}};
+    // Each stage fills its own span of the one bar.
+    const span={waiting:[0,.04],raster:trace?[.04,.2]:[.04,1],preparing:[.2,.25],tracing:[.25,1],finishing:[1,1]};let shown=0;
+    const progress=p=>{const [a,b]=span[p.stage];shown=Math.max(shown,a+(b-a)*Math.min(1,Math.max(0,p.progress)));try{onProgress?.({...p,progress:shown});}catch{}};
     const restore=[];
     const done=(async()=>{
       // The bake, the room view and (on desktop) the AO passes finish first, so the photo starts from the settled room.
       progress({stage:"waiting",progress:0});
       if(!LOW&&!post)loadPost();
-      for(let i=0;i<160&&!session.stopped&&!(data&&bake.ready&&!mirrorDirty&&!kit.loading()&&(LOW||post));i++){request();await new Promise(r=>setTimeout(r,60));}
+      for(let i=0;i<160&&!session.stopped&&!(data&&bake.ready&&!mirrorDirty&&!kit.loading()&&(LOW||post));i++){request();progress({stage:"waiting",progress:i/40});await new Promise(r=>setTimeout(r,60));}
       if(session.stopped||disposed||!data)return null;
       session.frozen=true;cancelAnimationFrame(raf);raf=0;
       try{return await shoot(session,progress,restore,{long,samples,trace});}
@@ -576,7 +580,9 @@ export function createStudioScene(container, options) {
     const show=(tex,premultiplied=false)=>{shown.material.blendSrc=premultiplied?T.OneFactor:T.SrcAlphaFactor;shown.material.uniforms.map.value=tex;renderer.setRenderTarget(null);renderer.setClearColor(bg,1);renderer.clear();shown.render(renderer);};
     pt.renderToCanvasCallback=target=>show(target.texture);
     await nextFrame();if(session.stopped)return null;
-    pt.setScene(scene,camera);
+    // Two frames, so the bar has painted before the tracer's scene build holds the main thread for a moment.
+    progress({stage:"preparing",progress:.4});await nextFrame();await nextFrame();if(session.stopped)return null;
+    pt.setScene(scene,camera);progress({stage:"preparing",progress:1});
     // Match the traced exposure to the raster's (twice: the tone curve isn't linear), over the room only, not the paper round it.
     const ref=thumb(raster),room=[],bgByte=bg.clone().convertLinearToSRGB();
     for(let i=0;i<ref.length;i+=4)if(Math.abs(ref[i]-bgByte.r*255)+Math.abs(ref[i+1]-bgByte.g*255)+Math.abs(ref[i+2]-bgByte.b*255)>14)room.push(i);
