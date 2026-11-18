@@ -155,6 +155,10 @@
 }
 .followBanner .faceSm { width: 30px; height: 30px; background: #fff; color: var(--person); }
 .followBanner button { height: 32px; padding: 0 12px; border: 0; border-radius: 999px; background: rgba(255, 255, 255, 0.2); color: inherit; font: 850 13px/1 var(--ds-sans); cursor: pointer; }
+/* A "Look here" from someone, when it landed on another tab or out of view: under the room bar, never over the canvas. */
+.pingNotice { align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; max-width: 100%; min-height: 44px; padding: 6px 6px 6px 8px; border-radius: 999px; background: var(--person); color: var(--person-ink); font-size: 15px; font-weight: 800; box-shadow: 0 10px 22px rgba(22, 22, 29, 0.18); }
+.pingNotice .faceSm { width: 30px; height: 30px; background: #fff; color: var(--person); }
+.pingNotice button { flex: none; height: 32px; padding: 0 12px; border: 0; border-radius: 999px; background: rgba(255, 255, 255, 0.2); color: inherit; font: 850 13px/1 var(--ds-sans); cursor: pointer; }
 .phoneCta { display: none; }
 
 /* ---------- left rail ---------- */
@@ -304,6 +308,13 @@
 /* The spot the comments panel is on: a soft ring in that person's colour (pins sit on top of it). */
 .spotRing { position: absolute; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 3px solid var(--person, var(--ds-blue)); border-radius: 50%; background: color-mix(in srgb, var(--person, var(--ds-blue)) 16%, transparent); box-shadow: 0 0 0 2px #fff, 0 0 18px var(--person, var(--ds-blue)); pointer-events: none; animation: spotRing 1.6s var(--ds-ease) infinite; }
 @keyframes spotRing { 50% { box-shadow: 0 0 0 2px #fff, 0 0 30px var(--person, var(--ds-blue)); } }
+/* "Look here": two rings spreading from the point and the sender's name, in their colour, for 3 s. */
+.ping { position: absolute; width: 0; height: 0; color: var(--person); pointer-events: none; z-index: 2; }
+.ping::before, .ping::after { content: ""; position: absolute; left: -24px; top: -24px; width: 48px; height: 48px; border: 3px solid currentColor; border-radius: 50%; opacity: 0; animation: ping 1s var(--ds-ease) 3; }
+.ping::after { animation-delay: 0.35s; }
+@keyframes ping { from { transform: scale(0.25); opacity: 1; } to { transform: scale(1.5); opacity: 0; } }
+.ping > i { position: absolute; left: -7px; top: -7px; width: 14px; height: 14px; border: 3px solid #fff; border-radius: 50%; background: currentColor; box-shadow: 0 2px 6px rgba(22, 22, 29, 0.3); }
+.ping > span { position: absolute; left: 12px; top: 10px; height: 22px; padding: 0 8px; border-radius: 6px; background: var(--person); color: var(--person-ink); font: 800 12px/22px var(--ds-sans); white-space: nowrap; }
 /* The right-click menu over the plan or 3D room (transient; writing happens in the side panel). */
 .canvasMenu { position: fixed; z-index: 80; display: grid; min-width: 200px; max-width: 260px; padding: 6px; border-radius: 14px; background: var(--ds-ink); box-shadow: 0 14px 34px rgba(22, 22, 29, 0.28); }
 .canvasMenu button { display: flex; align-items: center; gap: 10px; min-height: 40px; padding: 0 12px; border: 0; border-radius: 9px; background: none; color: #fff; font: 750 14px/1.2 var(--ds-sans); text-align: left; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -537,5 +548,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .bars i, .cursorBars b, .spotRing { animation: none; }
+  .ping::before { animation: none; opacity: 0.9; transform: none; } .ping::after { display: none; }
 }
 :global([data-motion-paused="true"]) .bars i, :global([data-motion-paused="true"]) .cursorBars b, :global([data-motion-paused="true"]) .spotRing { animation: none; }
+:global([data-motion-paused="true"]) .ping::before { animation: none; opacity: 0.9; transform: none; } :global([data-motion-paused="true"]) .ping::after { display: none; }

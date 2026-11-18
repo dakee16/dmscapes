@@ -4,17 +4,24 @@ import { readPointTarget, type CursorPoint } from "@/lib/workspace-collaboration
 import { animate, useCollaboration, wake } from "./CollaborationProvider";
 import { useWorkspace } from "./WorkspaceContext";
 import { useVoice } from "./RoomVoice";
-import { initial, personStyle } from "./people";
+import { initial, personColor, personStyle } from "./people";
 import s from "./Room.module.css";
 
 /** `read`: a pixel in the overlay to a room point. `draw`: a room point (at height `h`, or on piece `id`) to a pixel, null when off screen. */
 export type CursorProjection={read:(x:number,y:number)=>CursorPoint|null;draw:(x:number,y:number,h?:number,id?:string)=>{x:number;y:number}|null};
+/** What to outline on the plan or in 3D: the comments panel's piece, and for 3 s a piece someone said "Look here" about
+ * (pings follow the "Everyone's cursors" switch). */
+export function useCanvasMarks() {
+  const workspace=useWorkspace(),live=useCollaboration(),members=workspace?.members??[];
+  const pings=workspace?.overlay?.cursors!==false?live?.pings??[]:[];
+  return [...(workspace?.marks??[]),...pings.filter(p=>p.id&&!p.done).map(p=>({target:`furniture:${p.id}`,color:personColor(p.userId,members)}))];
+}
 /** Live cursors and comment pins over the plan, the 3D scene or a list. Pins take
  * the colour of whoever spoke last in the thread; both layers follow the rail's switches. */
 export default function CollaborationOverlay({surface,projection,pins=[],dynamic=false}: {surface:"plan"|"scene"|"shopping"|"roommates";projection?:CursorProjection;pins?:{id:string;label:string;x:number;y:number}[];dynamic?:boolean}) {
   const live=useCollaboration(),workspace=useWorkspace(),voice=useVoice(),layer=useRef<HTMLDivElement>(null),transform=useRef(projection);
   transform.current=projection;
-  const move=live?.move,clear=live?.clear,sample=live?.sample;
+  const move=live?.move,clear=live?.clear,sample=live?.sample,offscreen=live?.offscreen;
   const showPins=workspace?.overlay?.pins!==false,showCursors=workspace?.overlay?.cursors!==false;
   useEffect(()=>{
     const parent=layer.current?.parentElement;if(!parent||!move||!clear)return;
@@ -32,9 +39,10 @@ export default function CollaborationOverlay({surface,projection,pins=[],dynamic
     parent.addEventListener("pointermove",pointer,{passive:true});parent.addEventListener("pointerleave",leave);
     return()=>{parent.removeEventListener("pointermove",pointer);parent.removeEventListener("pointerleave",leave);clear();};
   },[surface,move,clear]);
-  // Cursors glide on the shared animation loop (no React render per message). In 3D, pins follow the camera too.
+  // Cursors glide on the shared animation loop (no React render per message). In 3D, pins and pings follow the camera too.
   useEffect(()=>{
     if(!sample)return;
+    const reported=new Set<string>();
     return animate(()=>{
       const el=layer.current;if(!el)return false;
       let more=false;const now=Date.now();
@@ -49,9 +57,14 @@ export default function CollaborationOverlay({surface,projection,pins=[],dynamic
         pin.style.visibility=q?"visible":"hidden";
         if(q){pin.style.left=`${q.x}px`;pin.style.top=`${q.y}px`;}
       });
+      // A ping outside this view (and this view on screen): the room bar offers to show it.
+      if(el.clientWidth)el.querySelectorAll<HTMLElement>("[data-ping]").forEach(ping=>{
+        const key=ping.dataset.ping!,q=transform.current?.draw(Number(ping.dataset.worldX),Number(ping.dataset.worldY),ping.dataset.worldH?Number(ping.dataset.worldH):undefined);
+        if(!reported.has(key)&&(!q||q.x<0||q.y<0||q.x>el.clientWidth||q.y>el.clientHeight)){reported.add(key);offscreen?.(key);}
+      });
       return more;
     });
-  },[sample,dynamic]);
+  },[sample,dynamic,offscreen]);
   // Redraw before paint whenever React changes the layer (a cursor appears, the 2D plan pans or zooms).
   useLayoutEffect(()=>{wake(true);});
   if(!workspace)return null;
@@ -73,6 +86,7 @@ export default function CollaborationOverlay({surface,projection,pins=[],dynamic
       const talking=voice?.participants.some(p=>p.id===id&&p.speaking&&!p.muted);
       return <div key={id} className={s.remoteCursor} data-cursor={id} style={personStyle(id,workspace.members)} aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M3 2l7 19 3-8 8-3z" fill="currentColor" stroke="white" strokeWidth="1.6" strokeLinejoin="round"/></svg><span>{member.display_name}{talking&&<i className={s.cursorBars}><b/><b/><b/></i>}</span></div>;
     })}
+    {room&&showCursors&&live?.pings.filter(p=>!p.done).map(p=>{const who=workspace.members.find(m=>m.user_id===p.userId);return <div key={p.key} className={s.ping} data-ping={p.key} data-world-x={p.x} data-world-y={p.y} data-world-h={p.h} style={{...position(p.x,p.y,p.h),...personStyle(p.userId,workspace.members)}} aria-hidden="true"><i/><span>{who?.display_name??"Roommate"}</span></div>;})}
     {rings.map(r=><span key={r.target} className={s.spotRing} data-ring={r.target} data-world-x={r.x} data-world-y={r.y} data-world-h={r.h} style={{...position(r.x,r.y,r.h),"--person":r.color} as CSSProperties} aria-hidden="true"/>)}
     {showPins&&pins.map(p=>pin(p.id,`furniture:${p.id}`,p.label,p.x,p.y))}
     {spots.map(p=>pin(p.target,p.target,p.label,p.x,p.y,p.h))}

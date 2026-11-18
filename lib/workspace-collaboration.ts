@@ -22,6 +22,14 @@ export function readCursor(value: unknown): RoomCursor | null {
     typeof c.session === "string" && c.session.length <= 64 && Number.isFinite(c.at) ?
     {...point, surface:c.surface, session:c.session, at:c.at, ...(Number.isSafeInteger(c.seq) ? {seq:c.seq} : {})} : null;
 }
+/** A "Look here": a room point (with height and piece in 3D), the sending tab, and when. Live only, never saved. */
+export type RoomPing = CursorPoint & { session: string; at: number; seq: number };
+export function readPing(value: unknown): RoomPing | null {
+  if (!value || typeof value !== "object") return null;
+  const p = value as RoomPing, point = readPoint(p);
+  return point && typeof p.session === "string" && p.session.length <= 64 && Number.isFinite(p.at) && Number.isSafeInteger(p.seq) ?
+    {...point, session:p.session, at:p.at, seq:p.seq} : null;
+}
 /** A room point from a message: x, y in 0–1, an optional height of 0–20 ft and an optional piece id. */
 export function readPoint(value: unknown): CursorPoint | null {
   if (!value || typeof value !== "object") return null;

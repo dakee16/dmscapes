@@ -29,7 +29,7 @@ import { furnitureCategory } from "@/lib/highlight";
 import { bedLabel, isBunkBed } from "@/lib/bedding";
 import { useWorkspace, useWorkspacePeople, type CanvasGesture } from "@/components/workspace/WorkspaceContext";
 import type { CursorPoint } from "@/lib/workspace-collaboration";
-import CollaborationOverlay from "@/components/workspace/CollaborationOverlay";
+import CollaborationOverlay, { useCanvasMarks } from "@/components/workspace/CollaborationOverlay";
 import { ownerName } from "@/lib/planning";
 import { clamp, footprint, invalidItems, layerOf, pointInPolygon, rotateFurniture } from "./geometry";
 
@@ -558,7 +558,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     const z = 1.35; setZoom(z); setStagePos({ x: stageW / 2 - (fitted.x + focusAt.x * roomL * pxFt) * z, y: stageH / 2 - (fitted.y + focusAt.y * roomW * pxFt) * z });
   }, [focusAt?.key]); // eslint-disable-line react-hooks/exhaustive-deps
   // Pieces the comments panel is on (or a thread there is hovered), outlined in that person's colour on a layer of their own.
-  const marked = (workspace?.marks ?? []).flatMap(m => { const f = m.target.startsWith("furniture:") && visible.find(x => x.id === m.target.slice(10)); return f ? [{ f, color: m.color }] : []; });
+  const marked = useCanvasMarks().flatMap(m => { const f = m.target.startsWith("furniture:") && visible.find(x => x.id === m.target.slice(10)); return f ? [{ f, color: m.color }] : []; });
 
   useImperativeHandle(ref, () => ({
     focusItem: id=>{const f=furniture.find(f=>f.id===id);if(!f)return;const b=footprint(f),z=1.35;setZoom(z);setStagePos({x:stageW/2-(fitted.x+(b.x+b.w/2)*pxFt)*z,y:stageH/2-(fitted.y+(b.y+b.h/2)*pxFt)*z});},

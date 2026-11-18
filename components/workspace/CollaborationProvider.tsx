@@ -2,7 +2,7 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import type { RealtimeChannel, SupabaseClient } from "@supabase/supabase-js";
 import { getBrowserClient } from "@/lib/supabase-browser";
-import { readCursor, readPresence, type CursorPoint, type RoomActivity, type RoomCursor, type RoomPresence } from "@/lib/workspace-collaboration";
+import { readCursor, readPing, readPresence, type CursorPoint, type RoomActivity, type RoomCursor, type RoomPresence } from "@/lib/workspace-collaboration";
 
 /**
  * A remote cursor's last few positions, on the sender's clock (`sent`). It's played back about `delay` ms in the past
@@ -24,7 +24,15 @@ type LiveState = {
   reconnect: () => void;
   /** Cursor arrivals over the last few seconds, for the ?debug=cursors readout. */
   stats: () => { rate: number; p50: number; p95: number; delay: number } | null;
+  /** "Look here" pings, yours and others': shown for 3 s (`done` after), kept 10 s for the "Show" notice. */
+  pings: Ping[];
+  /** Owners and editors can ping; commenters can't. */
+  canPing: boolean;
+  ping: (point: CursorPoint) => void;
+  /** An overlay drew this ping off screen, so the room bar offers to show it. */
+  offscreen: (key: string) => void;
 };
+export type Ping = CursorPoint & { key: string; userId: string; at: number; done?: boolean; offscreen?: boolean };
 // One animation loop for every overlay (cursors, pins in 3D, pings). It stops when no job needs another frame.
 const jobs = new Set<() => boolean>();
 let frame = 0;
@@ -39,15 +47,19 @@ const fakeRealtime: ((userId: string) => SupabaseClient) | null = process.env.NO
   ? require("@/lib/fake-realtime").fakeRealtimeClient : null;
 export const useCollaboration = () => useContext(CollaborationContext);
 
-export default function CollaborationProvider({id, epoch, enabled, userId, memberIds, onChange, children}: {
-  id:string; epoch?:string; enabled:boolean; userId:string; memberIds:string[]; onChange:()=>Promise<void>; children:ReactNode;
+export default function CollaborationProvider({id, epoch, enabled, userId, memberIds, editorIds, onChange, children}: {
+  id:string; epoch?:string; enabled:boolean; userId:string; memberIds:string[];
+  /** The owner and editors: the only members whose pings are shown (a member can only publish as themselves). */
+  editorIds:string[]; onChange:()=>Promise<void>; children:ReactNode;
 }) {
   const [status,setStatus] = useState<LiveState["status"]>("connecting");
   const [peers,setPeers] = useState<LiveState["peers"]>({});
   const [cursors,setCursors] = useState<LiveState["cursors"]>({});
   const [attempt,setAttempt] = useState(0);
+  const [pings,setPings] = useState<Ping[]>([]);
+  const editors = useRef(editorIds); editors.current = editorIds;
   const activity = useRef<RoomActivity>({section:"room",view:"2d",selected:null});
-  const actions = useRef<{track:()=>void; send:(surface:string,read:(()=>CursorPoint|null)|null)=>void}>({track:()=>{},send:()=>{}});
+  const actions = useRef<{track:()=>void; send:(surface:string,read:(()=>CursorPoint|null)|null)=>void; ping:(point:CursorPoint)=>void}>({track:()=>{},send:()=>{},ping:()=>{}});
   const tracks = useRef(new Map<string,Track>());
   // Cursors go out only while someone else is here to see them (another member's tab is open and in front).
   const othersHere = useRef(false);
@@ -56,14 +68,28 @@ export default function CollaborationProvider({id, epoch, enabled, userId, membe
   const arrivals = useRef<{at:number;lag:number}[]>([]);
   const membership = [...memberIds].sort().join(",");
   useEffect(() => {
-    setPeers({}); setCursors({}); tracks.current.clear();
+    setPeers({}); setCursors({}); tracks.current.clear(); setPings([]);
     if (!enabled) { setStatus("disabled"); return; }
     const client = fakeRealtime ? fakeRealtime(userId) : getBrowserClient();
     if (!client || !epoch) { setStatus("offline"); return; }
     setStatus("connecting");
     const session = crypto.randomUUID(), channels:RealtimeChannel[] = [], live = new Set<string>();
     let stopped=false, own:RealtimeChannel|undefined, lastActivity=Date.now(), lastTrack=0, lastSend=0, seq=0;
-    const heard=new Map<string,number>();
+    const heard=new Map<string,number>(),pinged=new Map<string,number>(),timers=new Set<ReturnType<typeof setTimeout>>();
+    let pingSeq=0;
+    const later=(fn:()=>void,ms:number)=>{const t=setTimeout(()=>{timers.delete(t);if(!stopped)fn();},ms);timers.add(t);};
+    const show=(ping:Ping)=>{
+      setPings(previous=>[...previous.filter(p=>p.userId!==ping.userId),ping]);
+      later(()=>setPings(previous=>previous.map(p=>p.key===ping.key?{...p,done:true}:p)),3000);
+      later(()=>setPings(previous=>previous.filter(p=>p.key!==ping.key)),10_000);
+    };
+    // "Look here": sent on your own channel, shown to you at once. Nothing is saved.
+    const ping=(point:CursorPoint)=>{
+      if(stopped || !own || !live.has(userId) || !editors.current.includes(userId))return;
+      const at=Date.now();
+      void own.send({type:"broadcast",event:"ping",payload:{...point,session,at,seq:++pingSeq}}).catch(()=>{});
+      show({...point,key:`${userId}:${pingSeq}`,userId,at});
+    };
     let flush:ReturnType<typeof setTimeout>|undefined, refreshTimer:ReturnType<typeof setTimeout>|undefined;
     // The pointer's latest position is read when a message goes out, so each message carries where it is now.
     let pending:(()=>CursorPoint|null)|null=null, pendingSurface="", shown=false;
@@ -89,7 +115,7 @@ export default function CollaborationProvider({id, epoch, enabled, userId, membe
       lastTrack=Date.now();
       void own.track({...activity.current,session,active:!document.hidden && Date.now()-lastActivity<60_000,hidden:document.hidden,at:Date.now()}).catch(()=>{});
     };
-    actions.current={track,send};
+    actions.current={track,send,ping};
     const refresh = () => {
       clearTimeout(refreshTimer);
       refreshTimer=setTimeout(()=>{if(!stopped)void changed.current().catch(()=>{});},120);
@@ -125,6 +151,13 @@ export default function CollaborationProvider({id, epoch, enabled, userId, membe
               setPeers(previous=>{const next={...previous};if(sessions[0])next[uid]=sessions[0];else delete next[uid];return next;});
               const track=tracks.current.get(uid);
               if(track && !sessions.some(p=>p.session===track.session&&p.active))drop(uid);
+            });
+            // Only an owner's or editor's ping counts (the channel guarantees who sent it), one per 1.5 s each, none older than 5 s.
+            if(uid!==userId)channel.on("broadcast",{event:"ping"},({payload})=>{
+              const ping=readPing(payload),now=Date.now();
+              if(stopped || !ping || !editors.current.includes(uid) || now-ping.at>5000 || now-(pinged.get(uid)??0)<1500)return;
+              pinged.set(uid,now);
+              show({x:ping.x,y:ping.y,...(ping.h!==undefined?{h:ping.h}:{}),...(ping.id?{id:ping.id}:{}),key:`${uid}:${ping.session}:${ping.seq}`,userId:uid,at:now});
             });
             if(uid!==userId)channel.on("broadcast",{event:"cursor"},({payload})=>{
               if(stopped)return;
@@ -172,7 +205,7 @@ export default function CollaborationProvider({id, epoch, enabled, userId, membe
     window.addEventListener("pointerdown",active);window.addEventListener("pointermove",active,{passive:true});window.addEventListener("keydown",active);
     window.addEventListener("offline",clearAll);window.addEventListener("blur",blur);document.addEventListener("visibilitychange",visible);
     return()=>{
-      stopped=true;actions.current={track:()=>{},send:()=>{}};clearTimeout(flush);clearTimeout(refreshTimer);clearInterval(heartbeat);clearInterval(expire);
+      stopped=true;actions.current={track:()=>{},send:()=>{},ping:()=>{}};timers.forEach(clearTimeout);clearTimeout(flush);clearTimeout(refreshTimer);clearInterval(heartbeat);clearInterval(expire);
       window.removeEventListener("pointerdown",active);window.removeEventListener("pointermove",active);window.removeEventListener("keydown",active);
       window.removeEventListener("offline",clearAll);window.removeEventListener("blur",blur);document.removeEventListener("visibilitychange",visible);
       channels.forEach(channel=>{void client.removeChannel(channel).catch(()=>{});});
@@ -194,10 +227,12 @@ export default function CollaborationProvider({id, epoch, enabled, userId, membe
   },[]);
   const clear=useCallback(()=>actions.current.send("",null),[]);
   const reconnect=useCallback(()=>setAttempt(n=>n+1),[]);
+  const ping=useCallback((point:CursorPoint)=>actions.current.ping(point),[]);
+  const offscreen=useCallback((key:string)=>setPings(previous=>previous.some(p=>p.key===key&&!p.offscreen)?previous.map(p=>p.key===key?{...p,offscreen:true}:p):previous),[]);
   const stats=useCallback(()=>{
     const recent=arrivals.current.filter(a=>Date.now()-a.at<5000),lags=recent.map(a=>a.lag).sort((a,b)=>a-b);
     const delays=[...tracks.current.values()].map(t=>t.delay);
     return lags.length?{rate:recent.length/5,p50:lags[Math.floor(lags.length*.5)],p95:lags[Math.min(lags.length-1,Math.floor(lags.length*.95))],delay:Math.round(delays.length?Math.max(...delays):0)}:null;
   },[]);
-  return <CollaborationContext.Provider value={{status,peers,cursors,sample,updateActivity,move,clear,reconnect,stats}}>{children}</CollaborationContext.Provider>;
+  return <CollaborationContext.Provider value={{status,peers,cursors,sample,updateActivity,move,clear,reconnect,stats,pings,canPing:editorIds.includes(userId),ping,offscreen}}>{children}</CollaborationContext.Provider>;
 }

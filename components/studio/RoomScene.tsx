@@ -14,7 +14,7 @@ import { OPENING_DRAG_TYPE, type OpeningControls } from "@/lib/room-editing";
 import s from "./Studio.module.css";
 import BrandLoader from "@/components/site/BrandLoader";
 import {usePlannerStore} from "@/lib/store";
-import CollaborationOverlay from "@/components/workspace/CollaborationOverlay";
+import CollaborationOverlay, { useCanvasMarks } from "@/components/workspace/CollaborationOverlay";
 import { wake } from "@/components/workspace/CollaborationProvider";
 import type { CursorPoint } from "@/lib/workspace-collaboration";
 
@@ -108,7 +108,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
   useEffect(()=>{view.current?.setMoveMode(props.moveMode??false);},[props.moveMode]);
   useEffect(()=>{view.current?.setWalker(props.walker??null);},[props.walker]);
   // The pieces the comments panel is on, outlined in the room; Locate on a spot turns the camera to it.
-  const marks=(workspace?.marks??[]).flatMap(m=>m.target.startsWith("furniture:")?[{id:m.target.slice(10),color:m.color}]:[]),marksKey=JSON.stringify(marks);
+  const marks=useCanvasMarks().flatMap(m=>m.target.startsWith("furniture:")?[{id:m.target.slice(10),color:m.color}]:[]),marksKey=JSON.stringify(marks);
   useEffect(()=>{view.current?.setMarks(JSON.parse(marksKey));},[marksKey,ready]);
   const focusAt=workspace?.focus;
   useEffect(()=>{if(focusAt&&ready&&Date.now()-focusAt.key<3000)view.current?.focusPoint(focusAt.x,focusAt.y,focusAt.h);},[focusAt?.key,ready]); // eslint-disable-line react-hooks/exhaustive-deps

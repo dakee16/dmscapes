@@ -185,6 +185,8 @@ async function roomShot(page) {
   try { return await scene(page).locator("canvas").screenshot(); }
   finally { await page.evaluate(() => document.querySelectorAll("[data-testid=room-3d] [class*=cursorLayer]").forEach(el => { el.style.visibility = ""; })); }
 }
+/** When a ping first shows on `page` (its own clock, which the pages share). */
+const watchPings = page => page.evaluate(() => { window.__pingSeen = null; new MutationObserver((_, o) => { if (document.querySelector("[data-ping]")) { window.__pingSeen = Date.now(); o.disconnect(); } }).observe(document.body, { childList: true, subtree: true }); });
 const selected = page => page.locator("[role=toolbar][aria-label$=' actions']").getAttribute("aria-label").catch(() => null);
 const panelTarget = page => page.locator("#room-side-panel select").inputValue();
 
@@ -298,6 +300,68 @@ const tests = {
     await commenter.getByRole("button", { name: "Close comments" }).click();
     void zoom;
   },
+  async pings({ owner, editor, commenter }) {
+    for (const p of [owner, editor, commenter]) await listen(p);
+    await sees(owner, EDITOR); await sees(commenter, EDITOR);
+    // An editor's "Look here" on a piece: everyone else sees it within the cursor budget, with the piece outlined.
+    const target = await findSpot(editor, owner, "piece");
+    await editor.mouse.click(target.x, target.y, { button: "right" });
+    const menu = editor.getByRole("menu", { name: "Canvas actions" });
+    await menu.waitFor();
+    ok((await menu.getByRole("menuitem").allTextContents()).map(t => t.trim()).join(" | ").match(/^Comment on .+ \| Look here$/), "Editors get the two-item menu: Comment on … and Look here");
+    await owner.mouse.move(5, 5); await commenter.mouse.move(5, 5); await sleep(300);
+    const plain = await owner.locator(".konvajs-content").screenshot();
+    await Promise.all([owner, commenter].map(watchPings));
+    const sent = Date.now();
+    await menu.getByRole("menuitem", { name: "Look here" }).click();
+    await owner.locator("[data-ping]").first().waitFor({ state: "attached" }); await commenter.locator("[data-ping]").first().waitFor({ state: "attached" });
+    const delays = await Promise.all([owner, commenter].map(p => p.evaluate(() => window.__pingSeen)));
+    results.pingDelayMs = delays.map(t => t - sent);
+    ok(results.pingDelayMs.every(d => d <= 250), `The ping shows for the owner and the commenter within the cursor budget (${results.pingDelayMs.join(", ")} ms)`);
+    ok(await editor.locator("[data-ping]").count() >= 1, "The sender sees their own ping");
+    const theirs = await owner.locator("[data-ping]").first().boundingBox(), box = await surface(owner).boundingBox(), mine = await surface(editor).boundingBox();
+    const off = Math.hypot(theirs.x - box.x - (target.x - mine.x), theirs.y - box.y - (target.y - mine.y));
+    ok(off < 6, `It lands where the editor pointed (${Math.round(off * 10) / 10} px off on the host's plan)`);
+    ok(await changedPixels(plain, await owner.locator(".konvajs-content").screenshot()) > 100, "The pinged piece is outlined on the host's plan");
+    const said = await owner.locator("p.ds-sr[role=status]").allTextContents();
+    ok(said.some(t => /^Sam: look here, .+\.$/.test(t)), `Screen readers hear it ("${said.find(t => t.startsWith("Sam"))}")`);
+    await owner.screenshot({ path: path.join(OUT, `ping-2d-${label}.png`) });
+    await sleep(3300);
+    ok(await owner.locator("[data-ping]").count() === 0, "The ping is gone after about 3 s (nothing is saved)");
+    ok(!state.patches.some(p => JSON.stringify(p).includes("ping")), "No ping was sent to the server");
+    // Limits: a second ping within 1.5 s isn't shown to others.
+    const heardBefore = (await heard(owner, "ping")).length;
+    await editor.mouse.click(target.x, target.y, { button: "right" }); await menu.getByRole("menuitem", { name: "Look here" }).click();
+    await owner.locator("[data-ping]").first().waitFor({ state: "attached" });
+    await editor.mouse.click(target.x + 20, target.y, { button: "right" }); await menu.getByRole("menuitem", { name: "Look here" }).click();
+    await sleep(400);
+    const keys = await owner.locator("[data-ping]").evaluateAll(els => els.map(e => e.dataset.ping));
+    ok(keys.length === 1 && (await heard(owner, "ping")).length - heardBefore === 2, "A second ping within 1.5 s reaches others but isn't shown");
+    await sleep(3200);
+    // A forged ping from the commenter (on their own channel, the only one they can publish on) is ignored.
+    const forged = await commenter.evaluate(([topic]) => { const at = Date.now(); new BroadcastChannel("dormscape-fake-realtime").postMessage({ topic, kind: "broadcast", event: "ping", payload: { x: .5, y: .5, session: "forged", at, seq: 1 } }); return at; }, [`workspace:${ROOM}:${EPOCH}:${COMMENTER.id}`]);
+    await sleep(500);
+    ok(forged && await owner.locator("[data-ping]").count() === 0 && await editor.locator("[data-ping]").count() === 0, "A forged ping from the commenter is ignored by everyone");
+    // On another tab: the room bar offers to show it.
+    await commenter.getByRole("button", { name: /Who brings what/ }).first().click();
+    await editor.mouse.click(target.x, target.y, { button: "right" }); await menu.getByRole("menuitem", { name: "Look here" }).click();
+    const notice = commenter.getByRole("button", { name: "Show", exact: true });
+    await notice.waitFor({ timeout: 2000 });
+    const text = await commenter.locator("[class*=pingNotice]").textContent();
+    ok(/^SSam wants you to look at .+Show×$/.test(text), `Away from the room, the bar says "${text.replace(/^S/, "").replace(/Show×$/, "")}" with Show`);
+    await commenter.screenshot({ path: path.join(OUT, `ping-notice-${label}.png`) });
+    await notice.click();
+    await surface(commenter).waitFor();
+    ok(await commenter.locator("[data-section=room]").count() === 1, "Show switches to the room");
+    await sleep(3200);
+    // Pings follow the "Everyone's cursors" switch.
+    await owner.getByRole("switch", { name: "Everyone's cursors" }).click();
+    await editor.mouse.click(target.x, target.y, { button: "right" }); await menu.getByRole("menuitem", { name: "Look here" }).click();
+    await sleep(600);
+    ok(await owner.locator("[data-ping]").count() === 0 && await commenter.locator("[data-ping]").count() === 1, "With Everyone's cursors off, the host sees no pings (the commenter still does)");
+    await owner.getByRole("switch", { name: "Everyone's cursors" }).click();
+    await sleep(3000);
+  },
   async scene3d({ owner, editor }) {
     await view(owner, "3d"); await view(editor, "3d"); await listen(editor); await listen(owner);
     // Both cameras on the default framing (a Locate in an earlier test turned the editor's).
@@ -345,6 +409,17 @@ const tests = {
     const roomAfter = await roomShot(editor);
     if (Buffer.compare(room, roomAfter)) { fs.writeFileSync(path.join(OUT, "room-before.png"), room); fs.writeFileSync(path.join(OUT, "room-after.png"), roomAfter); }
     ok(await changedPixels(room, roomAfter) === 0, "The room didn't orbit or change");
+    // "Look here" in 3D: it lands on the piece for the host (same camera), and the piece is outlined in the room.
+    await owner.mouse.move(5, 5); await sleep(300);
+    const hostRoom = await roomShot(owner), hostBox = await scene(owner).boundingBox(), myBox = await scene(editor).boundingBox();
+    await editor.mouse.click(mine.x, mine.y, { button: "right" }); await menu.getByRole("menuitem", { name: "Look here" }).click();
+    await owner.locator("[data-ping]").first().waitFor({ state: "attached" }); await sleep(250);
+    const landed = await owner.locator("[data-ping]").first().boundingBox();
+    const miss = Math.hypot(landed.x - hostBox.x - (mine.x - myBox.x), landed.y - hostBox.y - (mine.y - myBox.y));
+    ok(miss < 6, `A 3D ping lands on the piece for the host (${Math.round(miss * 10) / 10} px off)`);
+    ok(await changedPixels(hostRoom, await roomShot(owner)) > 100, "The pinged piece is outlined in the host's 3D room");
+    await owner.screenshot({ path: path.join(OUT, `ping-3d-${label}.png`) });
+    await sleep(3200);
     await editor.mouse.dblclick(mine.x, mine.y);
     await editor.locator("#room-side-panel").waitFor();
     ok(await panelTarget(editor) === `furniture:${mine.payload.id}`, "3D double-click comments on that piece");

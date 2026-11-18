@@ -16,9 +16,9 @@ import PlanResult from "@/components/planner/PlanResult";
 import ReadOnlyRoom from "./ReadOnlyRoom";
 import RoomAppHeader from "./RoomAppHeader";
 import { WorkspaceContext, type CanvasGesture, type WorkspaceAccess } from "./WorkspaceContext";
-import CanvasMenu from "./CanvasMenu";
+import CanvasMenu, { type CanvasMenuItem } from "./CanvasMenu";
 import { useWorkspaceSession } from "./useWorkspaceSession";
-import CollaborationProvider, { useCollaboration } from "./CollaborationProvider";
+import CollaborationProvider, { useCollaboration, type Ping } from "./CollaborationProvider";
 import CommentsPanel from "./CommentsPanel";
 import RoomBar from "./RoomBar";
 import RoomRail from "./RoomRail";
@@ -130,6 +130,7 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
   const outline = roomOutline(state.room), room = state.room;
   const spotName = (t: string) => { const p = readPointTarget(t); return p && spotLabel(p, { lengthFt: room.lengthFt, widthFt: room.widthFt, inside: (x, y) => pointInPolygon(x, y, outline.points, .05) },
     furniture.map(f => { const b = footprint(f); return { label: f.label, x: b.x, y: b.y, w: b.w, h: b.h }; }), outline.openings.filter(o => o.kind === "window").map(o => openingCenter(outline.points, o))); };
+  const pingLabel = (p: Ping) => furniture.find(f => f.id === p.id)?.label ?? `the ${(spotName(pointTarget(p)) ?? "Spot").replace(/^Spot/, "spot")}`;
   const spots = [...new Set([target, ...detail.comments.map(c => c.target)])].flatMap(t => { const name = spotName(t); return name ? [{ id: t, name }] : []; });
   // On the canvas: the thread hovered in the panel (its author's colour), else the piece or spot the panel is on (yours).
   const mark = hovered ?? (side === "comments" && target !== "room" ? { target, user: userId } : null);
@@ -140,7 +141,7 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
   });
 
   const access: WorkspaceAccess = { id, members: detail.members, ownerPro: detail.ownerPro, canEdit: detail.canEdit, section, comments: detail.comments, commentOn, overlay, canvasGesture: commentAllowed ? canvasGesture : undefined, marks, spots: spotPins, focus };
-  return <CollaborationProvider id={id} epoch={detail.workspace.realtime_epoch} enabled={enabled} userId={userId} memberIds={detail.members.map(m => m.user_id)} onChange={() => session.refresh()}><VoiceProvider id={detail.workspace.id} epoch={detail.workspace.realtime_epoch} enabled={enabled}><WorkspaceContext.Provider value={access}>
+  return <CollaborationProvider id={id} epoch={detail.workspace.realtime_epoch} enabled={enabled} userId={userId} memberIds={detail.members.map(m => m.user_id)} editorIds={detail.members.filter(m => m.role !== "commenter").map(m => m.user_id)} onChange={() => session.refresh()}><VoiceProvider id={detail.workspace.id} epoch={detail.workspace.realtime_epoch} enabled={enabled}><WorkspaceContext.Provider value={access}>
     <div className={`ds ${s.room}`} data-section={section} data-side={side ?? undefined}>
       <RoomBar detail={detail} userId={userId} name={state.planning.name} place={place} status={status} tab={section} setTab={t => { setSection(t); setFollowing(null); }} badges={{ shopping: unclaimed }} halls={halls}
         side={side} openSide={setSide} onInvite={invite} canRename={detail.canEdit} onRename={name => state.updatePlanning({ name })} />
@@ -152,6 +153,7 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
         {session.error && <div className={`${s.notice} ${s.noticeError}`} role="alert"><div><p>{session.error}</p></div><div className={s.noticeActions}><button type="button" className={s.ghostBtn} onClick={() => void session.save()}>Retry saving</button></div></div>}
         {error && !confirm && section !== "roommates" && <p role="alert" className={s.inlineError}>{error}</p>}
         {message && !confirm && section !== "roommates" && <p role="status" className={s.toast}>{message}<button type="button" aria-label="Dismiss" onClick={() => setMessage("")}>×</button></p>}
+        <PingNotice userId={userId} members={detail.members} section={section} enabled={overlay.cursors} label={pingLabel} onShow={p => { setSection("room"); setFollowing(null); setFocus({ x: p.x, y: p.y, h: p.h, key: Date.now() }); }} />
       </div>
       <div className={s.body}>
         {section === "room" && <RoomRail detail={detail} userId={userId} overlay={overlay} setOverlay={setOverlay} following={following} onFollow={setFollowing} onInvite={invite} onPeople={() => setSection("roommates")} />}
@@ -176,8 +178,8 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
         {side === "voice" && <VoicePanel members={detail.members} userId={userId} roomName={state.planning.name} onClose={() => setSide(null)} following={following} onFollow={setFollowing} />}
       </div>
       <VoiceToast hidden={side === "voice"} />
-      {menu && <CanvasMenu x={menu.gesture.clientX} y={menu.gesture.clientY} onClose={refocus => { setMenu(null); if (refocus) menu.gesture.canvas?.focus({ preventScroll: true }); }}
-        items={[{ label: menu.name, icon: "comment", run: () => { setMenu(null); startComment(menu.target); } }]} />}
+      {menu && <LiveMenu x={menu.gesture.clientX} y={menu.gesture.clientY} point={menu.gesture.point} onClose={refocus => { setMenu(null); if (refocus) menu.gesture.canvas?.focus({ preventScroll: true }); }}
+        comment={{ label: menu.name, icon: "comment", run: () => { setMenu(null); startComment(menu.target); } }} />}
       {confirm && <Modal className={s.confirmLayer} aria-labelledby="confirm-title" onKeyDown={e => { if (e.key === "Escape" && !busy) setConfirm(null); }} onClick={() => { if (!busy) setConfirm(null); }}><div className={s.confirm} role="alertdialog" aria-labelledby="confirm-title" aria-describedby="confirm-body" onClick={e => e.stopPropagation()}>
         <h2 id="confirm-title">{confirm === "reload" ? "Load the shared version?" : confirm.startsWith("restore:") ? "Restore this version?" : confirm.startsWith("remove:") ? "Remove this roommate?" : confirm === "personal" ? "Make this room personal?" : confirm === "delete" ? "Delete this workspace?" : "Leave this room?"}</h2>
         <p id="confirm-body">{confirm === "reload" ? "This replaces your unsaved edits. Keep a personal copy first if you want to preserve them." : confirm === "personal" ? "Roommates will lose access and all invitation links will stop working. Your room and shopping list stay saved." : confirm === "delete" ? "The workspace, comments, and versions will be deleted. This cannot be undone. Original saved designs remain available." : confirm.startsWith("restore:") ? "The room and shopping list will return to this version for everyone. The current version is kept in history." : confirm === "leave" ? "You will lose access to this room. Your existing comments remain with its members." : "Their access ends immediately. Existing comments remain with the room."}</p>
@@ -190,6 +192,29 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
       </div></Modal>}
     </div>
   </WorkspaceContext.Provider></VoiceProvider></CollaborationProvider>;
+}
+
+/** The canvas menu: "Comment on …", and "Look here" for the owner and editors while the room is live. */
+function LiveMenu({ x, y, point, comment, onClose }: { x: number; y: number; point: Ping | { x: number; y: number }; comment: CanvasMenuItem; onClose: (refocus: boolean) => void }) {
+  const live = useCollaboration();
+  const items = live?.canPing && live.status === "live" ? [comment, { label: "Look here", icon: "ping" as const, run: () => { live.ping(point); onClose(true); } }] : [comment];
+  return <CanvasMenu x={x} y={y} items={items} onClose={onClose} />;
+}
+
+/** "Alex wants you to look at Desk · Show" when a ping lands on another tab or off screen, and a screen reader line for each. */
+function PingNotice({ userId, members, section, enabled, label, onShow }: { userId: string; members: { user_id: string; display_name: string }[]; section: RoomTab; enabled: boolean; label: (p: Ping) => string; onShow: (p: Ping) => void }) {
+  const live = useCollaboration(), [dismissed, setDismissed] = useState<string[]>([]);
+  if (!enabled || !live) return null;
+  const others = live.pings.filter(p => p.userId !== userId), name = (p: Ping) => members.find(m => m.user_id === p.userId)?.display_name ?? "A roommate";
+  const notice = [...others].reverse().find(p => (section !== "room" || p.offscreen) && !dismissed.includes(p.key)), latest = others.filter(p => !p.done).at(-1);
+  return <>
+    {notice && <div className={s.pingNotice} style={personStyle(notice.userId, members)}>
+      <span className={s.faceSm} aria-hidden="true">{initial(name(notice))}</span>{name(notice)} wants you to look at {label(notice)}
+      <button type="button" onClick={() => { setDismissed(d => [...d, notice.key]); onShow(notice); }}>Show</button>
+      <button type="button" aria-label="Dismiss" onClick={() => setDismissed(d => [...d, notice.key])}>×</button>
+    </div>}
+    <p className="ds-sr" role="status">{latest ? `${name(latest)}: look here, ${label(latest)}.` : ""}</p>
+  </>;
 }
 
 /** Tell the room which view and piece you're on (presence, and others' Follow). */
