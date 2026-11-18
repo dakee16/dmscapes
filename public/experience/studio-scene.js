@@ -1106,7 +1106,7 @@ export function createStudioScene(container, options) {
     stopPress();
     // A long press comments on what's under the finger; the piece the touch picked goes back to what was selected.
     if(e.pointerType==="touch"&&pointers.size===1){const before=data?.selectedId??null,at={clientX:e.clientX,clientY:e.clientY};
-      press={id:e.pointerId,x:e.clientX,y:e.clientY,timer:setTimeout(()=>{press=null;cancelDrag();options.onSelect?.(before);if(gesture("long_press",at))pressAt=Date.now();request();},550)};}
+      press={id:e.pointerId,x:e.clientX,y:e.clientY,timer:setTimeout(()=>{press=null;if(!gesture("long_press",at))return;pressAt=Date.now();cancelDrag();options.onSelect?.(before);request();},550)};}
     if(pointers.size===2){cancelDrag();pinch=distance();return;}
     const opening=data?.editOpenings?openingHit(e):null;
     if(opening){const index=opening.object.userData.openingIndex;options.onSelectOpening?.(index);

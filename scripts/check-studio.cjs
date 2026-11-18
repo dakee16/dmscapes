@@ -168,7 +168,9 @@ function collectGestures(node){
 collectGestures(sceneSource);
 let openingCommits=0;
 const openingNode={position:{set(x,y,z){Object.assign(this,{x,y,z});}},rotation:{y:0}};
+// photo: the HD photo in progress; press/stopPress/MAC: the long-press and Mac Ctrl-click handling (timers never fire here).
 const gestureContext={data:{editOpenings:true,outline:withDoor},drag:null,pointers:new Map(),pinch:0,assemblyStart:0,angle:.7,polar:.94,
+  photo:null,MAC:false,press:null,stopPress(){},setTimeout:()=>0,clearTimeout(){},
   meshes:new Map(),openingNodes:new Map([[0,openingNode]]),openingGhost:{visible:false},clearGuides(){},request(){},
   canvas:{focus(){},setPointerCapture(){},hasPointerCapture(){return false;}},
   openingHit:()=>({object:{userData:{openingIndex:0}},point:{y:3}}),wallPoint:e=>({x:e.x,z:e.y}),
