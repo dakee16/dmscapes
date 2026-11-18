@@ -28,6 +28,10 @@ import { hasHallFinder } from "@/lib/hall-finder";
 import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
 import { VoicePanel, VoiceProvider, VoiceToast } from "./RoomVoice";
 import { initial, personStyle } from "./people";
+import { readPointTarget, spotLabel } from "@/lib/workspace-collaboration";
+import { roomOutline } from "@/lib/studio";
+import { openingCenter } from "@/lib/room-editing";
+import { footprint, pointInPolygon } from "@/components/canvas/geometry";
 import s from "./Room.module.css";
 
 export type RoomTab = WorkspaceAccess["section"];
@@ -106,6 +110,11 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
     return undefined;
   };
   const showOnPlan = (itemId: string) => { setSection("room"); usePlannerStore.setState({ selectedItemId: itemId }); };
+  // Spot comments are named after what's near them now ("Spot near Desk"), or flagged when a redraw left them outside.
+  const outline = roomOutline(state.room), room = state.room;
+  const spotName = (t: string) => { const p = readPointTarget(t); return p && spotLabel(p, { lengthFt: room.lengthFt, widthFt: room.widthFt, inside: (x, y) => pointInPolygon(x, y, outline.points, .05) },
+    furniture.map(f => { const b = footprint(f); return { label: f.label, x: b.x, y: b.y, w: b.w, h: b.h }; }), outline.openings.filter(o => o.kind === "window").map(o => openingCenter(outline.points, o))); };
+  const spots = [...new Set([target, ...detail.comments.map(c => c.target)])].flatMap(t => { const name = spotName(t); return name ? [{ id: t, name }] : []; });
 
   return <CollaborationProvider id={id} epoch={detail.workspace.realtime_epoch} enabled={enabled} userId={userId} memberIds={detail.members.map(m => m.user_id)} onChange={() => session.refresh()}><VoiceProvider id={detail.workspace.id} epoch={detail.workspace.realtime_epoch} enabled={enabled}><WorkspaceContext.Provider value={access}>
     <div className={`ds ${s.room}`} data-section={section} data-side={side ?? undefined}>
@@ -138,6 +147,7 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
           ...furniture.map(f => ({ id: `furniture:${f.id}`, name: f.label })),
           ...products.map(p => ({ id: `product:${p.id}`, name: p.name })),
           ...state.planning.alternatives.map(a => ({ id: `layout:${a.id}`, name: a.name })),
+          ...spots,
         ]}/>}
         {side === "voice" && <VoicePanel members={detail.members} userId={userId} roomName={state.planning.name} onClose={() => setSide(null)} following={following} onFollow={setFollowing} />}
       </div>

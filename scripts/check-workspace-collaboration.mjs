@@ -80,6 +80,23 @@ try{
   equal((await comment(commenter,room,'resolve',{comment_id:other.id,resolved:true})).status,403,'Commenter cannot resolve another author');
   equal((await comment(owner,room,'comment',{body:' ',target:'room'})).status,400,'Empty comment denied');
   equal((await comment(owner,room,'comment',{body:'x'.repeat(1501),target:'room'})).status,400,'Oversized comment denied');
+  // Spot comments (point:x:y[:h]) need no schema change: any member can start one, reply to it and resolve it.
+  for(const [who,target] of [[owner,'point:0.25:0.5'],[editor,'point:1:0.1234:3.25'],[commenter,'point:0:1']]){
+    const spot=await comment(who,room,'comment',{body:'Here?',target});
+    equal(spot.ok,true,`Spot comment ${target} saved`);
+    equal((await db.query('select target from workspace_comments where id=$1',[spot.id])).rows[0].target,target,'Spot target kept exactly');
+    const answer=await comment(who===owner?commenter:owner,room,'comment',{body:'Agreed',target:'room',parent_id:spot.id});
+    equal((await db.query('select target from workspace_comments where id=$1',[answer.id])).rows[0].target,target,'Reply inherits the spot');
+  }
+  const spot=await comment(commenter,room,'comment',{body:'Rug here?',target:'point:0.5:0.5'});
+  equal((await comment(commenter,room,'resolve',{comment_id:spot.id,resolved:true})).ok,true,'Commenter resolves own spot thread');
+  equal((await comment(editor,room,'resolve',{comment_id:spot.id,resolved:false})).ok,true,'Editor reopens a spot thread');
+  equal((await comment(owner,room,'comment',{body:'Too long',target:'point:'+'1'.repeat(115)})).status,400,'Targets over 120 characters denied');
+  equal((await comment(owner,room,'comment',{body:'Longest',target:'point:'+'0'.repeat(114)})).ok,true,'A 120-character target is the limit');
+  // "Look here" pings rely on this: a member can publish only on their own topic.
+  equal(await allowed(commenter,topic(room,current,editor),true),false,'Commenter cannot publish as the editor');
+  equal(await allowed(commenter,topic(room,current,owner),true),false,'Commenter cannot publish as the owner');
+  equal(await allowed(editor,topic(room,current,commenter),true),false,'Editor cannot publish as the commenter');
   await action(owner,room,'member',{user_id:editor,role:'remove'});
   const rotated=await epoch(room);
   equal(rotated===current,false,'Removal rotates topics');

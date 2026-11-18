@@ -2,6 +2,7 @@ import { inviteRoommate } from "@/lib/workspace-invitation";
 import { workspaceAccess, workspaceAction, workspaceBody, workspaceIdentity, workspaceJson, workspaceUnavailable, uuid } from "@/lib/workspace-server";
 import { cleanWorkspaceSnapshot } from "@/lib/workspace-validation";
 import { closeWorkspaceVoice } from "@/lib/workspace-voice";
+import { readPointTarget } from "@/lib/workspace-collaboration";
 type Context = { params: Promise<{ id: string }> };
 
 export async function GET(request: Request, context: Context) {
@@ -48,7 +49,7 @@ export async function PATCH(request: Request, context: Context) {
   } else if (action === "comment") {
     if (typeof body.body !== "string" || !body.body.trim() || body.body.length > 1500 || typeof body.target !== "string" || body.target.length > 120) return workspaceJson({ error: "Write a comment of up to 1,500 characters." }, 400);
     if (body.parent_id != null && !uuid(body.parent_id)) return workspaceJson({ error: "Invalid conversation." }, 400);
-    if (!/^(room|(?:product|furniture|layout):[a-zA-Z0-9_.:-]{1,110})$/.test(body.target)) return workspaceJson({ error: "Choose a room, piece, or product to comment on." }, 400);
+    if (!/^(room|(?:product|furniture|layout):[a-zA-Z0-9_.:-]{1,110})$/.test(body.target) && !readPointTarget(body.target)) return workspaceJson({ error: "Choose a room, piece, or product to comment on." }, 400);
     payload = { body: body.body.trim(), target: body.target, parent_id: body.parent_id ?? null };
   } else if (action === "resolve") {
     if (!uuid(body.comment_id) || typeof body.resolved !== "boolean") return workspaceJson({ error: "Invalid comment." }, 400);

@@ -48,3 +48,29 @@ export function presenceLabel(p: RoomPresence | undefined, connected: boolean) {
   if (p.section === "roommates") return "With the roommates";
   return p.view === "3d" ? "In the 3D room" : "In the 2D plan";
 }
+
+/** A comment on a spot in the room: `point:<x>:<y>[:<h>]`, x and y 0–1 to 4 decimals, h the height in feet (3D only). */
+export function pointTarget(p: { x: number; y: number; h?: number }) {
+  const n = (v: number, places: number) => String(Math.round(Math.min(1, Math.max(0, v)) * 10 ** places) / 10 ** places);
+  return `point:${n(p.x, 4)}:${n(p.y, 4)}${p.h && p.h >= .005 ? `:${Math.round(Math.min(20, p.h) * 100) / 100}` : ""}`;
+}
+const pointPattern = /^point:(0(?:\.\d{1,4})?|1(?:\.0{1,4})?):(0(?:\.\d{1,4})?|1(?:\.0{1,4})?)(?::(\d{1,2}(?:\.\d{1,2})?))?$/;
+export function readPointTarget(target: string): { x: number; y: number; h?: number } | null {
+  const m = pointPattern.exec(target), h = m?.[3] === undefined ? undefined : Number(m[3]);
+  return m && (h === undefined || h <= 20) ? { x: Number(m[1]), y: Number(m[2]), ...(h !== undefined ? { h } : {}) } : null;
+}
+/**
+ * What a spot comment is called: "Spot near Desk" when a piece is within 3 ft, else by the window, on the wall or on
+ * the floor. `pieces` are footprints and `windows` window centres, in feet; `inside` says whether a point (ft) is in
+ * the room as it's drawn now.
+ */
+export function spotLabel(p: { x: number; y: number; h?: number }, room: { lengthFt: number; widthFt: number; inside: (x: number, y: number) => boolean },
+  pieces: { label: string; x: number; y: number; w: number; h: number }[], windows: { x: number; y: number }[]) {
+  const x = p.x * room.lengthFt, y = p.y * room.widthFt;
+  if (!room.inside(x, y)) return "Spot (outside the room now)";
+  const near = pieces.map(r => ({ label: r.label, d: Math.hypot(Math.max(r.x - x, 0, x - r.x - r.w), Math.max(r.y - y, 0, y - r.y - r.h)) }))
+    .filter(r => r.d <= 3).sort((a, b) => a.d - b.d)[0];
+  if (near) return `Spot near ${near.label}`;
+  if (windows.some(w => Math.hypot(w.x - x, w.y - y) <= 3)) return "Spot by the window";
+  return (p.h ?? 0) > .5 ? "Spot on the wall" : "Spot on the floor";
+}
