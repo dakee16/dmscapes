@@ -83,10 +83,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ received: true });
   }
 
-  const userId =
-    session.metadata?.user_id ??
-    (typeof session.client_reference_id === "string" ? session.client_reference_id : null);
-  const rawPurchase = session.metadata?.purchase ?? "plus";
+  // Only sessions our checkout created count: it pins user_id and purchase in metadata. A Payment Link
+  // or other integration on the same Stripe account can't name a user (client_reference_id) or
+  // default to Plus.
+  const userId = session.metadata?.user_id ?? null;
+  const rawPurchase = session.metadata?.purchase ?? "";
   const purchase = (PURCHASE_TYPES as readonly string[]).includes(rawPurchase)
     ? (rawPurchase as PurchaseType)
     : null;

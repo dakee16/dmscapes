@@ -27,9 +27,11 @@ export async function PATCH(request: Request, ctx: { params: Promise<{ id: strin
     .eq("user_id", userId)
     .not("name", "is", null)
     .not("dorm_id", "is", null)
-    .select("id")
+    .select("id, college_id, dorm_id")
     .maybeSingle();
   if (error) return NextResponse.json({ error: "The hall gallery isn't switched on yet." }, { status: 503 });
   if (!data) return NextResponse.json({ error: "Only your own designs with a hall can go in a gallery." }, { status: 404 });
+  // One gallery layout per person per hall (the gallery shows one each anyway), so one account can't fill a hall's.
+  if (body.gallery) await db.from("saved_rooms").update({ gallery_at: null }).eq("user_id", userId).eq("college_id", data.college_id).eq("dorm_id", data.dorm_id).neq("id", id).not("gallery_at", "is", null);
   return NextResponse.json({ gallery: body.gallery });
 }
