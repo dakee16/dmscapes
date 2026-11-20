@@ -5,6 +5,7 @@ import FeedbackLink from "@/components/site/FeedbackLink";
 import { FooterLink as HallFinderLink } from "@/components/hall-finder/Entry";
 import SocialLinks from "@/components/ds/SocialLinks";
 import AskAi from "@/components/site/AskAi";
+import PreferredSource from "@/components/site/PreferredSource";
 import { POPULAR_SCHOOLS } from "@/lib/popular-schools";
 import { COMPARE_NAMES } from "@/lib/compare-names";
 import s from "./ds/SiteFooter.module.css";
@@ -113,6 +114,8 @@ export default function Footer() {
             <SocialLinks />
             <p className={s.sideHead}>Ask AI about dormscape</p>
             <AskAi />
+            <p className={s.sideHead}>Prefer dormscape on Google</p>
+            <PreferredSource tone="dark" />
           </div>
         </div>
         <nav className={s.columns} aria-label="Footer">

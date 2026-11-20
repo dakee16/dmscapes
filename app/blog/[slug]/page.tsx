@@ -6,6 +6,7 @@ import Headline from "@/components/ds/Headline";
 import { ArrowRight } from "@/components/ds/Icons";
 import JsonLd from "@/components/site/JsonLd";
 import FounderLink from "@/components/site/FounderLink";
+import PreferredSource from "@/components/site/PreferredSource";
 import ReadingBar from "@/components/blog/ReadingBar";
 import PostToc from "@/components/blog/PostToc";
 import PostHeroArt from "@/components/blog/PostHeroArt";
@@ -169,6 +170,9 @@ export default async function BlogPostPage(props: {
                 How we source room sizes
                 <ArrowRight size={15} />
               </Link>
+              <p className={css.prefer}>
+                <PreferredSource tone="light" />
+              </p>
             </footer>
           </article>
         </div>
