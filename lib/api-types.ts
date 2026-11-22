@@ -188,6 +188,10 @@ export interface InvoiceItem {
   description: string | null;
   /** Link to Stripe's hosted receipt, or null when unavailable. */
   receipt_url: string | null;
+  /** Set when the payment was refunded or disputed (a won dispute gives the purchase back). */
+  reversal: "refunded" | "partly_refunded" | "disputed" | "dispute_won" | null;
+  /** What was taken back from the account ("Pro and 10 credits"), once it has been. */
+  taken_back: string | null;
 }
 export interface InvoicesResponse {
   invoices: InvoiceItem[];

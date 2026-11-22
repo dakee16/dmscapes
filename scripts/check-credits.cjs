@@ -48,6 +48,8 @@ function database(tier, balance = null, used = 0) {
         async maybeSingle() {
           // Yield so parallel requests read competing snapshots and exercise CAS.
           await Promise.resolve();
+          if (table === "processed_stripe_events") { const id = filters.find(([k]) => k === "event_id")?.[1]; return { error: null, data: db.events.has(id) ? { event_id: id } : null }; }
+          if (table === "creator_redemptions") return { error: null, data: db.creator ? { user_id: "member" } : null };
           if (db.failRead && !values) return { error: { message: "offline" }, data: null };
           if (db.failWrite && values) return { error: { message: "offline" }, data: null };
           if (db.missing || !filters.every(([k, v]) => (db.row[k] ?? null) === v)) return { error: null, data: null };
@@ -252,6 +254,59 @@ test("Webhook grants new offers once, including recharge and Pro top-ups", async
     assert.equal(db.row.plan_credits_remaining, after);
     if (tier === "pro") assert.equal(db.row.plan, "pro");
   }
+});
+
+test("Refunds and chargebacks take a purchase back once; a won chargeback gives it back", async t => {
+  const secret = process.env.STRIPE_WEBHOOK_SECRET;
+  process.env.STRIPE_WEBHOOK_SECRET = "test-only";
+  t.after(() => { if (secret === undefined) delete process.env.STRIPE_WEBHOOK_SECRET; else process.env.STRIPE_WEBHOOK_SECRET = secret; });
+  const pi = (id, purchase, credits) => ({ id, customer: "cus_test", metadata: { user_id: "member", purchase, credit_amount: String(credits) } });
+  const send = (db, type, object, pis, charges = []) => routes(db, { stripe: {
+    webhooks: { constructEvent: () => ({ type, data: { object } }) },
+    paymentIntents: { retrieve: async id => pis[id] },
+    charges: { list: async () => ({ data: charges }) },
+  } }).webhook(new Request("https://dormscape.test/api/stripe/webhook", { method: "POST", headers: { "stripe-signature": "s" }, body: "x" }));
+
+  // A refunded Pro purchase: its credits go (never below zero) and so does Pro.
+  const pro = database("pro", 7); pro.row.plus_features_unlocked = true;
+  const proPi = { pi_pro: pi("pi_pro", "pro", 10) };
+  assert.equal((await send(pro, "charge.refunded", { refunded: true, payment_intent: "pi_pro" }, proPi)).status, 200);
+  assert.deepEqual([pro.row.plan, pro.row.plan_credits_remaining, pro.row.plus_features_unlocked], ["free", 0, false]);
+  assert.equal((await (await send(pro, "charge.refunded", { refunded: true, payment_intent: "pi_pro" }, proPi)).json()).duplicate, true);
+
+  // Refunding Plus keeps Pro bought separately; leftover credits stay.
+  const both = database("pro", 13);
+  const pis = { pi_plus: pi("pi_plus", "plus", 3), pi_pro: pi("pi_pro", "pro", 10) };
+  const charges = [{ status: "succeeded", refunded: false, disputed: false, payment_intent: pis.pi_pro }, { status: "succeeded", refunded: true, disputed: false, payment_intent: pis.pi_plus }];
+  await send(both, "charge.refunded", { refunded: true, payment_intent: "pi_plus" }, pis, charges);
+  assert.deepEqual([both.row.plan, both.row.plan_credits_remaining, both.row.plus_features_unlocked], ["pro", 10, true]);
+
+  // Credits only: the plan stays. A partial refund keeps the purchase.
+  const flex = database("flex", 5);
+  const flexPi = { pi_flex: pi("pi_flex", "flex_credits", 3) };
+  await send(flex, "charge.refunded", { refunded: false, payment_intent: "pi_flex" }, flexPi);
+  assert.equal(flex.row.plan_credits_remaining, 5);
+  await send(flex, "charge.refunded", { refunded: true, payment_intent: "pi_flex" }, flexPi);
+  assert.deepEqual([flex.row.plan, flex.row.plan_credits_remaining], ["flex", 2]);
+
+  // A chargeback takes Plus back; leftover credits keep them on Flex. Lost: nothing more. Won: given back.
+  const disputed = database("plus", 5);
+  const plusPi = { pi_plus: pi("pi_plus", "plus", 3) };
+  await send(disputed, "charge.dispute.created", { payment_intent: "pi_plus" }, plusPi);
+  assert.deepEqual([disputed.row.plan, disputed.row.plan_credits_remaining], ["flex", 2]);
+  await send(disputed, "charge.dispute.closed", { status: "lost", payment_intent: "pi_plus" }, plusPi);
+  assert.equal(disputed.row.plan_credits_remaining, 2);
+  await send(disputed, "charge.dispute.closed", { status: "won", payment_intent: "pi_plus" }, plusPi);
+  assert.deepEqual([disputed.row.plan, disputed.row.plan_credits_remaining], ["plus", 5]);
+  assert.equal((await (await send(disputed, "charge.dispute.closed", { status: "won", payment_intent: "pi_plus" }, plusPi)).json()).duplicate, true);
+
+  // Plus from a creator code survives a refunded Plus purchase; a payment our checkout didn't make is ignored.
+  const creator = database("plus", 3); creator.creator = true;
+  await send(creator, "charge.refunded", { refunded: true, payment_intent: "pi_plus" }, plusPi);
+  assert.deepEqual([creator.row.plan, creator.row.plan_credits_remaining], ["plus", 0]);
+  const other = database("pro", 10);
+  await send(other, "charge.refunded", { refunded: true, payment_intent: "pi_x" }, { pi_x: { id: "pi_x", metadata: {} } });
+  assert.deepEqual([other.row.plan, other.row.plan_credits_remaining, other.events.size], ["pro", 10, 0]);
 });
 
 test("Webhook preserves an in-flight purchase and retries a failed grant", async t => {

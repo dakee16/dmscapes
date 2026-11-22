@@ -30,6 +30,13 @@ import {
 import type { InvoiceItem, InvoicesResponse } from "@/lib/api-types";
 import c from "@/components/account/AccountPage.module.css";
 
+const REVERSAL: Record<NonNullable<InvoiceItem["reversal"]>, string> = {
+  refunded: "Refunded",
+  partly_refunded: "Partly refunded",
+  disputed: "Disputed",
+  dispute_won: "Dispute won",
+};
+
 function money(amount: number, currency: string): string {
   try {
     return new Intl.NumberFormat("en-US", { style: "currency", currency: currency.toUpperCase() }).format(amount / 100);
@@ -326,8 +333,13 @@ export default function BillingPage() {
                           <span className={c.pName}>{name}</span>
                           <span className={c.pMeta}>
                             {fmtDate(inv.created, { year: "numeric", month: "short", day: "numeric" })}
-                            <span className={`${c.chip} ${inv.status === "succeeded" ? c.green : ""}`}>{inv.status === "succeeded" ? "Paid" : inv.status}</span>
+                            {inv.reversal ? (
+                              <span className={`${c.chip} ${inv.reversal === "dispute_won" ? c.green : c.warn}`}>{REVERSAL[inv.reversal]}</span>
+                            ) : (
+                              <span className={`${c.chip} ${inv.status === "succeeded" ? c.green : ""}`}>{inv.status === "succeeded" ? "Paid" : inv.status}</span>
+                            )}
                           </span>
+                          {inv.taken_back && <span className={c.pBack}>Taken back from your account: {inv.taken_back}</span>}
                         </div>
                         <span className={c.pAmt}>{money(inv.amount, inv.currency)}</span>
                         {inv.receipt_url ? (
