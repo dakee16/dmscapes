@@ -16,6 +16,7 @@ export async function POST(request: Request) {
   let body: { email?: string; source?: string; website?: string };
   try {
     body = await request.json();
+    if (!body || typeof body !== "object") throw new Error("Not a JSON object.");
   } catch {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
@@ -26,7 +27,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const email = body.email?.trim().toLowerCase() ?? "";
+  const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
   const source = typeof body.source === "string" ? body.source.slice(0, 64) : "unknown";
 
   if (email.length > 254 || !EMAIL_RE.test(email)) {

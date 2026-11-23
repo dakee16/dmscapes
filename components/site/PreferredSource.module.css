@@ -1,0 +1,20 @@
+/* The "Preferred source on Google" pill (components/site/PreferredSource.tsx). Dark: styled like the footer's round
+   social and Ask AI icons. Light: for paper pages (the end of a guide). */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  height: 40px;
+  padding: 0 16px 0 12px;
+  border-radius: 999px;
+  font: 700 14px/1 var(--ds-sans);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s;
+}
+.pill svg { flex: none; }
+.dark { border: 1px solid rgba(255, 255, 255, 0.25); color: #edebe4; }
+.dark:hover,
+.dark:focus-visible { color: var(--ds-yellow); border-color: var(--ds-yellow); }
+.light { border: 1.5px solid rgba(22, 22, 29, 0.18); background: #fff; color: var(--ds-ink); }
+.light:hover { border-color: var(--ds-ink); }

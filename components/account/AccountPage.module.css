@@ -175,6 +175,8 @@
 
 .chip { display: inline-flex; align-items: center; height: 22px; padding: 0 9px; border-radius: 999px; background: rgba(22, 22, 29, 0.06); font: 600 10.5px/1 var(--ds-mono); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; color: var(--ds-ink); }
 .green { background: rgba(23, 138, 82, 0.1); color: #11653c; }
+.warn { background: rgba(200, 32, 42, 0.08); color: var(--a-red); }
+.pBack { display: block; margin-top: 4px; font-size: 13px; color: var(--a-red); }
 
 /* Inline edits */
 .edit { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }

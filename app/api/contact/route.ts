@@ -25,6 +25,7 @@ export async function POST(request: Request) {
   let body: ContactRequest;
   try {
     body = await request.json();
+    if (!body || typeof body !== "object") throw new Error("Not a JSON object.");
   } catch {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }

@@ -1,6 +1,8 @@
 import { workspaceBody, workspaceIdentity, workspaceAction, workspaceJson, workspaceUnavailable } from "@/lib/workspace-server";
 import { cleanWorkspaceSnapshot } from "@/lib/workspace-validation";
 
+const MAX_OWNED_ROOMS = 50;
+
 export async function GET(request: Request) {
   const auth = await workspaceIdentity(request);
   if (auth.response) return auth.response;
@@ -32,6 +34,11 @@ export async function POST(request: Request) {
     if (!data) return workspaceJson({ error: "That saved room is not in your account." }, 404);
     raw = data;
   }
+  // ponytail: count, then create, so a burst of parallel requests can pass the cap by a few; move it into
+  // dormscape_workspace_action's create if that ever matters.
+  const { count, error } = await auth.db.from("room_workspaces").select("id", { count: "exact", head: true }).eq("owner_id", auth.userId);
+  if (error) return workspaceUnavailable();
+  if ((count ?? 0) >= MAX_OWNED_ROOMS) return workspaceJson({ error: `You can keep up to ${MAX_OWNED_ROOMS} rooms. Delete one you no longer need first.` }, 409);
   const snapshot = cleanWorkspaceSnapshot(raw);
   if (!snapshot) return workspaceJson({ error: "Couldn't open this room. Its saved measurements or products need attention." }, 400);
   return workspaceAction(auth.db, auth.userId, null, "create", { snapshot, name: snapshot.name, source_room_id: source });

@@ -1,6 +1,6 @@
 // SERVER ONLY: callers supply the service-role client, never a browser client.
 import type { SupabaseClient } from "@supabase/supabase-js";
-import { FREE_PLAN_CAP, planCreditsRemaining, planOf, type PlanFields } from "./plan";
+import { FREE_PLAN_CAP, planCreditsRemaining, planOf, type PlanFields, type PurchaseType } from "./plan";
 
 type CreditRow = PlanFields & { id: string };
 const FIELDS = "id,plan,plan_credits_remaining,free_plans_used";
@@ -57,6 +57,27 @@ export async function addPlanCredits(supabase: SupabaseClient, userId: string, a
     const balance = planCreditsRemaining(row) ?? Math.max(0, row.plan_credits_remaining ?? 0);
     if (!Number.isSafeInteger(balance + amount)) throw new Error("Credit balance is too large.");
     if (await write(supabase, row, { plan: tier === "free" ? "flex" : tier, plan_credits_remaining: balance + amount })) return;
+  }
+  throw new Error("Your balance changed. Please try again.");
+}
+
+/** processed_stripe_events keys recording that a payment's purchase was taken back (refund or
+ * chargeback) or given back (a chargeback we won). The billing page reads them. */
+export const reversalKey = (paymentIntent: string, kind: "revoke" | "restore") => `${kind}:${paymentIntent}`;
+
+/** A refunded or charged-back purchase is taken back: its credits (never below zero) and, for Plus or
+ * Pro, the plan. `keep` is the best plan the customer still holds through another purchase or a
+ * creator code; with none, leftover credits keep them on Flex, otherwise Free. */
+export async function revokePurchase(supabase: SupabaseClient, userId: string, purchase: PurchaseType, amount: number, keep: "plus" | "pro" | null): Promise<void> {
+  if (!Number.isSafeInteger(amount) || amount < 0) throw new Error("Invalid credit amount.");
+  const upgrade = purchase === "plus" || purchase === "pro";
+  for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
+    const row = await read(supabase, userId);
+    const balance = Math.max(0, (planCreditsRemaining(row) ?? Math.max(0, row.plan_credits_remaining ?? 0)) - amount);
+    const values = upgrade
+      ? { plan: keep ?? (balance > 0 ? "flex" : "free"), plan_credits_remaining: balance, plus_features_unlocked: keep !== null }
+      : { plan_credits_remaining: balance };
+    if (await write(supabase, row, values)) return;
   }
   throw new Error("Your balance changed. Please try again.");
 }

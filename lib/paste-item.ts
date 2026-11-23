@@ -33,7 +33,9 @@ export function slugTitleFromUrl(url: string): string | null {
   if (typeof url !== "string") return null;
   const m = url.match(/amazon\.[a-z.]+\/([^/?#]+)\/(?:dp|gp\/product|gp\/aw\/d)\//i);
   if (!m) return null;
-  const slug = decodeURIComponent(m[1]).replace(/[-_+]/g, " ").replace(/\s+/g, " ").trim();
+  let slug: string;
+  try { slug = decodeURIComponent(m[1]); } catch { return null; } // a malformed %-escape
+  slug = slug.replace(/[-_+]/g, " ").replace(/\s+/g, " ").trim();
   if (slug.length < 3 || /^(dp|gp|product|ref|d)$/i.test(slug)) return null;
   return slug;
 }

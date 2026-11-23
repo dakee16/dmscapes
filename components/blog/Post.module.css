@@ -490,6 +490,7 @@ li[data-state="on"] .clNum { background: var(--ds-blue); border-color: var(--ds-
   text-decoration: none;
 }
 .footLink:hover { text-decoration: underline; text-underline-offset: 3px; }
+.prefer { flex-basis: 100%; margin: 0; }
 
 /* ---------- Keep reading ---------- */
 .more { background: #fff; padding: clamp(56px, 5vw, 72px) 0 clamp(72px, 8vw, 120px); }

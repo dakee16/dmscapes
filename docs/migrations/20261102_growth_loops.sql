@@ -68,7 +68,4 @@ revoke all on public.creator_codes, public.creator_redemptions from anon, authen
 
 commit;
 
-
--- Creater codes: add a code (lowercase; the site lowercases what people type):
-insert into public.creator_codes (code, creator, max_redemptions, expires_at)
-values ('jane', 'Jane Doe (@janedorms)', 200, '2027-06-30');
+-- To add a creator code, use the template in docs/owner-commands.sql (not here: this file runs as a whole).

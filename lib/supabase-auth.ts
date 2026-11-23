@@ -20,7 +20,9 @@ export async function getUserId(request: Request): Promise<string | null> {
 
   try {
     const { data, error } = await supabase.auth.getUser(token);
-    if (error || !data.user) return null;
+    // dormscape has no anonymous sign-in: refuse anonymous users so a throwaway session
+    // can't collect per-account perks (a free design, referral payouts, creator codes).
+    if (error || !data.user || data.user.is_anonymous) return null;
     return data.user.id;
   } catch {
     return null;

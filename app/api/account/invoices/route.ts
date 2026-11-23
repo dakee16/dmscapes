@@ -4,6 +4,16 @@ import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
 import type { InvoiceItem, InvoicesResponse } from "@/lib/api-types";
+import { reversalKey } from "@/lib/credit-ledger";
+import type Stripe from "stripe";
+
+/** "Pro and 10 credits", "3 credits": what a purchase granted, from what checkout pinned on its payment. */
+function takenBack(meta: Stripe.Metadata | null | undefined): string {
+  const plan = meta?.purchase === "pro" ? "Pro" : meta?.purchase === "plus" ? "Plus" : null;
+  const n = Number(meta?.credit_amount ?? meta?.quantity);
+  const credits = Number.isSafeInteger(n) && n > 0 ? `${n} credit${n === 1 ? "" : "s"}` : null;
+  return [plan, credits].filter(Boolean).join(" and ") || "This purchase";
+}
 
 // Stripe's Node SDK needs the Node runtime, not edge.
 export const runtime = "nodejs";
@@ -52,17 +62,29 @@ export async function POST(request: Request) {
   }
 
   try {
-    const charges = await stripe.charges.list({ customer: customerId, limit: 24 });
-    const invoices: InvoiceItem[] = charges.data.map((c) => ({
-      id: c.id,
-      // Stripe timestamps are seconds since epoch; expose ISO for the client.
-      created: new Date(c.created * 1000).toISOString(),
-      amount: c.amount, // cents
-      currency: c.currency,
-      status: c.status, // "succeeded" | "pending" | "failed"
-      description: c.description ?? null,
-      receipt_url: c.receipt_url ?? null,
-    }));
+    const charges = await stripe.charges.list({ customer: customerId, limit: 24, expand: ["data.payment_intent"] });
+    // The webhook records each purchase it takes back or gives back (lib/credit-ledger reversalKey).
+    const piOf = (c: Stripe.Charge) => (typeof c.payment_intent === "string" ? c.payment_intent : c.payment_intent?.id ?? null);
+    const keys = charges.data.flatMap((c) => { const pi = piOf(c); return pi ? [reversalKey(pi, "revoke"), reversalKey(pi, "restore")] : []; });
+    const { data: done } = keys.length ? await supabase.from("processed_stripe_events").select("event_id").in("event_id", keys) : { data: [] };
+    const recorded = new Set((done ?? []).map((r: { event_id: string }) => r.event_id));
+    const invoices: InvoiceItem[] = charges.data.map((c) => {
+      const pi = piOf(c);
+      const restored = !!pi && recorded.has(reversalKey(pi, "restore"));
+      const revoked = !!pi && recorded.has(reversalKey(pi, "revoke"));
+      return {
+        id: c.id,
+        // Stripe timestamps are seconds since epoch; expose ISO for the client.
+        created: new Date(c.created * 1000).toISOString(),
+        amount: c.amount, // cents
+        currency: c.currency,
+        status: c.status, // "succeeded" | "pending" | "failed"
+        description: c.description ?? null,
+        receipt_url: c.receipt_url ?? null,
+        reversal: restored ? "dispute_won" : c.disputed ? "disputed" : c.refunded ? "refunded" : c.amount_refunded > 0 ? "partly_refunded" : null,
+        taken_back: revoked && !restored ? takenBack(typeof c.payment_intent === "object" ? c.payment_intent?.metadata : null) : null,
+      };
+    });
     return NextResponse.json({ invoices } satisfies InvoicesResponse);
   } catch (err) {
     console.error("invoices list failed:", err);

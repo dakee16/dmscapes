@@ -9,7 +9,7 @@ import {
   PURCHASE_TYPES,
   type PurchaseType,
 } from "@/lib/plan";
-import { addPlanCredits, grantPurchasedPlan } from "@/lib/credit-ledger";
+import { addPlanCredits, grantPurchasedPlan, revokePurchase, reversalKey } from "@/lib/credit-ledger";
 import { deliverPurchaseInvoice } from "@/lib/purchase-email";
 import { capturePurchase } from "@/lib/purchase-analytics";
 
@@ -34,6 +34,75 @@ function creditGrant(purchase: PurchaseType, metadata: Stripe.Metadata | null): 
   return 5; // Honor fixed-price Plus/recharge sessions sold before the new offer.
 }
 
+const received = () => NextResponse.json({ received: true });
+
+/** The best plan the customer still holds without this payment: another paid Plus or Pro purchase that
+ * wasn't refunded or disputed, or Plus from a creator code. */
+async function keptPlan(stripe: Stripe, supabase: NonNullable<ReturnType<typeof getServiceClient>>, userId: string, except: Stripe.PaymentIntent): Promise<"plus" | "pro" | null> {
+  let best: "plus" | "pro" | null = null;
+  const customer = typeof except.customer === "string" ? except.customer : except.customer?.id;
+  if (customer) {
+    // ponytail: the newest 100 charges; a customer with more purchases than that would be checked by hand.
+    const charges = await stripe.charges.list({ customer, limit: 100, expand: ["data.payment_intent"] });
+    for (const c of charges.data) {
+      const pi = c.payment_intent;
+      if (!pi || typeof pi === "string" || pi.id === except.id || c.status !== "succeeded" || c.refunded || c.disputed || pi.metadata?.user_id !== userId) continue;
+      if (pi.metadata?.purchase === "pro") return "pro";
+      if (pi.metadata?.purchase === "plus") best = "plus";
+    }
+  }
+  if (!best) {
+    const { data } = await supabase.from("creator_redemptions").select("user_id").eq("user_id", userId).maybeSingle();
+    if (data) best = "plus";
+  }
+  return best;
+}
+
+/** Refunds and chargebacks take a purchase back: its credits and, for Plus or Pro, the plan. A chargeback
+ * we win gives it back. A partial refund keeps the purchase (it's a goodwill refund), and a lost chargeback
+ * was already taken back when it opened. */
+async function reverse(stripe: Stripe, event: Stripe.Event) {
+  const object = event.data.object as Stripe.Charge | Stripe.Dispute;
+  if (event.type === "charge.refunded" && !(object as Stripe.Charge).refunded) return received();
+  const restore = event.type === "charge.dispute.closed";
+  if (restore && (object as Stripe.Dispute).status !== "won") return received();
+  const piId = typeof object.payment_intent === "string" ? object.payment_intent : object.payment_intent?.id;
+  if (!piId) return received();
+  const supabase = getServiceClient();
+  if (!supabase) return NextResponse.json({ error: "Not configured." }, { status: 500 });
+  const key = reversalKey(piId, restore ? "restore" : "revoke");
+  try {
+    // Checkout pins what it sold on the payment (app/api/checkout).
+    const pi = await stripe.paymentIntents.retrieve(piId);
+    const userId = pi.metadata?.user_id;
+    const purchase = PURCHASE_TYPES.find((p) => p === pi.metadata?.purchase);
+    if (!userId || !purchase) return received(); // not a dormscape checkout
+    const amount = creditGrant(purchase, pi.metadata);
+    if (restore) {
+      // Only give back what was taken.
+      const { data } = await supabase.from("processed_stripe_events").select("event_id").eq("event_id", reversalKey(piId, "revoke")).maybeSingle();
+      if (!data) return received();
+    }
+    // Once each way per payment: Stripe's repeat deliveries, or a refund after a chargeback, take nothing twice.
+    const { error } = await supabase.from("processed_stripe_events").insert({ event_id: key });
+    if (error?.code === "23505") return NextResponse.json({ received: true, duplicate: true });
+    if (error) throw new Error(error.message);
+    try {
+      if (!restore) await revokePurchase(supabase, userId, purchase, amount, await keptPlan(stripe, supabase, userId, pi));
+      else if (purchase === "plus" || purchase === "pro") await grantPurchasedPlan(supabase, userId, purchase, amount, null);
+      else await addPlanCredits(supabase, userId, amount);
+    } catch (error) {
+      // Roll back the ledger row so Stripe's retry can apply it cleanly.
+      await supabase.from("processed_stripe_events").delete().eq("event_id", key);
+      throw error;
+    }
+    return received();
+  } catch (error) {
+    console.error(`stripe webhook: ${restore ? "giving back" : "taking back"} a purchase failed`, piId, error instanceof Error ? error.message : error);
+    return NextResponse.json({ error: "Update failed." }, { status: 500 });
+  }
+}
+
 export async function POST(request: Request) {
   const stripe = getStripe();
   const secret = process.env.STRIPE_WEBHOOK_SECRET;
@@ -53,6 +122,10 @@ export async function POST(request: Request) {
   } catch (err) {
     console.error("stripe webhook signature verification failed:", err);
     return NextResponse.json({ error: "Invalid signature." }, { status: 400 });
+  }
+
+  if (event.type === "charge.refunded" || event.type === "charge.dispute.created" || event.type === "charge.dispute.closed") {
+    return reverse(stripe, event);
   }
 
   // Invoices finalize asynchronously. Keep mail retries separate from credits:
@@ -83,10 +156,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ received: true });
   }
 
-  const userId =
-    session.metadata?.user_id ??
-    (typeof session.client_reference_id === "string" ? session.client_reference_id : null);
-  const rawPurchase = session.metadata?.purchase ?? "plus";
+  // Only sessions our checkout created count: it pins user_id and purchase in metadata. A Payment Link
+  // or other integration on the same Stripe account can't name a user (client_reference_id) or
+  // default to Plus.
+  const userId = session.metadata?.user_id ?? null;
+  const rawPurchase = session.metadata?.purchase ?? "";
   const purchase = (PURCHASE_TYPES as readonly string[]).includes(rawPurchase)
     ? (rawPurchase as PurchaseType)
     : null;

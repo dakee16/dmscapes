@@ -4,6 +4,7 @@ import { nanoid } from "nanoid";
 import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
+import { boundedJson } from "@/lib/request-body";
 import { ALL_STYLE_IDS, budgetRange } from "@/lib/styles";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
 import type { ClosetRect, FurnitureItem, Point, RoomOutline, WallOpening } from "@/lib/types";
@@ -107,12 +108,9 @@ export async function POST(request: Request) {
     );
   }
 
-  let body: SaveRoomRequest;
-  try {
-    body = await request.json();
-  } catch {
-    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
-  }
+  // Unsigned share-link saves land here too: bound the body like a shared room's snapshot (lib/workspace-server).
+  const body = (await boundedJson(request, 750_000)) as SaveRoomRequest | null;
+  if (!body) return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
 
   const style = STYLE_IDS.includes(body.style) ? body.style : null;
   const budget =
@@ -218,6 +216,8 @@ export async function POST(request: Request) {
   };
   // A named save with a hall can go in that hall's gallery, anonymously (lib/gallery.ts).
   const gallery = Boolean(name && row.dorm_id && body.gallery === true);
+  // One gallery layout per person per hall (the gallery shows one each anyway), so one account can't fill a hall's.
+  if (gallery && userId && row.college_id) await supabase.from("saved_rooms").update({ gallery_at: null }).eq("user_id", userId).eq("college_id", row.college_id).eq("dorm_id", row.dorm_id).not("gallery_at", "is", null);
   let { error } = await supabase.from("saved_rooms").insert({ ...row, ...(gallery ? { gallery_at: new Date().toISOString() } : {}) });
   // Before the gallery migration that column is missing: keep the save, skip the gallery.
   if (error && gallery) ({ error } = await supabase.from("saved_rooms").insert(row));
