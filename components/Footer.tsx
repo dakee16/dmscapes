@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Wordmark from "@/components/site/Wordmark";
-import { MotionToggle } from "@/components/experience/MotionProvider";
 import FeedbackLink from "@/components/site/FeedbackLink";
 import { FooterLink as HallFinderLink } from "@/components/hall-finder/Entry";
 import SocialLinks from "@/components/ds/SocialLinks";
@@ -147,13 +146,13 @@ export default function Footer() {
           ))}
         </nav>
         <div className={s.bottom}>
-          <Wordmark tone="dark" />
-          <p className={s.legal}>
-            © 2026 dormscape · <Link href="/methodology">Built on official housing data</Link>
-          </p>
-          <div className={s.motion}>
-            <MotionToggle />
+          <div className={s.mark}>
+            <Wordmark tone="dark" />
+            <p className={s.copy}>© 2026 All rights reserved.</p>
           </div>
+          <Link href="/methodology" className={s.data}>
+            Built on official housing data
+          </Link>
         </div>
       </div>
     </footer>
