@@ -12,8 +12,8 @@
 -- browser write: a table browsers may insert, update or delete rows in directly (with row-level
 --   security, only rows its policies allow, but skipping every check our API makes). The site
 --   writes everything through the server, so none are expected.
---   Fix: docs/migrations/20261120_security_fixes.sql covers hall_finder_setups and profiles;
---   send any other row to whoever maintains the site.
+--   Fix: docs/migrations/20261123_close_browser_writes.sql (all tables except profiles) and
+--   20261120_security_fixes.sql (profiles).
 select 'function' as problem, p.proname || '(' || pg_get_function_identity_arguments(p.oid) || ')' as detail,
        case when has_function_privilege('anon', p.oid, 'execute') then 'anyone' else 'signed-in users' end as who
 from pg_proc p join pg_namespace n on n.oid = p.pronamespace
