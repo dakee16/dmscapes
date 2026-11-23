@@ -13,6 +13,7 @@ import StudioSection from "@/components/home/StudioSection";
 import TogetherSection from "@/components/home/TogetherSection";
 import SchoolsSection from "@/components/home/SchoolsSection";
 import PricingSection from "@/components/home/PricingSection";
+import FaqSection from "@/components/home/FaqSection";
 import Testimonials from "@/components/home/Testimonials";
 import FinalCta from "@/components/home/FinalCta";
 import { HomeSection } from "@/components/hall-finder/Entry";
@@ -62,6 +63,7 @@ const RAIL = [
   { id: "together", label: "My Room" },
   { id: "schools", label: "Real rooms" },
   { id: "pricing", label: "Pricing" },
+  { id: "faq", label: "FAQ" },
   { id: "start", label: "Get started" },
 ];
 
@@ -94,6 +96,7 @@ export default function Home() {
           <SchoolsSection rooms={FEATURED_ROOMS} schoolCount={SCHOOL_COUNT} />
           <Testimonials />
           <PricingSection />
+          <FaqSection />
           <FinalCta />
         </HomeFlow>
       </main>

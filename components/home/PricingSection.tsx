@@ -66,13 +66,6 @@ export default function PricingSection() {
             </article>
           ))}
         </div>
-        <p className={css.faq}>
-          Questions about credits or what&apos;s included?{" "}
-          <Link href="/faq" className="ds-link">
-            Read the FAQ
-          </Link>
-          .
-        </p>
       </div>
     </section>
   );
