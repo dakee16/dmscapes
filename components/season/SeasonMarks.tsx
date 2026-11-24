@@ -1,8 +1,19 @@
 import css from "./Season.module.css";
 
-// Halloween season marks (design-handoff/halloween/Main.dc.html · Pieces): ink
-// outlines at the plan drawings' weight, so they sit with the rest of the brand.
-// Every placement gates them with data-season-show (app/ds.css).
+// Season marks (design-handoff/halloween/Main.dc.html · Pieces): ink outlines at
+// the plan drawings' weight, so they sit with the rest of the brand. Every
+// placement gates them with data-season-show (app/ds.css).
+
+/** The holiday season's snowflake: six arms, each with a V near its tip, in currentColor. */
+export function SnowflakeMark({ size, className }: { size?: number; className?: string }) {
+  return (
+    <svg viewBox="0 0 32 32" width={size} height={size} aria-hidden="true" className={`${css.mark} ${className ?? ""}`}
+      fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      {[0, 60, 120].map((a) => <path key={a} d="M16 3v26" transform={`rotate(${a} 16 16)`} />)}
+      {[0, 60, 120, 180, 240, 300].map((a) => <path key={a} d="M12.4 6.6 16 10.2l3.6-3.6" transform={`rotate(${a} 16 16)`} />)}
+    </svg>
+  );
+}
 
 /** The pumpkin: three lobes and a stem (green on the hero chip, ink elsewhere). */
 export function PumpkinMark({ size, stem = "ink" }: { size: number; stem?: "green" | "ink" }) {

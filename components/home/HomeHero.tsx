@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HeroChip } from "@/components/hall-finder/Entry";
+import { ArrowRight } from "@/components/ds/Icons";
+import SeasonLink from "@/components/season/SeasonLink";
+import { SnowflakeMark } from "@/components/season/SeasonMarks";
+import { lastDay, seasonOf } from "@/lib/season";
 import { HAPPY_CUSTOMERS, HERO_ROOM, RATING, feetInches, spokenFeet } from "@/lib/home-data";
 import GalaxyBand from "./GalaxyBand";
 import HomeSearch from "./HomeSearch";
@@ -15,6 +19,8 @@ import css from "./Hero.module.css";
  */
 /** "100+": a count rounded down to a round figure, so it stays true as schools are added. */
 const atLeast = (n: number, step: number) => `${(Math.floor(n / step) * step).toLocaleString("en-US")}+`;
+/** "Dec 31": the Cozy Holiday vibe is free through the season's last day. */
+const HOLIDAY_LAST = lastDay(seasonOf("holiday")!);
 
 export default function HomeHero({ schoolCount, roomCount }: { schoolCount: number; roomCount: number }) {
   const dims = HERO_ROOM ? (
@@ -27,6 +33,13 @@ export default function HomeHero({ schoolCount, roomCount }: { schoolCount: numb
       <div className={css.paper} aria-hidden="true" />
       <div className={`ds-wrap ${css.copy}`}>
         <HeroChip className={`ds-tag ${css.chip}`} />
+        <SeasonLink vibe="holiday" where="hero" className={css.seasonChip} data-season-show="holiday">
+          <SnowflakeMark size={22} />
+          <span>
+            Cozy Holiday vibe <span className={css.seasonFree}>· free till {HOLIDAY_LAST}</span>
+          </span>
+          <ArrowRight size={16} className={css.seasonArrow} />
+        </SeasonLink>
         <p className="ds-eyebrow">
           AI dorm room planner{" "}
           <span className={css.wide}>

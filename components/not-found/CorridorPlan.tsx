@@ -1,4 +1,4 @@
-import { GhostMark } from "@/components/season/SeasonMarks";
+import { GhostMark, SnowflakeMark } from "@/components/season/SeasonMarks";
 import SeasonLink from "@/components/season/SeasonLink";
 import css from "./NotFound.module.css";
 
@@ -25,7 +25,8 @@ const at = (x: number, y: number) =>
  * Floor 4, east wing: rooms 401–407 drawn on plan paper, with a dashed pink
  * outline where 404 should be (design-handoff/designs/site/NotFound.dc.html).
  * Purely decorative. In the Halloween season the outline turns pumpkin and
- * the room is "Probably haunted." (design-handoff/halloween/LoaderAnd404.dc.html).
+ * the room is "Probably haunted." (design-handoff/halloween/LoaderAnd404.dc.html);
+ * in the holiday season it turns blue and the room is "Snowed in."
  */
 export default function CorridorPlan() {
   return (
@@ -86,6 +87,11 @@ export default function CorridorPlan() {
       <GhostMark className={css.ghost} />
       <SeasonLink vibe="spooky" where="404" tabIndex={-1} className={css.haunted} style={box(226, 478, 156, 34)} data-season-show="halloween">
         Probably haunted.
+      </SeasonLink>
+      {/* Holiday: the missing room is snowed in. */}
+      <SnowflakeMark className={css.flake} />
+      <SeasonLink vibe="holiday" where="404" tabIndex={-1} className={`${css.haunted} ${css.snowed}`} style={box(226, 478, 156, 34)} data-season-show="holiday">
+        Snowed in.
       </SeasonLink>
 
       {/* You are here */}

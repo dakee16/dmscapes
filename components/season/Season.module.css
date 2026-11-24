@@ -1,4 +1,4 @@
-/* Halloween season marks (components/season/SeasonMarks.tsx) */
+/* Season marks (components/season/SeasonMarks.tsx) */
 .mark { flex: none; display: block; }
 .lights { display: block; width: 100%; height: auto; overflow: visible; }
 

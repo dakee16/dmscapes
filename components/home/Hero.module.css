@@ -17,6 +17,15 @@
   background-size: 24px 24px;
 }
 
+/* Holiday season (lib/season.ts): a sky wash over the plan paper. */
+:global(:root[data-season="holiday"]) .paper {
+  background-image:
+    linear-gradient(rgba(36, 73, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 73, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(180deg, var(--ds-sky), var(--ds-plan) 760px);
+  background-size: 24px 24px, 24px 24px, auto;
+}
+
 /* ---------- Copy ---------- */
 .copy {
   position: relative;
@@ -27,6 +36,28 @@
   text-align: center;
 }
 .chip { margin-bottom: 18px; }
+/* The holiday chip: hidden unless <html data-season="holiday"> (app/ds.css). */
+.seasonChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-bottom: 18px;
+  padding: 0 16px 0 12px;
+  border-radius: 999px;
+  background: var(--ds-ink);
+  color: var(--ds-paper);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.seasonChip:hover { color: var(--ds-paper); text-decoration: none; }
+.seasonChip > svg:first-child { color: var(--ds-sky); }
+.seasonFree { color: var(--ds-yellow); }
+@media (max-width: 560px) {
+  .seasonChip { gap: 8px; padding: 0 14px 0 10px; font-size: 14px; }
+  .seasonArrow { display: none; }
+}
 .narrow { display: none; }
 .h1 { margin: 16px 0 0; font-weight: 400; }
 .l1 { display: block; font-size: clamp(48px, 6.3vw, 90px); line-height: 0.94; }
