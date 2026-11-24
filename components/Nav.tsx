@@ -180,6 +180,7 @@ export default function Nav({
   const [mobileOpen, setMobileOpen] = useState(false);
   const [feedback, setFeedback] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [groundDark, setGroundDark] = useState(tone === "dark");
   const close = () => { setMore(false); setMobileOpen(false); };
   const current = activeKey(pathname);
@@ -194,10 +195,19 @@ export default function Nav({
   useEffect(() => {
     const header = root.current;
     if (!header) return;
-    let frame = 0;
+    let frame = 0, lastY = window.scrollY;
+    // The page's first block (the hero): its bottom, in page coordinates.
+    const heroBottom = () => {
+      const first = Array.from(document.getElementById("page-content")?.children ?? []).find((el) => (el as HTMLElement).offsetHeight > 0);
+      return first ? first.getBoundingClientRect().bottom + window.scrollY : window.innerHeight;
+    };
     const update = () => {
       frame = 0;
-      setScrolled(window.scrollY > 8);
+      const y = window.scrollY, dy = y - lastY;
+      setScrolled(y > 8);
+      // Past the hero the header slides away while scrolling down and comes back on any scroll up.
+      if (y < heroBottom()) { setHidden(false); lastY = y; }
+      else if (Math.abs(dy) > 6) { setHidden(dy > 0); lastY = y; }
       const ground = groundBehind(header);
       const darkGround = ground !== null && isDark(ground);
       header.style.setProperty("--nav-ground",
@@ -353,6 +363,7 @@ export default function Nav({
       data-tone={dark ? "dark" : "light"}
       data-scrolled={scrolled || mobileOpen}
       data-open={mobileOpen}
+      data-hidden={hidden && !more && !mobileOpen}
     >
       <div className={s.plate}>
       <nav className={s.bar} aria-label="Main navigation">
