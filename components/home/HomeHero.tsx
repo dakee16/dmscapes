@@ -31,6 +31,7 @@ export default function HomeHero({ schoolCount, roomCount }: { schoolCount: numb
   return (
     <section className={css.hero} aria-labelledby="hero-title">
       <div className={css.paper} aria-hidden="true" />
+      <div className={css.snow} aria-hidden="true" data-season-show="holiday" />
       <div className={`ds-wrap ${css.copy}`}>
         <HeroChip className={`ds-tag ${css.chip}`} />
         <SeasonLink vibe="holiday" where="hero" className={css.seasonChip} data-season-show="holiday">

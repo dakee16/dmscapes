@@ -26,6 +26,70 @@
   background-size: 24px 24px, 24px 24px, auto;
 }
 
+/* ---------- Holiday snowfall (lib/season.ts) ----------
+   Two layers of flakes, each one tall pseudo-element moved by transform only (the compositor's
+   work, cheap on laptops), falling one tile per loop so the loop never shows. They sit above the
+   paper and the galaxy band but under the copy and the room call, never over the demo room.
+   Hidden unless <html data-season="holiday">; off with reduced motion and the site's pause. */
+.snow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.snow::before,
+.snow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  will-change: transform;
+  animation: snowSmall 26s linear infinite;
+}
+.snow::before {
+  top: -420px;
+  background-size: 420px 420px;
+  background-image:
+    radial-gradient(circle at 200px 341px, #fff 1.8px, rgba(36, 73, 255, 0.34) 2.6px, transparent 3.4px),
+    radial-gradient(circle at 369px 294px, #fff 1.9px, rgba(36, 73, 255, 0.34) 2.7px, transparent 3.5px),
+    radial-gradient(circle at 24px 9px, #fff 2.3px, rgba(36, 73, 255, 0.34) 3.1px, transparent 3.9px),
+    radial-gradient(circle at 74px 171px, #fff 1.6px, rgba(36, 73, 255, 0.34) 2.4px, transparent 3.2px),
+    radial-gradient(circle at 250px 166px, #fff 2.0px, rgba(36, 73, 255, 0.34) 2.8px, transparent 3.6px),
+    radial-gradient(circle at 204px 220px, #fff 2.0px, rgba(36, 73, 255, 0.34) 2.8px, transparent 3.6px),
+    radial-gradient(circle at 405px 40px, #fff 1.6px, rgba(36, 73, 255, 0.34) 2.4px, transparent 3.2px),
+    radial-gradient(circle at 256px 363px, #fff 2.0px, rgba(36, 73, 255, 0.34) 2.8px, transparent 3.6px),
+    radial-gradient(circle at 154px 317px, #fff 2.0px, rgba(36, 73, 255, 0.34) 2.8px, transparent 3.6px),
+    radial-gradient(circle at 311px 140px, #fff 2.1px, rgba(36, 73, 255, 0.34) 2.9px, transparent 3.7px),
+    radial-gradient(circle at 33px 160px, #fff 1.9px, rgba(36, 73, 255, 0.34) 2.7px, transparent 3.5px),
+    radial-gradient(circle at 12px 140px, #fff 1.9px, rgba(36, 73, 255, 0.34) 2.7px, transparent 3.5px),
+    radial-gradient(circle at 192px 121px, #fff 2.3px, rgba(36, 73, 255, 0.34) 3.1px, transparent 3.9px),
+    radial-gradient(circle at 391px 213px, #fff 1.7px, rgba(36, 73, 255, 0.34) 2.5px, transparent 3.3px),
+    radial-gradient(circle at 276px 166px, #fff 1.8px, rgba(36, 73, 255, 0.34) 2.6px, transparent 3.4px),
+    radial-gradient(circle at 165px 37px, #fff 2.1px, rgba(36, 73, 255, 0.34) 2.9px, transparent 3.7px);
+}
+.snow::after {
+  top: -560px;
+  background-size: 560px 560px;
+  background-image:
+    radial-gradient(circle at 511px 278px, #fff 3.3px, rgba(36, 73, 255, 0.34) 4.1px, transparent 4.9px),
+    radial-gradient(circle at 439px 400px, #fff 3.0px, rgba(36, 73, 255, 0.34) 3.8px, transparent 4.6px),
+    radial-gradient(circle at 31px 294px, #fff 3.7px, rgba(36, 73, 255, 0.34) 4.5px, transparent 5.3px),
+    radial-gradient(circle at 495px 267px, #fff 3.6px, rgba(36, 73, 255, 0.34) 4.4px, transparent 5.2px),
+    radial-gradient(circle at 490px 365px, #fff 3.6px, rgba(36, 73, 255, 0.34) 4.4px, transparent 5.2px),
+    radial-gradient(circle at 173px 82px, #fff 3.2px, rgba(36, 73, 255, 0.34) 4.0px, transparent 4.8px),
+    radial-gradient(circle at 289px 63px, #fff 3.6px, rgba(36, 73, 255, 0.34) 4.4px, transparent 5.2px);
+  animation-name: snowBig;
+  animation-duration: 17s;
+}
+@keyframes snowSmall { to { transform: translateY(420px); } }
+@keyframes snowBig { to { transform: translateY(560px); } }
+@media (prefers-reduced-motion: reduce) {
+  .snow { display: none; }
+}
+:global(.dm-app[data-motion="paused"]) .snow { display: none; }
+
 /* ---------- Copy ---------- */
 .copy {
   position: relative;
