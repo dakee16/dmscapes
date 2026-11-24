@@ -20,13 +20,14 @@ import {
   PLUS_INITIAL_CREDITS,
   PRO_INITIAL_CREDITS,
   RECHARGE_CREDITS,
-  PLUS_PRICE_WAS_USD,
+  PLUS_SALE_PRICE_USD,
   PRO_PRICE_USD,
-  PRO_PRICE_WAS_USD,
+  PRO_SALE_PRICE_USD,
   RECHARGE_PRICE_USD,
   FLEX_CREDIT_PRICE_USD,
   FREE_PLAN_CAP,
 } from "@/lib/plan";
+import { PlanPrice, SaleNote } from "@/components/site/Sale";
 import css from "@/components/pricing/Pricing.module.css";
 
 // Real, honest social proof: counts derived straight from the shipped data, so
@@ -198,23 +199,23 @@ function cell(v: Cell, label: string) {
   return v;
 }
 
-/** The hero ruler: each tier sits at its price along a strip of tape. */
-function PriceRuler() {
-  const max = PRO_PRICE_USD;
+/** The hero ruler: each tier sits at its price along a strip of tape (Black Friday prices during the sale). */
+function PriceRuler({ plus, pro, sale }: { plus: number; pro: number; sale: boolean }) {
+  const max = pro;
   const at = (p: number) => `${(p / max) * 100}%`;
   return (
-    <div className={css.ruler} aria-hidden="true">
+    <div className={css.ruler} aria-hidden="true" {...(sale ? { "data-sale-show": "" } : { "data-sale-hide": "" })}>
       <div className={css.rulerTape}>
         <span className={css.mark} data-pos="up" style={{ left: at(0) }}>
           <b>$0</b>
           <small>Free</small>
         </span>
-        <span className={css.mark} data-pos="down" data-tone="ink" style={{ left: at(PLUS_PRICE_USD) }}>
-          <b>{usd(PLUS_PRICE_USD)}</b>
+        <span className={css.mark} data-pos="down" data-tone="ink" style={{ left: at(plus) }}>
+          <b>{usd(plus)}</b>
           <small>Plus · once</small>
         </span>
-        <span className={css.mark} data-pos="up" data-tone="blue" style={{ left: at(PRO_PRICE_USD) }}>
-          <b>{usd(PRO_PRICE_USD)}</b>
+        <span className={css.mark} data-pos="up" data-tone="blue" style={{ left: at(pro) }}>
+          <b>{usd(pro)}</b>
           <small>Pro · once</small>
         </span>
       </div>
@@ -241,7 +242,12 @@ export default function PricingPage() {
             possibilities.
           </p>
         }
-        visual={<PriceRuler />}
+        visual={
+          <>
+            <PriceRuler plus={PLUS_PRICE_USD} pro={PRO_PRICE_USD} sale={false} />
+            <PriceRuler plus={PLUS_SALE_PRICE_USD} pro={PRO_SALE_PRICE_USD} sale />
+          </>
+        }
       />
 
       <section className={css.plansSection} aria-label="Plans">
@@ -278,15 +284,10 @@ export default function PricingPage() {
                 <span className={css.tag}>One time</span>
               </div>
               <p className={css.priceRow}>
-                <span className={css.price}>{usd(PLUS_PRICE_USD)}</span>
-                <span className={css.wasStack}>
-                  <s>
-                    <span className="ds-sr">was </span>
-                    {usd(PLUS_PRICE_WAS_USD)}
-                  </s>
-                  <span className={css.cadence}>once</span>
-                </span>
+                <span className={css.price}><PlanPrice tier="plus" /></span>
+                <span className={css.cadence}>once</span>
               </p>
+              <SaleNote tier="plus" />
               <p className={css.pitch}>
                 A one-time upgrade with {PLUS_INITIAL_CREDITS} plan credits. Recharge {RECHARGE_CREDITS} for{" "}
                 {usd(RECHARGE_PRICE_USD)}.
@@ -324,15 +325,10 @@ export default function PricingPage() {
                 <span className={css.tag}>{PRO_INITIAL_CREDITS} credits</span>
               </div>
               <p className={css.priceRow}>
-                <span className={css.price}>{usd(PRO_PRICE_USD)}</span>
-                <span className={css.wasStack}>
-                  <s>
-                    <span className="ds-sr">was </span>
-                    {usd(PRO_PRICE_WAS_USD)}
-                  </s>
-                  <span className={css.cadence}>once</span>
-                </span>
+                <span className={css.price}><PlanPrice tier="pro" /></span>
+                <span className={css.cadence}>once</span>
               </p>
+              <SaleNote tier="pro" />
               <p className={css.pitch}>
                 Build in 3D, find your own vibe, and bring your ideas to life. Includes {PRO_INITIAL_CREDITS} plan
                 credits and all Plus tools.
@@ -354,6 +350,11 @@ export default function PricingPage() {
               <p className={css.planFoot}>At zero credits, top up at {usd(FLEX_CREDIT_PRICE_USD)} per credit.</p>
             </article>
           </div>
+
+          <p className={css.saleTerms} data-sale-show="">
+            Black Friday prices apply to Plus and Pro purchases completed from Thu Nov 26, 12:00am through Mon Nov 30,
+            11:59pm US Eastern. One-time payments, no subscription. Credits don&apos;t expire.
+          </p>
 
           <div className={`ds-tape ${css.flex}`} data-reveal="">
             <div className={css.flexName}>

@@ -3,10 +3,8 @@ import type { PlanTier } from "@/lib/auth-context";
 /** One-time purchases. Only generation spends credits; saving and editing do not. */
 export const PLUS_PRICE_USD = 4.99;
 export const PLUS_PRICE_CENTS = 499;
-export const PLUS_PRICE_WAS_USD = 7.99;
 export const PRO_PRICE_USD = 14.99;
 export const PRO_PRICE_CENTS = 1499;
-export const PRO_PRICE_WAS_USD = 19.99;
 /** Black Friday 2026 (lib/sale.ts owns the window): Plus and Pro at these prices,
  * each with SALE_BONUS_CREDITS on top of its usual allowance. */
 export const PLUS_SALE_PRICE_USD = 1.99;

@@ -1,7 +1,9 @@
 "use client";
 
 import { STYLES } from "@/lib/styles";
-import { PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PLUS_PRICE_WAS_USD } from "@/lib/plan";
+import { PLUS_INITIAL_CREDITS, PLUS_PRICE_USD } from "@/lib/plan";
+import { SALE_OFFER } from "@/lib/sale";
+import { PlanPrice, SaleNote, SaleSwap } from "@/components/site/Sale";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
 import css from "./Vibe.module.css";
@@ -19,7 +21,10 @@ export default function PlusCard({ compact = false }: { compact?: boolean }) {
         <span className={css.plusStripText}>
           <strong>{head}</strong>
           <span>
-            {usd(PLUS_PRICE_USD)} one-time · {PLUS_INITIAL_CREDITS} plan credits
+            <SaleSwap
+              regular={`${usd(PLUS_PRICE_USD)} one-time · ${PLUS_INITIAL_CREDITS} plan credits`}
+              sale={`Black Friday ${usd(SALE_OFFER.plus.cents / 100)}, regularly ${usd(PLUS_PRICE_USD)} · ${SALE_OFFER.plus.credits} plan credits`}
+            />
           </span>
         </span>
         <span className={css.plusStripGo}>Get Plus</span>
@@ -35,19 +40,14 @@ export default function PlusCard({ compact = false }: { compact?: boolean }) {
       </p>
       <div className={css.plusFoot}>
         <span className={css.plusPrice}>
-          <strong>{usd(PLUS_PRICE_USD)}</strong>
-          {PLUS_PRICE_WAS_USD > PLUS_PRICE_USD && (
-            <s>
-              <span className="ds-sr">was </span>
-              {usd(PLUS_PRICE_WAS_USD)}
-            </s>
-          )}
+          <strong><PlanPrice tier="plus" /></strong>
           <span>one-time</span>
         </span>
         <button type="button" className={css.plusBtn} onClick={() => openUpgrade("style")}>
           Get Plus
         </button>
       </div>
+      <SaleNote tier="plus" />
     </div>
   );
 }

@@ -151,7 +151,6 @@
 .plusFoot { margin-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .price { display: flex; align-items: baseline; gap: 8px; font-size: 13px; color: #c9c8d2; }
 .price strong { font-size: 24px; color: var(--ds-yellow); }
-.price s { font-size: 14px; color: #9c9aa8; }
 
 /* Results: ranked list (Plus) */
 .ranked { position: relative; list-style: none; margin: 14px 0 0; padding: 0; }

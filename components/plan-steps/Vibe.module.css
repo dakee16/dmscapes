@@ -404,10 +404,6 @@
   color: var(--ds-paper);
   font-variant-numeric: tabular-nums;
 }
-.plusPrice s {
-  font-size: 14px;
-  color: #9c9aa8;
-}
 .plusBtn.plusBtn {
   display: inline-flex;
   align-items: center;

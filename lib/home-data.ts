@@ -3,10 +3,8 @@ import {
   FLEX_CREDIT_PRICE_USD,
   PLUS_INITIAL_CREDITS,
   PLUS_PRICE_USD,
-  PLUS_PRICE_WAS_USD,
   PRO_INITIAL_CREDITS,
   PRO_PRICE_USD,
-  PRO_PRICE_WAS_USD,
   RECHARGE_CREDITS,
   RECHARGE_PRICE_USD,
 } from "@/lib/plan";
@@ -188,7 +186,6 @@ export const PRICING = {
   plus: {
     name: "Plus",
     price: usd(PLUS_PRICE_USD),
-    was: usd(PLUS_PRICE_WAS_USD),
     note: "One time",
     tag: "All 9 vibes",
     line: "You'll have more than one good idea.",
@@ -206,7 +203,6 @@ export const PRICING = {
   pro: {
     name: "Pro",
     price: usd(PRO_PRICE_USD),
-    was: usd(PRO_PRICE_WAS_USD),
     note: "One time",
     tag: "Includes 3D",
     line: "Your room, in 3D.",
