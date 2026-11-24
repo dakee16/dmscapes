@@ -73,6 +73,38 @@ function database(tier, balance = null, used = 0) {
 test("Current offers are 3 Plus, 3 recharge, 10 Pro with unchanged prices", () => {
   assert.deepEqual([plan.PLUS_INITIAL_CREDITS, plan.RECHARGE_CREDITS, plan.PRO_INITIAL_CREDITS], [3, 3, 10]);
   assert.deepEqual([plan.PLUS_PRICE_CENTS, plan.RECHARGE_PRICE_CENTS, plan.PRO_PRICE_CENTS], [499, 299, 1499]);
+  // Black Friday: Plus $1.99 and Pro $4.99, each with 2 bonus credits. The shown and charged prices agree.
+  assert.deepEqual([plan.PLUS_SALE_PRICE_CENTS, plan.PRO_SALE_PRICE_CENTS, plan.SALE_BONUS_CREDITS], [199, 499, 2]);
+  for (const [usd, cents] of [[plan.PLUS_PRICE_USD, plan.PLUS_PRICE_CENTS], [plan.PRO_PRICE_USD, plan.PRO_PRICE_CENTS], [plan.PLUS_SALE_PRICE_USD, plan.PLUS_SALE_PRICE_CENTS], [plan.PRO_SALE_PRICE_USD, plan.PRO_SALE_PRICE_CENTS]]) {
+    assert.equal(Math.round(usd * 100), cents);
+  }
+  // The year-round "was" prices are gone for good.
+  assert.equal("PLUS_PRICE_WAS_USD" in plan, false);
+  assert.equal("PRO_PRICE_WAS_USD" in plan, false);
+});
+
+// The sale window as absolute instants: Thu Nov 26 12:00am ET to Mon Nov 30 11:59pm ET (end excluded).
+const SALE_START = Date.parse("2026-11-26T05:00:00Z");
+const SALE_END = Date.parse("2026-12-01T05:00:00Z");
+/** Runs fn with Date.now() pinned, so checks never depend on today's date. */
+async function at(ms, fn) {
+  const now = Date.now;
+  Date.now = () => ms;
+  try { return await fn(); } finally { Date.now = now; }
+}
+
+test("The sale window is Thu Nov 26 00:00 to Mon Nov 30 23:59:59.999 Eastern", () => {
+  const sale = load("lib/sale.ts");
+  assert.equal(Date.parse(sale.SALE.start), SALE_START);
+  assert.equal(Date.parse(sale.SALE.end), SALE_END);
+  assert.equal(sale.SALE.id, "bf2026");
+  for (const [ms, on] of [[SALE_START - 1, false], [SALE_START, true], [SALE_END - 1, true], [SALE_END, false]]) {
+    assert.equal(sale.isSale(ms), on, new Date(ms).toISOString());
+  }
+  assert.deepEqual(sale.salePlan("plus", SALE_START), { cents: 199, credits: 5, sale: true });
+  assert.deepEqual(sale.salePlan("pro", SALE_END - 1), { cents: 499, credits: 12, sale: true });
+  assert.deepEqual(sale.salePlan("plus", SALE_START - 1), { cents: 499, credits: 3, sale: false });
+  assert.deepEqual(sale.salePlan("pro", SALE_END), { cents: 1499, credits: 10, sale: false });
 });
 
 test("Pro shows a finite balance and keeps tools at zero; unknown accounts cannot generate", () => {
@@ -200,7 +232,8 @@ test("Checkout advertises and pins the exact new grants, including Pro top-ups",
   for (const [type, tier, credits, cents] of [["plus", "free", 3, 499], ["pro", "plus", 10, 1499], ["recharge", "plus", 3, 299], ["flex_credits", "pro", 4, 99]]) {
     let created;
     const stripe = { checkout: { sessions: { create: async args => { created = args; return { url: "https://checkout.stripe.com/test" }; } } } };
-    const res = await routes(database(tier, 0), { stripe }).checkout(request({ type, quantity: 4 }));
+    // Outside the Black Friday window (the sale checks are further down).
+    const res = await at(SALE_END, () => routes(database(tier, 0), { stripe }).checkout(request({ type, quantity: 4 })));
     assert.equal(res.status, 200);
     assert.equal(created.metadata.credit_amount, String(credits));
     assert.equal(created.metadata.credit_plan_version, plan.CREDIT_PLAN_VERSION);
@@ -512,4 +545,152 @@ test("Custom regeneration keeps one free pass and charges subsequent successful 
   await handler("components/planner/PlanResult.tsx", "handleRegenerate", blocked.scope)();
   assert.equal(blocked.state.saves, 0);
   assert.deepEqual(blocked.state.upgrades, ["pro-credits"]);
+});
+
+// ---------- Black Friday (lib/sale.ts) ----------
+async function checkoutAt(ms, type, tier, quantity) {
+  let created;
+  const stripe = { checkout: { sessions: { create: async args => { created = args; return { url: "https://checkout.stripe.com/test" }; } } } };
+  const res = await at(ms, () => routes(database(tier, 0), { stripe }).checkout(request({ type, quantity })));
+  assert.equal(res.status, 200);
+  return created;
+}
+const pinned = c => [c.metadata, c.invoice_creation.invoice_data.metadata, c.payment_intent_data.metadata];
+
+test("Inside the window checkout charges $1.99 Plus with 5 credits and $4.99 Pro with 12, pinned everywhere", async () => {
+  for (const ms of [SALE_START, SALE_START + 3 * 86_400_000, SALE_END - 1]) {
+    for (const [type, tier, cents, credits] of [["plus", "free", 199, 5], ["pro", "plus", 499, 12], ["pro", "free", 499, 12]]) {
+      const c = await checkoutAt(ms, type, tier);
+      assert.equal(c.line_items[0].price_data.unit_amount, cents);
+      assert.equal(c.line_items[0].quantity, 1);
+      for (const md of pinned(c)) assert.deepEqual([md.purchase, md.credit_amount, md.sale], [type, String(credits), "bf2026"]);
+      assert.match(c.line_items[0].price_data.product_data.description, new RegExp(`^One-time upgrade: ${credits} plan credits, including 2 Black Friday bonus credits, free saving`));
+    }
+    // Flex credits and the Plus recharge are not on sale.
+    const recharge = await checkoutAt(ms, "recharge", "plus");
+    assert.deepEqual([recharge.line_items[0].price_data.unit_amount, recharge.metadata.credit_amount, recharge.metadata.sale], [299, "3", undefined]);
+    const flex = await checkoutAt(ms, "flex_credits", "pro", 4);
+    assert.deepEqual([flex.line_items[0].price_data.unit_amount, flex.line_items[0].quantity, flex.metadata.credit_amount, flex.metadata.sale], [99, 4, "4", undefined]);
+  }
+});
+
+test("1 ms before the start, at the end and after it, checkout is exactly the regular offer", async () => {
+  const copy = {
+    plus: "One-time upgrade: 3 plan credits, free saving, all 9 vibes, and PDF/PNG export, comparison, and priority school requests unlocked for good.",
+    pro: "One-time upgrade: 10 plan credits, free saving, 3D Room Builder, live 3D planning, custom vibes, and all Plus tools. Top up credits separately.",
+  };
+  for (const ms of [SALE_START - 1, SALE_END, SALE_END + 86_400_000]) {
+    for (const [type, tier, cents, credits] of [["plus", "free", 499, 3], ["pro", "plus", 1499, 10]]) {
+      const c = await checkoutAt(ms, type, tier);
+      assert.equal(c.line_items[0].price_data.unit_amount, cents);
+      assert.equal(c.line_items[0].price_data.product_data.description, copy[type]);
+      for (const md of pinned(c)) assert.deepEqual([md.credit_amount, md.sale], [String(credits), undefined]);
+      assert.doesNotMatch(JSON.stringify(c), /bf2026|Black Friday/);
+    }
+  }
+});
+
+test("Kill switch: NEXT_PUBLIC_SALE=off charges regular prices inside the window", async t => {
+  const prev = process.env.NEXT_PUBLIC_SALE;
+  t.after(() => { if (prev === undefined) delete process.env.NEXT_PUBLIC_SALE; else process.env.NEXT_PUBLIC_SALE = prev; });
+  process.env.NEXT_PUBLIC_SALE = "off";
+  for (const [type, tier, cents, credits] of [["plus", "free", 499, 3], ["pro", "plus", 1499, 10]]) {
+    const c = await checkoutAt(SALE_START + 60_000, type, tier);
+    assert.deepEqual([c.line_items[0].price_data.unit_amount, c.metadata.credit_amount, c.metadata.sale], [cents, String(credits), undefined]);
+  }
+  const sale = load("lib/sale.ts");
+  assert.equal(sale.SALE_ENABLED, false);
+  assert.equal(sale.isSale(SALE_START + 60_000), false);
+  delete process.env.NEXT_PUBLIC_SALE;
+  assert.equal((await checkoutAt(SALE_START + 60_000, "plus", "free")).line_items[0].price_data.unit_amount, 199);
+});
+
+test("A Black Friday purchase grants 5 or 12 credits once, even if paid after the window, and a refund takes the same back", async t => {
+  const secret = process.env.STRIPE_WEBHOOK_SECRET;
+  process.env.STRIPE_WEBHOOK_SECRET = "test-only";
+  t.after(() => { if (secret === undefined) delete process.env.STRIPE_WEBHOOK_SECRET; else process.env.STRIPE_WEBHOOK_SECRET = secret; });
+  for (const [type, credits] of [["plus", 5], ["pro", 12]]) {
+    // Checkout opened at 11:59pm Monday; Stripe confirms the payment after midnight.
+    const c = await checkoutAt(SALE_END - 60_000, type, "flex");
+    const db = database("flex", 2);
+    const session = { id: `cs_bf_${type}`, payment_status: "paid", customer: "cus_test", amount_total: c.line_items[0].price_data.unit_amount, currency: "usd", metadata: c.metadata };
+    const paid = () => at(SALE_END + 60_000, webhookFixture(db, session));
+    assert.equal((await paid()).status, 200);
+    assert.deepEqual([db.row.plan, db.row.plan_credits_remaining], [type, 2 + credits]);
+    assert.equal((await (await paid()).json()).duplicate, true);
+    assert.equal(db.row.plan_credits_remaining, 2 + credits);
+    // Refunded: exactly the sale grant comes off, the 2 credits bought before stay (on Flex).
+    const pi = { id: "pi_bf", customer: "cus_test", metadata: c.payment_intent_data.metadata };
+    const refund = await routes(db, { stripe: {
+      webhooks: { constructEvent: () => ({ type: "charge.refunded", data: { object: { refunded: true, payment_intent: "pi_bf" } } }) },
+      paymentIntents: { retrieve: async () => pi },
+      charges: { list: async () => ({ data: [] }) },
+    } }).webhook(new Request("https://dormscape.test/api/stripe/webhook", { method: "POST", headers: { "stripe-signature": "s" }, body: "x" }));
+    assert.equal(refund.status, 200);
+    assert.deepEqual([db.row.plan, db.row.plan_credits_remaining, db.row.plus_features_unlocked], ["flex", 2, false]);
+  }
+});
+
+test("checkout_started and purchase_completed carry sale: bf2026 for sale purchases only", async t => {
+  const keys = ["NEXT_PUBLIC_POSTHOG_KEY", "NEXT_PUBLIC_POSTHOG_HOST", "GA4_API_SECRET"];
+  const env = Object.fromEntries(keys.map(k => [k, process.env[k]]));
+  const originalFetch = global.fetch;
+  t.after(() => {
+    for (const k of keys) if (env[k] === undefined) delete process.env[k]; else process.env[k] = env[k];
+    global.fetch = originalFetch;
+  });
+  process.env.NEXT_PUBLIC_POSTHOG_KEY = "phc_test";
+  delete process.env.NEXT_PUBLIC_POSTHOG_HOST;
+  process.env.GA4_API_SECRET = "mp";
+  const { capturePurchase } = load("lib/purchase-analytics.ts");
+  const sent = [];
+  const send = async (_url, init) => { sent.push(JSON.parse(init.body)); return new Response(null, { status: 200 }); };
+  const ids = { ph_distinct_id: "ph-buyer", ga_client_id: "123.456" };
+  await capturePurchase({ id: "cs_bf", amount_total: 199, currency: "usd", metadata: { ...ids, sale: "bf2026" } }, "plus", send);
+  assert.deepEqual(sent[0].properties, { plan: "plus", amount: 1.99, currency: "USD", sale: "bf2026" });
+  assert.equal(sent[1].events[0].params.sale, "bf2026");
+  sent.length = 0;
+  await capturePurchase({ id: "cs_regular", amount_total: 499, currency: "usd", metadata: ids }, "plus", send);
+  assert.deepEqual(sent[0].properties, { plan: "plus", amount: 4.99, currency: "USD" });
+  assert.equal("sale" in sent[1].events[0].params, false);
+
+  // In the browser, tagged by the clock (as the server prices it), never by the ?sale= preview.
+  const events = [];
+  const client = load("lib/checkout.ts", {
+    "@/lib/supabase-browser": { getBrowserClient: () => ({ auth: { getSession: async () => ({ data: { session: { access_token: "t" } } }) } }) },
+    "@/lib/analytics": { track: (event, props) => events.push([event, props]), checkoutAnalyticsIds: () => ({}) },
+  });
+  global.fetch = async () => Response.json({ error: "owned", alreadyOwned: true }, { status: 409 });
+  await at(SALE_START + 1, () => client.startCheckout("pro"));
+  await at(SALE_START + 1, () => client.startCheckout("flex_credits", 3));
+  await at(SALE_END, () => client.startCheckout("plus"));
+  assert.deepEqual(events, [
+    ["checkout_started", { type: "pro", sale: "bf2026" }],
+    ["checkout_started", { type: "flex_credits", quantity: 3 }],
+    ["checkout_started", { type: "plus" }],
+  ]);
+});
+
+test("The head script marks <html data-sale> only inside the window; ?sale= previews for the tab; a closed banner stays closed", () => {
+  const { SALE_SCRIPT } = load("lib/sale.ts");
+  const store = o => ({ getItem: k => o[k] ?? null, setItem: (k, v) => { o[k] = String(v); } });
+  const blocked = { getItem() { throw Error("blocked"); }, setItem() { throw Error("blocked"); } };
+  const run = (ms, search = "", session = store({}), local = store({})) => {
+    const attrs = {};
+    new Function("Date", "document", "location", "sessionStorage", "localStorage", SALE_SCRIPT)(
+      { now: () => ms }, { documentElement: { setAttribute: (k, v) => { attrs[k] = v; } } }, { search }, session, local);
+    return attrs;
+  };
+  const on = { "data-sale": "bf2026" };
+  assert.deepEqual(run(SALE_START - 1), {});
+  assert.deepEqual(run(SALE_START), on);
+  assert.deepEqual(run(SALE_END - 1), on);
+  assert.deepEqual(run(SALE_END), {});
+  const tab = store({});
+  assert.deepEqual(run(SALE_START - 1, "?sale=on", tab), on);
+  assert.deepEqual(run(SALE_END + 1, "", tab), on, "the preview lasts the tab session");
+  assert.deepEqual(run(SALE_START + 1, "?ref=x&sale=off", tab), {});
+  assert.deepEqual(run(SALE_START - 1, "?sale=onward", store({})), {}, "only exact values count");
+  assert.deepEqual(run(SALE_START + 1, "", store({}), store({ "dormscape-sale-banner": "bf2026" })), { ...on, "data-sale-banner": "off" });
+  assert.deepEqual(run(SALE_START + 1, "?sale=off", blocked, blocked), on, "storage blocked: the clock decides");
 });
