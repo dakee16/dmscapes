@@ -19,12 +19,18 @@
   background: none;
   /* the strip around the floating card lets clicks through to the page */
   pointer-events: none;
-  transition: transform 0.3s var(--ds-ease);
+  /* An even glide back in (the site's expo ease front-loads the move and read as a snap). */
+  transition: transform 0.55s cubic-bezier(0.33, 1, 0.68, 1), opacity 0.45s ease-out;
+  will-change: transform;
 }
 /* Past the hero it slides out of view while scrolling down, and back on any scroll up (Nav.tsx).
    Keyboard focus inside it keeps it in view. */
-.header[data-hidden="true"]:not(:focus-within) { transform: translate3d(0, calc(-100% - 24px), 0); }
-@media (prefers-reduced-motion: reduce) { .header[data-overlay] { transition: none; } }
+.header[data-hidden="true"]:not(:focus-within) {
+  transform: translate3d(0, calc(-100% - 24px), 0);
+  opacity: 0;
+  transition: transform 0.65s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.5s ease-in 0.1s;
+}
+@media (prefers-reduced-motion: reduce) { .header[data-overlay], .header[data-hidden="true"] { transition: none; } }
 .header[data-overlay="true"] { margin-bottom: calc(var(--ds-nav-h) * -1); }
 /* Hall Finder's phone results carry their own bar (design-handoff/hall-finder 08, 09). */
 @media (max-width: 899px) {

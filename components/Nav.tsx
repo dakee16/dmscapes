@@ -207,7 +207,8 @@ export default function Nav({
       setScrolled(y > 8);
       // Past the hero the header slides away while scrolling down and comes back on any scroll up.
       if (y < heroBottom()) { setHidden(false); lastY = y; }
-      else if (Math.abs(dy) > 6) { setHidden(dy > 0); lastY = y; }
+      // A deliberate scroll, not a trackpad wobble: 12px down to hide, 8px up to show.
+      else if (dy > 12 || dy < -8) { setHidden(dy > 0); lastY = y; }
       const ground = groundBehind(header);
       const darkGround = ground !== null && isDark(ground);
       header.style.setProperty("--nav-ground",
