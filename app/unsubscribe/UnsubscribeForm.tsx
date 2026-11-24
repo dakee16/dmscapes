@@ -63,7 +63,7 @@ export default function UnsubscribeForm({ u, t }: { u: string; t: string }) {
               {state === "busy" ? "Unsubscribing…" : "Unsubscribe"}
             </button>
           </form>
-          <p className={css.status} style={{ marginTop: 18 }}>
+          <p className={`${css.status} ${css.note}`}>
             Changed your mind later? Turn them back on in{" "}
             <Link href="/account/settings#marketing-emails">Account settings</Link>.
           </p>
