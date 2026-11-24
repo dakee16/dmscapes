@@ -107,7 +107,7 @@ export default function PlanBudgetPage() {
   // A seasonal vibe whose window has closed goes back to the vibe step.
   useEffect(() => {
     if (!mounted || !style) return;
-    if (isSeasonalStyle(style) && !seasonOn()) {
+    if (isSeasonalStyle(style) && !seasonOn(style)) {
       router.replace("/plan/style");
       return;
     }
@@ -160,8 +160,8 @@ export default function PlanBudgetPage() {
   useEffect(() => {
     if (!pendingGenerateRef.current || !user || !profile || modalOpen) return;
     pendingGenerateRef.current = false;
-    // A Spooky Season plan spends nothing, so there's no credit to confirm.
-    if (style && isSeasonalStyle(style) && seasonOn()) {
+    // A seasonal plan in its season spends nothing, so there's no credit to confirm.
+    if (style && isSeasonalStyle(style) && seasonOn(style)) {
       setShowDisclaimer(true);
     } else if (canGeneratePlan(profile)) {
       setShowCreditConfirm(true);
@@ -183,8 +183,8 @@ export default function PlanBudgetPage() {
       return;
     }
     const blockReason = creditLimitReason(profile);
-    // Spooky Season plans are free inside the window; the server has the final say.
-    const freeSeasonal = isSeasonalStyle(style) && seasonOn();
+    // A seasonal vibe's plans are free inside its season; the server has the final say.
+    const freeSeasonal = isSeasonalStyle(style) && seasonOn(style);
     if (!freeSeasonal && !canGeneratePlan(profile)) {
       track("plan_blocked_no_credits");
       openUpgrade(blockReason);

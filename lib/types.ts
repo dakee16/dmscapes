@@ -45,8 +45,9 @@ export type StyleId =
   | "y2k"
   | "retro"
   | "pastel"
-  // Limited seasonal kit (lib/styles SEASONAL_STYLES): decor for the room, offered only in its window.
+  // Limited seasonal kits (lib/styles SEASONAL_STYLES): decor for the room, offered only in their season.
   | "spooky"
+  | "holiday"
   // "Create your own vibe" (Pro): a pseudo-style whose products come from the
   // live pipeline, not the curated catalog. Never shown in the picker grid.
   | "custom";

@@ -148,15 +148,18 @@ test("Paid upgrades add the allowance to existing credits and never downgrade Pr
 // after(): queued here so a test can run it once the response is back, as Next does.
 const afterTasks = [];
 const responseMock = { NextResponse: { json: (body, options) => Response.json(body, options) }, after: fn => afterTasks.push(fn) };
-function routes(db, { user = "member", stripe = null, season } = {}) {
+// Pinned clocks for the seasons (lib/season.ts), so the checks don't depend on today's date.
+const ET = iso => Date.parse(iso);
+const OCTOBER = ET("2026-10-25T12:00:00-04:00"), NOVEMBER = ET("2026-11-15T12:00:00-05:00"), DECEMBER = ET("2026-12-15T12:00:00-05:00");
+function routes(db, { user = "member", stripe = null, now } = {}) {
   const mocks = {
     "next/server": responseMock,
     "@/lib/supabase-server": { getServiceClient: () => db },
     "@/lib/supabase-auth": { getUserId: async () => user },
     "@/lib/rate-limit": { rateLimit: () => ({ allowed: true }) },
     "@/lib/stripe": { getStripe: () => stripe },
-    // The Halloween window, pinned open or closed so the check doesn't depend on today's date.
-    ...(season === undefined ? {} : { "@/lib/season": { isSeason: () => season } }),
+    // The real season windows, read at a pinned instant.
+    ...(now === undefined ? {} : { "@/lib/season": { freeInSeason: style => load("lib/season.ts").freeInSeason(style, now) } }),
   };
   return { consume: load("app/api/plan/consume/route.ts", mocks).POST,
     checkout: load("app/api/checkout/route.ts", mocks).POST,
@@ -179,21 +182,74 @@ test("Consume API rejects unauthenticated, missing-profile, and unavailable-data
 test("A Spooky Season plan is free only inside the window; every other plan still spends", async () => {
   // A free account whose one free plan is already used: no credits left, still gets a Spooky plan.
   const open = database("free", 0, 1);
-  const free = await routes(open, { season: true }).consume(request({ style: "spooky" }));
+  const free = await routes(open, { now: OCTOBER }).consume(request({ style: "spooky" }));
   assert.deepEqual(await free.json(), { blocked: false, remaining: 0, seasonalFree: true });
   assert.equal(open.row.free_plans_used, 1, "A free seasonal plan writes nothing");
   assert.equal(open.writes, 0);
   const paid = database("pro", 10);
-  assert.deepEqual(await (await routes(paid, { season: true }).consume(request({ style: "spooky" }))).json(), { blocked: false, remaining: 10, seasonalFree: true });
+  assert.deepEqual(await (await routes(paid, { now: OCTOBER }).consume(request({ style: "spooky" }))).json(), { blocked: false, remaining: 10, seasonalFree: true });
   assert.equal(paid.row.plan_credits_remaining, 10);
   // Another vibe in season, or Spooky once the window has closed, goes through the normal ledger.
-  assert.deepEqual(await (await routes(paid, { season: true }).consume(request({ style: "cozy" }))).json(), { blocked: false, remaining: 9 });
-  assert.deepEqual(await (await routes(paid, { season: false }).consume(request({ style: "spooky" }))).json(), { blocked: false, remaining: 8 });
-  assert.deepEqual(await (await routes(database("pro", 0), { season: false }).consume(request({ style: "spooky" }))).json(), { blocked: true, remaining: 0 });
+  assert.deepEqual(await (await routes(paid, { now: OCTOBER }).consume(request({ style: "cozy" }))).json(), { blocked: false, remaining: 9 });
+  assert.deepEqual(await (await routes(paid, { now: NOVEMBER }).consume(request({ style: "spooky" }))).json(), { blocked: false, remaining: 8 });
+  assert.deepEqual(await (await routes(database("pro", 0), { now: NOVEMBER }).consume(request({ style: "spooky" }))).json(), { blocked: true, remaining: 0 });
+  // Spooky in December is an ordinary plan too: only the live season's own vibe is free.
+  assert.deepEqual(await (await routes(database("pro", 0), { now: DECEMBER }).consume(request({ style: "spooky" }))).json(), { blocked: true, remaining: 0 });
   // A request without a body (older clients) still spends.
   const legacy = database("pro", 2);
   const bare = new Request("https://dormscape.test/api", { method: "POST" });
-  assert.deepEqual(await (await routes(legacy, { season: true }).consume(bare)).json(), { blocked: false, remaining: 1 });
+  assert.deepEqual(await (await routes(legacy, { now: OCTOBER }).consume(bare)).json(), { blocked: false, remaining: 1 });
+});
+
+test("A Cozy Holiday plan is free from Dec 1 through Dec 31, Eastern, and an ordinary plan outside", async () => {
+  const inside = [ET("2026-12-01T00:00:00-05:00"), DECEMBER, ET("2026-12-31T23:59:59.999-05:00")];
+  for (const now of inside) {
+    // A free account with nothing left still gets one, and nothing is written.
+    const open = database("free", 0, 1);
+    assert.deepEqual(await (await routes(open, { now }).consume(request({ style: "holiday" }))).json(), { blocked: false, remaining: 0, seasonalFree: true });
+    assert.equal(open.writes, 0);
+    const paid = database("pro", 10);
+    assert.deepEqual(await (await routes(paid, { now }).consume(request({ style: "holiday" }))).json(), { blocked: false, remaining: 10, seasonalFree: true });
+    // Any other vibe in December still spends.
+    assert.deepEqual(await (await routes(paid, { now }).consume(request({ style: "cozy" }))).json(), { blocked: false, remaining: 9 });
+  }
+  const outside = [ET("2026-11-30T23:59:59.999-05:00"), ET("2027-01-01T00:00:00-05:00"), OCTOBER, ET("2027-02-01T12:00:00-05:00")];
+  for (const now of outside) {
+    const paid = database("pro", 3);
+    assert.deepEqual(await (await routes(paid, { now }).consume(request({ style: "holiday" }))).json(), { blocked: false, remaining: 2 });
+    assert.deepEqual(await (await routes(database("free", 0, 1), { now }).consume(request({ style: "holiday" }))).json(), { blocked: true, remaining: 0 });
+  }
+});
+
+test("Seasons: the kill switch, the windows and the head script's preview flag", () => {
+  const season = load("lib/season.ts");
+  assert.equal(season.seasonAt(DECEMBER)?.id, "holiday");
+  assert.equal(season.seasonAt(OCTOBER)?.id, "halloween");
+  assert.equal(season.seasonAt(NOVEMBER), undefined);
+  assert.equal(season.lastDay(season.seasonOf("holiday")), "Dec 31");
+  // Outside every season, no style (not even a missing one) is free.
+  for (const style of [undefined, null, "holiday", "spooky"]) assert.equal(season.freeInSeason(style, NOVEMBER), false);
+  process.env.NEXT_PUBLIC_SEASON = "off";
+  try {
+    const off = load("lib/season.ts");
+    assert.equal(off.seasonAt(DECEMBER), undefined);
+    assert.equal(off.freeInSeason("holiday", DECEMBER), false);
+  } finally { delete process.env.NEXT_PUBLIC_SEASON; }
+  // The head script, run against a fake page: the clock picks the season, ?season= overrides it for the tab.
+  const run = (now, search = "", stored = null) => {
+    const store = new Map(stored ? [["dormscape-season", stored]] : []), attrs = {};
+    const page = { Date: { now: () => now }, location: { search }, sessionStorage: { getItem: k => store.get(k) ?? null, setItem: (k, v) => store.set(k, v) },
+      document: { documentElement: { setAttribute: (k, v) => { attrs[k] = v; } } } };
+    new Function(...Object.keys(page), season.SEASON_SCRIPT)(...Object.values(page));
+    return attrs["data-season"];
+  };
+  assert.equal(run(DECEMBER), "holiday");
+  assert.equal(run(OCTOBER), "halloween");
+  assert.equal(run(NOVEMBER), undefined);
+  assert.equal(run(NOVEMBER, "?season=holiday"), "holiday");
+  assert.equal(run(DECEMBER, "?season=off"), undefined);
+  assert.equal(run(NOVEMBER, "", "holiday"), "holiday", "the preview lasts the tab session");
+  assert.equal(run(DECEMBER, "?season=bogus"), "holiday");
 });
 
 test("Checkout advertises and pins the exact new grants, including Pro top-ups", async () => {

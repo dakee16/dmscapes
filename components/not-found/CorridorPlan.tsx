@@ -84,7 +84,7 @@ export default function CorridorPlan() {
       {/* Halloween: a ghost moves in. The plan is aria-hidden, so the tag is a
           pointer-only link; the page's own buttons stay the keyboard route. */}
       <GhostMark className={css.ghost} />
-      <SeasonLink where="404" tabIndex={-1} className={css.haunted} style={box(226, 478, 156, 34)} data-season-show="">
+      <SeasonLink vibe="spooky" where="404" tabIndex={-1} className={css.haunted} style={box(226, 478, 156, 34)} data-season-show="halloween">
         Probably haunted.
       </SeasonLink>
 

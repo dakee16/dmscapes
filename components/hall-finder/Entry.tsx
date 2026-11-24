@@ -134,7 +134,7 @@ export function HomeSection({ example, others }: { example: Example; others: num
   );
 }
 
-/** The homepage hero chip: Jan 1 – Mar 31 (lib/hall-finder heroChipOn), and never while Halloween is on. */
+/** The homepage hero chip: Jan 1 – Mar 31 (lib/hall-finder heroChipOn), and never while a season is on. */
 export function HeroChip({ className, arrowClassName }: { className: string; arrowClassName?: string }) {
   const [show, setShow] = useState(false);
   useEffect(() => setShow(heroChipOn(Date.now(), hallFinderOn()) && !seasonOn()), []);

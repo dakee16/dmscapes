@@ -68,12 +68,14 @@
   }
 }
 
-/* ---------- Halloween season ----------
-   lib/season.ts sets <html data-season="halloween"> before paint. Season
-   pieces carry data-season-show (hidden otherwise); anything they replace
-   carries data-season-hide. Without the attribute nothing here applies. */
-:root:not([data-season="halloween"]) [data-season-show] { display: none !important; }
-:root[data-season="halloween"] [data-season-hide] { display: none !important; }
+/* ---------- Seasons ----------
+   lib/season.ts sets <html data-season="halloween|holiday"> before paint. A
+   season's pieces carry data-season-show="<its id>" (hidden otherwise);
+   anything they replace carries data-season-hide (hidden in any season).
+   Without the attribute nothing here applies. */
+:root:not([data-season="halloween"]) [data-season-show="halloween"],
+:root:not([data-season="holiday"]) [data-season-show="holiday"] { display: none !important; }
+:root[data-season] [data-season-hide] { display: none !important; }
 
 /* ---------- Page root ---------- */
 .ds {
