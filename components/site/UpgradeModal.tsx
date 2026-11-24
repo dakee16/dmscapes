@@ -8,7 +8,8 @@ import { useUpgrade, type UpgradeReason } from "@/lib/upgrade-context";
 import { useAuth } from "@/lib/auth-context";
 import { startCheckout } from "@/lib/checkout";
 import { track } from "@/lib/analytics";
-import { PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, RECHARGE_CREDITS, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, PHOTO_RENDER_CREDITS } from "@/lib/plan";
+import { RECHARGE_PRICE_USD, RECHARGE_CREDITS, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, PHOTO_RENDER_CREDITS } from "@/lib/plan";
+import { PlanPrice, SaleNote } from "@/components/site/Sale";
 import BuyCreditsForm from "@/components/site/BuyCreditsForm";
 import { ArrowRight, Check } from "@/components/ds/Icons";
 import { PlusPerk } from "@/components/hall-finder/Entry";
@@ -214,16 +215,17 @@ export default function UpgradeModal() {
                 <span className={d.planTag}>One time</span>
               </div>
               <p className={d.priceRow}>
-                <span className={d.price}>{usd(PRO_PRICE_USD)}</span>
+                <span className={d.price}><PlanPrice tier="pro" /></span>
                 <span className={d.once}>once</span>
               </p>
+              <SaleNote tier="pro" />
               <p className={d.planLine}>
                 3D Room Builder, live 3D Room Studio, create your own vibe, {PRO_INITIAL_CREDITS} plan credits, shared room
                 hosting, and everything in Plus.
               </p>
               <div className={d.planCta}>
                 <button ref={ctaRef} type="button" className={`${d.btn} ${d.btnWhite} ${d.wide}`} onClick={() => buy("pro")} disabled={busy !== null}>
-                  {busy ? "Starting checkout…" : `Get Pro for ${usd(PRO_PRICE_USD)} once`}
+                  {busy ? "Starting checkout…" : <>Get Pro for <PlanPrice tier="pro" /> once</>}
                 </button>
               </div>
             </div>
@@ -250,7 +252,7 @@ export default function UpgradeModal() {
                     <b>{busy === "pro" ? "Starting checkout…" : "Upgrade to Pro"}</b>
                     <span>{PRO_LINE}</span>
                   </span>
-                  <span className={d.optionPrice}>{usd(PRO_PRICE_USD)}</span>
+                  <span className={d.optionPrice}><PlanPrice tier="pro" /></span>
                 </button>
               </div>
             )}
@@ -281,7 +283,7 @@ export default function UpgradeModal() {
                   <b>{busy === "pro" ? "Starting checkout…" : "Upgrade to Pro"}</b>
                   <span>{PRO_LINE}</span>
                 </span>
-                <span className={d.optionPrice}>{usd(PRO_PRICE_USD)}</span>
+                <span className={d.optionPrice}><PlanPrice tier="pro" /></span>
               </button>
             </div>
             {errorLine}
@@ -301,9 +303,10 @@ export default function UpgradeModal() {
                   <span className={d.planTag}>One time</span>
                 </div>
                 <p className={d.priceRow}>
-                  <span className={d.price}>{usd(PLUS_PRICE_USD)}</span>
+                  <span className={d.price}><PlanPrice tier="plus" /></span>
                   <span className={d.once}>once</span>
                 </p>
+                <SaleNote tier="plus" />
                 <ul className={d.perks}>
                   {PERKS.map((perk, i) => (
                     <Fragment key={perk}>
@@ -317,7 +320,7 @@ export default function UpgradeModal() {
                 </ul>
                 <div className={d.planCta}>
                   <button ref={ctaRef} type="button" className={`${d.btn} ${d.btnYellow} ${d.wide}`} onClick={() => buy("plus")} disabled={busy !== null}>
-                    {busy === "plus" ? "Starting checkout…" : `Get Plus for ${usd(PLUS_PRICE_USD)}`}
+                    {busy === "plus" ? "Starting checkout…" : <>Get Plus for <PlanPrice tier="plus" /></>}
                   </button>
                 </div>
               </article>
@@ -327,9 +330,10 @@ export default function UpgradeModal() {
                   <span className={d.planTag}>{PRO_INITIAL_CREDITS} credits</span>
                 </div>
                 <p className={d.priceRow}>
-                  <span className={d.price}>{usd(PRO_PRICE_USD)}</span>
+                  <span className={d.price}><PlanPrice tier="pro" /></span>
                   <span className={d.once}>once</span>
                 </p>
+                <SaleNote tier="pro" />
                 <ul className={d.perks}>
                   {PRO_PERKS.map((perk) => (
                     <li key={perk}>
@@ -340,7 +344,7 @@ export default function UpgradeModal() {
                 </ul>
                 <div className={d.planCta}>
                   <button type="button" className={`${d.btn} ${d.btnWhite} ${d.wide}`} onClick={() => buy("pro")} disabled={busy !== null}>
-                    {busy === "pro" ? "Starting checkout…" : `Go Pro for ${usd(PRO_PRICE_USD)}`}
+                    {busy === "pro" ? "Starting checkout…" : <>Go Pro for <PlanPrice tier="pro" /></>}
                   </button>
                 </div>
               </article>

@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { PLUS_PRICE_USD, CREATOR_MIN_FOLLOWERS } from "@/lib/plan";
+import { CREATOR_MIN_FOLLOWERS } from "@/lib/plan";
+import { PlanPrice } from "@/components/site/Sale";
 import { decodeDraft } from "@/lib/hall-finder";
 import { useRouter } from "next/navigation";
 import { getBrowserClient } from "@/lib/supabase-browser";
@@ -507,7 +508,7 @@ export default function AuthForm({
           {hallFinderReason && (
             <div className={styles.gateCards}>
               <p><span>Free account</span>Your #1 hall, its weekly walk and one route.</p>
-              <p><span>Plus · ${PLUS_PRICE_USD} once</span>Every hall ranked, every route, compare halls.</p>
+              <p><span>Plus · <PlanPrice tier="plus" /> once</span>Every hall ranked, every route, compare halls.</p>
             </div>
           )}
           {finderNext && (

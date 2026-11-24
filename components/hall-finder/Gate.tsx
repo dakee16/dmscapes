@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Modal from "@/components/site/Modal";
 import { startGoogleSignIn } from "@/components/auth/AuthForm";
-import { PLUS_PRICE_USD } from "@/lib/plan";
+import { PlanPrice } from "@/components/site/Sale";
 import styles from "./HallFinder.module.css";
 
 export default function Gate({ places, halls, upload = false, onEmail, onBack }: { places: number; halls: number; upload?: boolean; onEmail: () => void; onBack: () => void }) {
@@ -64,7 +64,7 @@ export default function Gate({ places, halls, upload = false, onEmail, onBack }:
         {error && <p className={styles.error} role="alert">{error}</p>}
         <div className={styles.gateCards}>
           <p><span>Free account</span>Your #1 hall, its weekly walk and one route.</p>
-          <p><span>Plus · ${PLUS_PRICE_USD} once</span>All {halls} halls ranked, every route, compare halls.</p>
+          <p><span>Plus · <PlanPrice tier="plus" /> once</span>All {halls} halls ranked, every route, compare halls.</p>
         </div>
         <div className={styles.gateFoot}>
           <button type="button" className={styles.linkBtn} onClick={onBack}>{upload ? "Not now" : "Back to my places"}</button>

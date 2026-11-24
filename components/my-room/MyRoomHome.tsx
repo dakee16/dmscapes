@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { isPro, planLabel, PRO_INITIAL_CREDITS, PRO_PRICE_USD } from "@/lib/plan";
+import { isPro, planLabel, PRO_INITIAL_CREDITS } from "@/lib/plan";
+import { PlanPrice } from "@/components/site/Sale";
 import { workspaceRequest } from "@/lib/workspace-client";
 import { WORKSPACE_MEMBER_LIMIT, type WorkspaceSummary } from "@/lib/workspace";
 import type { AccountRoomSummary, AccountRoomsResponse } from "@/lib/api-types";
@@ -151,7 +152,7 @@ export default function MyRoomHome() {
           </ul>
           <p className={s.gateMore}>Pro also unlocks the 3D Room Builder, the live 3D Room Studio, {PRO_INITIAL_CREDITS} plan credits and Create your own vibe.</p>
           <div className={s.gateBuy}>
-            <button type="button" className={s.gateCta} onClick={() => { setGate(false); openUpgrade("workspace"); }}>Go Pro · ${PRO_PRICE_USD.toFixed(2)} once</button>
+            <button type="button" className={s.gateCta} onClick={() => { setGate(false); openUpgrade("workspace"); }}>Go Pro · <PlanPrice tier="pro" /> once</button>
             <span>One payment.{" "}<br />No subscription.</span>
           </div>
           <p className={s.gateInvite}>{joined ? <>You&apos;re already in a shared room. <Link href={`/rooms/${joined.id}`}>Open {joined.name}</Link></> : <>Got an invite from a roommate? Open the link in that email to <strong>join their room free.</strong></>}</p>

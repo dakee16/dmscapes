@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { useAuth } from "@/lib/auth-context";
-import { isPro, isPlusTier, PLUS_PRICE_USD, PRO_PRICE_USD } from "@/lib/plan";
+import { isPro, isPlusTier } from "@/lib/plan";
+import { PlanPrice } from "@/components/site/Sale";
 import { startCheckout } from "@/lib/checkout";
 
 function CheckSvg() {
@@ -69,7 +70,7 @@ export default function UpgradeButton({
     setError(res.error);
   }
 
-  const defaultLabel = type === "pro" ? `Go Pro for $${PRO_PRICE_USD.toFixed(2)}` : `Get Plus for $${PLUS_PRICE_USD.toFixed(2)}`;
+  const defaultLabel = type === "pro" ? <>Go Pro for <PlanPrice tier="pro" /></> : <>Get Plus for <PlanPrice tier="plus" /></>;
 
   return (
     <div>
