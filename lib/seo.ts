@@ -26,7 +26,7 @@ export function absoluteUrl(path = "/"): string {
 export const RSS_FEED = { "application/rss+xml": "/blog/rss.xml" };
 
 const OG_IMAGE = {
-  url: "/og.png?v=room-mark",
+  url: "/og.png?v=christmas",
   width: 1200,
   height: 630,
   alt: "dormscape, the free dorm room planner",
@@ -169,7 +169,7 @@ const organization = {
   ...(SOCIAL_PROFILES.length ? { sameAs: SOCIAL_PROFILES } : {}),
   logo: {
     "@type": "ImageObject",
-    url: `${SITE_URL}/icons/icon-512.png?v=room-mark`,
+    url: `${SITE_URL}/icons/icon-512.png?v=christmas`,
     width: 512,
     height: 512,
   },

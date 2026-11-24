@@ -47,7 +47,7 @@ export async function generateMetadata(props: {
       authors: [FOUNDER.name],
       images: [
         {
-          url: "/og.png?v=room-mark",
+          url: "/og.png?v=christmas",
           width: 1200,
           height: 630,
           alt: "dormscape, the free AI dorm room planner",
@@ -58,7 +58,7 @@ export async function generateMetadata(props: {
       card: "summary_large_image",
       title: post.metaTitle ?? post.title,
       description: post.description,
-      images: ["/og.png?v=room-mark"],
+      images: ["/og.png?v=christmas"],
     },
   };
 }

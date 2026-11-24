@@ -58,7 +58,7 @@ function shadowMesh(root,uniforms){
 }
 
 export function createStudioScene(container, options) {
-  const brandMark=new Image();brandMark.src="/brand/dormscape-mark.png?v=room-mark";
+  const brandMark=new Image();brandMark.src="/brand/dormscape-mark.png?v=christmas";
   const renderer=new T.WebGLRenderer({antialias:true,stencil:true,powerPreference:"high-performance"});
   // The pixel ratio starts at the screen's (capped). While the camera or a piece moves slowly it steps down, so weak GPUs stay
   // smooth; when everything stops, the still frame goes back to the full ratio.

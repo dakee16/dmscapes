@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: "/faq",
     images: [
       {
-        url: "/og.png?v=room-mark",
+        url: "/og.png?v=christmas",
         width: 1200,
         height: 630,
         alt: "dormscape, the free AI dorm room planner",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dorm FAQ",
     description: DESCRIPTION,
-    images: ["/og.png?v=room-mark"],
+    images: ["/og.png?v=christmas"],
   },
 };
 
