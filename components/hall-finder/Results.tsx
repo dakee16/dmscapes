@@ -9,8 +9,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Modal from "@/components/site/Modal";
 import { ArrowRight, CloseIcon } from "@/components/ds/Icons";
 import { formatDims } from "@/lib/schools";
-import { PLUS_INITIAL_CREDITS } from "@/lib/plan";
-import { PlanPrice, SaleNote } from "@/components/site/Sale";
+import { PlanCredits, PlanPrice, SaleNote } from "@/components/site/Sale";
 import { STYLES } from "@/lib/styles";
 import { track } from "@/lib/analytics";
 import { formatMinutes, type CampusHall, type Filters, type HallFacts, type RankResult, type RankedHall } from "@/lib/hall-finder";
@@ -172,7 +171,7 @@ function FreeResults({ collegeId, schoolName, result, halls, facts, places, rout
             <p className={styles.plusTitle}>See all {result.count} halls ranked, with every route.</p>
             <p className={styles.plusText}>
               {second !== undefined && `Your #2 is only ${Math.max(1, Math.round(second))} ${Math.round(second) === 1 ? "minute" : "minutes"} a week behind. `}
-              Compare halls side by side. Plus also has {PLUS_INITIAL_CREDITS} plan credits and all {STYLES.length} vibes.
+              Compare halls side by side. Plus also has <PlanCredits tier="plus" /> and all {STYLES.length} vibes.
             </p>
             <div className={styles.plusFoot}>
               <span className={styles.price}>

@@ -8,8 +8,8 @@ import { useUpgrade, type UpgradeReason } from "@/lib/upgrade-context";
 import { useAuth } from "@/lib/auth-context";
 import { startCheckout } from "@/lib/checkout";
 import { track } from "@/lib/analytics";
-import { RECHARGE_PRICE_USD, RECHARGE_CREDITS, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, PHOTO_RENDER_CREDITS } from "@/lib/plan";
-import { PlanPrice, SaleNote } from "@/components/site/Sale";
+import { RECHARGE_PRICE_USD, RECHARGE_CREDITS, PRO_INITIAL_CREDITS, PHOTO_RENDER_CREDITS, SALE_BONUS_CREDITS } from "@/lib/plan";
+import { creditsText, PlanCredits, PlanPrice, SaleNote, SaleSwap } from "@/components/site/Sale";
 import BuyCreditsForm from "@/components/site/BuyCreditsForm";
 import { ArrowRight, Check } from "@/components/ds/Icons";
 import { PlusPerk } from "@/components/hall-finder/Entry";
@@ -19,14 +19,14 @@ import d from "@/components/account-ui/Dialog.module.css";
 // Headline + one-line hook per gating point. The body below adapts: Plus and Pro
 // cards for feature gates and free limits, a Pro card for Pro-only tools, the
 // recharge-vs-Pro choice for Plus members out of credits, and the Flex form.
-const COPY: Record<UpgradeReason, { title: string; body: string }> = {
+const COPY: Record<UpgradeReason, { title: string; body: React.ReactNode }> = {
   "plan-credits": {
     title: "You're out of plan credits",
     body: "You've used your Plus plan credits. Recharge to generate more rooms. Your saved designs, exports, and comparisons stay right where they are.",
   },
   "hall-finder": {
     title: "See every hall ranked",
-    body: `Plus ranks every hall at your school by your weekly walk, shows every route and compares halls side by side. It also includes ${PLUS_INITIAL_CREDITS} plan credits and every vibe.`,
+    body: <>Plus ranks every hall at your school by your weekly walk, shows every route and compares halls side by side. It also includes <PlanCredits tier="plus" /> and every vibe.</>,
   },
   "workspace": { title: "Make room for your roommates", body: "Pro hosts one shared room with up to four people, including you. Friends join free to edit or comment, with a shared shopping list and version history. Personal rooms stay available on every plan." },
   "pro-credits": {
@@ -39,15 +39,15 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
   },
   "free-plan-limit": {
     title: "That's your free room plan",
-    body: `Free includes one room plan. Plus adds ${PLUS_INITIAL_CREDITS} plan credits and Plus tools. Pro includes ${PRO_INITIAL_CREDITS} plan credits, 3D tools, and custom vibes. Saving is always free.`,
+    body: <>Free includes one room plan. Plus adds <PlanCredits tier="plus" /> and Plus tools. Pro includes <PlanCredits tier="pro" />, 3D tools, and custom vibes. Saving is always free.</>,
   },
   "flex-credits": {
     title: "You're out of credits",
-    body: `Buy more plan credits for $0.99 each. Or upgrade to Pro for ${PRO_INITIAL_CREDITS} included credits and every premium tool. No subscription.`,
+    body: <>Buy more plan credits for $0.99 each. Or upgrade to Pro for <SaleSwap regular={`${PRO_INITIAL_CREDITS} included credits`} sale={`${PRO_INITIAL_CREDITS + SALE_BONUS_CREDITS} included credits (${PRO_INITIAL_CREDITS} + ${SALE_BONUS_CREDITS} bonus)`} /> and every premium tool. No subscription.</>,
   },
   "free-save-limit": {
     title: "Keep every good idea",
-    body: `Saving is always free. Plus adds ${PLUS_INITIAL_CREDITS} plan credits, all nine preset vibes, and Plus tools. Pro includes ${PRO_INITIAL_CREDITS} plan credits, 3D tools, and custom vibes.`,
+    body: <>Saving is always free. Plus adds <PlanCredits tier="plus" />, all nine preset vibes, and Plus tools. Pro includes <PlanCredits tier="pro" />, 3D tools, and custom vibes.</>,
   },
   pdf: {
     title: "Export your list as a PDF",
@@ -101,7 +101,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
 
 
 const PERKS = [
-  `${PLUS_INITIAL_CREDITS} plan credits (saving is always free)`,
+  <SaleSwap key="credits" regular={`${creditsText("plus", false)} (saving is always free)`} sale={`${creditsText("plus", true)}, saving is always free`} />,
   "All 9 vibes unlocked",
   "Draw your own room, any shape",
   "PDF and PNG export",
@@ -110,13 +110,13 @@ const PERKS = [
 ];
 const PRO_PERKS = [
   "Everything in Plus",
-  `${PRO_INITIAL_CREDITS} plan credits`,
+  <PlanCredits key="credits" tier="pro" />,
   "3D Room Builder",
   "Live 3D Room Studio",
   "Create your own vibe",
   "A shared room for your people",
 ];
-const PRO_LINE = `${PRO_INITIAL_CREDITS} plan credits, 3D tools, and custom vibes.`;
+const PRO_LINE = <><PlanCredits tier="pro" />, 3D tools, and custom vibes.</>;
 const PRO_GATES: UpgradeReason[] = ["workspace", "room-3d", "draw-3d", "custom-vibe", "photo-render"];
 const usd = (n: number) => `$${n.toFixed(2)}`;
 
@@ -220,7 +220,7 @@ export default function UpgradeModal() {
               </p>
               <SaleNote tier="pro" />
               <p className={d.planLine}>
-                3D Room Builder, live 3D Room Studio, create your own vibe, {PRO_INITIAL_CREDITS} plan credits, shared room
+                3D Room Builder, live 3D Room Studio, create your own vibe, <PlanCredits tier="pro" />, shared room
                 hosting, and everything in Plus.
               </p>
               <div className={d.planCta}>
@@ -309,7 +309,7 @@ export default function UpgradeModal() {
                 <SaleNote tier="plus" />
                 <ul className={d.perks}>
                   {PERKS.map((perk, i) => (
-                    <Fragment key={perk}>
+                    <Fragment key={i}>
                       <li>
                         <Check size={16} color="var(--ds-yellow)" />
                         <span>{perk}</span>
@@ -327,7 +327,7 @@ export default function UpgradeModal() {
               <article className={`${d.plan} ${d.planPro}`} aria-labelledby="upgrade-pro">
                 <div className={d.planHead}>
                   <h3 id="upgrade-pro">Pro</h3>
-                  <span className={d.planTag}>{PRO_INITIAL_CREDITS} credits</span>
+                  <span className={d.planTag}><PlanCredits tier="pro" short /></span>
                 </div>
                 <p className={d.priceRow}>
                   <span className={d.price}><PlanPrice tier="pro" /></span>
@@ -335,8 +335,8 @@ export default function UpgradeModal() {
                 </p>
                 <SaleNote tier="pro" />
                 <ul className={d.perks}>
-                  {PRO_PERKS.map((perk) => (
-                    <li key={perk}>
+                  {PRO_PERKS.map((perk, i) => (
+                    <li key={i}>
                       <Check size={16} color="#fff" />
                       <span>{perk}</span>
                     </li>

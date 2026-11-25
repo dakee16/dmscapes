@@ -3,7 +3,7 @@
 import { STYLES } from "@/lib/styles";
 import { PLUS_INITIAL_CREDITS, PLUS_PRICE_USD } from "@/lib/plan";
 import { SALE_OFFER } from "@/lib/sale";
-import { PlanPrice, SaleNote, SaleSwap } from "@/components/site/Sale";
+import { PlanCredits, PlanPrice, SaleNote, SaleSwap } from "@/components/site/Sale";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
 import css from "./Vibe.module.css";
@@ -35,7 +35,7 @@ export default function PlusCard({ compact = false }: { compact?: boolean }) {
     <div className={css.plus}>
       <p className={css.plusHead}>{head}</p>
       <p className={css.plusText}>
-        {PLUS_INITIAL_CREDITS} plan credits, {hallFinder && <><strong className={css.plusHot}>Hall Finder</strong>, </>}PDF and PNG
+        <PlanCredits tier="plus" />, {hallFinder && <><strong className={css.plusHot}>Hall Finder</strong>, </>}PDF and PNG
         export, and compare two designs side by side.
       </p>
       <div className={css.plusFoot}>

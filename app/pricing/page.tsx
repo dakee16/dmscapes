@@ -26,8 +26,9 @@ import {
   RECHARGE_PRICE_USD,
   FLEX_CREDIT_PRICE_USD,
   FREE_PLAN_CAP,
+  SALE_BONUS_CREDITS,
 } from "@/lib/plan";
-import { PlanPrice, SaleNote } from "@/components/site/Sale";
+import { PlanCredits, PlanPrice, SaleNote, SaleSwap } from "@/components/site/Sale";
 import css from "@/components/pricing/Pricing.module.css";
 
 // Real, honest social proof: counts derived straight from the shipped data, so
@@ -94,9 +95,12 @@ const FREE_PERKS: React.ReactNode[] = [
 
 // Plus perks: the one-time unlock. Plan generation is metered by plan credits;
 // saving is free, and features are forever.
-const PLUS_PERKS: { title: string; body: string }[] = [
+// `label` replaces the title where it's shown (the credits line, which grows during the Black Friday sale).
+type Perk = { title: string; body: React.ReactNode; label?: React.ReactNode };
+const PLUS_PERKS: Perk[] = [
   {
     title: `${PLUS_INITIAL_CREDITS} plan credits`,
+    label: <PlanCredits tier="plus" />,
     body: `One credit per generated room plan. Recharge ${RECHARGE_CREDITS} more for $${RECHARGE_PRICE_USD.toFixed(2)}. Manual arrangements and saving your designs use no credits.`,
   },
   {
@@ -126,13 +130,22 @@ const PLUS_PERKS: { title: string; body: string }[] = [
 ];
 
 // Pro includes a larger generation allowance and permanent access to its tools.
-const PRO_PERKS: { title: string; body: string }[] = [
+const PRO_PERKS: Perk[] = [
   {title: "A shared room for your people", body: "Host one active shared workspace with up to four people, including you. Friends join free with editing or comment access. Keep a shared shopping list, purchasing assignments, comments, and room versions."},
   {title: "3D Room Builder", body: "Build your own room on a 3D grid. Place a floor, draw custom walls, and add doors and windows. Your room carries straight into 3D planning. Pro only."},
   {title: "Live 3D Room Studio", body: "Arrange furniture, explore room, top, and inside views, and try finishes and lighting. Switch between the same 2D and 3D layout. Included with Pro, available now."},
   {
     title: `${PRO_INITIAL_CREDITS} plan credits`,
-    body: `${PRO_INITIAL_CREDITS} included credits for new room plans. Top up for $${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. Your Pro tools and saved designs remain available at zero.`,
+    label: <PlanCredits tier="pro" />,
+    body: (
+      <>
+        <SaleSwap
+          regular={`${PRO_INITIAL_CREDITS} included credits`}
+          sale={`${PRO_INITIAL_CREDITS + SALE_BONUS_CREDITS} included credits (${PRO_INITIAL_CREDITS} + ${SALE_BONUS_CREDITS} Black Friday bonus)`}
+        />
+        {` for new room plans. Top up for $${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. Your Pro tools and saved designs remain available at zero.`}
+      </>
+    ),
   },
   {
     title: "Create your own vibe",
@@ -159,9 +172,9 @@ const NEVER = [
   "Invitations",
 ];
 
-type Cell = string | boolean;
+type Cell = React.ReactNode;
 const TABLE: { feature: string; free: Cell; plus: Cell; pro: Cell }[] = [
-  { feature: "Plan credits", free: String(FREE_PLAN_CAP), plus: String(PLUS_INITIAL_CREDITS), pro: String(PRO_INITIAL_CREDITS) },
+  { feature: "Plan credits", free: String(FREE_PLAN_CAP), plus: <SaleSwap regular={String(PLUS_INITIAL_CREDITS)} sale={`${PLUS_INITIAL_CREDITS + SALE_BONUS_CREDITS} (${PLUS_INITIAL_CREDITS} + ${SALE_BONUS_CREDITS} bonus)`} />, pro: <SaleSwap regular={String(PRO_INITIAL_CREDITS)} sale={`${PRO_INITIAL_CREDITS + SALE_BONUS_CREDITS} (${PRO_INITIAL_CREDITS} + ${SALE_BONUS_CREDITS} bonus)`} /> },
   { feature: "Preset vibes", free: String(FREE_VIBES.length), plus: String(ALL_VIBES), pro: String(ALL_VIBES) },
   { feature: "Real room dimensions, 2D layout, live Amazon links", free: true, plus: true, pro: true },
   { feature: "Save and share", free: true, plus: true, pro: true },
@@ -289,7 +302,7 @@ export default function PricingPage() {
               </p>
               <SaleNote tier="plus" />
               <p className={css.pitch}>
-                A one-time upgrade with {PLUS_INITIAL_CREDITS} plan credits. Recharge {RECHARGE_CREDITS} for{" "}
+                A one-time upgrade with <PlanCredits tier="plus" />. Recharge {RECHARGE_CREDITS} for{" "}
                 {usd(RECHARGE_PRICE_USD)}.
               </p>
               <UpgradeButton
@@ -303,7 +316,7 @@ export default function PricingPage() {
                   <Fragment key={perk.title}>
                     <li>
                       <Check size={16} color="var(--ds-yellow)" />
-                      <span>{perk.title}</span>
+                      <span>{perk.label ?? perk.title}</span>
                     </li>
                     {/* Hall Finder goes after the vibes (design-handoff/hall-finder 17-Mentions). */}
                     {i === 1 && <PlusPerk link check={<Check size={16} color="var(--ds-yellow)" />} />}
@@ -322,7 +335,7 @@ export default function PricingPage() {
             <article id="pro" className={`${css.plan} ${css.pro}`} data-reveal="" aria-labelledby="plan-pro">
               <div className={css.planTop}>
                 <h2 id="plan-pro">Pro</h2>
-                <span className={css.tag}>{PRO_INITIAL_CREDITS} credits</span>
+                <span className={css.tag}><PlanCredits tier="pro" short /></span>
               </div>
               <p className={css.priceRow}>
                 <span className={css.price}><PlanPrice tier="pro" /></span>
@@ -330,8 +343,8 @@ export default function PricingPage() {
               </p>
               <SaleNote tier="pro" />
               <p className={css.pitch}>
-                Build in 3D, find your own vibe, and bring your ideas to life. Includes {PRO_INITIAL_CREDITS} plan
-                credits and all Plus tools.
+                Build in 3D, find your own vibe, and bring your ideas to life. Includes <PlanCredits tier="pro" /> and
+                all Plus tools.
               </p>
               <UpgradeButton
                 type="pro"
@@ -343,7 +356,7 @@ export default function PricingPage() {
                 {PRO_PERKS.map((perk) => (
                   <li key={perk.title}>
                     <Check size={16} color="#fff" />
-                    <span>{perk.title}</span>
+                    <span>{perk.label ?? perk.title}</span>
                   </li>
                 ))}
               </ul>
@@ -469,7 +482,7 @@ export default function PricingPage() {
                 <dl>
                   {g.perks.map((p) => (
                     <div key={p.title}>
-                      <dt>{p.title}</dt>
+                      <dt>{p.label ?? p.title}</dt>
                       <dd>{p.body}</dd>
                     </div>
                   ))}

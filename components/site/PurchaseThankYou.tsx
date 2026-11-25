@@ -10,7 +10,7 @@ import d from "@/components/account-ui/Dialog.module.css";
 import type { ReactNode } from "react";
 import { PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, SALE_BONUS_CREDITS } from "@/lib/plan";
 import { SALE_OFFER } from "@/lib/sale";
-import { PlanPrice, SaleSwap } from "@/components/site/Sale";
+import { PlanCredits, PlanPrice, SaleSwap } from "@/components/site/Sale";
 
 // Brief, satisfying confirmation shown when a buyer returns from Stripe Checkout
 // for Plus or Pro. Stripe redirects to /account?upgraded=plus|pro (see
@@ -127,7 +127,7 @@ export default function PurchaseThankYou() {
 
         {tier === "plus" && (
           <p className={d.small}>
-            Pro includes {PRO_INITIAL_CREDITS} plan credits and 3D tools for <PlanPrice tier="pro" />, one time.
+            Pro includes <PlanCredits tier="pro" /> and 3D tools for <PlanPrice tier="pro" />, one time.
           </p>
         )}
 
