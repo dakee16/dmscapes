@@ -1,0 +1,77 @@
+/* Black Friday ticker on the homepage hero (components/home/SaleMarquee).
+   Promo-ticker energy in dormscape's own kit: an ink band edged in tape yellow,
+   condensed Archivo prices, Martian Mono sticker chips set at a tilt. */
+
+.marquee {
+  position: relative;
+  z-index: 3;
+  display: block;
+  /* In the hero's flow, just under the floating nav pill (the hero pads for the overlaid nav). */
+  margin: calc(var(--ds-nav-h) + 6px - var(--hero-pad-top, 128px)) 0 36px;
+  overflow: hidden;
+  background: var(--ds-ink);
+  color: var(--ds-paper);
+  box-shadow: inset 0 3px 0 var(--ds-yellow), inset 0 -3px 0 var(--ds-yellow);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.marquee:focus-visible { outline: 3px solid var(--ds-blue); outline-offset: 3px; }
+
+.rail {
+  display: flex;
+  width: max-content;
+  animation: bf-ticker 36s linear infinite;
+}
+/* Hover or keyboard focus holds it still to read. */
+.marquee:hover .rail, .marquee:focus-visible .rail { animation-play-state: paused; }
+@keyframes bf-ticker { to { transform: translate3d(-50%, 0, 0); } }
+
+.half, .run { display: flex; align-items: center; flex: none; }
+.run { gap: 22px; padding: 14px 22px 14px 0; }
+
+.big {
+  font-family: var(--ds-sans);
+  font-size: 34px;
+  font-weight: 900;
+  font-stretch: 84%;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.big em { font-style: normal; font-variant-numeric: tabular-nums; }
+.yellow { color: var(--ds-yellow); }
+.blue { color: var(--ds-blue-on-dark); }
+
+.flag, .bonus {
+  display: inline-block;
+  padding: 6px 10px 5px;
+  border-radius: 5px;
+  font: 800 12px/1 var(--ds-mono);
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+.flag { background: var(--ds-yellow); color: var(--ds-ink); transform: rotate(-3deg); }
+.bonus { background: var(--ds-pink); color: var(--ds-ink); transform: rotate(2.5deg); }
+.ends { font: 700 12px/1 var(--ds-mono); letter-spacing: 0.12em; color: rgba(244, 243, 238, 0.78); white-space: nowrap; }
+.star { color: var(--ds-pink); font-size: 18px; line-height: 1; }
+
+@media (max-width: 760px) {
+  .marquee { margin-bottom: 28px; }
+  .run { gap: 14px; padding: 11px 14px 11px 0; }
+  .big { font-size: 24px; }
+  .flag, .bonus { padding: 5px 8px 4px; font-size: 10.5px; }
+  .ends { font-size: 10.5px; }
+  .star { font-size: 14px; }
+}
+
+/* Reduced motion or the site's motion pause: one still run, wrapped and centred. */
+@media (prefers-reduced-motion: reduce) {
+  .rail { width: auto; animation: none; justify-content: center; }
+  .half[data-copy], .half > .run + .run { display: none; }
+  .half, .run { flex: 1 1 100%; min-width: 0; flex-wrap: wrap; justify-content: center; }
+  .run { row-gap: 8px; padding-left: 16px; padding-right: 16px; }
+}
+:global(.ds-still) .rail { width: auto; animation: none; justify-content: center; }
+:global(.ds-still) .half[data-copy], :global(.ds-still) .half > .run + .run { display: none; }
+:global(.ds-still) .half, :global(.ds-still) .run { flex: 1 1 100%; min-width: 0; flex-wrap: wrap; justify-content: center; }
+:global(.ds-still) .run { row-gap: 8px; padding-left: 16px; padding-right: 16px; }
