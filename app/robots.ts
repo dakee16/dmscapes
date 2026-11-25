@@ -8,10 +8,11 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us";
  *   /account*       account, saved designs, settings, billing, compare
  *   /api/*          all API routes incl. the Stripe checkout/webhook endpoints
  *   /reset-password password-recovery landing (private, token in URL)
+ *   /unsubscribe    marketing-email unsubscribe landing (token in URL)
  *   /dev            dev-only review tools (404 in production anyway)
  * The sitemap (app/sitemap.ts) is referenced so crawlers find every college page.
  */
-const PRIVATE = ["/account", "/rooms", "/api/", "/reset-password", "/dev"];
+const PRIVATE = ["/account", "/rooms", "/api/", "/reset-password", "/unsubscribe", "/dev"];
 
 // Search and answer engines' crawlers, named so it's explicit they're welcome.
 // A crawler reads only the group that names it, so each repeats the private paths.

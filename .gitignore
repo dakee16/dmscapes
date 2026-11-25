@@ -67,3 +67,6 @@ brag-output/
 
 # Hall Finder raw OSM/registrar downloads (scripts/campus/fetch.mjs)
 /scripts/campus/cache/
+
+# Campaign sent-logs (scripts/send-campaign.mjs): recipient user ids, never committed
+/qa-tmp/campaign-*.jsonl

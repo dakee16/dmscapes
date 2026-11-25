@@ -25,6 +25,8 @@
 .form :global(.ds-btn):disabled { cursor: wait; opacity: 0.7; transform: none; }
 .error { margin: 0; font-size: 15px; line-height: 1.45; color: #b01d2a; }
 .status { margin: 0; font-family: var(--ds-mono); font-size: 12px; font-weight: 600; line-height: 1.5; color: var(--ds-caption); }
+.note { margin-top: 18px; }
+.note a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .skeleton { display: grid; gap: 16px; }
 .skeleton span { display: block; height: 52px; border-radius: 14px; background: linear-gradient(90deg, #efeee8, #f7f6f1, #efeee8); background-size: 200% 100%; animation: shimmer 1.4s linear infinite; }
