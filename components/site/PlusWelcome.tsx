@@ -8,8 +8,8 @@ import { track } from "@/lib/analytics";
 import { ArrowRight } from "@/components/ds/Icons";
 import { CloseButton } from "@/components/account-ui/parts";
 import d from "@/components/account-ui/Dialog.module.css";
-import { PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, RECHARGE_CREDITS, RECHARGE_PRICE_USD } from "@/lib/plan";
-import { PlanPrice, SaleNote } from "@/components/site/Sale";
+import { RECHARGE_CREDITS, RECHARGE_PRICE_USD } from "@/lib/plan";
+import { PlanCredits, PlanPrice, SaleNote } from "@/components/site/Sale";
 
 // The once-per-session "welcome" upgrade moment, shown after a free user's first
 // sign-in of the session (wired in lib/auth-context). Deliberately NOT the
@@ -18,11 +18,11 @@ import { PlanPrice, SaleNote } from "@/components/site/Sale";
 // considered welcome rather than a paywall. Easy to dismiss; never nags
 // again that session.
 
-type Feature = { label: string; desc: string; icon: React.ReactNode };
+type Feature = { label: React.ReactNode; desc: string; icon: React.ReactNode };
 
 const FEATURES: Feature[] = [
   {
-    label: `${PLUS_INITIAL_CREDITS} plan credits`,
+    label: <PlanCredits tier="plus" />,
     desc: `Recharge ${RECHARGE_CREDITS} more for $${RECHARGE_PRICE_USD.toFixed(2)}. Saving is always free.`,
     icon: (
       <path
@@ -126,13 +126,13 @@ export default function PlusWelcome({
           More room <span className={d.serif}>to plan.</span>
         </h2>
         <p className={d.body}>
-          Try another style. Compare your favorites. Plus adds {PLUS_INITIAL_CREDITS} plan credits, all nine preset vibes, 2D
+          Try another style. Compare your favorites. Plus adds <PlanCredits tier="plus" />, all nine preset vibes, 2D
           room drawing, and exports. Saving your designs is always free.
         </p>
 
         <ul className={d.features}>
           {FEATURES.map((f) => (
-            <li key={f.label}>
+            <li key={f.desc}>
               <span className={d.featureIcon} aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.9">
                   {f.icon}
@@ -149,7 +149,7 @@ export default function PlusWelcome({
         <div className={d.priceLine}>
           <strong><PlanPrice tier="plus" /></strong>
           <span>
-            one time for Plus. Pro is <PlanPrice tier="pro" /> for {PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D
+            one time for Plus. Pro is <PlanPrice tier="pro" /> for <PlanCredits tier="pro" />, custom vibes, and 3D
             room building and planning.
           </span>
         </div>

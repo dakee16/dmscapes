@@ -5,8 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { isPro, planLabel, PRO_INITIAL_CREDITS } from "@/lib/plan";
-import { PlanPrice } from "@/components/site/Sale";
+import { isPro, planLabel } from "@/lib/plan";
+import { PlanCredits, PlanPrice } from "@/components/site/Sale";
 import { workspaceRequest } from "@/lib/workspace-client";
 import { WORKSPACE_MEMBER_LIMIT, type WorkspaceSummary } from "@/lib/workspace";
 import type { AccountRoomSummary, AccountRoomsResponse } from "@/lib/api-types";
@@ -150,7 +150,7 @@ export default function MyRoomHome() {
           <ul className={s.gateList}>
             {["Friends join free with editing or comment access", "Mark what's yours, theirs and shared, and who brings what", "A shared shopping list, comments and room versions", "A voice channel right in the room"].map(t => <li key={t}><Check size={18} color="#2449FF" />{t}</li>)}
           </ul>
-          <p className={s.gateMore}>Pro also unlocks the 3D Room Builder, the live 3D Room Studio, {PRO_INITIAL_CREDITS} plan credits and Create your own vibe.</p>
+          <p className={s.gateMore}>Pro also unlocks the 3D Room Builder, the live 3D Room Studio, <PlanCredits tier="pro" /> and Create your own vibe.</p>
           <div className={s.gateBuy}>
             <button type="button" className={s.gateCta} onClick={() => { setGate(false); openUpgrade("workspace"); }}><span>Go Pro · <PlanPrice tier="pro" /> once</span></button>
             <span>One payment.{" "}<br />No subscription.</span>

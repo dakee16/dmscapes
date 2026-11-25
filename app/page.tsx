@@ -1,5 +1,4 @@
 import Nav from "@/components/Nav";
-import SaleBanner from "@/components/site/SaleBanner";
 import Footer from "@/components/Footer";
 import StickyMobileCta from "@/components/site/StickyMobileCta";
 import JsonLd from "@/components/site/JsonLd";
@@ -82,7 +81,7 @@ export default function Home() {
           softwareApplicationJsonLd(),
         ]}
       />
-      <SaleBanner />
+      {/* No top strip here: the hero carries the Black Friday ticker (components/home/SaleMarquee). */}
       <Nav overlay cardOnScroll />
       <main id="page-content" tabIndex={-1}>
         <HomeHero schoolCount={SCHOOL_COUNT} roomCount={LAYOUT_COUNT} />

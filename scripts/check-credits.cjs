@@ -694,3 +694,15 @@ test("The head script marks <html data-sale> only inside the window; ?sale= prev
   assert.deepEqual(run(SALE_START + 1, "", store({}), store({ "dormscape-sale-banner": "bf2026" })), { ...on, "data-sale-banner": "off" });
   assert.deepEqual(run(SALE_START + 1, "?sale=off", blocked, blocked), on, "storage blocked: the clock decides");
 });
+
+test("Discount codes are off inside the sale window for every purchase, and on outside it or with the kill switch", async t => {
+  const types = [["plus", "free"], ["pro", "plus"], ["recharge", "plus"], ["flex_credits", "pro", 2]];
+  for (const [type, tier, quantity] of types) {
+    for (const ms of [SALE_START, SALE_END - 1]) assert.equal((await checkoutAt(ms, type, tier, quantity)).allow_promotion_codes, false, `${type} in the window`);
+    for (const ms of [SALE_START - 1, SALE_END]) assert.equal((await checkoutAt(ms, type, tier, quantity)).allow_promotion_codes, true, `${type} outside the window`);
+  }
+  const prev = process.env.NEXT_PUBLIC_SALE;
+  t.after(() => { if (prev === undefined) delete process.env.NEXT_PUBLIC_SALE; else process.env.NEXT_PUBLIC_SALE = prev; });
+  process.env.NEXT_PUBLIC_SALE = "off";
+  for (const [type, tier, quantity] of types) assert.equal((await checkoutAt(SALE_START + 60_000, type, tier, quantity)).allow_promotion_codes, true, `${type} with the kill switch`);
+});

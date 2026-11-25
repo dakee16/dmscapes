@@ -343,7 +343,7 @@
 .sheet.sheet.sheet button.optionBlue:hover:not(:disabled) { box-shadow: 0 12px 26px rgba(36, 73, 255, 0.3); }
 .optionText { display: grid; gap: 4px; min-width: 0; }
 .optionText b { font-size: 17px; font-weight: 850; line-height: 1.2; }
-.optionText span { font-size: 14px; line-height: 1.35; opacity: 0.85; }
+.optionText > span { font-size: 14px; line-height: 1.35; opacity: 0.85; }
 .optionPrice { flex: none; font-size: 26px; font-weight: 900; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
 .optionInk .optionPrice { color: var(--ds-yellow); }
 
@@ -408,7 +408,7 @@
   color: var(--ds-ink);
 }
 .features div b { display: block; font-size: 15px; font-weight: 800; line-height: 1.25; }
-.features div span { display: block; margin-top: 3px; font-size: 13.5px; line-height: 1.4; color: #cfccd9; }
+.features div > span { display: block; margin-top: 3px; font-size: 13.5px; line-height: 1.4; color: #cfccd9; }
 .priceLine { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-top: 26px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.16); }
 .priceLine strong { font-size: 44px; line-height: 1; font-weight: 900; letter-spacing: -0.04em; color: var(--ds-yellow); font-variant-numeric: tabular-nums; }
 .priceLine > span { flex: 1 1 240px; font-size: 14px; line-height: 1.45; color: #cfccd9; }

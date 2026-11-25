@@ -4,7 +4,7 @@ import PlanCta from "@/components/site/PlanCta";
 import { ArrowRight, Check } from "@/components/ds/Icons";
 import { PRICING } from "@/lib/home-data";
 import { PlusPerk } from "@/components/hall-finder/Entry";
-import { PlanPrice, SaleNote } from "@/components/site/Sale";
+import { PlanCredits, PlanPrice, SaleNote } from "@/components/site/Sale";
 import H2 from "./H2";
 import css from "./Home.module.css";
 
@@ -39,10 +39,10 @@ export default function PricingSection() {
               <p className={css.pline}>{tier.line}</p>
               <ul className={css.perks}>
                 {tier.perks.map((perk, i) => (
-                  <Fragment key={perk}>
+                  <Fragment key={typeof perk === "string" ? perk : perk.rest}>
                     <li>
                       <Check color={check} size={18} className="ds-check" />
-                      <span>{perk}</span>
+                      <span>{typeof perk === "string" ? perk : <><PlanCredits tier={perk.credits} />{perk.rest}</>}</span>
                     </li>
                     {/* Hall Finder goes after the vibes (design-handoff/hall-finder 17-Mentions). */}
                     {tier.name === "Plus" && i === 2 && <PlusPerk link check={<Check color={check} size={18} className="ds-check" />} />}

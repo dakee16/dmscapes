@@ -4,7 +4,9 @@
 
 .hero {
   position: relative;
-  padding: 128px 0 64px;
+  /* The top padding clears the overlaid nav; SaleMarquee reads it to sit right under the pill. */
+  --hero-pad-top: 128px;
+  padding: var(--hero-pad-top) 0 64px;
   overflow: hidden;
 }
 .paper {
@@ -441,7 +443,7 @@
   .stageZone { margin-top: 92px; }
 }
 @media (max-width: 760px) {
-  .hero { padding: 104px 0 56px; }
+  .hero { --hero-pad-top: 104px; padding: var(--hero-pad-top) 0 56px; }
   .wide { display: none; }
   .narrow { display: inline; }
   .lede { margin-top: 20px; }

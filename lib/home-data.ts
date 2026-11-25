@@ -1,9 +1,7 @@
 import { SCHOOLS, getDorm } from "@/lib/schools";
 import {
   FLEX_CREDIT_PRICE_USD,
-  PLUS_INITIAL_CREDITS,
   PLUS_PRICE_USD,
-  PRO_INITIAL_CREDITS,
   PRO_PRICE_USD,
   RECHARGE_CREDITS,
   RECHARGE_PRICE_USD,
@@ -191,7 +189,8 @@ export const PRICING = {
     line: "You'll have more than one good idea.",
     perks: [
       "Everything in Free",
-      `${PLUS_INITIAL_CREDITS} plan credits; recharge ${RECHARGE_CREDITS} more for ${usd(RECHARGE_PRICE_USD)}`,
+      // The credits line grows during the Black Friday sale (components/site/Sale PlanCredits).
+      { credits: "plus", rest: `; recharge ${RECHARGE_CREDITS} more for ${usd(RECHARGE_PRICE_USD)}` },
       "All 9 vibes",
       "Draw your own room",
       "Add your own products",
@@ -208,7 +207,7 @@ export const PRICING = {
     line: "Your room, in 3D.",
     perks: [
       "Everything in Plus",
-      `${PRO_INITIAL_CREDITS} plan credits; top up for ${usd(FLEX_CREDIT_PRICE_USD)} each`,
+      { credits: "pro", rest: `; top up for ${usd(FLEX_CREDIT_PRICE_USD)} each` },
       "My Room: one shared room for up to four people",
       "3D Room Builder",
       "Live 3D Room Studio",

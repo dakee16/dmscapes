@@ -15,7 +15,7 @@ import {
   SALE_BONUS_CREDITS,
   type PurchaseType,
 } from "@/lib/plan";
-import { SALE, salePlan } from "@/lib/sale";
+import { SALE, isSale, salePlan } from "@/lib/sale";
 
 // Stripe's Node SDK needs the Node runtime, not edge.
 export const runtime = "nodejs";
@@ -155,6 +155,8 @@ export async function POST(request: Request) {
 
   const origin = process.env.NEXT_PUBLIC_SITE_URL ?? new URL(request.url).origin;
 
+  // One reading of the server clock decides the sale price and whether codes are allowed.
+  const now = Date.now();
   // Pin each grant in server-owned metadata so an in-flight checkout keeps its offer.
   const metadata: Record<string, string> = { user_id: userId, purchase: type, credit_plan_version: CREDIT_PLAN_VERSION };
   let lineItems: Stripe.Checkout.SessionCreateParams.LineItem[];
@@ -183,7 +185,7 @@ export async function POST(request: Request) {
     const cfg = CFG[type];
     // Decided here, on the server's clock, and pinned in metadata (session, invoice and payment)
     // so the webhook grants and a refund takes back exactly what this checkout sold.
-    const offer = type === "recharge" ? { cents: RECHARGE_PRICE_CENTS, credits: RECHARGE_CREDITS, sale: false } : salePlan(type);
+    const offer = type === "recharge" ? { cents: RECHARGE_PRICE_CENTS, credits: RECHARGE_CREDITS, sale: false } : salePlan(type, now);
     metadata.credit_amount = String(offer.credits);
     if (offer.sale) metadata.sale = SALE.id;
     lineItems = [{
@@ -218,7 +220,8 @@ export async function POST(request: Request) {
         : email
           ? { customer_email: email }
           : {}),
-      allow_promotion_codes: true,
+      // No discount codes on top of the Black Friday prices (owner, Nov 24); back on when the sale ends.
+      allow_promotion_codes: !isSale(now),
     });
 
     if (!session.url) {

@@ -4,6 +4,7 @@ import { HeroChip } from "@/components/hall-finder/Entry";
 import { HAPPY_CUSTOMERS, HERO_ROOM, RATING, feetInches, spokenFeet } from "@/lib/home-data";
 import GalaxyBand from "./GalaxyBand";
 import HomeSearch from "./HomeSearch";
+import SaleMarquee from "./SaleMarquee";
 import css from "./Hero.module.css";
 
 /**
@@ -25,6 +26,7 @@ export default function HomeHero({ schoolCount, roomCount }: { schoolCount: numb
   return (
     <section className={css.hero} aria-labelledby="hero-title">
       <div className={css.paper} aria-hidden="true" />
+      <SaleMarquee />
       <div className={`ds-wrap ${css.copy}`}>
         <HeroChip className={`ds-tag ${css.chip}`} />
         <p className="ds-eyebrow">
