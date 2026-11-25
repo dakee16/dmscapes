@@ -31,6 +31,8 @@
    motion on (components/season/Season.module.css). Hidden unless <html data-season="holiday">. */
 .lights { position: absolute; left: 0; right: 0; top: calc(var(--ds-nav-h) + 2px); z-index: 2; pointer-events: none; }
 .lights > svg { height: 38px; overflow: hidden; }
+/* The Black Friday ticker (data-sale) sits in the same spot under the nav: while it shows, it replaces the lights. */
+:global(:root[data-sale]) .lights { display: none; }
 @media (max-width: 560px) {
   .lights > svg { height: 30px; }
 }
