@@ -1052,9 +1052,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               const highlighted = !selected && !readOnly && (selectedItemId === f.id ||
                 (activeCategory !== null && furnitureCategory(f) === activeCategory));
               const entry = entryFor?.(f);
-              // Halloween pieces draw as what they are: jack-o'-lanterns, a ghost or ghost lantern, bats, coloured bulbs.
+              // Seasonal pieces draw as what they are: jack-o'-lanterns, a ghost or ghost lantern, bats, a tree, coloured bulbs.
               const visual = entry ? productVisual(entry.product) : undefined;
-              const seasonal = { shape: visual?.kind === "pumpkin" ? "pumpkin" : visual?.kind === "lantern" ? visual.variant : visual?.variant === "bats" ? "bats" : undefined,
+              const seasonal = { shape: visual?.kind === "pumpkin" || visual?.kind === "tree" ? visual.kind : visual?.kind === "lantern" ? visual.variant : visual?.variant === "bats" ? "bats" : undefined,
                 count: visual?.count, tint: visual?.kind === "pumpkin" ? visual.color : undefined, bulbs: visual?.bulbs?.join(",") };
               const handle = selected && canEditItem && !!onSetRotation && !narrow && !panMode && !dragging;
               return (

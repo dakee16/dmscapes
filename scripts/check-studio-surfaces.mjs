@@ -46,7 +46,15 @@ try {
     assert([...bounds.min.toArray(),...bounds.max.toArray()].every(Number.isFinite),`${kind}/${variant} must have finite geometry`);
     assert(!model.getObjectByName("storage-body"),`${kind} must not fall back to a generic storage box`);
   }
-  console.log("PASS: bunk mattresses, ladder, rails, and distinct product geometry across lamp, textile, storage and accessory variants.");
+  // The Cozy Holiday tabletop tree: its own model, standing in its footprint and as tall as the listing says.
+  for(const variant of ["plain","flocked"]){
+    const model=kit.build({id:"tree-"+variant,kind:"tree",width_ft:1,length_ft:1,height:2,product:{id:"tree-"+variant,variant,lit:true,pattern:"solid"}},["#ffffff"]);
+    const b=new T.Box3().setFromObject(model);
+    assert(!model.getObjectByName("storage-body"),"A tree must not fall back to a storage box");
+    assert(b.min.y>=-1e-6&&Math.abs(b.max.y-2)<.1,`A 2 ft tree stands 2 ft tall (got ${b.min.y.toFixed(2)} to ${b.max.y.toFixed(2)})`);
+    assert(Math.max(-b.min.x,b.max.x,-b.min.z,b.max.z)<=.56,"A tree stays inside its 1 ft footprint");
+  }
+  console.log("PASS: bunk mattresses, ladder, rails, and distinct product geometry across lamp, textile, storage, accessory and tree variants.");
 
   // Baked corner shading: the desk's legs darken under its top, open faces stay fully lit, and only grounded pieces shade toward the floor.
   const desk=kit.build({id:"desk",kind:"desk",width_ft:3.5,length_ft:2,height:2.5},["#ffffff"]),creases=kit.bake(desk);

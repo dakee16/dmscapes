@@ -61,8 +61,8 @@ export function furnitureKindFromText(text: string): string | null {
 /** ponytail: catalog text gives approximate silhouettes; manufacturer meshes are needed for exact replicas. */
 export function productVisual(product: Product) {
   const text = `${product.name} ${product.description}`.toLowerCase();
-  // The Halloween kit's own pieces: a jack-o'-lantern, a ghost or ghost lantern, bats on the wall.
-  const pumpkin = /pumpkin|jack[- ]?o'?[- ]?lantern/.test(text), ghost = /ghost|lantern/.test(text);
+  // The seasonal kits' own pieces: a jack-o'-lantern, a ghost or ghost lantern, bats on the wall, a tabletop Christmas tree.
+  const pumpkin = /pumpkin|jack[- ]?o'?[- ]?lantern/.test(text), ghost = /ghost|lantern/.test(text), tree = /christmas tree|xmas tree/.test(text);
   const seasonal = product.style_tags.some(isSeasonalStyle);
   let kind: string;
   switch (product.category) {
@@ -82,7 +82,7 @@ export function productVisual(product: Product) {
     case "towel_caddy": kind = /towel set/.test(text) ? "towels" : "caddy"; break;
     case "plant": kind = "plant"; break;
     case "clip_fan": kind = "fan"; break;
-    default: kind = pumpkin ? "pumpkin" : ghost ? "lantern" : furnitureKindFromText(text) ?? (/plant|tree|monstera|pothos|eucalyptus/.test(text) ? "plant" : /candle|tea ?light/.test(text) ? "candle" : /disco|mirror ball/.test(text) ? "disco" : /pillow/.test(text) ? "pillow" : /book/.test(text) ? "books" : /projector|lamp|diffuser/.test(text) ? "lamp" : "decor");
+    default: kind = pumpkin ? "pumpkin" : ghost ? "lantern" : tree ? "tree" : furnitureKindFromText(text) ?? (/plant|tree|monstera|pothos|eucalyptus/.test(text) ? "plant" : /candle|tea ?light/.test(text) ? "candle" : /disco|mirror ball/.test(text) ? "disco" : /pillow/.test(text) ? "pillow" : /book/.test(text) ? "books" : /projector|lamp|diffuser/.test(text) ? "lamp" : "decor");
   }
   const variant = kind === "lamp"
     ? /mushroom/.test(text) ? "mushroom" : /banker/.test(text) ? "banker" : /lava/.test(text) ? "lava" : /salt/.test(text) ? "salt" : /projector/.test(text) ? "projector" : /light bar|under monitor/.test(text) ? "bar" : /swing|architect|gooseneck|clip|slim metal/.test(text) ? "task" : "shade"
@@ -92,9 +92,10 @@ export function productVisual(product: Product) {
     : kind === "art" && /\bbats?\b/.test(text) ? "bats"
     : kind === "lantern" ? /lantern|globe/.test(text) ? "lantern" : "ghost"
     : kind === "pumpkin" ? /glass|mercury/.test(text) ? "glass" : "plain"
+    : kind === "tree" ? /flock|snow/.test(text) ? "flocked" : "plain"
     : /woven|wicker|seagrass|rattan|jute|rope/.test(text) ? "woven" : /clear|acrylic/.test(text) ? "clear" : /fluffy|fur|shag|sherpa/.test(text) ? "plush" : /knit|chenille/.test(text) ? "knit" : "plain";
   const pattern = /check|gingham|plaid|houndstooth/.test(text) ? "check" : /strip/.test(text) ? "stripe" : /floral|flower|botanical/.test(text) ? "floral" : /geometric|berber|tribal|medallion/.test(text) ? "diamond" : /abstract|wave|groovy/.test(text) ? "wave"
-    : seasonal && kind === "blanket" ? "halloween" : "solid";
+    : product.style_tags.includes("spooky") && kind === "blanket" ? "halloween" : "solid";
   // Lit pieces glow from inside; a multi-pack of small pieces (six jack-o'-lanterns, tea lights) sits as a cluster.
   const lit = /\b(led|light|lights|lantern|glow)\b/.test(text);
   const count = ["pumpkin", "candle"].includes(kind) ? Number(/(\d+)\s*-?\s*(?:pack|pcs?|pieces?)\b/.exec(text)?.[1]) || 1 : 1;
@@ -108,14 +109,14 @@ export function productVisual(product: Product) {
  * (A plant or a fan stands on the floor only when it's floor-sized.)
  */
 const SURFACE_KINDS = new Set(["lamp", "monitor", "riser", "organizer", "desk-mat", "speaker", "books", "candle", "decor",
-  "lantern", "pumpkin", "towels", "microwave"]);
+  "lantern", "pumpkin", "tree", "towels", "microwave"]);
 export function surfaceOnly(kind: string, category?: string, heightFt?: number | null): boolean {
   if (SURFACE_KINDS.has(kind)) return true;
   if (kind === "plant" || kind === "fan") return category === "clip_fan" || (heightFt ?? 1) < 1.6;
   return false;
 }
-/** Pieces that belong on a desk in particular (they're desk gear), rather than any top. */
-export const DESK_KINDS = new Set(["monitor", "riser", "organizer", "desk-mat", "speaker"]);
+/** Pieces that belong on a desk in particular (desk gear, and a tabletop tree), rather than any top. */
+export const DESK_KINDS = new Set(["monitor", "riser", "organizer", "desk-mat", "speaker", "tree"]);
 
 export function throwIsBlanket(item: FurnitureItem, product?: Product): boolean {
   if (item.type !== "throw" && item.type !== "throw_pillows") return false;
@@ -159,7 +160,7 @@ function clearOfOpenings(f: FurnitureItem, room: SelectedRoom): void {
 
 const DEFAULT_SIZE: Record<string, [number, number, number]> = {
   curtains:[4,.18,5.25], organizer:[1.1,.65,.65], "desk-mat":[2.5,1.2,.02], riser:[1.5,.8,.4],
-  plant:[.7,.7,1.2], towels:[1.2,.9,.45], caddy:[.8,.65,.9], fan:[.6,.5,.8], pumpkin:[.45,.45,.4], lantern:[.4,.4,.8],
+  plant:[.7,.7,1.2], towels:[1.2,.9,.45], caddy:[.8,.65,.9], fan:[.6,.5,.8], pumpkin:[.45,.45,.4], lantern:[.4,.4,.8], tree:[1,1,2],
   candle:[.35,.35,.65], disco:[1,1,1], books:[.8,1,.5], decor:[.7,.7,.7],
   blanket:[1.5,1,.16], "power-strip":[1,.3,.15], hamper:[1.5,1.5,2.2], trash:[1,1,1.4],
   lamp:[.7,.7,1.4], basket:[1,1,1], storage:[1,1,1],

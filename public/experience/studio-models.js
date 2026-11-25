@@ -802,6 +802,16 @@ export function createModelKit({onTexture=()=>{},onModel=()=>{},lite=false,rende
         }
         break;
       }
+      case "tree":{
+        // A tabletop Christmas tree: a small red base, three tiers of branches and a star; lit ones carry warm bulbs.
+        const r=Math.min(w,d)/2,base=Math.min(.2,h*.1),flocked=variant==="flocked",span=h-base;
+        const dark=mat(flocked?"#9bb5a2":"#2f5d45",.85),light=mat(flocked?"#eef2ef":"#3c7552",.85);
+        cyl(g,r*.26,r*.32,base,mat("#b3262e",.7),0,base/2,0,16);
+        for(let i=0;i<3;i++){const th=span*.42,rr=r*(1-i*.27);cyl(g,rr*.08,rr,th,i===1?light:dark,0,base+span*i*.27+th/2,0,14);}
+        oval(g,0,h-.03,0,.06,.07,.06,glowMat("#ffd83d"));
+        if(f.product?.lit)for(let i=0;i<12;i++){const t=(i+.5)/12,a=i*2.4,rr=r*(1-t)*1.02;oval(g,Math.cos(a)*rr,base+span*t*.9,Math.sin(a)*rr,.026,.026,.026,glowMat("#fff1d6"));}
+        break;
+      }
       case "disco":oval(g,0,h/2,0,w/2,h/2,d/2,metal);break;
       case "fan":
         box(g,w*.65,.12,d*.7,finish,0,.06,0);box(g,.06,h*.55,.06,finish,0,h*.3,0);oval(g,0,h*.7,0,w*.48,h*.3,.05,ink);
