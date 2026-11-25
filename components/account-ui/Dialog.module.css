@@ -411,7 +411,7 @@
 .features div span { display: block; margin-top: 3px; font-size: 13.5px; line-height: 1.4; color: #cfccd9; }
 .priceLine { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin-top: 26px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.16); }
 .priceLine strong { font-size: 44px; line-height: 1; font-weight: 900; letter-spacing: -0.04em; color: var(--ds-yellow); font-variant-numeric: tabular-nums; }
-.priceLine span { flex: 1 1 240px; font-size: 14px; line-height: 1.45; color: #cfccd9; }
+.priceLine > span { flex: 1 1 240px; font-size: 14px; line-height: 1.45; color: #cfccd9; }
 
 /* Wordmark inside a dialog (not a link) */
 .mark { display: inline-flex; align-items: baseline; font-size: 26px; font-weight: 850; font-stretch: 90%; letter-spacing: -0.03em; }

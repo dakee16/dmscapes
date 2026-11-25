@@ -70,7 +70,7 @@ export default function UpgradeButton({
     setError(res.error);
   }
 
-  const defaultLabel = type === "pro" ? <>Go Pro for <PlanPrice tier="pro" /></> : <>Get Plus for <PlanPrice tier="plus" /></>;
+  const defaultLabel = type === "pro" ? <span>Go Pro for <PlanPrice tier="pro" /></span> : <span>Get Plus for <PlanPrice tier="plus" /></span>;
 
   return (
     <div>

@@ -31,7 +31,7 @@ export function PlanPrice({ tier }: { tier: Tier }) {
 export function SaleNote({ tier, className = "" }: { tier: Tier; className?: string }) {
   return (
     <span className={`ds-sale-note ${className}`} data-sale-show="">
-      <b>Black Friday</b>
+      <b>Black Friday</b>{" "}
       {`regularly ${usd(REGULAR[tier])} · +${SALE_BONUS_CREDITS} bonus credits (${SALE_OFFER[tier].credits} total) · ends ${SALE.ends}`}
     </span>
   );

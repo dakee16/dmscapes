@@ -115,7 +115,7 @@
 .gateList svg { flex: none; margin-top: 1px; }
 .gateMore { margin: 18px 0 0; font-size: 14px; line-height: 1.55; color: var(--ds-caption); }
 .gateBuy { display: flex; align-items: center; gap: 14px; margin-top: auto; padding-top: 28px; }
-.gateBuy span { font-size: 13px; line-height: 1.45; color: var(--ds-caption); }
+.gateBuy > span { font-size: 13px; line-height: 1.45; color: var(--ds-caption); }
 .gateBody .gateCta { display: inline-flex; align-items: center; height: 58px; padding: 0 28px; border: 0; border-radius: 999px; background: var(--ds-ink); color: var(--ds-yellow); font: 850 17px/1 var(--ds-sans); cursor: pointer; }
 .gateBody .gateCta:hover { box-shadow: 4px 4px 0 var(--ds-pink); }
 .gateInvite { margin: 18px 0 0; padding-top: 16px; border-top: 1.5px solid rgba(22, 22, 29, 0.1); font-size: 14px; line-height: 1.5; color: var(--ds-muted); }

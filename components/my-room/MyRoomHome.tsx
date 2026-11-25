@@ -152,7 +152,7 @@ export default function MyRoomHome() {
           </ul>
           <p className={s.gateMore}>Pro also unlocks the 3D Room Builder, the live 3D Room Studio, {PRO_INITIAL_CREDITS} plan credits and Create your own vibe.</p>
           <div className={s.gateBuy}>
-            <button type="button" className={s.gateCta} onClick={() => { setGate(false); openUpgrade("workspace"); }}>Go Pro · <PlanPrice tier="pro" /> once</button>
+            <button type="button" className={s.gateCta} onClick={() => { setGate(false); openUpgrade("workspace"); }}><span>Go Pro · <PlanPrice tier="pro" /> once</span></button>
             <span>One payment.{" "}<br />No subscription.</span>
           </div>
           <p className={s.gateInvite}>{joined ? <>You&apos;re already in a shared room. <Link href={`/rooms/${joined.id}`}>Open {joined.name}</Link></> : <>Got an invite from a roommate? Open the link in that email to <strong>join their room free.</strong></>}</p>

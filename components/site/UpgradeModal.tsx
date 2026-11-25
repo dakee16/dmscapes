@@ -225,7 +225,7 @@ export default function UpgradeModal() {
               </p>
               <div className={d.planCta}>
                 <button ref={ctaRef} type="button" className={`${d.btn} ${d.btnWhite} ${d.wide}`} onClick={() => buy("pro")} disabled={busy !== null}>
-                  {busy ? "Starting checkout…" : <>Get Pro for <PlanPrice tier="pro" /> once</>}
+                  {busy ? "Starting checkout…" : <span>Get Pro for <PlanPrice tier="pro" /> once</span>}
                 </button>
               </div>
             </div>
@@ -320,7 +320,7 @@ export default function UpgradeModal() {
                 </ul>
                 <div className={d.planCta}>
                   <button ref={ctaRef} type="button" className={`${d.btn} ${d.btnYellow} ${d.wide}`} onClick={() => buy("plus")} disabled={busy !== null}>
-                    {busy === "plus" ? "Starting checkout…" : <>Get Plus for <PlanPrice tier="plus" /></>}
+                    {busy === "plus" ? "Starting checkout…" : <span>Get Plus for <PlanPrice tier="plus" /></span>}
                   </button>
                 </div>
               </article>
@@ -344,7 +344,7 @@ export default function UpgradeModal() {
                 </ul>
                 <div className={d.planCta}>
                   <button type="button" className={`${d.btn} ${d.btnWhite} ${d.wide}`} onClick={() => buy("pro")} disabled={busy !== null}>
-                    {busy === "pro" ? "Starting checkout…" : <>Go Pro for <PlanPrice tier="pro" /></>}
+                    {busy === "pro" ? "Starting checkout…" : <span>Go Pro for <PlanPrice tier="pro" /></span>}
                   </button>
                 </div>
               </article>

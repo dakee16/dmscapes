@@ -20,7 +20,7 @@ export default function SaleBanner() {
   return (
     <div className="ds-sale-banner" data-sale-show="" role="region" aria-label="Black Friday sale">
       <Link href="/pricing">
-        <b>Black Friday</b>
+        <b>Black Friday</b>{" "}
         {`Plus $${PLUS_SALE_PRICE_USD.toFixed(2)}, Pro $${PRO_SALE_PRICE_USD.toFixed(2)}, each with +${SALE_BONUS_CREDITS} bonus credits · ends ${SALE.ends}`}{" "}
         <span>See pricing →</span>
       </Link>

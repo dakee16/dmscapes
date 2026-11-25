@@ -121,7 +121,7 @@ export default function BuilderEntry({children}:{children?:ReactNode}){
 
     <div className={s.ctaWrap}>
       <CtaBand tone="blue" lead="Start with a floor." tail="Build your world.">
-        <button type="button" className="ds-btn ds-btn--white ds-btn--lg" onClick={()=>{setOrigin("cta");start();}} disabled={loading||busy}>{loading?"Checking your account…":busy?"Opening your builder…":!user?"Sign in to build in 3D":pro?"Start building in 3D":<>Go Pro for <PlanPrice tier="pro"/></>}</button>
+        <button type="button" className="ds-btn ds-btn--white ds-btn--lg" onClick={()=>{setOrigin("cta");start();}} disabled={loading||busy}>{loading?"Checking your account…":busy?"Opening your builder…":!user?"Sign in to build in 3D":pro?"Start building in 3D":<span>Go Pro for <PlanPrice tier="pro"/></span>}</button>
         {error&&origin==="cta"&&<p role="alert" className={s.ctaError}>{error}</p>}
       </CtaBand>
     </div>
