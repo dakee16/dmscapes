@@ -9513,5 +9513,290 @@
     ],
     "description": "A flameless snow globe lantern with floating ghosts. Battery powered.",
     "active": true
+  },
+  {
+    "id": "hol-budget-ambient-01",
+    "name": "Minetom Silver-Wire Fairy Lights, Warm White, 33 ft",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "budget",
+    "price": 8.99,
+    "amazon_asin": "B00JR5N0JM",
+    "affiliate_url": "https://www.amazon.com/dp/B00JR5N0JM?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71LgO0c1uQL._AC_SL1480_.jpg",
+    "width_ft": 33,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "warm white",
+    "rating": 4.5,
+    "review_count": 12912,
+    "alternative_ids": [
+      "hol-mid-ambient-01",
+      "hol-prem-ambient-01",
+      "hol-budget-ambient-02",
+      "hol-mid-ambient-02"
+    ],
+    "description": "Barely-there silver wire with warm white LEDs, 33 ft to run along a wall.",
+    "active": true
+  },
+  {
+    "id": "hol-mid-ambient-01",
+    "name": "LE Fairy Lights with Switch, 200 LED, 66 ft",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "mid",
+    "price": 13.49,
+    "amazon_asin": "B01M9FPE8X",
+    "affiliate_url": "https://www.amazon.com/dp/B01M9FPE8X?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/717nBKi0rVL._AC_SL1200_.jpg",
+    "width_ft": 66,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "white",
+    "rating": 4.4,
+    "review_count": 5802,
+    "alternative_ids": [
+      "hol-budget-ambient-01",
+      "hol-prem-ambient-01",
+      "hol-budget-ambient-02",
+      "hol-mid-ambient-02"
+    ],
+    "description": "200 LEDs on 66 ft of wire, plug in, with an on/off switch.",
+    "active": true
+  },
+  {
+    "id": "hol-prem-ambient-01",
+    "name": "Twinkle Star 300 LED Curtain String Lights, Warm White",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "premium",
+    "price": 18.99,
+    "amazon_asin": "B01LLSNG1E",
+    "affiliate_url": "https://www.amazon.com/dp/B01LLSNG1E?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81SeihZDOGL._AC_SL1500_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "warm white",
+    "rating": 4.6,
+    "review_count": 97844,
+    "alternative_ids": [
+      "hol-budget-ambient-01",
+      "hol-mid-ambient-01",
+      "hol-budget-ambient-02",
+      "hol-mid-ambient-02"
+    ],
+    "description": "A curtain of warm white light for the wall behind the bed.",
+    "active": true
+  },
+  {
+    "id": "hol-budget-ambient-02",
+    "name": "Brightown 300 LED Curtain Lights, Warm White",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "budget",
+    "price": 7.98,
+    "amazon_asin": "B0FCXP8VTT",
+    "affiliate_url": "https://www.amazon.com/dp/B0FCXP8VTT?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81lje80zgcL._AC_SL1500_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "warm white",
+    "rating": 4.3,
+    "review_count": 9431,
+    "alternative_ids": [
+      "hol-budget-ambient-01",
+      "hol-mid-ambient-01",
+      "hol-prem-ambient-01",
+      "hol-mid-ambient-02"
+    ],
+    "description": "A USB-powered curtain of fairy lights for behind the bed.",
+    "active": true
+  },
+  {
+    "id": "hol-mid-ambient-02",
+    "name": "LE String Lights, 100 LED, 33 ft Copper Wire",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "mid",
+    "price": 9.99,
+    "amazon_asin": "B0196H75KA",
+    "affiliate_url": "https://www.amazon.com/dp/B0196H75KA?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71fae4QF8tL._AC_SL1200_.jpg",
+    "width_ft": 33,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "white",
+    "rating": 4.4,
+    "review_count": 5802,
+    "alternative_ids": [
+      "hol-budget-ambient-01",
+      "hol-mid-ambient-01",
+      "hol-prem-ambient-01",
+      "hol-budget-ambient-02"
+    ],
+    "description": "100 LEDs on 33 ft of copper wire.",
+    "active": true
+  },
+  {
+    "id": "hol-budget-throw-01",
+    "name": "BEDELITE Buffalo Plaid Fleece Throw, Black & White, 50 × 60 in",
+    "category": "throw",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "budget",
+    "price": 9.99,
+    "amazon_asin": "B08FY9T1MW",
+    "affiliate_url": "https://www.amazon.com/dp/B08FY9T1MW?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81HY1iZkzqL._AC_SL1200_.jpg",
+    "width_ft": 4.17,
+    "length_ft": 5,
+    "height_ft": null,
+    "color": "black white",
+    "rating": 4.6,
+    "review_count": 2900,
+    "alternative_ids": [
+      "hol-mid-throw-01",
+      "hol-prem-throw-01"
+    ],
+    "description": "Black and white buffalo plaid in soft polyester fleece.",
+    "active": true
+  },
+  {
+    "id": "hol-mid-throw-01",
+    "name": "HOMRITAR Plaid Flannel Fleece Throw",
+    "category": "throw",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "mid",
+    "price": 16.99,
+    "amazon_asin": "B0838Y9MWC",
+    "affiliate_url": "https://www.amazon.com/dp/B0838Y9MWC?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71x1PV249wL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "plaid",
+    "rating": 4.6,
+    "review_count": 877,
+    "alternative_ids": [
+      "hol-budget-throw-01",
+      "hol-prem-throw-01"
+    ],
+    "description": "An ultra-soft flannel fleece throw in plaid.",
+    "active": true
+  },
+  {
+    "id": "hol-prem-throw-01",
+    "name": "Eddie Bauer Reversible Sherpa & Fleece Throw, Red",
+    "category": "throw",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "premium",
+    "price": 27.99,
+    "amazon_asin": "B09D1B5HV4",
+    "affiliate_url": "https://www.amazon.com/dp/B09D1B5HV4?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81oklu6jsvL._AC_SX569_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "red",
+    "rating": 4.4,
+    "review_count": 2959,
+    "alternative_ids": [
+      "hol-budget-throw-01",
+      "hol-mid-throw-01"
+    ],
+    "description": "Red brushed fleece on one side, sherpa on the other.",
+    "active": true
+  },
+  {
+    "id": "hol-budget-accent-01",
+    "name": "Joiedomi 24 in Mini Christmas Tree with Clear LED Lights",
+    "category": "accent",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "budget",
+    "price": 27.99,
+    "amazon_asin": "B0778RXCTC",
+    "affiliate_url": "https://www.amazon.com/dp/B0778RXCTC?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/918f9uOG6CL._AC_SL1500_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": 2,
+    "color": "green",
+    "rating": 4.3,
+    "review_count": 4348,
+    "alternative_ids": [
+      "hol-mid-accent-01",
+      "hol-prem-accent-01"
+    ],
+    "description": "A 24 in tabletop Christmas tree, pre-lit with clear LEDs, with a star on top and hanging ornaments.",
+    "active": true
+  },
+  {
+    "id": "hol-mid-accent-01",
+    "name": "Joiedomi 24 in Pre-Lit Tabletop Christmas Tree with Warm LED Lights",
+    "category": "accent",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "mid",
+    "price": 29.99,
+    "amazon_asin": "B0CXTBKG8W",
+    "affiliate_url": "https://www.amazon.com/dp/B0CXTBKG8W?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/917itEmzUSL._AC_SL1500_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": 2,
+    "color": "green",
+    "rating": 4.3,
+    "review_count": 4348,
+    "alternative_ids": [
+      "hol-budget-accent-01",
+      "hol-prem-accent-01"
+    ],
+    "description": "A 24 in tabletop Christmas tree with warm LED lights, a gift box and ball ornaments.",
+    "active": true
+  },
+  {
+    "id": "hol-prem-accent-01",
+    "name": "JOIEDOMI 24 in Pre-Lit Tabletop Christmas Tree with Star and Ornaments",
+    "category": "accent",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "premium",
+    "price": 29.99,
+    "amazon_asin": "B0DBYSWXRB",
+    "affiliate_url": "https://www.amazon.com/dp/B0DBYSWXRB?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/91jtLm++iAL._AC_SL1500_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": 2,
+    "color": "green",
+    "rating": 4.3,
+    "review_count": 4348,
+    "alternative_ids": [
+      "hol-budget-accent-01",
+      "hol-mid-accent-01"
+    ],
+    "description": "A 24 in pre-lit LED tabletop Christmas tree with a star on top and hanging ornaments.",
+    "active": true
   }
 ]
