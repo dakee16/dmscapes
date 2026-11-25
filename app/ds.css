@@ -76,8 +76,8 @@
 :root:not([data-season="halloween"]) [data-season-show="halloween"],
 :root:not([data-season="holiday"]) [data-season-show="holiday"] { display: none !important; }
 :root[data-season] [data-season-hide] { display: none !important; }
-/* Holiday: every page's ground cools a shade toward the sky blue (the hero adds a wash). */
-:root[data-season="holiday"] { --ds-paper: color-mix(in srgb, var(--ds-sky) 30%, var(--ds-plan)); }
+/* Holiday: every page's ground warms a shade toward cream (the hero adds a lamplight glow). */
+:root[data-season="holiday"] { --ds-paper: color-mix(in srgb, var(--ds-warm) 55%, var(--ds-plan)); }
 
 /* ---------- Page root ---------- */
 .ds {

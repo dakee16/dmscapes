@@ -68,7 +68,7 @@
 /* The Cozy Holiday card (HolidayCard.tsx): the same card in the holiday colours. */
 .holiday:hover { box-shadow: 4px 4px 0 var(--ds-red); }
 .holiday[data-selected="true"] { box-shadow: 6px 6px 0 var(--ds-red); }
-.holiday .art { background: #1b2a4a; }
+.holiday .art { background: #1f3d2b; }
 .holiday .eyebrow { color: var(--ds-red); }
 .tag[data-tone="holiday"] { background: var(--ds-red); color: #fff; }
 /* The label between the card and the year-round grid. */

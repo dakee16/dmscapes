@@ -113,18 +113,24 @@
 }
 /* Seasons: the number moves over for the season's mark */
 :global(:root[data-season="halloween"]) .missing { border-color: var(--ds-pumpkin); background: rgba(255, 122, 26, 0.07); }
-:global(:root[data-season="holiday"]) .missing { border-color: var(--ds-blue); background: rgba(36, 73, 255, 0.06); }
+:global(:root[data-season="holiday"]) .missing { border-color: var(--ds-red); background: rgba(215, 38, 46, 0.06); }
 :global(:root[data-season]) .missingNo { font-size: 11.84cqw; transform: translateX(-3.95cqw); }
-.flake {
+.tree {
   position: absolute;
-  left: calc(352 / 608 * 100%);
-  top: calc(398 / 600 * 100%);
-  width: calc(44 / 608 * 100%);
+  left: calc(354 / 608 * 100%);
+  top: calc(388 / 600 * 100%);
+  width: calc(42 / 608 * 100%);
   height: auto;
-  color: var(--ds-blue);
 }
-:global(:root:not([data-season="holiday"])) .flake { display: none; }
-.haunted.snowed, .haunted.snowed:hover { background: var(--ds-blue); color: #fff; }
+:global(:root:not([data-season="holiday"])) .tree { display: none; }
+.haunted.holidayTag, .haunted.holidayTag:hover {
+  border: 0.4cqw solid transparent;
+  background:
+    linear-gradient(var(--ds-red), var(--ds-red)) padding-box,
+    repeating-linear-gradient(-45deg, var(--ds-red) 0 0.9cqw, #fff 0.9cqw 1.8cqw) border-box;
+  color: #fff;
+  font-size: 2.5cqw;
+}
 .ghost {
   position: absolute;
   left: calc(354 / 608 * 100%);

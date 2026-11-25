@@ -3,7 +3,7 @@ import Link from "next/link";
 import { HeroChip } from "@/components/hall-finder/Entry";
 import { ArrowRight } from "@/components/ds/Icons";
 import SeasonLink from "@/components/season/SeasonLink";
-import { SnowflakeMark } from "@/components/season/SeasonMarks";
+import { HOLIDAY_BULBS, OrnamentMark, SeasonLights } from "@/components/season/SeasonMarks";
 import { lastDay, seasonOf } from "@/lib/season";
 import { HAPPY_CUSTOMERS, HERO_ROOM, RATING, feetInches, spokenFeet } from "@/lib/home-data";
 import GalaxyBand from "./GalaxyBand";
@@ -31,11 +31,13 @@ export default function HomeHero({ schoolCount, roomCount }: { schoolCount: numb
   return (
     <section className={css.hero} aria-labelledby="hero-title">
       <div className={css.paper} aria-hidden="true" />
-      <div className={css.snow} aria-hidden="true" data-season-show="holiday" />
+      <div className={css.lights} aria-hidden="true" data-season-show="holiday">
+        <SeasonLights drape="festoon" colors={HOLIDAY_BULBS} />
+      </div>
       <div className={`ds-wrap ${css.copy}`}>
         <HeroChip className={`ds-tag ${css.chip}`} />
         <SeasonLink vibe="holiday" where="hero" className={css.seasonChip} data-season-show="holiday">
-          <SnowflakeMark size={22} />
+          <OrnamentMark size={24} />
           <span>
             Cozy Holiday vibe <span className={css.seasonFree}>· free till {HOLIDAY_LAST}</span>
           </span>
