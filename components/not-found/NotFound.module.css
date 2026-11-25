@@ -124,7 +124,7 @@
   color: var(--ds-blue);
 }
 :global(:root:not([data-season="holiday"])) .flake { display: none; }
-.snowed, .snowed:hover { background: var(--ds-blue); color: #fff; }
+.haunted.snowed, .haunted.snowed:hover { background: var(--ds-blue); color: #fff; }
 .ghost {
   position: absolute;
   left: calc(354 / 608 * 100%);
