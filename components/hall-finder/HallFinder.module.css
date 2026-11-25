@@ -151,7 +151,6 @@
 .plusFoot { margin-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .price { display: flex; align-items: baseline; gap: 8px; font-size: 13px; color: #c9c8d2; }
 .price strong { font-size: 24px; color: var(--ds-yellow); }
-.price s { font-size: 14px; color: #9c9aa8; }
 
 /* Results: ranked list (Plus) */
 .ranked { position: relative; list-style: none; margin: 14px 0 0; padding: 0; }
@@ -225,8 +224,8 @@
 .gateGoogle { background: #fff; color: var(--ds-ink); box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.22); }
 .gateCards { margin-top: 18px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .gateCards p { margin: 0; padding: 12px 14px; border-radius: 14px; background: #fff; box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.1); font-size: 14px; line-height: 1.4; }
-.gateCards span { display: block; margin-bottom: 6px; font: 600 9.5px var(--ds-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ds-caption); }
-.gateCards p + p span { color: var(--ds-magenta); }
+.gateCards p > span { display: block; margin-bottom: 6px; font: 600 9.5px var(--ds-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ds-caption); }
+.gateCards p + p > span { color: var(--ds-magenta); }
 .gateFoot { margin-top: 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; font-size: 13px; color: var(--ds-muted); }
 .gateFoot a { color: var(--ds-blue); }
 .skeleton { margin-top: 22px; filter: blur(5px); }

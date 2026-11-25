@@ -1,6 +1,7 @@
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { checkoutAnalyticsIds, track } from "@/lib/analytics";
 import type { PurchaseType } from "@/lib/plan";
+import { isSale, SALE } from "@/lib/sale";
 
 export type CheckoutResult =
   | { ok: true }
@@ -31,7 +32,9 @@ export async function startCheckout(
     : null;
   if (!token) return { ok: false, needsAuth: true };
 
-  track("checkout_started", { type, ...(quantity != null ? { quantity } : {}) });
+  // Tagged the way the server prices it: by the clock, not the ?sale= preview.
+  const sale = (type === "plus" || type === "pro") && isSale() ? { sale: SALE.id } : {};
+  track("checkout_started", { type, ...(quantity != null ? { quantity } : {}), ...sale });
   let res: Response;
   try {
     res = await fetch("/api/checkout", {

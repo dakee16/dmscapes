@@ -8,7 +8,8 @@ import { track } from "@/lib/analytics";
 import { ArrowRight } from "@/components/ds/Icons";
 import { CloseButton } from "@/components/account-ui/parts";
 import d from "@/components/account-ui/Dialog.module.css";
-import { PLUS_PRICE_USD, PRO_PRICE_USD, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, RECHARGE_CREDITS, RECHARGE_PRICE_USD } from "@/lib/plan";
+import { PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, RECHARGE_CREDITS, RECHARGE_PRICE_USD } from "@/lib/plan";
+import { PlanPrice, SaleNote } from "@/components/site/Sale";
 
 // The once-per-session "welcome" upgrade moment, shown after a free user's first
 // sign-in of the session (wired in lib/auth-context). Deliberately NOT the
@@ -146,12 +147,13 @@ export default function PlusWelcome({
         </ul>
 
         <div className={d.priceLine}>
-          <strong>${PLUS_PRICE_USD.toFixed(2)}</strong>
+          <strong><PlanPrice tier="plus" /></strong>
           <span>
-            one time for Plus. Pro is ${PRO_PRICE_USD.toFixed(2)} for {PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D
+            one time for Plus. Pro is <PlanPrice tier="pro" /> for {PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D
             room building and planning.
           </span>
         </div>
+        <SaleNote tier="plus" />
 
         <div className={d.row}>
           <Link

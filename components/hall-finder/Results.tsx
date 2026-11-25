@@ -9,7 +9,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import Modal from "@/components/site/Modal";
 import { ArrowRight, CloseIcon } from "@/components/ds/Icons";
 import { formatDims } from "@/lib/schools";
-import { PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PLUS_PRICE_WAS_USD } from "@/lib/plan";
+import { PLUS_INITIAL_CREDITS } from "@/lib/plan";
+import { PlanPrice, SaleNote } from "@/components/site/Sale";
 import { STYLES } from "@/lib/styles";
 import { track } from "@/lib/analytics";
 import { formatMinutes, type CampusHall, type Filters, type HallFacts, type RankResult, type RankedHall } from "@/lib/hall-finder";
@@ -175,11 +176,11 @@ function FreeResults({ collegeId, schoolName, result, halls, facts, places, rout
             </p>
             <div className={styles.plusFoot}>
               <span className={styles.price}>
-                <strong>${PLUS_PRICE_USD}</strong>
-                <s>${PLUS_PRICE_WAS_USD}</s> one-time
+                <strong><PlanPrice tier="plus" /></strong> one-time
               </span>
               <button type="button" className="ds-btn ds-btn--yellow ds-btn--sm" onClick={onUpgrade}>Get Plus</button>
             </div>
+            <SaleNote tier="plus" />
           </div>
         </div>
       )}

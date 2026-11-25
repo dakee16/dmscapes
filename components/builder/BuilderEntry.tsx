@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { canBuild3D, PRO_PRICE_USD } from "@/lib/plan";
+import { canBuild3D } from "@/lib/plan";
+import { PlanPrice } from "@/components/site/Sale";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { usePlannerStore } from "@/lib/store";
 import type { BuilderDraft } from "@/lib/room-builder";
@@ -120,7 +121,7 @@ export default function BuilderEntry({children}:{children?:ReactNode}){
 
     <div className={s.ctaWrap}>
       <CtaBand tone="blue" lead="Start with a floor." tail="Build your world.">
-        <button type="button" className="ds-btn ds-btn--white ds-btn--lg" onClick={()=>{setOrigin("cta");start();}} disabled={loading||busy}>{loading?"Checking your account…":busy?"Opening your builder…":!user?"Sign in to build in 3D":pro?"Start building in 3D":`Go Pro for $${PRO_PRICE_USD.toFixed(2)}`}</button>
+        <button type="button" className="ds-btn ds-btn--white ds-btn--lg" onClick={()=>{setOrigin("cta");start();}} disabled={loading||busy}>{loading?"Checking your account…":busy?"Opening your builder…":!user?"Sign in to build in 3D":pro?"Start building in 3D":<span>Go Pro for <PlanPrice tier="pro"/></span>}</button>
         {error&&origin==="cta"&&<p role="alert" className={s.ctaError}>{error}</p>}
       </CtaBand>
     </div>

@@ -5,55 +5,50 @@ import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
 import {
-  PLUS_PRICE_CENTS,
-  PRO_PRICE_CENTS,
   RECHARGE_PRICE_CENTS,
-  PLUS_INITIAL_CREDITS,
-  PRO_INITIAL_CREDITS,
   CREDIT_PLAN_VERSION,
   RECHARGE_CREDITS,
   FLEX_CREDIT_PRICE_CENTS,
   FLEX_MIN_QTY,
   FLEX_MAX_QTY,
   PURCHASE_TYPES,
+  SALE_BONUS_CREDITS,
   type PurchaseType,
 } from "@/lib/plan";
+import { SALE, salePlan } from "@/lib/sale";
 
 // Stripe's Node SDK needs the Node runtime, not edge.
 export const runtime = "nodejs";
 
 // Inline prices keep Stripe's checkout copy in sync with the current allowance.
+// Plus and Pro take their price and credits from salePlan (the Black Friday offer inside its window).
+const planCredits = (n: number, bonus: boolean) =>
+  `${n} plan credits,${bonus ? ` including ${SALE_BONUS_CREDITS} Black Friday bonus credits,` : ""}`;
 const CFG: Record<
   Exclude<PurchaseType, "flex_credits">,
-  { cents: number; credits: number; name: string; description: string; success: string }
+  { name: string; description: (credits: number, bonus: boolean) => string; success: string }
 > = {
   plus: {
-    cents: PLUS_PRICE_CENTS,
-    credits: PLUS_INITIAL_CREDITS,
     name: "dormscape Plus",
-    description: `One-time upgrade: ${PLUS_INITIAL_CREDITS} plan credits, free saving, all 9 vibes, and PDF/PNG export, comparison, and priority school requests unlocked for good.`,
+    description: (n, bonus) => `One-time upgrade: ${planCredits(n, bonus)} free saving, all 9 vibes, and PDF/PNG export, comparison, and priority school requests unlocked for good.`,
     success: "upgraded=plus",
   },
   pro: {
-    cents: PRO_PRICE_CENTS,
-    credits: PRO_INITIAL_CREDITS,
     name: "dormscape Pro",
-    description:
-      `One-time upgrade: ${PRO_INITIAL_CREDITS} plan credits, free saving, 3D Room Builder, live 3D planning, custom vibes, and all Plus tools. Top up credits separately.`,
+    description: (n, bonus) =>
+      `One-time upgrade: ${planCredits(n, bonus)} free saving, 3D Room Builder, live 3D planning, custom vibes, and all Plus tools. Top up credits separately.`,
     success: "upgraded=pro",
   },
   recharge: {
-    cents: RECHARGE_PRICE_CENTS,
-    credits: RECHARGE_CREDITS,
     name: "dormscape Plus recharge",
-    description: `${RECHARGE_CREDITS} more plan credits added to your Plus account. Saving uses no credits.`,
+    description: () => `${RECHARGE_CREDITS} more plan credits added to your Plus account. Saving uses no credits.`,
     success: "recharged=1",
   },
 };
 
 /**
  * Start a one-time Stripe Checkout session for one of the three purchases:
- * Plus ($4.99), Pro ($14.99), or a Plus credit recharge ($2.99). The profile is
+ * Plus or Pro (priced by salePlan, lib/sale.ts), or a Plus credit recharge. The profile is
  * only ever changed server-side in the webhook after Stripe confirms payment,
  * never from the client redirect.
  */
@@ -186,12 +181,16 @@ export async function POST(request: Request) {
     successUrl = `${origin}/account/billing?credits=${quantity}`;
   } else {
     const cfg = CFG[type];
-    metadata.credit_amount = String(cfg.credits);
+    // Decided here, on the server's clock, and pinned in metadata (session, invoice and payment)
+    // so the webhook grants and a refund takes back exactly what this checkout sold.
+    const offer = type === "recharge" ? { cents: RECHARGE_PRICE_CENTS, credits: RECHARGE_CREDITS, sale: false } : salePlan(type);
+    metadata.credit_amount = String(offer.credits);
+    if (offer.sale) metadata.sale = SALE.id;
     lineItems = [{
       quantity: 1,
       price_data: {
-        currency: "usd", unit_amount: cfg.cents,
-        product_data: { name: cfg.name, description: cfg.description },
+        currency: "usd", unit_amount: offer.cents,
+        product_data: { name: cfg.name, description: cfg.description(offer.credits, offer.sale) },
       },
     }];
     successUrl = `${origin}/account?${cfg.success}`;
