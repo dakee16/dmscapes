@@ -24,9 +24,9 @@ export interface GeneratingPicks {
   bedding?: boolean;
   rug?: boolean;
   lamp?: boolean;
-  /** A seasonal kit's picks: string lights along the top wall, a pumpkin on the desk. */
+  /** A seasonal kit's picks: string lights along the top wall, and the label of its piece on the desk ("PUMPKIN", "TREE"). */
   lights?: boolean;
-  pumpkin?: boolean;
+  desk?: string;
 }
 
 /**
@@ -318,16 +318,16 @@ export default function Generating({
                 </text>
               </g>
             )}
-            {picks.pumpkin &&
+            {picks.desk &&
               desks.slice(0, 1).map((f) => {
                 const fp = footprint(f);
                 const cx = X(fp.x + fp.w / 2);
                 const cy = Y(fp.y + fp.h / 2);
                 return (
-                  <g key={`pumpkin-${f.id}`} className={css.pick} style={{ "--i": pickIndex++ } as React.CSSProperties}>
+                  <g key={`desk-${f.id}`} className={css.pick} style={{ "--i": pickIndex++ } as React.CSSProperties}>
                     <circle cx={cx} cy={cy} r={0.45 * U} className={css.pickShape} data-fill={fill} data-kind="lamp" />
                     <text x={cx} y={cy - 0.45 * U - 6} className={css.pickLabel} textAnchor="middle">
-                      PUMPKIN
+                      {picks.desk}
                     </text>
                   </g>
                 );

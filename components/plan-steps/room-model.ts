@@ -90,8 +90,8 @@ export function vibeMeta(id: StyleId | null, customVibe?: string | null): VibeMe
   }
   const seasonal = SEASONAL_STYLES.find((x) => x.id === id);
   if (seasonal) {
-    // The kit's own colours, pumpkin first: [main, light, dark].
-    return { id, name: seasonal.name, line: "Orange glow, bats on the wall, a pumpkin on the desk.", plus: false,
+    // The kit's own colours, its accent first: [main, light, dark].
+    return { id, name: seasonal.name, line: seasonal.line ?? "", plus: false,
       dots: [seasonal.palette[1], seasonal.palette[2], seasonal.palette[3]] };
   }
   const v = HOME_VIBES.find((x) => x.id === id);

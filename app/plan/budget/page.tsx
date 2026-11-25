@@ -19,7 +19,7 @@ import { useAuth } from "@/lib/auth-context";
 import { creditLimitReason, canGeneratePlan, headerCreditState } from "@/lib/plan";
 import { consumePlanCredit } from "@/lib/plan-credits";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { seasonOn } from "@/lib/season";
+import { lastDay, seasonOf, seasonOn } from "@/lib/season";
 import { budgetRange, isSeasonalStyle } from "@/lib/styles";
 import type { SelectedRoom } from "@/lib/types";
 import v from "@/components/plan-steps/Vibe.module.css";
@@ -36,9 +36,13 @@ const FACTS = [
   { h: "Live Amazon links", p: "Every piece links to a live listing, sizes included." },
   { h: "Change it later", p: "Swap pieces on the canvas and the total follows you." },
 ];
-// A seasonal kit decorates the room the student already has.
-const SEASONAL_FACTS = [
-  { h: "Decor, not a whole new room", p: "Lights, wall decor, a throw, a rug and a pumpkin, all sized to your floor plan." },
+// A seasonal kit decorates the room the student already has: what's in each, and the piece the planning screen puts on the desk.
+const KITS: Record<string, { pieces: string; desk: [category: string, label: string] }> = {
+  spooky: { pieces: "Lights, wall decor, a throw, a rug and a pumpkin", desk: ["Desk Accessories", "PUMPKIN"] },
+  holiday: { pieces: "String lights, a tabletop tree and a throw", desk: ["Accent", "TREE"] },
+};
+const seasonalFacts = (kit: string) => [
+  { h: "Decor, not a whole new room", p: `${kit}, all sized to your floor plan.` },
   { h: "Live Amazon links", p: "Every piece links to a live listing, sizes included." },
 ];
 
@@ -242,8 +246,9 @@ export default function PlanBudgetPage() {
   // "covers" applies to curated styles only; the custom flow has its own copy.
   const covered = style !== "custom" ? categoriesCovered(style, budget, room.bedSize) : null;
   const vibe = vibeMeta(style, customVibe);
-  const picks: GeneratingPicks = seasonal && covered
-    ? { lights: covered.includes("Ambient Lighting"), rug: covered.includes("Rug"), pumpkin: covered.includes("Desk Accessories") }
+  const kit = seasonal ? KITS[style] : undefined;
+  const picks: GeneratingPicks = kit && covered
+    ? { lights: covered.includes("Ambient Lighting"), rug: covered.includes("Rug"), desk: covered.includes(kit.desk[0]) ? kit.desk[1] : undefined }
     : covered
       ? { bedding: covered.includes("Bedding"), rug: covered.includes("Rug"), lamp: covered.includes("Desk Lamp") }
       : { bedding: true, rug: true, lamp: true };
@@ -303,7 +308,7 @@ export default function PlanBudgetPage() {
         </div>
 
         <div className={css.facts} data-seasonal={seasonal || undefined}>
-          {(seasonal ? SEASONAL_FACTS : FACTS).map((f) => (
+          {(kit ? seasonalFacts(kit.pieces) : FACTS).map((f) => (
             <div key={f.h} className={css.fact}>
               <span className={css.factHead}>{f.h}</span>
               <span className={css.factBody}>{f.p}</span>
@@ -332,7 +337,7 @@ export default function PlanBudgetPage() {
               <ArrowUpRight size={24} strokeWidth={2.8} />
             </button>
             <div className={css.costs} data-seasonal={seasonal || undefined}>
-              {seasonal ? <span className={css.free}>Free till Oct 31 · no credit used</span> : <span>Uses 1 plan credit</span>}
+              {seasonal ? <span className={css.free}>Free till {lastDay(seasonOf(style)!)} · no credit used</span> : <span>Uses 1 plan credit</span>}
               <span>Saving is always free</span>
             </div>
           </div>
