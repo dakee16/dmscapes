@@ -127,6 +127,9 @@
   cursor: pointer;
 }
 .ds-sale-banner button:hover { background: rgba(255, 255, 255, 0.12); }
+.ds-sale-banner i { font-style: normal; }
+/* Phones: two lines, not three; the pricing cards spell out the bonus. */
+@media (max-width: 599px) { .ds-sale-banner i { display: none; } }
 
 /* ---------- Page root ---------- */
 .ds {
