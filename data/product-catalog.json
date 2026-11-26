@@ -9725,9 +9725,9 @@
     "active": true
   },
   {
-    "id": "hol-budget-accent-01",
+    "id": "hol-budget-desk-01",
     "name": "Joiedomi 24 in Mini Christmas Tree with Clear LED Lights",
-    "category": "accent",
+    "category": "desk_accessories",
     "style_tags": [
       "holiday"
     ],
@@ -9743,16 +9743,16 @@
     "rating": 4.3,
     "review_count": 4348,
     "alternative_ids": [
-      "hol-mid-accent-01",
-      "hol-prem-accent-01"
+      "hol-mid-desk-01",
+      "hol-prem-desk-01"
     ],
     "description": "A 24 in tabletop Christmas tree, pre-lit with clear LEDs, with a star on top and hanging ornaments.",
     "active": true
   },
   {
-    "id": "hol-mid-accent-01",
+    "id": "hol-mid-desk-01",
     "name": "Joiedomi 24 in Pre-Lit Tabletop Christmas Tree with Warm LED Lights",
-    "category": "accent",
+    "category": "desk_accessories",
     "style_tags": [
       "holiday"
     ],
@@ -9768,16 +9768,16 @@
     "rating": 4.3,
     "review_count": 4348,
     "alternative_ids": [
-      "hol-budget-accent-01",
-      "hol-prem-accent-01"
+      "hol-budget-desk-01",
+      "hol-prem-desk-01"
     ],
     "description": "A 24 in tabletop Christmas tree with warm LED lights, a gift box and ball ornaments.",
     "active": true
   },
   {
-    "id": "hol-prem-accent-01",
+    "id": "hol-prem-desk-01",
     "name": "JOIEDOMI 24 in Pre-Lit Tabletop Christmas Tree with Star and Ornaments",
-    "category": "accent",
+    "category": "desk_accessories",
     "style_tags": [
       "holiday"
     ],
@@ -9793,8 +9793,8 @@
     "rating": 4.3,
     "review_count": 4348,
     "alternative_ids": [
-      "hol-budget-accent-01",
-      "hol-mid-accent-01"
+      "hol-budget-desk-01",
+      "hol-mid-desk-01"
     ],
     "description": "A 24 in pre-lit LED tabletop Christmas tree with a star on top and hanging ornaments.",
     "active": true

@@ -74,7 +74,7 @@ export function productVisual(product: Product) {
     case "storage": kind = /ottoman/.test(text) ? "ottoman" : /drawer/.test(text) ? "dresser" : /basket|cube|seagrass|wicker/.test(text) ? "basket" : "storage"; break;
     case "throw": kind = /pillow/.test(text) ? "pillow" : "blanket"; break;
     case "curtains": kind = "curtains"; break;
-    case "desk_accessories": case "desk_organizer": kind = pumpkin ? "pumpkin" : /mat|pad/.test(text) ? "desk-mat" : /stand|riser/.test(text) ? "riser" : "organizer"; break;
+    case "desk_accessories": case "desk_organizer": kind = pumpkin ? "pumpkin" : tree ? "tree" : /mat|pad/.test(text) ? "desk-mat" : /stand|riser/.test(text) ? "riser" : "organizer"; break;
     case "mirror": kind = "mirror"; break;
     case "laundry_hamper": kind = "hamper"; break;
     case "power_strip": kind = "power-strip"; break;
@@ -82,7 +82,8 @@ export function productVisual(product: Product) {
     case "towel_caddy": kind = /towel set/.test(text) ? "towels" : "caddy"; break;
     case "plant": kind = "plant"; break;
     case "clip_fan": kind = "fan"; break;
-    default: kind = pumpkin ? "pumpkin" : ghost ? "lantern" : tree ? "tree" : furnitureKindFromText(text) ?? (/plant|tree|monstera|pothos|eucalyptus/.test(text) ? "plant" : /candle|tea ?light/.test(text) ? "candle" : /disco|mirror ball/.test(text) ? "disco" : /pillow/.test(text) ? "pillow" : /book/.test(text) ? "books" : /projector|lamp|diffuser/.test(text) ? "lamp" : "decor");
+    // A seasonal kit's pillow covers and garland: listing titles name couches and sofas, so read them before the furniture words.
+    default: kind = pumpkin ? "pumpkin" : ghost ? "lantern" : tree ? "tree" : seasonal && /pillow/.test(text) ? "pillow" : seasonal && /garland/.test(text) ? "lights" : furnitureKindFromText(text) ?? (/plant|tree|monstera|pothos|eucalyptus/.test(text) ? "plant" : /candle|tea ?light/.test(text) ? "candle" : /disco|mirror ball/.test(text) ? "disco" : /pillow/.test(text) ? "pillow" : /book/.test(text) ? "books" : /projector|lamp|diffuser/.test(text) ? "lamp" : "decor");
   }
   const variant = kind === "lamp"
     ? /mushroom/.test(text) ? "mushroom" : /banker/.test(text) ? "banker" : /lava/.test(text) ? "lava" : /salt/.test(text) ? "salt" : /projector/.test(text) ? "projector" : /light bar|under monitor/.test(text) ? "bar" : /swing|architect|gooseneck|clip|slim metal/.test(text) ? "task" : "shade"
@@ -311,7 +312,8 @@ export function syncProductFurniture(items: FurnitureItem[], products: Product[]
     const wall = ["curtains", "art", "lights", "wall-shelf", "macrame"].includes(visual.kind);
     const surface = surfaceOnly(visual.kind, p.category, p.height_ft ?? size[2]) || ["fan", "caddy", "plant"].includes(visual.kind);
     const [w, l] = clusterSize(visual, p.width_ft ?? size[0], p.length_ft ?? size[1]);
-    const f: FurnitureItem = {id:`cart-${p.category}`, product_id:p.id, type:wall ? "wall_decor" : p.category,
+    const bedPillows = visual.seasonal && visual.kind === "pillow";
+    const f: FurnitureItem = {id:`cart-${p.category}`, product_id:p.id, type:wall ? "wall_decor" : bedPillows ? "throw_pillows" : p.category,
       label:p.name, owner:"shared", x_ft:0, y_ft:0, width_ft:w, length_ft:l, height_ft:p.height_ft ?? size[2],
       rotation_deg:0, movable:true, built_in:false, color_category:"decor", product_category:p.category};
     // A light string runs along the wall it hangs on, however long the strand.
@@ -331,6 +333,13 @@ export function syncProductFurniture(items: FurnitureItem[], products: Product[]
         f.x_ft=Math.max(.05,Math.min(room.lengthFt-bounds.w-.05,a.x+dx*center-bounds.w/2));
         f.y_ft=Math.max(.05,Math.min(room.widthFt-bounds.h-.05,a.y+dy*center-bounds.h/2));
       }
+    } else if (bedPillows && result.some(x => ["bed", "bunk"].includes(modelKind(x)) && !x.parent_id)) {
+      // A seasonal set of pillows sits at the head of the first bed, where the templates put their own (the throw takes the foot).
+      const bed = result.find(x => ["bed", "bunk"].includes(modelKind(x)) && !x.parent_id)!, b = footprint(bed), a = bed.rotation_deg * Math.PI / 180;
+      f.width_ft = Math.min(f.width_ft, bed.width_ft - .3); f.length_ft = Math.min(f.length_ft, 1.2); f.height_ft = Math.min(f.height_ft ?? .4, .45);
+      f.rotation_deg = bed.rotation_deg; f.parent_id = bed.id; f.elevation_ft = bedSurfaceHeight(bed);
+      const reach = bed.length_ft / 2 - f.length_ft / 2 - .35, s = footprint(f);
+      f.x_ft = b.x + b.w / 2 + Math.sin(a) * reach - s.w / 2; f.y_ft = b.y + b.h / 2 - Math.cos(a) * reach - s.h / 2;
     } else if (visual.seasonal && visual.kind === "rug") {
       // A seasonal rug goes in the open floor: the clear spot nearest the middle of the room.
       const pts = roomOutline(room).points, spots: {x:number;y:number}[] = [];

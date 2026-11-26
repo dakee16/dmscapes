@@ -177,8 +177,10 @@ export interface BudgetRange { min: number; max: number; step: number; marks: nu
 const ROOM_BUDGET: BudgetRange = { min: 200, max: 1500, step: 50, marks: [200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400], quick: [300, 500, 650, 1000, 1500], start: 500 };
 // A seasonal kit is a handful of decor pieces, so its tape runs $25 to $200.
 const SEASONAL_BUDGET: BudgetRange = { min: 25, max: 200, step: 5, marks: [50, 75, 100, 125, 150, 175], quick: [40, 75, 120, 200], start: 75 };
-// The holiday kit starts where its Essentials set (lights, a throw and a tree) fits whole.
-const HOLIDAY_BUDGET: BudgetRange = { min: 50, max: 150, step: 5, marks: [60, 80, 100, 120, 140], quick: [50, 75, 100, 150], start: 75 };
+// The holiday kit's tape runs from where its Essentials kit fits whole to $50 above its Premium kit, so every
+// budget on it gets a cart within $50 of it (tierForBudget picks the fullest kit that fits; check-studio checks it).
+// Move both ends with the kit's prices.
+const HOLIDAY_BUDGET: BudgetRange = { min: 50, max: 125, step: 5, marks: [60, 70, 80, 90, 100, 110, 120], quick: [50, 75, 100, 125], start: 75 };
 export const budgetRange = (id: StyleId | null | undefined): BudgetRange =>
   id === "holiday" ? HOLIDAY_BUDGET : id && isSeasonalStyle(id) ? SEASONAL_BUDGET : ROOM_BUDGET;
 

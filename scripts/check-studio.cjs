@@ -273,6 +273,37 @@ assert.equal(productVisual(testProduct).variant,"banker");
 assert.equal(productVisual({...testProduct,name:"Pink mushroom lamp"}).variant,"mushroom");
 assert.equal(productVisual({...testProduct,category:"wall_decor",name:"Floating shelves"}).kind,"wall-shelf");
 assert.equal(productVisual({...testProduct,category:"throw",name:"Cotton knitted throw blanket"}).kind,"blanket");
+{
+  // The Cozy Holiday kit. Each kind of piece is modeled as what it is (titles in the style of the approved listings).
+  const {footprint}=load(path.join(root,"components/canvas/geometry.ts")),{tierForBudget,totalFor}=load(path.join(root,"lib/catalog.ts")),{budgetRange}=load(path.join(root,"lib/styles.ts"));
+  const hol=(id,category,name,size={})=>({...catalog[0],id,category,name,description:"",color:"red black",style_tags:["holiday"],width_ft:null,length_ft:null,height_ft:null,...size});
+  assert.equal(productVisual(hol("t","desk_accessories","Joiedomi 24 in Pre-Lit Tabletop Christmas Tree with Warm LED Lights")).kind,"tree");
+  assert.equal(productVisual(hol("p","accent","Christmas Pillow Covers 18x18 Set of 4 Buffalo Plaid Throw Pillow Covers for Couch Sofa")).kind,"pillow","Pillow covers are pillows, not a sofa");
+  assert.equal(productVisual(hol("s","wall_decor","Christmas Stockings 2 Pack, 18 Inches Cable Knitted Xmas Hanging Sock")).kind,"art");
+  assert.equal(productVisual(hol("g","accent","9ft Pre-lit Christmas Garland with LED Lights, Battery Operated")).kind,"lights");
+  assert.equal(productVisual(hol("g2","ambient_lighting","9ft Pre-lit Christmas Garland with LED Lights, Battery Operated")).kind,"lights");
+  const plaid=productVisual(hol("r","rug","Buffalo Plaid Rug 3x5 Black and Red Checkered Washable"));assert.equal(plaid.kind,"rug");assert.equal(plaid.pattern,"check");
+  // In a real double: the tree stands on a desk and a set of pillow covers sits at the head of a bed.
+  const room={type:"double",occupants:2,lengthFt:15,widthFt:12,source:"manual"};
+  const match=matchTemplate({length_ft:15,width_ft:12,occupants:2,room_type:room.type});
+  const items=fitTemplateToRoom(match.template.furniture,match.template_id,15,12);
+  const pillows=hol("hol-test-pillows","accent","Christmas Pillow Covers 18x18 Set of 4 Buffalo Plaid",{width_ft:1.5,length_ft:1.5});
+  const kit=[...productsFor("holiday","mid"),pillows],synced=syncProductFurniture(items,kit,room);
+  assert.equal(syncProductFurniture(synced,kit,room),synced,"Holiday product synchronization must stabilize");
+  const tree=synced.find(f=>f.product_category==="desk_accessories"),treeHost=synced.find(f=>f.id===tree?.parent_id);
+  assert.equal(treeHost?.type,"desk","The tabletop tree stands on a desk");
+  const placed=synced.find(f=>f.product_id===pillows.id),bed=synced.find(f=>f.id===placed?.parent_id);
+  assert(bed&&["bed","bunk"].includes(studio.modelKind(bed))&&placed.elevation_ft>0,"Holiday pillows sit on a bed");
+  const pc=footprint(placed),bc=footprint(bed),a=bed.rotation_deg*Math.PI/180;
+  assert((pc.x+pc.w/2-bc.x-bc.w/2)*Math.sin(a)-(pc.y+pc.h/2-bc.y-bc.h/2)*Math.cos(a)>.5,"Holiday pillows sit at the head, clear of the throw at the foot");
+  // The owner's margin: every budget on the tape seeds a cart (the result page's walk) within $50 under it.
+  const r=budgetRange("holiday");
+  for(let b=r.min;b<=r.max;b+=r.step){
+    const tier=tierForBudget(b,"holiday");let left=b;for(const p of productsFor("holiday",tier))if(p.price<=left)left-=p.price;
+    assert(left>=0&&left<=50,"A $"+b+" holiday budget leaves $"+left.toFixed(2)+" unspent ("+tier+")");
+  }
+  assert(totalFor(productsFor("holiday","budget"))<=r.min,"The tape starts where the Essentials kit fits whole");
+}
 assert(invalidItems([{...item,id:"bed",type:"bed",width_ft:7,length_ft:3}, {...item,id:"overlapping-desk",x_ft:3,y_ft:2.5}],15,12).size>0,"A desk overlapping a bed is not a rider");
 console.log("PASS: triple/quad capacity and clearance, portrait layouts, legacy bunks, cart dimensions, missing categories, and product variants.");
 
