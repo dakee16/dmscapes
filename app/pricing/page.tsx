@@ -387,6 +387,25 @@ export default function PricingPage() {
             </Link>
           </div>
 
+          {/* Gifts are sold at the regular prices, never the sale's (app/api/checkout). */}
+          <div className={`ds-tape ${css.flex}`} data-reveal="">
+            <div className={css.flexName}>
+              <b>Gift</b>
+              <span>For someone else</span>
+            </div>
+            <p>
+              Know someone heading to college? Give them Plus or Pro. They get an email with a code that never expires.
+              <span data-sale-show=""> Gifts are at the regular price, not the Black Friday one.</span>
+            </p>
+            <span className={css.flexPrice}>
+              <small>from </small>
+              {usd(PLUS_PRICE_USD)}
+            </span>
+            <Link href="/gift" className="ds-btn ds-btn--ink ds-btn--sm">
+              Give dormscape as a gift
+            </Link>
+          </div>
+
           <ul className={css.trust} aria-label="Good to know">
             <li>Secured by Stripe</li>
             <li>One-time payment, no subscription</li>

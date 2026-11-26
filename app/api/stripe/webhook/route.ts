@@ -12,6 +12,8 @@ import {
 import { addPlanCredits, grantPurchasedPlan, revokePurchase, reversalKey } from "@/lib/credit-ledger";
 import { deliverPurchaseInvoice } from "@/lib/purchase-email";
 import { capturePurchase } from "@/lib/purchase-analytics";
+import { cleanGift, giftPlanOf } from "@/lib/gift";
+import { createGift, deliverGift } from "@/lib/gift-codes";
 
 // Signature verification needs the raw body and the Node runtime.
 export const runtime = "nodejs";
@@ -36,26 +38,56 @@ function creditGrant(purchase: PurchaseType, metadata: Stripe.Metadata | null): 
 
 const received = () => NextResponse.json({ received: true });
 
+type Db = NonNullable<ReturnType<typeof getServiceClient>>;
+
 /** The best plan the customer still holds without this payment: another paid Plus or Pro purchase that
- * wasn't refunded or disputed, or Plus from a creator code. */
-async function keptPlan(stripe: Stripe, supabase: NonNullable<ReturnType<typeof getServiceClient>>, userId: string, except: Stripe.PaymentIntent): Promise<"plus" | "pro" | null> {
+ * wasn't refunded or disputed (on their Stripe customer), a gift they redeemed that wasn't taken back, or
+ * Plus from a creator code. Gifts they bought for others never count. */
+async function keptPlan(stripe: Stripe, supabase: Db, userId: string, customer: string | null, exceptPi: string): Promise<"plus" | "pro" | null> {
   let best: "plus" | "pro" | null = null;
-  const customer = typeof except.customer === "string" ? except.customer : except.customer?.id;
   if (customer) {
     // ponytail: the newest 100 charges; a customer with more purchases than that would be checked by hand.
     const charges = await stripe.charges.list({ customer, limit: 100, expand: ["data.payment_intent"] });
     for (const c of charges.data) {
       const pi = c.payment_intent;
-      if (!pi || typeof pi === "string" || pi.id === except.id || c.status !== "succeeded" || c.refunded || c.disputed || pi.metadata?.user_id !== userId) continue;
+      if (!pi || typeof pi === "string" || pi.id === exceptPi || c.status !== "succeeded" || c.refunded || c.disputed || pi.metadata?.user_id !== userId) continue;
       if (pi.metadata?.purchase === "pro") return "pro";
       if (pi.metadata?.purchase === "plus") best = "plus";
     }
   }
+  // The gift being taken back is already voided by now, so it doesn't count. No table yet: no gifts.
+  const { data: gifts } = await supabase.from("gift_codes").select("plan").eq("redeemed_by", userId).is("voided_at", null);
+  if (gifts?.some((g: { plan: string }) => g.plan === "pro")) return "pro";
+  if (gifts?.length) best = "plus";
   if (!best) {
     const { data } = await supabase.from("creator_redemptions").select("user_id").eq("user_id", userId).maybeSingle();
     if (data) best = "plus";
   }
   return best;
+}
+
+/** A refunded or charged-back gift: unredeemed, its code stops working; redeemed, the plan and credits come
+ * back off whoever redeemed it, who keeps any other plan they hold. The buyer never had anything to take.
+ * A won chargeback undoes either. The caller's reversalKey row makes each direction happen once; if this
+ * throws, that row is removed and Stripe's retry runs it again, so each step is safe to repeat. */
+async function reverseGift(stripe: Stripe, supabase: Db, piId: string, restore: boolean) {
+  const fields = "id, plan, credits, redeemed_by";
+  type Row = { id: string; plan: "plus" | "pro"; credits: number; redeemed_by: string | null };
+  // One conditional update: once voided, no redeem can claim the code, so redeemed_by is final here.
+  const flip = supabase.from("gift_codes").update({ voided_at: restore ? null : new Date().toISOString() }).eq("payment_intent", piId);
+  const { data: flipped, error } = await (restore ? flip.not("voided_at", "is", null) : flip.is("voided_at", null)).select(fields).maybeSingle();
+  if (error) throw new Error(error.message);
+  let row = flipped as Row | null;
+  if (!row) {
+    // Already flipped by an earlier try that failed after it, or the gift isn't made yet (its checkout event is still retrying).
+    const { data } = await supabase.from("gift_codes").select(fields).eq("payment_intent", piId).maybeSingle();
+    if (!data) throw new Error("No gift for this payment yet.");
+    row = data as Row;
+  }
+  if (!row.redeemed_by) return;
+  if (restore) return grantPurchasedPlan(supabase, row.redeemed_by, row.plan, row.credits, null, false);
+  const { data: redeemer } = await supabase.from("profiles").select("stripe_customer_id").eq("id", row.redeemed_by).maybeSingle();
+  await revokePurchase(supabase, row.redeemed_by, row.plan, row.credits, await keptPlan(stripe, supabase, row.redeemed_by, redeemer?.stripe_customer_id ?? null, piId));
 }
 
 /** Refunds and chargebacks take a purchase back: its credits and, for Plus or Pro, the plan. A chargeback
@@ -88,7 +120,8 @@ async function reverse(stripe: Stripe, event: Stripe.Event) {
     if (error?.code === "23505") return NextResponse.json({ received: true, duplicate: true });
     if (error) throw new Error(error.message);
     try {
-      if (!restore) await revokePurchase(supabase, userId, purchase, amount, await keptPlan(stripe, supabase, userId, pi));
+      if (giftPlanOf(purchase)) await reverseGift(stripe, supabase, piId, restore);
+      else if (!restore) await revokePurchase(supabase, userId, purchase, amount, await keptPlan(stripe, supabase, userId, typeof pi.customer === "string" ? pi.customer : pi.customer?.id ?? null, pi.id));
       else if (purchase === "plus" || purchase === "pro") await grantPurchasedPlan(supabase, userId, purchase, amount, null);
       else await addPlanCredits(supabase, userId, amount);
     } catch (error) {
@@ -184,6 +217,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid credit grant." }, { status: 500 });
   }
 
+  const giftPlan = giftPlanOf(purchase);
+  if (giftPlan) return giftPaid(supabase, session, userId, giftPlan, amount, customerId);
+
   // Idempotency: record this checkout session before applying it. A duplicate
   // delivery (Stripe is at-least-once) hits the primary-key conflict and is
   // skipped, which is essential for recharges since they increment credits.
@@ -221,4 +257,48 @@ export async function POST(request: Request) {
   // Analytics runs after the response is sent: it can't delay or fail the webhook.
   after(() => capturePurchase(session, purchase));
   return NextResponse.json({ received: true });
+}
+
+/**
+ * A paid gift: make its code once (the processed_stripe_events row, then gift_codes' unique session) and
+ * email the recipient. The buyer is granted nothing; their Stripe customer is only linked so Billing lists
+ * the gift and their next checkout reuses it. If the email isn't accepted the answer is 503, so Stripe
+ * sends the event again; the gift is already made and its derived code is sent unchanged.
+ */
+async function giftPaid(supabase: Db, session: Stripe.Checkout.Session, userId: string, plan: "plus" | "pro", credits: number, customerId: string | null) {
+  const md = session.metadata ?? {};
+  const details = cleanGift({ to: md.gift_to, from: md.gift_from, message: md.gift_message });
+  if (!details.ok) {
+    console.error("stripe webhook: gift session with invalid details", session.id);
+    return NextResponse.json({ error: "Invalid gift." }, { status: 500 });
+  }
+  const { error: ledgerErr } = await supabase.from("processed_stripe_events").insert({ event_id: session.id });
+  if (ledgerErr && ledgerErr.code !== "23505") {
+    console.error("stripe webhook: ledger insert failed:", ledgerErr.message);
+    return NextResponse.json({ error: "Ledger error." }, { status: 500 });
+  }
+  if (!ledgerErr) {
+    try {
+      const paymentIntent = typeof session.payment_intent === "string" ? session.payment_intent : session.payment_intent?.id ?? null;
+      await createGift(supabase, { sessionId: session.id, paymentIntent, buyerId: userId, plan, credits, details: details.gift });
+    } catch (error) {
+      console.error("stripe webhook: gift not recorded", session.id, error instanceof Error ? error.message : error);
+      await supabase.from("processed_stripe_events").delete().eq("event_id", session.id);
+      return NextResponse.json({ error: "Update failed." }, { status: 500 });
+    }
+    if (customerId) {
+      const { error } = await supabase.from("profiles").update({ stripe_customer_id: customerId }).eq("id", userId).is("stripe_customer_id", null);
+      if (error) console.error("stripe webhook: buyer's customer not linked", session.id);
+    }
+    const purchase = `gift_${plan}`;
+    after(() => capturePurchase(session, purchase));
+    after(() => capturePurchase(session, purchase, fetch, "gift_purchased"));
+  }
+  try {
+    await deliverGift(supabase, session.id);
+  } catch (error) {
+    console.error("stripe webhook: gift email pending", session.id, error instanceof Error ? error.message : "Delivery failed");
+    return NextResponse.json({ error: "Gift email pending. Retry delivery." }, { status: 503 });
+  }
+  return NextResponse.json(ledgerErr ? { received: true, duplicate: true } : { received: true });
 }

@@ -28,6 +28,7 @@ const COLUMNS: Group[][] = [
         { label: "My Room (Pro)", href: "/my-room" },
         { label: "Hall Finder", hallFinder: true },
         { label: "Pricing", href: "/pricing" },
+        { label: "Gift a plan", href: "/gift" },
       ],
     },
   ],

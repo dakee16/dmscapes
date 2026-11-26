@@ -5,6 +5,7 @@ import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
 import type { InvoiceItem, InvoicesResponse } from "@/lib/api-types";
 import { reversalKey } from "@/lib/credit-ledger";
+import { giftPlanOf, maskEmail, type GiftStatus } from "@/lib/gift";
 import type Stripe from "stripe";
 
 /** "Pro and 10 credits", "3 credits": what a purchase granted, from what checkout pinned on its payment. */
@@ -68,10 +69,21 @@ export async function POST(request: Request) {
     const keys = charges.data.flatMap((c) => { const pi = piOf(c); return pi ? [reversalKey(pi, "revoke"), reversalKey(pi, "restore")] : []; });
     const { data: done } = keys.length ? await supabase.from("processed_stripe_events").select("event_id").in("event_id", keys) : { data: [] };
     const recorded = new Set((done ?? []).map((r: { event_id: string }) => r.event_id));
+    // Gifts this account bought (lib/gift-codes): who they went to and where they stand. No table yet: none.
+    const metaOf = (c: Stripe.Charge) => (typeof c.payment_intent === "object" ? c.payment_intent?.metadata : null);
+    const giftPis = charges.data.flatMap((c) => { const pi = piOf(c); return pi && giftPlanOf(metaOf(c)?.purchase) ? [pi] : []; });
+    type GiftRow = { payment_intent: string; recipient_email: string; emailed_at: string | null; redeemed_at: string | null; voided_at: string | null };
+    const { data: giftRows } = giftPis.length
+      ? await supabase.from("gift_codes").select("payment_intent, recipient_email, emailed_at, redeemed_at, voided_at").eq("buyer_id", userId).in("payment_intent", giftPis)
+      : { data: [] };
+    const gifts = new Map(((giftRows ?? []) as GiftRow[]).map((g) => [g.payment_intent, g]));
     const invoices: InvoiceItem[] = charges.data.map((c) => {
       const pi = piOf(c);
       const restored = !!pi && recorded.has(reversalKey(pi, "restore"));
       const revoked = !!pi && recorded.has(reversalKey(pi, "revoke"));
+      const giftPlan = giftPlanOf(metaOf(c)?.purchase);
+      const g = pi ? gifts.get(pi) : undefined;
+      const giftStatus: GiftStatus = c.refunded ? "refunded" : g?.voided_at ? "voided" : g?.redeemed_at ? "redeemed" : g?.emailed_at ? "sent" : "sending";
       return {
         id: c.id,
         // Stripe timestamps are seconds since epoch; expose ISO for the client.
@@ -82,7 +94,9 @@ export async function POST(request: Request) {
         description: c.description ?? null,
         receipt_url: c.receipt_url ?? null,
         reversal: restored ? "dispute_won" : c.disputed ? "disputed" : c.refunded ? "refunded" : c.amount_refunded > 0 ? "partly_refunded" : null,
-        taken_back: revoked && !restored ? takenBack(typeof c.payment_intent === "object" ? c.payment_intent?.metadata : null) : null,
+        // A gift is taken back from whoever redeemed it, never from this account.
+        taken_back: revoked && !restored && !giftPlan ? takenBack(metaOf(c)) : null,
+        gift: giftPlan ? { plan: giftPlan === "pro" ? "Pro" : "Plus", to: g ? maskEmail(g.recipient_email) : null, status: giftStatus } : null,
       };
     });
     return NextResponse.json({ invoices } satisfies InvoicesResponse);

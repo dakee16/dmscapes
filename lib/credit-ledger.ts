@@ -83,8 +83,9 @@ export async function revokePurchase(supabase: SupabaseClient, userId: string, p
 }
 
 /** A paid upgrade adds its included allowance without discarding credits the
- * customer already bought. Late Plus payments must never downgrade Pro. */
-export async function grantPurchasedPlan(supabase: SupabaseClient, userId: string, tier: "plus" | "pro", amount: number, customerId: string | null): Promise<void> {
+ * customer already bought. Late Plus payments must never downgrade Pro. A redeemed gift
+ * (paid: false) clears the purchase date, so Billing doesn't show the redeemer a price they never paid. */
+export async function grantPurchasedPlan(supabase: SupabaseClient, userId: string, tier: "plus" | "pro", amount: number, customerId: string | null, paid = true): Promise<void> {
   if (!Number.isSafeInteger(amount) || amount <= 0) throw new Error("Invalid credit amount.");
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
     const row = await read(supabase, userId);
@@ -95,7 +96,7 @@ export async function grantPurchasedPlan(supabase: SupabaseClient, userId: strin
       plan_credits_remaining: balance + amount,
       save_credits_remaining: null,
       plus_features_unlocked: true,
-      plan_purchased_at: new Date().toISOString(),
+      plan_purchased_at: paid ? new Date().toISOString() : null,
       ...(customerId ? { stripe_customer_id: customerId } : {}),
     })) return;
   }

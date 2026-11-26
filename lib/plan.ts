@@ -40,8 +40,10 @@ export const FLEX_MIN_QTY = 1;
 export const FLEX_MAX_QTY = 100;
 export const FLEX_DEFAULT_QTY = 3;
 
-export type PurchaseType = "plus" | "pro" | "recharge" | "flex_credits";
-export const PURCHASE_TYPES: readonly PurchaseType[] = ["plus", "pro", "recharge", "flex_credits"];
+/** gift_plus and gift_pro buy Plus or Pro for someone else, at the regular price (lib/gift.ts):
+ * the buyer gets a receipt, the recipient a code. Nothing is granted to the buyer. */
+export type PurchaseType = "plus" | "pro" | "recharge" | "flex_credits" | "gift_plus" | "gift_pro";
+export const PURCHASE_TYPES: readonly PurchaseType[] = ["plus", "pro", "recharge", "flex_credits", "gift_plus", "gift_pro"];
 
 export interface PlanFields {
   plan?: PlanTier | string | null;

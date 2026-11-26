@@ -5,6 +5,10 @@ import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
 import {
+  PLUS_INITIAL_CREDITS,
+  PLUS_PRICE_CENTS,
+  PRO_INITIAL_CREDITS,
+  PRO_PRICE_CENTS,
   RECHARGE_PRICE_CENTS,
   CREDIT_PLAN_VERSION,
   RECHARGE_CREDITS,
@@ -16,6 +20,7 @@ import {
   type PurchaseType,
 } from "@/lib/plan";
 import { SALE, isSale, salePlan } from "@/lib/sale";
+import { cleanGift, giftPlanOf, type GiftDetails } from "@/lib/gift";
 
 // Stripe's Node SDK needs the Node runtime, not edge.
 export const runtime = "nodejs";
@@ -25,7 +30,7 @@ export const runtime = "nodejs";
 const planCredits = (n: number, bonus: boolean) =>
   `${n} plan credits,${bonus ? ` including ${SALE_BONUS_CREDITS} Black Friday bonus credits,` : ""}`;
 const CFG: Record<
-  Exclude<PurchaseType, "flex_credits">,
+  Exclude<PurchaseType, "flex_credits" | "gift_plus" | "gift_pro">,
   { name: string; description: (credits: number, bonus: boolean) => string; success: string }
 > = {
   plus: {
@@ -45,6 +50,13 @@ const CFG: Record<
     success: "recharged=1",
   },
 };
+
+// Gifts are sold at the regular price and allowance, never the sale's (owner: "Gift price will be the same
+// as the std plan price"), so a gift redeemed after the sale is the same gift.
+const GIFT = {
+  plus: { cents: PLUS_PRICE_CENTS, credits: PLUS_INITIAL_CREDITS, name: "dormscape Plus gift", tools: "every Plus tool" },
+  pro: { cents: PRO_PRICE_CENTS, credits: PRO_INITIAL_CREDITS, name: "dormscape Pro gift", tools: "every Pro tool" },
+} as const;
 
 /**
  * Start a one-time Stripe Checkout session for one of the three purchases:
@@ -67,12 +79,16 @@ export async function POST(request: Request) {
   // Analytics ids for the webhook's purchase_completed (lib/purchase-analytics),
   // sent by lib/checkout only when the buyer allows analytics.
   const tracking: Record<string, string> = {};
+  // Gift purchases: who it's for, from whom, and a note (lib/gift cleanGift checks them below).
+  let giftInput: unknown = null;
   try {
     const body = (await request.json().catch(() => ({}))) as {
       type?: string;
       quantity?: number;
       analytics?: Record<string, unknown> | null;
+      gift?: unknown;
     };
+    giftInput = body.gift ?? null;
     if (body.type && PURCHASE_TYPES.includes(body.type as PurchaseType)) {
       type = body.type as PurchaseType;
     } else if (body.type) {
@@ -102,9 +118,17 @@ export async function POST(request: Request) {
     quantity = Math.min(quantity, FLEX_MAX_QTY);
   }
 
+  const giftPlan = giftPlanOf(type);
+  let gift: GiftDetails | null = null;
+  if (giftPlan) {
+    const checked = cleanGift(giftInput);
+    if (!checked.ok) return NextResponse.json({ error: checked.error }, { status: 400 });
+    gift = checked.gift;
+  }
+
   const userId = await getUserId(request);
   if (!userId) {
-    return NextResponse.json({ error: "Log in to upgrade." }, { status: 401 });
+    return NextResponse.json({ error: giftPlan ? "Log in to send a gift." : "Log in to upgrade." }, { status: 401 });
   }
 
   const stripe = getStripe();
@@ -148,9 +172,16 @@ export async function POST(request: Request) {
         { status: 409 }
       );
     }
-    // Every tier can add credits while retaining its existing feature access.
+    // Every tier can add credits while retaining its existing feature access. A gift is for someone
+    // else, so the buyer's own plan doesn't matter.
     email = data?.email ?? undefined;
     customerId = data?.stripe_customer_id ?? undefined;
+  }
+  // Until docs/migrations/20261125_gift_codes.sql is applied there is nowhere to keep the code, so a
+  // gift can't be paid for at all.
+  if (giftPlan) {
+    const { error } = await supabase.from("gift_codes").select("id").limit(1);
+    if (error) return NextResponse.json({ error: "Gifts aren't available yet. Check back soon." }, { status: 503 });
   }
 
   const origin = process.env.NEXT_PUBLIC_SITE_URL ?? new URL(request.url).origin;
@@ -161,8 +192,30 @@ export async function POST(request: Request) {
   const metadata: Record<string, string> = { user_id: userId, purchase: type, credit_plan_version: CREDIT_PLAN_VERSION };
   let lineItems: Stripe.Checkout.SessionCreateParams.LineItem[];
   let successUrl: string;
+  let cancelUrl = `${origin}/pricing?checkout=cancelled`;
+  // The recipient and note stay on the session, which the webhook reads; the invoice and payment don't carry them.
+  const giftMeta: Record<string, string> = {};
 
-  if (type === "flex_credits") {
+  if (giftPlan && gift) {
+    const offer = GIFT[giftPlan];
+    metadata.credit_amount = String(offer.credits);
+    metadata.gift_plan = giftPlan;
+    giftMeta.gift_to = gift.to;
+    if (gift.from) giftMeta.gift_from = gift.from;
+    if (gift.message) giftMeta.gift_message = gift.message;
+    lineItems = [{
+      quantity: 1,
+      price_data: {
+        currency: "usd", unit_amount: offer.cents,
+        product_data: {
+          name: offer.name,
+          description: `A gift for ${gift.to}: ${offer.credits} plan credits and ${offer.tools}. We email them a code that never expires.`,
+        },
+      },
+    }];
+    successUrl = `${origin}/gift?sent=${giftPlan}`;
+    cancelUrl = `${origin}/gift?checkout=cancelled`;
+  } else if (type === "flex_credits") {
     metadata.quantity = String(quantity);
     metadata.credit_amount = String(quantity);
     lineItems = [
@@ -182,10 +235,11 @@ export async function POST(request: Request) {
     ];
     successUrl = `${origin}/account/billing?credits=${quantity}`;
   } else {
-    const cfg = CFG[type];
+    const tier = type as keyof typeof CFG; // gifts and Flex were handled above
+    const cfg = CFG[tier];
     // Decided here, on the server's clock, and pinned in metadata (session, invoice and payment)
     // so the webhook grants and a refund takes back exactly what this checkout sold.
-    const offer = type === "recharge" ? { cents: RECHARGE_PRICE_CENTS, credits: RECHARGE_CREDITS, sale: false } : salePlan(type, now);
+    const offer = tier === "recharge" ? { cents: RECHARGE_PRICE_CENTS, credits: RECHARGE_CREDITS, sale: false } : salePlan(tier, now);
     metadata.credit_amount = String(offer.credits);
     if (offer.sale) metadata.sale = SALE.id;
     lineItems = [{
@@ -207,10 +261,10 @@ export async function POST(request: Request) {
       managed_payments: { enabled: false },
       line_items: lineItems,
       success_url: successUrl,
-      cancel_url: `${origin}/pricing?checkout=cancelled`,
+      cancel_url: cancelUrl,
       client_reference_id: userId,
       // The analytics ids stay on the session: the invoice and payment never carry them.
-      metadata: { ...metadata, ...tracking },
+      metadata: { ...metadata, ...tracking, ...giftMeta },
       // Generate a real paid invoice for the branded thank-you email.
       invoice_creation: { enabled: true, invoice_data: { metadata: { ...metadata, dormscape_email: "v1" }, footer: "Thank you for making room with dormscape. dormscape.us/contact" } },
       ...(!customerId ? { customer_creation: "always" as const } : {}),
@@ -221,6 +275,7 @@ export async function POST(request: Request) {
           ? { customer_email: email }
           : {}),
       // No discount codes on top of the Black Friday prices (owner, Nov 24); back on when the sale ends.
+      // Gifts follow the same rule.
       allow_promotion_codes: !isSale(now),
     });
 
