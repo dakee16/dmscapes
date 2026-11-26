@@ -283,19 +283,28 @@ assert.equal(productVisual({...testProduct,category:"throw",name:"Cotton knitted
   assert.equal(productVisual(hol("g","accent","9ft Pre-lit Christmas Garland with LED Lights, Battery Operated")).kind,"lights");
   assert.equal(productVisual(hol("g2","ambient_lighting","9ft Pre-lit Christmas Garland with LED Lights, Battery Operated")).kind,"lights");
   const plaid=productVisual(hol("r","rug","Buffalo Plaid Rug 3x5 Black and Red Checkered Washable"));assert.equal(plaid.kind,"rug");assert.equal(plaid.pattern,"check");
-  // In a real double: the tree stands on a desk and a set of pillow covers sits at the head of a bed.
+  // The real kit: six pieces in every tier, each modeled as what it is.
+  const KIND={rug:"rug",ambient_lighting:"lights",throw:"blanket",desk_accessories:"tree",accent:"pillow"};
+  for(const tier of ["budget","mid","premium"]){
+    const picks=productsFor("holiday",tier);
+    assert.equal(picks.length,6,`The ${tier} holiday kit has six pieces`);
+    for(const p of picks){const kind=productVisual(p).kind;assert.equal(kind,KIND[p.category]??(/garland/i.test(p.name)?"lights":"art"),`${p.id} models as ${kind}`);}
+  }
+  // In a real double, for each tier: the tree stands on a desk and the pillow covers sit at the head of a bed.
   const room={type:"double",occupants:2,lengthFt:15,widthFt:12,source:"manual"};
   const match=matchTemplate({length_ft:15,width_ft:12,occupants:2,room_type:room.type});
   const items=fitTemplateToRoom(match.template.furniture,match.template_id,15,12);
-  const pillows=hol("hol-test-pillows","accent","Christmas Pillow Covers 18x18 Set of 4 Buffalo Plaid",{width_ft:1.5,length_ft:1.5});
-  const kit=[...productsFor("holiday","mid"),pillows],synced=syncProductFurniture(items,kit,room);
-  assert.equal(syncProductFurniture(synced,kit,room),synced,"Holiday product synchronization must stabilize");
-  const tree=synced.find(f=>f.product_category==="desk_accessories"),treeHost=synced.find(f=>f.id===tree?.parent_id);
-  assert.equal(treeHost?.type,"desk","The tabletop tree stands on a desk");
-  const placed=synced.find(f=>f.product_id===pillows.id),bed=synced.find(f=>f.id===placed?.parent_id);
-  assert(bed&&["bed","bunk"].includes(studio.modelKind(bed))&&placed.elevation_ft>0,"Holiday pillows sit on a bed");
-  const pc=footprint(placed),bc=footprint(bed),a=bed.rotation_deg*Math.PI/180;
-  assert((pc.x+pc.w/2-bc.x-bc.w/2)*Math.sin(a)-(pc.y+pc.h/2-bc.y-bc.h/2)*Math.cos(a)>.5,"Holiday pillows sit at the head, clear of the throw at the foot");
+  for(const tier of ["budget","mid","premium"]){
+    const kit=productsFor("holiday",tier),synced=syncProductFurniture(items,kit,room);
+    assert.equal(syncProductFurniture(synced,kit,room),synced,"Holiday product synchronization must stabilize");
+    assert(layoutPenalty(synced,15,12)<15,"The holiday kit adds no floor collisions");
+    const tree=synced.find(f=>f.product_category==="desk_accessories"),treeHost=synced.find(f=>f.id===tree?.parent_id);
+    assert.equal(treeHost?.type,"desk","The tabletop tree stands on a desk");
+    const placed=synced.find(f=>f.product_category==="accent"),bed=synced.find(f=>f.id===placed?.parent_id);
+    assert(bed&&["bed","bunk"].includes(studio.modelKind(bed))&&placed.elevation_ft>0,"Holiday pillows sit on a bed");
+    const pc=footprint(placed),bc=footprint(bed),a=bed.rotation_deg*Math.PI/180;
+    assert((pc.x+pc.w/2-bc.x-bc.w/2)*Math.sin(a)-(pc.y+pc.h/2-bc.y-bc.h/2)*Math.cos(a)>.5,"Holiday pillows sit at the head, clear of the throw at the foot");
+  }
   // The owner's margin: every budget on the tape seeds a cart (the result page's walk) within $50 under it.
   const r=budgetRange("holiday");
   for(let b=r.min;b<=r.max;b+=r.step){

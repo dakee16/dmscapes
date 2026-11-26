@@ -9798,5 +9798,259 @@
     ],
     "description": "A 24 in pre-lit LED tabletop Christmas tree with a star on top and hanging ornaments.",
     "active": true
+  },
+  {
+    "id": "hol-budget-rug-01",
+    "name": "Black & Red Buffalo Plaid Rug, 3 × 5 ft",
+    "category": "rug",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "budget",
+    "price": 19.54,
+    "amazon_asin": "B0FM2FYDRV",
+    "affiliate_url": "https://www.amazon.com/dp/B0FM2FYDRV?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/811Y8-OlkpL._AC_SL1500_.jpg",
+    "width_ft": 3,
+    "length_ft": 5,
+    "height_ft": 0.03,
+    "color": "black red",
+    "rating": 4.6,
+    "review_count": 179,
+    "alternative_ids": [
+      "hol-mid-rug-01",
+      "hol-prem-rug-01"
+    ],
+    "description": "Washable cotton in a black and red check, 3 × 5 ft.",
+    "active": true
+  },
+  {
+    "id": "hol-mid-rug-01",
+    "name": "Red & Black Buffalo Check Rug, 3 × 5 ft",
+    "category": "rug",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "mid",
+    "price": 28.49,
+    "amazon_asin": "B0CGL8ZHCR",
+    "affiliate_url": "https://www.amazon.com/dp/B0CGL8ZHCR?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81rugbhpieL._AC_SL1500_.jpg",
+    "width_ft": 3,
+    "length_ft": 5,
+    "height_ft": 0.03,
+    "color": "red black",
+    "rating": 4.7,
+    "review_count": 5113,
+    "alternative_ids": [
+      "hol-budget-rug-01",
+      "hol-prem-rug-01"
+    ],
+    "description": "Machine-washable woven cotton in a red and black check, for indoors or out, 3 × 5 ft.",
+    "active": true
+  },
+  {
+    "id": "hol-prem-rug-01",
+    "name": "Mudder Buffalo Plaid Rug, 3 × 5 ft",
+    "category": "rug",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "premium",
+    "price": 29.99,
+    "amazon_asin": "B097XS4KJ5",
+    "affiliate_url": "https://www.amazon.com/dp/B097XS4KJ5?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81qsjUKwtCL._AC_SL1500_.jpg",
+    "width_ft": 2.95,
+    "length_ft": 4.92,
+    "height_ft": 0.03,
+    "color": "red black",
+    "rating": 4.7,
+    "review_count": 291,
+    "alternative_ids": [
+      "hol-budget-rug-01",
+      "hol-mid-rug-01"
+    ],
+    "description": "A woven black and red check, 59 × 35.4 in.",
+    "active": true
+  },
+  {
+    "id": "hol-budget-wall-01",
+    "name": "Red & White Knit Christmas Stockings, 18 in, 2 Pack",
+    "category": "wall_decor",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "budget",
+    "price": 12.99,
+    "amazon_asin": "B0HHMRG6TZ",
+    "affiliate_url": "https://www.amazon.com/dp/B0HHMRG6TZ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61qdKXl58gL._AC_SL1500_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": 1.5,
+    "color": "red white",
+    "rating": 4.7,
+    "review_count": 120,
+    "alternative_ids": [
+      "hol-mid-wall-01",
+      "hol-prem-wall-01"
+    ],
+    "description": "Two red and white knitted stockings, 18 in long.",
+    "active": true
+  },
+  {
+    "id": "hol-mid-wall-01",
+    "name": "Cable Knit Christmas Stockings, Vintage Red, 18 in, 2 Pack",
+    "category": "wall_decor",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "mid",
+    "price": 18.91,
+    "amazon_asin": "B0FP4TVXWG",
+    "affiliate_url": "https://www.amazon.com/dp/B0FP4TVXWG?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71Bj7-EREOL._AC_SL1500_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": 1.5,
+    "color": "red",
+    "rating": 4.5,
+    "review_count": 2,
+    "alternative_ids": [
+      "hol-budget-wall-01",
+      "hol-prem-wall-01"
+    ],
+    "description": "Two vintage red cable-knit stockings, 18 in long with a 12.5 in cuff.",
+    "active": true
+  },
+  {
+    "id": "hol-prem-wall-01",
+    "name": "Prelit Snow Flocked Christmas Garland with LED Lights and Timer, 9 ft",
+    "category": "wall_decor",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "premium",
+    "price": 42.49,
+    "amazon_asin": "B0C6YFC52G",
+    "affiliate_url": "https://www.amazon.com/dp/B0C6YFC52G?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/819pGbaDOQL._AC_SL1200_.jpg",
+    "width_ft": 9,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "warm white",
+    "rating": 4.2,
+    "review_count": 569,
+    "alternative_ids": [
+      "hol-budget-wall-01",
+      "hol-mid-wall-01"
+    ],
+    "description": "9 ft of flocked garland with ornaments and 50 warm white LEDs. Battery powered (3 AA, not included), with a 6-hour timer.",
+    "active": true
+  },
+  {
+    "id": "hol-budget-accent-01",
+    "name": "Red & Black Buffalo Plaid Christmas Pillow Covers, 18 × 18 in, Set of 4",
+    "category": "accent",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "budget",
+    "price": 9.99,
+    "amazon_asin": "B0FR23BMP8",
+    "affiliate_url": "https://www.amazon.com/dp/B0FR23BMP8?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81WcJifvbkL._AC_SL1500_.jpg",
+    "width_ft": 1.5,
+    "length_ft": 1.5,
+    "height_ft": null,
+    "color": "red black",
+    "rating": 4.8,
+    "review_count": 573,
+    "alternative_ids": [
+      "hol-mid-accent-01",
+      "hol-prem-accent-01",
+      "hol-prem-accent-02"
+    ],
+    "description": "Four red and black buffalo plaid linen covers, 18 × 18 in. Covers only, no inserts.",
+    "active": true
+  },
+  {
+    "id": "hol-mid-accent-01",
+    "name": "Merry Christmas Pillow Covers: Trees, Truck & Plaid, 18 × 18 in, Set of 4",
+    "category": "accent",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "mid",
+    "price": 9.99,
+    "amazon_asin": "B0CL5SFYJB",
+    "affiliate_url": "https://www.amazon.com/dp/B0CL5SFYJB?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71yezUlSR4L._AC_SL1000_.jpg",
+    "width_ft": 1.5,
+    "length_ft": 1.5,
+    "height_ft": null,
+    "color": "multicolor",
+    "rating": 4.6,
+    "review_count": 580,
+    "alternative_ids": [
+      "hol-budget-accent-01",
+      "hol-prem-accent-01",
+      "hol-prem-accent-02"
+    ],
+    "description": "Four Christmas covers with trees, a truck and buffalo plaid, 18 × 18 in.",
+    "active": true
+  },
+  {
+    "id": "hol-prem-accent-01",
+    "name": "Buffalo Plaid Christmas Throw Pillow Covers, 18 × 18 in, Set of 4",
+    "category": "accent",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "premium",
+    "price": 13.99,
+    "amazon_asin": "B0HHQY27R8",
+    "affiliate_url": "https://www.amazon.com/dp/B0HHQY27R8?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71u5ITjWhEL._AC_SL1000_.jpg",
+    "width_ft": 1.5,
+    "length_ft": 1.5,
+    "height_ft": null,
+    "color": "red black",
+    "rating": 4.7,
+    "review_count": 224,
+    "alternative_ids": [
+      "hol-budget-accent-01",
+      "hol-mid-accent-01",
+      "hol-prem-accent-02"
+    ],
+    "description": "Four red and black buffalo plaid covers, 18 × 18 in.",
+    "active": true
+  },
+  {
+    "id": "hol-prem-accent-02",
+    "name": "Gray Buffalo Plaid Snowman Pillow Covers, 18 × 18 in, Set of 4",
+    "category": "accent",
+    "style_tags": [
+      "holiday"
+    ],
+    "budget_tier": "premium",
+    "price": 14.99,
+    "amazon_asin": "B0FJXPMTCK",
+    "affiliate_url": "https://www.amazon.com/dp/B0FJXPMTCK?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81yPn7aXtJL._AC_SL1500_.jpg",
+    "width_ft": 1.5,
+    "length_ft": 1.5,
+    "height_ft": null,
+    "color": "gray",
+    "rating": 4.6,
+    "review_count": 304,
+    "alternative_ids": [
+      "hol-budget-accent-01",
+      "hol-mid-accent-01",
+      "hol-prem-accent-01"
+    ],
+    "description": "Four gray buffalo plaid covers with a snowman, 18 × 18 in.",
+    "active": true
   }
 ]

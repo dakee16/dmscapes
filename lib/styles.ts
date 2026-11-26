@@ -164,8 +164,8 @@ export const SEASONAL_STYLES: StyleMeta[] = [
     name: "Cozy Holiday",
     keywords: ["warm lights", "a little tree", "plaid", "holidays"],
     palette: ["#f6efe4", "#d7262e", "#2f5d45", "#16161d"],
-    // The room's normal boards; pine and cream textiles, red accents, warm lamplight, a red and green plaid rug.
-    room: { floor: "#DDBF92", floorAlt: "#D2B282", wood: "#C9A16E", woodDark: "#8E6A43", textile: "#2F5D45", textileAlt: "#F4EADC", accent: "#D7262E", glow: "#FFD49A", rug: { pattern: "plaid", base: "#B3262E", line: "#2F5D45" } },
+    // The room's normal boards; pine and cream textiles, red accents, warm lamplight, a red and black plaid rug.
+    room: { floor: "#DDBF92", floorAlt: "#D2B282", wood: "#C9A16E", woodDark: "#8E6A43", textile: "#2F5D45", textileAlt: "#F4EADC", accent: "#D7262E", glow: "#FFD49A", rug: { pattern: "plaid", base: "#B3262E", line: "#1C1622" } },
     line: "Warm string lights, a little tree on the desk, a plaid throw.",
   },
 ];
@@ -180,7 +180,7 @@ const SEASONAL_BUDGET: BudgetRange = { min: 25, max: 200, step: 5, marks: [50, 7
 // The holiday kit's tape runs from where its Essentials kit fits whole to $50 above its Premium kit, so every
 // budget on it gets a cart within $50 of it (tierForBudget picks the fullest kit that fits; check-studio checks it).
 // Move both ends with the kit's prices.
-const HOLIDAY_BUDGET: BudgetRange = { min: 50, max: 125, step: 5, marks: [60, 70, 80, 90, 100, 110, 120], quick: [50, 75, 100, 125], start: 75 };
+const HOLIDAY_BUDGET: BudgetRange = { min: 90, max: 210, step: 5, marks: [100, 120, 140, 160, 180, 200], quick: [90, 120, 165, 210], start: 120 };
 export const budgetRange = (id: StyleId | null | undefined): BudgetRange =>
   id === "holiday" ? HOLIDAY_BUDGET : id && isSeasonalStyle(id) ? SEASONAL_BUDGET : ROOM_BUDGET;
 

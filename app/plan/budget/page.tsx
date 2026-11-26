@@ -39,7 +39,7 @@ const FACTS = [
 // A seasonal kit decorates the room the student already has: what's in each, and the piece the planning screen puts on the desk.
 const KITS: Record<string, { pieces: string; desk: [category: string, label: string] }> = {
   spooky: { pieces: "Lights, wall decor, a throw, a rug and a pumpkin", desk: ["Desk Accessories", "PUMPKIN"] },
-  holiday: { pieces: "String lights, a tabletop tree and a throw", desk: ["Desk Accessories", "TREE"] },
+  holiday: { pieces: "String lights, stockings or a garland, a tabletop tree, a throw, pillows and a rug", desk: ["Desk Accessories", "TREE"] },
 };
 const seasonalFacts = (kit: string) => [
   { h: "Decor, not a whole new room", p: `${kit}, all sized to your floor plan.` },

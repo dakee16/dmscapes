@@ -83,7 +83,7 @@ export function productVisual(product: Product) {
     case "plant": kind = "plant"; break;
     case "clip_fan": kind = "fan"; break;
     // A seasonal kit's pillow covers and garland: listing titles name couches and sofas, so read them before the furniture words.
-    default: kind = pumpkin ? "pumpkin" : ghost ? "lantern" : tree ? "tree" : seasonal && /pillow/.test(text) ? "pillow" : seasonal && /garland/.test(text) ? "lights" : furnitureKindFromText(text) ?? (/plant|tree|monstera|pothos|eucalyptus/.test(text) ? "plant" : /candle|tea ?light/.test(text) ? "candle" : /disco|mirror ball/.test(text) ? "disco" : /pillow/.test(text) ? "pillow" : /book/.test(text) ? "books" : /projector|lamp|diffuser/.test(text) ? "lamp" : "decor");
+    default: kind = pumpkin ? "pumpkin" : ghost ? "lantern" : seasonal && /pillow/.test(text) ? "pillow" : tree ? "tree" : seasonal && /garland/.test(text) ? "lights" : furnitureKindFromText(text) ?? (/plant|tree|monstera|pothos|eucalyptus/.test(text) ? "plant" : /candle|tea ?light/.test(text) ? "candle" : /disco|mirror ball/.test(text) ? "disco" : /pillow/.test(text) ? "pillow" : /book/.test(text) ? "books" : /projector|lamp|diffuser/.test(text) ? "lamp" : "decor");
   }
   const variant = kind === "lamp"
     ? /mushroom/.test(text) ? "mushroom" : /banker/.test(text) ? "banker" : /lava/.test(text) ? "lava" : /salt/.test(text) ? "salt" : /projector/.test(text) ? "projector" : /light bar|under monitor/.test(text) ? "bar" : /swing|architect|gooseneck|clip|slim metal/.test(text) ? "task" : "shade"
