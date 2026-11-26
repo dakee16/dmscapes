@@ -192,6 +192,8 @@ export interface InvoiceItem {
   reversal: "refunded" | "partly_refunded" | "disputed" | "dispute_won" | null;
   /** What was taken back from the account ("Pro and 10 credits"), once it has been. */
   taken_back: string | null;
+  /** Set for a gift purchase: the plan, the masked recipient ("r***@example.com"), and where it stands. */
+  gift?: { plan: "Plus" | "Pro"; to: string | null; status: import("./gift").GiftStatus } | null;
 }
 export interface InvoicesResponse {
   invoices: InvoiceItem[];

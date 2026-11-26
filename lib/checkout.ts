@@ -2,6 +2,7 @@ import { getBrowserClient } from "@/lib/supabase-browser";
 import { checkoutAnalyticsIds, track } from "@/lib/analytics";
 import type { PurchaseType } from "@/lib/plan";
 import { isSale, SALE } from "@/lib/sale";
+import type { GiftDetails, GiftPlan } from "@/lib/gift";
 
 export type CheckoutResult =
   | { ok: true }
@@ -67,6 +68,32 @@ export async function startCheckout(
     return { ok: false, error: data.error ?? "Couldn't start checkout. Try again." };
   }
 
+  window.location.href = data.url;
+  return { ok: true };
+}
+
+/**
+ * Buy Plus or Pro as a gift (app/gift): the server prices it at the regular price and pins the recipient
+ * on the session. Same result shape as startCheckout; on success the browser goes to Stripe.
+ */
+export async function startGiftCheckout(plan: GiftPlan, gift: GiftDetails): Promise<CheckoutResult> {
+  const supabase = getBrowserClient();
+  const token = supabase ? (await supabase.auth.getSession()).data.session?.access_token : null;
+  track("gift_checkout_started", { plan });
+  let res: Response;
+  try {
+    res = await fetch("/api/checkout", {
+      method: "POST",
+      // Without a session the server answers 401 and the page asks the buyer to sign in.
+      headers: { ...(token ? { Authorization: `Bearer ${token}` } : {}), "Content-Type": "application/json" },
+      body: JSON.stringify({ type: `gift_${plan}`, gift, analytics: checkoutAnalyticsIds() }),
+    });
+  } catch {
+    return { ok: false, error: "Network hiccup. Try again in a moment." };
+  }
+  if (res.status === 401) return { ok: false, needsAuth: true };
+  const data = (await res.json().catch(() => ({}))) as { url?: string; error?: string };
+  if (!res.ok || !data.url) return { ok: false, error: data.error ?? "Couldn't start checkout. Try again." };
   window.location.href = data.url;
   return { ok: true };
 }

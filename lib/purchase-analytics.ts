@@ -11,12 +11,13 @@ const GA_ID = "G-DSRNH55V8B";
  * session ids; lib/checkout puts those ids in the session metadata only when
  * the buyer allows analytics. No id, key or GA4_API_SECRET skips that half.
  * Never throws, and gives up after a few seconds, so the webhook's answer to
- * Stripe never depends on it.
+ * Stripe never depends on it. A gift checkout also sends gift_purchased the same way.
  */
 export async function capturePurchase(
   session: Stripe.Checkout.Session,
   plan: string,
-  send: typeof fetch = fetch
+  send: typeof fetch = fetch,
+  event: "purchase_completed" | "gift_purchased" = "purchase_completed"
 ): Promise<void> {
   const md = session.metadata ?? {};
   const amount = (session.amount_total ?? 0) / 100;
@@ -31,9 +32,9 @@ export async function capturePurchase(
       signal: AbortSignal.timeout(3000),
     })
       .then((res) => {
-        if (!res.ok) console.warn("purchase_completed not captured:", new URL(url).host, res.status);
+        if (!res.ok) console.warn(`${event} not captured:`, new URL(url).host, res.status);
       })
-      .catch(() => console.warn("purchase_completed not captured:", new URL(url).host));
+      .catch(() => console.warn(`${event} not captured:`, new URL(url).host));
 
   const jobs: Promise<void>[] = [];
   const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
@@ -44,7 +45,7 @@ export async function capturePurchase(
     jobs.push(
       post(`${base}/i/v0/e/`, {
         api_key: key,
-        event: "purchase_completed",
+        event,
         distinct_id: md.ph_distinct_id,
         properties: { plan, amount, currency, ...sale },
       })
@@ -57,7 +58,7 @@ export async function capturePurchase(
         client_id: md.ga_client_id,
         events: [
           {
-            name: "purchase_completed",
+            name: event,
             params: {
               plan,
               value: amount,
