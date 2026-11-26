@@ -21,6 +21,8 @@ export async function capturePurchase(
   const md = session.metadata ?? {};
   const amount = (session.amount_total ?? 0) / 100;
   const currency = (session.currency ?? "usd").toUpperCase();
+  // Checkout pins sale: "bf2026" on purchases priced by the Black Friday offer (lib/sale.ts).
+  const sale = md.sale ? { sale: md.sale } : {};
   const post = (url: string, body: unknown) =>
     send(url, {
       method: "POST",
@@ -44,7 +46,7 @@ export async function capturePurchase(
         api_key: key,
         event: "purchase_completed",
         distinct_id: md.ph_distinct_id,
-        properties: { plan, amount, currency },
+        properties: { plan, amount, currency, ...sale },
       })
     );
   }
@@ -61,6 +63,7 @@ export async function capturePurchase(
               value: amount,
               currency,
               transaction_id: session.id,
+              ...sale,
               // Joins the buyer's GA session, so the key event keeps its source.
               ...(md.ga_session_id ? { session_id: md.ga_session_id } : {}),
               engagement_time_msec: 1,

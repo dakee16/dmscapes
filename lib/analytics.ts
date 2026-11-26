@@ -120,8 +120,8 @@ export type AnalyticsEvent =
 /** The GA4 property components/site/GoogleAnalytics loads. */
 export const GA_ID = "G-DSRNH55V8B";
 
-/** Pages kept out of analytics: workspace, invite and login URLs can carry room ids and invite tokens. */
-export const PRIVATE_PATH = /^\/(rooms|login|account|report)(\/|$)/;
+/** Pages kept out of analytics: workspace, invite, login and unsubscribe URLs can carry room ids and tokens. */
+export const PRIVATE_PATH = /^\/(rooms|login|account|report|unsubscribe)(\/|$)/;
 
 let initialized = false;
 

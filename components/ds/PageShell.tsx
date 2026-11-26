@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import SaleBanner from "@/components/site/SaleBanner";
 
 /**
  * Every redesigned content page: the .ds root (paper, Archivo, focus rings),
@@ -19,6 +20,7 @@ export default function PageShell({
 }) {
   return (
     <div className={`ds ${className}`}>
+      <SaleBanner />
       <Nav overlay={navOverlay} tone={navTone} />
       <main id="page-content" tabIndex={-1}>
         {children}

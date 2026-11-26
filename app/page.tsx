@@ -81,6 +81,7 @@ export default function Home() {
           softwareApplicationJsonLd(),
         ]}
       />
+      {/* No top strip here: the hero carries the Black Friday ticker (components/home/SaleMarquee). */}
       <Nav overlay cardOnScroll />
       <main id="page-content" tabIndex={-1}>
         <HomeHero schoolCount={SCHOOL_COUNT} roomCount={LAYOUT_COUNT} />

@@ -7,7 +7,10 @@ import { track } from "@/lib/analytics";
 import { ArrowRight, Check } from "@/components/ds/Icons";
 import { CloseButton } from "@/components/account-ui/parts";
 import d from "@/components/account-ui/Dialog.module.css";
-import { PRO_PRICE_USD, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS } from "@/lib/plan";
+import type { ReactNode } from "react";
+import { PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, SALE_BONUS_CREDITS } from "@/lib/plan";
+import { SALE_OFFER } from "@/lib/sale";
+import { PlanCredits, PlanPrice, SaleSwap } from "@/components/site/Sale";
 
 // Brief, satisfying confirmation shown when a buyer returns from Stripe Checkout
 // for Plus or Pro. Stripe redirects to /account?upgraded=plus|pro (see
@@ -17,12 +20,20 @@ import { PRO_PRICE_USD, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS } from "@/lib/
 // read-only "you're all set", never a form.
 type Tier = "plus" | "pro";
 
-const COPY: Record<Tier, { title: string; blurb: string; perks: string[] }> = {
+/** The allowance, with the Black Friday bonus during the sale (buyers return here right after paying). */
+const credits = (tier: Tier, base: number) => (
+  <SaleSwap
+    regular={`${base} included plan credits, with free saving`}
+    sale={`${SALE_OFFER[tier].credits} plan credits, including ${SALE_BONUS_CREDITS} Black Friday bonus credits, with free saving`}
+  />
+);
+
+const COPY: Record<Tier, { title: string; blurb: string; perks: ReactNode[] }> = {
   plus: {
     title: "You're on Plus.",
     blurb: "Every preset vibe and your Plus tools are unlocked, permanently.",
     perks: [
-      `${PLUS_INITIAL_CREDITS} included plan credits, with free saving`,
+      credits("plus", PLUS_INITIAL_CREDITS),
       "All 9 vibes unlocked",
       "PDF + PNG export and side-by-side compare",
       "Priority on your add-my-school requests",
@@ -32,7 +43,7 @@ const COPY: Record<Tier, { title: string; blurb: string; perks: string[] }> = {
     title: "You're on Pro.",
     blurb: "Your Pro tools are unlocked. Generate rooms with your plan credits, then keep editing and saving for free.",
     perks: [
-      `${PRO_INITIAL_CREDITS} included plan credits, with free saving`,
+      credits("pro", PRO_INITIAL_CREDITS),
       "3D Room Builder and live 3D Room Studio",
       "Host one shared room with up to four people",
       "Create your own vibe",
@@ -106,8 +117,8 @@ export default function PurchaseThankYou() {
         <p className={d.body}>{copy.blurb}</p>
 
         <ul className={d.perks}>
-          {copy.perks.map((perk) => (
-            <li key={perk}>
+          {copy.perks.map((perk, i) => (
+            <li key={i}>
               <Check size={18} color="var(--ds-blue)" />
               <span>{perk}</span>
             </li>
@@ -116,7 +127,7 @@ export default function PurchaseThankYou() {
 
         {tier === "plus" && (
           <p className={d.small}>
-            Pro includes {PRO_INITIAL_CREDITS} plan credits and 3D tools for ${PRO_PRICE_USD.toFixed(2)}, one time.
+            Pro includes <PlanCredits tier="pro" /> and 3D tools for <PlanPrice tier="pro" />, one time.
           </p>
         )}
 

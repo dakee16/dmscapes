@@ -22,11 +22,10 @@ import {
   planOf,
   FLEX_CREDIT_PRICE_USD,
   PLUS_INITIAL_CREDITS,
-  PLUS_PRICE_USD,
-  PRO_PRICE_USD,
   REFERRAL_BONUS_DESIGNS,
   REFERRAL_MONTHLY_CAP,
 } from "@/lib/plan";
+import { salePlan } from "@/lib/sale";
 import type { InvoiceItem, InvoicesResponse } from "@/lib/api-types";
 import c from "@/components/account/AccountPage.module.css";
 
@@ -87,7 +86,12 @@ function PlanCard({ profile }: { profile: Profile }) {
   const { openUpgrade } = useUpgrade();
   const tier = planOf(profile.plan);
   const purchasedAt = profile.plan_purchased_at ? fmtDate(profile.plan_purchased_at, { year: "numeric", month: "short", day: "numeric" }) : null;
-  const price = tier === "pro" ? PRO_PRICE_USD : tier === "plus" ? PLUS_PRICE_USD : null;
+  // What the plan cost when bought: the Black Friday price for a purchase inside the sale (lib/sale.ts).
+  // ponytail: dated by the grant (webhook) time at list price, so a promotion code or a checkout paid
+  // just as the window closed reads differently; the invoices below carry the exact amount.
+  const price = (tier === "pro" || tier === "plus") && profile.plan_purchased_at
+    ? salePlan(tier, Date.parse(profile.plan_purchased_at)).cents / 100
+    : null;
   // Plans are one-time purchases: no renewal. A price only shows when the plan was bought (a creator code unlocks Plus free).
   const meta =
     tier === "flex"
