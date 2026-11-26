@@ -19,6 +19,26 @@
   background-size: 24px 24px;
 }
 
+/* Holiday season (lib/season.ts): a warm lamplight glow down from the lights over the plan paper. */
+:global(:root[data-season="holiday"]) .paper {
+  background-image:
+    linear-gradient(rgba(36, 73, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 73, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(180deg, color-mix(in srgb, var(--ds-studio) 26%, var(--ds-plan)), var(--ds-plan) 720px);
+  background-size: 24px 24px, 24px 24px, auto;
+}
+
+/* Holiday: Christmas lights strung across the top of the hero, just under the header, cropped to its
+   width (SeasonLights "festoon"). Under the copy, never over the room call; the bulbs twinkle only with
+   motion on (components/season/Season.module.css). Hidden unless <html data-season="holiday">. */
+.lights { position: absolute; left: 0; right: 0; top: calc(var(--ds-nav-h) + 2px); z-index: 2; pointer-events: none; }
+.lights > svg { height: 38px; overflow: hidden; }
+/* The Black Friday ticker (data-sale) sits in the same spot under the nav: while it shows, it replaces the lights. */
+:global(:root[data-sale]) .lights { display: none; }
+@media (max-width: 560px) {
+  .lights > svg { height: 30px; }
+}
+
 /* ---------- Copy ---------- */
 .copy {
   position: relative;
@@ -29,6 +49,30 @@
   text-align: center;
 }
 .chip { margin-bottom: 18px; }
+/* The holiday chip, in a candy-cane border: hidden unless <html data-season="holiday"> (app/ds.css). */
+.seasonChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-bottom: 18px;
+  padding: 0 16px 0 9px;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background:
+    linear-gradient(var(--ds-ink), var(--ds-ink)) padding-box,
+    repeating-linear-gradient(-45deg, var(--ds-red) 0 6px, #fff 6px 12px) border-box;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.seasonChip:hover { color: #fff; text-decoration: none; }
+.seasonFree { color: var(--ds-yellow); }
+@media (max-width: 560px) {
+  .seasonChip { gap: 8px; padding: 0 14px 0 10px; font-size: 14px; }
+  .seasonArrow { display: none; }
+}
 .narrow { display: none; }
 .h1 { margin: 16px 0 0; font-weight: 400; }
 .l1 { display: block; font-size: clamp(48px, 6.3vw, 90px); line-height: 0.94; }

@@ -91,7 +91,10 @@ export function productById(id: string): Product | undefined {
 
 /** Budget slider value -> catalog tier. Tier room targets: 200-400 / 400-700 / 700-1500. */
 export function tierForBudget(budget: number, style?: StyleId | null): BudgetTier {
-  // A seasonal kit ($25-$200): up to $60 Essentials, up to $110 Upgraded, above that Premium.
+  // The holiday kit: the fullest tier whose whole kit fits the budget. Its tape (lib/styles budgetRange) keeps
+  // that within $50 of every budget on it, the owner's margin (scripts/check-studio.cjs checks each step).
+  if (style === "holiday") return (["premium", "mid"] as const).find((t) => totalFor(productsFor(style, t)) <= budget) ?? "budget";
+  // Any other seasonal kit ($25-$200): up to $60 Essentials, up to $110 Upgraded, above that Premium.
   if (style && isSeasonalStyle(style)) return budget <= 60 ? "budget" : budget <= 110 ? "mid" : "premium";
   // Tuned so a budget lands a cart WITHIN ~\$50 of it, not hundreds under. The
   // auto-list is one product per category and the result-page seeder trims to

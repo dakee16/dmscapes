@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { matchTemplate } from "@/templates/template-matcher";
 import { productsFor, productById, tierForBudget, totalFor, extrasFor, isExtraCategory, unfilledSlots } from "@/lib/catalog";
-import { PumpkinMark } from "@/components/season/SeasonMarks";
+import { OrnamentMark, PumpkinMark } from "@/components/season/SeasonMarks";
 import { seasonOn } from "@/lib/season";
 import { isPlusStyle, isSeasonalStyle } from "@/lib/styles";
 import { useAuth } from "@/lib/auth-context";
@@ -153,7 +153,7 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
       openUpgrade("style");
       router.replace("/plan/style");
     }
-    // A free Spooky Season plan opens only that vibe: any other vibe goes back
+    // A free seasonal plan opens only that vibe: any other vibe goes back
     // through the normal credit gate on the budget step.
     else if (!workspace && !manual && planning.seasonalFree && !isSeasonalStyle(style)) {
       usePlannerStore.getState().updatePlanning({ seasonalFree: false });
@@ -482,7 +482,9 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
           unplacedIds={unplacedItemIds} onPlace={placeCustomItem}
           ownership={workspace?<ShoppingOwnership products={allCartProducts}/>:undefined}
           tip={college?.id && hasHallFinder(college.id) ? <ResultTip collegeId={college.id} short={shortName({ id: college.id, name: college.name })} /> : undefined}
-          note={isSeasonalStyle(style) && seasonOn() ? <><PumpkinMark size={24} /><p><strong>Halloween is Saturday.</strong> Check delivery dates on Amazon before you order.</p></> : undefined}
+          note={!seasonOn(style) ? undefined : style === "spooky"
+            ? <><PumpkinMark size={24} /><p><strong>Halloween is Saturday.</strong> Check delivery dates on Amazon before you order.</p></>
+            : <><OrnamentMark size={24} /><p><strong>Ordering for the holidays?</strong> Check delivery dates on Amazon before you order.</p></>}
           extras={regen}/>}
       />
     </BuyGateProvider>

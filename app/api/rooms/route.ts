@@ -114,7 +114,7 @@ export async function POST(request: Request) {
 
   const style = STYLE_IDS.includes(body.style) ? body.style : null;
   const budget =
-    // Each style's own floor: $25 for a seasonal kit, $200 for a room.
+    // Each style's own floor (lib/styles budgetRange): a seasonal kit's, or $200 for a room.
     typeof body.budget === "number" && body.budget >= budgetRange(style).min && body.budget <= 1500
       ? body.budget
       : null;

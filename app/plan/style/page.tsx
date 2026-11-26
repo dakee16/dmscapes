@@ -7,11 +7,12 @@ import CreateVibeBanner from "@/components/planner/CreateVibeBanner";
 import RoomCard, { RoomLine } from "@/components/plan-steps/RoomCard";
 import PlusCard from "@/components/plan-steps/PlusCard";
 import SpookyCard from "@/components/plan-steps/SpookyCard";
+import HolidayCard from "@/components/plan-steps/HolidayCard";
 import spookyCss from "@/components/plan-steps/SpookyCard.module.css";
 import { ArrowRight } from "@/components/ds/Icons";
 import { ChevronLeft } from "@/components/plan-steps/icons";
 import { track } from "@/lib/analytics";
-import { STYLES, isPlusStyle } from "@/lib/styles";
+import { STYLES, isPlusStyle, isSeasonalStyle } from "@/lib/styles";
 import { CUSTOM_VIBE_ENABLED } from "@/lib/custom-vibe";
 import { usePlannerStore } from "@/lib/store";
 import { useAuth } from "@/lib/auth-context";
@@ -43,11 +44,11 @@ export default function PlanStylePage() {
     if (mounted && !room) router.replace("/plan");
   }, [mounted, room, router]);
 
-  // The Spooky Season vibe is offered only inside its window (lib/season.ts):
-  // after that a leftover selection is cleared, so no new Spooky plan starts.
-  const spooky = mounted && seasonOn();
+  // A seasonal vibe is offered only inside its own season (lib/season.ts):
+  // after that a leftover selection is cleared, so no new seasonal plan starts.
+  const spooky = mounted && seasonOn("spooky"), holiday = mounted && seasonOn("holiday");
   useEffect(() => {
-    if (mounted && style === "spooky" && !seasonOn()) usePlannerStore.setState({ style: null });
+    if (mounted && style && isSeasonalStyle(style) && !seasonOn(style)) usePlannerStore.setState({ style: null });
   }, [mounted, style]);
 
   function handleStyle(id: StyleId) {
@@ -104,12 +105,9 @@ export default function PlanStylePage() {
           <RoomLine variant="pill" />
         </div>
 
-        {spooky && (
-          <>
-            <SpookyCard selected={style === "spooky"} onSelect={() => handleStyle("spooky")} />
-            <p className={spookyCss.after}>Or any time of year</p>
-          </>
-        )}
+        {spooky && <SpookyCard selected={style === "spooky"} onSelect={() => handleStyle("spooky")} />}
+        {holiday && <HolidayCard selected={style === "holiday"} onSelect={() => handleStyle("holiday")} />}
+        {(spooky || holiday) && <p className={spookyCss.after}>Or any time of year</p>}
 
         <div role="group" aria-label="Vibes" className={css.grid}>
           {STYLES.map((s) => (

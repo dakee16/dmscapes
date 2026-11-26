@@ -15,7 +15,7 @@ import { getSchool } from "@/lib/schools";
 import { usePlannerStore } from "@/lib/store";
 import { RECOVERY_KEY } from "@/lib/planner-storage";
 import type { RoomSummary, SchoolSummary, SelectedRoom } from "@/lib/types";
-import { seasonOn } from "@/lib/season";
+import { currentSeason } from "@/lib/season";
 import css from "@/components/plan-steps/Page.module.css";
 
 let flowTracked = false;
@@ -104,10 +104,11 @@ export default function PlanSelectPage() {
       return;
     }
     setReady(true);
-    // /plan?vibe=spooky (the hero chip, tape band and 404): preselect the seasonal vibe while it runs.
-    if (params.get("vibe") === "spooky" && seasonOn() && usePlannerStore.getState().style !== "spooky") {
-      usePlannerStore.getState().setStyle("spooky");
-      track("style_selected", { style: "spooky", source: "link" });
+    // /plan?vibe=holiday (the hero chip and 404): preselect the season's own vibe while it runs.
+    const seasonal = currentSeason()?.style;
+    if (seasonal && params.get("vibe") === seasonal && usePlannerStore.getState().style !== seasonal) {
+      usePlannerStore.getState().setStyle(seasonal);
+      track("style_selected", { style: seasonal, source: "link" });
     }
     const view = params.get("view");
     if (view === "2d" || view === "3d") usePlannerStore.getState().setPlannerView(view);

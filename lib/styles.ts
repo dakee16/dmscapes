@@ -30,6 +30,8 @@ export interface StyleMeta {
   plus?: boolean;
   /** The Room view theme; styles without one derive it from `palette`. */
   room?: RoomTheme;
+  /** A seasonal kit's one-line pitch (the room card and planning screen). */
+  line?: string;
 }
 
 /** Blend two #rrggbb colours: t = 0 gives a, 1 gives b. */
@@ -145,7 +147,7 @@ export const RETIRED_STYLES: StyleMeta[] = [
 // Limited seasonal kits: decor for the room the student already lives in, not
 // a whole new room. Kept out of STYLES so the picker grid, the homepage
 // showcase, the "All 9 vibes" count and Plus gating don't change; the vibe
-// step shows a wide card for one only inside its window (lib/season.ts).
+// step shows a wide card for one only inside its season (lib/season.ts).
 // Listed in ALL_STYLES, so saved designs keep opening after the season ends.
 export const SEASONAL_STYLES: StyleMeta[] = [
   {
@@ -155,6 +157,16 @@ export const SEASONAL_STYLES: StyleMeta[] = [
     palette: ["#fbe3cc", "#ff7a1a", "#4b2a6b", "#16161d"],
     // The room's normal boards; grape and charcoal textiles, pumpkin accents, warm lamplight, a black and orange striped rug.
     room: { floor: "#DDBF92", floorAlt: "#D2B282", wood: "#C9A16E", woodDark: "#8E6A43", textile: "#4B2A6B", textileAlt: "#2E2A33", accent: "#FF7A1A", glow: "#FFB066", rug: { pattern: "stripes", base: "#1C1622", line: "#FF7A1A" } },
+    line: "Orange glow, bats on the wall, a pumpkin on the desk.",
+  },
+  {
+    id: "holiday",
+    name: "Cozy Holiday",
+    keywords: ["warm lights", "a little tree", "plaid", "holidays"],
+    palette: ["#f6efe4", "#d7262e", "#2f5d45", "#16161d"],
+    // The room's normal boards; pine and cream textiles, red accents, warm lamplight, a red and black plaid rug.
+    room: { floor: "#DDBF92", floorAlt: "#D2B282", wood: "#C9A16E", woodDark: "#8E6A43", textile: "#2F5D45", textileAlt: "#F4EADC", accent: "#D7262E", glow: "#FFD49A", rug: { pattern: "plaid", base: "#B3262E", line: "#1C1622" } },
+    line: "Warm string lights, a little tree on the desk, a plaid throw.",
   },
 ];
 
@@ -165,7 +177,12 @@ export interface BudgetRange { min: number; max: number; step: number; marks: nu
 const ROOM_BUDGET: BudgetRange = { min: 200, max: 1500, step: 50, marks: [200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400], quick: [300, 500, 650, 1000, 1500], start: 500 };
 // A seasonal kit is a handful of decor pieces, so its tape runs $25 to $200.
 const SEASONAL_BUDGET: BudgetRange = { min: 25, max: 200, step: 5, marks: [50, 75, 100, 125, 150, 175], quick: [40, 75, 120, 200], start: 75 };
-export const budgetRange = (id: StyleId | null | undefined): BudgetRange => (id && isSeasonalStyle(id) ? SEASONAL_BUDGET : ROOM_BUDGET);
+// The holiday kit's tape runs from where its Essentials kit fits whole to $50 above its Premium kit, so every
+// budget on it gets a cart within $50 of it (tierForBudget picks the fullest kit that fits; check-studio checks it).
+// Move both ends with the kit's prices.
+const HOLIDAY_BUDGET: BudgetRange = { min: 90, max: 210, step: 5, marks: [100, 120, 140, 160, 180, 200], quick: [90, 120, 165, 210], start: 120 };
+export const budgetRange = (id: StyleId | null | undefined): BudgetRange =>
+  id === "holiday" ? HOLIDAY_BUDGET : id && isSeasonalStyle(id) ? SEASONAL_BUDGET : ROOM_BUDGET;
 
 // "Create your own vibe" (Pro). A pseudo-style: resolvable for display, saves,
 // share links, and comparison, but deliberately NOT in STYLES so it never

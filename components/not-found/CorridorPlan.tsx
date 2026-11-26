@@ -1,4 +1,4 @@
-import { GhostMark } from "@/components/season/SeasonMarks";
+import { GhostMark, TreeMark } from "@/components/season/SeasonMarks";
 import SeasonLink from "@/components/season/SeasonLink";
 import css from "./NotFound.module.css";
 
@@ -25,7 +25,9 @@ const at = (x: number, y: number) =>
  * Floor 4, east wing: rooms 401–407 drawn on plan paper, with a dashed pink
  * outline where 404 should be (design-handoff/designs/site/NotFound.dc.html).
  * Purely decorative. In the Halloween season the outline turns pumpkin and
- * the room is "Probably haunted." (design-handoff/halloween/LoaderAnd404.dc.html).
+ * the room is "Probably haunted." (design-handoff/halloween/LoaderAnd404.dc.html);
+ * in the holiday season it turns red, a Christmas tree moves in and the room
+ * is "Home for the holidays."
  */
 export default function CorridorPlan() {
   return (
@@ -84,8 +86,13 @@ export default function CorridorPlan() {
       {/* Halloween: a ghost moves in. The plan is aria-hidden, so the tag is a
           pointer-only link; the page's own buttons stay the keyboard route. */}
       <GhostMark className={css.ghost} />
-      <SeasonLink where="404" tabIndex={-1} className={css.haunted} style={box(226, 478, 156, 34)} data-season-show="">
+      <SeasonLink vibe="spooky" where="404" tabIndex={-1} className={css.haunted} style={box(226, 478, 156, 34)} data-season-show="halloween">
         Probably haunted.
+      </SeasonLink>
+      {/* Holiday: the missing room has gone home for the holidays, and left its tree. */}
+      <TreeMark className={css.tree} />
+      <SeasonLink vibe="holiday" where="404" tabIndex={-1} className={`${css.haunted} ${css.holidayTag}`} style={box(204, 478, 200, 34)} data-season-show="holiday">
+        Home for the holidays.
       </SeasonLink>
 
       {/* You are here */}

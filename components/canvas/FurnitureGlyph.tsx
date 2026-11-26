@@ -16,9 +16,9 @@ const METAL = "#E9EEF4";
 const stripes = (n: number) => Array.from({ length: n }, (_, i) => (i + 1) / (n + 1));
 const bulbs = (n: number) => Array.from({ length: n }, (_, i) => (i + .5) / n);
 
-/** The Halloween pieces lib/product-model picks out: what the glyphs need, as plain props so caching still works. */
+/** The seasonal pieces lib/product-model picks out: what the glyphs need, as plain props so caching still works. */
 interface Seasonal {
-  /** "pumpkin", "ghost", "lantern" or "bats". */
+  /** "pumpkin", "ghost", "lantern", "bats" or "tree". */
   shape?: string;
   /** Pieces in a multi-pack (six jack-o'-lanterns), drawn as a cluster. */
   count?: number;
@@ -63,6 +63,21 @@ function seasonalArt({ shape, count = 1, tint }: Seasonal, w: number, h: number)
   if (shape === "bats") {
     // Flat on the wall, so from above only their edge shows: a dark strip.
     return <Rect width={w} height={h} fill="#1C1622" cornerRadius={1} />;
+  }
+  if (shape === "tree") {
+    // A tabletop tree from above: two tiers of branch tips round a star, with a few lit bulbs.
+    const r = s / 2, cx = w / 2, cy = h / 2;
+    const tips = (n: number, out: number, inner: number, turn = 0) => Array.from({ length: n * 2 }, (_, i) => {
+      const a = turn + i * Math.PI / n, d = i % 2 ? inner : out;
+      return [cx + Math.cos(a) * d, cy + Math.sin(a) * d];
+    }).flat();
+    return <>
+      <Line points={tips(9, r, r * .78)} closed fill="#2F5D45" stroke="#22432F" strokeWidth={.8} />
+      <Line points={tips(7, r * .64, r * .48, .3)} closed fill="#3C7552" />
+      {[0, 1, 2, 3, 4].map(i => { const a = i * 1.26 + .4, d = r * (i % 2 ? .42 : .7);
+        return <Circle key={i} x={cx + Math.cos(a) * d} y={cy + Math.sin(a) * d} radius={Math.max(.8, r * .07)} fill="#FFD49A" />; })}
+      <Circle x={cx} y={cy} radius={Math.max(1, r * .14)} fill="#FFD83D" stroke="#C99A06" strokeWidth={.6} />
+    </>;
   }
   return null;
 }
@@ -466,7 +481,7 @@ export const RoomGlyph = memo(function RoomGlyph({ item, scale, theme, dressed =
   </>;
   let art: ReactNode = seasonalArt(seasonal, w, h);
   // A single round piece casts the usual soft shadow, in its own colour (a cluster's pieces are too small to bother).
-  const castFill = seasonal.shape === "pumpkin" ? seasonal.tint ?? "#E8782A" : seasonal.shape === "ghost" ? "#FFFFFF" : seasonal.shape === "lantern" ? "#2B2C3A" : null;
+  const castFill = seasonal.shape === "pumpkin" ? seasonal.tint ?? "#E8782A" : seasonal.shape === "ghost" ? "#FFFFFF" : seasonal.shape === "lantern" ? "#2B2C3A" : seasonal.shape === "tree" ? "#2F5D45" : null;
   if (art && castFill && (seasonal.count ?? 1) < 2) art = <>{casterRound(castFill, s / 2 * .9)}{art}</>;
   if (!art) switch (blanket ? "throw" : item.type) {
     case "bed": {

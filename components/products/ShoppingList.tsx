@@ -55,7 +55,7 @@ export default function ShoppingList({
   onPlace: (id: string) => void;
   extras?: ReactNode;
   ownership?: ReactNode;
-  /** A short note above the list (the Spooky kit's delivery reminder). */
+  /** A short note above the list (a seasonal kit's delivery reminder). */
   note?: ReactNode;
   /** A dismissible tip above the list (Hall Finder's "Still choosing a hall?"). */
   tip?: ReactNode;

@@ -68,12 +68,16 @@
   }
 }
 
-/* ---------- Halloween season ----------
-   lib/season.ts sets <html data-season="halloween"> before paint. Season
-   pieces carry data-season-show (hidden otherwise); anything they replace
-   carries data-season-hide. Without the attribute nothing here applies. */
-:root:not([data-season="halloween"]) [data-season-show] { display: none !important; }
-:root[data-season="halloween"] [data-season-hide] { display: none !important; }
+/* ---------- Seasons ----------
+   lib/season.ts sets <html data-season="halloween|holiday"> before paint. A
+   season's pieces carry data-season-show="<its id>" (hidden otherwise);
+   anything they replace carries data-season-hide (hidden in any season).
+   Without the attribute nothing here applies. */
+:root:not([data-season="halloween"]) [data-season-show="halloween"],
+:root:not([data-season="holiday"]) [data-season-show="holiday"] { display: none !important; }
+:root[data-season] [data-season-hide] { display: none !important; }
+/* Holiday: every page's ground warms a shade toward cream (the hero adds a lamplight glow). */
+:root[data-season="holiday"] { --ds-paper: color-mix(in srgb, var(--ds-warm) 55%, var(--ds-plan)); }
 
 /* ---------- Black Friday sale ----------
    lib/sale.ts sets <html data-sale="bf2026"> inside the window (or with ?sale=on).
