@@ -36,6 +36,15 @@ const REVERSAL: Record<NonNullable<InvoiceItem["reversal"]>, string> = {
   dispute_won: "Dispute won",
 };
 
+// A gift purchase's status (app/api/account/invoices). Refunds show here, so the "Refunded" chip isn't repeated.
+const GIFT_STATUS: Record<NonNullable<InvoiceItem["gift"]>["status"], [label: string, tone: "green" | "warn" | ""]> = {
+  sending: ["Gift sending", ""],
+  sent: ["Gift sent", ""],
+  redeemed: ["Redeemed", "green"],
+  voided: ["Voided", "warn"],
+  refunded: ["Refunded", "warn"],
+};
+
 function money(amount: number, currency: string): string {
   try {
     return new Intl.NumberFormat("en-US", { style: "currency", currency: currency.toUpperCase() }).format(amount / 100);
@@ -330,16 +339,22 @@ export default function BillingPage() {
               ) : invoices.length > 0 ? (
                 <ul className={c.purchases} aria-label="Purchases">
                   {invoices.map((inv) => {
-                    const name = inv.description ?? "dormscape purchase";
+                    const name = inv.gift
+                      ? `Gift: ${inv.gift.plan}${inv.gift.to ? ` for ${inv.gift.to}` : ""}`
+                      : inv.description ?? "dormscape purchase";
+                    const [giftLabel, giftTone] = inv.gift ? GIFT_STATUS[inv.gift.status] : ["", ""];
                     return (
                       <li key={inv.id}>
                         <div>
                           <span className={c.pName}>{name}</span>
                           <span className={c.pMeta}>
                             {fmtDate(inv.created, { year: "numeric", month: "short", day: "numeric" })}
+                            {inv.gift && <span className={`${c.chip} ${giftTone ? c[giftTone] : ""}`}>{giftLabel}</span>}
                             {inv.reversal ? (
-                              <span className={`${c.chip} ${inv.reversal === "dispute_won" ? c.green : c.warn}`}>{REVERSAL[inv.reversal]}</span>
-                            ) : (
+                              inv.gift && inv.reversal === "refunded" ? null : (
+                                <span className={`${c.chip} ${inv.reversal === "dispute_won" ? c.green : c.warn}`}>{REVERSAL[inv.reversal]}</span>
+                              )
+                            ) : inv.gift ? null : (
                               <span className={`${c.chip} ${inv.status === "succeeded" ? c.green : ""}`}>{inv.status === "succeeded" ? "Paid" : inv.status}</span>
                             )}
                           </span>
