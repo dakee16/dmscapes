@@ -3,8 +3,9 @@ import type { getServiceClient } from "./supabase-server";
 import { sendEmail, type SendArgs } from "./email";
 import { purchaseInvoiceEmail } from "./email-templates";
 import { PURCHASE_TYPES, type PurchaseType } from "./plan";
+import { giftPlanOf } from "./gift";
 
-const names: Record<PurchaseType, string> = { plus: "dormscape Plus", pro: "dormscape Pro", recharge: "dormscape Plus recharge", flex_credits: "dormscape Flex credits" };
+const names: Record<PurchaseType, string> = { plus: "dormscape Plus", pro: "dormscape Pro", recharge: "dormscape Plus recharge", flex_credits: "dormscape Flex credits", gift_plus: "dormscape Plus", gift_pro: "dormscape Pro" };
 
 /** Separate from credit fulfillment: invoice events may arrive before checkout events.
  * Freeze the first payload so every retry has an identical Resend idempotency body. */
@@ -27,7 +28,7 @@ export async function deliverPurchaseInvoice(db: NonNullable<ReturnType<typeof g
     payload = {
       to: invoice.customer_email,
       from: process.env.CONTACT_FROM_EMAIL || "dormscape <contact@dormscape.us>",
-      ...purchaseInvoiceEmail({ tier: names[purchase], credits, invoiceNumber: invoice.number || invoice.id, amount, date, url: invoice.hosted_invoice_url }),
+      ...purchaseInvoiceEmail({ tier: names[purchase], credits, invoiceNumber: invoice.number || invoice.id, amount, date, url: invoice.hosted_invoice_url, gift: giftPlanOf(purchase) !== null }),
       attachments: [{ filename: `dormscape-invoice-${(invoice.number || invoice.id).replace(/[^a-zA-Z0-9_-]/g, "-")}.pdf`, path: invoice.invoice_pdf }],
       idempotencyKey: `purchase-invoice/${invoice.id}`,
     };

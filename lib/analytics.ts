@@ -113,6 +113,10 @@ export type AnalyticsEvent =
   | "creator_code_failed"
   | "creator_applied"
   | "profile_photo_set"
+  // Gift a plan (gift_purchased is sent by the Stripe webhook, lib/purchase-analytics)
+  | "gift_checkout_started"
+  | "gift_redeemed"
+  | "gift_redeem_failed"
   // My Room live collaboration
   | "workspace_ping_sent"
   | "workspace_comment_started";
