@@ -186,7 +186,7 @@ export default function GiftForm() {
       )}
 
       <button type="submit" className={`ds-btn ds-btn--blue ${css.submit}`} disabled={busy || loading}>
-        {busy ? "Opening checkout…" : user || loading ? `Continue to payment · ${usd(plan.price)}` : "Sign in to send a gift"}
+        {busy ? "Opening checkout…" : user || loading ? `Continue · ${usd(plan.price)}` : "Sign in to send a gift"}
       </button>
       <p className={css.fine}>One-time payment, secured by Stripe. You get the receipt; they get the gift.</p>
     </form>

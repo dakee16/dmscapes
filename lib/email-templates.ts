@@ -71,7 +71,7 @@ export function giftEmail({ plan, credits, from, message, code, url }: {
     + `<p style="margin:0 0 20px;font-size:14px;line-height:1.7;color:#62677a">One credit makes one room plan. Saving and editing never use one.</p>`
     + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px dashed #304bff"><tr><td style="padding:18px 20px">`
     + `<p style="margin:0 0 6px;color:#304bff;font:700 11px/1.6 'Courier New',monospace;letter-spacing:1px;text-transform:uppercase">Your gift code</p>`
-    + `<p style="margin:0 0 6px;font:700 24px/1.3 'Courier New',monospace;letter-spacing:2px;color:#17172b">${escapeEmail(code)}</p>`
+    + `<p style="margin:0 0 6px;font:700 19px/1.3 'Courier New',monospace;letter-spacing:1px;white-space:nowrap;color:#17172b">${escapeEmail(code)}</p>`
     + `<p style="margin:0;font-size:13px;line-height:1.6;color:#62677a">No expiry. It works once, whenever you're ready.</p></td></tr></table>`;
   return {
     subject: `${sender} sent you a gift: ${tier}`,
