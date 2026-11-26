@@ -30,15 +30,61 @@ export function workspaceInvitationEmail({ owner, room, email, role, url }: { ow
   };
 }
 
-export function purchaseInvoiceEmail({ tier, credits, invoiceNumber, amount, date, url }: { tier: string; credits: number; invoiceNumber: string; amount: string; date: string; url: string }) {
-  const intro = `Thank you for purchasing ${tier}. Your purchase includes ${credits} plan credit${credits === 1 ? "" : "s"}.`;
+export function purchaseInvoiceEmail({ tier, credits, invoiceNumber, amount, date, url, gift = false }: { tier: string; credits: number; invoiceNumber: string; amount: string; date: string; url: string; gift?: boolean }) {
+  // A gift's buyer gets this same invoice email, worded so it doesn't promise them the credits.
+  const intro = gift
+    ? `Thank you for giving ${tier}. The gift includes ${credits} plan credit${credits === 1 ? "" : "s"}, and we email it straight to the person you chose.`
+    : `Thank you for purchasing ${tier}. Your purchase includes ${credits} plan credit${credits === 1 ? "" : "s"}.`;
+  const footnote = gift
+    ? "This is the payment confirmation for your dormscape gift. Keep the attached invoice for your records. Account > Billing shows when the gift is redeemed."
+    : "This is the payment confirmation for your dormscape purchase. Keep the attached invoice for your records. Your plan and credits are shown in Account > Billing.";
   const rows = [["Purchase", tier], ["Invoice", invoiceNumber], ["Date", date], ["Paid", amount]].map(([label, value]) => `<tr><td style="padding:12px 0;border-bottom:1px solid #dfe2ec;font-size:13px;color:#636b82">${escapeEmail(label)}</td><td align="right" style="padding:12px 0 12px 16px;border-bottom:1px solid #dfe2ec;font-size:14px;color:#17172b">${escapeEmail(value)}</td></tr>`).join("");
   return {
     subject: `Thank you for purchasing ${tier} | Your invoice`,
     text: `${intro}\n\nInvoice: ${invoiceNumber}\nDate: ${date}\nPaid: ${amount}\nOne-time payment. No subscription.\n\nYour invoice PDF is attached. View the invoice: ${url}\n\nOpen your account: https://dormscape.us/account/billing\nNeed help? https://dormscape.us/contact`,
     html: emailFrame({ eyebrow: "A little more room for your ideas", title: "Good things ahead.", intro,
       body: `<table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rows}</table><p style="font-size:12px;line-height:1.7;color:#62677a">One-time payment. No subscription.<br>Your paid invoice PDF is attached to this email.</p>`,
-      action: "View your invoice", url, footnote: "This is the payment confirmation for your dormscape purchase. Keep the attached invoice for your records. Your plan and credits are shown in Account > Billing." }),
+      action: "View your invoice", url, footnote }),
+  };
+}
+
+// What each gifted plan unlocks. Prices never appear in the gift email; credits come from the caller (lib/plan.ts).
+const GIFT_PERKS = {
+  plus: "All 9 vibes, your own Amazon products, PDF and PNG export, and side-by-side comparison.",
+  pro: "The 3D Room Builder, the Live 3D Room Studio, your own custom vibe, and a shared room for up to four people. Everything in Plus, too.",
+} as const;
+
+/** The gift email, to the recipient only. Transactional (one email per purchase), so no unsubscribe; the
+ * frame carries the contact link. Every value the buyer typed is escaped. */
+export function giftEmail({ plan, credits, from, message, code, url }: {
+  plan: "plus" | "pro"; credits: number; from: string | null; message: string | null; code: string; url: string;
+}) {
+  const tier = plan === "pro" ? "dormscape Pro" : "dormscape Plus";
+  const sender = from ?? "Someone";
+  const credit = `${credits} plan credit${credits === 1 ? "" : "s"}`;
+  const intro = `${sender} sent you ${tier}: ${credit} and every ${plan === "pro" ? "Pro" : "Plus"} tool, on your own account.`;
+  const note = message
+    ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 20px;background:#eef1ff;border-left:3px solid #304bff"><tr><td style="padding:18px 20px;font-size:16px;line-height:1.7;color:#17172b">${escapeEmail(message).replace(/\n/g, "<br>")}<br><span style="color:#62677a;font-size:14px">${escapeEmail(from ? `From ${from}` : "From the sender")}</span></td></tr></table>`
+    : "";
+  const body = note
+    + `<p style="margin:0 0 8px;font-size:15px;line-height:1.7;color:#17172b"><strong>${escapeEmail(credit)}.</strong> ${escapeEmail(GIFT_PERKS[plan])}</p>`
+    + `<p style="margin:0 0 20px;font-size:14px;line-height:1.7;color:#62677a">One credit makes one room plan. Saving and editing never use one.</p>`
+    + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px dashed #304bff"><tr><td style="padding:18px 20px">`
+    + `<p style="margin:0 0 6px;color:#304bff;font:700 11px/1.6 'Courier New',monospace;letter-spacing:1px;text-transform:uppercase">Your gift code</p>`
+    + `<p style="margin:0 0 6px;font:700 24px/1.3 'Courier New',monospace;letter-spacing:2px;color:#17172b">${escapeEmail(code)}</p>`
+    + `<p style="margin:0;font-size:13px;line-height:1.6;color:#62677a">No expiry. It works once, whenever you're ready.</p></td></tr></table>`;
+  return {
+    subject: `${sender} sent you a gift: ${tier}`,
+    text: [
+      intro,
+      message ? `"${message}"\n${from ? `From ${from}` : "From the sender"}` : null,
+      `${credit}. ${GIFT_PERKS[plan]}`,
+      `Your gift code: ${code}\nNo expiry. It works once, whenever you're ready.`,
+      `Redeem your gift: ${url}\nSign in or create a free dormscape account, and the plan is yours.`,
+      "If you weren't expecting this, you can ignore it.\nNeed a hand? https://dormscape.us/contact",
+    ].filter(Boolean).join("\n\n"),
+    html: emailFrame({ eyebrow: "A gift for you / No expiry", title: `You've got ${plan === "pro" ? "Pro" : "Plus"}.`, intro, body, action: "Redeem your gift", url,
+      footnote: "Redeem it on a free dormscape account; signing up takes a minute. The code works once and has no expiry. If you weren't expecting this gift, you can ignore this email." }),
   };
 }
 
