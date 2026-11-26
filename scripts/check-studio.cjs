@@ -303,6 +303,13 @@ assert.equal(productVisual({...testProduct,category:"throw",name:"Cotton knitted
     assert(left>=0&&left<=50,"A $"+b+" holiday budget leaves $"+left.toFixed(2)+" unspent ("+tier+")");
   }
   assert(totalFor(productsFor("holiday","budget"))<=r.min,"The tape starts where the Essentials kit fits whole");
+  // Every holiday listing links to its own /dp/ page with our associate tag and shows an Amazon CDN image.
+  const {AFFILIATE_TAG,cartUrl}=load(path.join(root,"lib/catalog.ts")),holiday=catalog.filter(p=>p.style_tags.includes("holiday"));
+  for(const p of holiday){
+    assert.equal(p.affiliate_url,`https://www.amazon.com/dp/${p.amazon_asin}?tag=${AFFILIATE_TAG}`,p.id+" carries the tag");
+    assert.match(p.image_url,/^https:\/\/m\.media-amazon\.com\/images\/I\//,p.id+" image");
+  }
+  assert.equal(new URL(cartUrl(productsFor("holiday","premium"))).searchParams.get("AssociateTag"),"dailyama09e85-20");
 }
 assert(invalidItems([{...item,id:"bed",type:"bed",width_ft:7,length_ft:3}, {...item,id:"overlapping-desk",x_ft:3,y_ft:2.5}],15,12).size>0,"A desk overlapping a bed is not a rider");
 console.log("PASS: triple/quad capacity and clearance, portrait layouts, legacy bunks, cart dimensions, missing categories, and product variants.");
