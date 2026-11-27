@@ -181,10 +181,16 @@ const buildings = toBuildings(osm.elements);
 const unnamed = toBuildings(cache("unnamed")?.elements ?? []);
 
 // Campus outline (fetched with the buildings). Places sit inside it or appear on the official list.
-const [areaType, areaId] = (config.area.osm ?? "").split("/");
-const outlineEl = osm.elements.find((e) => e.type === areaType && String(e.id) === areaId);
-const outline = outlineEl
-  ? (areaType === "way" ? [outlineEl.geometry] : outlineEl.members.filter((m) => m.type === "way").map((m) => m.geometry))
+// config.area.also adds outlines for a campus OSM maps in pieces; even-odd counts each piece once.
+const outlineEls = [config.area.osm, ...(config.area.also ?? [])].filter(Boolean).map((o) => {
+  const [type, osmId] = o.split("/");
+  const el = osm.elements.find((e) => e.type === type && String(e.id) === osmId);
+  if (!el) console.warn(`no outline for ${o} in the cache`);
+  return el;
+}).filter(Boolean);
+const outline = outlineEls.length
+  ? outlineEls
+      .flatMap((el) => (el.type === "way" ? [el.geometry] : el.members.filter((m) => m.type === "way").map((m) => m.geometry)))
       .filter(Boolean)
       .map((g) => g.map((p) => xy(p.lon, p.lat)))
   : null;

@@ -52,7 +52,11 @@ const dLat = m / 111320;
 const dLng = m / (111320 * Math.cos((((S + N) / 2) * Math.PI) / 180));
 const box = [S - dLat, W - dLng, N + dLat, E + dLng].map((v) => v.toFixed(6)).join(",");
 const [osmType, osmId] = (config.area.osm ?? "").split("/");
-const outline = osmId ? `${osmType}(${osmId});\nout geom;` : "";
+// config.area.also: more outlines, for a campus OSM maps in pieces (Bridgewater State's East and West).
+const outline = [config.area.osm, ...(config.area.also ?? [])]
+  .filter(Boolean)
+  .map((o) => `${o.split("/")[0]}(${o.split("/")[1]});\nout geom;`)
+  .join("\n");
 
 const HIGHWAYS = "footway|path|pedestrian|steps|living_street|residential|service|unclassified|tertiary|secondary|primary";
 const listHasPoints = () =>
