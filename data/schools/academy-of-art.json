@@ -1,0 +1,950 @@
+{
+ "college_id": "academy-of-art",
+ "college_name": "Academy of Art University",
+ "city": "San Francisco",
+ "state": "CA",
+ "aliases": [
+  "academy of art",
+  "academy of art university",
+  "aau",
+  "artu",
+  "art u",
+  "academy of art sf",
+  "urban knights"
+ ],
+ "housing_url": "https://www.academyart.edu/academy-life/housing-dining/",
+ "data_collected": "2026-11-26",
+ "campus_notes": "Compiled 2026-11-26 from Academy of Art University's Department of Housing & Residence Life: the Housing Overview (academyart.edu/academy-life/housing-dining/), the official Fall 2026-Spring 2027 housing rate sheet (halls, addresses, room types, codes and persons per room) and Preparing for Your Arrival (furniture). The university publishes no room dimensions, square footage or floor plans, so every room here uses the site's estimate fallback (a representative ft x ft derived from similar rooms across the dataset) and is labelled as an estimate. There is no enclosed campus: the four residence halls are separate buildings in downtown San Francisco (Union Square and Lower Nob Hill, no more than about 600 m apart), and free ArtU shuttles link them with the academic buildings across the city. Clara Gil Stephens (620 Sutter) is the first-year hall and requires a meal plan; the other three are apartment-style halls for upper-class and graduate students. Beds are standard twin, not Twin XL, and most are bunk beds; lofted beds are prohibited. Air conditioning is not mentioned, and air conditioners are on the prohibited-items list.",
+ "dorms": [
+  {
+   "dorm_id": "clara-gil-stephens",
+   "dorm_name": "Clara Gil Stephens (620 Sutter)",
+   "hall_url": "https://www.academyart.edu/academy-life/housing-dining/",
+   "address": "620 Sutter Street, San Francisco, CA",
+   "building_type": "Traditional",
+   "air_conditioning": null,
+   "notes": "The only hall open to first-year students on the Fall 2026-Spring 2027 rate sheet (also upper-class and graduate students). Meal plan required. Fitness center and dining hall in the building; it also houses the Department of Housing & Residence Life and an ArtU shuttle stop (620/860 Sutter).",
+   "population": null,
+   "rooms": [
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Dorm Private with attached full bathroom (DPFB)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 1,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Private room with its own full bathroom. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Dorm Private with no attached bathroom (DPNB)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 1,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Private room with no attached bathroom. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Dorm Double with attached full bathroom (DDFB)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets. Most beds are bunk beds."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 2,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Double room with an attached full bathroom. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Dorm Shared with attached full bathroom (DSFB)",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets. Most beds are bunk beds."
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 4,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 4,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Shared room for four with an attached full bathroom. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ]
+  },
+  {
+   "dorm_id": "edgar-degas",
+   "dorm_name": "Edgar Degas (680 Sutter)",
+   "hall_url": "https://www.academyart.edu/academy-life/housing-dining/",
+   "address": "680 Sutter Street, San Francisco, CA",
+   "building_type": "Apartment Style",
+   "air_conditioning": null,
+   "notes": "Apartment-style hall for upper-class and graduate students; no meal plan required. Kitchen studios, a lounge with foosball, across Sutter Street from the 625 Sutter academic building. Apartments have full kitchens; residents bring their own cookware.",
+   "population": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Private studio with kitchen (APSK)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 1,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Single studio with its own kitchen. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_single",
+     "room_type_official": "Private room within unit (APRU)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 1,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Private bedroom inside a shared apartment unit. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "double_studio",
+     "room_type_official": "Double studio with kitchen (ADSK)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets. Most beds are bunk beds."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 2,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Studio with a kitchen, shared by two. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double_living_room",
+     "room_type_official": "Double converted living room (ADCL)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets. Most beds are bunk beds."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 2,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "An apartment's living room converted into a double bedroom. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ]
+  },
+  {
+   "dorm_id": "leonardo-da-vinci",
+   "dorm_name": "Leonardo da Vinci (1080 Bush)",
+   "hall_url": "https://www.academyart.edu/academy-life/housing-dining/",
+   "address": "1080 Bush Street, San Francisco, CA",
+   "building_type": "Apartment Style",
+   "air_conditioning": null,
+   "notes": "The university's largest apartment building, for upper-class and graduate students; no meal plan required. Studios and shared suites, a study room, and a recreation room with pool and foosball tables. Apartments have full kitchens; residents bring their own cookware. Open in summer 2026.",
+   "population": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Private studio with kitchen (APSK)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 1,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Single studio with its own kitchen. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Dorm Private with attached full bathroom (DPFB)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 1,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Private room with an attached full bathroom; the rate sheet says this room type may share that suite bathroom with an adjoining room. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_single",
+     "room_type_official": "Private room within unit (APRU)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 1,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Private bedroom inside a shared apartment unit. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "double_studio",
+     "room_type_official": "Double studio with kitchen (ADSK)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets. Most beds are bunk beds."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 2,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Studio with a kitchen, shared by two. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Double room within unit (ADRU)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets. Most beds are bunk beds."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 2,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Double bedroom inside a shared apartment unit. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double_living_room",
+     "room_type_official": "Double converted living room (ADCL)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets. Most beds are bunk beds."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 2,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "An apartment's living room converted into a double bedroom. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ]
+  },
+  {
+   "dorm_id": "fritz-lang",
+   "dorm_name": "Fritz Lang (560 Powell)",
+   "hall_url": "https://www.academyart.edu/academy-life/housing-dining/",
+   "address": "560 Powell Street, San Francisco, CA",
+   "building_type": "Apartment Style",
+   "air_conditioning": null,
+   "notes": "Co-ed apartment-style hall for upper-class and graduate students; no meal plan required. Kitchen studios and lounges.",
+   "population": null,
+   "rooms": [
+    {
+     "room_type": "apartment_single",
+     "room_type_official": "Private room within unit (APRU)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 1,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Private bedroom inside a shared apartment unit. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "double_studio",
+     "room_type_official": "Double studio with kitchen (ADSK)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets. Most beds are bunk beds."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 2,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Studio with a kitchen, shared by two. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Double room within unit (ADRU)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets. Most beds are bunk beds."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 2,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "Double bedroom inside a shared apartment unit. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double_living_room",
+     "room_type_official": "Double converted living room (ADCL)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": null,
+       "notes": "Standard twin mattress (38\" x 75\"); the school lists a \"Twin mattress\" and asks residents to bring twin sheets. Most beds are bunk beds."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": null,
+       "notes": "Drafting table."
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": null,
+       "notes": "Stool."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": null,
+       "notes": "Mobile drawer unit."
+      },
+      {
+       "type": "closet_or_wardrobe",
+       "count": 2,
+       "movable": null,
+       "notes": "Closet space or an armoire unit."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://mediacenter.academyart.edu/link/172454-housing-rate-sheet-fa26-sp27.pdf/play?player=0",
+     "data_confidence": "low",
+     "notes": "An apartment's living room converted into a double bedroom. Each resident gets a twin bed, drafting table, stool, mobile drawer unit, desk lamp and closet space or an armoire unit. Academy of Art University does not publish room dimensions or floor plans; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ]
+  }
+ ]
+}

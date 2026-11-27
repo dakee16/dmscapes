@@ -1,0 +1,946 @@
+{
+ "college_id": "north-georgia",
+ "college_name": "University of North Georgia",
+ "city": "Dahlonega",
+ "state": "GA",
+ "aliases": [
+  "ung",
+  "north georgia",
+  "university of north georgia",
+  "ung dahlonega",
+  "dahlonega",
+  "nighthawks",
+  "ngcsu",
+  "north georgia college"
+ ],
+ "housing_url": "https://ung.edu/residence-life/halls/index.php",
+ "data_collected": "2026-11-26",
+ "campus_notes": "Compiled 2026-11-26 from UNG Residence Life (ung.edu/residence-life) and the Corps of Cadets housing pages. UNG has several campuses, including Gainesville, but Residence Life states \"Residency is only offered at the Dahlonega Campus\", so every hall here is on the Dahlonega campus. Non-cadets live in North Georgia Suites, Donovan Hall, Lewis Hall, Lewis Annex, Owen Hall and The Commons; the Corps of Cadets lives in the Military Village (Gaillard, Liberty and Patriot halls). Each Residence Life hall page has a furniture-measurement table (UNG calls the measurements approximate) that gives the bedroom size for one room type, plus labeled floor plans; those sizes are used as published, with plan-derived sizes at medium confidence. Patriot Hall's sizes come from its Residence Life page as archived in July 2025. Gaillard Hall, Liberty Hall, The Commons and the North Georgia Suites single publish no usable size and use the estimate fallback. Every room has a Twin XL mattress; bed risers are prohibited.",
+ "dorms": [
+  {
+   "dorm_id": "north-georgia-suites",
+   "dorm_name": "North Georgia Suites",
+   "campus": "Dahlonega",
+   "hall_url": "https://ung.edu/residence-life/halls/ng-suites.php",
+   "address": "Sunset Drive, Dahlonega, GA 30597",
+   "air_conditioning": null,
+   "building_type": "Suite-style",
+   "capacity": 598,
+   "notes": "Two buildings joined by a central atrium on Sunset Drive, west campus next to the Health and Natural Sciences building. Freshmen and upperclassmen; single-sex suites where two bedrooms share a bathroom. Non-cadets only (Fall 2026 rates). Open continuously mid-August to May.",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Occupancy Room (suite)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18.5,
+      "width_ft": 10.5,
+      "ceiling_height_ft": 9
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.96,
+      "height_ft": 6.67
+     },
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.75,
+      "height_ft": 5.83
+     },
+     "closet": {
+      "type": "closet",
+      "width_ft": 3.5,
+      "depth_ft": 2.0,
+      "wall": null,
+      "notes": "Published bedroom closet 42\" wide x 24\" deep, 70\" to the shelf."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.62,
+       "width_ft": 3.42,
+       "height_ft": 2.58,
+       "movable": true,
+       "notes": "Twin bed frame with Twin XL mattress; published frame 79.5\" x 41\". Beds may be bunked."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Computer desk with hutch."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://ung.edu/residence-life/_uploads/images/halls/ngsuites/ngsuite-double-floor-plan.jpg",
+     "data_source": "https://ung.edu/residence-life/halls/ng-suites.php",
+     "data_confidence": "high",
+     "notes": "Published in the North Georgia Suites furniture-measurement table: bedroom (double occupancy) 9 ft high x 10.5 ft wide x 18.5 ft deep; UNG notes measurements are approximate. Shares a bathroom with another double. Door 35.5\" x 80\"; window 33\" x 70\"."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single Occupancy Room (suite)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet",
+      "width_ft": 3.5,
+      "depth_ft": 2.0,
+      "wall": null,
+      "notes": "Published bedroom closet 42\" wide x 24\" deep (same furniture in every room)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.62,
+       "width_ft": 3.42,
+       "height_ft": 2.58,
+       "movable": true,
+       "notes": "Twin bed frame with Twin XL mattress; published frame 79.5\" x 41\". Beds may be bunked."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Computer desk with hutch."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://ung.edu/residence-life/_uploads/images/halls/ngsuites/suite-single-floor-plan.jpg",
+     "data_source": "https://ung.edu/residence-life/halls/ng-suites.php",
+     "data_confidence": "low",
+     "notes": "Shares a bathroom with another single. UNG says room dimensions differ between single and double rooms and publishes the double only; the single floor plan labels the 11'-0\" room module but not the bedroom depth. UNG does not publish a usable size for this room type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ]
+  },
+  {
+   "dorm_id": "donovan-hall",
+   "dorm_name": "Donovan Hall",
+   "campus": "Dahlonega",
+   "hall_url": "https://ung.edu/residence-life/halls/donovan-hall.php",
+   "address": "Colombo Way, Dahlonega, GA 30597",
+   "air_conditioning": null,
+   "building_type": "Traditional",
+   "capacity": 248,
+   "year_built": 1975,
+   "notes": "Three-story brick building with three wings and 124 rooms. Freshmen; co-ed by floor; community bathrooms on each hall. Non-cadets only. Closed between semesters and breaks.",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Occupancy Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 10.8,
+      "ceiling_height_ft": 9
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 3.38,
+      "height_ft": 4.5
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Twin bed frame with Twin XL mattress; published frame 80\" x 39\". Beds may be bunked."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.54,
+       "movable": true,
+       "notes": "Computer desk with hutch."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 3.08,
+       "width_ft": 1.88,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 1.83,
+       "height_ft": 6.58,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://ung.edu/residence-life/_uploads/images/halls/donovan/Donovan-floor-plan-675x813.jpg",
+     "data_source": "https://ung.edu/residence-life/halls/donovan-hall.php",
+     "data_confidence": "high",
+     "notes": "Published in the Donovan Hall furniture-measurement table: room 9 ft high x 15.5 ft wide x 10.8 ft deep; UNG notes measurements are approximate. Community bathroom on the hall. Window 40.5\" x 54\"."
+    }
+   ]
+  },
+  {
+   "dorm_id": "lewis-annex",
+   "dorm_name": "Lewis Annex",
+   "campus": "Dahlonega",
+   "hall_url": "https://ung.edu/residence-life/halls/lewis-annex.php",
+   "address": "Lewis Circle, Dahlonega, GA 30597",
+   "air_conditioning": null,
+   "building_type": "Traditional",
+   "capacity": 96,
+   "year_built": 1964,
+   "notes": "Two floors and 51 rooms. Freshmen and upperclassmen; single-sex community bathrooms. Non-cadets only. Closed between semesters and breaks.",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Occupancy Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.5,
+      "width_ft": 12,
+      "ceiling_height_ft": 8
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 3.0,
+      "height_ft": 4.83
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.17,
+       "width_ft": 3.21,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Twin bed frame with Twin XL mattress; published frame 86\" x 38.5\". Beds may be bunked; Residence Life provides the tools."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.54,
+       "movable": true,
+       "notes": "Computer desk with hutch."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 2.96,
+       "width_ft": 1.96,
+       "height_ft": 6.12,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://ung.edu/residence-life/_uploads/images/floor-plans/annex-double.png",
+     "data_source": "https://ung.edu/residence-life/halls/lewis-annex.php",
+     "data_confidence": "high",
+     "notes": "Published in the Lewis Annex furniture-measurement table: room 8 ft high x 12 ft wide x 14.5 ft deep; UNG notes measurements are approximate. The floor plan labels the same room 14'8\". Community bathroom on the floor. Windows 36\" x 58\"."
+    }
+   ]
+  },
+  {
+   "dorm_id": "lewis-hall",
+   "dorm_name": "Lewis Hall",
+   "campus": "Dahlonega",
+   "hall_url": "https://ung.edu/residence-life/halls/lewis-hall.php",
+   "address": "Lewis Circle, Dahlonega, GA 30597",
+   "air_conditioning": null,
+   "building_type": "Traditional",
+   "capacity": 206,
+   "year_built": 1952,
+   "notes": "Four floors and 117 rooms. Freshmen and upperclassmen; single-sex community bathrooms on each floor. Non-cadets only. Closed between semesters and breaks. UNG says room sizes in Lewis Hall vary.",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Occupancy Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 10.5,
+      "ceiling_height_ft": 9
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 3.88,
+      "height_ft": 5.62
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.71,
+       "width_ft": 3.25,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Twin bed frame with Twin XL mattress; published frame 80.5\" x 39\". Beds may be bunked; Residence Life provides the tools."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 1.83,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 3.04,
+       "width_ft": 1.83,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 1.83,
+       "height_ft": 6.58,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://ung.edu/residence-life/_uploads/images/floor-plans/lewis-double.png",
+     "data_source": "https://ung.edu/residence-life/halls/lewis-hall.php",
+     "data_confidence": "medium",
+     "notes": "Published in the Lewis Hall furniture-measurement table as the average room: 9 ft high x 10.5 ft wide x 15.5 ft deep. UNG says room sizes in Lewis Hall vary; the double floor plan on the same page labels a 14' x 10' room. Community bathroom on the floor. Window 46.5\" x 67.5\"."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Occupancy Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 13,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.71,
+       "width_ft": 3.25,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Twin bed frame with Twin XL mattress; published frame 80.5\" x 39\". Beds may be bunked; Residence Life provides the tools."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 1.83,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 3.04,
+       "width_ft": 1.83,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 1.83,
+       "height_ft": 6.58,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://ung.edu/residence-life/_uploads/images/floor-plans/lewis-single.png",
+     "data_source": "https://ung.edu/residence-life/halls/lewis-hall.php",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the bounding box of UNG's labeled single floor plan (13' long; 3'0\" + 3'2\" + 2'10\" wide). The wardrobe corner is notched (3'2\" deep), so usable floor is slightly smaller. Room sizes in Lewis Hall vary. Community bathroom on the floor."
+    }
+   ]
+  },
+  {
+   "dorm_id": "owen-hall",
+   "dorm_name": "Owen Hall",
+   "campus": "Dahlonega",
+   "hall_url": "https://ung.edu/residence-life/halls/owen-hall.php",
+   "address": "Alumni Drive, Dahlonega, GA 30597",
+   "air_conditioning": null,
+   "building_type": "Apartment",
+   "capacity": 314,
+   "year_built": 2001,
+   "notes": "Five-story brick building with 76 four-bedroom, two-bath apartments (single-sex apartments, co-ed building). Upperclassmen and limited freshmen; non-cadets only; meal plan optional. Each apartment has a kitchen (refrigerator, stove, dishwasher, table with four chairs) and a living room (sofa, chair, coffee table, end table, entertainment center). The elevator stops at the 1500s floor; the 1600s floor is reached by stairs.",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Single Bedroom in 4-Bedroom Apartment (13'7\" x 9'6\" plan)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 13.58,
+      "width_ft": 9.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.83,
+       "width_ft": 1.83,
+       "height_ft": 2.33,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 1.5,
+       "height_ft": 3.08,
+       "movable": true,
+       "notes": "Two dresser units per resident; they may be stacked."
+      },
+      {
+       "type": "nightstand",
+       "count": 1,
+       "length_ft": 1.58,
+       "width_ft": 1.17,
+       "height_ft": 2.0,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://ung.edu/residence-life/_uploads/images/floor-plans/owen.png",
+     "data_source": "https://ung.edu/residence-life/halls/owen-hall.php",
+     "data_confidence": "medium",
+     "notes": "Two of the four bedrooms, by the kitchen and bathrooms. Dimensions are the bounding box of UNG's labeled apartment floor plan (13'7\" x 9'6\"); the room narrows to 8'7\" at the window end. Window 74\" x 53\" (orientation not stated). The published bed-frame figures are garbled, so the standard Twin XL size is shown."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Single Bedroom in 4-Bedroom Apartment (12'8\" x 10'1\" plan)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.67,
+      "width_ft": 10.08,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.83,
+       "width_ft": 1.83,
+       "height_ft": 2.33,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 1.5,
+       "height_ft": 3.08,
+       "movable": true,
+       "notes": "Two dresser units per resident; they may be stacked."
+      },
+      {
+       "type": "nightstand",
+       "count": 1,
+       "length_ft": 1.58,
+       "width_ft": 1.17,
+       "height_ft": 2.0,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://ung.edu/residence-life/_uploads/images/floor-plans/owen.png",
+     "data_source": "https://ung.edu/residence-life/halls/owen-hall.php",
+     "data_confidence": "medium",
+     "notes": "Two of the four bedrooms, either side of the living room. Dimensions are from UNG's labeled apartment floor plan (12'8\" x 10'1\"). Window 74\" x 53\" (orientation not stated). The published bed-frame figures are garbled, so the standard Twin XL size is shown."
+    }
+   ]
+  },
+  {
+   "dorm_id": "the-commons",
+   "dorm_name": "The Commons",
+   "campus": "Dahlonega",
+   "hall_url": "https://ung.edu/residence-life/halls/the-commons.php",
+   "address": "Sunset Drive, Dahlonega, GA 30597",
+   "air_conditioning": null,
+   "building_type": "Suite-style",
+   "capacity": 538,
+   "year_built": 2016,
+   "notes": "Two buildings across the street from the Dining Hall: Building 1 has 61 suites (up to 187 students), Building 2 has 108 suites (up to 351). Freshmen and upperclassmen; two-bedroom, one-bath single-sex suites. Microwaves are allowed only on the common-area wall between the two rooms. Open continuously mid-August to May.",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Occupancy Room (2-bedroom, 1-bath suite)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 4.0,
+      "height_ft": 5.83
+     },
+     "closet": {
+      "type": "open_closet",
+      "width_ft": 2.88,
+      "depth_ft": 1.25,
+      "wall": null,
+      "notes": "Published bedroom closet 34.5\" wide x 15\" deep, no doors."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.62,
+       "width_ft": 3.12,
+       "height_ft": 2.83,
+       "movable": true,
+       "notes": "Twin bed frame with Twin XL mattress; published frame 79.5\" x 37.5\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.83,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.54,
+       "width_ft": 1.83,
+       "height_ft": 2.58,
+       "movable": true
+      },
+      {
+       "type": "side_table",
+       "count": 2,
+       "length_ft": 1.33,
+       "width_ft": 1.67,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Two-shelf side table."
+      }
+     ],
+     "floor_plan_url": "https://ung.edu/residence-life/_uploads/images/floor-plans/commons-double-floor-plan.jpg",
+     "data_source": "https://ung.edu/residence-life/halls/the-commons.php",
+     "data_confidence": "low",
+     "notes": "UNG's double floor plan labels the bedroom 10'7\" deep plus a 2'10\" closet strip, but its width labels don't add up (24'0\" across the top vs 20'1\" across the bottom), so no reliable room size is published. UNG does not publish a usable size for this room type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single Occupancy Room (2-bedroom, 1-bath suite)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 4.0,
+      "height_ft": 5.83
+     },
+     "closet": {
+      "type": "open_closet",
+      "width_ft": 2.88,
+      "depth_ft": 1.25,
+      "wall": null,
+      "notes": "Published bedroom closet 34.5\" wide x 15\" deep, no doors."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.62,
+       "width_ft": 3.12,
+       "height_ft": 2.83,
+       "movable": true,
+       "notes": "Twin bed frame with Twin XL mattress; published frame 79.5\" x 37.5\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.83,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.54,
+       "width_ft": 1.83,
+       "height_ft": 2.58,
+       "movable": true
+      },
+      {
+       "type": "side_table",
+       "count": 1,
+       "length_ft": 1.33,
+       "width_ft": 1.67,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Two-shelf side table."
+      }
+     ],
+     "floor_plan_url": "https://ung.edu/residence-life/_uploads/images/floor-plans/commons-single.png",
+     "data_source": "https://ung.edu/residence-life/halls/the-commons.php",
+     "data_confidence": "low",
+     "notes": "UNG's single floor plan labels the bedroom 7'3\" deep plus a 2'6\" closet strip, but its width labels don't add up (20'4\" across the top vs 14'3\" across the bottom), so no reliable room size is published. UNG does not publish a usable size for this room type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ]
+  },
+  {
+   "dorm_id": "patriot-hall",
+   "dorm_name": "Patriot Hall",
+   "campus": "Dahlonega",
+   "hall_url": "https://ung.edu/military-college-admissions/learn-more/boars-head-brigade/cadet-housing.php",
+   "address": "Colombo Way, Dahlonega, GA 30597",
+   "air_conditioning": "central",
+   "building_type": "Suite-style",
+   "capacity": 352,
+   "year_built": 2010,
+   "notes": "Military Village hall for the Corps of Cadets, opened fall 2010, in the center of campus near the Library Technology Center. Fall 2026 rates list it as suite style, cadets only (it housed some civilian students on its 4th floor in earlier years). Central air and heating, day rooms, laundry and a kitchen.",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in Four-Person Suite",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18.33,
+      "width_ft": 10.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.08,
+      "height_ft": 6.83
+     },
+     "closet": {
+      "type": "open_closet",
+      "width_ft": 3.33,
+      "depth_ft": 2.58,
+      "wall": null,
+      "notes": "Published open closet with a shelf, 40\" wide x 31\" deep."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin bed with Twin XL mattress (36\" x 80\" assumed). Beds may be bunked."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "notes": "Desk with hutch."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Three-drawer chest."
+      }
+     ],
+     "floor_plan_url": "https://ung.edu/residence-life/_uploads/images/floor-plans/patriot-4people-01.png",
+     "data_source": "https://web.archive.org/web/20250719170644/https://ung.edu/residence-life/halls/patriot-hall.php",
+     "data_confidence": "medium",
+     "notes": "Published on UNG Residence Life's Patriot Hall page (archived July 2025; the page now redirects to the halls list): double occupancy room (4 persons) 10'6\" wide x 18'4\" long. Two double rooms share a bathroom with two showers, two sinks and one toilet. Windows 5'1\" wide x 6'10\" high."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in Two-Person Suite",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.25,
+      "width_ft": 12.38,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.08,
+      "height_ft": 6.83
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin bed with Twin XL mattress (36\" x 80\" assumed). Beds may be bunked."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "notes": "Desk with hutch."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Three-drawer chest."
+      }
+     ],
+     "floor_plan_url": "https://ung.edu/residence-life/_uploads/images/patriot-2people.png",
+     "data_source": "https://web.archive.org/web/20250719170644/https://ung.edu/residence-life/halls/patriot-hall.php",
+     "data_confidence": "medium",
+     "notes": "Published on UNG Residence Life's Patriot Hall page (archived July 2025): room 12'4.5\" wide x 17'3\" long, plus one bathroom with one shower; the floor plan draws the 5'4\" x 8'2\" bathroom inside that outline, so open floor is smaller. Windows 5'1\" x 6'10\"."
+    }
+   ]
+  },
+  {
+   "dorm_id": "liberty-hall",
+   "dorm_name": "Liberty Hall",
+   "campus": "Dahlonega",
+   "hall_url": "https://ung.edu/military-college-admissions/learn-more/boars-head-brigade/cadet-housing.php",
+   "air_conditioning": "central",
+   "building_type": "Suite-style",
+   "year_built": 2012,
+   "notes": "Military Village hall for the Corps of Cadets, opened spring 2012. Suite style, cadets only. Central air and heating, day rooms, laundry and a kitchen.",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double (cadet suite)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Bed and mattress provided by the university; size not published (Twin XL 36\" x 80\" assumed)."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ung.edu/military-college-admissions/learn-more/boars-head-brigade/cadet-housing.php",
+     "data_confidence": "low",
+     "notes": "Each room holds two cadets, with a desk, bed, storage space and closet for each; two rooms (four cadets) share a bathroom with a toilet, two showers and two sinks. Fall 2026 rates also list a single rate. UNG does not publish a usable size for this room type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ]
+  },
+  {
+   "dorm_id": "gaillard-hall",
+   "dorm_name": "Gaillard Hall",
+   "campus": "Dahlonega",
+   "hall_url": "https://ung.edu/military-college-admissions/learn-more/boars-head-brigade/cadet-housing.php",
+   "air_conditioning": "central",
+   "building_type": "Suite-style",
+   "notes": "Military Village hall for the Corps of Cadets; renovation into suites completed fall 2012. Suite style, cadets only. Central air and heating, day rooms, laundry and a kitchen.",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double (cadet suite)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Bed and mattress provided by the university; size not published (Twin XL 36\" x 80\" assumed)."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ung.edu/military-college-admissions/learn-more/boars-head-brigade/cadet-housing.php",
+     "data_confidence": "low",
+     "notes": "Each room holds two cadets, with a desk, bed, storage space and closet for each; two rooms (four cadets) share a bathroom with a toilet, two showers and two sinks. Fall 2026 rates also list a single rate. UNG does not publish a usable size for this room type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1197 @@
+{
+ "college_id": "bridgewater-state",
+ "college_name": "Bridgewater State University",
+ "city": "Bridgewater",
+ "state": "MA",
+ "aliases": [
+  "bridgewater state",
+  "bsu",
+  "bridgewater state university",
+  "bridgewater"
+ ],
+ "housing_url": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+ "data_collected": "2026-11-26",
+ "campus_notes": "Compiled 2026-11-26 from Bridgewater State University Residence Life and Housing (bridgew.edu). BSU lists 11 residence halls (Shea and Durgin counted separately). It publishes approximate sizes for most rooms in three: Shea and Durgin (15' x 11'), Woodward (14' x 14') and Scott (15' x 13'). Each hall's main room type carries that figure at data_confidence high and its other room types at medium; Shea/Durgin four-person rooms are left to the estimate fallback. Pope, Miles, DiNardo, Crimson, Stonehouse, Weygand and the Great Hill Student Apartments publish room types without sizes and use the estimate fallback. Furniture is extra-long twin beds, dressers, desks with chairs, closets or wardrobes and bookshelves; furniture sizes in notes come from captioned photos on BSU's Family Hub Room Information page (https://engage.bridgew.edu/Family/room-information/).",
+ "dorms": [
+  {
+   "dorm_id": "shea-hall",
+   "dorm_name": "Shea Hall",
+   "hall_url": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+   "address": "160 Burrill Avenue, Bridgewater, MA 02325",
+   "campus_area": "Upper Great Hill (East Campus)",
+   "air_conditioning": null,
+   "building_type": "Traditional",
+   "population": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 165,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "29\" wide x 37\" tall (BSU Room Information photo, Shea/Durgin)."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/faqs",
+     "data_confidence": "high",
+     "notes": "Published: most rooms in Shea and Durgin Halls are approximately 15' x 11'. First-year."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 165,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "29\" wide x 37\" tall (BSU Room Information photo, Shea/Durgin)."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/faqs",
+     "data_confidence": "medium",
+     "notes": "BSU publishes one size for most Shea/Durgin rooms (15' x 11'), not a per-type figure; shown here at triple occupancy. BSU also adds an extra bed to some design doubles at the start of the year ('additional occupancy')."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Four-Person Room",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true,
+       "notes": "29\" wide x 37\" tall (BSU Room Information photo, Shea/Durgin)."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "BSU's 15' x 11' figure covers most rooms in the hall and is not given for four-person rooms. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "Corridor-style first-year hall on the Great Hill; Shea and Durgin are one building (OSM: \"Shea/Durgin Hall\") and together house approximately 658 first-year residents on five floors, with some single-sex floors. Shared single-sex bathrooms; gender-neutral bathrooms on each floor in Shea."
+  },
+  {
+   "dorm_id": "durgin-hall",
+   "dorm_name": "Durgin Hall",
+   "hall_url": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+   "address": "160 Burrill Avenue, Bridgewater, MA 02325",
+   "campus_area": "Upper Great Hill (East Campus)",
+   "air_conditioning": null,
+   "building_type": "Traditional",
+   "population": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 165,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "29\" wide x 37\" tall (BSU Room Information photo, Shea/Durgin)."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/faqs",
+     "data_confidence": "high",
+     "notes": "Published: most rooms in Shea and Durgin Halls are approximately 15' x 11'. First-year."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 165,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "29\" wide x 37\" tall (BSU Room Information photo, Shea/Durgin)."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/faqs",
+     "data_confidence": "medium",
+     "notes": "BSU publishes one size for most Shea/Durgin rooms (15' x 11'), not a per-type figure; shown here at triple occupancy. BSU also adds an extra bed to some design doubles at the start of the year ('additional occupancy')."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Four-Person Room",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true,
+       "notes": "29\" wide x 37\" tall (BSU Room Information photo, Shea/Durgin)."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "BSU's 15' x 11' figure covers most rooms in the hall and is not given for four-person rooms. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "Corridor-style first-year hall on the Great Hill; Shea and Durgin are one building (OSM: \"Shea/Durgin Hall\") and together house approximately 658 first-year residents on five floors, with some single-sex floors. Shared single-sex bathrooms."
+  },
+  {
+   "dorm_id": "woodward-hall",
+   "dorm_name": "Woodward Hall",
+   "hall_url": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+   "address": "115 Grove Street, Bridgewater, MA 02325",
+   "campus_area": "West Campus",
+   "air_conditioning": null,
+   "building_type": "Traditional",
+   "population": 231,
+   "rooms": [
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 14,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 196,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true,
+       "notes": "40\" wide hutch (BSU Room Information photo, Woodward)."
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "30\" wide x 30\" tall (BSU Room Information photo, Woodward)."
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": true,
+       "notes": "36\" wide x 76\" tall (BSU Room Information photo, Woodward)."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/faqs",
+     "data_confidence": "high",
+     "notes": "Published: most rooms in Woodward Hall are approximately 14' x 14'. First-year."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad Room",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 14,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 196,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true,
+       "notes": "40\" wide hutch (BSU Room Information photo, Woodward)."
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true,
+       "notes": "30\" wide x 30\" tall (BSU Room Information photo, Woodward)."
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": true,
+       "notes": "36\" wide x 76\" tall (BSU Room Information photo, Woodward)."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/faqs",
+     "data_confidence": "medium",
+     "notes": "BSU publishes one size for most Woodward rooms (14' x 14'), not a per-type figure; shown here at quad occupancy."
+    }
+   ],
+   "notes": "Corridor-style first-year hall of triples and quads; shared single-sex and gender-neutral bathrooms on each floor. BSU's rate table also lists a 'Woodward Hall Enhanced Room' (not described further). Gender Inclusive Housing is in Woodward."
+  },
+  {
+   "dorm_id": "scott-hall",
+   "dorm_name": "Scott Hall",
+   "hall_url": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+   "address": "170 Summer Street, Bridgewater, MA 02325",
+   "campus_area": "West Campus",
+   "air_conditioning": null,
+   "building_type": "Traditional",
+   "population": 269,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "30\" wide x 30\" tall (BSU Room Information photo, Scott)."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/faqs",
+     "data_confidence": "high",
+     "notes": "Published: most rooms in Scott Hall are approximately 15' x 13'. First-year and upper-class."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "30\" wide x 30\" tall (BSU Room Information photo, Scott)."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/faqs",
+     "data_confidence": "medium",
+     "notes": "BSU publishes one size for most Scott rooms (15' x 13'), not a per-type figure; shown here at triple occupancy."
+    }
+   ],
+   "notes": "Corridor-style hall on five floors, first-year and upper-class; shared single-sex bathrooms."
+  },
+  {
+   "dorm_id": "pope-hall",
+   "dorm_name": "Pope Hall",
+   "hall_url": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+   "address": "4 Park Avenue, Bridgewater, MA 02325",
+   "campus_area": "West Campus",
+   "air_conditioning": null,
+   "building_type": "Traditional",
+   "population": 336,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "First-year and upper-class. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "Corridor-style hall of doubles and triples, first-year and upper-class, with first-year and upper-class Residential Learning Communities; shared single-sex bathrooms."
+  },
+  {
+   "dorm_id": "miles-hall",
+   "dorm_name": "Miles Hall",
+   "hall_url": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+   "address": "115 Burrill Avenue, Bridgewater, MA 02325",
+   "campus_area": "University Park (East Campus)",
+   "air_conditioning": null,
+   "building_type": "Suite-style",
+   "population": 425,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in Suite",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Upper-class. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple in Suite",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "Suite-style upper-class hall on four floors: doubles and/or triples share a common room, with shared single-sex bathrooms on each wing. Mirror image of DiNardo Hall. Population from the BSU campus map."
+  },
+  {
+   "dorm_id": "dinardo-hall",
+   "dorm_name": "DiNardo Hall",
+   "hall_url": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+   "address": "115A Burrill Avenue, Bridgewater, MA 02325",
+   "campus_area": "University Park (East Campus)",
+   "air_conditioning": null,
+   "building_type": "Suite-style",
+   "population": 425,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in Suite",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Upper-class. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple in Suite",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "Suite-style upper-class hall on four floors: doubles and/or triples share a common room, with shared single-sex bathrooms on each wing. Mirror image of Miles Hall; the Residence Life and Housing office is here. Population from the BSU campus map."
+  },
+  {
+   "dorm_id": "crimson-hall",
+   "dorm_name": "Crimson Hall",
+   "hall_url": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+   "address": "200 East Campus Drive, Bridgewater, MA 02325",
+   "campus_area": "University Park (East Campus)",
+   "air_conditioning": true,
+   "building_type": "Suite-style",
+   "population": 408,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in Suite",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Upper-class. The most common suite is two doubles sharing a common room and a bathroom. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single in Suite",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "Air-conditioned upper-class suites with a living room and private bath on five floors; gender-neutral bathrooms on the first floor. Has its own dining hall."
+  },
+  {
+   "dorm_id": "stonehouse-hall",
+   "dorm_name": "Stonehouse Hall",
+   "hall_url": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+   "address": "135 Burrill Avenue, Bridgewater, MA 02325",
+   "campus_area": "Lower Great Hill (East Campus)",
+   "air_conditioning": true,
+   "building_type": "Suite-style",
+   "population": 300,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in Suite",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Upper-class. The most common suite is one double room with two single rooms. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single in Suite",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "Air-conditioned upper-class suites with a private bath on four floors; gender-neutral bathrooms on the first floor."
+  },
+  {
+   "dorm_id": "weygand-hall",
+   "dorm_name": "Weygand Hall",
+   "hall_url": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+   "address": "350 Great Hill Drive, Bridgewater, MA 02325",
+   "campus_area": "Lower Great Hill (East Campus)",
+   "air_conditioning": true,
+   "building_type": "Suite-style",
+   "population": 500,
+   "year_built": 2013,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in Suite or Pod",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Upper-class. The most common configuration is a four-bed suite. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single in Suite or Pod",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "Air-conditioned upper-class hall on five floors: singles and doubles in suites and pods with a living room and one or two bathrooms each; home to the Upper-Class Residential Learning Communities and the Wellness Center. Opened 2013; suites have a University-provided full-size refrigerator."
+  },
+  {
+   "dorm_id": "great-hill-student-apartments",
+   "dorm_name": "Great Hill Student Apartments",
+   "hall_url": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+   "address": "120-128 Burrill Avenue, Bridgewater, MA 02325",
+   "campus_area": "Upper Great Hill (East Campus)",
+   "air_conditioning": null,
+   "building_type": "Apartment",
+   "population": 198,
+   "rooms": [
+    {
+     "room_type": "apartment_single",
+     "room_type_official": "Single Room (Six-Person Apartment)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bridgew.edu/student-life/residence-life-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Upper-class. Six-person units of single rooms with 1.5 baths, a kitchen and a common area. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "Upper-class apartments: six-person units with shared kitchen, living room and bathrooms; accessible units available; full-size refrigerator provided. Meal plan not required."
+  }
+ ]
+}

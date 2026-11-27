@@ -1,0 +1,1446 @@
+{
+ "college_id": "stephen-f-austin",
+ "college_name": "Stephen F. Austin State University",
+ "city": "Nacogdoches",
+ "state": "TX",
+ "aliases": [
+  "sfa",
+  "sfasu",
+  "stephen f austin",
+  "stephen f austin state",
+  "stephen f austin state university",
+  "stephen austin",
+  "sfa state",
+  "lumberjacks"
+ ],
+ "housing_url": "https://www.sfasu.edu/reslife/halls",
+ "data_collected": "2026-11-26",
+ "campus_notes": "Compiled 2026-11-26 from Stephen F. Austin State University Residence Life (sfasu.edu/reslife): the 14 residence halls on its Our Halls page, each hall's At a Glance and furniture-dimension page, the move-in FAQ and the Community Guidelines. SFA publishes the unit size for Griffith (11' x 15'), Hall 14 (12' x 15'), Kerr (11' x 15'), Lumberjack Landing (14' x 25'), Steen (12' x 22') and Wisely (10' x 18'), and bedroom sizes for the Lumberjack Village 4 townhomes; those rooms are data_confidence high. Hall 10, North, South, Lumberjack Lodge and Lumberjack Village 1-3 publish no room or bedroom size (Lodge and Village 1 give only whole-apartment square footage), so those rooms use the site's estimate fallback and are labelled \"Estimated based on similar rooms. Official size not published.\" Most halls have bunkable standard twin beds (39\" x 75\" mattress, shorter than Twin XL); Landing, Lodge and Steen have XL twins, and Village 3 and 4 have XL full beds. Every hall has air conditioning. First-time, first-year students live on campus unless granted an off-campus permit.",
+ "dorms": [
+  {
+   "dorm_id": "griffith-hall",
+   "dorm_name": "Griffith Hall",
+   "hall_url": "https://www.sfasu.edu/reslife/griffith",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Shared one-bedroom unit",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 165,
+     "bed_size": "twin",
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.33,
+      "height_ft": 4.0
+     },
+     "closet": {
+      "type": "built-in",
+      "wall": null,
+      "width_ft": 3.5,
+      "depth_ft": 2.0,
+      "height_ft": 7.17,
+      "notes": "Closets 3'6\"W x 7'2\"H x 24\"D, rod 5'6\" from floor; unit keys also lock closet doors. Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Bunkable twin beds, adjustable 1' to 3' from floor; mattress 39\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": false,
+       "notes": "Built-in with two drawers."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.42,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, three drawers."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 1.83,
+       "width_ft": 1.25,
+       "height_ft": 4.0,
+       "movable": false,
+       "notes": "Built-in, six drawers."
+      },
+      {
+       "type": "bookcase",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 0.83,
+       "height_ft": 3.17,
+       "movable": false,
+       "notes": "Built-in above the desks, three shelves."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/griffith",
+     "data_confidence": "high",
+     "notes": "Published: 11 foot by 15 foot one-bedroom unit, shared by two (not a private bedroom). Standard twin, mattress 39\" x 75\" (5 in shorter than Twin XL). Mini fridge in each unit."
+    }
+   ],
+   "notes": "Non-first-year hall for men with community bathrooms. Units have a mini fridge; wheelchair-accessible rooms. Coinless laundry, community kitchen and elevator. Central air (windows stay closed).",
+   "population": null,
+   "address": "118 Griffith Boulevard East, Nacogdoches, TX",
+   "gender": "Male",
+   "bathroom_configuration": "Community",
+   "building_type": "Traditional",
+   "elevator": true
+  },
+  {
+   "dorm_id": "hall-10",
+   "dorm_name": "Hall 10",
+   "hall_url": "https://www.sfasu.edu/reslife/hall-10",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Shared one-bedroom unit",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.25,
+      "height_ft": 3.75
+     },
+     "closet": {
+      "type": "built-in",
+      "wall": null,
+      "width_ft": 3.33,
+      "depth_ft": 2.17,
+      "height_ft": 7.58,
+      "notes": "Closets 3'4\"W x 91\"H x 2'2\"D, rod 46\" from floor; lock on closet door. Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Bunkable twin beds, adjustable 1' to 3' from floor; mattress 39\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": false,
+       "notes": "Built-in with two drawers; SFA lists the width as 3'20\" (a typo), so it is left out."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.42,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, three drawers."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 4.08,
+       "movable": false,
+       "notes": "Built-in, six drawers."
+      },
+      {
+       "type": "bookcase",
+       "count": 2,
+       "length_ft": 2.83,
+       "width_ft": 0.83,
+       "height_ft": 3.92,
+       "movable": false,
+       "notes": "Wall-mounted, three shelves."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/hall-10",
+     "data_confidence": "low",
+     "notes": "Shared one-bedroom unit for two (not a private bedroom). Standard twin, mattress 39\" x 75\" (5 in shorter than Twin XL). Mini fridge in each unit. Stephen F. Austin does not publish per-room dimensions for this hall; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": "Non-first-year hall for women with community bathrooms. Units have a mini fridge; wheelchair-accessible rooms. Coinless laundry and community kitchen; no elevator. Central air.",
+   "population": null,
+   "address": "605 Horseshoe Drive West, Nacogdoches, TX",
+   "gender": "Female",
+   "bathroom_configuration": "Community",
+   "building_type": "Traditional",
+   "elevator": false
+  },
+  {
+   "dorm_id": "hall-14",
+   "dorm_name": "Hall 14",
+   "hall_url": "https://www.sfasu.edu/reslife/hall-14",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Shared one-bedroom unit",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": "twin",
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.33,
+      "height_ft": 3.92
+     },
+     "closet": {
+      "type": "built-in",
+      "wall": null,
+      "width_ft": 3.5,
+      "depth_ft": 2.0,
+      "height_ft": 7.17,
+      "notes": "Closets 3'6\"W x 7'2\"H x 24\"D, rod 5'6\" from floor; lock on closet doors. Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Bunkable twin beds, adjustable 1' to 3' from floor; mattress 39\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.83,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": false,
+       "notes": "Built-in with two drawers."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.42,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, three drawers."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 4.0,
+       "movable": false,
+       "notes": "Built-in, five drawers."
+      },
+      {
+       "type": "bookcase",
+       "count": 2,
+       "length_ft": 2.83,
+       "width_ft": 0.83,
+       "height_ft": 3.92,
+       "movable": false,
+       "notes": "Built-in above the desks, three shelves."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/hall-14",
+     "data_confidence": "high",
+     "notes": "Published: 12 foot by 15 foot one-bedroom unit, shared by two. Standard twin, mattress 39\" x 75\" (5 in shorter than Twin XL). Mini fridge in each unit."
+    }
+   ],
+   "notes": "First-time, first-year co-ed hall with community bathrooms. Units have a mini fridge. Coinless laundry and community kitchen; no elevator. Central air.",
+   "population": null,
+   "address": "514 East College Street, Nacogdoches, TX",
+   "gender": "Co-ed",
+   "bathroom_configuration": "Community",
+   "building_type": "Traditional",
+   "elevator": false
+  },
+  {
+   "dorm_id": "kerr-hall",
+   "dorm_name": "Kerr Hall",
+   "hall_url": "https://www.sfasu.edu/reslife/kerr",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Shared one-bedroom unit",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 165,
+     "bed_size": "twin",
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.33,
+      "height_ft": 4.0
+     },
+     "closet": {
+      "type": "built-in",
+      "wall": null,
+      "width_ft": 3.5,
+      "depth_ft": 2.0,
+      "height_ft": 7.17,
+      "notes": "Closets 3'6\"W x 7'2\"H x 24\"D, rod 5'6\" from floor; unit keys also lock closet doors. Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Bunkable twin beds, adjustable 1' to 3' from floor; mattress 39\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": false,
+       "notes": "Built-in with two drawers."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.42,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, three drawers."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 1.83,
+       "width_ft": 1.25,
+       "height_ft": 4.0,
+       "movable": false,
+       "notes": "Built-in, six drawers."
+      },
+      {
+       "type": "bookcase",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 0.83,
+       "height_ft": 3.17,
+       "movable": false,
+       "notes": "Built-in above the desks, three shelves."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/kerr",
+     "data_confidence": "high",
+     "notes": "Published: 11 foot by 15 foot one-bedroom unit, shared by two (not a private bedroom). Standard twin, mattress 39\" x 75\" (5 in shorter than Twin XL). Carpeted; mini fridge in each unit."
+    }
+   ],
+   "notes": "Non-first-year hall for women with community bathrooms. Carpeted units with a mini fridge; wheelchair-accessible rooms. Coinless laundry, community kitchen and elevator. Central air.",
+   "population": null,
+   "address": "218 Griffith Boulevard, Nacogdoches, TX",
+   "gender": "Female",
+   "bathroom_configuration": "Community",
+   "building_type": "Traditional",
+   "elevator": true
+  },
+  {
+   "dorm_id": "lumberjack-landing",
+   "dorm_name": "Lumberjack Landing",
+   "hall_url": "https://www.sfasu.edu/reslife/landing",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Shared one-bedroom unit (suite bath)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 25,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 350,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 4.54,
+      "height_ft": 5.21,
+      "notes": "Second to fourth floors; first-floor windows are 54.5\"W x 78.5\"H."
+     },
+     "closet": {
+      "type": "built-in",
+      "wall": null,
+      "width_ft": 3.67,
+      "depth_ft": 2.17,
+      "height_ft": 8.0,
+      "notes": "Closets 3'8\"W x 96\"H x 2'2\"D with rods at 41\" and 80\" and a shelf above. Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Bunkable XL twin beds, adjustable 1' to 3' from floor; mattress 39\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 2.17,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "On rollers, one pull-out shelf."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 2.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "On rollers, three drawers."
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true,
+       "notes": "Combo microwave/mini fridge."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/landing",
+     "data_confidence": "high",
+     "notes": "Published: two students share the one-bedroom 14 foot by 25 foot space; each unit shares a semi-private bathroom with one neighbouring unit. Carpeted; rolling nightstands (2'W x 2'6\"H x 17\"D) with hasp locks."
+    }
+   ],
+   "notes": "First-time, first-year co-ed suite-style hall; each unit shares a bathroom with one neighbouring unit. Carpeted units with a combo microwave/mini fridge; keycard entry; wheelchair-accessible rooms. Coinless laundry, community kitchen and elevator. Residence Life's office is in Suite 139. Central air.",
+   "population": null,
+   "address": "508 East College Street, Nacogdoches, TX",
+   "gender": "Co-ed",
+   "bathroom_configuration": "Suite",
+   "building_type": "Suite-style",
+   "elevator": true
+  },
+  {
+   "dorm_id": "lumberjack-lodge",
+   "dorm_name": "Lumberjack Lodge",
+   "hall_url": "https://www.sfasu.edu/reslife/lodge",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private bedroom, two-bedroom apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 6.0,
+      "height_ft": 6.0
+     },
+     "closet": {
+      "type": "built-in",
+      "wall": null,
+      "width_ft": 5.83,
+      "depth_ft": 2.17,
+      "height_ft": 5.58,
+      "notes": "Closets 5'10\"W x 5'7\"H x 2'2\"D, rod 67\" from floor, shelf above. Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "XL twin bed, adjustable 1' to 3' from floor; mattress 39\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, one pull-out shelf."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "movable": true,
+       "notes": "On rollers, three drawers; SFA lists it as 3'W x 6'H x 2'D."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/lodge",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a two-bedroom, one-bathroom apartment (SFA: the whole unit is 651 square feet; the bedroom alone is not published). Shared living room, kitchenette (full-size fridge, microwave) and bathroom; lockable bedroom door; nightstand 16\"W x 30\"H x 24\"D. Stephen F. Austin does not publish per-room dimensions for this hall; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private bedroom, four-bedroom apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 3.0,
+      "height_ft": 6.0
+     },
+     "closet": {
+      "type": "built-in",
+      "wall": null,
+      "width_ft": 5.83,
+      "depth_ft": 2.17,
+      "height_ft": 5.58,
+      "notes": "Closets 5'10\"W x 5'7\"H x 2'2\"D, rod 67\" from floor, shelf above. Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "XL twin bed, adjustable 1' to 3' from floor; mattress 39\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, one pull-out shelf."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "movable": true,
+       "notes": "On rollers, three drawers; SFA lists it as 3'W x 6'H x 2'D."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/lodge",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a four-bedroom, two-bathroom apartment (SFA: the whole unit is 1,106 square feet; the bedroom alone is not published). Shared living room, kitchenette (full-size fridge, microwave) and bathrooms; lockable bedroom door; nightstand 16\"W x 30\"H x 24\"D. Stephen F. Austin does not publish per-room dimensions for this hall; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": "First-time, first-year co-ed apartment-style hall with private bedrooms. Carpeted bedrooms, laminate living areas, ceiling fans, furnished living room and kitchenette; keycard entry; wheelchair-accessible rooms. Coinless laundry, community kitchen and elevator. Residents set their own AC.",
+   "population": null,
+   "address": "424 East College Street, Nacogdoches, TX",
+   "gender": "Co-ed",
+   "bathroom_configuration": "Roommate suite (bathroom shared by the apartment)",
+   "building_type": "Apartment",
+   "elevator": true
+  },
+  {
+   "dorm_id": "lumberjack-village-1",
+   "dorm_name": "Lumberjack Village 1",
+   "hall_url": "https://www.sfasu.edu/reslife/village-1",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Shared bedroom, two-bedroom apartment",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 4.08,
+      "height_ft": 8.67
+     },
+     "closet": {
+      "type": "built-in",
+      "wall": null,
+      "width_ft": 6.0,
+      "depth_ft": 1.83,
+      "height_ft": 9.0,
+      "notes": "Closets 6'W x 108\"H x 22\"D, rod 66\" from floor, shelf above. Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Bunkable twin beds (two per bedroom), adjustable 1' to 3' from floor; mattress 39\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, one pull-out shelf."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "On rollers, three drawers and a pull-out shelf."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/village-1",
+     "data_confidence": "low",
+     "notes": "Two students share each bedroom of a four-person, two-bedroom apartment (SFA: the two-bedroom apartment is 665 square feet; the bedroom alone is not published). All four share the living area, kitchenette (full-size fridge, microwave) and bathroom; lock on bedroom door. Standard twin, mattress 39\" x 75\" (5 in shorter than Twin XL). Stephen F. Austin does not publish per-room dimensions for this hall; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": "Non-first-year co-ed apartment-style building: four residents per two-bedroom apartment, two per bedroom. Carpeted bedrooms, laminate living areas, furnished living room and kitchenette; keycard entry; wheelchair-accessible rooms. Coinless laundry, community kitchen and elevator. Meal plan required. Lumberjack Village front desk is in the Village Community Center. Residents set their own AC.",
+   "population": null,
+   "address": "419 East Starr Avenue, Nacogdoches, TX",
+   "gender": "Co-ed",
+   "bathroom_configuration": "Roommate suite (bathroom shared by the apartment)",
+   "building_type": "Apartment",
+   "elevator": true
+  },
+  {
+   "dorm_id": "lumberjack-village-2",
+   "dorm_name": "Lumberjack Village 2",
+   "hall_url": "https://www.sfasu.edu/reslife/village-2",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Shared bedroom, two-bedroom apartment",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 4.08,
+      "height_ft": 8.67
+     },
+     "closet": {
+      "type": "built-in",
+      "wall": null,
+      "width_ft": 6.0,
+      "depth_ft": 1.83,
+      "height_ft": 9.0,
+      "notes": "Closets 6'W x 108\"H x 22\"D, rod 50\" from floor, shelf above. Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Bunkable twin beds (two per bedroom), adjustable 1' to 3' from floor; mattress 39\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, one pull-out shelf."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "On rollers, three drawers and a pull-out shelf."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/village-2",
+     "data_confidence": "low",
+     "notes": "Two students share each bedroom of a four-person, two-bedroom apartment. All four share the living area, kitchenette (full-size fridge, microwave) and bathroom; hasp locks on dressers. Standard twin, mattress 39\" x 75\" (5 in shorter than Twin XL). Stephen F. Austin does not publish per-room dimensions for this hall; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": "Non-first-year co-ed apartment-style building: four residents per two-bedroom apartment, two per bedroom. Carpeted bedrooms, laminate living areas, furnished living room and kitchenette; keycard entry; wheelchair-accessible rooms. Coinless laundry, community kitchen and elevator. Meal plan required. Lumberjack Village front desk is in the Village Community Center. Residents set their own AC.",
+   "population": null,
+   "address": "1515 Clark Boulevard, Nacogdoches, TX",
+   "gender": "Co-ed",
+   "bathroom_configuration": "Roommate suite (bathroom shared by the apartment)",
+   "building_type": "Apartment",
+   "elevator": true
+  },
+  {
+   "dorm_id": "lumberjack-village-3",
+   "dorm_name": "Lumberjack Village 3",
+   "hall_url": "https://www.sfasu.edu/reslife/village-3",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private bedroom, two-bedroom apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "full_xl",
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 4.08,
+      "height_ft": 8.67
+     },
+     "closet": {
+      "type": "built-in",
+      "wall": null,
+      "width_ft": 6.0,
+      "depth_ft": 1.83,
+      "height_ft": 9.0,
+      "notes": "Closets 6'W x 108\"H x 22\"D, rod 66\" from floor, shelf above. Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "XL full bed, adjustable 1' to 3' from floor; mattress 54\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, one pull-out shelf."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "On rollers, three drawers and a pull-out shelf."
+      },
+      {
+       "type": "bookcase",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 0.83,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, two shelves."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/village-3",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a two-bedroom apartment with a shared bathroom, full kitchen and stacked washer/dryer; lockable bedroom door; nightstand 17\"W x 30\"H x 24\"D. XL full mattress (54\" x 80\"), so Twin XL bedding will not fit. Stephen F. Austin does not publish per-room dimensions for this hall; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": "Non-first-year co-ed apartments with private bedrooms, a full kitchen and an in-unit stacked washer/dryer, so the meal plan is optional. Carpeted bedrooms, laminate living areas, ceiling fans; keycard entry; wheelchair-accessible rooms. Elevator. Lumberjack Village front desk is in the Village Community Center. Residents set their own AC.",
+   "population": null,
+   "address": "1514 Baker Street, Nacogdoches, TX",
+   "gender": "Co-ed",
+   "bathroom_configuration": "Roommate suite (bathroom shared by the apartment)",
+   "building_type": "Apartment",
+   "elevator": true
+  },
+  {
+   "dorm_id": "lumberjack-village-4",
+   "dorm_name": "Lumberjack Village 4",
+   "hall_url": "https://www.sfasu.edu/reslife/village-4",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "One-bedroom townhome bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.67,
+      "width_ft": 11.33,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 132,
+     "bed_size": "full_xl",
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.83,
+      "height_ft": 2.83
+     },
+     "closet": {
+      "type": "closet",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": null,
+      "height_ft": 7.5,
+      "notes": "SFA lists the one-bedroom closet as 36'W x 90\"H (36 in wide); depth not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "XL full bed per SFA (the same page lists a 39\" x 75\" mattress, which looks like a copy error), adjustable 1' to 3' from floor."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, one pull-out shelf."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "On rollers, three drawers and a pull-out shelf."
+      },
+      {
+       "type": "bookcase",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 0.83,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, two shelves."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/village-4",
+     "data_confidence": "high",
+     "notes": "Published: carpeted 136\" x 140\" bedroom in a one-bedroom, two-story townhome (bedroom and bathroom upstairs, living space and full kitchen downstairs). Lockable bedroom door; nightstand 17\"W x 30\"H x 24\"D."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Two-bedroom townhome bedroom (larger)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.67,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 117,
+     "bed_size": "full_xl",
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.83,
+      "height_ft": 2.83
+     },
+     "closet": {
+      "type": "closet",
+      "wall": null,
+      "width_ft": 2.67,
+      "depth_ft": null,
+      "height_ft": 8.0,
+      "notes": "SFA lists the two-bedroom closets as 32\"W x 96\"H and 32\"W x 84\"H; depth not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "XL full bed per SFA (the same page lists a 39\" x 75\" mattress, which looks like a copy error), adjustable 1' to 3' from floor."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, one pull-out shelf."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "On rollers, three drawers and a pull-out shelf."
+      },
+      {
+       "type": "bookcase",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 0.83,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, two shelves."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/village-4",
+     "data_confidence": "high",
+     "notes": "Published: laminate 120\" x 140\" bedroom, the larger of the two in a two-bedroom townhome (half-bath downstairs). Lockable bedroom door; nightstand 17\"W x 30\"H x 24\"D."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Two-bedroom townhome bedroom (smaller)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.67,
+      "width_ft": 9.67,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 113,
+     "bed_size": "full_xl",
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.83,
+      "height_ft": 2.83
+     },
+     "closet": {
+      "type": "closet",
+      "wall": null,
+      "width_ft": 2.67,
+      "depth_ft": null,
+      "height_ft": 7.0,
+      "notes": "SFA lists the two-bedroom closets as 32\"W x 96\"H and 32\"W x 84\"H; depth not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "XL full bed per SFA (the same page lists a 39\" x 75\" mattress, which looks like a copy error), adjustable 1' to 3' from floor."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, one pull-out shelf."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "On rollers, three drawers and a pull-out shelf."
+      },
+      {
+       "type": "bookcase",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 0.83,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, two shelves."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/village-4",
+     "data_confidence": "high",
+     "notes": "Published: laminate 116\" x 140\" bedroom, the smaller of the two in a two-bedroom townhome (half-bath downstairs). Lockable bedroom door; nightstand 17\"W x 30\"H x 24\"D."
+    }
+   ],
+   "notes": "Non-first-year co-ed two-story townhomes (one or two bedrooms) with a full kitchen, dishwasher and full-size washer and dryer, so the meal plan is optional. Bedrooms and bathrooms upstairs, shared space downstairs; ceiling fans. Residents set their own AC; front desk in the Village Community Center.",
+   "population": null,
+   "address": "309 East Starr Avenue, Nacogdoches, TX",
+   "gender": "Co-ed",
+   "bathroom_configuration": "Townhome",
+   "building_type": "Townhome",
+   "elevator": null
+  },
+  {
+   "dorm_id": "north-hall",
+   "dorm_name": "North Hall",
+   "hall_url": "https://www.sfasu.edu/reslife/north",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Shared one-bedroom unit (suite bath)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 8.29,
+      "height_ft": 5.79,
+      "notes": "Two windows; SFA measures the whole frame (for tension rods and curtains)."
+     },
+     "closet": {
+      "type": "built-in",
+      "wall": null,
+      "width_ft": 2.83,
+      "depth_ft": 2.0,
+      "height_ft": 6.67,
+      "notes": "Closets 34\"W x 80\"H x 24\"D, rod 68\" from floor, shelf above. Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Bunkable twin beds, adjustable 1' to 3' from floor; mattress 39\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 5.33,
+       "width_ft": 1.83,
+       "height_ft": 2.5,
+       "movable": false,
+       "notes": "One built-in counter with two seats and four drawers between them."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.25,
+       "width_ft": 1.25,
+       "height_ft": 3.83,
+       "movable": false,
+       "notes": "Built-in, five drawers; hasp locks."
+      },
+      {
+       "type": "bookcase",
+       "count": 2,
+       "length_ft": 1.0,
+       "width_ft": 1.17,
+       "height_ft": 6.75,
+       "movable": false,
+       "notes": "Wall-mounted, six shelves."
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true,
+       "notes": "Combo microwave/mini fridge."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/north",
+     "data_confidence": "low",
+     "notes": "One-bedroom unit for two students; each unit shares a semi-private bathroom with one neighbouring unit. Standard twin, mattress 39\" x 75\" (5 in shorter than Twin XL). Stephen F. Austin does not publish per-room dimensions for this hall; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": "Non-first-year co-ed suite-style hall; each unit shares a bathroom with one neighbouring unit. Combo microwave/mini fridge in each unit. Coinless laundry and community kitchen; no elevator.",
+   "population": null,
+   "address": "619 Horseshoe Drive West, Nacogdoches, TX",
+   "gender": "Co-ed",
+   "bathroom_configuration": "Suite",
+   "building_type": "Suite-style",
+   "elevator": false
+  },
+  {
+   "dorm_id": "south-hall",
+   "dorm_name": "South Hall",
+   "hall_url": "https://www.sfasu.edu/reslife/south",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Shared one-bedroom unit (suite bath)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "twin",
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 8.29,
+      "height_ft": 5.79,
+      "notes": "Two windows; SFA measures the whole frame (for tension rods and curtains)."
+     },
+     "closet": {
+      "type": "built-in",
+      "wall": null,
+      "width_ft": 2.83,
+      "depth_ft": 2.0,
+      "height_ft": 6.67,
+      "notes": "Closets 34\"W x 80\"H x 24\"D, rod 68\" from floor, shelf above. Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Bunkable twin beds, adjustable 1' to 3' from floor; mattress 39\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 5.33,
+       "width_ft": 1.83,
+       "height_ft": 2.5,
+       "movable": false,
+       "notes": "One built-in counter with two seats and four drawers between them."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.25,
+       "width_ft": 1.25,
+       "height_ft": 3.83,
+       "movable": false,
+       "notes": "Built-in, five drawers; hasp locks."
+      },
+      {
+       "type": "bookcase",
+       "count": 2,
+       "length_ft": 1.0,
+       "width_ft": 1.17,
+       "height_ft": 6.75,
+       "movable": false,
+       "notes": "Wall-mounted, six shelves."
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true,
+       "notes": "Combo microwave/mini fridge."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/south",
+     "data_confidence": "low",
+     "notes": "One-bedroom unit for two students; each unit shares a semi-private bathroom with one neighbouring unit. Standard twin, mattress 39\" x 75\" (5 in shorter than Twin XL). Stephen F. Austin does not publish per-room dimensions for this hall; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": "Non-first-year co-ed suite-style hall; each unit shares a bathroom with one neighbouring unit. Combo microwave/mini fridge in each unit. Coinless laundry and community kitchen; no elevator.",
+   "population": null,
+   "address": "507 Horseshoe Drive West, Nacogdoches, TX",
+   "gender": "Co-ed",
+   "bathroom_configuration": "Suite",
+   "building_type": "Suite-style",
+   "elevator": false
+  },
+  {
+   "dorm_id": "steen-hall",
+   "dorm_name": "Steen Hall",
+   "hall_url": "https://www.sfasu.edu/reslife/steen",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Shared one-bedroom unit (suite bath)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 22,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 264,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.92,
+      "height_ft": 6.0
+     },
+     "closet": {
+      "type": "wardrobe",
+      "wall": null,
+      "width_ft": 2.5,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "notes": "Wardrobes, not closets: Steen East 30\"W x 72\"H x 24\"D; Steen West 2'10\"W x 4'5\"H x 1'10\"D (plus a rolling end table). Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "XL twin, loft style: adjustable 2'4\" to 4'10\" from floor and cannot be bunked. Mattress 39\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Freestanding, one pull-out shelf."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.42,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "On rollers, three drawers; hasp locks in Steen East."
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true,
+       "notes": "Combo microwave/mini fridge."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/steen",
+     "data_confidence": "high",
+     "notes": "Published: two students share the one-bedroom 12 foot by 22 foot space; each unit shares a semi-private bathroom with one neighbouring unit. Carpeted."
+    }
+   ],
+   "notes": "First-time, first-year co-ed suite-style hall in two towers (Steen East and Steen West); each unit shares a bathroom with one neighbouring unit. Carpeted units with a combo microwave/mini fridge; wheelchair-accessible rooms. Coinless laundry, community kitchen and elevator. Central air.",
+   "population": null,
+   "address": "609A East College Street, Nacogdoches, TX",
+   "gender": "Co-ed",
+   "bathroom_configuration": "Suite",
+   "building_type": "Suite-style",
+   "elevator": true
+  },
+  {
+   "dorm_id": "wisely-hall",
+   "dorm_name": "Wisely Hall",
+   "hall_url": "https://www.sfasu.edu/reslife/wisely",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Shared one-bedroom unit",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": "twin",
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 4.67,
+      "height_ft": 6.29
+     },
+     "closet": {
+      "type": "built-in",
+      "wall": null,
+      "width_ft": 3.75,
+      "depth_ft": 2.83,
+      "height_ft": 8.5,
+      "notes": "Closets 45\"W x 102\"H x 34\"D, rod 70\" from floor, six built-in shelves on one side. Approximate."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Bunkable twin beds, adjustable 1' to 3' from floor; mattress 39\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.17,
+       "width_ft": 1.83,
+       "height_ft": 2.5,
+       "movable": false,
+       "notes": "Built-in with two drawers."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.42,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "On rollers, three drawers; hasp locks."
+      },
+      {
+       "type": "bookcase",
+       "count": 2,
+       "length_ft": 2.58,
+       "width_ft": 0.88,
+       "height_ft": 2.0,
+       "movable": false,
+       "notes": "Built-in above the desks."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.sfasu.edu/reslife/wisely",
+     "data_confidence": "high",
+     "notes": "Published: two students share this 10 foot by 18 foot one-bedroom unit. First-floor units use community bathrooms; second- and third-floor units share a roommate-suite bathroom. Standard twin, mattress 39\" x 75\" (5 in shorter than Twin XL). Mini fridge in each unit."
+    }
+   ],
+   "notes": "School of Honors co-ed hall (SFA lists it as Wisely Hall (Honors)). Community bathrooms on the first floor, roommate-suite bathrooms on the second and third. Units have a mini fridge; wheelchair-accessible rooms. Coinless laundry and community kitchen; no elevator. Residents set their own AC.",
+   "population": null,
+   "address": "221 Aikman Drive, Nacogdoches, TX",
+   "gender": "Co-ed",
+   "bathroom_configuration": "Community (first floor); roommate suite (second and third floors)",
+   "building_type": "Traditional",
+   "elevator": false
+  }
+ ]
+}

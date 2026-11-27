@@ -1,6 +1,18 @@
 {
  "checked": "2026-10-28",
  "schools": {
+  "academy-of-art": [
+   {
+    "url": "https://www.academyart.edu/academy-life/housing-dining/preparing-for-your-arrival/",
+    "title": "Preparing for Your Arrival - Academy of Art University",
+    "quote": "Housing provides each resident with the following basic furnishings: Twin mattress, bed frame (most of the beds are bunk beds), drafting table, stool, mobile drawer unit, desk lamp, closet space or armoire unit."
+   },
+   {
+    "url": "https://mediacenter.academyart.edu/link/170565-whatnottobring-housing.pdf/play?player=0",
+    "title": "What NOT to Bring to Campus Housing - Academy of Art University Department of Housing",
+    "quote": "The following items are prohibited in University housing: • water beds • lofted beds • microwave ovens [...]"
+   }
+  ],
   "arizona": [
    {
     "url": "https://housing.arizona.edu/getting-started/housing-faqs",
@@ -74,6 +86,23 @@
     "url": "https://www.bu.edu/articles/2022/dorm-design-tips-from-bu-and-professional-design-experts/",
     "title": "Dorm Design Tips from BU and Professional Design Experts",
     "quote": "Placing your bed on risers gives you a few valuable inches and lets you fit big, bulky items (like suitcases) underneath. Remember, you are not allowed to make bunk beds, like you sometimes see on Instagram."
+   }
+  ],
+  "bridgewater-state": [
+   {
+    "url": "https://handbook.bridgew.edu/PoliciesProcedures/ResidenceHallPoliciesandProcedures",
+    "title": "Residence Hall Policies and Procedures | Student Handbook | Bridgewater State University",
+    "quote": "University-provided furniture may not be removed from your room without prior approval from Residence Life & Housing. [Furniture requiring approval includes:] Headboards, bed extenders, and mattresses [Items Not Allowed in Residence Halls, the following items are prohibited:] Homemade loft or bunk beds, bed extenders, cinder blocks, or other bed-lofting equipment"
+   },
+   {
+    "url": "https://www.bridgew.edu/student-life/residence-life-housing/packing-list",
+    "title": "Packing List for Residential Students | Bridgewater State University",
+    "quote": "Please note that all University provided furniture must remain in your room. [Prohibited Items:] Bed risers, homemade loft/bunk beds, cinder blocks and other homemade loft apparatus"
+   },
+   {
+    "url": "https://engage.bridgew.edu/Family/room-information/",
+    "title": "Room Information - BSU Family Hub | Bridgewater State University",
+    "quote": "Room Dimensions Please review images below for furniture dimensions. [photo captioned Shea Durgin: bunked beds, labeled 80\" long and 38\"; photo captioned Scott: a raised bed with 38\" beneath it over a 30\" dresser]"
    }
   ],
   "brown": [
@@ -525,6 +554,18 @@
     "quote": "Reach out to your House Operations Manager before lofting or bunking your bed, as guidelines vary by building. While lofting or bunking is sometimes permissible, you should remember to disassemble any lofting and return the bed to its original configuration before you move out."
    }
   ],
+  "molloy": [
+   {
+    "url": "https://www.molloy.edu/student-life/housing/move-in-day-resources",
+    "title": "Fall 2026 Move-In | Molloy University",
+    "quote": "Things NOT to Bring [...] Non-college furniture/mattress [...] Cinder blocks, bricks, or other items are used to loft beds"
+   },
+   {
+    "url": "https://www.molloy.edu/student-life/housing/residence-halls",
+    "title": "Residence Halls | Molloy University",
+    "quote": "All rooms are equipped with the following furniture per resident: 1 adjustable bed frame with an extra-long mattress, 1 desk and chair, 1 wardrobe with 2 drawers, and 2 under-the-bed dressers with 2 drawers."
+   }
+  ],
   "msu": [
    {
     "url": "https://liveon.msu.edu/beds",
@@ -604,6 +645,43 @@
     "url": "https://housing.dasa.ncsu.edu/resident-resources/faqs/",
     "title": "Frequently Asked Questions - NC State University Housing",
     "quote": "Can I loft my bed? All residence halls have beds that can be lofted with the exception of North Hall and some rooms in Avent Ferry Complex. Apartment beds cannot be lofted. Wolf Village beds are not adjustable, but do have storage space underneath. Wolf Ridge beds can be raised for additional storage."
+   }
+  ],
+  "north-georgia": [
+   {
+    "url": "https://ung.edu/residence-life/halls/ng-suites.php",
+    "title": "North Georgia Suites (UNG Residence Life)",
+    "quote": "Twin size bed w/ XL mattress. Beds may be bunked or left single."
+   },
+   {
+    "url": "https://ung.edu/residence-life/halls/ng-suites.php",
+    "title": "North Georgia Suites (UNG Residence Life)",
+    "quote": "Any items with an asterisk (*) are prohibited."
+   },
+   {
+    "url": "https://ung.edu/residence-life/halls/ng-suites.php",
+    "title": "North Georgia Suites (UNG Residence Life)",
+    "quote": "Bed Risers*"
+   },
+   {
+    "url": "https://ung.edu/residence-life/halls/donovan-hall.php",
+    "title": "Donovan Hall (UNG Residence Life)",
+    "quote": "Twin sized bed w/XL twin mattress. Beds may be bunked or left single."
+   },
+   {
+    "url": "https://ung.edu/residence-life/halls/lewis-hall.php",
+    "title": "Lewis Hall (UNG Residence Life)",
+    "quote": "Twin sized bed with XL twin mattress. Beds may be bunked or left single."
+   },
+   {
+    "url": "https://ung.edu/residence-life/halls/lewis-hall.php",
+    "title": "Lewis Hall (UNG Residence Life)",
+    "quote": "Tools to create bunk beds are provided by Residence Life."
+   },
+   {
+    "url": "https://ung.edu/residence-life/halls/lewis-annex.php",
+    "title": "Lewis Annex (UNG Residence Life)",
+    "quote": "There are two residents per room and beds may be bunked. Tools to create bunk beds provided by Residence Life."
    }
   ],
   "northeastern": [
@@ -838,6 +916,43 @@
     "url": "https://rde.stanford.edu/studenthousing/lofting-your-bed",
     "title": "Lofting Your Bed - Stanford R&DE Student Housing",
     "quote": "Lofting and/or bunking are permitted in undergraduate residences where supplies are available. Whether or not you opt to loft your bed, each bed frame offers choices of bed height, in most cases three options. The highest of these, called “captain’s height” puts the bed about 36” off the floor, which provides a good deal of extra space for dressers, mini-fridges, athletic equipment, suitcases and other storage needs. If you live in a residence where bunking or lofting is permitted and the required furniture is available, you can sign out bunking or lofting materials such as headboards, rails, bolts, pins, and tools (you’ll need a driver’s license or ID card to borrow tools) from your Housing Building Manager. ... Lofting supplies are available on a first-come, first-serve basis; look for posted check-out hours and locations or contact your Housing Service Center. Non-University provided bunks or lofts are not permitted in any residence. Two guardrails are required on upper bunks and lofted beds even if you do not plan to sleep on the loft."
+   }
+  ],
+  "stephen-f-austin": [
+   {
+    "url": "https://www.sfasu.edu/reslife/faq",
+    "title": "FAQ and Resources | Residence Life | SFA",
+    "quote": "Are lofts allowed in the residence halls? View your residence hall's room dimension details for information regarding whether the beds in your unit can be bunked."
+   },
+   {
+    "url": "https://www.sfasu.edu/reslife/faq",
+    "title": "FAQ and Resources | Residence Life | SFA",
+    "quote": "Our staff members can help with bunking, unbunking or adjusting the height of the beds — ask for help at the residence hall's front desk."
+   },
+   {
+    "url": "https://www.sfasu.edu/reslife/move-in",
+    "title": "Planning Your Move-In | Residence Life | SFA",
+    "quote": "Are bed risers allowed? No, most beds are adjustable and can be raised/lowered by putting in a work order at your hall’s front desk."
+   },
+   {
+    "url": "https://www.sfasu.edu/docs/residence-life/community-guidelines.pdf",
+    "title": "Residence Hall Community Guidelines (SFA Residence Life PDF, August 2026)",
+    "quote": "However, structures that require assembly inside the room, such as lofts or stacking beds on cinder blocks, are not permitted due to safety hazards and damage caused to university property."
+   },
+   {
+    "url": "https://www.sfasu.edu/docs/residence-life/community-guidelines.pdf",
+    "title": "Residence Hall Community Guidelines (SFA Residence Life PDF, August 2026)",
+    "quote": "Lofts may not be built in the suites."
+   },
+   {
+    "url": "https://www.sfasu.edu/reslife/steen",
+    "title": "Steen Hall | Residence Life | SFA",
+    "quote": "XL twin (loft style, beds cannot be bunked); 2'4\" to 4'10\" from floor; Mattress: 39\" x 80\""
+   },
+   {
+    "url": "https://www.sfasu.edu/reslife/hall-14",
+    "title": "Hall 14 | Residence Life | SFA",
+    "quote": "Bunkable twin beds; 1' to 3' from floor; Mattress: 39\" x 75\""
    }
   ],
   "syracuse": [

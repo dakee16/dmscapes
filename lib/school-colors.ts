@@ -5,11 +5,13 @@
  * Spirit's own red and navy; add it here once its colors are confirmed.
  */
 export const SCHOOL_COLORS: Record<string, [string, string]> = {
+  "academy-of-art": ["#ED1C2E", "#FFFFFF"],
   "arizona-state": ["#8C1D40", "#FFC627"],
   arizona: ["#AB0520", "#0C234B"],
   auburn: ["#0C2340", "#E87722"],
   "boston-college": ["#98002E", "#BC9B6A"],
   "boston-university": ["#CC0000", "#FFFFFF"],
+  "bridgewater-state": ["#89191F", "#FFFFFF"],
   brown: ["#4E3629", "#C00404"],
   caltech: ["#FF6C0C", "#FFFFFF"],
   calvin: ["#8C2131", "#F3CD00"],
@@ -37,9 +39,11 @@ export const SCHOOL_COLORS: Record<string, [string, string]> = {
   "miami-ohio": ["#C3142D", "#FFFFFF"],
   "michigan-tech": ["#000000", "#FFCD00"],
   mit: ["#A31F34", "#8A8B8C"],
+  molloy: ["#960423", "#FFFFFF"],
   msu: ["#18453B", "#FFFFFF"],
   nazareth: ["#4B2E83", "#F2C230"],
   "nc-state": ["#CC0000", "#FFFFFF"],
+  "north-georgia": ["#1F3D7C", "#FFC62F"],
   northeastern: ["#C8102E", "#000000"],
   northwestern: ["#4E2A84", "#FFFFFF"],
   "notre-dame": ["#0C2340", "#C99700"],
@@ -57,6 +61,7 @@ export const SCHOOL_COLORS: Record<string, [string, string]> = {
   seattleu: ["#AA0000", "#FFFFFF"],
   snhu: ["#0A3370", "#FDB913"],
   stanford: ["#8C1515", "#FFFFFF"],
+  "stephen-f-austin": ["#5F259F", "#FFFFFF"],
   susquehanna: ["#7A1E2E", "#F47920"],
   syracuse: ["#F76900", "#000E54"],
   tamucc: ["#0067C5", "#007F3E"],

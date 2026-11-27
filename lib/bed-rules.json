@@ -1,6 +1,27 @@
 {
  "checked": "2026-10-28",
  "schools": {
+  "academy-of-art": {
+   "loft": "no",
+   "bunk": "yes",
+   "how": "Lofted beds are on the university's prohibited-items list. Beds are university-provided, and most come as bunk beds.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "No page says whether residents may unbunk or re-bunk the beds or use bed risers. Beds are standard twin (the furniture list names a \"Twin mattress\"), and water beds are also prohibited.",
+   "sources": [
+    {
+     "url": "https://www.academyart.edu/academy-life/housing-dining/preparing-for-your-arrival/",
+     "title": "Preparing for Your Arrival - Academy of Art University"
+    },
+    {
+     "url": "https://mediacenter.academyart.edu/link/170565-whatnottobring-housing.pdf/play?player=0",
+     "title": "What NOT to Bring to Campus Housing - Academy of Art University Department of Housing"
+    }
+   ]
+  },
   "arizona": {
    "loft": "unknown",
    "bunk": "some",
@@ -118,6 +139,31 @@
     {
      "url": "https://www.bu.edu/articles/2022/dorm-design-tips-from-bu-and-professional-design-experts/",
      "title": "Dorm Design Tips from BU and Professional Design Experts"
+    }
+   ]
+  },
+  "bridgewater-state": {
+   "loft": "unknown",
+   "bunk": "unknown",
+   "how": "Only the University-provided beds are used: homemade lofts or bunk beds, bed risers, bed extenders, cinder blocks and other bed-lofting equipment are not allowed, and University furniture must stay in the room.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "No written rule on bunking or raising the University beds was found. Photos on BSU’s Family Hub Room Information page show bunked beds in a Shea/Durgin room and a Scott Hall bed raised with 38 in underneath, a 30 in dresser below it. Headboards, bed extenders and mattresses need Furniture Approval Form approval.",
+   "sources": [
+    {
+     "url": "https://handbook.bridgew.edu/PoliciesProcedures/ResidenceHallPoliciesandProcedures",
+     "title": "Residence Hall Policies and Procedures | Student Handbook | Bridgewater State University"
+    },
+    {
+     "url": "https://www.bridgew.edu/student-life/residence-life-housing/packing-list",
+     "title": "Packing List for Residential Students | Bridgewater State University"
+    },
+    {
+     "url": "https://engage.bridgew.edu/Family/room-information/",
+     "title": "Room Information - BSU Family Hub | Bridgewater State University"
     }
    ]
   },
@@ -698,6 +744,27 @@
     }
    ]
   },
+  "molloy": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": "Molloy's move-in list puts cinder blocks, bricks and other items used to loft beds, and non-college furniture or mattresses, on its Things NOT to Bring list. Fitzgerald and Maria Regina rooms have adjustable bed frames.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "No bunking rule, riser rule or bed-height range is published.",
+   "sources": [
+    {
+     "url": "https://www.molloy.edu/student-life/housing/move-in-day-resources",
+     "title": "Fall 2026 Move-In | Molloy University"
+    },
+    {
+     "url": "https://www.molloy.edu/student-life/housing/residence-halls",
+     "title": "Residence Halls | Molloy University"
+    }
+   ]
+  },
   "msu": {
    "loft": "yes",
    "bunk": "yes",
@@ -750,6 +817,35 @@
     {
      "url": "https://housing.dasa.ncsu.edu/resident-resources/faqs/",
      "title": "Frequently Asked Questions - NC State University Housing"
+    }
+   ]
+  },
+  "north-georgia": {
+   "loft": "unknown",
+   "bunk": "some",
+   "how": "Beds in North Georgia Suites, Donovan Hall, Lewis Hall and Lewis Annex may be bunked or left single; Residence Life provides the tools to bunk them.",
+   "own_loft_kits": "unknown",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "The Owen Hall and The Commons pages don't say whether beds bunk, and no lofting rule is published. Bed risers are on the prohibited-items list on every hall page.",
+   "sources": [
+    {
+     "url": "https://ung.edu/residence-life/halls/ng-suites.php",
+     "title": "North Georgia Suites (UNG Residence Life)"
+    },
+    {
+     "url": "https://ung.edu/residence-life/halls/donovan-hall.php",
+     "title": "Donovan Hall (UNG Residence Life)"
+    },
+    {
+     "url": "https://ung.edu/residence-life/halls/lewis-hall.php",
+     "title": "Lewis Hall (UNG Residence Life)"
+    },
+    {
+     "url": "https://ung.edu/residence-life/halls/lewis-annex.php",
+     "title": "Lewis Annex (UNG Residence Life)"
     }
    ]
   },
@@ -1106,6 +1202,42 @@
     {
      "url": "https://rde.stanford.edu/studenthousing/lofting-your-bed",
      "title": "Lofting Your Bed - Stanford R&DE Student Housing"
+    }
+   ]
+  },
+  "stephen-f-austin": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Most halls' twin beds are bunkable and adjust 1-3 ft; ask the hall front desk and staff bunk, unbunk or re-height them (all unit residents present, beds stripped). Steen's XL twins are loft style (2 ft 4 in to 4 ft 10 in) and can't be bunked.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": {
+    "min": 12,
+    "max": 36
+   },
+   "deadline": null,
+   "notes": "Students may not build lofts or stack beds on cinder blocks, and bed risers are not allowed. Hall pages list bunkable beds for Griffith, Hall 10, Hall 14, Kerr, Landing, North, South, Village 1-2 and Wisely; the private-bedroom Lodge and Village 3-4 pages don't say. The 12-36 in height is every hall but Steen (28-58 in).",
+   "sources": [
+    {
+     "url": "https://www.sfasu.edu/reslife/faq",
+     "title": "FAQ and Resources | Residence Life | SFA"
+    },
+    {
+     "url": "https://www.sfasu.edu/reslife/move-in",
+     "title": "Planning Your Move-In | Residence Life | SFA"
+    },
+    {
+     "url": "https://www.sfasu.edu/docs/residence-life/community-guidelines.pdf",
+     "title": "Residence Hall Community Guidelines (SFA Residence Life PDF, August 2026)"
+    },
+    {
+     "url": "https://www.sfasu.edu/reslife/steen",
+     "title": "Steen Hall | Residence Life | SFA"
+    },
+    {
+     "url": "https://www.sfasu.edu/reslife/hall-14",
+     "title": "Hall 14 | Residence Life | SFA"
     }
    ]
   },
