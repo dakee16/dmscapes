@@ -86,9 +86,18 @@ const medianDims = (g) => ({ length_ft: median(g.L), width_ft: median(g.W) });
 
 /** Best-fit dims for a room with no published size, or null if nothing fits. */
 function estimateDims(r) {
+  const occ = occupancyOf(r);
+  // A plain room for four or more gets n/2 standard doubles' worth of floor, side by side
+  // (n x a double's area per person), not the published-quad median: published quads are few,
+  // and one school's figure copied to every hall (Boston College's 36 x 16 quad, 19 halls)
+  // outvoted the rest and sized every estimated quad at 33.5 x 16.
+  const double = byCatOcc.get("standard:2");
+  if (occ >= 4 && categoryOf(r.room_type) === "standard" && double?.L.length >= MIN_BUCKET) {
+    const d = medianDims(double);
+    return { length_ft: Math.round(d.width_ft * occ) / 2, width_ft: d.length_ft };
+  }
   const slug = bySlug.get(r.room_type);
   if (slug) return medianDims(slug); // tier 1: exact room type
-  const occ = occupancyOf(r);
   if (occ != null) {
     const catOcc = byCatOcc.get(`${categoryOf(r.room_type)}:${occ}`);
     if (catOcc && catOcc.L.length >= MIN_BUCKET) return medianDims(catOcc); // tier 2
