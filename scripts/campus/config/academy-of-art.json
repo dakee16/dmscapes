@@ -1,0 +1,17 @@
+{
+  "collegeId": "academy-of-art",
+  "area": {
+    "osm": "relation/15635086",
+    "bbox": [
+      37.77355,
+      -122.42435,
+      37.80795,
+      -122.39155
+    ],
+    "note": "No enclosed campus: Academy of Art University is a set of separate buildings across San Francisco, named by street address (official list: academyart.edu/facilities/). OSM relation/15635086 'Academy of Art University' (amenity=university, 19 outer parcels, most tagged with the university's campus-map PDF as their website) is the outline, so only AAU parcels give places; the box is that relation's extent plus about 20 m, from 466 Townsend and 601 Brannan (SoMa) north to the Cannery (2801 Leavenworth, Fisherman's Wharf) and west to 1849 Washington. The four residence halls sit together in Union Square / Lower Nob Hill, no more than about 600 m apart: 560 Powell (Fritz Lang), 620 Sutter (Clara Gil Stephens), 680 Sutter (Edgar Degas) and 1080 Bush (Leonardo da Vinci, outside the OSM parcels but inside the box). OSM has every hall footprint with its address (way/256499430, way/135620229, way/135620236, way/259939121), so the school file's addresses pin them. Free ArtU shuttles (Fall 2026 routes, Mon-Fri) loop 620/860 Sutter, 180 New Montgomery, 466 Townsend, 5th & Bluxome (601 Brannan), 1849 Washington, Kearny & Bush (410 Bush) and Jones & Beach (the Cannery): academyart.edu/academy-life/current-students/campus-shuttle-service-schedule/. Several relation parcels (Federal St, Dr Tom Waddell Pl, Broadway, Taylor St (Russian Hill), 2300 Stockton) are not on the current facilities list; review any places they produce."
+  },
+  "walkMarginM": 250,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public building-code list: Academy of Art University names every building by its street address (Facilities page, https://www.academyart.edu/facilities/, and the ArtU shuttle route map), and no Registrar building-code key or coded class-location list turned up; checked 2026-11-26."
+}

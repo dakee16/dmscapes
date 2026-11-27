@@ -1,4 +1,46 @@
 {
+  "academy-of-art": {
+    "halls": 4,
+    "places": [
+      {
+        "placeId": "academy-of-art-university-liberal-arts",
+        "days": 21
+      },
+      {
+        "placeId": "academy-of-art-university-school-of-illustration",
+        "days": 10
+      },
+      {
+        "placeId": "academy-of-art-university-photo-gallery",
+        "days": 21
+      },
+      {
+        "placeId": "academy-of-art-university-school-of-photography",
+        "days": 10
+      },
+      {
+        "placeId": "academy-of-art-university-school-of-fine-art-sculpture",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "clara-gil-stephens",
+        "name": "Clara Gil Stephens (620 Sutter)",
+        "weekly": 82.4
+      },
+      {
+        "dormId": "edgar-degas",
+        "name": "Edgar Degas (680 Sutter)",
+        "weekly": 93
+      },
+      {
+        "dormId": "fritz-lang",
+        "name": "Fritz Lang (560 Powell)",
+        "weekly": 97.2
+      }
+    ]
+  },
   "arizona": {
     "halls": 22,
     "places": [
@@ -206,6 +248,44 @@
         "dormId": "south-campus-apartments",
         "name": "South Campus Apartments",
         "weekly": 167.4
+      }
+    ]
+  },
+  "bridgewater-state": {
+    "halls": 11,
+    "places": [
+      {
+        "placeId": "art-center",
+        "days": 21
+      },
+      {
+        "placeId": "boyden-hall",
+        "days": 10
+      },
+      {
+        "placeId": "hart-hall",
+        "days": 21
+      },
+      {
+        "placeId": "tinsley-center",
+        "days": 10
+      }
+    ],
+    "top": [
+      {
+        "dormId": "pope-hall",
+        "name": "Pope Hall",
+        "weekly": 142.4
+      },
+      {
+        "dormId": "scott-hall",
+        "name": "Scott Hall",
+        "weekly": 154.8
+      },
+      {
+        "dormId": "miles-hall",
+        "name": "Miles Hall",
+        "weekly": 165.4
       }
     ]
   },
@@ -1411,6 +1491,40 @@
       }
     ]
   },
+  "molloy": {
+    "halls": 3,
+    "places": [
+      {
+        "placeId": "siena-hall",
+        "days": 21
+      },
+      {
+        "placeId": "hagan-center",
+        "days": 10
+      },
+      {
+        "placeId": "wilbur-arts-center",
+        "days": 21
+      }
+    ],
+    "top": [
+      {
+        "dormId": "fitzgerald-hall",
+        "name": "Fitzgerald Hall",
+        "weekly": 56
+      },
+      {
+        "dormId": "maria-regina-hall",
+        "name": "Maria Regina Hall",
+        "weekly": 59.6
+      },
+      {
+        "dormId": "bogner-hall",
+        "name": "Bogner Hall",
+        "weekly": 60.2
+      }
+    ]
+  },
   "msu": {
     "halls": 11,
     "places": [
@@ -1530,6 +1644,48 @@
         "dormId": "carroll-hall",
         "name": "Carroll Hall",
         "weekly": 93.6
+      }
+    ]
+  },
+  "north-georgia": {
+    "halls": 9,
+    "places": [
+      {
+        "placeId": "barnes-hall",
+        "days": 21
+      },
+      {
+        "placeId": "price-memorial-hall",
+        "days": 10
+      },
+      {
+        "placeId": "newton-oaks-center",
+        "days": 21
+      },
+      {
+        "placeId": "chestatee-building",
+        "days": 10
+      },
+      {
+        "placeId": "moore-house",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "lewis-hall",
+        "name": "Lewis Hall",
+        "weekly": 131.4
+      },
+      {
+        "dormId": "the-commons",
+        "name": "The Commons",
+        "weekly": 135.8
+      },
+      {
+        "dormId": "lewis-annex",
+        "name": "Lewis Annex",
+        "weekly": 152.6
       }
     ]
   },
@@ -2232,6 +2388,48 @@
         "dormId": "gsb-residences",
         "name": "Graduate School of Business Residences",
         "weekly": 355.8
+      }
+    ]
+  },
+  "stephen-f-austin": {
+    "halls": 14,
+    "places": [
+      {
+        "placeId": "liberal-arts-north",
+        "days": 21
+      },
+      {
+        "placeId": "human-services",
+        "days": 10
+      },
+      {
+        "placeId": "chemistry-building",
+        "days": 21
+      },
+      {
+        "placeId": "math-building",
+        "days": 10
+      },
+      {
+        "placeId": "boynton-building",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "wisely-hall",
+        "name": "Wisely Hall",
+        "weekly": 100.4
+      },
+      {
+        "dormId": "lumberjack-lodge",
+        "name": "Lumberjack Lodge",
+        "weekly": 149.6
+      },
+      {
+        "dormId": "north-hall",
+        "name": "North Hall",
+        "weekly": 153.6
       }
     ]
   },

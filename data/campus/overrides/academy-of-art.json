@@ -1,0 +1,91 @@
+{
+  "places": {
+    "academy-of-art-university-school-of-architecture": {
+      "short": "601 Brannan",
+      "aliases": [
+        "601 Brannan",
+        "601 Brannan Street"
+      ]
+    },
+    "academy-of-art-university-school-of-motion-pictures-and-television": {
+      "short": "466 Townsend",
+      "aliases": [
+        "466 Townsend",
+        "466 Townsend Street"
+      ]
+    },
+    "academy-of-art-university-academy-resource-center": {
+      "short": "79 New Montgomery",
+      "aliases": [
+        "79 New Montgomery",
+        "79 New Montgomery Street"
+      ]
+    },
+    "academy-of-art-university-game-development": {
+      "short": "180 New Montgomery",
+      "aliases": [
+        "180 New Montgomery",
+        "180 New Montgomery Street"
+      ],
+      "kind": "library"
+    },
+    "academy-of-art-university-school-of-fashion": {
+      "short": "625 Polk",
+      "aliases": [
+        "625 Polk",
+        "625 Polk Street"
+      ]
+    },
+    "academy-of-art-university-liberal-arts": {
+      "short": "491 Post",
+      "aliases": [
+        "491 Post",
+        "491 Post Street"
+      ]
+    },
+    "academy-of-art-university-school-of-fine-art-sculpture": {
+      "short": "410 Bush",
+      "aliases": [
+        "410 Bush",
+        "410 Bush Street"
+      ]
+    },
+    "academy-of-art-university-school-of-illustration": {
+      "short": "540 Powell",
+      "aliases": [
+        "540 Powell",
+        "540 Powell Street"
+      ]
+    },
+    "academy-of-art-university-photo-gallery": {
+      "short": "625 Sutter",
+      "aliases": [
+        "625 Sutter",
+        "625 Sutter Street"
+      ]
+    },
+    "academy-of-art-university-school-of-photography": {
+      "short": "740 Taylor",
+      "aliases": [
+        "740 Taylor",
+        "740 Taylor Street"
+      ]
+    },
+    "academy-of-art-university": {
+      "hide": true
+    },
+    "academy-of-art-university-school-of-advertising": {
+      "hide": true
+    },
+    "academy-of-art-university-school-of-fine-art": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "addresses": "Academy of Art names its buildings by street address (academyart.edu/facilities/), so each place OSM names \"Academy of Art University - School of …\" gets its address as its short name and alias, and a schedule that says \"601 Brannan\" finds it.",
+    "academy-of-art-university": "2300 Stockton Street, one of the OSM campus parcels, isn't on the university's current facilities list (academyart.edu/facilities/, read 2026-11-27).",
+    "academy-of-art-university-school-of-advertising": "60 Federal Street isn't on the university's current facilities list (academyart.edu/facilities/, read 2026-11-27).",
+    "academy-of-art-university-school-of-fine-art": "701 Chestnut Street isn't on the university's current facilities list (academyart.edu/facilities/, read 2026-11-27).",
+    "academy-of-art-university-game-development": "180 New Montgomery holds the university library, along with departments, labs, studios and Cafe 180 (academyart.edu/facilities/); a place has one kind, so it is the library."
+  }
+}

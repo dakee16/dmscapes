@@ -1,0 +1,56 @@
+{
+  "halls": {
+    "the-commons": {
+      "pin": [
+        -83.98954,
+        34.52888
+      ]
+    }
+  },
+  "places": {
+    "the-commons-building-1": {
+      "hide": true
+    },
+    "memorial-hall": {
+      "kind": "gym"
+    },
+    "materials-management": {
+      "hide": true
+    },
+    "downtown-office-building-ung": {
+      "hide": true
+    },
+    "alumni-house": {
+      "hide": true
+    },
+    "coleman-fieldhouse-ung": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "the-commons": "The Commons is two OSM buildings, The Commons Building 1 and Building 2, neither named for the hall alone; pinned inside Building 2 (way/405170128), in the middle of its north wing (UNG Residence Life, ung.edu/residence-life/halls/the-commons.php).",
+    "the-commons-building-1": "The other half of The Commons residence hall, not a dining hall (its name only says commons).",
+    "memorial-hall": "Memorial Hall is the gym (UNG's venue page \"Memorial Hall Gym\", ung.edu/campuses/dahlonega/Venues/memorial-hall-gym.php).",
+    "materials-management": "Receiving and warehouse, not somewhere classes happen.",
+    "downtown-office-building-ung": "An office building, not somewhere classes happen.",
+    "alumni-house": "The alumni relations house, not somewhere classes happen.",
+    "coleman-fieldhouse-ung": "The baseball and softball teams' fieldhouse (dedicated March 2014, UNG Athletics), not somewhere classes happen."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "patriot-hall -> convocation-center",
+        "patriot-hall -> wynne-mathews-military-science-building"
+      ],
+      "maxRatio": 3,
+      "why": "OSM maps no door on Patriot Hall, so its walks start from the walkway on its north side; to the Convocation Center they go west round the hall and down the diagonal footpath (no path is mapped across its south side), and to Wynne-Mathews they go east round Gaillard Hall, which stands between them, by the road."
+    },
+    {
+      "pairs": [
+        "gaillard-hall -> dunlap-hall"
+      ],
+      "maxRatio": 3,
+      "why": "The Drill Field lies between Gaillard Hall and Dunlap Hall, and OSM maps only the oval path round it, not across; Gaillard has no mapped door and starts from the road south of it, so the walk goes round the west side of the field."
+    }
+  ]
+}

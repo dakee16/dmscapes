@@ -1,0 +1,17 @@
+{
+  "collegeId": "molloy",
+  "area": {
+    "osm": "way/32205302",
+    "bbox": [
+      40.68421,
+      -73.63029,
+      40.68827,
+      -73.62442
+    ]
+  },
+  "areaNote": "OSM's only Molloy University outline, way/32205302 (1000 Hempstead Avenue, Rockville Centre; centre about 40.68624, -73.62736), holds the main campus: Kellenberg, Siena, Casey, Hagan, Wilbur, Quealy, the Public Square and the residential quad. Molloy's other sites (30 Hempstead Avenue, the Manhattan Center at 50 Broadway, the Suffolk Center in Amityville) are outside it and have no residence halls.",
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Molloy publishes no building-code list: the Campus Facilities and Campus Buildings & Grounds pages (https://www.molloy.edu/about/campus-facilities/) name buildings in full, and the official campus map (https://www.molloy.edu/_documents/admission-aid/3d-rendered-campus-map-2024.pdf) numbers 14 locations by name with no codes; no Registrar code key turned up (checked 2026-11-26)."
+}

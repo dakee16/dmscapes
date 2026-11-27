@@ -1,0 +1,23 @@
+{
+  "halls": {
+    "bogner-hall": {
+      "pin": [
+        -73.62685,
+        40.68468
+      ]
+    }
+  },
+  "places": {
+    "kellenberg-hall": {
+      "kind": "dining"
+    },
+    "quealy-hall": {
+      "kind": "gym"
+    }
+  },
+  "notes": {
+    "bogner-hall": "Bogner Hall (#3 on Molloy's 2024 campus map, molloy.edu/_documents/admission-aid/3d-rendered-campus-map-2024.pdf) isn't in OSM: it stands on what OSM still maps as a surface car park (way/608163171), west of Maria Regina Hall and south of Fitzgerald Hall. Pinned on the building's centre in Esri World Imagery (2026-11-27), which matches OSM's Fitzgerald outline to about 5 m.",
+    "kellenberg-hall": "Molloy's dining hall, the Anselma Room, is on Kellenberg Hall's first floor, and the James E. Tobin Library on its second (molloy.edu/academics/resources/library/about). A place has one kind, so it is the dining hall; the name still matches classes there.",
+    "quealy-hall": "Quealy Hall is the gymnasium (\"Quealy Hall (Gymnasium)\", #14 on Molloy's 2024 campus map)."
+  }
+}

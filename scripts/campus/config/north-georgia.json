@@ -1,0 +1,64 @@
+{
+  "collegeId": "north-georgia",
+  "area": {
+    "osm": "relation/8338296",
+    "bbox": [
+      34.52416,
+      -83.99469,
+      34.53301,
+      -83.97951
+    ],
+    "note": "Nominatim (amenity=college, Dahlonega): relation/8338296 'University of North Georgia - Dahlonega Campus', 110 S Chestatee St. All nine halls (North Georgia Suites, The Commons Buildings 1 and 2, Lewis Hall, Lewis Annex, Donovan, Gaillard, Patriot, Liberty, Owen) are named OSM buildings inside it."
+  },
+  "areaNote": "UNG has several campuses (Gainesville and others), but Residence Life says \"Residency is only offered at the Dahlonega Campus\" (ung.edu/residence-life), so this map is the Dahlonega campus and no hall is excluded.",
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "UNG publishes no building-code list: its Dahlonega building directory (ung.edu/web-communications/short-links/maps.php) and the hall and cadet pages name buildings only (Library Technology Center, Health & Natural Sciences, Nix Center), and class rooms are scheduled in the login-only Banner system (checked 2026-11-26).",
+  "housing": {
+    "title": "UNG Residence Life: Residence Halls (Dahlonega Campus), and Corps of Cadets: Cadet Residence Halls",
+    "url": "https://ung.edu/residence-life/halls/index.php",
+    "note": "The Residence Life table lists each non-cadet hall's class (Freshmen, Upperclassmen or both). All cadets, every year, live in the Military Village (Gaillard, Liberty and Patriot halls), which are cadets only."
+  },
+  "years": {
+    "north-georgia-suites": {
+      "year": "any",
+      "source": "https://ung.edu/residence-life/halls/index.php"
+    },
+    "donovan-hall": {
+      "year": "first",
+      "source": "https://ung.edu/residence-life/halls/index.php"
+    },
+    "lewis-annex": {
+      "year": "any",
+      "source": "https://ung.edu/residence-life/halls/index.php"
+    },
+    "lewis-hall": {
+      "year": "any",
+      "source": "https://ung.edu/residence-life/halls/index.php"
+    },
+    "owen-hall": {
+      "year": "upper",
+      "source": [
+        "https://ung.edu/residence-life/halls/index.php",
+        "https://ung.edu/residence-life/halls/owen-hall.php"
+      ]
+    },
+    "the-commons": {
+      "year": "any",
+      "source": "https://ung.edu/residence-life/halls/index.php"
+    },
+    "gaillard-hall": {
+      "year": "any",
+      "source": "https://ung.edu/military-college-admissions/cadet-housing/index.php"
+    },
+    "liberty-hall": {
+      "year": "any",
+      "source": "https://ung.edu/military-college-admissions/cadet-housing/index.php"
+    },
+    "patriot-hall": {
+      "year": "any",
+      "source": "https://ung.edu/military-college-admissions/cadet-housing/index.php"
+    }
+  }
+}

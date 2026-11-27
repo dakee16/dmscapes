@@ -1,0 +1,232 @@
+{
+ "collegeId": "academy-of-art",
+ "generatedAt": "2026-11-27T17:54:25.003Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-27"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/academy-of-art.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -122.41941,
+  37.77415,
+  -122.39871,
+  37.79113
+ ],
+ "halls": [
+  {
+   "dormId": "clara-gil-stephens",
+   "name": "Clara Gil Stephens (620 Sutter)",
+   "lng": -122.410751,
+   "lat": 37.789238,
+   "pin": "address",
+   "osm": "way/135620229",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "academy-of-art-university-game-development",
+     "minutes": 16.8
+    }
+   }
+  },
+  {
+   "dormId": "edgar-degas",
+   "name": "Edgar Degas (680 Sutter)",
+   "lng": -122.411615,
+   "lat": 37.789051,
+   "pin": "address",
+   "osm": "way/135620236",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "academy-of-art-university-game-development",
+     "minutes": 17.6
+    }
+   }
+  },
+  {
+   "dormId": "leonardo-da-vinci",
+   "name": "Leonardo da Vinci (1080 Bush)",
+   "lng": -122.415015,
+   "lat": 37.789642,
+   "pin": "address",
+   "osm": "way/259939121",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "academy-of-art-university-game-development",
+     "minutes": 22.6
+    }
+   }
+  },
+  {
+   "dormId": "fritz-lang",
+   "name": "Fritz Lang (560 Powell)",
+   "lng": -122.408593,
+   "lat": 37.790004,
+   "pin": "address",
+   "osm": "way/256499430",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "academy-of-art-university-game-development",
+     "minutes": 15.4
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "academy-of-art-university-school-of-architecture",
+   "name": "Academy of Art University - School of Architecture",
+   "short": "601 Brannan",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "601 Brannan",
+    "601 Brannan Street"
+   ],
+   "lng": -122.398707,
+   "lat": 37.776015,
+   "osm": "way/218185113"
+  },
+  {
+   "id": "academy-of-art-university-school-of-motion-pictures-and-television",
+   "name": "Academy of Art University - School of Motion Pictures & Television",
+   "short": "466 Townsend",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "466 Townsend",
+    "466 Townsend Street"
+   ],
+   "lng": -122.399289,
+   "lat": 37.774147,
+   "osm": "way/218185049"
+  },
+  {
+   "id": "academy-of-art-university-academy-resource-center",
+   "name": "Academy of Art University - Academy Resource Center",
+   "short": "79 New Montgomery",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "79 New Montgomery",
+    "79 New Montgomery Street"
+   ],
+   "lng": -122.40056,
+   "lat": 37.787904,
+   "osm": "relation/3493148"
+  },
+  {
+   "id": "academy-of-art-university-game-development",
+   "name": "Academy of Art University - Game Development",
+   "short": "180 New Montgomery",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "180 New Montgomery",
+    "180 New Montgomery Street"
+   ],
+   "lng": -122.399519,
+   "lat": 37.786262,
+   "osm": "way/80296763"
+  },
+  {
+   "id": "academy-of-art-university-school-of-fashion",
+   "name": "Academy of Art University - School of Fashion",
+   "short": "625 Polk",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "625 Polk",
+    "625 Polk Street"
+   ],
+   "lng": -122.419409,
+   "lat": 37.782401,
+   "osm": "way/256045018"
+  },
+  {
+   "id": "academy-of-art-university-liberal-arts",
+   "name": "Academy of Art University - Liberal Arts",
+   "short": "491 Post",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "491 Post",
+    "491 Post Street"
+   ],
+   "lng": -122.409721,
+   "lat": 37.787842,
+   "osm": "way/332374374"
+  },
+  {
+   "id": "academy-of-art-university-school-of-fine-art-sculpture",
+   "name": "Academy of Art University - School of Fine Art Sculpture",
+   "short": "410 Bush",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "410 Bush",
+    "410 Bush Street"
+   ],
+   "lng": -122.404551,
+   "lat": 37.791135,
+   "osm": "way/256076609"
+  },
+  {
+   "id": "academy-of-art-university-school-of-illustration",
+   "name": "Academy of Art University - School of Illustration",
+   "short": "540 Powell",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "540 Powell",
+    "540 Powell Street"
+   ],
+   "lng": -122.40838,
+   "lat": 37.789802,
+   "osm": "way/256917340"
+  },
+  {
+   "id": "academy-of-art-university-photo-gallery",
+   "name": "Academy of Art University - Photo Gallery",
+   "short": "625 Sutter",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "625 Sutter",
+    "625 Sutter Street"
+   ],
+   "lng": -122.410674,
+   "lat": 37.788755,
+   "osm": "way/48995279"
+  },
+  {
+   "id": "academy-of-art-university-school-of-photography",
+   "name": "Academy of Art University - School of Photography",
+   "short": "740 Taylor",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "740 Taylor",
+    "740 Taylor Street"
+   ],
+   "lng": -122.411823,
+   "lat": 37.789362,
+   "osm": "way/135620223"
+  }
+ ]
+}

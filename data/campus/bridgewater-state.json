@@ -1,0 +1,468 @@
+{
+ "collegeId": "bridgewater-state",
+ "generatedAt": "2026-11-27T17:54:58.065Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-27"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/bridgewater-state.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -70.97517,
+  41.98528,
+  -70.96158,
+  41.98969
+ ],
+ "halls": [
+  {
+   "dormId": "shea-hall",
+   "name": "Shea Hall",
+   "lng": -70.961928,
+   "lat": 41.986378,
+   "pin": "address",
+   "osm": "way/212207347",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "maxwell-library",
+     "minutes": 12.4
+    },
+    "dining": {
+     "placeId": "east-campus-commons",
+     "minutes": 3.9
+    },
+    "gym": {
+     "placeId": "kelly-gymnasium",
+     "minutes": 10.4
+    }
+   }
+  },
+  {
+   "dormId": "durgin-hall",
+   "name": "Durgin Hall",
+   "lng": -70.961928,
+   "lat": 41.986378,
+   "pin": "address",
+   "osm": "way/212207347",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "maxwell-library",
+     "minutes": 12.4
+    },
+    "dining": {
+     "placeId": "east-campus-commons",
+     "minutes": 3.9
+    },
+    "gym": {
+     "placeId": "kelly-gymnasium",
+     "minutes": 10.4
+    }
+   }
+  },
+  {
+   "dormId": "woodward-hall",
+   "name": "Woodward Hall",
+   "lng": -70.97355,
+   "lat": 41.986175,
+   "pin": "name",
+   "osm": "way/212208592",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "maxwell-library",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "tillinghast-hall",
+     "minutes": 3.6
+    },
+    "gym": {
+     "placeId": "kelly-gymnasium",
+     "minutes": 6.3
+    }
+   }
+  },
+  {
+   "dormId": "scott-hall",
+   "name": "Scott Hall",
+   "lng": -70.972436,
+   "lat": 41.986679,
+   "pin": "name",
+   "osm": "way/212208440",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "maxwell-library",
+     "minutes": 2.2
+    },
+    "dining": {
+     "placeId": "tillinghast-hall",
+     "minutes": 3
+    },
+    "gym": {
+     "placeId": "kelly-gymnasium",
+     "minutes": 4.1
+    }
+   }
+  },
+  {
+   "dormId": "pope-hall",
+   "name": "Pope Hall",
+   "lng": -70.972255,
+   "lat": 41.988553,
+   "pin": "name",
+   "osm": "way/212208422",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "maxwell-library",
+     "minutes": 3.4
+    },
+    "dining": {
+     "placeId": "tillinghast-hall",
+     "minutes": 2.5
+    },
+    "gym": {
+     "placeId": "kelly-gymnasium",
+     "minutes": 3.9
+    }
+   }
+  },
+  {
+   "dormId": "miles-hall",
+   "name": "Miles Hall",
+   "lng": -70.964776,
+   "lat": 41.987333,
+   "pin": "name",
+   "osm": "way/212207509",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "maxwell-library",
+     "minutes": 9.1
+    },
+    "dining": {
+     "placeId": "east-campus-commons",
+     "minutes": 1.8
+    },
+    "gym": {
+     "placeId": "kelly-gymnasium",
+     "minutes": 7.2
+    }
+   }
+  },
+  {
+   "dormId": "dinardo-hall",
+   "name": "DiNardo Hall",
+   "lng": -70.965133,
+   "lat": 41.986958,
+   "pin": "name",
+   "osm": "way/212207511",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "maxwell-library",
+     "minutes": 8.1
+    },
+    "dining": {
+     "placeId": "east-campus-commons",
+     "minutes": 1.7
+    },
+    "gym": {
+     "placeId": "kelly-gymnasium",
+     "minutes": 6.1
+    }
+   }
+  },
+  {
+   "dormId": "crimson-hall",
+   "name": "Crimson Hall",
+   "lng": -70.965299,
+   "lat": 41.986274,
+   "pin": "name",
+   "osm": "way/311754684",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "maxwell-library",
+     "minutes": 10.2
+    },
+    "dining": {
+     "placeId": "east-campus-commons",
+     "minutes": 4.5
+    },
+    "gym": {
+     "placeId": "kelly-gymnasium",
+     "minutes": 8.3
+    }
+   }
+  },
+  {
+   "dormId": "stonehouse-hall",
+   "name": "Stonehouse Hall",
+   "lng": -70.963756,
+   "lat": 41.986347,
+   "pin": "name",
+   "osm": "way/212207459",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "maxwell-library",
+     "minutes": 10
+    },
+    "dining": {
+     "placeId": "east-campus-commons",
+     "minutes": 2.4
+    },
+    "gym": {
+     "placeId": "kelly-gymnasium",
+     "minutes": 8.1
+    }
+   }
+  },
+  {
+   "dormId": "weygand-hall",
+   "name": "Weygand Hall",
+   "lng": -70.964339,
+   "lat": 41.985278,
+   "pin": "name",
+   "osm": "way/641658430",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "maxwell-library",
+     "minutes": 10.9
+    },
+    "dining": {
+     "placeId": "east-campus-commons",
+     "minutes": 5.2
+    },
+    "gym": {
+     "placeId": "kelly-gymnasium",
+     "minutes": 8.9
+    }
+   }
+  },
+  {
+   "dormId": "great-hill-student-apartments",
+   "name": "Great Hill Student Apartments",
+   "lng": -70.962048,
+   "lat": 41.987933,
+   "pin": "name",
+   "osm": "way/212207331",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "maxwell-library",
+     "minutes": 12.1
+    },
+    "dining": {
+     "placeId": "east-campus-commons",
+     "minutes": 3.8
+    },
+    "gym": {
+     "placeId": "kelly-gymnasium",
+     "minutes": 10.2
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "burnell-hall",
+   "name": "Burnell Hall",
+   "short": "Burnell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.964999,
+   "lat": 41.989687,
+   "osm": "way/212207505"
+  },
+  {
+   "id": "rondileau-student-union",
+   "name": "Rondileau Student Union",
+   "short": "Rondileau Student Union",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.971995,
+   "lat": 41.987554,
+   "osm": "way/212208464"
+  },
+  {
+   "id": "tinsley-center",
+   "name": "Tinsley Center",
+   "short": "Tinsley Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.961584,
+   "lat": 41.988978,
+   "osm": "way/212207252"
+  },
+  {
+   "id": "dana-mohler-faria-science-and-mathematics-center",
+   "name": "Dana Mohler-Faria Science and Mathematics Center",
+   "short": "Dana Mohler-Faria Science and Mathematics Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.97076,
+   "lat": 41.988192,
+   "osm": "way/212208030"
+  },
+  {
+   "id": "maxwell-library",
+   "name": "Maxwell Library",
+   "short": "Maxwell Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.970692,
+   "lat": 41.986968,
+   "osm": "way/212208058"
+  },
+  {
+   "id": "east-campus-commons",
+   "name": "East Campus Commons",
+   "short": "East Campus Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.964415,
+   "lat": 41.986625,
+   "osm": "way/212207477"
+  },
+  {
+   "id": "kelly-gymnasium",
+   "name": "Kelly Gymnasium",
+   "short": "Kelly Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.970008,
+   "lat": 41.987518,
+   "osm": "way/212208110"
+  },
+  {
+   "id": "boyden-hall",
+   "name": "Boyden Hall",
+   "short": "Boyden Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.974595,
+   "lat": 41.987515,
+   "osm": "way/212208820"
+  },
+  {
+   "id": "moakley-center",
+   "name": "Moakley Center",
+   "short": "Moakley Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.965957,
+   "lat": 41.98875,
+   "osm": "way/212207559"
+  },
+  {
+   "id": "tillinghast-hall",
+   "name": "Tillinghast Hall",
+   "short": "Tillinghast Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.973271,
+   "lat": 41.987567,
+   "osm": "way/212208558"
+  },
+  {
+   "id": "hart-hall",
+   "name": "Hart Hall",
+   "short": "Hart Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.966041,
+   "lat": 41.989165,
+   "osm": "way/212207618"
+  },
+  {
+   "id": "hunt-hall",
+   "name": "Hunt Hall",
+   "short": "Hunt Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.974515,
+   "lat": 41.988606,
+   "osm": "way/212208797"
+  },
+  {
+   "id": "burrill-office-complex",
+   "name": "Burrill Office Complex",
+   "short": "Burrill Office Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.965821,
+   "lat": 41.987925,
+   "osm": "way/212207576"
+  },
+  {
+   "id": "harrington-hall",
+   "name": "Harrington Hall",
+   "short": "Harrington Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.974381,
+   "lat": 41.98664,
+   "osm": "way/212208685"
+  },
+  {
+   "id": "art-center",
+   "name": "Art Center",
+   "short": "Art Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.973453,
+   "lat": 41.98832,
+   "osm": "way/212208580"
+  },
+  {
+   "id": "gates-house",
+   "name": "Gates House",
+   "short": "Gates House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -70.975168,
+   "lat": 41.987344,
+   "osm": "way/212208873"
+  }
+ ]
+}

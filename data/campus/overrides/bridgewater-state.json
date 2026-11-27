@@ -1,0 +1,50 @@
+{
+  "places": {
+    "tillinghast-hall": {
+      "kind": "dining"
+    },
+    "msca": {
+      "hide": true
+    },
+    "welcome-center": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "tillinghast-hall": "Tillinghast Hall's first floor is the Flynn Dining Commons (\"Tilly\"), BSU's West Campus dining hall (bridgew.edu/stories/2023/flynn-dining-commons; bridgew.edu/student-life/dining-on-campus).",
+    "msca": "The MSCA office at 91 Burrill Avenue holds the faculty union's offices, not classes.",
+    "welcome-center": "The admissions Welcome Center, not somewhere classes happen.",
+    "shea-hall": "Shea and Durgin share one OSM building (way/212207347, 160 Burrill Avenue), so both halls sit on its centre and rank the same."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "pope-hall -> rondileau-student-union"
+      ],
+      "maxRatio": 3.2,
+      "why": "OSM maps no doors on Pope Hall or the Rondileau Student Union: Pope's pin snaps to the walk at its south-west corner, and the union is reached from the oval path on its south side, so the walk crosses the road and goes round the union's west end."
+    },
+    {
+      "pairs": [
+        "dinardo-hall -> burrill-office-complex",
+        "crimson-hall -> burrill-office-complex"
+      ],
+      "maxRatio": 3.4,
+      "why": "OSM maps no doors on Crimson, DiNardo or the Burrill Office Complex: Crimson's pin snaps to the walk south of it, and Burrill is reached from the drive on its west side, so walks go round Crimson's west end and up past DiNardo and Miles to Burrill Avenue."
+    },
+    {
+      "pairs": [
+        "weygand-hall -> east-campus-commons"
+      ],
+      "maxRatio": 3.2,
+      "why": "OSM maps no doors on Weygand Hall or East Campus Commons: Weygand's pin snaps to the walk on its west side and the Commons is reached from the path at its north-west corner, so the walk goes round Weygand's west end and up the Commons' east side."
+    },
+    {
+      "pairs": [
+        "great-hill-student-apartments -> tinsley-center"
+      ],
+      "maxRatio": 3,
+      "why": "The drive between the Great Hill apartment buildings isn't joined to the path north to the Tinsley Center (it stops short in OSM), and Great Hill's pin snaps to the drive south of it, so the walk goes west and round by the footpath to Tinsley's west side."
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+ "collegeId": "molloy",
+ "generatedAt": "2026-11-27T17:45:27.703Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-27"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/molloy.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -73.62758,
+  40.68468,
+  -73.6253,
+  40.68708
+ ],
+ "halls": [
+  {
+   "dormId": "fitzgerald-hall",
+   "name": "Fitzgerald Hall",
+   "lng": -73.626903,
+   "lat": 40.685114,
+   "pin": "name",
+   "osm": "way/608163144",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "kellenberg-hall",
+     "minutes": 2.4
+    },
+    "gym": {
+     "placeId": "quealy-hall",
+     "minutes": 5.2
+    }
+   }
+  },
+  {
+   "dormId": "maria-regina-hall",
+   "name": "Maria Regina Hall",
+   "lng": -73.626363,
+   "lat": 40.684887,
+   "pin": "name",
+   "osm": "relation/8705270",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "kellenberg-hall",
+     "minutes": 2.6
+    },
+    "gym": {
+     "placeId": "quealy-hall",
+     "minutes": 5.4
+    }
+   }
+  },
+  {
+   "dormId": "bogner-hall",
+   "name": "Bogner Hall",
+   "lng": -73.62685,
+   "lat": 40.68468,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "kellenberg-hall",
+     "minutes": 2.7
+    },
+    "gym": {
+     "placeId": "quealy-hall",
+     "minutes": 5.6
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "kellenberg-hall",
+   "name": "Kellenberg Hall",
+   "short": "Kellenberg Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.626322,
+   "lat": 40.686008,
+   "osm": "way/608163141"
+  },
+  {
+   "id": "public-square",
+   "name": "Public Square",
+   "short": "Public Square",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.627435,
+   "lat": 40.686306,
+   "osm": "way/608163142"
+  },
+  {
+   "id": "quealy-hall",
+   "name": "Quealy Hall",
+   "short": "Quealy Hall",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.6253,
+   "lat": 40.686719,
+   "osm": "way/608163146"
+  },
+  {
+   "id": "wilbur-arts-center",
+   "name": "Wilbur Arts Center",
+   "short": "Wilbur Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.625757,
+   "lat": 40.687019,
+   "osm": "way/608163145"
+  },
+  {
+   "id": "casey-center",
+   "name": "Casey Center",
+   "short": "Casey Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.626636,
+   "lat": 40.686867,
+   "osm": "way/608163140"
+  },
+  {
+   "id": "hagan-center",
+   "name": "Hagan Center",
+   "short": "Hagan Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.627584,
+   "lat": 40.685793,
+   "osm": "way/608163143"
+  },
+  {
+   "id": "siena-hall",
+   "name": "Siena Hall",
+   "short": "Siena Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.627215,
+   "lat": 40.687079,
+   "osm": "way/608163139"
+  }
+ ]
+}

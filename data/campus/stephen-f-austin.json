@@ -1,0 +1,922 @@
+{
+ "collegeId": "stephen-f-austin",
+ "generatedAt": "2026-11-27T17:53:11.464Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-27"
+  },
+  {
+   "name": "SFA Residence Life: each hall's 'Hall Type' and the Fall 2026 first-year check-in schedule on Planning Your Move-In",
+   "url": "https://www.sfasu.edu/reslife/halls",
+   "use": "first-year and upper-year tags (each hall's yearSource)",
+   "note": "Griffith, Hall 10, Kerr and Lumberjack Village 1 are labelled 'Non-first-year students', but the move-in page gives first-time, first-year residents check-in slots on their floors (and on Wisely's floors 1 and 2), so those halls are 'any'."
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/griffith",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/move-in",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/hall-10",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/hall-14",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/kerr",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/landing",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/lodge",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/village-1",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/village-2",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/village-3",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/village-4",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/north",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/south",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/steen",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.sfasu.edu/reslife/wisely",
+   "use": "year tag"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/stephen-f-austin.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -94.65211,
+  31.61583,
+  -94.64263,
+  31.62859
+ ],
+ "halls": [
+  {
+   "dormId": "griffith-hall",
+   "name": "Griffith Hall",
+   "lng": -94.652011,
+   "lat": 31.618407,
+   "pin": "name",
+   "osm": "way/411184902",
+   "year": "any",
+   "yearSource": [
+    "https://www.sfasu.edu/reslife/griffith",
+    "https://www.sfasu.edu/reslife/move-in"
+   ],
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 8.5
+    },
+    "gym": {
+     "placeId": "shelton-gym",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 14.1
+    }
+   }
+  },
+  {
+   "dormId": "hall-10",
+   "name": "Hall 10",
+   "lng": -94.650169,
+   "lat": 31.61859,
+   "pin": "name",
+   "osm": "way/411184901",
+   "year": "any",
+   "yearSource": [
+    "https://www.sfasu.edu/reslife/hall-10",
+    "https://www.sfasu.edu/reslife/move-in"
+   ],
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 6.5
+    },
+    "gym": {
+     "placeId": "shelton-gym",
+     "minutes": 6.2
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 12.5
+    }
+   }
+  },
+  {
+   "dormId": "hall-14",
+   "name": "Hall 14",
+   "lng": -94.646003,
+   "lat": 31.622505,
+   "pin": "name",
+   "osm": "way/289615988",
+   "year": "first",
+   "yearSource": "https://www.sfasu.edu/reslife/hall-14",
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 6
+    },
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 7.5
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 5.3
+    }
+   }
+  },
+  {
+   "dormId": "kerr-hall",
+   "name": "Kerr Hall",
+   "lng": -94.650772,
+   "lat": 31.618374,
+   "pin": "name",
+   "osm": "way/411184903",
+   "year": "any",
+   "yearSource": [
+    "https://www.sfasu.edu/reslife/kerr",
+    "https://www.sfasu.edu/reslife/move-in"
+   ],
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 7.6
+    },
+    "gym": {
+     "placeId": "shelton-gym",
+     "minutes": 7.3
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 13.2
+    }
+   }
+  },
+  {
+   "dormId": "lumberjack-landing",
+   "name": "Lumberjack Landing",
+   "lng": -94.645815,
+   "lat": 31.621499,
+   "pin": "name",
+   "osm": "way/289615985",
+   "year": "first",
+   "yearSource": "https://www.sfasu.edu/reslife/landing",
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 5.4
+    },
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "lumberjack-lodge",
+   "name": "Lumberjack Lodge",
+   "lng": -94.646857,
+   "lat": 31.6224,
+   "pin": "name",
+   "osm": "way/379692058",
+   "year": "first",
+   "yearSource": "https://www.sfasu.edu/reslife/lodge",
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 8.1
+    },
+    "gym": {
+     "placeId": "shelton-gym",
+     "minutes": 10
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 5
+    }
+   }
+  },
+  {
+   "dormId": "lumberjack-village-1",
+   "name": "Lumberjack Village 1",
+   "lng": -94.64971,
+   "lat": 31.61635,
+   "pin": "manual",
+   "osm": "way/411184147",
+   "year": "any",
+   "yearSource": [
+    "https://www.sfasu.edu/reslife/village-1",
+    "https://www.sfasu.edu/reslife/move-in"
+   ],
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 9.4
+    },
+    "gym": {
+     "placeId": "shelton-gym",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 15.4
+    }
+   }
+  },
+  {
+   "dormId": "lumberjack-village-2",
+   "name": "Lumberjack Village 2",
+   "lng": -94.64926,
+   "lat": 31.61706,
+   "pin": "manual",
+   "osm": "way/411184146",
+   "year": "upper",
+   "yearSource": "https://www.sfasu.edu/reslife/village-2",
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 8
+    },
+    "gym": {
+     "placeId": "shelton-gym",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 14
+    }
+   }
+  },
+  {
+   "dormId": "lumberjack-village-3",
+   "name": "Lumberjack Village 3",
+   "lng": -94.65021,
+   "lat": 31.61711,
+   "pin": "manual",
+   "osm": "way/411177418",
+   "year": "upper",
+   "yearSource": "https://www.sfasu.edu/reslife/village-3",
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 9
+    },
+    "gym": {
+     "placeId": "shelton-gym",
+     "minutes": 7.8
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 14.9
+    }
+   }
+  },
+  {
+   "dormId": "lumberjack-village-4",
+   "name": "Lumberjack Village 4",
+   "lng": -94.65086,
+   "lat": 31.6164,
+   "pin": "manual",
+   "osm": null,
+   "year": "upper",
+   "yearSource": "https://www.sfasu.edu/reslife/village-4",
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 11.2
+    },
+    "gym": {
+     "placeId": "shelton-gym",
+     "minutes": 10.1
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 17.2
+    }
+   }
+  },
+  {
+   "dormId": "north-hall",
+   "name": "North Hall",
+   "lng": -94.649468,
+   "lat": 31.618686,
+   "pin": "name",
+   "osm": "way/411181166",
+   "year": "upper",
+   "yearSource": "https://www.sfasu.edu/reslife/north",
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 5.7
+    },
+    "gym": {
+     "placeId": "shelton-gym",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 11.6
+    }
+   }
+  },
+  {
+   "dormId": "south-hall",
+   "name": "South Hall",
+   "lng": -94.64947,
+   "lat": 31.617874,
+   "pin": "name",
+   "osm": "way/411177543",
+   "year": "upper",
+   "yearSource": "https://www.sfasu.edu/reslife/south",
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 6.6
+    },
+    "gym": {
+     "placeId": "shelton-gym",
+     "minutes": 5.5
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 12.6
+    }
+   }
+  },
+  {
+   "dormId": "steen-hall",
+   "name": "Steen Hall",
+   "lng": -94.64535,
+   "lat": 31.6234,
+   "pin": "manual",
+   "osm": "way/419817859",
+   "year": "first",
+   "yearSource": "https://www.sfasu.edu/reslife/steen",
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 7.5
+    },
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 8.7
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 2
+    }
+   }
+  },
+  {
+   "dormId": "wisely-hall",
+   "name": "Wisely Hall",
+   "lng": -94.649599,
+   "lat": 31.622631,
+   "pin": "name",
+   "osm": "way/411268909",
+   "year": "any",
+   "yearSource": [
+    "https://www.sfasu.edu/reslife/wisely",
+    "https://www.sfasu.edu/reslife/move-in"
+   ],
+   "near": {
+    "library": {
+     "placeId": "ralph-w-steen-library",
+     "minutes": 7.1
+    },
+    "gym": {
+     "placeId": "shelton-gym",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "east-college-dining-hall",
+     "minutes": 8
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "baker-patillo-student-center",
+   "name": "Baker Patillo Student Center",
+   "short": "Baker Patillo Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.650007,
+   "lat": 31.620589,
+   "osm": "way/411208596"
+  },
+  {
+   "id": "early-childhood-research-center",
+   "name": "Early Childhood Research Center",
+   "short": "Early Childhood Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.646679,
+   "lat": 31.62563,
+   "osm": "way/411280432"
+  },
+  {
+   "id": "lucille-norton-hpe-complex",
+   "name": "Lucille Norton HPE Complex",
+   "short": "Lucille Norton HPE Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.647446,
+   "lat": 31.618813,
+   "osm": "way/289615981"
+  },
+  {
+   "id": "ralph-w-steen-library",
+   "name": "Ralph W. Steen Library",
+   "short": "Ralph W. Steen Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.646529,
+   "lat": 31.620593,
+   "osm": "way/379692187"
+  },
+  {
+   "id": "student-recreation-center",
+   "name": "Student Recreation Center",
+   "short": "Student Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.646045,
+   "lat": 31.618966,
+   "osm": "way/289615982"
+  },
+  {
+   "id": "wright-music-building",
+   "name": "Wright Music Building",
+   "short": "Wright Music Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.651304,
+   "lat": 31.622382,
+   "osm": "way/411265804"
+  },
+  {
+   "id": "el-miller-science-building",
+   "name": "E.L. Miller Science Building",
+   "short": "E.L. Miller Science Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.648452,
+   "lat": 31.619902,
+   "osm": "way/411191067"
+  },
+  {
+   "id": "east-college-dining-hall",
+   "name": "East College Dining Hall",
+   "short": "East College Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.64531,
+   "lat": 31.622509,
+   "osm": "way/289615986"
+  },
+  {
+   "id": "cole-stem-building",
+   "name": "Cole STEM Building",
+   "short": "Cole STEM Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.648486,
+   "lat": 31.618506,
+   "osm": "way/552401377"
+  },
+  {
+   "id": "art-building",
+   "name": "Art Building",
+   "short": "Art Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.643347,
+   "lat": 31.621445,
+   "osm": "way/411208603"
+  },
+  {
+   "id": "college-of-education-annex",
+   "name": "College of Education Annex",
+   "short": "College of Education Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.647516,
+   "lat": 31.617679,
+   "osm": "way/411187492"
+  },
+  {
+   "id": "math-building",
+   "name": "Math Building",
+   "short": "Math Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.646816,
+   "lat": 31.619814,
+   "osm": "way/289615989"
+  },
+  {
+   "id": "mckibben-education-building",
+   "name": "McKibben Education Building",
+   "short": "McKibben Education Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.647533,
+   "lat": 31.621107,
+   "osm": "way/411263728"
+  },
+  {
+   "id": "griffith-fine-arts-building",
+   "name": "Griffith Fine Arts Building",
+   "short": "Griffith Fine Arts Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.651935,
+   "lat": 31.621689,
+   "osm": "way/411266530"
+  },
+  {
+   "id": "mcgee-business-building",
+   "name": "McGee Business Building",
+   "short": "McGee Business Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.647539,
+   "lat": 31.62013,
+   "osm": "way/411191070"
+  },
+  {
+   "id": "arthur-temple-college-of-forestry-and-agriculture",
+   "name": "Arthur Temple College of Forestry and Agriculture",
+   "short": "Arthur Temple College of Forestry and Agriculture",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.647036,
+   "lat": 31.623411,
+   "osm": "way/379692005"
+  },
+  {
+   "id": "agriculture-building",
+   "name": "Agriculture Building",
+   "short": "Agriculture Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.643991,
+   "lat": 31.620754,
+   "osm": "way/411263725"
+  },
+  {
+   "id": "human-services",
+   "name": "Human Services",
+   "short": "Human Services",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.647595,
+   "lat": 31.62215,
+   "osm": "way/411272602"
+  },
+  {
+   "id": "shelton-gym",
+   "name": "Shelton Gym",
+   "short": "Shelton Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.647073,
+   "lat": 31.619222,
+   "osm": "way/411203774"
+  },
+  {
+   "id": "art-studio",
+   "name": "Art Studio",
+   "short": "Art Studio",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.643919,
+   "lat": 31.621386,
+   "osm": "way/411208601"
+  },
+  {
+   "id": "ferguson-liberal-arts-building",
+   "name": "Ferguson Liberal Arts Building",
+   "short": "Ferguson Liberal Arts Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.648392,
+   "lat": 31.621074,
+   "osm": "way/411263729"
+  },
+  {
+   "id": "boynton-building",
+   "name": "Boynton Building",
+   "short": "Boynton Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.650393,
+   "lat": 31.622293,
+   "osm": "way/411265799"
+  },
+  {
+   "id": "thomas-j-rusk-building",
+   "name": "Thomas J. Rusk Building",
+   "short": "Thomas J. Rusk Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.649011,
+   "lat": 31.621029,
+   "osm": "way/411208597"
+  },
+  {
+   "id": "austin-building",
+   "name": "Austin Building",
+   "short": "Austin Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.649457,
+   "lat": 31.6219,
+   "osm": "way/411263732"
+  },
+  {
+   "id": "kennedy-auditorium",
+   "name": "Kennedy Auditorium",
+   "short": "Kennedy Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.648954,
+   "lat": 31.619984,
+   "osm": "way/411191068"
+  },
+  {
+   "id": "liberal-arts-north",
+   "name": "Liberal Arts North",
+   "short": "Liberal Arts North",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.648481,
+   "lat": 31.621462,
+   "osm": "way/411263730"
+  },
+  {
+   "id": "human-sciences-building-south",
+   "name": "Human Sciences Building South",
+   "short": "Human Sciences Building South",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.647444,
+   "lat": 31.61649,
+   "osm": "way/411186348"
+  },
+  {
+   "id": "wellness-center",
+   "name": "Wellness Center",
+   "short": "Wellness Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.645525,
+   "lat": 31.624996,
+   "osm": "way/411280433"
+  },
+  {
+   "id": "forestry-labratories",
+   "name": "Forestry Labratories",
+   "short": "Forestry Labratories",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.647677,
+   "lat": 31.624269,
+   "osm": "way/411280429"
+  },
+  {
+   "id": "human-sciences-building-north",
+   "name": "Human Sciences Building North",
+   "short": "Human Sciences Building North",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.647352,
+   "lat": 31.617122,
+   "osm": "way/411186347"
+  },
+  {
+   "id": "chemistry-building",
+   "name": "Chemistry Building",
+   "short": "Chemistry Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.648924,
+   "lat": 31.620436,
+   "osm": "way/411208598"
+  },
+  {
+   "id": "ag-shop-and-soils-lab",
+   "name": "Ag Shop & Soils Lab",
+   "short": "Ag Shop & Soils Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.644539,
+   "lat": 31.623443,
+   "osm": "way/411280434"
+  },
+  {
+   "id": "school-of-social-work",
+   "name": "School of Social Work",
+   "short": "School of Social Work",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.6498,
+   "lat": 31.615865,
+   "osm": "way/411186341"
+  },
+  {
+   "id": "military-science-building",
+   "name": "Military Science Building",
+   "short": "Military Science Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.644099,
+   "lat": 31.623337,
+   "osm": "way/411202451"
+  },
+  {
+   "id": "scene-shop",
+   "name": "Scene Shop",
+   "short": "Scene Shop",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.651911,
+   "lat": 31.624192,
+   "osm": "way/411280436"
+  },
+  {
+   "id": "juanita-curry-boynton-house",
+   "name": "Juanita Curry Boynton House",
+   "short": "Juanita Curry Boynton House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.648353,
+   "lat": 31.616565,
+   "osm": "way/411187491"
+  },
+  {
+   "id": "brundrett-conservation-education-building",
+   "name": "Brundrett Conservation Education Building",
+   "short": "Brundrett Conservation Education Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.646925,
+   "lat": 31.62859,
+   "osm": "way/647970971"
+  },
+  {
+   "id": "tennis-complex",
+   "name": "Tennis Complex",
+   "short": "Tennis Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.64645,
+   "lat": 31.617147,
+   "osm": "way/411186344"
+  },
+  {
+   "id": "mckinney-fine-arts-building",
+   "name": "McKinney Fine Arts Building",
+   "short": "McKinney Fine Arts Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.652114,
+   "lat": 31.623979,
+   "osm": "way/411280435"
+  },
+  {
+   "id": "the-stone-fort-museum",
+   "name": "The Stone Fort Museum",
+   "short": "The Stone Fort Museum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.648781,
+   "lat": 31.619371,
+   "osm": "way/411191064"
+  },
+  {
+   "id": "filmmaking",
+   "name": "Filmmaking",
+   "short": "Filmmaking",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.650496,
+   "lat": 31.615832,
+   "osm": "way/552219869"
+  },
+  {
+   "id": "childrens-arboretum-center",
+   "name": "Children's Arboretum Center",
+   "short": "Children's Arboretum Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -94.642628,
+   "lat": 31.62291,
+   "osm": "way/411280437"
+  }
+ ]
+}

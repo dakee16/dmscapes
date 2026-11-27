@@ -1,0 +1,156 @@
+{
+  "halls": {
+    "steen-hall": {
+      "pin": [
+        -94.64535,
+        31.6234
+      ]
+    },
+    "lumberjack-village-1": {
+      "pin": [
+        -94.64971,
+        31.61635
+      ]
+    },
+    "lumberjack-village-2": {
+      "pin": [
+        -94.64926,
+        31.61706
+      ]
+    },
+    "lumberjack-village-3": {
+      "pin": [
+        -94.65021,
+        31.61711
+      ]
+    },
+    "lumberjack-village-4": {
+      "pin": [
+        -94.65086,
+        31.6164
+      ]
+    }
+  },
+  "places": {
+    "steen": {
+      "hide": true
+    },
+    "steen-555272919": {
+      "hide": true
+    },
+    "printing-services-and-residence-life-operations": {
+      "hide": true
+    },
+    "purchasing-and-central-stores": {
+      "hide": true
+    },
+    "health-services": {
+      "hide": true
+    },
+    "tracie-d-pearman-alumni-office": {
+      "hide": true
+    },
+    "housing-operations-annex": {
+      "hide": true
+    },
+    "technical-support-center": {
+      "hide": true
+    },
+    "environmental-health-safety-and-risk-management": {
+      "hide": true
+    },
+    "visitors-booth": {
+      "hide": true
+    },
+    "ticket-booth": {
+      "hide": true
+    },
+    "stadium-press-box": {
+      "hide": true
+    },
+    "us-forest-service": {
+      "hide": true
+    },
+    "basketball-performance-facility": {
+      "hide": true
+    },
+    "athletics-field-house": {
+      "hide": true
+    },
+    "william-r-johnson-coliseum": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "steen-hall": "Steen Hall (#71 on SFA's main campus map, sfasu.edu/docs/maps/campus-map.pdf, updated 09/2025) is three adjoining OSM buildings each named only \"Steen\" (way/419817859, way/555272919, way/555272920); pinned on the middle one.",
+    "lumberjack-village-1": "Lumberjack Village Building 1 is #45 on SFA's main campus map: the south wing along East Starr Avenue, OSM's \"Lumberjack Village S\" (way/411184147).",
+    "lumberjack-village-2": "Lumberjack Village Building 2 is #46 on SFA's main campus map: the east wing along Clark Boulevard, OSM's \"Lumberjack Village E\" (way/411184146).",
+    "lumberjack-village-3": "Lumberjack Village Building 3 is #47 on SFA's main campus map: the west wing along Baker Street, OSM's \"Lumberjack Village W\" (way/411177418).",
+    "lumberjack-village-4": "Lumberjack Village Building 4 (the townhomes) is #48 on SFA's main campus map, west of Baker Street at East Starr Avenue. OSM doesn't map it, so it is pinned on the building in Esri World Imagery (2026-11-27), which matches OSM's Village outlines to about 6 m.",
+    "steen": "Part of Steen Hall (way/555272920), the residence hall; see steen-hall.",
+    "steen-555272919": "Part of Steen Hall (way/555272919), the residence hall; see steen-hall.",
+    "printing-services-and-residence-life-operations": "Printing and Residence Life operations, not somewhere classes happen.",
+    "purchasing-and-central-stores": "Central Stores and Receiving (#16 on the map), not somewhere classes happen.",
+    "health-services": "The student health clinic, not somewhere classes happen.",
+    "tracie-d-pearman-alumni-office": "The Pearman Alumni Center (#60 on the map), not somewhere classes happen.",
+    "housing-operations-annex": "Housing operations, not somewhere classes happen.",
+    "technical-support-center": "IT support, not somewhere classes happen.",
+    "environmental-health-safety-and-risk-management": "An office (#22 on the map), not somewhere classes happen.",
+    "visitors-booth": "The visitor information booth, not somewhere classes happen.",
+    "ticket-booth": "The athletics ticket booth, not somewhere classes happen.",
+    "stadium-press-box": "Homer Bryce Stadium's press box, not somewhere classes happen.",
+    "us-forest-service": "The US Forest Service's research lab on campus, not an SFA class building.",
+    "basketball-performance-facility": "The Naymola Basketball Performance Center (#56 on the map), the basketball teams' practice facility.",
+    "athletics-field-house": "The athletics Field House (#24 on the map) by the stadium, not somewhere classes happen.",
+    "william-r-johnson-coliseum": "Johnson Coliseum (#37 on the map) is the basketball arena, not a student gym or a class building."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "hall-14 -> arthur-temple-college-of-forestry-and-agriculture",
+        "hall-14 -> human-services",
+        "hall-14 -> forestry-labratories"
+      ],
+      "maxRatio": 3.2,
+      "why": "OSM maps no door on Hall 14; its pin snaps to the courtyard walk on its south-east side, and no mapped path leaves the hall west or north, so walks to the buildings west of Lumberjack Lodge go back round the hall and up the Lodge's east side to East College Street."
+    },
+    {
+      "pairs": [
+        "lumberjack-landing -> ralph-w-steen-library",
+        "lumberjack-landing -> east-college-dining-hall",
+        "lumberjack-landing -> mckibben-education-building",
+        "lumberjack-landing -> human-services"
+      ],
+      "maxRatio": 4,
+      "why": "OSM maps no door on Lumberjack Landing or the Steen Library; Landing's pin snaps to the walk at its north-east corner, so walks west and south go round its east end and down beside Wilson Parking Garage, and the library is reached at its south-west corner."
+    },
+    {
+      "pairs": [
+        "lumberjack-lodge -> ralph-w-steen-library",
+        "lumberjack-lodge -> east-college-dining-hall",
+        "lumberjack-lodge -> mckibben-education-building",
+        "lumberjack-lodge -> ferguson-liberal-arts-building",
+        "lumberjack-lodge -> liberal-arts-north"
+      ],
+      "maxRatio": 3.8,
+      "why": "OSM maps no door on Lumberjack Lodge; its pin snaps to the walk in its east courtyard, and the lane south of the Lodge isn't joined to the walk west of it, so walks south-west go north to East College Street, round Health Services and down the west side of Human Services."
+    },
+    {
+      "pairs": [
+        "lumberjack-village-1 -> juanita-curry-boynton-house",
+        "lumberjack-village-2 -> human-sciences-building-south",
+        "lumberjack-village-2 -> school-of-social-work",
+        "lumberjack-village-2 -> juanita-curry-boynton-house"
+      ],
+      "maxRatio": 4.8,
+      "why": "OSM maps no doors on the Lumberjack Village buildings, and the courtyard walks inside the Village join the streets only at its north end, so walks east across Clark Boulevard and south across East Starr Avenue leave by the north and come back down Clark Boulevard; the Boynton House and the School of Social Work are reached from the drive and alley beside them."
+    },
+    {
+      "pairs": [
+        "wisely-hall -> human-services"
+      ],
+      "maxRatio": 3,
+      "why": "OSM maps no door on Wisely Hall; its pin snaps to Aikman Drive on its south-west side, and no mapped path crosses past Aikman Drive Parking Garage, so the walk to Human Services goes north to East College Street and round Health Services."
+    }
+  ]
+}

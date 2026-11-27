@@ -1,0 +1,556 @@
+{
+ "collegeId": "north-georgia",
+ "generatedAt": "2026-11-27T17:48:22.879Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-27"
+  },
+  {
+   "name": "UNG Residence Life: Residence Halls (Dahlonega Campus), and Corps of Cadets: Cadet Residence Halls",
+   "url": "https://ung.edu/residence-life/halls/index.php",
+   "use": "first-year and upper-year tags (each hall's yearSource)",
+   "note": "The Residence Life table lists each non-cadet hall's class (Freshmen, Upperclassmen or both). All cadets, every year, live in the Military Village (Gaillard, Liberty and Patriot halls), which are cadets only."
+  },
+  {
+   "name": "Housing page",
+   "url": "https://ung.edu/residence-life/halls/index.php",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://ung.edu/residence-life/halls/owen-hall.php",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://ung.edu/military-college-admissions/cadet-housing/index.php",
+   "use": "year tag"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/north-georgia.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -83.99243,
+  34.52537,
+  -83.98101,
+  34.53188
+ ],
+ "halls": [
+  {
+   "dormId": "north-georgia-suites",
+   "name": "North Georgia Suites",
+   "lng": -83.992433,
+   "lat": 34.528677,
+   "pin": "name",
+   "osm": "way/404952468",
+   "year": "any",
+   "yearSource": "https://ung.edu/residence-life/halls/index.php",
+   "near": {
+    "gym": {
+     "placeId": "memorial-hall",
+     "minutes": 13.3
+    },
+    "library": {
+     "placeId": "library-and-technology-center",
+     "minutes": 13.7
+    },
+    "dining": {
+     "placeId": "main-dining-hall",
+     "minutes": 7.2
+    }
+   }
+  },
+  {
+   "dormId": "donovan-hall",
+   "name": "Donovan Hall",
+   "lng": -83.987016,
+   "lat": 34.526837,
+   "pin": "name",
+   "osm": "way/404952465",
+   "year": "first",
+   "yearSource": "https://ung.edu/residence-life/halls/index.php",
+   "near": {
+    "gym": {
+     "placeId": "memorial-hall",
+     "minutes": 6.7
+    },
+    "library": {
+     "placeId": "library-and-technology-center",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "main-dining-hall",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "lewis-annex",
+   "name": "Lewis Annex",
+   "lng": -83.987655,
+   "lat": 34.527717,
+   "pin": "name",
+   "osm": "way/404952467",
+   "year": "any",
+   "yearSource": "https://ung.edu/residence-life/halls/index.php",
+   "near": {
+    "gym": {
+     "placeId": "memorial-hall",
+     "minutes": 7.9
+    },
+    "library": {
+     "placeId": "library-and-technology-center",
+     "minutes": 8.4
+    },
+    "dining": {
+     "placeId": "main-dining-hall",
+     "minutes": 2.8
+    }
+   }
+  },
+  {
+   "dormId": "lewis-hall",
+   "name": "Lewis Hall",
+   "lng": -83.987468,
+   "lat": 34.527916,
+   "pin": "name",
+   "osm": "way/458188827",
+   "year": "any",
+   "yearSource": "https://ung.edu/residence-life/halls/index.php",
+   "near": {
+    "gym": {
+     "placeId": "memorial-hall",
+     "minutes": 6.1
+    },
+    "library": {
+     "placeId": "library-and-technology-center",
+     "minutes": 6.6
+    },
+    "dining": {
+     "placeId": "main-dining-hall",
+     "minutes": 1.9
+    }
+   }
+  },
+  {
+   "dormId": "owen-hall",
+   "name": "Owen Hall",
+   "lng": -83.983014,
+   "lat": 34.52537,
+   "pin": "name",
+   "osm": "way/404952461",
+   "year": "upper",
+   "yearSource": [
+    "https://ung.edu/residence-life/halls/index.php",
+    "https://ung.edu/residence-life/halls/owen-hall.php"
+   ],
+   "near": {
+    "gym": {
+     "placeId": "memorial-hall",
+     "minutes": 6.3
+    },
+    "library": {
+     "placeId": "library-and-technology-center",
+     "minutes": 3.8
+    },
+    "dining": {
+     "placeId": "main-dining-hall",
+     "minutes": 9.1
+    }
+   }
+  },
+  {
+   "dormId": "the-commons",
+   "name": "The Commons",
+   "lng": -83.98954,
+   "lat": 34.52888,
+   "pin": "manual",
+   "osm": "way/405170128",
+   "year": "any",
+   "yearSource": "https://ung.edu/residence-life/halls/index.php",
+   "near": {
+    "gym": {
+     "placeId": "memorial-hall",
+     "minutes": 9
+    },
+    "library": {
+     "placeId": "library-and-technology-center",
+     "minutes": 9.5
+    },
+    "dining": {
+     "placeId": "main-dining-hall",
+     "minutes": 2.8
+    }
+   }
+  },
+  {
+   "dormId": "patriot-hall",
+   "name": "Patriot Hall",
+   "lng": -83.985068,
+   "lat": 34.526641,
+   "pin": "name",
+   "osm": "way/404952463",
+   "year": "any",
+   "yearSource": "https://ung.edu/military-college-admissions/cadet-housing/index.php",
+   "near": {
+    "gym": {
+     "placeId": "memorial-hall",
+     "minutes": 5.6
+    },
+    "library": {
+     "placeId": "library-and-technology-center",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "main-dining-hall",
+     "minutes": 5.7
+    }
+   }
+  },
+  {
+   "dormId": "liberty-hall",
+   "name": "Liberty Hall",
+   "lng": -83.984076,
+   "lat": 34.526535,
+   "pin": "name",
+   "osm": "way/404952462",
+   "year": "any",
+   "yearSource": "https://ung.edu/military-college-admissions/cadet-housing/index.php",
+   "near": {
+    "gym": {
+     "placeId": "memorial-hall",
+     "minutes": 5.6
+    },
+    "library": {
+     "placeId": "library-and-technology-center",
+     "minutes": 3.2
+    },
+    "dining": {
+     "placeId": "main-dining-hall",
+     "minutes": 7.1
+    }
+   }
+  },
+  {
+   "dormId": "gaillard-hall",
+   "name": "Gaillard Hall",
+   "lng": -83.985745,
+   "lat": 34.527248,
+   "pin": "name",
+   "osm": "way/404952464",
+   "year": "any",
+   "yearSource": "https://ung.edu/military-college-admissions/cadet-housing/index.php",
+   "near": {
+    "gym": {
+     "placeId": "memorial-hall",
+     "minutes": 6.2
+    },
+    "library": {
+     "placeId": "library-and-technology-center",
+     "minutes": 4.8
+    },
+    "dining": {
+     "placeId": "main-dining-hall",
+     "minutes": 4.7
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "convocation-center",
+   "name": "Convocation Center",
+   "short": "Convocation Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.986012,
+   "lat": 34.526142,
+   "osm": "way/963423262"
+  },
+  {
+   "id": "memorial-hall",
+   "name": "Memorial Hall",
+   "short": "Memorial Hall",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.983518,
+   "lat": 34.528843,
+   "osm": "way/395289176"
+  },
+  {
+   "id": "library-and-technology-center",
+   "name": "Library and Technology Center",
+   "short": "Library and Technology Center",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.982556,
+   "lat": 34.52736,
+   "osm": "way/395289183"
+  },
+  {
+   "id": "health-and-natural-sciences",
+   "name": "Health & Natural Sciences",
+   "short": "Health & Natural Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.990394,
+   "lat": 34.528544,
+   "osm": "way/404952469"
+  },
+  {
+   "id": "military-leadership-center",
+   "name": "Military Leadership Center",
+   "short": "Military Leadership Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.981421,
+   "lat": 34.528096,
+   "osm": "way/395289179"
+  },
+  {
+   "id": "main-dining-hall",
+   "name": "Main Dining Hall",
+   "short": "Main Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.987995,
+   "lat": 34.52867,
+   "osm": "way/404952456"
+  },
+  {
+   "id": "cottrell-center-for-business-technology-and-innovation",
+   "name": "Cottrell Center for Business, Technology, & Innovation",
+   "short": "Cottrell Center for Business, Technology, & Innovation",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.982401,
+   "lat": 34.52906,
+   "osm": "way/1079145862"
+  },
+  {
+   "id": "chestatee-building",
+   "name": "Chestatee Building",
+   "short": "Chestatee Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.984166,
+   "lat": 34.530833,
+   "osm": "way/395286979"
+  },
+  {
+   "id": "dunlap-hall",
+   "name": "Dunlap Hall",
+   "short": "Dunlap Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.984777,
+   "lat": 34.529371,
+   "osm": "way/395291408"
+  },
+  {
+   "id": "hoag-student-center",
+   "name": "Hoag Student Center",
+   "short": "Hoag Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.985708,
+   "lat": 34.530174,
+   "osm": "way/395291407"
+  },
+  {
+   "id": "stewart-student-success-center",
+   "name": "Stewart Student Success Center",
+   "short": "Stewart Student Success Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.984898,
+   "lat": 34.529926,
+   "osm": "way/395291409"
+  },
+  {
+   "id": "newton-oaks-center",
+   "name": "Newton Oaks Center",
+   "short": "Newton Oaks Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.984255,
+   "lat": 34.529517,
+   "osm": "way/404952457"
+  },
+  {
+   "id": "john-l-nix-mountain-cultural-center",
+   "name": "John L. Nix Mountain Cultural Center",
+   "short": "John L. Nix Mountain Cultural Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.986698,
+   "lat": 34.529455,
+   "osm": "way/395291679"
+  },
+  {
+   "id": "rogers-hall",
+   "name": "Rogers Hall",
+   "short": "Rogers Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.987578,
+   "lat": 34.529267,
+   "osm": "way/395291678"
+  },
+  {
+   "id": "young-hall",
+   "name": "Young Hall",
+   "short": "Young Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.986358,
+   "lat": 34.530119,
+   "osm": "way/395291406"
+  },
+  {
+   "id": "barnes-hall",
+   "name": "Barnes Hall",
+   "short": "Barnes Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.985917,
+   "lat": 34.529535,
+   "osm": "way/404952455"
+  },
+  {
+   "id": "hansford-hall",
+   "name": "Hansford Hall",
+   "short": "Hansford Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.98756,
+   "lat": 34.529731,
+   "osm": "way/395291677"
+  },
+  {
+   "id": "ung-evergreen-learning",
+   "name": "UNG Evergreen Learning",
+   "short": "UNG Evergreen Learning",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Evergreen Learning"
+   ],
+   "lng": -83.981007,
+   "lat": 34.528615,
+   "osm": "way/395287413"
+  },
+  {
+   "id": "price-memorial-hall",
+   "name": "Price Memorial Hall",
+   "short": "Price Memorial Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.987044,
+   "lat": 34.530001,
+   "osm": "way/395291675"
+  },
+  {
+   "id": "choice-avenue-arts-complex-buildings-a-and-b",
+   "name": "Choice Avenue Arts Complex - Buildings A & B",
+   "short": "Choice Avenue Arts Complex - Buildings A & B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.984135,
+   "lat": 34.531875,
+   "osm": "way/395286975"
+  },
+  {
+   "id": "wynne-mathews-military-science-building",
+   "name": "Wynne-Mathews Military Science Building",
+   "short": "Wynne-Mathews Military Science Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.98556,
+   "lat": 34.527601,
+   "osm": "way/1553207244"
+  },
+  {
+   "id": "choice-avenue-arts-complex-buildings-c-and-d",
+   "name": "Choice Avenue Arts Complex - Buildings C & D",
+   "short": "Choice Avenue Arts Complex - Buildings C & D",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.983864,
+   "lat": 34.531581,
+   "osm": "way/395286977"
+  },
+  {
+   "id": "the-vickery-house",
+   "name": "The Vickery House",
+   "short": "The Vickery House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.987974,
+   "lat": 34.530359,
+   "osm": "way/531587529"
+  },
+  {
+   "id": "church-street-house",
+   "name": "Church Street House",
+   "short": "Church Street House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.983509,
+   "lat": 34.530459,
+   "osm": "way/1079145865"
+  },
+  {
+   "id": "moore-house",
+   "name": "Moore House",
+   "short": "Moore House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.988796,
+   "lat": 34.528705,
+   "osm": "way/531584308"
+  },
+  {
+   "id": "biology-department-fields-study",
+   "name": "Biology Department Fields Study",
+   "short": "Biology Department Fields Study",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.990202,
+   "lat": 34.529286,
+   "osm": "way/469876968"
+  }
+ ]
+}

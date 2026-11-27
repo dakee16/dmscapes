@@ -1,0 +1,20 @@
+{
+  "collegeId": "bridgewater-state",
+  "area": {
+    "osm": "way/311754679",
+    "bbox": [
+      41.98357,
+      -70.97536,
+      41.99309,
+      -70.95688
+    ],
+    "also": [
+      "way/29694355"
+    ]
+  },
+  "areaNote": "OSM maps BSU as two outlines either side of the rail line: West Campus way/311754679 (Pope, Scott, Woodward; Maxwell Library, Mohler-Faria Science, Boyden, Harrington, Rondileau Student Union, Tillinghast) and East Campus way/29694355 (Shea/Durgin, Miles, DiNardo, Crimson, Stonehouse, Weygand, Great Hill; Moakley, Hart, Burnell, East Campus Commons, Tinsley Center), with no relation joining them. Both are used: area.osm is West Campus and area.also adds East Campus, and the bbox spans both (centre about 41.9883, -70.9661).",
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public building-code list: BSU's course search (bridgew.edu/bsu-course-search) shows rooms as codes such as DMF342 and HRG with no legend, the campus map (bridgew.edu/about-us/campus-map) lists buildings by name and street address only, and the campus navigation guide PDF numbers buildings 1-40 without codes (checked 2026-11-26)."
+}

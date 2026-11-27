@@ -1,0 +1,38 @@
+{
+  "collegeId": "stephen-f-austin",
+  "area": {
+    "osm": "way/411192739",
+    "bbox": [
+      31.614,
+      -94.65265,
+      31.63191,
+      -94.63396
+    ],
+    "note": "Nominatim (amenity=university, Nacogdoches): way/411192739 'Stephen F. Austin State University', 1936 North Street. The outline's south edge (31.6154) stops at about East Starr Avenue, so Lumberjack Village 1 (419 East Starr Avenue) and the Village 4 townhomes (309 East Starr Avenue) sit on or just outside it; the box runs south to 31.614 to hold them."
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public building-code list: the Registrar's Class Schedule Building page (sfasu.edu/registrar/faculty-staff/class-schedule-building) covers the WebFocus schedule report and Banner part-of-term codes only; room codes live in the login-only Ad Astra scheduler (aaiscloud.com/StephenFAustinStateU, linked from sfasu.edu/registrar/astra); the public Course Information site (orion.sfasu.edu/courseinformation) lists syllabi and CVs without rooms; and the main campus map (sfasu.edu/docs/maps/campus-map.pdf, updated 09/2025) numbers its buildings alphabetically as map keys, not codes (checked 2026-11-26).",
+  "housing": {
+    "title": "SFA Residence Life: each hall's 'Hall Type' and the Fall 2026 first-year check-in schedule on Planning Your Move-In",
+    "url": "https://www.sfasu.edu/reslife/halls",
+    "note": "Griffith, Hall 10, Kerr and Lumberjack Village 1 are labelled 'Non-first-year students', but the move-in page gives first-time, first-year residents check-in slots on their floors (and on Wisely's floors 1 and 2), so those halls are 'any'."
+  },
+  "years": {
+    "hall-14": { "year": "first", "source": "https://www.sfasu.edu/reslife/hall-14" },
+    "lumberjack-landing": { "year": "first", "source": "https://www.sfasu.edu/reslife/landing" },
+    "lumberjack-lodge": { "year": "first", "source": "https://www.sfasu.edu/reslife/lodge" },
+    "steen-hall": { "year": "first", "source": "https://www.sfasu.edu/reslife/steen" },
+    "griffith-hall": { "year": "any", "source": ["https://www.sfasu.edu/reslife/griffith", "https://www.sfasu.edu/reslife/move-in"] },
+    "hall-10": { "year": "any", "source": ["https://www.sfasu.edu/reslife/hall-10", "https://www.sfasu.edu/reslife/move-in"] },
+    "kerr-hall": { "year": "any", "source": ["https://www.sfasu.edu/reslife/kerr", "https://www.sfasu.edu/reslife/move-in"] },
+    "lumberjack-village-1": { "year": "any", "source": ["https://www.sfasu.edu/reslife/village-1", "https://www.sfasu.edu/reslife/move-in"] },
+    "wisely-hall": { "year": "any", "source": ["https://www.sfasu.edu/reslife/wisely", "https://www.sfasu.edu/reslife/move-in"] },
+    "lumberjack-village-2": { "year": "upper", "source": "https://www.sfasu.edu/reslife/village-2" },
+    "lumberjack-village-3": { "year": "upper", "source": "https://www.sfasu.edu/reslife/village-3" },
+    "lumberjack-village-4": { "year": "upper", "source": "https://www.sfasu.edu/reslife/village-4" },
+    "north-hall": { "year": "upper", "source": "https://www.sfasu.edu/reslife/north" },
+    "south-hall": { "year": "upper", "source": "https://www.sfasu.edu/reslife/south" }
+  }
+}
