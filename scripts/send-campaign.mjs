@@ -53,7 +53,7 @@ function message(campaign, recipient, { from, address, option }) {
   };
 }
 
-async function postBatch(emails, idempotencyKey, sleep, log) {
+export async function postBatch(emails, idempotencyKey, sleep, log) {
   for (let attempt = 1; ; attempt++) {
     const res = await fetch("https://api.resend.com/emails/batch", {
       method: "POST",

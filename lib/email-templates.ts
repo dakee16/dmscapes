@@ -88,6 +88,61 @@ export function giftEmail({ plan, credits, from, message, code, url }: {
   };
 }
 
+/** A one-time, transactional reply to someone who asked for their school (the Add-my-school form,
+ * room_submissions): it's live. Sent by scripts/notify-school-added.mjs, which imports this file
+ * directly. Counts come from the school index the caller reads; nothing here is hard-coded. */
+export function schoolAddedEmail({ school, halls, rooms, published, hallFinder, requestedHall = null, mailingAddress }: {
+  school: { id: string; name: string };
+  halls: number; rooms: number;
+  /** Rooms with the school's own published size; the rest carry a labelled estimate. */
+  published: number;
+  /** True when the school is on Hall Finder (data/campus/index.json). */
+  hallFinder: boolean;
+  /** The hall named in their request, when it matches one of the school's halls. */
+  requestedHall?: { id: string; name: string } | null;
+  mailingAddress?: string;
+}) {
+  const site = "https://dormscape.us";
+  const utm = `utm_source=email&utm_medium=email&utm_campaign=school_added&utm_content=${encodeURIComponent(school.id)}`;
+  const link = (p: string) => `${site}${p}${p.includes("?") ? "&" : "?"}${utm}`;
+  const collegeUrl = link(`/colleges/${school.id}`);
+  const finderUrl = link(`/colleges/${school.id}/hall-finder`);
+  const hallUrl = requestedHall ? link(`/colleges/${school.id}/${requestedHall.id}`) : null;
+  const planUrl = link(`/plan?school=${school.id}${requestedHall ? `&dorm=${requestedHall.id}` : ""}`);
+  const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
+  const sizes = published === rooms
+    ? "Every one has the size the school publishes."
+    : published === 0
+      ? "The school doesn't publish room sizes, so each size is an estimate from similar rooms, and it's labelled as one."
+      : `${published} have the size the school publishes; the rest are estimates from similar rooms, labelled as such.`;
+  const intro = `You asked us to add ${school.name}. It's live: ${plural(halls, "residence hall")} and ${plural(rooms, "room type")}.`;
+  const items: [string, string, string][] = [
+    ["Your school's page", "Every hall, its room types and sizes, and where each size comes from.", collegeUrl],
+    ...(hallFinder ? [["Hall Finder", "Add where your classes meet, and it ranks the halls by your week of walking.", finderUrl] as [string, string, string]] : []),
+    ["The planner", "Start from your real room and lay it out to the inch.", planUrl],
+  ];
+  const hallCard = requestedHall && hallUrl
+    ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 20px;background:#eef1ff;border-left:3px solid #304bff"><tr><td style="padding:18px 20px;font-size:15px;line-height:1.7;color:#17172b"><strong>${escapeEmail(requestedHall.name)} is in.</strong> You mentioned it in your request. <a href="${escapeEmail(hallUrl)}" style="color:#304bff">See its rooms</a>.</td></tr></table>`
+    : "";
+  const body = `<p style="font-size:15px;line-height:1.7;color:#17172b;margin:0 0 20px">${escapeEmail(sizes)}</p>` + hallCard
+    + items.map(([name, what, url]) => `<p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:#17172b"><a href="${escapeEmail(url)}" style="color:#304bff;font-weight:700">${escapeEmail(name)}</a><br><span style="color:#5a5f74;font-size:14px">${escapeEmail(what)}</span></p>`).join("");
+  const footnote = `This is a one-time reply to your request to add ${school.name}. We won't email you about it again.`;
+  const address = mailingAddress?.trim();
+  const footer = address ? `<p style="margin:8px 0 0;color:#7a7c8a;font-size:11px;line-height:1.6">dormscape, ${escapeEmail(address)}</p>` : "";
+  return {
+    subject: `${school.name} is now on dormscape`,
+    text: [
+      intro,
+      sizes,
+      requestedHall && hallUrl ? `${requestedHall.name} is in. You mentioned it in your request: ${hallUrl}` : null,
+      items.map(([name, what, url]) => `${name}: ${url}\n${what}`).join("\n\n"),
+      `Plan your room: ${planUrl}`,
+      `--\n${footnote}\nNeed a hand? ${site}/contact${address ? `\ndormscape, ${address}` : ""}`,
+    ].filter(Boolean).join("\n\n"),
+    html: emailFrame({ eyebrow: "You asked / It's here", title: "Your school is on dormscape.", intro, body, action: "Plan your room", url: planUrl, footnote, footer }),
+  };
+}
+
 // Black Friday 2026 marketing emails (owner decisions, 2026-11-24). Sent only to
 // profiles with marketing_opt_in_at set, by scripts/send-campaign.mjs, which
 // imports this file directly, so keep it free of imports. The sale prices

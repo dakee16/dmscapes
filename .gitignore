@@ -70,3 +70,6 @@ brag-output/
 
 # Campaign sent-logs (scripts/send-campaign.mjs): recipient user ids, never committed
 /qa-tmp/campaign-*.jsonl
+
+# School-added sent-logs (scripts/notify-school-added.mjs): hashed addresses, never committed
+/qa-tmp/notify-*.jsonl
