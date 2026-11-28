@@ -1,0 +1,18 @@
+{
+  "collegeId": "colorado-state",
+  "area": {
+    "osm": "relation/8539568",
+    "bbox": [
+      40.5633,
+      -105.0959,
+      40.5789,
+      -105.0722
+    ]
+  },
+  "areaNote": "OSM's Colorado State University multipolygon, relation/8539568 (amenity=university), has seven outer ways: the main Fort Collins campus (way/208623822, about 40.5633-40.5781, -105.0959 to -105.0722), the South Campus piece (way/386388522, about 40.553-40.561), the International House and University Village family-housing complexes to the west, and three small pieces. The bbox is the main campus only (plus way/971723614 on its north-west edge, to 40.5789), where every hall here stands: the eleven residence halls (CSU's Mail page addresses, W. Laurel, W. Pitkin and W. Plum streets) and Aggie Village (501-521 W. Lake St.). The South Campus and the family-housing complexes are outside this walking map.",
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/colorado-state.codes.json"
+  }
+}

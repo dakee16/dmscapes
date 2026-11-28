@@ -1,0 +1,931 @@
+{
+ "collegeId": "colorado-state",
+ "generatedAt": "2026-11-28T07:04:08.041Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-28"
+  },
+  {
+   "name": "Colorado State University Registrar, General Assignment Classrooms (updated 8/13/2026), plus the department-controlled classroom buildings in CSU's Echo360 classroom directory (wsprod.colostate.edu/cwis24/echo/echoclient/rooms)",
+   "url": "https://registrar.colostate.edu/wp-content/uploads/sites/23/2026/08/GACL-Detail-8.13.26.pdf",
+   "use": "building codes",
+   "read": "2026-11-28"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/colorado-state.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -105.09442,
+  40.56783,
+  -105.0747,
+  40.57779
+ ],
+ "halls": [
+  {
+   "dormId": "academic-village",
+   "name": "Academic Village",
+   "lng": -105.090229,
+   "lat": 40.571368,
+   "pin": "address",
+   "osm": "way/208575224",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 7.5
+    },
+    "library": {
+     "placeId": "morgan-library",
+     "minutes": 10.1
+    },
+    "dining": {
+     "placeId": "academic-village-commons",
+     "minutes": 3.7
+    }
+   }
+  },
+  {
+   "dormId": "braiden-hall",
+   "name": "Braiden Hall",
+   "lng": -105.085765,
+   "lat": 40.571667,
+   "pin": "name",
+   "osm": "way/135244419",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 9.6
+    },
+    "library": {
+     "placeId": "morgan-library",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "academic-village-commons",
+     "minutes": 10
+    }
+   }
+  },
+  {
+   "dormId": "corbett-hall",
+   "name": "Corbett Hall",
+   "lng": -105.090364,
+   "lat": 40.577175,
+   "pin": "name",
+   "osm": "relation/1838385",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "intramural-gym",
+     "minutes": 3.3
+    },
+    "library": {
+     "placeId": "morgan-library",
+     "minutes": 10.9
+    },
+    "dining": {
+     "placeId": "durrell-center",
+     "minutes": 4.2
+    }
+   }
+  },
+  {
+   "dormId": "durward-hall",
+   "name": "Durward Hall",
+   "lng": -105.093218,
+   "lat": 40.577582,
+   "pin": "name",
+   "osm": "way/134099645",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "intramural-gym",
+     "minutes": 5.5
+    },
+    "library": {
+     "placeId": "morgan-library",
+     "minutes": 14.1
+    },
+    "dining": {
+     "placeId": "durrell-center",
+     "minutes": 3.4
+    }
+   }
+  },
+  {
+   "dormId": "edwards-hall",
+   "name": "Edwards Hall",
+   "lng": -105.092948,
+   "lat": 40.571721,
+   "pin": "name",
+   "osm": "way/135244421",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 8.4
+    },
+    "library": {
+     "placeId": "morgan-library",
+     "minutes": 11.9
+    },
+    "dining": {
+     "placeId": "academic-village-commons",
+     "minutes": 2.9
+    }
+   }
+  },
+  {
+   "dormId": "ingersoll-hall",
+   "name": "Ingersoll Hall",
+   "lng": -105.094417,
+   "lat": 40.571734,
+   "pin": "name",
+   "osm": "way/135244420",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "moby-b-wing",
+     "minutes": 9.7
+    },
+    "library": {
+     "placeId": "morgan-library",
+     "minutes": 13.6
+    },
+    "dining": {
+     "placeId": "academic-village-commons",
+     "minutes": 4.6
+    }
+   }
+  },
+  {
+   "dormId": "laurel-village",
+   "name": "Laurel Village",
+   "lng": -105.091793,
+   "lat": 40.576918,
+   "pin": "address",
+   "osm": "way/574113097",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "intramural-gym",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "morgan-library",
+     "minutes": 11.8
+    },
+    "dining": {
+     "placeId": "durrell-center",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "newsom-hall",
+   "name": "Newsom Hall",
+   "lng": -105.089278,
+   "lat": 40.571681,
+   "pin": "name",
+   "osm": "way/135244422",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 6.6
+    },
+    "library": {
+     "placeId": "morgan-library",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "academic-village-commons",
+     "minutes": 4.4
+    }
+   }
+  },
+  {
+   "dormId": "parmelee-hall",
+   "name": "Parmelee Hall",
+   "lng": -105.089142,
+   "lat": 40.577161,
+   "pin": "name",
+   "osm": "way/135720561",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 5.7
+    },
+    "library": {
+     "placeId": "morgan-library",
+     "minutes": 9.2
+    },
+    "dining": {
+     "placeId": "durrell-center",
+     "minutes": 6.9
+    }
+   }
+  },
+  {
+   "dormId": "summit-hall",
+   "name": "Summit Hall",
+   "lng": -105.093037,
+   "lat": 40.570337,
+   "pin": "name",
+   "osm": "way/229942446",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 9.6
+    },
+    "library": {
+     "placeId": "morgan-library",
+     "minutes": 12.9
+    },
+    "dining": {
+     "placeId": "academic-village-commons",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "westfall-hall",
+   "name": "Westfall Hall",
+   "lng": -105.094055,
+   "lat": 40.577226,
+   "pin": "name",
+   "osm": "way/134099648",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "intramural-gym",
+     "minutes": 6
+    },
+    "library": {
+     "placeId": "morgan-library",
+     "minutes": 14.6
+    },
+    "dining": {
+     "placeId": "durrell-center",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "aggie-village",
+   "name": "Aggie Village",
+   "lng": -105.084853,
+   "lat": 40.567831,
+   "pin": "address",
+   "osm": "way/514361681",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center",
+     "minutes": 15.4
+    },
+    "library": {
+     "placeId": "morgan-library",
+     "minutes": 12.5
+    },
+    "dining": {
+     "placeId": "academic-village-commons",
+     "minutes": 14
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "lory-student-center",
+   "name": "Lory Student Center",
+   "short": "Lory Student Center",
+   "kind": "academic",
+   "codes": [
+    "LSC"
+   ],
+   "aliases": [],
+   "lng": -105.084694,
+   "lat": 40.574767,
+   "osm": "way/131469182"
+  },
+  {
+   "id": "student-recreation-center",
+   "name": "Student Recreation Center",
+   "short": "Student Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -105.089692,
+   "lat": 40.575261,
+   "osm": "way/208571818"
+  },
+  {
+   "id": "university-center-for-the-arts",
+   "name": "University Center for the Arts",
+   "short": "University Center for the Arts",
+   "kind": "academic",
+   "codes": [
+    "UCA",
+    "UCAAX"
+   ],
+   "aliases": [
+    "Fort Collins High School",
+    "University Center for the Arts East"
+   ],
+   "lng": -105.074697,
+   "lat": 40.569748,
+   "osm": "way/131710669"
+  },
+  {
+   "id": "clark",
+   "name": "Clark",
+   "short": "Clark",
+   "kind": "academic",
+   "codes": [
+    "CLARK",
+    "SOCSCI"
+   ],
+   "aliases": [
+    "Clark Hall (formerly Clark A)",
+    "Social Sciences Hall (formerly Clark C)"
+   ],
+   "lng": -105.083225,
+   "lat": 40.572731,
+   "osm": "relation/3079995"
+  },
+  {
+   "id": "visual-arts-building",
+   "name": "Visual Arts Building",
+   "short": "Visual Arts Building",
+   "kind": "academic",
+   "codes": [
+    "ART"
+   ],
+   "aliases": [
+    "Visual Arts"
+   ],
+   "lng": -105.085975,
+   "lat": 40.570215,
+   "osm": "relation/3081701"
+  },
+  {
+   "id": "morgan-library",
+   "name": "Morgan Library",
+   "short": "Morgan Library",
+   "kind": "library",
+   "codes": [
+    "LIBRY"
+   ],
+   "aliases": [],
+   "lng": -105.084437,
+   "lat": 40.572981,
+   "osm": "relation/3080945"
+  },
+  {
+   "id": "engineering",
+   "name": "Engineering",
+   "short": "Engineering",
+   "kind": "academic",
+   "codes": [
+    "ENGRG"
+   ],
+   "aliases": [],
+   "lng": -105.083285,
+   "lat": 40.575605,
+   "osm": "way/106336414"
+  },
+  {
+   "id": "anatomy-zoology",
+   "name": "Anatomy/Zoology",
+   "short": "Anatomy/Zoology",
+   "kind": "academic",
+   "codes": [
+    "ANAZO"
+   ],
+   "aliases": [],
+   "lng": -105.082716,
+   "lat": 40.569883,
+   "osm": "way/229606036"
+  },
+  {
+   "id": "south-college-gymnasium",
+   "name": "South College Gymnasium",
+   "short": "South College Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -105.078002,
+   "lat": 40.575067,
+   "osm": "way/106336410"
+  },
+  {
+   "id": "chemistry",
+   "name": "Chemistry",
+   "short": "Chemistry",
+   "kind": "academic",
+   "codes": [
+    "CHEM"
+   ],
+   "aliases": [],
+   "lng": -105.084328,
+   "lat": 40.570125,
+   "osm": "way/136961263"
+  },
+  {
+   "id": "intramural-gym",
+   "name": "Intramural Gym",
+   "short": "Intramural Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -105.091461,
+   "lat": 40.575611,
+   "osm": "way/208571821"
+  },
+  {
+   "id": "animal-sciences",
+   "name": "Animal Sciences",
+   "short": "Animal Sciences",
+   "kind": "academic",
+   "codes": [
+    "ANSCI"
+   ],
+   "aliases": [],
+   "lng": -105.082213,
+   "lat": 40.572078,
+   "osm": "way/132687119"
+  },
+  {
+   "id": "plant-growth-facility",
+   "name": "Plant Growth Facility",
+   "short": "Plant Growth Facility",
+   "kind": "academic",
+   "codes": [
+    "PGFAC"
+   ],
+   "aliases": [
+    "Plant Growth Center"
+   ],
+   "lng": -105.081155,
+   "lat": 40.571746,
+   "osm": "way/229822185"
+  },
+  {
+   "id": "behavioral-sciences",
+   "name": "Behavioral Sciences",
+   "short": "Behavioral Sciences",
+   "kind": "academic",
+   "codes": [
+    "BHSCI"
+   ],
+   "aliases": [],
+   "lng": -105.083065,
+   "lat": 40.571421,
+   "osm": "way/132687123"
+  },
+  {
+   "id": "walnut",
+   "name": "Walnut",
+   "short": "Walnut",
+   "kind": "academic",
+   "codes": [
+    "WALNT"
+   ],
+   "aliases": [],
+   "lng": -105.084781,
+   "lat": 40.568509,
+   "osm": "way/514361682"
+  },
+  {
+   "id": "biology-research",
+   "name": "Biology/Research",
+   "short": "Biology/Research",
+   "kind": "academic",
+   "codes": [
+    "BIOL",
+    "BIO"
+   ],
+   "aliases": [
+    "Biology"
+   ],
+   "lng": -105.081063,
+   "lat": 40.570424,
+   "osm": "way/645894444"
+  },
+  {
+   "id": "natural-resources",
+   "name": "Natural Resources",
+   "short": "Natural Resources",
+   "kind": "academic",
+   "codes": [
+    "NATRS"
+   ],
+   "aliases": [],
+   "lng": -105.082553,
+   "lat": 40.574081,
+   "osm": "way/132781986"
+  },
+  {
+   "id": "plant-science",
+   "name": "Plant Science",
+   "short": "Plant Science",
+   "kind": "academic",
+   "codes": [
+    "PLSCI"
+   ],
+   "aliases": [],
+   "lng": -105.082157,
+   "lat": 40.573246,
+   "osm": "way/132687125"
+  },
+  {
+   "id": "moby-b-wing",
+   "name": "Moby B-wing",
+   "short": "Moby B-wing",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -105.092205,
+   "lat": 40.575479,
+   "osm": "way/208571832"
+  },
+  {
+   "id": "rockwell-hall",
+   "name": "Rockwell Hall",
+   "short": "Rockwell Hall",
+   "kind": "academic",
+   "codes": [
+    "RCKWL"
+   ],
+   "aliases": [
+    "Rockwell"
+   ],
+   "lng": -105.084369,
+   "lat": 40.577584,
+   "osm": "relation/1827184"
+  },
+  {
+   "id": "scott-bioengineering",
+   "name": "Scott Bioengineering",
+   "short": "Scott Bioengineering",
+   "kind": "academic",
+   "codes": [
+    "SCOTT"
+   ],
+   "aliases": [],
+   "lng": -105.087076,
+   "lat": 40.577629,
+   "osm": "way/351692066"
+  },
+  {
+   "id": "durrell-center",
+   "name": "Durrell Center",
+   "short": "Durrell Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Durrell Dining Center"
+   ],
+   "lng": -105.093005,
+   "lat": 40.577018,
+   "osm": "way/135493746"
+  },
+  {
+   "id": "design-building",
+   "name": "Design Building",
+   "short": "Design Building",
+   "kind": "academic",
+   "codes": [
+    "RDC"
+   ],
+   "aliases": [
+    "Richardson Design Center"
+   ],
+   "lng": -105.086325,
+   "lat": 40.569276,
+   "osm": "way/645892055"
+  },
+  {
+   "id": "microbiology",
+   "name": "Microbiology",
+   "short": "Microbiology",
+   "kind": "academic",
+   "codes": [
+    "MICRO"
+   ],
+   "aliases": [],
+   "lng": -105.083032,
+   "lat": 40.570485,
+   "osm": "way/229606041"
+  },
+  {
+   "id": "gifford",
+   "name": "Gifford",
+   "short": "Gifford",
+   "kind": "academic",
+   "codes": [
+    "GIFRD"
+   ],
+   "aliases": [],
+   "lng": -105.085263,
+   "lat": 40.569162,
+   "osm": "way/229841480"
+  },
+  {
+   "id": "physiology",
+   "name": "Physiology",
+   "short": "Physiology",
+   "kind": "academic",
+   "codes": [
+    "PHYSL"
+   ],
+   "aliases": [],
+   "lng": -105.083093,
+   "lat": 40.569257,
+   "osm": "way/136961262"
+  },
+  {
+   "id": "eddy-hall",
+   "name": "Eddy Hall",
+   "short": "Eddy Hall",
+   "kind": "academic",
+   "codes": [
+    "EDDY"
+   ],
+   "aliases": [
+    "Eddy"
+   ],
+   "lng": -105.084264,
+   "lat": 40.572132,
+   "osm": "relation/1781782"
+  },
+  {
+   "id": "johnson-hall",
+   "name": "Johnson Hall",
+   "short": "Johnson Hall",
+   "kind": "academic",
+   "codes": [
+    "JNTHR"
+   ],
+   "aliases": [],
+   "lng": -105.079826,
+   "lat": 40.574939,
+   "osm": "way/108386857"
+  },
+  {
+   "id": "academic-village-commons",
+   "name": "Academic Village Commons",
+   "short": "Ram's Horn Dining Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Ram's Horn Dining Center",
+    "Ram's Horn"
+   ],
+   "lng": -105.09114,
+   "lat": 40.572031,
+   "osm": "way/208575221"
+  },
+  {
+   "id": "rockwell-west",
+   "name": "Rockwell West",
+   "short": "Rockwell West",
+   "kind": "academic",
+   "codes": [
+    "RCKWLW"
+   ],
+   "aliases": [],
+   "lng": -105.085247,
+   "lat": 40.577749,
+   "osm": "way/229732454"
+  },
+  {
+   "id": "pathology",
+   "name": "Pathology",
+   "short": "Pathology",
+   "kind": "academic",
+   "codes": [
+    "PATH"
+   ],
+   "aliases": [],
+   "lng": -105.080969,
+   "lat": 40.569206,
+   "osm": "way/229606034"
+  },
+  {
+   "id": "molecular-and-radiological-biosciences",
+   "name": "Molecular and Radiological Biosciences",
+   "short": "Molecular and Radiological Biosciences",
+   "kind": "academic",
+   "codes": [
+    "MRBSC"
+   ],
+   "aliases": [],
+   "lng": -105.084349,
+   "lat": 40.569247,
+   "osm": "way/136961261"
+  },
+  {
+   "id": "academic-village-engineering",
+   "name": "Academic VIllage Engineering",
+   "short": "Academic VIllage Engineering",
+   "kind": "academic",
+   "codes": [
+    "AVC"
+   ],
+   "aliases": [
+    "Academic Village C-Engineering"
+   ],
+   "lng": -105.090883,
+   "lat": 40.571348,
+   "osm": "way/208575223"
+  },
+  {
+   "id": "weber",
+   "name": "Weber",
+   "short": "Weber",
+   "kind": "academic",
+   "codes": [
+    "WEBER"
+   ],
+   "aliases": [],
+   "lng": -105.082283,
+   "lat": 40.576197,
+   "osm": "way/106336413"
+  },
+  {
+   "id": "yates-hall",
+   "name": "Yates Hall",
+   "short": "Yates Hall",
+   "kind": "academic",
+   "codes": [
+    "YATES"
+   ],
+   "aliases": [
+    "Yates"
+   ],
+   "lng": -105.08363,
+   "lat": 40.570155,
+   "osm": "way/229605452"
+  },
+  {
+   "id": "wagar",
+   "name": "Wagar",
+   "short": "Wagar",
+   "kind": "academic",
+   "codes": [
+    "WAGAR"
+   ],
+   "aliases": [],
+   "lng": -105.081736,
+   "lat": 40.574951,
+   "osm": "way/108386849"
+  },
+  {
+   "id": "education",
+   "name": "Education",
+   "short": "Education",
+   "kind": "academic",
+   "codes": [
+    "EDUC"
+   ],
+   "aliases": [],
+   "lng": -105.084287,
+   "lat": 40.571292,
+   "osm": "way/132687120"
+  },
+  {
+   "id": "preconstruction-center",
+   "name": "Preconstruction Center",
+   "short": "Preconstruction Center",
+   "kind": "academic",
+   "codes": [
+    "PRECON"
+   ],
+   "aliases": [
+    "Pre Construction Center"
+   ],
+   "lng": -105.079745,
+   "lat": 40.577747,
+   "osm": "way/105408699"
+  },
+  {
+   "id": "forestry",
+   "name": "Forestry",
+   "short": "Forestry",
+   "kind": "academic",
+   "codes": [
+    "FRSTY"
+   ],
+   "aliases": [],
+   "lng": -105.081719,
+   "lat": 40.574299,
+   "osm": "way/108386846"
+  },
+  {
+   "id": "tilt-building",
+   "name": "TILT Building",
+   "short": "TILT Building",
+   "kind": "academic",
+   "codes": [
+    "TILT"
+   ],
+   "aliases": [
+    "The Institute for Learning and Teaching"
+   ],
+   "lng": -105.082001,
+   "lat": 40.576722,
+   "osm": "way/104141391"
+  },
+  {
+   "id": "computer-science",
+   "name": "Computer Science",
+   "short": "Computer Science",
+   "kind": "academic",
+   "codes": [
+    "COMSC"
+   ],
+   "aliases": [],
+   "lng": -105.083344,
+   "lat": 40.57415,
+   "osm": "way/135372849"
+  },
+  {
+   "id": "guggenheim-hall",
+   "name": "Guggenheim Hall",
+   "short": "Guggenheim Hall",
+   "kind": "academic",
+   "codes": [
+    "GUGHM"
+   ],
+   "aliases": [
+    "Guggenheim"
+   ],
+   "lng": -105.080405,
+   "lat": 40.577789,
+   "osm": "way/104397071"
+  },
+  {
+   "id": "military-science",
+   "name": "Military Science",
+   "short": "Military Science",
+   "kind": "academic",
+   "codes": [
+    "MILSC"
+   ],
+   "aliases": [],
+   "lng": -105.080001,
+   "lat": 40.573467,
+   "osm": "way/106581150"
+  },
+  {
+   "id": "alder-hall",
+   "name": "Alder Hall",
+   "short": "Alder Hall",
+   "kind": "academic",
+   "codes": [
+    "ALDER"
+   ],
+   "aliases": [],
+   "lng": -105.077967,
+   "lat": 40.575811,
+   "osm": "way/106336407"
+  },
+  {
+   "id": "occupational-therapy",
+   "name": "Occupational Therapy",
+   "short": "Occupational Therapy",
+   "kind": "academic",
+   "codes": [
+    "OCCTH"
+   ],
+   "aliases": [],
+   "lng": -105.07971,
+   "lat": 40.576607,
+   "osm": "way/105408702"
+  }
+ ]
+}

@@ -1,0 +1,203 @@
+{
+ "name": "Colorado State University Registrar, General Assignment Classrooms (updated 8/13/2026), plus the department-controlled classroom buildings in CSU's Echo360 classroom directory (wsprod.colostate.edu/cwis24/echo/echoclient/rooms)",
+ "url": "https://registrar.colostate.edu/wp-content/uploads/sites/23/2026/08/GACL-Detail-8.13.26.pdf",
+ "read": "2026-11-28",
+ "buildings": [
+  {
+   "code": "ANAZO",
+   "name": "Anatomy-Zoology"
+  },
+  {
+   "code": "ANSCI",
+   "name": "Animal Sciences"
+  },
+  {
+   "code": "BHSCI",
+   "name": "Behavioral Sciences"
+  },
+  {
+   "code": "BIOL",
+   "name": "Biology"
+  },
+  {
+   "code": "CHEM",
+   "name": "Chemistry"
+  },
+  {
+   "code": "CLARK",
+   "name": "Clark Hall (formerly Clark A)"
+  },
+  {
+   "code": "EDDY",
+   "name": "Eddy"
+  },
+  {
+   "code": "EDUC",
+   "name": "Education"
+  },
+  {
+   "code": "ENGRG",
+   "name": "Engineering"
+  },
+  {
+   "code": "FRSTY",
+   "name": "Forestry"
+  },
+  {
+   "code": "GIFRD",
+   "name": "Gifford"
+  },
+  {
+   "code": "GUGHM",
+   "name": "Guggenheim"
+  },
+  {
+   "code": "HESTF",
+   "name": "HES Teaching Facility"
+  },
+  {
+   "code": "JNTHR",
+   "name": "Johnson Hall"
+  },
+  {
+   "code": "LIBRY",
+   "name": "Morgan Library"
+  },
+  {
+   "code": "MICRO",
+   "name": "Microbiology"
+  },
+  {
+   "code": "MILSC",
+   "name": "Military Science"
+  },
+  {
+   "code": "MRBSC",
+   "name": "Molecular and Radiological Biosciences"
+  },
+  {
+   "code": "NATRS",
+   "name": "Natural Resources"
+  },
+  {
+   "code": "NUTRN",
+   "name": "Nutrien"
+  },
+  {
+   "code": "PATH",
+   "name": "Pathology"
+  },
+  {
+   "code": "PHYSL",
+   "name": "Physiology"
+  },
+  {
+   "code": "PLSCI",
+   "name": "Plant Science"
+  },
+  {
+   "code": "RCKWL",
+   "name": "Rockwell"
+  },
+  {
+   "code": "RCKWLW",
+   "name": "Rockwell West"
+  },
+  {
+   "code": "SCOTT",
+   "name": "Scott Bioengineering"
+  },
+  {
+   "code": "SOCSCI",
+   "name": "Social Sciences Hall (formerly Clark C)"
+  },
+  {
+   "code": "SPRUC",
+   "name": "Spruce Hall"
+  },
+  {
+   "code": "STADM",
+   "name": "Stadium"
+  },
+  {
+   "code": "TILT",
+   "name": "The Institute for Learning and Teaching"
+  },
+  {
+   "code": "ART",
+   "name": "Visual Arts"
+  },
+  {
+   "code": "WAGAR",
+   "name": "Wagar"
+  },
+  {
+   "code": "WALNT",
+   "name": "Walnut"
+  },
+  {
+   "code": "WEBER",
+   "name": "Weber"
+  },
+  {
+   "code": "YATES",
+   "name": "Yates"
+  },
+  {
+   "code": "AVC",
+   "name": "Academic Village C-Engineering"
+  },
+  {
+   "code": "ALDER",
+   "name": "Alder Hall"
+  },
+  {
+   "code": "BIO",
+   "name": "Biology"
+  },
+  {
+   "code": "COMSC",
+   "name": "Computer Science"
+  },
+  {
+   "code": "LSC",
+   "name": "Lory Student Center"
+  },
+  {
+   "code": "OCCTH",
+   "name": "Occupational Therapy"
+  },
+  {
+   "code": "PGFAC",
+   "name": "Plant Growth Center"
+  },
+  {
+   "code": "PRECON",
+   "name": "Pre Construction Center"
+  },
+  {
+   "code": "RDC",
+   "name": "Richardson Design Center"
+  },
+  {
+   "code": "TMI",
+   "name": "Translational Medicine Institute"
+  },
+  {
+   "code": "UCA",
+   "name": "University Center for the Arts"
+  },
+  {
+   "code": "UCAAX",
+   "name": "University Center for the Arts East"
+  },
+  {
+   "code": "VHEC",
+   "name": "Veterinary Hospital and Education Complex"
+  },
+  {
+   "code": "VETTH",
+   "name": "Veterinary Teaching Hospital"
+  }
+ ]
+}

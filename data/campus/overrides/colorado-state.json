@@ -1,0 +1,75 @@
+{
+  "places": {
+    "academic-village-commons": {
+      "include": true,
+      "kind": "dining",
+      "short": "Ram's Horn Dining Center",
+      "aliases": [
+        "Ram's Horn Dining Center",
+        "Ram's Horn"
+      ]
+    },
+    "durrell-center": {
+      "kind": "dining",
+      "aliases": [
+        "Durrell Dining Center"
+      ]
+    },
+    "walnut": {
+      "include": true,
+      "kind": "academic"
+    },
+    "moby-arena": {
+      "hide": true
+    },
+    "indoor-practice-facility": {
+      "hide": true
+    },
+    "anderson-academic": {
+      "hide": true
+    },
+    "library-depository": {
+      "hide": true
+    },
+    "study-cube": {
+      "hide": true
+    }
+  },
+  "codes": {
+    "SOCSCI": "relation/3079995",
+    "TILT": "way/104141391",
+    "PRECON": "way/105408699"
+  },
+  "notes": {
+    "academic-village-commons": "Ram's Horn Dining Center is in Academic Village's shared commons building (CSU Housing, housing.colostate.edu/housing/halls/academic-village/); OSM tags the building residential, so the override keeps it as the dining place.",
+    "durrell-center": "CSU's north-side dining center: Durward is 'adjacent to the Durrell Dining Center' and Westfall is in 'close walking distance to Durrell Center Dining' (CSU Housing hall pages).",
+    "walnut": "Aggie Village Walnut (501 W. Lake St.) has general assignment classrooms, code WALNT, rooms 101-119 on the Registrar's list; OSM tags it apartments, so the override keeps it as a class building.",
+    "moby-arena": "CSU's basketball arena (Moby Arena), not a student gym; students use the Student Recreation Center, the Intramural Gym and South College Gymnasium.",
+    "indoor-practice-facility": "CSU Athletics' indoor practice facility, not a student gym.",
+    "anderson-academic": "CSU Athletics' Anderson Academic and Training Center (2009, southwest corner of Moby), a study facility for student-athletes (csurams.com/facilities/anderson-academic-center/9), not a student gym.",
+    "library-depository": "By its name a library storage building, not the library students use; Morgan Library is CSU's library.",
+    "study-cube": "A small study space OSM tags as a library; Morgan Library is CSU's library.",
+    "SOCSCI": "Social Sciences Hall is the former Clark C wing; OSM maps the whole Clark building (A, B and C wings) as one relation, Clark (relation/3079995).",
+    "TILT": "The Institute for Learning and Teaching is the OSM building 'TILT Building' (way/104141391).",
+    "PRECON": "The Registrar's 'Pre Construction Center' is OSM's 'Preconstruction Center' (way/105408699, 251 W. Laurel St.)."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "durward-hall -> moby-b-wing",
+        "laurel-village -> moby-b-wing"
+      ],
+      "maxRatio": 3,
+      "why": "OSM maps no door on Moby B-wing, so its walks end on the footway along its west side, where its centroid snaps; the footways that come down to its north side from Plum Street stop at the wall, so walks from Durward and Laurel Village (Piñon Hall) go east round the Intramural Gym and back along the south side of the Moby complex."
+    },
+    {
+      "pairs": [
+        "aggie-village -> design-building",
+        "aggie-village -> gifford",
+        "aggie-village -> molecular-and-radiological-biosciences"
+      ],
+      "maxRatio": 3.5,
+      "why": "Aggie Village is pinned on Cottonwood (511 W. Lake St.), whose mapped doors open onto courtyard footways that lead south; OSM maps no path from Cottonwood's north side up to Lake Street, so walks to the buildings just across Lake Street start round the west end of Lodgepole (to Gifford and the Design Building) or along the path between Walnut and Cottonwood to its east end (to Molecular and Radiological Biosciences, which also has no mapped door)."
+    }
+  ]
+}
