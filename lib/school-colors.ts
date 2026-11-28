@@ -18,6 +18,7 @@ export const SCHOOL_COLORS: Record<string, [string, string]> = {
   "carnegie-mellon": ["#C41230", "#6D6E71"],
   "carroll-university": ["#F47920", "#FFFFFF"],
   clemson: ["#F56600", "#522D80"],
+  "colorado-state": ["#1E4D2B", "#C8C372"],
   columbia: ["#B9D9EB", "#FFFFFF"],
   cornell: ["#B31B1B", "#FFFFFF"],
   "csu-la": ["#000000", "#FFC72C"],

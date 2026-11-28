@@ -26,6 +26,7 @@ const SHORT: Record<string, string> = {
   "bridgewater-state": "Bridgewater State",
   caltech: "Caltech",
   "carnegie-mellon": "Carnegie Mellon",
+  "colorado-state": "Colorado State",
   "csu-la": "Cal State LA",
   "cu-boulder": "CU Boulder",
   fsu: "Florida State",

@@ -1,0 +1,1948 @@
+{
+ "college_id": "colorado-state",
+ "college_name": "Colorado State University",
+ "city": "Fort Collins",
+ "state": "CO",
+ "aliases": [
+  "colorado state",
+  "colorado state university",
+  "csu",
+  "csu fort collins",
+  "colostate",
+  "colorado state fort collins",
+  "csu rams"
+ ],
+ "housing_url": "https://housing.colostate.edu/housing/",
+ "data_collected": "2026-11-28",
+ "campus_notes": "Compiled 2026-11-28 from Colorado State University Housing & Dining Services (housing.colostate.edu): the hall pages, the 2026-2027 Hall Rates page (room types, air conditioning and general-assignment share per hall), the Bed Lofting page, the Mail page (building addresses) and the Aggie Village pages. For 2026-27 CSU runs eleven residence halls: Academic Village (Aspen, Honors and Engineering), Braiden, Corbett, Durward, Edwards, Ingersoll, Laurel Village (Alpine and Piñon), Newsom, Parmelee, Summit and Westfall; Allison Hall is closed for renovation and reopens Fall 2027, so it is left out. CSU's own undergraduate apartments, Aggie Village, are included; its Graduate & Family Apartments (Aggie Village Family, University Village, and International House, which is for undergraduates over 21 and graduate students) are left out. CSU publishes undimensioned floor plans and 3D tours for every hall room type but no room sizes, so every residence hall room uses the site's estimate fallback and is labelled 'Estimated based on similar rooms. Official size not published.' Economy doubles are smaller than CSU's other doubles, so their estimates run large. Aggie Village's renderings and the Lodgepole shared-bedroom drawings carry dimensions, recorded as published. Hall beds are extra-long twins (39\" x 80\") set at about 20 in and loftable; Aggie Village private bedrooms have full XL beds.",
+ "dorms": [
+  {
+   "dorm_id": "academic-village",
+   "dorm_name": "Academic Village",
+   "hall_url": "https://housing.colostate.edu/housing/halls/academic-village/",
+   "address": "800 W. Pitkin St., Fort Collins, CO 80521",
+   "campus_area": "South campus",
+   "air_conditioning": true,
+   "building_type": "Suite-style",
+   "population": 640,
+   "rooms": [
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Suite-Style Double with Private Bathroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/ACADEMIC-VILLAGE_SUITE-STYLE-DOUBLE-WITH-PRIVATE-BATH.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/academic-village/",
+     "data_confidence": "low",
+     "notes": "2 people per room with a private bathroom in the room. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double in Quad with Private Bathroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/08/ACADEMIC-VILLAGE_SUITE-STYLE-DOUBLE-IN-QUAD-WITH-PRIVATE-BATH.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/academic-village/",
+     "data_confidence": "low",
+     "notes": "Aspen Hall only: two double rooms, each with its own bathroom, sharing a common room. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Suite-Style Single with Private Bathroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/ACADEMIC-VILLAGE_SUITE-STYLE-SINGLE-WITH-PRIVATE-BATH.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/academic-village/",
+     "data_confidence": "low",
+     "notes": "1 person per room with a private bathroom. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "Three suite-style halls, Aspen (800 W. Pitkin St.), Honors (810) and Engineering (816), around a commons building with Ram's Horn Dining Center; together they house 640 students in the Honors and Engineering learning communities, returning and transfer students (0% open for general assignment). In-room air conditioning; Aspen is LEED Gold."
+  },
+  {
+   "dorm_id": "braiden-hall",
+   "dorm_name": "Braiden Hall",
+   "hall_url": "https://housing.colostate.edu/housing/halls/braiden/",
+   "address": "500 W. Pitkin St., Fort Collins, CO 80521",
+   "campus_area": "South campus",
+   "air_conditioning": null,
+   "building_type": "Suite-style",
+   "population": 590,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/BRAIDEN_SUITE-STYLE-DOUBLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/braiden/",
+     "data_confidence": "low",
+     "notes": "2 people per room with a shared bathroom between 2 rooms. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double 4th Floor Loft",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/BRAIDEN_SUITE-STYLE-DOUBLE-4TH-FLOOR-LOFT.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/braiden/",
+     "data_confidence": "low",
+     "notes": "4th floor: 2 people per room with a shared bathroom between 2 rooms, air conditioning and lofted ceilings. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single 4th Floor Loft",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/BRAIDEN_SUITE-STYLE-SINGLE-4TH-FLOOR-LOFT.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/braiden/",
+     "data_confidence": "low",
+     "notes": "4th floor: 1 person per room with a shared bathroom between 2 rooms; vaulted ceilings. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Economy Double 4th Floor Loft",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/BRAIDEN_SUITE-STYLE-ECONOMY-DOUBLE-4TH-FLOOR-LOFT.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/braiden/",
+     "data_confidence": "low",
+     "notes": "4th floor: 2 people per room with a shared bathroom between 2 rooms; vaulted ceilings. CSU describes it as a smaller room, and its beds are high-lofted or bunked before move-in with limited rearranging (Bed Lofting page). The estimate is a typical room of this type, so the real room is smaller: measure before buying. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "Suite-style hall on the south side near the academic core, home to 590 students; two rooms share a connected bathroom. Connected to Braiden Dining Center (Express location and Mini Market). Air conditioning and lofted ceilings on the 4th-floor lofts only; singles are 4th floor only."
+  },
+  {
+   "dorm_id": "corbett-hall",
+   "dorm_name": "Corbett Hall",
+   "hall_url": "https://housing.colostate.edu/housing/halls/corbett/",
+   "address": "801 W. Laurel St., Fort Collins, CO 80521",
+   "campus_area": "North campus",
+   "air_conditioning": false,
+   "building_type": "Suite-style",
+   "population": 890,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/CORBETT_SUITE-STYLE-DOUBLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/corbett/",
+     "data_confidence": "low",
+     "notes": "2 people per room with a shared bathroom between 2 rooms. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/CORBETT_SUITE-STYLE-SINGLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/corbett/",
+     "data_confidence": "low",
+     "notes": "1 person per room with a shared bathroom between 2 rooms (availability very limited). CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "The largest residence hall on campus: 890 students across seven wings in suite-style rooms (two rooms share a connected bathroom). The Foundry Dining Center is in the building, which connects Corbett and Parmelee. Home to the Health & Exercise Science and Living Substance Free communities. The hall page also mentions limited triples, but the 2026-27 rates and floor plans list only doubles and singles. No air conditioning (rates page hall table)."
+  },
+  {
+   "dorm_id": "durward-hall",
+   "dorm_name": "Durward Hall",
+   "hall_url": "https://housing.colostate.edu/housing/halls/durward/",
+   "address": "1001 W. Laurel St., Fort Collins, CO 80521",
+   "campus_area": "North campus",
+   "air_conditioning": false,
+   "building_type": "Community-style",
+   "population": 450,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Community-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.colostate.edu/housing/halls/durward/",
+     "data_confidence": "low",
+     "notes": "2 people per room with a centralized bathroom on each floor. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Community-Style Designed Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.colostate.edu/housing/halls/durward/",
+     "data_confidence": "low",
+     "notes": "1 person per room with a centralized bathroom on each floor (limited). Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Community-Style Corner Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.colostate.edu/housing/halls/durward/",
+     "data_confidence": "low",
+     "notes": "4 roommates with a centralized bathroom on each floor (limited availability); CSU notes the floor plan, furniture and layout vary. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "One of the two 12-story north-side 'Towers', home to 450 students in community-style rooms (each corridor shares a community bathroom), doubles and quads; next to the Durrell Dining Center. All rooms are open for general assignment. Wired internet not available. No air conditioning (rates page hall table)."
+  },
+  {
+   "dorm_id": "edwards-hall",
+   "dorm_name": "Edwards Hall",
+   "hall_url": "https://housing.colostate.edu/housing/halls/edwards/",
+   "address": "900 W. Pitkin St., Fort Collins, CO 80521",
+   "campus_area": "South campus",
+   "air_conditioning": false,
+   "building_type": "Community-style",
+   "population": 415,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Community-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/EDWARDS_COMMUNITY-STYLE-DOUBLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/edwards/",
+     "data_confidence": "low",
+     "notes": "2 people per room with centralized bathrooms on each floor. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "South-side hall, home to 415 students in community-style double rooms (each corridor shares a community bathroom); close to Ram's Horn and Braiden dining centers. No air conditioning (rates page hall table)."
+  },
+  {
+   "dorm_id": "ingersoll-hall",
+   "dorm_name": "Ingersoll Hall",
+   "hall_url": "https://housing.colostate.edu/housing/halls/ingersoll/",
+   "address": "1000 W. Pitkin St., Fort Collins, CO 80521",
+   "campus_area": "South campus",
+   "air_conditioning": false,
+   "building_type": "Community-style",
+   "population": 415,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Community-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/INGERSOLL_COMMUNITY-STYLE-DOUBLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/ingersoll/",
+     "data_confidence": "low",
+     "notes": "2 people per room with centralized bathrooms on each floor. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "South-side hall, home to 415 students in community-style double rooms (each corridor shares a community bathroom), with a renovated large community kitchen, a few minutes from Ram's Horn Dining Center. All rooms open for general assignment. No air conditioning (rates page hall table)."
+  },
+  {
+   "dorm_id": "laurel-village",
+   "dorm_name": "Laurel Village",
+   "hall_url": "https://housing.colostate.edu/housing/halls/laurel-village/",
+   "address": "900 W. Plum St., Fort Collins, CO 80521",
+   "campus_area": "North campus",
+   "air_conditioning": true,
+   "building_type": "Community-style and suite-style",
+   "population": 615,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Community-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/LAUREL-VILLAGE_COMMUNITY-STYLE-DOUBLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/laurel-village/",
+     "data_confidence": "low",
+     "notes": "2 people per room with a community bathroom down the hall. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Suite-Style Double with Private Bathroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/LAUREL-VILLAGE_SUITE-STYLE-DOUBLE-WITH-PRIVATE-BATH.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/laurel-village/",
+     "data_confidence": "low",
+     "notes": "Double room with a private bathroom. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Community-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/LAUREL-VILLAGE_COMMUNITY-STYLE-SINGLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/laurel-village/",
+     "data_confidence": "low",
+     "notes": "Single room with a community bathroom down the hall. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/LAUREL-VILLAGE_SUITE-STYLE-SINGLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/laurel-village/",
+     "data_confidence": "low",
+     "notes": "Two single rooms that share a connecting bathroom. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Suite-Style Single with Private Bathroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/LAUREL-VILLAGE_SUITE-STYLE-SINGLE-WITH-PRIVATE-BATH.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/laurel-village/",
+     "data_confidence": "low",
+     "notes": "Single room with a private bathroom. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single in Quad",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/LAUREL-VILLAGE_SUITE-STYLE-SINGLE-IN-QUAD.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/laurel-village/",
+     "data_confidence": "low",
+     "notes": "Four single rooms with a common room and bathroom (separate rooms for shower and toilet). CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Community-Style Economy Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/LAUREL-VILLAGE_COMMUNITY-STYLE-ECONOMY-DOUBLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/laurel-village/",
+     "data_confidence": "low",
+     "notes": "2 people per room; community bathroom. CSU describes it as a smaller room, and its beds are high-lofted or bunked before move-in with limited rearranging (Bed Lofting page). The estimate is a typical room of this type, so the real room is smaller: measure before buying. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "CSU's newest residence halls: Alpine (910 W. Plum St.) and Piñon (900 W. Plum St.) house 615 first-year, upper-division and transfer students, with the Pavilion community center (programming, lounges, The Spoke bike shop). Mix of community-style and suite-style rooms with shared and private bathrooms; in-room air conditioning. Alpine and Piñon are LEED Gold, the Pavilion LEED Platinum."
+  },
+  {
+   "dorm_id": "newsom-hall",
+   "dorm_name": "Newsom Hall",
+   "hall_url": "https://housing.colostate.edu/housing/halls/newsom/",
+   "address": "700 W. Pitkin St., Fort Collins, CO 80521",
+   "campus_area": "South campus",
+   "air_conditioning": false,
+   "building_type": "Community-style",
+   "population": 400,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Community-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/NEWSOM_COMMUNITY-STYLE-DOUBLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/newsom/",
+     "data_confidence": "low",
+     "notes": "2 people per room with centralized bathrooms on each floor. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "South-side hall, home to 400 students in community-style double rooms (each corridor shares a community bathroom), between Ram's Horn and Braiden dining centers. All rooms open for general assignment. No air conditioning (rates page hall table)."
+  },
+  {
+   "dorm_id": "parmelee-hall",
+   "dorm_name": "Parmelee Hall",
+   "hall_url": "https://housing.colostate.edu/housing/halls/parmelee/",
+   "address": "701 W. Laurel St., Fort Collins, CO 80521",
+   "campus_area": "North campus",
+   "air_conditioning": null,
+   "building_type": "Suite-style",
+   "population": 585,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/PARMELEE_SUITE-STYLE-DOUBLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/parmelee/",
+     "data_confidence": "low",
+     "notes": "2 people per room with a shared bathroom between 2 rooms. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double 4th Floor Loft",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/PARMELEE_SUITE-STYLE-DOUBLE-4TH-FLOOR-LOFT.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/parmelee/",
+     "data_confidence": "low",
+     "notes": "4th floor: 2 people per room with a shared bathroom between 2 rooms, air conditioning and lofted ceilings. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single 4th Floor Loft",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/PARMELEE_SUITE-STYLE-SINGLE-4TH-FLOOR-LOFT.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/parmelee/",
+     "data_confidence": "low",
+     "notes": "4th floor: 1 person per room with a shared bathroom between 2 rooms; vaulted ceilings. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Economy Double 4th Floor Loft",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/PARMELEE_SUITE-STYLE-ECONOMY-DOUBLE-4TH-FLOOR-LOFT.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/parmelee/",
+     "data_confidence": "low",
+     "notes": "4th floor: 2 people per room with a shared bathroom between 2 rooms; vaulted ceilings. CSU describes it as a smaller room, and its beds are high-lofted or bunked before move-in with limited rearranging (Bed Lofting page). The estimate is a typical room of this type, so the real room is smaller: measure before buying. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "Suite-style hall on the north side, home to 585 students; two rooms share a connected bathroom. The Foundry Dining Center is in the building, which connects Corbett and Parmelee. Air conditioning and lofted ceilings on the 4th-floor lofts only; singles are 4th floor only."
+  },
+  {
+   "dorm_id": "summit-hall",
+   "dorm_name": "Summit Hall",
+   "hall_url": "https://housing.colostate.edu/housing/halls/summit/",
+   "address": "963 W. Pitkin St., Fort Collins, CO 80521",
+   "campus_area": "South campus",
+   "air_conditioning": true,
+   "building_type": "Suite-style",
+   "population": 535,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/SUMMIT_SUITE-STYLE-SINGLE-DOUBLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/summit/",
+     "data_confidence": "low",
+     "notes": "Shares a connecting bathroom with a single or an economy double. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/SUMMIT_SUITE-STYLE-SINGLE-DOUBLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/summit/",
+     "data_confidence": "low",
+     "notes": "One double room and one single room share a connecting bathroom. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Economy Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "3-drawer dresser."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2026/11/SUMMIT_SUITE-STYLE-ECONOMY-DOUBLE.png",
+     "data_source": "https://housing.colostate.edu/housing/halls/summit/",
+     "data_confidence": "low",
+     "notes": "Shares a connecting bathroom with a double. CSU describes it as a smaller room, and its beds are high-lofted or bunked before move-in with limited rearranging (Bed Lofting page). The estimate is a typical room of this type, so the real room is smaller: measure before buying. CSU's floor plan for this room type is drawn without dimensions. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "South-side hall, home to 535 students in suite-style rooms (two rooms share a connected bathroom): a double paired with a single, or an economy double paired with a double. Natural Resources, Agricultural Leadership and Transfer communities and a Gender Inclusive Housing option. Air conditioning; LEED Gold."
+  },
+  {
+   "dorm_id": "westfall-hall",
+   "dorm_name": "Westfall Hall",
+   "hall_url": "https://housing.colostate.edu/housing/halls/westfall/",
+   "address": "1009 W. Laurel St., Fort Collins, CO 80521",
+   "campus_area": "North campus",
+   "air_conditioning": false,
+   "building_type": "Community-style",
+   "population": 500,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Community-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.colostate.edu/housing/halls/westfall/",
+     "data_confidence": "low",
+     "notes": "2 people per room with a centralized bathroom on each floor. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Community-Style Designed Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.colostate.edu/housing/halls/westfall/",
+     "data_confidence": "low",
+     "notes": "1 person per room with a centralized bathroom on each floor (limited). Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Community-Style Corner Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": true,
+       "notes": "Extra-long twin mattress, 39\" x 80\" (CSU); bed height about 20 in, loftable to medium or high."
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": true,
+       "notes": "Wardrobe or closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.colostate.edu/housing/halls/westfall/",
+     "data_confidence": "low",
+     "notes": "4 roommates with a centralized bathroom on each floor (limited availability); CSU notes the floor plan, furniture and layout vary. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ],
+   "notes": "The other 12-story north-side Tower, home to 500 students in community-style rooms (each corridor shares a community bathroom); shares a courtyard with Durward and is near the Durrell Center. Renovated rooms, windows and more reopened for 2023-24. No air conditioning (rates page hall table)."
+  },
+  {
+   "dorm_id": "aggie-village",
+   "dorm_name": "Aggie Village",
+   "hall_url": "https://housing.colostate.edu/housing/aggie-village/explore/",
+   "address": "511 W. Lake St., Fort Collins, CO 80521",
+   "campus_area": "Main campus (West Lake Street)",
+   "air_conditioning": true,
+   "building_type": "Apartments",
+   "population": null,
+   "year_built": 2016,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 22,
+      "width_ft": 16,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 352,
+     "bed_size": "full_xl",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "Full XL bed (CSU)."
+      },
+      {
+       "type": "chair",
+       "count": 4,
+       "movable": true,
+       "notes": "Two kitchen-table chairs and two living room chairs, with a kitchen table, TV stand and end table."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2023/12/studio.png",
+     "data_source": "https://housing.colostate.edu/housing/aggie-village/explore/",
+     "data_confidence": "medium",
+     "notes": "Published: 352 sq ft (32.7 m2), 22' x 16' overall, a whole studio unit including its kitchen and bathroom. CSU's renderings note that dimensions may vary by unit."
+    },
+    {
+     "room_type": "apartment_single",
+     "room_type_official": "One-Bedroom Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 120,
+     "bed_size": "full_xl",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "Full XL bed (CSU)."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Two-piece desk."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2023/12/1-bed.png",
+     "data_source": "https://housing.colostate.edu/housing/aggie-village/explore/",
+     "data_confidence": "high",
+     "notes": "Published: bedroom 120 sq ft (11.1 m2), 12' x 10', in a 462 sq ft one-bedroom unit with a 242 sq ft living room/kitchen. CSU's renderings note that dimensions may vary by unit."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Two-, Three- or Four-Bedroom Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 13,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 130,
+     "bed_size": "full_xl",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "Full XL bed (CSU)."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Two-piece desk."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2023/12/2-bed.png",
+     "data_source": "https://housing.colostate.edu/housing/aggie-village/explore/",
+     "data_confidence": "high",
+     "notes": "Published: each bedroom 130 sq ft (12.1 m2), 13' x 10', in two-, three- and four-bedroom units (620, 842 and 1,042 sq ft) with a 242 sq ft living room/kitchen. CSU's renderings note that dimensions may vary by unit."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Lodgepole Shared Bedroom (One-Bedroom Unit)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.83,
+      "width_ft": 9.4,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": false,
+       "notes": "Two extra-long twin beds bunked together (CSU); furniture layouts are reduced with limited options for rearrangement."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Closet/wardrobe."
+      },
+      {
+       "type": "nightstand",
+       "count": 2,
+       "movable": true,
+       "notes": "End table."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2024/04/aggie-shared-1-bedroom-large.jpg",
+     "data_source": "https://housing.colostate.edu/housing/aggie-village/shared-bedroom/",
+     "data_confidence": "high",
+     "notes": "Published: CSU's dimensioned plan shows the shared bedroom at 11'-10\" x 9'-4 3/4\" in a 20'-11\" x 20'-4\" one-bedroom unit. Aggie Village Lodgepole only, 9-month contract only, lower price than a single-occupancy bedroom."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Lodgepole Shared Bedroom (Two-Bedroom Unit)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.44,
+      "width_ft": 9.42,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.25,
+       "movable": false,
+       "notes": "Two extra-long twin beds bunked together (CSU); furniture layouts are reduced with limited options for rearrangement."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": true,
+       "notes": "Closet/wardrobe."
+      },
+      {
+       "type": "nightstand",
+       "count": 2,
+       "movable": true,
+       "notes": "End table."
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2024/04/aggie-shared-2-bedroom-large.jpg",
+     "data_source": "https://housing.colostate.edu/housing/aggie-village/shared-bedroom/",
+     "data_confidence": "high",
+     "notes": "Published: CSU's dimensioned plan shows each shared bedroom at 9'-5\" x 11'-5 1/4\" in a 30'-3 1/2\" x 20'-11\" two-bedroom unit (one bathroom with two vanity sinks). Aggie Village Lodgepole only, 9-month contract only."
+    }
+   ],
+   "notes": "CSU-run apartments opened 2016 for continuing undergraduates, transfer and graduate students (and new students over 21): Cottonwood (511 W. Lake St.), Lodgepole (521) and Walnut (501). Furnished, individual contracts, all utilities and Wi-Fi included, air conditioning, in-unit washer/dryer and dishwasher. Studio, one-, two-, three- and four-bedroom units; private bedrooms have a full XL bed, and Lodgepole's shared bedrooms two twin XL beds bunked."
+  }
+ ]
+}

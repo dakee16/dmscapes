@@ -314,6 +314,30 @@
     }
    ]
   },
+  "colorado-state": {
+   "loft": "yes",
+   "bunk": "some",
+   "how": "Residence hall beds come set at 20 in and can be lofted to a medium or high height: residents loft them at move-in (instructions provided, staff help available) or by maintenance request afterwards (allow 2-4 weeks). Economy Double beds come high-lofted or bunked.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": {
+    "min": 20,
+    "max": 72
+   },
+   "deadline": null,
+   "notes": "Medium and high heights by hall (frame to floor): Durward, Edwards and Ingersoll 34 and 55 in; Academic Village, Braiden and Parmelee floors 1-3, Corbett, Laurel Village, Newsom, Summit and Westfall 36 and 60 in; Laurel Village and the 4th floors of Braiden and Parmelee 36 and 72 in. Beds above medium need a safety rail. Lofted beds go back to 20 in before spring move-out or a $100 charge applies. Aggie Village Lodgepole shared bedrooms have two twin XL beds bunked together. No rule on bed risers or personal loft kits is published.",
+   "sources": [
+    {
+     "url": "https://housing.colostate.edu/knowledge-base/hall-operational/bed-lofting/",
+     "title": "Bed Lofting - Housing & Dining Services"
+    },
+    {
+     "url": "https://housing.colostate.edu/housing/aggie-village/shared-bedroom/",
+     "title": "Aggie Village Lodgepole – Shared Bedroom - Housing & Dining Services"
+    }
+   ]
+  },
   "columbia": {
    "loft": "no",
    "bunk": "unknown",
