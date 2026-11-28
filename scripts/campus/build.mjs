@@ -403,7 +403,10 @@ function kindOf(t) {
   return "academic";
 }
 
-const candidates = largestFirst(buildings.filter((b) => b.tags.name && !hallBuildings.has(b) && !NOT_PLACES.has(b.tags.building) && !OUTBUILDING.test(b.tags.name)));
+// overrides.places.<id>.include keeps a building OSM tags residential (Colorado State's Academic Village Commons holds
+// Ram's Horn Dining Center; Aggie Village Walnut has classrooms).
+const keptByOverride = (b) => overrides.places?.[slug(b.tags.name)]?.include === true;
+const candidates = largestFirst(buildings.filter((b) => b.tags.name && !hallBuildings.has(b) && (!NOT_PLACES.has(b.tags.building) || keptByOverride(b)) && !OUTBUILDING.test(b.tags.name)));
 const joined = new Map(candidates.map((b) => [b, []]));
 // Word matches are the loosest join, so the report lists each for review.
 function wordMatch(o, variants) {
