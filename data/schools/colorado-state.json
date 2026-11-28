@@ -14,7 +14,7 @@
  ],
  "housing_url": "https://housing.colostate.edu/housing/",
  "data_collected": "2026-11-28",
- "campus_notes": "Compiled 2026-11-28 from Colorado State University Housing & Dining Services (housing.colostate.edu): the hall pages, the 2026-2027 Hall Rates page (room types, air conditioning and general-assignment share per hall), the Bed Lofting page, the Mail page (building addresses) and the Aggie Village pages. For 2026-27 CSU runs eleven residence halls: Academic Village (Aspen, Honors and Engineering), Braiden, Corbett, Durward, Edwards, Ingersoll, Laurel Village (Alpine and Piñon), Newsom, Parmelee, Summit and Westfall; Allison Hall is closed for renovation and reopens Fall 2027, so it is left out. CSU's own undergraduate apartments, Aggie Village, are included; its Graduate & Family Apartments (Aggie Village Family, University Village, and International House, which is for undergraduates over 21 and graduate students) are left out. CSU publishes undimensioned floor plans and 3D tours for every hall room type but no room sizes, so every residence hall room uses the site's estimate fallback and is labelled 'Estimated based on similar rooms. Official size not published.' Economy doubles are smaller than CSU's other doubles, so their estimates run large. Aggie Village's renderings and the Lodgepole shared-bedroom drawings carry dimensions, recorded as published. Hall beds are extra-long twins (39\" x 80\") set at about 20 in and loftable; Aggie Village private bedrooms have full XL beds.",
+ "campus_notes": "Compiled 2026-11-28 from Colorado State University Housing & Dining Services (housing.colostate.edu): the hall pages, the 2026-2027 Hall Rates page (room types, air conditioning and general-assignment share per hall), the Bed Lofting page, the Mail page (building addresses), the Aggie Village pages and the International House page. For 2026-27 CSU runs eleven residence halls: Academic Village (Aspen, Honors and Engineering), Braiden, Corbett, Durward, Edwards, Ingersoll, Laurel Village (Alpine and Piñon), Newsom, Parmelee, Summit and Westfall; Allison Hall is closed for renovation and reopens Fall 2027, so it is left out. CSU's own apartments Aggie Village (continuing undergraduates, transfer and graduate students) and International House (undergraduates over 21 and graduate students, with spaces held for undergraduates from 2026) are included; the family apartments, Aggie Village Family and University Village, are left out. CSU publishes undimensioned floor plans and 3D tours for every hall room type but no room sizes, so every residence hall room uses the site's estimate fallback and is labelled 'Estimated based on similar rooms. Official size not published.' Economy doubles are smaller than CSU's other doubles, so their estimates run large. The Aggie Village and International House renderings and the Lodgepole shared-bedroom drawings carry dimensions, recorded as published. Hall beds are extra-long twins (39\" x 80\") set at about 20 in and loftable; apartment private bedrooms have full XL beds.",
  "dorms": [
   {
    "dorm_id": "academic-village",
@@ -1943,6 +1943,98 @@
     }
    ],
    "notes": "CSU-run apartments opened 2016 for continuing undergraduates, transfer and graduate students (and new students over 21): Cottonwood (511 W. Lake St.), Lodgepole (521) and Walnut (501). Furnished, individual contracts, all utilities and Wi-Fi included, air conditioning, in-unit washer/dryer and dishwasher. Studio, one-, two-, three- and four-bedroom units; private bedrooms have a full XL bed, and Lodgepole's shared bedrooms two twin XL beds bunked."
+  },
+  {
+   "dorm_id": "international-house",
+   "dorm_name": "International House",
+   "hall_url": "https://housing.colostate.edu/housing/apartments/international-house/",
+   "address": "1400 W. Elizabeth St., Fort Collins, CO 80521",
+   "campus_area": "West of main campus (W. Elizabeth St.)",
+   "air_conditioning": null,
+   "building_type": "Apartments",
+   "population": null,
+   "rooms": [
+    {
+     "room_type": "apartment_single",
+     "room_type_official": "One-Bedroom Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": "full_xl",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "Full XL bed (CSU)."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2023/12/ihouse_1bedroom.png",
+     "data_source": "https://housing.colostate.edu/housing/apartments/international-house/",
+     "data_confidence": "high",
+     "notes": "Published: CSU's 1 Bedroom plan marks the bedroom 10' x 10' (3 m x 3 m), in a 439 sq ft (40.8 m2) furnished unit with one bathroom and a balcony. Bedroom furniture: one full XL bed and one dresser; the living room has a two-seat couch, coffee table, TV stand and two dining chairs."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Two-Bedroom Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": "full_xl",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "Full XL bed (CSU)."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Two-piece desk."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.colostate.edu/wp-content/uploads/sites/28/2023/12/IHouse2Bedroom_Top.png",
+     "data_source": "https://housing.colostate.edu/housing/apartments/international-house/",
+     "data_confidence": "high",
+     "notes": "Published: CSU's 2 Bedroom plan marks each bedroom 11' x 12' (3.3 m x 3.6 m), in a 669 sq ft (62.2 m2) furnished unit whose one bathroom is shared between 2 students. CSU lists the bedroom furniture as one full XL bed, two dressers, one two-piece desk and one desk chair."
+    }
+   ],
+   "notes": "CSU-run furnished apartments a short walk or bike ride from campus, listed with CSU's Graduate & Family Apartments: single-student housing for undergraduates over 21 and graduate students, with individual bedroom leases billed monthly (12-month option, June 1 to May 31) and all utilities and Wi-Fi included. CSU says that new for 2026, International House will have specific spaces held for undergraduate students. One- and two-bedroom units with full XL beds; washer/dryer facilities in the building; community center and kitchen. Limited transitional housing for post-doctoral fellows, visiting scholars, faculty and staff."
   }
  ]
 }

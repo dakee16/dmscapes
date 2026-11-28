@@ -1,4 +1,12 @@
 {
+  "halls": {
+    "international-house": {
+      "pin": [
+        -105.101752,
+        40.575431
+      ]
+    }
+  },
   "places": {
     "academic-village-commons": {
       "include": true,
@@ -41,6 +49,7 @@
     "PRECON": "way/105408699"
   },
   "notes": {
+    "international-house": "OSM maps International House (1400 W. Elizabeth St.) as the International House Complex outline (way/365432393, landuse=residential) holding nine apartment buildings with no names or addresses (way/345318293-345318301), so the build can't find it; pinned on the complex's central building, way/345318301.",
     "academic-village-commons": "Ram's Horn Dining Center is in Academic Village's shared commons building (CSU Housing, housing.colostate.edu/housing/halls/academic-village/); OSM tags the building residential, so the override keeps it as the dining place.",
     "durrell-center": "CSU's north-side dining center: Durward is 'adjacent to the Durrell Dining Center' and Westfall is in 'close walking distance to Durrell Center Dining' (CSU Housing hall pages).",
     "walnut": "Aggie Village Walnut (501 W. Lake St.) has general assignment classrooms, code WALNT, rooms 101-119 on the Registrar's list; OSM tags it apartments, so the override keeps it as a class building.",

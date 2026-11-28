@@ -1,6 +1,6 @@
 {
  "collegeId": "colorado-state",
- "generatedAt": "2026-11-28T07:04:08.041Z",
+ "generatedAt": "2026-11-28T07:13:21.001Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -22,7 +22,7 @@
   }
  ],
  "bounds": [
-  -105.09442,
+  -105.10175,
   40.56783,
   -105.0747,
   40.57779
@@ -313,6 +313,30 @@
     "dining": {
      "placeId": "academic-village-commons",
      "minutes": 14
+    }
+   }
+  },
+  {
+   "dormId": "international-house",
+   "name": "International House",
+   "lng": -105.101752,
+   "lat": 40.575431,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "moby-b-wing",
+     "minutes": 11.2
+    },
+    "library": {
+     "placeId": "morgan-library",
+     "minutes": 20.2
+    },
+    "dining": {
+     "placeId": "durrell-center",
+     "minutes": 11.9
     }
    }
   }
